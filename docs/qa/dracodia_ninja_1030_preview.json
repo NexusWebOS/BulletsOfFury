@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "clip": "stage8-dracodia-ninja-combo",
+      "source": "http://127.0.0.1:51046/videos/stage8-dracodia-ninja-claws-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.001254,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "stage8-dracodia-ninja",
+      "source": "http://127.0.0.1:51046/videos/stage8-dracodia-ninja-claws-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.001009,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "stage8-copy-arena-return",
+      "source": "http://127.0.0.1:51046/videos/stage8-copy-arena-return-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.001106,
+      "advanced": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,74 @@
+{
+  "checks": [
+    {
+      "name": "easy full terrain matches uncropped authored reference",
+      "ok": true,
+      "data": {
+        "inspected": 90,
+        "failures": []
+      }
+    },
+    {
+      "name": "normal full terrain matches uncropped authored reference",
+      "ok": true,
+      "data": {
+        "inspected": 90,
+        "failures": []
+      }
+    },
+    {
+      "name": "hard full terrain matches uncropped authored reference",
+      "ok": true,
+      "data": {
+        "inspected": 90,
+        "failures": []
+      }
+    },
+    {
+      "name": "furious full terrain matches uncropped authored reference",
+      "ok": true,
+      "data": {
+        "inspected": 90,
+        "failures": []
+      }
+    },
+    {
+      "name": "Native join finishes on its original clock",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "Transition never changes boss health",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "Published ground coordinates put the entire mountain below view",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "Retry clears the arena join",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "Lava keeps its independent animated frames",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "No browser errors",
+      "ok": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "full_suite": {
+    "assertions": 8943,
+    "errors": 0,
+    "exit": 0
+  },
+  "baseline_commit": "06f413a3ccda5f6464c79ffc1813a2a3bd132560",
+  "published": false
+}

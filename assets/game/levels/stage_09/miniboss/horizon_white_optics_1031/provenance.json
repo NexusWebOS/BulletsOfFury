@@ -1,0 +1,18 @@
+{
+  "beam": "spaceLaserPulseCanvas(laser_4_pulse_long), intact centre cross section",
+  "muzzle": "roundLaserMuzzleArt(#f5f7ff, 0..7), uniform 0.5 scale",
+  "core": "Original EH57 optical mask, per-pose 32 x 8, white palette",
+  "render": "Fixed native frame blits only",
+  "inputs": {
+    "laser_4_pulse_long.png": "fbe56341c7875df02504a045eacc52950446991c51fd78e6c867ff00a002e8bc",
+    "laser_4_pulse_short.png": "7a96a0a1dead0dbe371aa0423290c05bd06a51f5de57bafc02b6594dac74f17f",
+    "white_muzzle_0.png": "7e8a813ae3984ddacfa4ed3a3f7a95d8d7adf9038ef685efe624f3fc86ec1e6a",
+    "white_muzzle_1.png": "36a8935a741eb5240f46e94b41552df147c74935e17ea4d4e0ab0956f86d0c3f",
+    "white_muzzle_2.png": "27d268c97977fa207ef17693e941a36a5ab4857e89578b44ba1fe0a2a79f75d3",
+    "white_muzzle_3.png": "58d183535512523af8e2e19e984767379bcf0667d6f7cb84d5030641423734d2",
+    "white_muzzle_4.png": "306db949f66ad13c8ddd5a1a983c86586aa920e336e672ae5fc91fcd737387d3",
+    "white_muzzle_5.png": "074f204e77e546c4868c4b54c0d05459cbd905d5aef63da6dfd21e51fde3cc63",
+    "white_muzzle_6.png": "eb5485945e673de60351637e04b617e71668c85ed2ca5b8958631be5300f9761",
+    "white_muzzle_7.png": "12c2482b93832fe59deaa356926b0b1676de1af97cbc4dd0501c560a7db5be95"
+  }
+}

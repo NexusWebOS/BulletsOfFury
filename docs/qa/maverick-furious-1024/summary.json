@@ -1,0 +1,160 @@
+{
+  "testedRuntime": "a5760cb4ab856b2e48f2d3fabc70720a47a86b21",
+  "date": "2026-10-24",
+  "pilot": "maverick",
+  "difficulty": "furious",
+  "allHostSamplesCorrectPilot": true,
+  "allHostSamplesCorrectDifficulty": true,
+  "nativeVictory": true,
+  "score": 1672640,
+  "lifeStock": 7,
+  "ranks": {
+    "1": "B",
+    "2": "A",
+    "3": "A",
+    "4": "A",
+    "5": "C",
+    "6": "A",
+    "7": "B",
+    "8": "B",
+    "9": "B"
+  },
+  "stageX": {
+    "route": "left",
+    "done": true,
+    "signatureMk2": true,
+    "rewarded": true
+  },
+  "elapsedTelemetry": 3592.04,
+  "godEnabledAt": 195.11,
+  "nativeDeaths": 1,
+  "engineRafFpsDuringCapture": 53.206534448391444,
+  "frameMs": {
+    "p50": 16.699999999953434,
+    "p95": 33.3000000002794,
+    "p99": 50.10000000009313,
+    "max": 966.6000000000931
+  },
+  "flashDuty": {
+    "8:heralddeath": {
+      "frames": 601,
+      "flashed": 546,
+      "firing": 601,
+      "flashedWhileFiring": 546,
+      "maxRun": 439,
+      "run": 0
+    },
+    "8:vileexistence": {
+      "frames": 8729,
+      "flashed": 6256,
+      "firing": 8729,
+      "flashedWhileFiring": 6256,
+      "maxRun": 187,
+      "run": 58
+    }
+  },
+  "pageErrors": [],
+  "consoleErrorCount": 2,
+  "httpErrorResponses": [],
+  "requestFailures": {
+    "aborted": 69,
+    "timeout": 2
+  },
+  "scope": "Automated native-engine completion/presentation review. God mode after first death. Not human difficulty certification.",
+  "interventions": [
+    {
+      "t": 195.11,
+      "type": "god-enabled",
+      "reason": "Native bot death; user-authorized completion fallback. No loadout/ammo/HP changes."
+    },
+    {
+      "t": 972.33,
+      "type": "recorder-input-correction",
+      "note": "Prevent host menu Enter from acting as cinematic Skip. Post-1/post-3 scenes were partly skipped; preserve continuous campaign take and review complete native scenes separately."
+    },
+    {
+      "t": 1174.42,
+      "type": "capture-audio-adapter",
+      "note": "Stable media sources for repeated native audio-pool playback; no game mixer/stat changes."
+    },
+    {
+      "t": 1232.53,
+      "type": "controller-policy",
+      "note": "Attempt earned optional Stage9 by steering through visible Stage5 portal mouths with native movement; no gate/unlock edits."
+    },
+    {
+      "t": 1429.56,
+      "type": "controller-policy",
+      "note": "Aim toward visible boss/module Retina markers before chasing interceptable missile markers at the screen edge; native weapons and damage unchanged."
+    },
+    {
+      "t": 1642.78,
+      "type": "controller-policy",
+      "note": "Retain native fire during combatLive Chronos speech; only protected cinematic scenes suspend controller firing."
+    },
+    {
+      "t": 1792.47,
+      "type": "controller-policy",
+      "note": "React to visible healing/SHOOT objective: prioritize hammer Retina marker and tap native manual missiles at .45 s cadence (native cooldown/ammo retained)."
+    },
+    {
+      "t": 2674.04,
+      "type": "route-navigation",
+      "note": "Stage6 cinematic launched Stage7 directly while earned StageX Harrier remained pending. Pause to return to the earned map route before final progression."
+    },
+    {
+      "t": 2741.31,
+      "type": "route-navigation",
+      "note": "Native post-6 story auto-entered Stage7 without exposing pending StageX. Review adapter returns to existing campaign map; earned Harrier route only. Early Stage7 preview is abandoned and will be replayed, no completion/HP/score edits."
+    },
+    {
+      "t": 3196.84,
+      "type": "capture-audio-adapter",
+      "note": "Unity gain nodes preserve native mixer node contract; captured signal and gameplay unchanged."
+    }
+  ],
+  "limitations": [
+    "Post-1/post-3 partly skipped by recorder; complete separate replays supplied.",
+    "Old stop constant truncated expanded ending; complete separate native ending supplied.",
+    "Earned Stage X map handoff required disclosed native map action.",
+    "Variable captured frame rate; no interpolation.",
+    "No physical gamepad or human Furious fairness certification."
+  ],
+  "findings": [
+    {
+      "id": "BETA-01",
+      "priority": "P1",
+      "title": "Earned Stage X route handoff"
+    },
+    {
+      "id": "BETA-02",
+      "priority": "P1",
+      "title": "Sustained hit-flash masking"
+    },
+    {
+      "id": "BETA-03",
+      "priority": "P2",
+      "title": "Duplicate Stage X cards"
+    },
+    {
+      "id": "BETA-04",
+      "priority": "P2",
+      "title": "Live Chronos dialogue/portrait aperture"
+    },
+    {
+      "id": "BETA-05",
+      "priority": "P2",
+      "title": "Armor/body progress legibility"
+    },
+    {
+      "id": "BETA-06",
+      "priority": "P2",
+      "title": "Turret FX masking"
+    },
+    {
+      "id": "BETA-07",
+      "priority": "P2",
+      "title": "Completion metadata; normal-UI reproduction pending"
+    }
+  ]
+}

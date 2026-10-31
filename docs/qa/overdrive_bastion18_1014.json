@@ -1,0 +1,976 @@
+{
+  "build": "overdrive1013-bastion18-r1",
+  "date": "2026-10-14",
+  "focused": {
+    "build": "overdrive1013-bastion18-r1",
+    "checks": [
+      {
+        "name": "all new assets have even declared sizes and safe alpha gutters",
+        "passed": true
+      },
+      {
+        "name": "new graphics have binary alpha",
+        "passed": true
+      },
+      {
+        "name": "M30 auto preset preserves printed A/B/C/X/Y/Z receiver mapping",
+        "passed": true
+      },
+      {
+        "name": "physical A arms controller capture",
+        "passed": true
+      },
+      {
+        "name": "printed B can be captured without cancelling or rearming the row",
+        "passed": true
+      },
+      {
+        "name": "a fast keyboard press is captured directly and stays out of navigation",
+        "passed": true
+      },
+      {
+        "name": "Apply saves both keyboard and physical controller bindings",
+        "passed": true
+      },
+      {
+        "name": "bindings survive a fresh page load",
+        "passed": true
+      },
+      {
+        "name": "another printed button binds after the first custom mapping",
+        "passed": true
+      },
+      {
+        "name": "Cancel restores the complete saved preset and bindings",
+        "passed": true
+      },
+      {
+        "name": "Genesis preset omits nonexistent shoulders in its settings and learning list",
+        "passed": true
+      },
+      {
+        "name": "Genesis learning opens a twelve-input six-button wizard",
+        "passed": true
+      },
+      {
+        "name": "every Genesis input can be learned even when Mode also reports a mirrored button",
+        "passed": true
+      },
+      {
+        "name": "learned Genesis mapping returns to settings without discarding changes",
+        "passed": true
+      },
+      {
+        "name": "controller diagrams match M30 and original Genesis layouts",
+        "passed": true
+      },
+      {
+        "name": "first room has a live animated door core and two mounted corner turrets",
+        "passed": true
+      },
+      {
+        "name": "room cannot clear until its door core is destroyed",
+        "passed": true
+      },
+      {
+        "name": "Yuri hops while the protective wall retains its actual height",
+        "passed": true
+      },
+      {
+        "name": "forward camera motion enlarges cover before it passes beneath the camera",
+        "passed": true
+      },
+      {
+        "name": "black passage really fades the whole scene to black",
+        "passed": true
+      },
+      {
+        "name": "next room arrives with an intact new wall, door core and corners",
+        "passed": true
+      },
+      {
+        "name": "room 3 has its own compulsory core",
+        "passed": true
+      },
+      {
+        "name": "room 4 has its own compulsory core",
+        "passed": true
+      },
+      {
+        "name": "room 5 has its own compulsory core",
+        "passed": true
+      },
+      {
+        "name": "room 6 has its own compulsory core",
+        "passed": true
+      },
+      {
+        "name": "room 7 has its own compulsory core",
+        "passed": true
+      },
+      {
+        "name": "room 8 has its own compulsory core",
+        "passed": true
+      },
+      {
+        "name": "master core has three moving laser rays and eight rotating glass-core frames",
+        "passed": true
+      },
+      {
+        "name": "real core damage selects fractured glass artwork",
+        "passed": true
+      },
+      {
+        "name": "transformation has authored glass-shatter frames and protects the player",
+        "passed": true
+      },
+      {
+        "name": "energy release is an actual blinding full-screen white-out",
+        "passed": true
+      },
+      {
+        "name": "animated Helios emerges after the light fades",
+        "passed": true
+      },
+      {
+        "name": "Helios has complete distinct walk/run/idle/throw/lightning/jump/hit/death banks",
+        "passed": true
+      },
+      {
+        "name": "actual boss running uses at least six unique gait frames",
+        "passed": true
+      },
+      {
+        "name": "Gosfer has eight new walk frames in each orientation plus fire/dash/death",
+        "passed": true
+      },
+      {
+        "name": "Gosfer movement actually advances multiple authored gait poses",
+        "passed": true
+      },
+      {
+        "name": "all 193 new registered keys decode and render through native ART",
+        "passed": true
+      },
+      {
+        "name": "no browser or resource errors",
+        "passed": true
+      }
+    ],
+    "passed": 38,
+    "failed": 0,
+    "errors": [],
+    "scope": "Fresh Chromium context, synthetic M30 and actual keyboard capture events; isolated native gameplay fixtures, not full unassisted difficulty."
+  },
+  "recovery": {
+    "checks": [
+      {
+        "name": "death in room seven revives into room seven rather than jumping to the boss",
+        "passed": true
+      },
+      {
+        "name": "Helios death checkpoint restores Helios without resurrecting the computer or corner turrets",
+        "passed": true
+      },
+      {
+        "name": "Gosfer laser starts exactly at the actual firing-frame muzzle",
+        "passed": true
+      },
+      {
+        "name": "actual native rifle projectiles hit and defeat the animated Gosfer",
+        "passed": true
+      },
+      {
+        "name": "recovery and firing fixtures have no browser errors",
+        "passed": true
+      }
+    ],
+    "passed": 5,
+    "failed": 0,
+    "errors": [],
+    "scope": "Protected native recovery/muzzle/damage fixtures; not a Normal balance route."
+  },
+  "m30": {
+    "build": "overdrive1013-bastion17-r1",
+    "checks": [
+      {
+        "name": "legacy generic preset migrates to receiver physical letters",
+        "passed": true
+      },
+      {
+        "name": "migrated receiver layout persists with explicit six-button style",
+        "passed": true
+      },
+      {
+        "name": "physical M30 A fires actual Level7 rifle projectiles",
+        "passed": true
+      },
+      {
+        "name": "physical M30 Y throws grenade without firing rifle",
+        "passed": true
+      },
+      {
+        "name": "physical M30 X toggles duck without firing",
+        "passed": true
+      },
+      {
+        "name": "physical Z plus D-pad free aims without moving Yuri",
+        "passed": true
+      },
+      {
+        "name": "physical M30 B plus left performs immediate side fire without foot movement",
+        "passed": true
+      },
+      {
+        "name": "releasing physical B restores the original Retina target",
+        "passed": true
+      },
+      {
+        "name": "physical Mode takes cover",
+        "passed": true
+      },
+      {
+        "name": "held physical A is latched through cutscene boundary",
+        "passed": true
+      },
+      {
+        "name": "physical A fires again after release",
+        "passed": true
+      },
+      {
+        "name": "resetting six-button controls retains receiver-correct A",
+        "passed": true
+      },
+      {
+        "name": "standard control scheme on the raw M30 still uses printed A to fire",
+        "passed": true
+      },
+      {
+        "name": "custom receiver bindings survive reconnect",
+        "passed": true
+      },
+      {
+        "name": "custom receiver bindings survive page reload",
+        "passed": true
+      },
+      {
+        "name": "unknown controller retains generic six-button preset",
+        "passed": true
+      },
+      {
+        "name": "browser-standardized M30 report avoids raw receiver remapping",
+        "passed": true
+      },
+      {
+        "name": "built-in raw receiver layout does not leak across a standardized mode change",
+        "passed": true
+      },
+      {
+        "name": "learned six-button profile records explicit style and custom ownership",
+        "passed": true
+      },
+      {
+        "name": "zero browser or asset errors",
+        "passed": true
+      }
+    ],
+    "passed": 20,
+    "failed": 0,
+    "errors": [],
+    "hardware": "Windows confirms receiver VID_0CA3/PID_0024. Button presses here are synthetic, using the documented Windows HID mapping."
+  },
+  "pointer_route": {
+    "state": "clear",
+    "time": 132.0833333333306,
+    "wave": 8,
+    "hp": 5,
+    "deaths": 0,
+    "kills": 33,
+    "coverStops": 45,
+    "brokenWalls": 0,
+    "barrelKills": 15,
+    "damage": 1,
+    "pickupLog": [
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 7
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 7
+      }
+    ],
+    "gunShots": {
+      "rifle": 463,
+      "shotgun": 41,
+      "laser": 68,
+      "minigun": 336
+    },
+    "quickShots": 0,
+    "transitionLog": [
+      {
+        "wave": 1,
+        "phase": "blast"
+      },
+      {
+        "wave": 1,
+        "phase": "hop"
+      },
+      {
+        "wave": 1,
+        "phase": "walk"
+      },
+      {
+        "wave": 1,
+        "phase": "black"
+      },
+      {
+        "wave": 1,
+        "phase": "emerge"
+      },
+      {
+        "wave": 1,
+        "phase": "done"
+      },
+      {
+        "wave": 2,
+        "phase": "blast"
+      },
+      {
+        "wave": 2,
+        "phase": "hop"
+      },
+      {
+        "wave": 2,
+        "phase": "walk"
+      },
+      {
+        "wave": 2,
+        "phase": "black"
+      },
+      {
+        "wave": 2,
+        "phase": "emerge"
+      },
+      {
+        "wave": 2,
+        "phase": "done"
+      },
+      {
+        "wave": 3,
+        "phase": "blast"
+      },
+      {
+        "wave": 3,
+        "phase": "hop"
+      },
+      {
+        "wave": 3,
+        "phase": "walk"
+      },
+      {
+        "wave": 3,
+        "phase": "black"
+      },
+      {
+        "wave": 3,
+        "phase": "emerge"
+      },
+      {
+        "wave": 3,
+        "phase": "done"
+      },
+      {
+        "wave": 4,
+        "phase": "blast"
+      },
+      {
+        "wave": 4,
+        "phase": "hop"
+      },
+      {
+        "wave": 4,
+        "phase": "walk"
+      },
+      {
+        "wave": 4,
+        "phase": "black"
+      },
+      {
+        "wave": 4,
+        "phase": "emerge"
+      },
+      {
+        "wave": 4,
+        "phase": "done"
+      },
+      {
+        "wave": 5,
+        "phase": "blast"
+      },
+      {
+        "wave": 5,
+        "phase": "hop"
+      },
+      {
+        "wave": 5,
+        "phase": "walk"
+      },
+      {
+        "wave": 5,
+        "phase": "black"
+      },
+      {
+        "wave": 5,
+        "phase": "emerge"
+      },
+      {
+        "wave": 5,
+        "phase": "done"
+      },
+      {
+        "wave": 6,
+        "phase": "blast"
+      },
+      {
+        "wave": 6,
+        "phase": "hop"
+      },
+      {
+        "wave": 6,
+        "phase": "walk"
+      },
+      {
+        "wave": 6,
+        "phase": "black"
+      },
+      {
+        "wave": 6,
+        "phase": "emerge"
+      },
+      {
+        "wave": 6,
+        "phase": "done"
+      },
+      {
+        "wave": 7,
+        "phase": "blast"
+      },
+      {
+        "wave": 7,
+        "phase": "hop"
+      },
+      {
+        "wave": 7,
+        "phase": "walk"
+      },
+      {
+        "wave": 7,
+        "phase": "black"
+      },
+      {
+        "wave": 7,
+        "phase": "emerge"
+      },
+      {
+        "wave": 7,
+        "phase": "done"
+      }
+    ],
+    "coreLog": [
+      {
+        "room": 1,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 2,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 3,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 4,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 5,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 6,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 7,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 8,
+        "x": 320,
+        "y": 166,
+        "master": true
+      }
+    ],
+    "boss": {
+      "form": "helios",
+      "hp": 0
+    },
+    "bot": {
+      "last": {
+        "A": false,
+        "cover": false,
+        "left": false,
+        "right": false
+      },
+      "decisions": 662,
+      "cover": 72,
+      "move": 3,
+      "fire": 473,
+      "blindfire": 72,
+      "grenadeWave": 7,
+      "stages": [
+        "0:advance:",
+        "1:fight:",
+        "1:breach:",
+        "2:fight:",
+        "2:breach:",
+        "3:fight:",
+        "3:breach:",
+        "4:fight:",
+        "4:breach:",
+        "5:fight:",
+        "5:breach:",
+        "6:fight:",
+        "6:breach:",
+        "7:fight:",
+        "7:breach:",
+        "8:core:core",
+        "8:core:helios",
+        "8:victory:helios"
+      ],
+      "target": {
+        "x": 188,
+        "y": 217.02950703516223
+      },
+      "controller": false,
+      "minHP": 5
+    },
+    "errors": [],
+    "scope": "Normal armor input-only complete stage; decisions 200ms, pointer aim. No actor-health writes or kill APIs."
+  },
+  "dpad_route": {
+    "state": "clear",
+    "time": 142.75000000000574,
+    "wave": 8,
+    "hp": 4,
+    "deaths": 0,
+    "kills": 33,
+    "coverStops": 60,
+    "brokenWalls": 0,
+    "barrelKills": 17,
+    "damage": 2,
+    "pickupLog": [
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 7
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 7
+      }
+    ],
+    "gunShots": {
+      "rifle": 538,
+      "shotgun": 43,
+      "laser": 68,
+      "minigun": 332
+    },
+    "quickShots": 0,
+    "transitionLog": [
+      {
+        "wave": 1,
+        "phase": "blast"
+      },
+      {
+        "wave": 1,
+        "phase": "hop"
+      },
+      {
+        "wave": 1,
+        "phase": "walk"
+      },
+      {
+        "wave": 1,
+        "phase": "black"
+      },
+      {
+        "wave": 1,
+        "phase": "emerge"
+      },
+      {
+        "wave": 1,
+        "phase": "done"
+      },
+      {
+        "wave": 2,
+        "phase": "blast"
+      },
+      {
+        "wave": 2,
+        "phase": "hop"
+      },
+      {
+        "wave": 2,
+        "phase": "walk"
+      },
+      {
+        "wave": 2,
+        "phase": "black"
+      },
+      {
+        "wave": 2,
+        "phase": "emerge"
+      },
+      {
+        "wave": 2,
+        "phase": "done"
+      },
+      {
+        "wave": 3,
+        "phase": "blast"
+      },
+      {
+        "wave": 3,
+        "phase": "hop"
+      },
+      {
+        "wave": 3,
+        "phase": "walk"
+      },
+      {
+        "wave": 3,
+        "phase": "black"
+      },
+      {
+        "wave": 3,
+        "phase": "emerge"
+      },
+      {
+        "wave": 3,
+        "phase": "done"
+      },
+      {
+        "wave": 4,
+        "phase": "blast"
+      },
+      {
+        "wave": 4,
+        "phase": "hop"
+      },
+      {
+        "wave": 4,
+        "phase": "walk"
+      },
+      {
+        "wave": 4,
+        "phase": "black"
+      },
+      {
+        "wave": 4,
+        "phase": "emerge"
+      },
+      {
+        "wave": 4,
+        "phase": "done"
+      },
+      {
+        "wave": 5,
+        "phase": "blast"
+      },
+      {
+        "wave": 5,
+        "phase": "hop"
+      },
+      {
+        "wave": 5,
+        "phase": "walk"
+      },
+      {
+        "wave": 5,
+        "phase": "black"
+      },
+      {
+        "wave": 5,
+        "phase": "emerge"
+      },
+      {
+        "wave": 5,
+        "phase": "done"
+      },
+      {
+        "wave": 6,
+        "phase": "blast"
+      },
+      {
+        "wave": 6,
+        "phase": "hop"
+      },
+      {
+        "wave": 6,
+        "phase": "walk"
+      },
+      {
+        "wave": 6,
+        "phase": "black"
+      },
+      {
+        "wave": 6,
+        "phase": "emerge"
+      },
+      {
+        "wave": 6,
+        "phase": "done"
+      },
+      {
+        "wave": 7,
+        "phase": "blast"
+      },
+      {
+        "wave": 7,
+        "phase": "hop"
+      },
+      {
+        "wave": 7,
+        "phase": "walk"
+      },
+      {
+        "wave": 7,
+        "phase": "black"
+      },
+      {
+        "wave": 7,
+        "phase": "emerge"
+      },
+      {
+        "wave": 7,
+        "phase": "done"
+      }
+    ],
+    "coreLog": [
+      {
+        "room": 1,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 2,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 3,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 4,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 5,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 6,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 7,
+        "x": 318,
+        "y": 139
+      },
+      {
+        "room": 8,
+        "x": 320,
+        "y": 166,
+        "master": true
+      }
+    ],
+    "boss": {
+      "form": "helios",
+      "hp": 0
+    },
+    "bot": {
+      "last": {
+        "A": false,
+        "cover": false,
+        "left": false,
+        "right": false
+      },
+      "decisions": 715,
+      "cover": 96,
+      "move": 3,
+      "fire": 529,
+      "blindfire": 96,
+      "grenadeWave": 7,
+      "stages": [
+        "0:advance:",
+        "1:fight:",
+        "1:breach:",
+        "2:fight:",
+        "2:breach:",
+        "3:fight:",
+        "3:breach:",
+        "4:fight:",
+        "4:breach:",
+        "5:fight:",
+        "5:breach:",
+        "6:fight:",
+        "6:breach:",
+        "7:fight:",
+        "7:breach:",
+        "8:core:core",
+        "8:core:helios",
+        "8:victory:helios"
+      ],
+      "target": {
+        "x": 202,
+        "y": 225.02950703516223
+      },
+      "controller": true,
+      "minHP": 4
+    },
+    "errors": [],
+    "scope": "Normal armor input-only complete stage; decisions 200ms, rate-limited D-pad Retina aim. No actor-health writes or kill APIs."
+  },
+  "art": {
+    "registered_keys": 193,
+    "unique_pngs": 191,
+    "banks": 28,
+    "sources": 16,
+    "review": "All native gallery pages, contact sheets, locomotion onions and live captures inspected."
+  },
+  "base": {
+    "syntax": "passed",
+    "suite": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "exit": 0,
+    "log": "_shots/bastion18/base_regression.txt"
+  },
+  "limitations": "Controller tests use synthetic M30 reports. Complete Normal routes use input-only automated aiming, not human difficulty assessment. Gosfer damage/recovery fixtures are isolated and protected. Initial parallel test servers encountered connection queue timeouts; final probes use the same AssetServer as the live build with backlog128."
+}

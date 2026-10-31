@@ -1,0 +1,13 @@
+from pathlib import Path
+import sys,http.server
+R=Path(__file__).resolve().parents[1];W=R/'_shots/riders_defense_1029';W.mkdir(parents=True,exist_ok=True);sys.path.insert(0,str(R/'_BUILD_SOURCE'));import rough_riders_capture_base_1028 as rec
+http.server.ThreadingHTTPServer.request_queue_size=256
+rec.OUT=W;rec.CONFIG=dict(id='rough-riders-defense-fixed',stage=6,role='boss',kind='rebelsquad',name='Rough Riders / Clear airspace / Golden Aegis',limit=480,demonstrate=100)
+rec.CAPTURE=rec.CAPTURE.replace(' const audio=Snd._audioCtx();',"""
+ window.rr45Film={maxOverlap:0,frames:0,worst:null,maxIdleStep:0,last:{}};
+ const rrTick=rebelSquadTick;rebelSquadTick=function(b,dt){const out=rrTick.apply(this,arguments);if(rr45Scope(b)&&(!rr33Protected(b)||['settle','dialogue'].includes(b._rebels.rough33?.phase))){const F=rr45Film,ss=b._rebels.ships.filter(q=>!q.dead&&q.y>PLAY.y-100&&q.y<VH+100&&q.x>camLeftX()-100&&q.x<camRightX()+100);F.frames++;for(let i=0;i<ss.length;i++)for(let j=i+1;j<ss.length;j++){const a=ss[i],b=ss[j],A=rr45Bounds(a),B=rr45Bounds(b),x=A.w+B.w+7-Math.abs(a.x-b.x),y=A.h+B.h+9-Math.abs(a.y-b.y);if(x>0&&y>0&&Math.min(x,y)>F.maxOverlap){F.maxOverlap=Math.min(x,y);F.worst={a:a.key,b:b.key,phase:a.rg4?.act?.phase||b.rg4?.act?.phase,x,y};}}for(const q of ss){const prev=F.last[q.key];if(prev&&!q.rg4?.act&&!prev.act&&q.mode==='fight')F.maxIdleStep=Math.max(F.maxIdleStep,Math.hypot(q.x-prev.x,q.y-prev.y));F.last[q.key]={x:q.x,y:q.y,act:!!q.rg4?.act};}}return out;};
+ const rrBG=drawBG;drawBG=function(){const m=ctx.getTransform();window.rrFilmMatrix=[m.a,m.b,m.c,m.d,m.e,m.f];return rrBG.apply(this,arguments);};
+ const audio=Snd._audioCtx();""")
+rec.SNAPSHOT=rec.SNAPSHOT.replace('target:reviewBot.targetInfo,',"defense:{audit:rr45Film,events:RR45.events.slice(-12),wall:rg4State()?.rr26?.wall?{t:rg4State().rr26.wall.t,hits:rg4State().rr26.wall.hits,gold:rg4State().rr26.wall._rr45}:null,returns:rg4State()?.rr26?.returns.length},steady:{active:RR43.scope(),camX,matrix:window.rrFilmMatrix},music:{path:Snd.cur?.currentSrc,stagexPaused:Snd.music.stagex?.paused},pilotActs:b?._rebels?.ships.map(q=>({key:q.key,x:q.x,y:q.y,act:q.rg4?.act?.kind,phase:q.rg4?.act?.phase,hp:q.hp})),target:reviewBot.targetInfo,")
+print('FINAL',rec.record(6,480),flush=True)
+

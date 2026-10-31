@@ -1,0 +1,1 @@
+()=>({t:FURYBOT.age(),gate:s5run?{idx:s5run.idx,failed:s5run.failed,done:s5run.done,t:s5run.t,gates:s5run.gates.map(g=>({i:g.i,x:g.x,y:g.y,passed:g.passed,missed:g.missed}))}:null,player:{x:player.x,y:player.y},space:run.spaceMode,ammo:run.bombs,audioErrors:FURYBOT.audioErrors})

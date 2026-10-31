@@ -1,0 +1,1266 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "axel_hull has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 129,
+          "size": [
+            1536,
+            1408
+          ]
+        }
+      },
+      {
+        "name": "axel_shadow has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 43,
+          "size": [
+            1536,
+            512
+          ]
+        }
+      },
+      {
+        "name": "cole_hull has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 129,
+          "size": [
+            1536,
+            1408
+          ]
+        }
+      },
+      {
+        "name": "cole_shadow has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 43,
+          "size": [
+            1536,
+            512
+          ]
+        }
+      },
+      {
+        "name": "decker_hull has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 129,
+          "size": [
+            1536,
+            1408
+          ]
+        }
+      },
+      {
+        "name": "decker_shadow has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 43,
+          "size": [
+            1536,
+            512
+          ]
+        }
+      },
+      {
+        "name": "falva_hull has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 129,
+          "size": [
+            1536,
+            1408
+          ]
+        }
+      },
+      {
+        "name": "falva_shadow has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 43,
+          "size": [
+            1536,
+            512
+          ]
+        }
+      },
+      {
+        "name": "freezer_hull has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 129,
+          "size": [
+            1536,
+            1408
+          ]
+        }
+      },
+      {
+        "name": "freezer_shadow has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 43,
+          "size": [
+            1536,
+            512
+          ]
+        }
+      },
+      {
+        "name": "juggernaut_hull has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 129,
+          "size": [
+            1536,
+            1408
+          ]
+        }
+      },
+      {
+        "name": "juggernaut_shadow has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 43,
+          "size": [
+            1536,
+            512
+          ]
+        }
+      },
+      {
+        "name": "lizzie_hull has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 129,
+          "size": [
+            1536,
+            1408
+          ]
+        }
+      },
+      {
+        "name": "lizzie_shadow has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 43,
+          "size": [
+            1536,
+            512
+          ]
+        }
+      },
+      {
+        "name": "lizzie_b42_hull has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 129,
+          "size": [
+            1536,
+            1408
+          ]
+        }
+      },
+      {
+        "name": "lizzie_b42_shadow has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 43,
+          "size": [
+            1536,
+            512
+          ]
+        }
+      },
+      {
+        "name": "maverick_hull has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 129,
+          "size": [
+            1536,
+            1408
+          ]
+        }
+      },
+      {
+        "name": "maverick_shadow has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 43,
+          "size": [
+            1536,
+            512
+          ]
+        }
+      },
+      {
+        "name": "yuri_hull has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 129,
+          "size": [
+            1536,
+            1408
+          ]
+        }
+      },
+      {
+        "name": "yuri_shadow has complete, unclipped even fixed cells",
+        "passed": true,
+        "data": {
+          "frames": 43,
+          "size": [
+            1536,
+            512
+          ]
+        }
+      },
+      {
+        "name": "All nine real pilot identities plus the B-42 variant are authored",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native formation triggers allied breakaway",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Every depth and shadow texture is ready before flight",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Jets grow into the foreground overpass",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Jets shrink progressively as they pass the fighters",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Every wingman remains in active travel while crossing the fighter row",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No wingman enters hold until its actual craft and shadow clear the top",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Both authored flight and shadow pixels are drawn during travel",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Only real edge clearance causes disappearance",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Overflight preserves allied HP and does not reset the live boss pool",
+        "passed": true,
+        "data": {
+          "before": 7120,
+          "boss": 7096.200000000006,
+          "wing": true
+        }
+      },
+      {
+        "name": "Shadow is under enemies and the allied hull is above their passes",
+        "passed": true,
+        "data": [
+          "axel_shadow",
+          "enemy-voss",
+          "enemy-nyx",
+          "enemy-rook",
+          "enemy-kaia",
+          "enemy-jace",
+          "axel_hull"
+        ]
+      },
+      {
+        "name": "The original south-edge return restores ordinary wing AI",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "B-42 costume selects its matching authored overflight bank",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage X keeps its existing wing behavior",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other stages keep their existing wing behavior",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No real game, draw, console or asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "film": [
+    {
+      "name": "Native Furious full squad fight reaches actual defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Only the confirmed original Gasline recording plays throughout the active fight",
+      "passed": true,
+      "data": [
+        {
+          "path": "http://127.0.0.1:50253/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+          "key": "roughriders6",
+          "clock": 0,
+          "paused": false,
+          "stagexPaused": true
+        },
+        {
+          "path": "http://127.0.0.1:50253/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+          "key": "roughriders6",
+          "clock": 0.245333,
+          "paused": false,
+          "stagexPaused": true
+        }
+      ]
+    },
+    {
+      "name": "Native root transform has no impact displacement",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film retains five real opponents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, audio, HTTP or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All five pilots show actual barrel-roll cells in native footage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native entrance contains no somersault pitch frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native flight has no uncommanded cruise jumps",
+      "passed": true,
+      "data": {
+        "ticks": 6141,
+        "maxCruiseStep": 9.000000000000009,
+        "maxTurboStep": 26.666666666666686,
+        "outliers": []
+      }
+    },
+    {
+      "name": "Solid grid deploys during the real full fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Allied overflight is visibly rendered in the actual full fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every wing departure crosses the fighter row in its own flight before edge clearance",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recorded music and game sound are audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -16.0,
+        "peakDb": -0.5
+      }
+    },
+    {
+      "name": "stage6-rough-riders uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-gold-shield uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-missile-barrage uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-allied-overflight uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes live audio and moving video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No player errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "summary": {
+    "native": {
+      "checks": [
+        {
+          "name": "axel_hull has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 129,
+            "size": [
+              1536,
+              1408
+            ]
+          }
+        },
+        {
+          "name": "axel_shadow has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 43,
+            "size": [
+              1536,
+              512
+            ]
+          }
+        },
+        {
+          "name": "cole_hull has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 129,
+            "size": [
+              1536,
+              1408
+            ]
+          }
+        },
+        {
+          "name": "cole_shadow has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 43,
+            "size": [
+              1536,
+              512
+            ]
+          }
+        },
+        {
+          "name": "decker_hull has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 129,
+            "size": [
+              1536,
+              1408
+            ]
+          }
+        },
+        {
+          "name": "decker_shadow has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 43,
+            "size": [
+              1536,
+              512
+            ]
+          }
+        },
+        {
+          "name": "falva_hull has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 129,
+            "size": [
+              1536,
+              1408
+            ]
+          }
+        },
+        {
+          "name": "falva_shadow has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 43,
+            "size": [
+              1536,
+              512
+            ]
+          }
+        },
+        {
+          "name": "freezer_hull has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 129,
+            "size": [
+              1536,
+              1408
+            ]
+          }
+        },
+        {
+          "name": "freezer_shadow has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 43,
+            "size": [
+              1536,
+              512
+            ]
+          }
+        },
+        {
+          "name": "juggernaut_hull has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 129,
+            "size": [
+              1536,
+              1408
+            ]
+          }
+        },
+        {
+          "name": "juggernaut_shadow has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 43,
+            "size": [
+              1536,
+              512
+            ]
+          }
+        },
+        {
+          "name": "lizzie_hull has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 129,
+            "size": [
+              1536,
+              1408
+            ]
+          }
+        },
+        {
+          "name": "lizzie_shadow has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 43,
+            "size": [
+              1536,
+              512
+            ]
+          }
+        },
+        {
+          "name": "lizzie_b42_hull has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 129,
+            "size": [
+              1536,
+              1408
+            ]
+          }
+        },
+        {
+          "name": "lizzie_b42_shadow has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 43,
+            "size": [
+              1536,
+              512
+            ]
+          }
+        },
+        {
+          "name": "maverick_hull has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 129,
+            "size": [
+              1536,
+              1408
+            ]
+          }
+        },
+        {
+          "name": "maverick_shadow has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 43,
+            "size": [
+              1536,
+              512
+            ]
+          }
+        },
+        {
+          "name": "yuri_hull has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 129,
+            "size": [
+              1536,
+              1408
+            ]
+          }
+        },
+        {
+          "name": "yuri_shadow has complete, unclipped even fixed cells",
+          "passed": true,
+          "data": {
+            "frames": 43,
+            "size": [
+              1536,
+              512
+            ]
+          }
+        },
+        {
+          "name": "All nine real pilot identities plus the B-42 variant are authored",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Native formation triggers allied breakaway",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Every depth and shadow texture is ready before flight",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Jets grow into the foreground overpass",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Jets shrink progressively as they pass the fighters",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Every wingman remains in active travel while crossing the fighter row",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No wingman enters hold until its actual craft and shadow clear the top",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Both authored flight and shadow pixels are drawn during travel",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Only real edge clearance causes disappearance",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Overflight preserves allied HP and does not reset the live boss pool",
+          "passed": true,
+          "data": {
+            "before": 7120,
+            "boss": 7096.200000000006,
+            "wing": true
+          }
+        },
+        {
+          "name": "Shadow is under enemies and the allied hull is above their passes",
+          "passed": true,
+          "data": [
+            "axel_shadow",
+            "enemy-voss",
+            "enemy-nyx",
+            "enemy-rook",
+            "enemy-kaia",
+            "enemy-jace",
+            "axel_hull"
+          ]
+        },
+        {
+          "name": "The original south-edge return restores ordinary wing AI",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "B-42 costume selects its matching authored overflight bank",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Stage X keeps its existing wing behavior",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Other stages keep their existing wing behavior",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No real game, draw, console or asset errors",
+          "passed": true,
+          "data": {
+            "errors": [],
+            "http": []
+          }
+        }
+      ],
+      "errors": [],
+      "http": []
+    },
+    "film": [
+      {
+        "name": "Native Furious full squad fight reaches actual defeat",
+        "passed": true,
+        "data": "native defeat"
+      },
+      {
+        "name": "Only the confirmed original Gasline recording plays throughout the active fight",
+        "passed": true,
+        "data": [
+          {
+            "path": "http://127.0.0.1:50253/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+            "key": "roughriders6",
+            "clock": 0,
+            "paused": false,
+            "stagexPaused": true
+          },
+          {
+            "path": "http://127.0.0.1:50253/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+            "key": "roughriders6",
+            "clock": 0.245333,
+            "paused": false,
+            "stagexPaused": true
+          }
+        ]
+      },
+      {
+        "name": "Native root transform has no impact displacement",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Film retains five real opponents",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native game, audio, HTTP or bot errors",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All five pilots show actual barrel-roll cells in native footage",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native entrance contains no somersault pitch frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native flight has no uncommanded cruise jumps",
+        "passed": true,
+        "data": {
+          "ticks": 6141,
+          "maxCruiseStep": 9.000000000000009,
+          "maxTurboStep": 26.666666666666686,
+          "outliers": []
+        }
+      },
+      {
+        "name": "Solid grid deploys during the real full fight",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Allied overflight is visibly rendered in the actual full fight",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Every wing departure crosses the fighter row in its own flight before edge clearance",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Recorded music and game sound are audible and unclipped",
+        "passed": true,
+        "data": {
+          "meanDb": -16.0,
+          "peakDb": -0.5
+        }
+      },
+      {
+        "name": "stage6-rough-riders uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-formations uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-team-locks uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-evasion uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-jace uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-rook uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-voss uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-gold-shield uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-missile-barrage uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-allied-overflight uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Preview decodes live audio and moving video",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No player errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "duration": 165.85,
+    "combat": 54.074,
+    "preview": "http://127.0.0.1:51046/?riders=allied-overflight-1030#clip=stage6-rough-riders",
+    "sha256": "0663f5c01d583e3f30ad3e02992e01253a8905363f714d5a906c278f531a86b3",
+    "audio": {
+      "meanDb": -16.0,
+      "peakDb": -0.5
+    },
+    "fps": 57.077944562226264,
+    "cards": [
+      "stage6-rough-riders",
+      "rough-riders-formations",
+      "rough-riders-team-locks",
+      "rough-riders-evasion",
+      "rough-riders-jace",
+      "rough-riders-rook",
+      "rough-riders-voss",
+      "rough-riders-gold-shield",
+      "rough-riders-missile-barrage",
+      "rough-riders-allied-overflight"
+    ],
+    "fullSuite": {
+      "exit": 1,
+      "baselineFailures": 5
+    },
+    "published": false
+  },
+  "overflight": {
+    "events": [
+      {
+        "event": "overflight-start",
+        "pilot": "axel",
+        "time": 21.93333333333337,
+        "x": 264.7013916414803,
+        "y": 364.08952434456927
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "decker",
+        "time": 21.93333333333337,
+        "x": 514.2509245948585,
+        "y": 386.2825049095354
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "falva",
+        "time": 21.93333333333337,
+        "x": 438.8832364709454,
+        "y": 364.08952434456927
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "yuri",
+        "time": 21.93333333333337,
+        "x": 614.6572656105534,
+        "y": 367.03999999986667
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "axel",
+        "time": 22.533333333333335,
+        "x": 264.7013916414803,
+        "y": 232.56768466460358,
+        "height": 100
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "falva",
+        "time": 22.533333333333335,
+        "x": 438.8832364709454,
+        "y": 232.56768466460358,
+        "height": 100
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "yuri",
+        "time": 22.533333333333335,
+        "x": 614.6572656105534,
+        "y": 234.7165482903057,
+        "height": 100
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "decker",
+        "time": 22.566666666666666,
+        "x": 514.2509245948585,
+        "y": 235.9039265265547,
+        "height": 98
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "axel",
+        "time": 23.733333333333267,
+        "x": 264.7013916414803,
+        "y": -120
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "decker",
+        "time": 23.733333333333267,
+        "x": 514.2509245948585,
+        "y": -120
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "falva",
+        "time": 23.733333333333267,
+        "x": 438.8832364709454,
+        "y": -120
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "yuri",
+        "time": 23.733333333333267,
+        "x": 614.6572656105534,
+        "y": -120
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "axel",
+        "time": 47.43333333333192,
+        "x": 209.8468381655412,
+        "y": 343.03999563658795
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "decker",
+        "time": 47.43333333333192,
+        "x": 298.9920520241243,
+        "y": 367.03998764121917
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "falva",
+        "time": 47.43333333333192,
+        "x": 237.87184234039898,
+        "y": 392.70793395256266
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "yuri",
+        "time": 47.43333333333192,
+        "x": 347.3650420787717,
+        "y": 367.0400000000004
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "axel",
+        "time": 47.933333333331895,
+        "x": 232.0807505572063,
+        "y": 250.49095571208824,
+        "height": 100
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "decker",
+        "time": 47.966666666665226,
+        "x": 324.86712540539475,
+        "y": 258.41219890248186,
+        "height": 100
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "yuri",
+        "time": 47.966666666665226,
+        "x": 373.24011546004215,
+        "y": 258.4122085048014,
+        "height": 100
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "falva",
+        "time": 48.01666666666522,
+        "x": 267.45333782251095,
+        "y": 259.783654779676,
+        "height": 100
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "axel",
+        "time": 49.23333333333182,
+        "x": 400.7201820551443,
+        "y": -120
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "decker",
+        "time": 49.23333333333182,
+        "x": 489.8653959137274,
+        "y": -120
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "falva",
+        "time": 49.23333333333182,
+        "x": 428.7451862300021,
+        "y": -119.99999999999994
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "yuri",
+        "time": 49.23333333333182,
+        "x": 538.2383859683748,
+        "y": -120
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "axel",
+        "time": 73.28333333333046,
+        "x": 642.4077532840276,
+        "y": 346.0808894170934
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "decker",
+        "time": 73.28333333333046,
+        "x": 645.8183111614451,
+        "y": 401.75706145717044
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "falva",
+        "time": 73.28333333333046,
+        "x": 586.966519959363,
+        "y": 425.68883349357213
+      },
+      {
+        "event": "overflight-start",
+        "pilot": "yuri",
+        "time": 73.28333333333046,
+        "x": 596.6651474099302,
+        "y": 367.2020632897806
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "axel",
+        "time": 73.73333333333044,
+        "x": 620.9689541496828,
+        "y": 268.34154277500033,
+        "height": 98
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "yuri",
+        "time": 73.78333333333043,
+        "x": 596.6651474099302,
+        "y": 269.82368640742374,
+        "height": 100
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "decker",
+        "time": 73.8499999999971,
+        "x": 617.6,
+        "y": 272.8825967601614,
+        "height": 100
+      },
+      {
+        "event": "overflight-crossing",
+        "pilot": "falva",
+        "time": 73.89999999999709,
+        "x": 586.966519959363,
+        "y": 270.559947256043,
+        "height": 98
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "axel",
+        "time": 75.08333333333036,
+        "x": 617.6,
+        "y": -120
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "decker",
+        "time": 75.08333333333036,
+        "x": 617.6,
+        "y": -120.00000000000006
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "falva",
+        "time": 75.08333333333036,
+        "x": 586.966519959363,
+        "y": -120
+      },
+      {
+        "event": "ally-offscreen-after-travel",
+        "pilot": "yuri",
+        "time": 75.08333333333036,
+        "x": 596.6651474099302,
+        "y": -120
+      }
+    ],
+    "hulls": 2037,
+    "shadows": 2037,
+    "ships": [
+      {
+        "key": "axel",
+        "x": 159.0197466495741,
+        "y": 342.97609655111023,
+        "phase": null,
+        "depth": null
+      },
+      {
+        "key": "decker",
+        "x": 309.9190135612046,
+        "y": 366.99597510342903,
+        "phase": null,
+        "depth": null
+      },
+      {
+        "key": "falva",
+        "x": 364.74347528165725,
+        "y": 392.96676122135943,
+        "phase": null,
+        "depth": null
+      },
+      {
+        "key": "yuri",
+        "x": 457.88361409503517,
+        "y": 367.03855510553353,
+        "phase": null,
+        "depth": null
+      }
+    ]
+  },
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  }
+}

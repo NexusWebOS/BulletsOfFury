@@ -1,0 +1,161 @@
+{
+  "build": "overdrive1015-yuri31-r1",
+  "checks": [
+    {
+      "name": "145 authored frames decoded",
+      "passed": true
+    },
+    {
+      "name": "new poses retain even uniform cells and root",
+      "passed": true
+    },
+    {
+      "name": "roll reaches inverted and recovery drawings",
+      "passed": true
+    },
+    {
+      "name": "roll plays all24 frames over movement duration",
+      "passed": true
+    },
+    {
+      "name": "roll completes standing with five second cooldown",
+      "passed": true
+    },
+    {
+      "name": "jump does not cut the roll short",
+      "passed": true
+    },
+    {
+      "name": "mode+roll queues prone landing",
+      "passed": true
+    },
+    {
+      "name": "complete roll lands prone",
+      "passed": true
+    },
+    {
+      "name": "prone landing stays down while moving",
+      "passed": true
+    },
+    {
+      "name": "horizontal topdown roll uses full authored rotation",
+      "passed": true
+    },
+    {
+      "name": "slide turn visits authored intermediate angles",
+      "passed": true
+    },
+    {
+      "name": "drawing does not advance animation",
+      "passed": true
+    },
+    {
+      "name": "projectiles originate at current turned barrel",
+      "passed": true
+    },
+    {
+      "name": "aim reversal unwinds instead of snapping",
+      "passed": true
+    },
+    {
+      "name": "turn returns to forward slide",
+      "passed": true
+    },
+    {
+      "name": "Retina stands Yuri over hatch facing forward/down",
+      "passed": true
+    },
+    {
+      "name": "floor muzzle lies directly below center",
+      "passed": true
+    },
+    {
+      "name": "M30A fires into hatch from front-facing stance",
+      "passed": true
+    },
+    {
+      "name": "floor shooting still breaches hatch",
+      "passed": true
+    },
+    {
+      "name": "820 retained art files unchanged",
+      "passed": true
+    },
+    {
+      "name": "review loads every selected frame",
+      "passed": true
+    },
+    {
+      "name": "no browser errors",
+      "passed": true
+    }
+  ],
+  "passed": 22,
+  "failed": 0,
+  "errors": [],
+  "measured": {
+    "rollFrames": [
+      "y31_roll_east_0",
+      "y31_roll_east_0",
+      "y31_roll_east_1",
+      "y31_roll_east_2",
+      "y31_roll_east_3",
+      "y31_roll_east_3",
+      "y31_roll_east_4",
+      "y31_roll_east_5",
+      "y31_roll_east_6",
+      "y31_roll_east_7",
+      "y31_roll_east_7",
+      "y31_roll_east_8",
+      "y31_roll_east_9",
+      "y31_roll_east_10",
+      "y31_roll_east_11",
+      "y31_roll_east_11",
+      "y31_roll_east_12",
+      "y31_roll_east_13",
+      "y31_roll_east_14",
+      "y31_roll_east_15",
+      "y31_roll_east_15",
+      "y31_roll_east_16",
+      "y31_roll_east_17",
+      "y31_roll_east_18",
+      "y31_roll_east_19",
+      "y31_roll_east_19",
+      "y31_roll_east_20",
+      "y31_roll_east_21",
+      "y31_roll_east_22",
+      "y31_roll_east_23"
+    ],
+    "rollLanding": {
+      "roll": 0,
+      "prone": false,
+      "cooldown": 4.500000000000002
+    },
+    "slideTurn": [
+      "y31_slide_turn_east_0",
+      "y31_slide_turn_east_1",
+      "y31_slide_turn_east_2",
+      "y31_slide_turn_east_2",
+      "y31_slide_turn_east_3",
+      "y31_slide_turn_east_4",
+      "y31_slide_turn_east_5",
+      "y31_slide_turn_east_5",
+      "y31_slide_turn_east_6",
+      "y31_slide_turn_east_7",
+      "y31_slide_turn_east_8",
+      "y31_slide_turn_east_8",
+      "y31_slide_turn_east_9",
+      "y31_slide_turn_east_10",
+      "y31_slide_turn_east_11",
+      "y31_slide_turn_east_11",
+      "y31_slide_turn_east_12",
+      "y31_slide_turn_east_13",
+      "y31_slide_turn_east_13",
+      "y31_slide_turn_east_14",
+      "y31_slide_turn_east_14",
+      "y31_slide_turn_east_14",
+      "y31_slide_turn_east_14"
+    ]
+  },
+  "scope": "Native Chromium with raw-M30 input simulation; real-time roll progression, reversible slide aim, and actual hatch impacts. No physical controller test."
+}

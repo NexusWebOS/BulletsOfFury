@@ -1,0 +1,97 @@
+{
+  "build": "overdrive1015-base33-r1",
+  "checks": [
+    {
+      "name": "72authoredpiecesdecode",
+      "passed": true
+    },
+    {
+      "name": "chutedronesstillenterfromceiling",
+      "passed": true
+    },
+    {
+      "name": "recessselectsauthoredbackcover",
+      "passed": true
+    },
+    {
+      "name": "tuckedpierblocksphysicalbulletwithoutinvulnerability",
+      "passed": true
+    },
+    {
+      "name": "leanoutfiresfromexistingYuri32pose",
+      "passed": true
+    },
+    {
+      "name": "exposedYuriremainsonehit",
+      "passed": true
+    },
+    {
+      "name": "standingbodycannotwalkthroughlowpipe",
+      "passed": true
+    },
+    {
+      "name": "realflatgroundslidepassesthepipe",
+      "passed": true
+    },
+    {
+      "name": "slidecooldownremainsfiveseconds",
+      "passed": true
+    },
+    {
+      "name": "crawlcanopyblocksuprightentry",
+      "passed": true
+    },
+    {
+      "name": "modeXpronecanentercrawlspace",
+      "passed": true
+    },
+    {
+      "name": "cannotstandupinsideoverheadduct",
+      "passed": true
+    },
+    {
+      "name": "canstandafterleavingcrawlspace",
+      "passed": true
+    },
+    {
+      "name": "ventregisterssweptphysicalprojectiledamage",
+      "passed": true
+    },
+    {
+      "name": "ventopensafterthreeassaultbullets",
+      "passed": true
+    },
+    {
+      "name": "crawlingintoventgrantsspreadgunandgrenades",
+      "passed": true
+    },
+    {
+      "name": "secretrewardcannotbefarmed",
+      "passed": true
+    },
+    {
+      "name": "secretshotgunactuallyfiresfiveprojectiles",
+      "passed": true
+    },
+    {
+      "name": "allevenexportdimensionsandvalidanchors",
+      "passed": true
+    },
+    {
+      "name": "effectbanksusefixedgeometry",
+      "passed": true
+    },
+    {
+      "name": "820originalartfilespreserved",
+      "passed": true
+    },
+    {
+      "name": "nobrowsererrors",
+      "passed": true
+    }
+  ],
+  "passed": 22,
+  "failed": 0,
+  "errors": [],
+  "scope": "Native renderer, actual asset draws, raw-M30 ordinary controls in scoped fixtures. Incoming bullet fixtures use live swept collision and damage. No physical controller test."
+}

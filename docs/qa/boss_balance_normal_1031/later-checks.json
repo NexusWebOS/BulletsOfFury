@@ -1,0 +1,329 @@
+[
+  {
+    "name": "hard has the intended Nightwing second-life health",
+    "passed": true,
+    "data": {
+      "ace": 3960,
+      "hp": 1598,
+      "max": 1598,
+      "parts": [
+        {
+          "hp": 184,
+          "max": 184
+        },
+        {
+          "hp": 184,
+          "max": 184
+        },
+        {
+          "hp": 145,
+          "max": 145
+        },
+        {
+          "hp": 145,
+          "max": 145
+        },
+        {
+          "hp": 73,
+          "max": 73
+        },
+        {
+          "hp": 72,
+          "max": 72
+        },
+        {
+          "hp": 73,
+          "max": 73
+        },
+        {
+          "hp": 72,
+          "max": 72
+        },
+        {
+          "hp": 165,
+          "max": 165
+        },
+        {
+          "hp": 165,
+          "max": 165
+        }
+      ],
+      "core": 320
+    }
+  },
+  {
+    "name": "hard carrier budget still equals every part plus its hull",
+    "passed": true,
+    "data": {
+      "ace": 3960,
+      "hp": 1598,
+      "max": 1598,
+      "parts": [
+        {
+          "hp": 184,
+          "max": 184
+        },
+        {
+          "hp": 184,
+          "max": 184
+        },
+        {
+          "hp": 145,
+          "max": 145
+        },
+        {
+          "hp": 145,
+          "max": 145
+        },
+        {
+          "hp": 73,
+          "max": 73
+        },
+        {
+          "hp": 72,
+          "max": 72
+        },
+        {
+          "hp": 73,
+          "max": 73
+        },
+        {
+          "hp": 72,
+          "max": 72
+        },
+        {
+          "hp": 165,
+          "max": 165
+        },
+        {
+          "hp": 165,
+          "max": 165
+        }
+      ],
+      "core": 320
+    }
+  },
+  {
+    "name": "furious has the intended Nightwing second-life health",
+    "passed": true,
+    "data": {
+      "ace": 4680,
+      "hp": 1803,
+      "max": 1803,
+      "parts": [
+        {
+          "hp": 206,
+          "max": 206
+        },
+        {
+          "hp": 206,
+          "max": 206
+        },
+        {
+          "hp": 165,
+          "max": 165
+        },
+        {
+          "hp": 165,
+          "max": 165
+        },
+        {
+          "hp": 83,
+          "max": 83
+        },
+        {
+          "hp": 82,
+          "max": 82
+        },
+        {
+          "hp": 83,
+          "max": 83
+        },
+        {
+          "hp": 82,
+          "max": 82
+        },
+        {
+          "hp": 185,
+          "max": 185
+        },
+        {
+          "hp": 185,
+          "max": 185
+        }
+      ],
+      "core": 361
+    }
+  },
+  {
+    "name": "furious carrier budget still equals every part plus its hull",
+    "passed": true,
+    "data": {
+      "ace": 4680,
+      "hp": 1803,
+      "max": 1803,
+      "parts": [
+        {
+          "hp": 206,
+          "max": 206
+        },
+        {
+          "hp": 206,
+          "max": 206
+        },
+        {
+          "hp": 165,
+          "max": 165
+        },
+        {
+          "hp": 165,
+          "max": 165
+        },
+        {
+          "hp": 83,
+          "max": 83
+        },
+        {
+          "hp": 82,
+          "max": 82
+        },
+        {
+          "hp": 83,
+          "max": 83
+        },
+        {
+          "hp": 82,
+          "max": 82
+        },
+        {
+          "hp": 185,
+          "max": 185
+        },
+        {
+          "hp": 185,
+          "max": 185
+        }
+      ],
+      "core": 361
+    }
+  },
+  {
+    "name": "Tidal bullets is measurably lighter on Hard",
+    "passed": true,
+    "data": {
+      "hard": {
+        "rank": "hard",
+        "mode": "bullets",
+        "warm": 1.6,
+        "live": 2,
+        "slugs": 42,
+        "rain": 0,
+        "lamps": 0
+      },
+      "furious": {
+        "rank": "furious",
+        "mode": "bullets",
+        "warm": 1.35,
+        "live": 2.3,
+        "slugs": 100,
+        "rain": 0,
+        "lamps": 0
+      }
+    }
+  },
+  {
+    "name": "Tidal mortars is measurably lighter on Hard",
+    "passed": true,
+    "data": {
+      "hard": {
+        "rank": "hard",
+        "mode": "mortars",
+        "warm": 1.6,
+        "live": 2.7,
+        "slugs": 0,
+        "rain": 3,
+        "lamps": 0
+      },
+      "furious": {
+        "rank": "furious",
+        "mode": "mortars",
+        "warm": 1.35,
+        "live": 3.6,
+        "slugs": 0,
+        "rain": 4,
+        "lamps": 0
+      }
+    }
+  },
+  {
+    "name": "Tidal rain is measurably lighter on Hard",
+    "passed": true,
+    "data": {
+      "hard": {
+        "rank": "hard",
+        "mode": "rain",
+        "warm": 2.05,
+        "live": 2.7,
+        "slugs": 0,
+        "rain": 4,
+        "lamps": 0
+      },
+      "furious": {
+        "rank": "furious",
+        "mode": "rain",
+        "warm": 1.8,
+        "live": 3.4,
+        "slugs": 0,
+        "rain": 6,
+        "lamps": 0
+      }
+    }
+  },
+  {
+    "name": "Tidal lamp is measurably lighter on Hard",
+    "passed": true,
+    "data": {
+      "hard": {
+        "rank": "hard",
+        "mode": "lamp",
+        "warm": 2.75,
+        "live": 4.6,
+        "slugs": 0,
+        "rain": 0,
+        "lamps": 6
+      },
+      "furious": {
+        "rank": "furious",
+        "mode": "lamp",
+        "warm": 2.5,
+        "live": 6.5,
+        "slugs": 0,
+        "rain": 0,
+        "lamps": 10
+      }
+    }
+  },
+  {
+    "name": "Tidal offscreen re-entry is protected and cannot be targeted",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Both ranks preserve all three native water-wall beeps and their full tell",
+    "passed": true,
+    "data": [
+      3.35,
+      3.35
+    ]
+  },
+  {
+    "name": "Actual fresh Hard operation resets progression without losing Normal archive",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "No runtime errors in later balance tests",
+    "passed": true,
+    "data": []
+  }
+]

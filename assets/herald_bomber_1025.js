@@ -107,18 +107,20 @@ hd1003Blit=function(p,P,flash=0,alpha=1){const H=subBoss?._hd1003,Q=H?._hb25,B=C
 };
 heraldDeathDraw=function(b){const Q=b?._hd1003?._hb25;if(Q&&!b.dead){
  if(Q.phase==='tell')combatWarningDraw(b,{...Q.path.from,ex:Q.path.to.x,ey:Q.path.to.y,width:Q.kind==='swoop'?164:80,progress:Q.t/Q.warm,fieldOnly:true,alpha:.40});
- if(Q.kind==='bomber'&&Q.phase==='tell')for(const P of Q.plan)if(hd1003Live(b,hd1003Part(b,P.id))){combatWarningDraw(b,{...P.from,ex:P.target.x,ey:P.burst?P.target.y:VH,width:P.burst?14:28,progress:Q.t/Q.warm,fieldOnly:true,alpha:.24});if(P.burst)groundTargetReticleDraw(P.target.x,P.target.y,60,Q.t/Q.warm,.70);}
- }if(!b.dead)for(const q of eBullets)if(q._heraldOwner1003===b&&q._hb25Bomb&&!q.dead){const B=q._hb25Bomb,at=B.target,u=clamp((efxClock-q._hb25Born)/(B.at-q._hb25Born),0,1);
-  groundTargetReticleDraw(at.x,at.y,62,u,.64);for(const a of hb25BurstAngles(B))combatWarningDraw(b,{...at,ex:at.x+Math.cos(a)*VH,ey:at.y+Math.sin(a)*VH,width:10,progress:u,fieldOnly:true,alpha:.12});}
- return HB25.base.draw.apply(this,arguments);
+ // Bomb impact retinas begin only when an explosive drop actually leaves a claw.
+ }const result=HB25.base.draw.apply(this,arguments);
+ if(!b.dead)for(const q of eBullets)if(q._heraldOwner1003===b&&q._hb25Bomb&&!q.dead){const B=q._hb25Bomb,at=B.target,u=clamp((efxClock-q._hb25Born)/(B.at-q._hb25Born),0,1);
+  if(q._hl51)hl51Reticle(q);else groundTargetReticleDraw(at.x,at.y,62,u,.64);}
+ return result;
 };
 function hb25BurstAngles(B){const at=B.target,n=[9,11,13,15][B.rank],gap=Math.atan2(VH-38-at.y,B.escapeX-at.x),half=Math.max(.32,Math.atan2(46,VH-38-at.y)),angles=[];
  for(let i=0;i<n;i++){const a=i*TAU/n+B.seed*.17;if(Math.abs(Math.atan2(Math.sin(a-gap),Math.cos(a-gap)))>=half)angles.push(a);}return angles;
 }
 function hb25Burst(q){const b=q._heraldOwner1003,B=q._hb25Bomb;q.dead=true;if(!b||b.dead||!hd1003Live(b,hd1003Part(b,q._heraldPart1003)))return;
  const at={...B.target},n=[9,11,13,15][B.rank],gap=Math.atan2(VH-38-at.y,B.escapeX-at.x),half=Math.max(.32,Math.atan2(46,VH-38-at.y));
- const live=eBullets.filter(q=>q._hb25Chaos&&!q.dead).length;if(live+n>128)return;
- for(const a of hb25BurstAngles(B))hb25Shot(b,q._heraldPart1003,at,a,1.85+B.rank*.13);
+ const live=eBullets.filter(q=>q._hb25Chaos&&!q.dead).length;
+ // The landing explosion remains visible even when the bullet budget is full.
+ if(live+n<=128)for(const a of hb25BurstAngles(B))hb25Shot(b,q._heraldPart1003,at,a,1.85+B.rank*.13);
  explode(at.x,at.y,40,'red');combatAudio0927(b,'combatOrb0927',.5);hb25Log(b,'bomb-burst',{id:q._heraldPart1003,x:at.x,y:at.y,escapeX:B.escapeX,gap,half});
 }
 function hb25Prune(){for(const q of [...eBullets])if(q._hb25Chaos){const b=q._heraldOwner1003;

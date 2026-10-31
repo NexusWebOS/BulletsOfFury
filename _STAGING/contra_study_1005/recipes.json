@@ -1,0 +1,1640 @@
+{
+  "version": 1,
+  "scope": "Original standalone BOF candidates; proposed tuning, not measured Contra data",
+  "units": {
+    "position": "normalized arena",
+    "time": "seconds",
+    "velocity": "arena units/second"
+  },
+  "source": "https://www.youtube.com/watch?v=iooQeqdyB8E",
+  "presets": {
+    "Easy": {
+      "tell": 1.35,
+      "speed": 0.27,
+      "gap": 0.34,
+      "recovery": 1.7
+    },
+    "Normal": {
+      "tell": 1.15,
+      "speed": 0.32,
+      "gap": 0.3,
+      "recovery": 1.4
+    },
+    "Furious": {
+      "tell": 0.95,
+      "speed": 0.37,
+      "gap": 0.27,
+      "recovery": 1.15
+    }
+  },
+  "patterns": [
+    {
+      "id": "cannon",
+      "name": "Committed cannon",
+      "lesson": "Bait the aim; leave after LOCK; return during recovery.",
+      "source": "30:29 Big Magnum",
+      "fit": "Harrier / turret hardpoint",
+      "presets": [
+        {
+          "difficulty": "Easy",
+          "duration": 6.400000000000001,
+          "activeEnd": 4.700000000000001,
+          "warnings": [
+            {
+              "key": "c0",
+              "start": 0,
+              "lock": 0.7425000000000002,
+              "fire": 1.35,
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065
+            },
+            {
+              "key": "c1",
+              "start": 2.7,
+              "lock": 3.4425000000000003,
+              "fire": 4.050000000000001,
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.7425000000000002,
+              "type": "lock",
+              "order": 0,
+              "key": "c0"
+            },
+            {
+              "at": 1.35,
+              "type": "beam",
+              "order": 1,
+              "key": "c0",
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065,
+              "duration": 0.65
+            },
+            {
+              "at": 1.35,
+              "type": "fx",
+              "order": 2,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 3.4425000000000003,
+              "type": "lock",
+              "order": 3,
+              "key": "c1"
+            },
+            {
+              "at": 4.050000000000001,
+              "type": "beam",
+              "order": 4,
+              "key": "c1",
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065,
+              "duration": 0.65
+            },
+            {
+              "at": 4.050000000000001,
+              "type": "fx",
+              "order": 5,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 4.700000000000001,
+              "type": "recovery",
+              "order": 6
+            },
+            {
+              "at": 6.400000000000001,
+              "type": "complete",
+              "order": 7
+            }
+          ]
+        },
+        {
+          "difficulty": "Normal",
+          "duration": 5.9,
+          "activeEnd": 4.5,
+          "warnings": [
+            {
+              "key": "c0",
+              "start": 0,
+              "lock": 0.6325,
+              "fire": 1.15,
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065
+            },
+            {
+              "key": "c1",
+              "start": 2.7,
+              "lock": 3.3325,
+              "fire": 3.85,
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.6325,
+              "type": "lock",
+              "order": 0,
+              "key": "c0"
+            },
+            {
+              "at": 1.15,
+              "type": "beam",
+              "order": 1,
+              "key": "c0",
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065,
+              "duration": 0.65
+            },
+            {
+              "at": 1.15,
+              "type": "fx",
+              "order": 2,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 3.3325,
+              "type": "lock",
+              "order": 3,
+              "key": "c1"
+            },
+            {
+              "at": 3.85,
+              "type": "beam",
+              "order": 4,
+              "key": "c1",
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065,
+              "duration": 0.65
+            },
+            {
+              "at": 3.85,
+              "type": "fx",
+              "order": 5,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 4.5,
+              "type": "recovery",
+              "order": 6
+            },
+            {
+              "at": 5.9,
+              "type": "complete",
+              "order": 7
+            }
+          ]
+        },
+        {
+          "difficulty": "Furious",
+          "duration": 5.450000000000001,
+          "activeEnd": 4.300000000000001,
+          "warnings": [
+            {
+              "key": "c0",
+              "start": 0,
+              "lock": 0.5225,
+              "fire": 0.95,
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065
+            },
+            {
+              "key": "c1",
+              "start": 2.7,
+              "lock": 3.2225,
+              "fire": 3.6500000000000004,
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.5225,
+              "type": "lock",
+              "order": 0,
+              "key": "c0"
+            },
+            {
+              "at": 0.95,
+              "type": "beam",
+              "order": 1,
+              "key": "c0",
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065,
+              "duration": 0.65
+            },
+            {
+              "at": 0.95,
+              "type": "fx",
+              "order": 2,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 3.2225,
+              "type": "lock",
+              "order": 3,
+              "key": "c1"
+            },
+            {
+              "at": 3.6500000000000004,
+              "type": "beam",
+              "order": 4,
+              "key": "c1",
+              "kind": "lane",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "width": 0.065,
+              "duration": 0.65
+            },
+            {
+              "at": 3.6500000000000004,
+              "type": "fx",
+              "order": 5,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 4.300000000000001,
+              "type": "recovery",
+              "order": 6
+            },
+            {
+              "at": 5.450000000000001,
+              "type": "complete",
+              "order": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "name": "Walking gate",
+      "lesson": "Enter the first opening, then travel with the next opening.",
+      "source": "Omni Bot / reconfiguring bodies",
+      "fit": "Code-wall encounter variation",
+      "presets": [
+        {
+          "difficulty": "Easy",
+          "duration": 9.549999999999999,
+          "activeEnd": 7.85,
+          "warnings": [
+            {
+              "key": "g0",
+              "start": 0,
+              "fire": 1.35,
+              "kind": "gate",
+              "gapX": 0.36,
+              "gap": 0.34
+            },
+            {
+              "key": "g1",
+              "start": 1.5,
+              "fire": 2.85,
+              "kind": "gate",
+              "gapX": 0.64,
+              "gap": 0.34
+            },
+            {
+              "key": "g2",
+              "start": 3,
+              "fire": 4.35,
+              "kind": "gate",
+              "gapX": 0.36,
+              "gap": 0.34
+            }
+          ],
+          "schedule": [
+            {
+              "at": 1.35,
+              "type": "curtain",
+              "order": 0,
+              "gapX": 0.36,
+              "gap": 0.34,
+              "y": 0.16,
+              "speed": 0.27,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 2.85,
+              "type": "curtain",
+              "order": 1,
+              "gapX": 0.64,
+              "gap": 0.34,
+              "y": 0.16,
+              "speed": 0.27,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 4.35,
+              "type": "curtain",
+              "order": 2,
+              "gapX": 0.36,
+              "gap": 0.34,
+              "y": 0.16,
+              "speed": 0.27,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 7.85,
+              "type": "recovery",
+              "order": 3
+            },
+            {
+              "at": 9.549999999999999,
+              "type": "complete",
+              "order": 4
+            }
+          ]
+        },
+        {
+          "difficulty": "Normal",
+          "duration": 9.05,
+          "activeEnd": 7.65,
+          "warnings": [
+            {
+              "key": "g0",
+              "start": 0,
+              "fire": 1.15,
+              "kind": "gate",
+              "gapX": 0.36,
+              "gap": 0.3
+            },
+            {
+              "key": "g1",
+              "start": 1.5,
+              "fire": 2.65,
+              "kind": "gate",
+              "gapX": 0.64,
+              "gap": 0.3
+            },
+            {
+              "key": "g2",
+              "start": 3,
+              "fire": 4.15,
+              "kind": "gate",
+              "gapX": 0.36,
+              "gap": 0.3
+            }
+          ],
+          "schedule": [
+            {
+              "at": 1.15,
+              "type": "curtain",
+              "order": 0,
+              "gapX": 0.36,
+              "gap": 0.3,
+              "y": 0.16,
+              "speed": 0.32,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 2.65,
+              "type": "curtain",
+              "order": 1,
+              "gapX": 0.64,
+              "gap": 0.3,
+              "y": 0.16,
+              "speed": 0.32,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 4.15,
+              "type": "curtain",
+              "order": 2,
+              "gapX": 0.36,
+              "gap": 0.3,
+              "y": 0.16,
+              "speed": 0.32,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 7.65,
+              "type": "recovery",
+              "order": 3
+            },
+            {
+              "at": 9.05,
+              "type": "complete",
+              "order": 4
+            }
+          ]
+        },
+        {
+          "difficulty": "Furious",
+          "duration": 8.6,
+          "activeEnd": 7.45,
+          "warnings": [
+            {
+              "key": "g0",
+              "start": 0,
+              "fire": 0.95,
+              "kind": "gate",
+              "gapX": 0.36,
+              "gap": 0.27
+            },
+            {
+              "key": "g1",
+              "start": 1.5,
+              "fire": 2.45,
+              "kind": "gate",
+              "gapX": 0.64,
+              "gap": 0.27
+            },
+            {
+              "key": "g2",
+              "start": 3,
+              "fire": 3.95,
+              "kind": "gate",
+              "gapX": 0.36,
+              "gap": 0.27
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.95,
+              "type": "curtain",
+              "order": 0,
+              "gapX": 0.36,
+              "gap": 0.27,
+              "y": 0.16,
+              "speed": 0.37,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 2.45,
+              "type": "curtain",
+              "order": 1,
+              "gapX": 0.64,
+              "gap": 0.27,
+              "y": 0.16,
+              "speed": 0.37,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 3.95,
+              "type": "curtain",
+              "order": 2,
+              "gapX": 0.36,
+              "gap": 0.27,
+              "y": 0.16,
+              "speed": 0.37,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 7.45,
+              "type": "recovery",
+              "order": 3
+            },
+            {
+              "at": 8.6,
+              "type": "complete",
+              "order": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sweep",
+      "name": "Raking arm",
+      "lesson": "Read the start edge. Cross before release or stay ahead of the rake.",
+      "source": "Takedda / Spear Sphere geometry",
+      "fit": "Hammer or articulated cannon",
+      "presets": [
+        {
+          "difficulty": "Easy",
+          "duration": 5.65,
+          "activeEnd": 3.95,
+          "warnings": [
+            {
+              "key": "s",
+              "start": 0,
+              "fire": 1.35,
+              "kind": "sweep",
+              "x0": 0.14,
+              "x1": 0.86,
+              "width": 0.055
+            }
+          ],
+          "schedule": [
+            {
+              "at": 1.35,
+              "type": "beam",
+              "order": 0,
+              "kind": "sweep",
+              "x0": 0.14,
+              "x1": 0.86,
+              "y": 0.16,
+              "width": 0.055,
+              "duration": 2.6
+            },
+            {
+              "at": 1.35,
+              "type": "fx",
+              "order": 1,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 3.95,
+              "type": "recovery",
+              "order": 2
+            },
+            {
+              "at": 5.65,
+              "type": "complete",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "difficulty": "Normal",
+          "duration": 5.15,
+          "activeEnd": 3.75,
+          "warnings": [
+            {
+              "key": "s",
+              "start": 0,
+              "fire": 1.15,
+              "kind": "sweep",
+              "x0": 0.14,
+              "x1": 0.86,
+              "width": 0.055
+            }
+          ],
+          "schedule": [
+            {
+              "at": 1.15,
+              "type": "beam",
+              "order": 0,
+              "kind": "sweep",
+              "x0": 0.14,
+              "x1": 0.86,
+              "y": 0.16,
+              "width": 0.055,
+              "duration": 2.6
+            },
+            {
+              "at": 1.15,
+              "type": "fx",
+              "order": 1,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 3.75,
+              "type": "recovery",
+              "order": 2
+            },
+            {
+              "at": 5.15,
+              "type": "complete",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "difficulty": "Furious",
+          "duration": 4.699999999999999,
+          "activeEnd": 3.55,
+          "warnings": [
+            {
+              "key": "s",
+              "start": 0,
+              "fire": 0.95,
+              "kind": "sweep",
+              "x0": 0.14,
+              "x1": 0.86,
+              "width": 0.055
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.95,
+              "type": "beam",
+              "order": 0,
+              "kind": "sweep",
+              "x0": 0.14,
+              "x1": 0.86,
+              "y": 0.16,
+              "width": 0.055,
+              "duration": 2.6
+            },
+            {
+              "at": 0.95,
+              "type": "fx",
+              "order": 1,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 3.55,
+              "type": "recovery",
+              "order": 2
+            },
+            {
+              "at": 4.699999999999999,
+              "type": "complete",
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "radial",
+      "name": "Broken pressure ring",
+      "lesson": "Find the announced angular exit and move through it.",
+      "source": "Radial arrangements / constellation forms",
+      "fit": "Reactor discharge / alien core",
+      "presets": [
+        {
+          "difficulty": "Easy",
+          "duration": 7.05,
+          "activeEnd": 5.35,
+          "warnings": [
+            {
+              "key": "r",
+              "start": 0,
+              "lock": 0.7425000000000002,
+              "fire": 1.35,
+              "kind": "radial",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "gapAngle": 0.62
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.7425000000000002,
+              "type": "lock",
+              "order": 0,
+              "key": "r"
+            },
+            {
+              "at": 1.35,
+              "type": "ring",
+              "order": 1,
+              "key": "r",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "speed": 0.2295,
+              "gapAngle": 0.62,
+              "count": 24,
+              "radius": 0.011,
+              "life": 4
+            },
+            {
+              "at": 1.35,
+              "type": "fx",
+              "order": 2,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 5.35,
+              "type": "recovery",
+              "order": 3
+            },
+            {
+              "at": 7.05,
+              "type": "complete",
+              "order": 4
+            }
+          ]
+        },
+        {
+          "difficulty": "Normal",
+          "duration": 6.550000000000001,
+          "activeEnd": 5.15,
+          "warnings": [
+            {
+              "key": "r",
+              "start": 0,
+              "lock": 0.6325,
+              "fire": 1.15,
+              "kind": "radial",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "gapAngle": 0.62
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.6325,
+              "type": "lock",
+              "order": 0,
+              "key": "r"
+            },
+            {
+              "at": 1.15,
+              "type": "ring",
+              "order": 1,
+              "key": "r",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "speed": 0.272,
+              "gapAngle": 0.62,
+              "count": 24,
+              "radius": 0.011,
+              "life": 4
+            },
+            {
+              "at": 1.15,
+              "type": "fx",
+              "order": 2,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 5.15,
+              "type": "recovery",
+              "order": 3
+            },
+            {
+              "at": 6.550000000000001,
+              "type": "complete",
+              "order": 4
+            }
+          ]
+        },
+        {
+          "difficulty": "Furious",
+          "duration": 6.1,
+          "activeEnd": 4.95,
+          "warnings": [
+            {
+              "key": "r",
+              "start": 0,
+              "lock": 0.5225,
+              "fire": 0.95,
+              "kind": "radial",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "gapAngle": 0.62
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.5225,
+              "type": "lock",
+              "order": 0,
+              "key": "r"
+            },
+            {
+              "at": 0.95,
+              "type": "ring",
+              "order": 1,
+              "key": "r",
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "speed": 0.3145,
+              "gapAngle": 0.62,
+              "count": 24,
+              "radius": 0.011,
+              "life": 4
+            },
+            {
+              "at": 0.95,
+              "type": "fx",
+              "order": 2,
+              "emitter": {
+                "x": 0.5,
+                "y": 0.16
+              },
+              "name": "pressure"
+            },
+            {
+              "at": 4.95,
+              "type": "recovery",
+              "order": 3
+            },
+            {
+              "at": 6.1,
+              "type": "complete",
+              "order": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pincer",
+      "name": "Staggered crossfire",
+      "lesson": "Bait one arm, change sides, then bait the other. Bursts alternate.",
+      "source": "Cyborg Bros / twin emitters",
+      "fit": "Herald cannon arms / dual emitters",
+      "presets": [
+        {
+          "difficulty": "Easy",
+          "duration": 9.37,
+          "activeEnd": 7.67,
+          "warnings": [
+            {
+              "key": "p0",
+              "start": 0,
+              "lock": 0.7425000000000002,
+              "fire": 1.35,
+              "kind": "fan",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "halfAngle": 0.16
+            },
+            {
+              "key": "p1",
+              "start": 2.5,
+              "lock": 3.2425,
+              "fire": 3.85,
+              "kind": "fan",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "halfAngle": 0.16
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.7425000000000002,
+              "type": "lock",
+              "order": 0,
+              "key": "p0"
+            },
+            {
+              "at": 1.35,
+              "type": "fan",
+              "order": 1,
+              "key": "p0",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "speed": 0.27,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 1.51,
+              "type": "fan",
+              "order": 2,
+              "key": "p0",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "speed": 0.27,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 1.6700000000000002,
+              "type": "fan",
+              "order": 3,
+              "key": "p0",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "speed": 0.27,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 3.2425,
+              "type": "lock",
+              "order": 4,
+              "key": "p1"
+            },
+            {
+              "at": 3.85,
+              "type": "fan",
+              "order": 5,
+              "key": "p1",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "speed": 0.27,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 4.01,
+              "type": "fan",
+              "order": 6,
+              "key": "p1",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "speed": 0.27,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 4.17,
+              "type": "fan",
+              "order": 7,
+              "key": "p1",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "speed": 0.27,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 7.67,
+              "type": "recovery",
+              "order": 8
+            },
+            {
+              "at": 9.37,
+              "type": "complete",
+              "order": 9
+            }
+          ]
+        },
+        {
+          "difficulty": "Normal",
+          "duration": 8.87,
+          "activeEnd": 7.47,
+          "warnings": [
+            {
+              "key": "p0",
+              "start": 0,
+              "lock": 0.6325,
+              "fire": 1.15,
+              "kind": "fan",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "halfAngle": 0.16
+            },
+            {
+              "key": "p1",
+              "start": 2.5,
+              "lock": 3.1325,
+              "fire": 3.65,
+              "kind": "fan",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "halfAngle": 0.16
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.6325,
+              "type": "lock",
+              "order": 0,
+              "key": "p0"
+            },
+            {
+              "at": 1.15,
+              "type": "fan",
+              "order": 1,
+              "key": "p0",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "speed": 0.32,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 1.3099999999999998,
+              "type": "fan",
+              "order": 2,
+              "key": "p0",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "speed": 0.32,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 1.47,
+              "type": "fan",
+              "order": 3,
+              "key": "p0",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "speed": 0.32,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 3.1325,
+              "type": "lock",
+              "order": 4,
+              "key": "p1"
+            },
+            {
+              "at": 3.65,
+              "type": "fan",
+              "order": 5,
+              "key": "p1",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "speed": 0.32,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 3.81,
+              "type": "fan",
+              "order": 6,
+              "key": "p1",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "speed": 0.32,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 3.9699999999999998,
+              "type": "fan",
+              "order": 7,
+              "key": "p1",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "speed": 0.32,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 7.47,
+              "type": "recovery",
+              "order": 8
+            },
+            {
+              "at": 8.87,
+              "type": "complete",
+              "order": 9
+            }
+          ]
+        },
+        {
+          "difficulty": "Furious",
+          "duration": 8.42,
+          "activeEnd": 7.27,
+          "warnings": [
+            {
+              "key": "p0",
+              "start": 0,
+              "lock": 0.5225,
+              "fire": 0.95,
+              "kind": "fan",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "halfAngle": 0.16
+            },
+            {
+              "key": "p1",
+              "start": 2.5,
+              "lock": 3.0225,
+              "fire": 3.45,
+              "kind": "fan",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "halfAngle": 0.16
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0.5225,
+              "type": "lock",
+              "order": 0,
+              "key": "p0"
+            },
+            {
+              "at": 0.95,
+              "type": "fan",
+              "order": 1,
+              "key": "p0",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "speed": 0.37,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 1.1099999999999999,
+              "type": "fan",
+              "order": 2,
+              "key": "p0",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "speed": 0.37,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 1.27,
+              "type": "fan",
+              "order": 3,
+              "key": "p0",
+              "emitter": {
+                "x": 0.14,
+                "y": 0.16
+              },
+              "speed": 0.37,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 3.0225,
+              "type": "lock",
+              "order": 4,
+              "key": "p1"
+            },
+            {
+              "at": 3.45,
+              "type": "fan",
+              "order": 5,
+              "key": "p1",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "speed": 0.37,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 3.6100000000000003,
+              "type": "fan",
+              "order": 6,
+              "key": "p1",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "speed": 0.37,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 3.77,
+              "type": "fan",
+              "order": 7,
+              "key": "p1",
+              "emitter": {
+                "x": 0.86,
+                "y": 0.16
+              },
+              "speed": 0.37,
+              "count": 3,
+              "spread": 0.15,
+              "radius": 0.012,
+              "life": 3.5
+            },
+            {
+              "at": 7.27,
+              "type": "recovery",
+              "order": 8
+            },
+            {
+              "at": 8.42,
+              "type": "complete",
+              "order": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eruption",
+      "name": "Eruption relay",
+      "lesson": "Drop a mark, move away, leave room for the next mark.",
+      "source": "Mandrake / successive arena transformations",
+      "fit": "Existing marked chromium eruptions",
+      "presets": [
+        {
+          "difficulty": "Easy",
+          "duration": 6.6499999999999995,
+          "activeEnd": 4.949999999999999,
+          "warnings": [
+            {
+              "key": "e0",
+              "start": 0,
+              "lock": 0,
+              "fire": 1.35,
+              "kind": "circle",
+              "radius": 0.07
+            },
+            {
+              "key": "e1",
+              "start": 1.5,
+              "lock": 1.5,
+              "fire": 2.85,
+              "kind": "circle",
+              "radius": 0.07
+            },
+            {
+              "key": "e2",
+              "start": 3,
+              "lock": 3,
+              "fire": 4.35,
+              "kind": "circle",
+              "radius": 0.07
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0,
+              "type": "lock",
+              "order": 0,
+              "key": "e0"
+            },
+            {
+              "at": 1.35,
+              "type": "hazard",
+              "order": 1,
+              "key": "e0",
+              "radius": 0.07,
+              "duration": 0.6
+            },
+            {
+              "at": 1.5,
+              "type": "lock",
+              "order": 2,
+              "key": "e1"
+            },
+            {
+              "at": 2.85,
+              "type": "hazard",
+              "order": 3,
+              "key": "e1",
+              "radius": 0.07,
+              "duration": 0.6
+            },
+            {
+              "at": 3,
+              "type": "lock",
+              "order": 4,
+              "key": "e2"
+            },
+            {
+              "at": 4.35,
+              "type": "hazard",
+              "order": 5,
+              "key": "e2",
+              "radius": 0.07,
+              "duration": 0.6
+            },
+            {
+              "at": 4.949999999999999,
+              "type": "recovery",
+              "order": 6
+            },
+            {
+              "at": 6.6499999999999995,
+              "type": "complete",
+              "order": 7
+            }
+          ]
+        },
+        {
+          "difficulty": "Normal",
+          "duration": 6.15,
+          "activeEnd": 4.75,
+          "warnings": [
+            {
+              "key": "e0",
+              "start": 0,
+              "lock": 0,
+              "fire": 1.15,
+              "kind": "circle",
+              "radius": 0.07
+            },
+            {
+              "key": "e1",
+              "start": 1.5,
+              "lock": 1.5,
+              "fire": 2.65,
+              "kind": "circle",
+              "radius": 0.07
+            },
+            {
+              "key": "e2",
+              "start": 3,
+              "lock": 3,
+              "fire": 4.15,
+              "kind": "circle",
+              "radius": 0.07
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0,
+              "type": "lock",
+              "order": 0,
+              "key": "e0"
+            },
+            {
+              "at": 1.15,
+              "type": "hazard",
+              "order": 1,
+              "key": "e0",
+              "radius": 0.07,
+              "duration": 0.6
+            },
+            {
+              "at": 1.5,
+              "type": "lock",
+              "order": 2,
+              "key": "e1"
+            },
+            {
+              "at": 2.65,
+              "type": "hazard",
+              "order": 3,
+              "key": "e1",
+              "radius": 0.07,
+              "duration": 0.6
+            },
+            {
+              "at": 3,
+              "type": "lock",
+              "order": 4,
+              "key": "e2"
+            },
+            {
+              "at": 4.15,
+              "type": "hazard",
+              "order": 5,
+              "key": "e2",
+              "radius": 0.07,
+              "duration": 0.6
+            },
+            {
+              "at": 4.75,
+              "type": "recovery",
+              "order": 6
+            },
+            {
+              "at": 6.15,
+              "type": "complete",
+              "order": 7
+            }
+          ]
+        },
+        {
+          "difficulty": "Furious",
+          "duration": 5.699999999999999,
+          "activeEnd": 4.55,
+          "warnings": [
+            {
+              "key": "e0",
+              "start": 0,
+              "lock": 0,
+              "fire": 0.95,
+              "kind": "circle",
+              "radius": 0.07
+            },
+            {
+              "key": "e1",
+              "start": 1.5,
+              "lock": 1.5,
+              "fire": 2.45,
+              "kind": "circle",
+              "radius": 0.07
+            },
+            {
+              "key": "e2",
+              "start": 3,
+              "lock": 3,
+              "fire": 3.95,
+              "kind": "circle",
+              "radius": 0.07
+            }
+          ],
+          "schedule": [
+            {
+              "at": 0,
+              "type": "lock",
+              "order": 0,
+              "key": "e0"
+            },
+            {
+              "at": 0.95,
+              "type": "hazard",
+              "order": 1,
+              "key": "e0",
+              "radius": 0.07,
+              "duration": 0.6
+            },
+            {
+              "at": 1.5,
+              "type": "lock",
+              "order": 2,
+              "key": "e1"
+            },
+            {
+              "at": 2.45,
+              "type": "hazard",
+              "order": 3,
+              "key": "e1",
+              "radius": 0.07,
+              "duration": 0.6
+            },
+            {
+              "at": 3,
+              "type": "lock",
+              "order": 4,
+              "key": "e2"
+            },
+            {
+              "at": 3.95,
+              "type": "hazard",
+              "order": 5,
+              "key": "e2",
+              "radius": 0.07,
+              "duration": 0.6
+            },
+            {
+              "at": 4.55,
+              "type": "recovery",
+              "order": 6
+            },
+            {
+              "at": 5.699999999999999,
+              "type": "complete",
+              "order": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

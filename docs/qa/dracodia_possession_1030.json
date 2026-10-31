@@ -1,0 +1,269 @@
+{
+  "native": [
+    {
+      "name": "All31 banks have even fixed cells, measured pivots and valid atlas bounds",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both toxic-rim gated portals close completely through authored fade frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Infector uses16 distinct hovering frames from the generated reference-based design",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Neutral drone emergence, arm lift and red-eye possession use authored frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Code spiral materializes through eight stored-alpha frames with rear/front layers",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "dracodia_wind keeps complete disjoint shoulders/arms, matching hit alpha and full core",
+      "passed": true,
+      "data": 3398
+    },
+    {
+      "name": "dracodia_strike keeps complete disjoint shoulders/arms, matching hit alpha and full core",
+      "passed": true,
+      "data": 3895
+    },
+    {
+      "name": "dracodia_recover keeps complete disjoint shoulders/arms, matching hit alpha and full core",
+      "passed": true,
+      "data": 4890
+    },
+    {
+      "name": "Native intro reaches normal first-host combat without HP writes",
+      "passed": true,
+      "data": {
+        "time": 9.6,
+        "mode": "fight",
+        "t": 0,
+        "last": {
+          "time": 20.983333333333476,
+          "mode": "v18conversion",
+          "primary": null,
+          "secondary": null,
+          "ufo": false,
+          "possessed": false,
+          "codeFrame": 8,
+          "white": 0,
+          "host": true,
+          "protected": true
+        },
+        "hp": 5945,
+        "ship": {
+          "x": 340,
+          "y": 447
+        }
+      }
+    },
+    {
+      "name": "Pilot stays anchored during the entire possession scene",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rejected amethyst gate is never rendered",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Primary portal closes before possession while drone visibly readies its attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Second red portal opens behind/above the visible UFO",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Spiraling code starts only after data bomb impact",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "UFO aim, actual data-bomb release and impact occur in order",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Four robotic screams route through the shared mixer at loud gain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native host first appears beneath complete white coverage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All parts retain the native33.3/33.3/33.4 health split",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Retina arm anchor lands on the new opaque full-arm mask",
+      "passed": true,
+      "data": {
+        "target": {
+          "x": 264.34456469014856,
+          "y": 210.82678672121392
+        },
+        "part": "left"
+      }
+    },
+    {
+      "name": "Core remains protected while either whole arm is alive",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native left arm damage destroys its complete shoulder/arm once",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No rectangular detached limb debris is emitted by the retired breakup",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both complete arms gate the native exposed-core phase",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Break effects remain bounded and expire",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, drawing or console errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Final possession has a bright actual red eye, overhead claw pixels and unclipped fixed canvas",
+      "passed": true
+    }
+  ],
+  "film": [
+    {
+      "name": "Real native Furious first host reaches defeat at5945HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No game, asset, sound or input-bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recording contains purple gate, red gate and visible UFO",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The data bomb releases before possession begins",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All four robotic scream events are in the native mix",
+      "passed": true,
+      "data": {
+        "rd71ScreamA": 2,
+        "rd71ScreamB": 2
+      }
+    },
+    {
+      "name": "Both complete shoulders and arms are destroyed once through normal combat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native scene includes red possession, full white cover and first-host combat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Decoded recorded audio is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -20.1,
+        "peakDb": -3.3
+      }
+    },
+    {
+      "name": "stage8-final plays the updated native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-final decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phase1 plays the updated native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phase1 decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-possession plays the updated native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-possession decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-shoulders plays the updated native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-shoulders decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No preview playback errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 115.81,
+  "fps": 56.30327306218557,
+  "audio": {
+    "meanDb": -20.1,
+    "peakDb": -3.3
+  },
+  "preview": "http://127.0.0.1:51046/?dracodia=possession-1030#clip=stage8-dracodia-possession",
+  "shoulderPreview": "http://127.0.0.1:51046/?dracodia=possession-1030#clip=stage8-dracodia-shoulders",
+  "fullFirstHost": "http://127.0.0.1:51046/?dracodia=possession-1030#clip=stage8-final",
+  "laterForms": "http://127.0.0.1:51046/?dracodia=possession-1030#clip=stage8-final-previous-full",
+  "sha256": "f6a6c7ef3f9e133007b95a3bfa45e9e0a57225dc6c95cc1fccdc4c1a92aac16c",
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false
+}

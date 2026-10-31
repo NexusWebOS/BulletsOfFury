@@ -1,0 +1,224 @@
+{
+  "environment": "Native Canvas2D + production game modules, not Chromium",
+  "checks": [
+    {
+      "name": "Pursuit starts on foot with three companions",
+      "passed": true
+    },
+    {
+      "name": "easy bullet exactly 1%",
+      "passed": true
+    },
+    {
+      "name": "easy missile exactly 5%",
+      "passed": true
+    },
+    {
+      "name": "normal bullet exactly 1%",
+      "passed": true
+    },
+    {
+      "name": "normal missile exactly 5%",
+      "passed": true
+    },
+    {
+      "name": "hard bullet exactly 1%",
+      "passed": true
+    },
+    {
+      "name": "hard missile exactly 5%",
+      "passed": true
+    },
+    {
+      "name": "furious bullet exactly 1%",
+      "passed": true
+    },
+    {
+      "name": "furious missile exactly 5%",
+      "passed": true
+    },
+    {
+      "name": "Actual projectiles open a crate and release a missile pickup",
+      "passed": true
+    },
+    {
+      "name": "Walking over the released pickup grants eight missiles",
+      "passed": true
+    },
+    {
+      "name": "Reaching vehicles with missiles starts crew boarding",
+      "passed": true
+    },
+    {
+      "name": "Boarding places all crew into the moving pursuit",
+      "passed": true
+    },
+    {
+      "name": "A real bullet collision damages the truck by one point",
+      "passed": true
+    },
+    {
+      "name": "A real missile collision damages the truck by five points",
+      "passed": true
+    },
+    {
+      "name": "Shooting an incoming missile intercepts it before hull damage",
+      "passed": true
+    },
+    {
+      "name": "Surviving pursuit starts the gate ram",
+      "passed": true
+    },
+    {
+      "name": "Ram reaches gate impact and black fade",
+      "passed": true
+    },
+    {
+      "name": "Fade returns the actual mission clear signal",
+      "passed": true
+    },
+    {
+      "name": "Door core blocks damage with either live turret",
+      "passed": true
+    },
+    {
+      "name": "One surviving turret still shields core",
+      "passed": true
+    },
+    {
+      "name": "Both turrets destroyed expose core",
+      "passed": true
+    },
+    {
+      "name": "Wave 1 begins with the right counter",
+      "passed": true
+    },
+    {
+      "name": "Wave 1 still has live infantry before core breach",
+      "passed": true
+    },
+    {
+      "name": "Wave 1 core destruction advances with live infantry",
+      "passed": true
+    },
+    {
+      "name": "Wave 2 begins with the right counter",
+      "passed": true
+    },
+    {
+      "name": "Wave 2 still has live infantry before core breach",
+      "passed": true
+    },
+    {
+      "name": "Wave 2 core destruction advances with live infantry",
+      "passed": true
+    },
+    {
+      "name": "Wave 3 begins with the right counter",
+      "passed": true
+    },
+    {
+      "name": "Wave 3 still has live infantry before core breach",
+      "passed": true
+    },
+    {
+      "name": "Wave 3 core destruction advances with live infantry",
+      "passed": true
+    },
+    {
+      "name": "Wave 4 begins with the right counter",
+      "passed": true
+    },
+    {
+      "name": "Wave 4 still has live infantry before core breach",
+      "passed": true
+    },
+    {
+      "name": "Wave 4 core destruction advances with live infantry",
+      "passed": true
+    },
+    {
+      "name": "Exactly four core breaches lead into the boss",
+      "passed": true
+    },
+    {
+      "name": "Ground draw_forward stays directional",
+      "passed": true
+    },
+    {
+      "name": "Ground fire_forward stays directional",
+      "passed": true
+    },
+    {
+      "name": "Ground reload_pump stays directional",
+      "passed": true
+    },
+    {
+      "name": "Enemy acquires a player inside its clear field of view",
+      "passed": true
+    },
+    {
+      "name": "Obstructed enemy retains last known location without tracking through walls",
+      "passed": true
+    },
+    {
+      "name": "Enemy search memory expires",
+      "passed": true
+    },
+    {
+      "name": "Both new weapons have finite travelling projectile specifications",
+      "passed": true
+    },
+    {
+      "name": "Ground locomotion and attacks retain one PixelLab body unit and view",
+      "passed": true
+    },
+    {
+      "name": "Level3 prone roll selects generated body-roll frames",
+      "passed": true
+    },
+    {
+      "name": "Base prone roll uses the dedicated rear-facing bank",
+      "passed": true
+    },
+    {
+      "name": "Half HP starts claymore phase once",
+      "passed": true
+    },
+    {
+      "name": "Claymores breach both walls and summon four flamers",
+      "passed": true
+    },
+    {
+      "name": "Every new exported frame has even dimensions",
+      "passed": true
+    },
+    {
+      "name": "Animation banks retain fixed roots",
+      "passed": true
+    },
+    {
+      "name": "All new attack and pickup routes resolve through the approved sound bank",
+      "passed": true
+    },
+    {
+      "name": "od39_truck_body visibly flashes and restores exact authored pixels",
+      "passed": true
+    },
+    {
+      "name": "nr39_arsenal_runner_fire_west_0 visibly flashes and restores exact authored pixels",
+      "passed": true
+    },
+    {
+      "name": "nr39_hunter_drone_fire_west_0 visibly flashes and restores exact authored pixels",
+      "passed": true
+    },
+    {
+      "name": "od39_gosfer_topdown_fire_east_0 visibly flashes and restores exact authored pixels",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": 54,
+  "total": 54
+}

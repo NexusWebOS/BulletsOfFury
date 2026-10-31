@@ -1,0 +1,311 @@
+{
+  "title": "Sumpjaw deployed. Twelve new threats to review.",
+  "boards": [
+    {
+      "id": "stage6-a",
+      "stage": 6,
+      "option": "A",
+      "theme": "Precision hunters",
+      "pitch": "A scissor-wing interceptor and an enormous wind manta. The most direct fit for a fast aerial battle.",
+      "mini": {
+        "name": "Windrazor",
+        "role": "Scissor-wing pursuit interceptor",
+        "modular": false,
+        "identity": "Twin needle noses, a royal-blue canopy and white hinged cutting wings around teal ramjets.",
+        "parts": "One complete aircraft body. Folding wings belong to consistent whole poses; gun mouths remain fixed to their real mounts.",
+        "attacks": [
+          [
+            "Shear Run",
+            "Wings fold and pressure builds before a committed diagonal cutting pass. Dodge across the marked route; punish its recovery turn."
+          ],
+          [
+            "Needle Rake",
+            "The real wing guns fire three narrow wind-slug lanes with a clear opening. It banks into its firing direction."
+          ],
+          [
+            "Crosswind Return",
+            "Leaves one side, returns from the opposite side with a shadow and authored roll, then settles before firing again."
+          ]
+        ],
+        "frames": "Idle, wings open/close, bite-like shear commitment, gun recoil, bank, drift, barrel roll, somersault, depth return, white hit and complete destruction."
+      },
+      "boss": {
+        "name": "Stratosphere Leviathan",
+        "role": "Wind-pressure manta engine",
+        "modular": true,
+        "identity": "Broad white crescent wings, two huge pressure turbines and a central teal heart surrounded by four small gun pods.",
+        "parts": "Four gun pods, two complete turbine-wing assemblies and the central heart hull. Weapon loss removes the matching attacks; broken turbines leave visible wrecked mounts.",
+        "attacks": [
+          [
+            "Pressure Valley",
+            "Turbines visibly spool up and send two broad currents around an open corridor. Their angle commits before release."
+          ],
+          [
+            "Feathering Guns",
+            "Pods recoil independently and alternate straight wind-slug rakes. Destroying a pod creates a lasting gap."
+          ],
+          [
+            "Broken Wing Turn",
+            "After turbine loss it banks unevenly, repositions and exposes its pressure heart during a longer recovery."
+          ]
+        ],
+        "frames": "Separate turbine spool/recoil/ruin banks, intact central body, complete wing turns, heart charge/release and full-module explosions."
+      }
+    },
+    {
+      "id": "stage6-b",
+      "stage": 6,
+      "option": "B",
+      "theme": "Predator and industrial hunter",
+      "pitch": "A mechanical dragonfly and a three-turbine grapple engine. Very different silhouettes and attack rhythms.",
+      "mini": {
+        "name": "Draft Widow",
+        "role": "Dragonfly ambush machine",
+        "modular": true,
+        "identity": "Four lattice pressure wings, a narrow armored spine and six hooked legs around a blue optic cockpit.",
+        "parts": "A complete core fuselage plus paired left/right wing banks. Wing damage changes the bank and ambush choices without stretching the remaining body.",
+        "attacks": [
+          [
+            "Hooked Cross",
+            "One side folds its wings and hooks its legs before a lateral strike. The opposite-side return gets its own tell."
+          ],
+          [
+            "Needle Thread",
+            "Hovers sideways and fires a brief aimed stream from its head guns, then changes height while recovering."
+          ],
+          [
+            "Wingbeat Slip",
+            "An authored roll and short depth feint precede a foreground dive. Its distant silhouette cannot damage the player."
+          ]
+        ],
+        "frames": "Independent wingbeats, whole bank/roll/depth poses, hooked-leg windup/contact/recovery, fixed head nozzles, hits and wing break."
+      },
+      "boss": {
+        "name": "Sky Anvil",
+        "role": "Airborne pressure grapple",
+        "modular": true,
+        "identity": "A heavy anchor-shaped hull suspended between three enormous ducted turbines, twin cannons and a physical retracting claw.",
+        "parts": "Three turbine/outrigger modules, two independent cannon assemblies, a complete grapple and the center hull. The main body stays intact after mounts break.",
+        "attacks": [
+          [
+            "Skyhook Drop",
+            "A ground Retina commits beneath the extended claw. The grapple slams that point, then slowly retracts into a punish window."
+          ],
+          [
+            "Triple Draft",
+            "Turbines spool in sequence, alternating pressure lanes. Only one heavy pressure sweep releases at a time."
+          ],
+          [
+            "Anvil Rake",
+            "The real twin cannons track, lock and recoil through short straight volleys while the grapple stays retracted."
+          ]
+        ],
+        "frames": "Turbine spin and damage, cannon yaw/recoil, claw extension/impact/retraction, hull sway, depth turns and real assembly breakup."
+      }
+    },
+    {
+      "id": "stage6-c",
+      "stage": 6,
+      "option": "C",
+      "theme": "Wind machines",
+      "pitch": "A flying scissor drone and a towering pressure-cannon array. The most unusual direction of the three.",
+      "mini": {
+        "name": "Cloud Guillotine",
+        "role": "Shear-wing drone",
+        "modular": true,
+        "identity": "Two enormous opposing C-shaped blade airfoils hinge around a diamond pressure chamber with two fixed gun barrels.",
+        "parts": "Two complete blade/hinge modules and an intact center. Destroying one blade removes its cutting attack and changes the return turn.",
+        "attacks": [
+          [
+            "Closing Sky",
+            "The two airfoils close into a compact wheel before a committed pass, then open into a broad shear during recovery."
+          ],
+          [
+            "Split Gust",
+            "The center barrels fire alternating slender wind crescents with a readable gap between the streams."
+          ],
+          [
+            "Crosscut",
+            "It opens both vanes, turns into the flight direction and sweeps one side. Its recovery exposes the center chamber."
+          ]
+        ],
+        "frames": "Blade open/close, hinge movement, complete turn/roll banks, center recoil, charge glow, white hits and separate blade destruction."
+      },
+      "boss": {
+        "name": "Tempest Choir",
+        "role": "Floating wind-organ engine",
+        "modular": true,
+        "identity": "A tall pressure heart, white buoyancy pods and a fan of jointed trumpet-like compressor cannons.",
+        "parts": "Independent pressure cannons, rear pressure pods and the complete heart hull. The final module count will be locked from the selected design before frame production.",
+        "attacks": [
+          [
+            "Breath by Breath",
+            "Alternate cannon banks compress and fire curved wind crescents in a deliberate rhythm. Broken mouths open permanent lanes."
+          ],
+          [
+            "Pressure Chord",
+            "Three selected bell mouths glow in order before releasing separated straight bursts. No simultaneous arena-filling release."
+          ],
+          [
+            "Last Lung",
+            "With pressure pods gone, the exposed heart expels one strong warned gust and needs a long recharge."
+          ]
+        ],
+        "frames": "Complete cannon swivel/recoil, compressor vanes, bellows charge, pod damage, intact core aftermath and venting death."
+      }
+    },
+    {
+      "id": "stage9-a",
+      "stage": 9,
+      "option": "A",
+      "theme": "Closest to the existing identities",
+      "pitch": "A new tri-crescent optic and a four-fan water crown. Recognizable roles, rebuilt as separate animatable machines.",
+      "mini": {
+        "name": "Eye of the Undertow",
+        "role": "Modular alien laser spinner",
+        "modular": true,
+        "identity": "Three crescent blade-emitter assemblies around one white-cyan iris, with visible rotary joints.",
+        "parts": "Three independent blade/projector modules and a complete iris core. The eye remains sealed until its three outer projector modules are destroyed.",
+        "attacks": [
+          [
+            "Threefold Sweep",
+            "The white iris charges; all surviving emitter arms rotate on one shared clock and sweep with a deliberately open arc."
+          ],
+          [
+            "Iris Lance",
+            "The core muzzle forms white energy before a fast committed beam. Its aperture visibly closes during recovery."
+          ],
+          [
+            "Broken Orbit",
+            "At half health it corkscrews offscreen and dashes back with separate side-projector bursts and a visible return warning."
+          ]
+        ],
+        "frames": "Full360 body and individual joint headings, aperture open/close, core charge/muzzle, projector recoil, exact socket masks, ruined mounts and death fragments."
+      },
+      "boss": {
+        "name": "Pelagic Crown",
+        "role": "Four-fan hydraulic warship",
+        "modular": true,
+        "identity": "A crownlike swept hull, bright central reservoir, four separate fan-booms and four forward cannon modules.",
+        "parts": "Four cannons, four full fan/boom assemblies, reservoir and intact hull. Destroyed weapon modules stop emitting. A staged reservoir gate follows the chosen break order.",
+        "attacks": [
+          [
+            "Crown Rain",
+            "Fans spin and launch water mortar grenades north; separate ground Retinas mark their return geysers."
+          ],
+          [
+            "Hydro Spread",
+            "Forward cannons face their warning lanes and alternate spread water slugs. Fans remain the grenade launchers."
+          ],
+          [
+            "Pressure Surge",
+            "The reservoir fills and shakes before three approaching water walls, with lane warnings and aqua wave sound."
+          ]
+        ],
+        "frames": "Independent fan swirl, full cannon yaw/recoil, filling reservoir, northbound grenade launch, returning geysers, whole-module break and exposed hull."
+      }
+    },
+    {
+      "id": "stage9-b",
+      "stage": 9,
+      "option": "B",
+      "theme": "Armored shell and flood engine",
+      "pitch": "An opening spiral spacecraft and a reservoir-tower dreadnought. Strong phase changes through real mechanical anatomy.",
+      "mini": {
+        "name": "Abyssal Nautilus",
+        "role": "Opening-shell optic spacecraft",
+        "modular": true,
+        "identity": "A helicoidal armored shell, exposed gimbal beam arms and a white eye inside a complete central spindle.",
+        "parts": "Four curved shell sectors, two complete projector arms and an intact iris core. The shells physically open; destroying them removes those actual modules.",
+        "attacks": [
+          [
+            "Shell Bloom",
+            "Sectors hinge open around the glowing iris before projector arms sweep two committed arcs."
+          ],
+          [
+            "Corkscrew Lance",
+            "One continuous rotation clock drives the shell, optic and beam headings; the firing cycle does not restart the spin."
+          ],
+          [
+            "Emergency Jet",
+            "A damaged shell vents aqua energy, retreats into depth and returns through a warned charge lane."
+          ]
+        ],
+        "frames": "Whole turntable, complete opening/closing shell sectors, arm gimbal rotations, iris recoil/charge, corresponding collision masks and full broken-shell aftermath."
+      },
+      "boss": {
+        "name": "Trench Cathedral",
+        "role": "Reservoir-pressure dreadnought",
+        "modular": true,
+        "identity": "Three huge blue-glass pressure columns over a squat prow, four water cannons, two fan booms and a central floodgate.",
+        "parts": "Three complete reservoirs, four gun modules, two fan-booms, the floodgate and intact chassis. Reservoir loss drains matching weapons and opens the central gate in stages.",
+        "attacks": [
+          [
+            "Pressure Cascade",
+            "Reservoirs fill in sequence before their cannons release separated heavy water salvos."
+          ],
+          [
+            "Floodgate",
+            "The central gate opens with a visible water-energy buildup and launches one broad surge. Its warning leaves side escape routes."
+          ],
+          [
+            "Geyser Battery",
+            "Fan-booms angle north and lob timed water mortars, then swing back into their resting sockets."
+          ]
+        ],
+        "frames": "Water volume and swirl inside each reservoir, cannon recoil/yaw, fan rotations, gate opening, reduced-pressure phases and real module explosions."
+      }
+    },
+    {
+      "id": "stage9-c",
+      "stage": 9,
+      "option": "C",
+      "theme": "Prism optic and trident assault",
+      "pitch": "A folding four-vane laser spindle and a three-prow hydraulic hunter. The largest departure from the current silhouettes.",
+      "mini": {
+        "name": "Prism Wraith",
+        "role": "Four-vane alien optic",
+        "modular": true,
+        "identity": "A long diamond spindle, white square-gimbal iris and four spearhead prism vanes on individual elbows.",
+        "parts": "Four complete vane/elbow/projector assemblies and an intact spindle core. Breaking a vane removes its beam and changes the available sweep directions.",
+        "attacks": [
+          [
+            "Prism Unfold",
+            "Vanes open into a cross while the inner light charges, then alternate beams across a warned open sector."
+          ],
+          [
+            "Diamond Drill",
+            "The whole machine folds tight and corkscrews through a committed dash; it must reopen before attacking again."
+          ],
+          [
+            "Wraith Orbit",
+            "The core hovers in depth while remaining vanes turn independently, then visibly returns to the foreground for its damage window."
+          ]
+        ],
+        "frames": "Complete folded/unfolded silhouettes, elbow headings, shared-clock spinning, lens charge, individual projector fire and full-spindle aftermath."
+      },
+      "boss": {
+        "name": "Riptide Hydra",
+        "role": "Trident hydraulic assault ship",
+        "modular": true,
+        "identity": "Three long prow hulls linked by a hydraulic spine, two huge water fans, separate twin guns and rear pressure reservoirs.",
+        "parts": "Two complete side prows with fan assemblies, two separate twin-gun mounts, two reservoirs and an intact central heart hull. Each side's destruction disables its matching arsenal.",
+        "attacks": [
+          [
+            "Hydra Mortars",
+            "Outer fans alternate high northbound water grenades; their landing marks commit before geyser impact."
+          ],
+          [
+            "Trident Rush",
+            "Side prows and main hull charge in a staggered sequence with clearly separated paths and real return turns."
+          ],
+          [
+            "Slipstream Flood",
+            "The remaining central reservoir fills, marks a water trail and accelerates into a warned forward surge."
+          ]
+        ],
+        "frames": "Whole side-prow hinges, fan swirl, twin gun rotations/recoil, reservoir fill/drain, drift/roll/depth turns, destroyed sockets and complete central-hull death."
+      }
+    }
+  ]
+}

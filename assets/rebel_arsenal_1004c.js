@@ -134,7 +134,7 @@ rg4AttackTick=function(q,R,G,dt){const M=q.rg4,A=M.act;if(!G.arsenal1004c||!A||!
  }else if(A.phase==='return'&&kind==='turbo'){
   ra4TurboReturnTick(q,A,G,dt);
  }else if(A.phase==='recover'){
-  q.frCloak=0;q.rfHeading=null;const x=camLeftX()+viewW()/2+(q.i-2)*Math.min(82,(viewW()-112)/4),y=PLAY.y+83+(q.i%2)*46;
+  q.frCloak=0;q.rfHeading=null;const home=typeof rr65Home==='function'&&rr45Scope()?rr65Home(q,G.age):null,x=home?.x??(camLeftX()+viewW()/2+(q.i-2)*Math.min(82,(viewW()-112)/4)),y=home?.y??(PLAY.y+83+(q.i%2)*46);
   q.x+=clamp(x-q.x,-dt*330,dt*330);q.y+=clamp(y-q.y,-dt*330,dt*330);
   if(A.t>.9){M.act=null;M.cd=({turbo:7.0,ram:5.2,slug:4.3,rockets:5.2,helix:5.4,cloak:3.0})[kind]*(G.gang?.82:diffKey==='easy'?1.2:1);}
  }

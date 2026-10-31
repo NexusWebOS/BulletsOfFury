@@ -1,0 +1,115 @@
+{
+  "checks": [
+    {
+      "name": "real mission seven uses fixed 640x480 camera",
+      "passed": true
+    },
+    {
+      "name": "all authored assets load with even dimensions and safe gutters",
+      "passed": true
+    },
+    {
+      "name": "F latches cover and transitions fully down",
+      "passed": true
+    },
+    {
+      "name": "side step works while behind cover",
+      "passed": true
+    },
+    {
+      "name": "held Retina stands and moves cursor independently of body",
+      "passed": true
+    },
+    {
+      "name": "base stage has no jump shooting",
+      "passed": true
+    },
+    {
+      "name": "mouse aim and visible projectiles damage wall core",
+      "passed": true
+    },
+    {
+      "name": "bullets begin at the rendered rifle socket",
+      "passed": true
+    },
+    {
+      "name": "wave enemies enter above the screen",
+      "passed": true
+    },
+    {
+      "name": "solid cover blocks real incoming bullets",
+      "passed": true
+    },
+    {
+      "name": "exposed player takes damage",
+      "passed": true
+    },
+    {
+      "name": "swept ellipses hit visible enemy bodies and reject empty space",
+      "passed": true
+    },
+    {
+      "name": "Prism Heart bar fills orange before combat",
+      "passed": true
+    },
+    {
+      "name": "core warns before prism beam discharge",
+      "passed": true
+    },
+    {
+      "name": "core destruction produces full white transformation flash",
+      "passed": true
+    },
+    {
+      "name": "white flash reveals living Helios form",
+      "passed": true
+    },
+    {
+      "name": "Helios double-fill progresses orange then red",
+      "passed": true
+    },
+    {
+      "name": "Helios upper body takes actual projectile damage",
+      "passed": true
+    },
+    {
+      "name": "Helios runs offscreen and returns",
+      "passed": true
+    },
+    {
+      "name": "Helios uses fire volleys lightning and jump geysers",
+      "passed": true
+    },
+    {
+      "name": "death remains rear-facing authored knockback",
+      "passed": true
+    },
+    {
+      "name": "boss death restarts current boss checkpoint without extra breach",
+      "passed": true
+    },
+    {
+      "name": "six-button Z plus dpad free-aims without moving body",
+      "passed": true
+    },
+    {
+      "name": "Genesis Mode alone ducks behind base wall",
+      "passed": true
+    },
+    {
+      "name": "Genesis Mode plus Z maps covered blindfire on foot",
+      "passed": true
+    },
+    {
+      "name": "new stage inherits selected damage difficulty",
+      "passed": true
+    },
+    {
+      "name": "zero missing assets or browser errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": 27,
+  "failed": 0
+}

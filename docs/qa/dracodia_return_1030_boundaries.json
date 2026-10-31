@@ -1,0 +1,73 @@
+{
+  "checks": [
+    {
+      "name": "normal enters return through native defeat",
+      "passed": true
+    },
+    {
+      "name": "normal pause freezes transfer clock",
+      "passed": true
+    },
+    {
+      "name": "normal resumes into valid native body",
+      "passed": true
+    },
+    {
+      "name": "normal releases temporary transfer immunity",
+      "passed": true
+    },
+    {
+      "name": "hard enters return through native defeat",
+      "passed": true
+    },
+    {
+      "name": "hard pause freezes transfer clock",
+      "passed": true
+    },
+    {
+      "name": "hard resumes into valid native body",
+      "passed": true
+    },
+    {
+      "name": "hard releases temporary transfer immunity",
+      "passed": true
+    },
+    {
+      "name": "furious enters return through native defeat",
+      "passed": true
+    },
+    {
+      "name": "furious pause freezes transfer clock",
+      "passed": true
+    },
+    {
+      "name": "furious resumes into valid native body",
+      "passed": true
+    },
+    {
+      "name": "furious releases temporary transfer immunity",
+      "passed": true
+    },
+    {
+      "name": "Living-form morph keeps its existing owner",
+      "passed": true
+    },
+    {
+      "name": "Living-form morph still completes",
+      "passed": true
+    },
+    {
+      "name": "Retry discards the old transfer state",
+      "passed": true
+    },
+    {
+      "name": "First host still uses its original entry",
+      "passed": true
+    },
+    {
+      "name": "No browser or native draw errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

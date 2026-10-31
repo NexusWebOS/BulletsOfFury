@@ -1,0 +1,88 @@
+{
+  "checks": [
+    {
+      "name": "D-pad already steers during the searchlight opening without rotating the turret",
+      "passed": true
+    },
+    {
+      "name": "released steering settles without lane oscillation or recentering",
+      "passed": true
+    },
+    {
+      "name": "D-pad right steers while north face-button fire stays north",
+      "passed": true
+    },
+    {
+      "name": "gunner mount stays a fixed bed offset as the hull turns",
+      "passed": true
+    },
+    {
+      "name": "hull leans into a gradual turn independently of turret direction",
+      "passed": true
+    },
+    {
+      "name": "D-pad up moves the truck and retains turret bearing",
+      "passed": true
+    },
+    {
+      "name": "D-pad down moves the truck and retains turret bearing",
+      "passed": true
+    },
+    {
+      "name": "D-pad left moves the truck and retains turret bearing",
+      "passed": true
+    },
+    {
+      "name": "D-pad right moves the truck and retains turret bearing",
+      "passed": true
+    },
+    {
+      "name": "truck stays inside visible road bounds",
+      "passed": true
+    },
+    {
+      "name": "explicit free-aim shoulder gives D-pad the turret while Hotwire holds the lane",
+      "passed": true
+    },
+    {
+      "name": "Retina still acquires a visible pursuing aircraft",
+      "passed": true
+    },
+    {
+      "name": "fresh face-direction fire overrides a released Retina lock",
+      "passed": true
+    },
+    {
+      "name": "standard-pad steering and right-stick aim remain independent",
+      "passed": true
+    },
+    {
+      "name": "mouse aim continues tracking its pointer while D-pad steers",
+      "passed": true
+    },
+    {
+      "name": "wreck restart restores center position and zero steering momentum",
+      "passed": true
+    },
+    {
+      "name": "full normal-hull pursuit remains clearable using real input",
+      "passed": true
+    },
+    {
+      "name": "no page or console errors",
+      "passed": true
+    }
+  ],
+  "fullRun": {
+    "state": "clear",
+    "hull": 81,
+    "kills": 65,
+    "intercepts": 0,
+    "restarts": 0,
+    "combat": 150.0000000000115
+  },
+  "errors": [],
+  "passed": 18,
+  "total": 18,
+  "scope": "Simulated gamepad hardware through unchanged production Input.update and mission simulation. No physical M30 claim. Focused fixtures suppress wave scheduling; full run uses normal health, damage and all waves."
+}

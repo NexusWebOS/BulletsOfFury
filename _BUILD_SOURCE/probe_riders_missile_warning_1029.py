@@ -1,0 +1,53 @@
+from pathlib import Path
+import sys,json,http.server
+from playwright.sync_api import sync_playwright
+R=Path(r'C:/Users/Mike/Desktop/Github Coding/BulletsOfFury');W=Path(__file__).resolve().parent;sys.path.insert(0,str(R/'_BUILD_SOURCE'));from shoot import serve,TRAP_RAF,STEP
+http.server.ThreadingHTTPServer.request_queue_size=256;checks=[];errors=[]
+def ck(n,v,d=None):
+ checks.append(dict(name=n,passed=bool(v),data=d));(W/'checks.json').write_text(json.dumps(checks,indent=2));print('PASS'if v else'FAIL',n,flush=True);assert v,(n,d)
+port,stop=serve(str(R))
+try:
+ with sync_playwright()as pw:
+  b=pw.chromium.launch(channel='msedge',headless=True,args=['--autoplay-policy=no-user-gesture-required']);p=b.new_page(viewport={'width':1280,'height':800});p.on('pageerror',lambda e:errors.append(str(e)));p.goto(f'http://127.0.0.1:{port}',timeout=180000);p.wait_for_function('window.__bofFrames>5');p.mouse.click(3,3);p.evaluate('()=>{run.stage=6;stageLoadBegin(6)}');p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(6)}',timeout=180000);p.evaluate(TRAP_RAF)
+  p.evaluate("""()=>{diffKey='furious';debugUnlocked=true;debugStartFight({stage:6,role:'boss',kind:'rebelsquad'},{pilot:'cole',record:false});DBGT.god=true;spawnBoss('rebelsquad');debugFight.spawned=true;warnT=0;BOFCinematicDirector.cancel();setState(GS.PLAY);bossActive=true;window.R=boss._rebels;R.frIntro={done:true,t:0,beat:0};boss._noHit=false;if(R.rough33){R.rough33.phase='combat';R.rough33.resume=1.6;}R.h3Intro=null;R.frRadio=null;R.releaseAt=0;window.G=rg4Init(boss);G.rescueDone=true;G.releaseAt=999;G.rd21.fleet=null;G.rd21.next=999;for(const q of R.ships){q.rg4.act=null;q.rg4.cd=999;q.stun=0;q.x=70+q.i*60;q.y=100;}window.n=R.ships.find(q=>q.key==='nyx');n.x=400;n.y=170;ny46Cloak(n);player.x=400;player.y=440;run.bombs=40;}""")
+  p.evaluate("()=>{window.k=R.ships.find(q=>q.key==='kaia');er28WingReady('right');window.AW=s6Wing;G.ord=[];G.rr26.wall=null;window.realPlay=Snd.play;window.soundCalls=[];Snd.play=function(name,v){soundCalls.push(name);return realPlay.apply(this,arguments)};rd21FleetStart(boss,G,G.rd21);}")
+  ck('New warning pools preloaded through shared mixer',p.evaluate('Object.values(RM49.keys).every(k=>Snd.pools[k]&&Snd.TAME[k].native)'))
+  # Native formation owner assembles then commits the lock and ally break.
+  p.evaluate('()=>{for(let i=0;i<110;i++)rd21Fleet(boss,G,G.rd21,1/60)}')
+  ck('Formation lock directs missiles at player seats',p.evaluate("R.ships.every(q=>q._rd21Volley?.target.ref===player)"))
+  ck('Every living NPC begins breakaway, player remains controlled',p.evaluate("AW.ships.length===4&&AW.ships.every(q=>q.phase==='rm49-evade'&&q._rm49Flight.phase==='out')&&!player._rm49Flight"))
+  ck('Escaping allies excluded from missile and attack target lists',p.evaluate('ra4Targets().every(t=>t.ref===player)'))
+  p.evaluate('()=>{window.oldPlayer={x:player.x,y:player.y};rr26Deploy(G);G.rr26.wall.t=3.1;for(let i=0;i<60;i++){rr26BlockShips(G);s6WingTick(1/60);rr26BlockShips(G)}}')
+  ck('Allies physically boost north off-screen before launch',p.evaluate("AW.ships.every(q=>q.y<=-90&&q._rm49Flight.phase==='hold')"))
+  ck('Active Golden Aegis cannot pin escaping allies below the barrier',p.evaluate("G.rr26.wall._rr45&&AW.ships.every(q=>q.y<=-90&&!q.out)"))
+  ck('Breakaway neither moves player nor changes NPC HP',p.evaluate('player.x===oldPlayer.x&&player.y===oldPlayer.y&&AW.ships.every(q=>q.hp===3)'))
+  p.evaluate("()=>{const s=rr49State();s.beep=0;const now=performance.now();rebelSquadTick(boss,1/60);}")
+  ck('Lock acquisition emits audible seek cue',p.evaluate("soundCalls.includes(RM49.keys.seek)"))
+  p.evaluate('()=>{window.shotStart=eBullets.length;for(let i=0;i<180;i++){rd21Fleet(boss,G,G.rd21,1/60);s6WingTick(1/60)}}')
+  ck('Launch emits one distinct locked-on event per barrage',p.evaluate("RM49.events.filter(e=>e.event==='locked-on').length===1&&soundCalls.includes(RM49.keys.locked)"))
+  ck('Real missile volley remains physical and shootable',p.evaluate('eBullets.slice(shotStart).filter(m=>m._rm49).length===15&&eBullets.slice(shotStart).filter(m=>m._rm49).every(m=>m._shootable&&m.hp===2&&m.lock.ref===player)'))
+  ck('Allies remain offscreen throughout missile fire',p.evaluate("AW.ships.every(q=>q.y<=-90&&q._rm49Flight.phase==='hold')"))
+  p.evaluate("()=>{const m=eBullets.find(m=>m._rm49);eBullets=eBullets.filter(z=>z===m);m.x=player.x;m.y=player.y-150;m.vx=0;m.vy=3;rr49State().clock=2;rr49State().confirmedUntil=0;rr49State().incoming=0;rebelSquadTick(boss,1/60)}")
+  ck('Closing real missile triggers proximity beep',p.evaluate("soundCalls.includes(RM49.keys.incoming)&&RM49.events.some(e=>e.event==='incoming')"))
+  ck('A launched missile keeps its proximity warning after its shooter falls',p.evaluate('(()=>{const m=eBullets[0],was=m.owner.dead;m.owner.dead=true;const yes=Number.isFinite(rr49Threat());m.owner.dead=was;return yes})()'))
+  p.evaluate("()=>{eBullets[0].vy=-3}")
+  ck('Missiles travelling away do not trigger proximity warning',p.evaluate('!Number.isFinite(rr49Threat())'))
+  p.evaluate("()=>{eBullets[0].vy=3;eBullets[0].dead=true}")
+  ck('Destroyed missiles stop proximity warning immediately',p.evaluate('!Number.isFinite(rr49Threat())'))
+  p.evaluate("()=>{eBullets=[];for(let i=0;i<80;i++){rd21Fleet(boss,G,G.rd21,1/60);s6WingTick(1/60)}drawWorld(0)}")
+  ck('Allies stay absent while Riders perform post-volley stunt',p.evaluate("G.rd21.fleet?.phase==='stunt'&&AW.ships.every(q=>q.y<=-90)"))
+  p.screenshot(path=str(W/'allies-offscreen.png'))
+  p.evaluate("()=>{for(let i=0;i<180&&G.rd21.fleet;i++){rd21Fleet(boss,G,G.rd21,1/60);s6WingTick(1/60)}}")
+  ck('Riders settle before allies start returning',p.evaluate("!G.rd21.fleet&&RM49.events.some(e=>e.event==='riders-settled')&&AW.ships.every(q=>q._rm49Flight?.phase==='return')"))
+  p.evaluate("()=>{for(let i=0;i<100;i++)s6WingTick(1/60);drawWorld(0)}")
+  ck('All four allies re-enter and resume native fight state',p.evaluate("AW.ships.length===4&&AW.ships.every(q=>!q._rm49Flight&&q.phase==='fight'&&q.y<VH&&q.hp===3)"))
+  ck('Returned allies regain target-list membership',p.evaluate('ra4Targets().length===5'))
+  p.screenshot(path=str(W/'allies-returned.png'))
+  p.evaluate("()=>{rr49Sound('incoming');setState(GS.PAUSE)}")
+  ck('Pause cancels dedicated warnings without touching player audio',p.evaluate('Object.values(RM49.keys).every(k=>Snd.pools[k].slots.every(s=>!s?.attached||s.el.paused))'))
+  p.evaluate("()=>{setState(GS.PLAY);run._gp4StageX=true}")
+  ck('Stage X retains existing owners',p.evaluate('!rr49Scope()&&ra4Targets().length===RM49.base.targets().length'))
+  p.evaluate("()=>{run._gp4StageX=false;rd21FleetStart(boss,G,G.rd21);for(let i=0;i<110;i++)rd21Fleet(boss,G,G.rd21,1/60);rr49Reset()}")
+  ck('Reset clears ally evade flags and re-arms native arrival',p.evaluate("AW.ships.every(q=>!q._rm49Flight&&q.phase==='arrive')&&RM49.owner===null"))
+  ck('No native errors',not errors,errors);b.close()
+finally:stop()

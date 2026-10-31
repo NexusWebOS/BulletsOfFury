@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "name": "normal opposite-side committed gun corridor survives without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal broad red waves have a reachable safe flank without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard opposite-side committed gun corridor survives without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard broad red waves have a reachable safe flank without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious opposite-side committed gun corridor survives without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious broad red waves have a reachable safe flank without GOD",
+      "passed": true
+    },
+    {
+      "name": "Actual shared warning voice beeps during player Retina arming/approach",
+      "passed": true
+    },
+    {
+      "name": "Owner clear removes detached projectiles and all pending pod launches",
+      "passed": true
+    },
+    {
+      "name": "Living copied-form visit still triggers its native covered return",
+      "passed": true
+    },
+    {
+      "name": "Live return preserves copied HP and main-body protection",
+      "passed": true
+    },
+    {
+      "name": "Destroying both pods leaves native core HP alive",
+      "passed": true
+    },
+    {
+      "name": "Unarmed attack book skips guns and missiles for sonic/charge counters",
+      "passed": true
+    },
+    {
+      "name": "Original Stage1 helicopter remains outside the new controller",
+      "passed": true
+    },
+    {
+      "name": "No browser or native draw errors in boundary pass",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

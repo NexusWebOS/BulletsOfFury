@@ -1,0 +1,3038 @@
+{
+  "checks": [
+    {
+      "name": "easy s1bullet survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s1bullet survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s1bullet survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s1bullet survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s1bullet survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy mg survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy mg survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy mg survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy mg survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy mg survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy bolt survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy bolt survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy bolt survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy bolt survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy bolt survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s2needle survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s2needle survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s2needle survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s2needle survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s2needle survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s2slug survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s2slug survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s2slug survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s2slug survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s2slug survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s3shard survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s3shard survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s3shard survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s3shard survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s3shard survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s4brass survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s4brass survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s4brass survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s4brass survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s4brass survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s4rail survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s4rail survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s4rail survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s4rail survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s4rail survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s6tracer survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s6tracer survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s6tracer survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s6tracer survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s6tracer survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s7shard survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s7shard survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s7shard survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s7shard survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s7shard survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s9needle survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s9needle survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s9needle survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s9needle survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy s9needle survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "easy fresh s1bullet survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "easy fresh s1bullet survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "easy fresh mg survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "easy fresh mg survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "easy fresh s4brass survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "easy fresh s4brass survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "easy fresh emissile is intercepted by chromium",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "easy fresh emissile is intercepted by roller",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "easy fresh s1jungleMissile is intercepted by chromium",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "easy fresh s1jungleMissile is intercepted by roller",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "easy physical emissile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "easy physical s1jungleMissile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "easy physical s2rocket remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "easy physical s4missile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "easy physical s5missile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "easy dedicated fireball mechanic retained",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "normal s1bullet survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s1bullet survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s1bullet survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s1bullet survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s1bullet survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal mg survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal mg survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal mg survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal mg survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal mg survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal bolt survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal bolt survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal bolt survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal bolt survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal bolt survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s2needle survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s2needle survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s2needle survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s2needle survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s2needle survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s2slug survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s2slug survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s2slug survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s2slug survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s2slug survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s3shard survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s3shard survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s3shard survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s3shard survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s3shard survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s4brass survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s4brass survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s4brass survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s4brass survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s4brass survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s4rail survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s4rail survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s4rail survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s4rail survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s4rail survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s6tracer survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s6tracer survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s6tracer survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s6tracer survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s6tracer survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s7shard survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s7shard survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s7shard survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s7shard survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s7shard survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s9needle survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s9needle survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s9needle survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s9needle survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal s9needle survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "normal fresh s1bullet survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "normal fresh s1bullet survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "normal fresh mg survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "normal fresh mg survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "normal fresh s4brass survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "normal fresh s4brass survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "normal fresh emissile is intercepted by chromium",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "normal fresh emissile is intercepted by roller",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "normal fresh s1jungleMissile is intercepted by chromium",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "normal fresh s1jungleMissile is intercepted by roller",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "normal physical emissile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "normal physical s1jungleMissile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "normal physical s2rocket remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "normal physical s4missile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "normal physical s5missile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "normal dedicated fireball mechanic retained",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "hard s1bullet survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s1bullet survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s1bullet survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s1bullet survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s1bullet survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard mg survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard mg survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard mg survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard mg survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard mg survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard bolt survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard bolt survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard bolt survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard bolt survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard bolt survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s2needle survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s2needle survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s2needle survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s2needle survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s2needle survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s2slug survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s2slug survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s2slug survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s2slug survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s2slug survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s3shard survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s3shard survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s3shard survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s3shard survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s3shard survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s4brass survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s4brass survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s4brass survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s4brass survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s4brass survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s4rail survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s4rail survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s4rail survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s4rail survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s4rail survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s6tracer survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s6tracer survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s6tracer survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s6tracer survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s6tracer survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s7shard survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s7shard survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s7shard survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s7shard survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s7shard survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s9needle survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s9needle survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s9needle survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s9needle survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard s9needle survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "hard fresh s1bullet survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "hard fresh s1bullet survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "hard fresh mg survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "hard fresh mg survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "hard fresh s4brass survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "hard fresh s4brass survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "hard fresh emissile is intercepted by chromium",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "hard fresh emissile is intercepted by roller",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "hard fresh s1jungleMissile is intercepted by chromium",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "hard fresh s1jungleMissile is intercepted by roller",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "hard physical emissile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "hard physical s1jungleMissile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "hard physical s2rocket remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "hard physical s4missile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "hard physical s5missile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "hard dedicated fireball mechanic retained",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "furious s1bullet survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s1bullet survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s1bullet survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s1bullet survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s1bullet survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious mg survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious mg survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious mg survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious mg survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious mg survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious bolt survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious bolt survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious bolt survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious bolt survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious bolt survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s2needle survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s2needle survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s2needle survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s2needle survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s2needle survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s2slug survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s2slug survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s2slug survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s2slug survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s2slug survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s3shard survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s3shard survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s3shard survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s3shard survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s3shard survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s4brass survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s4brass survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s4brass survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s4brass survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s4brass survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s4rail survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s4rail survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s4rail survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s4rail survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s4rail survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s6tracer survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s6tracer survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s6tracer survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s6tracer survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s6tracer survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s7shard survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s7shard survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s7shard survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s7shard survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s7shard survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s9needle survives mg",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s9needle survives beam",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s9needle survives gmiss",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s9needle survives iceorb",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious s9needle survives flame",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "alive": true,
+        "intercept": false,
+        "proof": true,
+        "shootable": false
+      }
+    },
+    {
+      "name": "furious fresh s1bullet survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "furious fresh s1bullet survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "furious fresh mg survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "furious fresh mg survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "furious fresh s4brass survives chromium",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "furious fresh s4brass survives roller",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "intercept": false
+      }
+    },
+    {
+      "name": "furious fresh emissile is intercepted by chromium",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "furious fresh emissile is intercepted by roller",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "furious fresh s1jungleMissile is intercepted by chromium",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "furious fresh s1jungleMissile is intercepted by roller",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "intercept": true
+      }
+    },
+    {
+      "name": "furious physical emissile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "furious physical s1jungleMissile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "furious physical s2rocket remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "furious physical s4missile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "furious physical s5missile remains shootable",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "furious dedicated fireball mechanic retained",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "alive": false,
+        "intercept": true,
+        "proof": false,
+        "shootable": true
+      }
+    },
+    {
+      "name": "All 117 recorded campaign projectile variants keep non-ordnance unshootable",
+      "passed": true,
+      "data": {
+        "families": 117,
+        "ordinary": 86
+      }
+    },
+    {
+      "name": "Actual Stage1 patrol boat releases protected spread fire",
+      "passed": true,
+      "data": {
+        "count": 3,
+        "ordinary": true,
+        "triples": true
+      }
+    },
+    {
+      "name": "Actual boat spread survives crossing machine-gun fire",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page or console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "passed": 288,
+  "failed": 0,
+  "errors": []
+}

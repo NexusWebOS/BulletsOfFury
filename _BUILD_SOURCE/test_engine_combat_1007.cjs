@@ -23,9 +23,9 @@ module.exports=function(vm,c,ok){
  coopOn=true;run2.pilot='yuri';run2.weapon=7;run2.wlevel=1;run2.wlevels=WEAPONS.map(()=>1);player2.reset();player2._chainSpinT=10;
  withSeat(2,()=>chaingunHeatTick(.1,true));out['P2 rotating barrel does not change P1 clock']=player._chainSpinT===t&&player2._chainSpinT>10;
  coopOn=false;player.x=160;player.y=400;player._vx=player._vy=0;run.stage=4;
- eBullets=Array.from({length:8},(_,i)=>({x:160,y:230+i*5,vx:0,vy:5,w:7,h:9}));pw5Collect();out['ordinary incoming warnings work outside Stage6 with bounded count']=PW5.threats.length===2;
+ eBullets=Array.from({length:8},(_,i)=>({x:160,y:230+i*5,vx:0,vy:5,w:7,h:9}));pw5Collect();out['bullet asterisks remain disabled outside Stage6']=PW5.threats.length===0;
  const moving={x:160,y:400,_vx:0,_vy:6};out['pilot outrunning a round gets no false threat']=pw5Impact(eBullets[0],moving)===null;
- const old=PW5.threats[0].p;old.dead=true;pw5Collect();out['dead rounds leave warning list immediately']=!PW5.threats.some(q=>q.p===old);
+ const old=eBullets[0];old.dead=true;PW5.threats=[{p:old,t:.1}];pw5Collect();out['obsolete warning references are cleared immediately']=PW5.threats.length===0;
  const a={x:160,y:100,vx:0,vy:4,w:10,h:100,_hammerLaser:true};out['long beams use their own lane warning instead of pellet asterisks']=pw5Impact(a,player)===null;
  beginStage(1);return out;
  })())`,c));for(const [name,value] of Object.entries(out))ok(value,name);

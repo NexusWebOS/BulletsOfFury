@@ -1,0 +1,250 @@
+{
+  "checks": [
+    {
+      "name": "Broken-core glow follows the held physical fragment",
+      "ok": true,
+      "data": {
+        "effectError": 0,
+        "releaseError": 0,
+        "frames": [
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "name": "Luminaire releases the core at its actual hand position",
+      "ok": true,
+      "data": {
+        "effectError": 0,
+        "releaseError": 0,
+        "frames": [
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "name": "Launched core never leaves a duplicate hammer in the hands",
+      "ok": true,
+      "data": {
+        "effectError": 0,
+        "releaseError": 0,
+        "frames": [
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "name": "Purple ball transition never restores a retired held hammer",
+      "ok": true,
+      "data": [
+        {
+          "u": 0,
+          "canonical": true,
+          "frame": 0,
+          "bank": "corrupt_jump"
+        },
+        {
+          "u": 0.25,
+          "canonical": true,
+          "frame": 0,
+          "bank": "corrupt_jump"
+        },
+        {
+          "u": 0.54,
+          "canonical": true,
+          "frame": 0,
+          "bank": "corrupt_jump"
+        },
+        {
+          "u": 0.7,
+          "canonical": true,
+          "frame": 6,
+          "bank": "corrupt_jump"
+        },
+        {
+          "u": 0.81,
+          "canonical": true,
+          "frame": 6,
+          "bank": "corrupt_jump"
+        },
+        {
+          "u": 0.85,
+          "canonical": false,
+          "frame": 7,
+          "bank": "corrupt_ball"
+        },
+        {
+          "u": 0.96,
+          "canonical": false,
+          "frame": 8,
+          "bank": "corrupt_ball"
+        },
+        {
+          "u": 1.2,
+          "canonical": false,
+          "frame": 8,
+          "bank": "corrupt_ball"
+        }
+      ]
+    },
+    {
+      "name": "Red ball transition never restores a retired held hammer",
+      "ok": true,
+      "data": [
+        {
+          "u": 0,
+          "canonical": true,
+          "frame": 0,
+          "bank": "corrupt_jump_red"
+        },
+        {
+          "u": 0.25,
+          "canonical": true,
+          "frame": 0,
+          "bank": "corrupt_jump_red"
+        },
+        {
+          "u": 0.54,
+          "canonical": true,
+          "frame": 0,
+          "bank": "corrupt_jump_red"
+        },
+        {
+          "u": 0.7,
+          "canonical": true,
+          "frame": 6,
+          "bank": "corrupt_jump_red"
+        },
+        {
+          "u": 0.81,
+          "canonical": true,
+          "frame": 6,
+          "bank": "corrupt_jump_red"
+        },
+        {
+          "u": 0.85,
+          "canonical": false,
+          "frame": 7,
+          "bank": "corrupt_ball"
+        },
+        {
+          "u": 0.96,
+          "canonical": false,
+          "frame": 8,
+          "bank": "corrupt_ball"
+        },
+        {
+          "u": 1.2,
+          "canonical": false,
+          "frame": 8,
+          "bank": "corrupt_ball"
+        }
+      ]
+    },
+    {
+      "name": "normal red punch preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "normal red fists preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "hard red punch preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "hard red fists preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "furious red punch preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "furious red fists preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "Red code punch visibly uses authored white hit feedback",
+      "ok": true,
+      "data": {
+        "white": 35999,
+        "bank": "corrupt_punch"
+      }
+    },
+    {
+      "name": "Detached code hammer visibly flashes on its native part hit",
+      "ok": true,
+      "data": 4430
+    },
+    {
+      "name": "Stage5 detached hammer flash survives whole-body render suppression",
+      "ok": true,
+      "data": 3714
+    },
+    {
+      "name": "No page console or renderer errors",
+      "ok": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

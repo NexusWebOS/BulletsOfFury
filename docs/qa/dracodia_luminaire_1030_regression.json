@@ -1,0 +1,13 @@
+{
+  "exitCode": 1,
+  "knownBaselineFailures": [
+    "ASSERT FAIL: and the flash is held long enough for a single hit to register",
+    "ASSERT FAIL: dialogue ends with the opening jump warning",
+    "ASSERT FAIL: opening jump lands and returns before chromium activation",
+    "ASSERT FAIL: unchosen right route persists as the opposite Stage X fight",
+    "ASSERT FAIL: Stage X right branch launches a full encounter"
+  ],
+  "newFailures": [],
+  "coreUnchanged": true,
+  "coreSHA256": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de"
+}

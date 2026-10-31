@@ -1,0 +1,41 @@
+{
+  "build": "overdrive1018-gosfar45-r2",
+  "native": {
+    "passed": 366,
+    "failed": 0
+  },
+  "required_full_suite": "node _BUILD_SOURCE/test_fl.js: BUILD OK, 0 ERRORS, exit 0",
+  "chromium": {
+    "real_inputs": [
+      "Yuri mouse aim/fire reduced boss HP",
+      "F prone",
+      "Space prone roll",
+      "Hotwire Tab Desert Eagle",
+      "R reload",
+      "J firing consumed pistol magazine",
+      "D movement"
+    ],
+    "verified": [
+      "hack to combat input lock",
+      "three distinct corner grenade targets",
+      "15% lift reinforcement arrival",
+      "shared cabin escape",
+      "clear state and Overdrive results"
+    ],
+    "console_errors": 0,
+    "method": "Protected fixtures and clock advances through actual production modules; no unprotected full-clear or human balance claim."
+  },
+  "art": {
+    "banks": 192,
+    "registered_cells": 1309,
+    "unique_warning": "Counts include intentional whole-pose holds and aliases; not 1309 unique drawings.",
+    "low_stance_holds": [
+      "rifle/south",
+      "eagle/north",
+      "eagle/south",
+      "eagle/east",
+      "eagle/west"
+    ]
+  },
+  "no_publish": true
+}

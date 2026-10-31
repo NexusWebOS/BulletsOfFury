@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Review images resolve without broken placeholders",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Furious screenshot switch works",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Native film 1 plays and seeks",
+    "passed": true,
+    "data": 70.324
+  },
+  {
+    "name": "Native film 2 plays and seeks",
+    "passed": true,
+    "data": 23.240333
+  },
+  {
+    "name": "Native film 3 plays and seeks",
+    "passed": true,
+    "data": 104.046
+  },
+  {
+    "name": "Mobile review has no horizontal page overflow",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Review has no browser errors",
+    "passed": true,
+    "data": []
+  },
+  {
+    "name": "Existing gallery selects the updated main encounters",
+    "passed": true,
+    "data": null
+  }
+]

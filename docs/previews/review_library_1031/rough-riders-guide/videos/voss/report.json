@@ -1,0 +1,6676 @@
+{
+  "id": "voss",
+  "setup": {
+    "health": [
+      {
+        "key": "voss",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "nyx",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "rook",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "kaia",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "jace",
+        "hp": 1424,
+        "max": 1424
+      }
+    ],
+    "view": {
+      "width": 480,
+      "height": 512
+    },
+    "key": "voss"
+  },
+  "timeline": [
+    {
+      "t": 0.26666666666666666,
+      "wall": 0.4400999999642372,
+      "label": "Voss / cruise and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 180.23437677496946,
+          "y": 134.10609645078097,
+          "heading": 1.6484387894857913,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.73575065699583,
+          "y": 188.7279442809899,
+          "heading": 1.730467430472042,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.26666666666666666,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 356.0115617893212,
+          "y": 138.7283834489154,
+          "heading": 1.6656951950985468,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 420.56641685364514,
+          "y": 171.78459173864698,
+          "heading": 1.5136733778552294,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.4393016514203,
+          "y": 115.79703155525159,
+          "heading": 1.414170136431066,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 12
+    },
+    {
+      "t": 0.6833333333333338,
+      "wall": 0.8530999999642372,
+      "label": "Voss / cruise and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 186.3968516394208,
+          "y": 140.44185402491993,
+          "heading": 1.7248940893497138,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.99417787751884,
+          "y": 187.97059704643627,
+          "heading": 1.690286668554359,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.6833333333333338,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 351.20894918290156,
+          "y": 131.57423296043206,
+          "heading": 1.5458203786032985,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 414.1182643022422,
+          "y": 164.81113096229015,
+          "heading": 1.424316860237107,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.27401087361494,
+          "y": 115.4156281690417,
+          "heading": 1.437485887899477,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 37
+    },
+    {
+      "t": 1.100000000000001,
+      "wall": 1.2703999999761582,
+      "label": "Voss / cruise and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.4147775779794,
+          "y": 142.99336162847672,
+          "heading": 1.7097106601461944,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.0515238854319,
+          "y": 182.92338722628182,
+          "heading": 1.5790474897386617,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 345.1723869932222,
+          "y": 123.56868714881575,
+          "heading": 1.4407982381728188,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.53778135312876,
+          "y": 161.20751105894595,
+          "heading": 1.4220686297692127,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.2802774527666,
+          "y": 119.52708569415961,
+          "heading": 1.540078580118104,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 62
+    },
+    {
+      "t": 1.5166666666666662,
+      "wall": 1.6871999999880791,
+      "label": "Voss / cruise and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 194.7357506569958,
+          "y": 140.91674006559103,
+          "heading": 1.6119177709056718,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 274.01156178932126,
+          "y": 175.2556162791751,
+          "heading": 1.462901516217065,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 338.56641685364514,
+          "y": 117.35948006452043,
+          "heading": 1.4130832527913042,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.4393016514203,
+          "y": 162.16558419553758,
+          "heading": 1.5082656622733412,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.45741152556997,
+          "y": 126.7715910282365,
+          "heading": 1.660938476341562,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 87
+    },
+    {
+      "t": 1.9333333333333313,
+      "wall": 2.101699999988079,
+      "label": "Voss / cruise and drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.9941778775188,
+          "y": 134.8988059195846,
+          "heading": 1.4896708155369096,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 269.20894918290156,
+          "y": 167.50330344796095,
+          "heading": 1.4109183387698598,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 332.1182643022422,
+          "y": 115.00022921349455,
+          "heading": 1.4791569468779113,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.27401087361494,
+          "y": 167.36847967689042,
+          "heading": 1.631648378264986,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 490.56574087672635,
+          "y": 134.7531147307941,
+          "heading": 1.7281927141640738,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 112
+    },
+    {
+      "t": 2.33333333333333,
+      "wall": 2.509199999988079,
+      "label": "Voss / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.13097474968734,
+          "y": 127.25352563895748,
+          "heading": 1.4169857688736502,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 263.4295140832457,
+          "y": 162.36780693940148,
+          "heading": 1.4506070944520006,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 326.736183208155,
+          "y": 117.09606828341673,
+          "heading": 1.5947298459653663,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.2375443222615,
+          "y": 174.76874954986488,
+          "heading": 1.7168482303284809,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 495.90841604724693,
+          "y": 140.65404141370118,
+          "heading": 1.70468716813568,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 136
+    },
+    {
+      "t": 2.7666666666666617,
+      "wall": 2.9345,
+      "label": "Voss / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 192.0115617893213,
+          "y": 119.64567972343536,
+          "heading": 1.4339160822875994,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 256.5664168536452,
+          "y": 161.18093053196458,
+          "heading": 1.5665538415999694,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.4393016514203,
+          "y": 123.42137007950154,
+          "heading": 1.7030921222353326,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.4574115255699,
+          "y": 182.7907762487748,
+          "heading": 1.7179982586560782,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 502.60409634131884,
+          "y": 142.99737866392996,
+          "heading": 1.597567617780143,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 162
+    },
+    {
+      "t": 3.1666666666666603,
+      "wall": 3.3455,
+      "label": "Voss / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 187.42879696470504,
+          "y": 115.54157618189096,
+          "heading": 1.528656391732468,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 250.36404382407187,
+          "y": 164.48344216999658,
+          "heading": 1.677909896164183,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.3197535765709,
+          "y": 131.09418292741606,
+          "heading": 1.72868367889731,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.3693911306642,
+          "y": 187.7795415591886,
+          "heading": 1.6342965582423077,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 508.95094761845144,
+          "y": 140.7154486173186,
+          "heading": 1.4815276176408767,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 186
+    },
+    {
+      "t": 3.599999999999992,
+      "wall": 3.767399999976158,
+      "label": "Voss / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 181.17238699322235,
+          "y": 115.74460714170343,
+          "heading": 1.6553538851857634,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 244.53778135312885,
+          "y": 171.6288640481216,
+          "heading": 1.7307806881625725,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.2802774527666,
+          "y": 138.61252780190682,
+          "heading": 1.6591186071036237,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 414.1529955201708,
+          "y": 188.7584778250621,
+          "heading": 1.5062534288478955,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 515.2402133180148,
+          "y": 134.25494678632663,
+          "heading": 1.412728693309816,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 212
+    },
+    {
+      "t": 4.016666666666658,
+      "wall": 4.185399999976158,
+      "label": "Voss / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 174.56641685364525,
+          "y": 120.41800131956828,
+          "heading": 1.7268586692567882,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.43930165142035,
+          "y": 179.67077297167202,
+          "heading": 1.6848026788754875,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.4574115255699,
+          "y": 142.6292574939937,
+          "heading": 1.5379297741585214,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 420.6040963413188,
+          "y": 185.0570655308788,
+          "heading": 1.4212742263635654,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 520.0341685433197,
+          "y": 126.23845389920791,
+          "heading": 1.4420886081486803,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 237
+    },
+    {
+      "t": 4.433333333333323,
+      "wall": 4.600899999976158,
+      "label": "Voss / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 168.11826430224235,
+          "y": 127.92978411725186,
+          "heading": 1.7055564295177945,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.27401087361494,
+          "y": 186.16788221134695,
+          "heading": 1.571027467104271,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 326.56574087672624,
+          "y": 142.1382809036572,
+          "heading": 1.4362859953562668,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 427.20886676251524,
+          "y": 178.02940472343172,
+          "heading": 1.4252127020067633,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.0629845687675,
+          "y": 119.13530781129879,
+          "heading": 1.5479883218941854,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "voss"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 262
+    },
+    {
+      "t": 4.849999999999988,
+      "wall": 5.017,
+      "label": "Voss / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.5377813531289,
+          "y": 135.79552741941185,
+          "heading": 1.6041151641512796,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.28027745276657,
+          "y": 188.9713542277441,
+          "heading": 1.4571148010064232,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 332.15299552017075,
+          "y": 137.30198239128958,
+          "heading": 1.4146327084022725,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 433.2402133180147,
+          "y": 169.9998062308368,
+          "heading": 1.5157267263628758,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.9932308281755,
+          "y": 115.29478516217767,
+          "heading": 1.6674514809942047,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "voss"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 287
+    },
+    {
+      "t": 5.266666666666653,
+      "wall": 5.434099999964237,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 160.86395009384157,
+          "y": 138.19781238206286,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "charge",
+            "t": 0.26666666666666666,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.45741152556985,
+          "y": 187.1539757499659,
+          "heading": 1.410806169963902,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 338.6040963413187,
+          "y": 129.71990714102733,
+          "heading": 1.4858466719444186,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 438.0341685433196,
+          "y": 163.6239592266501,
+          "heading": 1.6389894948290593,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 522.7225001319492,
+          "y": 115.98709073599083,
+          "heading": 1.729435833511998,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "voss"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 312
+    },
+    {
+      "t": 5.666666666666652,
+      "wall": 5.8410999999642375,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 160.86395009384157,
+          "y": 138.19781238206286,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "charge",
+            "t": 0.6666666666666671,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 244.36939113066413,
+          "y": 181.60660054456085,
+          "heading": 1.4560523591410461,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 344.9509476184513,
+          "y": 122.18317673834966,
+          "heading": 1.6026298424839012,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 440.9806256982991,
+          "y": 161.02710880150863,
+          "heading": 1.7199397383100645,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 519.5596040447708,
+          "y": 120.7176525932713,
+          "heading": 1.700127869399264,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "voss"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 336
+    },
+    {
+      "t": 6.083333333333317,
+      "wall": 6.260800000011921,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 160.86395009384157,
+          "y": 138.19781238206286,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "charge",
+            "t": 1.0833333333333344,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 249.90841604724676,
+          "y": 173.71536770599047,
+          "heading": 1.5695103756758155,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 351.0186527421421,
+          "y": 116.5750163607043,
+          "heading": 1.7047325334529364,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.9983909210326,
+          "y": 162.85813767263878,
+          "heading": 1.7168143605071189,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 514.5917007144307,
+          "y": 128.30443121328216,
+          "heading": 1.5946478807629476,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "voss"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 361
+    },
+    {
+      "t": 6.499999999999982,
+      "wall": 6.667599999964237,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 307.56073608228803,
+          "y": 383.70963079547437,
+          "heading": 1.032206660661302,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "fire",
+            "t": 0.35,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 256.3382119436498,
+          "y": 166.24901091549992,
+          "heading": 1.683733120550839,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 355.8733572769829,
+          "y": 115.07626376514412,
+          "heading": 1.727186152619967,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 440.8146111335956,
+          "y": 168.70493549651528,
+          "heading": 1.6268551000541587,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 508.45779828200523,
+          "y": 136.12126050121293,
+          "heading": 1.4749838698820632,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "voss"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 386
+    },
+    {
+      "t": 6.916666666666647,
+      "wall": 7.084199999988079,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 36,
+          "y": 432,
+          "heading": 0,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "row",
+            "t": 0.05,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 262.9509476184512,
+          "y": 161.67693420527075,
+          "heading": 1.7307947069952545,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 358.9806256982991,
+          "y": 118.18261260877274,
+          "heading": 1.6566380004433685,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 437.5596040447709,
+          "y": 176.6337470928312,
+          "heading": 1.503558855018238,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 501.83315418927083,
+          "y": 141.58282203415138,
+          "heading": 1.4122975310630794,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "voss"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 411
+    },
+    {
+      "t": 7.333333333333313,
+      "wall": 7.501,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 36,
+          "y": 432,
+          "heading": 0,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "row",
+            "t": 0.4666666666666666,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 269.018652742142,
+          "y": 161.51129470635018,
+          "heading": 1.6827085899861933,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.9983909210326,
+          "y": 124.8666769020017,
+          "heading": 1.5350415932905197,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 432.5917007144307,
+          "y": 184.02221729215677,
+          "heading": 1.4202473336873684,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 495.4470497171117,
+          "y": 142.8827727119897,
+          "heading": 1.4438671240550254,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "voss"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 436
+    },
+    {
+      "t": 7.749999999999978,
+      "wall": 7.917599999964237,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 36,
+          "y": 432,
+          "heading": 0,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "row",
+            "t": 0.8833333333333344,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 273.87335727698286,
+          "y": 165.80687560925546,
+          "heading": 1.568070581529239,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 358.8146111335956,
+          "y": 132.91778606208,
+          "heading": 1.434707781273149,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 426.4577982820053,
+          "y": 188.42670207722432,
+          "heading": 1.4264641621652714,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 490.0025062481294,
+          "y": 139.59117012297767,
+          "heading": 1.5509188695959912,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 461
+    },
+    {
+      "t": 8.166666666666652,
+      "wall": 8.334399999976158,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 322,
+          "y": 432,
+          "heading": 0,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "fire",
+            "t": 0.36666666666666664,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.9806256982991,
+          "y": 173.14296730957744,
+          "heading": 1.455053516996226,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 355.5596040447708,
+          "y": 139.67313653148793,
+          "heading": 1.4153029921402822,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 419.8331541892708,
+          "y": 188.39047324803937,
+          "heading": 1.5185123220715384,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.0988923792337,
+          "y": 132.79667061367468,
+          "heading": 1.6697913248254086,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 486
+    },
+    {
+      "t": 8.58333333333334,
+      "wall": 8.75269999998808,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 647,
+          "y": 432,
+          "heading": 0,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "fire",
+            "t": 0.7833333333333341,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.9983909210326,
+          "y": 181.09324932283292,
+          "heading": 1.4108662901766067,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 350.5917007144304,
+          "y": 142.898480717182,
+          "heading": 1.4883668497286122,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 413.4470497171113,
+          "y": 183.9255130362817,
+          "heading": 1.6416526903523496,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.165941765929,
+          "y": 124.74646983193631,
+          "heading": 1.7297935170922272,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 511
+    },
+    {
+      "t": 9.000000000000027,
+      "wall": 9.173099999964236,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 644,
+          "y": 406,
+          "heading": 3.141592653589793,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "row",
+            "t": 0.3833333333333333,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.8146111335953,
+          "y": 187.0282654079912,
+          "heading": 1.4617861243060224,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 344.45779828200455,
+          "y": 141.52707640996684,
+          "heading": 1.6104498000721779,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.00250624812884,
+          "y": 176.50855113219168,
+          "heading": 1.7226562553785623,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.4164454169737,
+          "y": 118.10307090051951,
+          "heading": 1.6952433926830663,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 536
+    },
+    {
+      "t": 9.416666666666714,
+      "wall": 9.58880000001192,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 644,
+          "y": 406,
+          "heading": 3.141592653589793,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "row",
+            "t": 0.8000000000000008,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 273.5596040447702,
+          "y": 188.9850832992892,
+          "heading": 1.5775320548423355,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 337.83315418926975,
+          "y": 136.01249841493367,
+          "heading": 1.7089516559598938,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.09889237923323,
+          "y": 168.59265482768149,
+          "heading": 1.7133518845790974,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.82282636054225,
+          "y": 115.06369484287276,
+          "heading": 1.5866871908001443,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 561
+    },
+    {
+      "t": 9.816666666666734,
+      "wall": 9.99430000001192,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 436,
+          "y": 406,
+          "heading": 3.141592653589793,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "fire",
+            "t": 0.26666666666666666,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 268.81695436932023,
+          "y": 186.5057339411027,
+          "heading": 1.6858083367312189,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.6888549793654,
+          "y": 128.50492232680728,
+          "heading": 1.726534870179817,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.201983992573,
+          "y": 162.95928284207758,
+          "heading": 1.6240761050654098,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 490.9173176197803,
+          "y": 116.48382318372958,
+          "heading": 1.4726321575213792,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 585
+    },
+    {
+      "t": 10.250000000000089,
+      "wall": 10.418,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 98,
+          "y": 406.00000000000006,
+          "heading": 3.141592653589793,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "fire",
+            "t": 0.7000000000000005,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 262.4577982820035,
+          "y": 179.90514266018334,
+          "heading": 1.7305574761043097,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 326.0025062481281,
+          "y": 120.61641002012533,
+          "heading": 1.6497617860764178,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.41644541697394,
+          "y": 161.03551134465798,
+          "heading": 1.4963656169529687,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 496.8354143552648,
+          "y": 122.29349913837314,
+          "heading": 1.4114006992033832,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 611
+    },
+    {
+      "t": 10.666666666666776,
+      "wall": 10.83430000001192,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": -10,
+          "y": 198.00000000000006,
+          "heading": -1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "return",
+            "t": 0.3,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 255.83315418926873,
+          "y": 171.8714608183644,
+          "heading": 1.6768359367892511,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.0988923792328,
+          "y": 115.82696310309038,
+          "heading": 1.527269042820367,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.82282636054276,
+          "y": 163.89369476026292,
+          "heading": 1.4177209330013107,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 503.33937456937485,
+          "y": 130.1715122354989,
+          "heading": 1.4489096342927301,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 636
+    },
+    {
+      "t": 11.083333333333464,
+      "wall": 11.261399999976158,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 42,
+          "y": -64,
+          "heading": 0,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "return",
+            "t": 0.7166666666666672,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 249.4470497171095,
+          "y": 164.87250414261425,
+          "heading": 1.5600548505373322,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.1659417659288,
+          "y": 115.39433321772195,
+          "heading": 1.43066106853859,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 409.1201754857072,
+          "y": 170.42514958670898,
+          "heading": 1.4301069967138416,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 509.91606046557246,
+          "y": 137.66206232767215,
+          "heading": 1.5589020461435275,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 661
+    },
+    {
+      "t": 11.516666666666818,
+      "wall": 11.684300000011921,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 154,
+          "y": 4,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "return",
+            "t": 1.1500000000000008,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 243.81328525435117,
+          "y": 161.16876111368012,
+          "heading": 1.4464126889921725,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.47231917796955,
+          "y": 119.70329925241673,
+          "heading": 1.4189046620194523,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 415.08501279284866,
+          "y": 178.7851811845493,
+          "heading": 1.5310451311569746,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 516.0553137558853,
+          "y": 142.38698499186464,
+          "heading": 1.6797326662419712,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 687
+    },
+    {
+      "t": 11.933333333333506,
+      "wall": 12.10080000001192,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 154,
+          "y": 104,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "turbo",
+            "phase": "return",
+            "t": 1.566666666666666,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.98156575460385,
+          "y": 162.26229265606648,
+          "heading": 1.4117878915437876,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.96093918176643,
+          "y": 127.00635079536437,
+          "heading": 1.4998495312179743,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 421.60594654555797,
+          "y": 185.5833608192199,
+          "heading": 1.6531393275576722,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 520.6132448380929,
+          "y": 142.43007771355371,
+          "heading": 1.7307233487402782,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 712
+    },
+    {
+      "t": 12.350000000000193,
+      "wall": 12.51719999998808,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 167.2067649568222,
+          "y": 115.0008844176603,
+          "heading": 1.4115476032446759,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.13342554184416,
+          "y": 167.5686614306519,
+          "heading": 1.4717220979111272,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 327.32532306429243,
+          "y": 134.96877685292847,
+          "heading": 1.6229849817091004,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 428.17026010916277,
+          "y": 188.88122636304735,
+          "heading": 1.7262658568592677,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.3422884652813,
+          "y": 138.03134037153572,
+          "heading": 1.6866087630527244,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 737
+    },
+    {
+      "t": 12.750000000000213,
+      "wall": 12.921899999976159,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.00250624812668,
+          "y": 117.2227664868136,
+          "heading": 1.4446978603063616,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.41644541697434,
+          "y": 175.00621709825717,
+          "heading": 1.5855367983844082,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 332.83541435526666,
+          "y": 140.78395173823472,
+          "heading": 1.7128234148622252,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 433.84147029414726,
+          "y": 187.72757549455702,
+          "heading": 1.7095309815624151,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.960533054327,
+          "y": 130.96952503740525,
+          "heading": 1.578686546476989,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 761
+    },
+    {
+      "t": 13.150000000000233,
+      "wall": 13.328099999964238,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.2194013758463,
+          "y": 123.0424730070487,
+          "heading": 1.547243631524933,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.68776721383873,
+          "y": 182.4418735058962,
+          "heading": 1.6912394049254276,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 339.0729200359758,
+          "y": 142.9992498233808,
+          "heading": 1.7245003677444248,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 438.3104259015884,
+          "y": 182.68578041409737,
+          "heading": 1.6164465441569278,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 522.5522014126635,
+          "y": 123.30603993688518,
+          "heading": 1.4664221212535429,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 785
+    },
+    {
+      "t": 13.583333333333588,
+      "wall": 13.751399999976158,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.1659417659285,
+          "y": 131.32867657806528,
+          "heading": 1.6708538415707488,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 245.1201754857087,
+          "y": 187.87467311948322,
+          "heading": 1.7299185581482224,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 345.91606046557433,
+          "y": 140.58375456944543,
+          "heading": 1.6426870290492153,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.2727467367016,
+          "y": 174.6427854894807,
+          "heading": 1.4893595198385474,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 518.9101585389308,
+          "y": 117.03023778310829,
+          "heading": 1.4109046353784698,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 811
+    },
+    {
+      "t": 13.983333333333608,
+      "wall": 14.158,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.36405312521612,
+          "y": 138.30599398097286,
+          "heading": 1.7293361386692148,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 250.58708960292967,
+          "y": 188.82930860231772,
+          "heading": 1.6746036123457193,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 351.6255217133219,
+          "y": 134.6380206718159,
+          "heading": 1.5244311464186224,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.97550277432623,
+          "y": 167.263162536711,
+          "heading": 1.4168866135054874,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 513.9600987063659,
+          "y": 115.0015170851,
+          "heading": 1.4508459611996267,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 835
+    },
+    {
+      "t": 14.400000000000295,
+      "wall": 14.567,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.68776721383924,
+          "y": 142.52819106780646,
+          "heading": 1.697541321799514,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 257.07292003597684,
+          "y": 185.34188441584894,
+          "heading": 1.5571065065214609,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 356.31042590158904,
+          "y": 126.64729692600345,
+          "heading": 1.429258048868964,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 440.5522014126631,
+          "y": 162.11577379234427,
+          "heading": 1.4315392312043582,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 507.7371685027951,
+          "y": 117.42994881535034,
+          "heading": 1.5618527450086934,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 860
+    },
+    {
+      "t": 14.816666666666983,
+      "wall": 14.9835,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.91731761978335,
+          "y": 142.27610832736008,
+          "heading": 1.5903738968833352,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 263.6608090934845,
+          "y": 178.43401143574872,
+          "heading": 1.4477504516133262,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.19977879279463,
+          "y": 119.43470026686512,
+          "heading": 1.4182548165301263,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 437.08656041432585,
+          "y": 161.22968155998592,
+          "heading": 1.5290051425031392,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 501.10282796616383,
+          "y": 123.68503012177854,
+          "heading": 1.6781780905840735,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 885
+    },
+    {
+      "t": 15.23333333333367,
+      "wall": 15.40069999998808,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 168.5870896029306,
+          "y": 137.63311897004527,
+          "heading": 1.4715640988957417,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 269.6255217133227,
+          "y": 170.39038216594145,
+          "heading": 1.4115672152567913,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.9755027743262,
+          "y": 115.38570674012928,
+          "heading": 1.4979648424433045,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 431.960098706365,
+          "y": 164.89794975191208,
+          "heading": 1.6513234004630728,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 494.7874258211204,
+          "y": 131.6979711737953,
+          "heading": 1.730645738321947,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 910
+    },
+    {
+      "t": 15.650000000000357,
+      "wall": 15.817099999964237,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 175.0729200359778,
+          "y": 130.1348335971306,
+          "heading": 1.4117656395314153,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 274.3104259015896,
+          "y": 163.87132628388596,
+          "heading": 1.4700742143065015,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 358.5522014126628,
+          "y": 115.83947026272824,
+          "heading": 1.6209862347995978,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 425.73716850279413,
+          "y": 171.90734458912573,
+          "heading": 1.7257538853357914,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 489.48620010629213,
+          "y": 138.81859203776986,
+          "heading": 1.6880542711728803,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 935
+    },
+    {
+      "t": 16.000000000000373,
+      "wall": 16.232,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 180.6301965020366,
+          "y": 123.43422043629323,
+          "heading": 1.4348012794542637,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.8739133888841,
+          "y": 161.18318218630975,
+          "heading": 1.5682481887789934,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 355.76504134750263,
+          "y": 119.63526251471309,
+          "heading": 1.7040378444442037,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 420.1618629954404,
+          "y": 178.69723929938962,
+          "heading": 1.7173258632573825,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.2486593283672,
+          "y": 142.35999132289993,
+          "heading": 1.595895302002531,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 954
+    },
+    {
+      "t": 16.43333333333368,
+      "wall": 16.65019999998808,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 186.96543098939622,
+          "y": 117.10344689561892,
+          "heading": 1.5401715599127548,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.99909755893856,
+          "y": 162.36177441378302,
+          "heading": 1.6863958039092173,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 350.64568606335655,
+          "y": 127.23962825175157,
+          "heading": 1.726338421761075,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 413.5046798962212,
+          "y": 185.73595975668948,
+          "heading": 1.6232763548201508,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.17423185432415,
+          "y": 142.36169937274218,
+          "heading": 1.4719643921368568,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 980
+    },
+    {
+      "t": 16.83333333333366,
+      "wall": 17.06019999998808,
+      "label": "Voss / turbo pursuit and lateral passes",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.6702180872462,
+          "y": 115.0001560651461,
+          "heading": 1.656787849512144,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.92408671192607,
+          "y": 167.4914770259145,
+          "heading": 1.7307954076830345,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 344.7792372865583,
+          "y": 134.8860993817293,
+          "heading": 1.6577005487589376,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.24037914051087,
+          "y": 188.86906911112024,
+          "heading": 1.5047063489404546,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.352052956935,
+          "y": 138.1008806602364,
+          "heading": 1.412474969971797,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Voss / cruise and drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        }
+      ],
+      "frames": 1004
+    },
+    {
+      "t": 17.266666666666968,
+      "wall": 17.48430000001192,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.04525856604846,
+          "y": 115.32149995967242,
+          "heading": 1.1027124833522406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "charge",
+            "t": 0.2833333333333333,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 273.5995508978016,
+          "y": 175.56813341391867,
+          "heading": 1.6799582937869162,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 337.89649622166763,
+          "y": 141.07785335963243,
+          "heading": 1.5313438708752123,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.12739321852774,
+          "y": 187.48325062637466,
+          "heading": 1.4190018539917437,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.7902824665244,
+          "y": 130.41160483668781,
+          "heading": 1.4462189753674166,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1030
+    },
+    {
+      "t": 17.68333333333361,
+      "wall": 17.90169999998808,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.04525856604846,
+          "y": 115.32149995967242,
+          "heading": 1.1027124833522406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "charge",
+            "t": 0.7000000000000005,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 268.6456860633575,
+          "y": 183.17915707159418,
+          "heading": 1.5642678766410414,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.5046798962222,
+          "y": 142.98024573019407,
+          "heading": 1.4327457543962956,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.17423185432426,
+          "y": 181.92796093765998,
+          "heading": 1.4281466917619903,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 491.0715036143464,
+          "y": 122.5061408089701,
+          "heading": 1.554699045714442,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1055
+    },
+    {
+      "t": 18.100000000000254,
+      "wall": 18.32239999997616,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.04525856604846,
+          "y": 115.32149995967242,
+          "heading": 1.1027124833522406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "charge",
+            "t": 1.1166666666666676,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 262.5198790899099,
+          "y": 188.08502692813292,
+          "heading": 1.4524597927942406,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 326.04808029186813,
+          "y": 140.25884685346412,
+          "heading": 1.416243437310566,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.4036121309085,
+          "y": 174.08133490455293,
+          "heading": 1.5221222956616174,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 496.7759726034187,
+          "y": 116.7484394077546,
+          "heading": 1.6727518337648104,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1080
+    },
+    {
+      "t": 18.516666666666897,
+      "wall": 18.742399999976158,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.04525856604846,
+          "y": 115.32149995967242,
+          "heading": 1.1027124833522406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "charge",
+            "t": 1.5333333333333328,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 255.44160022166872,
+          "y": 188.66318794832378,
+          "heading": 1.4110239804086002,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 321.67249721852824,
+          "y": 133.81372533692323,
+          "heading": 1.491650503795575,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.3353864665238,
+          "y": 166.53854585038724,
+          "heading": 1.645043331848463,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 502.8208106481186,
+          "y": 115.04278828701014,
+          "heading": 1.7301738058627087,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1105
+    },
+    {
+      "t": 18.93333333333354,
+      "wall": 19.169300000011923,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 262.82731214935103,
+          "y": 253.35136185728814,
+          "heading": 1.1027124833522406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "fire",
+            "t": 0.2833333333333333,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 198.38721720023005,
+          "y": 184.72242061311997,
+          "heading": 1.4646014538761747,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 265.45331345249315,
+          "y": 125.77652443141567,
+          "heading": 1.6141239423706635,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 350.48201768653075,
+          "y": 161.7942768216486,
+          "heading": 1.723811220920329,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 450.4993068152245,
+          "y": 117.95331020074511,
+          "heading": 1.6928173114754104,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1129
+    },
+    {
+      "t": 19.36666666666685,
+      "wall": 19.58489999997616,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 415.3251620059648,
+          "y": 554.9942066076811,
+          "heading": 1.1027124833522406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "fire",
+            "t": 0.7166666666666672,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 144.9039205872259,
+          "y": 177.2442825432844,
+          "heading": 1.5863803523807662,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 221.504313895023,
+          "y": 118.5843511465173,
+          "heading": 1.713211618701716,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 316.0709296252103,
+          "y": 161.50051927141647,
+          "heading": 1.7091069224253044,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 417.0500792293713,
+          "y": 124.82804772213032,
+          "heading": 1.5778401023782875,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1155
+    },
+    {
+      "t": 19.78333333333349,
+      "wall": 20.00369999998808,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 444.6516715937752,
+          "y": 613.0024459827566,
+          "heading": 1.1027124833522406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "offscreen",
+            "t": 0.3333333333333333,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 140.05210569982742,
+          "y": 169.26154866272452,
+          "heading": 1.695049368186561,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 222.9704692686639,
+          "y": 115.15400677462736,
+          "heading": 1.7227530678648593,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 321.5850561610484,
+          "y": 165.77640720386853,
+          "heading": 1.6107484405878494,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 420.62049181021564,
+          "y": 132.87893631309544,
+          "heading": 1.4620120241382113,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1180
+    },
+    {
+      "t": 20.200000000000134,
+      "wall": 20.435,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.04525856604846,
+          "y": 43.32674066945253,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "north",
+            "t": 0.3833333333333333,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.14262468378237,
+          "y": 163.17673571848957,
+          "heading": 1.729827688844562,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 227.2778594432141,
+          "y": 116.30305131485548,
+          "heading": 1.6419290088336405,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 328.11138230124396,
+          "y": 173.10288297736437,
+          "heading": 1.4886312690014682,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 423.3277391974399,
+          "y": 139.64691528148106,
+          "heading": 1.410875704380996,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1205
+    },
+    {
+      "t": 20.633333333333443,
+      "wall": 20.856,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.04525856604846,
+          "y": 108.9581939888057,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "north",
+            "t": 0.8166666666666675,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.5172350519755,
+          "y": 161.0120752049091,
+          "heading": 1.666009895036539,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 233.27587200791828,
+          "y": 121.93147542165818,
+          "heading": 1.5140389935016743,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 334.21669924956774,
+          "y": 181.34964453756348,
+          "heading": 1.4142505224467452,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 423.9256075610516,
+          "y": 142.92997974851897,
+          "heading": 1.4583895419615411,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1231
+    },
+    {
+      "t": 21.050000000000086,
+      "wall": 21.274399999976158,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.04525856604846,
+          "y": 115.32149995967242,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "recover",
+            "t": 0.2333333333333333,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 141.06809111839266,
+          "y": 163.64544983330137,
+          "heading": 1.5462068851616866,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 239.8088870609886,
+          "y": 129.75665963377128,
+          "heading": 1.4244746990863697,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 338.7253937332322,
+          "y": 187.17220005646652,
+          "heading": 1.4372699427295135,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 422.26465291513017,
+          "y": 141.39667588222306,
+          "heading": 1.5728287280939006,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1256
+    },
+    {
+      "t": 21.46666666666673,
+      "wall": 21.6845,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.04525856604846,
+          "y": 115.32149995967242,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "recover",
+            "t": 0.6500000000000004,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 145.48297345420352,
+          "y": 170.03419977418363,
+          "heading": 1.4410267039534321,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 246.36299932384821,
+          "y": 137.3315881451384,
+          "heading": 1.4219248283458892,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 341.3929130568313,
+          "y": 188.96895279854024,
+          "heading": 1.5396947218562733,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 418.5930720575739,
+          "y": 135.76332667009058,
+          "heading": 1.6860592875148277,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1281
+    },
+    {
+      "t": 21.883333333333372,
+      "wall": 22.102,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 193.04525856604846,
+          "y": 115.32149995967242,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26dash",
+            "phase": "recover",
+            "t": 1.0666666666666678,
+            "shot": 0
+          }
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 151.27580890589002,
+          "y": 178.06532596960756,
+          "heading": 1.4130178139540388,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 252.2166361475397,
+          "y": 142.15094818617976,
+          "heading": 1.507905736288053,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 341.9255444590245,
+          "y": 186.14564928908314,
+          "heading": 1.6606149774992411,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 413.31499909021744,
+          "y": 127.89309183639868,
+          "heading": 1.730745365472785,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1306
+    },
+    {
+      "t": 22.28333333333335,
+      "wall": 22.507099999964236,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 139.878591899382,
+          "y": 125.95489819696961,
+          "heading": 1.4112244142928267,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 157.54225487535382,
+          "y": 184.85327553713748,
+          "heading": 1.4747371104330538,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 256.57769052452215,
+          "y": 142.69259678916941,
+          "heading": 1.626566207096586,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 340.37167395756677,
+          "y": 179.94300769988436,
+          "heading": 1.7271207330067253,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 407.2748250795249,
+          "y": 120.64884012717356,
+          "heading": 1.6839513207726446,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1330
+    },
+    {
+      "t": 22.699999999999992,
+      "wall": 22.918,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 79.46192523271527,
+          "y": 133.98517099063204,
+          "heading": 1.45034920646761,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 164.10963034353207,
+          "y": 188.7019233872686,
+          "heading": 1.5943429483069742,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 259.3259872397296,
+          "y": 138.8211906113076,
+          "heading": 1.7166880349189428,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 336.7741205940838,
+          "y": 171.91090048005145,
+          "heading": 1.7049009578957466,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 400.63899560859284,
+          "y": 115.84071420132366,
+          "heading": 1.5698187014936213,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1355
+    },
+    {
+      "t": 23.116666666666635,
+      "wall": 23.335199999988077,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 69.02527078574272,
+          "y": 140.36666089180545,
+          "heading": 1.5611013918220844,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 170.00442038990423,
+          "y": 188.0188316205287,
+          "heading": 1.6999461009152272,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 259.94676124880914,
+          "y": 131.70154859675594,
+          "heading": 1.7200511032868369,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 331.5501418047617,
+          "y": 164.90047425195547,
+          "heading": 1.6029319524754242,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 394.3731660281522,
+          "y": 115.38485730355782,
+          "heading": 1.4562674556143653,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1380
+    },
+    {
+      "t": 23.516666666666612,
+      "wall": 23.7425,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 75.27570664811412,
+          "y": 142.9718817903235,
+          "heading": 1.6737939809996738,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 174.42704279718072,
+          "y": 183.29530623142693,
+          "heading": 1.729475662425034,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 258.4754315557086,
+          "y": 123.99206437912117,
+          "heading": 1.6392682944592947,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 325.537593745736,
+          "y": 161.293095441373,
+          "heading": 1.486108115197565,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 389.34730856038317,
+          "y": 119.19619134219747,
+          "heading": 1.4108098871187242,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1404
+    },
+    {
+      "t": 23.933333333333255,
+      "wall": 24.152,
+      "label": "Voss / charged rush and north return",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 81.85517532851716,
+          "y": 141.14985941395287,
+          "heading": 1.7302876621021326,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 177.25562584817808,
+          "y": 175.71162851752817,
+          "heading": 1.6676970162625255,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 254.95254276489237,
+          "y": 117.61912964393112,
+          "heading": 1.5160163234068054,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 318.9021608207486,
+          "y": 161.9901504901311,
+          "heading": 1.4147001130351673,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 385.6999179315912,
+          "y": 126.32236697770956,
+          "heading": 1.4568980417196522,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Voss / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1429
+    },
+    {
+      "t": 24.3499999999999,
+      "wall": 24.56919999998808,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 87.79007054903192,
+          "y": 135.30942314856696,
+          "heading": 1.6919351687857804,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 177.96443200456656,
+          "y": 167.8925885808064,
+          "heading": 1.548293548808971,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 249.78358674579806,
+          "y": 115.01027529434535,
+          "heading": 1.425340879135544,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 312.60775695226477,
+          "y": 166.99005038534222,
+          "heading": 1.4361192772379607,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 384.06711210227127,
+          "y": 134.3341362122802,
+          "heading": 1.5707191336079889,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1454
+    },
+    {
+      "t": 24.749999999999876,
+      "wall": 24.97469999998808,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 92.27347475014095,
+          "y": 127.70711343862529,
+          "heading": 1.5865929196834185,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 176.57590468154555,
+          "y": 162.5711986710519,
+          "heading": 1.4453536810761742,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 243.7997335159107,
+          "y": 116.86226652695939,
+          "heading": 1.4194458324343229,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 307.5301048791165,
+          "y": 174.31271056195462,
+          "heading": 1.5326889303190172,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 384.5640310851223,
+          "y": 140.39504533669114,
+          "heading": 1.6809677927823723,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1478
+    },
+    {
+      "t": 25.16666666666652,
+      "wall": 25.3845,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 95.18184128497589,
+          "y": 120.24254195757027,
+          "heading": 1.4686081076434934,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 173.12830674526526,
+          "y": 161.0771302666956,
+          "heading": 1.4119851916728072,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 237.16587675171883,
+          "y": 122.71234080001754,
+          "heading": 1.5013725009382966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 303.8091266024131,
+          "y": 182.12839620477732,
+          "heading": 1.6545877555319677,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 387.17698156333796,
+          "y": 142.99063701314822,
+          "heading": 1.7307655569687472,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1503
+    },
+    {
+      "t": 25.58333333333316,
+      "wall": 25.801899999976158,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 95.97855358054885,
+          "y": 115.67439008362238,
+          "heading": 1.4113925006422694,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 168.01529240829169,
+          "y": 164.1878767169878,
+          "heading": 1.473058375808778,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 230.8440175837385,
+          "y": 130.64197963409345,
+          "heading": 1.6245840723702698,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 302.0907107677199,
+          "y": 187.5864540479906,
+          "heading": 1.726657563704661,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 391.6419126554681,
+          "y": 140.95900065557197,
+          "heading": 1.6854329526151355,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1528
+    },
+    {
+      "t": 25.999999999999805,
+      "wall": 26.22119999998808,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 94.57590468154596,
+          "y": 115.51351685736631,
+          "heading": 1.4489710281886916,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 161.7997335159118,
+          "y": 170.87459757899268,
+          "heading": 1.5922542832181432,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 225.53010487911726,
+          "y": 138.02855426122517,
+          "heading": 1.7158091920704979,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 302.564031085122,
+          "y": 188.8816997929985,
+          "heading": 1.7060399413495564,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 397.4672974779026,
+          "y": 134.97207455382753,
+          "heading": 1.5719283351149447,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1553
+    },
+    {
+      "t": 26.399999999999782,
+      "wall": 26.62780000001192,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 91.3013812887273,
+          "y": 119.56915522272533,
+          "heading": 1.5539504136836029,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 155.43009651935782,
+          "y": 178.61114258865405,
+          "heading": 1.6955814794627826,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 221.92156915837364,
+          "y": 142.33306211221154,
+          "heading": 1.7224856513553237,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 305.03426774022535,
+          "y": 185.79662581836797,
+          "heading": 1.6099273577981692,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 403.7451823202309,
+          "y": 127.3338215383079,
+          "heading": 1.4613921747986012,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1577
+    },
+    {
+      "t": 26.816666666666425,
+      "wall": 27.0365,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 86.24521760073472,
+          "y": 126.82791079351404,
+          "heading": 1.6721706694941285,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 149.0819059213052,
+          "y": 185.46435830008582,
+          "heading": 1.7297323590126517,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 220.11784880992968,
+          "y": 142.4799230444195,
+          "heading": 1.6411689934812366,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 309.4333498114669,
+          "y": 179.10210870756407,
+          "heading": 1.4879053227385806,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 410.30257104226484,
+          "y": 119.95283454281775,
+          "heading": 1.4108512588538509,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1602
+    },
+    {
+      "t": 27.216666666666402,
+      "wall": 27.44280000001192,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 80.32194007989209,
+          "y": 134.50624355214762,
+          "heading": 1.7295556790713418,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 143.90338172570313,
+          "y": 188.80621846335077,
+          "heading": 1.673308181724276,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 220.4451892030168,
+          "y": 138.4128197899878,
+          "heading": 1.5228117577127793,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 314.9655995454464,
+          "y": 171.36531801115254,
+          "heading": 1.416432125223203,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 415.9534052249928,
+          "y": 115.65952609066886,
+          "heading": 1.4519742277716532,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1626
+    },
+    {
+      "t": 27.64999999999971,
+      "wall": 27.867800000011922,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 73.43009651935895,
+          "y": 140.86225440871945,
+          "heading": 1.6933027871327362,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 139.92156915837415,
+          "y": 187.66597563461983,
+          "heading": 1.550384124559858,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 223.03426774022475,
+          "y": 130.8246572741901,
+          "heading": 1.4262323465861806,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 321.7451823202298,
+          "y": 164.30575743070813,
+          "heading": 1.4349920253254445,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 420.69037509986356,
+          "y": 115.61909488640667,
+          "heading": 1.5686095525420987,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1652
+    },
+    {
+      "t": 28.066666666666354,
+      "wall": 28.28509999996424,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 67.08190592130622,
+          "y": 142.9961590076644,
+          "heading": 1.5836478188472625,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.1178488099298,
+          "y": 182.2862198878328,
+          "heading": 1.4435396692184155,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 227.43334981146597,
+          "y": 122.87736380525233,
+          "heading": 1.4204307036912407,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 328.30257104226376,
+          "y": 161.0976312041394,
+          "heading": 1.5355671985989678,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 423.3772375225998,
+          "y": 120.09967235988215,
+          "heading": 1.6830931915025833,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1677
+    },
+    {
+      "t": 28.483333333332997,
+      "wall": 28.7045,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 61.71547358554089,
+          "y": 140.50100924202331,
+          "heading": 1.4663503359738168,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.5028770921523,
+          "y": 174.49663813416518,
+          "heading": 1.4123720969954394,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 233.2158454846498,
+          "y": 116.9550556043834,
+          "heading": 1.5040483642839149,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 334.1661342518288,
+          "y": 162.48753940382448,
+          "heading": 1.6570924004809866,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 423.9309352948791,
+          "y": 127.52392177122084,
+          "heading": 1.7307962245058008,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1702
+    },
+    {
+      "t": 28.883333333332974,
+      "wall": 29.10959999996424,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 58.03722560998179,
+          "y": 134.50387943516915,
+          "heading": 1.41158829931608,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 140.8945700026086,
+          "y": 167.14172559609574,
+          "heading": 1.47139663290839,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 239.47856784910493,
+          "y": 115.00443300368272,
+          "heading": 1.62259258665478,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 338.5419680104267,
+          "y": 167.73460016381975,
+          "heading": 1.7261672979566838,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 422.3967590701561,
+          "y": 135.1445424272329,
+          "heading": 1.6868946549023849,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1726
+    },
+    {
+      "t": 29.316666666666283,
+      "wall": 29.5345,
+      "label": "Voss / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 56.117848809929924,
+          "y": 126.18256893177013,
+          "heading": 1.4509086779928353,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 145.4333498114651,
+          "y": 161.93816178871344,
+          "heading": 1.5951807561808684,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 246.30257104226266,
+          "y": 117.70274845936046,
+          "heading": 1.7170339024459969,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 341.3772375225995,
+          "y": 175.85397609652668,
+          "heading": 1.7044368960666367,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 418.6365611873676,
+          "y": 141.2200620488588,
+          "heading": 1.5689713666139005,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 5.016666666666654,
+          "label": "Voss / turbo pursuit and lateral passes",
+          "request": "turbo"
+        },
+        {
+          "t": 5.016666666666654,
+          "resolved": "turbo",
+          "warm": 1.15
+        },
+        {
+          "t": 17.000000000000316,
+          "label": "Voss / charged rush and north return",
+          "request": "fusion"
+        },
+        {
+          "t": 17.000000000000316,
+          "resolved": "rr26dash",
+          "warm": 1.65
+        },
+        {
+          "t": 24.016666666666584,
+          "label": "Voss / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1752
+    }
+  ],
+  "stats": {
+    "peak": 1.1922757625579834,
+    "tapped": 14,
+    "playing": {
+      "stagex": 1,
+      "enemyShoot": 1,
+      "av3_target_acquire": 4,
+      "bossWeaponCharge": 2,
+      "teleportIn": 1,
+      "juggernautRamLaunch": 4,
+      "alertLockon": 3
+    },
+    "tapErrors": [],
+    "frames": 1754,
+    "events": [
+      {
+        "t": 0.016666666666666666,
+        "label": "Voss / cruise and drift",
+        "request": "drift"
+      },
+      {
+        "t": 2.0166666666666644,
+        "label": "Voss / aimed energy round",
+        "request": "gun"
+      },
+      {
+        "t": 5.016666666666654,
+        "label": "Voss / turbo pursuit and lateral passes",
+        "request": "turbo"
+      },
+      {
+        "t": 5.016666666666654,
+        "resolved": "turbo",
+        "warm": 1.15
+      },
+      {
+        "t": 17.000000000000316,
+        "label": "Voss / charged rush and north return",
+        "request": "fusion"
+      },
+      {
+        "t": 17.000000000000316,
+        "resolved": "rr26dash",
+        "warm": 1.65
+      },
+      {
+        "t": 24.016666666666584,
+        "label": "Voss / recovery",
+        "request": "drift"
+      }
+    ],
+    "rr26": [
+      {
+        "kind": "energy-launch",
+        "t": 4.333333333333323,
+        "pilot": "voss",
+        "large": false
+      },
+      {
+        "kind": "voss-dash-release",
+        "t": 18.650000000000222,
+        "caught": false
+      },
+      {
+        "kind": "voss-north-return",
+        "t": 19.816666666666823
+      }
+    ],
+    "rd21": [
+      {
+        "event": "personal-charge",
+        "time": 4.999999999999988,
+        "pilot": "voss",
+        "kind": "depthram",
+        "warm": 1.15
+      },
+      {
+        "event": "personal-charge",
+        "time": 16.98333333333365,
+        "pilot": "voss",
+        "kind": "rr26cannon",
+        "warm": 1.15
+      },
+      {
+        "event": "personal-recovery",
+        "time": 21.916666666666703,
+        "pilot": "voss"
+      }
+    ],
+    "ra4": [
+      {
+        "event": "specialRelease",
+        "pilot": "voss",
+        "kind": "turbo"
+      },
+      {
+        "event": "turboReturn",
+        "x": 154,
+        "y": 129
+      },
+      {
+        "event": "turboRecovered",
+        "x": 154,
+        "y": 129
+      }
+    ],
+    "god": true
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+}

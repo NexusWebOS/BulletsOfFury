@@ -172,7 +172,7 @@ rebelSquadTick=function(b,dt){
  const locks=b._rebels.ships.filter(rd21Live).flatMap(q=>[q._rd21Volley,q.rg4?.act?.kind==='rockets'&&q.rg4.act])
   .filter(A=>A&&A.locked&&A.target?.ref&&!A.target.ref.dead&&(!A.phase||A.phase==='charge'));
  const S=rr26State(G);
- if(!G.scene&&locks.length){S.lockBeep=(S.lockBeep||0)-dt;if(S.lockBeep<=0){
+ if(!G.scene&&locks.length&&!(typeof rr49Scope==='function'&&rr49Scope(b))){S.lockBeep=(S.lockBeep||0)-dt;if(S.lockBeep<=0){
   const progress=Math.max(...locks.map(A=>clamp(A.t/A.warm,0,1)));
   S.lockBeep=lerp(.32,.10,progress);Audio.SFX.retinaLockBeep?.();rr26Log('missile-lock-beep');
  }}else S.lockBeep=0;
@@ -198,10 +198,11 @@ rg4AttackTick=function(q,R,G,dt){const A=q.rg4?.act;if(A?.kind!=='rr26roller')re
   if(A.t<A.warm)return;A.phase='fire';A.t=0;A.cd=0;A.launch=rr26Socket(q,0);A.launchAngle=A.a;
  }
  if(A.phase==='fire'){A.cd-=dt;if(A.cd<=0){
-  const a=A.launchAngle,socket=A.launch,v=[175,195,210,225][rd21Rank()];
-  G.ord.push({kind:'roller',_rr26KaiaRoller:true,owner:q,x:socket.x,y:socket.y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,r:16,hp:3,max:3,t:0,life:4,bounces:0,split:true,flash:0});
+  const a=A.launchAngle,socket=A.launch,ricochet=typeof kr48Own==='function'&&kr48Own(q),v=(ricochet?KR48.speeds:[175,195,210,225])[rd21Rank()];
+  const round={kind:'roller',_rr26KaiaRoller:true,owner:q,x:socket.x,y:socket.y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,r:16,hp:3,max:3,t:0,life:4,bounces:0,split:true,flash:0};
+  if(ricochet)kr48Launch(round);G.ord.push(round);
   q._rr26Kick=.12;wm26Emit?.(q,socket.x,socket.y,a,'orb','#39e6c5',{size:32,life:.16,follow:()=>rr26Socket(q,0)});
-  Audio.SFX.falvaRelease?.();rr26Log('kaia-roller',{shot:A.shot});A.shot++;A.cd=.20;
+  Audio.SFX.falvaRelease?.();rr26Log('kaia-roller',{shot:A.shot});A.shot++;A.cd=ricochet?KR48.interval:.20;
   if(A.shot>=10){A.phase='recover';A.t=0;}
  }}else if(A.phase==='recover'&&A.t>1.4)rd21Finish(q,G,5);
 };

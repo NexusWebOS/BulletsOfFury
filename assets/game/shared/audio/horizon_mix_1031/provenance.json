@@ -1,0 +1,48 @@
+{
+  "charge": {
+    "source": "assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+    "sourceSHA256": "aae30b30f3b72976a35eb3f4cb369dce78c2f6748efbf0fa93936c3af4a4e030",
+    "runtime": "assets/game/shared/audio/horizon_mix_1031/charge.mp3",
+    "master": "assets/game/shared/audio/horizon_mix_1031/charge.wav",
+    "license": "Existing BOF approved recording; prior provenance retained.",
+    "processing": "highpass=f=95,lowpass=f=10500,atrim=duration=1.3,loudnorm=I=-14:TP=-2:LRA=6,afade=t=out:st=1.22:d=0.08"
+  },
+  "release": {
+    "source": "assets/game/shared/combat/combat_1003i/laser_release.mp3",
+    "sourceSHA256": "b160333dfb628a1acec4145e1f679338b2964f1ab41bad31c1ede8fdc978cbf0",
+    "runtime": "assets/game/shared/audio/horizon_mix_1031/release.mp3",
+    "master": "assets/game/shared/audio/horizon_mix_1031/release.wav",
+    "license": "Existing BOF approved recording; prior provenance retained.",
+    "processing": "highpass=f=95,lowpass=f=10500,atrim=duration=0.64,loudnorm=I=-14:TP=-2:LRA=6,afade=t=out:st=0.56:d=0.08"
+  },
+  "orb": {
+    "source": "assets/game/shared/combat/combat_1003i/alien_orb.mp3",
+    "sourceSHA256": "8fff6fd091244d5e0e4e5183a413d6050a6aeb7b9cf670a058bfdc46b46ddd98",
+    "runtime": "assets/game/shared/audio/horizon_mix_1031/orb.mp3",
+    "master": "assets/game/shared/audio/horizon_mix_1031/orb.wav",
+    "license": "Existing BOF approved recording; prior provenance retained.",
+    "processing": "highpass=f=95,lowpass=f=10500,atrim=duration=0.65,loudnorm=I=-14:TP=-2:LRA=6,afade=t=out:st=0.5700000000000001:d=0.08"
+  },
+  "boost": {
+    "source": "assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3",
+    "sourceSHA256": "73113833c96e2657cea07855f0483be27e280bd6a6cdc50710ecf52eec0ff7ad",
+    "runtime": "assets/game/shared/audio/horizon_mix_1031/boost.mp3",
+    "master": "assets/game/shared/audio/horizon_mix_1031/boost.wav",
+    "license": "Existing BOF approved recording; prior provenance retained.",
+    "processing": "highpass=f=95,lowpass=f=10500,atrim=duration=0.9,loudnorm=I=-14:TP=-2:LRA=6,afade=t=out:st=0.8200000000000001:d=0.08"
+  },
+  "half": {
+    "source": "assets/game/shared/audio/sounds/arc_warp_burst_0923.mp3",
+    "sourceSHA256": "685f25b39d55b2ba51de1328418764e0cd2acc8c6c9c1507a45c23214c5413a6",
+    "runtime": "assets/game/shared/audio/horizon_mix_1031/half.mp3",
+    "master": "assets/game/shared/audio/horizon_mix_1031/half.wav",
+    "license": "Existing BOF approved recording; prior provenance retained.",
+    "processing": "highpass=f=95,lowpass=f=10500,atrim=duration=1.64,loudnorm=I=-14:TP=-2:LRA=6,afade=t=out:st=1.5599999999999998:d=0.08"
+  },
+  "sustain": {
+    "source": "release.wav",
+    "master": "assets/game/shared/audio/horizon_mix_1031/sustain.wav",
+    "runtime": "assets/game/shared/audio/horizon_mix_1031/sustain.mp3",
+    "loop": "2.4s pulse-textured beam bed,40ms boundary fades; gameplay adapter owns release/stop"
+  }
+}

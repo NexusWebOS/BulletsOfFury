@@ -1,0 +1,335 @@
+{
+  "checks": [
+    {
+      "name": "keyboard F enters prone",
+      "passed": true
+    },
+    {
+      "name": "WASD crawls while prone",
+      "passed": true
+    },
+    {
+      "name": "F toggles back to standing",
+      "passed": true
+    },
+    {
+      "name": "keyboard C crouches without changing body unit",
+      "passed": true
+    },
+    {
+      "name": "all raised props and damage states decode",
+      "passed": true
+    },
+    {
+      "name": "all exported frame canvases have even dimensions",
+      "passed": true
+    },
+    {
+      "name": "damaged crate changes art",
+      "passed": true
+    },
+    {
+      "name": "destroyed crate releases collision",
+      "passed": true
+    },
+    {
+      "name": "overhead contains all ten enemy archetypes",
+      "passed": true
+    },
+    {
+      "name": "ground shotgun and twin barrel attack",
+      "passed": true
+    },
+    {
+      "name": "rolling alien completes roll and unfolds",
+      "passed": true
+    },
+    {
+      "name": "sideways crouch uses matching approved Yuri bank",
+      "passed": true
+    },
+    {
+      "name": "every new troop flashes visible pixels and expires",
+      "passed": true
+    },
+    {
+      "name": "depth sorting draws Yuri before his foreground bunker",
+      "passed": true
+    },
+    {
+      "name": "rifle has live side attack",
+      "passed": true
+    },
+    {
+      "name": "rifle side pose is authored",
+      "passed": true
+    },
+    {
+      "name": "heavy has live side attack",
+      "passed": true
+    },
+    {
+      "name": "heavy side pose is authored",
+      "passed": true
+    },
+    {
+      "name": "laser has live side attack",
+      "passed": true
+    },
+    {
+      "name": "laser side pose is authored",
+      "passed": true
+    },
+    {
+      "name": "rocket has live side attack",
+      "passed": true
+    },
+    {
+      "name": "rocket side pose is authored",
+      "passed": true
+    },
+    {
+      "name": "shotgun has live side attack",
+      "passed": true
+    },
+    {
+      "name": "shotgun side pose is authored",
+      "passed": true
+    },
+    {
+      "name": "double has live side attack",
+      "passed": true
+    },
+    {
+      "name": "double side pose is authored",
+      "passed": true
+    },
+    {
+      "name": "roller has live side attack",
+      "passed": true
+    },
+    {
+      "name": "roller side pose is authored",
+      "passed": true
+    },
+    {
+      "name": "first Bastion room spawns shotgun and double barrel",
+      "passed": true
+    },
+    {
+      "name": "rifle has live front attack",
+      "passed": true
+    },
+    {
+      "name": "rifle front sprite resolves",
+      "passed": true
+    },
+    {
+      "name": "heavy has live front attack",
+      "passed": true
+    },
+    {
+      "name": "heavy front sprite resolves",
+      "passed": true
+    },
+    {
+      "name": "laser has live front attack",
+      "passed": true
+    },
+    {
+      "name": "laser front sprite resolves",
+      "passed": true
+    },
+    {
+      "name": "rocket has live front attack",
+      "passed": true
+    },
+    {
+      "name": "rocket front sprite resolves",
+      "passed": true
+    },
+    {
+      "name": "shotgun has live front attack",
+      "passed": true
+    },
+    {
+      "name": "shotgun front sprite resolves",
+      "passed": true
+    },
+    {
+      "name": "double has live front attack",
+      "passed": true
+    },
+    {
+      "name": "double front sprite resolves",
+      "passed": true
+    },
+    {
+      "name": "roller has live front attack",
+      "passed": true
+    },
+    {
+      "name": "roller front sprite resolves",
+      "passed": true
+    },
+    {
+      "name": "flame has live front attack",
+      "passed": true
+    },
+    {
+      "name": "flame front sprite resolves",
+      "passed": true
+    },
+    {
+      "name": "flyer has live front attack",
+      "passed": true
+    },
+    {
+      "name": "flyer front sprite resolves",
+      "passed": true
+    },
+    {
+      "name": "bat has live front attack",
+      "passed": true
+    },
+    {
+      "name": "bat front sprite resolves",
+      "passed": true
+    },
+    {
+      "name": "new troop pixels flash on hit",
+      "passed": true
+    },
+    {
+      "name": "troop hit flash expires",
+      "passed": true
+    },
+    {
+      "name": "all attack cues decode and use retrigger gates",
+      "passed": true
+    },
+    {
+      "name": "browser has no errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "measured": {
+    "overheadRoster": [
+      "c35_rifle",
+      "c35_shotgun",
+      "c35_double",
+      "c35_roller",
+      "c35_rocket",
+      "c35_heavy",
+      "c35_flyer",
+      "c35_flame",
+      "c35_laser",
+      "c35_roller",
+      "c35_bat",
+      "c35_double"
+    ],
+    "poseScales": [
+      {
+        "key": "y32_up_idle",
+        "scale": 1,
+        "angle": 0,
+        "action": "vertical_aim",
+        "dir": null
+      },
+      {
+        "key": "od_yuri_north_crouch_5",
+        "angle": 0,
+        "scale": 0.42,
+        "action": "crouch",
+        "dir": "north"
+      },
+      {
+        "key": "pb19_yuri_north_crawl_0",
+        "angle": 0,
+        "scale": 0.76,
+        "action": "prone_fire",
+        "dir": "north"
+      }
+    ],
+    "flashes": [
+      {
+        "kind": "rifle",
+        "changed": 1667,
+        "expired": true
+      },
+      {
+        "kind": "heavy",
+        "changed": 3314,
+        "expired": true
+      },
+      {
+        "kind": "laser",
+        "changed": 1747,
+        "expired": true
+      },
+      {
+        "kind": "rocket",
+        "changed": 2430,
+        "expired": true
+      },
+      {
+        "kind": "shotgun",
+        "changed": 1691,
+        "expired": true
+      },
+      {
+        "kind": "double",
+        "changed": 2258,
+        "expired": true
+      },
+      {
+        "kind": "roller",
+        "changed": 3265,
+        "expired": true
+      },
+      {
+        "kind": "flame",
+        "changed": 1965,
+        "expired": true
+      },
+      {
+        "kind": "flyer",
+        "changed": 2325,
+        "expired": true
+      },
+      {
+        "kind": "bat",
+        "changed": 11805,
+        "expired": true
+      }
+    ],
+    "audio": [
+      {
+        "key": "gd_soldierRifle",
+        "seconds": 0.10835416666666667,
+        "gated": true
+      },
+      {
+        "key": "enemyHeavyLaser",
+        "seconds": 0.45816666666666667,
+        "gated": true
+      },
+      {
+        "key": "missileLaunch",
+        "seconds": 0.4384375,
+        "gated": true
+      },
+      {
+        "key": "gd_tankCannon",
+        "seconds": 0.2901666666666667,
+        "gated": true
+      },
+      {
+        "key": "firewallLaunch",
+        "seconds": 0.67,
+        "gated": true
+      }
+    ]
+  }
+}

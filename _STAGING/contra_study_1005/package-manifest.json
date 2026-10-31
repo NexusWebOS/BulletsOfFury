@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-06",
+  "files": [
+    {
+      "path": "analyse-signature-fx.py",
+      "bytes": 2180,
+      "sha256": "73b10ecd169cf4479271e18fe042c00c8591684cb339f10c97709e2113a8ca6b"
+    },
+    {
+      "path": "art/boss_signature_fx.png",
+      "bytes": 715073,
+      "sha256": "6496b09bbc6882ee22992a1744a575291934bbf45662b45dbb0c86f70c31e444"
+    },
+    {
+      "path": "art/boss_signature_manifest.json",
+      "bytes": 4541,
+      "sha256": "4342001b170dec4f5d7c4c2423653335cdb4607e1c8d256b3beb904a8d06f0ec"
+    },
+    {
+      "path": "art/generation-prompt.txt",
+      "bytes": 1522,
+      "sha256": "f6f602fad83c0613a9275d26532e14fa40588345dcb22e2dbe5423e7f3684d4d"
+    },
+    {
+      "path": "art/manifest.json",
+      "bytes": 4989,
+      "sha256": "03bb91e80f7369ab19fe763d473b7591bb5e047ebfc7463f60126d31bf79e94f"
+    },
+    {
+      "path": "art/reactor_pressure_discharge.png",
+      "bytes": 1346831,
+      "sha256": "b481a0a909c06eccfb27fdef92081cc3bfcf475a33f6e60b851d9cbd4f9aa452"
+    },
+    {
+      "path": "art/signature-generation-prompt.txt",
+      "bytes": 1587,
+      "sha256": "e88a2bd39c2af18e706aed93dbb7e7f58c7d3250bfa91ef8966f3756ea3f41b2"
+    },
+    {
+      "path": "boss-lab.js",
+      "bytes": 7460,
+      "sha256": "0e2307758e5717ad8fc33a7a772e809d1e6f9e32c91b96769c46499cf8e38e62"
+    },
+    {
+      "path": "BOSS_FIGHT_ATLAS.md",
+      "bytes": 125030,
+      "sha256": "dca41e511161ec8eac536ce7bc08d1445c5b10d941e426065ed269efd63c66af"
+    },
+    {
+      "path": "bosses.js",
+      "bytes": 13299,
+      "sha256": "247399416708925eb47aefcd7a74bce9166bf31a0b2f6d0accd4e588fc4e3092"
+    },
+    {
+      "path": "bosses.test.cjs",
+      "bytes": 4379,
+      "sha256": "66d0885532b737c4eb19ee43fd288cd1210cd483d82e8ce46d6a48f6236d0f85"
+    },
+    {
+      "path": "build-fight-index.py",
+      "bytes": 1289,
+      "sha256": "bc8d0b92965f43d0646b7a4a834d286510cfedd209d8fa632abe0e06bee2aad8"
+    },
+    {
+      "path": "build-manifests.py",
+      "bytes": 2474,
+      "sha256": "ba5d1149bc919ba6171064b324c4e947fc6f386ce14af6db6ce9bbc942b9a7b1"
+    },
+    {
+      "path": "build-recipes.cjs",
+      "bytes": 782,
+      "sha256": "8b319c9d8de6f9bec60f278b9e249d85275558e12fff3efc8cb68ee1b1d9d62a"
+    },
+    {
+      "path": "encounter-proof.jpg",
+      "bytes": 74900,
+      "sha256": "6fceb581f6049dd226e13c7ce449d40f4531f401cfd53479a0f944f58e28ec94"
+    },
+    {
+      "path": "ENCOUNTER_KIT.md",
+      "bytes": 12372,
+      "sha256": "08120ced7b9fa47dfcec358e52c556724d76cff86f594389e32d5f6c1ca95a3c"
+    },
+    {
+      "path": "encounters.html",
+      "bytes": 3091,
+      "sha256": "4b767bfa196db113bccef362766288d242f4bcaea1f80816b72ce8fd354af303"
+    },
+    {
+      "path": "fight-index.json",
+      "bytes": 11142,
+      "sha256": "eb8100e01a2f093b169b4df714050e0aa0c16bb1989602d2cf14445423534668"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3879,
+      "sha256": "6421417d42aa52c168a46573f01c0cfc4d48d541b6bef0d03ba76a18faae6575"
+    },
+    {
+      "path": "INTEGRATION.md",
+      "bytes": 11899,
+      "sha256": "0d03bb3810312985af31f88e2445eb52824bde764617f62220d202f0d669a111"
+    },
+    {
+      "path": "lab.js",
+      "bytes": 7206,
+      "sha256": "95b2a3ffd826bd6ac18069c8b193b266ae8a9495354ca096158921a2480d2d82"
+    },
+    {
+      "path": "patterns.js",
+      "bytes": 9314,
+      "sha256": "cc7244c4aa4701ddebeeeb407a21dfa3e62b2a982099df02475938a1e048584a"
+    },
+    {
+      "path": "patterns.test.cjs",
+      "bytes": 3607,
+      "sha256": "c7cbb713532591fc7a40e7e4997ca53ea4fb06b01e20f29c9659eb25878e3532"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3014,
+      "sha256": "56e33fae56d9712fe9d8471198df245bf25aa36ddfaf43a7119ccf42769beded"
+    },
+    {
+      "path": "recipes.json",
+      "bytes": 39966,
+      "sha256": "91ceef78eb4d88d3855cb27c923230fd86d6bc2a1b1ef1dae182713947edc887"
+    },
+    {
+      "path": "STUDY.md",
+      "bytes": 15381,
+      "sha256": "9e7239b071b4dc94e0089dfdae3f4fddab54332abfcf9a450752c7adcfbbbbcf"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 3171,
+      "sha256": "b7daf1a88e0a7f6e3c668086b63dab8a0127b24c5ac8ab80cafe112b4850a0a5"
+    }
+  ],
+  "productionFollowThrough": "Existing Herald integrated; docs/CONTRA_HERALD_1006.md in BOF. Four original lab bosses remain candidates."
+}

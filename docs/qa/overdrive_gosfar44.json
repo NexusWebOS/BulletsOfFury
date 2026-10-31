@@ -1,0 +1,66 @@
+{
+  "build": "overdrive1018-gosfar44-r4",
+  "native": {
+    "passed": 88,
+    "failed": 0,
+    "report": "_shots/gosfar44/native-report.json"
+  },
+  "required_suite": {
+    "result": "BUILD OK, 0 ERRORS",
+    "exit_code": 0,
+    "core_syntax": "pass"
+  },
+  "art": {
+    "replacement_banks": 16,
+    "provider": "PixelLab",
+    "total_pack_banks": 24,
+    "total_pack_frames": 151,
+    "wall_visible_height": 88,
+    "modules": 6,
+    "module_width": 88,
+    "seamless_width": 528,
+    "states": [
+      "intact",
+      "cracked",
+      "breached",
+      "rubble"
+    ],
+    "audit": "expansion/topdown/art/gosfar44/art-audit.json"
+  },
+  "chromium": {
+    "url": "http://127.0.0.1:8781/expansion/topdown/index.html?v=overdrive1018-gosfar44-r4",
+    "real_input": {
+      "barrage_D": {
+        "x": 540,
+        "y": 411,
+        "scripted": true
+      },
+      "released_mouse_fire": {
+        "boss_hp_before": 1200,
+        "boss_hp_after": 1188
+      },
+      "released_D": {
+        "x_before": 540,
+        "x_after": 589.5
+      }
+    },
+    "wall_dead_after_barrage": 5,
+    "permanent_cover_survives": true,
+    "flamers_at_half_hp": 4,
+    "hotwire_action_observed": "fire",
+    "hotwire_throws_observed": 1,
+    "results_reached": true,
+    "exit_regression": {
+      "boss_death_clock": 9.033333333333362,
+      "flash": 0,
+      "boss_visible": false
+    },
+    "console_errors": [],
+    "audio_failures": [],
+    "captures": "_shots/gosfar44/browser",
+    "capture_note": "Actual Chromium game canvas captured; IAB full-screen surface intermittently returned black although game canvas was correctly rendered.",
+    "scope": "Focused/protected fixture; real mouse/keyboard inputs at handoff. No unprotected human clear/difficulty claim."
+  },
+  "preview": "Reloaded clean; test hooks removed.",
+  "publish": "local only; no commit, push or deployment"
+}

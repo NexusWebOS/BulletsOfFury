@@ -1,0 +1,11 @@
+# Nightwing stable wind sources
+
+New effect editor: Aseprite1.3.18.6-dev batch Lua. Four fixed PNG banks plus editable .aseprite sources. Runtime metadata is NW32_ART in assets/nightwing_stability_1028.js. Body and projectile pivots are cell centers; front and rear vortex share the aircraft center. Stage6 preload includes all four banks.
+
+clean_charge: eighteen272x272 cells,6columns: six illumination levels, each with normal/damaged/inverted source poses. Every native clean source frame maps to its identical pose. Armor colors change in the authored pixels, alpha and blue cockpit stay intact. Hit art remains owned by the existing clean_hit bank.
+wind_gust:512 fixed96x96 cells,16columns:32directions times16phase frames, selected at24fps. Visible core/trail is1.5x the previous linear size, with brighter mint/white highlights, increased authored opacity and a one-pixel dark outline. Native18px collision dimensions, speed, spread, origin and interception policy are unchanged.
+wind_rear/front:24 fixed384x384 cells each,8columns at18fps. PixelLab generated a192x192 vortex, then24animated frames. Original input frame0 is not played. Aseprite normalizes generated frames to384px, authors a stable clear central ellipse, removes neutral dark bands and splits upper/lower pixels around the whole aircraft. Ordinary source-over only; no runtime scaling, rotation, tint, filter, additive blending or opacity animation.
+
+Recipe: create a staging folder with art/; copy pixellab/ here to the staging folder and config.lua there. Update config.lua's three source paths to the canonical banks listed in original-metadata.json at your repository root. Run author.lua, vortex.lua, then pack.lua through Aseprite --batch --script-param work=<staging folder> --script <script>. The packing pass removes identical idle copies and transparent wind padding while preserving exact world pixels. Compare PNG hashes with manifest.json before installing. Runtime PNG decoded cost is50.08MiB, approximately half the first candidate. Keep the original source banks and all generated PixelLab frames.
+
+PixelLab provenance and charge receipt: pixellab/jobs.json. Keyframe cost$0.0109014; animation used2bonus generations. No aircraft appearance generation or external photo upload was performed.

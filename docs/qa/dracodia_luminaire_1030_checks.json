@@ -1,0 +1,305 @@
+{
+  "checks": [
+    {
+      "name": "normal left pocket is reachable by ordinary inputs before release",
+      "passed": true
+    },
+    {
+      "name": "normal left survives the actual live blast without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal left preserves the native boss HP pool",
+      "passed": true
+    },
+    {
+      "name": "normal left finishes with native combat unlocked",
+      "passed": true
+    },
+    {
+      "name": "normal right pocket is reachable by ordinary inputs before release",
+      "passed": true
+    },
+    {
+      "name": "normal right survives the actual live blast without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal right preserves the native boss HP pool",
+      "passed": true
+    },
+    {
+      "name": "normal right finishes with native combat unlocked",
+      "passed": true
+    },
+    {
+      "name": "hard left pocket is reachable by ordinary inputs before release",
+      "passed": true
+    },
+    {
+      "name": "hard left survives the actual live blast without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard left preserves the native boss HP pool",
+      "passed": true
+    },
+    {
+      "name": "hard left finishes with native combat unlocked",
+      "passed": true
+    },
+    {
+      "name": "hard right pocket is reachable by ordinary inputs before release",
+      "passed": true
+    },
+    {
+      "name": "hard right survives the actual live blast without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard right preserves the native boss HP pool",
+      "passed": true
+    },
+    {
+      "name": "hard right finishes with native combat unlocked",
+      "passed": true
+    },
+    {
+      "name": "furious left pocket is reachable by ordinary inputs before release",
+      "passed": true
+    },
+    {
+      "name": "furious left survives the actual live blast without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious left preserves the native boss HP pool",
+      "passed": true
+    },
+    {
+      "name": "furious left finishes with native combat unlocked",
+      "passed": true
+    },
+    {
+      "name": "furious right pocket is reachable by ordinary inputs before release",
+      "passed": true
+    },
+    {
+      "name": "furious right survives the actual live blast without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious right preserves the native boss HP pool",
+      "passed": true
+    },
+    {
+      "name": "furious right finishes with native combat unlocked",
+      "passed": true
+    },
+    {
+      "name": "center danger invokes native death at release",
+      "passed": true
+    },
+    {
+      "name": "south danger invokes native death at release",
+      "passed": true
+    },
+    {
+      "name": "Charge warning does not damage the player",
+      "passed": true
+    },
+    {
+      "name": "Pause freezes the charge and field",
+      "passed": true
+    },
+    {
+      "name": "Warning/damage geometry spans the whole scrolling arena",
+      "passed": true
+    },
+    {
+      "name": "Repeated weapon samples share exact same-frame geometry",
+      "passed": true
+    },
+    {
+      "name": "World movement immediately invalidates cached geometry",
+      "passed": true
+    },
+    {
+      "name": "Fully expanded red warning holds before the release",
+      "passed": true
+    },
+    {
+      "name": "Breaking an arm during charge uses complete authored-part breakup",
+      "passed": true
+    },
+    {
+      "name": "Destroyed anatomy immediately invalidates the hit cache",
+      "passed": true
+    },
+    {
+      "name": "Cancellation removes the field immediately",
+      "passed": true
+    },
+    {
+      "name": "Cancellation stops pending charge and release voices",
+      "passed": true
+    },
+    {
+      "name": "Attack book alternates two claw combos then Luminaire",
+      "passed": true
+    },
+    {
+      "name": "Cached ninja geometry matches original alpha hit results across the arena",
+      "passed": true
+    },
+    {
+      "name": "Repeated claw hit queries reuse the same pose",
+      "passed": true
+    },
+    {
+      "name": "Claw animation/movement invalidates the pose cache",
+      "passed": true
+    },
+    {
+      "name": "Mid-slash destruction immediately removes cached claw geometry",
+      "passed": true
+    },
+    {
+      "name": "Native boss defeat cancels Luminaire and reaches final destruction",
+      "passed": true
+    },
+    {
+      "name": "Retry retains original first-host ownership",
+      "passed": true
+    },
+    {
+      "name": "Retry also stops the retired casting voices",
+      "passed": true
+    },
+    {
+      "name": "Original generated orb and authored field banks drew in-game",
+      "passed": true
+    },
+    {
+      "name": "No browser or native draw errors",
+      "passed": true
+    }
+  ],
+  "states": [
+    {
+      "rank": "normal",
+      "side": "left",
+      "before": {
+        "x": 168.44797528819348,
+        "y": 226.16757528819267,
+        "dead": false,
+        "inside": false,
+        "hp": 3380
+      },
+      "blast": {
+        "dead": false,
+        "phase": "blast",
+        "hits": 0,
+        "hp": 3380,
+        "x": 168.44797528819348,
+        "y": 226.16757528819267
+      }
+    },
+    {
+      "rank": "normal",
+      "side": "right",
+      "before": {
+        "x": 511.55202471180746,
+        "y": 226.16757528819267,
+        "dead": false,
+        "inside": false,
+        "hp": 3380
+      },
+      "blast": {
+        "dead": false,
+        "phase": "blast",
+        "hits": 0,
+        "hp": 3380,
+        "x": 511.55202471180746,
+        "y": 226.16757528819267
+      }
+    },
+    {
+      "rank": "hard",
+      "side": "left",
+      "before": {
+        "x": 168.44797528819348,
+        "y": 226.16757528819267,
+        "dead": false,
+        "inside": false,
+        "hp": 4290
+      },
+      "blast": {
+        "dead": false,
+        "phase": "blast",
+        "hits": 0,
+        "hp": 4290,
+        "x": 168.44797528819348,
+        "y": 226.16757528819267
+      }
+    },
+    {
+      "rank": "hard",
+      "side": "right",
+      "before": {
+        "x": 511.55202471180746,
+        "y": 226.16757528819267,
+        "dead": false,
+        "inside": false,
+        "hp": 4290
+      },
+      "blast": {
+        "dead": false,
+        "phase": "blast",
+        "hits": 0,
+        "hp": 4290,
+        "x": 511.55202471180746,
+        "y": 226.16757528819267
+      }
+    },
+    {
+      "rank": "furious",
+      "side": "left",
+      "before": {
+        "x": 168.44797528819348,
+        "y": 226.16757528819267,
+        "dead": false,
+        "inside": false,
+        "hp": 5330
+      },
+      "blast": {
+        "dead": false,
+        "phase": "blast",
+        "hits": 0,
+        "hp": 5330,
+        "x": 168.44797528819348,
+        "y": 226.16757528819267
+      }
+    },
+    {
+      "rank": "furious",
+      "side": "right",
+      "before": {
+        "x": 511.55202471180746,
+        "y": 226.16757528819267,
+        "dead": false,
+        "inside": false,
+        "hp": 5330
+      },
+      "blast": {
+        "dead": false,
+        "phase": "blast",
+        "hits": 0,
+        "hp": 5330,
+        "x": 511.55202471180746,
+        "y": 226.16757528819267
+      }
+    }
+  ],
+  "errors": []
+}

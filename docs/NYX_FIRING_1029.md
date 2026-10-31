@@ -1,0 +1,17 @@
+# Nyx: visible firing and turret-mounted FOV — October29
+
+Nyx's firing home could retain an old camera-relative position, and squad spacing could move that home again. The charge/fire owner now keeps the entire aircraft in the current visible firing area:82px side clearance,72px below the top of the playfield, a bounded upper fighting band and clearance above an active gold shield. Approach/retreat destinations track the current view. Charge/fire position anchors are repaired before the actual native emitter tick, then checked after squad spacing. The old seven-second visibility timer can no longer hide her after legitimate discovery; the attack book owns recloaking. The Retina-only reveal, full cloak wear-off, real hit flashes, native HP, mines, two-turret cadence, tracking speed, retreat and recloak remain.
+
+The two physical muzzles are registered against the inspected source frames:8 AF21 attack cells,1 idle cell and8 directional heading cells. Fixed pivots and the renderer's exact proportional model unit convert these explicit source points into world coordinates. Source image paths, cells and hashes are in nyx_firing_sockets_1029.js and the QA JSON; the owning registration helper reproduces them. No raster art was changed or generated. Both FOV origins, actual shot spawns and native muzzle effects call the same nx37Socket owner, including animation and heading changes. Warning angles now match the constrained emitted angles, and lane lengths stop at the visible screen boundary rather than using a1000px offscreen span.
+
+The internal squad dispatcher also now honors the hidden-Nyx gate. It cannot consume her personal attack turn while she is cloaked. Once a real lock reveals her, her normal attack book can take the next legal opportunity without interrupting another heavy attack. This preserves discovery and prevents the hidden-book cancellation from starving her actual visible volley.
+
+14 focused native checks pass: legitimate Retina reveal, all tested heading/frame combinations wholly visible, FOV/shot origins identical to registered turrets, actual opaque source pixels at every muzzle, live camera-edge changes, old offscreen-anchor repair, cloak firing cancellation, hidden dispatch and StageX scope. Native probe images are controlled fixtures; the separate complete recording uses only GOD and player inputs, with no enemy HP/phase/timer writes.
+
+Fresh205.21s complete native Furious squad defeat at59.02nativefps contains Nyx's actual corrected twin-turret volley. Every observed shot starts from the registered muzzle with Nyx visible; every observed charge/fire frame lies inside the live viewport. Native Retina discovery and hidden full-HP protection, established separation, music, steady camera, Kaia's demo and gold shield remain. 31 film/player checks pass. Recorded audio mean-18.9dB / peak-3.1dB. The full fight and related chapters use the fresh recording, with Nyx's chapter starting before her volley. Previous movies are retained.
+
+Preview: http://127.0.0.1:51046/?riders=nyx-fire-1029#clip=rough-riders-nyx
+
+Syntax passes. Required full suite reaches summary with the same five baseline failures (exit1): single-hit flash duration, opening-jump warning dialogue, opening jump return before Chromium, opposite StageX route persistence, StageX right full encounter. assets/game.js and _BUILD_SOURCE/test_fl.js untouched. No commit or GitHub upload.
+
+Evidence: C:/Users/Mike/Documents/New project/BOF-Nyx-Firing-1029/.

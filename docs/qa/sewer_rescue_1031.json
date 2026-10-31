@@ -1,0 +1,445 @@
+{
+  "scope": "SR93 fast Stage7 collapse and last-moment green gated rescue",
+  "targetedPassed": 47,
+  "targetedFailed": 0,
+  "groups": {
+    "native": [
+      {
+        "name": "Actual explosion, smoke and gated portal art preloads",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Real Warden core defeat begins fast travel immediately",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Travel remains a fast400px/s instead of easing to a stop",
+        "passed": true,
+        "data": [
+          1793.3333333333333,
+          1593.333333333331
+        ]
+      },
+      {
+        "name": "Blasts and smoke rings are active throughout the run",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No reward is granted during the escape",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Pause freezes the route and collapse effects",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Pilot can steer during the fast escape",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Original chamber is reached continuously without a map reversal",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Gate forms automatically while the floor is still moving",
+        "passed": true,
+        "data": {
+          "phase": "form",
+          "source": 519.9999999999941
+        }
+      },
+      {
+        "name": "Decker cries the exact warning with the selected pilot name",
+        "passed": true,
+        "data": {
+          "who": "DECKER",
+          "full": "WHAT IS THAT? COLE, NOOOO!",
+          "t": 0.03333333333333333,
+          "typed": 3.3333333333333335,
+          "dur": 3.2
+        }
+      },
+      {
+        "name": "Portal stays registered in the original stone aperture",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Entry starts without waiting for an approach prompt",
+        "passed": true,
+        "data": {
+          "phase": "enter",
+          "source": 279.99999999999346
+        }
+      },
+      {
+        "name": "Actual green gate loop and shrinking jet frames are used",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Pilot disappears just before the explosion front reaches the gate",
+        "passed": true,
+        "data": {
+          "margin": 22,
+          "portal": 310,
+          "source": 0
+        }
+      },
+      {
+        "name": "Terrain only stops after the aircraft is inside the gate",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native Stage8 portal handoff completes",
+        "passed": true,
+        "data": {
+          "stage": 8,
+          "state": "warpentry"
+        }
+      },
+      {
+        "name": "Native Forge reward and score remain single owned grants",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Campaign progression retains the direct Stage8 entry flag",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Effects cannot leak into Stage8",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Explosion budget stays bounded",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No browser or rendering errors",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "Core engine source remains unchanged",
+        "passed": true,
+        "data": null
+      }
+    ],
+    "pilotsAndCoop": [
+      {
+        "name": "Decker uses every selected pilot name, including the longest names",
+        "passed": true,
+        "data": [
+          {
+            "key": "axel",
+            "expected": "WHAT IS THAT? AXEL, NOOOO!",
+            "actual": "WHAT IS THAT? AXEL, NOOOO!",
+            "who": "DECKER"
+          },
+          {
+            "key": "decker",
+            "expected": "WHAT IS THAT? DECKER, NOOOO!",
+            "actual": "WHAT IS THAT? DECKER, NOOOO!",
+            "who": "DECKER"
+          },
+          {
+            "key": "maverick",
+            "expected": "WHAT IS THAT? MAVERICK, NOOOO!",
+            "actual": "WHAT IS THAT? MAVERICK, NOOOO!",
+            "who": "DECKER"
+          },
+          {
+            "key": "freezer",
+            "expected": "WHAT IS THAT? FREEZER, NOOOO!",
+            "actual": "WHAT IS THAT? FREEZER, NOOOO!",
+            "who": "DECKER"
+          },
+          {
+            "key": "juggernaut",
+            "expected": "WHAT IS THAT? JUGGERNAUT, NOOOO!",
+            "actual": "WHAT IS THAT? JUGGERNAUT, NOOOO!",
+            "who": "DECKER"
+          },
+          {
+            "key": "yuri",
+            "expected": "WHAT IS THAT? YURI, NOOOO!",
+            "actual": "WHAT IS THAT? YURI, NOOOO!",
+            "who": "DECKER"
+          },
+          {
+            "key": "lizzie",
+            "expected": "WHAT IS THAT? LIZZIE, NOOOO!",
+            "actual": "WHAT IS THAT? LIZZIE, NOOOO!",
+            "who": "DECKER"
+          },
+          {
+            "key": "falva",
+            "expected": "WHAT IS THAT? FALVA, NOOOO!",
+            "actual": "WHAT IS THAT? FALVA, NOOOO!",
+            "who": "DECKER"
+          },
+          {
+            "key": "cole",
+            "expected": "WHAT IS THAT? COLE, NOOOO!",
+            "actual": "WHAT IS THAT? COLE, NOOOO!",
+            "who": "DECKER"
+          }
+        ]
+      },
+      {
+        "name": "Both live seats are captured for portal rescue",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Both pilots reach the same gate and survive the collapse",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Restart cancels all rescue effects",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native browser exceptions",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "sources": [
+      {
+        "name": "dense has even fixed cells and its centre pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "dense has editable Aseprite source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "barrage has even fixed cells and its centre pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "barrage has editable Aseprite source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "radial has even fixed cells and its centre pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "radial has editable Aseprite source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "engulf has even fixed cells and its centre pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "engulf has editable Aseprite source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "ring has even fixed cells and its centre pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "ring has editable Aseprite source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All56 frames reuse actual game explosion and smoke artwork",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No runtime scaling, rotation, opacity or invented graphics",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Rescue hands native progression back to its existing owner",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Core source is unchanged",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Installed authoring recipe reproduces exact runtime PNGs",
+        "passed": true,
+        "data": null
+      }
+    ],
+    "playback": [
+      {
+        "name": "Existing Stage7 chamber link selects the revised native recording",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Movie loads at1280x800 with the complete escape and native handoff",
+        "passed": true,
+        "data": [
+          1280,
+          800,
+          15.867333
+        ]
+      },
+      {
+        "name": "Browser video advances with no media error",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review labels the checkpoint honestly and preserves the previous take",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Preview has no browser errors",
+        "passed": true,
+        "data": []
+      }
+    ]
+  },
+  "media": {
+    "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Sewer-Nick-Of-Time-1031\\route-video\\stage7-054057\\report.json",
+    "seconds": 15.847,
+    "fps": 58.67237687366167,
+    "overallFPS": 44.064689321024034,
+    "performanceScope": "Active escape phases from run through white; whole-recording average also includes native startup and Stage8 loading.",
+    "meanDB": -24.8,
+    "peakDB": -6.6,
+    "events": [
+      {
+        "event": "radio",
+        "time": 0.2333333333333333,
+        "who": "DECKER",
+        "text": "SELF-DESTRUCT! KEEP MOVING!"
+      },
+      {
+        "event": "escape-start",
+        "time": 0.2333333333333333,
+        "source": 1793.7254758399995,
+        "speed": 400,
+        "pilot": "cole"
+      },
+      {
+        "event": "phase",
+        "time": 3.4166666666666594,
+        "phase": "form",
+        "source": 513.7254758399937,
+        "portalY": -203.7254758399937,
+        "shipY": 452.361000772244
+      },
+      {
+        "event": "radio",
+        "time": 3.5833333333333255,
+        "who": "DECKER",
+        "text": "WHAT IS THAT? COLE, NOOOO!"
+      },
+      {
+        "event": "phase",
+        "time": 4.016666666666658,
+        "phase": "enter",
+        "source": 273.725475839993,
+        "portalY": 36.27452416000699,
+        "shipY": 452.361000772244
+      },
+      {
+        "event": "phase",
+        "time": 4.716666666666655,
+        "phase": "close",
+        "source": 0,
+        "portalY": 310,
+        "shipY": 310
+      },
+      {
+        "event": "saved-before-blast",
+        "time": 4.716666666666655,
+        "margin": 22,
+        "portalY": 310
+      },
+      {
+        "event": "phase",
+        "time": 5.199999999999987,
+        "phase": "white",
+        "source": 0,
+        "portalY": 310,
+        "shipY": 310
+      },
+      {
+        "event": "native-finish",
+        "time": 5.583333333333319,
+        "source": 0,
+        "age": 5.366666666666653
+      }
+    ],
+    "playing": {
+      "loop": 1,
+      "boss7": 1,
+      "hit": 3,
+      "bossAlarm": 1,
+      "laserBeamStart": 1,
+      "laserBeamEnd": 1,
+      "expSmall": 18,
+      "jetDash": 1,
+      "dialogueLetter": 69,
+      "missile": 1,
+      "warpCharge": 1,
+      "warpGate": 2,
+      "warpBurst": 1,
+      "expBig": 3,
+      "dash": 2,
+      "life": 1,
+      "achievement": 1,
+      "furiousCoin": 1
+    },
+    "decodeErrors": 0,
+    "sha256": "80fec5dc3ecf039242202f00a0de7e9da4c80400619471a8174c7d2f92cf1d83",
+    "preview": "http://127.0.0.1:51046/?escape=nick-of-time-1031#clip=stage7-portal-chamber"
+  },
+  "fullSuite": {
+    "exitCode": 1,
+    "existingFailures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "coreSHA256": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de",
+  "limits": [
+    "Native footage begins at a prepared final-hit Warden checkpoint, not a complete fight.",
+    "Performance measurement covers active escape; whole take also includes existing native startup and Stage8 loading.",
+    "Decker line uses the existing text dialogue and letter audio, not generated speech.",
+    "No Git commit or push."
+  ]
+}

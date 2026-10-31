@@ -1,0 +1,45 @@
+{
+  "assets": {
+    "laser_4_pulse_long": {
+      "w": 34,
+      "h": 53
+    },
+    "laser_4_pulse_short": {
+      "w": 24,
+      "h": 58
+    },
+    "white_muzzle_0": {
+      "w": 128,
+      "h": 128
+    },
+    "white_muzzle_1": {
+      "w": 128,
+      "h": 128
+    },
+    "white_muzzle_2": {
+      "w": 128,
+      "h": 128
+    },
+    "white_muzzle_3": {
+      "w": 128,
+      "h": 128
+    },
+    "white_muzzle_4": {
+      "w": 128,
+      "h": 128
+    },
+    "white_muzzle_5": {
+      "w": 128,
+      "h": 128
+    },
+    "white_muzzle_6": {
+      "w": 128,
+      "h": 128
+    },
+    "white_muzzle_7": {
+      "w": 128,
+      "h": 128
+    }
+  },
+  "errors": []
+}

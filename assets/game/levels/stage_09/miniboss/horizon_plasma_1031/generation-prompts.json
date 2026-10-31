@@ -1,0 +1,14 @@
+{
+ "provider":"PixelLab",
+ "seedJob":"5c3eed0b-80a1-49ca-b99f-df8d1bdb922d",
+ "animationJob":"939e4e0a-e9fb-4f47-aaf7-a5c61901658a",
+ "seedAsset":"6c4c65bc-c9f8-5fca-a4c2-f8c2f0e086cc",
+ "animationAsset":"2a88da54-4151-579c-a1e2-531e46178864",
+ "seed":85032,
+ "sourceCanvas":[64,256],
+ "generatedFrames":8,
+ "costUSD":0.0485,
+ "seedPrompt":"A seamless long vertical ALIEN SYMBIOTE PLASMA LASER beam segment for a premium Neo-Geo 16-bit arcade space shooter. Isolated centered narrow beam, points north/south, extends all the way through both top and bottom edges so matching segments tile. The core is white-hot ivory #effff8, thick mint-cyan #79ffe5 and luminous aqua #20e5df, with thin deep teal edge pixels #13778d. Exactly matches a bright turquoise-white alien eye reactor. Smooth readable braided liquid-energy filaments coil tightly around the central plasma shaft, precise bright pixel clusters, controlled soft authored light edge, no large jagged lightning zigzags, no blue/purple electricity, no star flare, no orb, no weapon, no background, no taper or caps. Beam stays within middle 28 pixels of the 64-pixel canvas; generous transparent sides. Rich HD16-bit SNK/Neo-Geo authored VFX, crystal plasma and living water-light, clean continuous shaft.",
+ "animationPrompt":"Seamless continuously flowing energy beam loop. Mint-cyan plasma braids coil smoothly around the bright central white shaft, pulses run down the beam, small precise light ripples. Keep the center shaft steady, unbroken and bright all the way from top edge to bottom edge, and keep the transparent background. No camera movement, no explosion, no jagged lightning forks, no added objects. Every frame remains the same straight long vertical beam.",
+ "authoring":"Aseprite: normalize generated filaments, author an uninterrupted ivory/cyan shaft, export64 directional variants with16 flow frames, fixed80px cells and40px pivot. Palette-align the existing eye/orb cells without changing their bounds. All rotation, glow and tint is baked offline."
+}

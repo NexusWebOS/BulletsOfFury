@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "name": "Pause freezes the offscreen leap",
+      "passed": true
+    },
+    {
+      "name": "Resume continues into the same committed combo",
+      "passed": true
+    },
+    {
+      "name": "Broken striking claw cancels its pending landing impact",
+      "passed": true
+    },
+    {
+      "name": "Destroyed claw is absent from the authored attack rig",
+      "passed": true
+    },
+    {
+      "name": "A one-clawed fighter chooses only its surviving arm",
+      "passed": true
+    },
+    {
+      "name": "Physical claw alpha contact reaches native playerHit",
+      "passed": true
+    },
+    {
+      "name": "Physical claw can kill through the normal death system",
+      "passed": true
+    },
+    {
+      "name": "Retry removes both combo and committed warnings",
+      "passed": true
+    },
+    {
+      "name": "Defeated copy still downloads into an intact main-body ninja fight",
+      "passed": true
+    },
+    {
+      "name": "The exhausted final copied life still reaches native final destruction",
+      "passed": true
+    },
+    {
+      "name": "No native/browser errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

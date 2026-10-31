@@ -1,0 +1,6731 @@
+{
+  "id": "jace",
+  "setup": {
+    "health": [
+      {
+        "key": "voss",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "nyx",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "rook",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "kaia",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "jace",
+        "hp": 1424,
+        "max": 1424
+      }
+    ],
+    "view": {
+      "width": 480,
+      "height": 512
+    },
+    "key": "jace"
+  },
+  "timeline": [
+    {
+      "t": 0.26666666666666666,
+      "wall": 0.45430000001192095,
+      "label": "Jace / agile drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 180.23437677496946,
+          "y": 134.10609645078097,
+          "heading": 1.6484387894857913,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.73575065699583,
+          "y": 188.7279442809899,
+          "heading": 1.730467430472042,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.26666666666666666,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 356.0115617893212,
+          "y": 138.7283834489154,
+          "heading": 1.6656951950985468,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 420.56641685364514,
+          "y": 171.78459173864698,
+          "heading": 1.5136733778552294,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.4393016514203,
+          "y": 115.79703155525159,
+          "heading": 1.414170136431066,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 11
+    },
+    {
+      "t": 0.7000000000000005,
+      "wall": 0.8783999999761581,
+      "label": "Jace / agile drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 186.62372395841768,
+          "y": 140.6269631868876,
+          "heading": 1.7261800672622638,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.99883440459934,
+          "y": 187.84413137394534,
+          "heading": 1.6868578287895877,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.7000000000000005,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 350.9871087285425,
+          "y": 131.2524644095444,
+          "heading": 1.5408291806280319,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 413.87388595711167,
+          "y": 164.58989205478017,
+          "heading": 1.4223521884517165,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.2317749612174,
+          "y": 115.49832493617858,
+          "heading": 1.4403540524829024,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 37
+    },
+    {
+      "t": 1.0833333333333344,
+      "wall": 1.2845,
+      "label": "Jace / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.24350545827681,
+          "y": 142.9794948666988,
+          "heading": 1.7121546195406208,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.1309747496873,
+          "y": 183.19052149247148,
+          "heading": 1.5841024323527657,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 345.42951408324564,
+          "y": 123.871220430591,
+          "heading": 1.4438166730792557,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.73618320815496,
+          "y": 161.26729565224633,
+          "heading": 1.4202754218352298,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.23754432226156,
+          "y": 119.28915591961555,
+          "heading": 1.5351223964484035,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 61
+    },
+    {
+      "t": 1.4999999999999996,
+      "wall": 1.7025,
+      "label": "Jace / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 194.64078171934452,
+          "y": 141.08493113308424,
+          "heading": 1.6167928087697039,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 274.1699280763918,
+          "y": 175.5821292740661,
+          "heading": 1.46669630486447,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 338.8325171314484,
+          "y": 117.54412044509826,
+          "heading": 1.4123088810402225,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.56848455172826,
+          "y": 162.03859444741175,
+          "heading": 1.503634083940519,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.3309068855969,
+          "y": 126.44972494019066,
+          "heading": 1.6567079431865783,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 86
+    },
+    {
+      "t": 1.9166666666666647,
+      "wall": 2.118199999988079,
+      "label": "Jace / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.98596688258598,
+          "y": 135.19342772647107,
+          "heading": 1.4940778484146364,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 269.428796964705,
+          "y": 167.78120508632585,
+          "heading": 1.4111962916989145,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 332.3640438240718,
+          "y": 115.00590919863426,
+          "heading": 1.4750502712171665,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.3197535765709,
+          "y": 167.0967158566621,
+          "heading": 1.6269327326780252,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 490.36939113066427,
+          "y": 134.45376550821257,
+          "heading": 1.7272036414562353,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 111
+    },
+    {
+      "t": 2.33333333333333,
+      "wall": 2.526399999976158,
+      "label": "Jace / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.13097474968734,
+          "y": 127.25352563895748,
+          "heading": 1.4169857688736502,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 263.4295140832457,
+          "y": 162.36780693940148,
+          "heading": 1.4506070944520006,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 326.736183208155,
+          "y": 117.09606828341673,
+          "heading": 1.5947298459653663,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.2375443222615,
+          "y": 174.76874954986488,
+          "heading": 1.7168482303284809,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 495.90841604724693,
+          "y": 140.65404141370118,
+          "heading": 1.70468716813568,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 136
+    },
+    {
+      "t": 2.749999999999995,
+      "wall": 2.945099999964237,
+      "label": "Jace / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 192.16992807639184,
+          "y": 119.89124808108772,
+          "heading": 1.4313616237878644,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 256.83251713144847,
+          "y": 161.132348496466,
+          "heading": 1.5614919297730572,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.56848455172826,
+          "y": 123.12330375024187,
+          "heading": 1.7001766554707038,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.3309068855969,
+          "y": 182.51726643427207,
+          "heading": 1.719909703651769,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 502.33821194365,
+          "y": 142.99988902628286,
+          "heading": 1.6025486008221954,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 161
+    },
+    {
+      "t": 3.1499999999999937,
+      "wall": 3.353,
+      "label": "Jace / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 187.6466129904817,
+          "y": 115.63521119675701,
+          "heading": 1.5237905541941248,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 250.61118082911054,
+          "y": 164.27069362653893,
+          "heading": 1.6740930594928713,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.3689949381697,
+          "y": 130.77065085534952,
+          "heading": 1.7294250251263896,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.1754645680574,
+          "y": 187.64267985352654,
+          "heading": 1.638914497067656,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 508.69214831896153,
+          "y": 140.89108729907662,
+          "heading": 1.4857764374031845,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 185
+    },
+    {
+      "t": 3.5833333333333255,
+      "wall": 3.776399999976158,
+      "label": "Jace / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 181.42951408324578,
+          "y": 115.64310946559877,
+          "heading": 1.651010901156003,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 244.7361832081551,
+          "y": 171.3127556820375,
+          "heading": 1.7306296543520143,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.2375443222615,
+          "y": 138.37243731981258,
+          "heading": 1.6632983833011667,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 413.9084160472469,
+          "y": 188.81514330896115,
+          "heading": 1.5109211480935443,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 515.0186527421422,
+          "y": 134.55627025164847,
+          "heading": 1.413592876055411,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "jace"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 210
+    },
+    {
+      "t": 3.9999999999999907,
+      "wall": 4.193,
+      "label": "Jace / aimed energy round",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 174.83251713144855,
+          "y": 120.16226706978735,
+          "heading": 1.7256634743199337,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.56848455172832,
+          "y": 179.3615790891871,
+          "heading": 1.6882998624547567,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.33090688559685,
+          "y": 142.55087540844076,
+          "heading": 1.5429040417992226,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 420.3382119436499,
+          "y": 185.28155937023772,
+          "heading": 1.4231522593368486,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 519.8733572769829,
+          "y": 126.55942506287846,
+          "heading": 1.4391437515999015,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "jace"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        }
+      ],
+      "frames": 235
+    },
+    {
+      "t": 4.416666666666656,
+      "wall": 4.612099999964237,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 168.36404382407193,
+          "y": 127.60439419520301,
+          "heading": 1.7082197812032567,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.31975357657092,
+          "y": 185.9678648180898,
+          "heading": 1.5760931658557198,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 326.3693911306642,
+          "y": 142.24753110812492,
+          "heading": 1.439096661103287,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 426.9509476184514,
+          "y": 178.3474783914698,
+          "heading": 1.4231842216235937,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 515,
+          "y": 126.55942506287846,
+          "heading": 1.6097058683926941,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "charge",
+            "t": 0.41666666666666663,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "jace"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 260
+    },
+    {
+      "t": 4.8333333333333215,
+      "wall": 5.031800000011921,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.73618320815513,
+          "y": 135.50810046804045,
+          "heading": 1.60905322269741,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.2375443222615,
+          "y": 188.94666657238412,
+          "heading": 1.4607365494164393,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.9084160472468,
+          "y": 137.56273174842602,
+          "heading": 1.4136083278905538,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 433.01865274214214,
+          "y": 170.3062608440257,
+          "heading": 1.510998027647724,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 515,
+          "y": 126.55942506287846,
+          "heading": 1.3859358510684037,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "charge",
+            "t": 0.8333333333333343,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "jace"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 285
+    },
+    {
+      "t": 5.249999999999987,
+      "wall": 5.452899999976158,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.56848455172835,
+          "y": 141.25933399030023,
+          "heading": 1.487136085205547,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.33090688559685,
+          "y": 187.31278296543223,
+          "heading": 1.4108301897050557,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 338.33821194364987,
+          "y": 130.04591606545375,
+          "heading": 1.481596422923326,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 437.8733572769829,
+          "y": 163.81743875838617,
+          "heading": 1.6343726363946856,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 489.5525182158124,
+          "y": 151.69949693001865,
+          "heading": 1.712217683032206,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "fire",
+            "t": 0.09999999999999999,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "jace"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 310
+    },
+    {
+      "t": 5.6833333333333185,
+      "wall": 5.8768000000119205,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.27401087361494,
+          "y": 142.9262553209221,
+          "heading": 1.413898569254434,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 244.5657408767262,
+          "y": 181.3168219565708,
+          "heading": 1.459640352108415,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 345.2088667625152,
+          "y": 121.8997316168653,
+          "heading": 1.607578425467106,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.06298456876755,
+          "y": 161.01059528404852,
+          "heading": 1.7216992069359065,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 414.2581776295124,
+          "y": 260.6398083542928,
+          "heading": 1.3975912460380089,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "fire",
+            "t": 0.5333333333333333,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "jace"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 336
+    },
+    {
+      "t": 6.099999999999984,
+      "wall": 6.293399999976158,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.28027745276654,
+          "y": 139.83284094116038,
+          "heading": 1.4382410859204906,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 250.1529955201707,
+          "y": 173.39045838552408,
+          "heading": 1.574576676682791,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 351.24021331801464,
+          "y": 116.42788096745547,
+          "heading": 1.7074366311921383,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.9932308281755,
+          "y": 163.02405180861086,
+          "heading": 1.7146701199877104,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 340,
+          "y": 327.68,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "fire",
+            "t": 0.9500000000000013,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "jace"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 361
+    },
+    {
+      "t": 6.516666666666649,
+      "wall": 6.709399999976158,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.45741152556982,
+          "y": 133.1566000436312,
+          "heading": 1.5414114428067318,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 256.60409634131867,
+          "y": 165.99643055254612,
+          "heading": 1.687264905934994,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 356.03416854331954,
+          "y": 115.11410128936228,
+          "heading": 1.7260376945242224,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 440.72250013194923,
+          "y": 168.9984032626359,
+          "heading": 1.6220822855553563,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 340,
+          "y": 327.68,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "recover",
+            "t": 0.21666666666666665,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [
+        {
+          "kind": "energy",
+          "hp": 2,
+          "dead": null,
+          "owner": "jace"
+        }
+      ],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 386
+    },
+    {
+      "t": 6.933333333333314,
+      "wall": 7.126300000011921,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.56574087672615,
+          "y": 125.10561572090408,
+          "heading": 1.6620563780244508,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 263.20886676251513,
+          "y": 161.58022059265542,
+          "heading": 1.7306916975664366,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.06298456876755,
+          "y": 118.39290876303582,
+          "heading": 1.6523199506163506,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 437.3906822759526,
+          "y": 176.9577076995736,
+          "heading": 1.4989957598902734,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 340,
+          "y": 327.68,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "recover",
+            "t": 0.6333333333333336,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 411
+    },
+    {
+      "t": 7.349999999999979,
+      "wall": 7.542899999976158,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 168.15299552017063,
+          "y": 118.34265024210794,
+          "heading": 1.7284308619996933,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 269.2402133180146,
+          "y": 161.602434660624,
+          "heading": 1.6790320433057215,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.9932308281755,
+          "y": 125.17987886612421,
+          "heading": 1.5301218060062778,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 432.36456411841976,
+          "y": 184.26952482471862,
+          "heading": 1.418607535539727,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 340,
+          "y": 327.68,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "recover",
+            "t": 1.0500000000000012,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 436
+    },
+    {
+      "t": 7.749999999999978,
+      "wall": 7.949599999964237,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 174.33821194364972,
+          "y": 115.14808132501615,
+          "heading": 1.7039394194121562,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 273.87335727698286,
+          "y": 165.80687560925546,
+          "heading": 1.568070581529239,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 358.8146111335956,
+          "y": 132.91778606208,
+          "heading": 1.434707781273149,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 426.4577982820053,
+          "y": 188.42670207722432,
+          "heading": 1.4264641621652714,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 361.75000000000017,
+          "y": 313.4300000000002,
+          "heading": 1.5509188695959912,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 460
+    },
+    {
+      "t": 8.166666666666652,
+      "wall": 8.369099999964238,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 180.9509476184513,
+          "y": 116.32014537909643,
+          "heading": 1.6012174474057523,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.9806256982991,
+          "y": 173.14296730957744,
+          "heading": 1.455053516996226,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 355.5596040447708,
+          "y": 139.67313653148793,
+          "heading": 1.4153029921402822,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 419.8331541892708,
+          "y": 188.39047324803937,
+          "heading": 1.5185123220715384,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 422.1666666666673,
+          "y": 273.8466666666673,
+          "heading": 1.6697913248254086,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 485
+    },
+    {
+      "t": 8.58333333333334,
+      "wall": 8.777099999964237,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 187.0186527421424,
+          "y": 121.68591260153022,
+          "heading": 1.4804046687363048,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.9983909210326,
+          "y": 181.09324932283292,
+          "heading": 1.4108662901766067,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 350.5917007144304,
+          "y": 142.898480717182,
+          "heading": 1.4883668497286122,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 413.4470497171113,
+          "y": 183.9255130362817,
+          "heading": 1.6416526903523496,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 482.58333333333445,
+          "y": 234.26333333333406,
+          "heading": 1.7297935170922272,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 510
+    },
+    {
+      "t": 9.000000000000027,
+      "wall": 9.21430000001192,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.8733572769833,
+          "y": 129.47072266109643,
+          "heading": 1.4133459259818322,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.8146111335953,
+          "y": 187.0282654079912,
+          "heading": 1.4617861243060224,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 344.45779828200455,
+          "y": 141.52707640996684,
+          "heading": 1.6104498000721779,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.00250624812884,
+          "y": 176.50855113219168,
+          "heading": 1.7226562553785623,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.4164454169737,
+          "y": 194.6800000000005,
+          "heading": 1.6952433926830663,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 535
+    },
+    {
+      "t": 9.450000000000049,
+      "wall": 9.647899999976158,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.14195451440858,
+          "y": 137.62371991630985,
+          "heading": 1.4460073308244752,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 273.219024426375,
+          "y": 188.93971747374272,
+          "heading": 1.587636133388041,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 337.3037934668593,
+          "y": 135.43960307211734,
+          "heading": 1.713782495430617,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 403.8674423597197,
+          "y": 168.01894730373837,
+          "heading": 1.7084680334440128,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 487.1020811244799,
+          "y": 151.93000000000023,
+          "heading": 1.5765788392698155,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 562
+    },
+    {
+      "t": 9.866666666666736,
+      "wall": 10.058699999988079,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.98451643582789,
+          "y": 142.27231529365747,
+          "heading": 1.5543630761412721,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 268.1355849605285,
+          "y": 185.91968562846236,
+          "heading": 1.695840751270657,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 330.96804341516406,
+          "y": 127.52754735516933,
+          "heading": 1.7223531592089365,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.10444110089594,
+          "y": 162.4891752529703,
+          "heading": 1.6095249143658903,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 491.53272388539335,
+          "y": 116.95319772656605,
+          "heading": 1.4610897847161046,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 587
+    },
+    {
+      "t": 10.283333333333424,
+      "wall": 10.475899999976159,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 194.6270607351444,
+          "y": 142.53125855254632,
+          "heading": 1.6724913332673128,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 261.936358400454,
+          "y": 179.2881044723553,
+          "heading": 1.7296840549722625,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 325.6265863058331,
+          "y": 120.10248691588777,
+          "heading": 1.6407961321392424,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.5316644752358,
+          "y": 161.09720185596913,
+          "heading": 1.4875507110932724,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 497.33584054327747,
+          "y": 122.87408529363391,
+          "heading": 1.4108409252165497,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 612
+    },
+    {
+      "t": 10.700000000000111,
+      "wall": 10.893099999964237,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.21902442637435,
+          "y": 138.31490745198136,
+          "heading": 1.730143688659717,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 255.30379346685834,
+          "y": 171.2382864476408,
+          "heading": 1.6690401368402037,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 321.8674423597193,
+          "y": 115.62016753530847,
+          "heading": 1.517611679139578,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 405.10208112448043,
+          "y": 164.3034048867547,
+          "heading": 1.415080941219683,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 503.8725885746487,
+          "y": 130.82104245544292,
+          "heading": 1.4557142106793466,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 637
+    },
+    {
+      "t": 11.116666666666799,
+      "wall": 11.30980000001192,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 186.1355849605276,
+          "y": 131.01776733117833,
+          "heading": 1.6930354876400922,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 248.96804341516318,
+          "y": 164.4326080849821,
+          "heading": 1.5499726715908189,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.1044411008959,
+          "y": 115.56306023142865,
+          "heading": 1.4260550281029682,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 409.5327238853941,
+          "y": 171.04737283347708,
+          "heading": 1.4352118671237784,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 510.42336283387147,
+          "y": 138.16571262395257,
+          "heading": 1.569024433086443,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 662
+    },
+    {
+      "t": 11.516666666666818,
+      "wall": 11.719300000011922,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 180.19745144249524,
+          "y": 123.35060022099984,
+          "heading": 1.5882784589361822,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 243.81328525435117,
+          "y": 161.16876111368012,
+          "heading": 1.4464126889921725,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.47231917796955,
+          "y": 119.70329925241673,
+          "heading": 1.4189046620194523,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 415.08501279284866,
+          "y": 178.7851811845493,
+          "heading": 1.5310451311569746,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 516.0553137558853,
+          "y": 142.38698499186464,
+          "heading": 1.6797326662419712,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 686
+    },
+    {
+      "t": 11.950000000000173,
+      "wall": 12.143300000011921,
+      "label": "Jace / swerve and Helix charge",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 173.30379346685734,
+          "y": 117.05558905957707,
+          "heading": 1.4660363742959932,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 239.86744235971886,
+          "y": 162.40130373264046,
+          "heading": 1.4124307175427047,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 323.10208112448095,
+          "y": 127.33020165204954,
+          "heading": 1.5044256715954558,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 421.87258857464974,
+          "y": 185.79430447189466,
+          "heading": 1.6574414999546143,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 520.7602375016977,
+          "y": 142.3341735407654,
+          "heading": 1.7307961556954168,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Jace / agile drift",
+          "request": "drift"
+        },
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 712
+    },
+    {
+      "t": 12.36666666666686,
+      "wall": 12.561,
+      "label": "Jace / Helix counterburst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 166.9680434151623,
+          "y": 115.0083665703403,
+          "heading": 1.4111371055970487,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.10444110089577,
+          "y": 167.84750622624796,
+          "heading": 1.4757495634002087,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 327.5327238853949,
+          "y": 135.26261567232822,
+          "heading": 1.6277475771378376,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 428.4233628338724,
+          "y": 188.9199051508018,
+          "heading": 1.727384873954314,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 515,
+          "y": 142.12064319746122,
+          "heading": 1.6310068575553238,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "charge",
+            "t": 0.3833333333333333,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 737
+    },
+    {
+      "t": 12.783333333333548,
+      "wall": 12.982300000011922,
+      "label": "Jace / Helix counterburst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 161.6265863058317,
+          "y": 117.58870166742417,
+          "heading": 1.4511838495585088,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.53166447523625,
+          "y": 175.65930648871034,
+          "heading": 1.5955907393360964,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 333.33584054327935,
+          "y": 141.12374796482388,
+          "heading": 1.7172017605685967,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 434.26701408248545,
+          "y": 187.44167147360668,
+          "heading": 1.7042083011728077,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 515,
+          "y": 142.12064319746122,
+          "heading": 1.39543274871604,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "charge",
+            "t": 0.8000000000000008,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 762
+    },
+    {
+      "t": 13.200000000000236,
+      "wall": 13.392699999988078,
+      "label": "Jace / Helix counterburst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 157.86744235971844,
+          "y": 123.94318082239474,
+          "heading": 1.5623616418416646,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 241.1020811244815,
+          "y": 183.25304938432697,
+          "heading": 1.7006871946765683,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 339.8725885746507,
+          "y": 142.97510240319625,
+          "heading": 1.7195916826034907,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 438.7602375016982,
+          "y": 181.84851072205367,
+          "heading": 1.6016944066049323,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 494.3382117621554,
+          "y": 157.58392293100613,
+          "heading": 1.6707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "fire",
+            "t": 0.06666666666666667,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 787
+    },
+    {
+      "t": 13.600000000000255,
+      "wall": 13.799699999988079,
+      "label": "Jace / Helix counterburst",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.13342554184405,
+          "y": 131.65012948578223,
+          "heading": 1.6747567237908918,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 245.32532306429317,
+          "y": 187.99947490587533,
+          "heading": 1.7293088773188088,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 346.1702601091637,
+          "y": 140.3971630476567,
+          "heading": 1.638125322913121,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.3422884652815,
+          "y": 174.3163520441328,
+          "heading": 1.4850397999799114,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 430.5124719580717,
+          "y": 250.3636013322755,
+          "heading": 1.4707963267948967,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "fire",
+            "t": 0.4666666666666666,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 1.0000000000000013,
+          "label": "Jace / aimed energy round",
+          "request": "gun"
+        },
+        {
+          "t": 4.016666666666658,
+          "label": "Jace / swerve and Helix charge",
+          "request": "helix"
+        },
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        }
+      ],
+      "frames": 811
+    },
+    {
+      "t": 14.016666666666943,
+      "wall": 14.216599999964238,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.47231917796998,
+          "y": 138.7837895385176,
+          "heading": 1.7303832706686035,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 251.0850127928505,
+          "y": 188.71257963178073,
+          "heading": 1.6666895551056362,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 352.0553137558869,
+          "y": 134.03408725038565,
+          "heading": 1.5148320476680548,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 441.9420148476887,
+          "y": 166.7272782668688,
+          "heading": 1.4144278403671953,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 340,
+          "y": 327.68,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "fire",
+            "t": 0.8833333333333344,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 836
+    },
+    {
+      "t": 14.43333333333363,
+      "wall": 14.6355,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.96093918176746,
+          "y": 142.68158369113894,
+          "heading": 1.691106786704821,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 257.60594654555996,
+          "y": 184.89042032135436,
+          "heading": 1.5470445277629354,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 356.61324483809403,
+          "y": 126.00605012012679,
+          "heading": 1.4248195633140015,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 440.3464024423884,
+          "y": 161.87430363114737,
+          "heading": 1.4368049620030663,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 340,
+          "y": 327.68,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "recover",
+            "t": 0.15,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 861
+    },
+    {
+      "t": 14.850000000000318,
+      "wall": 15.042899999976159,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 163.32532306429394,
+          "y": 142.05436532673707,
+          "heading": 1.580284178664487,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 264.17026010916464,
+          "y": 177.7971283143722,
+          "heading": 1.4415242004825095,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.34228846528174,
+          "y": 118.96822442939167,
+          "heading": 1.4216164190631857,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 436.7311060079523,
+          "y": 161.3624887401251,
+          "heading": 1.5388639568340043,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 340,
+          "y": 327.68,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "recover",
+            "t": 0.5666666666666668,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 886
+    },
+    {
+      "t": 15.266666666667005,
+      "wall": 15.460300000011921,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 169.08501279285144,
+          "y": 137.10957906677513,
+          "heading": 1.4638193427780468,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 270.0553137558877,
+          "y": 169.77872113651605,
+          "heading": 1.4128793135894802,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 359.9420148476886,
+          "y": 115.24828291418297,
+          "heading": 1.5071274580703542,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 431.49411945583796,
+          "y": 165.36110996125745,
+          "heading": 1.659912466832541,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 340,
+          "y": 327.68,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "swervehelix",
+            "phase": "recover",
+            "t": 0.9833333333333347,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 911
+    },
+    {
+      "t": 15.683333333333692,
+      "wall": 15.875399999976159,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 175.60594654556095,
+          "y": 129.48265105967664,
+          "heading": 1.4109714906313002,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 274.6132448380946,
+          "y": 163.487186574104,
+          "heading": 1.4781443845592344,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 358.346402442388,
+          "y": 116.07654965824078,
+          "heading": 1.630501046892313,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 425.2119622499196,
+          "y": 172.5476733870462,
+          "heading": 1.7279654649102505,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 354.5000000000001,
+          "y": 318.1800000000001,
+          "heading": 1.680929302167548,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 936
+    },
+    {
+      "t": 16.033333333333704,
+      "wall": 16.29339999997616,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 181.14733285210127,
+          "y": 122.84101309259472,
+          "heading": 1.4404089363642036,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.0436167533353,
+          "y": 161.09292052995934,
+          "heading": 1.5783785735773226,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 355.4312872356911,
+          "y": 120.1309326962964,
+          "heading": 1.7093771280660013,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 419.6315033985797,
+          "y": 179.3231244398591,
+          "heading": 1.7129651329641358,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 405.2500000000005,
+          "y": 284.9300000000005,
+          "heading": 1.5858437931153129,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 956
+    },
+    {
+      "t": 16.450000000000347,
+      "wall": 16.709300000011922,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 187.18746312298197,
+          "y": 116.93448882869303,
+          "heading": 1.5451590724564424,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.9947867407369,
+          "y": 162.50573610872462,
+          "heading": 1.6898402263412486,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 350.4189956397418,
+          "y": 127.56415199014472,
+          "heading": 1.7250729679822085,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 413.2640279972282,
+          "y": 185.9426799100734,
+          "heading": 1.618464477198737,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 465.66666666666765,
+          "y": 245.34666666666746,
+          "heading": 1.4680301087669132,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 981
+    },
+    {
+      "t": 16.86666666666699,
+      "wall": 17.125399999976157,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.99600912730241,
+          "y": 115.01848132856311,
+          "heading": 1.6651551496019692,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.7448084881473,
+          "y": 168.05087304555153,
+          "heading": 1.7305089520905585,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 344.25971737110297,
+          "y": 135.47226003691898,
+          "heading": 1.6490237034348245,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 407.8582617477596,
+          "y": 188.94308099869954,
+          "heading": 1.4956165654603717,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 484.4586550555588,
+          "y": 205.7633333333339,
+          "heading": 1.411329353347648,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 1006
+    },
+    {
+      "t": 17.283333333333633,
+      "wall": 17.543599999964236,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.04361675333493,
+          "y": 117.72668608510403,
+          "heading": 1.729038000604689,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 273.43128723569185,
+          "y": 175.8943467218322,
+          "heading": 1.6761999068750832,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 337.63150339858083,
+          "y": 141.23974910699906,
+          "heading": 1.5264542477132679,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 404.0093044139329,
+          "y": 187.331982609686,
+          "heading": 1.4174764915651272,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 486.92766798277154,
+          "y": 166.18000000000032,
+          "heading": 1.44946028485659,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 1031
+    },
+    {
+      "t": 17.68333333333361,
+      "wall": 17.953099999964238,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.99909755893856,
+          "y": 123.85818912148598,
+          "heading": 1.7017922258497513,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 268.6456860633575,
+          "y": 183.17915707159418,
+          "heading": 1.5642678766410414,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.5046798962222,
+          "y": 142.98024573019407,
+          "heading": 1.4327457543962956,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 402.17423185432426,
+          "y": 181.92796093765998,
+          "heading": 1.4281466917619903,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 491.0715036143464,
+          "y": 128.1800000000001,
+          "heading": 1.554699045714442,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 1055
+    },
+    {
+      "t": 18.11666666666692,
+      "wall": 18.376899999976157,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 194.74480848814773,
+          "y": 132.19975594266592,
+          "heading": 1.5924659312737808,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 262.25971737110405,
+          "y": 188.19761156571784,
+          "heading": 1.449109605736141,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 325.8582617477604,
+          "y": 140.06164397915282,
+          "heading": 1.4176314903528549,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 402.45865505555855,
+          "y": 173.75565193153957,
+          "heading": 1.5269724192385488,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 497.0252707857467,
+          "y": 116.5937077594637,
+          "heading": 1.6766048466272445,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 1081
+    },
+    {
+      "t": 18.533333333333562,
+      "wall": 18.79269999998808,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.43128723569257,
+          "y": 139.17783438626054,
+          "heading": 1.4732275753606878,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 255.63150339858197,
+          "y": 188.58825191894155,
+          "heading": 1.4113742209200513,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.0093044139334,
+          "y": 133.50569330278205,
+          "heading": 1.496092815408038,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 404.92766798277097,
+          "y": 166.280621043114,
+          "heading": 1.649493473752209,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 503.542254875156,
+          "y": 115.07210558493065,
+          "heading": 1.7305403381143145,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 1106
+    },
+    {
+      "t": 18.950000000000205,
+      "wall": 19.210800000011922,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 186.41899563974374,
+          "y": 142.78972152965966,
+          "heading": 1.412011323272408,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 249.26402799723024,
+          "y": 184.4847480703149,
+          "heading": 1.4684438412215888,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.1408727260643,
+          "y": 125.45954097627943,
+          "heading": 1.6189787623841976,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 409.2761074854971,
+          "y": 161.6894155809893,
+          "heading": 1.7252149744706893,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 510.10963034352716,
+          "y": 118.15698011563255,
+          "heading": 1.6894793940221369,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 1130
+    },
+    {
+      "t": 19.350000000000183,
+      "wall": 19.61539999997616,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 180.519879089911,
+          "y": 141.96747490342946,
+          "heading": 1.4421449096921728,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 244.04808029186896,
+          "y": 177.56608438155973,
+          "heading": 1.581330805907121,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 320.4036121309083,
+          "y": 118.80544771338843,
+          "heading": 1.7108313506085295,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 414.77597260341764,
+          "y": 161.41763540294116,
+          "heading": 1.7115843402202837,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 515.7900705490356,
+          "y": 124.51738646474621,
+          "heading": 1.582897479565926,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 1154
+    },
+    {
+      "t": 19.766666666666826,
+      "wall": 20.0245,
+      "label": "Jace / native Helix interception event",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 173.89649622166988,
+          "y": 136.9165517106083,
+          "heading": 1.5480820951355854,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.12739321852877,
+          "y": 169.56104786731123,
+          "heading": 1.6917955226751882,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 322.7902824665232,
+          "y": 115.20609153179532,
+          "heading": 1.7242628475388322,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 421.2757066481175,
+          "y": 165.53319102807868,
+          "heading": 1.6156337609776232,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 520.4270427971826,
+          "y": 132.5640310347201,
+          "heading": 1.4657813442072372,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 4.016666666666658,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 12.000000000000176,
+          "label": "Jace / Helix counterburst",
+          "request": "helix"
+        },
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        }
+      ],
+      "frames": 1179
+    },
+    {
+      "t": 20.18333333333347,
+      "wall": 20.451599999964237,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 167.50467989622427,
+          "y": 129.24732815206582,
+          "heading": 1.6675269609404304,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.17423185432457,
+          "y": 163.35487667709987,
+          "heading": 1.730304538433601,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 327.07150361434464,
+          "y": 116.16889788097059,
+          "heading": 1.6464310017559536,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 427.85517532852043,
+          "y": 172.7797751994178,
+          "heading": 1.4930192937262845,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 522.1484633659921,
+          "y": 136.4453838473035,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "ram",
+            "phase": "charge",
+            "t": 0.19999999999999998,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1204
+    },
+    {
+      "t": 20.60000000000011,
+      "wall": 20.86409999996424,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.04808029186978,
+          "y": 121.49630390369272,
+          "heading": 1.729448133811512,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.40361213090807,
+          "y": 161.000184232914,
+          "heading": 1.6739573437704647,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 332.7759726034166,
+          "y": 121.37543061493588,
+          "heading": 1.5236207904734846,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 433.7900705490347,
+          "y": 180.76067092708246,
+          "heading": 1.4166572077092785,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 522.1484633659921,
+          "y": 136.4453838473035,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "ram",
+            "phase": "charge",
+            "t": 0.6166666666666669,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1229
+    },
+    {
+      "t": 21.016666666666755,
+      "wall": 21.284899999976158,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 157.67249721852926,
+          "y": 116.22703319542424,
+          "heading": 1.6970223822482933,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.3353864665226,
+          "y": 163.27575558071146,
+          "heading": 1.5562624414689261,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 338.8208106481164,
+          "y": 129.10369421596923,
+          "heading": 1.42886488783181,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 437.97214679718195,
+          "y": 186.83629686727528,
+          "heading": 1.4319584446269893,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 522.1484633659921,
+          "y": 136.4453838473035,
+          "heading": 1.5707963267948966,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "ram",
+            "phase": "charge",
+            "t": 1.0333333333333345,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1254
+    },
+    {
+      "t": 21.433333333333398,
+      "wall": 21.704,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 101.45331345249441,
+          "y": 115.1822613445248,
+          "heading": 1.5895326251786375,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 185.79007241208265,
+          "y": 169.42897398659542,
+          "heading": 1.4472105379858158,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 285.20853746132286,
+          "y": 136.79766225328743,
+          "heading": 1.4185126550789973,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 383.39403526095737,
+          "y": 188.9972158050689,
+          "heading": 1.5298236776556429,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 394.44184872968174,
+          "y": 347.86917763157203,
+          "heading": 2.114174835913663,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "ram",
+            "phase": "fire",
+            "t": 0.3,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1279
+    },
+    {
+      "t": 21.866666666666706,
+      "wall": 22.1265,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 57.47576744654712,
+          "y": 118.93175470101005,
+          "heading": 1.4669937141159548,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 152.04238317673273,
+          "y": 177.74578016279077,
+          "heading": 1.4122556873246062,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 253.0215327808941,
+          "y": 142.03534800571566,
+          "heading": 1.503279193314624,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 342.96387363979795,
+          "y": 186.34027700777287,
+          "heading": 1.6563776404551902,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 317.45663486370347,
+          "y": 504.16540332193176,
+          "heading": null,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "ram",
+            "phase": "recover",
+            "t": 0.13333333333333333,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1305
+    },
+    {
+      "t": 22.28333333333335,
+      "wall": 22.54619999998808,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 58.96930079510674,
+          "y": 125.95489819696961,
+          "heading": 1.4112244142928267,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 157.5838876874901,
+          "y": 184.85327553713748,
+          "heading": 1.4747371104330538,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 256.6193233366584,
+          "y": 142.69259678916941,
+          "heading": 1.626566207096586,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 340.413306769703,
+          "y": 179.94300769988436,
+          "heading": 1.7271207330067253,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 404.0416328123376,
+          "y": 366.66540332193176,
+          "heading": null,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "ram",
+            "phase": "recover",
+            "t": 0.55,
+            "shot": 0
+          }
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1330
+    },
+    {
+      "t": 22.683333333333326,
+      "wall": 22.9525,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 63.073440124951595,
+          "y": 133.67858667459942,
+          "heading": 1.4470749879281715,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 163.85711183912693,
+          "y": 188.6311501485192,
+          "heading": 1.589320481270517,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 259.2575623587871,
+          "y": 139.0512970391601,
+          "heading": 1.7145349524164923,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 336.9544792755003,
+          "y": 172.2303277859284,
+          "heading": 1.707596794050607,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 400.9040973313561,
+          "y": 246.41540332193173,
+          "heading": 1.5748849169774994,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1354
+    },
+    {
+      "t": 23.09999999999997,
+      "wall": 23.36109999996424,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 68.77605186936728,
+          "y": 140.172879187801,
+          "heading": 1.5560497406952603,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 169.79014981498563,
+          "y": 188.13541526372268,
+          "heading": 1.696891013460285,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 259.96451127051927,
+          "y": 132.02131112324884,
+          "heading": 1.721801412820593,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 331.78366601174986,
+          "y": 165.12942746955014,
+          "heading": 1.607878432484509,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 394.60783621821656,
+          "y": 206.83206998859816,
+          "heading": 1.4598623351902877,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1379
+    },
+    {
+      "t": 23.499999999999947,
+      "wall": 23.76830000001192,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 75.00929086941208,
+          "y": 142.947387002568,
+          "heading": 1.6698657338411678,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 174.2734784371219,
+          "y": 183.55617204767722,
+          "heading": 1.7300456445991559,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 258.5759083685254,
+          "y": 124.29845197096104,
+          "heading": 1.6438124669837642,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 325.79973720288984,
+          "y": 161.3633134698437,
+          "heading": 1.4904485868099104,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 389.530108566096,
+          "y": 168.83206998859794,
+          "heading": 1.4109560482356653,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1403
+    },
+    {
+      "t": 23.91666666666659,
+      "wall": 24.17769999998808,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 81.59967955979093,
+          "y": 141.30883562284873,
+          "heading": 1.7298040793466392,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 177.181841435893,
+          "y": 176.03764958346744,
+          "heading": 1.6716795459249068,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 255.12830689618133,
+          "y": 117.81245330241242,
+          "heading": 1.5208034460818445,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 319.16587690263447,
+          "y": 161.87303586110443,
+          "heading": 1.4158905702123805,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 385.8091267533294,
+          "y": 129.24873665526437,
+          "heading": 1.4533973325603844,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1428
+    },
+    {
+      "t": 24.316666666666567,
+      "wall": 24.585599999964238,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 87.35512140852626,
+          "y": 135.88556599384205,
+          "heading": 1.6983077626630925,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 177.98912347331012,
+          "y": 168.46300159464047,
+          "heading": 1.5583645713745597,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 250.24521760775252,
+          "y": 115.05052338241373,
+          "heading": 1.4298510786875072,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 313.08190592832295,
+          "y": 166.46312964108841,
+          "heading": 1.4309219971080742,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 384.11784881694916,
+          "y": 133.72449513795166,
+          "heading": 1.560592729179185,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1452
+    },
+    {
+      "t": 24.73333333333321,
+      "wall": 24.993699999988078,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 92.11701368407134,
+          "y": 128.03270658157396,
+          "heading": 1.5916260703911305,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 176.67307547353883,
+          "y": 162.72492783834744,
+          "heading": 1.4485611281159942,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 244.0611977881985,
+          "y": 116.70279383114864,
+          "heading": 1.4178786637897405,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 307.71547358582586,
+          "y": 173.98665446411997,
+          "heading": 1.527787993614493,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 384.5028770924404,
+          "y": 140.202180309497,
+          "heading": 1.6772389866222182,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1477
+    },
+    {
+      "t": 25.149999999999853,
+      "wall": 25.4105,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 95.1046466671882,
+          "y": 120.49976735726234,
+          "heading": 1.4725573635492435,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 173.30138128873833,
+          "y": 161.0466805197499,
+          "heading": 1.4114484109817287,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 237.43009651936848,
+          "y": 122.42221126334975,
+          "heading": 1.496843197342276,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 303.92156915838495,
+          "y": 181.84533063639887,
+          "heading": 1.6502301498692327,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 387.03426774023774,
+          "y": 142.9748845912025,
+          "heading": 1.7305860117894882,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1502
+    },
+    {
+      "t": 25.566666666666496,
+      "wall": 25.83030000001192,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 95.98912346629089,
+          "y": 115.77817365948509,
+          "heading": 1.4119093215338905,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 168.24521760073424,
+          "y": 163.9833189283826,
+          "heading": 1.4690965796810151,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 231.08190592130467,
+          "y": 130.31714996849735,
+          "heading": 1.619786116312229,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 302.11784880993,
+          "y": 187.43999940192396,
+          "heading": 1.725434666389197,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 391.4333498114682,
+          "y": 141.1255707552182,
+          "heading": 1.6889094401944063,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1527
+    },
+    {
+      "t": 25.98333333333314,
+      "wall": 26.252,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 94.67307547325191,
+          "y": 115.4295334910185,
+          "heading": 1.445748071448884,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 162.0611977879123,
+          "y": 170.5635866763145,
+          "heading": 1.587223469274643,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 225.7154735855393,
+          "y": 137.77645781183864,
+          "heading": 1.7135958280621721,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 302.5028770921528,
+          "y": 188.92029410986726,
+          "heading": 1.7086789839382088,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 397.21584548465194,
+          "y": 135.26587620000927,
+          "heading": 1.5769934607151364,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1552
+    },
+    {
+      "t": 26.399999999999782,
+      "wall": 26.659699999988078,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 91.3013812887273,
+          "y": 119.56915522272533,
+          "heading": 1.5539504136836029,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 155.43009651935782,
+          "y": 178.61114258865405,
+          "heading": 1.6955814794627826,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 221.92156915837364,
+          "y": 142.33306211221154,
+          "heading": 1.7224856513553237,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 305.03426774022535,
+          "y": 185.79662581836797,
+          "heading": 1.6099273577981692,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 403.7451823202309,
+          "y": 127.3338215383079,
+          "heading": 1.4613921747986012,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1577
+    },
+    {
+      "t": 26.816666666666425,
+      "wall": 27.07930000001192,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 86.24521760073472,
+          "y": 126.82791079351404,
+          "heading": 1.6721706694941285,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 149.0819059213052,
+          "y": 185.46435830008582,
+          "heading": 1.7297323590126517,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 220.11784880992968,
+          "y": 142.4799230444195,
+          "heading": 1.6411689934812366,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 309.4333498114669,
+          "y": 179.10210870756407,
+          "heading": 1.4879053227385806,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 410.30257104226484,
+          "y": 119.95283454281775,
+          "heading": 1.4108512588538509,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1602
+    },
+    {
+      "t": 27.216666666666402,
+      "wall": 27.48539999997616,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 80.32194007989209,
+          "y": 134.50624355214762,
+          "heading": 1.7295556790713418,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 143.90338172570313,
+          "y": 188.80621846335077,
+          "heading": 1.673308181724276,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 220.4451892030168,
+          "y": 138.4128197899878,
+          "heading": 1.5228117577127793,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 314.9655995454464,
+          "y": 171.36531801115254,
+          "heading": 1.416432125223203,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 415.9534052249928,
+          "y": 115.65952609066886,
+          "heading": 1.4519742277716532,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1626
+    },
+    {
+      "t": 27.633333333333045,
+      "wall": 27.894,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 73.69477315195829,
+          "y": 140.685545720545,
+          "heading": 1.696499902295512,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 140.0372256099813,
+          "y": 187.8016825684775,
+          "heading": 1.5554187840643752,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 222.89457000260916,
+          "y": 131.14801150093575,
+          "heading": 1.4284757077025079,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 321.47856784910607,
+          "y": 164.51946856549623,
+          "heading": 1.4323815521890204,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 420.5419680104273,
+          "y": 115.52667789749242,
+          "heading": 1.5635453021157377,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1651
+    },
+    {
+      "t": 28.049999999999688,
+      "wall": 28.311,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 67.32137967433138,
+          "y": 142.99999994097058,
+          "heading": 1.5886908279563217,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.14852140443134,
+          "y": 182.5631504368364,
+          "heading": 1.4466740907054456,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 227.22702100551308,
+          "y": 123.17277530033007,
+          "heading": 1.4187747648961915,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 328.04893858851545,
+          "y": 161.13992367907673,
+          "heading": 1.5306433620132545,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 423.3094899293463,
+          "y": 119.84996230826343,
+          "heading": 1.6794284097756749,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1676
+    },
+    {
+      "t": 28.449999999999665,
+      "wall": 28.71589999997616,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 62.09379589421131,
+          "y": 140.86088859963075,
+          "heading": 1.4742310241291496,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.39097767318714,
+          "y": 175.14986009132642,
+          "heading": 1.4112719961272908,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 232.71660414779504,
+          "y": 117.30105090617178,
+          "heading": 1.4949789020570854,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 333.7385511798193,
+          "y": 162.20820156541487,
+          "heading": 1.6483919986408553,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 423.96812839222,
+          "y": 126.87607271301458,
+          "heading": 1.7304639923802259,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1700
+    },
+    {
+      "t": 28.86666666666631,
+      "wall": 29.126399999976158,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 58.156075396393646,
+          "y": 134.80271779136245,
+          "heading": 1.4121715276486646,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 140.7579131852748,
+          "y": 167.41419237622347,
+          "heading": 1.4674768195149723,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 239.21204607565699,
+          "y": 115.0000235066404,
+          "heading": 1.6177735898921222,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 338.39062017024446,
+          "y": 167.45736846085262,
+          "heading": 1.7248796812244314,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 422.49973366952685,
+          "y": 134.84937406752945,
+          "heading": 1.6903222470860217,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1725
+    },
+    {
+      "t": 29.28333333333295,
+      "wall": 29.5445,
+      "label": "Jace / charge dash",
+      "hp": 7076,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 56.18272309839992,
+          "y": 126.8253707216743,
+          "heading": 1.4444428945846188,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 145.02296291774,
+          "y": 162.18743556092696,
+          "heading": 1.5851236014232226,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 245.7942307838372,
+          "y": 117.3293130572951,
+          "heading": 1.7126318780421557,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1402,
+          "x": 341.2383095887388,
+          "y": 175.20116630665575,
+          "heading": 1.7097372029525162,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1402,
+          "x": 418.9947752797642,
+          "y": 140.88806818140307,
+          "heading": 1.5791009270822403,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 12.000000000000176,
+          "resolved": "swervehelix",
+          "warm": 1.15
+        },
+        {
+          "t": 13.800000000000265,
+          "label": "Jace / native Helix interception event",
+          "request": "intercept"
+        },
+        {
+          "t": 13.800000000000265,
+          "nativeCounterburst": true
+        },
+        {
+          "t": 20.000000000000146,
+          "label": "Jace / charge dash",
+          "request": "ram"
+        },
+        {
+          "t": 20.000000000000146,
+          "resolved": "ram",
+          "warm": 1.1500000000000001
+        }
+      ],
+      "frames": 1750
+    }
+  ],
+  "stats": {
+    "peak": 1.305903434753418,
+    "tapped": 15,
+    "playing": {
+      "stagex": 1,
+      "enemyShoot": 1,
+      "bossWeaponCharge": 2,
+      "av3_target_acquire": 3,
+      "maverickHelixRelease": 2,
+      "alertLockon": 2,
+      "helixBurst": 1,
+      "av3_impact_energy": 1,
+      "teleportIn": 1,
+      "juggernautRamLaunch": 1
+    },
+    "tapErrors": [],
+    "frames": 1752,
+    "events": [
+      {
+        "t": 0.016666666666666666,
+        "label": "Jace / agile drift",
+        "request": "drift"
+      },
+      {
+        "t": 1.0000000000000013,
+        "label": "Jace / aimed energy round",
+        "request": "gun"
+      },
+      {
+        "t": 4.016666666666658,
+        "label": "Jace / swerve and Helix charge",
+        "request": "helix"
+      },
+      {
+        "t": 4.016666666666658,
+        "resolved": "swervehelix",
+        "warm": 1.15
+      },
+      {
+        "t": 12.000000000000176,
+        "label": "Jace / Helix counterburst",
+        "request": "helix"
+      },
+      {
+        "t": 12.000000000000176,
+        "resolved": "swervehelix",
+        "warm": 1.15
+      },
+      {
+        "t": 13.800000000000265,
+        "label": "Jace / native Helix interception event",
+        "request": "intercept"
+      },
+      {
+        "t": 13.800000000000265,
+        "nativeCounterburst": true
+      },
+      {
+        "t": 20.000000000000146,
+        "label": "Jace / charge dash",
+        "request": "ram"
+      },
+      {
+        "t": 20.000000000000146,
+        "resolved": "ram",
+        "warm": 1.1500000000000001
+      }
+    ],
+    "rr26": [
+      {
+        "kind": "energy-launch",
+        "t": 3.4166666666666594,
+        "pilot": "jace",
+        "large": false
+      },
+      {
+        "kind": "helix-counterburst",
+        "t": 13.783333333333598,
+        "hit": 2
+      }
+    ],
+    "rd21": [
+      {
+        "event": "personal-charge",
+        "time": 3.9999999999999907,
+        "pilot": "jace",
+        "kind": "swervehelix",
+        "warm": 1.15
+      },
+      {
+        "event": "personal-release",
+        "time": 5.149999999999987,
+        "pilot": "jace",
+        "kind": "swervehelix"
+      },
+      {
+        "event": "personal-recovery",
+        "time": 7.599999999999978,
+        "pilot": "jace"
+      },
+      {
+        "event": "personal-charge",
+        "time": 11.983333333333508,
+        "pilot": "jace",
+        "kind": "swervehelix",
+        "warm": 1.15
+      },
+      {
+        "event": "personal-release",
+        "time": 13.133333333333566,
+        "pilot": "jace",
+        "kind": "swervehelix"
+      },
+      {
+        "event": "personal-recovery",
+        "time": 15.583333333333687,
+        "pilot": "jace"
+      }
+    ],
+    "ra4": [
+      {
+        "event": "helixRelease",
+        "pilot": "jace"
+      },
+      {
+        "event": "helixRelease",
+        "pilot": "jace"
+      },
+      {
+        "event": "specialStart",
+        "pilot": "jace",
+        "kind": "ram"
+      },
+      {
+        "event": "specialRelease",
+        "pilot": "jace",
+        "kind": "ram"
+      }
+    ],
+    "god": true
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+}

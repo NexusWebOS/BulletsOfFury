@@ -1,0 +1,284 @@
+{
+  "id": "bof_study_pressure_1005",
+  "status": "candidate_native_review_required",
+  "file": "reactor_pressure_discharge.png",
+  "mode": "RGBA",
+  "nativeSize": [
+    1448,
+    1086
+  ],
+  "grid": [
+    4,
+    3
+  ],
+  "cellSize": [
+    362,
+    362
+  ],
+  "requestedSize": [
+    1024,
+    768
+  ],
+  "fps": 20,
+  "loop": false,
+  "durationSeconds": 0.6,
+  "sampling": "nearest",
+  "collision": "cosmetic_only",
+  "alphaExtrema": [
+    0,
+    253
+  ],
+  "frames": [
+    {
+      "frame": 0,
+      "sourceRect": [
+        0,
+        0,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        123,
+        124,
+        241,
+        259
+      ],
+      "minimumSignificantAlphaPadding": 103
+    },
+    {
+      "frame": 1,
+      "sourceRect": [
+        362,
+        0,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        100,
+        109,
+        257,
+        276
+      ],
+      "minimumSignificantAlphaPadding": 86
+    },
+    {
+      "frame": 2,
+      "sourceRect": [
+        724,
+        0,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        78,
+        78,
+        281,
+        303
+      ],
+      "minimumSignificantAlphaPadding": 59
+    },
+    {
+      "frame": 3,
+      "sourceRect": [
+        1086,
+        0,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        39,
+        48,
+        318,
+        327
+      ],
+      "minimumSignificantAlphaPadding": 35
+    },
+    {
+      "frame": 4,
+      "sourceRect": [
+        0,
+        362,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        32,
+        31,
+        334,
+        336
+      ],
+      "minimumSignificantAlphaPadding": 26
+    },
+    {
+      "frame": 5,
+      "sourceRect": [
+        362,
+        362,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        13,
+        8,
+        349,
+        347
+      ],
+      "minimumSignificantAlphaPadding": 8
+    },
+    {
+      "frame": 6,
+      "sourceRect": [
+        724,
+        362,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        12,
+        3,
+        350,
+        353
+      ],
+      "minimumSignificantAlphaPadding": 3
+    },
+    {
+      "frame": 7,
+      "sourceRect": [
+        1086,
+        362,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        8,
+        1,
+        351,
+        354
+      ],
+      "minimumSignificantAlphaPadding": 1
+    },
+    {
+      "frame": 8,
+      "sourceRect": [
+        0,
+        724,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        16,
+        6,
+        347,
+        346
+      ],
+      "minimumSignificantAlphaPadding": 6
+    },
+    {
+      "frame": 9,
+      "sourceRect": [
+        362,
+        724,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        19,
+        5,
+        345,
+        344
+      ],
+      "minimumSignificantAlphaPadding": 5
+    },
+    {
+      "frame": 10,
+      "sourceRect": [
+        724,
+        724,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        21,
+        7,
+        337,
+        342
+      ],
+      "minimumSignificantAlphaPadding": 7
+    },
+    {
+      "frame": 11,
+      "sourceRect": [
+        1086,
+        724,
+        362,
+        362
+      ],
+      "pivot": [
+        181.0,
+        181.0
+      ],
+      "alphaBoundsAt16": [
+        38,
+        22,
+        321,
+        321
+      ],
+      "minimumSignificantAlphaPadding": 22
+    }
+  ],
+  "sha256": "b481a0a909c06eccfb27fdef92081cc3bfcf475a33f6e60b851d9cbd4f9aa452",
+  "generator": "OpenAI built-in imagegen; new original asset; no Contra pixels supplied",
+  "promptFile": "generation-prompt.txt",
+  "sourceOriginal": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-af924243-184c-4727-850c-f01c63a5c7ff.png",
+  "processing": "Exact copy; alpha and cell bounds analyzed only; no raster edits",
+  "qa": {
+    "transparentBackground": true,
+    "squareEqualCells": true,
+    "requested12PixelPaddingMet": false,
+    "notes": "Largest cells have 1 px significant-alpha padding; review native renderer for bleed before production registration."
+  }
+}

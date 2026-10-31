@@ -1,0 +1,358 @@
+{
+  "native": [
+    {
+      "name": "Native bomber reaches its pre-drop tell",
+      "passed": true,
+      "data": {
+        "stage": 8,
+        "state": "play",
+        "active": true,
+        "mode": "hb25-flight",
+        "phase": "tell",
+        "clock": 1.0000000000000013
+      }
+    },
+    {
+      "name": "No ground retinas appear before an explosive bomb releases",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Pre-drop carpet has no vertical FOV columns",
+      "passed": true,
+      "data": [
+        {
+          "x": 730,
+          "y": 138,
+          "ex": -50,
+          "ey": 138,
+          "width": 80,
+          "progress": 0,
+          "fieldOnly": true,
+          "alpha": 0.4
+        }
+      ]
+    },
+    {
+      "name": "Native explosive release occurs",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Each live explosive drop has one reticle at its committed landing point",
+      "passed": true,
+      "data": {
+        "marks": [
+          [
+            503.09120091422267,
+            92.16,
+            62,
+            0,
+            0.64
+          ]
+        ],
+        "lanes": [],
+        "bombs": [
+          {
+            "id": 1,
+            "x": 497.85931572612986,
+            "y": 77.22786447430681,
+            "target": {
+              "x": 503.09120091422267,
+              "y": 92.16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Falling bombs do not draw vertical or radial FOV rays",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Live bomber crosses the visible center for hit verification",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real claw damage still renders white damaged pixels",
+      "passed": true,
+      "data": {
+        "white": 7753,
+        "flash": 0.18,
+        "hp": 461,
+        "before": 471
+      }
+    },
+    {
+      "name": "Native claw hit flash expires normally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native passes use all four upper/middle/lower/bottom bands",
+      "passed": true,
+      "data": [
+        {
+          "event": "drop",
+          "time": 3.8833333333333244,
+          "id": 1,
+          "band": 0,
+          "part": "gunR",
+          "x": 497.727861324419,
+          "y": 76.85268518974166,
+          "vx": 0.1314544017108743,
+          "vy": 0.3751792845651552,
+          "target": {
+            "x": 503.09120091422267,
+            "y": 92.16
+          },
+          "at": 4.563333333333325
+        },
+        {
+          "event": "drop",
+          "time": 4.099999999999991,
+          "id": 2,
+          "band": 1,
+          "part": "gunL",
+          "x": 317.56380769342985,
+          "y": 153.61160918403985,
+          "vx": 0.2629088034217486,
+          "vy": 2.007558598430396,
+          "target": {
+            "x": 328.2904868730372,
+            "y": 235.52
+          },
+          "at": 4.7799999999999905
+        },
+        {
+          "event": "drop",
+          "time": 4.29999999999999,
+          "id": 3,
+          "band": 2,
+          "part": "gunR",
+          "x": 162.51913696168856,
+          "y": 76.85268518974166,
+          "vx": 0.06572720085543855,
+          "vy": 6.900669480643585,
+          "target": {
+            "x": 165.20080675659045,
+            "y": 358.4
+          },
+          "at": 4.97999999999999
+        },
+        {
+          "event": "drop",
+          "time": 7.133333333333313,
+          "id": 4,
+          "band": 3,
+          "part": "gunL",
+          "x": 254.78659932218693,
+          "y": 173.02361660966176,
+          "vx": -0.26290880342174794,
+          "vy": 7.053342730155348,
+          "target": {
+            "x": 244.0599201425796,
+            "y": 460.8
+          },
+          "at": 7.813333333333313
+        },
+        {
+          "event": "drop",
+          "time": 7.333333333333313,
+          "id": 5,
+          "band": 0,
+          "part": "gunR",
+          "x": 400.41628957809405,
+          "y": 220.70507633139735,
+          "vx": -0.06572720085544133,
+          "vy": -3.150614615965621,
+          "target": {
+            "x": 397.73461978319204,
+            "y": 92.16
+          },
+          "at": 8.013333333333312
+        }
+      ]
+    },
+    {
+      "name": "All observed velocity vectors end at the marked point after the native fuse",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Each native impact is at its own reticle position",
+      "passed": true,
+      "data": [
+        {
+          "event": "impact",
+          "time": 4.566666666666656,
+          "id": 1,
+          "x": 503.09120091422267,
+          "y": 92.16
+        },
+        {
+          "event": "impact",
+          "time": 4.783333333333322,
+          "id": 2,
+          "x": 328.2904868730372,
+          "y": 235.52
+        },
+        {
+          "event": "impact",
+          "time": 4.983333333333321,
+          "id": 3,
+          "x": 165.20080675659045,
+          "y": 358.4
+        },
+        {
+          "event": "impact",
+          "time": 7.816666666666644,
+          "id": 4,
+          "x": 244.0599201425796,
+          "y": 460.8
+        },
+        {
+          "event": "impact",
+          "time": 8.016666666666644,
+          "id": 5,
+          "x": 397.73461978319204,
+          "y": 92.16
+        }
+      ]
+    },
+    {
+      "name": "Native 128-round budget remains bounded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Explosive bombs remain ordinary unshootable chaos ordnance",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Player and camera motion cannot retarget a released bomb",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Landing still explodes exactly on the reticle with a full projectile budget",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "A destroyed claw cancels its in-flight bomb and marker",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage exit cancels remaining bombs",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page/console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Fresh native Furious fight reaches real miniboss defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "No native game, console, asset, audio-tap or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual attack book drops explosive bombs at all four depths",
+      "passed": true,
+      "data": {
+        "count": 12
+      }
+    },
+    {
+      "name": "Every observed impact matches the bomb reticle target",
+      "passed": true,
+      "data": {
+        "impacts": 12
+      }
+    },
+    {
+      "name": "Every released bomb trajectory reaches its marked endpoint",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native pre-drop tells have no phantom live bomb reticles",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Live bomb targets remain fixed after physical release",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native launch, impact and flight sound routes actually play",
+      "passed": true,
+      "data": {
+        "bossfireVileexistence": 5,
+        "combatOrb0927": 19,
+        "jetDash": 6
+      }
+    },
+    {
+      "name": "Decoded music and game sound are audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -21.0,
+        "peakDb": -3.7
+      }
+    },
+    {
+      "name": "stage8-miniboss uses the corrected native film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-bomb-landings uses the corrected native film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview has no runtime errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 76.68,
+  "fps": 58.303001529777916,
+  "preview": "http://127.0.0.1:51046/?herald=actual-landings-1029#clip=stage8-herald-bomb-landings",
+  "chapter": {
+    "start": 4.662,
+    "end": 12.311
+  },
+  "drops": 12,
+  "impacts": 12,
+  "audio": {
+    "meanDb": -21.0,
+    "peakDb": -3.7
+  },
+  "sha256": "05973653af6e01b12cf437c4e75004a3685eec14c0ddc9c059efb86d796a47d5",
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false
+}

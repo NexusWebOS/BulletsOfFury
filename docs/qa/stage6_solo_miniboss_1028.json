@@ -1,0 +1,319 @@
+{
+  "checks": [
+    {
+      "name": "Fresh live Furious solo fight reaches native defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "No NPC wing, callable ally or allied projectile appears anywhere in the film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No game, HTTP, audio or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual recorded audio is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -20.3,
+        "peakDb": -1.5
+      }
+    },
+    {
+      "name": "Existing preview selects the new local solo movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Solo movie seeks to0.2",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Solo movie seeks to0.75",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Updated preview decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No updated-preview errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "seconds": 57.87,
+  "nativeFps": 57.36841196082157,
+  "videoSha256": "f6a1be1440ab097fd933bc8f1d356c7ba510efbec01363c8de8ee11b3b151bad",
+  "video": "C:\\Users\\Mike\\Documents\\New project\\BOF-Downloaded-Stage6-9-1028\\videos\\stage6-miniboss-solo.mp4",
+  "preview": "http://127.0.0.1:51046/?solo=1#clip=stage6-miniboss",
+  "nativeChecks": {
+    "checks": [
+      {
+        "name": "easy warning has no NPCs",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "easy actual Fortress fight is solo with native weapons/HP",
+        "passed": true,
+        "data": {
+          "ships": 0,
+          "ally": false,
+          "shots": 0,
+          "parts": 6,
+          "hp": 1000,
+          "held": 0,
+          "opening": false,
+          "talk": false,
+          "bossTime": 2.9999999999999942,
+          "y": 80.56881307431463
+        }
+      },
+      {
+        "name": "easy Fortress entrance advances without a stuck stage opening",
+        "passed": true,
+        "data": {
+          "ships": 0,
+          "ally": false,
+          "shots": 0,
+          "parts": 6,
+          "hp": 1000,
+          "held": 0,
+          "opening": false,
+          "talk": false,
+          "bossTime": 2.9999999999999942,
+          "y": 80.56881307431463
+        }
+      },
+      {
+        "name": "easy reinforcements cannot enter mid-fight",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal warning has no NPCs",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal actual Fortress fight is solo with native weapons/HP",
+        "passed": true,
+        "data": {
+          "ships": 0,
+          "ally": false,
+          "shots": 0,
+          "parts": 6,
+          "hp": 1350,
+          "held": 0,
+          "opening": false,
+          "talk": false,
+          "bossTime": 2.9999999999999942,
+          "y": 80.56881307431463
+        }
+      },
+      {
+        "name": "normal Fortress entrance advances without a stuck stage opening",
+        "passed": true,
+        "data": {
+          "ships": 0,
+          "ally": false,
+          "shots": 0,
+          "parts": 6,
+          "hp": 1350,
+          "held": 0,
+          "opening": false,
+          "talk": false,
+          "bossTime": 2.9999999999999942,
+          "y": 80.56881307431463
+        }
+      },
+      {
+        "name": "normal reinforcements cannot enter mid-fight",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "hard warning has no NPCs",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "hard actual Fortress fight is solo with native weapons/HP",
+        "passed": true,
+        "data": {
+          "ships": 0,
+          "ally": false,
+          "shots": 0,
+          "parts": 6,
+          "hp": 1650,
+          "held": 0,
+          "opening": false,
+          "talk": false,
+          "bossTime": 2.9999999999999942,
+          "y": 80.56881307431463
+        }
+      },
+      {
+        "name": "hard Fortress entrance advances without a stuck stage opening",
+        "passed": true,
+        "data": {
+          "ships": 0,
+          "ally": false,
+          "shots": 0,
+          "parts": 6,
+          "hp": 1650,
+          "held": 0,
+          "opening": false,
+          "talk": false,
+          "bossTime": 2.9999999999999942,
+          "y": 80.56881307431463
+        }
+      },
+      {
+        "name": "hard reinforcements cannot enter mid-fight",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "furious warning has no NPCs",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "furious actual Fortress fight is solo with native weapons/HP",
+        "passed": true,
+        "data": {
+          "ships": 0,
+          "ally": false,
+          "shots": 0,
+          "parts": 6,
+          "hp": 1950,
+          "held": 0,
+          "opening": false,
+          "talk": false,
+          "bossTime": 2.9999999999999942,
+          "y": 80.56881307431463
+        }
+      },
+      {
+        "name": "furious Fortress entrance advances without a stuck stage opening",
+        "passed": true,
+        "data": {
+          "ships": 0,
+          "ally": false,
+          "shots": 0,
+          "parts": 6,
+          "hp": 1950,
+          "held": 0,
+          "opening": false,
+          "talk": false,
+          "bossTime": 2.9999999999999942,
+          "y": 80.56881307431463
+        }
+      },
+      {
+        "name": "furious reinforcements cannot enter mid-fight",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native ally renderer is not called during the miniboss",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Calling a rival ally is blocked without spending the favor",
+        "passed": true,
+        "data": {
+          "r": false,
+          "n": 0,
+          "used": 0,
+          "ally": false
+        }
+      },
+      {
+        "name": "Natural campaign warning parks existing support and clears NPC fire only",
+        "passed": true,
+        "data": {
+          "wing": 0,
+          "ally": false,
+          "npc": 0,
+          "seats": [
+            1,
+            2
+          ],
+          "same": true,
+          "parked": 4
+        }
+      },
+      {
+        "name": "Both human-seat rounds and player state remain untouched",
+        "passed": true,
+        "data": {
+          "wing": 0,
+          "ally": false,
+          "npc": 0,
+          "seats": [
+            1,
+            2
+          ],
+          "same": true,
+          "parked": 4
+        }
+      },
+      {
+        "name": "Campaign support returns after the miniboss with no duplicate favor cost",
+        "passed": true,
+        "data": {
+          "restored": 4,
+          "allArriving": true,
+          "ally": true,
+          "used": 1,
+          "expected": 4
+        }
+      },
+      {
+        "name": "warhive main encounter retains its allied wing",
+        "passed": true,
+        "data": 4
+      },
+      {
+        "name": "rebelsquad main encounter retains its allied wing",
+        "passed": true,
+        "data": 4
+      },
+      {
+        "name": "MINI6 password/direct-inner entry is also solo",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other stages can still call their allies during a miniboss",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native game, draw or asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "fullSuite": {
+    "exitCode": 1,
+    "sameBaselineFailures": 5
+  }
+}

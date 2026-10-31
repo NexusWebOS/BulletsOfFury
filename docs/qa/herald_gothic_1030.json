@@ -1,0 +1,348 @@
+{
+  "native": [
+    {
+      "name": "All78 banks use even fixed cells, valid pivots and atlases no larger than4096",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Skull loop has16 distinct authored frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Head cast genuinely changes jaw/eye source frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Arms reach the raised pose continuously during charge and lower back to idle",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Spiral has96 distinct genuine depth and roll views with per-frame sockets and masks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every spiral and yaw hit frame exactly preserves visible source alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native Herald completes entrance",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All new art is preloaded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Charge selects an animated face and smoothly raised arms through native pose owner",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual gothic skull release occurs",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native skull projectile draws the new gothic atlas at fixed132px size",
+      "passed": true,
+      "data": [
+        [
+          396,
+          0,
+          132,
+          132,
+          254,
+          51,
+          132,
+          132
+        ]
+      ]
+    },
+    {
+      "name": "Skull destruction creates dangerous red lightning ricochets and new shatter art",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Skull attack enters continuous lower-arm recovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recovery selects the authored lower bank",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native20% damage gate launches desperation at the correct HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Background spin begins after native five-second charge",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native depth orb becomes a visible foreground projectile",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Ordinary fire still cannot damage the protected background Herald",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both Retina modes can select the actual visible orb",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Ordinary machine-gun fire does not destroy or reflect the depth orb",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Physical missile collision knocks the orb back and removes hostile collision",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Returned orb reaches background Herald and deals native HP damage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Counter damage is1.25% native max HP without weakening background protection",
+      "passed": true,
+      "data": {
+        "event": "orb-counter-hit",
+        "time": 20.750000000000103,
+        "id": 1,
+        "damage": 45.200000000000045,
+        "hp": 677.9999999999998,
+        "x": 454.5436699358325,
+        "y": 86.17109910199747
+      }
+    },
+    {
+      "name": "Background counter hit has matched white flash art",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Another depth orb becomes targetable",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual laser beam shatters the orb into dangerous glass fragments",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Glass uses native lethal collision and cannot be shot down",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native sequence returns to its foreground attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Foreground yaw fires a complete circular volley",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pseudo3D spiral bank begins while still firing",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native rendering selects a fixed authored spiral frame and same-frame socket",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Foreground spiral resumes depth shots as well as circular shots",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Visible rotated hull is hittable and surrounding alpha gaps pass through",
+      "passed": true,
+      "data": {
+        "hits": 167,
+        "gaps": 1949
+      }
+    },
+    {
+      "name": "Foreground still takes native weapon damage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pressure remains bounded and prior red lasers, Retinas and tornado work stays loaded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Red glass can kill the player through normal engine damage",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "lives": 3,
+        "oldLives": 3,
+        "invuln": 0
+      }
+    },
+    {
+      "name": "No native game, drawing or console errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Depth sphere glass burst starts after all skull pixels are gone and preserves the generated red glass source",
+      "passed": true
+    }
+  ],
+  "film": [
+    {
+      "name": "Complete native Furious fight reaches normal defeat at original4264HP",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "No game, asset, sound or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual missiles return depth orbs",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Returned orbs damage native background HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual lasers shatter spheres into lethal glass",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Foreground yaw fires circular volleys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Foreground spiral keeps firing circular volleys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native attack book shows the new gothic skull bombs",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Decoded game audio is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -20.4,
+        "peakDb": -3.5
+      }
+    },
+    {
+      "name": "stage8-miniboss decodes the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-miniboss plays moving frames with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-gothic decodes the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-gothic plays moving frames with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-orb-counters decodes the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-orb-counters plays moving frames with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-glass decodes the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-glass plays moving frames with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-foreground-spiral decodes the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-foreground-spiral plays moving frames with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No preview errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 124.75,
+  "fps": 57.4651475935915,
+  "audio": {
+    "meanDb": -20.4,
+    "peakDb": -3.5
+  },
+  "preview": "http://127.0.0.1:51046/?herald=gothic-counters-1030#clip=stage8-herald-foreground-spiral",
+  "counterPreview": "http://127.0.0.1:51046/?herald=gothic-counters-1030#clip=stage8-herald-orb-counters",
+  "glassPreview": "http://127.0.0.1:51046/?herald=gothic-counters-1030#clip=stage8-herald-glass",
+  "skullPreview": "http://127.0.0.1:51046/?herald=gothic-counters-1030#clip=stage8-herald-gothic",
+  "fullFight": "http://127.0.0.1:51046/?herald=gothic-counters-1030#clip=stage8-miniboss",
+  "sha256": "bb0d1436a83a9c98972405ab44399678575414cd20bced2d59b56ec57b8a98fc",
+  "eventCounts": {
+    "orb-reflected": 3,
+    "orb-counter-hit": 3,
+    "orb-glass-shatter": 106,
+    "foreground-circle": 9
+  },
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false
+}

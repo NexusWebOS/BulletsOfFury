@@ -1,0 +1,499 @@
+{
+  "native": [
+    {
+      "name": "Authored fixed-size banks preload",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Unavailable Decker does not queue repeated charge dialogue",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Five stacked fighters separate into distinct reserved airspace",
+      "passed": true,
+      "data": {
+        "max": 0.019770956663876404,
+        "ships": [
+          {
+            "key": "voss",
+            "x": 164.40097347705495,
+            "y": 130
+          },
+          {
+            "key": "nyx",
+            "x": 516.4183107410813,
+            "y": 130
+          },
+          {
+            "key": "rook",
+            "x": 251.38120252039107,
+            "y": 130
+          },
+          {
+            "key": "kaia",
+            "x": 429.42475663073617,
+            "y": 130
+          },
+          {
+            "key": "jace",
+            "x": 338.3747566307362,
+            "y": 130
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jace launch speed equals actual Maverick full ball",
+      "passed": true,
+      "data": {
+        "maverick": 690,
+        "jace": 690,
+        "hp": 6,
+        "r": 28
+      }
+    },
+    {
+      "name": "Decker starts gold charge automatically without supply box",
+      "passed": true,
+      "data": {
+        "result": true,
+        "wall": true,
+        "caster": "decker",
+        "crate": false
+      }
+    },
+    {
+      "name": "Shield returns enemy bullets and energy with angry dialogue; friendly shots pass",
+      "passed": true,
+      "data": {
+        "bullet": true,
+        "orb": true,
+        "returns": 2,
+        "friendly": false,
+        "angry": true
+      }
+    },
+    {
+      "name": "Friendly laser retains its real range",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Kaia intro launches actual roller demonstration",
+      "passed": true,
+      "data": {
+        "kind": "rr45roller",
+        "count": 1
+      }
+    },
+    {
+      "name": "Voss warns top, bottom and sideways entries",
+      "passed": true,
+      "data": [
+        {
+          "x": 270,
+          "y": 486,
+          "dir": 3
+        },
+        {
+          "x": 554,
+          "y": 299.36,
+          "dir": 2
+        },
+        {
+          "x": 270,
+          "y": 486,
+          "dir": 3
+        },
+        {
+          "x": 340,
+          "y": 74,
+          "dir": 1
+        }
+      ]
+    },
+    {
+      "name": "Voss completes lateral pass and native recovery",
+      "passed": true,
+      "data": [
+        null,
+        "turn-south",
+        "rr45_return",
+        "turbocharge",
+        "rr45_cross",
+        "position",
+        "charge",
+        "recover",
+        "turn-north",
+        "dash",
+        "north",
+        "rr45_route",
+        "fire",
+        "rr45_entry",
+        "approach"
+      ]
+    },
+    {
+      "name": "Fighters keep clear during complete Voss book",
+      "passed": true,
+      "data": {
+        "phase": "dash",
+        "max": 0.01683328035460363,
+        "cue": null,
+        "scale": 1.0713378684807255,
+        "ships": [
+          {
+            "key": "voss",
+            "x": 340,
+            "y": 146.0515873015873,
+            "b": {
+              "w": 44.99619047619047,
+              "h": 57.85224489795918
+            }
+          },
+          {
+            "key": "nyx",
+            "x": 521.0293571958358,
+            "y": 130,
+            "b": {
+              "w": 38,
+              "h": 52
+            }
+          },
+          {
+            "key": "rook",
+            "x": 250.02064280342327,
+            "y": 130,
+            "b": {
+              "w": 38,
+              "h": 48
+            }
+          },
+          {
+            "key": "kaia",
+            "x": 433.97935719583586,
+            "y": 130,
+            "b": {
+              "w": 42,
+              "h": 50
+            }
+          },
+          {
+            "key": "jace",
+            "x": 162.9706428034233,
+            "y": 130,
+            "b": {
+              "w": 42,
+              "h": 55
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Prior fixed Voss orb columns remain unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage X retains previous behavior",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page/draw errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Native Furious full squad fight reaches actual defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Only the confirmed Stage6 boss music plays throughout the active fight",
+      "passed": true,
+      "data": [
+        {
+          "path": "http://127.0.0.1:58381/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "stagexPaused": true
+        },
+        {
+          "path": "http://127.0.0.1:58381/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "stagexPaused": true
+        }
+      ]
+    },
+    {
+      "name": "Native root transform has no impact displacement",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film retains five real opponents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, audio, HTTP or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native intro contains Kaia roller demonstration",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native combat automatically starts Decker gold charge",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native shield reflects hostile fire and triggers angry Riders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native Voss shows vertical and side entry warnings",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native Jace uses Maverick speed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every observed combat/settle frame maintains fighter separation",
+      "passed": true,
+      "data": {
+        "maxOverlap": 0.08041855282507981,
+        "frames": 6666,
+        "worst": {
+          "a": "rook",
+          "b": "jace",
+          "phase": null,
+          "x": 0.8241597533275637,
+          "y": 0.08041855282507981
+        },
+        "maxIdleStep": 231.8322972422677,
+        "last": {
+          "voss": {
+            "x": 171.06072872565835,
+            "y": 201.98039215686276,
+            "act": true
+          },
+          "nyx": {
+            "x": 146.63673833138296,
+            "y": 171.0264661751022,
+            "act": false
+          },
+          "rook": {
+            "x": 247.85604969846878,
+            "y": -6.920039767174103,
+            "act": true
+          },
+          "kaia": {
+            "x": 439.83556624177277,
+            "y": 257.0095737692049,
+            "act": false
+          },
+          "jace": {
+            "x": 607.4424257630837,
+            "y": 140.6087827378376,
+            "act": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Recorded music and game sound are audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -18.5,
+        "peakDb": -2.7
+      }
+    },
+    {
+      "name": "stage6-rough-riders uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-kaia uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-nyx uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-gold-shield uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes live audio and moving video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No player errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 172.27,
+  "combat": 52.965,
+  "preview": "http://127.0.0.1:51046/?riders=gold-defense-1029#clip=stage6-rough-riders",
+  "sha256": "c4465e82922a2eda6bc0d29072400a504ea4e073181ec20c1a9fa3d0a7cc688c",
+  "audio": {
+    "meanDb": -18.5,
+    "peakDb": -2.7
+  },
+  "fps": 59.00829239582058,
+  "cards": [
+    "stage6-rough-riders",
+    "rough-riders-formations",
+    "rough-riders-team-locks",
+    "rough-riders-evasion",
+    "rough-riders-kaia",
+    "rough-riders-jace",
+    "rough-riders-nyx",
+    "rough-riders-rook",
+    "rough-riders-voss",
+    "rough-riders-gold-shield"
+  ],
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false,
+  "assets": {
+    "editor": "Aseprite1.3.18.6-dev",
+    "builder": "_BUILD_SOURCE/build_riders_defense_1029.py",
+    "banks": {
+      "decker_charge": {
+        "path": "assets/game/levels/stage_06/boss/riders_defense_1029/decker_charge.png",
+        "cell": [
+          128,
+          128
+        ],
+        "pivot": [
+          64,
+          64
+        ],
+        "cols": 8,
+        "frames": 16,
+        "fps": 24,
+        "sha256": "f513f0f3acff2059f47799f6fb150be52fc5211b1eacac472a274cdd28dd88f7"
+      },
+      "shield_seed": {
+        "path": "assets/game/levels/stage_06/boss/riders_defense_1029/shield_seed.png",
+        "cell": [
+          64,
+          64
+        ],
+        "pivot": [
+          32,
+          32
+        ],
+        "cols": 8,
+        "frames": 16,
+        "fps": 24,
+        "sha256": "7de296b5374c1ffaa1b8473de9dd4457b5459380ba483221f92b976b0fffaaf8"
+      },
+      "gold_wall": {
+        "path": "assets/game/levels/stage_06/boss/riders_defense_1029/gold_wall.png",
+        "cell": [
+          480,
+          64
+        ],
+        "pivot": [
+          240,
+          32
+        ],
+        "cols": 8,
+        "frames": 40,
+        "fps": 24,
+        "sha256": "79adc8e64ddbfc7826376715ff76bccd1384746f529019bbefd0d993b200de07"
+      },
+      "entry_arrows": {
+        "path": "assets/game/levels/stage_06/boss/riders_defense_1029/entry_arrows.png",
+        "cell": [
+          40,
+          40
+        ],
+        "pivot": [
+          20,
+          20
+        ],
+        "cols": 4,
+        "frames": 4,
+        "fps": 24,
+        "sha256": "037c770e082762de0cfff3d7b043645611616412ea6b91506086870ffa45f687"
+      },
+      "entry_star": {
+        "path": "assets/game/levels/stage_06/boss/riders_defense_1029/entry_star.png",
+        "cell": [
+          40,
+          40
+        ],
+        "pivot": [
+          20,
+          20
+        ],
+        "cols": 1,
+        "frames": 1,
+        "fps": 24,
+        "sha256": "8b2ecfbdf161fc4870218fa88a0a9b1360984298eb313b6eadf447f4d9c20e66"
+      }
+    },
+    "sources": {
+      "ship_decker.png": "787f45a03bd7a9d70e9346c4f90e137c6c8a9548718dbfd4da879e0c603db363",
+      "rr26_wall.png": "b309d90d54be448448d3275158b29ba05b903f24adc0e711ba7d717255f3cc51",
+      "orb_source.png": "6f6e6fcc87c69dc63effb31dade605a923cf4ac7e49e91224083c24a26ca6250",
+      "warn_escape_arrow_0916.png": "404b5f9d1236fc1f592d8772727f3854c2e7dc507a6b91aafdc8283bcbf90dfa",
+      "bmfx_alert_red_impact_imminent.png": "5f5c950bd366241e8b72ba73e7e3927c113ce52387be75503c1c9c091412afbd"
+    },
+    "recipe": "Authored gold source palette, Decker alpha-derived outer charge, seed spin,40-frame shield formation/hold/expiry and four offline arrow directions. Fixed-cell ordinary source-over draws."
+  },
+  "sourceSha256": "b07696f1a9acf46f36ba24cfad87454480a98f2ebdd8c89711445f9510575003"
+}

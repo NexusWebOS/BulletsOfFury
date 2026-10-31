@@ -1,0 +1,165 @@
+{
+  "checks": [
+    {
+      "name": "all 518 authored exports resolve with even frame sizes",
+      "passed": true
+    },
+    {
+      "name": "fortress restored into normal campaign; no boss in pursuit",
+      "passed": true
+    },
+    {
+      "name": "new truck password round-trips across every pilot/difficulty/partner",
+      "passed": true
+    },
+    {
+      "name": "fortress uses close 640x480 playfield and three armor points",
+      "passed": true
+    },
+    {
+      "name": "walking advances feet with the north authored walk bank",
+      "passed": true
+    },
+    {
+      "name": "mouse aims and fires east while the body uses east artwork",
+      "passed": true
+    },
+    {
+      "name": "base rifle retains unlimited ammunition",
+      "passed": true
+    },
+    {
+      "name": "jump raises the authored jump sprite",
+      "passed": true
+    },
+    {
+      "name": "roll uses the drawn tumble sequence",
+      "passed": true
+    },
+    {
+      "name": "prone remains latched after release",
+      "passed": true
+    },
+    {
+      "name": "prone movement uses crawling artwork",
+      "passed": true
+    },
+    {
+      "name": "L shoulder crouches into real cover",
+      "passed": true
+    },
+    {
+      "name": "holding fire pops up and shoots beyond own cover",
+      "passed": true
+    },
+    {
+      "name": "releasing fire returns behind cover immediately",
+      "passed": true
+    },
+    {
+      "name": "cover absorbs enemy fire while crouched",
+      "passed": true
+    },
+    {
+      "name": "exposed peek can be hit by enemy rounds",
+      "passed": true
+    },
+    {
+      "name": "Retina can acquire the firing lane from a prone wall corner",
+      "passed": true
+    },
+    {
+      "name": "prone wall peek keeps physical feet outside the wall",
+      "passed": true
+    },
+    {
+      "name": "releasing wall fire lowers to the protected anchor",
+      "passed": true
+    },
+    {
+      "name": "destroyed concrete cover removes the collision slab and emits effects",
+      "passed": true
+    },
+    {
+      "name": "R shoulder acquires original BOF Retina on foot without missiles",
+      "passed": true
+    },
+    {
+      "name": "exhausted upgrade returns to unlimited assault rifle",
+      "passed": true
+    },
+    {
+      "name": "north doors trigger Gosfer entry and explosions",
+      "passed": true
+    },
+    {
+      "name": "Gosfer fires actual laser volleys",
+      "passed": true
+    },
+    {
+      "name": "Gosfer reflex dodge has a cooldown",
+      "passed": true
+    },
+    {
+      "name": "aimed rifle fire defeats the moving and dodging Gosfer",
+      "passed": true
+    },
+    {
+      "name": "defeating Gosfer advances to Machinists with a save password",
+      "passed": true
+    },
+    {
+      "name": "four new armor families occur in existing tank stages",
+      "passed": true
+    },
+    {
+      "name": "searchlight opening transitions into pursuit",
+      "passed": true
+    },
+    {
+      "name": "turret bullets intercept incoming rockets before hull impact",
+      "passed": true
+    },
+    {
+      "name": "hull zero explodes into a wreck",
+      "passed": true
+    },
+    {
+      "name": "hull loss restarts searchlight opening with full hull and zero combat time",
+      "passed": true
+    },
+    {
+      "name": "red hyper-elite robots spawn in the final stretch",
+      "passed": true
+    },
+    {
+      "name": "complete 150-second simulation reaches clear without a boss",
+      "passed": true
+    },
+    {
+      "name": "normal-hull pursuit is survivable using turret aim and fire",
+      "passed": true
+    },
+    {
+      "name": "searchlight pursuit does not award an undetected ghost clear",
+      "passed": true
+    },
+    {
+      "name": "every core pose renders through the game ART context",
+      "passed": true
+    },
+    {
+      "name": "no page, console or missing-file errors",
+      "passed": true
+    }
+  ],
+  "normalHullResult": {
+    "state": "clear",
+    "hull": 88,
+    "elapsed": 150.0000000000115,
+    "kills": 65,
+    "intercepts": 2,
+    "restarts": 0
+  },
+  "errors": []
+}

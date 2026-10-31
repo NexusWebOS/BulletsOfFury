@@ -1,0 +1,1125 @@
+{
+  "checks": [
+    {
+      "name": "crawl never replays upright lowering frames",
+      "passed": true
+    },
+    {
+      "name": "grounded crawl retains one scale and stays 36\u201340 pixels high",
+      "passed": true
+    },
+    {
+      "name": "side prone entry and exit use the same twelve drawings reversed",
+      "passed": true
+    },
+    {
+      "name": "column uses all nineteen authored standing back-cover frames",
+      "passed": true
+    },
+    {
+      "name": "low-wall lateral peek stops at the extended gun, before withdrawal",
+      "passed": true
+    },
+    {
+      "name": "crouched return plays the authored withdrawal then tucks into cover",
+      "passed": true
+    },
+    {
+      "name": "cover banks keep one fixed body scale",
+      "passed": true
+    },
+    {
+      "name": "full exposure keeps the same north peek endpoint",
+      "passed": true
+    },
+    {
+      "name": "cover muzzle is exactly the selected authored barrel pixel",
+      "passed": true
+    },
+    {
+      "name": "north cover side step uses all eight authored gait frames",
+      "passed": true
+    },
+    {
+      "name": "keyboard cover fire does not expose before the complete pop-out",
+      "passed": true
+    },
+    {
+      "name": "keyboard cover fire reaches exposure after the full pop-out",
+      "passed": true
+    },
+    {
+      "name": "release returns to the protected first frame",
+      "passed": true
+    },
+    {
+      "name": "browser reports no page or console errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "measurements": {
+    "crawl": [
+      {
+        "key": "e29_prone_east_11",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 11,
+        "h": 36
+      },
+      {
+        "key": "e29_prone_east_11",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 11,
+        "h": 36
+      },
+      {
+        "key": "e29_prone_east_11",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 11,
+        "h": 36
+      },
+      {
+        "key": "e29_prone_east_11",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 11,
+        "h": 36
+      },
+      {
+        "key": "e29_prone_east_11",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 11,
+        "h": 36
+      },
+      {
+        "key": "e29_prone_east_11",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 11,
+        "h": 36
+      },
+      {
+        "key": "e29_prone_east_11",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 11,
+        "h": 36
+      },
+      {
+        "key": "e29_prone_east_11",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 11,
+        "h": 36
+      },
+      {
+        "key": "e29_prone_east_11",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 11,
+        "h": 36
+      },
+      {
+        "key": "e29_prone_east_12",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 12,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_12",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 12,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_12",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 12,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_12",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 12,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_12",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 12,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_12",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 12,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_12",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 12,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_12",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 12,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_13",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 13,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_13",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 13,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_13",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 13,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_13",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 13,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_13",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 13,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_13",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 13,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_13",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 13,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_14",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 14,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_14",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 14,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_14",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 14,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_14",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 14,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_14",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 14,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_14",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 14,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_14",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 14,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_14",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 14,
+        "h": 37
+      },
+      {
+        "key": "e29_prone_east_15",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 15,
+        "h": 40
+      },
+      {
+        "key": "e29_prone_east_15",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 15,
+        "h": 40
+      },
+      {
+        "key": "e29_prone_east_15",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 15,
+        "h": 40
+      },
+      {
+        "key": "e29_prone_east_15",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 15,
+        "h": 40
+      },
+      {
+        "key": "e29_prone_east_15",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 15,
+        "h": 40
+      },
+      {
+        "key": "e29_prone_east_15",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 15,
+        "h": 40
+      },
+      {
+        "key": "e29_prone_east_15",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 15,
+        "h": 40
+      },
+      {
+        "key": "e29_prone_east_15",
+        "scale": 1,
+        "angle": 0,
+        "action": "crawl",
+        "dir": "east",
+        "bank": "e29_prone_east",
+        "index": 15,
+        "h": 40
+      }
+    ],
+    "transition": [
+      [
+        "e29_prone_east_0",
+        "e29_prone_east_1",
+        "e29_prone_east_2",
+        "e29_prone_east_3",
+        "e29_prone_east_4",
+        "e29_prone_east_5",
+        "e29_prone_east_6",
+        "e29_prone_east_7",
+        "e29_prone_east_8",
+        "e29_prone_east_9",
+        "e29_prone_east_10",
+        "e29_prone_east_11"
+      ],
+      [
+        "e29_prone_east_11",
+        "e29_prone_east_10",
+        "e29_prone_east_9",
+        "e29_prone_east_8",
+        "e29_prone_east_7",
+        "e29_prone_east_6",
+        "e29_prone_east_5",
+        "e29_prone_east_4",
+        "e29_prone_east_3",
+        "e29_prone_east_2",
+        "e29_prone_east_1",
+        "e29_prone_east_0"
+      ]
+    ],
+    "coverBanks": [
+      [
+        {
+          "key": "y32_cover_peek_east_0",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 0
+        },
+        {
+          "key": "y32_cover_peek_east_1",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 1
+        },
+        {
+          "key": "y32_cover_peek_east_2",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 2
+        },
+        {
+          "key": "y32_cover_peek_east_3",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 3
+        },
+        {
+          "key": "y32_cover_peek_east_4",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 4
+        },
+        {
+          "key": "y32_cover_peek_east_5",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 5
+        },
+        {
+          "key": "y32_cover_peek_east_6",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 6
+        },
+        {
+          "key": "y32_cover_peek_east_7",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 7
+        },
+        {
+          "key": "y32_cover_peek_east_8",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 8
+        },
+        {
+          "key": "y32_cover_peek_east_9",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 9
+        },
+        {
+          "key": "y32_cover_peek_east_10",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 10
+        },
+        {
+          "key": "y32_cover_peek_east_11",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 11
+        },
+        {
+          "key": "y32_cover_peek_east_12",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 12
+        },
+        {
+          "key": "y32_cover_peek_east_13",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 13
+        },
+        {
+          "key": "y32_cover_peek_east_14",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 14
+        },
+        {
+          "key": "y32_cover_peek_east_15",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 15
+        },
+        {
+          "key": "y32_cover_peek_east_16",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 16
+        },
+        {
+          "key": "y32_cover_peek_east_17",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 17
+        },
+        {
+          "key": "y32_cover_peek_east_18",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 18
+        },
+        {
+          "key": "y32_cover_peek_east_18",
+          "scale": 1,
+          "angle": 0,
+          "action": "back_cover",
+          "dir": "east",
+          "bank": "y32_cover_peek_east",
+          "index": 18
+        }
+      ],
+      [
+        {
+          "key": "y32_crouch_peek_east_0",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_hold",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 0
+        },
+        {
+          "key": "y32_crouch_peek_east_0",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 0
+        },
+        {
+          "key": "y32_crouch_peek_east_1",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 1
+        },
+        {
+          "key": "y32_crouch_peek_east_2",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 2
+        },
+        {
+          "key": "y32_crouch_peek_east_2",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 2
+        },
+        {
+          "key": "y32_crouch_peek_east_3",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 3
+        },
+        {
+          "key": "y32_crouch_peek_east_4",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 4
+        },
+        {
+          "key": "y32_crouch_peek_east_4",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 4
+        },
+        {
+          "key": "y32_crouch_peek_east_5",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 5
+        },
+        {
+          "key": "y32_crouch_peek_east_6",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 6
+        },
+        {
+          "key": "y32_crouch_peek_east_6",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 6
+        },
+        {
+          "key": "y32_crouch_peek_east_7",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 7
+        },
+        {
+          "key": "y32_crouch_peek_east_8",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 8
+        },
+        {
+          "key": "y32_crouch_peek_east_8",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 8
+        },
+        {
+          "key": "y32_crouch_peek_east_9",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 9
+        },
+        {
+          "key": "y32_crouch_peek_east_10",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 10
+        },
+        {
+          "key": "y32_crouch_peek_east_10",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 10
+        },
+        {
+          "key": "y32_crouch_peek_east_11",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 11
+        },
+        {
+          "key": "y32_crouch_peek_east_12",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 12
+        },
+        {
+          "key": "y32_crouch_peek_east_12",
+          "scale": 1,
+          "angle": 0,
+          "action": "cover_peek",
+          "dir": "east",
+          "bank": "y32_crouch_peek_east",
+          "index": 12
+        }
+      ]
+    ],
+    "return": [
+      13,
+      13,
+      13,
+      13,
+      14,
+      14,
+      14,
+      14,
+      15,
+      15,
+      15,
+      15,
+      16,
+      16,
+      16,
+      16,
+      4,
+      4,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "north": [
+      {
+        "key": "pb19_yuri_north_peek_0",
+        "scale": 1,
+        "angle": 0,
+        "action": "cover_hold",
+        "dir": "north",
+        "bank": "yuri_north_peek",
+        "index": 0
+      },
+      {
+        "key": "pb19_yuri_north_peek_4",
+        "scale": 1,
+        "angle": 0,
+        "action": "cover_peek",
+        "dir": "north",
+        "bank": "yuri_north_peek",
+        "index": 4
+      },
+      {
+        "key": "pb19_yuri_north_peek_7",
+        "scale": 1,
+        "angle": 0,
+        "action": "cover_peek",
+        "dir": "north",
+        "bank": "yuri_north_peek",
+        "index": 7
+      },
+      {
+        "key": "pb19_yuri_north_peek_7",
+        "scale": 1,
+        "angle": 0,
+        "action": "cover_peek",
+        "dir": "north",
+        "bank": "yuri_north_peek",
+        "index": 7
+      }
+    ],
+    "timing": [
+      {
+        "peek": 0.008421052631578947,
+        "key": "y32_cover_peek_east_0",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.016842105263157894,
+        "key": "y32_cover_peek_east_1",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.02526315789473684,
+        "key": "y32_cover_peek_east_2",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.03368421052631579,
+        "key": "y32_cover_peek_east_2",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.042105263157894736,
+        "key": "y32_cover_peek_east_3",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.05052631578947368,
+        "key": "y32_cover_peek_east_4",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.05894736842105262,
+        "key": "y32_cover_peek_east_4",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.06736842105263158,
+        "key": "y32_cover_peek_east_5",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.07578947368421052,
+        "key": "y32_cover_peek_east_6",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.08421052631578946,
+        "key": "y32_cover_peek_east_6",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.0926315789473684,
+        "key": "y32_cover_peek_east_7",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.10105263157894734,
+        "key": "y32_cover_peek_east_8",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.10947368421052628,
+        "key": "y32_cover_peek_east_8",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.11789473684210522,
+        "key": "y32_cover_peek_east_9",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.12631578947368416,
+        "key": "y32_cover_peek_east_10",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.1347368421052631,
+        "key": "y32_cover_peek_east_10",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.14315789473684204,
+        "key": "y32_cover_peek_east_11",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.15157894736842098,
+        "key": "y32_cover_peek_east_12",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.15999999999999992,
+        "key": "y32_cover_peek_east_12",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.16842105263157886,
+        "key": "y32_cover_peek_east_13",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.1768421052631578,
+        "key": "y32_cover_peek_east_14",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.18526315789473674,
+        "key": "y32_cover_peek_east_14",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.19368421052631568,
+        "key": "y32_cover_peek_east_15",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.20210526315789462,
+        "key": "y32_cover_peek_east_16",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.21052631578947356,
+        "key": "y32_cover_peek_east_16",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.2189473684210525,
+        "key": "y32_cover_peek_east_17",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.22736842105263144,
+        "key": "y32_cover_peek_east_18",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.23578947368421038,
+        "key": "y32_cover_peek_east_18",
+        "shots": 0,
+        "exposed": false
+      },
+      {
+        "peek": 0.24,
+        "key": "y32_cover_peek_east_18",
+        "shots": 1,
+        "exposed": true
+      },
+      {
+        "peek": 0.24,
+        "key": "y32_cover_peek_east_18",
+        "shots": 1,
+        "exposed": true
+      },
+      {
+        "peek": 0.24,
+        "key": "y32_cover_peek_east_18",
+        "shots": 1,
+        "exposed": true
+      }
+    ]
+  }
+}

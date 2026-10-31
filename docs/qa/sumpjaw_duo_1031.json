@@ -1,0 +1,465 @@
+{
+  "revision": "SJ98",
+  "date": "2026-10-31",
+  "checks": [
+    {
+      "name": "847 fixed even frames and18 editable banks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Registered source cells and pages stay within4096px",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Baked hit frames keep the exact normal alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Furious contains two independent full-health actors and no Dredger rig",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Complete local health budget equals both real actors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Four gills target initially; hearts and hull do not consume shots",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Ordinary bullet geometry reaches all four gill centers",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native point damage affects one pool and one actor",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real native hit-white bank draws",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Hit flash expires through its normal timer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "One broken gill preserves the sealed heart and other actor",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both broken gills expose exactly one real intake heart",
+      "passed": true,
+      "data": {
+        "pools": [
+          {
+            "id": "gillL",
+            "hp": 0,
+            "maxhp": 279,
+            "_bofDamageEvents": {
+              "sumpjawPart": 1
+            }
+          },
+          {
+            "id": "gillR",
+            "hp": 0,
+            "maxhp": 279,
+            "_bofDamageEvents": {
+              "sumpjawPart": 1
+            }
+          },
+          {
+            "id": "heart",
+            "hp": 558,
+            "maxhp": 558
+          }
+        ],
+        "phase": "stun",
+        "targets": [
+          {
+            "id": "sump0-heart",
+            "hp": 558,
+            "dead": false
+          },
+          {
+            "id": "sump1-gillL",
+            "hp": 279,
+            "dead": false
+          },
+          {
+            "id": "sump1-gillR",
+            "hp": 279,
+            "dead": false
+          }
+        ],
+        "events": [
+          {
+            "event": "part-break",
+            "clock": 0.13333333333333333,
+            "actor": 0,
+            "part": "gillL"
+          },
+          {
+            "event": "part-break",
+            "clock": 0.13333333333333333,
+            "actor": 0,
+            "part": "gillR"
+          },
+          {
+            "event": "heart-open",
+            "clock": 0.13333333333333333,
+            "actor": 0,
+            "hp": 558
+          }
+        ]
+      }
+    },
+    {
+      "name": "First creature dies without completing encounter or harming survivor",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Breach warns before hitting; distant body has no target",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pause freezes attack and landing clocks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Foreground breach returns real targets and recovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Toxic lobs launch from the actual mouth and acquire separate landings",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Landed globules emit finite unshootable toxic scatter",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Toxic fragments expire instead of bouncing forever",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Heavy attacks remain staggered through repeated books",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both complete silhouettes remain inside visible camera bounds",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Each creature uses breach, toxic lob and bite rather than simultaneous heavy attacks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Parent encounter box causes no invisible body deaths",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both full budgets must exhaust before the one native defeat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exactly one completion/reward hands the stage back without a softlock",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal keeps the existing Dredger encounter",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard keeps the existing Dredger encounter",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Retry restores two intact independent budgets and empty attack effects",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native browser or draw errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Core source is unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "New Game Plus applies exactly25percent HP to pair, actors and part budgets once",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "NGplus keeps warning duration in real time",
+      "passed": true,
+      "data": 0.4833333333333333
+    },
+    {
+      "name": "NGplus advances the director recovery gap by15percent",
+      "passed": true,
+      "data": 9.444166666666657
+    },
+    {
+      "name": "a camera edge preserves both complete passive silhouettes",
+      "passed": true,
+      "data": [
+        {
+          "l": 34.12855865331012,
+          "r": 206.1285586533101,
+          "visible": true
+        },
+        {
+          "l": 273.8714415276981,
+          "r": 445.8714415276981,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "d camera edge preserves both complete passive silhouettes",
+      "passed": true,
+      "data": [
+        {
+          "l": 220.72045430836533,
+          "r": 393.72045430836533,
+          "visible": true
+        },
+        {
+          "l": 486.2668020097093,
+          "r": 659.2668020097093,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "Real native machine-gun projectiles reach and damage a gill",
+      "passed": true,
+      "data": {
+        "before": 1116,
+        "after": 1111.95,
+        "weapon": 7,
+        "pools": [
+          {
+            "id": "gillL",
+            "hp": 279,
+            "maxhp": 279
+          },
+          {
+            "id": "gillR",
+            "hp": 274.95,
+            "maxhp": 279,
+            "_bofDamageEvents": {
+              "sumpjawPart": 1
+            }
+          },
+          {
+            "id": "heart",
+            "hp": 558,
+            "maxhp": 558
+          }
+        ]
+      }
+    },
+    {
+      "name": "Edge and NGplus runs produce no browser/render errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Installed source recipe reproduces every runtime PNG exactly",
+      "passed": true
+    },
+    {
+      "name": "All18 editable Aseprite banks and original generated motion sources are retained",
+      "passed": true
+    },
+    {
+      "name": "All twelve new Stage6/9 designs remain outside the live game pending approval",
+      "passed": true
+    },
+    {
+      "name": "All six new boards and12 individual designs render",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Each stage has exactly three miniboss/boss pairs",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All six actual generated concept boards load at full resolution",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Current74-second native Sumpjaw movie loads at1280x800",
+      "passed": true,
+      "data": {
+        "w": 1280,
+        "h": 800,
+        "d": 73.982,
+        "src": "http://127.0.0.1:51046/videos/stage7-sumpjaw-duo-1031.mp4"
+      }
+    },
+    {
+      "name": "Browser plays and seeks the actual fight recording without media errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Miniboss and boss choices mix independently without changing the game",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Shortlist survives reload and is labelled as pending approval",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Mobile390px layout has no horizontal clipping",
+      "passed": true,
+      "data": {
+        "w": 390,
+        "scroll": 390
+      }
+    },
+    {
+      "name": "Earlier concept-review page points to current Sumpjaw/new concepts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Fight-library shortcut selects the new paired recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Dredger and its four original chapters remain archived separately",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review and playback have no browser errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "focusedCount": 52,
+  "fullSuite": {
+    "exitCode": 1,
+    "unchangedFailures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "coreSHA256": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de",
+  "runtimeSHA256": "7b0a0baa93ebb52b9fd6ee0fcc1ed5e6dee4a611b90ec67a5b42352ccb1a1029",
+  "artManifestSHA256": "1db9580249def942a7f60558468582681a2c284b13fd244aefaf79bd4af9d00f",
+  "media": {
+    "completed": true,
+    "seconds": 74.035,
+    "fps": 57.88870078095134,
+    "audio": [
+      "mean_volume: -20.5 dB",
+      "max_volume: -2.3 dB"
+    ],
+    "bytes": 53043344,
+    "sha256": "fb4cc3d954cb5bdae99874ac99bfff8413038cd22139abd28bea046b81654531",
+    "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Sumpjaw-Duo-1031\\video\\stage7-085107\\report.json",
+    "errors": {
+      "page": [],
+      "console": [],
+      "assets": [],
+      "taps": []
+    },
+    "cues": {
+      "mini7": 1,
+      "bossAlarm": 1,
+      "enemyunit": 1,
+      "bossWeaponCharge": 19,
+      "av3_target_acquire": 19,
+      "alertLockon": 19,
+      "jetDash": 13,
+      "hammerImpact": 7,
+      "enemyToxicSpit": 36,
+      "loop": 23,
+      "hit": 274,
+      "laserBeamStart": 45,
+      "missile": 36,
+      "laserBeamEnd": 45,
+      "expSmall": 51,
+      "expBig": 36,
+      "missileHit": 36,
+      "combatModule0927": 6,
+      "powerup": 1,
+      "stageclear": 1,
+      "statTick": 10,
+      "stageClear": 1,
+      "crackle": 1,
+      "warpGate": 1,
+      "mapDeploy": 1,
+      "bossPhase": 1
+    },
+    "checkpoint": {
+      "entry": {
+        "stage": 7,
+        "role": "mini",
+        "kind": "dualscoopdredger",
+        "name": "Sumpjaw pair / Two independent gill-heart budgets and local health bars"
+      },
+      "difficulty": "furious",
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "screen": {
+        "width": 480,
+        "height": 512
+      },
+      "nativeGod": true,
+      "currentFont": "assets/game/shared/ui/pixelmap_ui_1027/fury_strike_28.png?v=solid-r-square-hud-1027d",
+      "focusedLaser": true,
+      "newEncounterBanks": true
+    },
+    "method": "Native encounter spawn, real RAF, Cole with level-5 Laser and40 missiles, native GOD and input-only aiming; no enemy HP/phase/timer writes.",
+    "defeatSeconds": 67.749
+  },
+  "preview": "http://127.0.0.1:51046/furious-next-wave-1031.html?v=paired-final",
+  "sources": "_ART_SOURCES/sumpjaw_duo_1031",
+  "concepts": "docs/concepts/next_wave_1031",
+  "evidence": "C:\\Users\\Mike\\Documents\\New project\\BOF-Sumpjaw-Duo-1031"
+}

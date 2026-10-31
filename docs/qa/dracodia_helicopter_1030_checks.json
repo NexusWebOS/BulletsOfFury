@@ -1,0 +1,879 @@
+{
+  "checks": [
+    {
+      "name": "normal twin-gun lane reachable and survived without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal dodge test preserves native copy HP",
+      "passed": true
+    },
+    {
+      "name": "normal both real turrets fire sustained committed bursts",
+      "passed": true
+    },
+    {
+      "name": "normal bullet trajectories leave the stated 96px dodge corridor",
+      "passed": true
+    },
+    {
+      "name": "normal rapid missile count matches difficulty",
+      "passed": true
+    },
+    {
+      "name": "normal each pod holds its own native player Retina lock",
+      "passed": true
+    },
+    {
+      "name": "normal physical missiles remain shootable and owned by locks",
+      "passed": true
+    },
+    {
+      "name": "normal aiming changes the authored turret direction",
+      "passed": true
+    },
+    {
+      "name": "hard twin-gun lane reachable and survived without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard dodge test preserves native copy HP",
+      "passed": true
+    },
+    {
+      "name": "hard both real turrets fire sustained committed bursts",
+      "passed": true
+    },
+    {
+      "name": "hard bullet trajectories leave the stated 96px dodge corridor",
+      "passed": true
+    },
+    {
+      "name": "hard rapid missile count matches difficulty",
+      "passed": true
+    },
+    {
+      "name": "hard each pod holds its own native player Retina lock",
+      "passed": true
+    },
+    {
+      "name": "hard physical missiles remain shootable and owned by locks",
+      "passed": true
+    },
+    {
+      "name": "hard aiming changes the authored turret direction",
+      "passed": true
+    },
+    {
+      "name": "furious twin-gun lane reachable and survived without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious dodge test preserves native copy HP",
+      "passed": true
+    },
+    {
+      "name": "furious both real turrets fire sustained committed bursts",
+      "passed": true
+    },
+    {
+      "name": "furious bullet trajectories leave the stated 96px dodge corridor",
+      "passed": true
+    },
+    {
+      "name": "furious rapid missile count matches difficulty",
+      "passed": true
+    },
+    {
+      "name": "furious each pod holds its own native player Retina lock",
+      "passed": true
+    },
+    {
+      "name": "furious physical missiles remain shootable and owned by locks",
+      "passed": true
+    },
+    {
+      "name": "furious aiming changes the authored turret direction",
+      "passed": true
+    },
+    {
+      "name": "Gun tracers invoke actual native death when not dodged",
+      "passed": true
+    },
+    {
+      "name": "Destroyed missile pod cancels every pending launch on its side",
+      "passed": true
+    },
+    {
+      "name": "Other pod continues its four-shot Furious volley",
+      "passed": true
+    },
+    {
+      "name": "Destroyed pod disappears from both exact hit rig and Retina list",
+      "passed": true
+    },
+    {
+      "name": "Ordinary machine-gun bullets cannot be shot down from their first frame",
+      "passed": true
+    },
+    {
+      "name": "Rendered pod rotations own exact source-alpha collision",
+      "passed": true
+    },
+    {
+      "name": "Same-frame rig cache reuses geometry and invalidates on movement",
+      "passed": true
+    },
+    {
+      "name": "Pressure waves are red authored non-interceptible ordnance",
+      "passed": true
+    },
+    {
+      "name": "Helicopter fits the 85-percent authored footprint",
+      "passed": true
+    },
+    {
+      "name": "Rotor advances at four times its previous authored rate",
+      "passed": true
+    },
+    {
+      "name": "New jungle ground and faster near canopy both render",
+      "passed": true
+    },
+    {
+      "name": "Pause freezes weapon, motion and rotor clocks",
+      "passed": true
+    },
+    {
+      "name": "Charge commits its warned lane and exits the foreground",
+      "passed": true
+    },
+    {
+      "name": "Charge returns to a visible reachable hover height",
+      "passed": true
+    },
+    {
+      "name": "Native copied-form death returns to the downloaded main arena",
+      "passed": true
+    },
+    {
+      "name": "Earlier copied-form death repairs the main body without restoring copy HP",
+      "passed": true
+    },
+    {
+      "name": "Last copied life reaches the native final destruction without an anatomy crash",
+      "passed": true
+    },
+    {
+      "name": "Retry restores the original first host instead of the copied helicopter",
+      "passed": true
+    },
+    {
+      "name": "New helicopter owner leaves the main-body Luminaire intact",
+      "passed": true
+    },
+    {
+      "name": "No native draw, browser or loading errors",
+      "passed": true
+    }
+  ],
+  "states": [
+    {
+      "rank": "normal",
+      "guns": {
+        "dead": false,
+        "x": 252.81160000000023,
+        "safeX": 252,
+        "hp": 2340,
+        "shots": [
+          {
+            "event": "gun-shot",
+            "clock": 1.4666666666666663,
+            "part": "left",
+            "x": 220.40690424642577,
+            "y": 228.24,
+            "angle": 1.7671458676442586,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.4666666666666663,
+            "part": "right",
+            "x": 437.5769042464258,
+            "y": 228.78,
+            "angle": 2.061670178918302,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.5999999999999992,
+            "part": "left",
+            "x": 220.40690424642577,
+            "y": 228.24,
+            "angle": 1.7671458676442586,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.5999999999999992,
+            "part": "right",
+            "x": 437.5769042464258,
+            "y": 228.78,
+            "angle": 2.061670178918302,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.7499999999999987,
+            "part": "left",
+            "x": 220.40690424642577,
+            "y": 228.24,
+            "angle": 1.7671458676442586,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.7499999999999987,
+            "part": "right",
+            "x": 437.5769042464258,
+            "y": 228.78,
+            "angle": 2.061670178918302,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.8999999999999981,
+            "part": "left",
+            "x": 220.40690424642577,
+            "y": 228.24,
+            "angle": 1.7671458676442586,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.8999999999999981,
+            "part": "right",
+            "x": 437.5769042464258,
+            "y": 228.78,
+            "angle": 2.061670178918302,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.033333333333331,
+            "part": "left",
+            "x": 220.40690424642577,
+            "y": 228.24,
+            "angle": 1.7671458676442586,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.033333333333331,
+            "part": "right",
+            "x": 437.5769042464258,
+            "y": 228.78,
+            "angle": 2.061670178918302,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.1833333333333305,
+            "part": "left",
+            "x": 220.40690424642577,
+            "y": 228.24,
+            "angle": 1.7671458676442586,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.1833333333333305,
+            "part": "right",
+            "x": 437.5769042464258,
+            "y": 228.78,
+            "angle": 2.061670178918302,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.33333333333333,
+            "part": "left",
+            "x": 220.40690424642577,
+            "y": 228.24,
+            "angle": 1.7671458676442586,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.33333333333333,
+            "part": "right",
+            "x": 437.5769042464258,
+            "y": 228.78,
+            "angle": 2.061670178918302,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.466666666666663,
+            "part": "left",
+            "x": 220.40690424642577,
+            "y": 228.24,
+            "angle": 1.7671458676442586,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.466666666666663,
+            "part": "right",
+            "x": 437.5769042464258,
+            "y": 228.78,
+            "angle": 2.061670178918302,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.6166666666666623,
+            "part": "left",
+            "x": 220.40690424642577,
+            "y": 228.24,
+            "angle": 1.7671458676442586,
+            "safeX": 252,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.6166666666666623,
+            "part": "right",
+            "x": 437.5769042464258,
+            "y": 228.78,
+            "angle": 2.061670178918302,
+            "safeX": 252,
+            "safeY": 447
+          }
+        ],
+        "part": null
+      }
+    },
+    {
+      "rank": "hard",
+      "guns": {
+        "dead": false,
+        "x": 298.3012000000001,
+        "safeX": 299.99997849136,
+        "hp": 2970,
+        "shots": [
+          {
+            "event": "gun-shot",
+            "clock": 1.3000000000000003,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.3000000000000003,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.4333333333333331,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.4333333333333331,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.5499999999999994,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.5499999999999994,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.6666666666666656,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.6666666666666656,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.7833333333333319,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.7833333333333319,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.9166666666666647,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.9166666666666647,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.033333333333331,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.033333333333331,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.1499999999999972,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.1499999999999972,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.2666666666666635,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.2666666666666635,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.3833333333333298,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.3833333333333298,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.5166666666666626,
+            "part": "left",
+            "x": 225.2449737049197,
+            "y": 230.34,
+            "angle": 1.6689710972195777,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.5166666666666626,
+            "part": "right",
+            "x": 447.97497370491965,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.99997849136,
+            "safeY": 447
+          }
+        ],
+        "part": null
+      }
+    },
+    {
+      "rank": "furious",
+      "guns": {
+        "dead": false,
+        "x": 298.3012000000001,
+        "safeX": 299.9999837182834,
+        "hp": 3690,
+        "shots": [
+          {
+            "event": "gun-shot",
+            "clock": 1.1500000000000008,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.1500000000000008,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.2500000000000004,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.2500000000000004,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.35,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.35,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.4666666666666663,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.4666666666666663,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.566666666666666,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.566666666666666,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.6666666666666656,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.6666666666666656,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.7666666666666653,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.7666666666666653,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.866666666666665,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.866666666666665,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.9666666666666646,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 1.9666666666666646,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.066666666666664,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.066666666666664,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.166666666666664,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.166666666666664,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.2666666666666635,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.2666666666666635,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.366666666666663,
+            "part": "left",
+            "x": 230.1501314019587,
+            "y": 231.9,
+            "angle": 1.5707963267948966,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          },
+          {
+            "event": "gun-shot",
+            "clock": 2.366666666666663,
+            "part": "right",
+            "x": 447.2701314019587,
+            "y": 230.8,
+            "angle": 1.8653206380689396,
+            "safeX": 299.9999837182834,
+            "safeY": 447
+          }
+        ],
+        "part": "guns"
+      }
+    }
+  ],
+  "errors": []
+}

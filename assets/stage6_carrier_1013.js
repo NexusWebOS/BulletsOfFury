@@ -233,7 +233,8 @@ warhiveDraw=function(b){if(!sc13Owns(b))return SC13.base.draw.apply(this,argumen
  if(!C.ready||C.crashed)return;ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=1;
  for(const L of C.lasers)sc13BeamDraw(b,L);
  const R=C.rockets;if(R&&!R.released)for(const q of R.paths){const m=sc13RocketMount(b,q.side);combatWarningDraw(R,{x:m.x,y:m.y,ex:m.x+Math.cos(q.angle)*VH,ey:m.y+Math.sin(q.angle)*VH,progress:R.t/R.warm,width:18,fieldOnly:true,laneShape:'line'});}
- const hull=XART.get('s6cargo13_hull');ctx.drawImage(hull,C.x-b.w/2,C.y-b.h/2,b.w,b.h);
+ const hull=XART.get(b._cargo17Mini&&C.fans?'s6f28_hull':'s6cargo13_hull');ctx.drawImage(hull,C.x-b.w/2,C.y-b.h/2,b.w,b.h);
+ if(b._cargo17Mini&&C.fans)s6f28FanDraw(b);
  sc13LightsDraw(b);
  // The sliding-aperture owner flashes the actual exposed energy core. Its
  // old rectangular hull flash otherwise paints a white slab behind the core.

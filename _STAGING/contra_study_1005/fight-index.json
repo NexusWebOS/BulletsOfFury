@@ -1,0 +1,408 @@
+{
+  "source": {
+    "url": "https://www.youtube.com/watch?v=iooQeqdyB8E",
+    "title": "Contra: Hard Corps (Genesis) All Bosses (No Damage)",
+    "creator": "Shadowserg"
+  },
+  "date": "2026-10-06",
+  "numberedEncounters": 35,
+  "scope": "Shown attacks and responses; not exhaustive source AI or measured hitboxes/timing. Audio not analysed.",
+  "atlas": "BOSS_FIGHT_ATLAS.md",
+  "entries": [
+    {
+      "number": 1,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "01",
+          "title": "Maximum Jumbo (00:43–~01:20)",
+          "atlasLine": 9
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "02",
+          "title": "Blade (~01:40–02:26)",
+          "atlasLine": 25
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "03",
+          "title": "Iron Spider — 02:52–03:35; chase, inverted chassis and articulated reach",
+          "atlasLine": 43
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "04",
+          "title": "Blimp Core (~03:50–04:23)",
+          "atlasLine": 55
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "05",
+          "title": "Spike (~04:23–05:03)",
+          "atlasLine": 71
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "06",
+          "title": "Wrecker: the body becomes the attack",
+          "atlasLine": 85
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "07",
+          "title": "Taurus — constellation becomes a moving body",
+          "atlasLine": 102
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "08",
+          "title": "Sagittarius — a moving emitter changes a curved attack",
+          "atlasLine": 112
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "09",
+          "title": "Gemini — paired travel, shared charge, spaced release",
+          "atlasLine": 122
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "10",
+          "title": "Simondo Belmont — whip height and thrown creatures",
+          "atlasLine": 132
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "11",
+          "title": "Psycho Mother — a mobile container reveals its attack body",
+          "atlasLine": 142
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "12",
+          "title": "Warp Bomber — relocation, ring pressure, and a splitting charge",
+          "atlasLine": 152
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "13",
+          "title": "Aphex Twins — hands, central apparition, moving footholds (11:24–12:28)",
+          "atlasLine": 162
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "14",
+          "title": "Omni Bot chapter — circular cores and corridor transformations (13:04–18:39)",
+          "atlasLine": 174
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "15",
+          "title": "Dr. Geo Mandrake — visible ingredients, six pairings, final fusion (19:27–21:45)",
+          "atlasLine": 192
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "16",
+          "title": "Gebolien / Xeno Slug — advancing base, articulated neck (22:12–22:22)",
+          "atlasLine": 212
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "17a",
+          "title": "Java — suspended jaw, reaching claw, mouth creatures (22:34–22:55)",
+          "atlasLine": 220
+        },
+        {
+          "id": "17b",
+          "title": "Kimkoh — crawler, separated pair, rolling body (23:07–24:14)",
+          "atlasLine": 228
+        },
+        {
+          "id": "17c",
+          "title": "Vertical shaft interlude — wall creatures and returning metal jaw (24:26–25:00)",
+          "atlasLine": 238
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "18",
+          "title": "Mother Alien — changing torso, segmented arms, pods and arcs (25:10–25:49)",
+          "atlasLine": 244
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "19",
+          "title": "Alien Heart — breathing chamber and linked eye barrier (25:50–27:00)",
+          "atlasLine": 254
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "20",
+          "title": "Mech Walker — surface attachment, opening hull and second leg (28:01–29:08)",
+          "atlasLine": 264
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "21",
+          "title": "Big Magnum — articulated cannon, damaged muzzle and split electrodes (29:25–31:33)",
+          "atlasLine": 276
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "22",
+          "title": "Wonderbird — road tank, missiles and frontal pressure ring (33:20–33:43)",
+          "atlasLine": 292
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "23",
+          "title": "Rocket Ninja Sasaki — curved star trail, pose echoes and close jet passes (33:57–34:24)",
+          "atlasLine": 300
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "24",
+          "title": "Master Builder — visible construction, charging column and collapse (35:42–36:22)",
+          "atlasLine": 310
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "25",
+          "title": "Takedda Robot — three machines, three assemblies and distinct reach (36:29–40:08)",
+          "atlasLine": 322
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "26",
+          "title": "Bahamut's Army — rolling ring, flexible arch, marching pyramid (40:09–41:07)",
+          "atlasLine": 340
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "27",
+          "title": "Cyborg Bros — suspended twin cannons, then a surviving flying torso (42:08–42:44)",
+          "atlasLine": 352
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "28",
+          "title": "Rail Cannon — counting housing, folding arm and downward discharge (43:07–43:39)",
+          "atlasLine": 364
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "29",
+          "title": "Super Power Robot Yokozuna — running beside the train, then climbing aboard (43:48–44:50)",
+          "atlasLine": 374
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "30",
+          "title": "Spear Sphere — extending spokes, then compact-body crossings (45:21–46:32)",
+          "atlasLine": 386
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "31",
+          "title": "Spider Mutant — compact crossing, gold fan and blue orb release (47:08–47:49)",
+          "atlasLine": 396
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "32",
+          "title": "Colonel Bahamut (mutation route) — duelist → coiling Janus body → orbiting faces (48:12–50:00)",
+          "atlasLine": 406
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "33",
+          "title": "Colonel Bahamut (final route) — jumping claw wielder and ceiling debris (50:20–51:00)",
+          "atlasLine": 416
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "34",
+          "title": "Deadeye Joe — jetpack crossings over oscillating rocket platforms (51:31–51:48)",
+          "atlasLine": 424
+        }
+      ]
+    },
+    {
+      "number": 35,
+      "review": "sequential visual replay of the shown fight",
+      "sections": [
+        {
+          "id": "35",
+          "title": "Living Warhead — casing organs → roof serpent → armoured head → extended maw (52:00–54:09)",
+          "atlasLine": 430
+        }
+      ]
+    }
+  ]
+}

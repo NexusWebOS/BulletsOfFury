@@ -1,0 +1,61 @@
+{
+  "build": "overdrive1013-combat-overhaul-r1",
+  "nativeSuites": [
+    {
+      "file": "overdrive_frontend_overhaul_1013.json",
+      "passed": 41,
+      "errors": [],
+      "failed": 0
+    },
+    {
+      "file": "overdrive_pacing_1013.json",
+      "passed": 24,
+      "errors": [],
+      "failed": 0
+    },
+    {
+      "file": "overdrive_cover_motion_1013.json",
+      "passed": 15,
+      "errors": [],
+      "failed": 0
+    },
+    {
+      "file": "overdrive_cover_assault_regression_1013.json",
+      "passed": 38,
+      "errors": [],
+      "failed": 0
+    },
+    {
+      "file": "overdrive_desert_1013.json",
+      "passed": 18,
+      "errors": [],
+      "failed": 0
+    },
+    {
+      "file": "overdrive_bastion_1013.json",
+      "passed": 27,
+      "errors": [],
+      "failed": 0
+    },
+    {
+      "file": "overdrive_bastion_balance_1013.json",
+      "passed": 18,
+      "errors": [],
+      "failed": 0
+    }
+  ],
+  "baseSuite": {
+    "passes": 8700,
+    "errors": 0,
+    "exitCode": 0,
+    "finalBanner": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+    "log": "_shots/bastion_1013/base_regression.log"
+  },
+  "physicalControllerTested": false,
+  "normalInputRuns": {
+    "mouseSeconds": 88.68333333332959,
+    "directionalRetinaSeconds": 106.74999999999523
+  },
+  "publish": "local changes, uncommitted and unpushed",
+  "nativePassed": 181
+}

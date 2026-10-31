@@ -1,0 +1,287 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "Native low-health attack crosses all three routes and returns",
+        "passed": true,
+        "data": {
+          "routes": [
+            0,
+            1,
+            2
+          ],
+          "frames": 432
+        }
+      },
+      {
+        "name": "Every visible crossing uses a whole authored directional hull",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Both side directions face the real per-frame travel vector",
+        "passed": true,
+        "data": {
+          "maxDegrees": 8.120227194960533,
+          "directions": [
+            -1,
+            1
+          ]
+        }
+      },
+      {
+        "name": "Wavering flight advances multiple actual rotation frames",
+        "passed": true,
+        "data": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          45,
+          46,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ]
+      },
+      {
+        "name": "Directional shadow and thrusters remain attached to the same heading",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Inverted return clears temporary side-pass poses",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Rotated hull retains real alpha hits and matched white damage frame",
+        "passed": true,
+        "data": {
+          "hits": 183,
+          "flash": 0.16,
+          "calls": [
+            {
+              "bank": "heading_shadow",
+              "frame": 50,
+              "x": 222,
+              "y": 190,
+              "w": 272,
+              "h": 272
+            },
+            {
+              "bank": "exhaust_boost",
+              "frame": 203,
+              "x": 179,
+              "y": 154,
+              "w": 192,
+              "h": 192
+            },
+            {
+              "bank": "exhaust_boost",
+              "frame": 203,
+              "x": 184,
+              "y": 129,
+              "w": 192,
+              "h": 192
+            },
+            {
+              "bank": "heading_hit",
+              "frame": 50,
+              "x": 204,
+              "y": 114,
+              "w": 272,
+              "h": 272
+            }
+          ]
+        }
+      },
+      {
+        "name": "Directional damage flash expires normally",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other stages keep their native heading metadata",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native browser, draw or asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "film": [
+    {
+      "name": "Complete live Carrier-to-Nightwing fight reaches native defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Film includes the new south/north/return/fight entrance",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film includes the native flyover and rotating drift",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Armor charge cue is present in real fight footage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual wind charge, release and larger gusts appear",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Teal outline and336px swirl appear in actual windup footage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native film reaches directional low-health side passes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real accepted damage flashes appear",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No game, HTTP, audio or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recorded sound is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -18.2,
+        "peakDb": -2.2
+      }
+    },
+    {
+      "name": "stage6-carrier-nightwing uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier-nightwing decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-shadow-turn uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-shadow-turn decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-flight uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-flight decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-wind uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-wind decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-side-passes uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-side-passes decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No video preview errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 220.57,
+  "entry": 45.92,
+  "windCharge": 53.726,
+  "drift": 78.884,
+  "preview": "http://127.0.0.1:51046/?nightwing=side-facing-1030#clip=stage6-nightwing-side-passes",
+  "fullFight": "http://127.0.0.1:51046/?nightwing=side-facing-1030#clip=stage6-carrier-nightwing",
+  "windPreview": "http://127.0.0.1:51046/?nightwing=side-facing-1030#clip=stage6-nightwing-wind",
+  "sha256": "5b52c6437679d5547efd1a71169398a894406eba269053dd4216b165941eddbe",
+  "audio": {
+    "meanDb": -18.2,
+    "peakDb": -2.2
+  },
+  "fps": 52.516850448281204,
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false
+}

@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "name": "Native main-to-brain morph reaches the new form and resumes combat",
+      "passed": true,
+      "data": {
+        "seen": [
+          "v18formOut",
+          "v18formIn",
+          "fight"
+        ],
+        "form": 6,
+        "mode": "fight",
+        "model": "brain"
+      }
+    },
+    {
+      "name": "After its3 attacks the brain naturally morphs home with damage saved",
+      "passed": true,
+      "data": {
+        "pending": 0,
+        "model": "colossus",
+        "mode": "fight",
+        "saved": 2824,
+        "expected": 2824
+      }
+    },
+    {
+      "name": "Standalone Stage6 Harrier remains its original aircraft encounter",
+      "passed": true,
+      "data": {
+        "stage": 6,
+        "kind": "warhive",
+        "native": true,
+        "brain": false,
+        "formNames": [
+          "colossus",
+          "hammer",
+          "helicopter",
+          "brain",
+          "volcano"
+        ]
+      }
+    },
+    {
+      "name": "No continuity page errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "passed": 4,
+  "failed": 0,
+  "errors": []
+}

@@ -1,0 +1,48 @@
+{
+  "banks": {
+    "wind_rear": {
+      "path": "assets/game/levels/stage_06/boss/nightwing_teal_charge_1030/wind_rear.png",
+      "cw": 336,
+      "ch": 336,
+      "frames": 24,
+      "cols": 8,
+      "pivot": [
+        168,
+        168
+      ],
+      "sha256": "3c77b0e168e8135bfd3762fff6649bdc70226639740affb51ff55c8e60d1adc6"
+    },
+    "wind_front": {
+      "path": "assets/game/levels/stage_06/boss/nightwing_teal_charge_1030/wind_front.png",
+      "cw": 336,
+      "ch": 336,
+      "frames": 24,
+      "cols": 8,
+      "pivot": [
+        168,
+        168
+      ],
+      "sha256": "b55e0cdfc23a76ccaaeb628bec908e1b4780f8d47e28de6911eff4f1c36117b4"
+    },
+    "wind_aura": {
+      "path": "assets/game/levels/stage_06/boss/nightwing_teal_charge_1030/wind_aura.png",
+      "cw": 272,
+      "ch": 272,
+      "frames": 18,
+      "cols": 6,
+      "pivot": [
+        136,
+        136
+      ],
+      "sha256": "f72a4dda9f563dd213b6d803de3078f6702cdba9a3150d92c6af933e5b3fd812"
+    }
+  },
+  "swirlRatio": 0.875,
+  "source": "Existing approved Nightwing PixelLab vortex and exact clean hulls0,8,16",
+  "blankAuraFrames": [
+    0,
+    1,
+    2
+  ],
+  "glowLevels": 6
+}

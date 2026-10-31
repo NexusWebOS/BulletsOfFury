@@ -1,0 +1,123 @@
+{
+  "source": "C:\\Users\\Mike\\Documents\\New project\\BOF-Dracodia-Extended-Claws-1031\\video\\dracodia-extended-claws-1031\\stage8-furious.mp4",
+  "sourceReport": "C:\\Users\\Mike\\Documents\\New project\\BOF-Dracodia-Extended-Claws-1031\\video\\dracodia-extended-claws-1031\\report.json",
+  "duration": 109.683,
+  "nativeFPS": 54.3341448849281,
+  "meanDB": -21.8,
+  "peakDB": -6.1,
+  "firstRake": 5.764,
+  "firstJump": 8.77,
+  "playing": {
+    "bossAlarm": 2,
+    "boss8": 1,
+    "bossWeaponCharge": 13,
+    "av3_target_acquire": 43,
+    "alertLockon": 37,
+    "slice": 32,
+    "jetDash": 8,
+    "expSmall": 79,
+    "hammerImpact": 15,
+    "rd74WaveCharge": 4,
+    "loop": 42,
+    "hit": 505,
+    "missile": 67,
+    "laserBeamStart": 82,
+    "av3_impact_flesh": 497,
+    "expBig": 15,
+    "missileHit": 64,
+    "laserBeamEnd": 76,
+    "shadowRelease": 4,
+    "rd74WaveFire": 4,
+    "powerup": 2,
+    "combatModule0927": 5,
+    "rd71ScreamA": 2,
+    "rd27Lightning": 27,
+    "dialogueLetter": 11,
+    "rd71ScreamB": 2
+  },
+  "sha256": "d4841df969a9eeae1d7ac5c4d9342a1c9dff5997cd91dab55e599bd2f7723274",
+  "entries": [
+    {
+      "id": "stage8-dracodia-ninja",
+      "parent": "stage8-final",
+      "stage": 8,
+      "title": "Dracodia / articulated claws \u2014 full final main life",
+      "start": 0,
+      "end": 109.683,
+      "seconds": 109.683,
+      "src": "videos/stage8-dracodia-extended-claws-1031.mp4",
+      "localSrc": "videos/stage8-dracodia-extended-claws-1031.mp4",
+      "poster": "posters/stage8-dracodia-ninja-1031.jpg",
+      "note": "Native Furious full5330HP final-main-life checkpoint, all preceding life pools cleared before recording. First22s withhold fire to show the articulation. Input-only invulnerable pilot thereafter; no recorder HP/phase/clock edits. Source-preserving shoulder/elbow/wrist poses: edge-to-center left/right rakes, coiled guard, protected background retreat, jump and two alternating physical claw strikes. Real blade-alpha contact, current part damage/targets, break cancellation and native Luminaire/copy/ending owners retained. Existing design and crescent blades; no new generation credits."
+    },
+    {
+      "id": "stage8-dracodia-ninja-combo",
+      "parent": "stage8-dracodia-ninja",
+      "stage": 8,
+      "title": "Dracodia / side rakes, coiled jump and double claw strike",
+      "start": 0,
+      "end": 20.5,
+      "seconds": 20.5,
+      "src": "videos/stage8-dracodia-extended-claws-1031.mp4",
+      "localSrc": "videos/stage8-dracodia-extended-claws-1031.mp4",
+      "poster": "posters/stage8-dracodia-ninja-combo-1031.jpg",
+      "note": "Native Furious full5330HP final-main-life checkpoint, all preceding life pools cleared before recording. First22s withhold fire to show the articulation. Input-only invulnerable pilot thereafter; no recorder HP/phase/clock edits. Source-preserving shoulder/elbow/wrist poses: edge-to-center left/right rakes, coiled guard, protected background retreat, jump and two alternating physical claw strikes. Real blade-alpha contact, current part damage/targets, break cancellation and native Luminaire/copy/ending owners retained. Existing design and crescent blades; no new generation credits."
+    },
+    {
+      "id": "stage8-dracodia-extended-claws",
+      "parent": "stage8-dracodia-ninja",
+      "stage": 8,
+      "title": "Dracodia / shoulder, elbow and wrist attack frames",
+      "start": 0,
+      "end": 10.8,
+      "seconds": 10.8,
+      "src": "videos/stage8-dracodia-extended-claws-1031.mp4",
+      "localSrc": "videos/stage8-dracodia-extended-claws-1031.mp4",
+      "poster": "posters/stage8-dracodia-extended-claws-1031.jpg",
+      "note": "Native Furious full5330HP final-main-life checkpoint, all preceding life pools cleared before recording. First22s withhold fire to show the articulation. Input-only invulnerable pilot thereafter; no recorder HP/phase/clock edits. Source-preserving shoulder/elbow/wrist poses: edge-to-center left/right rakes, coiled guard, protected background retreat, jump and two alternating physical claw strikes. Real blade-alpha contact, current part damage/targets, break cancellation and native Luminaire/copy/ending owners retained. Existing design and crescent blades; no new generation credits."
+    }
+  ],
+  "preview": "http://127.0.0.1:51046/?dracodia=extended-claws-1031#clip=stage8-dracodia-ninja-combo",
+  "nativeChecks": 82,
+  "inputDodgeChecks": 6,
+  "sourceChecks": 11,
+  "previewChecks": [
+    {
+      "name": "stage8-dracodia-ninja-combo plays revised native movie",
+      "passed": true,
+      "data": {
+        "src": "http://127.0.0.1:51046/videos/stage8-dracodia-extended-claws-1031.mp4",
+        "time": 1.676042,
+        "width": 1280,
+        "height": 800,
+        "error": null
+      }
+    },
+    {
+      "name": "stage8-dracodia-ninja plays revised native movie",
+      "passed": true,
+      "data": {
+        "src": "http://127.0.0.1:51046/videos/stage8-dracodia-extended-claws-1031.mp4",
+        "time": 1.673763,
+        "width": 1280,
+        "height": 800,
+        "error": null
+      }
+    },
+    {
+      "name": "stage8-dracodia-extended-claws plays revised native movie",
+      "passed": true,
+      "data": {
+        "src": "http://127.0.0.1:51046/videos/stage8-dracodia-extended-claws-1031.mp4",
+        "time": 1.671866,
+        "width": 1280,
+        "height": 800,
+        "error": null
+      }
+    }
+  ],
+  "fullSuiteExit": 1,
+  "knownBaselineFailures": 5,
+  "newPaidGenerations": 0,
+  "coreSHA256": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de"
+}

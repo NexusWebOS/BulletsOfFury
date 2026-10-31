@@ -1,0 +1,100 @@
+{
+  "checks": [
+    {
+      "name": "normal red punch preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "normal red fists preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "hard red punch preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "hard red fists preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "furious red punch preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "furious red fists preserves native movement and physical hit points",
+      "ok": true,
+      "data": {
+        "delta": 0,
+        "counts": [
+          26,
+          26
+        ],
+        "bank": "corrupt_rage"
+      }
+    },
+    {
+      "name": "Red code punch visibly uses authored white hit feedback",
+      "ok": true,
+      "data": {
+        "white": 35999,
+        "bank": "corrupt_punch"
+      }
+    },
+    {
+      "name": "Detached code hammer visibly flashes on its native part hit",
+      "ok": true,
+      "data": 12493
+    },
+    {
+      "name": "Stage5 detached hammer flash survives whole-body render suppression",
+      "ok": true,
+      "data": 3714
+    },
+    {
+      "name": "No page console or renderer errors",
+      "ok": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

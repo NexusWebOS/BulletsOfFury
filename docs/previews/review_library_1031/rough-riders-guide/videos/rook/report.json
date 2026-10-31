@@ -1,0 +1,5229 @@
+{
+  "id": "rook",
+  "setup": {
+    "health": [
+      {
+        "key": "voss",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "nyx",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "rook",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "kaia",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "jace",
+        "hp": 1424,
+        "max": 1424
+      }
+    ],
+    "view": {
+      "width": 480,
+      "height": 512
+    },
+    "key": "rook"
+  },
+  "timeline": [
+    {
+      "t": 0.24999999999999997,
+      "wall": 0.4745,
+      "label": "Rook / heavy gunship drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 179.97338661590123,
+          "y": 133.80056930437632,
+          "heading": 1.6439704783435294,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.64078171934455,
+          "y": 188.66012700957322,
+          "heading": 1.7300627331660463,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.24999999999999997,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 356.1699280763918,
+          "y": 138.96062693907183,
+          "heading": 1.6697261884655925,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 420.8325171314484,
+          "y": 172.1033723965724,
+          "heading": 1.518433985183533,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.56848455172826,
+          "y": 117.24999999999996,
+          "heading": 1.4152834772976508,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 12
+    },
+    {
+      "t": 0.7000000000000005,
+      "wall": 0.892800000011921,
+      "label": "Rook / heavy gunship drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 186.62372395841768,
+          "y": 140.6269631868876,
+          "heading": 1.7261800672622638,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.99883440459934,
+          "y": 187.84413137394534,
+          "heading": 1.6868578287895877,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.7000000000000005,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 350.9871087285425,
+          "y": 131.2524644095444,
+          "heading": 1.5408291806280319,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 413.87388595711167,
+          "y": 164.58989205478017,
+          "heading": 1.4223521884517165,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.2317749612174,
+          "y": 115.49832493617858,
+          "heading": 1.4403540524829024,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 37
+    },
+    {
+      "t": 1.100000000000001,
+      "wall": 1.309399999976158,
+      "label": "Rook / heavy gunship drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.4147775779794,
+          "y": 142.99336162847672,
+          "heading": 1.7097106601461944,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.0515238854319,
+          "y": 182.92338722628182,
+          "heading": 1.5790474897386617,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 345.1723869932222,
+          "y": 123.56868714881575,
+          "heading": 1.4407982381728188,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.53778135312876,
+          "y": 161.20751105894595,
+          "heading": 1.4220686297692127,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.2802774527666,
+          "y": 119.52708569415961,
+          "heading": 1.540078580118104,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 62
+    },
+    {
+      "t": 1.5166666666666662,
+      "wall": 1.727,
+      "label": "Rook / heavy gunship drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 194.7357506569958,
+          "y": 140.91674006559103,
+          "heading": 1.6119177709056718,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 274.01156178932126,
+          "y": 175.2556162791751,
+          "heading": 1.462901516217065,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 338.56641685364514,
+          "y": 117.35948006452043,
+          "heading": 1.4130832527913042,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.4393016514203,
+          "y": 162.16558419553758,
+          "heading": 1.5082656622733412,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.45741152556997,
+          "y": 126.7715910282365,
+          "heading": 1.660938476341562,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 87
+    },
+    {
+      "t": 1.9333333333333313,
+      "wall": 2.137699999988079,
+      "label": "Rook / heavy gunship drift",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.9941778775188,
+          "y": 134.8988059195846,
+          "heading": 1.4896708155369096,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 269.20894918290156,
+          "y": 167.50330344796095,
+          "heading": 1.4109183387698598,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 332.1182643022422,
+          "y": 115.00022921349455,
+          "heading": 1.4791569468779113,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.27401087361494,
+          "y": 167.36847967689042,
+          "heading": 1.631648378264986,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 490.56574087672635,
+          "y": 134.7531147307941,
+          "heading": 1.7281927141640738,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        }
+      ],
+      "frames": 112
+    },
+    {
+      "t": 2.3499999999999965,
+      "wall": 2.555300000011921,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.05152388543192,
+          "y": 126.92991556673961,
+          "heading": 1.4156675116227473,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 263.1723869932223,
+          "y": 162.2304291452169,
+          "heading": 1.4540112700576024,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "charge",
+            "t": 0.35,
+            "shot": 0
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.2802774527666,
+          "y": 175.0954049610467,
+          "heading": 1.7188436469802189,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 496.15299552017086,
+          "y": 140.83186776320102,
+          "heading": 1.7018465994624072,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 137
+    },
+    {
+      "t": 2.749999999999995,
+      "wall": 2.962899999976158,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 192.16992807639184,
+          "y": 119.89124808108772,
+          "heading": 1.4313616237878644,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 256.83251713144847,
+          "y": 161.132348496466,
+          "heading": 1.5614919297730572,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "charge",
+            "t": 0.7500000000000007,
+            "shot": 0
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.3309068855969,
+          "y": 182.51726643427207,
+          "heading": 1.719909703651769,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 502.33821194365,
+          "y": 142.99988902628286,
+          "heading": 1.6025486008221954,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 161
+    },
+    {
+      "t": 3.183333333333327,
+      "wall": 3.3895,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 187.20894918290165,
+          "y": 115.45526819866447,
+          "heading": 1.533564482730169,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 250.1182643022423,
+          "y": 164.7019161351679,
+          "heading": 1.6816193307039218,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "charge",
+            "t": 1.183333333333334,
+            "shot": 0
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.5657408767263,
+          "y": 187.90944583011623,
+          "heading": 1.6296149481169273,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 509.2088667625153,
+          "y": 140.5334318140323,
+          "heading": 1.477368307076165,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 187
+    },
+    {
+      "t": 3.599999999999992,
+      "wall": 3.804300000011921,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 181.17238699322235,
+          "y": 115.74460714170343,
+          "heading": 1.6553538851857634,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 244.53778135312885,
+          "y": 171.6288640481216,
+          "heading": 1.7307806881625725,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "charge",
+            "t": 1.5999999999999992,
+            "shot": 0
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 414.1529955201708,
+          "y": 188.7584778250621,
+          "heading": 1.5062534288478955,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 515.2402133180148,
+          "y": 134.25494678632663,
+          "heading": 1.412728693309816,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 212
+    },
+    {
+      "t": 4.016666666666658,
+      "wall": 4.222199999988079,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 174.56641685364525,
+          "y": 120.41800131956828,
+          "heading": 1.7268586692567882,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.43930165142035,
+          "y": 179.67077297167202,
+          "heading": 1.6848026788754875,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 0.35,
+            "shot": 5
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 420.6040963413188,
+          "y": 185.0570655308788,
+          "heading": 1.4212742263635654,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 520.0341685433197,
+          "y": 126.23845389920791,
+          "heading": 1.4420886081486803,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 236
+    },
+    {
+      "t": 4.433333333333323,
+      "wall": 4.638,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 168.11826430224235,
+          "y": 127.92978411725186,
+          "heading": 1.7055564295177945,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.27401087361494,
+          "y": 186.16788221134695,
+          "heading": 1.571027467104271,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 0.7666666666666674,
+            "shot": 9
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 427.20886676251524,
+          "y": 178.02940472343172,
+          "heading": 1.4252127020067633,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.0629845687675,
+          "y": 119.13530781129879,
+          "heading": 1.5479883218941854,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 261
+    },
+    {
+      "t": 4.849999999999988,
+      "wall": 5.054,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.5377813531289,
+          "y": 135.79552741941185,
+          "heading": 1.6041151641512796,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 238.28027745276657,
+          "y": 188.9713542277441,
+          "heading": 1.4571148010064232,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 1.183333333333334,
+            "shot": 14
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 433.2402133180147,
+          "y": 169.9998062308368,
+          "heading": 1.5157267263628758,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 523.9932308281755,
+          "y": 115.29478516217767,
+          "heading": 1.6674514809942047,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 286
+    },
+    {
+      "t": 5.266666666666653,
+      "wall": 5.470899999976158,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.43930165142035,
+          "y": 141.41373510531673,
+          "heading": 1.4828598803413913,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 240.45741152556985,
+          "y": 187.1539757499659,
+          "heading": 1.410806169963902,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 1.5999999999999992,
+            "shot": 18
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 438.0341685433196,
+          "y": 163.6239592266501,
+          "heading": 1.6389894948290593,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 522.7225001319492,
+          "y": 115.98709073599083,
+          "heading": 1.729435833511998,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 311
+    },
+    {
+      "t": 5.666666666666652,
+      "wall": 5.877899999976158,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.31975357657092,
+          "y": 142.95594627800222,
+          "heading": 1.4149699504902227,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 244.36939113066413,
+          "y": 181.60660054456085,
+          "heading": 1.4560523591410461,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 1.9999999999999978,
+            "shot": 23
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 440.9806256982991,
+          "y": 161.02710880150863,
+          "heading": 1.7199397383100645,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 519.5596040447708,
+          "y": 120.7176525932713,
+          "heading": 1.700127869399264,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 335
+    },
+    {
+      "t": 6.083333333333317,
+      "wall": 6.295800000011921,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.2375443222615,
+          "y": 140.03680405800367,
+          "heading": 1.4354705154271101,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 249.90841604724676,
+          "y": 173.71536770599047,
+          "heading": 1.5695103756758155,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 2.416666666666663,
+            "shot": 28
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 441.9983909210326,
+          "y": 162.85813767263878,
+          "heading": 1.7168143605071189,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 514.5917007144307,
+          "y": 128.30443121328216,
+          "heading": 1.5946478807629476,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 360
+    },
+    {
+      "t": 6.499999999999982,
+      "wall": 6.714800000011921,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.3309068855968,
+          "y": 133.46737707289125,
+          "heading": 1.5364465211372067,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 256.3382119436498,
+          "y": 166.24901091549992,
+          "heading": 1.683733120550839,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "recover",
+            "t": 0.2333333333333333,
+            "shot": 30
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 440.8146111335956,
+          "y": 168.70493549651528,
+          "heading": 1.6268551000541587,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 508.45779828200523,
+          "y": 136.12126050121293,
+          "heading": 1.4749838698820632,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 385
+    },
+    {
+      "t": 6.933333333333314,
+      "wall": 7.137599999964237,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.56574087672615,
+          "y": 125.10561572090408,
+          "heading": 1.6620563780244508,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 263.20886676251513,
+          "y": 161.58022059265542,
+          "heading": 1.7306916975664366,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "recover",
+            "t": 0.6666666666666671,
+            "shot": 30
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 437.3906822759526,
+          "y": 176.9577076995736,
+          "heading": 1.4989957598902734,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 501.56825767639464,
+          "y": 141.72259920555504,
+          "heading": 1.4116846792510276,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 411
+    },
+    {
+      "t": 7.333333333333313,
+      "wall": 7.543300000011921,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 167.9084160472467,
+          "y": 118.55736595132875,
+          "heading": 1.7274839680136331,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 269.018652742142,
+          "y": 161.51129470635018,
+          "heading": 1.6827085899861933,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.149591134103,
+          "y": 115.05369547629823,
+          "heading": 1.5403863151669672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "recover",
+            "t": 1.0666666666666678,
+            "shot": 30
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 432.5917007144307,
+          "y": 184.02221729215677,
+          "heading": 1.4202473336873684,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 495.4470497171117,
+          "y": 142.8827727119897,
+          "heading": 1.4438671240550254,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 435
+    },
+    {
+      "t": 7.749999999999978,
+      "wall": 7.9545,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 174.33821194364972,
+          "y": 115.14808132501615,
+          "heading": 1.7039394194121562,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 273.87335727698286,
+          "y": 165.80687560925546,
+          "heading": 1.568070581529239,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 358.8146111335956,
+          "y": 132.91778606208,
+          "heading": 1.434707781273149,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 426.4577982820053,
+          "y": 188.42670207722432,
+          "heading": 1.4264641621652714,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 490.0025062481294,
+          "y": 139.59117012297767,
+          "heading": 1.5509188695959912,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 460
+    },
+    {
+      "t": 8.166666666666652,
+      "wall": 8.3705,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 180.9509476184513,
+          "y": 116.32014537909643,
+          "heading": 1.6012174474057523,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.9806256982991,
+          "y": 173.14296730957744,
+          "heading": 1.455053516996226,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 355.5596040447708,
+          "y": 139.67313653148793,
+          "heading": 1.4153029921402822,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 419.8331541892708,
+          "y": 188.39047324803937,
+          "heading": 1.5185123220715384,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.0988923792337,
+          "y": 132.79667061367468,
+          "heading": 1.6697913248254086,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 485
+    },
+    {
+      "t": 8.58333333333334,
+      "wall": 8.787399999976158,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 187.0186527421424,
+          "y": 121.68591260153022,
+          "heading": 1.4804046687363048,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.9983909210326,
+          "y": 181.09324932283292,
+          "heading": 1.4108662901766067,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 350.5917007144304,
+          "y": 142.898480717182,
+          "heading": 1.4883668497286122,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 413.4470497171113,
+          "y": 183.9255130362817,
+          "heading": 1.6416526903523496,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.165941765929,
+          "y": 124.74646983193631,
+          "heading": 1.7297935170922272,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 510
+    },
+    {
+      "t": 9.000000000000027,
+      "wall": 9.2145,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.8733572769833,
+          "y": 129.47072266109643,
+          "heading": 1.4133459259818322,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.8146111335953,
+          "y": 187.0282654079912,
+          "heading": 1.4617861243060224,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 344.45779828200455,
+          "y": 141.52707640996684,
+          "heading": 1.6104498000721779,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 408.00250624812884,
+          "y": 176.50855113219168,
+          "heading": 1.7226562553785623,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.4164454169737,
+          "y": 118.10307090051951,
+          "heading": 1.6952433926830663,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 535
+    },
+    {
+      "t": 9.433333333333382,
+      "wall": 9.636899999976158,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.06298456876783,
+          "y": 137.3640602848284,
+          "heading": 1.442899372869806,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 273.3906822759519,
+          "y": 188.96620212460337,
+          "heading": 1.5825900068412022,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 337.5682576763936,
+          "y": 135.727882139459,
+          "heading": 1.7114375857673672,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 403.98156575460473,
+          "y": 168.30397834251417,
+          "heading": 1.710980239794639,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 486.96093918176535,
+          "y": 115.03636597717582,
+          "heading": 1.581638450701185,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 561
+    },
+    {
+      "t": 9.850000000000069,
+      "wall": 10.054099999964237,
+      "label": "Rook / committed dual chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.99323082817546,
+          "y": 142.16476547973883,
+          "heading": 1.5493322852249298,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 268.36456411841857,
+          "y": 186.12112508320297,
+          "heading": 1.692617644503745,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 331.20676495682403,
+          "y": 127.8527735728663,
+          "heading": 1.7239010460888355,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.1334255418444,
+          "y": 162.63917674893062,
+          "heading": 1.614420674833667,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 491.3253230642909,
+          "y": 116.7900638171711,
+          "heading": 1.4648322791756414,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 586
+    },
+    {
+      "t": 10.266666666666756,
+      "wall": 10.472399999976158,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 194.72250013194864,
+          "y": 142.61138931065662,
+          "heading": 1.6685294159406083,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 262.19745144249623,
+          "y": 179.59787515327454,
+          "heading": 1.730200682432468,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "charge",
+            "t": 0.2833333333333333,
+            "shot": 0
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.4723191779693,
+          "y": 161.06256269229328,
+          "heading": 1.491918618921557,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 497.0850127928477,
+          "y": 122.58204518534731,
+          "heading": 1.4110407192166807,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 611
+    },
+    {
+      "t": 10.683333333333444,
+      "wall": 10.889699999988078,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 191.39068227595126,
+          "y": 138.5562165370857,
+          "heading": 1.7296067146180845,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 255.5682576763926,
+          "y": 171.55393558024932,
+          "heading": 1.67298927093986,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "charge",
+            "t": 0.7000000000000005,
+            "shot": 0
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.96093918176587,
+          "y": 164.09558153315783,
+          "heading": 1.4163234926197654,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 503.605946545557,
+          "y": 130.4966847578367,
+          "heading": 1.4522524908905088,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 636
+    },
+    {
+      "t": 11.100000000000131,
+      "wall": 11.308699999988079,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 186.36456411841772,
+          "y": 131.340444784487,
+          "heading": 1.6962427841592915,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 249.20676495682312,
+          "y": 164.6497386704904,
+          "heading": 1.555005844553304,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "charge",
+            "t": 1.1166666666666676,
+            "shot": 0
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 409.32532306429164,
+          "y": 170.73510026228294,
+          "heading": 1.4325901426641454,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 510.1702601091618,
+          "y": 137.91631458466082,
+          "heading": 1.563959812148933,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 661
+    },
+    {
+      "t": 11.516666666666818,
+      "wall": 11.720399999976157,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 170.18546952601017,
+          "y": 123.35060022099984,
+          "heading": 1.5882784589361822,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 233.730177492135,
+          "y": 161.16876111368012,
+          "heading": 1.4464126889921725,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "charge",
+            "t": 1.5333333333333328,
+            "shot": 0
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 404.987758154242,
+          "y": 178.7851811845493,
+          "heading": 1.5310451311569746,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 505.95805911727865,
+          "y": 142.38698499186464,
+          "heading": 1.6797326662419712,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 686
+    },
+    {
+      "t": 11.933333333333506,
+      "wall": 12.136899999976158,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 109.76880285934362,
+          "y": 117.22922390583398,
+          "heading": 1.469917873934501,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 173.31351082546857,
+          "y": 162.26229265606648,
+          "heading": 1.4117878915437876,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 0.2833333333333333,
+            "shot": 4
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 344.8886738501448,
+          "y": 185.5833608192199,
+          "heading": 1.6531393275576722,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 445.77735447341774,
+          "y": 142.43007771355371,
+          "heading": 1.7307233487402782,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 711
+    },
+    {
+      "t": 12.350000000000193,
+      "wall": 12.554,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 67.74352762852006,
+          "y": 115.0008844176603,
+          "heading": 1.4115476032446759,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.670188213542,
+          "y": 167.5686614306519,
+          "heading": 1.4717220979111272,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 0.7000000000000005,
+            "shot": 8
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 328.7070227808606,
+          "y": 188.88122636304735,
+          "heading": 1.7262658568592677,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 423.8790511369791,
+          "y": 138.03134037153572,
+          "heading": 1.6866087630527244,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 736
+    },
+    {
+      "t": 12.76666666666688,
+      "wall": 12.97369999998808,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 61.83525621820715,
+          "y": 117.40257714413214,
+          "heading": 1.4478792308161232,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.49429014182647,
+          "y": 175.33285239919263,
+          "heading": 1.5905736841788831,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 1.1166666666666676,
+            "shot": 13
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 334.0772847197428,
+          "y": 187.5880500755769,
+          "heading": 1.70693789553356,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 423.96398581154546,
+          "y": 130.6456002709727,
+          "heading": 1.573622934247042,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 761
+    },
+    {
+      "t": 13.183333333333568,
+      "wall": 13.387,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 57.982465078044186,
+          "y": 123.63997228435315,
+          "heading": 1.557307094630129,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 140.96183850520768,
+          "y": 182.98695660390032,
+          "heading": 1.6976640880327376,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 1.5333333333333328,
+            "shot": 18
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 338.6141441615342,
+          "y": 182.13153382375774,
+          "heading": 1.6066493795208752,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 422.34730176582957,
+          "y": 122.71559848314679,
+          "heading": 1.4589561808763776,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 786
+    },
+    {
+      "t": 13.600000000000255,
+      "wall": 13.80430000001192,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 56.133462353276464,
+          "y": 131.65012948578223,
+          "heading": 1.6747567237908918,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 145.32535987572558,
+          "y": 187.99947490587533,
+          "heading": 1.7293088773188088,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 1.949999999999998,
+            "shot": 22
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 341.34232527671395,
+          "y": 174.3163520441328,
+          "heading": 1.4850397999799114,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 418.73114281938535,
+          "y": 116.86408381842912,
+          "heading": 1.4107984323139136,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 811
+    },
+    {
+      "t": 14.016666666666943,
+      "wall": 14.219899999976159,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 56.47232068474884,
+          "y": 138.7837895385176,
+          "heading": 1.7303832706686035,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 151.08501429962936,
+          "y": 188.71257963178073,
+          "heading": 1.6666895551056362,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "fire",
+            "t": 2.366666666666663,
+            "shot": 27
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 341.94201635446757,
+          "y": 166.7272782668688,
+          "heading": 1.4144278403671953,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 413.4941209626177,
+          "y": 115.02637149318184,
+          "heading": 1.4577880983577425,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 836
+    },
+    {
+      "t": 14.416666666666963,
+      "wall": 14.624300000011921,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 58.822826430630656,
+          "y": 142.60859177249208,
+          "heading": 1.6943860155708554,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 157.3393746394642,
+          "y": 185.11890683493218,
+          "heading": 1.5520661268127813,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "recover",
+            "t": 0.16666666666666666,
+            "shot": 30
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 340.4509420570469,
+          "y": 161.9914976689963,
+          "heading": 1.434103566099334,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 407.4748743195793,
+          "y": 117.61700677026987,
+          "heading": 1.5669151284516833,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 860
+    },
+    {
+      "t": 14.83333333333365,
+      "wall": 15.040399999976158,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 63.120175488578276,
+          "y": 142.1688215102613,
+          "heading": 1.5853363273594552,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 163.9160604684441,
+          "y": 178.11641819485718,
+          "heading": 1.4445740448865825,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "recover",
+            "t": 0.5833333333333335,
+            "shot": 30
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 336.91015854179886,
+          "y": 161.29235379344138,
+          "heading": 1.5339160598576853,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 400.8392393450538,
+          "y": 123.9886599299432,
+          "heading": 1.6818797207590406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 885
+    },
+    {
+      "t": 15.250000000000338,
+      "wall": 15.460899999976158,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 68.83541435538594,
+          "y": 137.37362840272274,
+          "heading": 1.4676400037246355,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 169.8414702942663,
+          "y": 170.08321325333966,
+          "heading": 1.4121437244181898,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.34429069463675,
+          "y": 125.28325779252889,
+          "heading": 1.5328556048696271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": {
+            "kind": "rr26chain",
+            "phase": "recover",
+            "t": 1.0000000000000013,
+            "shot": 30
+          }
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 331.7279737771887,
+          "y": 165.1268422855908,
+          "heading": 1.6556604800357477,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 394.5515602721433,
+          "y": 132.0177510774975,
+          "heading": 1.7307853328800251,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 910
+    },
+    {
+      "t": 15.666666666667025,
+      "wall": 15.87080000001192,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 75.33937456938364,
+          "y": 129.80896253599167,
+          "heading": 1.4112885963605326,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 174.46329875250052,
+          "y": 163.67617397176554,
+          "heading": 1.4740608013681928,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 283.4276240279697,
+          "y": 115.95445883539884,
+          "heading": 1.6257712023344324,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 325.4748742494968,
+          "y": 172.226754083171,
+          "heading": 1.7269379562592508,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 389.3040231522493,
+          "y": 139.04875883739692,
+          "heading": 1.6845488161385587,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 935
+    },
+    {
+      "t": 16.033333333333704,
+      "wall": 16.288300000011922,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 81.14733285210164,
+          "y": 122.84101309259472,
+          "heading": 1.4404089363642036,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 177.04361675333564,
+          "y": 161.09292052995934,
+          "heading": 1.5783785735773226,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 255.43128723569149,
+          "y": 120.1309326962964,
+          "heading": 1.7093771280660013,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 319.63150339858004,
+          "y": 179.3231244398591,
+          "heading": 1.7129651329641358,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 386.00930441393274,
+          "y": 142.54065551052517,
+          "heading": 1.5858437931153129,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 955
+    },
+    {
+      "t": 16.43333333333368,
+      "wall": 16.704,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 86.96543098939624,
+          "y": 117.10344689561892,
+          "heading": 1.5401715599127548,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 177.9990975589386,
+          "y": 162.36177441378302,
+          "heading": 1.6863958039092173,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 250.64568606335658,
+          "y": 127.23962825175157,
+          "heading": 1.726338421761075,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 313.5046798962212,
+          "y": 185.73595975668948,
+          "heading": 1.6232763548201508,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 384.17423185432415,
+          "y": 142.36169937274218,
+          "heading": 1.4719643921368568,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 980
+    },
+    {
+      "t": 16.850000000000325,
+      "wall": 17.12030000001192,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 91.83452109940899,
+          "y": 115.00550925832638,
+          "heading": 1.6610167312854494,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 176.8361218971785,
+          "y": 167.76920674242865,
+          "heading": 1.7307323633376008,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 244.5198790899088,
+          "y": 135.18086220103044,
+          "heading": 1.653403540975212,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 308.04808029186734,
+          "y": 188.90986145651127,
+          "heading": 1.5001260268581278,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 384.40361213090875,
+          "y": 137.85019823748837,
+          "heading": 1.4118224605901226,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1005
+    },
+    {
+      "t": 17.266666666666968,
+      "wall": 17.53739999997616,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 94.96045041951159,
+          "y": 117.53607422752955,
+          "heading": 1.7282097076723608,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 173.59955089780158,
+          "y": 175.56813341391867,
+          "heading": 1.6799582937869162,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 237.8964962216676,
+          "y": 141.07785335963243,
+          "heading": 1.5313438708752123,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 304.12739321852774,
+          "y": 187.48325062637466,
+          "heading": 1.4190018539917437,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 386.7902824665244,
+          "y": 130.41160483668781,
+          "heading": 1.4462189753674166,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1030
+    },
+    {
+      "t": 17.68333333333361,
+      "wall": 17.95380000001192,
+      "label": "Rook / ram selection currently resolves to chaingun",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 95.99909755893856,
+          "y": 123.85818912148598,
+          "heading": 1.7017922258497513,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 168.64568606335752,
+          "y": 183.17915707159418,
+          "heading": 1.5642678766410414,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 231.5046798962222,
+          "y": 142.98024573019407,
+          "heading": 1.4327457543962956,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 302.17423185432426,
+          "y": 181.92796093765998,
+          "heading": 1.4281466917619903,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 391.0715036143464,
+          "y": 122.5061408089701,
+          "heading": 1.554699045714442,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Rook / heavy gunship drift",
+          "request": "drift"
+        },
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        }
+      ],
+      "frames": 1055
+    },
+    {
+      "t": 18.100000000000254,
+      "wall": 18.373,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 94.83612189717887,
+          "y": 131.8808935897697,
+          "heading": 1.5974742119012313,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 162.51987908990992,
+          "y": 188.08502692813292,
+          "heading": 1.4524597927942406,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 226.04808029186816,
+          "y": 140.25884685346412,
+          "heading": 1.416243437310566,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 302.4036121309085,
+          "y": 174.08133490455293,
+          "heading": 1.5221222956616174,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 396.7759726034187,
+          "y": 116.7484394077546,
+          "heading": 1.6727518337648104,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1080
+    },
+    {
+      "t": 18.516666666666897,
+      "wall": 18.789899999976157,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 91.59955089780229,
+          "y": 138.950778571055,
+          "heading": 1.47729141546126,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 155.89649622166874,
+          "y": 188.66318794832378,
+          "heading": 1.4110239804086002,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 222.12739321852825,
+          "y": 133.81372533692323,
+          "heading": 1.491650503795575,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 304.7902824665238,
+          "y": 166.53854585038724,
+          "heading": 1.645043331848463,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 403.2757066481186,
+          "y": 115.04278828701014,
+          "heading": 1.7301738058627087,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1105
+    },
+    {
+      "t": 18.93333333333354,
+      "wall": 19.20919999998808,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 86.64568606335848,
+          "y": 142.72956812036162,
+          "heading": 1.4127140418004105,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 149.50467989622325,
+          "y": 184.72242061311997,
+          "heading": 1.4646014538761747,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 220.17423185432443,
+          "y": 125.77652443141567,
+          "heading": 1.6141239423706635,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 309.0715036143455,
+          "y": 161.7942768216486,
+          "heading": 1.723811220920329,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 409.8551753285215,
+          "y": 117.95331020074511,
+          "heading": 1.6928173114754104,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1129
+    },
+    {
+      "t": 19.350000000000183,
+      "wall": 19.620399999976158,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 80.51987908991102,
+          "y": 141.96747490342946,
+          "heading": 1.4421449096921728,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 144.04808029186896,
+          "y": 177.56608438155973,
+          "heading": 1.581330805907121,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 220.4036121309083,
+          "y": 118.80544771338843,
+          "heading": 1.7108313506085295,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 314.77597260341764,
+          "y": 161.41763540294116,
+          "heading": 1.7115843402202837,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 415.7900705490356,
+          "y": 124.51738646474621,
+          "heading": 1.582897479565926,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1154
+    },
+    {
+      "t": 19.766666666666826,
+      "wall": 20.04080000001192,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 73.89649622166988,
+          "y": 136.9165517106083,
+          "heading": 1.5480820951355854,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 140.12739321852877,
+          "y": 169.56104786731123,
+          "heading": 1.6917955226751882,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 222.79028246652322,
+          "y": 115.20609153179532,
+          "heading": 1.7242628475388322,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 321.2757066481175,
+          "y": 165.53319102807868,
+          "heading": 1.6156337609776232,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 420.42704279718265,
+          "y": 132.5640310347201,
+          "heading": 1.4657813442072372,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1179
+    },
+    {
+      "t": 20.18333333333347,
+      "wall": 20.45969999998808,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 67.50467989622426,
+          "y": 129.24732815206582,
+          "heading": 1.6675269609404304,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.17423185432457,
+          "y": 163.35487667709987,
+          "heading": 1.730304538433601,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 227.07150361434464,
+          "y": 116.16889788097059,
+          "heading": 1.6464310017559536,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 327.85517532852043,
+          "y": 172.7797751994178,
+          "heading": 1.4930192937262845,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 423.255625848179,
+          "y": 139.43191696042902,
+          "heading": 1.4111154312127323,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1204
+    },
+    {
+      "t": 20.60000000000011,
+      "wall": 20.88109999996424,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 62.04808029186978,
+          "y": 121.49630390369272,
+          "heading": 1.729448133811512,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 138.40361213090807,
+          "y": 161.000184232914,
+          "heading": 1.6739573437704647,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 232.77597260341662,
+          "y": 121.37543061493588,
+          "heading": 1.5236207904734846,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 333.7900705490347,
+          "y": 180.76067092708246,
+          "heading": 1.4166572077092785,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 423.96443200456633,
+          "y": 142.84957695556454,
+          "heading": 1.4514084201834219,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1229
+    },
+    {
+      "t": 21.016666666666755,
+      "wall": 21.289899999976157,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 58.12739321852929,
+          "y": 116.22703319542424,
+          "heading": 1.6970223822482933,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 140.79028246652263,
+          "y": 163.27575558071146,
+          "heading": 1.5562624414689261,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 239.27570664811637,
+          "y": 129.10369421596923,
+          "heading": 1.42886488783181,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 338.42704279718197,
+          "y": 186.83629686727528,
+          "heading": 1.4319584446269893,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 422.4754315557077,
+          "y": 141.6866627646881,
+          "heading": 1.5626989100036446,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1254
+    },
+    {
+      "t": 21.433333333333398,
+      "wall": 21.70819999998808,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 56.17423185432473,
+          "y": 115.1822613445248,
+          "heading": 1.5895326251786375,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 145.07150361434378,
+          "y": 169.42897398659542,
+          "heading": 1.4472105379858158,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 245.85517532851935,
+          "y": 136.79766225328743,
+          "heading": 1.4185126550789973,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 341.2556258481787,
+          "y": 188.9972158050689,
+          "heading": 1.5298236776556429,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 418.9525427648909,
+          "y": 136.32779369713793,
+          "heading": 1.6788047648958657,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1279
+    },
+    {
+      "t": 21.85000000000004,
+      "wall": 22.1285,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 56.40361213090785,
+          "y": 118.70753356048758,
+          "heading": 1.470900781794111,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 150.77597260341554,
+          "y": 177.42473949904277,
+          "heading": 1.4116525284405326,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 251.79007054903377,
+          "y": 141.91265112443716,
+          "heading": 1.4987203493647279,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 341.96443200456645,
+          "y": 186.52873085576567,
+          "heading": 1.6520544915428201,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 413.7835867457961,
+          "y": 128.5453486057696,
+          "heading": 1.7306802517928979,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1304
+    },
+    {
+      "t": 22.28333333333335,
+      "wall": 22.554,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 58.92766798276916,
+          "y": 125.95489819696961,
+          "heading": 1.4112244142928267,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 157.5422548751525,
+          "y": 184.85327553713748,
+          "heading": 1.4747371104330538,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 256.5776905243208,
+          "y": 142.69259678916941,
+          "heading": 1.626566207096586,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 340.37167395736543,
+          "y": 179.94300769988436,
+          "heading": 1.7271207330067253,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 407.27482507932353,
+          "y": 120.64884012717356,
+          "heading": 1.6839513207726446,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1330
+    },
+    {
+      "t": 22.699999999999992,
+      "wall": 22.97230000001192,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 63.27610748549441,
+          "y": 133.98517099063204,
+          "heading": 1.45034920646761,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 164.10963034352383,
+          "y": 188.7019233872686,
+          "heading": 1.5943429483069742,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 259.32598723972137,
+          "y": 138.8211906113076,
+          "heading": 1.7166880349189428,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 336.77412059407555,
+          "y": 171.91090048005145,
+          "heading": 1.7049009578957466,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 400.6389956085846,
+          "y": 115.84071420132366,
+          "heading": 1.5698187014936213,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1355
+    },
+    {
+      "t": 23.116666666666635,
+      "wall": 23.38769999998808,
+      "label": "Rook / recovery",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 69.02527078574238,
+          "y": 140.36666089180545,
+          "heading": 1.5611013918220844,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 170.00442038990388,
+          "y": 188.0188316205287,
+          "heading": 1.6999461009152272,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 259.9467612488088,
+          "y": 131.70154859675594,
+          "heading": 1.7200511032868369,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 331.5501418047614,
+          "y": 164.90047425195547,
+          "heading": 1.6029319524754242,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 394.37316602815184,
+          "y": 115.38485730355782,
+          "heading": 1.4562674556143653,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 2.0166666666666644,
+          "label": "Rook / committed dual chaingun",
+          "request": "slug"
+        },
+        {
+          "t": 2.0166666666666644,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 10.000000000000076,
+          "label": "Rook / ram selection currently resolves to chaingun",
+          "request": "ram"
+        },
+        {
+          "t": 10.000000000000076,
+          "resolved": "rr26chain",
+          "warm": 1.65
+        },
+        {
+          "t": 18.00000000000026,
+          "label": "Rook / recovery",
+          "request": "drift"
+        }
+      ],
+      "frames": 1380
+    }
+  ],
+  "stats": {
+    "peak": 1.2545950412750244,
+    "tapped": 10,
+    "playing": {
+      "stagex": 1,
+      "av3_target_acquire": 2,
+      "retinaLockBeep": 17,
+      "enemyMachineGunHeavy": 30,
+      "alertLockon": 1
+    },
+    "tapErrors": [],
+    "frames": 1382,
+    "events": [
+      {
+        "t": 0.016666666666666666,
+        "label": "Rook / heavy gunship drift",
+        "request": "drift"
+      },
+      {
+        "t": 2.0166666666666644,
+        "label": "Rook / committed dual chaingun",
+        "request": "slug"
+      },
+      {
+        "t": 2.0166666666666644,
+        "resolved": "rr26chain",
+        "warm": 1.65
+      },
+      {
+        "t": 10.000000000000076,
+        "label": "Rook / ram selection currently resolves to chaingun",
+        "request": "ram"
+      },
+      {
+        "t": 10.000000000000076,
+        "resolved": "rr26chain",
+        "warm": 1.65
+      },
+      {
+        "t": 18.00000000000026,
+        "label": "Rook / recovery",
+        "request": "drift"
+      }
+    ],
+    "rr26": [
+      {
+        "kind": "rook-chain-release",
+        "t": 3.6666666666666585,
+        "caught": true
+      },
+      {
+        "kind": "rook-chain-release",
+        "t": 11.650000000000158,
+        "caught": false
+      }
+    ],
+    "rd21": [
+      {
+        "event": "personal-recovery",
+        "time": 7.366666666666646,
+        "pilot": "rook"
+      },
+      {
+        "event": "personal-recovery",
+        "time": 15.350000000000342,
+        "pilot": "rook"
+      }
+    ],
+    "ra4": [
+      {
+        "event": "specialStart",
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "specialStart",
+        "pilot": "rook",
+        "kind": "ram"
+      }
+    ],
+    "god": true
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+}

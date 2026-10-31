@@ -1,0 +1,1190 @@
+{
+  "checks": [
+    {
+      "name": "normal turbo guns emit rapid paired rounds from both cannons",
+      "passed": true
+    },
+    {
+      "name": "normal all four actual barrel mouths fire in alternating pairs",
+      "passed": true
+    },
+    {
+      "name": "normal cannon bullets remain straight and cannot be intercepted",
+      "passed": true
+    },
+    {
+      "name": "normal left parallel gun lanes can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal right parallel gun lanes can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal left committed core beam can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal right committed core beam can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard turbo guns emit rapid paired rounds from both cannons",
+      "passed": true
+    },
+    {
+      "name": "hard all four actual barrel mouths fire in alternating pairs",
+      "passed": true
+    },
+    {
+      "name": "hard cannon bullets remain straight and cannot be intercepted",
+      "passed": true
+    },
+    {
+      "name": "hard left parallel gun lanes can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard right parallel gun lanes can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard left committed core beam can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard right committed core beam can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious turbo guns emit rapid paired rounds from both cannons",
+      "passed": true
+    },
+    {
+      "name": "furious all four actual barrel mouths fire in alternating pairs",
+      "passed": true
+    },
+    {
+      "name": "furious cannon bullets remain straight and cannot be intercepted",
+      "passed": true
+    },
+    {
+      "name": "furious left parallel gun lanes can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious right parallel gun lanes can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious left committed core beam can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious right committed core beam can be escaped without GOD",
+      "passed": true
+    },
+    {
+      "name": "Chest core draws multiple source-authored1015 glow levels",
+      "passed": true
+    },
+    {
+      "name": "Lava sides stay at the exact left and right visible edges",
+      "passed": true
+    },
+    {
+      "name": "Animated side strips remain edge-anchored after camera movement",
+      "passed": true
+    },
+    {
+      "name": "Side structures animate and scroll independently of lava",
+      "passed": true
+    },
+    {
+      "name": "Pause freezes body, charge and both arena animation clocks",
+      "passed": true
+    },
+    {
+      "name": "Laser releases once from the measured chest core",
+      "passed": true
+    },
+    {
+      "name": "No cannon-owned Phoenix laser renderer is called",
+      "passed": true
+    },
+    {
+      "name": "Real cannon damage retains native body/part hit flash",
+      "passed": true
+    },
+    {
+      "name": "Native white hit flash expires while core light continues",
+      "passed": true
+    },
+    {
+      "name": "Standing in the actual core beam causes native player death",
+      "passed": true
+    },
+    {
+      "name": "A destroyed cannon stops firing and selects the intact whole-body damaged bank",
+      "passed": true
+    },
+    {
+      "name": "Broken left cannon has no delayed launches",
+      "passed": true
+    },
+    {
+      "name": "Destroying both pods preserves native swoon transition and cancels core/gun fields",
+      "passed": true
+    },
+    {
+      "name": "Existing authored swoon controller remains reachable",
+      "passed": true
+    },
+    {
+      "name": "Evasion reacts to visible incoming fire and makes the player chase the guns",
+      "passed": true
+    },
+    {
+      "name": "Evasive movement has bounded speed without teleports",
+      "passed": true
+    },
+    {
+      "name": "Clear removes pending beam ownership and live cannon rounds",
+      "passed": true
+    },
+    {
+      "name": "Native timed live-copy return is preserved",
+      "passed": true
+    },
+    {
+      "name": "Native copied-life defeat downloads home without restoring its HP",
+      "passed": true
+    },
+    {
+      "name": "New brain night storm remains with its existing owner",
+      "passed": true
+    },
+    {
+      "name": "Digital-jungle helicopter remains with its existing owner",
+      "passed": true
+    },
+    {
+      "name": "Last Phoenix defeat retires surviving wings into native zero-HP final anatomy",
+      "passed": true
+    },
+    {
+      "name": "Last Phoenix handoff reaches native final death with no stale part drawing",
+      "passed": true
+    },
+    {
+      "name": "No native page, draw or asset errors",
+      "passed": true
+    },
+    {
+      "name": "All467 authored frames use even cells and stable logical canvases",
+      "passed": true
+    },
+    {
+      "name": "Lava source palette is visibly darker while keeping its drawing",
+      "passed": true
+    },
+    {
+      "name": "All23 whole source poses retain both cannon sockets and measured core",
+      "passed": true
+    },
+    {
+      "name": "Core engine remains byte-identical",
+      "passed": true
+    }
+  ],
+  "states": [
+    {
+      "rank": "normal",
+      "events": [
+        {
+          "event": "tell",
+          "clock": 0,
+          "kind": "guns",
+          "tell": 1.5,
+          "hp": 2600
+        },
+        {
+          "event": "evade",
+          "clock": 0.016666666666666666,
+          "from": {
+            "x": 340,
+            "y": 174
+          },
+          "to": {
+            "x": 254,
+            "y": 197.16023756563663
+          },
+          "visibleThreat": false
+        },
+        {
+          "event": "aim-commit",
+          "clock": 0.7500000000000007,
+          "kind": "guns",
+          "dir": 4,
+          "core": {
+            "x": 269,
+            "y": 203
+          },
+          "target": {
+            "x": 338.36036374326795,
+            "y": 447
+          }
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.5166666666666662,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 197,
+          "y": 224,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.5166666666666662,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 321,
+          "y": 229,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.6166666666666658,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 216,
+          "y": 223,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.6166666666666658,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 339,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.733333333333332,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 199,
+          "y": 225,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.733333333333332,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 316,
+          "y": 226,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.8499999999999983,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 224,
+          "y": 233,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.8499999999999983,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 339,
+          "y": 235,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.9666666666666646,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 197,
+          "y": 224,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.9666666666666646,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 321,
+          "y": 229,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.083333333333331,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 216,
+          "y": 223,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.083333333333331,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 339,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.199999999999997,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 199,
+          "y": 225,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.199999999999997,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 316,
+          "y": 226,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.3166666666666633,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 224,
+          "y": 241,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.3166666666666633,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 340,
+          "y": 244,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.4333333333333296,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 197,
+          "y": 224,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.4333333333333296,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 321,
+          "y": 229,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.549999999999996,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 216,
+          "y": 223,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.549999999999996,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 339,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.666666666666662,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 203,
+          "y": 232,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.666666666666662,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 316,
+          "y": 233,
+          "vx": 0
+        }
+      ],
+      "shots": [
+        {
+          "vx": 0,
+          "vy": 5.85,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 5.85,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 5.85,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 5.85,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 5.85,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 5.85,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 5.85,
+          "intercept": false
+        }
+      ],
+      "hp": 2600
+    },
+    {
+      "rank": "hard",
+      "events": [
+        {
+          "event": "tell",
+          "clock": 0,
+          "kind": "guns",
+          "tell": 1.35,
+          "hp": 3300
+        },
+        {
+          "event": "evade",
+          "clock": 0.016666666666666666,
+          "from": {
+            "x": 340,
+            "y": 174
+          },
+          "to": {
+            "x": 450,
+            "y": 197.16023756563663
+          },
+          "visibleThreat": false
+        },
+        {
+          "event": "aim-commit",
+          "clock": 0.6833333333333338,
+          "kind": "guns",
+          "dir": 8,
+          "core": {
+            "x": 413,
+            "y": 203
+          },
+          "target": {
+            "x": 338.36036374326795,
+            "y": 447
+          }
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.35,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 341,
+          "y": 224,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.35,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 465,
+          "y": 229,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.4499999999999997,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 370,
+          "y": 229,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.4499999999999997,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 479,
+          "y": 223,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.5499999999999994,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 344,
+          "y": 224,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.5499999999999994,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 461,
+          "y": 224,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.649999999999999,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 367,
+          "y": 232,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.649999999999999,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 481,
+          "y": 234,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.733333333333332,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 345,
+          "y": 243,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.733333333333332,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 460,
+          "y": 243,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.8333333333333317,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 364,
+          "y": 233,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.8333333333333317,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 487,
+          "y": 223,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.9333333333333313,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 343,
+          "y": 223,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.9333333333333313,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 462,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.0166666666666644,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 364,
+          "y": 225,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.0166666666666644,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 481,
+          "y": 227,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.116666666666664,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 346,
+          "y": 233,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.116666666666664,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 459,
+          "y": 234,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.2166666666666637,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 367,
+          "y": 242,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.2166666666666637,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 485,
+          "y": 243,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.3166666666666633,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 355,
+          "y": 226,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.3166666666666633,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 464,
+          "y": 230,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.3999999999999964,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 360,
+          "y": 223,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.3999999999999964,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 483,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.499999999999996,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 343,
+          "y": 225,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.499999999999996,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 460,
+          "y": 226,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.5999999999999956,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 368,
+          "y": 233,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.5999999999999956,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 483,
+          "y": 235,
+          "vx": 0
+        },
+        {
+          "event": "evade",
+          "clock": 3.0666666666666607,
+          "from": {
+            "x": 412.6666666666665,
+            "y": 203.6845111674072
+          },
+          "to": {
+            "x": 302.6666666666665,
+            "y": 182.25919406861067
+          },
+          "visibleThreat": false
+        },
+        {
+          "event": "recovery",
+          "clock": 3.0666666666666607,
+          "kind": "guns",
+          "rounds": 14
+        }
+      ],
+      "shots": [
+        {
+          "vx": 0,
+          "vy": 6.1,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 6.1,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 6.1,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 6.1,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 6.1,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 6.1,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 6.1,
+          "intercept": false
+        }
+      ],
+      "hp": 3300
+    },
+    {
+      "rank": "furious",
+      "events": [
+        {
+          "event": "tell",
+          "clock": 0,
+          "kind": "guns",
+          "tell": 1.2,
+          "hp": 4100
+        },
+        {
+          "event": "evade",
+          "clock": 0.016666666666666666,
+          "from": {
+            "x": 340,
+            "y": 174
+          },
+          "to": {
+            "x": 450,
+            "y": 197.16023756563663
+          },
+          "visibleThreat": false
+        },
+        {
+          "event": "aim-commit",
+          "clock": 0.6000000000000002,
+          "kind": "guns",
+          "dir": 8,
+          "core": {
+            "x": 411,
+            "y": 201
+          },
+          "target": {
+            "x": 338.36036374326795,
+            "y": 447
+          }
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.2000000000000006,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 339,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.2000000000000006,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 463,
+          "y": 227,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.2833333333333337,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 368,
+          "y": 227,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.2833333333333337,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 477,
+          "y": 221,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.3666666666666667,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 342,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.3666666666666667,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 459,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.4499999999999997,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 362,
+          "y": 223,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.4499999999999997,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 479,
+          "y": 225,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.5333333333333328,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 344,
+          "y": 231,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.5333333333333328,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 457,
+          "y": 232,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.6166666666666658,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 365,
+          "y": 240,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.6166666666666658,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 483,
+          "y": 241,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.6833333333333322,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 339,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.6833333333333322,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 463,
+          "y": 227,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.7666666666666653,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 358,
+          "y": 221,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.7666666666666653,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 481,
+          "y": 220,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.8499999999999983,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 342,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.8499999999999983,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 459,
+          "y": 222,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.9333333333333313,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 365,
+          "y": 230,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 1.9333333333333313,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 479,
+          "y": 232,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.0166666666666644,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 343,
+          "y": 241,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.0166666666666644,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 458,
+          "y": 241,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.083333333333331,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 365,
+          "y": 240,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.083333333333331,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 483,
+          "y": 241,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.166666666666664,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 353,
+          "y": 224,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.166666666666664,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 462,
+          "y": 228,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.249999999999997,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 358,
+          "y": 221,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.249999999999997,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 481,
+          "y": 220,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.33333333333333,
+          "id": "cannonL",
+          "barrel": 0,
+          "x": 341,
+          "y": 223,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.33333333333333,
+          "id": "cannonR",
+          "barrel": 0,
+          "x": 458,
+          "y": 224,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.416666666666663,
+          "id": "cannonL",
+          "barrel": 1,
+          "x": 366,
+          "y": 231,
+          "vx": 0
+        },
+        {
+          "event": "turbo-round",
+          "clock": 2.416666666666663,
+          "id": "cannonR",
+          "barrel": 1,
+          "x": 481,
+          "y": 233,
+          "vx": 0
+        },
+        {
+          "event": "evade",
+          "clock": 2.916666666666661,
+          "from": {
+            "x": 410.5833333333328,
+            "y": 202.0000000000004
+          },
+          "to": {
+            "x": 300.5833333333328,
+            "y": 182.25919406861067
+          },
+          "visibleThreat": false
+        },
+        {
+          "event": "recovery",
+          "clock": 2.916666666666661,
+          "kind": "guns",
+          "rounds": 16
+        }
+      ],
+      "shots": [
+        {
+          "vx": 0,
+          "vy": 6.35,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 6.35,
+          "intercept": false
+        },
+        {
+          "vx": 0,
+          "vy": 6.35,
+          "intercept": false
+        }
+      ],
+      "hp": 4100
+    }
+  ],
+  "errors": []
+}

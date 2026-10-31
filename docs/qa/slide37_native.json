@@ -1,0 +1,15 @@
+{
+  "state": {
+    "speed": 420,
+    "seconds": 1.016666666666668,
+    "phase": "chute",
+    "shots": 8,
+    "drones": 1,
+    "pose": "y31_slide_turn_east_0",
+    "cursor": {
+      "x": 472,
+      "y": 168
+    }
+  },
+  "errors": []
+}

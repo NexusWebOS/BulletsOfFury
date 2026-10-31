@@ -1,0 +1,1 @@
+()=>{const k='fb1002_hammer_portrait',im=XART.get(k);return{t:FURYBOT.age(),portrait:{key:k,type:im?.constructor.name,w:im?.width,h:im?.height,src:im?.src,source:XART._src[k]},dialogueBinding:typeof HT23!=='undefined'?HT23.speechOwner:null,route:s6Wing?.route};}

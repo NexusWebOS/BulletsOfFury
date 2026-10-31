@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "clip": "stage8-dracodia-luminaire",
+      "source": "http://127.0.0.1:51046/videos/stage8-dracodia-luminaire-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 13.29066,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "stage8-dracodia-ninja",
+      "source": "http://127.0.0.1:51046/videos/stage8-dracodia-luminaire-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.001234,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "s8-dracodia",
+      "source": "http://127.0.0.1:51046/videos/stage8-dracodia-luminaire-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.00062,
+      "advanced": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

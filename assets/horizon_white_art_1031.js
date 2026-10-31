@@ -1,0 +1,2 @@
+'use strict';
+const EH91_ART={"beam":{"key":"eh91_beam","path":"assets/game/levels/stage_09/miniboss/horizon_white_optics_1031/beam.png","cw":64,"ch":64,"cols":32,"frames":1024,"pivot":[32,32]},"eye_glow":{"key":"eh91_eye_glow","path":"assets/game/levels/stage_09/miniboss/horizon_white_optics_1031/eye_glow.png","cw":80,"ch":80,"cols":16,"frames":256,"pivot":[40,40]},"muzzle":{"key":"eh91_muzzle","path":"assets/game/levels/stage_09/miniboss/horizon_white_optics_1031/muzzle.png","cw":80,"ch":80,"cols":8,"frames":8,"pivot":[40,40]}};

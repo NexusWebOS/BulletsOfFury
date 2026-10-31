@@ -1,0 +1,861 @@
+{
+  "revision": "RD97",
+  "date": "2026-10-31",
+  "scope": "Dracodia final-main-life Luminaire only",
+  "focused_checks": [
+    {
+      "name": "Seven authored banks contain192 even fixed-cell frames and editable sources",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All page dimensions fit4096px and preserve full fixed cells",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Old Luminaire warning and flood pages are not queued",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal cole reaches the clear top by ordinary movement without GOD or upgrades",
+      "passed": true,
+      "data": {
+        "t": 6.833333333333314,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 71.71080000000076,
+        "hp": 3380,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "name": "normal cole keeps the landing point and native HP unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal juggernaut reaches the clear top by ordinary movement without GOD or upgrades",
+      "passed": true,
+      "data": {
+        "t": 6.833333333333314,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 3380,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "name": "normal juggernaut keeps the landing point and native HP unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal yuri reaches the clear top by ordinary movement without GOD or upgrades",
+      "passed": true,
+      "data": {
+        "t": 6.833333333333314,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 3380,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "name": "normal yuri keeps the landing point and native HP unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard cole reaches the clear top by ordinary movement without GOD or upgrades",
+      "passed": true,
+      "data": {
+        "t": 6.633333333333315,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 4290,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "name": "hard cole keeps the landing point and native HP unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard juggernaut reaches the clear top by ordinary movement without GOD or upgrades",
+      "passed": true,
+      "data": {
+        "t": 6.633333333333315,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 4290,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "name": "hard juggernaut keeps the landing point and native HP unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard yuri reaches the clear top by ordinary movement without GOD or upgrades",
+      "passed": true,
+      "data": {
+        "t": 6.633333333333315,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 4290,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "name": "hard yuri keeps the landing point and native HP unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious cole reaches the clear top by ordinary movement without GOD or upgrades",
+      "passed": true,
+      "data": {
+        "t": 6.483333333333316,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 5330,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "name": "furious cole keeps the landing point and native HP unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious juggernaut reaches the clear top by ordinary movement without GOD or upgrades",
+      "passed": true,
+      "data": {
+        "t": 6.483333333333316,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 5330,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "name": "furious juggernaut keeps the landing point and native HP unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious yuri reaches the clear top by ordinary movement without GOD or upgrades",
+      "passed": true,
+      "data": {
+        "t": 6.483333333333316,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 5330,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "name": "furious yuri keeps the landing point and native HP unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Retina commits before release and never chases the player",
+      "passed": true,
+      "data": {
+        "phase": "flight",
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "orb": {
+          "x": 337.48148148148147,
+          "y": 263.5311629964793
+        }
+      }
+    },
+    {
+      "name": "Orb becomes a harmless arming mine at the marked floor point",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pause freezes mine arming and growth",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Giant half-dome has a clear upper band and dangerous lower floor",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Dome rise radii are monotonically larger from the fixed base",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Only the actual landing Retina and new generated effects draw",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "centre cannot hide inside/below the detonating mine",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "south-edge cannot hide inside/below the detonating mine",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cancellation removes every mine/dome draw immediately",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cancellation stops long charge/release voices",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Two native claw combos still precede each plasma Luminaire",
+      "passed": true,
+      "data": [
+        "rd88-extended-claws",
+        "rd88-extended-claws",
+        "luminaire"
+      ]
+    },
+    {
+      "name": "Breaking an arm uses the native whole-part owner and removes its hit target",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native final-main-life defeat cancels the mine",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Retry restores normal first-host ownership with no mine",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native browser or rendering errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Core game source remains unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Installed recipe reproduces every runtime PNG exactly",
+      "passed": true
+    },
+    {
+      "name": "Both new generated sources and exact prompts are saved in project",
+      "passed": true
+    },
+    {
+      "name": "All seven animation banks have editable Aseprite sources",
+      "passed": true
+    },
+    {
+      "name": "Retina uses the exact approved native ground target source",
+      "passed": true
+    },
+    {
+      "name": "Existing Luminaire chapter selects the new native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Full native final-main-life recording loads at1280x800",
+      "passed": true,
+      "data": [
+        1280,
+        800,
+        145.181333
+      ]
+    },
+    {
+      "name": "Focused chapter plays forward with no media error",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Chapter links to the updated full final-main-life fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Old ninja-combo bookmark also selects current plasma footage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview has no browser errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "ordinary_movement_runs": [
+    {
+      "rank": "normal",
+      "pilot": "cole",
+      "result": {
+        "t": 6.833333333333314,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 71.71080000000076,
+        "hp": 3380,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "rank": "normal",
+      "pilot": "juggernaut",
+      "result": {
+        "t": 6.833333333333314,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 3380,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "rank": "normal",
+      "pilot": "yuri",
+      "result": {
+        "t": 6.833333333333314,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 3380,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "rank": "hard",
+      "pilot": "cole",
+      "result": {
+        "t": 6.633333333333315,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 4290,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "rank": "hard",
+      "pilot": "juggernaut",
+      "result": {
+        "t": 6.633333333333315,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 4290,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "rank": "hard",
+      "pilot": "yuri",
+      "result": {
+        "t": 6.633333333333315,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 4290,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "rank": "furious",
+      "pilot": "cole",
+      "result": {
+        "t": 6.483333333333316,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 5330,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "rank": "furious",
+      "pilot": "juggernaut",
+      "result": {
+        "t": 6.483333333333316,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 5330,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    },
+    {
+      "rank": "furious",
+      "pilot": "yuri",
+      "result": {
+        "t": 6.483333333333316,
+        "phase": "recover",
+        "dead": false,
+        "hits": 0,
+        "x": 340,
+        "y": 67.92000000000075,
+        "hp": 5330,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "radius": 0,
+        "active": false
+      }
+    }
+  ],
+  "required_full_suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exit_code": 1,
+    "unchanged_baseline_failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "core_sha256": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de",
+  "runtime_sha256": "e1cf7889ec1c18c6ecb7892b11fa53d336d1e700cd51a09bde9b31f21ccb0d7b",
+  "art_manifest_sha256": "0dc749351943a88c057a57c7c3477d88412f9fc36632feca114b624a5b83e38e",
+  "media": {
+    "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Luminaire-Plasma-Mine-1031\\video\\luminaire-plasma-mine-1031\\report.json",
+    "seconds": 145.177,
+    "fps": 55.51057690311598,
+    "meanDB": -21.6,
+    "peakDB": -5.5,
+    "decodeErrors": 0,
+    "events": [
+      {
+        "event": "plasma-cast-start",
+        "clock": 19.216666666666857,
+        "tell": 3.27,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "safeY": 70,
+        "filmTime": 20.412
+      },
+      {
+        "event": "plasma-orb-thrown",
+        "clock": 20.116666666666806,
+        "from": {
+          "x": 336,
+          "y": 284.6776971896037
+        },
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 21.346
+      },
+      {
+        "event": "plasma-mine-landed",
+        "clock": 20.850000000000097,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 21.815
+      },
+      {
+        "event": "plasma-mine-detonates",
+        "clock": 22.500000000000004,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 23.716
+      },
+      {
+        "event": "plasma-recovery",
+        "clock": 24.899999999999867,
+        "filmTime": 26.059
+      },
+      {
+        "event": "plasma-cast-start",
+        "clock": 44.666666666665414,
+        "tell": 3.27,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "safeY": 70,
+        "filmTime": 46.391
+      },
+      {
+        "event": "plasma-orb-thrown",
+        "clock": 45.56666666666536,
+        "from": {
+          "x": 336,
+          "y": 284.6776971896037
+        },
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 47.344
+      },
+      {
+        "event": "plasma-mine-landed",
+        "clock": 46.299999999998654,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 47.828
+      },
+      {
+        "event": "plasma-mine-detonates",
+        "clock": 47.94999999999856,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 49.831
+      },
+      {
+        "event": "plasma-recovery",
+        "clock": 50.349999999998424,
+        "filmTime": 52.216
+      },
+      {
+        "event": "plasma-cast-start",
+        "clock": 70.11666666666397,
+        "tell": 3.27,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "safeY": 70,
+        "filmTime": 72.126
+      },
+      {
+        "event": "plasma-orb-thrown",
+        "clock": 71.01666666666392,
+        "from": {
+          "x": 336,
+          "y": 284.6776971896037
+        },
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 73.073
+      },
+      {
+        "event": "plasma-mine-landed",
+        "clock": 71.74999999999721,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 73.555
+      },
+      {
+        "event": "plasma-mine-detonates",
+        "clock": 73.39999999999712,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 75.445
+      },
+      {
+        "event": "plasma-recovery",
+        "clock": 75.79999999999698,
+        "filmTime": 77.796
+      },
+      {
+        "event": "plasma-cast-start",
+        "clock": 95.56666666666253,
+        "tell": 3.27,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "safeY": 70,
+        "filmTime": 97.961
+      },
+      {
+        "event": "plasma-orb-thrown",
+        "clock": 96.46666666666248,
+        "from": {
+          "x": 336,
+          "y": 284.6776971896037
+        },
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 98.914
+      },
+      {
+        "event": "plasma-mine-landed",
+        "clock": 97.19999999999577,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 99.424
+      },
+      {
+        "event": "plasma-mine-detonates",
+        "clock": 98.84999999999567,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 101.34
+      },
+      {
+        "event": "plasma-recovery",
+        "clock": 101.24999999999554,
+        "filmTime": 103.966
+      },
+      {
+        "event": "plasma-cast-start",
+        "clock": 121.01666666666108,
+        "tell": 3.27,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "safeY": 70,
+        "filmTime": 123.911
+      },
+      {
+        "event": "plasma-orb-thrown",
+        "clock": 121.91666666666103,
+        "from": {
+          "x": 336,
+          "y": 284.6776971896037
+        },
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 124.858
+      },
+      {
+        "event": "plasma-mine-landed",
+        "clock": 122.64999999999432,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 125.329
+      },
+      {
+        "event": "plasma-mine-detonates",
+        "clock": 124.29999999999423,
+        "land": {
+          "x": 340,
+          "y": 466
+        },
+        "filmTime": 127.226
+      },
+      {
+        "event": "plasma-recovery",
+        "clock": 126.69999999999409,
+        "filmTime": 129.258
+      }
+    ],
+    "playing": {
+      "bossAlarm": 1,
+      "boss8": 1,
+      "bossWeaponCharge": 18,
+      "av3_target_acquire": 55,
+      "alertLockon": 46,
+      "slice": 40,
+      "jetDash": 10,
+      "expSmall": 95,
+      "hammerImpact": 19,
+      "rd74WaveCharge": 5,
+      "shadowRelease": 5,
+      "combatOrb0927": 5,
+      "expBig": 21,
+      "rd74WaveFire": 5,
+      "loop": 45,
+      "missile": 76,
+      "missileHit": 72,
+      "laserBeamStart": 93,
+      "hit": 497,
+      "av3_impact_flesh": 487,
+      "laserBeamEnd": 81,
+      "powerup": 1,
+      "achievement": 1,
+      "weapon": 1,
+      "combatModule0927": 8,
+      "teleportIn": 1,
+      "rd71ScreamA": 2,
+      "rd27Lightning": 27,
+      "dialogueLetter": 11,
+      "rd71ScreamB": 2
+    },
+    "full": "http://127.0.0.1:51046/?luminaire=red-plasma-mine-1031#clip=stage8-dracodia-ninja",
+    "preview": "http://127.0.0.1:51046/?luminaire=red-plasma-mine-1031#clip=stage8-dracodia-luminaire",
+    "combo": "http://127.0.0.1:51046/?luminaire=red-plasma-mine-1031#clip=stage8-dracodia-ninja-combo",
+    "sha256": "d546a9c73d1c7b067ad1719cefe90cc3713d3d5b5f37134c4e5dc82d835c7c08"
+  },
+  "generation": {
+    "tool": "Built-in image_gen imagegen; transparent_background=true; two new images, no reference uploads.",
+    "prompts": [
+      "Use case: stylized-concept. Production raster game effect asset for Bullets of Fury, polished Neo Geo / HD 16-bit pixel art, crisply authored pixel clusters, no painterly blur. One compact spherical detonating plasma mine orb, dead center on genuine transparent background, full unobstructed silhouette with generous transparent margin. Dark crimson and black-purple plasma body, intensely luminous scarlet red corona and thin jagged red electrical tendrils, concentrated white-hot core, subtle violet digital/symbiotic veins. The object should read as a hostile unstable energy mine suspended just above ground, no mechanical pedestal, no actual ground plane, no interface, no lettering, no warning symbols, no characters, no background, no drop shadow or diffuse photographic bloom. Strong clean silhouette that remains readable at 64-96 pixels. Single orb only, front view.",
+      "Use case: stylized-concept. Production sprite effect for Bullets of Fury. One giant rising red plasma detonation HALF-DOME on a genuinely transparent background. Polished Neo Geo / HD 16-bit pixel art with deliberate crisp pixel clusters and detailed animated-energy-looking texture; no blur or airbrush. Front-facing slightly foreshortened hemisphere, broad horizontal base, symmetrical arch rising to a rounded summit, dome fully visible with 8% transparent padding. Bottom-center is its landing/detonation origin; the energy expands UPWARD from that point like a gigantic detonating plasma mine, NOT a sphere floating above the base. Rich black-crimson and deep red translucent interior filled with scarlet plasma streams, sharp red electrical branching and white-hot red-rimmed arcs crawling through its volume. Brilliant red crackling curved rim and a concentrated white-hot base-center. Preserve readable dark cavities and pixel texture inside, do not make a flat opaque white wall. Sparse violet code sparks as accents only. No circular warning field, no geometric wireframe, no FOV overlay, no grid, no UI, no symbols, no text, no scenery, no characters, no ground/shadow/platform, no enclosing rectangular background. This is the actual damaging plasma explosion, not a telegraph graphic. Wide composition, 2:1 hemisphere silhouette, single asset only."
+    ]
+  },
+  "test": "test_luminaire_plasma_1031.py",
+  "recorder": "record_luminaire_plasma_1031.py",
+  "evidence": "C:\\Users\\Mike\\Documents\\New project\\BOF-Luminaire-Plasma-Mine-1031",
+  "preview_video": "BOF-Downloaded-Stage6-9-1028/videos/stage8-dracodia-plasma-mine-1031.mp4"
+}

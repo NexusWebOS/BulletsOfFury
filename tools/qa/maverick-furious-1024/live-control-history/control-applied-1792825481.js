@@ -1,0 +1,1 @@
+()=>{Input.injectTap('p');FURYBOT.events.push({t:FURYBOT.age(),type:'route-navigation',note:'Stage6 cinematic launched Stage7 directly while earned StageX Harrier remained pending. Pause to return to the earned map route before final progression.'});return{pending:campaign.stageX1004,canContinue:campCanContinue(),checkpoint:campReadAuto()?.stage};}

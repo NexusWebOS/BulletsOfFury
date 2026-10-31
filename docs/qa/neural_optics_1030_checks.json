@@ -1,0 +1,331 @@
+{
+  "checks": [
+    {
+      "name": "normal left full-width eye beam escape survives without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal left escape preserves original brain HP",
+      "passed": true
+    },
+    {
+      "name": "normal right full-width eye beam escape survives without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal right escape preserves original brain HP",
+      "passed": true
+    },
+    {
+      "name": "normal standing in the actual beam triggers native death",
+      "passed": true
+    },
+    {
+      "name": "hard left full-width eye beam escape survives without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard left escape preserves original brain HP",
+      "passed": true
+    },
+    {
+      "name": "hard right full-width eye beam escape survives without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard right escape preserves original brain HP",
+      "passed": true
+    },
+    {
+      "name": "hard standing in the actual beam triggers native death",
+      "passed": true
+    },
+    {
+      "name": "furious left full-width eye beam escape survives without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious left escape preserves original brain HP",
+      "passed": true
+    },
+    {
+      "name": "furious right full-width eye beam escape survives without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious right escape preserves original brain HP",
+      "passed": true
+    },
+    {
+      "name": "furious standing in the actual beam triggers native death",
+      "passed": true
+    },
+    {
+      "name": "Charge warnings draw all three native FOV colours",
+      "passed": true
+    },
+    {
+      "name": "Charge remains harmless before release",
+      "passed": true
+    },
+    {
+      "name": "Pause freezes charge, pose and eye origins",
+      "passed": true
+    },
+    {
+      "name": "Beam launches at a full32px eye aperture instead of a hairline",
+      "passed": true
+    },
+    {
+      "name": "First launch frame grows outward from the eye rather than appearing detached",
+      "passed": true
+    },
+    {
+      "name": "Both beams expand through the42px maximum and600px continuous length",
+      "passed": true
+    },
+    {
+      "name": "Render, warning and damage use this exact whole-body frame eye sockets",
+      "passed": true
+    },
+    {
+      "name": "Moving the brain moves both beam origins by the identical offset",
+      "passed": true
+    },
+    {
+      "name": "Actual damage retains the white hit flash and visible emitting eye layer",
+      "passed": true
+    },
+    {
+      "name": "Hit flash expires normally during laser fire",
+      "passed": true
+    },
+    {
+      "name": "Laser recovery uses authored dissipation frames",
+      "passed": true
+    },
+    {
+      "name": "Recovery is harmless inside the fading beam artwork",
+      "passed": true
+    },
+    {
+      "name": "Beam damage follows the exact current authored shaft alpha",
+      "passed": true
+    },
+    {
+      "name": "Cancelling the attack immediately removes beam ownership",
+      "passed": true
+    },
+    {
+      "name": "Native brain defeat cancels beams and downloads home without healing dead copy HP",
+      "passed": true
+    },
+    {
+      "name": "Existing cloud shield still protects native brain HP",
+      "passed": true
+    },
+    {
+      "name": "Existing committed geysers retain their original staggered releases",
+      "passed": true
+    },
+    {
+      "name": "Revised helicopter stays under its separate owner",
+      "passed": true
+    },
+    {
+      "name": "Main-body Luminaire stays under its existing owner",
+      "passed": true
+    },
+    {
+      "name": "No native draw or browser errors",
+      "passed": true
+    },
+    {
+      "name": "All96 flowing beam frames have continuous fully filled source rows",
+      "passed": true
+    },
+    {
+      "name": "Laser pixels use eye-matched hot reds/yellows without blue or violet shafts",
+      "passed": true
+    },
+    {
+      "name": "Every beam phase retains an uninterrupted bright incandescent core",
+      "passed": true
+    },
+    {
+      "name": "All166 exports retain even dimensions and source rectangles",
+      "passed": true
+    }
+  ],
+  "states": [
+    {
+      "rank": "normal",
+      "side": -1,
+      "state": {
+        "dead": false,
+        "x": 233.85760000000028,
+        "hp": 2861,
+        "goal": 235,
+        "events": [
+          {
+            "event": "eye-release",
+            "clock": 1.2000000000000006,
+            "eyes": [
+              {
+                "x": 312,
+                "y": 255
+              },
+              {
+                "x": 356,
+                "y": 254
+              }
+            ],
+            "width": 32
+          }
+        ],
+        "attack": true
+      }
+    },
+    {
+      "rank": "normal",
+      "side": 1,
+      "state": {
+        "dead": false,
+        "x": 446.1423999999997,
+        "hp": 2861,
+        "goal": 445,
+        "events": [
+          {
+            "event": "eye-release",
+            "clock": 1.2000000000000006,
+            "eyes": [
+              {
+                "x": 312,
+                "y": 255
+              },
+              {
+                "x": 356,
+                "y": 254
+              }
+            ],
+            "width": 32
+          }
+        ],
+        "attack": true
+      }
+    },
+    {
+      "rank": "hard",
+      "side": -1,
+      "state": {
+        "dead": false,
+        "x": 233.85760000000028,
+        "hp": 3631,
+        "goal": 235,
+        "events": [
+          {
+            "event": "eye-release",
+            "clock": 1.0500000000000012,
+            "eyes": [
+              {
+                "x": 312,
+                "y": 255
+              },
+              {
+                "x": 356,
+                "y": 254
+              }
+            ],
+            "width": 32
+          }
+        ],
+        "attack": true
+      }
+    },
+    {
+      "rank": "hard",
+      "side": 1,
+      "state": {
+        "dead": false,
+        "x": 446.1423999999997,
+        "hp": 3631,
+        "goal": 445,
+        "events": [
+          {
+            "event": "eye-release",
+            "clock": 1.0500000000000012,
+            "eyes": [
+              {
+                "x": 312,
+                "y": 255
+              },
+              {
+                "x": 356,
+                "y": 254
+              }
+            ],
+            "width": 32
+          }
+        ],
+        "attack": true
+      }
+    },
+    {
+      "rank": "furious",
+      "side": -1,
+      "state": {
+        "dead": false,
+        "x": 233.85760000000028,
+        "hp": 4510,
+        "goal": 235,
+        "events": [
+          {
+            "event": "eye-release",
+            "clock": 0.9000000000000011,
+            "eyes": [
+              {
+                "x": 312,
+                "y": 255
+              },
+              {
+                "x": 356,
+                "y": 254
+              }
+            ],
+            "width": 32
+          }
+        ],
+        "attack": false
+      }
+    },
+    {
+      "rank": "furious",
+      "side": 1,
+      "state": {
+        "dead": false,
+        "x": 446.1423999999997,
+        "hp": 4510,
+        "goal": 445,
+        "events": [
+          {
+            "event": "eye-release",
+            "clock": 0.9000000000000011,
+            "eyes": [
+              {
+                "x": 312,
+                "y": 255
+              },
+              {
+                "x": 356,
+                "y": 254
+              }
+            ],
+            "width": 32
+          }
+        ],
+        "attack": false
+      }
+    }
+  ],
+  "errors": []
+}

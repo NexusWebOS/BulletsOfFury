@@ -1,0 +1,205 @@
+{
+  "build": "overdrive1015-yuri28-r1",
+  "checks": [
+    {
+      "name": "all58new images decode through native ART",
+      "passed": true
+    },
+    {
+      "name": "common even192x224cells and root96,160",
+      "passed": true
+    },
+    {
+      "name": "both facings have16movement and12firing drawings",
+      "passed": true
+    },
+    {
+      "name": "every frame draws actual nonempty native pixels",
+      "passed": true
+    },
+    {
+      "name": "east side-fire spawns bullets from the measured barrel",
+      "passed": true
+    },
+    {
+      "name": "east flash follows the current animated gun socket",
+      "passed": true
+    },
+    {
+      "name": "M30 up+B selects east upward firing",
+      "passed": true
+    },
+    {
+      "name": "east firing keeps an advancing gait",
+      "passed": true
+    },
+    {
+      "name": "east shots keep the side aim",
+      "passed": true
+    },
+    {
+      "name": "east release fire keeps the side aim and selects the movement bank",
+      "passed": true
+    },
+    {
+      "name": "east stopping does not keep walking feet",
+      "passed": true
+    },
+    {
+      "name": "west side-fire spawns bullets from the measured barrel",
+      "passed": true
+    },
+    {
+      "name": "west flash follows the current animated gun socket",
+      "passed": true
+    },
+    {
+      "name": "M30 up+Y selects west upward firing",
+      "passed": true
+    },
+    {
+      "name": "west firing keeps an advancing gait",
+      "passed": true
+    },
+    {
+      "name": "west shots keep the side aim",
+      "passed": true
+    },
+    {
+      "name": "west release fire keeps the side aim and selects the movement bank",
+      "passed": true
+    },
+    {
+      "name": "west stopping does not keep walking feet",
+      "passed": true
+    },
+    {
+      "name": "barrier collision stops the new gait instead of walking in place",
+      "passed": true
+    },
+    {
+      "name": "ordinary horizontal running retains its existing animation",
+      "passed": true
+    },
+    {
+      "name": "prone/crawl retains its authored bank",
+      "passed": true
+    },
+    {
+      "name": "roll retains its authored bank",
+      "passed": true
+    },
+    {
+      "name": "pause freezes the new gait",
+      "passed": true
+    },
+    {
+      "name": "new side-step keeps the actual damage flash timer",
+      "passed": true
+    },
+    {
+      "name": "damaged new pose draws visible white hit pixels",
+      "passed": true
+    },
+    {
+      "name": "damage flash expires on the normal clock",
+      "passed": true
+    },
+    {
+      "name": "all820previous PNGs remain unchanged",
+      "passed": true
+    },
+    {
+      "name": "stage7 retains cover/HUD/exposure and its authored player",
+      "passed": true
+    },
+    {
+      "name": "native viewer supports onion, half-speed and old-size overlay",
+      "passed": true
+    },
+    {
+      "name": "no browser, shader or asset errors",
+      "passed": true
+    }
+  ],
+  "passed": 30,
+  "failed": 0,
+  "errors": [],
+  "measurements": {
+    "east": {
+      "pose": {
+        "key": "y28_east_up_fire_7",
+        "angle": 0,
+        "scale": 1,
+        "action": "up_fire",
+        "dir": "east",
+        "phase": 0.6015624999999991,
+        "index": 7,
+        "bank": "y28_east_up_fire"
+      },
+      "x": 400,
+      "y": 2302.25,
+      "aim": -1.5707963267948966,
+      "shots": [
+        10,
+        10,
+        10
+      ]
+    },
+    "west": {
+      "pose": {
+        "key": "y28_west_up_fire_7",
+        "angle": 0,
+        "scale": 1,
+        "action": "up_fire",
+        "dir": "west",
+        "phase": 0.6015624999999991,
+        "index": 7,
+        "bank": "y28_west_up_fire"
+      },
+      "x": 400,
+      "y": 2302.25,
+      "aim": 1.5707963267948966,
+      "shots": [
+        -10,
+        -10,
+        -10
+      ]
+    }
+  },
+  "nativeFrames": {
+    "count": 58,
+    "empty": []
+  },
+  "scope": "Real game renderer with synthetic raw M30 inputs in isolated stage3 fixtures; not physical hardware or a full campaign playthrough.",
+  "baseRegression": {
+    "exit": 0,
+    "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "generation": {
+    "service": "PixelLab",
+    "includedGenerations": 32,
+    "remainingAfter": 1690,
+    "rawCandidatesRetained": true,
+    "referenceSource": "Verified byte-identical public GitHub Yuri artwork; no unpublished local game art uploaded."
+  },
+  "exports": {
+    "motionPNGs": 56,
+    "setupPNGs": 2,
+    "generatedSelectedDrawings": 28,
+    "rightFacing": "Mirrored left-facing selected drawings",
+    "loops": {
+      "up_step": 16,
+      "up_fire": 12
+    },
+    "cell": [
+      192,
+      224
+    ],
+    "root": [
+      96,
+      160
+    ],
+    "scale": 0.4756756756756757
+  }
+}

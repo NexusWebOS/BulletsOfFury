@@ -1,0 +1,2965 @@
+{
+  "native": [
+    {
+      "name": "Stage9 boss immediately initializes the actual water hull",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Only the established native water HP pool is initialized",
+      "passed": true,
+      "data": {
+        "hp": 6500,
+        "maxhp": 6500
+      }
+    },
+    {
+      "name": "All new Stage9 banks preload",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Water entry reaches the new attack book",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Turret and fan sockets share the actual water hull position",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Water bullets fire from both turrets",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Water energy is unshootable from its first update",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Water mortars have real arcing projectiles and committed ground marks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every water impact warning gets at least 1.45 seconds",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Mortar impacts generate geysers and falling water waves",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Water roller charges release actual orbs",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Roller bounces emit a water bomb from the actual contact point",
+      "passed": true,
+      "data": {
+        "vx": 3,
+        "marked": true,
+        "from": {
+          "x": 123,
+          "y": 307.2
+        },
+        "edge": 123,
+        "y": 307.2
+      }
+    },
+    {
+      "name": "Tidal wall charge uses exactly three stone asterisks",
+      "passed": true,
+      "data": [
+        [
+          "star",
+          0,
+          205.6,
+          60
+        ],
+        [
+          "star",
+          0,
+          340,
+          60
+        ],
+        [
+          "star",
+          0,
+          474.40000000000003,
+          60
+        ]
+      ]
+    },
+    {
+      "name": "Three lava-derived water walls launch in distinct lanes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Water triplet uses the actual Stage2 warning duration and lane fractions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Large water waves travel with the actual Stage2 crossing speed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Only one full-sized water wave is active at a time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The new water-wave bank selects authored approaching sizes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Unreleased waves keep their own warning asterisks",
+      "passed": true,
+      "data": 2
+    },
+    {
+      "name": "Fans launch upward water jets with delayed marked rain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Slip N Slide warns with authored water arrows and a water trail",
+      "passed": true,
+      "data": [
+        "arrow",
+        "arrow",
+        "arrow",
+        "trail",
+        "trail",
+        "trail"
+      ]
+    },
+    {
+      "name": "Slip N Slide moves the hull forward and sheds waves",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Slip N Slide returns to a visible recovery",
+      "passed": true,
+      "data": {
+        "mode": "slide",
+        "phase": "recover",
+        "y": 163.7649538141502
+      }
+    },
+    {
+      "name": "Whole hull takes damage with actual white hit pixels",
+      "passed": true,
+      "data": {
+        "white": 18257,
+        "prior": 6500,
+        "hp": 6495
+      }
+    },
+    {
+      "name": "White hit flash expires",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Oversized hit stops at half HP and starts protected water fill",
+      "passed": true,
+      "data": {
+        "hp": 3250,
+        "maxhp": 6500,
+        "mode": "half"
+      }
+    },
+    {
+      "name": "Half-health filling excludes bullet and Retina damage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Half-health fill moves to the playfield centre",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Half-health book emits buoyant bullet-hell water bubbles",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Lava-lamp bubbles merge by volume and have buoyant motion",
+      "passed": true,
+      "data": {
+        "merged": true,
+        "other": true,
+        "changed": true
+      }
+    },
+    {
+      "name": "Water splash consumes an actual non-GOD player shield",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Final defeat uses native water-boss death",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native defeat cancels all water hazards",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage8 roster replaces its old carrier beat with both former Wardens",
+      "passed": true,
+      "data": {
+        "stage": 8,
+        "units": [
+          {
+            "type": "s8gunship",
+            "pattern": "s8mega",
+            "sentinel": {
+              "side": -1,
+              "t": 0,
+              "seq": 0,
+              "cd": 1.3,
+              "phase": "hover",
+              "born": {
+                "x": 197.2,
+                "y": -130
+              }
+            }
+          },
+          {
+            "type": "s8gunship",
+            "pattern": "s8mega",
+            "sentinel": {
+              "side": 1,
+              "t": 0,
+              "seq": 0,
+              "cd": 1.3,
+              "phase": "hover",
+              "born": {
+                "x": 482.79999999999995,
+                "y": -130
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Both transferred Sentinels use their own combat turns",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Offscreen Sentinel muzzles cannot begin or finish firing",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Transferred Sentinels take ordinary weapon damage and flash",
+      "passed": true,
+      "data": {
+        "hp": 237,
+        "prior": 242,
+        "flash": 0.12,
+        "mutator": false
+      }
+    },
+    {
+      "name": "Both transferred Sentinels can be killed through the native enemy path",
+      "passed": true,
+      "data": [
+        {
+          "hp": 0,
+          "dead": false,
+          "dying": 0,
+          "spin": null,
+          "nohit": null
+        },
+        {
+          "hp": 0,
+          "dead": false,
+          "dying": 0,
+          "spin": null,
+          "nohit": null
+        }
+      ]
+    },
+    {
+      "name": "Transferred Sentinel art preloads in Stage8",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native browser reports no exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "art": {
+    "checks": [
+      {
+        "name": "Water waves use exactly the eight actual nwf_fire sources",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Six authored approaching sizes have eight phases each",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Water size190 retains flipped Stage2 source silhouettes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Water size242 retains flipped Stage2 source silhouettes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Water size294 retains flipped Stage2 source silhouettes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Water size346 retains flipped Stage2 source silhouettes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Water size398 retains flipped Stage2 source silhouettes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Water size452 retains flipped Stage2 source silhouettes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "intact actual spiral fan pixels rotate in16 phases",
+        "passed": true,
+        "data": [
+          16,
+          16
+        ]
+      },
+      {
+        "name": "intact metal fan rims remain fixed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "damaged actual spiral fan pixels rotate in16 phases",
+        "passed": true,
+        "data": [
+          16,
+          16
+        ]
+      },
+      {
+        "name": "damaged metal fan rims remain fixed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "critical actual spiral fan pixels rotate in16 phases",
+        "passed": true,
+        "data": [
+          16,
+          16
+        ]
+      },
+      {
+        "name": "critical metal fan rims remain fixed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "arrow retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "body_critical retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "body_damaged retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "body_hit retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "body_intact retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "bomb retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "bubble retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "fall_wave retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "geyser retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "jet retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "muzzle retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "outer retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rain retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "roller retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "sentinel_alpha retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "sentinel_beta retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "sentinel_hit retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "slug retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "trail retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "wave retains clear fixed-cell padding",
+        "passed": true,
+        "data": null
+      }
+    ],
+    "decodedMiB": 124.5185546875
+  },
+  "video": [
+    {
+      "name": "Real Furious film reaches native defeat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Full recording starts directly in water form without twins",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real recording includes all six opening water attacks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Half-health fill clamps to actual native 50 percent",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real bubble storm contains natural water-volume merges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Roller bounces launch actual bomb warnings",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Fan jets and ground-marked geyser rain occur",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Full fight never overlaps two large water waves",
+      "passed": true,
+      "data": 1
+    },
+    {
+      "name": "Opening three-wave sequence completes all three distinct lanes",
+      "passed": true,
+      "data": 7
+    },
+    {
+      "name": "Full-sized waves begin above view like Stage2",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Successive waves wait for the previous one to leave",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Live hull animation advances through all sixteen fan phases",
+      "passed": true,
+      "data": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "name": "Every recorded water impact retains the full warning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Slip N Slide returns through finite recovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native film remains Furious with invulnerable observer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Water ordnance and ground marks stay bounded",
+      "passed": true,
+      "data": [
+        32,
+        6
+      ]
+    },
+    {
+      "name": "Native framerate remains near 60",
+      "passed": true,
+      "data": 57.322192841370665
+    },
+    {
+      "name": "Audio is audible and unclipped",
+      "passed": true,
+      "data": [
+        -20.5,
+        -3.1
+      ]
+    },
+    {
+      "name": "Actual water, charge and dash sounds play",
+      "passed": true,
+      "data": {
+        "boss9": 2,
+        "bossAlarm": 1,
+        "bossWeaponCharge": 17,
+        "av3_target_acquire": 51,
+        "alertLockon": 39,
+        "bossfireTidalfusion": 36,
+        "cfComboWater": 93,
+        "combatOrb0927": 11,
+        "jetDash": 6,
+        "spaceLaserCannon": 225,
+        "missile": 45,
+        "spaceVolleyLaunch": 61,
+        "hit": 228,
+        "av3_impact_metal": 208,
+        "spaceLaserHit": 199,
+        "spaceVolleyHit": 57,
+        "missileHit": 45,
+        "expSmall": 54,
+        "expBig": 65,
+        "powerup": 2,
+        "achievement": 1,
+        "laserMistUnlock": 1,
+        "bossWhiteout": 1,
+        "expBoss": 1,
+        "life": 1,
+        "weapon": 1,
+        "stageclear": 1,
+        "statTick": 10,
+        "stageClear": 1
+      }
+    },
+    {
+      "name": "No engine, media or input-bot exceptions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "MP4 supports HTTP206 seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Gallery opens the new half-health bubble chapter",
+      "passed": true,
+      "data": {
+        "src": "http://127.0.0.1:51046/videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "clip": "stage9-tidal-bubbles"
+      }
+    },
+    {
+      "name": "Embedded video plays",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Video seeks within the bubble attack",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "film": {
+    "maxLargeWaves": 1,
+    "fanPhases": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "completed": true,
+    "seconds": 147.37,
+    "defeatSeconds": 140.189,
+    "maxHP": 6500,
+    "nativeFPS": 57.322192841370665,
+    "events": [
+      {
+        "event": "immediate-water-entry",
+        "time": 0,
+        "hp": 6500,
+        "maxhp": 6500
+      },
+      {
+        "event": "water-attack-start",
+        "time": 1.6166666666666658,
+        "kind": "bullets",
+        "half": false,
+        "warm": 1.35
+      },
+      {
+        "event": "aim-locked",
+        "time": 2.2333333333333303,
+        "kind": "bullets",
+        "target": {
+          "x": 345.170503475098,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 2.966666666666661,
+        "kind": "bullets"
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 6.499999999999982,
+        "kind": "bullets"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 6.499999999999982,
+        "kind": "mortars",
+        "half": false,
+        "warm": 1.35
+      },
+      {
+        "event": "aim-locked",
+        "time": 7.116666666666647,
+        "kind": "mortars",
+        "target": {
+          "x": 398.24170347509784,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 7.849999999999977,
+        "kind": "mortars"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 7.849999999999977,
+        "x": 360.24170347509784,
+        "y": 442.4385034750979,
+        "warm": 1.5,
+        "source": "mortar"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 8.666666666666677,
+        "x": 454.24170347509784,
+        "y": 356.4385034750979,
+        "warm": 1.5,
+        "source": "mortar"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 9.366666666666712,
+        "x": 360.24170347509784,
+        "y": 442.4385034750979,
+        "source": "mortar"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 9.483333333333384,
+        "x": 324.24170347509784,
+        "y": 270.4385034750979,
+        "warm": 1.5,
+        "source": "mortar"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 10.016666666666744,
+        "x": 360.24170347509784,
+        "y": 307.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 10.183333333333419,
+        "x": 454.24170347509784,
+        "y": 356.4385034750979,
+        "source": "mortar"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 10.300000000000091,
+        "x": 490.24170347509784,
+        "y": 442.4385034750979,
+        "warm": 1.5,
+        "source": "mortar"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 10.833333333333451,
+        "x": 454.24170347509784,
+        "y": 221.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 11.000000000000126,
+        "x": 324.24170347509784,
+        "y": 270.4385034750979,
+        "source": "mortar"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 11.650000000000158,
+        "x": 324.24170347509784,
+        "y": 135.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 11.816666666666833,
+        "x": 490.24170347509784,
+        "y": 442.4385034750979,
+        "source": "mortar"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 12.466666666666866,
+        "x": 490.24170347509784,
+        "y": 307.4385034750979,
+        "small": true
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 14.783333333333648,
+        "kind": "mortars"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 14.783333333333648,
+        "kind": "rollers",
+        "half": false,
+        "warm": 2.1
+      },
+      {
+        "event": "aim-locked",
+        "time": 15.733333333333695,
+        "kind": "rollers",
+        "target": {
+          "x": 417.1957034750978,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 16.900000000000322,
+        "kind": "rollers"
+      },
+      {
+        "event": "roller-release",
+        "time": 16.900000000000322,
+        "slot": "L"
+      },
+      {
+        "event": "roller-release",
+        "time": 17.76666666666694,
+        "slot": "R"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 17.8833333333336,
+        "x": 219.19570347507016,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 17.8833333333336,
+        "x": 285.0527092755285,
+        "y": 489
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 18.73333333333355,
+        "x": 615.1957034750976,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 18.73333333333355,
+        "x": 558.6909799885058,
+        "y": 489
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 18.750000000000217,
+        "x": 280.1957034750977,
+        "y": 195.4455203253633,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 18.750000000000217,
+        "x": 200.19570347509767,
+        "y": 285.4455203253633
+      },
+      {
+        "event": "geyser-impact",
+        "time": 19.40000000000018,
+        "x": 219.19570347507016,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 19.500000000000174,
+        "x": 554.1957034750976,
+        "y": 218.93257567243677,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 19.500000000000174,
+        "x": 634.1957034750976,
+        "y": 308.93257567243677
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 19.75000000000016,
+        "x": 379.49738076380396,
+        "y": 143,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 19.75000000000016,
+        "x": 299.49738076380396,
+        "y": 53
+      },
+      {
+        "event": "tidal-wave",
+        "time": 20.050000000000143,
+        "x": 219.19570347507016,
+        "y": 264,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 20.25000000000013,
+        "x": 615.1957034750976,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 20.266666666666797,
+        "x": 280.1957034750977,
+        "y": 195.4455203253633,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 20.60000000000011,
+        "x": 444.9638584575207,
+        "y": 143,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 20.60000000000011,
+        "x": 524.9638584575207,
+        "y": 53
+      },
+      {
+        "event": "tidal-wave",
+        "time": 20.900000000000095,
+        "x": 615.1957034750976,
+        "y": 264,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 20.91666666666676,
+        "x": 280.1957034750977,
+        "y": 60.445520325363304,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 21.016666666666755,
+        "x": 554.1957034750976,
+        "y": 218.93257567243677,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 21.61666666666672,
+        "x": 564.8605117027223,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 21.61666666666672,
+        "x": 484.86051170272236,
+        "y": 489
+      },
+      {
+        "event": "tidal-wave",
+        "time": 21.666666666666718,
+        "x": 554.1957034750976,
+        "y": 83.93257567243677,
+        "small": true
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 22.466666666666672,
+        "x": 259.6007275186023,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 22.466666666666672,
+        "x": 339.6007275186023,
+        "y": 489
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 22.86666666666665,
+        "x": 527.6602817539833,
+        "y": 105.41180816158123,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 22.86666666666665,
+        "x": 607.6602817539833,
+        "y": 195.41180816158123
+      },
+      {
+        "event": "geyser-impact",
+        "time": 23.1333333333333,
+        "x": 564.8605117027223,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 23.783333333333264,
+        "x": 564.8605117027223,
+        "y": 264,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 23.983333333333253,
+        "x": 259.6007275186023,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 24.11666666666658,
+        "x": 257.61177444920065,
+        "y": 100,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 24.11666666666658,
+        "x": 177.61177444920062,
+        "y": 101.46358677328679
+      },
+      {
+        "event": "geyser-impact",
+        "time": 24.38333333333323,
+        "x": 527.6602817539833,
+        "y": 105.41180816158123,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 24.399999999999896,
+        "kind": "rollers"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 24.399999999999896,
+        "kind": "tidal",
+        "half": false,
+        "warm": 3.35
+      },
+      {
+        "event": "aim-locked",
+        "time": 25.916666666666476,
+        "kind": "tidal",
+        "target": {
+          "x": 402.0325034750978,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 27.76666666666637,
+        "kind": "tidal"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 27.76666666666637,
+        "x": 263.88345346769484,
+        "y": -140,
+        "small": false
+      },
+      {
+        "event": "tidal-wave",
+        "time": 29.04999999999963,
+        "x": 398.2834534676948,
+        "y": -140,
+        "small": false
+      },
+      {
+        "event": "tidal-wave",
+        "time": 30.33333333333289,
+        "x": 532.6834534676948,
+        "y": -140,
+        "small": false
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 33.099999999999405,
+        "kind": "tidal"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 33.099999999999405,
+        "kind": "rain",
+        "half": false,
+        "warm": 1.8
+      },
+      {
+        "event": "aim-locked",
+        "time": 33.916666666666025,
+        "kind": "rain",
+        "target": {
+          "x": 379.2877034750979,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 34.91666666666597,
+        "kind": "rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 34.91666666666597,
+        "x": 334.2877034750979,
+        "y": 442.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 34.91666666666597,
+        "x": 424.2877034750979,
+        "y": 442.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "fan-geyser-launch",
+        "time": 34.91666666666597,
+        "index": 0
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 35.73333333333259,
+        "x": 302.2877034750979,
+        "y": 367.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 35.73333333333259,
+        "x": 456.2877034750979,
+        "y": 367.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "fan-geyser-launch",
+        "time": 35.73333333333259,
+        "index": 1
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 36.54999999999921,
+        "x": 270.2877034750979,
+        "y": 292.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 36.54999999999921,
+        "x": 488.2877034750979,
+        "y": 292.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "fan-geyser-launch",
+        "time": 36.54999999999921,
+        "index": 2
+      },
+      {
+        "event": "geyser-impact",
+        "time": 36.93333333333252,
+        "x": 334.2877034750979,
+        "y": 442.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 36.93333333333252,
+        "x": 424.2877034750979,
+        "y": 442.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 37.58333333333248,
+        "x": 334.2877034750979,
+        "y": 307.4385034750979,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 37.58333333333248,
+        "x": 424.2877034750979,
+        "y": 307.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 37.74999999999914,
+        "x": 302.2877034750979,
+        "y": 367.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 37.74999999999914,
+        "x": 456.2877034750979,
+        "y": 367.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 38.3999999999991,
+        "x": 302.2877034750979,
+        "y": 232.4385034750979,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 38.3999999999991,
+        "x": 456.2877034750979,
+        "y": 232.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 38.56666666666576,
+        "x": 270.2877034750979,
+        "y": 292.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 38.56666666666576,
+        "x": 488.2877034750979,
+        "y": 292.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 39.21666666666572,
+        "x": 270.2877034750979,
+        "y": 157.4385034750979,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 39.21666666666572,
+        "x": 488.2877034750979,
+        "y": 157.4385034750979,
+        "small": true
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 42.19999999999889,
+        "kind": "rain"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 42.19999999999889,
+        "kind": "slide",
+        "half": false,
+        "warm": 1.6
+      },
+      {
+        "event": "aim-locked",
+        "time": 42.93333333333218,
+        "kind": "slide",
+        "target": {
+          "x": 409.6141034750978,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 43.81666666666546,
+        "kind": "slide"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 43.81666666666546,
+        "x": 344.6141034750978,
+        "y": 197.804625772,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 43.81666666666546,
+        "x": 474.6141034750978,
+        "y": 197.804625772,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 44.04999999999878,
+        "x": 344.6141034750978,
+        "y": 304.0219665407268,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 44.04999999999878,
+        "x": 474.6141034750978,
+        "y": 304.0219665407268,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 44.2833333333321,
+        "x": 344.6141034750978,
+        "y": 410.2393073094536,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 44.2833333333321,
+        "x": 474.6141034750978,
+        "y": 410.2393073094536,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 44.51666666666542,
+        "x": 344.6141034750978,
+        "y": 516.4566480781805,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 44.51666666666542,
+        "x": 474.6141034750978,
+        "y": 516.4566480781805,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 44.74999999999874,
+        "x": 344.6141034750978,
+        "y": 622.6739888469073,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 44.74999999999874,
+        "x": 474.6141034750978,
+        "y": 622.6739888469073,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 44.98333333333206,
+        "x": 344.6141034750978,
+        "y": 728.891329615634,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 44.98333333333206,
+        "x": 474.6141034750978,
+        "y": 728.891329615634,
+        "small": true
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 50.24999999999843,
+        "kind": "slide"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 50.24999999999843,
+        "kind": "bullets",
+        "half": false,
+        "warm": 1.35
+      },
+      {
+        "event": "aim-locked",
+        "time": 50.86666666666506,
+        "kind": "bullets",
+        "target": {
+          "x": 405.8233034750978,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 51.59999999999835,
+        "kind": "bullets"
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 55.099999999998154,
+        "kind": "bullets"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 55.099999999998154,
+        "kind": "mortars",
+        "half": false,
+        "warm": 1.35
+      },
+      {
+        "event": "aim-locked",
+        "time": 55.716666666664786,
+        "kind": "mortars",
+        "target": {
+          "x": 424.77730347509777,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 56.44999999999808,
+        "kind": "mortars"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 56.44999999999808,
+        "x": 386.77730347509777,
+        "y": 442.4385034750979,
+        "warm": 1.5,
+        "source": "mortar"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 57.2666666666647,
+        "x": 480.77730347509777,
+        "y": 356.4385034750979,
+        "warm": 1.5,
+        "source": "mortar"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 57.96666666666466,
+        "x": 386.77730347509777,
+        "y": 442.4385034750979,
+        "source": "mortar"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 58.08333333333132,
+        "x": 350.77730347509777,
+        "y": 270.4385034750979,
+        "warm": 1.5,
+        "source": "mortar"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 58.61666666666462,
+        "x": 386.77730347509777,
+        "y": 307.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 58.78333333333128,
+        "x": 480.77730347509777,
+        "y": 356.4385034750979,
+        "source": "mortar"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 58.89999999999794,
+        "x": 516.7773034750978,
+        "y": 442.4385034750979,
+        "warm": 1.5,
+        "source": "mortar"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 59.43333333333124,
+        "x": 480.77730347509777,
+        "y": 221.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 59.5999999999979,
+        "x": 350.77730347509777,
+        "y": 270.4385034750979,
+        "source": "mortar"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 60.24999999999786,
+        "x": 350.77730347509777,
+        "y": 135.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 60.41666666666452,
+        "x": 516.7773034750978,
+        "y": 442.4385034750979,
+        "source": "mortar"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 61.06666666666448,
+        "x": 516.7773034750978,
+        "y": 307.4385034750979,
+        "small": true
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 63.38333333333102,
+        "kind": "mortars"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 63.38333333333102,
+        "kind": "rollers",
+        "half": false,
+        "warm": 2.1
+      },
+      {
+        "event": "aim-locked",
+        "time": 64.33333333333097,
+        "kind": "rollers",
+        "target": {
+          "x": 428.56810347509776,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 65.49999999999757,
+        "kind": "rollers"
+      },
+      {
+        "event": "roller-release",
+        "time": 65.49999999999757,
+        "slot": "L"
+      },
+      {
+        "event": "roller-release",
+        "time": 66.36666666666419,
+        "slot": "R"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 66.48333333333085,
+        "x": 230.5681034735053,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 66.48333333333085,
+        "x": 295.28662321554646,
+        "y": 489
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 67.3333333333308,
+        "x": 291.5681034750954,
+        "y": 199.36002954987555,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 67.3333333333308,
+        "x": 211.56810347509543,
+        "y": 289.36002954987555
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 67.36666666666413,
+        "x": 626.568103475096,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 67.36666666666413,
+        "x": 572.2349498381473,
+        "y": 489
+      },
+      {
+        "event": "geyser-impact",
+        "time": 67.99999999999743,
+        "x": 230.5681034735053,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 68.13333333333075,
+        "x": 567.8132733248923,
+        "y": 218.93257567243677,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 68.13333333333075,
+        "x": 647.8132733248923,
+        "y": 308.93257567243677
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 68.34999999999741,
+        "x": 392.5248087186135,
+        "y": 143,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 68.34999999999741,
+        "x": 312.5248087186135,
+        "y": 53
+      },
+      {
+        "event": "tidal-wave",
+        "time": 68.64999999999739,
+        "x": 230.5681034735053,
+        "y": 264,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 68.84999999999738,
+        "x": 291.5681034750954,
+        "y": 199.36002954987555,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 68.88333333333071,
+        "x": 626.568103475096,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 69.23333333333069,
+        "x": 458.5814283073154,
+        "y": 143,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 69.23333333333069,
+        "x": 538.5814283073154,
+        "y": 53
+      },
+      {
+        "event": "tidal-wave",
+        "time": 69.49999999999734,
+        "x": 291.5681034750954,
+        "y": 64.36002954987555,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 69.53333333333067,
+        "x": 626.568103475096,
+        "y": 264,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 69.64999999999733,
+        "x": 567.8132733248923,
+        "y": 218.93257567243677,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 70.21666666666397,
+        "x": 577.8879396575319,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 70.21666666666397,
+        "x": 497.8879396575319,
+        "y": 489
+      },
+      {
+        "event": "tidal-wave",
+        "time": 70.2999999999973,
+        "x": 567.8132733248923,
+        "y": 83.93257567243677,
+        "small": true
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 71.09999999999725,
+        "x": 273.218297368397,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 71.09999999999725,
+        "x": 353.218297368397,
+        "y": 489
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 71.4666666666639,
+        "x": 540.6285227678939,
+        "y": 105.41180816158123,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 71.4666666666639,
+        "x": 620.6285227678939,
+        "y": 195.41180816158123
+      },
+      {
+        "event": "geyser-impact",
+        "time": 71.73333333333055,
+        "x": 577.8879396575319,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 72.38333333333051,
+        "x": 577.8879396575319,
+        "y": 264,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 72.61666666666383,
+        "x": 273.218297368397,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 72.79999999999715,
+        "x": 265.03258823762417,
+        "y": 100,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 72.79999999999715,
+        "x": 185.03258823762417,
+        "y": 89.72005909975002
+      },
+      {
+        "event": "geyser-impact",
+        "time": 72.98333333333048,
+        "x": 540.6285227678939,
+        "y": 105.41180816158123,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 72.99999999999714,
+        "kind": "rollers"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 72.99999999999714,
+        "kind": "tidal",
+        "half": false,
+        "warm": 3.35
+      },
+      {
+        "event": "aim-locked",
+        "time": 74.51666666666372,
+        "kind": "tidal",
+        "target": {
+          "x": 402.0325034750978,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 76.36666666666362,
+        "kind": "tidal"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 76.36666666666362,
+        "x": 267.6325242487706,
+        "y": -140,
+        "small": false
+      },
+      {
+        "event": "tidal-wave",
+        "time": 77.64999999999688,
+        "x": 402.03252424877064,
+        "y": -140,
+        "small": false
+      },
+      {
+        "event": "tidal-wave",
+        "time": 78.93333333333014,
+        "x": 536.4325242487706,
+        "y": -140,
+        "small": false
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 81.69999999999665,
+        "kind": "tidal"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 81.69999999999665,
+        "kind": "rain",
+        "half": false,
+        "warm": 1.8
+      },
+      {
+        "event": "aim-locked",
+        "time": 82.51666666666327,
+        "kind": "rain",
+        "target": {
+          "x": 405.8233034750978,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 83.51666666666321,
+        "kind": "rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 83.51666666666321,
+        "x": 360.8233034750978,
+        "y": 442.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 83.51666666666321,
+        "x": 450.8233034750978,
+        "y": 442.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "fan-geyser-launch",
+        "time": 83.51666666666321,
+        "index": 0
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 84.33333333332983,
+        "x": 328.8233034750978,
+        "y": 367.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 84.33333333332983,
+        "x": 482.8233034750978,
+        "y": 367.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "fan-geyser-launch",
+        "time": 84.33333333332983,
+        "index": 1
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 85.14999999999645,
+        "x": 296.8233034750978,
+        "y": 292.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 85.14999999999645,
+        "x": 514.8233034750979,
+        "y": 292.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "fan-geyser-launch",
+        "time": 85.14999999999645,
+        "index": 2
+      },
+      {
+        "event": "geyser-impact",
+        "time": 85.53333333332976,
+        "x": 360.8233034750978,
+        "y": 442.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 85.53333333332976,
+        "x": 450.8233034750978,
+        "y": 442.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 86.18333333332973,
+        "x": 360.8233034750978,
+        "y": 307.4385034750979,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 86.18333333332973,
+        "x": 450.8233034750978,
+        "y": 307.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 86.34999999999638,
+        "x": 328.8233034750978,
+        "y": 367.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 86.34999999999638,
+        "x": 482.8233034750978,
+        "y": 367.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 86.99999999999635,
+        "x": 328.8233034750978,
+        "y": 232.4385034750979,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 86.99999999999635,
+        "x": 482.8233034750978,
+        "y": 232.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 87.166666666663,
+        "x": 296.8233034750978,
+        "y": 292.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 87.166666666663,
+        "x": 514.8233034750979,
+        "y": 292.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 87.81666666666297,
+        "x": 296.8233034750978,
+        "y": 157.4385034750979,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 87.81666666666297,
+        "x": 514.8233034750979,
+        "y": 157.4385034750979,
+        "small": true
+      },
+      {
+        "event": "half-health-fill",
+        "time": 89.04999999999623,
+        "hp": 3250,
+        "maxhp": 6500
+      },
+      {
+        "event": "water-attack-start",
+        "time": 92.06666666666273,
+        "kind": "lamp",
+        "half": true,
+        "warm": 2.5
+      },
+      {
+        "event": "aim-locked",
+        "time": 93.199999999996,
+        "kind": "lamp",
+        "target": {
+          "x": 432.35890347509775,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 94.58333333332925,
+        "kind": "lamp"
+      },
+      {
+        "event": "lamp-bubble",
+        "time": 94.58333333332925,
+        "slot": "circleL",
+        "index": 0
+      },
+      {
+        "event": "lamp-bubble",
+        "time": 94.58333333332925,
+        "slot": "circleR",
+        "index": 0
+      },
+      {
+        "event": "lamp-bubble",
+        "time": 95.79999999999585,
+        "slot": "circleL",
+        "index": 1
+      },
+      {
+        "event": "lamp-bubble",
+        "time": 95.79999999999585,
+        "slot": "circleR",
+        "index": 1
+      },
+      {
+        "event": "lamp-bubble",
+        "time": 97.01666666666245,
+        "slot": "circleL",
+        "index": 2
+      },
+      {
+        "event": "lamp-bubble",
+        "time": 97.01666666666245,
+        "slot": "circleR",
+        "index": 2
+      },
+      {
+        "event": "bubble-merge",
+        "time": 97.08333333332911,
+        "mass": 3.2,
+        "x": 475.0547104274194,
+        "y": 449.2662765087688
+      },
+      {
+        "event": "lamp-bubble",
+        "time": 98.23333333332904,
+        "slot": "circleL",
+        "index": 3
+      },
+      {
+        "event": "lamp-bubble",
+        "time": 98.23333333332904,
+        "slot": "circleR",
+        "index": 3
+      },
+      {
+        "event": "bubble-merge",
+        "time": 98.2999999999957,
+        "mass": 3.2,
+        "x": 492.3135171124798,
+        "y": 299.7661238508016
+      },
+      {
+        "event": "lamp-bubble",
+        "time": 99.44999999999564,
+        "slot": "circleL",
+        "index": 4
+      },
+      {
+        "event": "lamp-bubble",
+        "time": 99.44999999999564,
+        "slot": "circleR",
+        "index": 4
+      },
+      {
+        "event": "bubble-merge",
+        "time": 99.4666666666623,
+        "mass": 3.2,
+        "x": 371.72309349490763,
+        "y": 210.64390260688157
+      },
+      {
+        "event": "bubble-merge",
+        "time": 99.54999999999563,
+        "mass": 3.2,
+        "x": 367.6915098681435,
+        "y": 51.41705040757362
+      },
+      {
+        "event": "bubble-merge",
+        "time": 100.51666666666225,
+        "mass": 4.800000000000001,
+        "x": 388.27246771846666,
+        "y": 310.79417371825383
+      },
+      {
+        "event": "bubble-merge",
+        "time": 101.64999999999552,
+        "mass": 4.800000000000001,
+        "x": 512.4348077173524,
+        "y": 423.9042276519699
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 106.06666666666193,
+        "kind": "lamp"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 106.06666666666193,
+        "kind": "rollers",
+        "half": true,
+        "warm": 2.1
+      },
+      {
+        "event": "aim-locked",
+        "time": 107.01666666666188,
+        "kind": "rollers",
+        "target": {
+          "x": 443.7313034750977,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 108.18333333332848,
+        "kind": "rollers"
+      },
+      {
+        "event": "roller-release",
+        "time": 108.18333333332848,
+        "slot": "L"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 108.78333333332844,
+        "x": 267.59942513348665,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 108.78333333332844,
+        "x": 347.59942513348665,
+        "y": 489
+      },
+      {
+        "event": "roller-release",
+        "time": 109.0499999999951,
+        "slot": "R"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 109.6333333333284,
+        "x": 625.1064099251224,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 109.6333333333284,
+        "x": 545.1064099251224,
+        "y": 489
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 110.04999999999504,
+        "x": 302.9999999999999,
+        "y": 101.49729893706896,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 110.04999999999504,
+        "x": 222.9999999999999,
+        "y": 191.49729893706896
+      },
+      {
+        "event": "geyser-impact",
+        "time": 110.29999999999502,
+        "x": 267.59942513348665,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 110.649999999995,
+        "x": 362.58100637322366,
+        "y": 143,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 110.649999999995,
+        "x": 282.58100637322366,
+        "y": 53
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 110.76666666666166,
+        "x": 576.9999999999999,
+        "y": 132.81337273316714,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 110.76666666666166,
+        "x": 656.9999999999999,
+        "y": 222.81337273316714
+      },
+      {
+        "event": "tidal-wave",
+        "time": 110.94999999999499,
+        "x": 267.59942513348665,
+        "y": 264,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 111.14999999999498,
+        "x": 625.1064099251224,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 111.49999999999496,
+        "x": 504.17876998828194,
+        "y": 143,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 111.49999999999496,
+        "x": 584.1787699882819,
+        "y": 53
+      },
+      {
+        "event": "geyser-impact",
+        "time": 111.56666666666162,
+        "x": 302.9999999999999,
+        "y": 101.49729893706896,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 111.79999999999494,
+        "x": 625.1064099251224,
+        "y": 264,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 112.21666666666158,
+        "x": 302.9999999999999,
+        "y": -33.50270106293104,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 112.28333333332824,
+        "x": 576.9999999999999,
+        "y": 132.81337273316714,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 112.51666666666156,
+        "x": 547.9441373121421,
+        "y": 399,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 112.51666666666156,
+        "x": 467.94413731214206,
+        "y": 489
+      },
+      {
+        "event": "tidal-wave",
+        "time": 112.9333333333282,
+        "x": 576.9999999999999,
+        "y": -2.1866272668328577,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 114.03333333332814,
+        "x": 547.9441373121421,
+        "y": 399,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 114.38333333332812,
+        "x": 637.998458846198,
+        "y": 143,
+        "warm": 1.5,
+        "source": "roller-bounce"
+      },
+      {
+        "event": "roller-bounce",
+        "time": 114.38333333332812,
+        "x": 653.3072682510605,
+        "y": 53
+      },
+      {
+        "event": "tidal-wave",
+        "time": 114.68333333332811,
+        "x": 547.9441373121421,
+        "y": 264,
+        "small": true
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 115.68333333332805,
+        "kind": "rollers"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 115.68333333332805,
+        "kind": "rain",
+        "half": true,
+        "warm": 1.8
+      },
+      {
+        "event": "aim-locked",
+        "time": 116.49999999999467,
+        "kind": "rain",
+        "target": {
+          "x": 462.68530347509767,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 117.49999999999461,
+        "kind": "rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 117.49999999999461,
+        "x": 417.68530347509767,
+        "y": 442.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 117.49999999999461,
+        "x": 507.68530347509767,
+        "y": 442.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "fan-geyser-launch",
+        "time": 117.49999999999461,
+        "index": 0
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 118.31666666666123,
+        "x": 385.68530347509767,
+        "y": 367.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 118.31666666666123,
+        "x": 539.6853034750977,
+        "y": 367.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "fan-geyser-launch",
+        "time": 118.31666666666123,
+        "index": 1
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 119.13333333332785,
+        "x": 353.68530347509767,
+        "y": 292.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "ground-water-mark",
+        "time": 119.13333333332785,
+        "x": 571.6853034750977,
+        "y": 292.4385034750979,
+        "warm": 2,
+        "source": "fan-rain"
+      },
+      {
+        "event": "fan-geyser-launch",
+        "time": 119.13333333332785,
+        "index": 2
+      },
+      {
+        "event": "geyser-impact",
+        "time": 119.51666666666117,
+        "x": 417.68530347509767,
+        "y": 442.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 119.51666666666117,
+        "x": 507.68530347509767,
+        "y": 442.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 120.16666666666113,
+        "x": 417.68530347509767,
+        "y": 307.4385034750979,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 120.16666666666113,
+        "x": 507.68530347509767,
+        "y": 307.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 120.33333333332779,
+        "x": 385.68530347509767,
+        "y": 367.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 120.33333333332779,
+        "x": 539.6853034750977,
+        "y": 367.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 120.98333333332775,
+        "x": 385.68530347509767,
+        "y": 232.4385034750979,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 120.98333333332775,
+        "x": 539.6853034750977,
+        "y": 232.4385034750979,
+        "small": true
+      },
+      {
+        "event": "geyser-impact",
+        "time": 121.1499999999944,
+        "x": 353.68530347509767,
+        "y": 292.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "geyser-impact",
+        "time": 121.1499999999944,
+        "x": 571.6853034750977,
+        "y": 292.4385034750979,
+        "source": "fan-rain"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 121.79999999999437,
+        "x": 353.68530347509767,
+        "y": 157.4385034750979,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 121.79999999999437,
+        "x": 571.6853034750977,
+        "y": 157.4385034750979,
+        "small": true
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 124.78333333332753,
+        "kind": "rain"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 124.78333333332753,
+        "kind": "slide",
+        "half": true,
+        "warm": 1.6
+      },
+      {
+        "event": "aim-locked",
+        "time": 125.51666666666083,
+        "kind": "slide",
+        "target": {
+          "x": 420.9865034750978,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 126.39999999999411,
+        "kind": "slide"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 126.39999999999411,
+        "x": 355.9865034750978,
+        "y": 276.6273200785668,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 126.39999999999411,
+        "x": 485.9865034750978,
+        "y": 276.6273200785668,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 126.63333333332743,
+        "x": 355.9865034750978,
+        "y": 368.5132618824633,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 126.63333333332743,
+        "x": 485.9865034750978,
+        "y": 368.5132618824633,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 126.86666666666075,
+        "x": 355.9865034750978,
+        "y": 460.3992036863599,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 126.86666666666075,
+        "x": 485.9865034750978,
+        "y": 460.3992036863599,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 127.09999999999407,
+        "x": 355.9865034750978,
+        "y": 552.2851454902565,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 127.09999999999407,
+        "x": 485.9865034750978,
+        "y": 552.2851454902565,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 127.33333333332739,
+        "x": 355.9865034750978,
+        "y": 644.171087294153,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 127.33333333332739,
+        "x": 485.9865034750978,
+        "y": 644.171087294153,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 127.56666666666071,
+        "x": 355.9865034750978,
+        "y": 736.0570290980495,
+        "small": true
+      },
+      {
+        "event": "tidal-wave",
+        "time": 127.56666666666071,
+        "x": 485.9865034750978,
+        "y": 736.0570290980495,
+        "small": true
+      },
+      {
+        "event": "water-recover-complete",
+        "time": 132.83333333333118,
+        "kind": "slide"
+      },
+      {
+        "event": "water-attack-start",
+        "time": 132.83333333333118,
+        "kind": "tidal",
+        "half": true,
+        "warm": 3.35
+      },
+      {
+        "event": "aim-locked",
+        "time": 134.34999999999906,
+        "kind": "tidal",
+        "target": {
+          "x": 413.4049034750978,
+          "y": 442.4385034750979
+        }
+      },
+      {
+        "event": "water-release",
+        "time": 136.20000000000053,
+        "kind": "tidal"
+      },
+      {
+        "event": "tidal-wave",
+        "time": 136.20000000000053,
+        "x": 280.3682060316836,
+        "y": -140,
+        "small": false
+      }
+    ],
+    "chapters": [
+      {
+        "id": "stage9-tidal-mortars",
+        "stage": 9,
+        "title": "Tidal \u00b7 arcing water mortars, geysers and falling waves",
+        "seconds": 10.999999999999998,
+        "src": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "localSrc": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "poster": "posters/stage9-tidal-stage2-waves-fan-spin-1029.jpg",
+        "sha256": "b84f31133e4744c05f0eed2583d150e90a1424e5218cf84b25d0bd037f149b15",
+        "bytes": 127810057,
+        "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, bouncing rollers, fan rain, merging buoyant bubbles and Slip N Slide. Older films retained.",
+        "parent": "stage9-boss",
+        "start": 7.205,
+        "end": 18.205
+      },
+      {
+        "id": "stage9-tidal-rollers",
+        "stage": 9,
+        "title": "Tidal \u00b7 bouncing water rollers emit bombs",
+        "seconds": 11.0,
+        "src": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "localSrc": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "poster": "posters/stage9-tidal-stage2-waves-fan-spin-1029.jpg",
+        "sha256": "b84f31133e4744c05f0eed2583d150e90a1424e5218cf84b25d0bd037f149b15",
+        "bytes": 127810057,
+        "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, bouncing rollers, fan rain, merging buoyant bubbles and Slip N Slide. Older films retained.",
+        "parent": "stage9-boss",
+        "start": 15.779,
+        "end": 26.779
+      },
+      {
+        "id": "stage9-tidal-walls",
+        "stage": 9,
+        "title": "Tidal \u00b7 actual Stage2 water waves arriving one-two-three",
+        "seconds": 10.0,
+        "src": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "localSrc": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "poster": "posters/stage9-tidal-stage2-waves-fan-spin-1029.jpg",
+        "sha256": "b84f31133e4744c05f0eed2583d150e90a1424e5218cf84b25d0bd037f149b15",
+        "bytes": 127810057,
+        "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, bouncing rollers, fan rain, merging buoyant bubbles and Slip N Slide. Older films retained.",
+        "parent": "stage9-boss",
+        "start": 25.185000000000002,
+        "end": 35.185
+      },
+      {
+        "id": "stage9-tidal-rain",
+        "stage": 9,
+        "title": "Tidal \u00b7 fan geyser launches and warned falling rain",
+        "seconds": 11.0,
+        "src": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "localSrc": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "poster": "posters/stage9-tidal-stage2-waves-fan-spin-1029.jpg",
+        "sha256": "b84f31133e4744c05f0eed2583d150e90a1424e5218cf84b25d0bd037f149b15",
+        "bytes": 127810057,
+        "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, bouncing rollers, fan rain, merging buoyant bubbles and Slip N Slide. Older films retained.",
+        "parent": "stage9-boss",
+        "start": 34.212999999999994,
+        "end": 45.212999999999994
+      },
+      {
+        "id": "stage9-tidal-slide",
+        "stage": 9,
+        "title": "Tidal \u00b7 Slip N Slide water trail and wave rush",
+        "seconds": 9.0,
+        "src": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "localSrc": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "poster": "posters/stage9-tidal-stage2-waves-fan-spin-1029.jpg",
+        "sha256": "b84f31133e4744c05f0eed2583d150e90a1424e5218cf84b25d0bd037f149b15",
+        "bytes": 127810057,
+        "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, bouncing rollers, fan rain, merging buoyant bubbles and Slip N Slide. Older films retained.",
+        "parent": "stage9-boss",
+        "start": 43.184,
+        "end": 52.184
+      },
+      {
+        "id": "stage9-tidal-bubbles",
+        "stage": 9,
+        "title": "Tidal \u00b7 half-health fill and merging lava-lamp bubbles",
+        "seconds": 19.0,
+        "src": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "localSrc": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "poster": "posters/stage9-tidal-stage2-waves-fan-spin-1029.jpg",
+        "sha256": "b84f31133e4744c05f0eed2583d150e90a1424e5218cf84b25d0bd037f149b15",
+        "bytes": 127810057,
+        "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, bouncing rollers, fan rain, merging buoyant bubbles and Slip N Slide. Older films retained.",
+        "parent": "stage9-boss",
+        "start": 91.13199999999999,
+        "end": 110.13199999999999
+      },
+      {
+        "id": "stage9-tidal-fans",
+        "stage": 9,
+        "title": "Tidal \u00b7 counter-rotating spiral fans in fixed metal rims",
+        "seconds": 8.0,
+        "src": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "localSrc": "videos/stage9-tidal-stage2-waves-fan-spin-1029.mp4",
+        "poster": "posters/stage9-tidal-stage2-waves-fan-spin-1029.jpg",
+        "sha256": "b84f31133e4744c05f0eed2583d150e90a1424e5218cf84b25d0bd037f149b15",
+        "bytes": 127810057,
+        "note": "Actual native Furious fight: starts directly in the water form; former Wardens moved to the Stage8 roster. Input-only invulnerable Cole observer, native HP/timers/defeat. Actual nwf_fire Stage2 wave sequence palette-swapped to water with six authored approaching sizes and counter-rotating spiral fans; generated geysers, bouncing rollers, fan rain, merging buoyant bubbles and Slip N Slide. Older films retained.",
+        "parent": "stage9-boss",
+        "start": 2.0,
+        "end": 10.0
+      }
+    ],
+    "audioMeanDB": -20.5,
+    "audioPeakDB": -3.1,
+    "decodedCueCounts": {
+      "boss9": 2,
+      "bossAlarm": 1,
+      "bossWeaponCharge": 17,
+      "av3_target_acquire": 51,
+      "alertLockon": 39,
+      "bossfireTidalfusion": 36,
+      "cfComboWater": 93,
+      "combatOrb0927": 11,
+      "jetDash": 6,
+      "spaceLaserCannon": 225,
+      "missile": 45,
+      "spaceVolleyLaunch": 61,
+      "hit": 228,
+      "av3_impact_metal": 208,
+      "spaceLaserHit": 199,
+      "spaceVolleyHit": 57,
+      "missileHit": 45,
+      "expSmall": 54,
+      "expBig": 65,
+      "powerup": 2,
+      "achievement": 1,
+      "laserMistUnlock": 1,
+      "bossWhiteout": 1,
+      "expBoss": 1,
+      "life": 1,
+      "weapon": 1,
+      "stageclear": 1,
+      "statTick": 10,
+      "stageClear": 1
+    },
+    "pageErrors": [],
+    "consoleErrors": [],
+    "assetErrors": [],
+    "audioErrors": [],
+    "botErrors": [],
+    "maxProjectiles": 32,
+    "maxMarkers": 6,
+    "inputOnly": true,
+    "sha256": "b84f31133e4744c05f0eed2583d150e90a1424e5218cf84b25d0bd037f149b15"
+  },
+  "actualStage2Sources": [
+    {
+      "key": "nwf_fire_0",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        3370,
+        1536,
+        420,
+        421
+      ],
+      "sourceAtlasSHA256": "3bee36e83d40df59f97876f2bf33814a84c729c8e267ccbe5973f99ff5d66efd"
+    },
+    {
+      "key": "nwf_fire_1",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        0,
+        2048,
+        420,
+        421
+      ],
+      "sourceAtlasSHA256": "3bee36e83d40df59f97876f2bf33814a84c729c8e267ccbe5973f99ff5d66efd"
+    },
+    {
+      "key": "nwf_fire_2",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        422,
+        2048,
+        420,
+        421
+      ],
+      "sourceAtlasSHA256": "3bee36e83d40df59f97876f2bf33814a84c729c8e267ccbe5973f99ff5d66efd"
+    },
+    {
+      "key": "nwf_fire_3",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        844,
+        2048,
+        420,
+        421
+      ],
+      "sourceAtlasSHA256": "3bee36e83d40df59f97876f2bf33814a84c729c8e267ccbe5973f99ff5d66efd"
+    },
+    {
+      "key": "nwf_fire_4",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        1266,
+        2048,
+        420,
+        421
+      ],
+      "sourceAtlasSHA256": "3bee36e83d40df59f97876f2bf33814a84c729c8e267ccbe5973f99ff5d66efd"
+    },
+    {
+      "key": "nwf_fire_5",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        1688,
+        2048,
+        420,
+        421
+      ],
+      "sourceAtlasSHA256": "3bee36e83d40df59f97876f2bf33814a84c729c8e267ccbe5973f99ff5d66efd"
+    },
+    {
+      "key": "nwf_fire_6",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        2110,
+        2048,
+        420,
+        421
+      ],
+      "sourceAtlasSHA256": "3bee36e83d40df59f97876f2bf33814a84c729c8e267ccbe5973f99ff5d66efd"
+    },
+    {
+      "key": "nwf_fire_7",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        2532,
+        2048,
+        420,
+        421
+      ],
+      "sourceAtlasSHA256": "3bee36e83d40df59f97876f2bf33814a84c729c8e267ccbe5973f99ff5d66efd"
+    }
+  ],
+  "fullSuiteExit": 1,
+  "baselineFailures": 5
+}

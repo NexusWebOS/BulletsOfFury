@@ -1,0 +1,4220 @@
+{
+  "stage": 8,
+  "difficulty": "furious",
+  "pilot": "cole",
+  "invulnerable": true,
+  "method": "Native encounter spawn, real RAF, Cole with level-5 Laser and40 missiles, native GOD and input-only aiming; no enemy HP/phase/timer writes.",
+  "completed": true,
+  "reason": "native copied-life defeat and main-arena rebuild",
+  "checkpoint": "Focused native checkpoint: brain copy280HP and missing main left arm, prepared before recording. Other life pools full; no recorder HP/phase/clock writes during footage.",
+  "setup": {
+    "checkpoint": "Brain copy280HP; missing cached left arm; other lives full. Prepared before capture.",
+    "entry": {
+      "stage": 8,
+      "role": "boss",
+      "kind": "vileexistence",
+      "name": "Dracodia / Defeated copy to rebuilt main arena / Focused native checkpoint"
+    },
+    "difficulty": "furious",
+    "weapon": 3,
+    "wlevel": 5,
+    "missiles": 40,
+    "screen": {
+      "width": 480,
+      "height": 512
+    },
+    "nativeGod": true,
+    "currentFont": "assets/game/shared/ui/pixelmap_ui_1027/fury_strike_28.png?v=solid-r-square-hud-1027d",
+    "focusedLaser": true,
+    "newEncounterBanks": true
+  },
+  "defeatSeconds": 17.05,
+  "audio": {
+    "peak": 1.0822088718414307,
+    "tapped": 49,
+    "playing": {
+      "bossAlarm": 1,
+      "boss8": 1,
+      "bossPhase": 2,
+      "bossWeaponCharge": 3,
+      "av3_target_acquire": 5,
+      "alertLockon": 4,
+      "combatBeam0927": 1,
+      "loop": 4,
+      "hit": 29,
+      "missile": 6,
+      "av3_impact_flesh": 25,
+      "laserBeamStart": 7,
+      "expBig": 7,
+      "expSmall": 6,
+      "missileHit": 5,
+      "laserBeamEnd": 5,
+      "dracodiaShriek": 1,
+      "teleportIn": 1,
+      "combatEnergy0927": 1,
+      "boss8p3": 1,
+      "shieldHitHeavy": 2,
+      "enemyBossCannon": 3
+    },
+    "tapErrors": [],
+    "frames": 1092,
+    "god": true,
+    "godBlocks": 75,
+    "deaths": 0
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_warp_gate_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_warp_gate_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_warp_gate_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/crackle.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/crackle.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/crackle.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/levels/stage_03/audio/sounds/stage3_atomic_siren.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/expBig.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/enemy_machine_shot_light.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/reviewed_lizzie_atom_launch.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/reviewed_lizzie_atom_impact.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sfx_0927/alien.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/combat/combat_1003i/toxic_spit.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_void_spectral_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/expSmall.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_warp_gate_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sfx_0927/energy_release.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/chip_1011/chip_bossCannon.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/combat/combat_1003i/module_break.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/chip_1011/chip_timedBombBeep.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/chip_1011/chip_timedBombBlast.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/combat/combat_1003i/laser_release.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_fusion_beam_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_fusion_beam_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/arc_fusion_beam_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/cf_combo_thermoshock_0920.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/cf_combo_thermoshock_0920.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/cf_combo_thermoshock_0920.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/chip_1011/chip_shadowRelease.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/chip_1011/chip_shadowRelease.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/chip_1011/chip_shadowRelease.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/chip_1011/chip_slice.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/chip_1011/chip_slice.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/chip_1011/chip_slice.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/cf_enemy_ice_0920.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/cf_enemy_ice_0920.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/cf_enemy_ice_0920.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/reviewed_flamethrower_start.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/reviewed_flamethrower_start.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/shared/audio/sounds/reviewed_flamethrower_start.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:54483/assets/game/levels/stage_08/audio/music/Level8.mp3",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "timeline": [
+    {
+      "seconds": 0.563,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 340,
+        "y": 220,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 340,
+        "y": 399.36,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 2,
+      "pursuitEvents": [],
+      "nativeFrames": 1789,
+      "audioPeak": 0,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 1.041,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 364.9209037069598,
+        "y": 230.99814451389642,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 360.52420077224394,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 23,
+      "pursuitEvents": [],
+      "nativeFrames": 1810,
+      "audioPeak": 0.7218291759490967,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 1.576,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 385.08781680127447,
+        "y": 237.30497291050966,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 49,
+      "pursuitEvents": [],
+      "nativeFrames": 1836,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 2.055,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "eyeExpansion",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 1,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 394.5110759544252,
+        "y": 237.84996658814444,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 390.85060077224387,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 77,
+      "pursuitEvents": [],
+      "nativeFrames": 1864,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 2.527,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "eyeExpansion",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 1,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 394.5110759544252,
+        "y": 237.84996658814444,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 390.85060077224387,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 106,
+      "pursuitEvents": [],
+      "nativeFrames": 1893,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 2.997,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "eyeExpansion",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 1,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 394.5110759544252,
+        "y": 237.84996658814444,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 390.85060077224387,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 134,
+      "pursuitEvents": [],
+      "nativeFrames": 1921,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 3.466,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "eyeExpansion",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 1,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 394.5110759544252,
+        "y": 237.84996658814444,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 390.85060077224387,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 1,
+      "deaths": 0,
+      "director": null,
+      "frames": 162,
+      "pursuitEvents": [],
+      "nativeFrames": 1949,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 3.941,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "eyeExpansion",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 1,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 394.5110759544252,
+        "y": 237.84996658814444,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 390.85060077224387,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 27,
+      "deaths": 0,
+      "director": null,
+      "frames": 191,
+      "pursuitEvents": [],
+      "nativeFrames": 1978,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 4.402,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "eyeExpansion",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 1,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 394.5110759544252,
+        "y": 237.84996658814444,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 390.85060077224387,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 51,
+      "deaths": 0,
+      "director": null,
+      "frames": 219,
+      "pursuitEvents": [],
+      "nativeFrames": 2006,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 4.868,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "eyeExpansion",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 1,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 394.5110759544252,
+        "y": 237.84996658814444,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 390.85060077224387,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 247,
+      "pursuitEvents": [],
+      "nativeFrames": 2034,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 5.336,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 280,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "eyeExpansion",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 280,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 1,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 394.5110759544252,
+        "y": 237.84996658814444,
+        "hp": 280
+      },
+      "botErrors": [],
+      "player": {
+        "x": 390.85060077224387,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 275,
+      "pursuitEvents": [],
+      "nativeFrames": 2062,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 5.839,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 276,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "eyeExpansion",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 276,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 276,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 0,
+        "book": 1,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 394.5110759544252,
+        "y": 237.84996658814444,
+        "hp": 276
+      },
+      "botErrors": [],
+      "player": {
+        "x": 390.85060077224387,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 39,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 286,
+      "pursuitEvents": [],
+      "nativeFrames": 2073,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 6.307,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 256,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 256,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 256,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 1,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 278.59763115890127,
+        "y": 234.8494489014899,
+        "hp": 256
+      },
+      "botErrors": [],
+      "player": {
+        "x": 341.570200772244,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 39,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 305,
+      "pursuitEvents": [],
+      "nativeFrames": 2092,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 6.869,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 232,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "codeGeysers",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 232,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 232,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 278.40643322818494,
+        "y": 237.97112645288908,
+        "hp": 232
+      },
+      "botErrors": [],
+      "player": {
+        "x": 280.91740077224415,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 38,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 327,
+      "pursuitEvents": [],
+      "nativeFrames": 2114,
+      "audioPeak": 0.7384925484657288,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 7.338,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 184,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "codeGeysers",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 184,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 184,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 288.0089288307858,
+        "y": 234.61467580530538,
+        "hp": 184
+      },
+      "botErrors": [],
+      "player": {
+        "x": 280.91740077224415,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 38,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 352,
+      "pursuitEvents": [],
+      "nativeFrames": 2139,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 7.806,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 156,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "codeGeysers",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 156,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 156,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 305.3772223719904,
+        "y": 225.53865402266683,
+        "hp": 156
+      },
+      "botErrors": [],
+      "player": {
+        "x": 299.8714007722441,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 38,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 380,
+      "pursuitEvents": [],
+      "nativeFrames": 2167,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 8.275,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 140,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "codeGeysers",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 140,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 140,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 328.12216074637064,
+        "y": 214.3055411496414,
+        "hp": 140
+      },
+      "botErrors": [],
+      "player": {
+        "x": 322.61620077224404,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 37,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 408,
+      "pursuitEvents": [],
+      "nativeFrames": 2195,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 8.852,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 80,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "codeGeysers",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 80,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 80,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 357.8522697887053,
+        "y": 204.01949486601012,
+        "hp": 80
+      },
+      "botErrors": [],
+      "player": {
+        "x": 352.94260077224396,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 37,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 441,
+      "pursuitEvents": [],
+      "nativeFrames": 2228,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 9.32,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 60,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": "codeGeysers",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 60,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 60,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": {
+        "key": "nb23-core:vileexistence",
+        "kind": "Neural Archon",
+        "x": 379.5664236260284,
+        "y": 202.219772348599,
+        "hp": 60
+      },
+      "botErrors": [],
+      "player": {
+        "x": 371.8966007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 469,
+      "pursuitEvents": [],
+      "nativeFrames": 2256,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 9.787,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 0,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v19copyDeath",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 0,
+          "destroyed": true
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 497,
+      "pursuitEvents": [],
+      "nativeFrames": 2284,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 10.327,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 0,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v19copyDeath",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 0,
+          "destroyed": true
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 529,
+      "pursuitEvents": [],
+      "nativeFrames": 2316,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 10.796,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 0,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v19copyDeath",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 0,
+          "destroyed": true
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 557,
+      "pursuitEvents": [],
+      "nativeFrames": 2344,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 11.254,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 0,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v19copyDeath",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 0,
+          "destroyed": true
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 585,
+      "pursuitEvents": [],
+      "nativeFrames": 2372,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 11.721,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 0,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v19copyDeath",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 0,
+          "destroyed": true
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 613,
+      "pursuitEvents": [],
+      "nativeFrames": 2400,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 12.19,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 0,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v19copyDeath",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 0,
+          "destroyed": true
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 641,
+      "pursuitEvents": [],
+      "nativeFrames": 2428,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 12.657,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 0,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v18returnDownload",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 0,
+          "destroyed": true
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        }
+      ],
+      "returnTime": 0.2333333333333333,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 669,
+      "pursuitEvents": [],
+      "nativeFrames": 2456,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 13.218,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 0,
+      "maxhp": 4510,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v18returnDownload",
+      "pursuit": null,
+      "phase": 2,
+      "form": 6,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 0,
+          "destroyed": true
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": false,
+        "attacks": 1,
+        "book": 2,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        }
+      ],
+      "returnTime": 0.8000000000000008,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 702,
+      "pursuitEvents": [],
+      "nativeFrames": 2489,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 13.686,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v18returnDownload",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": 1.266666666666667,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 730,
+      "pursuitEvents": [],
+      "nativeFrames": 2517,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 14.236,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v18returnDownload",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": 1.7999999999999985,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 760,
+      "pursuitEvents": [],
+      "nativeFrames": 2547,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 14.701,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v18returnDownload",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": 2.2666666666666635,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 788,
+      "pursuitEvents": [],
+      "nativeFrames": 2575,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 15.171,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v18returnDownload",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": 2.7333333333333285,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 816,
+      "pursuitEvents": [],
+      "nativeFrames": 2603,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 15.636,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v18returnDownload",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": 3.1999999999999935,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 844,
+      "pursuitEvents": [],
+      "nativeFrames": 2631,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 16.105,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v18returnDownload",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": 3.6666666666666585,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 872,
+      "pursuitEvents": [],
+      "nativeFrames": 2659,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 16.569,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "v18returnDownload",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": false,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": 4.133333333333324,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 387.0598007722439,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 900,
+      "pursuitEvents": [],
+      "nativeFrames": 2687,
+      "audioPeak": 0.9392533302307129,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 17.05,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": true,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        },
+        {
+          "event": "return-complete",
+          "clock": 15.516666666667017,
+          "last": false,
+          "hp": 5330,
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 326.40700077224403,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 922,
+      "pursuitEvents": [],
+      "nativeFrames": 2709,
+      "audioPeak": 1.0073431730270386,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 17.644,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": null,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": true,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        },
+        {
+          "event": "return-complete",
+          "clock": 15.516666666667017,
+          "last": false,
+          "hp": 5330,
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 356.73340077224395,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 954,
+      "pursuitEvents": [],
+      "nativeFrames": 2741,
+      "audioPeak": 1.0073431730270386,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 18.121,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": "bh25",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": true,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        },
+        {
+          "event": "return-complete",
+          "clock": 15.516666666667017,
+          "last": false,
+          "hp": 5330,
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 421.1770007722438,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 36,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 983,
+      "pursuitEvents": [],
+      "nativeFrames": 2770,
+      "audioPeak": 1.0073431730270386,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 18.592,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": "bh25",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": true,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        },
+        {
+          "event": "return-complete",
+          "clock": 15.516666666667017,
+          "last": false,
+          "hp": 5330,
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 500.7838007722436,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 35,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 1006,
+      "pursuitEvents": [],
+      "nativeFrames": 2793,
+      "audioPeak": 1.0822088718414307,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 19.066,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": "bh25",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": true,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        },
+        {
+          "event": "return-complete",
+          "clock": 15.516666666667017,
+          "last": false,
+          "hp": 5330,
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 538.6918007722435,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 35,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 1023,
+      "pursuitEvents": [],
+      "nativeFrames": 2810,
+      "audioPeak": 1.0822088718414307,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 19.532,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": "bh25",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": true,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        },
+        {
+          "event": "return-complete",
+          "clock": 15.516666666667017,
+          "last": false,
+          "hp": 5330,
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 553.8550007722434,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 34,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 1045,
+      "pursuitEvents": [],
+      "nativeFrames": 2832,
+      "audioPeak": 1.0822088718414307,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 20.005,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": "bh25",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": true,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        },
+        {
+          "event": "return-complete",
+          "clock": 15.516666666667017,
+          "last": false,
+          "hp": 5330,
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 553.8550007722434,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 34,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 1066,
+      "pursuitEvents": [],
+      "nativeFrames": 2853,
+      "audioPeak": 1.0822088718414307,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 20.481,
+      "state": "play",
+      "stage": 8,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 5330,
+      "maxhp": 5330,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": "fight",
+      "pursuit": null,
+      "phase": 2,
+      "form": 0,
+      "attack": "bh25",
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "dracodia": {
+        "pools": {
+          "0": 5330,
+          "1": 3690,
+          "2": 4100,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 4920
+        },
+        "locked": true,
+        "attacks": 0,
+        "book": 0,
+        "unlocked": false
+      },
+      "rebels": null,
+      "carrier": null,
+      "twins": null,
+      "returnComplete": true,
+      "returnEvents": [
+        {
+          "event": "return-start",
+          "clock": 11.300000000000141,
+          "from": 6,
+          "last": false,
+          "remaining": [
+            8,
+            1,
+            2
+          ],
+          "mainHP": 5330
+        },
+        {
+          "event": "arena-restored",
+          "clock": 12.150000000000183,
+          "from": 6,
+          "last": false,
+          "hp": 5330,
+          "parts": [
+            {
+              "id": "core",
+              "hp": 5330,
+              "destroyed": false
+            },
+            {
+              "id": "left",
+              "hp": 1280,
+              "destroyed": false
+            },
+            {
+              "id": "right",
+              "hp": 1280,
+              "destroyed": false
+            }
+          ],
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        },
+        {
+          "event": "return-complete",
+          "clock": 15.516666666667017,
+          "last": false,
+          "hp": 5330,
+          "pools": [
+            5330,
+            3690,
+            4100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4920
+          ]
+        }
+      ],
+      "returnTime": null,
+      "target": null,
+      "botErrors": [],
+      "player": {
+        "x": 534.9010007722435,
+        "y": 442.6290007722439,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 34,
+      "god": true,
+      "godBlocks": 75,
+      "deaths": 0,
+      "director": null,
+      "frames": 1088,
+      "pursuitEvents": [],
+      "nativeFrames": 2875,
+      "audioPeak": 1.0822088718414307,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    }
+  ]
+}

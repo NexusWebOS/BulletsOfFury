@@ -1,0 +1,55 @@
+from pathlib import Path
+import sys,json,http.server
+from playwright.sync_api import sync_playwright
+R=Path(__file__).resolve().parents[1];W=R/'_shots/horizon_symbiote_1029/probe';W.mkdir(parents=True,exist_ok=True);sys.path.insert(0,str(R/'_BUILD_SOURCE'))
+from shoot import serve,STEP
+from barrage_review_common_1025 import boot
+http.server.ThreadingHTTPServer.request_queue_size=256;checks=[];errors=[]
+def ck(n,v,d=None):checks.append(dict(name=n,passed=bool(v),data=d));(W/'checks.json').write_text(json.dumps(checks,indent=2));print('PASS'if v else'FAIL',n,str(d)[:450]if not v else'',flush=True)
+def step(p,n):
+ for i in range(0,n,30):
+  e=p.evaluate(STEP,min(30,n-i))
+  if e:raise RuntimeError(e)
+  p.wait_for_timeout(1)
+def snap(p,n):p.evaluate('drawWorld(0)');p.screenshot(path=str(W/(n+'.png')))
+port,stop=serve(str(R))
+try:
+ with sync_playwright()as pw:
+  br=pw.chromium.launch(channel='msedge',headless=True,args=['--autoplay-policy=no-user-gesture-required']);bc=br.new_context(viewport={'width':1280,'height':800});p=boot(bc,port,9,errors)
+  p.evaluate('()=>{run.stage=9;stageLoadBegin(9)}');p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(9)}',timeout=240000)
+  p.evaluate("()=>{beginStage(9);BOFCinematicDirector.cancel();story=null;diffKey='furious';debugStartFight({stage:9,role:'mini',kind:'voidhorizon'},{pilot:'cole',record:false});spawnSubBoss('voidhorizon');debugFight.spawned=true;subBossActive=true;warnT=0;DBGT.god=true;player.invuln=1e9;BOFCinematicDirector.cancel();setState(GS.PLAY);window.B=subBoss;pBullets=[];eBullets=[];}");step(p,130)
+  ck('All generated rotations, beams, eye emission, orb and smoke banks preload',p.evaluate('Object.values(EH57_ART).every(a=>XART.rdy(a.key))'))
+  ck('Native entry hands over to the alien attack book',p.evaluate("!B.enter&&B._eh57.mode==='spiral'"),p.evaluate('({enter:B.enter,mode:B._eh57.mode})'))
+  p.evaluate("()=>{window.H=B._eh57;window.full=B.hp;eh57Set(B,'spiral');EH57.events=[]}");step(p,35);snap(p,'eye-charge-circle')
+  d=p.evaluate("""()=>{const r=rk50Blit,e=eh57Blit,calls=[];rk50Blit=function(...a){calls.push(a);return r.apply(this,a)};eh57Blit=function(...a){calls.push(a);return e.apply(this,a)};try{s9VoidHorizonDraw(B)}finally{rk50Blit=r;eh57Blit=e}return calls;}""")
+  ck('Spiral charge uses the shared filled 360-degree warning and rotation symbol',any(q[0]=='field'for q in d)and any(q[0]=='symbol'for q in d),d[:7])
+  ck('The luminous eye overlay shares the actual physical firing pivot',p.evaluate("()=>{const p=s5924Eye(B),w=B._s9rift.core;return p.x===w.x&&p.y===w.y&&p.x===B.x&&p.y===B.y}"))
+  step(p,70);snap(p,'spiral-lasers');ck('Spiral attack produces two real segmented laser spirals',p.evaluate('H.beams.length===28'))
+  ck('Every spiral starts at the actual eye',p.evaluate('(()=>{const p=s5924Eye(B);return Math.hypot(H.beams[0].x-p.x,H.beams[0].y-p.y)<.001&&Math.hypot(H.beams[14].x-p.x,H.beams[14].y-p.y)<.001})()'),p.evaluate('({eye:s5924Eye(B),a:H.beams[0],b:H.beams[14]})'))
+  p.evaluate("eh57Set(B,'sweep')");step(p,90);p.evaluate('window.first=H.beams[0].a');step(p,320);snap(p,'eye-sweep-360')
+  ck('Eye beam sweeps almost a full 360 degrees before recovery',p.evaluate('H.beams.length===1&&H.beams[0].a-first>5.5'),p.evaluate('({first,a:H.beams[0]?.a,t:H.t})'))
+  p.evaluate("eh57Set(B,'beam')");step(p,100)
+  p.evaluate("()=>{window.hits=[];window.oldHit=playerHit;playerHit=function(...a){hits.push(a);return oldHit.apply(this,a)};const L=H.beams[0];player.x=L.x+Math.cos(L.a)*120;player.y=L.y+Math.sin(L.a)*120;eBullets=[];DBGT.god=false;player.invuln=0;run.shield=1;H.hit.clear()}");step(p,1)
+  ck('Laser beams use actual native player damage',p.evaluate("hits.some(a=>a[0]==='Event Horizon symbiote laser')&&run.shield===0&&!player.dead"),p.evaluate('({hits,shield:run.shield,dead:player.dead})'));p.evaluate('()=>{playerHit=oldHit;DBGT.god=true;player.invuln=1e9}')
+  p.evaluate("eh57Set(B,'orb')");step(p,170);snap(p,'symbiote-orbs')
+  ck('Charged eye launches the new alien plasma orbs',p.evaluate('eBullets.filter(q=>q._eh57Owner===B&&q._eh57Orb).length===3'))
+  ck('Ordinary alien shots cannot be shot down',p.evaluate('eBullets.filter(q=>q._eh57Owner===B).every(q=>!enemyOrdnanceCanIntercept(q)&&q._weaponProof&&!q._shootable)'))
+  p.evaluate("eh57Set(B,'spin')");step(p,130);ck('360-degree spin warning leads to actual radial laser volleys',p.evaluate("EH57.events.some(e=>e.event==='spin-volley')&&eBullets.some(q=>q._eh57Owner===B&&!q._eh57Orb)"))
+  ck('First phase never changes native HP without player attacks',p.evaluate('B.hp===full'))
+  px=p.evaluate("""()=>{drawWorld(0);const a=ctx.getImageData(0,0,cv.width,cv.height).data,before=B.hp;s9VoidHorizonHit(B,5,B.x,B.y);drawWorld(0);const d=ctx.getImageData(0,0,cv.width,cv.height).data;let n=0;for(let i=0;i<d.length;i+=4)if(d[i]>240&&d[i+1]>240&&d[i+2]>240&&a[i]+a[i+1]+a[i+2]<650)n++;return{white:n,before,hp:B.hp};}""")
+  ck('New alien hull takes damage with real white hit pixels',px['white']>4 and px['hp']<px['before'],px);step(p,15);ck('Hull hit flash expires',p.evaluate('B._s9rift.core.flash===0'))
+  p.evaluate('s9VoidHorizonHit(B,999999,B.x,B.y)');ck('Native oversized hit stops exactly at half HP and enters water charge',p.evaluate("H.half&&H.mode==='half'&&Math.abs(B.hp-B.maxhp*.5)<.001&&!B.dead"),p.evaluate('({hp:B.hp,maxhp:B.maxhp,mode:H.mode})'))
+  ck('Half-health transition protection rejects hits and Retina targets',p.evaluate('(()=>{const hp=B.hp;s9VoidHorizonHit(B,55,B.x,B.y);return B.hp===hp&&!retinaBossTargets(B).length})()'))
+  step(p,80);snap(p,'aqua-white-eye-smoke');d=p.evaluate("""()=>{const f=eh57Blit,keys=[];eh57Blit=function(...a){keys.push(a[0]);return f.apply(this,a)};try{s9VoidHorizonDraw(B)}finally{eh57Blit=f}return keys}""")
+  ck('Water phase draws aqua hull, white eye and three anchored smoke emitters','ship_water'in d and 'eye_white'in d and d.count('smoke')==3,d)
+  step(p,190);snap(p,'dash-edge-warning');ck('Water phase departs offscreen and charges its dash',p.evaluate("H.mode==='dash'&&H.phase==='edge-charge'&&H.protected"),p.evaluate('({mode:H.mode,phase:H.phase,t:H.t})'))
+  ck('Dash lane covers the complete spinning side-laser danger',p.evaluate("(()=>{const old=combatWarningDraw,fields=[];combatWarningDraw=function(b,q){fields.push(q);};try{eh57Warning(B,H);}finally{combatWarningDraw=old;}return fields.some(q=>q.width>=400);})()"))
+  step(p,75);snap(p,'spinning-laser-dash');ck('Foreground dash spins and fires to multiple sides',p.evaluate("H.phase==='dash'&&H.beams.length===3&&!H.protected"),p.evaluate('({phase:H.phase,beams:H.beams.length})'))
+  ck('Visible dash position and its eye remain registered',p.evaluate('B.x===s5924Eye(B).x&&B.y===s5924Eye(B).y'))
+  step(p,220);ck('Dash returns visibly and releases its protection',p.evaluate("EH57.events.some(e=>e.event==='dash-complete')&&!H.protected&&B.y>viewTopY()"),p.evaluate('({mode:H.mode,phase:H.phase,x:B.x,y:B.y})'))
+  ck('Alien projectile lifetime and owner budget remain bounded',p.evaluate('eBullets.filter(q=>q._eh57Owner===B&&!q.dead).length<=120'))
+  p.evaluate('s9VoidHorizonHit(B,999999,B.x,B.y)');ck('Final defeat remains the native core depletion',p.evaluate('B.dead&&B._s9rift.core.disabled&&B.hp===0'));step(p,1)
+  ck('Defeat cancels active laser paths and owned shots',p.evaluate('H.beams.length===0&&!eBullets.some(q=>q._eh57Owner===B&&!q.dead)'))
+  ck('Native browser has no exceptions',not errors,errors);(W/'events.json').write_text(json.dumps(p.evaluate('EH57.events'),indent=2));br.close()
+finally:stop()
+print('RESULT',sum(q['passed']for q in checks),'/',len(checks));assert all(q['passed']for q in checks)

@@ -1,0 +1,147 @@
+[
+  {
+    "name": "Copied hammer fixture uses native form8 health",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "All authored banks and wave/lightning assets load",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "normal uses the correct stroke count",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "normal background windup rejects hits",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "normal foreground landing accepts hits",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "hard uses the correct stroke count",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "hard background windup rejects hits",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "hard foreground landing accepts hits",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "furious uses the correct stroke count",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "furious background windup rejects hits",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "furious foreground landing accepts hits",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Four Furious strokes include both downward impacts and side swipes",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Live armor dialogue opens with Dracodia and preserves bullets",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Armor activation has no shield timer or legacy circular-shield action",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Armor completes and exposes the same native HP pool",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Arsenal releases the hammer upward and lifts the canonical rotary gun from its icon box",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Arsenal connects directly to the tactical chaingun body",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Throw releases a separate canonical hammer and empty-handed body",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Ordinary gunfire cannot alter or recall the hammer",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "A missile reverses its direction without starting recall",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Rage has animated red code, dark scenery and accumulating lightning",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Rage completes in7.2s with the original native HP preserved",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Rage triggers26 lightning strikes",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Rage wave is fired from a connected hand with audible charge and release events",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Wave origin stays on the generated palm pixels",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Chaingun uses regenerated evil body and native fan/straight volleys",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Foreground body accepts native damage",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Cleanup retires state and shield danger",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Native browser/drawing has no errors",
+    "passed": true,
+    "data": []
+  }
+]

@@ -1,0 +1,507 @@
+{
+  "date": "2026-10-18",
+  "build": "overdrive1017-playtest41-r1",
+  "status": "verified_local",
+  "browser_access": "Available after app update/restart; original enabled-preference/host-authorization mismatch cleared.",
+  "environment": "Actual Chromium through the supported in-app browser. Keyboard and pointer actions plus existing deterministic game hooks. Separate native Canvas regression suite.",
+  "fixes": [
+    {
+      "problem": "Level 3 ground units repeatedly select cover outside their firing range and cancel windups.",
+      "change": "Only weapon-usable peek positions are eligible.",
+      "evidence": "level3-before.json; level3-final-enemies.json: all ten types fire."
+    },
+    {
+      "problem": "Truck barrel orientation and muzzle-to-reticle trajectory disagree.",
+      "change": "Solve aim using the authored bore offset above the mounting pivot.",
+      "evidence": "level5-aim-and-interception.json: all four quadrants align; a live missile was intercepted."
+    },
+    {
+      "problem": "South-facing ground shots originate near legs rather than barrel tips.",
+      "change": "Reviewed and registered 68 firing-frame hardware sockets across seven banks; no sprite pixels or sizes changed.",
+      "evidence": "sockets-0.png through sockets-2.png; level3-final-flame.jpg"
+    },
+    {
+      "problem": "Enlarged dark silhouettes overpaint overlapping flame tongues.",
+      "change": "Render the authored flame edges without enlarged dark underlays.",
+      "evidence": "level3-final-flame.jpg"
+    },
+    {
+      "problem": "Base sniper and double-barrel weapon draws hold one ready frame.",
+      "change": "Integrated the existing 13-frame PixelLab draw bank for each, with one root and scale; body height differs from firing by at most 1.1%.",
+      "evidence": "level4-front-draws-final.json; front-draw-roots.png"
+    },
+    {
+      "problem": "Prone body roll is labelled as roll-to-prone.",
+      "change": "HUD distinguishes PRONE ROLL from a standing roll that finishes prone."
+    }
+  ],
+  "browser_results": {
+    "level3": {
+      "prone": "Actual F toggle; held W crawls; Space body roll returns prone.",
+      "yuri": "All eight standing and prone firing frames in all eight directions completed.",
+      "ground_enemies": [
+        {
+          "kind": "heavy",
+          "shots": 32,
+          "frames": {
+            "idle": 4,
+            "draw_forward": 9,
+            "fire_forward": 9
+          },
+          "phases": {
+            "wait": 75,
+            "wind": 197,
+            "burst": 180,
+            "recover": 628
+          },
+          "wrongView": 0,
+          "seen": true,
+          "position": [
+            400,
+            2500
+          ]
+        },
+        {
+          "kind": "rifle",
+          "shots": 15,
+          "frames": {
+            "idle": 4,
+            "draw_forward": 9,
+            "fire_forward": 9
+          },
+          "phases": {
+            "wait": 75,
+            "wind": 225,
+            "burst": 225,
+            "recover": 555
+          },
+          "wrongView": 0,
+          "seen": true,
+          "position": [
+            400,
+            2500
+          ]
+        },
+        {
+          "kind": "shotgun",
+          "shots": 5,
+          "frames": {
+            "idle": 8,
+            "draw_forward": 9,
+            "fire_forward": 4,
+            "reload_pump": 13
+          },
+          "phases": {
+            "wait": 75,
+            "wind": 225,
+            "burst": 100,
+            "recover": 680
+          },
+          "wrongView": 0,
+          "seen": true,
+          "position": [
+            400,
+            2516.6523948100403
+          ]
+        },
+        {
+          "kind": "double",
+          "shots": 8,
+          "frames": {
+            "idle": 4,
+            "draw_forward": 9,
+            "fire_forward": 3,
+            "reload_break_action": 14
+          },
+          "phases": {
+            "wait": 75,
+            "wind": 193,
+            "burst": 64,
+            "recover": 748
+          },
+          "wrongView": 0,
+          "seen": true,
+          "position": [
+            400,
+            2500
+          ]
+        },
+        {
+          "kind": "rocket",
+          "shots": 4,
+          "frames": {
+            "idle": 4,
+            "draw_forward": 9,
+            "fire_forward": 17
+          },
+          "phases": {
+            "wait": 74,
+            "wind": 180,
+            "burst": 283,
+            "recover": 543
+          },
+          "wrongView": 0,
+          "seen": true,
+          "position": [
+            400,
+            2500
+          ]
+        },
+        {
+          "kind": "flame",
+          "shots": 28,
+          "frames": {
+            "idle": 7,
+            "draw_forward": 4,
+            "fire_forward": 9
+          },
+          "phases": {
+            "wait": 75,
+            "wind": 149,
+            "burst": 180,
+            "recover": 676
+          },
+          "wrongView": 0,
+          "seen": true,
+          "position": [
+            400,
+            2511.0891488017537
+          ]
+        },
+        {
+          "kind": "laser",
+          "shots": 4,
+          "frames": {
+            "idle": 4,
+            "draw_forward": 9,
+            "fire_forward": 9
+          },
+          "phases": {
+            "wait": 75,
+            "wind": 197,
+            "burst": 180,
+            "recover": 628
+          },
+          "wrongView": 0,
+          "seen": true,
+          "position": [
+            400,
+            2500
+          ]
+        },
+        {
+          "kind": "flyer",
+          "shots": 12,
+          "frames": {
+            "idle": 12,
+            "draw_forward": 11,
+            "fire_forward": 17
+          },
+          "phases": {
+            "wait": 74,
+            "wind": 180,
+            "burst": 344,
+            "recover": 482
+          },
+          "wrongView": 0,
+          "seen": true,
+          "position": [
+            458.91756245000136,
+            2509.7745000449404
+          ]
+        },
+        {
+          "kind": "bat",
+          "shots": 10,
+          "frames": {
+            "idle": 18,
+            "draw_forward": 8,
+            "fire_forward": 12
+          },
+          "phases": {
+            "wait": 75,
+            "wind": 140,
+            "burst": 285,
+            "recover": 580
+          },
+          "wrongView": 0,
+          "seen": true,
+          "position": [
+            459.67356043632435,
+            2510.0361621260213
+          ]
+        },
+        {
+          "kind": "roller",
+          "shots": 12,
+          "frames": {
+            "idle": 4,
+            "draw_forward": 4,
+            "fire_forward": 17
+          },
+          "phases": {
+            "wait": 75,
+            "wind": 115,
+            "burst": 346,
+            "recover": 544
+          },
+          "wrongView": 0,
+          "seen": true,
+          "position": [
+            400,
+            2500
+          ]
+        }
+      ],
+      "gosfer": "Natural shield-barrier phase observed; focused half-HP damage trigger then both wall breaches, four flamers and sustained flame attacks."
+    },
+    "level4": {
+      "route": "Mouse aiming and held J destroyed both turrets, exposed the core, breached all four wave doors and reached the reactor boss.",
+      "protection": "Player protection used for isolated objective/animation checks.",
+      "warnings": "Both gun and laser turrets rendered green/yellow/red FOV colours.",
+      "draws": {
+        "laser": {
+          "seen": 13,
+          "total": 13,
+          "complete": true
+        },
+        "double": {
+          "seen": 13,
+          "total": 13,
+          "complete": true
+        }
+      },
+      "minigun": "13 spin-up and 13 spin-down frame keys observed; fire/recoil changes across the full bank.",
+      "reloads": "Pump and break-action frames advanced."
+    },
+    "level5": {
+      "full_route": {
+        "build": "overdrive1017-playtest41-r1",
+        "samples": [
+          {
+            "state": "play",
+            "phase": "pursuit",
+            "time": 30.599999999999543,
+            "hp": 100,
+            "missiles": 8,
+            "kills": 8,
+            "deaths": 0,
+            "bulletHits": 0,
+            "missileHits": 0,
+            "intercepts": 0
+          },
+          {
+            "state": "play",
+            "phase": "pursuit",
+            "time": 60.59999999999784,
+            "hp": 100,
+            "missiles": 2,
+            "kills": 19,
+            "deaths": 0,
+            "bulletHits": 0,
+            "missileHits": 0,
+            "intercepts": 0
+          },
+          {
+            "state": "play",
+            "phase": "pursuit",
+            "time": 90.59999999999614,
+            "hp": 100,
+            "missiles": 2,
+            "kills": 35,
+            "deaths": 0,
+            "bulletHits": 0,
+            "missileHits": 0,
+            "intercepts": 0
+          },
+          {
+            "state": "play",
+            "phase": "pursuit",
+            "time": 120.59999999999444,
+            "hp": 100,
+            "missiles": 0,
+            "kills": 51,
+            "deaths": 0,
+            "bulletHits": 0,
+            "missileHits": 0,
+            "intercepts": 0
+          },
+          {
+            "state": "play",
+            "phase": "ram",
+            "time": 150.0000000000115,
+            "hp": 100,
+            "missiles": 0,
+            "kills": 72,
+            "deaths": 0,
+            "bulletHits": 0,
+            "missileHits": 0,
+            "intercepts": 0
+          },
+          {
+            "state": "clear",
+            "phase": "fade",
+            "time": 150.0000000000115,
+            "hp": 100,
+            "missiles": 0,
+            "kills": 72,
+            "deaths": 0,
+            "bulletHits": 0,
+            "missileHits": 0,
+            "intercepts": 0
+          }
+        ],
+        "log": [
+          {
+            "event": "boarding",
+            "at": 5.816666666666651
+          },
+          {
+            "event": "pursuit",
+            "at": 9.133333333333367
+          },
+          {
+            "event": "ram",
+            "at": 159.1333333333521
+          },
+          {
+            "event": "impact",
+            "at": 160.7166666666867
+          },
+          {
+            "event": "fade",
+            "at": 161.9666666666877
+          }
+        ],
+        "errors": [],
+        "healthChangesDuringRun": false,
+        "enemyStatChangesDuringRun": false
+      },
+      "incoming_fixture": {
+        "frames": {
+          "runner": 17,
+          "drone": 9
+        },
+        "released": {
+          "runner": 9,
+          "drone": 3
+        },
+        "hp": 76,
+        "bulletHits": 9,
+        "missileHits": 3,
+        "maxFlight": 0.7500000000000007,
+        "exactDamage": true
+      },
+      "fixture_scope": "Separate two-enemy firing fixture disables new spawns and Niel support; actual projectile collisions retain normal damage.",
+      "interception": "One live drone missile destroyed before impact.",
+      "presentation": "Strict side view, teal/white Mustang foreground, black/red truck background, all four crew, collected missiles, gate impact, fade, animated stats and rank badge."
+    },
+    "audio": {
+      "master": 0.2,
+      "activation": true,
+      "cues": [
+        {
+          "key": "gd_soldierRifle",
+          "voices": [
+            {
+              "ready": 4,
+              "time": 0.010496,
+              "volume": 0.030400000000000007,
+              "error": null
+            },
+            {
+              "ready": 4,
+              "time": 0.091777,
+              "volume": 0.030400000000000007,
+              "error": null
+            },
+            {
+              "ready": 4,
+              "time": 0.108367,
+              "volume": 0.030400000000000007,
+              "error": null
+            },
+            {
+              "ready": 4,
+              "time": 0.108367,
+              "volume": 0.030400000000000007,
+              "error": null
+            }
+          ]
+        },
+        {
+          "key": "enemyHeavyLaser",
+          "voices": [
+            {
+              "ready": 4,
+              "time": 0.458186,
+              "volume": 0.03440000000000001,
+              "error": null
+            }
+          ]
+        },
+        {
+          "key": "blip",
+          "voices": [
+            {
+              "ready": 4,
+              "time": 0.085011,
+              "volume": 0.018000000000000002,
+              "error": null
+            },
+            {
+              "ready": 4,
+              "time": 0.085011,
+              "volume": 0.018000000000000002,
+              "error": null
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "page_errors": [],
+    "console_errors": [],
+    "media_errors": []
+  },
+  "validation": {
+    "native_focused": {
+      "passed": 104,
+      "total": 104,
+      "exit": 0
+    },
+    "existing_combat": {
+      "passed": 54,
+      "total": 54,
+      "exit": 0
+    },
+    "required_suite": {
+      "final": "BUILD OK / 0 ERRORS",
+      "exit": 0,
+      "log": "_shots/playtest41-required-suite-final.log"
+    },
+    "syntax": "All four changed runtime modules and assets/game.js passed node --check.",
+    "early_native_runs": "Two earlier overlapping native processes ended exit 1 without assertion output; the sequential rerun completed 104/104, exit 0."
+  },
+  "scope_limits": [
+    "Level 3 and level 4 are focused/protected encounter checks, not full unprotected clears.",
+    "Level 5 uses frame-stepped input-only automation; the win does not establish human difficulty balance.",
+    "Master volume remains at the user setting of 20%."
+  ],
+  "owning_workflows": {
+    "muzzles": "expansion/topdown/_research/register_combat_sockets41.py; art/combat39/socket_review41.json",
+    "draws": "C:/Users/Mike/Documents/Codex/2026-10-15/fo/work/pixellab-integration/build_pixellab38.py --source outputs/bof-pixellab-rebuild --game <repo> --front-draw-review"
+  },
+  "hashes": {
+    "js/tactics36.js": "2c23bd7a59f585dc56fc5fca82523ec972a225568e584aedc7cbf661b5e70d41",
+    "js/night_run39.js": "070fc0d0dd489a278a412baaf120834403d823713485e2b88930f26b1ce07b27",
+    "js/pixellab38.js": "7f85eaa996c48ff3f8db212c86759edbbe2f1af2577e3969117637084dfe52e1",
+    "js/corner_hud26.js": "f832763ca04d1141a429693ba7f69cb40a741c45c19aac93b2e8763495f7e368",
+    "art/combat39/manifest.js": "a205e27847a45af641a03805d41c4b2e48b3243fb1f3e1cec4a501d662706f0d",
+    "art/pixellab38/manifest.js": "4b8906855c1e8aae59a100b3641cc7288c7f377a01b1726f4465a04fe92f2235",
+    "index.html": "52e39fca68362696ef80938cce2249e09ddb3fd95070fe6f04b34cdaf21e4332"
+  },
+  "evidence_directory": "_shots/playtest41",
+  "assets_game_js_changed": false,
+  "commit_or_push": false
+}

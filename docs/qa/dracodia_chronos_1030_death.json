@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "name": "Native copied-life defeat and final reform have no draw errors",
+      "passed": true
+    },
+    {
+      "name": "Final reform restores native core/left/right anatomy",
+      "passed": true
+    },
+    {
+      "name": "Reform does not refill boss or part HP",
+      "passed": true
+    },
+    {
+      "name": "Native final-death progression continues",
+      "passed": true
+    }
+  ],
+  "result": {
+    "trace": [],
+    "mode": "dr5Death",
+    "dead": false,
+    "form": 0,
+    "hp": 0,
+    "parts": [
+      {
+        "id": "core",
+        "hp": 0
+      },
+      {
+        "id": "left",
+        "hp": 0
+      },
+      {
+        "id": "right",
+        "hp": 0
+      }
+    ],
+    "events": [
+      {
+        "event": "reform-anatomy",
+        "clock": 2.6833333333333287,
+        "hp": 0,
+        "parts": [
+          "core",
+          "left",
+          "right"
+        ]
+      }
+    ]
+  },
+  "errors": []
+}

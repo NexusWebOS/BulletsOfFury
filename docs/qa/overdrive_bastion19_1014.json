@@ -1,0 +1,871 @@
+{
+  "build": "overdrive1014-bastion19-r1",
+  "art": {
+    "uniquePNG": 621,
+    "registeredKeys": 634,
+    "sequenceKeysIncludingAliases": 197,
+    "sourcePNG": 37,
+    "allEvenDimensions": true,
+    "allBinaryAlpha": true,
+    "nativeRenderer": {
+      "nativeFilesRendered": 621,
+      "errors": [],
+      "gosferActualRifleDefeat": true,
+      "scope": "Native Art.draw rendering of every new PNG plus protected actual rifle/animated Gosfer collision fixture. Armor protected only in isolated boss fixture."
+    }
+  },
+  "focused": {
+    "checks": [
+      {
+        "name": "Bastion19 art loads into current game",
+        "passed": true
+      },
+      {
+        "name": "rear door has an integrated core and corner sockets",
+        "passed": true
+      },
+      {
+        "name": "cover lowers Yuri behind foreground wall",
+        "passed": true
+      },
+      {
+        "name": "blindfire shoots from cover",
+        "passed": true
+      },
+      {
+        "name": "new cylindrical reactor has rotating and cracked/shattered banks",
+        "passed": true
+      },
+      {
+        "name": "containment destruction reveals authored Helios",
+        "passed": true
+      },
+      {
+        "name": "F toggles actual prone state",
+        "passed": true
+      },
+      {
+        "name": "WASD crawls while remaining prone",
+        "passed": true
+      },
+      {
+        "name": "F restores authored standing suit without a black silhouette",
+        "passed": true
+      },
+      {
+        "name": "grenade throw preserves north facing",
+        "passed": true
+      },
+      {
+        "name": "moving muzzle effect is attached to the actor socket",
+        "passed": true
+      },
+      {
+        "name": "Gosfer releases cover-breaker lasers after telegraph",
+        "passed": true
+      },
+      {
+        "name": "Gosfer cover has real damage states",
+        "passed": true
+      },
+      {
+        "name": "Gosfer wall breaks and removes collision",
+        "passed": true
+      },
+      {
+        "name": "no browser/page/asset errors",
+        "passed": true
+      }
+    ],
+    "passed": 15,
+    "failed": 0,
+    "errors": []
+  },
+  "m30": {
+    "build": "overdrive1014-bastion19-r1",
+    "checks": [
+      {
+        "name": "legacy generic preset migrates to receiver physical letters",
+        "passed": true
+      },
+      {
+        "name": "migrated receiver layout persists with explicit six-button style",
+        "passed": true
+      },
+      {
+        "name": "physical M30 A fires actual Level7 rifle projectiles",
+        "passed": true
+      },
+      {
+        "name": "physical M30 Y throws grenade without firing rifle",
+        "passed": true
+      },
+      {
+        "name": "physical M30 X toggles duck without firing",
+        "passed": true
+      },
+      {
+        "name": "physical Z plus D-pad free aims without moving Yuri",
+        "passed": true
+      },
+      {
+        "name": "physical M30 B plus left performs immediate side fire without foot movement",
+        "passed": true
+      },
+      {
+        "name": "releasing physical B restores the original Retina target",
+        "passed": true
+      },
+      {
+        "name": "physical Mode takes cover",
+        "passed": true
+      },
+      {
+        "name": "held physical A is latched through cutscene boundary",
+        "passed": true
+      },
+      {
+        "name": "physical A fires again after release",
+        "passed": true
+      },
+      {
+        "name": "resetting six-button controls retains receiver-correct A",
+        "passed": true
+      },
+      {
+        "name": "standard control scheme on the raw M30 still uses printed A to fire",
+        "passed": true
+      },
+      {
+        "name": "custom receiver bindings survive reconnect",
+        "passed": true
+      },
+      {
+        "name": "custom receiver bindings survive page reload",
+        "passed": true
+      },
+      {
+        "name": "unknown controller retains generic six-button preset",
+        "passed": true
+      },
+      {
+        "name": "browser-standardized M30 report avoids raw receiver remapping",
+        "passed": true
+      },
+      {
+        "name": "built-in raw receiver layout does not leak across a standardized mode change",
+        "passed": true
+      },
+      {
+        "name": "learned six-button profile records explicit style and custom ownership",
+        "passed": true
+      },
+      {
+        "name": "M30 Mode + X toggles on-foot prone",
+        "passed": true
+      },
+      {
+        "name": "M30 D-pad crawls while staying prone",
+        "passed": true
+      },
+      {
+        "name": "M30 Mode + X restores standing with the new colored pose",
+        "passed": true
+      },
+      {
+        "name": "zero browser or asset errors",
+        "passed": true
+      }
+    ],
+    "passed": 23,
+    "failed": 0,
+    "errors": [],
+    "hardware": "Windows confirms receiver VID_0CA3/PID_0024. Button presses here are synthetic, using the documented Windows HID mapping."
+  },
+  "normalMouse": {
+    "state": "clear",
+    "time": 139.01666666666944,
+    "wave": 8,
+    "hp": 5,
+    "deaths": 0,
+    "kills": 33,
+    "coverStops": 48,
+    "brokenWalls": 0,
+    "barrelKills": 15,
+    "damage": 1,
+    "pickupLog": [
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 7
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 7
+      }
+    ],
+    "gunShots": {
+      "rifle": 509,
+      "shotgun": 41,
+      "laser": 68,
+      "minigun": 332
+    },
+    "quickShots": 0,
+    "transitionLog": [
+      {
+        "wave": 1,
+        "phase": "blast"
+      },
+      {
+        "wave": 1,
+        "phase": "hop"
+      },
+      {
+        "wave": 1,
+        "phase": "walk"
+      },
+      {
+        "wave": 1,
+        "phase": "black"
+      },
+      {
+        "wave": 1,
+        "phase": "emerge"
+      },
+      {
+        "wave": 1,
+        "phase": "done"
+      },
+      {
+        "wave": 2,
+        "phase": "blast"
+      },
+      {
+        "wave": 2,
+        "phase": "hop"
+      },
+      {
+        "wave": 2,
+        "phase": "walk"
+      },
+      {
+        "wave": 2,
+        "phase": "black"
+      },
+      {
+        "wave": 2,
+        "phase": "emerge"
+      },
+      {
+        "wave": 2,
+        "phase": "done"
+      },
+      {
+        "wave": 3,
+        "phase": "blast"
+      },
+      {
+        "wave": 3,
+        "phase": "hop"
+      },
+      {
+        "wave": 3,
+        "phase": "walk"
+      },
+      {
+        "wave": 3,
+        "phase": "black"
+      },
+      {
+        "wave": 3,
+        "phase": "emerge"
+      },
+      {
+        "wave": 3,
+        "phase": "done"
+      },
+      {
+        "wave": 4,
+        "phase": "blast"
+      },
+      {
+        "wave": 4,
+        "phase": "hop"
+      },
+      {
+        "wave": 4,
+        "phase": "walk"
+      },
+      {
+        "wave": 4,
+        "phase": "black"
+      },
+      {
+        "wave": 4,
+        "phase": "emerge"
+      },
+      {
+        "wave": 4,
+        "phase": "done"
+      },
+      {
+        "wave": 5,
+        "phase": "blast"
+      },
+      {
+        "wave": 5,
+        "phase": "hop"
+      },
+      {
+        "wave": 5,
+        "phase": "walk"
+      },
+      {
+        "wave": 5,
+        "phase": "black"
+      },
+      {
+        "wave": 5,
+        "phase": "emerge"
+      },
+      {
+        "wave": 5,
+        "phase": "done"
+      },
+      {
+        "wave": 6,
+        "phase": "blast"
+      },
+      {
+        "wave": 6,
+        "phase": "hop"
+      },
+      {
+        "wave": 6,
+        "phase": "walk"
+      },
+      {
+        "wave": 6,
+        "phase": "black"
+      },
+      {
+        "wave": 6,
+        "phase": "emerge"
+      },
+      {
+        "wave": 6,
+        "phase": "done"
+      },
+      {
+        "wave": 7,
+        "phase": "blast"
+      },
+      {
+        "wave": 7,
+        "phase": "hop"
+      },
+      {
+        "wave": 7,
+        "phase": "walk"
+      },
+      {
+        "wave": 7,
+        "phase": "black"
+      },
+      {
+        "wave": 7,
+        "phase": "emerge"
+      },
+      {
+        "wave": 7,
+        "phase": "done"
+      }
+    ],
+    "coreLog": [
+      {
+        "room": 1,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 2,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 3,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 4,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 5,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 6,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 7,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 8,
+        "x": 320,
+        "y": 166,
+        "master": true
+      }
+    ],
+    "boss": {
+      "form": "helios",
+      "hp": 0
+    },
+    "bot": {
+      "last": {
+        "A": false,
+        "cover": false,
+        "left": false,
+        "right": false
+      },
+      "decisions": 696,
+      "cover": 80,
+      "move": 3,
+      "fire": 511,
+      "blindfire": 80,
+      "grenadeWave": 7,
+      "stages": [
+        "0:advance:",
+        "1:fight:",
+        "1:breach:",
+        "2:fight:",
+        "2:breach:",
+        "3:fight:",
+        "3:breach:",
+        "4:fight:",
+        "4:breach:",
+        "5:fight:",
+        "5:breach:",
+        "6:fight:",
+        "6:breach:",
+        "7:fight:",
+        "7:breach:",
+        "8:core:core",
+        "8:core:helios",
+        "8:victory:helios"
+      ],
+      "target": {
+        "x": 190,
+        "y": 214.52950703516223
+      },
+      "controller": false,
+      "minHP": 5
+    },
+    "errors": [],
+    "scope": "Normal armor input-only complete stage; decisions 200ms, pointer aim. No actor-health writes or kill APIs."
+  },
+  "normalDpad": {
+    "state": "clear",
+    "time": 145.25000000000773,
+    "wave": 8,
+    "hp": 5,
+    "deaths": 0,
+    "kills": 33,
+    "coverStops": 59,
+    "brokenWalls": 0,
+    "barrelKills": 11,
+    "damage": 1,
+    "pickupLog": [
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 7
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 7
+      }
+    ],
+    "gunShots": {
+      "rifle": 550,
+      "shotgun": 40,
+      "laser": 68,
+      "minigun": 333
+    },
+    "quickShots": 0,
+    "transitionLog": [
+      {
+        "wave": 1,
+        "phase": "blast"
+      },
+      {
+        "wave": 1,
+        "phase": "hop"
+      },
+      {
+        "wave": 1,
+        "phase": "walk"
+      },
+      {
+        "wave": 1,
+        "phase": "black"
+      },
+      {
+        "wave": 1,
+        "phase": "emerge"
+      },
+      {
+        "wave": 1,
+        "phase": "done"
+      },
+      {
+        "wave": 2,
+        "phase": "blast"
+      },
+      {
+        "wave": 2,
+        "phase": "hop"
+      },
+      {
+        "wave": 2,
+        "phase": "walk"
+      },
+      {
+        "wave": 2,
+        "phase": "black"
+      },
+      {
+        "wave": 2,
+        "phase": "emerge"
+      },
+      {
+        "wave": 2,
+        "phase": "done"
+      },
+      {
+        "wave": 3,
+        "phase": "blast"
+      },
+      {
+        "wave": 3,
+        "phase": "hop"
+      },
+      {
+        "wave": 3,
+        "phase": "walk"
+      },
+      {
+        "wave": 3,
+        "phase": "black"
+      },
+      {
+        "wave": 3,
+        "phase": "emerge"
+      },
+      {
+        "wave": 3,
+        "phase": "done"
+      },
+      {
+        "wave": 4,
+        "phase": "blast"
+      },
+      {
+        "wave": 4,
+        "phase": "hop"
+      },
+      {
+        "wave": 4,
+        "phase": "walk"
+      },
+      {
+        "wave": 4,
+        "phase": "black"
+      },
+      {
+        "wave": 4,
+        "phase": "emerge"
+      },
+      {
+        "wave": 4,
+        "phase": "done"
+      },
+      {
+        "wave": 5,
+        "phase": "blast"
+      },
+      {
+        "wave": 5,
+        "phase": "hop"
+      },
+      {
+        "wave": 5,
+        "phase": "walk"
+      },
+      {
+        "wave": 5,
+        "phase": "black"
+      },
+      {
+        "wave": 5,
+        "phase": "emerge"
+      },
+      {
+        "wave": 5,
+        "phase": "done"
+      },
+      {
+        "wave": 6,
+        "phase": "blast"
+      },
+      {
+        "wave": 6,
+        "phase": "hop"
+      },
+      {
+        "wave": 6,
+        "phase": "walk"
+      },
+      {
+        "wave": 6,
+        "phase": "black"
+      },
+      {
+        "wave": 6,
+        "phase": "emerge"
+      },
+      {
+        "wave": 6,
+        "phase": "done"
+      },
+      {
+        "wave": 7,
+        "phase": "blast"
+      },
+      {
+        "wave": 7,
+        "phase": "hop"
+      },
+      {
+        "wave": 7,
+        "phase": "walk"
+      },
+      {
+        "wave": 7,
+        "phase": "black"
+      },
+      {
+        "wave": 7,
+        "phase": "emerge"
+      },
+      {
+        "wave": 7,
+        "phase": "done"
+      }
+    ],
+    "coreLog": [
+      {
+        "room": 1,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 2,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 3,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 4,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 5,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 6,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 7,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 8,
+        "x": 320,
+        "y": 166,
+        "master": true
+      }
+    ],
+    "boss": {
+      "form": "helios",
+      "hp": 0
+    },
+    "bot": {
+      "last": {
+        "A": false,
+        "cover": false,
+        "left": false,
+        "right": false
+      },
+      "decisions": 727,
+      "cover": 100,
+      "move": 3,
+      "fire": 540,
+      "blindfire": 100,
+      "grenadeWave": 7,
+      "stages": [
+        "0:advance:",
+        "1:fight:",
+        "1:breach:",
+        "2:fight:",
+        "2:breach:",
+        "3:fight:",
+        "3:breach:",
+        "4:fight:",
+        "4:breach:",
+        "5:fight:",
+        "5:breach:",
+        "6:fight:",
+        "6:breach:",
+        "7:fight:",
+        "7:breach:",
+        "8:core:core",
+        "8:core:helios",
+        "8:victory:helios"
+      ],
+      "target": {
+        "x": 189.5,
+        "y": 213.52950703516223
+      },
+      "controller": true,
+      "minHP": 5
+    },
+    "errors": [],
+    "scope": "Normal armor input-only complete stage; decisions 200ms, rate-limited D-pad Retina aim. No actor-health writes or kill APIs."
+  },
+  "baseRegression": {
+    "nodeCheck": true,
+    "suiteExit": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log": "_shots/bastion19/base_regression.txt"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "source_size": [
+    688,
+    384
+  ],
+  "changed_bbox": [
+    70,
+    116,
+    265,
+    348
+  ],
+  "changed_pixels": 22330,
+  "right_side_and_hq_motion_patch_pixel_identical": true,
+  "sha256": "9fbc6d1f6fe9b42cd0f4fa7408e482e28e82e450e65282ef07b79318d55c5638",
+  "cole_head_candidate": 0,
+  "head_scale": 0.625,
+  "head_placement": [
+    106,
+    116
+  ],
+  "jobs": [
+    "a2a3270d-6327-446a-8cb9-fdc82e32cc46",
+    "aa9111df-b328-4125-a510-575777e9e5d5",
+    "fb303c66-9460-464b-89a5-4b0af7243a41",
+    "3898463d-a4c9-4412-adac-2f78cdc37c72"
+  ]
+}

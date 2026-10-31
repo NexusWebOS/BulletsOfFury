@@ -1,0 +1,253 @@
+{
+  "checks": [
+    {
+      "name": "Stage6 before clear earns10, with2 spent and8 available",
+      "passed": true,
+      "data": {
+        "earned": 10,
+        "left": 8,
+        "fee": 300,
+        "balance": 5000,
+        "hasForms": true
+      }
+    },
+    {
+      "name": "Stage6 clear earns12; duplicate clear awards nothing",
+      "passed": true,
+      "data": {
+        "a": 10,
+        "e": 12,
+        "after": 10
+      }
+    },
+    {
+      "name": "Stage7 clear earns14",
+      "passed": true,
+      "data": {
+        "earned": 14,
+        "left": 12
+      }
+    },
+    {
+      "name": "Fullreset costs300FP and restores10 points/basic forms, preserves progress and weapons",
+      "passed": true,
+      "data": {
+        "r": "ok",
+        "spent": 300,
+        "points": 10,
+        "empty": true,
+        "vars": 0,
+        "infusion": null,
+        "score": true,
+        "unlocks": true,
+        "elements": true
+      }
+    },
+    {
+      "name": "No repeat charge on already basic build",
+      "passed": true,
+      "data": {
+        "r": "bare",
+        "same": true
+      }
+    },
+    {
+      "name": "Repeated Forge visits do not refill or spend points",
+      "passed": true,
+      "data": {
+        "before": 10,
+        "after": 10
+      }
+    },
+    {
+      "name": "Campaign and profile save retain paid reset; NG+ recipes do not reappear",
+      "passed": true,
+      "data": {
+        "empty": true,
+        "points": 10,
+        "earned": 10,
+        "base": true,
+        "profile": true,
+        "paid": true
+      }
+    },
+    {
+      "name": "InsufficientFP cannot charge or reset",
+      "passed": true,
+      "data": {
+        "r": "poor",
+        "same": true
+      }
+    },
+    {
+      "name": "Failed profile save rolls back fee, forms and points",
+      "passed": true,
+      "data": {
+        "r": "save",
+        "same": true,
+        "balance": true
+      }
+    },
+    {
+      "name": "Failed campaign save rolls back transaction",
+      "passed": true,
+      "data": {
+        "r": "save",
+        "same": true
+      }
+    },
+    {
+      "name": "Merely choosing Stage6 cannot award10 points",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Legacy Stage6 save migrates to10 earned",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "UP flies actual map ship to new Forge landmark",
+      "passed": true,
+      "data": {
+        "focus": true,
+        "ship": 8.897402405238227e-13,
+        "hq": {
+          "x": 143.47150259066586,
+          "y": 195.68393782383004
+        },
+        "forge": {
+          "x": 336.5284974093321,
+          "y": 171.84974093263668
+        }
+      }
+    },
+    {
+      "name": "FIRE enters generated map service",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Re-Spec row opens generated fullreset menu",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Re-Spec opens with safe Cancel selected",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "B cancels reset without a fee or changing forms",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "THE FORGE opens existing Forge",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Charge shortcut opens Re-Spec from Forge",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Forge Re-Spec B cancels without leaving Forge",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All Re-Spec labels fit at1100x900",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All Re-Spec labels fit at390x844",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All Re-Spec labels fit at1920x1080",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Generated PAY button performs one confirmed reset",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Repeated PAY click does not charge twice",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Generated CANCEL closes confirmation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Basic build can choose a new element for one point",
+      "passed": true,
+      "data": {
+        "r": "ok",
+        "before": 10,
+        "after": 9,
+        "elem": "ice"
+      }
+    },
+    {
+      "name": "Reassigned form and9 remaining points survive load; resumeStage6",
+      "passed": true,
+      "data": {
+        "left": 9,
+        "elem": "ice",
+        "stage": 6
+      }
+    },
+    {
+      "name": "Loadout charge shortcut also opens fullreset menu",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Loadout modal B returns to Loadout",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Start opens Claude menu with authored button states",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Start menu Forge/Loadout enters the same service with9 points",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Controller A enters Re-Spec",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Controller B cancels without leaving workshop",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Saving in map service keepsStage6 destination",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page or console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "passed": 36,
+  "failed": 0,
+  "errors": []
+}

@@ -1,0 +1,102 @@
+{
+  "voss": {
+    "book": [
+      "turbo",
+      "fusion",
+      "turbo",
+      "turbo",
+      "fusion",
+      "turbo"
+    ],
+    "moves": {
+      "turbo": "turbo",
+      "fusion": "rr26dash",
+      "rookhook": "rookhook",
+      "slug": "slug",
+      "ram": "rr26dash",
+      "rockets": "rockets",
+      "helix": "helix",
+      "cloak": "cloak"
+    }
+  },
+  "nyx": {
+    "book": [
+      "cloak",
+      "cloak",
+      "cloak",
+      "cloak",
+      "cloak",
+      "cloak"
+    ],
+    "moves": {
+      "turbo": "turbo",
+      "fusion": "rr26cannon",
+      "rookhook": "rookhook",
+      "slug": "slug",
+      "ram": "ram",
+      "rockets": "rockets",
+      "helix": "helix",
+      "cloak": "shadowcast"
+    }
+  },
+  "rook": {
+    "book": [
+      "slug",
+      "rookhook",
+      "slug",
+      "ram",
+      "rookhook",
+      "slug"
+    ],
+    "moves": {
+      "turbo": "rr26chain",
+      "fusion": "rr26chain",
+      "rookhook": "rr26chain",
+      "slug": "rr26chain",
+      "ram": "rr26chain",
+      "rockets": "rr26chain",
+      "helix": "rr26chain",
+      "cloak": "rr26chain"
+    }
+  },
+  "kaia": {
+    "book": [
+      "rockets",
+      "rockets",
+      "rockets",
+      "rockets",
+      "rockets",
+      "rockets"
+    ],
+    "moves": {
+      "turbo": "turbo",
+      "fusion": "rr26cannon",
+      "rookhook": "rookhook",
+      "slug": "slug",
+      "ram": "ram",
+      "rockets": "rr26roller",
+      "helix": "helix",
+      "cloak": "cloak"
+    }
+  },
+  "jace": {
+    "book": [
+      "helix",
+      "helix",
+      "ram",
+      "helix",
+      "helix",
+      "ram"
+    ],
+    "moves": {
+      "turbo": "turbo",
+      "fusion": "rr26cannon",
+      "rookhook": "rookhook",
+      "slug": "slug",
+      "ram": "ram",
+      "rockets": "rockets",
+      "helix": "swervehelix",
+      "cloak": "cloak"
+    }
+  }
+}

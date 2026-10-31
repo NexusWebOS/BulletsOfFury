@@ -71,7 +71,7 @@ function rg4OrdnanceTick(b,G,dt){
  for(const o of G.ord){if(o.dead)continue;o.t+=dt;o.flash=Math.max(0,o.flash-dt);if(o.owner.dead){o.dead=true;continue;}
   if(o.kind==='helper'){const a=G.age/.44;o.x=o.owner.x+Math.cos(a)*57;o.y=o.owner.y+Math.sin(a)*43;o.cd-=dt;
    if(o.cd<=0){o.cd=diffKey==='easy'?2.4:1.8;const a=rg4Aim(o);for(const off of [-.10,.10]){const z=eShootT(o.x,o.y,a+off,3.3,'s6orb',{w:7,h:22,silent:true});z._rg4Helper=true;z._noArsenal=true;}av3Sound('laser_release',.6,.3);rg4Log(G,'helperFire');}
-  }else{o.x+=o.vx*dt;o.y+=o.vy*dt;if((o.x<camLeftX()+o.r&&o.vx<0)||(o.x>camRightX()-o.r&&o.vx>0)){o.vx=-o.vx;o.bounces++;rg4FX(G,0,o.x,o.y,70,.35);}
+  }else{if(o._kr48)kr48Move(o,dt);else{o.x+=o.vx*dt;o.y+=o.vy*dt;if((o.x<camLeftX()+o.r&&o.vx<0)||(o.x>camRightX()-o.r&&o.vx>0)){o.vx=-o.vx;o.bounces++;rg4FX(G,0,o.x,o.y,70,.35);}}
    if(!o.split&&o.r>20&&o.t>.95){o.split=true;const a=Math.atan2(o.vy,o.vx);for(const off of [-.6,.6])G.ord.push({kind:'roller',owner:o.owner,x:o.x,y:o.y,vx:Math.cos(a+off)*155,vy:Math.sin(a+off)*155,r:11,hp:3,max:3,t:0,life:2.8,bounces:0,split:true,flash:0});rg4Log(G,'rollerSplit');}
    if(o.t>o.life||o.y>VH+60||o.y<PLAY.y-85)o.dead=true;
   }
@@ -145,7 +145,8 @@ rebelSquadTick=function(b,dt){const R=b._rebels;if(!R.frIntro?.done)return RG4_B
   A.cd-=dt;q.evadeT=Math.max(0,(q.evadeT||0)-dt);q.evadeCd=Math.max(0,(q.evadeCd||0)-dt);
   const duel=R.frStageX&&R.ships.filter(v=>!v.dead).length===1;
   const slot=duel?0:q.i-2,cx=camLeftX()+viewW()/2,span=Math.min(82,(viewW()-112)/4),speed=A.turbo?2.0:1.0;
-  const tx=clamp(cx+slot*span+Math.sin(G.age*(.8*speed)+q.i)*20,camLeftX()+54,camRightX()-54),ty=PLAY.y+83+(q.i%2)*46+Math.sin(G.age*1.4*speed+q.i)*14;
+  const home=typeof rr65Home==='function'&&rr45Scope(b)?rr65Home(q,G.age):null;
+  const tx=home?.x??clamp(cx+slot*span+Math.sin(G.age*(.8*speed)+q.i)*20,camLeftX()+54,camRightX()-54),ty=home?.y??(PLAY.y+83+(q.i%2)*46+Math.sin(G.age*1.4*speed+q.i)*14);
   if(!A.act||A.act.kind==='ghost'||A.act.kind==='stealth'){
    const threat=pBullets.find(p=>!p.dead&&p.y>q.y&&p.y<q.y+150&&Math.abs(p.x-q.x)<25);
    if(threat&&q.evadeCd<=0){q.evadeCd=2.5;q.evadeT=.38;q.evadeX=clamp(q.x+(q.x<threat.x?-1:1)*62,camLeftX()+54,camRightX()-54);q.frSomersault=false;}

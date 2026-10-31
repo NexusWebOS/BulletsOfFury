@@ -1,0 +1,899 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "Airshow intro camera matrix stays fixed under repeated large impacts",
+        "passed": true,
+        "data": {
+          "base": [
+            1,
+            0,
+            0,
+            1,
+            -100,
+            0
+          ],
+          "samples": [
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ]
+          ],
+          "saved": 18,
+          "hp": 8600,
+          "before": 8600,
+          "n": 25,
+          "frames": 25,
+          "scope": true,
+          "cam": 100,
+          "world": 680,
+          "view": 480
+        }
+      },
+      {
+        "name": "Airshow intro render does not consume HP or impact simulation state",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Protected dialogue camera matrix stays fixed under repeated large impacts",
+        "passed": true,
+        "data": {
+          "base": [
+            1,
+            0,
+            0,
+            1,
+            -100,
+            0
+          ],
+          "samples": [
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ]
+          ],
+          "saved": 18,
+          "hp": 7740,
+          "before": 7740,
+          "n": 25,
+          "frames": 950,
+          "scope": true,
+          "cam": 100,
+          "world": 680,
+          "view": 480
+        }
+      },
+      {
+        "name": "Protected dialogue render does not consume HP or impact simulation state",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Combat camera matrix stays fixed under repeated large impacts",
+        "passed": true,
+        "data": {
+          "base": [
+            1,
+            0,
+            0,
+            1,
+            -100,
+            0
+          ],
+          "samples": [
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ]
+          ],
+          "saved": 18,
+          "hp": 7094.600000000004,
+          "before": 7094.600000000004,
+          "n": 25,
+          "frames": 1065,
+          "scope": true,
+          "cam": 100,
+          "world": 680,
+          "view": 480
+        }
+      },
+      {
+        "name": "Combat render does not consume HP or impact simulation state",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Ship hit feedback still runs while the field is steady",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Hit flash expires normally",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Horizontal tracking is speed-limited rather than jumping to a new target",
+        "passed": true,
+        "data": {
+          "delta": 3,
+          "limit": 3
+        }
+      },
+      {
+        "name": "Gentle tracking still reaches both complete arena edges",
+        "passed": true,
+        "data": {
+          "left": 0,
+          "right": 200,
+          "max": 200
+        }
+      },
+      {
+        "name": "Rough Riders play the actual standard Stage6 boss file",
+        "passed": true,
+        "data": {
+          "key": "roughriders6",
+          "path": "http://127.0.0.1:57291/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "loop": true,
+          "duration": 69.528005,
+          "stagexPaused": true,
+          "clock": 1.47094
+        }
+      },
+      {
+        "name": "Decoded live boss music contains an audible waveform",
+        "passed": true,
+        "data": [
+          0.17243032397107494,
+          0.17247133159056768,
+          0.17729418583576304,
+          0.22854369342844363
+        ]
+      },
+      {
+        "name": "Legacy StageX requests stay on the boss track without restarting it",
+        "passed": true,
+        "data": {
+          "same": true,
+          "time": 2.717787,
+          "before": 2.457963,
+          "path": "http://127.0.0.1:57291/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "paused": false,
+          "stagexPaused": true,
+          "scope": true,
+          "key": "roughriders6"
+        }
+      },
+      {
+        "name": "Interrupted transport resumes the same boss track and position",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage X retains its normal camera effects",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Real StageX routing remains separate",
+        "passed": true,
+        "data": {
+          "path": "http://127.0.0.1:57291/assets/game/levels/stage_x/audio/music/ghostrider_1028.mp3",
+          "oldPaused": true,
+          "expected": "assets/game/levels/stage_x/audio/music/ghostrider_1028.mp3",
+          "scope": false
+        }
+      },
+      {
+        "name": "Harrier fight keeps its independent camera behavior",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native render or game errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "film": [
+    {
+      "name": "Native Furious full squad fight reaches actual defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Only the confirmed Stage6 boss music plays throughout the active fight",
+      "passed": true,
+      "data": [
+        {
+          "path": "http://127.0.0.1:53206/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "key": "roughriders6",
+          "clock": 0,
+          "paused": false,
+          "stagexPaused": true
+        },
+        {
+          "path": "http://127.0.0.1:53206/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "key": "roughriders6",
+          "clock": 0.354104,
+          "paused": false,
+          "stagexPaused": true
+        }
+      ]
+    },
+    {
+      "name": "Native root transform has no impact displacement",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film retains five real opponents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, audio, HTTP or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recorded music and game sound are audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -18.8,
+        "peakDb": -2.9
+      }
+    },
+    {
+      "name": "stage6-rough-riders uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-kaia uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-nyx uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes live audio and moving video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No player errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 150.12,
+  "combat": 53.793,
+  "preview": "http://127.0.0.1:51046/?riders=boss6-steady#clip=stage6-rough-riders",
+  "sha256": "1c47c8cd3a2bd777a588182d65e5f457623eb60eefb4abc79dfb6f9e31d0edb2",
+  "audio": {
+    "meanDb": -18.8,
+    "peakDb": -2.9
+  },
+  "fps": 58.53232577665827,
+  "cards": [
+    "stage6-rough-riders",
+    "rough-riders-formations",
+    "rough-riders-team-locks",
+    "rough-riders-evasion",
+    "rough-riders-kaia",
+    "rough-riders-jace",
+    "rough-riders-nyx",
+    "rough-riders-rook",
+    "rough-riders-voss"
+  ],
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false,
+  "musicSource": "assets/game/levels/stage_06/audio/music/Level6b.mp3",
+  "musicSha256": "56cb9d37073470c7bb45f024fbeaf787ce51b22252963f65f123a1736d1790a2",
+  "sourceSha256": "e26b99c3a55e8d42954962dd6f7745119aab28ecbf6a716ea65d14720338f410"
+}

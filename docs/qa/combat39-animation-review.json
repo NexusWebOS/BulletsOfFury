@@ -1,0 +1,1517 @@
+{
+  "method": "Fixed-root overlays of authored current frame and +/-1,+/-2 neighbors. No frame fitting or rescaling.",
+  "banks": [
+    {
+      "bank": "yuri_topdown/crawl/east",
+      "frames": 17,
+      "canvas": [
+        208,
+        160
+      ],
+      "root": [
+        104,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/crawl/north",
+      "frames": 17,
+      "canvas": [
+        160,
+        172
+      ],
+      "root": [
+        80,
+        142
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/crawl/north-east",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/crawl/north-west",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/crawl/south",
+      "frames": 17,
+      "canvas": [
+        160,
+        248
+      ],
+      "root": [
+        80,
+        180
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/crawl/south-east",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/crawl/south-west",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/crawl/west",
+      "frames": 17,
+      "canvas": [
+        184,
+        164
+      ],
+      "root": [
+        92,
+        138
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/fire/east",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/fire/north",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/fire/north-east",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/fire/north-west",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/fire/south",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/fire/south-east",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/fire/south-west",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/fire/west",
+      "frames": 8,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/reload/east",
+      "frames": 13,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/reload/north",
+      "frames": 13,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/reload/north-east",
+      "frames": 13,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/reload/north-west",
+      "frames": 13,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/reload/south",
+      "frames": 13,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/reload/south-east",
+      "frames": 13,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/reload/south-west",
+      "frames": 13,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/reload/west",
+      "frames": 13,
+      "canvas": [
+        240,
+        192
+      ],
+      "root": [
+        120,
+        146
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "gosfer_topdown/fire/east",
+      "frames": 14,
+      "canvas": [
+        180,
+        180
+      ],
+      "root": [
+        90,
+        160
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "gosfer_topdown/fire/north",
+      "frames": 9,
+      "canvas": [
+        160,
+        204
+      ],
+      "root": [
+        80,
+        172
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "bat_drone_topdown/fire/east",
+      "frames": 12,
+      "canvas": [
+        128,
+        112
+      ],
+      "root": [
+        64,
+        60
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "bat_drone_topdown/fire/north",
+      "frames": 12,
+      "canvas": [
+        128,
+        112
+      ],
+      "root": [
+        64,
+        60
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "bat_drone_topdown/fire/north-east",
+      "frames": 12,
+      "canvas": [
+        128,
+        112
+      ],
+      "root": [
+        64,
+        60
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "bat_drone_topdown/fire/south",
+      "frames": 12,
+      "canvas": [
+        128,
+        112
+      ],
+      "root": [
+        64,
+        60
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "bat_drone_topdown/fire/south-east",
+      "frames": 12,
+      "canvas": [
+        128,
+        112
+      ],
+      "root": [
+        64,
+        60
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "bat_drone_topdown/fire/west",
+      "frames": 12,
+      "canvas": [
+        128,
+        112
+      ],
+      "root": [
+        64,
+        60
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "bat_drone_topdown/fire/north-west",
+      "frames": 12,
+      "canvas": [
+        128,
+        112
+      ],
+      "root": [
+        64,
+        60
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "bat_drone_topdown/fire/south-west",
+      "frames": 12,
+      "canvas": [
+        128,
+        112
+      ],
+      "root": [
+        64,
+        60
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "machine_gunner_topdown/fire/east",
+      "frames": 9,
+      "canvas": [
+        80,
+        80
+      ],
+      "root": [
+        40,
+        66
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "machine_gunner_topdown/fire/south",
+      "frames": 9,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "machine_gunner_topdown/fire/west",
+      "frames": 9,
+      "canvas": [
+        80,
+        80
+      ],
+      "root": [
+        40,
+        66
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "machine_gunner_topdown/fire/north",
+      "frames": 9,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "minigunner_topdown/fire/west",
+      "frames": 9,
+      "canvas": [
+        80,
+        80
+      ],
+      "root": [
+        40,
+        66
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "minigunner_topdown/fire/east",
+      "frames": 9,
+      "canvas": [
+        80,
+        80
+      ],
+      "root": [
+        40,
+        66
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "minigunner_topdown/fire/south",
+      "frames": 9,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "minigunner_topdown/fire/north",
+      "frames": 9,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "sniper_topdown/fire/east",
+      "frames": 9,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "sniper_topdown/fire/west",
+      "frames": 9,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "sniper_topdown/fire/north",
+      "frames": 9,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "sniper_topdown/fire/south",
+      "frames": 9,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "rocket_launcher_topdown/fire/east",
+      "frames": 17,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "rocket_launcher_topdown/fire/west",
+      "frames": 17,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "rocket_launcher_topdown/fire/south",
+      "frames": 17,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "rocket_launcher_topdown/fire/north",
+      "frames": 9,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "shotgunner_topdown/fire/east",
+      "frames": 4,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "shotgunner_topdown/reload/east",
+      "frames": 13,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "shotgunner_topdown/fire/north",
+      "frames": 9,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "shotgunner_topdown/reload/north",
+      "frames": 17,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "shotgunner_topdown/fire/south",
+      "frames": 4,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "shotgunner_topdown/reload/south",
+      "frames": 13,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "shotgunner_topdown/fire/west",
+      "frames": 4,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "shotgunner_topdown/reload/west",
+      "frames": 13,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "double_barrel_topdown/fire/north",
+      "frames": 9,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "double_barrel_topdown/reload/north",
+      "frames": 17,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "double_barrel_topdown/fire/east",
+      "frames": 3,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "double_barrel_topdown/reload/east",
+      "frames": 14,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "double_barrel_topdown/fire/south",
+      "frames": 3,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "double_barrel_topdown/reload/south",
+      "frames": 14,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "double_barrel_topdown/fire/west",
+      "frames": 3,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "double_barrel_topdown/reload/west",
+      "frames": 14,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "flying_alien_topdown/fire/east",
+      "frames": 17,
+      "canvas": [
+        84,
+        84
+      ],
+      "root": [
+        42,
+        68
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "flying_alien_topdown/fire/west",
+      "frames": 17,
+      "canvas": [
+        84,
+        84
+      ],
+      "root": [
+        42,
+        68
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "flying_alien_topdown/fire/north",
+      "frames": 9,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "flying_alien_topdown/fire/south",
+      "frames": 17,
+      "canvas": [
+        76,
+        76
+      ],
+      "root": [
+        38,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "roller_alien_topdown/fire/west",
+      "frames": 17,
+      "canvas": [
+        84,
+        84
+      ],
+      "root": [
+        42,
+        68
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "roller_alien_topdown/fire/south",
+      "frames": 17,
+      "canvas": [
+        84,
+        84
+      ],
+      "root": [
+        42,
+        68
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "roller_alien_topdown/fire/north",
+      "frames": 9,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "roller_alien_topdown/fire/east",
+      "frames": 17,
+      "canvas": [
+        84,
+        84
+      ],
+      "root": [
+        42,
+        68
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "gosfer_topdown/fire/south",
+      "frames": 17,
+      "canvas": [
+        168,
+        168
+      ],
+      "root": [
+        84,
+        154
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "gosfer_topdown/fire/west",
+      "frames": 14,
+      "canvas": [
+        180,
+        180
+      ],
+      "root": [
+        90,
+        160
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/prone_roll/south-east",
+      "frames": 17,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/prone_roll/east",
+      "frames": 17,
+      "canvas": [
+        164,
+        160
+      ],
+      "root": [
+        82,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/prone_roll/south",
+      "frames": 17,
+      "canvas": [
+        160,
+        200
+      ],
+      "root": [
+        80,
+        156
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/prone_roll/south-west",
+      "frames": 17,
+      "canvas": [
+        168,
+        160
+      ],
+      "root": [
+        84,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/prone_roll/north",
+      "frames": 17,
+      "canvas": [
+        160,
+        168
+      ],
+      "root": [
+        80,
+        140
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/prone_roll/north-west",
+      "frames": 17,
+      "canvas": [
+        164,
+        176
+      ],
+      "root": [
+        82,
+        144
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/prone_roll/north-east",
+      "frames": 17,
+      "canvas": [
+        160,
+        196
+      ],
+      "root": [
+        80,
+        154
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_topdown/prone_roll/west",
+      "frames": 17,
+      "canvas": [
+        164,
+        160
+      ],
+      "root": [
+        82,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "flamethrower_topdown/fire/north",
+      "frames": 9,
+      "canvas": [
+        80,
+        96
+      ],
+      "root": [
+        40,
+        74
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_base/prone_roll/north",
+      "frames": 17,
+      "canvas": [
+        160,
+        168
+      ],
+      "root": [
+        80,
+        140
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "hotwire/board/east",
+      "frames": 13,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80.0,
+        136.0
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "hotwire/run/east",
+      "frames": 8,
+      "canvas": [
+        128,
+        128
+      ],
+      "root": [
+        64.0,
+        120.0
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "phoenix/board/east",
+      "frames": 13,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80.0,
+        136.0
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "phoenix/run/east",
+      "frames": 8,
+      "canvas": [
+        128,
+        128
+      ],
+      "root": [
+        64.0,
+        120.0
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "neil/run/east",
+      "frames": 8,
+      "canvas": [
+        128,
+        128
+      ],
+      "root": [
+        64.0,
+        120.0
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "neil/board/east",
+      "frames": 13,
+      "canvas": [
+        168,
+        168
+      ],
+      "root": [
+        84.0,
+        140.0
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "arsenal_runner/run/west",
+      "frames": 12,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80.0,
+        136.0
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "arsenal_runner/fire/west",
+      "frames": 17,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80.0,
+        136.0
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "arsenal_runner/fire/east",
+      "frames": 17,
+      "canvas": [
+        156,
+        156
+      ],
+      "root": [
+        78.0,
+        134.0
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_turret/fire/east",
+      "frames": 9,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_turret/fire/west",
+      "frames": 9,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_turret_up/fire/east",
+      "frames": 9,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_turret_up/fire/west",
+      "frames": 9,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_turret_down/fire/east",
+      "frames": 8,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_turret_down/fire/west",
+      "frames": 8,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80,
+        136
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "hunter_drone/fire/east",
+      "frames": 9,
+      "canvas": [
+        224,
+        128
+      ],
+      "root": [
+        112,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "hunter_drone/run/east",
+      "frames": 9,
+      "canvas": [
+        224,
+        128
+      ],
+      "root": [
+        112,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "hunter_drone/fire/west",
+      "frames": 9,
+      "canvas": [
+        224,
+        128
+      ],
+      "root": [
+        112,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "hunter_drone/run/west",
+      "frames": 9,
+      "canvas": [
+        224,
+        128
+      ],
+      "root": [
+        112,
+        64
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_side/prone_roll/east",
+      "frames": 17,
+      "canvas": [
+        160,
+        172
+      ],
+      "root": [
+        80,
+        142
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "yuri_side/prone_roll/west",
+      "frames": 17,
+      "canvas": [
+        160,
+        172
+      ],
+      "root": [
+        80,
+        142
+      ],
+      "fixed_anchor": true,
+      "even": true
+    },
+    {
+      "bank": "arsenal_runner/run/east",
+      "frames": 12,
+      "canvas": [
+        160,
+        160
+      ],
+      "root": [
+        80.0,
+        136.0
+      ],
+      "fixed_anchor": true,
+      "even": true
+    }
+  ]
+}

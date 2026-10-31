@@ -1,0 +1,374 @@
+{
+  "native": [
+    {
+      "name": "easy native five rows and ten orbs",
+      "passed": true,
+      "data": 10
+    },
+    {
+      "name": "easy simultaneous pairs from two live sockets",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "easy 33 percent faster travel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "easy constant velocity after target moves",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "easy columns keep their firing socket horizontal positions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "easy pair rows never converge",
+      "passed": true,
+      "data": {
+        "samples": 106,
+        "maxError": 0.0
+      }
+    },
+    {
+      "name": "easy continues into native turbo sequence",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal native five rows and ten orbs",
+      "passed": true,
+      "data": 10
+    },
+    {
+      "name": "normal simultaneous pairs from two live sockets",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal 33 percent faster travel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal constant velocity after target moves",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal columns keep their firing socket horizontal positions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal pair rows never converge",
+      "passed": true,
+      "data": {
+        "samples": 106,
+        "maxError": 0.0
+      }
+    },
+    {
+      "name": "normal continues into native turbo sequence",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard native five rows and ten orbs",
+      "passed": true,
+      "data": 10
+    },
+    {
+      "name": "hard simultaneous pairs from two live sockets",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard 33 percent faster travel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard constant velocity after target moves",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard columns keep their firing socket horizontal positions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard pair rows never converge",
+      "passed": true,
+      "data": {
+        "samples": 106,
+        "maxError": 0.0
+      }
+    },
+    {
+      "name": "hard continues into native turbo sequence",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious native five rows and ten orbs",
+      "passed": true,
+      "data": 10
+    },
+    {
+      "name": "furious simultaneous pairs from two live sockets",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious 33 percent faster travel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious constant velocity after target moves",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious columns keep their firing socket horizontal positions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious pair rows never converge",
+      "passed": true,
+      "data": {
+        "samples": 106,
+        "maxError": 0.0
+      }
+    },
+    {
+      "name": "furious continues into native turbo sequence",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Complete fixed-cell normal and hit atlas loaded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage X excluded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rook retains existing machine gun owner",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native hit selects white bank and expires",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Destroyed cannon emits no orb",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native JavaScript errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Native Furious full squad fight reaches actual defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Only the confirmed Stage6 boss music plays throughout the active fight",
+      "passed": true,
+      "data": [
+        {
+          "path": "http://127.0.0.1:53150/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "key": "roughriders6",
+          "clock": 0,
+          "paused": false,
+          "stagexPaused": true
+        },
+        {
+          "path": "http://127.0.0.1:53150/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "key": "roughriders6",
+          "clock": 0.406349,
+          "paused": false,
+          "stagexPaused": true
+        }
+      ]
+    },
+    {
+      "name": "Native root transform has no impact displacement",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film retains five real opponents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, audio, HTTP or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual native film contains the new orb volley",
+      "passed": true,
+      "data": 54
+    },
+    {
+      "name": "Recorded orbs retain their initial velocity",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recorded orb pairs remain evenly spaced",
+      "passed": true,
+      "data": {
+        "samples": 22,
+        "maxError": 0.0
+      }
+    },
+    {
+      "name": "Recorded music and game sound are audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -18.9,
+        "peakDb": -2.2
+      }
+    },
+    {
+      "name": "stage6-rough-riders uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-kaia uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-nyx uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes live audio and moving video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No player errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 172.81,
+  "combat": 52.959,
+  "preview": "http://127.0.0.1:51046/?riders=orb-rows-1029#clip=stage6-rough-riders",
+  "sha256": "66c9c21e3219f9d383b1b4762bdb5ff13caa3c8ed0696e93c812cf3be3df48e1",
+  "audio": {
+    "meanDb": -18.9,
+    "peakDb": -2.2
+  },
+  "fps": 58.999227135111894,
+  "cards": [
+    "stage6-rough-riders",
+    "rough-riders-formations",
+    "rough-riders-team-locks",
+    "rough-riders-evasion",
+    "rough-riders-kaia",
+    "rough-riders-jace",
+    "rough-riders-nyx",
+    "rough-riders-rook",
+    "rough-riders-voss"
+  ],
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false,
+  "art": [
+    {
+      "name": "All fixed cells remain inside shared padding",
+      "passed": true
+    },
+    {
+      "name": "All normal spin/light frames are distinct",
+      "passed": true
+    },
+    {
+      "name": "Hit alpha matches each normal spin frame exactly",
+      "passed": true
+    },
+    {
+      "name": "New draw owner uses fixed cells with no runtime tint, glow or rotation",
+      "passed": true
+    }
+  ],
+  "sourceSha256": "3c04798e485890f6c4119d84b8c60b8910b581b53674c9e22138e4960d104b20",
+  "asset": {
+    "sourceKey": "florb_0",
+    "sourceSha256": "6f6e6fcc87c69dc63effb31dade605a923cf4ac7e49e91224083c24a26ca6250",
+    "editor": "Aseprite 1.3.18.6-dev",
+    "cell": [
+      48,
+      48
+    ],
+    "frames": 64,
+    "animationFrames": 32,
+    "hitOffset": 32,
+    "cols": 8,
+    "pivot": [
+      24,
+      24
+    ],
+    "fps": 24,
+    "recipe": "Offline circular source rotation and baked 1015 red own-pixel illumination; matched white hit alpha; runtime source-over fixed cells.",
+    "builder": "_BUILD_SOURCE/build_voss_orb_rows_1029.py",
+    "sha256": "8b55f4307317712c1c89b4ade44466813f77a0a6e0a9d40c62ab298374de27a2"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "build": "overdrive1013-cover-side-r3",
+  "correction": "Camera -> Yuri -> protective wall -> enemies. Supersedes the r2 foreground-occlusion interpretation.",
+  "visual_review": {
+    "crouch": "Full rear silhouette remains visible, head below cover lip.",
+    "standing": "Rifle clears lip, feet remain on near-side floor.",
+    "knockdown": "Remains on the protected camera side; boss stays beyond wall.",
+    "independent_review": "passed"
+  },
+  "bastion_checks": 27,
+  "bastion_failures": 0,
+  "browser_errors": [],
+  "base_assertions": 8700,
+  "base_errors": 0,
+  "base_exit": 0,
+  "screenshots": [
+    "_shots/bastion_1013/cover_side/cover_down.png",
+    "_shots/bastion_1013/cover_side/retina_free_aim.png",
+    "_shots/bastion_1013/cover_side/backward_knockdown.png"
+  ],
+  "base_log": "_shots/bastion_1013/cover_side_base.log"
+}

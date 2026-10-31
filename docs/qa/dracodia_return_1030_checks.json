@@ -1,0 +1,1420 @@
+{
+  "method": "Native death-boundary checkpoints; damaged home-limb fixture, real copied-death tick, download, arena, rendering and ending. No claim of full encounter balance.",
+  "checks": [
+    {
+      "name": "form8 earlier return uses native copied-life defeat",
+      "passed": true
+    },
+    {
+      "name": "form8 earlier return enters protected download",
+      "passed": true
+    },
+    {
+      "name": "form8 earlier return returns to main arena with original HP",
+      "passed": true
+    },
+    {
+      "name": "form8 earlier return applies limb exception",
+      "passed": true
+    },
+    {
+      "name": "form8 earlier return completes and restores native combat",
+      "passed": true
+    },
+    {
+      "name": "form8 earlier return never heals or resurrects life pools",
+      "passed": true
+    },
+    {
+      "name": "form8 earlier return commits exactly once",
+      "passed": true
+    },
+    {
+      "name": "form8 earlier return preserves final-life vulnerability",
+      "passed": true
+    },
+    {
+      "name": "form8 last life uses native copied-life defeat",
+      "passed": true
+    },
+    {
+      "name": "form8 last life enters protected download",
+      "passed": true
+    },
+    {
+      "name": "form8 last life returns to main arena with original HP",
+      "passed": true
+    },
+    {
+      "name": "form8 last life applies limb exception",
+      "passed": true
+    },
+    {
+      "name": "form8 last life completes and restores native combat",
+      "passed": true
+    },
+    {
+      "name": "form8 last life never heals or resurrects life pools",
+      "passed": true
+    },
+    {
+      "name": "form8 last life commits exactly once",
+      "passed": true
+    },
+    {
+      "name": "form8 last life preserves final-life vulnerability",
+      "passed": true
+    },
+    {
+      "name": "form1 earlier return uses native copied-life defeat",
+      "passed": true
+    },
+    {
+      "name": "form1 earlier return enters protected download",
+      "passed": true
+    },
+    {
+      "name": "form1 earlier return returns to main arena with original HP",
+      "passed": true
+    },
+    {
+      "name": "form1 earlier return applies limb exception",
+      "passed": true
+    },
+    {
+      "name": "form1 earlier return completes and restores native combat",
+      "passed": true
+    },
+    {
+      "name": "form1 earlier return never heals or resurrects life pools",
+      "passed": true
+    },
+    {
+      "name": "form1 earlier return commits exactly once",
+      "passed": true
+    },
+    {
+      "name": "form1 earlier return preserves final-life vulnerability",
+      "passed": true
+    },
+    {
+      "name": "form1 last life uses native copied-life defeat",
+      "passed": true
+    },
+    {
+      "name": "form1 last life enters protected download",
+      "passed": true
+    },
+    {
+      "name": "form1 last life returns to main arena with original HP",
+      "passed": true
+    },
+    {
+      "name": "form1 last life applies limb exception",
+      "passed": true
+    },
+    {
+      "name": "form1 last life completes and restores native combat",
+      "passed": true
+    },
+    {
+      "name": "form1 last life never heals or resurrects life pools",
+      "passed": true
+    },
+    {
+      "name": "form1 last life commits exactly once",
+      "passed": true
+    },
+    {
+      "name": "form1 last life preserves final-life vulnerability",
+      "passed": true
+    },
+    {
+      "name": "form6 earlier return uses native copied-life defeat",
+      "passed": true
+    },
+    {
+      "name": "form6 earlier return enters protected download",
+      "passed": true
+    },
+    {
+      "name": "form6 earlier return returns to main arena with original HP",
+      "passed": true
+    },
+    {
+      "name": "form6 earlier return applies limb exception",
+      "passed": true
+    },
+    {
+      "name": "form6 earlier return completes and restores native combat",
+      "passed": true
+    },
+    {
+      "name": "form6 earlier return never heals or resurrects life pools",
+      "passed": true
+    },
+    {
+      "name": "form6 earlier return commits exactly once",
+      "passed": true
+    },
+    {
+      "name": "form6 earlier return preserves final-life vulnerability",
+      "passed": true
+    },
+    {
+      "name": "form6 last life uses native copied-life defeat",
+      "passed": true
+    },
+    {
+      "name": "form6 last life enters protected download",
+      "passed": true
+    },
+    {
+      "name": "form6 last life returns to main arena with original HP",
+      "passed": true
+    },
+    {
+      "name": "form6 last life applies limb exception",
+      "passed": true
+    },
+    {
+      "name": "form6 last life completes and restores native combat",
+      "passed": true
+    },
+    {
+      "name": "form6 last life never heals or resurrects life pools",
+      "passed": true
+    },
+    {
+      "name": "form6 last life commits exactly once",
+      "passed": true
+    },
+    {
+      "name": "form6 last life preserves final-life vulnerability",
+      "passed": true
+    },
+    {
+      "name": "form2 earlier return uses native copied-life defeat",
+      "passed": true
+    },
+    {
+      "name": "form2 earlier return enters protected download",
+      "passed": true
+    },
+    {
+      "name": "form2 earlier return returns to main arena with original HP",
+      "passed": true
+    },
+    {
+      "name": "form2 earlier return applies limb exception",
+      "passed": true
+    },
+    {
+      "name": "form2 earlier return completes and restores native combat",
+      "passed": true
+    },
+    {
+      "name": "form2 earlier return never heals or resurrects life pools",
+      "passed": true
+    },
+    {
+      "name": "form2 earlier return commits exactly once",
+      "passed": true
+    },
+    {
+      "name": "form2 earlier return preserves final-life vulnerability",
+      "passed": true
+    },
+    {
+      "name": "form2 last life uses native copied-life defeat",
+      "passed": true
+    },
+    {
+      "name": "form2 last life enters protected download",
+      "passed": true
+    },
+    {
+      "name": "form2 last life returns to main arena with original HP",
+      "passed": true
+    },
+    {
+      "name": "form2 last life applies limb exception",
+      "passed": true
+    },
+    {
+      "name": "form2 last life completes and restores native combat",
+      "passed": true
+    },
+    {
+      "name": "form2 last life never heals or resurrects life pools",
+      "passed": true
+    },
+    {
+      "name": "form2 last life commits exactly once",
+      "passed": true
+    },
+    {
+      "name": "form2 last life preserves final-life vulnerability",
+      "passed": true
+    },
+    {
+      "name": "True final life proceeds to original final destruction",
+      "passed": true
+    },
+    {
+      "name": "Authored download frames were drawn",
+      "passed": true
+    },
+    {
+      "name": "No native/browser drawing errors",
+      "passed": true
+    }
+  ],
+  "states": [
+    {
+      "form": 8,
+      "last": false,
+      "start": {
+        "mode": "v18returnDownload",
+        "t": 0.2333333333333333,
+        "last": false,
+        "form": 8,
+        "targets": 0,
+        "protected": true,
+        "locked": true
+      },
+      "build": {
+        "mode": "v18returnDownload",
+        "t": 1.816666666666665,
+        "form": 0,
+        "arena": "void",
+        "phase": 2,
+        "hp": 5130,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "max": 5330,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          }
+        ],
+        "draws": 78
+      },
+      "end": {
+        "mode": "fight",
+        "form": 0,
+        "hp": 5130,
+        "pools": [
+          5130,
+          3690,
+          4100,
+          0,
+          0,
+          0,
+          4510,
+          0,
+          0
+        ],
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 1280,
+            "destroyed": false
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "destroyed": false
+          }
+        ],
+        "transition": null,
+        "events": [
+          {
+            "event": "return-start",
+            "clock": 2.666666666666662,
+            "from": 8,
+            "last": false,
+            "remaining": [
+              1,
+              6,
+              2
+            ],
+            "mainHP": 5130
+          },
+          {
+            "event": "arena-restored",
+            "clock": 3.516666666666659,
+            "from": 8,
+            "last": false,
+            "hp": 5130,
+            "parts": [
+              {
+                "id": "core",
+                "hp": 5130,
+                "destroyed": false
+              },
+              {
+                "id": "left",
+                "hp": 1280,
+                "destroyed": false
+              },
+              {
+                "id": "right",
+                "hp": 1280,
+                "destroyed": false
+              }
+            ],
+            "pools": [
+              5130,
+              3690,
+              4100,
+              0,
+              0,
+              0,
+              4510,
+              0,
+              0
+            ]
+          },
+          {
+            "event": "return-complete",
+            "clock": 6.883333333333314,
+            "last": false,
+            "hp": 5130,
+            "pools": [
+              5130,
+              3690,
+              4100,
+              0,
+              0,
+              0,
+              4510,
+              0,
+              0
+            ]
+          }
+        ],
+        "protected": false,
+        "enter": false,
+        "targets": 0
+      }
+    },
+    {
+      "form": 8,
+      "last": true,
+      "start": {
+        "mode": "v18returnDownload",
+        "t": 0.24999999999999997,
+        "last": true,
+        "form": 8,
+        "targets": 0,
+        "protected": true,
+        "locked": true
+      },
+      "build": {
+        "mode": "v18returnDownload",
+        "t": 1.8333333333333317,
+        "form": 0,
+        "arena": "void",
+        "phase": 2,
+        "hp": 5130,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "max": 5330,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 0,
+            "max": 1280,
+            "destroyed": true
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          }
+        ],
+        "draws": 956
+      },
+      "end": {
+        "mode": "fight",
+        "form": 0,
+        "hp": 5130,
+        "pools": [
+          5130,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 0,
+            "destroyed": true
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "destroyed": false
+          }
+        ],
+        "transition": null,
+        "events": [
+          {
+            "event": "return-start",
+            "clock": 2.666666666666662,
+            "from": 8,
+            "last": true,
+            "remaining": [],
+            "mainHP": 5130
+          },
+          {
+            "event": "arena-restored",
+            "clock": 3.516666666666659,
+            "from": 8,
+            "last": true,
+            "hp": 5130,
+            "parts": [
+              {
+                "id": "core",
+                "hp": 5130,
+                "destroyed": false
+              },
+              {
+                "id": "left",
+                "hp": 0,
+                "destroyed": true
+              },
+              {
+                "id": "right",
+                "hp": 1280,
+                "destroyed": false
+              }
+            ],
+            "pools": [
+              5130,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "event": "return-complete",
+            "clock": 6.883333333333314,
+            "last": true,
+            "hp": 5130,
+            "pools": [
+              5130,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "protected": false,
+        "enter": false,
+        "targets": 2
+      }
+    },
+    {
+      "form": 1,
+      "last": false,
+      "start": {
+        "mode": "v18returnDownload",
+        "t": 0.24999999999999997,
+        "last": false,
+        "form": 1,
+        "targets": 0,
+        "protected": true,
+        "locked": true
+      },
+      "build": {
+        "mode": "v18returnDownload",
+        "t": 1.8333333333333317,
+        "form": 0,
+        "arena": "void",
+        "phase": 2,
+        "hp": 5130,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "max": 5330,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          }
+        ],
+        "draws": 1584
+      },
+      "end": {
+        "mode": "fight",
+        "form": 0,
+        "hp": 5130,
+        "pools": [
+          5130,
+          0,
+          4100,
+          0,
+          0,
+          0,
+          4510,
+          0,
+          4920
+        ],
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 1280,
+            "destroyed": false
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "destroyed": false
+          }
+        ],
+        "transition": null,
+        "events": [
+          {
+            "event": "return-start",
+            "clock": 2.666666666666662,
+            "from": 1,
+            "last": false,
+            "remaining": [
+              8,
+              6,
+              2
+            ],
+            "mainHP": 5130
+          },
+          {
+            "event": "arena-restored",
+            "clock": 3.516666666666659,
+            "from": 1,
+            "last": false,
+            "hp": 5130,
+            "parts": [
+              {
+                "id": "core",
+                "hp": 5130,
+                "destroyed": false
+              },
+              {
+                "id": "left",
+                "hp": 1280,
+                "destroyed": false
+              },
+              {
+                "id": "right",
+                "hp": 1280,
+                "destroyed": false
+              }
+            ],
+            "pools": [
+              5130,
+              0,
+              4100,
+              0,
+              0,
+              0,
+              4510,
+              0,
+              4920
+            ]
+          },
+          {
+            "event": "return-complete",
+            "clock": 6.883333333333314,
+            "last": false,
+            "hp": 5130,
+            "pools": [
+              5130,
+              0,
+              4100,
+              0,
+              0,
+              0,
+              4510,
+              0,
+              4920
+            ]
+          }
+        ],
+        "protected": false,
+        "enter": false,
+        "targets": 0
+      }
+    },
+    {
+      "form": 1,
+      "last": true,
+      "start": {
+        "mode": "v18returnDownload",
+        "t": 0.24999999999999997,
+        "last": true,
+        "form": 1,
+        "targets": 0,
+        "protected": true,
+        "locked": true
+      },
+      "build": {
+        "mode": "v18returnDownload",
+        "t": 1.8333333333333317,
+        "form": 0,
+        "arena": "void",
+        "phase": 2,
+        "hp": 5130,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "max": 5330,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 0,
+            "max": 1280,
+            "destroyed": true
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          }
+        ],
+        "draws": 2456
+      },
+      "end": {
+        "mode": "fight",
+        "form": 0,
+        "hp": 5130,
+        "pools": [
+          5130,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 0,
+            "destroyed": true
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "destroyed": false
+          }
+        ],
+        "transition": null,
+        "events": [
+          {
+            "event": "return-start",
+            "clock": 2.666666666666662,
+            "from": 1,
+            "last": true,
+            "remaining": [],
+            "mainHP": 5130
+          },
+          {
+            "event": "arena-restored",
+            "clock": 3.516666666666659,
+            "from": 1,
+            "last": true,
+            "hp": 5130,
+            "parts": [
+              {
+                "id": "core",
+                "hp": 5130,
+                "destroyed": false
+              },
+              {
+                "id": "left",
+                "hp": 0,
+                "destroyed": true
+              },
+              {
+                "id": "right",
+                "hp": 1280,
+                "destroyed": false
+              }
+            ],
+            "pools": [
+              5130,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "event": "return-complete",
+            "clock": 6.883333333333314,
+            "last": true,
+            "hp": 5130,
+            "pools": [
+              5130,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "protected": false,
+        "enter": false,
+        "targets": 2
+      }
+    },
+    {
+      "form": 6,
+      "last": false,
+      "start": {
+        "mode": "v18returnDownload",
+        "t": 0.24999999999999997,
+        "last": false,
+        "form": 6,
+        "targets": 0,
+        "protected": true,
+        "locked": true
+      },
+      "build": {
+        "mode": "v18returnDownload",
+        "t": 1.8333333333333317,
+        "form": 0,
+        "arena": "void",
+        "phase": 2,
+        "hp": 5130,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "max": 5330,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          }
+        ],
+        "draws": 3084
+      },
+      "end": {
+        "mode": "fight",
+        "form": 0,
+        "hp": 5130,
+        "pools": [
+          5130,
+          3690,
+          4100,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4920
+        ],
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 1280,
+            "destroyed": false
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "destroyed": false
+          }
+        ],
+        "transition": null,
+        "events": [
+          {
+            "event": "return-start",
+            "clock": 2.666666666666662,
+            "from": 6,
+            "last": false,
+            "remaining": [
+              8,
+              1,
+              2
+            ],
+            "mainHP": 5130
+          },
+          {
+            "event": "arena-restored",
+            "clock": 3.516666666666659,
+            "from": 6,
+            "last": false,
+            "hp": 5130,
+            "parts": [
+              {
+                "id": "core",
+                "hp": 5130,
+                "destroyed": false
+              },
+              {
+                "id": "left",
+                "hp": 1280,
+                "destroyed": false
+              },
+              {
+                "id": "right",
+                "hp": 1280,
+                "destroyed": false
+              }
+            ],
+            "pools": [
+              5130,
+              3690,
+              4100,
+              0,
+              0,
+              0,
+              0,
+              0,
+              4920
+            ]
+          },
+          {
+            "event": "return-complete",
+            "clock": 6.883333333333314,
+            "last": false,
+            "hp": 5130,
+            "pools": [
+              5130,
+              3690,
+              4100,
+              0,
+              0,
+              0,
+              0,
+              0,
+              4920
+            ]
+          }
+        ],
+        "protected": false,
+        "enter": false,
+        "targets": 0
+      }
+    },
+    {
+      "form": 6,
+      "last": true,
+      "start": {
+        "mode": "v18returnDownload",
+        "t": 0.24999999999999997,
+        "last": true,
+        "form": 6,
+        "targets": 0,
+        "protected": true,
+        "locked": true
+      },
+      "build": {
+        "mode": "v18returnDownload",
+        "t": 1.8333333333333317,
+        "form": 0,
+        "arena": "void",
+        "phase": 2,
+        "hp": 5130,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "max": 5330,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 0,
+            "max": 1280,
+            "destroyed": true
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          }
+        ],
+        "draws": 3956
+      },
+      "end": {
+        "mode": "fight",
+        "form": 0,
+        "hp": 5130,
+        "pools": [
+          5130,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 0,
+            "destroyed": true
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "destroyed": false
+          }
+        ],
+        "transition": null,
+        "events": [
+          {
+            "event": "return-start",
+            "clock": 2.666666666666662,
+            "from": 6,
+            "last": true,
+            "remaining": [],
+            "mainHP": 5130
+          },
+          {
+            "event": "arena-restored",
+            "clock": 3.516666666666659,
+            "from": 6,
+            "last": true,
+            "hp": 5130,
+            "parts": [
+              {
+                "id": "core",
+                "hp": 5130,
+                "destroyed": false
+              },
+              {
+                "id": "left",
+                "hp": 0,
+                "destroyed": true
+              },
+              {
+                "id": "right",
+                "hp": 1280,
+                "destroyed": false
+              }
+            ],
+            "pools": [
+              5130,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "event": "return-complete",
+            "clock": 6.883333333333314,
+            "last": true,
+            "hp": 5130,
+            "pools": [
+              5130,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "protected": false,
+        "enter": false,
+        "targets": 2
+      }
+    },
+    {
+      "form": 2,
+      "last": false,
+      "start": {
+        "mode": "v18returnDownload",
+        "t": 0.24999999999999997,
+        "last": false,
+        "form": 2,
+        "targets": 0,
+        "protected": true,
+        "locked": true
+      },
+      "build": {
+        "mode": "v18returnDownload",
+        "t": 1.8333333333333317,
+        "form": 0,
+        "arena": "void",
+        "phase": 2,
+        "hp": 5130,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "max": 5330,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          }
+        ],
+        "draws": 4584
+      },
+      "end": {
+        "mode": "fight",
+        "form": 0,
+        "hp": 5130,
+        "pools": [
+          5130,
+          3690,
+          0,
+          0,
+          0,
+          0,
+          4510,
+          0,
+          4920
+        ],
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 1280,
+            "destroyed": false
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "destroyed": false
+          }
+        ],
+        "transition": null,
+        "events": [
+          {
+            "event": "return-start",
+            "clock": 2.666666666666662,
+            "from": 2,
+            "last": false,
+            "remaining": [
+              8,
+              1,
+              6
+            ],
+            "mainHP": 5130
+          },
+          {
+            "event": "arena-restored",
+            "clock": 3.516666666666659,
+            "from": 2,
+            "last": false,
+            "hp": 5130,
+            "parts": [
+              {
+                "id": "core",
+                "hp": 5130,
+                "destroyed": false
+              },
+              {
+                "id": "left",
+                "hp": 1280,
+                "destroyed": false
+              },
+              {
+                "id": "right",
+                "hp": 1280,
+                "destroyed": false
+              }
+            ],
+            "pools": [
+              5130,
+              3690,
+              0,
+              0,
+              0,
+              0,
+              4510,
+              0,
+              4920
+            ]
+          },
+          {
+            "event": "return-complete",
+            "clock": 6.883333333333314,
+            "last": false,
+            "hp": 5130,
+            "pools": [
+              5130,
+              3690,
+              0,
+              0,
+              0,
+              0,
+              4510,
+              0,
+              4920
+            ]
+          }
+        ],
+        "protected": false,
+        "enter": false,
+        "targets": 0
+      }
+    },
+    {
+      "form": 2,
+      "last": true,
+      "start": {
+        "mode": "v18returnDownload",
+        "t": 0.24999999999999997,
+        "last": true,
+        "form": 2,
+        "targets": 0,
+        "protected": true,
+        "locked": true
+      },
+      "build": {
+        "mode": "v18returnDownload",
+        "t": 1.8333333333333317,
+        "form": 0,
+        "arena": "void",
+        "phase": 2,
+        "hp": 5130,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "max": 5330,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 0,
+            "max": 1280,
+            "destroyed": true
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "max": 1280,
+            "destroyed": false
+          }
+        ],
+        "draws": 5456
+      },
+      "end": {
+        "mode": "fight",
+        "form": 0,
+        "hp": 5130,
+        "pools": [
+          5130,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5130,
+            "destroyed": false
+          },
+          {
+            "id": "left",
+            "hp": 0,
+            "destroyed": true
+          },
+          {
+            "id": "right",
+            "hp": 1280,
+            "destroyed": false
+          }
+        ],
+        "transition": null,
+        "events": [
+          {
+            "event": "return-start",
+            "clock": 2.666666666666662,
+            "from": 2,
+            "last": true,
+            "remaining": [],
+            "mainHP": 5130
+          },
+          {
+            "event": "arena-restored",
+            "clock": 3.516666666666659,
+            "from": 2,
+            "last": true,
+            "hp": 5130,
+            "parts": [
+              {
+                "id": "core",
+                "hp": 5130,
+                "destroyed": false
+              },
+              {
+                "id": "left",
+                "hp": 0,
+                "destroyed": true
+              },
+              {
+                "id": "right",
+                "hp": 1280,
+                "destroyed": false
+              }
+            ],
+            "pools": [
+              5130,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "event": "return-complete",
+            "clock": 6.883333333333314,
+            "last": true,
+            "hp": 5130,
+            "pools": [
+              5130,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "protected": false,
+        "enter": false,
+        "targets": 2
+      }
+    }
+  ],
+  "errors": []
+}

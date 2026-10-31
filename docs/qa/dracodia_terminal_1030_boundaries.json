@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "name": "maverick returns in their exact authored aircraft with the other eight pilots present",
+      "passed": true
+    },
+    {
+      "name": "yuri returns in their exact authored aircraft with the other eight pilots present",
+      "passed": true
+    },
+    {
+      "name": "lizzie returns in their exact authored aircraft with the other eight pilots present",
+      "passed": true
+    },
+    {
+      "name": "Reunion shows the actual existing blue mechanical gate lifecycle",
+      "passed": true
+    },
+    {
+      "name": "River water cycles independently of the fixed foreground quay",
+      "passed": true
+    },
+    {
+      "name": "Far river/bridge and near apron have separate world parallax positions",
+      "passed": true
+    },
+    {
+      "name": "Reduced-motion mode retains timing with softer full-field and body flashes",
+      "passed": true
+    },
+    {
+      "name": "Scene reset removes the terminal owner, flashes and scene substitution",
+      "passed": true
+    },
+    {
+      "name": "Live Phoenix Order controller remains unchanged before final death",
+      "passed": true
+    },
+    {
+      "name": "Live brain attack remains with its established owner",
+      "passed": true
+    },
+    {
+      "name": "No native browser/draw errors in the selected-pilot and reset runs",
+      "passed": true
+    },
+    {
+      "name": "Shatter frame zero exactly reconstructs every original body pixel",
+      "passed": true
+    },
+    {
+      "name": "All nine current aircraft have both entry and return depth banks",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,21 @@
+{
+  "completed": true,
+  "elapsed": 131.41,
+  "events": [
+    {
+      "t": 0,
+      "type": "story-replay",
+      "stage": 1
+    },
+    {
+      "t": 72.61,
+      "type": "story-replay",
+      "stage": 3
+    }
+  ],
+  "frames": 7858,
+  "bytes": 38285974,
+  "error": null,
+  "audioErrors": null,
+  "pageErrors": []
+}

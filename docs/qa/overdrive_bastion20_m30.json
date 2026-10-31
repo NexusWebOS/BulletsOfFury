@@ -1,0 +1,105 @@
+{
+  "build": "overdrive1014-gosfer20-r1",
+  "checks": [
+    {
+      "name": "legacy generic preset migrates to receiver physical letters",
+      "passed": true
+    },
+    {
+      "name": "migrated receiver layout persists with explicit six-button style",
+      "passed": true
+    },
+    {
+      "name": "physical M30 A fires actual Level7 rifle projectiles",
+      "passed": true
+    },
+    {
+      "name": "physical M30 Y throws grenade without firing rifle",
+      "passed": true
+    },
+    {
+      "name": "physical M30 X rolls without firing",
+      "passed": true
+    },
+    {
+      "name": "physical Mode + X enters base prone without a roll",
+      "passed": true
+    },
+    {
+      "name": "physical Z plus D-pad free aims without moving Yuri",
+      "passed": true
+    },
+    {
+      "name": "physical M30 B plus left performs immediate side fire without foot movement",
+      "passed": true
+    },
+    {
+      "name": "releasing physical B restores the original Retina target",
+      "passed": true
+    },
+    {
+      "name": "physical Mode takes cover",
+      "passed": true
+    },
+    {
+      "name": "held physical A is latched through cutscene boundary",
+      "passed": true
+    },
+    {
+      "name": "physical A fires again after release",
+      "passed": true
+    },
+    {
+      "name": "resetting six-button controls retains receiver-correct A",
+      "passed": true
+    },
+    {
+      "name": "standard control scheme on the raw M30 still uses printed A to fire",
+      "passed": true
+    },
+    {
+      "name": "custom receiver bindings survive reconnect",
+      "passed": true
+    },
+    {
+      "name": "custom receiver bindings survive page reload",
+      "passed": true
+    },
+    {
+      "name": "unknown controller retains generic six-button preset",
+      "passed": true
+    },
+    {
+      "name": "browser-standardized M30 report avoids raw receiver remapping",
+      "passed": true
+    },
+    {
+      "name": "built-in raw receiver layout does not leak across a standardized mode change",
+      "passed": true
+    },
+    {
+      "name": "learned six-button profile records explicit style and custom ownership",
+      "passed": true
+    },
+    {
+      "name": "M30 Mode + X toggles on-foot prone",
+      "passed": true
+    },
+    {
+      "name": "M30 D-pad crawls while staying prone",
+      "passed": true
+    },
+    {
+      "name": "M30 Mode + X restores standing with the new colored pose",
+      "passed": true
+    },
+    {
+      "name": "zero browser or asset errors",
+      "passed": true
+    }
+  ],
+  "passed": 24,
+  "failed": 0,
+  "errors": [],
+  "hardware": "Windows confirms receiver VID_0CA3/PID_0024. Button presses here are synthetic, using the documented Windows HID mapping."
+}

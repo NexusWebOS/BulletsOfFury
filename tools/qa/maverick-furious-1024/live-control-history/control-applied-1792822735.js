@@ -1,0 +1,1 @@
+()=>{const pre=FURYBOT.pre;FURYBOT.pre=function(now){pre.call(this,now);if(state===GS.STAGESEL&&sselBoot===0&&!sselUnlockCine&&FURYBOT.age()>(FURYBOT.nextMapFire||0)){cmap2.focus='map';Input.injectTap('j');FURYBOT.nextMapFire=FURYBOT.age()+8;}};return{mapFire:'native FIRE deploy tap, not START',audio:Snd.cur,vol:Snd.vol};}

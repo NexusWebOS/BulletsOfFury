@@ -1,0 +1,11 @@
+# Stage6 miniboss — solo encounter, October28
+
+Mike requested no allies at all during the Stage6 miniboss. `assets/stage6_solo_miniboss_1028.js` now blocks NPC wing launches/calls, parks existing support, removes only NPC-owned projectile entries, and bypasses ally simulation/rendering through the warning, encounter and direct-review exit. Campaign support returns after the miniboss, while the main Harrier and Rough Riders keep their native allied wing. Human players, both seat projectiles, native HP/modules/attacks/FOV/audio and other stages are untouched. Existing callable favors are paused/returned without charging another use.
+
+The former debug preparation in `encounter_revision_1027.js` no longer explicitly assembles the main boss wing. The Fortress builder still runs its required Carrier preparation through `er28WingReady`; only actual allied launches are blocked. This preserves the native opening release, route/clock and real Fortress entrance. An initial attempt also skipped this preparation and froze the entrance; that take was rejected and retained outside the preview. The final native checks explicitly assert the opening is released and the boss clock advances.
+
+26 native entry/scope checks pass across Easy/Normal/Hard/Furious, including real warning/spawn, six batteries, no allies/rounds, blocked reinforcements/favor calls, campaign return, human-seat projectile retention, both later boss allies, MINI6 direct entry and other-stage calls. Native pixels inspected. A fresh57.87s Furious GOD/input-only film reaches real defeat at57.37 nativefps with zero NPCs or allied shots in every observed snapshot and no game/HTTP/audio/bot errors. Audio mean-20.3dB / peak-1.5dB. The local33-card preview now points its miniboss card at this film; original downloads remain intact. Updated playback/seek/audio checks pass.
+
+Syntax passes. Required final full suite reaches summary with the same five prior failures (exit1): single-hit flash duration, opening-jump dialogue warning, jump return before Chromium, opposite StageX route persistence, StageX right full encounter. No game.js/test_fl.js edits, commit or GitHub upload.
+
+Preview: http://127.0.0.1:51046/?solo=1#clip=stage6-miniboss. Evidence: `C:/Users/Mike/Documents/New project/BOF-Stage6-Solo-Mini-1028/`.

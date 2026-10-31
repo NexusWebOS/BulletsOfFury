@@ -1,0 +1,707 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "easy eight modules preserve the complete native HP budget",
+        "passed": true,
+        "data": {
+          "n": 8,
+          "hp": 1000,
+          "max": 1000,
+          "sum": 1000,
+          "targets": 8,
+          "open": false,
+          "solo": true,
+          "body": null
+        }
+      },
+      {
+        "name": "easy all targets available; body absent; solo",
+        "passed": true,
+        "data": {
+          "n": 8,
+          "hp": 1000,
+          "max": 1000,
+          "sum": 1000,
+          "targets": 8,
+          "open": false,
+          "solo": true,
+          "body": null
+        }
+      },
+      {
+        "name": "easy ordinary fire and beams reach both fans through the hull",
+        "passed": true,
+        "data": [
+          {
+            "id": "fan0",
+            "direct": "fan0",
+            "beam": "fan0"
+          },
+          {
+            "id": "fan1",
+            "direct": "fan1",
+            "beam": "fan1"
+          }
+        ]
+      },
+      {
+        "name": "easy battery sequences fire lasers with zero Fortress missiles",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal eight modules preserve the complete native HP budget",
+        "passed": true,
+        "data": {
+          "n": 8,
+          "hp": 1350,
+          "max": 1350,
+          "sum": 1350,
+          "targets": 8,
+          "open": false,
+          "solo": true,
+          "body": null
+        }
+      },
+      {
+        "name": "normal all targets available; body absent; solo",
+        "passed": true,
+        "data": {
+          "n": 8,
+          "hp": 1350,
+          "max": 1350,
+          "sum": 1350,
+          "targets": 8,
+          "open": false,
+          "solo": true,
+          "body": null
+        }
+      },
+      {
+        "name": "normal ordinary fire and beams reach both fans through the hull",
+        "passed": true,
+        "data": [
+          {
+            "id": "fan0",
+            "direct": "fan0",
+            "beam": "fan0"
+          },
+          {
+            "id": "fan1",
+            "direct": "fan1",
+            "beam": "fan1"
+          }
+        ]
+      },
+      {
+        "name": "normal battery sequences fire lasers with zero Fortress missiles",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "hard eight modules preserve the complete native HP budget",
+        "passed": true,
+        "data": {
+          "n": 8,
+          "hp": 1650,
+          "max": 1650,
+          "sum": 1650,
+          "targets": 8,
+          "open": false,
+          "solo": true,
+          "body": null
+        }
+      },
+      {
+        "name": "hard all targets available; body absent; solo",
+        "passed": true,
+        "data": {
+          "n": 8,
+          "hp": 1650,
+          "max": 1650,
+          "sum": 1650,
+          "targets": 8,
+          "open": false,
+          "solo": true,
+          "body": null
+        }
+      },
+      {
+        "name": "hard ordinary fire and beams reach both fans through the hull",
+        "passed": true,
+        "data": [
+          {
+            "id": "fan0",
+            "direct": "fan0",
+            "beam": "fan0"
+          },
+          {
+            "id": "fan1",
+            "direct": "fan1",
+            "beam": "fan1"
+          }
+        ]
+      },
+      {
+        "name": "hard battery sequences fire lasers with zero Fortress missiles",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "furious eight modules preserve the complete native HP budget",
+        "passed": true,
+        "data": {
+          "n": 8,
+          "hp": 1950,
+          "max": 1950,
+          "sum": 1950,
+          "targets": 8,
+          "open": false,
+          "solo": true,
+          "body": null
+        }
+      },
+      {
+        "name": "furious all targets available; body absent; solo",
+        "passed": true,
+        "data": {
+          "n": 8,
+          "hp": 1950,
+          "max": 1950,
+          "sum": 1950,
+          "targets": 8,
+          "open": false,
+          "solo": true,
+          "body": null
+        }
+      },
+      {
+        "name": "furious ordinary fire and beams reach both fans through the hull",
+        "passed": true,
+        "data": [
+          {
+            "id": "fan0",
+            "direct": "fan0",
+            "beam": "fan0"
+          },
+          {
+            "id": "fan1",
+            "direct": "fan1",
+            "beam": "fan1"
+          }
+        ]
+      },
+      {
+        "name": "furious battery sequences fire lasers with zero Fortress missiles",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Fan accepts native projectile damage with a real part flash",
+        "passed": true,
+        "data": {
+          "delta": 7,
+          "flash": 0.12,
+          "mark": 0.16,
+          "hp": 1943,
+          "sum": 1943
+        }
+      },
+      {
+        "name": "Actual native renderer blits the authored fan hit silhouette",
+        "passed": true,
+        "data": 1
+      },
+      {
+        "name": "Fan flash expires naturally",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All six batteries destroyed cannot expose or hurt core while fans live",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Broken fan leaves target list; remaining fan still seals core",
+        "passed": true,
+        "data": {
+          "n": 1,
+          "open": false,
+          "calls": [
+            {
+              "kind": "fire",
+              "a": [
+                64,
+                0,
+                64,
+                64,
+                118,
+                11,
+                64,
+                64
+              ]
+            },
+            {
+              "kind": "smoke",
+              "a": [
+                96,
+                0,
+                96,
+                144,
+                102,
+                -73,
+                96,
+                144
+              ]
+            }
+          ],
+          "m": {
+            "x": 149.69961072543472,
+            "y": 53.16263429983988
+          }
+        }
+      },
+      {
+        "name": "Fire and smoke are drawn anchored to the destroyed fan",
+        "passed": true,
+        "data": {
+          "n": 1,
+          "open": false,
+          "calls": [
+            {
+              "kind": "fire",
+              "a": [
+                64,
+                0,
+                64,
+                64,
+                118,
+                11,
+                64,
+                64
+              ]
+            },
+            {
+              "kind": "smoke",
+              "a": [
+                96,
+                0,
+                96,
+                144,
+                102,
+                -73,
+                96,
+                144
+              ]
+            }
+          ],
+          "m": {
+            "x": 149.69961072543472,
+            "y": 53.16263429983988
+          }
+        }
+      },
+      {
+        "name": "Only all eight breaks open the animated aperture",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Exposed core fires red bolt spreads and orb pincers from aperture",
+        "passed": true,
+        "data": {
+          "emissions": [
+            {
+              "event": "core-projectile",
+              "time": 7.533333333333312,
+              "orb": false,
+              "x": 348.99249147301373,
+              "y": 68.77491325761362,
+              "angle": 1.1754681951151253
+            },
+            {
+              "event": "core-projectile",
+              "time": 7.533333333333312,
+              "orb": false,
+              "x": 348.99249147301373,
+              "y": 68.77491325761362,
+              "angle": 1.4154681951151253
+            },
+            {
+              "event": "core-projectile",
+              "time": 7.533333333333312,
+              "orb": false,
+              "x": 348.99249147301373,
+              "y": 68.77491325761362,
+              "angle": 1.6554681951151253
+            },
+            {
+              "event": "core-projectile",
+              "time": 7.533333333333312,
+              "orb": false,
+              "x": 348.99249147301373,
+              "y": 68.77491325761362,
+              "angle": 1.8954681951151253
+            },
+            {
+              "event": "core-projectile",
+              "time": 7.533333333333312,
+              "orb": false,
+              "x": 348.99249147301373,
+              "y": 68.77491325761362,
+              "angle": 2.1354681951151253
+            },
+            {
+              "event": "core-projectile",
+              "time": 9.233333333333372,
+              "orb": true,
+              "x": 308.7540777478033,
+              "y": 62.931887963543744,
+              "angle": 1.1979448703324802
+            },
+            {
+              "event": "core-projectile",
+              "time": 9.233333333333372,
+              "orb": true,
+              "x": 308.7540777478033,
+              "y": 62.931887963543744,
+              "angle": 1.8779448703324804
+            },
+            {
+              "event": "core-projectile",
+              "time": 10.933333333333456,
+              "orb": false,
+              "x": 303.52679511856627,
+              "y": 60.041704544587965,
+              "angle": 0.9572410979396884
+            },
+            {
+              "event": "core-projectile",
+              "time": 10.933333333333456,
+              "orb": false,
+              "x": 303.52679511856627,
+              "y": 60.041704544587965,
+              "angle": 1.1972410979396884
+            },
+            {
+              "event": "core-projectile",
+              "time": 10.933333333333456,
+              "orb": false,
+              "x": 303.52679511856627,
+              "y": 60.041704544587965,
+              "angle": 1.4372410979396884
+            },
+            {
+              "event": "core-projectile",
+              "time": 10.933333333333456,
+              "orb": false,
+              "x": 303.52679511856627,
+              "y": 60.041704544587965,
+              "angle": 1.6772410979396883
+            },
+            {
+              "event": "core-projectile",
+              "time": 10.933333333333456,
+              "orb": false,
+              "x": 303.52679511856627,
+              "y": 60.041704544587965,
+              "angle": 1.9172410979396883
+            }
+          ],
+          "rounds": [
+            {
+              "orb": false,
+              "intercept": false,
+              "element": "lightning"
+            },
+            {
+              "orb": false,
+              "intercept": false,
+              "element": "lightning"
+            },
+            {
+              "orb": false,
+              "intercept": false,
+              "element": "lightning"
+            },
+            {
+              "orb": false,
+              "intercept": false,
+              "element": "lightning"
+            },
+            {
+              "orb": false,
+              "intercept": false,
+              "element": "lightning"
+            }
+          ],
+          "missiles": 0,
+          "bh": false,
+          "rocket": false
+        }
+      },
+      {
+        "name": "Core energy is not shootable and no legacy missiles/barrage overlaps",
+        "passed": true,
+        "data": {
+          "emissions": [
+            {
+              "event": "core-projectile",
+              "time": 7.533333333333312,
+              "orb": false,
+              "x": 348.99249147301373,
+              "y": 68.77491325761362,
+              "angle": 1.1754681951151253
+            },
+            {
+              "event": "core-projectile",
+              "time": 7.533333333333312,
+              "orb": false,
+              "x": 348.99249147301373,
+              "y": 68.77491325761362,
+              "angle": 1.4154681951151253
+            },
+            {
+              "event": "core-projectile",
+              "time": 7.533333333333312,
+              "orb": false,
+              "x": 348.99249147301373,
+              "y": 68.77491325761362,
+              "angle": 1.6554681951151253
+            },
+            {
+              "event": "core-projectile",
+              "time": 7.533333333333312,
+              "orb": false,
+              "x": 348.99249147301373,
+              "y": 68.77491325761362,
+              "angle": 1.8954681951151253
+            },
+            {
+              "event": "core-projectile",
+              "time": 7.533333333333312,
+              "orb": false,
+              "x": 348.99249147301373,
+              "y": 68.77491325761362,
+              "angle": 2.1354681951151253
+            },
+            {
+              "event": "core-projectile",
+              "time": 9.233333333333372,
+              "orb": true,
+              "x": 308.7540777478033,
+              "y": 62.931887963543744,
+              "angle": 1.1979448703324802
+            },
+            {
+              "event": "core-projectile",
+              "time": 9.233333333333372,
+              "orb": true,
+              "x": 308.7540777478033,
+              "y": 62.931887963543744,
+              "angle": 1.8779448703324804
+            },
+            {
+              "event": "core-projectile",
+              "time": 10.933333333333456,
+              "orb": false,
+              "x": 303.52679511856627,
+              "y": 60.041704544587965,
+              "angle": 0.9572410979396884
+            },
+            {
+              "event": "core-projectile",
+              "time": 10.933333333333456,
+              "orb": false,
+              "x": 303.52679511856627,
+              "y": 60.041704544587965,
+              "angle": 1.1972410979396884
+            },
+            {
+              "event": "core-projectile",
+              "time": 10.933333333333456,
+              "orb": false,
+              "x": 303.52679511856627,
+              "y": 60.041704544587965,
+              "angle": 1.4372410979396884
+            },
+            {
+              "event": "core-projectile",
+              "time": 10.933333333333456,
+              "orb": false,
+              "x": 303.52679511856627,
+              "y": 60.041704544587965,
+              "angle": 1.6772410979396883
+            },
+            {
+              "event": "core-projectile",
+              "time": 10.933333333333456,
+              "orb": false,
+              "x": 303.52679511856627,
+              "y": 60.041704544587965,
+              "angle": 1.9172410979396883
+            }
+          ],
+          "rounds": [
+            {
+              "orb": false,
+              "intercept": false,
+              "element": "lightning"
+            },
+            {
+              "orb": false,
+              "intercept": false,
+              "element": "lightning"
+            },
+            {
+              "orb": false,
+              "intercept": false,
+              "element": "lightning"
+            },
+            {
+              "orb": false,
+              "intercept": false,
+              "element": "lightning"
+            },
+            {
+              "orb": false,
+              "intercept": false,
+              "element": "lightning"
+            }
+          ],
+          "missiles": 0,
+          "bh": false,
+          "rocket": false
+        }
+      },
+      {
+        "name": "Native projectile renderer uses the authored red bolt/orb banks",
+        "passed": true,
+        "data": 5
+      },
+      {
+        "name": "Native core defeat cancels projectiles, warnings and batteries",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "hp": 0,
+          "live": 0,
+          "queue": 0,
+          "beams": 0,
+          "reactor": false
+        }
+      },
+      {
+        "name": "Native miniboss lifecycle completes normally",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Fans-first order leaves six real laser targets and sealed core",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Main Harrier is outside this miniboss owner and retains its allies",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game, draw or HTTP errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "film": [
+    {
+      "name": "Live Furious fight reaches native defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "No NPC wing, callable ally or allied shot appears in film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Zero Fortress missiles throughout film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All eight native modules are present at the start",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Core never opens while a fan or battery remains",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film shows live red bolts and orb attacks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No game, HTTP, audio or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recorded audio is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -20.0,
+        "peakDb": -3.6
+      }
+    },
+    {
+      "name": "Existing preview selects the corrected local film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "New film seeks to 0.2",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "New film seeks to 0.75",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes moving video and audible audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No preview errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "preview": "http://127.0.0.1:51046/?fortress=red-core#clip=stage6-miniboss",
+  "duration": 82.33,
+  "coreExposedAt": 47.921,
+  "sha256": "a9b8fa13087c6e2372df357ec005e01aa35afb7fa49173c7a7cffee4954d8d94",
+  "audio": {
+    "meanDb": -20.0,
+    "peakDb": -3.6
+  },
+  "fps": 58.893610749465715,
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false
+}

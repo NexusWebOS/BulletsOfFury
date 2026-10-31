@@ -1,0 +1,342 @@
+{
+  "build": "overdrive1015-escape29-r1",
+  "checks": [
+    {
+      "name": "all generated exports decode in native ART",
+      "passed": true
+    },
+    {
+      "name": "even frame geometry and uniform unit",
+      "passed": true
+    },
+    {
+      "name": "13 authored aim positions each side",
+      "passed": true
+    },
+    {
+      "name": "stage3 one-hit health and no player health bar",
+      "passed": true
+    },
+    {
+      "name": "new aiming bank preserves crouching",
+      "passed": true
+    },
+    {
+      "name": "rawM30 mode+A vaults toward nearby wall",
+      "passed": true
+    },
+    {
+      "name": "vault crosses the collision footprint and queues landing roll",
+      "passed": true
+    },
+    {
+      "name": "one unprotected hit kills Yuri",
+      "passed": true
+    },
+    {
+      "name": "stage3 retry preserves one-hit rules",
+      "passed": true
+    },
+    {
+      "name": "Gosfer has840HP and linked shield",
+      "passed": true
+    },
+    {
+      "name": "player cannot break linked shield barriers",
+      "passed": true
+    },
+    {
+      "name": "Gosfer rolls and vaults across the arena",
+      "passed": true
+    },
+    {
+      "name": "barriers are destroyed by Gosfer projectile ownership",
+      "passed": true
+    },
+    {
+      "name": "dialogue and charged second phase finish",
+      "passed": true
+    },
+    {
+      "name": "boss defeat opens elevator instead of clearing level",
+      "passed": true
+    },
+    {
+      "name": "walking through north door starts elevator",
+      "passed": true
+    },
+    {
+      "name": "power loss and emergency phases reach timed hatch",
+      "passed": true
+    },
+    {
+      "name": "physicalA fires in elevator and Retina raises aim",
+      "passed": true
+    },
+    {
+      "name": "real shots break hatch and enter45degree slide",
+      "passed": true
+    },
+    {
+      "name": "chute ignores jumping rolling and manual movement",
+      "passed": true
+    },
+    {
+      "name": "pause freezes escape simulation",
+      "passed": true
+    },
+    {
+      "name": "ordinary-input slide can reach corridor",
+      "passed": true
+    },
+    {
+      "name": "drones visibly take hits and can be destroyed",
+      "passed": true
+    },
+    {
+      "name": "sideview B vaults a crate",
+      "passed": true
+    },
+    {
+      "name": "sideview vault lands beyond crate",
+      "passed": true
+    },
+    {
+      "name": "down crouches Yuri",
+      "passed": true
+    },
+    {
+      "name": "mode+X toggles sideview prone",
+      "passed": true
+    },
+    {
+      "name": "barrel volley blows metal exit door",
+      "passed": true
+    },
+    {
+      "name": "down+roll slides into breached door",
+      "passed": true
+    },
+    {
+      "name": "escape enters formerstage7 as visiblelevel4",
+      "passed": true
+    },
+    {
+      "name": "password pins list new campaign numbering without losing legacy slots",
+      "passed": true
+    },
+    {
+      "name": "backward slide uses authored reverse-torso pose",
+      "passed": true
+    },
+    {
+      "name": "new drone has visible native hit flash",
+      "passed": true
+    },
+    {
+      "name": "drone hit flash expires",
+      "passed": true
+    },
+    {
+      "name": "base turret creates finite-speed projectile instead of immediate damage",
+      "passed": true
+    },
+    {
+      "name": "every cover impact records damage and kicks screen",
+      "passed": true
+    },
+    {
+      "name": "base up+B starts a cover vault",
+      "passed": true
+    },
+    {
+      "name": "base vault crosses cover and lands",
+      "passed": true
+    },
+    {
+      "name": "base section is also one-hit lethal",
+      "passed": true
+    },
+    {
+      "name": "base respawn stays one-hit",
+      "passed": true
+    },
+    {
+      "name": "all820preexisting graphics retained byte-for-byte",
+      "passed": true
+    },
+    {
+      "name": "animation review loads every generated asset",
+      "passed": true
+    },
+    {
+      "name": "no browser or missing asset errors",
+      "passed": true
+    }
+  ],
+  "passed": 43,
+  "failed": 0,
+  "errors": [],
+  "cancelledMedia": [
+    "FAILED http://127.0.0.1:53759/expansion/topdown/audio/music23/rise_of_the_last_hope_fast_riff_genesis.wav net::ERR_ABORTED",
+    "FAILED http://127.0.0.1:53759/expansion/topdown/audio/music23/BOF-BASE.wav net::ERR_ABORTED",
+    "FAILED http://127.0.0.1:53759/expansion/topdown/audio/music23/BOF-BASE.wav net::ERR_ABORTED"
+  ],
+  "measured": {
+    "gosferStates": [
+      "windup",
+      "dialogue",
+      "roll",
+      "move",
+      "shoot",
+      "jump",
+      "strafe",
+      "recover"
+    ],
+    "gosferAfterDialogue": {
+      "phase": 2,
+      "state": "move",
+      "lines": [
+        {
+          "line": 0,
+          "at": 23.549999999999944
+        },
+        {
+          "line": 1,
+          "at": 26.36666666666645
+        },
+        {
+          "line": 2,
+          "at": 28.483333333332997
+        }
+      ],
+      "scripted": false
+    },
+    "slidePlay": [
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 0,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 0,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 0,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 1,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 1,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 2,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 3,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 3,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 4,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 4,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 5,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 5,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 6,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": false,
+        "deaths": 0,
+        "kills": 7,
+        "intercepts": 0,
+        "phase": "chute"
+      },
+      {
+        "done": true,
+        "phase": "corridor",
+        "deaths": 0
+      }
+    ]
+  },
+  "scope": "Native Chromium, synthetic raw M30 input, isolated combat fixtures plus ordinary-input slide survival; not physical controller testing. ERR_ABORTED audio requests on intentional music changes/navigation recorded separately.",
+  "baseRegression": {
+    "exitCode": 0,
+    "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "okLines": 8700
+  },
+  "exportAudit": {
+    "count": 238,
+    "evenDimensions": true,
+    "binaryAlpha": true,
+    "validManifestSizes": true
+  },
+  "routeSummary": {
+    "passed": true,
+    "end": {
+      "done": true,
+      "mission": 7,
+      "state": "play"
+    },
+    "deathsAtLastSample": 0
+  }
+}

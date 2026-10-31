@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "clip": "s8-helicopter",
+      "source": "http://127.0.0.1:51046/videos/stage8-helicopter-digital-jungle-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.001922,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "stage8-helicopter-digital-jungle",
+      "source": "http://127.0.0.1:51046/videos/stage8-helicopter-digital-jungle-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.002526,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "stage8-helicopter-weapons",
+      "source": "http://127.0.0.1:51046/videos/stage8-helicopter-digital-jungle-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 5.18042,
+      "advanced": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

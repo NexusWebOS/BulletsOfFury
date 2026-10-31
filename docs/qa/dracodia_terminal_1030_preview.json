@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "clip": "stage8-dracodia-terminal",
+      "source": "http://127.0.0.1:51046/videos/stage8-dracodia-terminal-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.000405,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "stage8-dracodia-shatter",
+      "source": "http://127.0.0.1:51046/videos/stage8-dracodia-terminal-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 6.93039,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "stage8-sewer-reunion",
+      "source": "http://127.0.0.1:51046/videos/stage8-dracodia-terminal-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 28.450857,
+      "advanced": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

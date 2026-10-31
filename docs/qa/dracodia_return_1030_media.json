@@ -1,0 +1,77 @@
+{
+  "nativeFPS": 54.52354654081734,
+  "transferFPS": 59.049079754601244,
+  "performanceLimit": "Whole checkpoint54.52FPS includes existing combat stalls; return interval is measured separately, not a full-fight performance claim.",
+  "meanDB": -22.4,
+  "peakDB": -4.5,
+  "duration": 20.481,
+  "events": [
+    {
+      "event": "return-start",
+      "clock": 11.300000000000141,
+      "from": 6,
+      "last": false,
+      "remaining": [
+        8,
+        1,
+        2
+      ],
+      "mainHP": 5330
+    },
+    {
+      "event": "arena-restored",
+      "clock": 12.150000000000183,
+      "from": 6,
+      "last": false,
+      "hp": 5330,
+      "parts": [
+        {
+          "id": "core",
+          "hp": 5330,
+          "destroyed": false
+        },
+        {
+          "id": "left",
+          "hp": 1280,
+          "destroyed": false
+        },
+        {
+          "id": "right",
+          "hp": 1280,
+          "destroyed": false
+        }
+      ],
+      "pools": [
+        5330,
+        3690,
+        4100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4920
+      ]
+    },
+    {
+      "event": "return-complete",
+      "clock": 15.516666666667017,
+      "last": false,
+      "hp": 5330,
+      "pools": [
+        5330,
+        3690,
+        4100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4920
+      ]
+    }
+  ],
+  "sha256": "2cb46170714f6fdd6a85adb90cf84da872ed5a26a90cc915d497275276901b0a",
+  "preview": "http://127.0.0.1:51046/?dracodia=copy-return-1030#clip=stage8-copy-arena-return",
+  "checkpoint": "Focused native checkpoint: brain copy280HP and missing main left arm, prepared before recording. Other life pools full; no recorder HP/phase/clock writes during footage."
+}

@@ -1,0 +1,61 @@
+from pathlib import Path
+import sys,json,http.server
+from playwright.sync_api import sync_playwright
+R=Path(__file__).resolve().parents[1];W=R/'_shots/herald_spellcaster_1029/probe';W.mkdir(parents=True,exist_ok=True);sys.path.insert(0,str(R/'_BUILD_SOURCE'))
+from shoot import serve,STEP
+from barrage_review_common_1025 import boot,advance
+http.server.ThreadingHTTPServer.request_queue_size=256;checks=[];errors=[]
+def ck(n,v,d=None):
+ checks.append(dict(name=n,passed=bool(v),data=d));(W/'checks.json').write_text(json.dumps(checks,indent=2));print('PASS'if v else'FAIL',n,json.dumps(d)[:700]if not v else'',flush=True)
+def step(p,n):
+ for i in range(0,n,30):
+  err=p.evaluate(STEP,min(30,n-i))
+  if err:raise RuntimeError(err)
+  p.wait_for_timeout(1)
+def snap(p,name):p.evaluate('drawWorld(0)');p.screenshot(path=str(W/(name+'.png')))
+port,stop=serve(str(R))
+try:
+ with sync_playwright()as pw:
+  br=pw.chromium.launch(channel='msedge',headless=True,args=['--autoplay-policy=no-user-gesture-required']);bc=br.new_context(viewport={'width':1280,'height':800});p=boot(bc,port,8,errors)
+  p.evaluate('()=>{run.stage=8;stageLoadBegin(8)}');p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(8)}',timeout=240000)
+  p.evaluate("()=>{beginStage(8);BOFCinematicDirector.cancel();story=null;diffKey='furious';debugStartFight({stage:8,role:'mini',kind:'heralddeath'},{pilot:'cole',record:false});spawnSubBoss('heralddeath');debugFight.spawned=true;subBossActive=true;warnT=0;DBGT.god=true;player.invuln=1e9;BOFCinematicDirector.cancel();setState(GS.PLAY);window.B=subBoss;pBullets=[];eBullets=[];}");step(p,150)
+  ck('All authored seal, skull, orb and glass banks preload',p.evaluate('Object.values(HS53_ART).every(a=>XART.rdy(a.key))'))
+  p.evaluate("()=>{HS53.events=[];hr28Start(B,'pentagram')}");step(p,20);snap(p,'skull-gather')
+  d=p.evaluate("""()=>{const f=combatWarningDraw,h=hh52Blit,fields=[],marks=[];combatWarningDraw=function(o,a){fields.push(a)};hh52Blit=function(...a){marks.push(a);return h.apply(this,a)};try{heraldDeathDraw(B)}finally{combatWarningDraw=f;hh52Blit=h}return{fields,marks,head:hd1003Pose(B,hd1003Part(B,'head')),dark:B._hd1003.er28.dark};}""")
+  ck('Caster starts with asterisk above the skull and no broad FOV',not d['fields']and any(a[0]=='star'and a[3]<d['head']['y']for a in d['marks']),d)
+  ck('Casting darkens the scenery',d['dark']>0,d['dark']);step(p,60);snap(p,'seal-lines')
+  ck('Five lines and circle have separate progression events',p.evaluate("HS53.events.some(e=>e.event==='seal-line')&&!HS53.events.some(e=>e.event==='seal-circle')"))
+  step(p,80);snap(p,'seal-circle');ck('Outer circle forms after all five line starts',p.evaluate("()=>{const e=HS53.events;return e.filter(e=>e.event==='seal-line').map(e=>e.line).join(',')==='0,1,2,3,4'&&e.some(e=>e.event==='seal-circle');}"))
+  ck('Seal remains anchored to the live caster',p.evaluate('(()=>{const p=hs53SealPoint(B);return p.x===B.x&&p.y===B.y+82})()'))
+  ck('Old moving pentagram is absent',p.evaluate("!eBullets.some(q=>q._er28Herald==='pentagram'&&!q.dead)"))
+  step(p,60);snap(p,'seal-spin');ck('Completed seal enters its authored spinning phase',p.evaluate("B._hd1003.er28.phase==='spin'"),p.evaluate('B._hd1003.er28.phase'))
+  step(p,70);snap(p,'seal-pulse');ck('Spin transitions into authored glow/expansion/contraction',p.evaluate("B._hd1003.er28.phase==='pulse'"),p.evaluate('B._hd1003.er28.phase'))
+  step(p,42);snap(p,'seal-burst');ck('Seal bursts and releases seven native Furious penta balls',p.evaluate("HS53.events.filter(e=>e.event==='penta-ball-release').length===7&&HS53.orbs.size===7"),p.evaluate('HS53.events.slice(-10)'))
+  ck('Penta balls originate at the visible casting seal',p.evaluate("()=>{const e=HS53.events,at=e.find(e=>e.event==='seal-release');return e.filter(e=>e.event==='penta-ball-release').every(q=>q.x===at.x&&q.y===at.y)}"))
+  ck('Spell ordnance stays unshootable before its next rules update',p.evaluate("()=>{const q=hs53Round(B,{x:100,y:100},1,2,'shard',{_hs53Dir:0,_hs53Phase:0});return !enemyOrdnanceCanIntercept(q)&&q._weaponProof&&!q._shootable}"))
+  p.evaluate("()=>{window.orb=[...HS53.orbs][0];pBullets.push({kind:'mg',x:orb.x,y:orb.y,vx:0,vy:0,w:30,h:30,dmg:1,life:1,t:0})}");step(p,1)
+  ck('Ordinary player bullets do not destroy penta balls',p.evaluate('!orb.dead'))
+  step(p,65);snap(p,'penta-balls');step(p,55);snap(p,'glass-shatter')
+  ck('Every penta ball explodes exactly once',p.evaluate("HS53.events.filter(e=>e.event==='penta-ball-shatter').length===7&&new Set(HS53.events.filter(e=>e.event==='penta-ball-shatter').map(e=>e.index)).size===7"))
+  ck('Every timed shatter stays at its committed visible burst point',p.evaluate("()=>{const e=HS53.events;return e.filter(q=>q.event==='penta-ball-shatter').every(q=>{const p=e.find(p=>p.event==='penta-ball-release'&&p.index===q.index);return Math.abs(p.target.x-q.x)<.001&&Math.abs(p.target.y-q.y)<.001&&q.y<VH-45});}"))
+  ck('Explosions emit real red-glass bullet-hell rounds',p.evaluate("eBullets.filter(q=>q._hs53==='shard'&&!q.dead).length>=30&&eBullets.filter(q=>q._hs53==='shard').every(q=>!enemyOrdnanceCanIntercept(q))"),p.evaluate("eBullets.filter(q=>q._hs53==='shard'&&!q.dead).length"))
+  ck('The native 128-round owner budget remains bounded',p.evaluate('eBullets.filter(q=>q._heraldOwner1003===B&&!q.dead).length<=128'))
+  p.evaluate("""()=>{window.damageCalls=[];window.hitOriginal=playerHit;playerHit=function(...args){damageCalls.push(args);return hitOriginal.apply(this,args)};window.contactShard=eBullets.find(q=>q._hs53==='shard'&&!q.dead);const q=contactShard;q.x=player.x=camLeftX()+viewW()/2;q.y=player.y=VH-85;q.vx=q.vy=0;player.invuln=0;run.shield=0;}""");step(p,1)
+  contact=p.evaluate('({calls:damageCalls.length,invuln:player.invuln,player:{x:player.x,y:player.y,dead:player.dead},shard:{x:contactShard.x,y:contactShard.y,dead:contactShard.dead}})')
+  ck('Glass shards use actual native player collision/damage',contact['calls']>0,contact);p.evaluate('()=>{playerHit=hitOriginal;player.invuln=1e9}')
+  step(p,280);ck('Cast recovers and all glass rounds expire',p.evaluate("HS53.events.some(e=>e.event==='cast-complete')&&!eBullets.some(q=>q._hs53&&!q.dead)&&HS53.orbs.size===0"))
+  pressure=p.evaluate("""()=>{const old=enemyBulletPressure;enemyBulletPressure=()=>3;try{hs53Release(B,{});const q=[...HS53.orbs];return q.length===7&&q.every(q=>{const dt=q._hs53At-q._hs53Born;return Math.abs(q.x+q.vx*60*dt-q._hs53Target.x)<1e-7&&Math.abs(q.y+q.vy*60*dt-q._hs53Target.y)<1e-7});}finally{enemyBulletPressure=old;eBullets=[];HS53.orbs.clear()}}""")
+  ck('Difficulty pressure cannot accelerate orbs past their committed burst points',pressure)
+  p.evaluate("()=>{for(const id of ['gunL','gunR','wingL','wingR']){const part=hd1003Part(B,id);hd1003Hit(B,part.hp+2,0,0,id)};hd1003Tell(B)}")
+  ck('Destroying all four real modules enters the skull/core caster phase',p.evaluate("B.hp>0&&B._hd1003.hs53Caster&&B._hd1003.er28?._hs53&&['gunL','gunR','wingL','wingR'].every(id=>hd1003Part(B,id).dead)"),p.evaluate('({hp:B.hp,caster:B._hd1003.hs53Caster,parts:B._hd1003.parts.map(p=>({id:p.id,hp:p.hp,dead:p.dead}))})'))
+  step(p,35);snap(p,'skull-only-caster')
+  px=p.evaluate("""()=>{drawWorld(0);const a=ctx.getImageData(0,0,cv.width,cv.height).data,part=hd1003Part(B,'head'),before=B.hp;hd1003Hit(B,5,0,0,'head');drawWorld(0);const d=ctx.getImageData(0,0,cv.width,cv.height).data;let white=0;for(let i=0;i<d.length;i+=4)if(d[i]>240&&d[i+1]>240&&d[i+2]>240&&a[i]+a[i+1]+a[i+2]<650)white++;return{white,flash:part.flash,hp:B.hp,before};}""")
+  ck('Animated casting skull preserves actual white damage pixels',px['white']>4 and px['flash']>0 and px['hp']<px['before'],px);step(p,20)
+  ck('Casting skull hit flash expires normally',p.evaluate("hd1003Part(B,'head').flash===0"))
+  p.evaluate('()=>{window.casterKinds=[];for(let i=0;i<5;i++){hd1003Tell(B);casterKinds.push(B._hd1003.er28?.kind)}}')
+  ck('Stripped phase stays in magic turns, never empty bomber/swoop flights',p.evaluate("casterKinds.join(',')==='nuke,rage,storm,pentagram,pentagram'&&!B._hd1003._hb25"),p.evaluate('casterKinds'))
+  p.evaluate("()=>{hr28Start(B,'pentagram');hs53Release(B,B._hd1003.er28);window.cancel=[...HS53.orbs][0];run.stage=7}");step(p,1)
+  ck('Leaving Stage 8 cancels spell rounds and effects',p.evaluate('cancel.dead&&HS53.orbs.size===0&&HS53.fx.length===0'))
+  ck('Native page and console are error-free',not errors,errors);(W/'events.json').write_text(json.dumps(p.evaluate('HS53.events'),indent=2));br.close()
+finally:stop()
+print('RESULT',sum(q['passed']for q in checks),'/',len(checks));assert all(q['passed']for q in checks)

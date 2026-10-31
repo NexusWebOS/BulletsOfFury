@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "name": "broken barriers draw authored low rubble",
+      "passed": true
+    },
+    {
+      "name": "no native errors",
+      "passed": true
+    },
+    {
+      "name": "entering elevator stops walking animation",
+      "passed": true
+    },
+    {
+      "name": "M30 Retina Dpad takes aim from parked mouse",
+      "passed": true
+    },
+    {
+      "name": "moving mouse takes aim back immediately",
+      "passed": true
+    },
+    {
+      "name": "final handoff has no native errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

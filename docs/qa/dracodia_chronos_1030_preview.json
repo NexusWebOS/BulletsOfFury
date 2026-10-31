@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "clip": "s8-code-hammer",
+      "source": "http://127.0.0.1:51046/videos/stage8-dracodia-corrupted-chronos-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "duration": 118.480333,
+      "time": 0.000803,
+      "advanced": true,
+      "expected": "s8-code-hammer",
+      "passed": true
+    },
+    {
+      "clip": "s8-code-hammer-rage",
+      "source": "http://127.0.0.1:51046/videos/stage8-dracodia-corrupted-chronos-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "duration": 118.480333,
+      "time": 68.700465,
+      "advanced": true,
+      "expected": "s8-code-hammer-rage",
+      "passed": true
+    },
+    {
+      "clip": "rough-riders-teal-overflight",
+      "source": "http://127.0.0.1:51046/videos/stage6-teal-return-overflight-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "duration": 9.029333,
+      "time": 0.012641,
+      "advanced": true,
+      "expected": "rough-riders-teal-overflight",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

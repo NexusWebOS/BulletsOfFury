@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-06",
+  "scope": "Additive standalone choreography kit and study; no live BOF runtime or production atlas edits",
+  "referenceReview": {
+    "source": "https://www.youtube.com/watch?v=iooQeqdyB8E",
+    "numberedEncounters": 35,
+    "atlasSections": 37,
+    "method": "Sequential normal-speed visual replay and ambiguous-event revisits; sampled frames, not source disassembly",
+    "audioAnalysed": false,
+    "fullPossibleMovesetsEstablished": false
+  },
+  "syntax": {
+    "bosses.js": "pass",
+    "boss-lab.js": "pass",
+    "patterns.js": "pass",
+    "lab.js": "pass"
+  },
+  "tests": {
+    "bosses": {
+      "command": "node bosses.test.cjs",
+      "exitCode": 0,
+      "checksPassed": 9,
+      "formPresetCombinations": 33,
+      "frameRatesCompared": [
+        30,
+        60,
+        144
+      ]
+    },
+    "patterns": {
+      "command": "node patterns.test.cjs",
+      "exitCode": 0,
+      "checksPassed": 8,
+      "recipePresetCombinations": 18,
+      "frameRatesCompared": [
+        30,
+        60,
+        144
+      ],
+      "skippedFrameComparison": true
+    }
+  },
+  "browser": {
+    "engine": "Codex in-app Chromium via CUA",
+    "url": "http://127.0.0.1:8766/encounters.html",
+    "allFourEncountersSelected": true,
+    "allElevenFormsVisuallyInspected": true,
+    "difficultySelectorVerified": true,
+    "pauseResumeRestartStepVerified": true,
+    "gunPartDestructionVisiblyVerified": true,
+    "combatDrivenFormAdvanceVisiblyVerified": true,
+    "pointerMovementVisuallyVerified": true,
+    "generatedJointContactBreachPlaybackVisuallyInspected": true,
+    "consoleWarningsOrErrors": [],
+    "proof": "encounter-proof.jpg",
+    "notes": "Found and corrected duplicate recovery effect at floating timing boundary and clipped extending spoke. Preview forms inspected with authoring button; Coupler also advanced through gun damage."
+  },
+  "assets": {
+    "signature": {
+      "manifest": "art/boss_signature_manifest.json",
+      "nativeSize": [
+        1448,
+        1086
+      ],
+      "cellSize": [
+        362,
+        362
+      ],
+      "clips": 3,
+      "minimumSignificantAlphaPadding": 13,
+      "requested48PixelPaddingMet": false,
+      "status": "sandbox candidate, native art review required"
+    },
+    "pressure": {
+      "manifest": "art/manifest.json",
+      "minimumSignificantAlphaPadding": 1,
+      "status": "sandbox candidate, native art review required"
+    }
+  },
+  "productionLimitations": [
+    "Original tuning, not measured Contra frame timings or final BOF balance",
+    "Actual BOF controls, weapons, pilot speeds, support fire and shared collision adapter still need validation",
+    "Sandbox schematic bosses need approved authored plates/poses before live registration",
+    "Amber chain guides do not certify exact swept footprints or a safe path from every start position",
+    "High-speed native moving collisions need swept verification",
+    "Generated effects need native blending, pixel-density and anchor review",
+    "Full production regression suite not run because production runtime was not edited"
+  ]
+}

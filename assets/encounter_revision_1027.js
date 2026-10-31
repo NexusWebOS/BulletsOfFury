@@ -19,7 +19,7 @@ function er28WingReady(route){if(!s6Wing)s6WingInit();const W=s6Wing;
  W.er28Encounter=true;er28Log('stage6-encounter-entry',{route,allies:W.ships.length});
 }
 spawnBoss=function(kind){if(run.stage===6&&['warhive','rebelsquad'].includes(kind))er28WingReady(kind==='rebelsquad'?'right':'left');return ER28.base.spawn.apply(this,arguments);};
-spawnSubBoss=function(){if(run.stage===6&&debugFight?.stage===6){er28WingReady('left');s6Wing.er28Mini=true;}return ER28.base.mini.apply(this,arguments);};
+spawnSubBoss=function(){if(run.stage===6&&debugFight?.stage===6){if(!s6Wing)s6WingInit();s6Wing.er28Mini=true;}return ER28.base.mini.apply(this,arguments);};
 s6OpeningTick=function(dt){if(er28Stage6Boss()||run.stage===6&&debugFight?.stage===6)return;return ER28.base.opening.apply(this,arguments);};
 s6OnslaughtTick=function(){if(er28Stage6Boss()||s6Wing?.er28Encounter&&debugFight?.stage===6)return;return ER28.base.onslaught.apply(this,arguments);};
 s6WingTick=function(dt){if(er28Stage6Boss()){

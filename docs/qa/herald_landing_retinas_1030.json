@@ -1,0 +1,351 @@
+{
+  "native": [
+    {
+      "name": "Retina atlas contains24 fixed64x32 colour/fade frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Green fade is authored into increasing pixel alpha",
+      "passed": true,
+      "data": [
+        10725,
+        22975,
+        39058,
+        57934,
+        79659,
+        102602,
+        118792,
+        134885
+      ]
+    },
+    {
+      "name": "Yellow fade is authored into increasing pixel alpha",
+      "passed": true,
+      "data": [
+        10725,
+        22975,
+        39058,
+        57934,
+        79659,
+        102602,
+        118792,
+        134885
+      ]
+    },
+    {
+      "name": "Red fade is authored into increasing pixel alpha",
+      "passed": true,
+      "data": [
+        10725,
+        22975,
+        39058,
+        57934,
+        79659,
+        102602,
+        118792,
+        134885
+      ]
+    },
+    {
+      "name": "Retina frames are preloaded before the bomber attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native bomber reaches its pre-drop tell",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No acquisition marks exist before a physical drop releases",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native drop releases a landing mark",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Mark starts faint and in motion, then rapidly locks onto the impact",
+      "passed": true,
+      "data": {
+        "distances": [
+          103.76897416858277,
+          77.08424481234675,
+          55.41785804866869,
+          38.247078343173406,
+          25.049170161485673,
+          15.301397969230294,
+          8.481026232032091,
+          4.065319415515686,
+          1.5315419853061594,
+          0.35695840702815573,
+          0.018833146306424874,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frames": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          3,
+          4,
+          5,
+          6,
+          6,
+          7,
+          7,
+          7,
+          7
+        ]
+      }
+    },
+    {
+      "name": "Fade and movement finish within first quarter of actual bomb flight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every falling drop has one real authored Retina blit and no old popping marker",
+      "passed": true,
+      "data": {
+        "calls": [
+          [
+            448,
+            0,
+            64,
+            32,
+            460,
+            460,
+            64,
+            32
+          ],
+          [
+            448,
+            0,
+            64,
+            32,
+            471,
+            460,
+            64,
+            32
+          ],
+          [
+            448,
+            0,
+            64,
+            32,
+            406,
+            460,
+            64,
+            32
+          ],
+          [
+            448,
+            0,
+            64,
+            32,
+            412,
+            460,
+            64,
+            32
+          ],
+          [
+            0,
+            0,
+            64,
+            32,
+            229,
+            416,
+            64,
+            32
+          ]
+        ],
+        "legacy": [],
+        "live": 5
+      }
+    },
+    {
+      "name": "Released targets sit at the bottom of the current arena",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Player/camera motion cannot drag a committed target",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both native ordinary and radial-explosive drops receive cues",
+      "passed": true,
+      "data": {
+        "drops": 22,
+        "impacts": 22
+      }
+    },
+    {
+      "name": "Every released velocity/fuse ends on its marked bottom point",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual ordinary and radial impacts match their locked Retina coordinates",
+      "passed": true,
+      "data": [
+        {
+          "event": "impact",
+          "time": 4.583333333333322,
+          "id": 2,
+          "simple": false,
+          "x": 503.09120091422267,
+          "y": 476
+        },
+        {
+          "event": "impact",
+          "time": 4.616666666666656,
+          "id": 1,
+          "simple": true,
+          "x": 491.8723443620496,
+          "y": 476
+        },
+        {
+          "event": "impact",
+          "time": 4.683333333333322,
+          "id": 3,
+          "simple": true,
+          "x": 438.2389484640127,
+          "y": 476
+        }
+      ]
+    },
+    {
+      "name": "Projectile pressure remains inside the native128-round cap",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Ordinary marked drops remain unshootable",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Broken claw cancels its in-flight drop and animated mark",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage exit clears drops and marks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Dual-red claw laser asset owner remains loaded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page/console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Full native Furious Herald fight reaches defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Native4264 health budget is retained",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, asset, audio or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native recording includes synchronized dual-claw releases",
+      "passed": true,
+      "data": {
+        "events": 32,
+        "pairedWaves": 16
+      }
+    },
+    {
+      "name": "Live film includes moving and locked bottom landing marks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film reaches actual marked bottom impacts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recorded native renderer draws red laser and muzzle banks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Existing protected20percent desperation and foreground return remain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Decoded recorded sound is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -20.7,
+        "peakDb": -2.8
+      }
+    },
+    {
+      "name": "stage8-miniboss uses the corrected native film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-miniboss decodes moving footage with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-bomb-retinas uses the corrected native film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-bomb-retinas decodes moving footage with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No video preview errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 118.39,
+  "firstLaser": 6.924,
+  "pairedWaves": 16,
+  "fps": 59.05692438402719,
+  "audio": {
+    "meanDb": -20.7,
+    "peakDb": -2.8
+  },
+  "preview": "http://127.0.0.1:51046/?herald=retina-arrivals-1030#clip=stage8-herald-bomb-retinas",
+  "fullFight": "http://127.0.0.1:51046/?herald=retina-arrivals-1030#clip=stage8-miniboss",
+  "sha256": "b8b71edee61c122a6405d76f494844f74a269a715ecf20614be8c816a4b23815",
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false
+}

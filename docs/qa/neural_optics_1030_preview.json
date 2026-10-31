@@ -1,0 +1,23 @@
+{
+  "checks": [
+    {
+      "clip": "s8-neural-archon",
+      "source": "http://127.0.0.1:51046/videos/stage8-neural-eye-beams-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.000982,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "stage8-neural-eye-beams",
+      "source": "http://127.0.0.1:51046/videos/stage8-neural-eye-beams-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.900821,
+      "advanced": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

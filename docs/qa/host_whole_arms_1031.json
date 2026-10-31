@@ -1,0 +1,541 @@
+{
+  "scope": "RD96 first-host complete arm strikes, intact armless torso and sphere transformation",
+  "targetedPassed": 44,
+  "targetedFailed": 0,
+  "groups": {
+    "native": [
+      {
+        "name": "All466 authored frames keep even fixed cells and explicit pivots",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Hit frames retain every normal-frame alpha pixel",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Original host unit stays fixed with no bank-edge clipping",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Whole arms retain finite anatomical reach while coiling and extending",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Correct gated possession entrance reaches the intact full-health host",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "left uses a whole finite arm, body advance and same-frame Retina anchor",
+        "passed": true,
+        "data": {
+          "advance": 135.94687341544363,
+          "length": 155.01048641946775,
+          "nodes": 0,
+          "f": 25,
+          "anchor": {
+            "x": 323.7238351207211,
+            "y": 443.94353078240647
+          },
+          "tip": {
+            "x": 323.7238351207211,
+            "y": 443.94353078240647
+          }
+        }
+      },
+      {
+        "name": "left native hit changes visible pixels",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "left hit flash expires through its normal timer",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "left stroke fully retracts and body returns home",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "right uses a whole finite arm, body advance and same-frame Retina anchor",
+        "passed": true,
+        "data": {
+          "advance": 143.0130160651498,
+          "length": 154.13158436868153,
+          "nodes": 0,
+          "f": 25,
+          "anchor": {
+            "x": 354.97993081345084,
+            "y": 441.9729387385107
+          },
+          "tip": {
+            "x": 354.97993081345084,
+            "y": 441.9729387385107
+          }
+        }
+      },
+      {
+        "name": "right native hit changes visible pixels",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "right hit flash expires through its normal timer",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "right stroke fully retracts and body returns home",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Retired segmented ligament and detached claw are never rendered",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Moving whole-arm pixels own projectile collision",
+        "passed": true,
+        "data": {
+          "actual": "left",
+          "expected": "left"
+        }
+      },
+      {
+        "name": "Whole-arm reach still supports a nonfatal native capture",
+        "passed": true,
+        "data": {
+          "P": {
+            "f": 24,
+            "lean": 15
+          },
+          "target": {
+            "x": 340,
+            "y": 447
+          },
+          "tip": {
+            "x": 317.50634742592206,
+            "y": 439.59624287361646
+          },
+          "ship": {
+            "x": 340,
+            "y": 447
+          }
+        }
+      },
+      {
+        "name": "Bending complete arm lifts the held pilot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native GOD throw releases input locks safely",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Second complete-arm grab catches normally",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Destroying the grabbing arm releases the pilot and uses current-arm blast anchors",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Remaining arm still protects the core",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native arm budgets leave the entire core pool intact",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "First armless frame uses complete current torso",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native exposed-core owner begins its new fold",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Actual folding has a readable1.50second animation",
+        "passed": true,
+        "data": {
+          "tell": 1.5,
+          "hp": 1987,
+          "f": 0
+        }
+      },
+      {
+        "name": "Pause freezes transformation timing and movement",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Current torso still renders during shell closure",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native rolling begins only after the shell closes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Ball keeps native ricochet movement and bomb attacks",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No old cropped fold plate was drawn",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Fold and rolling Retina target stay at visible body centre",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Rolling core still accepts native damage and flashes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No browser or renderer errors",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "Core game source remains unchanged",
+        "passed": true,
+        "data": null
+      }
+    ],
+    "sources": [
+      {
+        "name": "Installed recipe reproduces all runtime PNGs exactly",
+        "passed": true
+      },
+      {
+        "name": "Fold begins with the exact complete current armless torso",
+        "passed": true
+      },
+      {
+        "name": "Fold closes on the exact native ball phase used by the spin",
+        "passed": true
+      },
+      {
+        "name": "Every bank retains an editable Aseprite source",
+        "passed": true
+      }
+    ],
+    "playback": [
+      {
+        "name": "strike chapter seeks inside the current full native film",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "strike chapter plays forward without media errors",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "fold chapter seeks inside the current full native film",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "fold chapter plays forward without media errors",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Both chapters retain the full-fight continuation link",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No preview browser errors",
+        "passed": true,
+        "data": []
+      }
+    ]
+  },
+  "media": {
+    "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Host-Whole-Arms-Ball-1031\\video\\whole-arms-ball-1031\\report.json",
+    "seconds": 148.056,
+    "fps": 58.10602824617429,
+    "meanDB": -18.6,
+    "peakDB": -2.6,
+    "decodeErrors": 0,
+    "events": [
+      {
+        "event": "whole-arm-windup",
+        "clock": 26.499999999999776,
+        "serial": 2,
+        "side": "left",
+        "kind": "swipe",
+        "filmTime": 27.118
+      },
+      {
+        "event": "whole-arm-strike",
+        "clock": 27.566666666666382,
+        "serial": 2,
+        "side": "left",
+        "target": {
+          "x": 213.71439382204835,
+          "y": 442.2480061779519
+        },
+        "advance": 165.11861005613991,
+        "filmTime": 28.522
+      },
+      {
+        "event": "whole-arm-contact",
+        "clock": 27.783333333333037,
+        "seat": 1,
+        "side": "left",
+        "filmTime": 28.522
+      },
+      {
+        "event": "whole-arm-windup",
+        "clock": 33.566666666666045,
+        "serial": 4,
+        "side": "left",
+        "kind": "grab",
+        "filmTime": 34.135
+      },
+      {
+        "event": "whole-arm-strike",
+        "clock": 34.8999999999993,
+        "serial": 4,
+        "side": "left",
+        "target": {
+          "x": 422.2083938220478,
+          "y": 442.2480061779519
+        },
+        "advance": 175.00000000000006,
+        "filmTime": 35.535
+      },
+      {
+        "event": "whole-arm-windup",
+        "clock": 49.54999999999847,
+        "serial": 8,
+        "side": "left",
+        "kind": "swipe",
+        "filmTime": 50.625
+      },
+      {
+        "event": "whole-arm-strike",
+        "clock": 50.616666666665076,
+        "serial": 8,
+        "side": "left",
+        "target": {
+          "x": 422.2083938220478,
+          "y": 442.2480061779519
+        },
+        "advance": 171.28273347606245,
+        "filmTime": 51.569
+      },
+      {
+        "event": "whole-arm-windup",
+        "clock": 56.616666666664734,
+        "serial": 10,
+        "side": "left",
+        "kind": "grab",
+        "filmTime": 57.738
+      },
+      {
+        "event": "whole-arm-strike",
+        "clock": 57.94999999999799,
+        "serial": 10,
+        "side": "left",
+        "target": {
+          "x": 395.6727938220479,
+          "y": 442.2480061779519
+        },
+        "advance": 171.9365944256118,
+        "filmTime": 59.139
+      },
+      {
+        "event": "whole-arm-windup",
+        "clock": 71.66666666666389,
+        "serial": 14,
+        "side": "left",
+        "kind": "swipe",
+        "filmTime": 72.777
+      },
+      {
+        "event": "whole-arm-strike",
+        "clock": 72.73333333333049,
+        "serial": 14,
+        "side": "left",
+        "target": {
+          "x": 244.04079382204827,
+          "y": 442.2480061779519
+        },
+        "advance": 156.7698918151216,
+        "filmTime": 74.287
+      },
+      {
+        "event": "whole-arm-contact",
+        "clock": 72.94999999999715,
+        "seat": 1,
+        "side": "left",
+        "filmTime": 74.287
+      },
+      {
+        "event": "whole-arm-windup",
+        "clock": 78.73333333333015,
+        "serial": 16,
+        "side": "left",
+        "kind": "grab",
+        "filmTime": 80.478
+      },
+      {
+        "event": "whole-arm-strike",
+        "clock": 80.06666666666341,
+        "serial": 16,
+        "side": "left",
+        "target": {
+          "x": 247.83159382204826,
+          "y": 442.2480061779519
+        },
+        "advance": 155.35016571522718,
+        "filmTime": 81.447
+      },
+      {
+        "event": "whole-arm-windup",
+        "clock": 94.3666666666626,
+        "serial": 20,
+        "side": "left",
+        "kind": "swipe",
+        "filmTime": 96.039
+      },
+      {
+        "event": "whole-arm-strike",
+        "clock": 95.4333333333292,
+        "serial": 20,
+        "side": "left",
+        "target": {
+          "x": 213.71439382204835,
+          "y": 442.2480061779519
+        },
+        "advance": 160.11879668234715,
+        "filmTime": 97.003
+      },
+      {
+        "event": "whole-arm-contact",
+        "clock": 95.64999999999586,
+        "seat": 1,
+        "side": "left",
+        "filmTime": 97.471
+      },
+      {
+        "event": "whole-arm-windup",
+        "clock": 101.43333333332886,
+        "serial": 22,
+        "side": "left",
+        "kind": "grab",
+        "filmTime": 103.123
+      },
+      {
+        "event": "whole-arm-strike",
+        "clock": 102.76666666666212,
+        "serial": 22,
+        "side": "left",
+        "target": {
+          "x": 236.4591938220483,
+          "y": 442.2480061779519
+        },
+        "advance": 160.49928069960882,
+        "filmTime": 104.537
+      },
+      {
+        "event": "current-torso-fold-start",
+        "clock": 108.48333333332846,
+        "hp": 1977,
+        "tell": 1.5,
+        "filmTime": 110.169
+      },
+      {
+        "event": "sphere-closed",
+        "clock": 109.99999999999504,
+        "startFrame": 9,
+        "hp": 1977,
+        "filmTime": 111.571
+      }
+    ],
+    "playing": {
+      "bossAlarm": 1,
+      "combatEnergy0927": 2,
+      "bossPhase": 2,
+      "boss8": 1,
+      "warpGate": 3,
+      "combatModule0927": 12,
+      "combatAlien0927": 1,
+      "bossWeaponCharge": 25,
+      "av3_target_acquire": 25,
+      "alertLockon": 25,
+      "combatOrb0927": 2,
+      "expBig": 56,
+      "dialogueLetter": 60,
+      "rd71ScreamA": 2,
+      "rd71ScreamB": 2,
+      "enemyBossCannon": 27,
+      "combatBeam0927": 62,
+      "loop": 15,
+      "hit": 506,
+      "missile": 67,
+      "av3_impact_flesh": 430,
+      "laserBeamStart": 29,
+      "expSmall": 511,
+      "missileHit": 67,
+      "laserBeamEnd": 29,
+      "powerup": 5,
+      "achievement": 2,
+      "weapon": 2,
+      "spread": 294,
+      "timedBombBeep": 85,
+      "timedBombBlast": 38,
+      "cryoOrb": 1,
+      "iceOrbImpact": 1,
+      "cfComboIce": 1
+    },
+    "full": "http://127.0.0.1:51046/?host=whole-arms-ball-1031#clip=stage8-firsthost-whole-arms",
+    "strike": "http://127.0.0.1:51046/?host=whole-arms-ball-1031#clip=stage8-host-whole-arm-strike",
+    "fold": "http://127.0.0.1:51046/?host=whole-arms-ball-1031#clip=stage8-host-ball-transformation",
+    "sha256": "a7ab4cde5e61a6948a7c375177bbb985760f6049fcbcb802abee3b0aaea7cfb2"
+  },
+  "coreSHA256": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de",
+  "fullSuite": {
+    "exitCode": 1,
+    "existingFailures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "limits": [
+    "Native full5945HP first-host fight, not a new complete copied-form/final-life run.",
+    "Observer is invulnerable and supplies only player input; no HP, phase or timer writes during filming.",
+    "Both arm sides and grab/GOD-release/arm-break-release are checked with explicit native fixtures. The natural recorded attack book uses its existing side selection.",
+    "No paid generation, Git commit or push."
+  ]
+}

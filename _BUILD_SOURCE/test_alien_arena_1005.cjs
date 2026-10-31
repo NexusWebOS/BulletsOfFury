@@ -23,11 +23,12 @@ module.exports=function(vm,c,ok){
  const clock=J.aa5Clock;drawBG(0);drawBG(0);out['render calls do not advance arena clock']=J.aa5Clock===clock;
  beginStage(1);out['alien arena cannot leak into another stage']=!aa5Arena(b);
  const ship={x:100,y:300},p={x:100,y:150,vx:0,vy:5,w:7,h:7};
- out['approaching pellet receives time-to-impact warning']=Math.abs(pw5Impact(p,ship).t-.5)<.001;
+ out['approaching pellets no longer receive retired bullet asterisks']=pw5Impact(p,ship)===null;
  out['receding pellet receives no warning']=pw5Impact({...p,vy:-5},ship)===null;
  out['nearby pellet on a safe parallel lane receives no warning']=pw5Impact({...p,x:155},ship)===null;
  out['dead pellet receives no warning']=pw5Impact({...p,dead:true},ship)===null;
- out['slow ordnance uses its own seconds-based velocity']=Math.abs(pw5Impact({...p,vy:300},ship,1).t-.5)<.001;
+ out['seconds-based ordnance also receives no bullet asterisk']=pw5Impact({...p,vy:300},ship,1)===null;
+ PW5.threats=[{p,t:.1}];pw5Draw();out['stale bullet warning state cannot redraw stars']=PW5.draws===0;pw5Collect();out['retired marker collection clears stale references']=PW5.threats.length===0;
  return out;})())`,c));
  for(const [name,v]of Object.entries(out))ok(v,name);
 };

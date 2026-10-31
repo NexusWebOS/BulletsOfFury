@@ -1,0 +1,206 @@
+{
+  "checks": [
+    {
+      "name": "ordinary inputs clear corridor and self-destruct into level4",
+      "passed": true
+    },
+    {
+      "name": "holding crouch maintains stationary cover",
+      "passed": true
+    },
+    {
+      "name": "cover smoothly exposes authored shooting pose",
+      "passed": true
+    },
+    {
+      "name": "no browser errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "measured": {
+    "startingPickups": [
+      {
+        "kind": "minigun",
+        "x": 460,
+        "y": 2200
+      }
+    ],
+    "corridorPlay": [
+      {
+        "done": false,
+        "phase": "corridor",
+        "x": 104.25,
+        "y": 350,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 0,
+        "blast": -500,
+        "door": false,
+        "projectiles": 0,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "corridor",
+        "x": 473.7352941176471,
+        "y": 317.48825004315626,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 1,
+        "blast": -500,
+        "door": false,
+        "projectiles": 0,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "corridor",
+        "x": 814.333333333333,
+        "y": 375.2777777777777,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 1,
+        "blast": -500,
+        "door": false,
+        "projectiles": 0,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "corridor",
+        "x": 950.3333333333321,
+        "y": 380,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 2,
+        "blast": -500,
+        "door": false,
+        "projectiles": 0,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "corridor",
+        "x": 1198.2666666666685,
+        "y": 380,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 2,
+        "blast": -500,
+        "door": false,
+        "projectiles": 0,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "corridor",
+        "x": 1334.2666666666812,
+        "y": 380,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 2,
+        "blast": -500,
+        "door": false,
+        "projectiles": 0,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "corridor",
+        "x": 1508,
+        "y": 380,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 2,
+        "blast": -500,
+        "door": false,
+        "projectiles": 0,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "escape",
+        "x": 1912.4754901960785,
+        "y": 358.0003551732574,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 3,
+        "blast": 1232.1666666666647,
+        "door": false,
+        "projectiles": 0,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "escape",
+        "x": 2358.7536764705883,
+        "y": 325.586790651868,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 3,
+        "blast": 1656.166666666661,
+        "door": false,
+        "projectiles": 2,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "escape",
+        "x": 2540.75,
+        "y": 410,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 4,
+        "blast": 2080.1666666666574,
+        "door": false,
+        "projectiles": 0,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "escape",
+        "x": 2965.5,
+        "y": 410,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 6,
+        "blast": 2504.166666666654,
+        "door": false,
+        "projectiles": 0,
+        "cover": false
+      },
+      {
+        "done": false,
+        "phase": "doorSlide",
+        "x": 3650.8333333333303,
+        "y": 410,
+        "dead": false,
+        "deaths": 0,
+        "lives": 2,
+        "kills": 6,
+        "blast": 2783.2999999999847,
+        "door": true,
+        "projectiles": 0,
+        "cover": false
+      }
+    ],
+    "end": {
+      "done": true,
+      "mission": 7,
+      "state": "play"
+    }
+  },
+  "scope": "Continuous ordinary-input corridor run; no health, invulnerability, enemy or geometry changes during the run. Separate stationary-cover fixture."
+}

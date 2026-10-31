@@ -1,0 +1,12 @@
+{
+  "sources": {
+    "assets/game/levels/stage_08/miniboss/herald_spellcaster_1029/seal_build.png": "7fec442939d4becf28b715260d392419a1e6995e7645cf0f2263d706c1e3f283",
+    "assets/game/levels/stage_08/miniboss/herald_spellcaster_1029/glass_shard.png": "169974c3765f7016f977062a2e9456c377ae621fd0d9e4b2474edafd8413d901",
+    "assets/game/levels/stage_08/miniboss/herald_storm_1030/summon.png": "9f6b00c98479e930e37bae95a8a317442450700a31d33a308dacaae73f265ac7",
+    "assets/game/levels/stage_08/miniboss/herald_storm_1030/warning.png": "6cafccc49fb49e1232209c775ca7f5cf50a10c854264d8d1f594ec6fdf2c55be"
+  },
+  "sourceScale": 1.5,
+  "sealDiameter": 360,
+  "expandedDiameter": 490,
+  "model": "Five authored source line slices plus circle; clockwise baked turns, expansion, eighteen exact seal sectors plus native ruby prism glass"
+}

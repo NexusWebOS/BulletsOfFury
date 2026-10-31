@@ -216,16 +216,9 @@ drawAtomBooms=function(){
 };
 // Give the urgent rounds enough contrast and room to read while retaining the
 // predictive time-to-impact test and all original projectile hit boxes.
-pw5Collect=function(){PW5.threats=[];if(state!==GS.PLAY||run.stage<6)return;pw5Warm();
- const W=boss?._whv,G=boss?._rebels?.gang1004,rounds=eBullets.filter(p=>!p.dead).map(p=>[p,60]);
- for(const p of W?.shots||[])rounds.push([p,60]);for(const p of G?.ord||[])if(p.kind!=='helper')rounds.push([p,1]);
- for(const seat of seatList())withSeat(seat,()=>{const found=rounds.map(([p,s])=>pw5Impact(p,player,s)).filter(Boolean).sort((a,b)=>a.t-b.t);
-  for(const q of found.slice(0,4))if(!PW5.threats.some(v=>v.p===q.p))PW5.threats.push({...q,seat});});
-};
-pw5Draw=function(){for(const q of PW5.threats){const p=q.p;if(p.dead)continue;const urgent=q.t<.30,key='bmfx_alert_'+(urgent?'red':'yellow')+'_impact_imminent';
- if(XART.rdy(key)){const size=urgent?26:21;ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=.88+.12*Math.sin(efxClock*(urgent?22:14));
- ctx.drawImage(XART.get(key),p.x-size/2,p.y-size/2,size,size);ctx.restore();PW5.draws++;}}
-};
+// Bullet collision asterisks retired globally; do not restore PW5's old collectors.
+pw5Collect=function(){PW5.threats.length=0;};
+pw5Draw=function(){};;
 
 // The equipment strip does not belong underneath the full-screen debrief.
 const P2_HUD_STATE=_hudStateWants;

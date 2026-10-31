@@ -1,0 +1,382 @@
+{
+  "build": "overdrive1018-combat42-r5",
+  "status": "available fixes complete; replacement turret recoil/extreme-elevation grip art deferred by Mike for SpriteCook",
+  "scope": {
+    "level3": "Restored authored back-cover/pop-out poses; correct footprint depth; short transient infantry cues; two attackers, range keeping, lateral reposition, cover reassessment, early aim tracking then committed last-known shots.",
+    "level4": "Defense-line root y273, reduced distant scale, no foreground vault rush, visible 27-31px side steps, pop-up fire and hidden reload; fixed-turret full warnings retained.",
+    "level5": "Centered bed stand, rail occlusion, 17 generated back-turn drawings, three identity-referenced 5-frame seated clips, bullet/missile damage unchanged. Rejected recoil is not registered.",
+    "audio": "42 ColeSFX chip cues and v7.5 editor/export workflow. Exclusive scene updates now run audio, and mission changes clear vehicle state/voices."
+  },
+  "validation": {
+    "native37": 37,
+    "native104": 104,
+    "native54": 54,
+    "native_total": 195,
+    "requiredSuite": "BUILD OK / 0 ERRORS / exit 0",
+    "browser_errors": [],
+    "chromium_decoded_cues": 42,
+    "liveGround": [
+      {
+        "kind": "rifle",
+        "shots": 12,
+        "frames": {
+          "idle": 12,
+          "draw_forward": 9,
+          "fire_forward": 9
+        },
+        "phases": {
+          "wait": 212,
+          "wind": 180,
+          "burst": 180,
+          "recover": 508
+        },
+        "wrongView": 0,
+        "seen": true,
+        "position": [
+          422.20270249548554,
+          2497.9147937556036
+        ]
+      },
+      {
+        "kind": "heavy",
+        "shots": 32,
+        "frames": {
+          "idle": 12,
+          "draw_forward": 9,
+          "fire_forward": 9
+        },
+        "phases": {
+          "wait": 188,
+          "wind": 180,
+          "burst": 180,
+          "recover": 532
+        },
+        "wrongView": 0,
+        "seen": true,
+        "position": [
+          405.36306604530415,
+          2496.957882526591
+        ]
+      },
+      {
+        "kind": "shotgun",
+        "shots": 4,
+        "frames": {
+          "idle": 9,
+          "draw_forward": 9,
+          "fire_forward": 4,
+          "reload_pump": 13
+        },
+        "phases": {
+          "wait": 188,
+          "wind": 180,
+          "burst": 80,
+          "recover": 632
+        },
+        "wrongView": 0,
+        "seen": true,
+        "position": [
+          408.0148703520731,
+          2522.344070273439
+        ]
+      },
+      {
+        "kind": "flame",
+        "shots": 28,
+        "frames": {
+          "idle": 12,
+          "draw_forward": 4,
+          "fire_forward": 9
+        },
+        "phases": {
+          "wait": 188,
+          "wind": 136,
+          "burst": 180,
+          "recover": 576
+        },
+        "wrongView": 0,
+        "seen": true,
+        "position": [
+          407.14024889381585,
+          2514.4720951260792
+        ]
+      }
+    ],
+    "liveBase": {
+      "build": "overdrive1018-combat42-r4",
+      "maxY": 273,
+      "frame": 616,
+      "positions": {
+        "rifle": {
+          "min": 142.83333333333354,
+          "max": 174
+        },
+        "shotgun": {
+          "min": 450,
+          "max": 481.16666666666646
+        },
+        "double": {
+          "min": 252.80000000000018,
+          "max": 280
+        }
+      },
+      "units": [
+        {
+          "kind": "rifle",
+          "x": 169.4666666666667,
+          "y": 273,
+          "phase": "peek",
+          "attack": "burst"
+        },
+        {
+          "kind": "shotgun",
+          "x": 454.5333333333333,
+          "y": 273,
+          "phase": "peek",
+          "attack": "wind"
+        },
+        {
+          "kind": "double",
+          "x": 252.80000000000018,
+          "y": 273,
+          "phase": "hide",
+          "attack": "wait"
+        }
+      ],
+      "failures": []
+    },
+    "liveNight": {
+      "build": "overdrive1018-combat42-r4",
+      "samples": [
+        {
+          "state": "play",
+          "phase": "pursuit",
+          "time": 20.516666666666783,
+          "hp": 100,
+          "missiles": 8,
+          "kills": 5,
+          "deaths": 0,
+          "bulletHits": 0,
+          "missileHits": 0,
+          "intercepts": 0
+        },
+        {
+          "state": "play",
+          "phase": "pursuit",
+          "time": 40.51666666666565,
+          "hp": 100,
+          "missiles": 3,
+          "kills": 10,
+          "deaths": 0,
+          "bulletHits": 0,
+          "missileHits": 0,
+          "intercepts": 0
+        },
+        {
+          "state": "play",
+          "phase": "pursuit",
+          "time": 60.51666666666451,
+          "hp": 100,
+          "missiles": 3,
+          "kills": 19,
+          "deaths": 0,
+          "bulletHits": 0,
+          "missileHits": 0,
+          "intercepts": 0
+        },
+        {
+          "state": "play",
+          "phase": "pursuit",
+          "time": 80.51666666666338,
+          "hp": 100,
+          "missiles": 3,
+          "kills": 30,
+          "deaths": 0,
+          "bulletHits": 0,
+          "missileHits": 0,
+          "intercepts": 0
+        },
+        {
+          "state": "play",
+          "phase": "pursuit",
+          "time": 100.51666666666225,
+          "hp": 100,
+          "missiles": 3,
+          "kills": 40,
+          "deaths": 0,
+          "bulletHits": 0,
+          "missileHits": 0,
+          "intercepts": 0
+        },
+        {
+          "state": "play",
+          "phase": "pursuit",
+          "time": 120.51666666666111,
+          "hp": 100,
+          "missiles": 0,
+          "kills": 51,
+          "deaths": 0,
+          "bulletHits": 0,
+          "missileHits": 0,
+          "intercepts": 0
+        },
+        {
+          "state": "play",
+          "phase": "pursuit",
+          "time": 140.51666666667063,
+          "hp": 100,
+          "missiles": 0,
+          "kills": 66,
+          "deaths": 0,
+          "bulletHits": 0,
+          "missileHits": 0,
+          "intercepts": 0
+        },
+        {
+          "state": "clear",
+          "phase": "fade",
+          "time": 150.0000000000115,
+          "hp": 100,
+          "missiles": 0,
+          "kills": 72,
+          "deaths": 0,
+          "bulletHits": 0,
+          "missileHits": 0,
+          "intercepts": 0
+        }
+      ],
+      "phases": [
+        "pursuit",
+        "ram",
+        "impact",
+        "fade"
+      ],
+      "frames": {},
+      "state": "clear",
+      "results": {
+        "time": 163.73333333335577,
+        "kills": 72,
+        "alerts": 1,
+        "deaths": 0,
+        "timeBonus": 17451,
+        "ghostBonus": 0,
+        "noDeath": 10000,
+        "extraRows": [
+          [
+            "TRUCK INTEGRITY",
+            "100%"
+          ],
+          [
+            "MISSILES INTERCEPTED",
+            0
+          ],
+          [
+            "PURSUIT RESTARTS",
+            0
+          ]
+        ],
+        "rank": "b",
+        "password": "OD-237C-5JXN"
+      },
+      "loops": [],
+      "audioFailures": []
+    },
+    "liveIncoming": {
+      "build": "overdrive1018-combat42-r4",
+      "hp": 68,
+      "bulletHits": 12,
+      "missileHits": 4,
+      "released": 16,
+      "frames": {
+        "runner": 17,
+        "drone": 9
+      },
+      "failures": []
+    },
+    "audioTransition": {
+      "build": "r5",
+      "enginesBefore": [
+        "od75_truckEngine",
+        "od75_mustangEngine"
+      ],
+      "nightStateClearedOnLevel3": true,
+      "voicesAfter": []
+    },
+    "zip": "42 WAVs + 42 editable recipes + manifest; CRC/integrity pass",
+    "liveFlame": {
+      "build": "overdrive1018-combat42-r5",
+      "voices": [
+        {
+          "key": "gd_alarmLoop",
+          "ready": 4,
+          "playing": true,
+          "time": 1.180668
+        },
+        {
+          "key": "od75_flameLoop",
+          "ready": 4,
+          "playing": true,
+          "time": 0.04287
+        }
+      ],
+      "remainingAfterPause": 0,
+      "priorDeveloperFixtureFailures": [
+        {
+          "key": "od75_truckEngine",
+          "error": "NotAllowedError"
+        },
+        {
+          "key": "od75_mustangEngine",
+          "error": "NotAllowedError"
+        },
+        {
+          "key": "music:base",
+          "error": "NotAllowedError"
+        }
+      ],
+      "note": "The recorded NotAllowedError entries came from a developer fixture before native user activation. This playback check follows a real browser click."
+    },
+    "browserBuilds": {
+      "fullTruckRoute": "r4; final r5 adds scene-state cleanup and an audio ownership guard, with unchanged truck combat and mounting",
+      "baseAndGround": "r4; final r5 adds scene-state cleanup only",
+      "coverAndSceneCleanup": "r5",
+      "decodedSounds": "same exported WAV files through the pass"
+    },
+    "mediaActivation": "Three NotAllowedError entries occurred in a developer fixture before native input. Subsequent real-click playback advanced readyState4 engine/flame voices. Public gameplay follows normal user activation."
+  },
+  "art": {
+    "banks": 4,
+    "character_frames": 32,
+    "rear_turn_frames": 17,
+    "crew_frames": 15,
+    "fixedCanvas": true,
+    "fixedRoot": true,
+    "seedPaletteLocked": true,
+    "onionReviewed": true,
+    "recoilTakes": "5 clips rejected; excluded from live manifest",
+    "deferred": "Dedicated firing recoil and extreme-elevation grip poses, accepted by Mike pending SpriteCook"
+  },
+  "limitations": [
+    "Levels 3/4 use focused/protected fixtures, not full unprotected human clears.",
+    "The truck clear used real keyboard controls for crate collection/boarding, then input-only automation with normal health for pursuit. It is not a human difficulty/balance verdict.",
+    "Dedicated new firing-recoil/elevation-grip art remains deferred.",
+    "ColeSFX v7.5 is local; public Netlify site remains unchanged."
+  ],
+  "hashes": {
+    "expansion/topdown/index.html": "8a21c9018b3937294572db42cf21e8f509270ba7a2d755f75acccf16289ba82c",
+    "expansion/topdown/js/main.js": "ec2b6edf0f88b6534aac370ce85fe2046a174e39deb2c16321868db7c1ee937b",
+    "expansion/topdown/js/combat39.js": "02f50a43f9d4bd4134aaa0613b2682f6a1752501d958d9fcad101c1644eb9e30",
+    "expansion/topdown/js/tactics36.js": "28d096667d68f1d11489bf097e9ac3976fca5497a5201a18a92946839fb90723",
+    "expansion/topdown/js/level36.js": "ea7d053a2852afb9f32deca113381de758d365db4c2fcce709ae929cd2a60518",
+    "expansion/topdown/js/depth35.js": "c383c5533fdd760f2c0faf732fb529ee24b07c6aead7a5343d26024c4ca7110e",
+    "expansion/topdown/js/prism_bastion_1013.js": "35fa02bbaa4d99c2daaee65a623e2000b4fc9e84594c696e6dfd3dc25d526531",
+    "expansion/topdown/js/pixellab38.js": "c52a7f5363603da4738e6363c4b79866d9084da2d50f2ddd4cbb4876680fef92",
+    "expansion/topdown/js/night_run39.js": "dfd7160bf9c6b596f1d04237794ad427268019890a42090f1032e17d14be2d80",
+    "expansion/topdown/js/audio42.js": "eef037a50f80d3fee69dfb6286bd3c30941c38e8c65624d55a647a0a9347d115",
+    "expansion/topdown/art/combat42/manifest.json": "6267972d36da9baa8636634ea743994f83c150b0c402e198d49d372963a04479",
+    "expansion/topdown/audio/colesfx75/manifest.json": "e9c28f44533d61f1cfdf930fcdb232a9f5649e689bd2edf24419f2778d015ed5"
+  },
+  "evidence": "_shots/playtest42",
+  "committed": false,
+  "pushed": false
+}

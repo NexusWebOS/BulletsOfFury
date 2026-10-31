@@ -1,0 +1,173 @@
+{
+  "checks": [
+    {
+      "name": "60Hz advances exactly 60 simulation ticks in one second",
+      "passed": true
+    },
+    {
+      "name": "120Hz advances exactly 60 simulation ticks in one second",
+      "passed": true
+    },
+    {
+      "name": "144Hz advances exactly 60 simulation ticks in one second",
+      "passed": true
+    },
+    {
+      "name": "240Hz advances exactly 60 simulation ticks in one second",
+      "passed": true
+    },
+    {
+      "name": "alternating25ms_8ms advances exactly 60 simulation ticks in one second",
+      "passed": true
+    },
+    {
+      "name": "long stalls catch up by at most six ticks",
+      "passed": true
+    },
+    {
+      "name": "negative and nonfinite frame intervals do not advance simulation",
+      "passed": true
+    },
+    {
+      "name": "actual keyboard movement advances the tank simulation",
+      "passed": true
+    },
+    {
+      "name": "a fixed-step boundary draws the previous position",
+      "passed": true
+    },
+    {
+      "name": "240Hz tank render advances to 0.25 of its fixed-step movement",
+      "passed": true
+    },
+    {
+      "name": "240Hz tank render advances to 0.5 of its fixed-step movement",
+      "passed": true
+    },
+    {
+      "name": "240Hz tank render advances to 0.75 of its fixed-step movement",
+      "passed": true
+    },
+    {
+      "name": "camera interpolation stays synchronized with the moving tank",
+      "passed": true
+    },
+    {
+      "name": "exact render reads the restored current simulation position",
+      "passed": true
+    },
+    {
+      "name": "120Hz interpolates enemies, boss, camera, shots and Bastion reticle/projectiles/hazards",
+      "passed": true
+    },
+    {
+      "name": "all interpolated coordinates and angles restore after drawing",
+      "passed": true
+    },
+    {
+      "name": "rotations cross the plus/minus PI boundary by the shortest path",
+      "passed": true
+    },
+    {
+      "name": "render exceptions still restore exact gameplay state",
+      "passed": true
+    },
+    {
+      "name": "pause holds gameplay time and position while menus tick",
+      "passed": true
+    },
+    {
+      "name": "freeze suppresses automatic RAF stepping",
+      "passed": true
+    },
+    {
+      "name": "manual step remains exact while frozen",
+      "passed": true
+    },
+    {
+      "name": "Levels 5 and 7 retain a close 640 by 480 viewport",
+      "passed": true
+    },
+    {
+      "name": "mission starts clear prior Bastion and desert state",
+      "passed": true
+    },
+    {
+      "name": "no page console or asset errors",
+      "passed": true
+    }
+  ],
+  "cadence": {
+    "60Hz": {
+      "ticks": 60,
+      "alpha": 0
+    },
+    "120Hz": {
+      "ticks": 60,
+      "alpha": 0
+    },
+    "144Hz": {
+      "ticks": 60,
+      "alpha": 0
+    },
+    "240Hz": {
+      "ticks": 60,
+      "alpha": 0
+    },
+    "alternating25ms_8ms": {
+      "ticks": 60,
+      "alpha": 2.0816681711721685e-16
+    }
+  },
+  "interpolation": [
+    {
+      "state": 400.648,
+      "after": 400.648,
+      "draw": {
+        "x": 400.16200000000003,
+        "y": 3540,
+        "a": 3.166592653589793,
+        "aim": 3.166592653589793,
+        "cx": 80.32460005998571,
+        "cy": 3120
+      },
+      "clock": {
+        "ticks": 0,
+        "alpha": 0.25
+      }
+    },
+    {
+      "state": 400.648,
+      "after": 400.648,
+      "draw": {
+        "x": 400.324,
+        "y": 3540,
+        "a": 3.191592653589793,
+        "aim": 3.191592653589793,
+        "cx": 80.64920011997143,
+        "cy": 3120
+      },
+      "clock": {
+        "ticks": 0,
+        "alpha": 0.5
+      }
+    },
+    {
+      "state": 400.648,
+      "after": 400.648,
+      "draw": {
+        "x": 400.486,
+        "y": 3540,
+        "a": 3.2165926535897933,
+        "aim": 3.2165926535897933,
+        "cx": 80.97380017995715,
+        "cy": 3120
+      },
+      "clock": {
+        "ticks": 0,
+        "alpha": 0.75
+      }
+    }
+  ],
+  "errors": []
+}

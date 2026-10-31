@@ -1,0 +1,6 @@
+{
+  "slice": "assets\\game\\shared\\audio\\chip_1011\\chip_slice.mp3",
+  "sliceSHA256": "a0a9104eab4ec03d01d060f826937e0bcc81582f7fc8b56637d049a6197bff68",
+  "lightning": "Existing Dracodia-derived chronos_lightning_1026/strike.mp3",
+  "processing": "Small pitch variants, high-pass, presence EQ, short echoes; native gain and music duck owned by HR92"
+}

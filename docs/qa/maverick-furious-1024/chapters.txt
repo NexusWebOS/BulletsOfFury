@@ -1,0 +1,87 @@
+00:00:00 Opening cinematic
+00:02:42 Campaign map
+00:03:10 Stage 1 flight
+00:03:15 God mode enabled after native death
+00:03:52 Stage 1 MINIBOSS
+00:04:44 Stage 1 flight
+00:05:32 Stage 1 BOSS
+00:06:19 Stage 1 flight
+00:06:47 Stage 1 results
+00:07:23 Stage 1 story / post-1
+00:07:42 Campaign map
+00:08:06 Stage 2 flight
+00:08:31 Stage 2 MINIBOSS
+00:09:19 Stage 2 flight
+00:09:49 Stage 2 BOSS
+00:10:35 Stage 2 flight
+00:10:44 Stage 2 results
+00:11:28 Stage 2 story / post-2
+00:11:47 Campaign map
+00:12:11 Stage 3 flight
+00:12:37 Stage 3 MINIBOSS
+00:13:02 Stage 3 flight
+00:13:32 Stage 3 BOSS
+00:14:08 Stage 3 flight
+00:14:18 Stage 3 results
+00:14:53 Stage 3 story / post-3
+00:15:12 Campaign map
+00:15:37 Stage 4 flight
+00:16:03 Stage 4 MINIBOSS
+00:16:33 Stage 4 flight
+00:17:12 Stage 4 BOSS
+00:18:49 Stage 4 flight
+00:19:03 Stage 4 results
+00:19:26 Stage 4 story / post-4
+00:20:14 Campaign map
+00:20:48 Stage 5 flight
+00:21:19 Stage 5 MINIBOSS
+00:21:43 Stage 5 flight
+00:22:06 Campaign map
+00:22:31 Stage 9 flight
+00:22:52 Stage 9 MINIBOSS
+00:24:10 Stage 9 flight
+00:24:46 Stage 9 BOSS
+00:25:41 Stage 9 flight
+00:25:50 Stage 9 results
+00:26:22 Stage 5 flight
+00:26:32 Stage 5 BOSS
+00:31:13 Stage 5 flight
+00:32:21 Stage 5 results
+00:33:06 Stage 5 story / post-5
+00:34:24 Stage 6 flight
+00:36:31 Stage 6 MINIBOSS
+00:36:54 Stage 6 flight
+00:38:21 Stage 6 flight / route-right
+00:38:39 Stage 6 flight
+00:39:14 Stage 6 BOSS
+00:41:18 Stage 6 flight
+00:41:28 Stage 6 results
+00:42:03 Campaign map
+00:42:12 Stage 7 story / stage7-approach (first visit, abandoned)
+00:42:53 Stage 7 flight (first visit, abandoned)
+00:43:25 Stage 7 MINIBOSS (first visit, abandoned)
+00:43:46 Stage 7 flight (first visit, abandoned)
+00:45:06 Stage 7 BOSS (first visit, abandoned)
+00:45:41 Review map intervention for earned Harrier route
+00:45:50 Stage X-HARRIER flight
+00:45:57 Stage X-HARRIER BOSS
+00:46:51 Stage X-HARRIER flight
+00:47:01 Stage X-HARRIER results
+00:47:28 Campaign map
+00:47:56 Stage 7 flight (full return)
+00:48:28 Stage 7 MINIBOSS (full return)
+00:48:56 Stage 7 flight (full return)
+00:49:56 Stage 7 BOSS (full return)
+00:51:19 Stage 8 flight
+00:51:51 Stage 8 MINIBOSS
+00:52:15 Stage 8 flight
+00:52:48 Stage 8 BOSS
+00:53:50 Dracodia symbiote rebirth
+00:55:32 Dracodia copy: corrupted Hammer
+00:56:19 Dracodia copy: helicopter
+00:56:43 Dracodia copy: Neural Archon brain
+00:57:02 Dracodia copy: volcano
+00:57:56 Dracodia copy: Neural Archon brain
+00:58:11 Dracodia final destruction
+00:58:37 Stage 8 results
+00:58:45 Final ending (continues in supplement)

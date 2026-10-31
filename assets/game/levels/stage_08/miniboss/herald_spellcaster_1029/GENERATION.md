@@ -1,0 +1,19 @@
+# Herald spellcaster artwork — October 29, 2026
+
+Generated with the built-in GPT image-generation tool, transparent RGBA output. No PixelLab credits used. The existing Herald screenshot was supplied as a style/palette reference only. Selected raw assets are archived here as `gpt_seal.png` and `gpt_penta_ball.png`.
+
+## Seal prompt
+
+> FRAME FORMAT: One original 512x512 pixel-art magic casting seal, fixed center pivot256,256. All artwork fully inside 390x390 centered bounds, at least60 transparent pixels padding each edge. Transparent RGBA background. Production game VFX for Bullets of Fury. Original late-16-bit JRPG spellcasting aesthetic inspired by elaborate classic fantasy magic circles, with the crisp bright pixel clusters and sinister red energy of the reference game's skeletal chrome demon. One perfectly circular FRONT-FACING arcane seal: a thin five-point star made of five distinct straight luminous red/ivory strokes inside two delicate concentric red rune circles, small pointed diamond glyphs on the ring, restrained interlocking angular circuit/runic detail. Refined mystical geometry, NOT a thick red star badge, NOT a logo, no face, no skull, no ground, no boss, no text. Lots of transparent negative space between thin luminous lines. Rich burgundy shadow pixels, bright scarlet edges, pale pink/ivory sharp highlights. No yellow or orange fire. Pixel-art stepped linework and small bevel-like light clusters, no fuzzy gradients, no smooth vector appearance, no bloom haze. Symmetric clean geometry with top star point at12o'clock, coherent five-point construction so individual lines and ring arcs can animate in later. Full circle entirely visible and not cropped. Style reference only, do not reproduce the rejected tornado or character.
+
+## Penta ball prompt
+
+> FRAME FORMAT: Single isolated 256x256 pixel-art projectile, fixed center128,128, generous transparent margin32 pixels. Actual RGBA transparent background. Bullets of Fury arcade game asset in polished Neo-Geo/HD16-bit pixel-art style matching the sinister crimson magical energy in reference. A PENTA BALL: a volumetric faceted ruby-red GLASS magic sphere, glowing sharp pale pink-white core, a tiny floating five-point runic spark trapped deep inside it, angular translucent ruby crystal facets around the sphere, blood-red and burgundy shadow sides, bright red electricity tracing a few glass seams. Clear round silhouette, crystalline energy NOT a flat star/pentagram badge. No skull, no character, no ground ring, no trailing junk, no labels, no text, no detached extra objects. Sharp deliberate shaded pixel clusters and stepped contours; dark outline keeps it readable on black or biological backgrounds. Internal glass panes strongly directional to support a later spinning animation and glass-shard explosion. Single complete centered sphere with no cutoff and no blurry glow. Reference only for red dark-fantasy arcade palette.
+
+## Authored animation
+
+Aseprite normalizes each selected raw image proportionally, then authors fixed even cells with common pivots. The seal has56 inscription frames,32 spin frames,24 glow/expansion/contraction frames and16 explosion frames. Its five source lines form individually before the outer circle. Rotation, glow, scale pulses and disintegration are stored in those cells, not synthesized in the renderer.
+
+The faceted orb has32 spin frames,16 armed-pulse frames and16 glass-shatter frames. Native Stage9 prism-shard artwork provides the physical red-glass fragments: eight source phases,32 baked flight directions, pale glass highlights and dark ruby facets. The original blue assets are unchanged. The skull retains ER28's existing grin/jaw animation with32 authored eye-emission phases and matching white-hit cells.
+
+`author.lua`, `inputs.json`, editable `.aseprite` animations and the hashed `manifest.json` own the export. Rebuild using `_BUILD_SOURCE/build_herald_spellcaster_1029.py --aseprite <executable>`.

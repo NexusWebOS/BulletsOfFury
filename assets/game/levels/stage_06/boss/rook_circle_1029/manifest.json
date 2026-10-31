@@ -1,0 +1,92 @@
+{
+  "builder": "_BUILD_SOURCE/build_rook_circle_1029.py",
+  "author": "author.lua",
+  "radius": 200,
+  "source": "assets/bossmode/ui/fov-{light-green,yellow,neon-red}.png",
+  "banks": {
+    "field_green": {
+      "key": "rk50_field_green",
+      "file": "field_green.png",
+      "cell": [
+        404,
+        404
+      ],
+      "pivot": [
+        202,
+        202
+      ],
+      "frames": 1,
+      "sha256": "db272454e86c7c096b5a611813965f17eeeae82b715f98a1c151ff79374948bc"
+    },
+    "field_yellow": {
+      "key": "rk50_field_yellow",
+      "file": "field_yellow.png",
+      "cell": [
+        404,
+        404
+      ],
+      "pivot": [
+        202,
+        202
+      ],
+      "frames": 1,
+      "sha256": "fce3934615eec09752756c458265ab83b3fe10816fbff3f08cb0dfd657fbaf33"
+    },
+    "field_red": {
+      "key": "rk50_field_red",
+      "file": "field_red.png",
+      "cell": [
+        404,
+        404
+      ],
+      "pivot": [
+        202,
+        202
+      ],
+      "frames": 1,
+      "sha256": "08aaee7ac2f05a2625edf10b305caccf9d5363aec1f24af6b8b20ade7e71e57d"
+    },
+    "symbol_green": {
+      "key": "rk50_symbol_green",
+      "file": "symbol_green.png",
+      "cell": [
+        48,
+        48
+      ],
+      "pivot": [
+        24,
+        24
+      ],
+      "frames": 1,
+      "sha256": "2189ca27e95bc5df40af06265a69eec583f2a237db4c3b3ba83f4df185057cd5"
+    },
+    "symbol_yellow": {
+      "key": "rk50_symbol_yellow",
+      "file": "symbol_yellow.png",
+      "cell": [
+        48,
+        48
+      ],
+      "pivot": [
+        24,
+        24
+      ],
+      "frames": 1,
+      "sha256": "d0b1b35ff684da5b11fe83fc45184043ce381befc534ad012402797bbc0f281d"
+    },
+    "symbol_red": {
+      "key": "rk50_symbol_red",
+      "file": "symbol_red.png",
+      "cell": [
+        48,
+        48
+      ],
+      "pivot": [
+        24,
+        24
+      ],
+      "frames": 1,
+      "sha256": "667df80d202c79beede6ae9a1af8ff336c5ec28322dac85a93b014cbc9cad9d4"
+    }
+  }
+}

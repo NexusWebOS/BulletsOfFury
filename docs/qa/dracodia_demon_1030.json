@@ -1,0 +1,547 @@
+{
+  "native": [
+    {
+      "name": "All35 new banks use even fixed cells, common pivots and bounded atlases",
+      "passed": true,
+      "data": 35
+    },
+    {
+      "name": "Physical claws have64 directional frames and4 actual closure stages",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "White hit masks preserve the authored claw and tendon alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All45 inset-turret poses carry same-frame body anchors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native possession intro reaches combat with all original HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Paired shootable missiles launch from inset tubes rather than distal claws",
+      "passed": true,
+      "data": {
+        "n": 4,
+        "ports": [
+          {
+            "event": "inset-missile",
+            "clock": 22.366666666666678,
+            "side": "left",
+            "x": 304.71787797279575,
+            "y": 205.01432903762674,
+            "angle": 1.4726215563702154
+          },
+          {
+            "event": "inset-missile",
+            "clock": 22.366666666666678,
+            "side": "right",
+            "x": 408.3725654727957,
+            "y": 205.71745403762674,
+            "angle": 1.8653206380689396
+          }
+        ],
+        "claws": [
+          {
+            "x": 268.15537797279575,
+            "y": 220.8200929715323
+          },
+          {
+            "x": 444.9350654727957,
+            "y": 221.5232179715323
+          }
+        ],
+        "shootable": true,
+        "kinds": [
+          "emissile"
+        ]
+      }
+    },
+    {
+      "name": "Purple missile exhaust replaces the retired yellow smoke/flame trail",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Missile attack recovers into the normal encounter owner",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "eyeFan keeps the red beam attached to the moving eye and recovers",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "eyeSweep keeps the red beam attached to the moving eye and recovers",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "eye360 keeps the red beam attached to the moving eye and recovers",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Furious fan delivers12 rapid flashes;360 sweep visits all64 directions",
+      "passed": true,
+      "data": {
+        "fan": 12,
+        "circleDirections": 64
+      }
+    },
+    {
+      "name": "The retired generic claw shots and warning sidecar remain disabled",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual extending arm carries collision and Retina anchors with its claw",
+      "passed": true,
+      "data": {
+        "target": {
+          "x": 340,
+          "y": 447
+        },
+        "tip": {
+          "x": 406.6913813379414,
+          "y": 425.4148810952651
+        },
+        "nodes": 13,
+        "d": 206.70614349166516,
+        "retina": {
+          "x": 406.6913813379414,
+          "y": 425.4148810952651
+        },
+        "collision": "left",
+        "side": "left"
+      }
+    },
+    {
+      "name": "Physical swipe fully retracts before the next attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "A ship outside the rendered beam keeps its shields",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "A ship inside the rendered beam takes native damage exactly once",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native GOD still permits a nonfatal capture",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Debug GOD prevents the fatal throw without leaving capture/input locks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "A captured pilot can leave the encounter safely",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage-load cancellation releases the held pilot and restores its inputs",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Grab catches a real player without killing or consuming its shields",
+      "passed": true,
+      "data": {
+        "dead": false,
+        "shield": 2,
+        "invuln": 3,
+        "roll": false,
+        "somer": false,
+        "kind": "grab",
+        "events": [
+          {
+            "event": "attack-start",
+            "clock": 35.76666666666592,
+            "kind": "grab",
+            "side": "left",
+            "serial": 6,
+            "tell": 1.35
+          },
+          {
+            "event": "grab-caught",
+            "clock": 37.44999999999916,
+            "seat": 1,
+            "side": "left",
+            "hp": 5945,
+            "dead": false
+          },
+          {
+            "event": "grab-god-survived",
+            "clock": 38.699999999999086,
+            "seat": 1
+          },
+          {
+            "event": "attack-end",
+            "clock": 39.31666666666572,
+            "kind": "grab",
+            "serial": 6
+          },
+          {
+            "event": "attack-start",
+            "clock": 39.53333333333237,
+            "kind": "grab",
+            "side": "left",
+            "serial": 7,
+            "tell": 1.35
+          },
+          {
+            "event": "grab-caught",
+            "clock": 41.21666666666561,
+            "seat": 1,
+            "side": "left",
+            "hp": 5945,
+            "dead": false
+          },
+          {
+            "event": "grab-released",
+            "clock": 41.21666666666561,
+            "reason": "stage-change",
+            "seat": 1
+          },
+          {
+            "event": "grab-released",
+            "clock": 41.21666666666561,
+            "reason": "owner-clear",
+            "seat": 1
+          },
+          {
+            "event": "attack-start",
+            "clock": 41.21666666666561,
+            "kind": "grab",
+            "side": "left",
+            "serial": 8,
+            "tell": 1.35
+          },
+          {
+            "event": "grab-caught",
+            "clock": 42.89999999999885,
+            "seat": 1,
+            "side": "left",
+            "hp": 5945,
+            "dead": false
+          }
+        ],
+        "x": 340,
+        "y": 402,
+        "tip": {
+          "x": 327.4563376983967,
+          "y": 380.679826673019
+        }
+      }
+    },
+    {
+      "name": "Held ship is lifted inside the closing claw while its controls are locked",
+      "passed": true,
+      "data": {
+        "held": true,
+        "dead": false,
+        "y": 284.5452893473448,
+        "inputs": true,
+        "grip": {
+          "x": 285.12182163447324,
+          "y": 284.5452893473448
+        }
+      }
+    },
+    {
+      "name": "Held fire and missile inputs cannot shoot or spend ammunition",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Committed throw invokes a native death even with stocked shields",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Thrown wreck travels outward through native tumbling/fire death state",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "x": 69.92105652253954,
+        "edge": 0.02579909701008412,
+        "right": 480.02579909701006,
+        "spin": 0.19999999999999998,
+        "life": 3,
+        "deaths": null
+      }
+    },
+    {
+      "name": "Native death finishes, spends one life and restores normal play",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Second grab can catch a respawned pilot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Destroying the whole grabbing arm rescues the living pilot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Remaining arm still protects native core HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both actual shoulder/arm pools gate the original exposed-core phase",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Armless native rolling/code phase remains available",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No browser, console or native draw errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "A real player-fired laser intercepts the purple missile without losing shootability",
+      "passed": true,
+      "data": {
+        "before": {
+          "x": 358.0522254218161,
+          "y": 380.09408721626363,
+          "playerY": 480.09408721626363,
+          "interceptable": true
+        },
+        "after": {
+          "dead": true,
+          "removed": true,
+          "y": 380.09408721626363,
+          "beam": true,
+          "playerDead": false
+        },
+        "errors": []
+      }
+    }
+  ],
+  "film": [
+    {
+      "name": "Final full native Furious first-host film reaches its original5945HP defeat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All six new attacks occur in the normal native rotation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Paired inset missiles and fast optic fans appear during actual gameplay",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rapid360 beam visibly covers the entire compass",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both original arm pools protect the entire native core HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both whole arms break and the native exposed-core roll finishes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Separate native grab film contains a real nonfatal capture and fatal throw",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "GOD is disabled throughout the filmed hold and native death follows it",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Throw footage preserves normal respawn without artificial boss damage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Full fight runs at a smooth native game pace",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Full fight has no native, asset, sound or input-bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Full fight records actual charge and optical firing audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Fatal grab runs at a smooth native game pace",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Fatal grab has no native, asset, sound or input-bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Fatal grab records actual charge and optical firing audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "dracodia-claw-optic-polished-1030 decoded audio is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -20.3,
+        "peakDb": -4.5
+      }
+    },
+    {
+      "name": "dracodia-claw-grab-polished-1030 decoded audio is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -22.8,
+        "peakDb": -6.0
+      }
+    },
+    {
+      "name": "stage8-final plays the new native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-final decodes motion and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phase1 plays the new native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phase1 decodes motion and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-claws plays the new native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-claws decodes motion and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-optics plays the new native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-optics decodes motion and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-grab plays the new native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-grab decodes motion and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-possession plays the new native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-possession decodes motion and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-shoulders plays the new native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-shoulders decodes motion and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No gallery playback errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "full": {
+    "duration": 159.36,
+    "fps": 58.63198337217359,
+    "audio": {
+      "meanDb": -20.3,
+      "peakDb": -4.5
+    },
+    "sha256": "c8d4f5bdb97bd3bb1c2cbf226361dc24e526bd5563f4282522e81ac2112ade5a"
+  },
+  "grab": {
+    "duration": 41.7,
+    "fps": 58.623206032595476,
+    "audio": {
+      "meanDb": -22.8,
+      "peakDb": -6.0
+    },
+    "sha256": "c7cfd9354cb4b452f9049a188ee55d33d6a0ed79fcdc406c03ee85ef1cb075f4"
+  },
+  "preview": "http://127.0.0.1:51046/?dracodia=claw-optic-1030#clip=stage8-dracodia-claws",
+  "opticPreview": "http://127.0.0.1:51046/?dracodia=claw-optic-1030#clip=stage8-dracodia-optics",
+  "grabPreview": "http://127.0.0.1:51046/?dracodia=claw-optic-1030#clip=stage8-dracodia-grab",
+  "fullFirstHost": "http://127.0.0.1:51046/?dracodia=claw-optic-1030#clip=stage8-final",
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false,
+  "coreEdit": {
+    "before": "36a9cfb7721722209f53afb4019d9428a1f7a633427c705c8bc317b027e33fde",
+    "after": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de",
+    "scope": "Captured-seat input lock and explicit scoped fatal throw through the original playerHit/death pipeline",
+    "exactOriginalReconstruction": true
+  }
+}

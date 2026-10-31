@@ -1,0 +1,56 @@
+[
+  {
+    "stage": 9,
+    "movie": "C:\\Users\\Mike\\Documents\\New project\\BOF-Boss-Review-Normal-Finale-1031\\video\\stage9-100540\\stage9-furious.mp4",
+    "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Boss-Review-Normal-Finale-1031\\video\\stage9-100540\\report.json",
+    "duration": 70.324,
+    "decodeOK": true,
+    "decodeErrors": "",
+    "audio": {
+      "mean_volume": -20.1,
+      "max_volume": -3.2
+    },
+    "nativeFPS": 56.709826357522836,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "httpErrors": [],
+    "cancelledPreloads": 77,
+    "completed": true
+  },
+  {
+    "stage": 6,
+    "movie": "C:\\Users\\Mike\\Documents\\New project\\BOF-Boss-Review-Normal-Finale-1031\\video\\nightwing-health-review-1031\\stage6-furious.mp4",
+    "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Boss-Review-Normal-Finale-1031\\video\\nightwing-health-review-1031\\report.json",
+    "duration": 104.046,
+    "decodeOK": true,
+    "decodeErrors": "",
+    "audio": {
+      "mean_volume": -17.8,
+      "max_volume": -1.0
+    },
+    "nativeFPS": 49.75808654258848,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "httpErrors": [],
+    "cancelledPreloads": 5,
+    "completed": true
+  },
+  {
+    "stage": 5,
+    "movie": "C:\\Users\\Mike\\Documents\\New project\\BOF-Boss-Review-Normal-Finale-1031\\video\\stage5-101544\\normal-ending-preview.mp4",
+    "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Boss-Review-Normal-Finale-1031\\video\\stage5-101544\\report.json",
+    "duration": 23.240333,
+    "decodeOK": true,
+    "decodeErrors": "",
+    "audio": {
+      "mean_volume": -18.4,
+      "max_volume": -2.5
+    },
+    "nativeFPS": 58.40700180322821,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "httpErrors": [],
+    "cancelledPreloads": 33,
+    "completed": true
+  }
+]

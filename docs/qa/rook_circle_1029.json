@@ -1,0 +1,425 @@
+{
+  "native": [
+    {
+      "name": "Stored squad dispatcher initializes the same filled center attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Spin destination is viewport center rather than the current player lane",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rook reaches the center before starting his warning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Center reservation survives camera changes and crowded squad spacing",
+      "passed": true,
+      "data": [
+        {
+          "x": 240,
+          "y": 256,
+          "cx": 240,
+          "overlap": false
+        },
+        {
+          "x": 360,
+          "y": 256,
+          "cx": 360,
+          "overlap": false
+        },
+        {
+          "x": 480,
+          "y": 256,
+          "cx": 480,
+          "overlap": false
+        },
+        {
+          "x": 300,
+          "y": 256,
+          "cx": 300,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "Golden Aegis and squad spacing do not push him out of center",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every colour fills the center and complete 360-degree radius",
+      "passed": true,
+      "data": [
+        {
+          "colour": "green",
+          "holes": 0,
+          "w": 404,
+          "h": 404
+        },
+        {
+          "colour": "yellow",
+          "holes": 0,
+          "w": 404,
+          "h": 404
+        },
+        {
+          "colour": "red",
+          "holes": 0,
+          "w": 404,
+          "h": 404
+        }
+      ]
+    },
+    {
+      "name": "Native renderer blits all three filled warning states",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rotate symbols remain above Rook in matching colours",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Old outer shock-ring warning is absent",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Warning field is drawn before the whole Rook hull",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native radial attack starts after the complete windup",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "FOV clears for gunfire while rotate badge remains",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real spinning hull remains at center while firing",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real missile damage and knockback remain active",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real damaged hull pixels render white above the FOV",
+      "passed": true,
+      "data": {
+        "blits": 1,
+        "ink": 3291,
+        "white": 3291,
+        "flash": 0.12
+      }
+    },
+    {
+      "name": "Five real missile hits still interrupt and stun the spin",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native hit flash expires after real missile impacts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage X keeps its existing attack owner",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Native Furious squad reaches real defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "No native page, console, asset, audio-tap or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All warning families decode and play in real combat",
+      "passed": true,
+      "data": {
+        "riders49_boost": 8,
+        "riders49_seek": 88,
+        "riders49_locked": 8,
+        "riders49_incoming": 59
+      }
+    },
+    {
+      "name": "All cue families have accepted mixer events",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exactly one lock-confirmed alert per volley sequence",
+      "passed": true,
+      "data": [
+        {
+          "event": "locked-on",
+          "time": 24.049999999999915,
+          "sequence": 1
+        },
+        {
+          "event": "locked-on",
+          "time": 46.533333333331974,
+          "sequence": 2
+        },
+        {
+          "event": "locked-on",
+          "time": 79.94999999999675,
+          "sequence": 3
+        },
+        {
+          "event": "locked-on",
+          "time": 100.16666666666227,
+          "sequence": 4
+        },
+        {
+          "event": "locked-on",
+          "time": 122.64999999999432,
+          "sequence": 5
+        },
+        {
+          "event": "locked-on",
+          "time": 151.73333333334622,
+          "sequence": 6
+        },
+        {
+          "event": "locked-on",
+          "time": 177.55000000003344,
+          "sequence": 7
+        },
+        {
+          "event": "locked-on",
+          "time": 213.91666666672904,
+          "sequence": 8
+        }
+      ]
+    },
+    {
+      "name": "Native volleys launch physical shootable missiles at the player",
+      "passed": true,
+      "data": {
+        "count": 117
+      }
+    },
+    {
+      "name": "All NPC allies remain offscreen during every observed salvo",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Allies wait until Riders finish their post-volley stunt",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All four allies return after Riders settle and resume fighting",
+      "passed": true,
+      "data": {
+        "settles": 8,
+        "returns": 32,
+        "restores": 32
+      }
+    },
+    {
+      "name": "Return begins only after a formation has settled",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual nearby missiles trigger proximity warnings",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Confirmed Stage6 boss music remains selected",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native root camera remains steady",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual native fight contains Rook spin charge and fire",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Observed Rook charge/fire stays at current viewport center",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native filled discs and rotate symbols actually render in the film",
+      "passed": true,
+      "data": {
+        "fields": 132,
+        "symbols": 349
+      }
+    },
+    {
+      "name": "Decoded music and SFX remain audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -19.1,
+        "peakDb": -1.9
+      }
+    },
+    {
+      "name": "stage6-rough-riders loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-kaia loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-nyx loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-gold-shield loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-missile-barrage loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook-spin loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No preview errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 292.27,
+  "fps": 59.23683073525681,
+  "preview": "http://127.0.0.1:51046/?riders=rook-circle-1029#clip=rough-riders-rook-spin",
+  "chapter": {
+    "start": 236.262,
+    "end": 251.262
+  },
+  "sha256": "4084f2b96ca27de34045443060b2db61220305bdc30604378aa4b9fd63413614",
+  "audio": {
+    "meanDb": -19.1,
+    "peakDb": -1.9,
+    "playing": {
+      "riders49_boost": 8,
+      "riders49_seek": 88,
+      "riders49_locked": 8,
+      "riders49_incoming": 59
+    }
+  },
+  "spacing": {
+    "maxOverlap": 0.08549783274133915,
+    "frames": 13851,
+    "worst": {
+      "a": "voss",
+      "b": "nyx",
+      "phase": null,
+      "x": 0.08549783274133915,
+      "y": 75.26249167854365
+    },
+    "maxIdleStep": 329.611529756605,
+    "last": {
+      "voss": {
+        "x": 76.8820056148809,
+        "y": 118.3665031928415,
+        "act": false
+      },
+      "nyx": {
+        "x": 184.96040024293444,
+        "y": 168.75029313722044,
+        "act": false
+      },
+      "rook": {
+        "x": 311.19349698834117,
+        "y": 66.09221897332739,
+        "act": false
+      },
+      "kaia": {
+        "x": 267.7399733371215,
+        "y": 202.32593774413812,
+        "act": false
+      },
+      "jace": {
+        "x": 599.4807082040578,
+        "y": 115.46083747598425,
+        "act": false
+      }
+    }
+  },
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false
+}

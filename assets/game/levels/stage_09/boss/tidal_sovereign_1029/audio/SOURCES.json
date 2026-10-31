@@ -1,0 +1,39 @@
+{
+  "tool": "ElevenLabs Sound Effects v2",
+  "flow": "05xS1ruEg4orpOUS5WAg",
+  "selectedGeneration": "YgOFRWvFYWk0uCiyteau",
+  "selectedSeconds": 2,
+  "variants": [
+    {
+      "id": "W5QfKu0bFzW5SJpKCN73",
+      "seconds": 1
+    },
+    {
+      "id": "z3OpLG6LSwZOE37ggrTr",
+      "seconds": 1
+    },
+    {
+      "id": "EAh8LPjJTiWvqnd2gS4m",
+      "seconds": 0.48
+    },
+    {
+      "id": "YgOFRWvFYWk0uCiyteau",
+      "seconds": 2
+    }
+  ],
+  "cue": "tidalWaterWave",
+  "gain": 0.76,
+  "cooldownSeconds": 0.8,
+  "master": "tidal_wave_master_1029.mp3",
+  "runtime": "tidal_wave_rush_1029.mp3",
+  "processing": "70Hz highpass, peak limiter .89, 150ms end fade; original pitch/speed",
+  "role": "One foamy aqua rushing/crashing sound on each full-sized wall launch, through shared Snd mixer; small geyser waves keep cfComboWater. No pending callbacks or loops.",
+  "warningCue": {
+    "key": "tidalWallAlert",
+    "source": "existing alertDanger recording",
+    "voices": 2,
+    "gain": 0.48,
+    "cooldownSeconds": 0.4,
+    "reason": "Global .90s alertDanger gate skips the .75s middle cue; keep it unchanged elsewhere."
+  }
+}

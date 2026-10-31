@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "name": "normal index loaded Level36 and Yuri36 exactly once",
+      "passed": true
+    },
+    {
+      "name": "C takes back cover on the real 170,2310 beam column",
+      "passed": true
+    },
+    {
+      "name": "real column exposes and fires the authored extended gun",
+      "passed": true
+    },
+    {
+      "name": "C takes low cover at the real 415,1515 wall",
+      "passed": true
+    },
+    {
+      "name": "real wall pop-out keeps its full-height endpoint during firing",
+      "passed": true
+    },
+    {
+      "name": "one-hit and prone/roll controls retained",
+      "passed": true
+    },
+    {
+      "name": "integrated native scene has no page or console errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

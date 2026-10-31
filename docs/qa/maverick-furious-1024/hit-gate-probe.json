@@ -1,0 +1,57 @@
+{
+  "retryAssets": [
+    {
+      "path": "assets/game/shared/combat/modular_roster_0927/rime.png",
+      "status": 200,
+      "bytes": 2026662,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "path": "assets/game/levels/stage_05/boss/hammer_redesign_1020/blue_throw/09.png",
+      "status": 200,
+      "bytes": 18070,
+      "width": 256,
+      "height": 256
+    }
+  ],
+  "resolvedPortrait": {
+    "kind": "HTMLCanvasElement",
+    "path": null,
+    "width": 1,
+    "height": 1
+  },
+  "nativeHitGate": [
+    {
+      "at": 10,
+      "before": 0,
+      "after": 0.16,
+      "next": 10.14
+    },
+    {
+      "at": 10.05,
+      "before": 0.10999999999999929,
+      "after": 0.10999999999999929,
+      "next": 10.14
+    },
+    {
+      "at": 10.15,
+      "before": 0.009999999999999648,
+      "after": 0.16,
+      "next": 10.290000000000001
+    },
+    {
+      "at": 10.3,
+      "before": 0.009999999999999648,
+      "after": 0.16,
+      "next": 10.440000000000001
+    },
+    {
+      "at": 10.45,
+      "before": 0.010000000000001424,
+      "after": 0.16,
+      "next": 10.59
+    }
+  ],
+  "pageErrors": []
+}

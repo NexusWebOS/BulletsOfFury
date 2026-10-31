@@ -1,0 +1,89 @@
+{
+  "editor": "Aseprite1.3.18.6-dev",
+  "builder": "_BUILD_SOURCE/build_riders_defense_1029.py",
+  "banks": {
+    "decker_charge": {
+      "path": "assets/game/levels/stage_06/boss/riders_defense_1029/decker_charge.png",
+      "cell": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        64
+      ],
+      "cols": 8,
+      "frames": 16,
+      "fps": 24,
+      "sha256": "f513f0f3acff2059f47799f6fb150be52fc5211b1eacac472a274cdd28dd88f7"
+    },
+    "shield_seed": {
+      "path": "assets/game/levels/stage_06/boss/riders_defense_1029/shield_seed.png",
+      "cell": [
+        64,
+        64
+      ],
+      "pivot": [
+        32,
+        32
+      ],
+      "cols": 8,
+      "frames": 16,
+      "fps": 24,
+      "sha256": "7de296b5374c1ffaa1b8473de9dd4457b5459380ba483221f92b976b0fffaaf8"
+    },
+    "gold_wall": {
+      "path": "assets/game/levels/stage_06/boss/riders_defense_1029/gold_wall.png",
+      "cell": [
+        480,
+        64
+      ],
+      "pivot": [
+        240,
+        32
+      ],
+      "cols": 8,
+      "frames": 40,
+      "fps": 24,
+      "sha256": "79adc8e64ddbfc7826376715ff76bccd1384746f529019bbefd0d993b200de07"
+    },
+    "entry_arrows": {
+      "path": "assets/game/levels/stage_06/boss/riders_defense_1029/entry_arrows.png",
+      "cell": [
+        40,
+        40
+      ],
+      "pivot": [
+        20,
+        20
+      ],
+      "cols": 4,
+      "frames": 4,
+      "fps": 24,
+      "sha256": "037c770e082762de0cfff3d7b043645611616412ea6b91506086870ffa45f687"
+    },
+    "entry_star": {
+      "path": "assets/game/levels/stage_06/boss/riders_defense_1029/entry_star.png",
+      "cell": [
+        40,
+        40
+      ],
+      "pivot": [
+        20,
+        20
+      ],
+      "cols": 1,
+      "frames": 1,
+      "fps": 24,
+      "sha256": "8b2ecfbdf161fc4870218fa88a0a9b1360984298eb313b6eadf447f4d9c20e66"
+    }
+  },
+  "sources": {
+    "ship_decker.png": "787f45a03bd7a9d70e9346c4f90e137c6c8a9548718dbfd4da879e0c603db363",
+    "rr26_wall.png": "b309d90d54be448448d3275158b29ba05b903f24adc0e711ba7d717255f3cc51",
+    "orb_source.png": "6f6e6fcc87c69dc63effb31dade605a923cf4ac7e49e91224083c24a26ca6250",
+    "warn_escape_arrow_0916.png": "404b5f9d1236fc1f592d8772727f3854c2e7dc507a6b91aafdc8283bcbf90dfa",
+    "bmfx_alert_red_impact_imminent.png": "5f5c950bd366241e8b72ba73e7e3927c113ce52387be75503c1c9c091412afbd"
+  },
+  "recipe": "Authored gold source palette, Decker alpha-derived outer charge, seed spin,40-frame shield formation/hold/expiry and four offline arrow directions. Fixed-cell ordinary source-over draws."
+}

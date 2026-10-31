@@ -1,0 +1,390 @@
+{
+  "checks": [
+    {
+      "name": "all authored cinematic art decodes",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cole restored comms and HQ regroup before airbase",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cole power cell restores launch and reveals satellite takeover",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cole .50 upgrade precedes alarm and selected-pilot boarding",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cole player never assigned base defense",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cole returns to HQ before tracing river sewer",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cole private prototype story remains Cole-only",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "axel restored comms and HQ regroup before airbase",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "axel power cell restores launch and reveals satellite takeover",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "axel .50 upgrade precedes alarm and selected-pilot boarding",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "axel player never assigned base defense",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "axel returns to HQ before tracing river sewer",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "axel private prototype story remains Cole-only",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "freezer restored comms and HQ regroup before airbase",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "freezer power cell restores launch and reveals satellite takeover",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "freezer .50 upgrade precedes alarm and selected-pilot boarding",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "freezer player never assigned base defense",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "freezer returns to HQ before tracing river sewer",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "freezer private prototype story remains Cole-only",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "yuri restored comms and HQ regroup before airbase",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "yuri power cell restores launch and reveals satellite takeover",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "yuri .50 upgrade precedes alarm and selected-pilot boarding",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "yuri player never assigned base defense",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "yuri returns to HQ before tracing river sewer",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "yuri private prototype story remains Cole-only",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "maverick restored comms and HQ regroup before airbase",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "maverick power cell restores launch and reveals satellite takeover",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "maverick .50 upgrade precedes alarm and selected-pilot boarding",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "maverick player never assigned base defense",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "maverick returns to HQ before tracing river sewer",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "maverick private prototype story remains Cole-only",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "falva restored comms and HQ regroup before airbase",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "falva power cell restores launch and reveals satellite takeover",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "falva .50 upgrade precedes alarm and selected-pilot boarding",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "falva player never assigned base defense",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "falva returns to HQ before tracing river sewer",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "falva private prototype story remains Cole-only",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "lizzie restored comms and HQ regroup before airbase",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "lizzie power cell restores launch and reveals satellite takeover",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "lizzie .50 upgrade precedes alarm and selected-pilot boarding",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "lizzie player never assigned base defense",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "lizzie returns to HQ before tracing river sewer",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "lizzie private prototype story remains Cole-only",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "decker restored comms and HQ regroup before airbase",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "decker power cell restores launch and reveals satellite takeover",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "decker .50 upgrade precedes alarm and selected-pilot boarding",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "decker player never assigned base defense",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "decker returns to HQ before tracing river sewer",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "decker private prototype story remains Cole-only",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "juggernaut restored comms and HQ regroup before airbase",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "juggernaut power cell restores launch and reveals satellite takeover",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "juggernaut .50 upgrade precedes alarm and selected-pilot boarding",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "juggernaut player never assigned base defense",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "juggernaut returns to HQ before tracing river sewer",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "juggernaut private prototype story remains Cole-only",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "Maverick homing lasers remain a separate circuit",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "intro wordless run is 1.65 seconds",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native yuri hq_regroup actually renders",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native cole forge_upgrade actually renders",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native yuri launch_generator actually renders",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native cole hq_alarm actually renders",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native decker hq_hangar actually renders",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native yuri hq_river actually renders",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native ending uses dimensional air_invasion",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native ending uses dimensional coast_invasion",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native ending uses dimensional earth_invasion",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native ending uses dimensional solar",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "data_disintegrate all native source cells render",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "data_blast all native source cells render",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "blue_portal all native source cells render",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "void_portal all native source cells render",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "remnant all native source cells render",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "code_fragments all native source cells render",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "hq_motion all native source cells render",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "coast_motion all native source cells render",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "forge_motion all native source cells render",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "no page / console errors",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

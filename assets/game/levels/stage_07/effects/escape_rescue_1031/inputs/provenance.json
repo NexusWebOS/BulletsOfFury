@@ -1,0 +1,162 @@
+{
+  "nxp_dense_0": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_dense_1": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_dense_2": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_dense_3": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_dense_4": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_dense_5": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_dense_6": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_dense_7": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_barrage_0": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_barrage_1": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_barrage_2": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_barrage_3": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_barrage_4": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_barrage_5": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_barrage_6": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_barrage_7": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_radial_0": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_radial_1": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_radial_2": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_radial_3": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_radial_4": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_radial_5": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_radial_6": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nxp_radial_7": {
+    "width": 256,
+    "height": 256,
+    "path": "assets/game/shared/atlases/fx_explosions.png"
+  },
+  "nsd_ring_0": {
+    "width": 256,
+    "height": 176,
+    "path": "assets/game/shared/atlases/fx_weather_2.png"
+  },
+  "nsd_ring_1": {
+    "width": 256,
+    "height": 176,
+    "path": "assets/game/shared/atlases/fx_weather_2.png"
+  },
+  "nsd_ring_2": {
+    "width": 256,
+    "height": 176,
+    "path": "assets/game/shared/atlases/fx_weather_2.png"
+  },
+  "nsd_ring_3": {
+    "width": 256,
+    "height": 176,
+    "path": "assets/game/shared/atlases/fx_weather_2.png"
+  },
+  "nsd_ring_4": {
+    "width": 256,
+    "height": 176,
+    "path": "assets/game/shared/atlases/fx_weather_2.png"
+  },
+  "nsd_ring_5": {
+    "width": 256,
+    "height": 176,
+    "path": "assets/game/shared/atlases/fx_weather_2.png"
+  },
+  "nsd_ring_6": {
+    "width": 256,
+    "height": 176,
+    "path": "assets/game/shared/atlases/fx_weather_2.png"
+  },
+  "nsd_ring_7": {
+    "width": 256,
+    "height": 176,
+    "path": "assets/game/shared/atlases/fx_weather_2.png"
+  }
+}

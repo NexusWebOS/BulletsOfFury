@@ -1,0 +1,411 @@
+{
+  "scope": "RD94 actual gated Dracodia entrance and infector return",
+  "passed": 38,
+  "failed": 0,
+  "native": [
+    {
+      "name": "All six banks use144 actual gated PixelLab frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "purple_close fixed even cells, centre pivot and editable source",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "purple_form fixed even cells, centre pivot and editable source",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "purple_loop fixed even cells, centre pivot and editable source",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_close fixed even cells, centre pivot and editable source",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_form fixed even cells, centre pivot and editable source",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_loop fixed even cells, centre pivot and editable source",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All original purple/red gated input hashes match",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Sources are the sewer mechanical gate family, not RD71 energy-only rims",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native entrance reaches full-health first-host fight",
+      "passed": true,
+      "data": {
+        "time": 9.616666666666667,
+        "mode": "fight",
+        "t": 0.016666666666666666,
+        "last": {
+          "time": 20.983333333333476,
+          "mode": "v18conversion",
+          "primary": null,
+          "primaryPhase": null,
+          "secondary": null,
+          "secondaryPhase": null,
+          "ufo": false,
+          "ufoReturning": false,
+          "ufoAt": {
+            "x": 422,
+            "y": 125
+          },
+          "redGateAt": {
+            "x": 422,
+            "y": 125
+          },
+          "gated": true,
+          "possessed": false,
+          "codeFrame": 8,
+          "white": 0,
+          "host": true,
+          "protected": true
+        },
+        "hp": 5945,
+        "ship": {
+          "x": 340,
+          "y": 447
+        }
+      }
+    },
+    {
+      "name": "Player stays anchored during possession",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Energy-only red/purple portal frames are never drawn",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both actual metal gates render their authored form, loop and close banks",
+      "passed": true,
+      "data": {
+        "purple_form": 67,
+        "purple_loop": 134,
+        "purple_close": 42,
+        "red_form": 42,
+        "red_loop": 255,
+        "red_close": 49
+      }
+    },
+    {
+      "name": "Purple gate opens first and closes after neutral drone emerges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Red gate stays fully open during aim, data bomb and return",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Infector leaves the red aperture and visibly hovers in front",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Return flight approaches the same red aperture and ends inside",
+      "passed": true,
+      "data": [
+        78.22416946717338,
+        0.21106626813953594
+      ]
+    },
+    {
+      "name": "Red gate never closes over a still-visible infector",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Red gate closes after infector is gone and fully disappears",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Data bomb fires and impacts before return/closure",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Code possession only starts after the native impact",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Host remains concealed under full white at reveal",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Robotic screams still route through the native mixer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Health split and arm protection remain intact",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Core cannot take damage before the whole arms",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Whole shoulder/arm destruction owner is unchanged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage7 rescue still has its original green gated banks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No game or rendering errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Core engine source remains unchanged",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "source": [
+    {
+      "name": "Installed authoring recipe reproduces all six PNG banks exactly",
+      "passed": true
+    },
+    {
+      "name": "Whole-host armor, hits, arm rupture and death cleanup functions remain byte-identical",
+      "passed": true
+    },
+    {
+      "name": "New portal renderer only selects and blits authored frames",
+      "passed": true
+    },
+    {
+      "name": "Index keeps original CRLF and loads new art before the possession owner",
+      "passed": true
+    }
+  ],
+  "playback": [
+    {
+      "name": "Review selects the corrected gated entrance",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Complete native entrance loads at1280x800",
+      "passed": true,
+      "data": [
+        1280,
+        800,
+        28.978
+      ]
+    },
+    {
+      "name": "Browser video advances without a media error",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Current take and previous full-fight limits are clear",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No preview browser errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "media": {
+    "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Dracodia-Gated-Return-1031\\video\\gated-possession-1031\\report.json",
+    "seconds": 29.013,
+    "fps": 58.34182687238604,
+    "meanDB": -22.0,
+    "peakDB": -6.5,
+    "decodeErrors": 0,
+    "events": [
+      {
+        "event": "background-warp",
+        "time": 0.016666666666666666,
+        "clock": 0.016666666666666666,
+        "cue": "combatEnergy0927",
+        "gain": 0.45
+      },
+      {
+        "event": "arena-handoff",
+        "time": 3.4166666666666594,
+        "clock": 3.4166666666666594
+      },
+      {
+        "event": "purple-toxic-gate",
+        "time": 5.416666666666653,
+        "clock": 5.416666666666653,
+        "cue": "warpGate",
+        "gain": 0.85
+      },
+      {
+        "event": "neutral-drone-emerges",
+        "time": 7.2,
+        "clock": 7.216666666666646
+      },
+      {
+        "event": "drone-ready",
+        "time": 8.200000000000001,
+        "clock": 8.216666666666654,
+        "cue": "combatModule0927",
+        "gain": 0.5
+      },
+      {
+        "event": "red-toxic-gate",
+        "time": 9.216666666666665,
+        "clock": 9.233333333333372,
+        "cue": "warpGate",
+        "gain": 0.95
+      },
+      {
+        "event": "infector-arrival",
+        "time": 9.6,
+        "clock": 9.633333333333391
+      },
+      {
+        "event": "ufo-hover",
+        "time": 9.7,
+        "clock": 9.733333333333396,
+        "cue": "combatAlien0927",
+        "gain": 0.7
+      },
+      {
+        "event": "data-bomb-charge",
+        "time": 10.75,
+        "clock": 10.783333333333449,
+        "cue": "bossWeaponCharge",
+        "gain": 0.8
+      },
+      {
+        "event": "data-bomb-release",
+        "time": 12.116666666666662,
+        "clock": 12.150000000000183,
+        "cue": "combatOrb0927",
+        "gain": 0.8
+      },
+      {
+        "event": "data-bomb-impact",
+        "time": 12.66666666666666,
+        "clock": 12.70000000000021
+      },
+      {
+        "event": "robotic-scream-first",
+        "time": 12.71666666666666,
+        "clock": 12.750000000000213,
+        "cue": "rd71ScreamA",
+        "gain": 0.98
+      },
+      {
+        "event": "infector-returns-through-red-gate",
+        "time": 12.916666666666659,
+        "clock": 12.950000000000223,
+        "cue": "combatModule0927",
+        "gain": 0.45
+      },
+      {
+        "event": "red-gate-closes-after-return",
+        "time": 14.066666666666656,
+        "clock": 14.10000000000028,
+        "cue": "warpGate",
+        "gain": 0.65
+      },
+      {
+        "event": "robotic-scream-rising",
+        "time": 15.21666666666665,
+        "clock": 15.250000000000338,
+        "cue": "rd71ScreamB",
+        "gain": 1
+      },
+      {
+        "event": "robotic-scream-violent",
+        "time": 17.266666666666644,
+        "clock": 17.3000000000003,
+        "cue": "rd71ScreamA",
+        "gain": 1
+      },
+      {
+        "event": "covering-white-impact",
+        "time": 18.650000000000027,
+        "clock": 18.683333333333554,
+        "cue": "expBig",
+        "gain": 1
+      },
+      {
+        "event": "robotic-host-reveal",
+        "time": 19.050000000000047,
+        "clock": 19.08333333333353,
+        "cue": "rd71ScreamB",
+        "gain": 1
+      },
+      {
+        "event": "native-phase1-fight",
+        "time": 21.000000000000146,
+        "clock": 21.03333333333342
+      }
+    ],
+    "playing": {
+      "bossPhase": 2,
+      "combatEnergy0927": 1,
+      "boss8": 1,
+      "warpGate": 3,
+      "combatModule0927": 2,
+      "combatAlien0927": 1,
+      "bossWeaponCharge": 3,
+      "alertLockon": 3,
+      "av3_target_acquire": 3,
+      "combatOrb0927": 1,
+      "expBig": 2,
+      "dialogueLetter": 26,
+      "rd71ScreamA": 2,
+      "rd71ScreamB": 2,
+      "enemyBossCannon": 6
+    },
+    "sha256": "dd6c8bff30c78f495ad8a4e1908f15dac6a3506dd411c17b37320aeba1f8c41b",
+    "preview": "http://127.0.0.1:51046/?dracodia=gated-return-1031#clip=stage8-gated-possession"
+  },
+  "fullSuite": {
+    "exitCode": 1,
+    "existingFailures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "limits": [
+    "Focused entrance film only; the earlier complete Stage8 movie predates this correction.",
+    "Native observer is invulnerable; no HP, phase or timer writes during filming.",
+    "No paid generations or uploads, no Git commit or push."
+  ]
+}

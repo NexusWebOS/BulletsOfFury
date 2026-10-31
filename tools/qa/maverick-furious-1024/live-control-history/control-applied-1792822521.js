@@ -1,0 +1,1 @@
+()=>{FURYBOT.writeQueue.then(()=>{FURYBOT.chunks=[];});const fn=FURYBOT.rec.ondataavailable;FURYBOT.rec.ondataavailable=function(e){fn(e);FURYBOT.writeQueue.then(()=>{FURYBOT.chunks=[];});};return {capture:'streamed to disk; completed chunks released',inputKeys:Object.keys(Input),gs:GS};}

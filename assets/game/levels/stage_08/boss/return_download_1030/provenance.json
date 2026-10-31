@@ -1,0 +1,204 @@
+{
+  "sources": [
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_00.png",
+      "sha256": "047d33ddee03e78464a2ae271eb2a0cc18b7f0db721f866219f79bbdc5cb23d9"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_01.png",
+      "sha256": "511610b99e575f154ec0113659f044e7cd78a849ff41384da1d08370610b1683"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_02.png",
+      "sha256": "66a53f6b6c3c6020744a893624fbe91de1be832f7ee995e171ebbc4b984b1510"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_03.png",
+      "sha256": "bd0ee3a81204feb2c5c2934c4ea94a0e87c3157ef1f769abc3d0cd8477b346bb"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_04.png",
+      "sha256": "8b8e939b1123867d25a6fc4434247dfbf378fd36c04df46a70cae44bb4af9b0e"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_05.png",
+      "sha256": "19578b1b3b296217530f895856e851eceab5cf6d70026d65890408a6cae983c9"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_06.png",
+      "sha256": "744b0f48fb50ec1114dd94a229487de125f4a494c6b80c2775a4ac462da3f342"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_07.png",
+      "sha256": "af292e70772d42e6dab8c1f7c5e3b776aad49f9e97d05fc4f58a17e8a5463f53"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_08.png",
+      "sha256": "4ae0648786b23fd9c875743b6dcbb158fe6775e74fe243a03083b5e361da3e82"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_09.png",
+      "sha256": "81d4d631a1dc9763f7ba05c194dcfdbcd00be378005cc9e4a333542008f6497b"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_10.png",
+      "sha256": "79ef57bd4f847c59b6989e2a75fb6b490e4e38844a85b5e22d1a758394417a39"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_11.png",
+      "sha256": "cfb8e32bd542c0956f761bedf53b5eb819267fc7ced032a3d2fd8dbfe932dca3"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_12.png",
+      "sha256": "ff30047ac72a298c2f9fcb4bdc2831017583fd50db3f0d53745f5be7e42acc9e"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_13.png",
+      "sha256": "47f16fc906aae399e18fab0c861f2f6b48ec9e6fa074750d72a97985d41174a3"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_14.png",
+      "sha256": "12a1dea9650d419ca4adaebc034a106a5825580aed7030552ffa068fa9b90a8f"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_15.png",
+      "sha256": "782d9e3e6c1878a8a72500a0fd1f56ca97fce24b1dd67d09c2c2b7a63ee4fe20"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_00.png",
+      "sha256": "3aff80e8d6f69eaa6fbdcacda010fb1790272e70ddc4033170c18c31ea810569"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_01.png",
+      "sha256": "f196a2d9ac70f88b99a1c5f9021a948453056e6bc3de5b1d0cfa909b74ad0b47"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_02.png",
+      "sha256": "555bf761432de699e5deebe04180044469b9ee3f33de95a9c351ef24fe69da8e"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_03.png",
+      "sha256": "b0fd65bc26e3bca2e9254e1f105e2604a4db46669b21021615e1685264dee9d4"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_04.png",
+      "sha256": "3ae89d4a8438795a4a6dd34bfeeee1a7d2a18c0bb735dc95d3fc450c3593efef"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_05.png",
+      "sha256": "9a0af498a448ebde8eb29e1f6be35de4c27f370fe785923ddfa8e3ba68410b47"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_06.png",
+      "sha256": "5590d7e4d706591795239dfb1c3bda1705026ffdbc90e40f153ba3debee7080f"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_07.png",
+      "sha256": "d3092c3821c274a5a4761d1cc61f7b7cced20f05f8df078cfcf6bcd40eb50dac"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_08.png",
+      "sha256": "119dc1190ede992508b85b511d916621cbe29faea6150e8c4040b8717a0d8a4a"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_09.png",
+      "sha256": "a6b5b6dd9d64f3d2395c040aa5cde673c1aa1325e95105c7017a9fccfc8bfed0"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_10.png",
+      "sha256": "9a44c78ae9e0ef4ef8aa2caef5698d938f45904197725ffd51885b0b037607af"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_11.png",
+      "sha256": "35de9b3c0c0815de83e8a6139df52bf7e660df73134f8140391fbff54d38666d"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_12.png",
+      "sha256": "3834ee04d6b4dd39174fcc12f0699538643426d604f812687daba5d1e498b1e0"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_13.png",
+      "sha256": "e9ef276804995d2601a0b0362df7ef8e1deca97330cd16c4fa2cf299267588d7"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_14.png",
+      "sha256": "389cc05efd1ae399a13afef87f83c314b511f3ac9614d3cc7797161c893ba705"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_15.png",
+      "sha256": "134c40c865dfceed0d92f95ceb95b1ea9caecf22c49c7c9f7f70f0a79187b481"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_00.png",
+      "sha256": "7f32afce2afb0f2901111090fa7bc677c13220f7b0f9ae38fab6c05f771a78c8"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_01.png",
+      "sha256": "8bfa2e66f05a08b8bce8e27bad996e44fab6309f5ddc42ddacbf5f0bc1dcf691"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_02.png",
+      "sha256": "b1279ff7e88c5839d53d1bee35344e10b394423e83c3585ab81bf79f92c23177"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_03.png",
+      "sha256": "423ee0ccc555d3eb3b70180ca86a632958ab3003604cc0eae6dec24bc327c1fe"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_04.png",
+      "sha256": "8980172ef1b00b3f023504ae8456ca60c46549b8e000d8944038ace8c390f9fd"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_05.png",
+      "sha256": "5f6102f1982551fbb963a3bd15f8d2b90d654b45db87e7393099c5a7e83e747c"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_06.png",
+      "sha256": "d1e3c9985f21b227bfc318fd0aaf39c4c754d90bf93c01506ef58acfd67bb90b"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_07.png",
+      "sha256": "08d7b980651cd722ce1c8798ff118c8f883dcf145ba5a3935616b4205596e44e"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_08.png",
+      "sha256": "73c0d5df16ce88788ef2cb59bb93e063bcf3d308dcde91e1a3f482d6497948e5"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_09.png",
+      "sha256": "02344757b393115426bfd90a16561eb5736374f4761907a919891050451db9f0"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_10.png",
+      "sha256": "f59cbfdc207fc520ef015d93a9f6d8948d5dff90912665ebc196690bda9f013b"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_11.png",
+      "sha256": "2458e60530619f2ba570e702954d4df4d0ea7f3fb52cfdb9085b619c4e774515"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_12.png",
+      "sha256": "d8e5a03a8381db5a3e57f73c9a140e0d31485dfd6b97208e1c263c6a5ce7c002"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_13.png",
+      "sha256": "cd785ac77a3bc3b712e9a49ec1d9bb194e2e3ebe78ea1d543e764a0790d0c522"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_14.png",
+      "sha256": "ae747ae56c25028b8fcfae072da1a1a672ed9925718bcab84a2a62b9f5204998"
+    },
+    {
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_15.png",
+      "sha256": "994bf7cd040ef23b2410f2978b98704b9c8bf8b85e365ebae4191adebf28033a"
+    }
+  ],
+  "banks": 6,
+  "frames": 96,
+  "evenCells": true,
+  "size": [
+    410,
+    410
+  ],
+  "bodySourcePixels": "native nearest-neighbor410/320; stable205 pivot"
+}

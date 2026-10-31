@@ -1,0 +1,456 @@
+{
+  "runtime": [
+    {
+      "name": "Native Furious core health is intact and matches its hull",
+      "passed": true,
+      "data": 9287
+    },
+    {
+      "name": "White cannon banks are fully ready before firing",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Hull rotation runs continuously through the entry",
+      "passed": true,
+      "data": [
+        {
+          "a": 0,
+          "t": 0
+        },
+        {
+          "a": 0.06283185307179587,
+          "t": 0.016666666666666666
+        }
+      ]
+    },
+    {
+      "name": "Core and hull share one pose index",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Core white charge brightens at the physical optic",
+      "passed": true,
+      "data": [
+        [
+          "ship",
+          28,
+          357.40065483882097,
+          217.53367924358568
+        ],
+        [
+          "eye_glow",
+          230,
+          357.40065483882097,
+          217.53367924358568
+        ]
+      ]
+    },
+    {
+      "name": "Native release produces two core-rooted spirals",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "White cannon muzzle appears only when the core fires",
+      "passed": true,
+      "data": [
+        [
+          "muzzle",
+          1,
+          357.40065483882097,
+          215.8140076400379
+        ]
+      ]
+    },
+    {
+      "name": "All beam states resolve to the level-4 white cannon sheet",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Spiral and hull turn at exactly the same angular speed",
+      "passed": true,
+      "data": [
+        {
+          "a": 12.943361732789901,
+          "r": 1.9989041080201768,
+          "frame": 1
+        },
+        {
+          "a": 14.07433508808222,
+          "r": 3.129877463312497,
+          "frame": 7
+        }
+      ]
+    },
+    {
+      "name": "Rotation never stalls or resets across wraps",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "beam uses the same uninterrupted rotation",
+      "passed": true,
+      "data": {
+        "a": 28.21150202923621,
+        "mode": "beam",
+        "phase": "fire",
+        "beams": 1
+      }
+    },
+    {
+      "name": "beam firing line is locked to the hull clock",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "sweep uses the same uninterrupted rotation",
+      "passed": true,
+      "data": {
+        "a": 34.99734216099029,
+        "mode": "sweep",
+        "phase": "fire",
+        "beams": 1
+      }
+    },
+    {
+      "name": "sweep firing line is locked to the hull clock",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "spin uses the same uninterrupted rotation",
+      "passed": true,
+      "data": {
+        "a": 41.78318229274459,
+        "mode": "spin",
+        "phase": "fire",
+        "beams": 0
+      }
+    },
+    {
+      "name": "orb uses the same uninterrupted rotation",
+      "passed": true,
+      "data": {
+        "a": 48.0663675999245,
+        "mode": "orb",
+        "phase": "fire",
+        "beams": 0
+      }
+    },
+    {
+      "name": "Projectiles remain native unshootable ordnance",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All wrapped near-collision predictors return no bullet markers",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Even stale bullet-marker state cannot draw an asterisk",
+      "passed": true,
+      "data": {
+        "imgs": 0,
+        "before": 0,
+        "after": 0,
+        "fn": "function(){}"
+      }
+    },
+    {
+      "name": "Native update discards obsolete marker state",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Authored filled rotation warning is retained",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native damage and visible white hull feedback work",
+      "passed": true,
+      "data": {
+        "white": 13888,
+        "hp": 9287,
+        "after": 9282
+      }
+    },
+    {
+      "name": "Hit flash expires normally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "White beam still calls native player damage on contact",
+      "passed": true,
+      "data": 1
+    },
+    {
+      "name": "Oversized hit preserves the exact half-health gate",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Half transformation rejects damage and Retina targets",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Half-health charge and return never interrupt rotation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Dash retains the physical three-way spinning laser paths",
+      "passed": true,
+      "data": {
+        "phase": "dash",
+        "t": 3.9999999999999907,
+        "beams": 3
+      }
+    },
+    {
+      "name": "Dash exit and return keep the same rotation speed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Half-health optics still use white cannon and core muzzle",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All owned rounds remain within their budget",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pause freezes the shared simulation rotation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native defeat clears beams and owned projectiles",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Browser has no page or render exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "source": [
+    {
+      "name": "Nightwing gun and missile logic is byte-preserved after marker removal",
+      "passed": true
+    },
+    {
+      "name": "Later combat-owner code after retired marker block is unchanged",
+      "passed": true
+    },
+    {
+      "name": "s9VoidHorizonHit retains native health and contact logic",
+      "passed": true
+    },
+    {
+      "name": "s9VoidHorizonPart retains native health and contact logic",
+      "passed": true
+    },
+    {
+      "name": "eh57Touch retains native health and contact logic",
+      "passed": true
+    },
+    {
+      "name": "Exactly one simulation-owned angular advance exists",
+      "passed": true
+    },
+    {
+      "name": "New render layer contains no runtime transform/filter/blend/alpha operations",
+      "passed": true
+    },
+    {
+      "name": "Core game source remains unchanged",
+      "passed": true
+    },
+    {
+      "name": "beam has even fixed cells and a registered pivot",
+      "passed": true
+    },
+    {
+      "name": "beam retains editable Aseprite source",
+      "passed": true
+    },
+    {
+      "name": "eye_glow has even fixed cells and a registered pivot",
+      "passed": true
+    },
+    {
+      "name": "eye_glow retains editable Aseprite source",
+      "passed": true
+    },
+    {
+      "name": "muzzle has even fixed cells and a registered pivot",
+      "passed": true
+    },
+    {
+      "name": "muzzle retains editable Aseprite source",
+      "passed": true
+    },
+    {
+      "name": "All 1288 authored cells are present",
+      "passed": true
+    }
+  ],
+  "playback": [
+    {
+      "name": "Current full fight loads and plays",
+      "passed": true,
+      "data": {
+        "time": 1.478961,
+        "w": 1280,
+        "h": 800,
+        "duration": 163.039
+      }
+    },
+    {
+      "name": "white-spiral chapter seeks and decodes",
+      "passed": true
+    },
+    {
+      "name": "water-dash chapter seeks and decodes",
+      "passed": true
+    },
+    {
+      "name": "No browser preview exceptions",
+      "passed": true
+    }
+  ],
+  "rebuild": {
+    "passed": true,
+    "before": {
+      "beam.png": "43144af2bbb6038bcc81f5d37e64959c227d5838d13d613ddf9bf6912babadac",
+      "eye_glow.png": "57b034c9e2f4863a78ed11707f7a89ca8e2d926e9891fce0defb36d665bf3675",
+      "muzzle.png": "c664d2198e516e0c26c4eda6e9fbba45a35e8effade3e255c575c8aaff64441b"
+    },
+    "after": {
+      "authored-optics.png": "1d122739b49085955f05faaeb73cb7cd52cb440db74a408b882f31accf03aee5",
+      "beam.png": "43144af2bbb6038bcc81f5d37e64959c227d5838d13d613ddf9bf6912babadac",
+      "eye_glow.png": "57b034c9e2f4863a78ed11707f7a89ca8e2d926e9891fce0defb36d665bf3675",
+      "muzzle.png": "c664d2198e516e0c26c4eda6e9fbba45a35e8effade3e255c575c8aaff64441b"
+    }
+  },
+  "fullSuite": {
+    "exit": 1,
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "media": {
+    "source": "C:\\Users\\Mike\\Documents\\New project\\BOF-Horizon-White-Optics-1031\\video\\stage9-042434\\stage9-furious.mp4",
+    "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Horizon-White-Optics-1031\\video\\stage9-042434\\report.json",
+    "seconds": 163.034,
+    "nativeFPS": 58.907869151057184,
+    "nativeHP": 10965,
+    "halfAt": 76.766,
+    "dashAt": 82.434,
+    "meanDB": -19.0,
+    "peakDB": -2.4,
+    "markers": 0,
+    "decodeErrors": "",
+    "playing": {
+      "mini9": 2,
+      "enemyunit": 1,
+      "bossAlarm": 1,
+      "alertLockon": 24,
+      "av3_target_acquire": 24,
+      "horizon85_charge": 32,
+      "lockon": 127,
+      "horizon85_sustain": 34,
+      "horizon85_release": 35,
+      "enemyHeavyLaser": 98,
+      "horizon85_orb": 15,
+      "missile": 50,
+      "spaceLaserCannon": 388,
+      "spaceVolleyLaunch": 104,
+      "spaceLaserHit": 356,
+      "hit": 16,
+      "spaceVolleyHit": 102,
+      "expSmall": 59,
+      "missileHit": 50,
+      "expBig": 31,
+      "powerup": 1,
+      "horizon85_half": 1,
+      "horizon85_boost": 8,
+      "weapon": 1,
+      "stageclear": 1,
+      "statTick": 10,
+      "stageClear": 1
+    },
+    "sha256": "e595acb59c4035ffe07ee796a41afd19e52392afc8da808f9838c5d88e8523c1",
+    "entries": [
+      {
+        "id": "stage9-miniboss",
+        "stage": 9,
+        "title": "Stage 9 / Event Horizon \u2014 white core cannon & continuous synchronized spin",
+        "start": 0,
+        "end": 163.034,
+        "seconds": 163.034,
+        "poster": "posters/horizon-white-spiral-1031.jpg",
+        "src": "videos/stage9-horizon-white-core-1031.mp4",
+        "localSrc": "videos/stage9-horizon-white-core-1031.mp4",
+        "note": "Current native Furious fight: original 10965 HP, exact half-health gate, invulnerable input-only observer. No recorder HP/phase/timer writes. Actual level-4 white cannon art, pose-anchored 1015 white core charge and white energy muzzle. Hull, core and spiral share one continuous 0.60-turn/second simulation clock through entry, charge, firing, recovery and water dashes. Bullet-attached asterisks removed globally; actual attack/ground warnings and missile Retina locks remain. Charge, release, beam bed, boost and half-health audio are wired and played. No browser/asset errors."
+      },
+      {
+        "id": "stage9-horizon-white-cannon",
+        "parent": "stage9-miniboss",
+        "stage": 9,
+        "title": "Event Horizon / white charge, muzzle and cannon",
+        "start": 9.161999999999999,
+        "end": 13.562,
+        "seconds": 4.4,
+        "poster": "posters/horizon-white-cannon-1031.jpg",
+        "src": "videos/stage9-horizon-white-core-1031.mp4",
+        "localSrc": "videos/stage9-horizon-white-core-1031.mp4",
+        "note": "Current native Furious fight: original 10965 HP, exact half-health gate, invulnerable input-only observer. No recorder HP/phase/timer writes. Actual level-4 white cannon art, pose-anchored 1015 white core charge and white energy muzzle. Hull, core and spiral share one continuous 0.60-turn/second simulation clock through entry, charge, firing, recovery and water dashes. Bullet-attached asterisks removed globally; actual attack/ground warnings and missile Retina locks remain. Charge, release, beam bed, boost and half-health audio are wired and played. No browser/asset errors."
+      },
+      {
+        "id": "stage9-horizon-white-spiral",
+        "parent": "stage9-miniboss",
+        "stage": 9,
+        "title": "Event Horizon / synchronized white spiral",
+        "start": 2.492,
+        "end": 10.392,
+        "seconds": 7.9,
+        "poster": "posters/horizon-white-turn-1031.jpg",
+        "src": "videos/stage9-horizon-white-core-1031.mp4",
+        "localSrc": "videos/stage9-horizon-white-core-1031.mp4",
+        "note": "Current native Furious fight: original 10965 HP, exact half-health gate, invulnerable input-only observer. No recorder HP/phase/timer writes. Actual level-4 white cannon art, pose-anchored 1015 white core charge and white energy muzzle. Hull, core and spiral share one continuous 0.60-turn/second simulation clock through entry, charge, firing, recovery and water dashes. Bullet-attached asterisks removed globally; actual attack/ground warnings and missile Retina locks remain. Charge, release, beam bed, boost and half-health audio are wired and played. No browser/asset errors."
+      },
+      {
+        "id": "stage9-horizon-water-dash",
+        "parent": "stage9-miniboss",
+        "stage": 9,
+        "title": "Event Horizon / continuous water-phase spin and white dash lasers",
+        "start": 75.766,
+        "end": 86.434,
+        "seconds": 10.667999999999992,
+        "poster": "posters/horizon-white-dash-1031.jpg",
+        "src": "videos/stage9-horizon-white-core-1031.mp4",
+        "localSrc": "videos/stage9-horizon-white-core-1031.mp4",
+        "note": "Current native Furious fight: original 10965 HP, exact half-health gate, invulnerable input-only observer. No recorder HP/phase/timer writes. Actual level-4 white cannon art, pose-anchored 1015 white core charge and white energy muzzle. Hull, core and spiral share one continuous 0.60-turn/second simulation clock through entry, charge, firing, recovery and water dashes. Bullet-attached asterisks removed globally; actual attack/ground warnings and missile Retina locks remain. Charge, release, beam bed, boost and half-health audio are wired and played. No browser/asset errors."
+      }
+    ],
+    "preview": "http://127.0.0.1:51046/?horizon=white-core-1031#clip=stage9-miniboss"
+  },
+  "coreHash": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de",
+  "noCommitOrPush": true
+}

@@ -1,0 +1,419 @@
+{
+  "checks": [
+    {
+      "name": "Seven native-controller previews exist",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "evasion has no game, console or HTTP errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "evasion records moving native frames at a useful rate",
+      "passed": true,
+      "data": {
+        "frames": 735,
+        "seconds": 12.516700000047683
+      }
+    },
+    {
+      "name": "evasion has audible unclipped recorded audio",
+      "passed": true,
+      "data": {
+        "meanDb": -18.5,
+        "peakDb": -5.4
+      }
+    },
+    {
+      "name": "evasion audio taps have no errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All five aircraft perform a native incoming-fire evasion",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "evasion decoded footage visibly changes",
+      "passed": true,
+      "data": 16.327701171875
+    },
+    {
+      "name": "formations has no game, console or HTTP errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "formations records moving native frames at a useful rate",
+      "passed": true,
+      "data": {
+        "frames": 2293,
+        "seconds": 38.210900000035764
+      }
+    },
+    {
+      "name": "formations has audible unclipped recorded audio",
+      "passed": true,
+      "data": {
+        "meanDb": -17.4,
+        "peakDb": -5.1
+      }
+    },
+    {
+      "name": "formations audio taps have no errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Formation star performs lock, scatter and return",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Formation bowling performs lock, scatter and return",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Formation H performs lock, scatter and return",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Formation X performs lock, scatter and return",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Formation preview emits actual physical missiles",
+      "passed": true,
+      "data": 10
+    },
+    {
+      "name": "formations decoded footage visibly changes",
+      "passed": true,
+      "data": 15.679557291666667
+    },
+    {
+      "name": "jace has no game, console or HTTP errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace records moving native frames at a useful rate",
+      "passed": true,
+      "data": {
+        "frames": 1752,
+        "seconds": 29.5445
+      }
+    },
+    {
+      "name": "jace has audible unclipped recorded audio",
+      "passed": true,
+      "data": {
+        "meanDb": -17.3,
+        "peakDb": -3.5
+      }
+    },
+    {
+      "name": "jace audio taps have no errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace demonstrates every reachable signature kind",
+      "passed": true,
+      "data": [
+        "ram",
+        "swervehelix"
+      ]
+    },
+    {
+      "name": "jace shows charge, live release and recovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Jace preview includes actual native Helix counterburst",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "jace decoded footage visibly changes",
+      "passed": true,
+      "data": 17.811724609375
+    },
+    {
+      "name": "kaia has no game, console or HTTP errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia records moving native frames at a useful rate",
+      "passed": true,
+      "data": {
+        "frames": 1155,
+        "seconds": 19.183300000011922
+      }
+    },
+    {
+      "name": "kaia has audible unclipped recorded audio",
+      "passed": true,
+      "data": {
+        "meanDb": -17.6,
+        "peakDb": -4.4
+      }
+    },
+    {
+      "name": "kaia audio taps have no errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia demonstrates every reachable signature kind",
+      "passed": true,
+      "data": [
+        "rr26roller"
+      ]
+    },
+    {
+      "name": "kaia shows charge, live release and recovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Kaia emits two sixteen-round native bursts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "kaia decoded footage visibly changes",
+      "passed": true,
+      "data": 18.6474404296875
+    },
+    {
+      "name": "nyx has no game, console or HTTP errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx records moving native frames at a useful rate",
+      "passed": true,
+      "data": {
+        "frames": 1453,
+        "seconds": 24.568299999952316
+      }
+    },
+    {
+      "name": "nyx has audible unclipped recorded audio",
+      "passed": true,
+      "data": {
+        "meanDb": -17.5,
+        "peakDb": -4.6
+      }
+    },
+    {
+      "name": "nyx audio taps have no errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx demonstrates every reachable signature kind",
+      "passed": true,
+      "data": [
+        "shadowcast"
+      ]
+    },
+    {
+      "name": "nyx shows charge, live release and recovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Nyx is seen both cloaked and revealed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Nyx releases native shadow energy",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "nyx decoded footage visibly changes",
+      "passed": true,
+      "data": 16.193862630208333
+    },
+    {
+      "name": "rook has no game, console or HTTP errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook records moving native frames at a useful rate",
+      "passed": true,
+      "data": {
+        "frames": 1382,
+        "seconds": 23.38769999998808
+      }
+    },
+    {
+      "name": "rook has audible unclipped recorded audio",
+      "passed": true,
+      "data": {
+        "meanDb": -17.2,
+        "peakDb": -3.4
+      }
+    },
+    {
+      "name": "rook audio taps have no errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook demonstrates every reachable signature kind",
+      "passed": true,
+      "data": [
+        "rr26chain"
+      ]
+    },
+    {
+      "name": "rook shows charge, live release and recovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Rook releases thirty Furious slugs in at least one burst",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rook decoded footage visibly changes",
+      "passed": true,
+      "data": 16.944440104166667
+    },
+    {
+      "name": "voss has no game, console or HTTP errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss records moving native frames at a useful rate",
+      "passed": true,
+      "data": {
+        "frames": 1754,
+        "seconds": 29.5345
+      }
+    },
+    {
+      "name": "voss has audible unclipped recorded audio",
+      "passed": true,
+      "data": {
+        "meanDb": -17.3,
+        "peakDb": -4.4
+      }
+    },
+    {
+      "name": "voss audio taps have no errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss demonstrates every reachable signature kind",
+      "passed": true,
+      "data": [
+        "rr26dash",
+        "turbo"
+      ]
+    },
+    {
+      "name": "voss shows charge, live release and recovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Voss shows turbo side rows, charged offscreen exit and north return",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "voss decoded footage visibly changes",
+      "passed": true,
+      "data": 17.035743815104166
+    }
+  ],
+  "media": {
+    "evasion": {
+      "seconds": 12.516700000047683,
+      "frames": 735,
+      "meanDb": -18.5,
+      "peakDb": -5.4,
+      "sha256": "552efa7d3fe0c76c44970ab8c7a76edb753b8fa9a5fcc536e7a67b38534bf2f8",
+      "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+    },
+    "formations": {
+      "seconds": 38.210900000035764,
+      "frames": 2293,
+      "meanDb": -17.4,
+      "peakDb": -5.1,
+      "sha256": "c44f29233637926bd03af413efad5b1efa1d26bbee7c2a93236ac632e8821915",
+      "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+    },
+    "jace": {
+      "seconds": 29.5445,
+      "frames": 1752,
+      "meanDb": -17.3,
+      "peakDb": -3.5,
+      "sha256": "a26b5a0f886f660c414905accba0085a9f141b086557f1f50c9d8139f71ef258",
+      "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+    },
+    "kaia": {
+      "seconds": 19.183300000011922,
+      "frames": 1155,
+      "meanDb": -17.6,
+      "peakDb": -4.4,
+      "sha256": "ef1f1993b15367e1b1f745f056324e21e354144c5fa044ce0796f44ddf63192f",
+      "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+    },
+    "nyx": {
+      "seconds": 24.568299999952316,
+      "frames": 1453,
+      "meanDb": -17.5,
+      "peakDb": -4.6,
+      "sha256": "e6bf486778e52db23b97744650f6b742aa72a431debb02f79601c753bcdcbabb",
+      "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+    },
+    "rook": {
+      "seconds": 23.38769999998808,
+      "frames": 1382,
+      "meanDb": -17.2,
+      "peakDb": -3.4,
+      "sha256": "7098851c9a7279086ad9f03cf0b35ef9c4d92a38eae24742c8708e41317f2ace",
+      "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+    },
+    "voss": {
+      "seconds": 29.5345,
+      "frames": 1754,
+      "meanDb": -17.3,
+      "peakDb": -4.4,
+      "sha256": "10abb47ca593988b7cdabebb2f149447f3502a334ce96bd39dac108ac0f3fcda",
+      "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+    }
+  },
+  "sourceHashes": {
+    "index.html": "4e3a470b12e3fc81f860dcd8dfa61fe23b95715b8b7308123d915bef31ae0a9b",
+    "assets/game.js": "36a9cfb7721722209f53afb4019d9428a1f7a633427c705c8bc317b027e33fde",
+    "assets/rough_riders_1028.js": "abda1987f447c13cded82e655bb00743cb60475e428bf191f529ae598b319039",
+    "assets/rebel_dogfight_1021.js": "fdec4e5b4a4018000ef4718b9868bda31b6e2949e8897bebae11f4b6cd84ad88",
+    "assets/rebel_revision_1026.js": "eed13335829c4d84f48133a0f795cf58e323db79a6431984c230685d42bcc7e1",
+    "assets/rebel_gang_1004.js": "5eebe0b05982f3c6aa6bb16224455293d219b38ff23d2926769a29cddf5e22ba",
+    "assets/rebel_arsenal_1004c.js": "3daa8ad3608d1f785ff6cd49bdbc05238ff36dc2c7cb9b543f11919454fef457",
+    "assets/rebel_air_1007.js": "8bfd26520911926e1a2487df0542d8e9b43014b2629d3679050526575cc5e4d1",
+    "assets/rebel_balance_1019.js": "ea69c5d20283a89df37d79234ab826f1eb49a92c797d47b295a2291714e6d401"
+  },
+  "scope": "Current native Rough Riders combat. Isolated scheduled selection at normal speed; not an unassisted fight. Only page and development capture tools authored. Existing combat unchanged.",
+  "rejectedFirstCapture": "Initial stream froze on its opening frame while native game ran; retained under rejected_static and replaced by audited moving captures."
+}

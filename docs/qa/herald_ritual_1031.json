@@ -1,0 +1,798 @@
+{
+  "checks": {
+    "native": [
+      {
+        "name": "All authored seal, lightning and warning banks preload",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native attack waits for the full11.65second ritual",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Warning stays ahead of the inscription",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Scene pixels darken strongly before the first line",
+        "passed": true,
+        "data": {
+          "before": 34.571421983506944,
+          "after": 13.776025390625,
+          "level": 15
+        }
+      },
+      {
+        "name": "Warning becomes solid red before the flash",
+        "passed": true,
+        "data": [
+          [
+            "source",
+            "head_cast",
+            1,
+            340,
+            140.03179616334089,
+            false
+          ],
+          [
+            "old",
+            "warning",
+            0,
+            340,
+            282.0317961633409
+          ],
+          [
+            "new",
+            "warning",
+            2,
+            340,
+            282.0317961633409
+          ]
+        ]
+      },
+      {
+        "name": "The final red warning visibly flashes white",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No line appears during the official warning flash",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No slice is scheduled before the warning completes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The first larger stroke appears after the final warning",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The old warning does not overlap the drawn star",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The blade stroke and lightning share one simulation event",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Tornadoes remain absent during inscription",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Pause freezes inscription and emits no extra cues",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Line3 selects its own authored stroke frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Charging skull uses its existing animated glowing face",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Exactly five sword strokes precede the circle",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Circle forms as a distinct final inscription",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All six loud slices are exactly one second apart",
+        "passed": true,
+        "data": [
+          {
+            "event": "line-slice",
+            "time": 4.716666666666655,
+            "serial": 1,
+            "index": 0,
+            "t": 2.2166666666666637,
+            "at": 2.2
+          },
+          {
+            "event": "line-slice",
+            "time": 5.716666666666652,
+            "serial": 1,
+            "index": 1,
+            "t": 3.21666666666666,
+            "at": 3.2
+          },
+          {
+            "event": "line-slice",
+            "time": 6.716666666666648,
+            "serial": 1,
+            "index": 2,
+            "t": 4.216666666666657,
+            "at": 4.2
+          },
+          {
+            "event": "line-slice",
+            "time": 7.716666666666645,
+            "serial": 1,
+            "index": 3,
+            "t": 5.2166666666666535,
+            "at": 5.2
+          },
+          {
+            "event": "line-slice",
+            "time": 8.71666666666668,
+            "serial": 1,
+            "index": 4,
+            "t": 6.21666666666665,
+            "at": 6.2
+          },
+          {
+            "event": "circle-slice",
+            "time": 9.716666666666729,
+            "serial": 1,
+            "index": 5,
+            "t": 7.216666666666646,
+            "at": 7.2
+          }
+        ]
+      },
+      {
+        "name": "Each inscription owns a lightning release",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Completed glowing seal spins before expansion",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native warmup still prevents any tornado contact or volley",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Seal expansion uses authored larger frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "The actual seal shatters before the funnels arrive",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Shatter sound is scheduled only once",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Authored tornado arrival follows the seal explosion",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native tornado attacks release after the entire ritual",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No old fast inscription draws underneath the new seal",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Casting preserves original HP until player attacks",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native recovery relinquishes the special instead of looping",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Caster and storm leave no renderer exceptions",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "Death cancels owned casting audio and visuals",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage change clears the ritual and ducking",
+        "passed": true,
+        "data": null
+      }
+    ],
+    "damageAndReducedFlash": [
+      {
+        "name": "Native part damage still produces real white casting pixels",
+        "passed": true,
+        "data": {
+          "hp": 362,
+          "after": 357,
+          "white": 29744,
+          "whiteAfter": 30071,
+          "flash": 0.18,
+          "bflash": 0.16,
+          "clip": {
+            "clip": "cast",
+            "f": 13
+          },
+          "alpha": 1,
+          "calls": [
+            [
+              "wingL_cast",
+              13,
+              303,
+              139.98857140836802,
+              true
+            ],
+            [
+              "wingR_cast",
+              13,
+              377,
+              139.98857140836802,
+              true
+            ],
+            [
+              "core_cast",
+              13,
+              340,
+              157.98857140836802,
+              true
+            ],
+            [
+              "gunL_cast",
+              13,
+              298,
+              156.42335401706367,
+              true
+            ],
+            [
+              "gunR_cast",
+              13,
+              382,
+              156.42335401706367,
+              true
+            ]
+          ]
+        }
+      },
+      {
+        "name": "Part hit flash expires without interrupting the seal",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Reduced-motion warning holds red instead of the white flash",
+        "passed": true,
+        "data": [
+          [
+            "warning",
+            2,
+            340,
+            283.2252112699867
+          ]
+        ]
+      },
+      {
+        "name": "Only one source owns the new seal",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No extra native browser exceptions",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "source": [
+      {
+        "name": "inscribe exports fixed even cells and exact central pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "inscribe retains editable source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "spin exports fixed even cells and exact central pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "spin retains editable source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "expand exports fixed even cells and exact central pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "expand retains editable source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "shatter exports fixed even cells and exact central pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "shatter retains editable source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "lightning exports fixed even cells and exact central pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "lightning retains editable source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "warning exports fixed even cells and exact central pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "warning retains editable source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "dark exports fixed even cells and exact central pivot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "dark retains editable source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Circle cannot leak into the five completed star strokes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sixth stroke adds the authored circle and runes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Every outward seal fragment fits its authored canvas",
+        "passed": true,
+        "data": [
+          [
+            128,
+            128,
+            704,
+            704
+          ],
+          [
+            183,
+            180,
+            648,
+            648
+          ],
+          [
+            178,
+            175,
+            653,
+            653
+          ],
+          [
+            172,
+            169,
+            659,
+            659
+          ],
+          [
+            167,
+            163,
+            664,
+            665
+          ],
+          [
+            161,
+            158,
+            670,
+            670
+          ],
+          [
+            155,
+            152,
+            676,
+            676
+          ],
+          [
+            150,
+            146,
+            681,
+            682
+          ],
+          [
+            144,
+            141,
+            687,
+            687
+          ],
+          [
+            139,
+            135,
+            692,
+            693
+          ],
+          [
+            133,
+            129,
+            698,
+            699
+          ],
+          [
+            127,
+            124,
+            704,
+            704
+          ],
+          [
+            122,
+            118,
+            709,
+            710
+          ],
+          [
+            116,
+            112,
+            715,
+            716
+          ],
+          [
+            111,
+            106,
+            720,
+            722
+          ],
+          [
+            105,
+            101,
+            726,
+            727
+          ],
+          [
+            100,
+            95,
+            731,
+            733
+          ],
+          [
+            94,
+            89,
+            737,
+            739
+          ],
+          [
+            88,
+            84,
+            743,
+            744
+          ],
+          [
+            83,
+            78,
+            748,
+            750
+          ],
+          [
+            77,
+            72,
+            754,
+            756
+          ],
+          [
+            72,
+            67,
+            759,
+            761
+          ],
+          [
+            66,
+            61,
+            765,
+            767
+          ],
+          [
+            60,
+            55,
+            771,
+            773
+          ],
+          [
+            55,
+            50,
+            776,
+            777
+          ]
+        ]
+      },
+      {
+        "name": "New complete seal is substantially larger than the former240px source",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Runtime renders authored frames without transforms or invented decoration",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Core engine source is unchanged",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All268 fixed authored frames are present",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Slice variant0 is installed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Slice variant1 is installed",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Slice variant2 is installed",
+        "passed": true,
+        "data": null
+      }
+    ],
+    "playback": [
+      {
+        "name": "New ritual preview actually plays",
+        "passed": true,
+        "data": {
+          "time": 1.564315,
+          "w": 1280,
+          "h": 800
+        }
+      },
+      {
+        "name": "three-slices seeks and decodes",
+        "passed": true
+      },
+      {
+        "name": "shatter seeks and decodes",
+        "passed": true
+      },
+      {
+        "name": "Complete fight uses the revised recording",
+        "passed": true
+      },
+      {
+        "name": "Preview page has no browser exceptions",
+        "passed": true
+      }
+    ]
+  },
+  "totalFocused": 67,
+  "rebuild": {
+    "passed": true,
+    "banks": {
+      "dark.png": "fc11b1e4ae20020780f1e81dce5c66c0dee96a839fa99fdc7117ca10e4dd2e89",
+      "expand.png": "260d71144c332241a26cec5599b7a6031bf5663f16e443d335a5bb8b2486ae9d",
+      "inscribe.png": "bd43d1c72aec570f28629a7da3d17b6748489558262f6dbbfc29a2b734d2c354",
+      "lightning.png": "a059da71d54b0516e03bd8f6b26918240c97f475682820d8b1a55757e2457696",
+      "shatter.png": "e5b5ef11dc69146ad4203a41f17be612c36301e6e58687623ce7baa51a2846bd",
+      "spin.png": "2ef3a3b31aea26a3e768e502e45443674895741819db790bcc5a614b200e8aeb",
+      "warning.png": "8acfc8040118fdafa9cabe0a18bda0b2e11ee793872dd545d88609e663ca7ca3"
+    }
+  },
+  "fullSuite": {
+    "exit": 1,
+    "failures": [
+      "and the flash is held long enough for a single hit to register",
+      "dialogue ends with the opening jump warning",
+      "opening jump lands and returns before chromium activation",
+      "unchosen right route persists as the opposite Stage X fight",
+      "Stage X right branch launches a full encounter"
+    ]
+  },
+  "media": {
+    "focused": {
+      "source": "C:\\Users\\Mike\\Documents\\New project\\BOF-Herald-Ritual-1031\\ritual-video\\stage8-051240\\report.json",
+      "seconds": 24.245,
+      "fps": 55.81159359012304,
+      "nativeHP": 4264,
+      "playing": {
+        "bossAlarm": 1,
+        "enemyunit": 1,
+        "bossWeaponCharge": 2,
+        "av3_target_acquire": 2,
+        "alertLockon": 3,
+        "boss8": 1,
+        "herald92_slice_0": 2,
+        "herald92_lightning": 6,
+        "herald92_slice_1": 2,
+        "herald92_slice_2": 2,
+        "timedBombBlast": 1,
+        "iceOrbImpact": 1,
+        "combatOrb0927": 13,
+        "wardenScream": 1,
+        "lockon": 5,
+        "enemyHeavyLaser": 4,
+        "jetDash": 1,
+        "bossfireVileexistence": 1,
+        "expSmall": 2
+      },
+      "events": [
+        {
+          "event": "warning-red-flash",
+          "time": 1.6833333333333322,
+          "serial": 1,
+          "t": 1.6666666666666656
+        },
+        {
+          "event": "line-slice",
+          "time": 2.2333333333333303,
+          "serial": 1,
+          "index": 0,
+          "t": 2.2166666666666637,
+          "at": 2.2
+        },
+        {
+          "event": "line-lightning",
+          "time": 2.2666666666666635,
+          "serial": 1,
+          "index": 0,
+          "t": 2.249999999999997
+        },
+        {
+          "event": "line-slice",
+          "time": 3.2333333333333267,
+          "serial": 1,
+          "index": 1,
+          "t": 3.21666666666666,
+          "at": 3.2
+        },
+        {
+          "event": "line-lightning",
+          "time": 3.26666666666666,
+          "serial": 1,
+          "index": 1,
+          "t": 3.2499999999999933
+        },
+        {
+          "event": "line-slice",
+          "time": 4.233333333333324,
+          "serial": 1,
+          "index": 2,
+          "t": 4.216666666666657,
+          "at": 4.2
+        },
+        {
+          "event": "line-lightning",
+          "time": 4.266666666666657,
+          "serial": 1,
+          "index": 2,
+          "t": 4.24999999999999
+        },
+        {
+          "event": "line-slice",
+          "time": 5.23333333333332,
+          "serial": 1,
+          "index": 3,
+          "t": 5.2166666666666535,
+          "at": 5.2
+        },
+        {
+          "event": "line-lightning",
+          "time": 5.266666666666653,
+          "serial": 1,
+          "index": 3,
+          "t": 5.249999999999987
+        },
+        {
+          "event": "line-slice",
+          "time": 6.2333333333333165,
+          "serial": 1,
+          "index": 4,
+          "t": 6.21666666666665,
+          "at": 6.2
+        },
+        {
+          "event": "line-lightning",
+          "time": 6.26666666666665,
+          "serial": 1,
+          "index": 4,
+          "t": 6.249999999999983
+        },
+        {
+          "event": "circle-slice",
+          "time": 7.233333333333313,
+          "serial": 1,
+          "index": 5,
+          "t": 7.216666666666646,
+          "at": 7.2
+        },
+        {
+          "event": "line-lightning",
+          "time": 7.266666666666646,
+          "serial": 1,
+          "index": 5,
+          "t": 7.24999999999998
+        },
+        {
+          "event": "seal-shatter",
+          "time": 11.016666666666794,
+          "serial": 1,
+          "t": 11.000000000000126
+        }
+      ],
+      "sha256": "ae93ad51138ed150e979ddcea219833995ab2eee01a58a9d20008b0f8760f3a8",
+      "meanDB": -23.4,
+      "peakDB": -5.2,
+      "decodeErrors": 0
+    },
+    "preview": "http://127.0.0.1:51046/?herald=six-slice-ritual-1031#clip=stage8-herald-inscribed-storm",
+    "full": {
+      "source": "C:\\Users\\Mike\\Documents\\New project\\BOF-Herald-Ritual-1031\\full-video\\stage8-051348\\report.json",
+      "seconds": 148.769,
+      "fps": 58.2589195250125,
+      "nativeHP": 4264,
+      "sha256": "a6a1a72b2ed7d33772beab419de6e610b0e5e98910d1bce7b0e06c82bc45702f",
+      "meanDB": -17.9,
+      "peakDB": -1.7,
+      "decodeErrors": 0
+    }
+  },
+  "coreHash": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de",
+  "noCommitOrPush": true
+}

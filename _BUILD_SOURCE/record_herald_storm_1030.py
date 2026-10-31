@@ -1,0 +1,12 @@
+from pathlib import Path
+import sys,http.server
+R=Path(__file__).resolve().parents[1];W=R/'_shots/herald_storm_1030/record';W.mkdir(parents=True,exist_ok=True);sys.path.insert(0,str(R/'_BUILD_SOURCE'));import rough_riders_capture_base_1028 as rec
+http.server.ThreadingHTTPServer.request_queue_size=256
+rec.OUT=W;rec.CONFIG=dict(id='herald-storm-lightning-1030',stage=8,role='mini',kind='heralddeath',name='Herald of Death / Tornado fades and red lightning-orb storm',limit=480,demonstrate=25)
+rec.CAPTURE=rec.CAPTURE.replace("let target=list.find(t=>targetKey(t)===A.targetKey);", """const modules=list.filter(t=>/^herald-(gun|wing)/.test(t._retinaId||''));if(modules.length)list=modules;
+  let target=list.find(t=>targetKey(t)===A.targetKey);""")
+rec.CAPTURE=rec.CAPTURE.replace("const demonstrate=elapsed<(cfg.demonstrate??25)||(J&&A.firstVisit&&elapsed-A.formAt<5);", """const final=b?._hd1003?.hd54;
+  if(final&&A.finalAt==null)A.finalAt=elapsed;
+  const demonstrate=elapsed<(cfg.demonstrate??25)||(J&&A.firstVisit&&elapsed-A.formAt<5)||(final&&elapsed-A.finalAt<21.8);""")
+rec.SNAPSHOT=rec.SNAPSHOT.replace('target:reviewBot.targetInfo,',"storm:{active:hh52Special(subBoss)?.kind==='storm',t:hh52Special(subBoss)?.t,warm:hh52Special(subBoss)?.warm,events:HH52.events.filter(e=>['storm-summon-bolt','tornado-volley'].includes(e.event)).slice(-90),flash:hh52Special(subBoss)?.stormFlash,orbs:eBullets.filter(q=>q._hh69Storm&&!q.dead).length},landing:{events:HL51.events.slice(-150),marks:eBullets.filter(q=>q._hl51&&!q.dead).map(q=>hl51Mark(q)).filter(Boolean),draws:HL51.draws.slice(-40)},clawLasers:{events:HL67.events.slice(-100),flashes:HL67.flashes.length,rounds:eBullets.filter(q=>q._hl67&&!q.dead).map(q=>({x:q.x,y:q.y,port:q._target17Port})),draws:HL67.draws},desperation:{events:HD54.events.slice(-170),phase:subBoss?._hd1003?.er28?._hd54?subBoss._hd1003.er28.phase:null,t:subBoss?._hd1003?.er28?.t,pulse:subBoss?._hd1003?.er28?.pulse,spin:subBoss?._hd1003?.er28?.spin,bank:subBoss?._hd1003?.er28?.bank,frame:subBoss?._hd1003?.er28?.frame,flights:HD54.flights.length,rounds:eBullets.filter(q=>q._hd54&&!q.dead).length},spell:{events:HS53.events.slice(-100),caster:!!subBoss?._hd1003?.hs53Caster,phase:subBoss?._hd1003?.er28?._hs53?subBoss._hd1003.er28.phase:null},chaos:{kind:subBoss?._hd1003?.er28?.kind,phase:subBoss?._hd1003?.er28?.phase,flight:subBoss?._hd1003?._hb25?.phase},target:reviewBot.targetInfo,")
+print('FINAL',rec.record(8,480),flush=True)

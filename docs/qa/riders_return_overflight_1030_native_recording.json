@@ -1,0 +1,4134 @@
+{
+  "stage": 6,
+  "difficulty": "furious",
+  "pilot": "cole",
+  "invulnerable": true,
+  "method": "Native encounter spawn, real RAF, Cole with level-5 Laser and40 missiles, native GOD and input-only aiming; no enemy HP/phase/timer writes.",
+  "completed": true,
+  "reason": "native teal-energy flyover effect demonstration",
+  "setup": {
+    "checkpoint": "Active native Golden Aegis and ten native enemy energy rounds; no health or phase changes during footage",
+    "entry": {
+      "stage": 6,
+      "role": "boss",
+      "kind": "rebelsquad",
+      "name": "Golden Aegis / Teal energy-ball overflight / Native effect checkpoint"
+    },
+    "difficulty": "furious",
+    "weapon": 3,
+    "wlevel": 5,
+    "missiles": 40,
+    "screen": {
+      "width": 480,
+      "height": 512
+    },
+    "nativeGod": true,
+    "currentFont": "assets/game/shared/ui/pixelmap_ui_1027/fury_strike_28.png?v=solid-r-square-hud-1027d",
+    "focusedLaser": true,
+    "newEncounterBanks": true
+  },
+  "audio": {
+    "peak": 1.2652225494384766,
+    "tapped": 30,
+    "playing": {
+      "bossAlarm": 1,
+      "allyArrive": 1,
+      "roughriders6": 1,
+      "juggernautRamLaunch": 2,
+      "bossWeaponCharge": 1,
+      "loop": 5,
+      "dialogueLetter": 1392,
+      "enemyMachineGunLight": 46,
+      "av3_impact_energy": 2,
+      "av3_impact_metal": 42,
+      "missile": 1,
+      "expSmall": 50,
+      "enemyMachineGunHeavy": 2,
+      "enemyShoot": 4,
+      "combatOrb0927": 1,
+      "dash": 1
+    },
+    "tapErrors": [],
+    "frames": 951,
+    "god": true,
+    "godBlocks": 0,
+    "deaths": 0
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:62067/assets/game/levels/stage_x/audio/music/ghostrider_1028.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:62067/assets/game/levels/stage_06/audio/music/Level6.mp3",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "timeline": [
+    {
+      "seconds": 0.468,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8245,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [],
+        "orbs": 16,
+        "shadows": 16,
+        "live": 4
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 341,
+        "y": 109,
+        "hp": 1649
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 453,
+      "pursuitEvents": [],
+      "nativeFrames": 1019,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 0.94,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8233,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1637,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          }
+        ],
+        "orbs": 136,
+        "shadows": 136,
+        "live": 8
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 369.3217950869209,
+        "y": 146.8669662921348,
+        "hp": 1637
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 475,
+      "pursuitEvents": [],
+      "nativeFrames": 1041,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 1.423,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8156.800000000001,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1625,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1622.1999999999998,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1623.6,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1637,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          }
+        ],
+        "orbs": 325,
+        "shadows": 325,
+        "live": 9
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 341.245214853554,
+        "y": 147.97827102732472,
+        "hp": 1622.1999999999998
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 495,
+      "pursuitEvents": [],
+      "nativeFrames": 1061,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 1.884,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8103.800000000003,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1610.1999999999998,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1608.7999999999997,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1612.1999999999998,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1623.6,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          }
+        ],
+        "orbs": 462,
+        "shadows": 462,
+        "live": 3
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 340.7085678827443,
+        "y": 144.8669662921348,
+        "hp": 1608.7999999999997
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 520,
+      "pursuitEvents": [],
+      "nativeFrames": 1086,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 2.362,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8096.800000000005,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1608.7999999999997,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1607.3999999999996,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1609.3999999999996,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1622.1999999999998,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          }
+        ],
+        "orbs": 494,
+        "shadows": 494,
+        "live": 0
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 339.2648052531541,
+        "y": 146.6877915409999,
+        "hp": 1607.3999999999996
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 549,
+      "pursuitEvents": [],
+      "nativeFrames": 1115,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 2.834,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8089.800000000007,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1607.3999999999996,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1604.5999999999995,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1607.9999999999995,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1620.7999999999997,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          }
+        ],
+        "orbs": 494,
+        "shadows": 494,
+        "live": 0
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 340.23721846674295,
+        "y": 144.8669662921348,
+        "hp": 1604.5999999999995
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 576,
+      "pursuitEvents": [],
+      "nativeFrames": 1142,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 3.309,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8084.200000000008,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1605.9999999999995,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1603.1999999999994,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1606.5999999999995,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1619.3999999999996,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          }
+        ],
+        "orbs": 494,
+        "shadows": 494,
+        "live": 0
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 340.8757863393457,
+        "y": 144.8669662921348,
+        "hp": 1603.1999999999994
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 605,
+      "pursuitEvents": [],
+      "nativeFrames": 1171,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 3.775,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8074.400000000011,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1603.1999999999994,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1603.1999999999994,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1602.3999999999992,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1616.5999999999995,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          }
+        ],
+        "orbs": 494,
+        "shadows": 494,
+        "live": 0
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 368.1822243404399,
+        "y": 146.09391805706534,
+        "hp": 1603.1999999999994
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 633,
+      "pursuitEvents": [],
+      "nativeFrames": 1199,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 4.246,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8068.800000000012,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1601.7999999999993,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1603.1999999999994,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1598.199999999999,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1616.5999999999995,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          }
+        ],
+        "orbs": 504,
+        "shadows": 504,
+        "live": 1
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 338.2190844332632,
+        "y": 147.4008956961193,
+        "hp": 1603.1999999999994
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 661,
+      "pursuitEvents": [],
+      "nativeFrames": 1227,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 4.717,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8051.2000000000135,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1600.3999999999992,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1601.7999999999993,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1584.7999999999988,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1615.1999999999994,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          },
+          {
+            "event": "pass-over",
+            "clock": 3.8833333333333244,
+            "target": "kaia",
+            "x": 444.0606020210698,
+            "y": 262.2474692097579
+          }
+        ],
+        "orbs": 532,
+        "shadows": 532,
+        "live": 1
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 335.0271599651706,
+        "y": 153.32432159572878,
+        "hp": 1601.7999999999993
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 689,
+      "pursuitEvents": [],
+      "nativeFrames": 1255,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 5.193,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8045.600000000015,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1598.999999999999,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1600.3999999999992,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1583.3999999999987,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1613.7999999999993,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          },
+          {
+            "event": "pass-over",
+            "clock": 3.8833333333333244,
+            "target": "kaia",
+            "x": 444.0606020210698,
+            "y": 262.2474692097579
+          }
+        ],
+        "orbs": 561,
+        "shadows": 561,
+        "live": 1
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 335.43138916725854,
+        "y": 155.24779322005242,
+        "hp": 1600.3999999999992
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 718,
+      "pursuitEvents": [],
+      "nativeFrames": 1284,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 5.659,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8038.600000000017,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1596.199999999999,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1598.999999999999,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1581.9999999999986,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1612.3999999999992,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          },
+          {
+            "event": "pass-over",
+            "clock": 3.8833333333333244,
+            "target": "kaia",
+            "x": 444.0606020210698,
+            "y": 262.2474692097579
+          },
+          {
+            "event": "edge-exit",
+            "clock": 4.816666666666655,
+            "x": 59.2713629995567,
+            "y": 148.20499476409748,
+            "age": 1.1500000000000008
+          }
+        ],
+        "orbs": 561,
+        "shadows": 561,
+        "live": 0
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 336.24683818621855,
+        "y": 155.99552427675042,
+        "hp": 1598.999999999999
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 746,
+      "pursuitEvents": [],
+      "nativeFrames": 1312,
+      "audioPeak": 1.1621079444885254,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 6.126,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8033.000000000018,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1594.7999999999988,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1597.599999999999,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1580.5999999999985,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1610.999999999999,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          },
+          {
+            "event": "pass-over",
+            "clock": 3.8833333333333244,
+            "target": "kaia",
+            "x": 444.0606020210698,
+            "y": 262.2474692097579
+          },
+          {
+            "event": "edge-exit",
+            "clock": 4.816666666666655,
+            "x": 59.2713629995567,
+            "y": 148.20499476409748,
+            "age": 1.1500000000000008
+          }
+        ],
+        "orbs": 561,
+        "shadows": 561,
+        "live": 0
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 331.02038083589105,
+        "y": 144.8669662921348,
+        "hp": 1597.599999999999
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 774,
+      "pursuitEvents": [],
+      "nativeFrames": 1340,
+      "audioPeak": 1.1984553337097168,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 6.591,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8023.200000000021,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1593.3999999999987,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1594.7999999999988,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1577.7999999999984,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1608.199999999999,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          },
+          {
+            "event": "pass-over",
+            "clock": 3.8833333333333244,
+            "target": "kaia",
+            "x": 444.0606020210698,
+            "y": 262.2474692097579
+          },
+          {
+            "event": "edge-exit",
+            "clock": 4.816666666666655,
+            "x": 59.2713629995567,
+            "y": 148.20499476409748,
+            "age": 1.1500000000000008
+          }
+        ],
+        "orbs": 561,
+        "shadows": 561,
+        "live": 0
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 338.8000673581277,
+        "y": 153.76701604529322,
+        "hp": 1594.7999999999988
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 802,
+      "pursuitEvents": [],
+      "nativeFrames": 1368,
+      "audioPeak": 1.1984553337097168,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 7.057,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8017.600000000022,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1591.9999999999986,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1593.3999999999987,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1576.3999999999983,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1606.7999999999988,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          },
+          {
+            "event": "pass-over",
+            "clock": 3.8833333333333244,
+            "target": "kaia",
+            "x": 444.0606020210698,
+            "y": 262.2474692097579
+          },
+          {
+            "event": "edge-exit",
+            "clock": 4.816666666666655,
+            "x": 59.2713629995567,
+            "y": 148.20499476409748,
+            "age": 1.1500000000000008
+          }
+        ],
+        "orbs": 561,
+        "shadows": 561,
+        "live": 0
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 340.30471785508706,
+        "y": 151.36523089173036,
+        "hp": 1593.3999999999987
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 830,
+      "pursuitEvents": [],
+      "nativeFrames": 1396,
+      "audioPeak": 1.1984553337097168,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 7.525,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8012.000000000024,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1590.5999999999985,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1591.9999999999986,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1574.9999999999982,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1605.3999999999987,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          },
+          {
+            "event": "pass-over",
+            "clock": 3.8833333333333244,
+            "target": "kaia",
+            "x": 444.0606020210698,
+            "y": 262.2474692097579
+          },
+          {
+            "event": "edge-exit",
+            "clock": 4.816666666666655,
+            "x": 59.2713629995567,
+            "y": 148.20499476409748,
+            "age": 1.1500000000000008
+          }
+        ],
+        "orbs": 561,
+        "shadows": 561,
+        "live": 0
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 341.7815452449349,
+        "y": 148.86929827536088,
+        "hp": 1591.9999999999986
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 858,
+      "pursuitEvents": [],
+      "nativeFrames": 1424,
+      "audioPeak": 1.1984553337097168,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 7.992,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 8005.0000000000255,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1587.7999999999984,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1590.5999999999985,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1573.599999999998,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1603.9999999999986,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          },
+          {
+            "event": "pass-over",
+            "clock": 3.8833333333333244,
+            "target": "kaia",
+            "x": 444.0606020210698,
+            "y": 262.2474692097579
+          },
+          {
+            "event": "edge-exit",
+            "clock": 4.816666666666655,
+            "x": 59.2713629995567,
+            "y": 148.20499476409748,
+            "age": 1.1500000000000008
+          }
+        ],
+        "orbs": 563,
+        "shadows": 563,
+        "live": 1
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 343.09570371549745,
+        "y": 146.92260770262598,
+        "hp": 1590.5999999999985
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 886,
+      "pursuitEvents": [],
+      "nativeFrames": 1452,
+      "audioPeak": 1.2652225494384766,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 8.46,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 7987.400000000027,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1586.3999999999983,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1590.5999999999985,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1570.799999999998,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1590.5999999999985,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          },
+          {
+            "event": "pass-over",
+            "clock": 3.8833333333333244,
+            "target": "kaia",
+            "x": 444.0606020210698,
+            "y": 262.2474692097579
+          },
+          {
+            "event": "edge-exit",
+            "clock": 4.816666666666655,
+            "x": 59.2713629995567,
+            "y": 148.20499476409748,
+            "age": 1.1500000000000008
+          },
+          {
+            "event": "pass-over",
+            "clock": 7.9333333333333105,
+            "target": "jace",
+            "x": 513.7733565631347,
+            "y": 160.87928011792457
+          }
+        ],
+        "orbs": 591,
+        "shadows": 591,
+        "live": 1
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 344.12720039048753,
+        "y": 146.02696770736634,
+        "hp": 1590.5999999999985
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 914,
+      "pursuitEvents": [],
+      "nativeFrames": 1480,
+      "audioPeak": 1.2652225494384766,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    },
+    {
+      "seconds": 9.044,
+      "state": "play",
+      "stage": 6,
+      "difficulty": "furious",
+      "spawned": true,
+      "hp": 7979.000000000029,
+      "maxhp": 8245,
+      "dead": false,
+      "bossDefeated": false,
+      "active": true,
+      "mode": null,
+      "pursuit": null,
+      "phase": null,
+      "form": null,
+      "attack": null,
+      "parts": null,
+      "dracodia": null,
+      "rebels": [
+        {
+          "key": "voss",
+          "hp": 1584.9999999999982,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "nyx",
+          "hp": 1649,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "rook",
+          "hp": 1587.7999999999984,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "kaia",
+          "hp": 1569.3999999999978,
+          "dead": false,
+          "mode": "fight"
+        },
+        {
+          "key": "jace",
+          "hp": 1587.7999999999984,
+          "dead": false,
+          "mode": "fight"
+        }
+      ],
+      "carrier": null,
+      "twins": null,
+      "teal": {
+        "events": [
+          {
+            "event": "pass-over",
+            "clock": 0.4833333333333333,
+            "target": "rook",
+            "x": 357.74960050605006,
+            "y": 150.57969923933896
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.6833333333333338,
+            "target": "kaia",
+            "x": 472.3073330500052,
+            "y": 258.265247294299
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.7500000000000007,
+            "target": "voss",
+            "x": 175.18171664271807,
+            "y": 159.5839981111808
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8166666666666675,
+            "target": "kaia",
+            "x": 448.7314463316584,
+            "y": 261.05262294029393
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.8333333333333343,
+            "target": "jace",
+            "x": 503.04323253759793,
+            "y": 115.63126130822504
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.9000000000000011,
+            "target": "rook",
+            "x": 369.0708249446252,
+            "y": 156.86744050682634
+          },
+          {
+            "event": "pass-over",
+            "clock": 0.966666666666668,
+            "target": "voss",
+            "x": 162.4309628332341,
+            "y": 173.22672091010602
+          },
+          {
+            "event": "edge-exit",
+            "clock": 0.9833333333333347,
+            "x": 265.58302648153375,
+            "y": -43.66324820685084,
+            "age": 0.8666666666666677
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0333333333333345,
+            "x": 622.1224969692091,
+            "y": 243.92416435533733,
+            "age": 0.8833333333333344
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.0500000000000012,
+            "x": 54.69526454770799,
+            "y": 113.49696239009248,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.0833333333333344,
+            "target": "jace",
+            "x": 510.0430161946008,
+            "y": 113.74493159423986
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.1666666666666674,
+            "target": "rook",
+            "x": 331.22499101444913,
+            "y": 156.52490799440156
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.183333333333334,
+            "x": 624.6624484105726,
+            "y": 26.98016808065868,
+            "age": 1.0333333333333345
+          },
+          {
+            "event": "pass-over",
+            "clock": 1.2500000000000004,
+            "target": "voss",
+            "x": 172.20123669305363,
+            "y": 162.16937767343288
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.2500000000000004,
+            "x": 624.0217982197726,
+            "y": 197.85924001096913,
+            "age": 0.7166666666666672
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 621.5881486938683,
+            "y": -7.6128501648990525,
+            "age": 0.9333333333333346
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.4666666666666663,
+            "x": 168.54520015884418,
+            "y": -41.68632220716514,
+            "age": 0.7666666666666674
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.5333333333333328,
+            "x": 57.00112320276256,
+            "y": 122.51720291674187,
+            "age": 1.100000000000001
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.6833333333333322,
+            "x": 57.85825628433138,
+            "y": 28.013136922093516,
+            "age": 1.2500000000000004
+          },
+          {
+            "event": "edge-exit",
+            "clock": 1.816666666666665,
+            "x": 528.6423817694414,
+            "y": -41.33014962983784,
+            "age": 1.1166666666666676
+          },
+          {
+            "event": "pass-over",
+            "clock": 3.8833333333333244,
+            "target": "kaia",
+            "x": 444.0606020210698,
+            "y": 262.2474692097579
+          },
+          {
+            "event": "edge-exit",
+            "clock": 4.816666666666655,
+            "x": 59.2713629995567,
+            "y": 148.20499476409748,
+            "age": 1.1500000000000008
+          },
+          {
+            "event": "pass-over",
+            "clock": 7.9333333333333105,
+            "target": "jace",
+            "x": 513.7733565631347,
+            "y": 160.87928011792457
+          },
+          {
+            "event": "edge-exit",
+            "clock": 8.333333333333327,
+            "x": 623.4337144502338,
+            "y": 28.370390197009385,
+            "age": 0.7833333333333341
+          }
+        ],
+        "orbs": 605,
+        "shadows": 605,
+        "live": 0
+      },
+      "target": {
+        "key": "rook-hull:rebelsquad",
+        "kind": "rival",
+        "x": 385.80190762507834,
+        "y": 146.50441819187648,
+        "hp": 1587.7999999999984
+      },
+      "botErrors": [],
+      "player": {
+        "x": 338.0018871149615,
+        "y": 401.16306297659435,
+        "dead": false
+      },
+      "weapon": 3,
+      "wlevel": 5,
+      "missiles": 40,
+      "god": true,
+      "godBlocks": 0,
+      "deaths": 0,
+      "director": null,
+      "frames": 948,
+      "pursuitEvents": [],
+      "nativeFrames": 1514,
+      "audioPeak": 1.2652225494384766,
+      "newLaserMuzzleDraws": 0,
+      "heraldEvents": []
+    }
+  ]
+}

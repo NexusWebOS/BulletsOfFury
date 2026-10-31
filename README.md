@@ -6,6 +6,14 @@ integration, and real-browser verification on `main`.
 
 Branch: `main`
 
+## October31 review library
+
+- [Current boss review and Normal ending](https://nexuswebos.github.io/BulletsOfFury/boss-balance-normal-finale-1031.html)
+- [Enemy field guide:163 individual native clips](https://nexuswebos.github.io/BulletsOfFury/enemy-showcase-1031.html)
+- [New concept boards / pending approval](https://nexuswebos.github.io/BulletsOfFury/furious-next-wave-1031.html)
+- [Full field manual](https://nexuswebos.github.io/BulletsOfFury/field-manual/guide.html) and [Rough Riders guide](https://nexuswebos.github.io/BulletsOfFury/rough-riders-guide/index.html)
+- [Publication contents and verification](docs/GITHUB_PUBLICATION_1031.md)
+
 ## Run the game
 
 The game is browser-based and should be served over HTTP rather than opened directly from disk.

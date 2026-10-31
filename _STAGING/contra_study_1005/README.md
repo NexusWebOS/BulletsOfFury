@@ -1,0 +1,15 @@
+# BOF Contra study package
+
+Start with **BOSS_FIGHT_ATLAS.md** for the close replay of all 35 numbered fights. **ENCOUNTER_KIT.md** explains the four original BOF encounters, eleven forms, independent parts, grounded core recovery, generated effects and production adapter contract. Open **encounters.html** for the new playable choreography lab. **STUDY.md**, **INTEGRATION.md** and **index.html** retain the earlier overview, existing BOF mappings and six basic recipes. Everything is local and dependency-free except optional Pillow-based asset provenance rebuilding.
+
+New lab: WASD/arrows or drag, Space/Auto-fire for shots, F for melee. Pause, Step 0.25s and Preview next form support inspection. The eleven forms change body reach, committed lanes, independent sockets, chain geometry and hollow orbit space. Kill the low core in recovery to advance normally. This is a schematic design sandbox, staged for BOF, not registered production art/gameplay.
+
+`bosses.js` exports `BOFBosses.Boss` in browsers or CommonJS. `art/boss_signature_fx.png` adds three original four-frame clips: joint discharge/break, heavy contact dust and casing breach. See its manifest for actual dimensions, pivots, durations, alpha bounds and limitations. `fight-index.json` indexes every numbered atlas entry, including compound encounters.
+
+Patterns: committed cannon, walking gate, raking arm, broken pressure ring, staggered crossfire and eruption relay. Three proposed difficulty presets are included. Use WASD/arrows or drag/touch inside the arena; press Pause to examine a tell. Destroy emitter demonstrates cleanup. Restart creates a fresh cycle and clears hit feedback.
+
+`patterns.js` is usable through CommonJS or as a browser script. `recipes.json` stores schedules for all presets. `art/reactor_pressure_discharge.png` is an unchanged original imagegen reel; `art/manifest.json` records actual dimensions, pivots, alpha padding and SHA-256. The imagegen request's nominal dimensions/padding were not fully honored, so native renderer review remains necessary before production registration.
+
+Run checks: `node --check bosses.js`, `node --check boss-lab.js`, `node bosses.test.cjs`, plus `node --check patterns.js`, `node --check lab.js`, `node patterns.test.cjs`. Rebuild older data: `node build-recipes.cjs`, `python build-manifests.py`. New FX analysis: `python analyse-signature-fx.py` (Pillow; exact source copy and read-only analysis).
+
+October 6 production follow-through: the existing Stage 8 Herald now implements committed, staggered twin cannon releases, owner-specific disarm cleanup and longer disarmed recovery. Two generated signature clips (joint/breach) are registered and reviewed in the native game. The full game suite passes 7,445 assertions; 41 native checks pass with zero errors. See the repository’s `docs/CONTRA_HERALD_1006.md` and `docs/qa/contra_herald_1006.json`. The four original lab bosses / eleven forms remain candidates; this does not implement all 35 reference bosses.

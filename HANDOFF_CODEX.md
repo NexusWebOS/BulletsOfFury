@@ -1,3 +1,230 @@
+# October31 boss balance / Normal Stage5 completion
+
+Implemented and native-tested NF100 Normal ending/save/Hard-Furious pilot-select transition; EH57 pulse/dash/recovery fixes and BA99 single-pool health; shorter Nightwing ace life; TS58 distinct Hard volleys/protected re-entry. No unapproved Dracodia move/art changes. Full analysis: docs/BOSS_BALANCE_NORMAL_FINALE_1031.md.45 focused native checks pass; mandatory full suite still returns the same five baseline failures. Core game.js unchanged.
+
+Local review: http://127.0.0.1:51046/boss-balance-normal-finale-1031.html#horizon
+Fresh actual native Furious films and Normal-menu preview are in the review; GOD/input-only footage is not human survival certification. Existing videos/concepts retained. No GitHub upload in this pass.
+
+## 2026-10-31 - Sumpjaw pair live; twelve new Stage6/9 concepts pending approval
+
+SJ98 replaces Stage7's Furious-family Dredger with two independent Sumpjaws, each with a local overhead HP bar and25/25/50 gill/gill/heart budget. One heavy breach/lob/bite at a time; no invisible parent contact; complete camera-aware body recovery, real hits and individual source-pixel breakup. Both must exhaust before one native reward/progression; Normal/Hard keep Dredger. Built-in production seed plus two PixelLab8-frame motions,847 fixed frames/18 Aseprites, exact rebuild.52 focused/source/playback checks pass, same5 baseline full-suite failures/exit1. Current full2232HP film74.035s,57.89fps, decoded peak-2.3dB; no browser/asset/audio errors. Six new boards contain three Stage6 pairs and three modular Stage9 pairs, all approval-pending, with actual Stage9 role/palette references and unchanged void arena. Local review furious-next-wave-1031.html, previous Dredger movies preserved. Core unchanged, no push. Sources/limits: docs/SUMPJAW_CONCEPTS_1031.md.
+
+## 2026-10-31 - Luminaire ground-targeted red plasma mine
+
+RD97 replaces the old filled FOV/flood with one native landing Retina, visible orb throw, constantly pulsing red mine and generated rising plasma half-dome. Damage follows the authored rim; ordinary unupgraded northward movement clears it through cast finish on all three difficulties. Caster moved lower to keep that route clear.192 frames/seven Aseprites; original final-life attack book, parts/HP/cancellation/death owners retained.47 focused/source/rebuild/playback checks pass; same5 baseline full-suite failures/exit1. Full5330HP native final-main-life recording145.177s,55.51fps, five mine casts/zero mine contacts, audio peak-5.5dB. Original prompts, generated images and exact rebuild are saved. Built-in imagegen used, no PixelLab credits/reference uploads; core unchanged, no push. Source/chapters/limits: docs/LUMINAIRE_PLASMA_MINE_1031.md.
+
+## 2026-10-31 - Whole first-host arm strikes and complete sphere closure
+
+RD96 retires the segmented extending limb: whole shoulder-to-claw poses and a committed body lean/advance own contact, targets and hits. The complete current armless torso closes through40 authored frames into the native ball, with exact matching endpoints and continuous spin.466 fixed frames/16 Aseprites; native arm/core HP, grab/throw owners, bomb ricochet and first-host defeat retained. 44 focused/source/rebuild/playback checks pass; same5 baseline suite failures/exit1. Fresh full5945HP first-host film148.056s,58.11 native fps, decoded audio peak-2.6dB. Old full-run footage is labelled archived. Core unchanged, no paid generation or push. Source/chapters/limits: docs/HOST_WHOLE_ARMS_1031.md.
+
+## 2026-10-31 - Red/purple/gray Dracodia data bomb
+
+The flying data bomb and impact now use red core/purple energy/gray metalwork through the existing Aseprite authoring owner.38 palette-only frames, exact alpha/pivots/order retained, all other possession bank PNGs unchanged. Current live gated entrance re-recorded and reviewed; no gameplay code, paid generation or push. Source/media notes: docs/DRACODIA_BOMB_PALETTE_1031.md.
+
+## 2026-10-31 - Actual purple/red mechanical gates and infector return
+
+RD94 corrects RD71's first-host entrance with the original PixelLab gated family used by the sewer. Purple arrival keeps its native timing; red stays open through the data bomb, then the infector visibly flies back into its aperture before closing at14.06s.144 authored frames/six Aseprites; no runtime transforms. Native possession/full5945HP/whole-arm combat functions retained. 38 focused/source/rebuild/playback checks pass; same5 baseline full-suite failures/exit1. Fresh29.013s entrance film,58.34 native fps, clear decoded audio. Older full fight is labelled as pre-correction. Core unchanged, no paid generation or push. Review/source/limits: docs/DRACODIA_GATED_1031.md.
+
+## 2026-10-31 - Fast sewer collapse and nick-of-time green gate rescue
+
+SR93 holds the original post-Warden route at400px/s, fills the escape with actual toxic ColeForge explosions and authored smoke rings, and automatically forms the original green PixelLab gated portal in the stone aperture. Decker calls the selected pilot by name: “WHAT IS THAT? COLE, NOOOO!” Both live seats are pulled in22px before the blast; native Forge/campaign/Stage8 handoff stays authoritative.56 authored frames/five Aseprite sources, 47 targeted checks pass; same5 baseline full-suite failures/exit1. Current final-hit native Furious film, active58.67fps, no paid generation or push, core unchanged. Review/source/limits: docs/SEWER_RESCUE_1031.md.
+
+## 2026-10-31 - Herald red-flash gate and six blade-inscribed storm
+
+HR92 darkens the scene, holds the final red warning flash, then draws five larger star strokes plus the circle at1second intervals with six loud slice/thunder events. The authored1015 seal accelerates, expands and shatters into18 exact sectors before native tornado arrival/damage.268 fixed frames/seven Aseprite sources,832px shatter margin, native hit flash/HP/other attacks/straight glass retained. 67 focused/source/rebuild/playback checks pass; full suite completes with the same5 baseline failures/exit1. Fresh focused and full4264HP native Furious films; no paid generation or push, core unchanged. Source/review/limits: docs/HERALD_RITUAL_1031.md.
+
+## 2026-10-31 - White Event Horizon core cannon and globally retired bullet asterisks
+
+EH91 reuses actual level4 white cannon/muzzle art and exact per-pose optic masks. One continuous0.60Hz clock owns hull/core/spiral through all live phases, with no loop stop/reset. PW5 prediction and both early/late collector/draw owners are retired globally; Nightwing attack code and actual attack/ground/Retina warnings remain.1288 fixed cells/three Aseprite sources;54 focused/source/rebuild/playback checks pass. Full suite finishes with the same5 baseline failures/exit1. Final native10965HP Furious film163.034s,58.91fps, all attacks/half/defeat, clear audio and zero bullet markers. Core unchanged, no paid generation or push. Sources, review and limits: docs/HORIZON_WHITE_CORE_1031.md.
+
+## 2026-10-31 - Dracodia articulated rakes and double jumping strike
+
+RD88 replaces the final main-body physical combo with236 source-preserving articulated poses: left/right edge-to-centre rakes, coiled depth jump and twin alternating claws. Exact source-alpha targets/contact/hits, native HP, break cancellation, Luminaire/copies/return/ending retained.99 focused native/input/source checks plus3 playback checks pass; full suite retains the same5 baseline failures/exit1. Full5330HP native final-main-life film109.683s,54.33fps, clear audio and first22s without player fire. Core unchanged, no paid generation or push. Current sources/limits/review: docs/DRACODIA_EXTENDED_CLAWS_1031.md.
+
+## 2026-10-31 - Stone portal route and straight Herald glass
+
+SC86 restores the Stage7 original stone chamber, continuous post-Warden northward route, green PixelLab gate activation/entry and native campaign finish; terminal/reunion blue gates now use the actual PixelLab metal rim, correcting the prior wrong energy-only source. HR87 removes glass edge rebounds and adds the existing line-by-line seal before tornado release.54 focused native/source checks pass; complete suite has the same5 baseline failures/exit1. Core unchanged, no new generation credits, no push. Runtime, sources, limits and native films: docs/SEWER_PORTAL_HERALD_1031.md.
+
+## 2026-10-30 - Dracodia terminal collapse and outdoor reunion
+
+RD84 owns true final death only:24 accelerating formation-lightning beats, faster idle/overhead scream alternation, white1015 material, electrified original ColeForge explosions, all9 stages+coastalX downloads,56 exact body shards, actual blue mechanical lifecycle, generated riverfront and all8 other native aircraft. Native one-time campaign reward/Stage Clear stays authoritative.994 authored frames/15 Aseprite sources; 36 focused checks, same5 baseline failures, unchanged core. Native final-hit film and limits: docs/DRACODIA_TERMINAL_1030.md. No push.
+
+## 2026-10-30 - Order of the Phoenix
+
+PH83 owns only the Phoenix cannon-destroyed stage: four shuffled committed corner rushes, continuous perimeter routing, authored depth bank/roll,4.2s accelerating fire charge,8–12 growing digital-fire body copies and a real turn-away/exit/foreground recovery. World-centred camera-safe cast; native HP/parts/copy returns/ending preserved.702 authored frames/seven Aseprite sources; inherited PH82 row-flush clipping repaired without cannon logic changes. 46 focused checks, final native full4100HP film, same5 baseline failures; core unchanged. Source/limits/review: docs/ORDER_OF_THE_PHOENIX_1030.md. No push.
+
+## 2026-10-30 - Phoenix twin turbo cannons and single chest beam
+
+PH82 replaces cannon-stage feather fans/pod lasers with parallel alternating twin-barrel bullet streams and a source-exact1015 chest-core charge/FOV/single beam. Private bounded selection, committed aim and visible-fire evasive recovery; native cannon gate/HP/breaks, later swoons and copied-life progression preserved.467 authored frames; darker8-phase lava and48px animated metal edges anchored to viewport sides. 49 checks, current full native4100HP film, same5 baseline failures; core unchanged. Source/limits/review: docs/PHOENIX_TURBO_CORE_1030.md. No push.
+
+## 2026-10-30 - Neural Archon unboxed night storm
+
+NB81 removes code-geyser rectangular plates:54 authored1015 caster glow poses plus one actual metal ground asterisk, varied committed unboxed eruptions, an open flank and scoped thunder. Clean generated midnight clouds replace the baked machinery/code-dust sky; world-anchored3/9px parallax and actual scenery dim/recovery verified. Native HP, NB80 optics, cloud shield, copies/return and other arenas retained. 38 checks, same5 baseline failures, core unchanged. Current native film/source/prompt: docs/NEURAL_NIGHT_STORM_1030.md. No push.
+
+## 2026-10-30 - Neural Archon aperture-filled eye beams
+
+NB80 replaces detached hairline optics with32px pupil-width startup, outward0.16s growth and42px continuous white-hot red/orange/yellow beams. Exact current whole-pose eyes own rendering, warnings and damage; warm lenses remain visible over standard hit flash.166 authored frames from existing approved PixelLab sources, no new credit spend. Geysers/cloud/native4510HP/copy return/other forms unchanged. 39 native checks, same5 baseline failures, core unchanged. Fresh full fight and source metadata: docs/NEURAL_OPTICS_1030.md. No push.
+
+## 2026-10-30 - Dracodia digital-jungle helicopter
+
+HC79 shrinks the copied helicopter15%, runs its rotor source at48fps, and adds independently turning/recoiling destructible weapon pods with actual player Retina locks and rapid finite missile volleys. Bounded committed twin-gun lanes have tested no-GOD escapes; red pressure fronts and two world-anchored digital-jungle parallax layers. Native3690HP, protected copies, covered live/defeated return and final death remain. 58 native checks; same5 baseline failures, core unchanged. Full current film and sources: docs/DRACODIA_HELICOPTER_1030.md. No push.
+
+## 2026-10-30 - Dracodia Luminaire
+
+RD78 adds a chest-origin round expanding FOV and rising flood, then violet-white void release. Native680x512 world anchoring, held final red field, exact damage spans and clear upper-side escape pockets; ordinary movement survives both routes without GOD on all3 difficulties.148 authored frames from original generated chest VFX, native body sockets/HP/copies/return/death retained. 46 focused native checks and updated full final-main-life film; same5 baseline suite failures, core unchanged. Source/prompt, limits and preview: docs/DRACODIA_LUMINAIRE_1030.md. No commit/push.
+
+## 2026-10-30 - Dracodia physical ninja main body
+
+RD77 replaces the armed main-body barrage with fixed authored guard/recede/offscreen dive and committed ground-Retina landings, alternating twisting jump slashes and moving recovery. Exact part alpha/Retina/contact, native HP/guard/copies/death retained. Broken claws cancel their pending strikes; native no-GOD damage, pause/retry and RD76 arena return verified.66 native checks, same5 baseline suite failures. Full5330HP final-life checkpoint film at58.18fps; details/limits in docs/DRACODIA_NINJA_1030.md. No core edits or commit/push.
+
+## 2026-10-30 - Dracodia defeated-copy arena return
+
+RD76 downloads the player back to the main arena after copied-life defeat and rebuilds missing main limbs only before the final life. Native life HP, dead pools, live morphs, final death/reward preserved. Fixed authored scan cells/curtains, pause/retry and all difficulty checks; same5 baseline full-suite failures. Native checkpoint preview and limits: docs/DRACODIA_RETURN_1030.md. Core unchanged; no commit/push.
+
+## 2026-10-30 — Dracodia ricocheting exposed core
+
+RD73 replaces only the slow armless first-host route with continuous four-edge rebounds and rapid native code-bomb drops. Full authored spin bounds/HUD clearance, committed warnings, bounded pressure, moving recovery and original HP/core defeat/rebirth preserved. New focused chapter and full native Furious first-host film verified. See docs/DRACODIA_RICOCHET_1030.md. Same5 baseline suite failures; no core edits or commit/push.
+
+## 2026-10-30 — Dracodia physical claw/optic first host
+
+RD72 replaces armed first-host ghost/code claw fire with source-authored extending swipe/grab/lift/native fatal throw, inset-tube purple missiles and fast eye fans/sweeps/360 blast with actual warnings. Generic target17 claw sidecar disabled only for this host. Same-frame art/hit/Retina sockets, whole shoulders, original HP/core gate and armless/later progression retained. Native full fight and no-GOD grab/death/respawn films verified sequentially. See docs/DRACODIA_DEMON_1030.md. Two scoped core hooks, exact original reconstruction; same5 baseline suite failures; no commit/push.
+
+## 2026-10-30 — Dracodia UFO possession and complete shoulder/arm breaks
+
+RD71 supersedes RD29 intro drawing/timing: purple/red actual toxic gated rims, neutral drone emergence/readiness, reference-generated Dracodia UFO,1.35s FOV/data-bomb impact, authored code fade-in/helix, moving bright-red eye and overhead claws, four loud processed robotic scream cues and covered first-host reveal. Pose-specific complete shoulder/arm/core banks replace the broad cropped shoulder boundary; exact alpha collision/hit frames and five anchored native explosions preserve native budgets/progression. New native Furious first-host film/chapters verified; old full later-form film retained separately. See docs/DRACODIA_POSSESSION_1030.md. Same5 baseline suite failures; no core/test edits, commit or push.
+
+## 2026-10-30 — Herald gothic skulls, missile counters and foreground spiral
+
+Actual Herald-skull reference now drives dark gothic skull loops/destruction; ricochets use red lightning orbs. Face source frames animate and arms lift/lower continuously. HG70 makes foreground depth orbs missile-returnable for native1.25% maxHP counters, laser-shatterable into lethal unshootable glass, MG-proof. Background guard stays intact outside scoped reflected hits. Foreground yaw/96-frame depth-and-roll spiral fires circular and aimed-depth volleys with same-frame sockets and exact baked-alpha hit masks. Final native Furious film/chapters verified. See docs/HERALD_GOTHIC_1030.md. Same5 baseline suite failures; no core/test edits, commit or push.
+
+## 2026-10-30 — Herald tornado fades and lightning-orb storm
+
+HH52 storm now uses the actual metal warning, accelerating forming red charge channels, eight-frame in/out fades and actual red lightning-orb volleys. Three authored own-alpha internal-lightning1015 strengths flash only the emitting funnel, then recover. Native warm/active/recovery, collision, cadence, cap, HP, red claws, bottom Retinas and final desperation retained. Full Furious film and focused storm chapter verified. See docs/HERALD_STORM_1030.md. Same5 baseline suite failures/exit1; no core/test edits or commit/push.
+
+## 2026-10-30 — Herald animated bottom-landing Retinas
+
+HL51 now marks every bomber drop: authored8-step fade, at most0.18s acquisition sweep, exact bottom world-point lock, green/yellow/red frames and native impact/cancellation. Original explosive subset keeps radial volleys; ordinary drops only gain a small bottom impact, no extra radial/splash pressure. Latest user bottom request supersedes four-height bands. Native red dual lasers/HP/final phase retained; full film and focused chapter verified. See docs/HERALD_LANDING_RETINAS_1030.md. Same5 baseline suite failures/exit1, no core/test edits or commit/push.
+
+## 2026-10-30 — Herald dual red claw lasers
+
+HL67 replaces target17 Herald blue packets/orb flashes with authored red8x64-direction laser and larger64px muzzle banks, seven pixels over the actual claw tip. Both surviving claws release together on native waves; complete committed warning/fire before next maneuver, one launcher cue, native part break/HP/hits/death/final phase retained. New full Furious film and focused chapter verified locally. See docs/HERALD_CLAW_LASERS_1030.md. Same5 baseline suite failures/exit1; no core/test edits or commit/push.
+
+## 2026-10-30 — Nightwing directional low-health side passes
+
+NW32 now selects actual64-heading frames from the native desperation path tangent (including vertical waves), retaining matched hull/hit/shadow/engine sockets, finite inverted return and all movement/warning/HP owners. Fresh complete Furious native film and focused side-pass chapter refreshed locally. See docs/NIGHTWING_SIDE_FACING_1030.md. Same5 baseline suite failures/exit1; no core/test edits or commit/push.
+
+## 2026-10-30 — Nightwing smaller swirl and teal wind charge
+
+NW32 wind front/rear are now authored336px cells (12.5% smaller), registered from nightwing_teal_charge_1030. New six-level source-contour teal-green aura stays visible around real white hit feedback before wind release; existing body glow, blue cockpit,2.1s windup, gun/FOV/projectile/collision/audio and flight remain. Native/full-film checks and current full Carrier/Nightwing gallery refreshed. See docs/NIGHTWING_TEAL_CHARGE_1030.md. Same5 existing suite failures/exit1; no core/test edits or commit/push.
+
+## 2026-10-30 — Visible allied overflight with depth and shadows
+
+RR66 extends the native Rough Riders ally breakaway to a visible 1.8s northbound flyover, authored60→100→16px depth and matched ground silhouettes; actual top-edge clearance precedes hold. Real pilot/flame/B-42 sources, fixed128 cells, shadows under enemies and hulls above all enemy passes while preserving dialogue. Native return/HP/warnings, Gasline/grid/RR65 unchanged. Fresh full Furious input-only GOD defeat and barrage chapter published locally. See docs/RIDERS_ALLIED_OVERFLIGHT_1030.md; same5 baseline suite failures/exit1, no core/test edits or commit/push.
+
+## 2026-10-30 — Rough Riders continuous flight and solid grid
+
+RR65 removes repeated RR45 snap separation/anchor drift. Shared clear homes, continuous swept hull reservations, bounded approach routing and finite4.8s clear-slot formation fallback; combat stunts now true barrel rolls. Decker uses new40-cell source-authored filled gold force-field grid, native charge/reflection/timing retained. Full Furious input-only GOD defeat refreshed in gallery including gold-shield chapter. Tests/evidence: docs/RIDERS_FLIGHT_GRID_1030.md. Same5 baseline full-suite failures/exit1; no core/test edits or commit/push.
+
+## 2026-10-30 — Rough Riders barrel rolls, aligned type and original Gasline
+
+User confirmed original Gasline (LevelX.mp3 original file), not Harrier boss6 or newer StageX music. RR43 keeps a separate scoped element. Intro now uses actual complete16-frame barrel rolls at72–87, separate lanes/south-facing, preserving protected native release/allies. New Command-master dialogue family shares baselines and ordered font sizes; body-only override preserves names/typewriter/audio. 63 native and 17 film checks pass; full Furious GOD/input-only defeat recorded and main gallery card refreshed. Existing specialized demos preserved. Full suite same5baseline failures/exit1. See docs/RIDERS_ROLL_TYPE_MUSIC_1030.md. No core/test edits or commit/push.
+
+## 2026-10-30 — Actual Stage2 metal warning signs for water walls
+
+Mike meant the metal nwarn_yield/nwarn_alert signs, not HH52 red impact stars. Water-wall queue now uses fixed64px authored signs: yellow queued, red next, drawn above hull/effects until individual launch. Sources/recipe archived in TS58 owning art workflow. Warning cadence/beeps/water sounds, mortar weave and other combat unchanged. 64 native/42 art/11/11 video checks pass. Fresh native Furious water-wall excerpt installed. Full suite same five baseline failures, exit1. See docs/TIDAL_WARNING_SIGNS_1030.md. No core/test edits or commit/push.
+
+## 2026-10-30 — Tidal water-mortar side-to-side feint
+
+Mortar charge/volley now weaves around the visible playfield centre with a small hover, 0.8s entry ramp and 180px/s cap. Four actual fan sockets and locked ground retinas remain synchronized; native timing, HP, recovery, damage and water-wave warnings/audio retained. 62 native checks and 10/10 video checks pass. Short live Furious attack excerpt refreshed at stage9-tidal-mortars; previous complete film retained. Full suite same five baseline failures, exit 1. See docs/TIDAL_MORTAR_SWAY_1030.md. No core/test edits or commit/push.
+
+## 2026-10-29 — Visible water-wall asterisks and dedicated aqua wave sound
+
+The water-wall asterisks were hidden by the hull; TS58 now paints them last, below the gauge in their committed lanes, with one alert beep per reveal and removal only on each launch. New two-second ElevenLabs ocean-rush/crash cue uses two native mixer voices on each full wall. Sources/rebuild and QA archived. 55 native checks pass; 33/33 film checks pass, with 57.67 FPS, above the >55 threshold. Full suite same five baseline failures, exit 1. Gallery root and water-wall chapter refreshed; no core/test edits or commit/push. See docs/TIDAL_WALL_WARNINGS_1029.md.
+
+## 2026-10-29 — Forward water spreads, northbound fan jets, exploding fan grenades
+
+TS60 correction in TS58 owner: fixed south barrel spreads/five authored headings and exact FOV, visible fan jets north/offscreen then marked return/geysers, and fan water-ball grenades exploding on fuse/contact instead of bouncing. Native top-cull handoff fixed; original wave triplets/fan spin/HP/death and Stage8 transfer retained. 49 native/40 art checks pass; 29/30 film checks pass (FPS check remains below 55);147.91s native Furious defeat at54.59fps, no runtime/media errors. Gallery root and chapters current. Full suite same5baseline failures/exit1. See docs/TIDAL_FORWARD_FANS_1029.md. No commit/push.
+
+## 2026-10-29 — Correct Stage2 water waves and visible fan rotation
+
+Mike rejected the wrong nib_wall strip. TS58 now uses actual nwf_fire0..7 source silhouettes, water palette, six baked approach sizes, Stage2 warning/crossing cadence and one-at-a-time triplets with queued asterisks; actual alpha owns contact. The measured fan spiral disks counter-rotate through16 phases with fixed metal rims in all damage/fill states. 40native/34art/24film checks pass. Fresh147.37s full Furious native defeat,57.32fps, no media/runtime errors; gallery root/chapters updated, new fan chapter, earlier media retained. Full suite same5baseline failures/exit1. See docs/TIDAL_WAVES_FANS_1029.md. No external generation or commit/push.
+
+## 2026-10-29 — Immediate Tidal Sovereign, water arsenal and Stage8 Sentinels
+
+TS58 starts Stage9 directly as water Sovereign, preserving its established pool after outer spawn scaling. Former Warp Sentinels replace the actual Stage8 34.5s carrier beat as separate normal heavies, with real hits/death and visible-muzzle firing guards; old mutation rig flags removed. Whole hull water16-phase x4 fill/glow, actual turret/fan anchors, arcing geyser mortars/falling waves, bouncing bomb-emitting rollers, three asterisk water walls, warned fan jet rain, half-health centre/360 charge and naturally merging buoyant bubbles, Slip N Slide water arrows/trail/waves. Ordinary water energy unshootable; bounded hazards/native HP/white hits/defeat/rewards retained. 35native/41art/19film checks pass;146.97s native Furious defeat,58.96fps, no runtime/media errors. Full suite same5baseline failures/exit1. See docs/TIDAL_SOVEREIGN_1029.md. Dracodia not changed; no commit/push.
+
+## 2026-10-29 — Event Horizon alien eye lasers and aqua dash phase
+
+EH57 replaces Stage9 mini attack ownership with generated/source-normalized32-angle UFO, pulsing optical eye, spirals/straight beam/360 sweep/charged orbs/radial laser book.50% native HP enters protected aqua/white-eye/smoke transition then alternate edge-warning spinning dashes with three side beams, finite offscreen/return. Shared space bob remains aligned across visible eye, laser and collision. Native10965FuriousHP/flash/death/rewards retained; ordinary shots unshootable. 26 native,11art,16film checks pass;164.77s native Furious defeat,58.89fps, no media/runtime errors. Full suite same5 baseline failures/exit1. Stage9 main boss and Dracodia not revised. See docs/HORIZON_SYMBIOTE_1029.md. No commit/push.
+
+## 2026-10-29 — Warden front barrels, spin slams, hops; sewer outlets removed
+
+WS56 paints live Warden guns after head/body and retains native sockets/hit masks. Exposed core adds five circling, authored32-angle ground slams and back-forward/home hops with committed Retinas, toxic bursts, shadows, native damage and finite recovery. Stage7 sluice outlet draws/events/damage disabled across all ranks; structural sewer scenery remains. Native HP/module/defeat owners unchanged. 19 native,5 art,18 film checks pass. Refreshed boss133.09s and mini80.29s native Furious defeats; zero pipe events/media exceptions. Full suite same5baseline failures/exit1. See docs/WARDEN_SPIN_CLEAR_SEWER_1029.md. No commit/push.
+
+## 2026-10-29 — Dredger protected hull, roof Retinas and wall crash
+
+DF55 locks hull until both twin-barrel guns break; each alternates fast native toxic slugs. Roof uses1015 top pixels + ooze, actual toxic orbs and committed ground Retinas, no circular roof field. Wall rush has metal impact/rumble,2.95s reverse with distance-driven tracks. Exposed hull only rams/reverses/spews magma; native HP/death/rewards retained. 30 native,9 art,17 film checks pass. 81.54s native Furious defeat,58.27fps,6 audible wall impacts, no runtime/media exceptions. Full suite same5baseline failures/exit1. Current evidence: docs/DREDGER_FINAL_1029.md; no commit/push.
+
+# Latest pass — Herald final depth desperation (October29)
+
+Implemented HD54 final 20% phase, protected retreat/5s charge, generated depth turntable and growing Falva red/black rollers; finite foreground damage windows preserve native defeat. Current evidence: docs/HERALD_DESPERATION_1029.md and docs/qa/herald_desperation_1029.json. Prior films preserved in local gallery. Full suite still has its five baseline failures; no push.
+
+## 2026-10-29 — Herald inscribed seal and permanent skull-caster phase
+
+HS53 retires the traveling pentagram: skull/eyes1015 emission + overhead asterisk, darkened scenery, five lines then circle, spin, authored glow/expand/contract and shatter into ruby penta balls/red-glass bullet hell. After four real limb breaks, skull/core stays in magic turns. Native HP/hit/death/reward owners retained. Orbs solve actual world velocity after native pressure scaling and timed bursts match committed in-view points; native interference/cleanup preserved. 26 native,13 art and25 distinct film/player checks pass. Fresh180.00s Furious native defeat at58.97fps refreshes full/chapters; both full-body and stripped caster casts occur naturally, earlier media preserved. No runtime/asset/audio exceptions. Full suite same5baseline failures, exit1. Sources/proof: docs/HERALD_SPELLCASTER_1029.md. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-29 — Herald GPT tornadoes, growing skulls and anchored lightning
+
+HH52 replaces the broad special-attack FOVs with the requested cues: asterisk-only tornado tell, accelerating shootable/growing skull bombs with size-linked splash and bounded ricochets, two-second committed ground lightning marks, charge/throw/background casting and authored foreground return. Bomber/swoop flights re-enter opposite their exit edge and turn home; HL51 actual bomb landings remain. Native modular HP, damage/white flash/breakup/defeat/reward owners retained. Final unclipped Aseprite exports/manifest/provenance registered as hh52_. 28 native and19 distinct film/player checks pass; all110 art banks and six source extent checks pass. Fresh139.93s native Furious defeat at58.95fps refreshes full/chapters, older media preserved; no runtime/asset/audio exceptions. Required full suite same5baseline failures, exit1. Docs/QA: HERALD_CHAOS_1029. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-29 — Herald actual bomb landing retinas
+
+HL51 removes the bomber's pre-release reticle/vertical-lane carpet and bomb-burst ray FOVs. Released explosive drops commit to upper/middle/lower-middle/bottom landing bands; one shared world point owns velocity, marker and native impact, with final position clamped to it. Native fuse, chaos rounds, live-claw checks, escape gaps, 128-round cap, hit/part/defeat and sounds remain. Budget saturation suppresses extra rays while retaining the actual landing explosion. 19 native and13 film/player checks pass, including actual damaged claw pixels/expiry. Fresh76.68s native Furious defeat at58.30fps shows12 drops/12 exactly matched impacts, all four bands, no premature marks or runtime/audio errors. Stage8 miniboss/full and focused bomber chapter refreshed, older media preserved. Full suite same5 baseline failures, exit1. See docs/HERALD_BOMB_LANDING_1029.md. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-29 — Rook centered spin and full circular FOV
+
+RK50 replaces the spin's outer shock ring with native-palette Aseprite404x404 full filled FOV discs behind Rook, plus matched48x48 rotate symbols above. He advances to viewport center and reserves it during charge/fire; other Riders yield, Golden Aegis spacing cannot displace him, and real missile knockback/stun remain. Both public and stored squad attack owners initialize this path. 19 native and31 distinct film/player checks pass, including actual white damaged pixels and flash expiry. Fresh292.27s native Furious defeat at59.24fps shows the naturally scheduled full attack; full/chapters refreshed, old media preserved. Direct Rook-spin chapter236.262-251.262s. Full suite same5 baseline failures, exit1. See docs/ROOK_CIRCLE_1029.md. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-29 — Audible missile locks and allied breakaway
+
+RM49 adds dedicated shared-mixer seek/lock-confirmed/proximity cues, animated Retina frames after launch and bounded music ducking. Stage6 Rough Riders formation missiles commit to live player/co-op seats; NPC allies boost north before launch, wait offscreen until Riders settle, then return and resume native weapons. Player control/HP and shootable physical missiles remain native. Own Golden Aegis no longer pins evacuating allies; player/enemy barrier behavior remains. All23 native and27 distinct film/player checks pass. Fresh240.85s native Furious defeat at59.20fps refreshes full/chapters with an unobstructed barrage chapter. All three cue families decode/play; -19.3dB mean/-3.3dB peak, no runtime/asset/audio errors. Full suite same5 baseline failures, exit1. Docs/QA: RIDERS_MISSILE_WARNING_1029. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-29 — Kaia faster four-edge roller ricochets
+
+KR48 speeds Stage6 Kaia rollers to 235/260/280/300px/s and shortens release interval .20 to .14s. All four live viewport edges reflect full 48px cells with overshoot/corner handling. Native HP/lifetime/collision/shield/owner cleanup, warnings and recovery remain. StageX, Voss orb columns and noncombat intro unchanged. 15 native checks pass; fresh301.03s native Furious defeat at59.23fps shows the real burst/rebounds and refreshes full/chapters. 34 film/player checks pass; long-run spacing check records brief13.60px Kaia/Jace conservative-footprint overlap before first roller launch, separate follow-up (no flight code changed). Full suite same5 baseline failures, exit1. See docs/KAIA_RICOCHET_1029.md. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-29 — Visible Nyx firing and measured turret warnings
+
+NY47 bounds Nyx's charge/fire home in the live viewport and above the gold shield. Explicit source-frame turret points drive both FOVs, actual shots and muzzle effects; lane length ends at the visible edge and warning/fire angles agree. Hidden squad dispatch no longer spends Nyx's attack turn before discovery. Retina protection, native health/hit/death, mines/volley/retreat/recloak and other Riders remain. 14 native +31 film/player checks pass; fresh205.21s complete native Furious fight at59.02fps contains her actual corrected volley. Full/chapters refreshed, prior films preserved. Full suite same5 baseline failures, exit1. See docs/NYX_FIRING_1029.md. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-29 — Nyx requires completed Retina discovery
+
+NY46 keeps Stage6 Nyx completely hidden, untargetable by weapons/allies and immune until single/Multi-Retina finishes locking and her1s cloak wear-off completes. Missiles and self-ambush no longer reveal; hidden collision passes through, parts/HP/flash remain protected, cached targets and shield returns avoid her. Native visible attacks and final recloak remain. 16 native +27 film/player checks pass; fresh138.97s complete Furious native defeat at58.51fps uses actual scan input, with full HP until discovery. Local full/chapters refreshed; old movies preserved. Full suite same5 baseline failures, exit1. See docs/NYX_RETINA_1029.md. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-29 — Rough Riders airspace, entry cues and Golden Aegis
+
+RR45 reserves separate aircraft footprints, restores resting scale, widens bowling settlement, and gives Voss warned north/south/lateral passes with authored arrows/asterisk. Jace's launched combat helix matches Maverick690px/s; Kaia demonstrates her roller in the intro. Decker automatically charges gold outer light, launches/forms an authored reflection shield and provokes angry Riders; friendly fire passes. 14 native +24 film/player checks pass; complete172.27s native Furious defeat at59.01fps, measured max footprint overlap0.08042px. Local preview/chapters refreshed with new shield chapter; old films retained. Full suite same5 baseline failures, exit1. See docs/RIDERS_DEFENSE_1029.md. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-29 — Voss parallel spinning cannon rows
+
+OR44 gives both Voss cannon sockets fixed vertical columns, preserving firing X and row width with native five-pair cadence at240px/s (+33.3%). Source-derived Aseprite32-frame spin/1015 red illumination plus matched hit cells use fixed48px source-over blits. Native cannon damage, energy HP/counters, audio, turbo, other pilots and StageX remain. 34 native +4 art +20 film/player checks pass. Fresh172.81s native Furious squad defeat at59.00fps refreshes the local preview and Voss chapter; earlier films retained. Full suite same5 baseline failures, exit1. See docs/VOSS_ORB_ROWS_1029.md. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-29 — Rough Riders standard boss score and steady camera
+
+Mike selected Stage6's standard boss recording. RR43 maps this five-ship Stage6 encounter to the existing Level6b.mp3 source, bypasses the legacy global rebel→StageX redirect, preserves playback on repeated requests/pause and retains real StageX's current Ghostrider track. Impact shake is suppressed only in this encounter's renderer; gentle bounded horizontal tracking retains the native arena, actors, attacks and hit flashes. 18 native +17 film/player checks pass. Fresh150.12s complete native Furious squad defeat at58.53fps updates the local full card and related chapters; earlier videos preserved. Required suite same5baseline failures, exit1. See docs/ROUGH_RIDERS_MUSIC_CAMERA_1029.md. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Nightwing stable entry and readable wind
+
+NW32 uses one64-heading family for eased entry and progressive dash windup, retaining native drift/depth/shadows and the approved aircraft. Authored six-step armor pixels signal both gun and wind charge. PixelLab24-frame384px vortex surrounds a clear jet center; bright96px directional gusts retain native collision/attacks. Equivalent pose/padding packing cuts new decoded memory to50.08MiB. 16 native +21 film/player checks pass; final196.93s complete native Furious Carrier→Nightwing defeat at54.44nativefps. Existing local full card and five chapter cards refreshed; older films preserved. Full suite same5baseline failures, exit1. Docs/QA: NIGHTWING_STABILITY_WIND_1028. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Stage6 Fortress passive fans and red core
+
+S6F28 adds two real passive fan modules to the six laser batteries, with the exact native total HP budget. Core collision/Retina is absent until all eight break and the aperture opens. Destroyed fans retain anchored authored smoke/fire; batteries fire lasers only. Exposed core alternates screenshot-matched red pulsing branching bolts and electric orbs, with FOV/audio, no interception and death cleanup. Main Harrier and prior no-allies miniboss rule preserved. Aseprite fixed-cell sources/exports and provenance installed; no paid generation. 31 native and 13 film/player checks pass. Fresh82.33s audible Furious native defeat at58.89fps is in the local preview; earlier movies preserved. Full suite reaches summary with same5 baseline failures (exit1). See docs/STAGE6_FORTRESS_RED_CORE_1028.md. No game.js/test_fl.js edits, commit or push.
+
+## 2026-10-28 — Stage6 miniboss has no NPC allies
+
+S6SOLO blocks wing/callable allies and their rounds for the actual Stage6 miniboss, campaign warning, password/direct-inner route and entire debug preview. Existing support is parked and can return after a campaign mini; both main boss routes retain their wing and human players remain untouched. Keep the required Carrier preparation inside the Fortress builder: suppress launches, never skip er28WingReady's opening/route setup. Native26 checks pass and fresh57.87s Furious native defeat film has zero NPCs/ally rounds, audible sound and no errors. Existing local video preview now uses the solo film; old downloads retained. Final suite exits1 with same5 baseline failures. See docs/STAGE6_SOLO_MINIBOSS_1028.md. No game.js/test_fl.js edits, commit or push.
+
 ## 2026-10-28 — Current Nightwing frames in the Carrier review player
 
 Mike's normal/banked versus white-hit mismatch came from the older stage6-carrier release film's retired Part2 bank. Installed source-locked identity/flight banks are correct. 28 new source/native-render checks +20 combat regressions verify matching hit silhouettes, real damage/expiry and removed-fin collision. No hull art or gameplay edits.
@@ -5331,3 +5558,8 @@ Mike requested fresh full recordings of all updated Stage6–9 encounters and a 
 The full squad recording exposed Nyx/Rook entry-frame reads before attack state exists and personal-book starvation. Optional entry guards preserve actual hull pixels; assets/rebel_dispatch_1028.js schedules the least-served ready Stage6 pilot through the existing attack owners and heavy/formation interlocks. All5 books and Rook dash/spin appear in the final native film. Six native scheduling/entry checks,42 shared squad checks,50 Rook checks and69 local video/gallery checks pass. Legacy Voss expectations in the Nyx/Rook probes now verify his approved overhead turbo and full-scale return. No game.js/test_fl.js changes.
 
 Owners/reproduction/publication: docs/STAGE6_9_REFRESH_1028.md and docs/qa/stage6_9_refresh_1028.json. Source branch codex/build-2026-10-26; new media tag bof-stage6-9-updated-2026-10-28; public watch gallery https://nexuswebos.github.io/BulletsOfFury/. Existing _shots/github_review_1028/index.html is refreshed without deleting historical media. Pages uses a separate temporary index, preserving the active checkout and unrelated work. Full core suite still exits1 before assertions/final summary on the missing ignored UNUSED_ASSETS/retired_art_1022/manifest.json; no bypass or fake manifest. Dark weapon pass remains deferred.
+
+
+## October30/31: Horizon plasma, attack speed and sound audit
+
+Stage9 miniboss: faster native spin/spiral/sweep, new PixelLab mint/ivory continuous plasma and matching eye/orb palettes, six Aseprite banks. Explicit attack cues, sustained beam sound, cleanup and brief tell ducking. Native HP/half-health, damage, warning times, rewards and ordinary projectile non-interception retained. Fixed repeated dialogue redraws spamming letter sounds (Rough Riders88,489→418 requests/42s).25 real-time encounter/roster samples,746 seconds, no final HTTP/game/audio-tap errors. Full native Furious fight123.255s,56.79FPS, audio mean−19.3/peak−1.5dB.33 native checks +16 source checks pass; engine suite keeps the same five recorded baseline failures. Carrier remains47.61FPS game-only; follow-up profiling needed. Audio playback/levels verified instrumentally; environment cannot audition by ear. Core game.js byte-identical. Details:docs/HORIZON_AUDIO_SPEED_1031.md/.json. Sources:_ART_SOURCES/horizon_plasma_1031; rebuild:_BUILD_SOURCE/build_horizon_plasma_1031.py. Gallery:http://127.0.0.1:51046/?horizon=cyan-1031#clip=stage9-miniboss;25 samples: /audio-speed-1031.html. No Git commit/push performed.

@@ -1,0 +1,813 @@
+{
+  "build": "overdrive1013-bastion17-r1",
+  "date": "2026-10-13",
+  "mechanics": {
+    "checks": [
+      {
+        "name": "all 109 new authored assets load through the native renderer",
+        "passed": true
+      },
+      {
+        "name": "Yuri crouches safely behind intact cover while incoming shots damage the wall",
+        "passed": true
+      },
+      {
+        "name": "player wall progresses into visible cracked state",
+        "passed": true
+      },
+      {
+        "name": "player wall progresses into critical broken state",
+        "passed": true
+      },
+      {
+        "name": "destroyed wall leaves crouched Yuri vulnerable",
+        "passed": true
+      },
+      {
+        "name": "blindfire remains available while crouched behind cover",
+        "passed": true
+      },
+      {
+        "name": "all troops enter from the authored rear-door aperture",
+        "passed": true
+      },
+      {
+        "name": "guards gather by their own rear cover instead of the player wall",
+        "passed": true
+      },
+      {
+        "name": "selected rushers run forward then vault onto the camera side",
+        "passed": true
+      },
+      {
+        "name": "non-vaulters remain planted near rear cover",
+        "passed": true
+      },
+      {
+        "name": "enemy barricade absorbs low gunfire while hidden guard stays safe",
+        "passed": true
+      },
+      {
+        "name": "fully hidden guards do not fire through their cover",
+        "passed": true
+      },
+      {
+        "name": "exposed peek torso can be hit above rear cover",
+        "passed": true
+      },
+      {
+        "name": "enemy cover breaks into its authored final rubble state",
+        "passed": true
+      },
+      {
+        "name": "every role and elite deep-crouch head falls behind its rear cover lip",
+        "passed": true
+      },
+      {
+        "name": "quick side fire projectiles actually kill a near-side vaulter",
+        "passed": true
+      },
+      {
+        "name": "death interrupts held side-fire with the authored death animation",
+        "passed": true
+      },
+      {
+        "name": "checkpoint revival after side-fire death selects recovery animation",
+        "passed": true
+      },
+      {
+        "name": "B plus left immediately shoots a full side facing without moving feet",
+        "passed": true
+      },
+      {
+        "name": "held B can snap across to the right and shoot on the next tick",
+        "passed": true
+      },
+      {
+        "name": "releasing side fire restores the exact pre-snap Retina position",
+        "passed": true
+      },
+      {
+        "name": "Retina travels 96 by 84 pixels in 200ms while Yuri stays planted",
+        "passed": true
+      },
+      {
+        "name": "quick side fire clears crouch cover and fires within 84ms",
+        "passed": true
+      },
+      {
+        "name": "elite death launches exactly one shotgun package",
+        "passed": true
+      },
+      {
+        "name": "gun package visibly flies toward Yuri instead of instant equip",
+        "passed": true
+      },
+      {
+        "name": "arriving drop auto-equips finite shotgun ammo",
+        "passed": true
+      },
+      {
+        "name": "shotgun fires five diverging pellets for one shell",
+        "passed": true
+      },
+      {
+        "name": "a single shotgun volley caps damage to one target at six",
+        "passed": true
+      },
+      {
+        "name": "laser beam pierces through two separate enemy bodies",
+        "passed": true
+      },
+      {
+        "name": "minigun fires at least twenty distinct rounds in one second",
+        "passed": true
+      },
+      {
+        "name": "last special round automatically restores rifle without a swap input",
+        "passed": true
+      },
+      {
+        "name": "last elite reward delays breach until its flying package is caught",
+        "passed": true
+      },
+      {
+        "name": "cleared room begins full rear-wall blast after reward collection",
+        "passed": true
+      },
+      {
+        "name": "breach locks combat input and incoming damage",
+        "passed": true
+      },
+      {
+        "name": "walk moves Yuri forward into perspective and shrinks by depth",
+        "passed": true
+      },
+      {
+        "name": "crossing travels through open rear wall before next room appears",
+        "passed": true
+      },
+      {
+        "name": "new-room entry uses jump bank with a renewed wall",
+        "passed": true
+      },
+      {
+        "name": "six-line progression is clear-gated and restores fixed combat camera",
+        "passed": true
+      },
+      {
+        "name": "transition records blast walk cross jump done in order",
+        "passed": true
+      },
+      {
+        "name": "Prism Heart retains full220HP and fresh boss cover",
+        "passed": true
+      },
+      {
+        "name": "boss transformation still reaches full white flash",
+        "passed": true
+      },
+      {
+        "name": "Helios retains360HP with two-stage bar entry",
+        "passed": true
+      },
+      {
+        "name": "browser has no script or asset errors",
+        "passed": true
+      }
+    ],
+    "passed": 43,
+    "failed": 0,
+    "errors": [],
+    "scope": "Isolated native Chromium mechanics fixtures, not a normal playthrough."
+  },
+  "controller_mapping": {
+    "build": "overdrive1013-bastion17-r1",
+    "checks": [
+      {
+        "name": "legacy generic preset migrates to receiver physical letters",
+        "passed": true
+      },
+      {
+        "name": "migrated receiver layout persists with explicit six-button style",
+        "passed": true
+      },
+      {
+        "name": "physical M30 A fires actual Level7 rifle projectiles",
+        "passed": true
+      },
+      {
+        "name": "physical M30 Y throws grenade without firing rifle",
+        "passed": true
+      },
+      {
+        "name": "physical M30 X toggles duck without firing",
+        "passed": true
+      },
+      {
+        "name": "physical Z plus D-pad free aims without moving Yuri",
+        "passed": true
+      },
+      {
+        "name": "physical M30 B plus left performs immediate side fire without foot movement",
+        "passed": true
+      },
+      {
+        "name": "releasing physical B restores the original Retina target",
+        "passed": true
+      },
+      {
+        "name": "physical Mode takes cover",
+        "passed": true
+      },
+      {
+        "name": "held physical A is latched through cutscene boundary",
+        "passed": true
+      },
+      {
+        "name": "physical A fires again after release",
+        "passed": true
+      },
+      {
+        "name": "resetting six-button controls retains receiver-correct A",
+        "passed": true
+      },
+      {
+        "name": "standard control scheme on the raw M30 still uses printed A to fire",
+        "passed": true
+      },
+      {
+        "name": "custom receiver bindings survive reconnect",
+        "passed": true
+      },
+      {
+        "name": "custom receiver bindings survive page reload",
+        "passed": true
+      },
+      {
+        "name": "unknown controller retains generic six-button preset",
+        "passed": true
+      },
+      {
+        "name": "browser-standardized M30 report avoids raw receiver remapping",
+        "passed": true
+      },
+      {
+        "name": "built-in raw receiver layout does not leak across a standardized mode change",
+        "passed": true
+      },
+      {
+        "name": "learned six-button profile records explicit style and custom ownership",
+        "passed": true
+      },
+      {
+        "name": "zero browser or asset errors",
+        "passed": true
+      }
+    ],
+    "passed": 20,
+    "failed": 0,
+    "errors": [],
+    "hardware": "Windows confirms receiver VID_0CA3/PID_0024. Button presses here are synthetic, using the documented Windows HID mapping."
+  },
+  "new_art": {
+    "passed": 8,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "enemies even declared sizes",
+        "passed": true
+      },
+      {
+        "name": "enemies opaque pixels and safe gutters",
+        "passed": true
+      },
+      {
+        "name": "environment even declared sizes",
+        "passed": true
+      },
+      {
+        "name": "environment opaque pixels and safe gutters",
+        "passed": true
+      },
+      {
+        "name": "yuri even declared sizes",
+        "passed": true
+      },
+      {
+        "name": "yuri opaque pixels and safe gutters",
+        "passed": true
+      },
+      {
+        "name": "all109 assets decode through live ART registry",
+        "passed": true
+      },
+      {
+        "name": "zero native browser errors",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "assets": 109
+  },
+  "normal_pointer_route": {
+    "state": "clear",
+    "time": 110.81666666666166,
+    "wave": 6,
+    "hp": 6,
+    "deaths": 0,
+    "kills": 27,
+    "coverStops": 40,
+    "brokenWalls": 0,
+    "barrelKills": 13,
+    "damage": 0,
+    "pickupLog": [
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 6
+      }
+    ],
+    "gunShots": {
+      "rifle": 477,
+      "shotgun": 35,
+      "laser": 68,
+      "minigun": 100
+    },
+    "quickShots": 0,
+    "transitionLog": [
+      {
+        "wave": 1,
+        "phase": "blast"
+      },
+      {
+        "wave": 1,
+        "phase": "walk"
+      },
+      {
+        "wave": 1,
+        "phase": "cross"
+      },
+      {
+        "wave": 1,
+        "phase": "jump"
+      },
+      {
+        "wave": 1,
+        "phase": "done"
+      },
+      {
+        "wave": 2,
+        "phase": "blast"
+      },
+      {
+        "wave": 2,
+        "phase": "walk"
+      },
+      {
+        "wave": 2,
+        "phase": "cross"
+      },
+      {
+        "wave": 2,
+        "phase": "jump"
+      },
+      {
+        "wave": 2,
+        "phase": "done"
+      },
+      {
+        "wave": 3,
+        "phase": "blast"
+      },
+      {
+        "wave": 3,
+        "phase": "walk"
+      },
+      {
+        "wave": 3,
+        "phase": "cross"
+      },
+      {
+        "wave": 3,
+        "phase": "jump"
+      },
+      {
+        "wave": 3,
+        "phase": "done"
+      },
+      {
+        "wave": 4,
+        "phase": "blast"
+      },
+      {
+        "wave": 4,
+        "phase": "walk"
+      },
+      {
+        "wave": 4,
+        "phase": "cross"
+      },
+      {
+        "wave": 4,
+        "phase": "jump"
+      },
+      {
+        "wave": 4,
+        "phase": "done"
+      },
+      {
+        "wave": 5,
+        "phase": "blast"
+      },
+      {
+        "wave": 5,
+        "phase": "walk"
+      },
+      {
+        "wave": 5,
+        "phase": "cross"
+      },
+      {
+        "wave": 5,
+        "phase": "jump"
+      },
+      {
+        "wave": 5,
+        "phase": "done"
+      },
+      {
+        "wave": 6,
+        "phase": "blast"
+      },
+      {
+        "wave": 6,
+        "phase": "walk"
+      },
+      {
+        "wave": 6,
+        "phase": "cross"
+      },
+      {
+        "wave": 6,
+        "phase": "jump"
+      },
+      {
+        "wave": 6,
+        "phase": "done"
+      }
+    ],
+    "boss": {
+      "form": "helios",
+      "hp": 0
+    },
+    "bot": {
+      "last": {
+        "A": false,
+        "cover": false,
+        "left": false,
+        "right": false
+      },
+      "decisions": 555,
+      "cover": 55,
+      "move": 3,
+      "fire": 392,
+      "blindfire": 51,
+      "grenadeWave": 6,
+      "stages": [
+        "0:advance:",
+        "1:fight:",
+        "1:breach:",
+        "2:fight:",
+        "2:breach:",
+        "3:fight:",
+        "3:breach:",
+        "4:fight:",
+        "4:breach:",
+        "5:fight:",
+        "5:breach:",
+        "6:fight:",
+        "6:breach:",
+        "6:core:core",
+        "6:core:helios",
+        "6:victory:helios"
+      ],
+      "target": {
+        "x": 188,
+        "y": 257.0019465997108
+      },
+      "controller": false,
+      "minHP": 6
+    },
+    "errors": [],
+    "scope": "Normal armor input-only complete stage; decisions 200ms, pointer aim. No actor-health writes or kill APIs."
+  },
+  "normal_dpad_route": {
+    "state": "clear",
+    "time": 113.83333333332816,
+    "wave": 6,
+    "hp": 6,
+    "deaths": 0,
+    "kills": 27,
+    "coverStops": 41,
+    "brokenWalls": 0,
+    "barrelKills": 15,
+    "damage": 0,
+    "pickupLog": [
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 6
+      }
+    ],
+    "gunShots": {
+      "rifle": 510,
+      "shotgun": 35,
+      "laser": 68,
+      "minigun": 110
+    },
+    "quickShots": 0,
+    "transitionLog": [
+      {
+        "wave": 1,
+        "phase": "blast"
+      },
+      {
+        "wave": 1,
+        "phase": "walk"
+      },
+      {
+        "wave": 1,
+        "phase": "cross"
+      },
+      {
+        "wave": 1,
+        "phase": "jump"
+      },
+      {
+        "wave": 1,
+        "phase": "done"
+      },
+      {
+        "wave": 2,
+        "phase": "blast"
+      },
+      {
+        "wave": 2,
+        "phase": "walk"
+      },
+      {
+        "wave": 2,
+        "phase": "cross"
+      },
+      {
+        "wave": 2,
+        "phase": "jump"
+      },
+      {
+        "wave": 2,
+        "phase": "done"
+      },
+      {
+        "wave": 3,
+        "phase": "blast"
+      },
+      {
+        "wave": 3,
+        "phase": "walk"
+      },
+      {
+        "wave": 3,
+        "phase": "cross"
+      },
+      {
+        "wave": 3,
+        "phase": "jump"
+      },
+      {
+        "wave": 3,
+        "phase": "done"
+      },
+      {
+        "wave": 4,
+        "phase": "blast"
+      },
+      {
+        "wave": 4,
+        "phase": "walk"
+      },
+      {
+        "wave": 4,
+        "phase": "cross"
+      },
+      {
+        "wave": 4,
+        "phase": "jump"
+      },
+      {
+        "wave": 4,
+        "phase": "done"
+      },
+      {
+        "wave": 5,
+        "phase": "blast"
+      },
+      {
+        "wave": 5,
+        "phase": "walk"
+      },
+      {
+        "wave": 5,
+        "phase": "cross"
+      },
+      {
+        "wave": 5,
+        "phase": "jump"
+      },
+      {
+        "wave": 5,
+        "phase": "done"
+      },
+      {
+        "wave": 6,
+        "phase": "blast"
+      },
+      {
+        "wave": 6,
+        "phase": "walk"
+      },
+      {
+        "wave": 6,
+        "phase": "cross"
+      },
+      {
+        "wave": 6,
+        "phase": "jump"
+      },
+      {
+        "wave": 6,
+        "phase": "done"
+      }
+    ],
+    "boss": {
+      "form": "helios",
+      "hp": 0
+    },
+    "bot": {
+      "last": {
+        "A": false,
+        "cover": false,
+        "left": false,
+        "right": false
+      },
+      "decisions": 570,
+      "cover": 62,
+      "move": 3,
+      "fire": 409,
+      "blindfire": 59,
+      "grenadeWave": 6,
+      "stages": [
+        "0:advance:",
+        "1:fight:",
+        "1:breach:",
+        "2:fight:",
+        "2:breach:",
+        "3:fight:",
+        "3:breach:",
+        "4:fight:",
+        "4:breach:",
+        "5:fight:",
+        "5:breach:",
+        "6:fight:",
+        "6:breach:",
+        "6:core:core",
+        "6:core:helios",
+        "6:victory:helios"
+      ],
+      "target": {
+        "x": 191,
+        "y": 235.00085675044585
+      },
+      "controller": true,
+      "minHP": 6
+    },
+    "errors": [],
+    "scope": "Normal armor input-only complete stage; decisions 200ms, rate-limited D-pad Retina aim. No actor-health writes or kill APIs."
+  },
+  "live_boot": {
+    "url": "http://127.0.0.1:8781/expansion/topdown/index.html?fullscreen=0&build=overdrive1013-bastion17-r1",
+    "dom_seconds": 0.423,
+    "boot_seconds": 6.031,
+    "new_art_ready_seconds": 6.112,
+    "new_frames": 109,
+    "errors": [],
+    "scope": "Fresh headless Chromium, user-facing localhost8781 build; readiness based on native boot state and all109 new art keys."
+  },
+  "base_regression": {
+    "syntax": "passed",
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "exit_code": 0,
+    "assertion_count": null,
+    "note": "Complete suite exited successfully. Its footer does not report the assertion count, so no count is asserted here."
+  },
+  "visual_review": [
+    "new door guards and hide/peek occlusion",
+    "profile side fire left/right",
+    "whole rear-wall blast",
+    "next room visible through the breach",
+    "shared perspective for Yuri and corridor",
+    "authored jump entry",
+    "all three gun projectiles and pickup capsules"
+  ],
+  "scope": "Native browser fixtures plus complete input-driven Normal routes. M30 presses are synthetic HID reports, not manual hardware play. Automated aiming verifies reachability, not subjective human difficulty."
+}

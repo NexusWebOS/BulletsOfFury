@@ -1,0 +1,2475 @@
+{
+  "id": "evasion",
+  "setup": {
+    "health": [
+      {
+        "key": "voss",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "nyx",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "rook",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "kaia",
+        "hp": 1424,
+        "max": 1424
+      },
+      {
+        "key": "jace",
+        "hp": 1424,
+        "max": 1424
+      }
+    ],
+    "view": {
+      "width": 480,
+      "height": 512
+    },
+    "key": "voss"
+  },
+  "timeline": [
+    {
+      "t": 0.44999999999999996,
+      "wall": 0.41560000002384184,
+      "label": "Shared / cruising and banking",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 183.0454846655018,
+          "y": 137.24802661119176,
+          "heading": 1.6915276733764304,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.5572920487063,
+          "y": 188.97547164128684,
+          "heading": 1.7243779654457172,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.44999999999999996,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 354.08821531540354,
+          "y": 135.8539324955724,
+          "heading": 1.6160260072174544,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 417.6664983922524,
+          "y": 168.4309194219578,
+          "heading": 1.46609008939605,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 485.22898286229787,
+          "y": 115.047488736928,
+          "heading": 1.4124206033615914,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        }
+      ],
+      "frames": 26
+    },
+    {
+      "t": 0.850000000000001,
+      "wall": 0.8233000000119209,
+      "label": "Shared / cruising and banking",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 188.57586048036939,
+          "y": 141.99716554148833,
+          "heading": 1.7306400350684406,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 277.88086404396154,
+          "y": 186.40077249396114,
+          "heading": 1.6512108115466528,
+          "evade": 0,
+          "cloak": true,
+          "fade": 0.850000000000001,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 348.90749289083743,
+          "y": 128.32256179284218,
+          "heading": 1.4978488815944973,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 411.7446138528855,
+          "y": 162.86718465521778,
+          "heading": 1.4115544963452091,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.0104895434543,
+          "y": 116.56666199224145,
+          "heading": 1.471666315630037,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        }
+      ],
+      "frames": 50
+    },
+    {
+      "t": 1.266666666666667,
+      "wall": 1.237800000011921,
+      "label": "Shared / cruising and banking",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 192.97200011578343,
+          "y": 142.7138315851751,
+          "heading": 1.678081486574842,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 276.0733628300019,
+          "y": 180.03988802266005,
+          "heading": 1.5288794152912875,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 342.55815910789966,
+          "y": 120.73229465474581,
+          "heading": 1.4182155591344099,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 406.69099569954966,
+          "y": 161.0259914527816,
+          "heading": 1.4478337571023219,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 484.89886024394315,
+          "y": 122.16732726468777,
+          "heading": 1.5905031745746434,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        }
+      ],
+      "frames": 75
+    },
+    {
+      "t": 1.6666666666666656,
+      "wall": 1.6422000000476837,
+      "label": "Shared / cruising and banking",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.43875802726626,
+          "y": 139.12320234433656,
+          "heading": 1.5667849050676699,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 272.4617176347665,
+          "y": 172.33204851974324,
+          "heading": 1.4340359096366824,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 336.1886407424903,
+          "y": 115.99379698220933,
+          "heading": 1.4270238110379796,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 403.41970997458475,
+          "y": 163.61338851805388,
+          "heading": 1.5521955003852594,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 487.7334121686484,
+          "y": 129.7017781383504,
+          "heading": 1.6944687037514536,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        }
+      ],
+      "frames": 99
+    },
+    {
+      "t": 2.083333333333331,
+      "wall": 2.0507000000476836,
+      "label": "Shared / cruising and banking",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 195.9081591550353,
+          "y": 132.1224789961337,
+          "heading": 1.4541693871590167,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 267.14545253271626,
+          "y": 165.20323470099447,
+          "heading": 1.415611073412377,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 329.9744590282331,
+          "y": 115.29109124166295,
+          "heading": 1.519729365952163,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.02090165804145,
+          "y": 169.98285527287464,
+          "heading": 1.670798386783402,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 492.43603516511376,
+          "y": 137.28735902845702,
+          "heading": 1.7299259748443374,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        }
+      ],
+      "frames": 124
+    },
+    {
+      "t": 2.499999999999996,
+      "wall": 2.4726000000238417,
+      "label": "Shared / cruising and banking",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 194.18594853651365,
+          "y": 124.0890348123454,
+          "heading": 1.410909480558836,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 260.8224001611974,
+          "y": 161.31457835268867,
+          "heading": 1.489471674395014,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 324.8639500938415,
+          "y": 119.12243544201446,
+          "heading": 1.6428033785997942,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 402.82151450673723,
+          "y": 178.01167983322935,
+          "heading": 1.7299321314526845,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 498.4116900360214,
+          "y": 142.13199967484633,
+          "heading": 1.6707521593955683,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        }
+      ],
+      "frames": 149
+    },
+    {
+      "t": 2.916666666666661,
+      "wall": 2.883400000035763,
+      "label": "Shared / cruising and banking",
+      "hp": 7120,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 190.46171763476656,
+          "y": 117.67983088074313,
+          "heading": 1.4627309504871555,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1424,
+          "x": 254.18864074249038,
+          "y": 161.9522038773597,
+          "heading": 1.6116943519206222,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 321.4197099745848,
+          "y": 126.22066045613703,
+          "heading": 1.723056297664403,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 405.73341216864833,
+          "y": 185.04442899396096,
+          "heading": 1.6944311283735911,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 505.0025401976434,
+          "y": 142.6333958369948,
+          "heading": 1.5521366926824272,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        }
+      ],
+      "frames": 174
+    },
+    {
+      "t": 3.1166666666666605,
+      "wall": 3.3222000000476837,
+      "label": "Shared / incoming fire triggers barrel rolls",
+      "hp": 7119,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 172.59259694435647,
+          "y": 115.84425445317684,
+          "heading": 1.482686639979273,
+          "evade": 0.28,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1423,
+          "x": 235.97251129279687,
+          "y": 163.86283292270443,
+          "heading": 1.6355723140935505,
+          "evade": 0.28,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1424,
+          "x": 304.0512918555429,
+          "y": 130.12087144142012,
+          "heading": 1.7289032442152164,
+          "evade": 0.28,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1424,
+          "x": 389.62804358221337,
+          "y": 187.34838592605763,
+          "heading": 1.6768714036080472,
+          "evade": 0.28,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1424,
+          "x": 489.414317430343,
+          "y": 141.22285133777712,
+          "heading": 1.5273146265691475,
+          "evade": 0.28,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        }
+      ],
+      "frames": 183
+    },
+    {
+      "t": 3.566666666666659,
+      "wall": 3.7539000000357627,
+      "label": "Shared / incoming fire triggers barrel rolls",
+      "hp": 7115,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 180.58333333333323,
+          "y": 115.54888354440945,
+          "heading": 1.6465874864551304,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1422,
+          "x": 223.88917795946358,
+          "y": 170.9986547245583,
+          "heading": 1.7303183566255296,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 291.96795852220947,
+          "y": 138.12724429779908,
+          "heading": 1.6673854082431772,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1423,
+          "x": 377.54471024887994,
+          "y": 188.86428755608705,
+          "heading": 1.5156489038206464,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1423,
+          "x": 477.33098409700955,
+          "y": 134.8545687737465,
+          "heading": 1.4146146857552702,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        }
+      ],
+      "frames": 208
+    },
+    {
+      "t": 3.983333333333324,
+      "wall": 4.175200000047684,
+      "label": "Shared / incoming fire triggers barrel rolls",
+      "hp": 7115,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 175.09882495868698,
+          "y": 119.9113442562992,
+          "heading": 1.7243129950259923,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1422,
+          "x": 240.7007663422061,
+          "y": 179.05001067693433,
+          "heading": 1.6916792259457631,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 322.20754337119746,
+          "y": 142.4651159587772,
+          "heading": 1.5479062768662788,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1423,
+          "x": 420.07262297059214,
+          "y": 185.5004557256841,
+          "heading": 1.4251783341282918,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1423,
+          "x": 519.7097241222699,
+          "y": 126.88172492372964,
+          "heading": 1.4363309022962016,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        }
+      ],
+      "frames": 233
+    },
+    {
+      "t": 4.416666666666656,
+      "wall": 4.600600000023842,
+      "label": "Shared / incoming fire triggers barrel rolls",
+      "hp": 7115,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 168.36404382407193,
+          "y": 127.60439419520301,
+          "heading": 1.7082197812032567,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1422,
+          "x": 238.31975357657092,
+          "y": 185.9678648180898,
+          "heading": 1.5760931658557198,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 326.3693911306642,
+          "y": 142.24753110812492,
+          "heading": 1.439096661103287,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1423,
+          "x": 426.9509476184514,
+          "y": 178.3474783914698,
+          "heading": 1.4231842216235937,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1423,
+          "x": 522.9806256982991,
+          "y": 119.36976947938489,
+          "heading": 1.5429856708902956,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        }
+      ],
+      "frames": 259
+    },
+    {
+      "t": 4.8333333333333215,
+      "wall": 5.021300000011921,
+      "label": "Shared / incoming fire triggers barrel rolls",
+      "hp": 7115,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.73618320815513,
+          "y": 135.50810046804045,
+          "heading": 1.60905322269741,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1422,
+          "x": 238.2375443222615,
+          "y": 188.94666657238412,
+          "heading": 1.4607365494164393,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 331.9084160472468,
+          "y": 137.56273174842602,
+          "heading": 1.4136083278905538,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1423,
+          "x": 433.01865274214214,
+          "y": 170.3062608440257,
+          "heading": 1.510998027647724,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1423,
+          "x": 523.9983909210325,
+          "y": 115.365192073341,
+          "heading": 1.6633660078668189,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        }
+      ],
+      "frames": 284
+    },
+    {
+      "t": 5.249999999999987,
+      "wall": 5.433200000047684,
+      "label": "Shared / incoming fire triggers barrel rolls",
+      "hp": 7115,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.56848455172835,
+          "y": 141.25933399030023,
+          "heading": 1.487136085205547,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1422,
+          "x": 240.33090688559685,
+          "y": 187.31278296543223,
+          "heading": 1.4108301897050557,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 338.33821194364987,
+          "y": 130.04591606545375,
+          "heading": 1.481596422923326,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1423,
+          "x": 437.8733572769829,
+          "y": 163.81743875838617,
+          "heading": 1.6343726363946856,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1423,
+          "x": 522.8146111335956,
+          "y": 115.87015668583496,
+          "heading": 1.7286970840171725,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        }
+      ],
+      "frames": 309
+    },
+    {
+      "t": 5.666666666666652,
+      "wall": 5.8495,
+      "label": "Shared / incoming fire triggers barrel rolls",
+      "hp": 7115,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.31975357657092,
+          "y": 142.95594627800222,
+          "heading": 1.4149699504902227,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1422,
+          "x": 244.36939113066413,
+          "y": 181.60660054456085,
+          "heading": 1.4560523591410461,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 344.9509476184513,
+          "y": 122.18317673834966,
+          "heading": 1.6026298424839012,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1423,
+          "x": 440.9806256982991,
+          "y": 161.02710880150863,
+          "heading": 1.7199397383100645,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1423,
+          "x": 519.5596040447708,
+          "y": 120.7176525932713,
+          "heading": 1.700127869399264,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        }
+      ],
+      "frames": 334
+    },
+    {
+      "t": 6.083333333333317,
+      "wall": 6.2686000000238415,
+      "label": "Shared / incoming fire triggers barrel rolls",
+      "hp": 7115,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 156.2375443222615,
+          "y": 140.03680405800367,
+          "heading": 1.4354705154271101,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1422,
+          "x": 249.90841604724676,
+          "y": 173.71536770599047,
+          "heading": 1.5695103756758155,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 351.0186527421421,
+          "y": 116.5750163607043,
+          "heading": 1.7047325334529364,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1423,
+          "x": 441.9983909210326,
+          "y": 162.85813767263878,
+          "heading": 1.7168143605071189,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1423,
+          "x": 514.5917007144307,
+          "y": 128.30443121328216,
+          "heading": 1.5946478807629476,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        }
+      ],
+      "frames": 359
+    },
+    {
+      "t": 6.499999999999982,
+      "wall": 6.6901000000238415,
+      "label": "Shared / incoming fire triggers barrel rolls",
+      "hp": 7115,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 158.3309068855968,
+          "y": 133.46737707289125,
+          "heading": 1.5364465211372067,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1422,
+          "x": 256.3382119436498,
+          "y": 166.24901091549992,
+          "heading": 1.683733120550839,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 355.8733572769829,
+          "y": 115.07626376514412,
+          "heading": 1.727186152619967,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1423,
+          "x": 440.8146111335956,
+          "y": 168.70493549651528,
+          "heading": 1.6268551000541587,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1423,
+          "x": 508.45779828200523,
+          "y": 136.12126050121293,
+          "heading": 1.4749838698820632,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        }
+      ],
+      "frames": 384
+    },
+    {
+      "t": 6.916666666666647,
+      "wall": 7.108200000047684,
+      "label": "Shared / incoming fire triggers barrel rolls",
+      "hp": 7115,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1424,
+          "x": 162.3693911306641,
+          "y": 125.42042105097696,
+          "heading": 1.6578496406612662,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1422,
+          "x": 262.9509476184512,
+          "y": 161.67693420527075,
+          "heading": 1.7307947069952545,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 358.9806256982991,
+          "y": 118.18261260877274,
+          "heading": 1.6566380004433685,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1423,
+          "x": 437.5596040447709,
+          "y": 176.6337470928312,
+          "heading": 1.503558855018238,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1423,
+          "x": 501.83315418927083,
+          "y": 141.58282203415138,
+          "heading": 1.4122975310630794,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        }
+      ],
+      "frames": 409
+    },
+    {
+      "t": 7.333333333333313,
+      "wall": 7.519800000011921,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 154,
+          "y": 118.55736595132875,
+          "heading": 1.6779274887463482,
+          "evade": 0.06333333333333341,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 215.897493936934,
+          "y": 161.51129470635018,
+          "heading": 1.7286798410788358,
+          "evade": 0.06333333333333341,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 311.02506010729593,
+          "y": 124.8666769020017,
+          "heading": 1.6342748184958003,
+          "evade": 0.06333333333333341,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 388.3546086241488,
+          "y": 184.02221729215677,
+          "heading": 1.4815079633890171,
+          "evade": 0.06333333333333341,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 452.180131042207,
+          "y": 142.8827727119897,
+          "heading": 1.4108324178232146,
+          "evade": 0.06333333333333341,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 434
+    },
+    {
+      "t": 7.749999999999978,
+      "wall": 7.9408000000119205,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 174.33821194364972,
+          "y": 115.14808132501615,
+          "heading": 1.7039394194121562,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 261.81416060360056,
+          "y": 165.80687560925546,
+          "heading": 1.568070581529239,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 356.94172677396296,
+          "y": 132.91778606208,
+          "heading": 1.434707781273149,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 426.4577982820053,
+          "y": 188.42670207722432,
+          "heading": 1.4264641621652714,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 490.0025062481294,
+          "y": 139.59117012297767,
+          "heading": 1.5509188695959912,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 459
+    },
+    {
+      "t": 8.166666666666652,
+      "wall": 8.349600000023841,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 180.9509476184513,
+          "y": 116.32014537909643,
+          "heading": 1.6012174474057523,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 276.9806256982991,
+          "y": 173.14296730957744,
+          "heading": 1.455053516996226,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 355.5596040447708,
+          "y": 139.67313653148793,
+          "heading": 1.4153029921402822,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 419.8331541892708,
+          "y": 188.39047324803937,
+          "heading": 1.5185123220715384,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 486.0988923792337,
+          "y": 132.79667061367468,
+          "heading": 1.6697913248254086,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 484
+    },
+    {
+      "t": 8.58333333333334,
+      "wall": 8.768100000023843,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 187.0186527421424,
+          "y": 121.68591260153022,
+          "heading": 1.4804046687363048,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 277.9983909210326,
+          "y": 181.09324932283292,
+          "heading": 1.4108662901766067,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 350.5917007144304,
+          "y": 142.898480717182,
+          "heading": 1.4883668497286122,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 413.4470497171113,
+          "y": 183.9255130362817,
+          "heading": 1.6416526903523496,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 484.165941765929,
+          "y": 124.74646983193631,
+          "heading": 1.7297935170922272,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 509
+    },
+    {
+      "t": 9.000000000000027,
+      "wall": 9.18480000001192,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 191.8733572769833,
+          "y": 129.47072266109643,
+          "heading": 1.4133459259818322,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 276.8146111335953,
+          "y": 187.0282654079912,
+          "heading": 1.4617861243060224,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 344.45779828200455,
+          "y": 141.52707640996684,
+          "heading": 1.6104498000721779,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 408.00250624812884,
+          "y": 176.50855113219168,
+          "heading": 1.7226562553785623,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 484.4164454169737,
+          "y": 118.10307090051951,
+          "heading": 1.6952433926830663,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 534
+    },
+    {
+      "t": 9.400000000000047,
+      "wall": 9.592300000011921,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 194.89489254436333,
+          "y": 136.83122418608488,
+          "heading": 1.4370711692229028,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 273.7257597027381,
+          "y": 188.9963507185159,
+          "heading": 1.5724673489694807,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 338.09843591347203,
+          "y": 136.29329694782183,
+          "heading": 1.7063271986350594,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 404.21940137584767,
+          "y": 168.88481959806248,
+          "heading": 1.715580589763431,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 486.6877672138372,
+          "y": 115.09861090824516,
+          "heading": 1.5917199972253704,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 558
+    },
+    {
+      "t": 9.833333333333401,
+      "wall": 10.016900000035763,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 195.99839092103255,
+          "y": 142.05004850757783,
+          "heading": 1.5443230161739339,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 268.5917007144295,
+          "y": 186.31650997788114,
+          "heading": 1.6892723882344873,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 331.4470497171104,
+          "y": 128.17862436328016,
+          "heading": 1.7252954157878317,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 402.1659417659289,
+          "y": 162.79590772111158,
+          "heading": 1.6192726934301256,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 491.1201754857064,
+          "y": 116.6335772380979,
+          "heading": 1.4686810231482084,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 584
+    },
+    {
+      "t": 10.250000000000089,
+      "wall": 10.436,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 194.81461113359498,
+          "y": 142.6841097596932,
+          "heading": 1.6644695022334155,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 262.4577982820035,
+          "y": 179.90514266018334,
+          "heading": 1.7305574761043097,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 326.0025062481281,
+          "y": 120.61641002012533,
+          "heading": 1.6497617860764178,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 402.41644541697394,
+          "y": 161.03551134465798,
+          "heading": 1.4963656169529687,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 496.8354143552648,
+          "y": 122.29349913837314,
+          "heading": 1.4114006992033832,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 609
+    },
+    {
+      "t": 10.666666666666776,
+      "wall": 10.8565,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 191.55960404476957,
+          "y": 138.79232302923654,
+          "heading": 1.728910502356042,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 255.83315418926873,
+          "y": 171.8714608183644,
+          "heading": 1.6768359367892511,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 322.0988923792328,
+          "y": 115.82696310309038,
+          "heading": 1.527269042820367,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 404.82282636054276,
+          "y": 163.89369476026292,
+          "heading": 1.4177209330013107,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 503.33937456937485,
+          "y": 130.1715122354989,
+          "heading": 1.4489096342927301,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 634
+    },
+    {
+      "t": 11.083333333333464,
+      "wall": 11.268,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 186.59170071442867,
+          "y": 131.66184805344696,
+          "heading": 1.6993242962704231,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 249.4470497171095,
+          "y": 164.87250414261425,
+          "heading": 1.5600548505373322,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 320.1659417659288,
+          "y": 115.39433321772195,
+          "heading": 1.43066106853859,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 409.1201754857072,
+          "y": 170.42514958670898,
+          "heading": 1.4301069967138416,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 509.91606046557246,
+          "y": 137.66206232767215,
+          "heading": 1.5589020461435275,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 659
+    },
+    {
+      "t": 11.500000000000151,
+      "wall": 11.684200000047683,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 180.45779828200256,
+          "y": 123.65100015942116,
+          "heading": 1.593305184365244,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 244.0025062481274,
+          "y": 161.22308992885647,
+          "heading": 1.4496614964382482,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 320.41644541697417,
+          "y": 119.46160728222515,
+          "heading": 1.417388612899263,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 414.8354143552657,
+          "y": 178.46967891176428,
+          "heading": 1.5261580740400038,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 515.8414702941465,
+          "y": 142.28774375107145,
+          "heading": 1.6759677389037433,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 684
+    },
+    {
+      "t": 11.916666666666838,
+      "wall": 12.105700000047683,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 173.83315418926776,
+          "y": 117.40926699498992,
+          "heading": 1.47390052379077,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 240.09889237923235,
+          "y": 162.13021623885422,
+          "heading": 1.411304502346245,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 322.8228263605433,
+          "y": 126.68358532066728,
+          "heading": 1.4953445287655769,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 421.3393745693759,
+          "y": 185.36665537596522,
+          "heading": 1.648754590329271,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 520.463298752494,
+          "y": 142.51867028688145,
+          "heading": 1.7304901839224136,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 709
+    },
+    {
+      "t": 12.333333333333526,
+      "wall": 12.516700000047683,
+      "label": "Shared / evade, bank and recover",
+      "hp": 7110,
+      "ships": [
+        {
+          "key": "voss",
+          "hp": 1423,
+          "x": 167.4470497171086,
+          "y": 115.00102365989132,
+          "heading": 1.412117778629309,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "nyx",
+          "hp": 1421,
+          "x": 238.16594176592864,
+          "y": 167.29386240249175,
+          "heading": 1.4677939735552819,
+          "evade": 0,
+          "cloak": true,
+          "fade": 1,
+          "act": null
+        },
+        {
+          "key": "rook",
+          "hp": 1423,
+          "x": 327.12017548570793,
+          "y": 134.67168851356695,
+          "heading": 1.618170057030067,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "kaia",
+          "hp": 1421,
+          "x": 427.91606046557337,
+          "y": 188.83499036160038,
+          "heading": 1.724990951401787,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        },
+        {
+          "key": "jace",
+          "hp": 1422,
+          "x": 523.2727467367014,
+          "y": 138.2784658745054,
+          "heading": 1.6900460190148763,
+          "evade": 0,
+          "cloak": false,
+          "fade": 0,
+          "act": null
+        }
+      ],
+      "ord": [],
+      "missiles": 0,
+      "fleet": null,
+      "events": [
+        {
+          "t": 0.016666666666666666,
+          "label": "Shared / cruising and banking",
+          "request": "drift"
+        },
+        {
+          "t": 3.016666666666661,
+          "label": "Shared / incoming fire triggers barrel rolls",
+          "request": "roll"
+        },
+        {
+          "t": 7.016666666666647,
+          "label": "Shared / evade, bank and recover",
+          "request": "roll"
+        }
+      ],
+      "frames": 734
+    }
+  ],
+  "stats": {
+    "peak": 1,
+    "tapped": 5,
+    "playing": {
+      "stagex": 1,
+      "av3_impact_metal": 2,
+      "expSmall": 2
+    },
+    "tapErrors": [],
+    "frames": 735,
+    "events": [
+      {
+        "t": 0.016666666666666666,
+        "label": "Shared / cruising and banking",
+        "request": "drift"
+      },
+      {
+        "t": 3.016666666666661,
+        "label": "Shared / incoming fire triggers barrel rolls",
+        "request": "roll"
+      },
+      {
+        "t": 7.016666666666647,
+        "label": "Shared / evade, bank and recover",
+        "request": "roll"
+      }
+    ],
+    "rr26": [],
+    "rd21": [],
+    "ra4": [],
+    "god": true
+  },
+  "pageErrors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "method": "Isolated native-controller demonstration on Furious. Scheduled native attack selection and native reveal/interception events; ordinary live game update/draw/audio and GOD observer. Automatic other-pilot attacks/allies/supply events suppressed. No combat code modified; this is not an unassisted playthrough."
+}

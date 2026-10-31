@@ -1,0 +1,69 @@
+{
+  "build": "overdrive1015-yuri30-r1",
+  "checks": [
+    {
+      "name": "all213identity frames decoded by native ART",
+      "passed": true
+    },
+    {
+      "name": "runtime owner uses corrected files",
+      "passed": true
+    },
+    {
+      "name": "all frame cells and scale retained",
+      "passed": true
+    },
+    {
+      "name": "action sequences and timing unchanged",
+      "passed": true
+    },
+    {
+      "name": "all gun sockets preserved",
+      "passed": true
+    },
+    {
+      "name": "new files contain corrected pixels",
+      "passed": true
+    },
+    {
+      "name": "original assets and gameplay files unchanged",
+      "passed": true
+    },
+    {
+      "name": "820 retained graphics still unchanged",
+      "passed": true
+    },
+    {
+      "name": "standing sideways uses corrected Yuri",
+      "passed": true
+    },
+    {
+      "name": "running selects corrected motion bank",
+      "passed": true
+    },
+    {
+      "name": "rolling selects corrected motion bank",
+      "passed": true
+    },
+    {
+      "name": "vault selects corrected motion bank",
+      "passed": true
+    },
+    {
+      "name": "reverse slide has corrected authored sprite",
+      "passed": true
+    },
+    {
+      "name": "all corrected frames load in review",
+      "passed": true
+    },
+    {
+      "name": "no browser errors or missing images",
+      "passed": true
+    }
+  ],
+  "passed": 15,
+  "failed": 0,
+  "errors": [],
+  "scope": "Identity/art correction. Existing movement controls exercised with synthetic M30 input; native renderer and onion views inspected. No physical-controller test or gameplay rebalance."
+}

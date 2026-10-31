@@ -1,0 +1,906 @@
+{
+  "environment": "Production modules + keyboard event handlers + native Canvas; browser access blocked; no audible browser playback",
+  "checks": [
+    {
+      "name": "Level 3 actual key event F enters prone",
+      "passed": true
+    },
+    {
+      "name": "Level 3 prone movement advances a complete crawl",
+      "passed": true
+    },
+    {
+      "name": "Space while prone selects body roll",
+      "passed": true
+    },
+    {
+      "name": "Prone roll ends prone",
+      "passed": true
+    },
+    {
+      "name": "Second F returns to standing",
+      "passed": true
+    },
+    {
+      "name": "Pause is available from the keyboard",
+      "passed": true
+    },
+    {
+      "name": "Level 3 bullet trajectory passes through the mouse reticle from its muzzle",
+      "passed": true
+    },
+    {
+      "name": "Level 3 first firing frame and shot share a muzzle",
+      "passed": true
+    },
+    {
+      "name": "Single standing shot finishes every Yuri south frame",
+      "passed": true
+    },
+    {
+      "name": "Single standing shot finishes every Yuri west frame",
+      "passed": true
+    },
+    {
+      "name": "Single standing shot finishes every Yuri north frame",
+      "passed": true
+    },
+    {
+      "name": "Single standing shot finishes every Yuri east frame",
+      "passed": true
+    },
+    {
+      "name": "Single prone shot finishes every Yuri south frame",
+      "passed": true
+    },
+    {
+      "name": "Single prone shot finishes every Yuri west frame",
+      "passed": true
+    },
+    {
+      "name": "Single prone shot finishes every Yuri north frame",
+      "passed": true
+    },
+    {
+      "name": "Single prone shot finishes every Yuri east frame",
+      "passed": true
+    },
+    {
+      "name": "rifle south fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "rifle west fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "rifle north fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "rifle east fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "heavy south fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "heavy west fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "heavy north fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "heavy east fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "laser south fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "laser west fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "laser north fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "laser east fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "rocket south fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "rocket west fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "rocket north fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "rocket east fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "shotgun south fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "shotgun west fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "shotgun north fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "shotgun east fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "double south fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "double west fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "double north fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "double east fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "roller south fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "roller west fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "roller north fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "roller east fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "flame south fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "flame west fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "flame north fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "flame east fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "flyer south fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "flyer west fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "flyer north fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "flyer east fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "bat south fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "bat west fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "bat north fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "bat east fires complete directional clips repeatedly",
+      "passed": true
+    },
+    {
+      "name": "Retreating to reload uses moving feet instead of frozen pump frame",
+      "passed": true
+    },
+    {
+      "name": "Fresh firing action starts at frame zero despite old unit age",
+      "passed": true
+    },
+    {
+      "name": "Authored cover fixture 1 does not remain stuck at warning",
+      "passed": true
+    },
+    {
+      "name": "Authored cover fixture 2 does not remain stuck at warning",
+      "passed": true
+    },
+    {
+      "name": "Authored cover fixture 4 does not remain stuck at warning",
+      "passed": true
+    },
+    {
+      "name": "Authored cover fixture 5 does not remain stuck at warning",
+      "passed": true
+    },
+    {
+      "name": "Authored cover fixture 6 does not remain stuck at warning",
+      "passed": true
+    },
+    {
+      "name": "Authored cover fixture 7 does not remain stuck at warning",
+      "passed": true
+    },
+    {
+      "name": "Authored cover fixture 9 does not remain stuck at warning",
+      "passed": true
+    },
+    {
+      "name": "Base rifle advances firing, spin and reload frames",
+      "passed": true
+    },
+    {
+      "name": "Base heavy advances firing, spin and reload frames",
+      "passed": true
+    },
+    {
+      "name": "Base laser advances firing, spin and reload frames",
+      "passed": true
+    },
+    {
+      "name": "Base rocket advances firing, spin and reload frames",
+      "passed": true
+    },
+    {
+      "name": "Base shotgun advances firing, spin and reload frames",
+      "passed": true
+    },
+    {
+      "name": "Base double advances firing, spin and reload frames",
+      "passed": true
+    },
+    {
+      "name": "Base roller advances firing, spin and reload frames",
+      "passed": true
+    },
+    {
+      "name": "Base flame advances firing, spin and reload frames",
+      "passed": true
+    },
+    {
+      "name": "Base flyer advances firing, spin and reload frames",
+      "passed": true
+    },
+    {
+      "name": "Base bat advances firing, spin and reload frames",
+      "passed": true
+    },
+    {
+      "name": "gun turret shows green, yellow and red warnings",
+      "passed": true
+    },
+    {
+      "name": "laser turret shows green, yellow and red warnings",
+      "passed": true
+    },
+    {
+      "name": "Gun and laser turrets release real travelling shots",
+      "passed": true
+    },
+    {
+      "name": "Laser turret requests its own approved firing cue",
+      "passed": true
+    },
+    {
+      "name": "Gun turret requests an audible approved firing cue",
+      "passed": true
+    },
+    {
+      "name": "Destroyed turret releases no queued fire or sound",
+      "passed": true
+    },
+    {
+      "name": "base bullet has a visible bright head at its first frame",
+      "passed": true
+    },
+    {
+      "name": "ground bullet has a visible bright head at its first frame",
+      "passed": true
+    },
+    {
+      "name": "On-foot truck level Yuri faces the left aim reticle",
+      "passed": true
+    },
+    {
+      "name": "On-foot shot leaves the same rendered muzzle",
+      "passed": true
+    },
+    {
+      "name": "Single tap of fire completes Yuri full weapon clip",
+      "passed": true
+    },
+    {
+      "name": "Crate projectiles release collectable missiles",
+      "passed": true
+    },
+    {
+      "name": "Walking to truck begins actual boarding",
+      "passed": true
+    },
+    {
+      "name": "All four board into pursuit",
+      "passed": true
+    },
+    {
+      "name": "runner reaches every generated firing frame",
+      "passed": true
+    },
+    {
+      "name": "runner sends repeated projectiles toward truck",
+      "passed": true
+    },
+    {
+      "name": "drone reaches every generated firing frame",
+      "passed": true
+    },
+    {
+      "name": "drone sends repeated projectiles toward truck",
+      "passed": true
+    },
+    {
+      "name": "Truck barrel and projectile aim agree at 30,70",
+      "passed": true
+    },
+    {
+      "name": "Truck barrel and projectile aim agree at 600,70",
+      "passed": true
+    },
+    {
+      "name": "Truck barrel and projectile aim agree at 600,410",
+      "passed": true
+    },
+    {
+      "name": "Truck barrel and projectile aim agree at 50,410",
+      "passed": true
+    },
+    {
+      "name": "Pursuit reaches ram impact and fade",
+      "passed": true
+    },
+    {
+      "name": "Truck sequence reaches actual results signal",
+      "passed": true
+    }
+  ],
+  "details": {
+    "ground": [
+      {
+        "kind": "rifle",
+        "di": "south",
+        "emitted": 12,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "rifle",
+        "di": "west",
+        "emitted": 12,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 8,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "rifle",
+        "di": "north",
+        "emitted": 12,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "rifle",
+        "di": "east",
+        "emitted": 12,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 8,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "heavy",
+        "di": "south",
+        "emitted": 32,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "heavy",
+        "di": "west",
+        "emitted": 32,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "heavy",
+        "di": "north",
+        "emitted": 32,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "heavy",
+        "di": "east",
+        "emitted": 32,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "laser",
+        "di": "south",
+        "emitted": 4,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "laser",
+        "di": "west",
+        "emitted": 4,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "laser",
+        "di": "north",
+        "emitted": 4,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "laser",
+        "di": "east",
+        "emitted": 4,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "rocket",
+        "di": "south",
+        "emitted": 3,
+        "bursts": 3,
+        "seen": 17,
+        "total": 17,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "rocket",
+        "di": "west",
+        "emitted": 3,
+        "bursts": 3,
+        "seen": 17,
+        "total": 17,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "rocket",
+        "di": "north",
+        "emitted": 4,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "rocket",
+        "di": "east",
+        "emitted": 3,
+        "bursts": 3,
+        "seen": 17,
+        "total": 17,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "shotgun",
+        "di": "south",
+        "emitted": 20,
+        "bursts": 4,
+        "seen": 4,
+        "total": 4,
+        "reloadSeen": 13,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "shotgun",
+        "di": "west",
+        "emitted": 20,
+        "bursts": 5,
+        "seen": 4,
+        "total": 4,
+        "reloadSeen": 13,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "shotgun",
+        "di": "north",
+        "emitted": 20,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 17,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "shotgun",
+        "di": "east",
+        "emitted": 20,
+        "bursts": 5,
+        "seen": 4,
+        "total": 4,
+        "reloadSeen": 13,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "double",
+        "di": "south",
+        "emitted": 56,
+        "bursts": 4,
+        "seen": 3,
+        "total": 3,
+        "reloadSeen": 14,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "double",
+        "di": "west",
+        "emitted": 56,
+        "bursts": 4,
+        "seen": 3,
+        "total": 3,
+        "reloadSeen": 14,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "double",
+        "di": "north",
+        "emitted": 49,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 17,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "double",
+        "di": "east",
+        "emitted": 56,
+        "bursts": 4,
+        "seen": 3,
+        "total": 3,
+        "reloadSeen": 14,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "roller",
+        "di": "south",
+        "emitted": 12,
+        "bursts": 4,
+        "seen": 17,
+        "total": 17,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "roller",
+        "di": "west",
+        "emitted": 12,
+        "bursts": 4,
+        "seen": 17,
+        "total": 17,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "roller",
+        "di": "north",
+        "emitted": 15,
+        "bursts": 5,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "roller",
+        "di": "east",
+        "emitted": 12,
+        "bursts": 4,
+        "seen": 17,
+        "total": 17,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "flame",
+        "di": "south",
+        "emitted": 84,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "flame",
+        "di": "west",
+        "emitted": 84,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "flame",
+        "di": "north",
+        "emitted": 84,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "flame",
+        "di": "east",
+        "emitted": 84,
+        "bursts": 4,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "flyer",
+        "di": "south",
+        "emitted": 24,
+        "bursts": 4,
+        "seen": 17,
+        "total": 17,
+        "reloadSeen": 4,
+        "drawSeen": 9,
+        "native": true
+      },
+      {
+        "kind": "flyer",
+        "di": "west",
+        "emitted": 24,
+        "bursts": 4,
+        "seen": 17,
+        "total": 17,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "flyer",
+        "di": "north",
+        "emitted": 26,
+        "bursts": 5,
+        "seen": 9,
+        "total": 9,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "flyer",
+        "di": "east",
+        "emitted": 24,
+        "bursts": 4,
+        "seen": 17,
+        "total": 17,
+        "reloadSeen": 4,
+        "drawSeen": 4,
+        "native": true
+      },
+      {
+        "kind": "bat",
+        "di": "south",
+        "emitted": 16,
+        "bursts": 4,
+        "seen": 12,
+        "total": 12,
+        "reloadSeen": 8,
+        "drawSeen": 6,
+        "native": true
+      },
+      {
+        "kind": "bat",
+        "di": "west",
+        "emitted": 16,
+        "bursts": 4,
+        "seen": 12,
+        "total": 12,
+        "reloadSeen": 8,
+        "drawSeen": 6,
+        "native": true
+      },
+      {
+        "kind": "bat",
+        "di": "north",
+        "emitted": 16,
+        "bursts": 4,
+        "seen": 12,
+        "total": 12,
+        "reloadSeen": 8,
+        "drawSeen": 6,
+        "native": true
+      },
+      {
+        "kind": "bat",
+        "di": "east",
+        "emitted": 16,
+        "bursts": 4,
+        "seen": 12,
+        "total": 12,
+        "reloadSeen": 8,
+        "drawSeen": 6,
+        "native": true
+      }
+    ],
+    "cover": [
+      {
+        "kind": "c35_rifle",
+        "released": 21
+      },
+      {
+        "kind": "c35_double",
+        "released": 84
+      },
+      {
+        "kind": "c35_heavy",
+        "released": 52
+      },
+      {
+        "kind": "c35_shotgun",
+        "released": 35
+      },
+      {
+        "kind": "c35_double",
+        "released": 84
+      },
+      {
+        "kind": "c35_flame",
+        "released": 105
+      },
+      {
+        "kind": "c35_rocket",
+        "released": 6
+      }
+    ],
+    "base": {
+      "launches": 42,
+      "maxShots": 40,
+      "warnings": {
+        "gun": [
+          "green",
+          "yellow",
+          "red"
+        ],
+        "laser": [
+          "green",
+          "yellow",
+          "red"
+        ]
+      }
+    },
+    "baseBulletPixels": 48,
+    "groundBulletPixels": 276,
+    "night": {
+      "shots": {
+        "runner": 12,
+        "drone": 4
+      },
+      "fireFrameCounts": {
+        "runner": 17,
+        "drone": 9
+      },
+      "maxAge": 1.4166666666666665
+    }
+  },
+  "passed": 99,
+  "total": 99
+}

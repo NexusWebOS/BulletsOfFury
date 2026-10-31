@@ -1,0 +1,61 @@
+{
+  "poses": [
+    {
+      "pose": "standing",
+      "wallFacePlayerPixels": 0,
+      "playerAnchor": [
+        320,
+        448
+      ]
+    },
+    {
+      "pose": "ducked",
+      "wallFacePlayerPixels": 0,
+      "playerAnchor": [
+        320,
+        448
+      ]
+    },
+    {
+      "pose": "hit",
+      "wallFacePlayerPixels": 0,
+      "playerAnchor": [
+        320,
+        448
+      ]
+    },
+    {
+      "pose": "fall_start",
+      "wallFacePlayerPixels": 0,
+      "playerAnchor": [
+        320,
+        448
+      ]
+    },
+    {
+      "pose": "fall_middle",
+      "wallFacePlayerPixels": 0,
+      "playerAnchor": [
+        320,
+        448
+      ]
+    },
+    {
+      "pose": "fall_end",
+      "wallFacePlayerPixels": 0,
+      "playerAnchor": [
+        320,
+        448
+      ]
+    }
+  ],
+  "errors": [],
+  "build": "overdrive1013-cover-depth-r2",
+  "stageChecksPassed": 27,
+  "baseSuite": {
+    "passed": 8700,
+    "errors": 0,
+    "exitCode": 0,
+    "log": "_shots/bastion_1013/cover_depth_base.log"
+  }
+}

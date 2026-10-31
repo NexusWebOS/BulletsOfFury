@@ -1,0 +1,736 @@
+{
+  "native": [
+    {
+      "name": "Squad dispatch cannot spend a hidden Nyx attack turn",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Retina-only discovery remains required before firing",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Revealed Nyx stays visible beyond the retired seven-second timer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All charge poses stay wholly in the current visible firing region",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both FOVs start at the exact registered muzzle on every tested heading/frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Warning spans end inside the visible playfield",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All tested firing sockets use registered visible animation frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every registered muzzle touches actual authored hull pixels",
+      "passed": true,
+      "data": 241
+    },
+    {
+      "name": "Firing follows viewport changes and never emits from offscreen",
+      "passed": true,
+      "data": [
+        {
+          "visible": true,
+          "shots": [
+            {
+              "x": 66.12163729128015,
+              "y": 133.87836270871986,
+              "s": {
+                "x": 66.12163729128015,
+                "y": 133.87836270871986,
+                "key": "af21_nyx_attack",
+                "frame": 7,
+                "side": -1
+              }
+            },
+            {
+              "x": 96.01032003710576,
+              "y": 133.87836270871986,
+              "s": {
+                "x": 96.01032003710576,
+                "y": 133.87836270871986,
+                "key": "af21_nyx_attack",
+                "frame": 7,
+                "side": 1
+              }
+            }
+          ],
+          "x": 82,
+          "y": 118
+        },
+        {
+          "visible": true,
+          "shots": [
+            {
+              "x": 166.12163729128014,
+              "y": 133.87836270871986,
+              "s": {
+                "x": 166.12163729128014,
+                "y": 133.87836270871986,
+                "key": "af21_nyx_attack",
+                "frame": 7,
+                "side": -1
+              }
+            },
+            {
+              "x": 196.01032003710574,
+              "y": 133.87836270871986,
+              "s": {
+                "x": 196.01032003710574,
+                "y": 133.87836270871986,
+                "key": "af21_nyx_attack",
+                "frame": 7,
+                "side": 1
+              }
+            }
+          ],
+          "x": 182,
+          "y": 118
+        },
+        {
+          "visible": true,
+          "shots": [
+            {
+              "x": 266.12163729128014,
+              "y": 133.87836270871986,
+              "s": {
+                "x": 266.12163729128014,
+                "y": 133.87836270871986,
+                "key": "af21_nyx_attack",
+                "frame": 7,
+                "side": -1
+              }
+            },
+            {
+              "x": 296.01032003710577,
+              "y": 133.87836270871986,
+              "s": {
+                "x": 296.01032003710577,
+                "y": 133.87836270871986,
+                "key": "af21_nyx_attack",
+                "frame": 7,
+                "side": 1
+              }
+            }
+          ],
+          "x": 282,
+          "y": 118
+        },
+        {
+          "visible": true,
+          "shots": [
+            {
+              "x": 66.12163729128015,
+              "y": 133.87836270871986,
+              "s": {
+                "x": 66.12163729128015,
+                "y": 133.87836270871986,
+                "key": "af21_nyx_attack",
+                "frame": 7,
+                "side": -1
+              }
+            },
+            {
+              "x": 96.01032003710576,
+              "y": 133.87836270871986,
+              "s": {
+                "x": 96.01032003710576,
+                "y": 133.87836270871986,
+                "key": "af21_nyx_attack",
+                "frame": 7,
+                "side": 1
+              }
+            }
+          ],
+          "x": 82,
+          "y": 118
+        }
+      ]
+    },
+    {
+      "name": "Both real shots begin at their FOV turret sockets",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Old side-offscreen firing anchors are repaired before the native tick",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Hidden cloak still cancels firing completely",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage X retains its previous socket and movement owners",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Native Furious full squad fight reaches actual defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Only the confirmed Stage6 boss music plays throughout the active fight",
+      "passed": true,
+      "data": [
+        {
+          "path": "http://127.0.0.1:53670/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "stagexPaused": true
+        },
+        {
+          "path": "http://127.0.0.1:53670/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "stagexPaused": true
+        }
+      ]
+    },
+    {
+      "name": "Native root transform has no impact displacement",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film retains five real opponents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, audio, HTTP or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native intro contains Kaia roller demonstration",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native combat automatically starts Decker gold charge",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native shield reflects hostile fire and triggers angry Riders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Nyx remains protected before first actual scan reveal",
+      "passed": true,
+      "data": 18
+    },
+    {
+      "name": "Real Retina lock burns off Nyx cloak",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native hidden hull damage before discovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Visible Nyx can be defeated through native weapon damage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native film contains Nyx dual turret fire",
+      "passed": true,
+      "data": 2898
+    },
+    {
+      "name": "Every observed shot starts with Nyx visible",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every observed shot starts at the registered physical turret",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All observed firing/charge frames keep Nyx inside the current viewport",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every observed combat/settle frame maintains fighter separation",
+      "passed": true,
+      "data": {
+        "maxOverlap": 0.09407607807685281,
+        "frames": 8642,
+        "worst": {
+          "a": "nyx",
+          "b": "kaia",
+          "phase": "approach",
+          "x": 0.09407607807685281,
+          "y": 98.25357476636229
+        },
+        "maxIdleStep": 225.00753996710822,
+        "last": {
+          "voss": {
+            "x": 93.60731728473938,
+            "y": 115.91960482877923,
+            "act": false
+          },
+          "nyx": {
+            "x": 168.59831134665868,
+            "y": 151,
+            "act": true
+          },
+          "rook": {
+            "x": 414.8536378620539,
+            "y": 143.10104054947666,
+            "act": false
+          },
+          "kaia": {
+            "x": 509.01738484581267,
+            "y": 168.69657285536633,
+            "act": false
+          },
+          "jace": {
+            "x": 587.180629419986,
+            "y": 122.70671796173185,
+            "act": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Recorded music and game sound are audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -18.9,
+        "peakDb": -3.1
+      }
+    },
+    {
+      "name": "stage6-rough-riders uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-kaia uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-nyx uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-gold-shield uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-gold-shield uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes live audio and moving video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No player errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 205.21,
+  "combat": 52.794,
+  "preview": "http://127.0.0.1:51046/?riders=nyx-fire-1029#clip=stage6-rough-riders",
+  "sha256": "a06d3f04d988299d71b61ea92dba7ffb28f55cd39a1d6f6a932c5bfbd4e5fc6f",
+  "audio": {
+    "meanDb": -18.9,
+    "peakDb": -3.1
+  },
+  "fps": 59.01648961393869,
+  "cards": [
+    "stage6-rough-riders",
+    "rough-riders-formations",
+    "rough-riders-team-locks",
+    "rough-riders-evasion",
+    "rough-riders-kaia",
+    "rough-riders-jace",
+    "rough-riders-nyx",
+    "rough-riders-rook",
+    "rough-riders-voss",
+    "rough-riders-gold-shield",
+    "rough-riders-gold-shield"
+  ],
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false,
+  "sockets": {
+    "af21_nyx_idle": {
+      "pivot": [
+        64,
+        64
+      ],
+      "points": [
+        [
+          [
+            47,
+            81
+          ],
+          [
+            79,
+            81
+          ]
+        ]
+      ],
+      "source": "assets/game/levels/stage_06/boss/air_refit_1021/nyx/idle.webp",
+      "sha256": "66c3cd4599c2b2bfe728b751e61d01001e6b381166dc2c393d7ba70558d86398",
+      "cells": [
+        [
+          0,
+          0,
+          128,
+          128
+        ]
+      ]
+    },
+    "af21_nyx_attack": {
+      "pivot": [
+        64,
+        64
+      ],
+      "points": [
+        [
+          [
+            47,
+            81
+          ],
+          [
+            79,
+            81
+          ]
+        ],
+        [
+          [
+            46,
+            81
+          ],
+          [
+            79,
+            81
+          ]
+        ],
+        [
+          [
+            46,
+            81
+          ],
+          [
+            79,
+            81
+          ]
+        ],
+        [
+          [
+            46,
+            81
+          ],
+          [
+            79,
+            81
+          ]
+        ],
+        [
+          [
+            47,
+            81
+          ],
+          [
+            79,
+            81
+          ]
+        ],
+        [
+          [
+            47,
+            81
+          ],
+          [
+            79,
+            81
+          ]
+        ],
+        [
+          [
+            47,
+            81
+          ],
+          [
+            79,
+            81
+          ]
+        ],
+        [
+          [
+            47,
+            81
+          ],
+          [
+            79,
+            81
+          ]
+        ]
+      ],
+      "source": "assets/game/levels/stage_06/boss/air_refit_1021/nyx/attack.webp",
+      "sha256": "237e6ac0ff423031ac151ba9fbd4c35f43f08cd0970be02e6674495bad77c689",
+      "cells": [
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          128,
+          0,
+          128,
+          128
+        ],
+        [
+          256,
+          0,
+          128,
+          128
+        ],
+        [
+          384,
+          0,
+          128,
+          128
+        ],
+        [
+          512,
+          0,
+          128,
+          128
+        ],
+        [
+          640,
+          0,
+          128,
+          128
+        ],
+        [
+          768,
+          0,
+          128,
+          128
+        ],
+        [
+          896,
+          0,
+          128,
+          128
+        ]
+      ]
+    },
+    "air13_s6_nyx_heading": {
+      "pivot": [
+        96,
+        96
+      ],
+      "points": [
+        [
+          [
+            76,
+            119
+          ],
+          [
+            115,
+            119
+          ]
+        ],
+        [
+          [
+            64,
+            100
+          ],
+          [
+            92,
+            128
+          ]
+        ],
+        [
+          [
+            71,
+            76
+          ],
+          [
+            71,
+            115
+          ]
+        ],
+        [
+          [
+            92,
+            66
+          ],
+          [
+            66,
+            93
+          ]
+        ],
+        [
+          [
+            119,
+            71
+          ],
+          [
+            79,
+            73
+          ]
+        ],
+        [
+          [
+            128,
+            92
+          ],
+          [
+            100,
+            64
+          ]
+        ],
+        [
+          [
+            121,
+            116
+          ],
+          [
+            120,
+            77
+          ]
+        ],
+        [
+          [
+            100,
+            128
+          ],
+          [
+            128,
+            100
+          ]
+        ]
+      ],
+      "source": "assets/game/levels/stage_06/boss/air_motion_1013/nyx/headings.webp",
+      "sha256": "915505cdcdf45ad4242281cfac9fd9afbb957aabe1c2884a1cb5506ab8855d45",
+      "cells": [
+        [
+          0,
+          0,
+          192,
+          192
+        ],
+        [
+          192,
+          0,
+          192,
+          192
+        ],
+        [
+          384,
+          0,
+          192,
+          192
+        ],
+        [
+          576,
+          0,
+          192,
+          192
+        ],
+        [
+          768,
+          0,
+          192,
+          192
+        ],
+        [
+          960,
+          0,
+          192,
+          192
+        ],
+        [
+          1152,
+          0,
+          192,
+          192
+        ],
+        [
+          1344,
+          0,
+          192,
+          192
+        ]
+      ]
+    }
+  },
+  "sourceSha256": "5b1a557a4ec9138370624562e790e9157dcec6b989de465c7050cf9e918c215b"
+}

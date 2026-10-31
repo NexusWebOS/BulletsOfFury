@@ -1,0 +1,68 @@
+[
+  {
+    "name": "All17 authored depth levels and native teal frames load",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "The reflected ball survives contact and keeps travelling behind the target",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Native reflected damage is attempted exactly once",
+    "passed": true,
+    "data": 1
+  },
+  {
+    "name": "The contact still deals its original12HP damage",
+    "passed": true,
+    "data": [
+      1424,
+      1412
+    ]
+  },
+  {
+    "name": "Depth shrinks continuously after the flyover",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "The ball reaches the far edge before retiring",
+    "passed": true,
+    "data": [
+      {
+        "event": "pass-over",
+        "clock": 0.016666666666666666,
+        "target": "voss",
+        "x": 236.9560403828541,
+        "y": 166.70069426040445
+      },
+      {
+        "event": "edge-exit",
+        "clock": 0.016666666666666666,
+        "x": 232.30999675668434,
+        "y": -41.08070221932893,
+        "age": 0.8166666666666675
+      }
+    ]
+  },
+  {
+    "name": "Both the shadow and foreground orb are actually drawn",
+    "passed": true,
+    "data": {
+      "orb": 4,
+      "shadow": 4
+    }
+  },
+  {
+    "name": "No return leaks after its edge exit",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "No native browser errors",
+    "passed": true,
+    "data": []
+  }
+]

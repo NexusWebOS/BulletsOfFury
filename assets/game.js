@@ -34900,7 +34900,7 @@ function updatePlay(dt){
   for(const _s of seatList()){
     if(withSeat(_s, function(){
     if(player.out) return false;         // this seat has spent every life; it is a spectator now
-    if(s6OpeningControlsLocked()){
+    if(s6OpeningControlsLocked()||player._rd72Grab){
       player.invuln=Math.max(0,player.invuln-1);player._spawnClearT=0;
       player._vx=0;player._vy=0;player._bank=0;
       return false;
@@ -37706,12 +37706,13 @@ function killEnemy(e){
 }
 
 function playerHit(source){
-  if(player.dead||(source!=='fusionOvercharge'&&player.invuln>0)) return;
+  const _fatal=source==='fusionOvercharge'||(source==='dracodiaClawThrow'&&player._rd72ThrowFatal===true);
+  if(player.dead||(!_fatal&&player.invuln>0)) return;
   // JUGGERNAUT wrecking-ball special: fully invulnerable to enemy bullets/attacks while active
-  if(source!=='fusionOvercharge'&&specialActive('juggernaut')){ return; }
-  if(source!=='fusionOvercharge'&&axelMegaShieldActive()){axelMegaShieldSpend();player.invuln=40;return;}
+  if(!_fatal&&specialActive('juggernaut')){ return; }
+  if(!_fatal&&axelMegaShieldActive()){axelMegaShieldSpend();player.invuln=40;return;}
   if(typeof stageStats!=='undefined') stageStats.dmgTaken++;
-  if(source!=='fusionOvercharge'&&run.shield>0){ run.shield--; player.invuln=70; flashScreen=0.5;
+  if(!_fatal&&run.shield>0){ run.shield--; player.invuln=70; flashScreen=0.5;
     if(run.shield<=0) (Audio.SFX.shieldBreakCombat||Audio.SFX.nsp_shield_down||Audio.SFX.hit)();
     else (Audio.SFX.shieldHitHeavy||Audio.SFX.hit)();
     floatText(player.x,player.y-16, run.shield>0?('SHIELD L'+run.shield):'SHIELD DOWN','#4ea0ff');
@@ -37728,7 +37729,7 @@ function playerHit(source){
   // the end of its crash drift could put the live ship behind the bottom HUD.
   player._deathAnchor={x:player.x,y:player.y};
   player.dead=true; player.alive=false;
-  if(source==='fusionOvercharge')run.shield=0;
+  if(_fatal)run.shield=0;
   /* THE SPIN-OUT OWNS THE DEATH NOW (Mike's header rule, 0907). The shock ring and the seven
      explosions that used to fire HERE are the CRASH, and they moved into updateDeathSpin so
      they land at the end of the turn instead of on the frame of the hit. A pilot with no sp

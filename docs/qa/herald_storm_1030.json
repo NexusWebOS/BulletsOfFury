@@ -1,0 +1,559 @@
+{
+  "native": [
+    {
+      "name": "All new art has even fixed cells and shared source pivots",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Eight incoming frames gain stored alpha and outgoing frames finish completely clear",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every1015 lightning frame preserves the exact original tornado alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Flash bank adds white-core lightning inside actual red funnel pixels",
+      "passed": true,
+      "data": 17652
+    },
+    {
+      "name": "Warning graphic is the approved metal sign, not the plain impact star",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native entry finishes before the storm fixture",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Storm art preloads before summoning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Charge uses a real metal warning and forming red bolt, with no storm FOV",
+      "passed": true,
+      "data": {
+        "fields": [],
+        "art": [
+          [
+            "summon",
+            5,
+            209.2,
+            276.48
+          ],
+          [
+            "wingL_cast",
+            5,
+            265.5,
+            140.2744129544237,
+            false
+          ],
+          [
+            "wingR_cast",
+            5,
+            339.5,
+            140.2744129544237,
+            false
+          ],
+          [
+            "core_cast",
+            5,
+            302.5,
+            158.2744129544237,
+            false
+          ],
+          [
+            "gunL_cast",
+            5,
+            260.5,
+            165.05702165007588,
+            false
+          ],
+          [
+            "gunR_cast",
+            5,
+            344.5,
+            165.05702165007588,
+            false
+          ],
+          [
+            "head_cast",
+            5,
+            302.5,
+            146.2744129544237,
+            false
+          ],
+          [
+            "warning",
+            0,
+            302.5,
+            288.2744129544237
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Tornadoes materialize through actual incoming frames before they can attack",
+      "passed": true,
+      "data": {
+        "fields": [],
+        "art": [
+          [
+            "summon",
+            10,
+            173.2,
+            276.48
+          ],
+          [
+            "summon",
+            0,
+            488.8,
+            276.48
+          ],
+          [
+            "arrive",
+            1,
+            488.8,
+            276.48
+          ],
+          [
+            "arrive",
+            1,
+            191.2,
+            276.48
+          ],
+          [
+            "wingL_cast",
+            21,
+            303,
+            135.67243867011544,
+            false
+          ],
+          [
+            "wingR_cast",
+            21,
+            377,
+            135.67243867011544,
+            false
+          ],
+          [
+            "core_cast",
+            21,
+            340,
+            153.67243867011544,
+            false
+          ],
+          [
+            "gunL_cast",
+            21,
+            298,
+            143.75939519185457,
+            false
+          ],
+          [
+            "gunR_cast",
+            21,
+            382,
+            143.75939519185457,
+            false
+          ],
+          [
+            "head_cast",
+            21,
+            340,
+            141.67243867011544,
+            false
+          ],
+          [
+            "warning",
+            1,
+            340,
+            283.6724386701154
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Native first orb volley releases",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Storm volleys are actual red lightning orbs with native ordinary-energy rules",
+      "passed": true,
+      "data": [
+        {
+          "lightning": true,
+          "intercept": false,
+          "w": 12,
+          "h": 12
+        },
+        {
+          "lightning": true,
+          "intercept": false,
+          "w": 12,
+          "h": 12
+        }
+      ]
+    },
+    {
+      "name": "Emitting funnel selects an internal-lightning1015 flash on that exact beat",
+      "passed": true,
+      "data": {
+        "fields": [],
+        "art": [
+          [
+            "flash",
+            40,
+            488.7867735292828,
+            277.7770282354032
+          ],
+          [
+            "tornado",
+            8,
+            191.2132264707172,
+            275.18297176459686
+          ],
+          [
+            "wingL_raised",
+            0,
+            303,
+            134.48906058536244,
+            false
+          ],
+          [
+            "wingR_raised",
+            0,
+            377,
+            134.48906058536244,
+            false
+          ],
+          [
+            "core_raised",
+            0,
+            340,
+            152.48906058536244,
+            false
+          ],
+          [
+            "gunL_raised",
+            0,
+            298,
+            140.48906058536244,
+            false
+          ],
+          [
+            "gunR_raised",
+            0,
+            382,
+            140.48906058536244,
+            false
+          ],
+          [
+            "head_raised",
+            0,
+            340,
+            140.48906058536244,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Native projectile renderer uses the44px animated lightning-ball bank",
+      "passed": true,
+      "data": [
+        [
+          0,
+          0,
+          44,
+          44,
+          471,
+          256,
+          44,
+          44
+        ]
+      ]
+    },
+    {
+      "name": "Summoning lightning cadence accelerates before release",
+      "passed": true,
+      "data": {
+        "beats": 8,
+        "first": 0.37986861377954806,
+        "last": 0.11230072291357052
+      }
+    },
+    {
+      "name": "Volley flash returns to the normal funnel between releases",
+      "passed": true,
+      "data": {
+        "fields": [],
+        "art": [
+          [
+            "tornado",
+            13,
+            485.8339067827768,
+            295.80655249974336
+          ],
+          [
+            "tornado",
+            13,
+            194.16609321722316,
+            257.15344750025673
+          ],
+          [
+            "wingL_raised",
+            5,
+            303,
+            134.48906058536244,
+            false
+          ],
+          [
+            "wingR_raised",
+            5,
+            377,
+            134.48906058536244,
+            false
+          ],
+          [
+            "core_raised",
+            5,
+            340,
+            152.48906058536244,
+            false
+          ],
+          [
+            "gunL_raised",
+            5,
+            298,
+            140.48906058536244,
+            false
+          ],
+          [
+            "gunR_raised",
+            5,
+            382,
+            140.48906058536244,
+            false
+          ],
+          [
+            "head_raised",
+            5,
+            340,
+            140.48906058536244,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Native storm reaches recovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both funnels fade out through authored departing frames",
+      "passed": true,
+      "data": {
+        "fields": [],
+        "art": [
+          [
+            "depart",
+            2,
+            226.03895581372595,
+            213.92908237299577
+          ],
+          [
+            "depart",
+            2,
+            453.9610441862741,
+            339.03091762700427
+          ],
+          [
+            "wingL_grow",
+            15,
+            303,
+            134.48906058536244,
+            false
+          ],
+          [
+            "wingR_grow",
+            15,
+            377,
+            134.48906058536244,
+            false
+          ],
+          [
+            "core_grow",
+            15,
+            340,
+            152.48906058536244,
+            false
+          ],
+          [
+            "gunL_grow",
+            15,
+            298,
+            164.48906058536244,
+            false
+          ],
+          [
+            "gunR_grow",
+            15,
+            382,
+            164.48906058536244,
+            false
+          ],
+          [
+            "head_grow",
+            15,
+            340,
+            140.48906058536244,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Tornado art ends before the finite native recovery completes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native attack book resumes after the storm",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native pressure cap remains bounded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Boss death cancels pending summon and tornado graphics",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Dual red lasers and animated bottom Retinas stay registered",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game/draw/console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Full native Furious Herald fight reaches defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Native4264 health budget is retained",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, asset, audio or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native recording includes synchronized dual-claw releases",
+      "passed": true,
+      "data": {
+        "events": 32,
+        "pairedWaves": 16
+      }
+    },
+    {
+      "name": "Live film includes moving and locked bottom landing marks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film reaches actual marked bottom impacts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film contains accelerating storm summon bolts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film contains storm lightning-orb volleys and synchronized flashes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recorded native renderer draws red laser and muzzle banks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Existing protected20percent desperation and foreground return remain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Decoded recorded sound is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -20.1,
+        "peakDb": -3.5
+      }
+    },
+    {
+      "name": "stage8-miniboss uses the corrected native film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-miniboss decodes moving footage with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-storm uses the corrected native film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-storm decodes moving footage with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No video preview errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 114.24000000000001,
+  "firstLaser": 18.468,
+  "pairedWaves": 16,
+  "fps": 58.46094238440337,
+  "audio": {
+    "meanDb": -20.1,
+    "peakDb": -3.5
+  },
+  "preview": "http://127.0.0.1:51046/?herald=storm-lightning-1030#clip=stage8-herald-storm",
+  "fullFight": "http://127.0.0.1:51046/?herald=storm-lightning-1030#clip=stage8-miniboss",
+  "sha256": "361145ad3ca3a2d9ad4d42b89e730445597b563d956f41757e85628202acf5de",
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false
+}

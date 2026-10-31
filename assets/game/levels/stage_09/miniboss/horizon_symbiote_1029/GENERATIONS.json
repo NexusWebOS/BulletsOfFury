@@ -1,0 +1,49 @@
+{
+  "service": "PixelLab",
+  "date": "2026-10-29",
+  "totalCreditsUSD": 0.2192,
+  "source": "reference.png exported from the actual S5924 black_drift frame0; no original photos",
+  "jobs": [
+    {
+      "job": "31fb5f80-1612-4ae5-88f0-610513a61417",
+      "asset": "509fbe94-b614-5872-96dc-194b75ab5f8a",
+      "tool": "animate_image_pixminimax",
+      "seed": 571029,
+      "creditsUSD": 0.0592,
+      "requestedFrames": 32,
+      "returnedFrames": 33,
+      "size": [
+        256,
+        256
+      ],
+      "brief": "Fixed centered optical eye and consistent actual alien hull/fins, top-down planar rotation, transparent game frames."
+    },
+    {
+      "job": "809d8b63-2b09-441d-85f8-728549a8a47b",
+      "asset": "4e092f76-e492-559f-8152-065f2a0cd97d",
+      "tool": "create_image_pro",
+      "seed": 572029,
+      "creditsUSD": 0.08,
+      "size": [
+        256,
+        96
+      ],
+      "brief": "Horizontal alien symbiote laser with cyan/white core, cobalt/violet sheath and dark organic tendrils, transparent."
+    },
+    {
+      "job": "88aaa36d-9762-45a4-94f0-18c2875c6145",
+      "asset": "b4bfec63-d77c-56f9-a67b-f7d2def33c7d",
+      "tool": "create_image_pro",
+      "seed": 573029,
+      "creditsUSD": 0.08,
+      "size": [
+        96,
+        96
+      ],
+      "returnedCandidates": 4,
+      "selected": "orb_0.png",
+      "brief": "Alien plasma sphere, cyan optical core, black armored symbiote tendrils and violet highlights, transparent."
+    }
+  ],
+  "normalization": "Provider turn slows/reverses after its first half-turn. Measured optical centers and eye PCA headings select16 first-half views at uniform angles. Their opposite half is authored offline; all32 share one1.25 scale and192,192 pivot. Normal armor highlights, aqua palette/emission, actual white hits, eight eye strengths,64 directional16phase laser tiles and16rotating orbs are authored in Aseprite. Only a30px eye region emits; fin reflections excluded. Native chimney smoke is cropped from the shared atlas. Exact selection/angles/pivots in inputs.json; sources retained."
+}

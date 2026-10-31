@@ -1,0 +1,316 @@
+{
+  "native": [
+    {
+      "name": "Hidden Nyx is absent from offensive and ally target lists",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Direct hull collision skips hidden Nyx",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Missiles cannot reveal Nyx",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All direct damage routes preserve hidden hull and parts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cloak suppresses hull drawing and attack starts",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real single Retina can acquire hidden signal",
+      "passed": true,
+      "data": {
+        "id": "nyx-retina",
+        "phase": "seek",
+        "scan": 0,
+        "base": [
+          "voss-hull",
+          "rook-hull",
+          "kaia-hull",
+          "jace-hull",
+          "nyx"
+        ],
+        "state": {
+          "hidden": true,
+          "dead": false,
+          "mode": "fight",
+          "cloak": 10
+        }
+      }
+    },
+    {
+      "name": "Completed single lock alone starts cloak burn-off",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Burn-off still prevents weapon damage and auto-targeting",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Nyx becomes a legal weapon target only after full visible fade",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Revealed hull takes native damage and white hit flash",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Multi-Retina also completes a legitimate reveal",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Uncovered Nyx can perform her existing attack book without self-cloaking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native recloak restores immunity and prevents ally tracking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Other Riders remain targetable",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage X is outside the new rule",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native JavaScript errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Native Furious full squad fight reaches actual defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Only the confirmed Stage6 boss music plays throughout the active fight",
+      "passed": true,
+      "data": [
+        {
+          "path": "http://127.0.0.1:55073/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "stagexPaused": true
+        },
+        {
+          "path": "http://127.0.0.1:55073/assets/game/levels/stage_06/audio/music/Level6b.mp3",
+          "stagexPaused": true
+        }
+      ]
+    },
+    {
+      "name": "Native root transform has no impact displacement",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film retains five real opponents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, audio, HTTP or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native intro contains Kaia roller demonstration",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native combat automatically starts Decker gold charge",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native shield reflects hostile fire and triggers angry Riders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Nyx remains protected before first actual scan reveal",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real Retina lock burns off Nyx cloak",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native hidden hull damage before discovery",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Visible Nyx can be defeated through native weapon damage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every observed combat/settle frame maintains fighter separation",
+      "passed": true,
+      "data": {
+        "maxOverlap": 0.08041855282507981,
+        "frames": 4662,
+        "worst": {
+          "a": "rook",
+          "b": "jace",
+          "phase": null,
+          "x": 0.8241597533275637,
+          "y": 0.08041855282507981
+        },
+        "maxIdleStep": 203.4461009294798,
+        "last": {
+          "voss": {
+            "x": 199.16915698040242,
+            "y": 238.75,
+            "act": true
+          },
+          "nyx": {
+            "x": 136.3087880611788,
+            "y": 151,
+            "act": true
+          },
+          "rook": {
+            "x": 420.4695920363019,
+            "y": 100.74999999999999,
+            "act": false
+          },
+          "kaia": {
+            "x": 501.9146057514709,
+            "y": 186.96787086650986,
+            "act": false
+          },
+          "jace": {
+            "x": 599.1014981410867,
+            "y": 131.9291349825613,
+            "act": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Recorded music and game sound are audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -18.5,
+        "peakDb": -1.7
+      }
+    },
+    {
+      "name": "stage6-rough-riders uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-kaia uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-nyx uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-gold-shield uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-gold-shield uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes live audio and moving video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No player errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 138.97,
+  "combat": 53.178,
+  "preview": "http://127.0.0.1:51046/?riders=nyx-retina-1029#clip=stage6-rough-riders",
+  "sha256": "ca37ae0732930209c4eb4b05ec067ba2d7d4c67e44b03413e0708d92c2964452",
+  "audio": {
+    "meanDb": -18.5,
+    "peakDb": -1.7
+  },
+  "fps": 58.50925201980715,
+  "cards": [
+    "stage6-rough-riders",
+    "rough-riders-formations",
+    "rough-riders-team-locks",
+    "rough-riders-evasion",
+    "rough-riders-kaia",
+    "rough-riders-jace",
+    "rough-riders-nyx",
+    "rough-riders-rook",
+    "rough-riders-voss",
+    "rough-riders-gold-shield",
+    "rough-riders-gold-shield"
+  ],
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false,
+  "sourceSha256": "02cedfca51a3633528b820afe68d3db8469f75d8c1c8cd70464c57655228383e"
+}

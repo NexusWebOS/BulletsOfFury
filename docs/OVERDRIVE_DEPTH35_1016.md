@@ -1,0 +1,19 @@
+# Overdrive Depth35 — complete enemy roster and raised ground cover
+
+Local build `overdrive1016-depth35-r1`, 2026-10-16. No commit or push.
+
+The unused Contra34 shotgun, double-barrel, rolling alien, flamethrower, flyer and bat banks now have real encounter slots and independent attacks. Fortress/Dead Signal and the seven regular Bastion rooms collectively use all ten archetypes; the service corridor includes rifle, heavy, sniper, rocket, shotgun, double-barrel and rolling alien encounters. The chute retains its flying-alien waves.
+
+Shotgun troops use a five-projectile fan, pump recovery and 2.7-second recovery window. Double-barrel troops fire two seven-projectile fans 0.32 seconds apart, followed by a longer break-action reload. Rolling aliens finish their authored fold, ball roll and unfold clips, then fire acid bursts. Minigunners wind up before longer bursts; snipers, rockets, flame and plasma have separate projectile speeds, patterns and approved mixer cues. Attacks commit to their windup aim point, providing a readable dodge opportunity; all shots travel and can be intercepted. Corridor attacks cannot start off-screen. Existing one-hit rules and five-second player roll cooldown remain.
+
+The source PNGs in Contra34 are preserved. Depth35 imports 77 additional direction/roller clips without repainting them. Action timing lets the full firing and reload drawings play; sprite body bounds and gun-tip metadata drive collision and emission. Every new family uses the shared flash path on damage. Enemy deaths retain the existing authored explosion effects.
+
+Yuri's sideways crouch/crawl now selects the approved Yuri30 bank shared with his standing/aim art. Older overhead crawl banks use a single proportional 0.76 correction across each bank; transitions and ordinary standing banks retain their own correct scale. The displaced full-body black shadow was removed, eliminating the extra silhouette edge. Whole plates and roots remain intact, and muzzle sockets use the resulting pose scale.
+
+Keyboard: F toggles prone/standing, WASD crawls, C holds crouch/cover. Options moves PRONE / STAND TOGGLE next to the other on-foot actions. Help displays the actual current binding, respecting remaps. Raw M30 controls remain unchanged.
+
+New built-in ImageGen art: eight raised prop families, each with intact/damaged/critical/rubble states, plus a separate subdued floor material and wall perimeter. Walls, bunkers, steel crates, wood crates, barrels, servers and red relay machines have authored top faces, vertical faces and contact shadows. Source images and exact prompts are retained under art/depth35/source; 192x192 prop canvases share a ground-contact origin. Floor export is 800x2400. Objects remain separate from the floor. The top-down scene sorts actors and solid props by their ground depth, so cover actually occludes Yuri and enemies. Destruction still releases the corresponding collision footprint.
+
+Verification: 53 focused native Chromium checks passed, including actual F/C/WASD input, all ten attack profiles, per-family visible flash pixels and expiry, all exported assets decoding, even frame dimensions, damaged prop states and released collision, and decoded approved attack audio with retrigger gates. 4 route checks passed, including a continuous ordinary-input corridor/self-destruct run into visible level 4 plus stationary cover and peek fire. No health, enemy HP or geometry overrides during that route. The replay uses targeting, separate jump presses, grenade throws and rolls; preliminary replays exposed off-screen aiming and overly reactive shotgun aim, corrected in production.
+
+Required syntax and `test_fl.js` checks finished with exit 0 and BUILD OK / 0 ERRORS. Native screenshots, stance review and detailed results are under _shots/depth35; persistent reports are docs/qa/overdrive_depth35*. The main-game assets/game.js was not edited by this pass; preserve unrelated ongoing work.

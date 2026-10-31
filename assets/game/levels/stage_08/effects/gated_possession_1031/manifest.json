@@ -1,0 +1,86 @@
+{
+  "purple_close": {
+    "ch": 512,
+    "cols": 8,
+    "cw": 512,
+    "fps": 20,
+    "frames": 32,
+    "key": "rd94_purple_close",
+    "path": "assets/game/levels/stage_08/effects/gated_possession_1031/purple_close.png",
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "a734aa49e017a2a75e0fe1856f8f8704a66448b0bf5afd509625295795dfc2dd"
+  },
+  "purple_form": {
+    "ch": 512,
+    "cols": 8,
+    "cw": 512,
+    "fps": 20,
+    "frames": 32,
+    "key": "rd94_purple_form",
+    "path": "assets/game/levels/stage_08/effects/gated_possession_1031/purple_form.png",
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "fdd39cb615567c4cc139ddc42ae58cb2cc9445d8d94c9c81c04316c4d6c6c3cc"
+  },
+  "purple_loop": {
+    "ch": 512,
+    "cols": 8,
+    "cw": 512,
+    "fps": 10,
+    "frames": 16,
+    "key": "rd94_purple_loop",
+    "path": "assets/game/levels/stage_08/effects/gated_possession_1031/purple_loop.png",
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "c7d2e0f15df0f22254833b99f13ee9cb475b7f942991817f5e2ba985e549f171"
+  },
+  "red_close": {
+    "ch": 384,
+    "cols": 8,
+    "cw": 384,
+    "fps": 10,
+    "frames": 16,
+    "key": "rd94_red_close",
+    "path": "assets/game/levels/stage_08/effects/gated_possession_1031/red_close.png",
+    "pivot": [
+      192,
+      192
+    ],
+    "sha256": "2a96eee0845a38265348b34fb463f1eaa16ac69ade2d5a3bb7c0312dc5831176"
+  },
+  "red_form": {
+    "ch": 384,
+    "cols": 8,
+    "cw": 384,
+    "fps": 10,
+    "frames": 16,
+    "key": "rd94_red_form",
+    "path": "assets/game/levels/stage_08/effects/gated_possession_1031/red_form.png",
+    "pivot": [
+      192,
+      192
+    ],
+    "sha256": "1e6927a2d6917032259a0e44b4936cb0281ebe0c03af3728eaaaf24775c0ac4c"
+  },
+  "red_loop": {
+    "ch": 384,
+    "cols": 8,
+    "cw": 384,
+    "fps": 20,
+    "frames": 32,
+    "key": "rd94_red_loop",
+    "path": "assets/game/levels/stage_08/effects/gated_possession_1031/red_loop.png",
+    "pivot": [
+      192,
+      192
+    ],
+    "sha256": "d6bc4e2b8269874af80e5fdb9b58877ebc51c2895d9a0059bbeb904b5a7a9ddb"
+  }
+}

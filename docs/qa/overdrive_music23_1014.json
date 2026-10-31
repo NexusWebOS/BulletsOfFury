@@ -1,0 +1,280 @@
+{
+  "build": "overdrive1014-music23-r1",
+  "checks": [
+    {
+      "name": "level 3 briefing queues BOF-BASE before audio unlock",
+      "passed": true
+    },
+    {
+      "name": "supplied BOF-BASE decodes and plays as the level 3 track",
+      "passed": true
+    },
+    {
+      "name": "native stage audio produces nonzero PCM signal",
+      "passed": true
+    },
+    {
+      "name": "ordinary level 3 boss spawn retains stage music throughout entrance",
+      "passed": true
+    },
+    {
+      "name": "boss track does not begin before Gosfer entrance finishes",
+      "passed": true
+    },
+    {
+      "name": "Gosfer combat starts a quiet Rise of the Last Hope crossfade",
+      "passed": true
+    },
+    {
+      "name": "both actual media volumes change gradually during boss crossfade",
+      "passed": true
+    },
+    {
+      "name": "boss fade reaches music setting and releases outgoing stage audio",
+      "passed": true
+    },
+    {
+      "name": "supplied boss WAV decodes at its original duration and loops",
+      "passed": true
+    },
+    {
+      "name": "native boss audio produces nonzero PCM signal",
+      "passed": true
+    },
+    {
+      "name": "actual Gosfer cover-breaker volleys reach the protected dialogue",
+      "passed": true
+    },
+    {
+      "name": "dialogue ducks the same boss recording instead of restarting it",
+      "passed": true
+    },
+    {
+      "name": "music stays lowered through the lightning transformation",
+      "passed": true
+    },
+    {
+      "name": "post-cutscene duel begins a fade back into the boss track",
+      "passed": true
+    },
+    {
+      "name": "post-dialogue boss fade completes at normal volume without resetting time",
+      "passed": true
+    },
+    {
+      "name": "boss recording loops in native playback",
+      "passed": true
+    },
+    {
+      "name": "level 7 briefing and initial room use BOF-BASE",
+      "passed": true
+    },
+    {
+      "name": "rooms 1 through 7 retain the stage track",
+      "passed": true
+    },
+    {
+      "name": "room 8 starts boss music at the core encounter",
+      "passed": true
+    },
+    {
+      "name": "reactor encounter crossfades both tracks",
+      "passed": true
+    },
+    {
+      "name": "reactor fracture, white flash and Helios reveal continue the same boss track",
+      "passed": true
+    },
+    {
+      "name": "boss retry keeps Rise of the Last Hope playing without restart",
+      "passed": true
+    },
+    {
+      "name": "music and master options respect the current fade gain",
+      "passed": true
+    },
+    {
+      "name": "master mute silences every active music voice",
+      "passed": true
+    },
+    {
+      "name": "unmute restores selected music volume",
+      "passed": true
+    },
+    {
+      "name": "fresh level 7 restart returns to BOF-BASE",
+      "passed": true
+    },
+    {
+      "name": "stage recording loops in native playback",
+      "passed": true
+    },
+    {
+      "name": "stop during a fade releases all tracks and cancels pending playback",
+      "passed": true
+    },
+    {
+      "name": "a cancelled locked cue cannot start on later input",
+      "passed": true
+    },
+    {
+      "name": "other campaign stages keep their existing stage music",
+      "passed": true
+    },
+    {
+      "name": "return to title replaces and releases encounter music",
+      "passed": true
+    },
+    {
+      "name": "native media and browser report no playback or asset errors",
+      "passed": true
+    },
+    {
+      "name": "exact original WAV bytes preserved: BOF-BASE.wav",
+      "passed": true
+    },
+    {
+      "name": "exact original WAV bytes preserved: rise_of_the_last_hope_fast_riff_genesis.wav",
+      "passed": true
+    }
+  ],
+  "passed": 34,
+  "failed": 0,
+  "errors": [],
+  "playback": {
+    "basePlayback": {
+      "key": "base",
+      "volume": 0.55,
+      "time": 0.013798,
+      "duration": 122.4,
+      "loop": true,
+      "paused": false,
+      "voices": [
+        {
+          "key": "base",
+          "gain": 1,
+          "volume": 0.55,
+          "paused": false
+        }
+      ],
+      "failures": []
+    },
+    "baseRMS": 0.08519349002202156,
+    "gosferFadeStart": {
+      "key": "lastHope",
+      "volume": 1.2707904663923184e-05,
+      "time": 0.009146,
+      "duration": 40.324127,
+      "loop": true,
+      "paused": false,
+      "voices": [
+        {
+          "key": "base",
+          "gain": 0.9999740417958367,
+          "volume": 0.5499857229877102,
+          "paused": false
+        },
+        {
+          "key": "lastHope",
+          "gain": 2.310528120713306e-05,
+          "volume": 1.2707904663923184e-05,
+          "paused": false
+        }
+      ],
+      "failures": []
+    },
+    "gosferFadeMiddle": {
+      "key": "lastHope",
+      "volume": 0.17234960388142828,
+      "time": 0.646721,
+      "duration": 40.324127,
+      "loop": true,
+      "paused": false,
+      "voices": [
+        {
+          "key": "base",
+          "gain": 0.6864032340185864,
+          "volume": 0.3775217787102225,
+          "paused": false
+        },
+        {
+          "key": "lastHope",
+          "gain": 0.3133629161480514,
+          "volume": 0.17234960388142828,
+          "paused": false
+        }
+      ],
+      "failures": []
+    },
+    "gosferFadeEnd": {
+      "key": "lastHope",
+      "volume": 0.55,
+      "time": 1.957593,
+      "duration": 40.324127,
+      "loop": true,
+      "paused": false,
+      "voices": [
+        {
+          "key": "lastHope",
+          "gain": 1,
+          "volume": 0.55,
+          "paused": false
+        }
+      ],
+      "failures": []
+    },
+    "bossRMS": 0.11878235942900504,
+    "dialogueDucked": {
+      "key": "lastHope",
+      "volume": 0.09899999999999998,
+      "time": 3.682948,
+      "duration": 40.324127,
+      "loop": true,
+      "paused": false,
+      "voices": [
+        {
+          "key": "lastHope",
+          "gain": 0.17999999999999994,
+          "volume": 0.09899999999999998,
+          "paused": false
+        }
+      ],
+      "failures": []
+    },
+    "coreFadeMiddle": {
+      "key": "lastHope",
+      "volume": 0.21054611235667461,
+      "time": 0.734543,
+      "duration": 40.324127,
+      "loop": true,
+      "paused": false,
+      "voices": [
+        {
+          "key": "base",
+          "gain": 0.6171076205075443,
+          "volume": 0.33940919127914937,
+          "paused": false
+        },
+        {
+          "key": "lastHope",
+          "gain": 0.382811113375772,
+          "volume": 0.21054611235667461,
+          "paused": false
+        }
+      ],
+      "failures": []
+    }
+  },
+  "scope": "Real Chromium native HTMLAudio playback, PCM analysis and cue-boundary fixtures. Not a complete combat route.",
+  "baseRegression": {
+    "syntax": "node --check assets/game.js passed",
+    "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "exitCode": 0
+  },
+  "screenshots": [
+    "gosfer_dialogue.png",
+    "gosfer_duel.png",
+    "reactor_music.png",
+    "helios_music.png"
+  ]
+}

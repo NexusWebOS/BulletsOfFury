@@ -1,0 +1,729 @@
+{
+  "checks": {
+    "checks": [
+      {
+        "name": "40 fixed even authored shield cells with transparent safety margins",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Active shield is a filled membrane across its full rectangular grid",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Editable Aseprite source retained with source recipe",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Original protected barrel-roll intro still runs",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native grid asset is warmed before the shield can deploy",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "star formation completes arrival, warned volley and barrel roll",
+        "passed": true,
+        "data": {
+          "seconds": 8.400000000000002,
+          "phases": [
+            null,
+            "stunt",
+            "assemble",
+            "volley",
+            "tell"
+          ]
+        }
+      },
+      {
+        "name": "star fighter hull reservations remain separated",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "star keeps actual authored barrel-roll cells for all five pilots",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "bowling formation completes arrival, warned volley and barrel roll",
+        "passed": true,
+        "data": {
+          "seconds": 11.399999999999991,
+          "phases": [
+            null,
+            "stunt",
+            "assemble",
+            "volley",
+            "tell"
+          ]
+        }
+      },
+      {
+        "name": "bowling fighter hull reservations remain separated",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "bowling keeps actual authored barrel-roll cells for all five pilots",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "H formation completes arrival, warned volley and barrel roll",
+        "passed": true,
+        "data": {
+          "seconds": 8.400000000000002,
+          "phases": [
+            null,
+            "stunt",
+            "assemble",
+            "volley",
+            "tell"
+          ]
+        }
+      },
+      {
+        "name": "H fighter hull reservations remain separated",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "H keeps actual authored barrel-roll cells for all five pilots",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "X formation completes arrival, warned volley and barrel roll",
+        "passed": true,
+        "data": {
+          "seconds": 8.400000000000002,
+          "phases": [
+            null,
+            "stunt",
+            "assemble",
+            "volley",
+            "tell"
+          ]
+        }
+      },
+      {
+        "name": "X fighter hull reservations remain separated",
+        "passed": true,
+        "data": []
+      },
+      {
+        "name": "X keeps actual authored barrel-roll cells for all five pilots",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Formation navigation does not write the native health pool",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Original Gasline remains the scoped squad music",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Decker still owns the native Golden Aegis cast and duration",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Solid grid retains hostile reflection and friendly pass-through",
+        "passed": true,
+        "data": {
+          "enemy": true,
+          "friendly": false,
+          "returns": 1
+        }
+      },
+      {
+        "name": "Stage X is outside this motion/grid override",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other stages are outside this motion/grid override",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No real game, draw, console or missing-asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "film": [
+    {
+      "name": "Native Furious full squad fight reaches actual defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Only the confirmed original Gasline recording plays throughout the active fight",
+      "passed": true,
+      "data": [
+        {
+          "path": "http://127.0.0.1:62922/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+          "key": "roughriders6",
+          "clock": 0,
+          "paused": false,
+          "stagexPaused": true
+        },
+        {
+          "path": "http://127.0.0.1:62922/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+          "key": "roughriders6",
+          "clock": 0.321215,
+          "paused": false,
+          "stagexPaused": true
+        }
+      ]
+    },
+    {
+      "name": "Native root transform has no impact displacement",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film retains five real opponents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, audio, HTTP or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All five pilots show actual barrel-roll cells in native footage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native entrance contains no somersault pitch frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native flight has no uncommanded cruise jumps",
+      "passed": true,
+      "data": {
+        "ticks": 6684,
+        "maxCruiseStep": 9.000000000000025,
+        "maxTurboStep": 26.666666666666686,
+        "outliers": []
+      }
+    },
+    {
+      "name": "Solid grid deploys during the real full fight",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recorded music and game sound are audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -15.5,
+        "peakDb": -0.7
+      }
+    },
+    {
+      "name": "stage6-rough-riders uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-gold-shield uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes live audio and moving video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No player errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "summary": {
+    "native": {
+      "checks": [
+        {
+          "name": "40 fixed even authored shield cells with transparent safety margins",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Active shield is a filled membrane across its full rectangular grid",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Editable Aseprite source retained with source recipe",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Original protected barrel-roll intro still runs",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Native grid asset is warmed before the shield can deploy",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "star formation completes arrival, warned volley and barrel roll",
+          "passed": true,
+          "data": {
+            "seconds": 8.400000000000002,
+            "phases": [
+              null,
+              "stunt",
+              "assemble",
+              "volley",
+              "tell"
+            ]
+          }
+        },
+        {
+          "name": "star fighter hull reservations remain separated",
+          "passed": true,
+          "data": []
+        },
+        {
+          "name": "star keeps actual authored barrel-roll cells for all five pilots",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "bowling formation completes arrival, warned volley and barrel roll",
+          "passed": true,
+          "data": {
+            "seconds": 11.399999999999991,
+            "phases": [
+              null,
+              "stunt",
+              "assemble",
+              "volley",
+              "tell"
+            ]
+          }
+        },
+        {
+          "name": "bowling fighter hull reservations remain separated",
+          "passed": true,
+          "data": []
+        },
+        {
+          "name": "bowling keeps actual authored barrel-roll cells for all five pilots",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "H formation completes arrival, warned volley and barrel roll",
+          "passed": true,
+          "data": {
+            "seconds": 8.400000000000002,
+            "phases": [
+              null,
+              "stunt",
+              "assemble",
+              "volley",
+              "tell"
+            ]
+          }
+        },
+        {
+          "name": "H fighter hull reservations remain separated",
+          "passed": true,
+          "data": []
+        },
+        {
+          "name": "H keeps actual authored barrel-roll cells for all five pilots",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "X formation completes arrival, warned volley and barrel roll",
+          "passed": true,
+          "data": {
+            "seconds": 8.400000000000002,
+            "phases": [
+              null,
+              "stunt",
+              "assemble",
+              "volley",
+              "tell"
+            ]
+          }
+        },
+        {
+          "name": "X fighter hull reservations remain separated",
+          "passed": true,
+          "data": []
+        },
+        {
+          "name": "X keeps actual authored barrel-roll cells for all five pilots",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Formation navigation does not write the native health pool",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Original Gasline remains the scoped squad music",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Decker still owns the native Golden Aegis cast and duration",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Solid grid retains hostile reflection and friendly pass-through",
+          "passed": true,
+          "data": {
+            "enemy": true,
+            "friendly": false,
+            "returns": 1
+          }
+        },
+        {
+          "name": "Stage X is outside this motion/grid override",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Other stages are outside this motion/grid override",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No real game, draw, console or missing-asset errors",
+          "passed": true,
+          "data": {
+            "errors": [],
+            "http": []
+          }
+        }
+      ],
+      "errors": [],
+      "http": []
+    },
+    "film": [
+      {
+        "name": "Native Furious full squad fight reaches actual defeat",
+        "passed": true,
+        "data": "native defeat"
+      },
+      {
+        "name": "Only the confirmed original Gasline recording plays throughout the active fight",
+        "passed": true,
+        "data": [
+          {
+            "path": "http://127.0.0.1:62922/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+            "key": "roughriders6",
+            "clock": 0,
+            "paused": false,
+            "stagexPaused": true
+          },
+          {
+            "path": "http://127.0.0.1:62922/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+            "key": "roughriders6",
+            "clock": 0.321215,
+            "paused": false,
+            "stagexPaused": true
+          }
+        ]
+      },
+      {
+        "name": "Native root transform has no impact displacement",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Film retains five real opponents",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native game, audio, HTTP or bot errors",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All five pilots show actual barrel-roll cells in native footage",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native entrance contains no somersault pitch frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native flight has no uncommanded cruise jumps",
+        "passed": true,
+        "data": {
+          "ticks": 6684,
+          "maxCruiseStep": 9.000000000000025,
+          "maxTurboStep": 26.666666666666686,
+          "outliers": []
+        }
+      },
+      {
+        "name": "Solid grid deploys during the real full fight",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Recorded music and game sound are audible and unclipped",
+        "passed": true,
+        "data": {
+          "meanDb": -15.5,
+          "peakDb": -0.7
+        }
+      },
+      {
+        "name": "stage6-rough-riders uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-formations uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-team-locks uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-evasion uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-jace uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-rook uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-voss uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-gold-shield uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Preview decodes live audio and moving video",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No player errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "duration": 174.49,
+    "combat": 53.182,
+    "preview": "http://127.0.0.1:51046/?riders=stable-grid-1030#clip=stage6-rough-riders",
+    "sha256": "71623f1bf7b2ccc98d0abd4d99c599b6dec5c4344e8334ea4264dfbb43196c51",
+    "audio": {
+      "meanDb": -15.5,
+      "peakDb": -0.7
+    },
+    "fps": 57.44877344877345,
+    "cards": [
+      "stage6-rough-riders",
+      "rough-riders-formations",
+      "rough-riders-team-locks",
+      "rough-riders-evasion",
+      "rough-riders-jace",
+      "rough-riders-rook",
+      "rough-riders-voss",
+      "rough-riders-gold-shield"
+    ],
+    "fullSuite": {
+      "exit": 1,
+      "baselineFailures": 5
+    },
+    "published": false
+  },
+  "flight": {
+    "ticks": 6684,
+    "maxCruiseStep": 9.000000000000025,
+    "maxTurboStep": 26.666666666666686,
+    "outliers": []
+  },
+  "baseline": {
+    "ticks": 4200,
+    "spacingWrites": 13562,
+    "largestUncommandedStep": 202.3813107657882,
+    "worst": [
+      {
+        "t": 46.033333333332,
+        "key": "kaia",
+        "d": 202.3813107657882,
+        "from": [
+          533,
+          286.9809241142702
+        ],
+        "to": [
+          449.9,
+          102.4474991005927
+        ],
+        "act": null,
+        "phase": null,
+        "fleet": null
+      },
+      {
+        "t": 46.033333333332,
+        "key": "jace",
+        "d": 162.1166666666669,
+        "from": [
+          520.9166666666669,
+          60
+        ],
+        "to": [
+          358.79999999999995,
+          60
+        ],
+        "act": null,
+        "phase": null,
+        "fleet": null
+      },
+      {
+        "t": 59.98333333333121,
+        "key": "nyx",
+        "d": 149.98922537912608,
+        "from": [
+          251.65665665610229,
+          214.61275109577184
+        ],
+        "to": [
+          214.2943365408642,
+          69.35152170046223
+        ],
+        "act": null,
+        "phase": null,
+        "fleet": "stunt"
+      },
+      {
+        "t": 26.549999999999773,
+        "key": "nyx",
+        "d": 146.2142892720816,
+        "from": [
+          283.0142153663504,
+          214.61986787476093
+        ],
+        "to": [
+          266.40921650684817,
+          69.35152170046223
+        ],
+        "act": null,
+        "phase": null,
+        "fleet": "stunt"
+      },
+      {
+        "t": 60.64999999999784,
+        "key": "nyx",
+        "d": 139.4461930247493,
+        "from": [
+          205.66492251355382,
+          66.8939698406684
+        ],
+        "to": [
+          234.34543707480478,
+          203.3588694800904
+        ],
+        "act": null,
+        "phase": null,
+        "fleet": "stunt"
+      },
+      {
+        "t": 26.549999999999773,
+        "key": "voss",
+        "d": 137.74276630701158,
+        "from": [
+          169.56932279739283,
+          73.14588306312204
+        ],
+        "to": [
+          169.73057591021873,
+          210.88855498196352
+        ],
+        "act": null,
+        "phase": null,
+        "fleet": "stunt"
+      }
+    ]
+  },
+  "fullSuite": {
+    "exit": 1,
+    "failures": 5
+  }
+}

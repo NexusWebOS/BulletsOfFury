@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "name": "previewloads16props",
+      "passed": true
+    },
+    {
+      "name": "pausedpreviewhasactualrenderedpixels",
+      "passed": true
+    },
+    {
+      "name": "chutesectionready",
+      "passed": true
+    },
+    {
+      "name": "coversectionready",
+      "passed": true
+    },
+    {
+      "name": "lowsectionready",
+      "passed": true
+    },
+    {
+      "name": "ventsectionready",
+      "passed": true
+    },
+    {
+      "name": "exitsectionready",
+      "passed": true
+    },
+    {
+      "name": "previewplaysrealgameclock",
+      "passed": true
+    },
+    {
+      "name": "previewcanpause",
+      "passed": true
+    },
+    {
+      "name": "wallsgallery",
+      "passed": true
+    },
+    {
+      "name": "recessgallery",
+      "passed": true
+    },
+    {
+      "name": "iconsgallery",
+      "passed": true
+    },
+    {
+      "name": "fxgallery",
+      "passed": true
+    },
+    {
+      "name": "nobrowsererrors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,6736 @@
+{
+  "native": [
+    {
+      "name": "Spin, front and shadow banks preload",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pipe hazards draw nothing on every difficulty",
+      "passed": true,
+      "data": {
+        "draws": 0,
+        "hits": 0,
+        "events": 0
+      }
+    },
+    {
+      "name": "Removed pipe hazards cannot damage players or persist saved events",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both gun poses are ordered in front of the head",
+      "passed": true,
+      "data": {
+        "ids": [
+          "rearL",
+          "rearR",
+          "body",
+          "frontL",
+          "canL",
+          "frontR",
+          "canR",
+          "mask",
+          "gunL",
+          "gunR"
+        ],
+        "draws": [
+          {
+            "name": "warden",
+            "i": "er28rear_rearL_0"
+          },
+          {
+            "name": "warden",
+            "i": "er28rear_rearR_0"
+          },
+          {
+            "name": "body",
+            "i": 0
+          },
+          {
+            "name": "warden",
+            "i": "r25_leg_frontL_0"
+          },
+          {
+            "name": "warden",
+            "i": 6
+          },
+          {
+            "name": "warden",
+            "i": "r25_leg_frontR_0"
+          },
+          {
+            "name": "warden",
+            "i": 6
+          },
+          {
+            "name": "warden",
+            "i": 7
+          },
+          {
+            "name": "warden",
+            "i": 5
+          },
+          {
+            "name": "warden",
+            "i": 5
+          },
+          {
+            "name": "shield",
+            "i": 7
+          }
+        ]
+      }
+    },
+    {
+      "name": "Native renderer actually paints live guns after the face",
+      "passed": true,
+      "data": {
+        "ids": [
+          "rearL",
+          "rearR",
+          "body",
+          "frontL",
+          "canL",
+          "frontR",
+          "canR",
+          "mask",
+          "gunL",
+          "gunR"
+        ],
+        "draws": [
+          {
+            "name": "warden",
+            "i": "er28rear_rearL_0"
+          },
+          {
+            "name": "warden",
+            "i": "er28rear_rearR_0"
+          },
+          {
+            "name": "body",
+            "i": 0
+          },
+          {
+            "name": "warden",
+            "i": "r25_leg_frontL_0"
+          },
+          {
+            "name": "warden",
+            "i": 6
+          },
+          {
+            "name": "warden",
+            "i": "r25_leg_frontR_0"
+          },
+          {
+            "name": "warden",
+            "i": 6
+          },
+          {
+            "name": "warden",
+            "i": 7
+          },
+          {
+            "name": "warden",
+            "i": 5
+          },
+          {
+            "name": "warden",
+            "i": 5
+          },
+          {
+            "name": "shield",
+            "i": 7
+          }
+        ]
+      }
+    },
+    {
+      "name": "Native module destruction exposes the existing living core pool",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Spin warns a committed ground landing point",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Spinning core rises with a ground shadow",
+      "passed": true,
+      "data": {
+        "height": 85.96361770706925,
+        "frame": 20
+      }
+    },
+    {
+      "name": "Spin delivers five distinct circular ground slams",
+      "passed": true,
+      "data": [
+        {
+          "event": "slam",
+          "time": 13.200000000000236,
+          "kind": "spin",
+          "index": 0,
+          "x": 340,
+          "y": 298,
+          "impact": {
+            "x": 340,
+            "y": 338
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 14.283333333333623,
+          "kind": "spin",
+          "index": 1,
+          "x": 408.47606917325106,
+          "y": 268.9787137637478,
+          "impact": {
+            "x": 408.47606917325106,
+            "y": 308.9787137637478
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 15.36666666666701,
+          "kind": "spin",
+          "index": 2,
+          "x": 382.32053816505805,
+          "y": 222.0212862362522,
+          "impact": {
+            "x": 382.32053816505805,
+            "y": 262.0212862362522
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 16.450000000000347,
+          "kind": "spin",
+          "index": 3,
+          "x": 297.67946183494195,
+          "y": 222.0212862362522,
+          "impact": {
+            "x": 297.67946183494195,
+            "y": 262.0212862362522
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 17.516666666666953,
+          "kind": "spin",
+          "index": 4,
+          "x": 271.52393082674894,
+          "y": 268.9787137637478,
+          "impact": {
+            "x": 271.52393082674894,
+            "y": 308.9787137637478
+          },
+          "count": 14
+        }
+      ]
+    },
+    {
+      "name": "Slam orbs use actual unshootable toxic ordnance",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Circling core returns smoothly instead of snapping to native center",
+      "passed": true,
+      "data": {
+        "returnDX": 2.6331177832428807,
+        "x": 340,
+        "mode": "recover"
+      }
+    },
+    {
+      "name": "Backward-forward hop has three committed landings",
+      "passed": true,
+      "data": [
+        {
+          "event": "slam",
+          "time": 20.350000000000126,
+          "kind": "hop",
+          "index": 0,
+          "x": 340,
+          "y": 180,
+          "impact": {
+            "x": 340,
+            "y": 223.565625
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 21.516666666666726,
+          "kind": "hop",
+          "index": 1,
+          "x": 340,
+          "y": 321,
+          "impact": {
+            "x": 340,
+            "y": 364.565625
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 22.66666666666666,
+          "kind": "hop",
+          "index": 2,
+          "x": 340,
+          "y": 256,
+          "impact": {
+            "x": 340,
+            "y": 299.565625
+          },
+          "count": 14
+        }
+      ]
+    },
+    {
+      "name": "New attacks leave the native HP unchanged without player hits",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Ground slams use actual player damage",
+      "passed": true,
+      "data": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          "Warden core ground slam"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [
+          "s7acid"
+        ],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "name": "Actual rotating core takes damage with white hit pixels",
+      "passed": true,
+      "data": {
+        "white": 9104,
+        "before": 1748,
+        "hp": 1743
+      }
+    },
+    {
+      "name": "Rotating core hit flash expires",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exposed core naturally chooses spin, hops and mortars",
+      "passed": true,
+      "data": [
+        "ws56-spin",
+        "ws56-hop",
+        "er28-mortar"
+      ]
+    },
+    {
+      "name": "Defeat retains native zero-pool and escape state",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No browser exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "art": {
+    "checks": [
+      {
+        "name": "core",
+        "passed": true,
+        "frames": 32
+      },
+      {
+        "name": "core_hit",
+        "passed": true,
+        "frames": 32
+      },
+      {
+        "name": "front",
+        "passed": true,
+        "frames": 16
+      },
+      {
+        "name": "front_hit",
+        "passed": true,
+        "frames": 16
+      },
+      {
+        "name": "shadow",
+        "passed": true,
+        "frames": 32
+      }
+    ],
+    "decodedMiB": 32.625
+  },
+  "video": [
+    {
+      "name": "boss native defeat completes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "boss pipe events remain absent throughout",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "boss near-native frame rate",
+      "passed": true,
+      "data": 56.65711672348757
+    },
+    {
+      "name": "boss audible unclipped soundtrack",
+      "passed": true,
+      "data": [
+        -20.6,
+        -4.3
+      ]
+    },
+    {
+      "name": "boss no engine/media exceptions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mini native defeat completes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mini pipe events remain absent throughout",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mini near-native frame rate",
+      "passed": true,
+      "data": 58.08904049240374
+    },
+    {
+      "name": "mini audible unclipped soundtrack",
+      "passed": true,
+      "data": [
+        -20.0,
+        -3.2
+      ]
+    },
+    {
+      "name": "mini no engine/media exceptions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real full fight includes five distinct spinning slams",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real full fight includes backwards then forwards core landings",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Slam sound plays through the recorded mixer",
+      "passed": true,
+      "data": {
+        "boss7": 1,
+        "bossAlarm": 1,
+        "expBig": 209,
+        "expSmall": 106,
+        "dialogueLetter": 149,
+        "lockAlert": 1,
+        "missile": 98,
+        "warpGate": 2,
+        "hammerThrow": 11,
+        "wardenRoar": 1,
+        "mechFootWhir": 34,
+        "wardenRail": 1,
+        "lockon": 25,
+        "enemyToxicSpit": 134,
+        "enemyHeavyLaser": 19,
+        "av3_target_acquire": 26,
+        "alertLockon": 25,
+        "laserBeamStart": 86,
+        "hit": 583,
+        "loop": 43,
+        "missileHit": 66,
+        "laserBeamEnd": 86,
+        "powerup": 5,
+        "enemyMachineGunHeavy": 6,
+        "combatModule0927": 6,
+        "bossWeaponCharge": 14,
+        "av3_impact_energy": 26,
+        "blocked": 1,
+        "combatStun0927": 2,
+        "wardenScream": 2,
+        "bodyDrop": 19,
+        "jetDash": 1,
+        "dash": 1,
+        "weapon": 1,
+        "atomicDetonate": 2,
+        "cfComboToxic": 1,
+        "teleportIn": 1
+      }
+    },
+    {
+      "name": "Refreshed Dredger preserves recorded wall crashes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Video supports HTTP206 seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Gallery opens the new spinning-slam chapter",
+      "passed": true,
+      "data": {
+        "src": "http://127.0.0.1:51046/videos/stage7-warden-spin-hops-smooth-1029.mp4",
+        "clip": "stage7-warden-spin"
+      }
+    },
+    {
+      "name": "Embedded video plays",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Video seeks correctly",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "films": {
+    "boss": {
+      "completed": true,
+      "seconds": 133.09,
+      "nativeFPS": 56.65711672348757,
+      "events": [
+        {
+          "event": "attack-start",
+          "time": 83.39999999999655,
+          "kind": "spin",
+          "targets": [
+            {
+              "x": 340,
+              "y": 298
+            },
+            {
+              "x": 408.47606917325106,
+              "y": 268.9787137637478
+            },
+            {
+              "x": 382.32053816505805,
+              "y": 222.0212862362522
+            },
+            {
+              "x": 297.67946183494195,
+              "y": 222.0212862362522
+            },
+            {
+              "x": 271.52393082674894,
+              "y": 268.9787137637478
+            }
+          ],
+          "core": 1748
+        },
+        {
+          "event": "slam",
+          "time": 85.43333333332977,
+          "kind": "spin",
+          "index": 0,
+          "x": 340,
+          "y": 298,
+          "impact": {
+            "x": 340,
+            "y": 362.99999999999994
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 86.51666666666304,
+          "kind": "spin",
+          "index": 1,
+          "x": 408.47606917325106,
+          "y": 268.9787137637478,
+          "impact": {
+            "x": 408.47606917325106,
+            "y": 333.97871376374775
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 87.59999999999631,
+          "kind": "spin",
+          "index": 2,
+          "x": 382.32053816505805,
+          "y": 222.0212862362522,
+          "impact": {
+            "x": 382.32053816505805,
+            "y": 287.0212862362522
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 88.68333333332959,
+          "kind": "spin",
+          "index": 3,
+          "x": 297.67946183494195,
+          "y": 222.0212862362522,
+          "impact": {
+            "x": 297.67946183494195,
+            "y": 287.0212862362522
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 89.74999999999619,
+          "kind": "spin",
+          "index": 4,
+          "x": 271.52393082674894,
+          "y": 268.9787137637478,
+          "impact": {
+            "x": 271.52393082674894,
+            "y": 333.97871376374775
+          },
+          "count": 14
+        },
+        {
+          "event": "attack-complete",
+          "time": 90.41666666666282,
+          "kind": "spin",
+          "x": 340,
+          "y": 256
+        },
+        {
+          "event": "attack-start",
+          "time": 90.93333333332946,
+          "kind": "hop",
+          "targets": [
+            {
+              "x": 340,
+              "y": 180
+            },
+            {
+              "x": 340,
+              "y": 321
+            },
+            {
+              "x": 340,
+              "y": 256
+            }
+          ],
+          "core": 1744
+        },
+        {
+          "event": "slam",
+          "time": 93.049999999996,
+          "kind": "hop",
+          "index": 0,
+          "x": 340,
+          "y": 180,
+          "impact": {
+            "x": 340,
+            "y": 244.99999999999997
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 94.2166666666626,
+          "kind": "hop",
+          "index": 1,
+          "x": 340,
+          "y": 321,
+          "impact": {
+            "x": 340,
+            "y": 385.99999999999994
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 95.36666666666254,
+          "kind": "hop",
+          "index": 2,
+          "x": 340,
+          "y": 256,
+          "impact": {
+            "x": 340,
+            "y": 320.99999999999994
+          },
+          "count": 14
+        },
+        {
+          "event": "attack-complete",
+          "time": 96.0166666666625,
+          "kind": "hop",
+          "x": 340,
+          "y": 256
+        },
+        {
+          "event": "attack-start",
+          "time": 100.81666666666223,
+          "kind": "spin",
+          "targets": [
+            {
+              "x": 340,
+              "y": 298
+            },
+            {
+              "x": 408.47606917325106,
+              "y": 268.9787137637478
+            },
+            {
+              "x": 382.32053816505805,
+              "y": 222.0212862362522
+            },
+            {
+              "x": 297.67946183494195,
+              "y": 222.0212862362522
+            },
+            {
+              "x": 271.52393082674894,
+              "y": 268.9787137637478
+            }
+          ],
+          "core": 1600
+        },
+        {
+          "event": "slam",
+          "time": 102.84999999999545,
+          "kind": "spin",
+          "index": 0,
+          "x": 340,
+          "y": 298,
+          "impact": {
+            "x": 340,
+            "y": 362.99999999999994
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 103.93333333332872,
+          "kind": "spin",
+          "index": 1,
+          "x": 408.47606917325106,
+          "y": 268.9787137637478,
+          "impact": {
+            "x": 408.47606917325106,
+            "y": 333.97871376374775
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 105.01666666666199,
+          "kind": "spin",
+          "index": 2,
+          "x": 382.32053816505805,
+          "y": 222.0212862362522,
+          "impact": {
+            "x": 382.32053816505805,
+            "y": 287.0212862362522
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 106.09999999999526,
+          "kind": "spin",
+          "index": 3,
+          "x": 297.67946183494195,
+          "y": 222.0212862362522,
+          "impact": {
+            "x": 297.67946183494195,
+            "y": 287.0212862362522
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 107.16666666666187,
+          "kind": "spin",
+          "index": 4,
+          "x": 271.52393082674894,
+          "y": 268.9787137637478,
+          "impact": {
+            "x": 271.52393082674894,
+            "y": 333.97871376374775
+          },
+          "count": 14
+        },
+        {
+          "event": "attack-complete",
+          "time": 107.8333333333285,
+          "kind": "spin",
+          "x": 340,
+          "y": 256
+        },
+        {
+          "event": "attack-start",
+          "time": 108.34999999999513,
+          "kind": "hop",
+          "targets": [
+            {
+              "x": 340,
+              "y": 180
+            },
+            {
+              "x": 340,
+              "y": 321
+            },
+            {
+              "x": 340,
+              "y": 256
+            }
+          ],
+          "core": 1004
+        },
+        {
+          "event": "slam",
+          "time": 110.46666666666168,
+          "kind": "hop",
+          "index": 0,
+          "x": 340,
+          "y": 180,
+          "impact": {
+            "x": 340,
+            "y": 244.99999999999997
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 111.63333333332828,
+          "kind": "hop",
+          "index": 1,
+          "x": 340,
+          "y": 321,
+          "impact": {
+            "x": 340,
+            "y": 385.99999999999994
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 112.78333333332822,
+          "kind": "hop",
+          "index": 2,
+          "x": 340,
+          "y": 256,
+          "impact": {
+            "x": 340,
+            "y": 320.99999999999994
+          },
+          "count": 14
+        },
+        {
+          "event": "attack-complete",
+          "time": 113.43333333332818,
+          "kind": "hop",
+          "x": 340,
+          "y": 256
+        },
+        {
+          "event": "attack-start",
+          "time": 118.2333333333279,
+          "kind": "spin",
+          "targets": [
+            {
+              "x": 340,
+              "y": 298
+            },
+            {
+              "x": 408.47606917325106,
+              "y": 268.9787137637478
+            },
+            {
+              "x": 382.32053816505805,
+              "y": 222.0212862362522
+            },
+            {
+              "x": 297.67946183494195,
+              "y": 222.0212862362522
+            },
+            {
+              "x": 271.52393082674894,
+              "y": 268.9787137637478
+            }
+          ],
+          "core": 254
+        },
+        {
+          "event": "slam",
+          "time": 120.26666666666112,
+          "kind": "spin",
+          "index": 0,
+          "x": 340,
+          "y": 298,
+          "impact": {
+            "x": 340,
+            "y": 362.99999999999994
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 121.3499999999944,
+          "kind": "spin",
+          "index": 1,
+          "x": 408.47606917325106,
+          "y": 268.9787137637478,
+          "impact": {
+            "x": 408.47606917325106,
+            "y": 333.97871376374775
+          },
+          "count": 14
+        },
+        {
+          "event": "slam",
+          "time": 122.43333333332767,
+          "kind": "spin",
+          "index": 2,
+          "x": 382.32053816505805,
+          "y": 222.0212862362522,
+          "impact": {
+            "x": 382.32053816505805,
+            "y": 287.0212862362522
+          },
+          "count": 14
+        }
+      ],
+      "chapters": [
+        {
+          "id": "stage7-warden-spin",
+          "stage": 7,
+          "title": "Warden \u00b7 five spinning ground slams and toxic bursts",
+          "seconds": 7.037000000000006,
+          "src": "videos/stage7-warden-spin-hops-smooth-1029.mp4",
+          "localSrc": "videos/stage7-warden-spin-hops-smooth-1029.mp4",
+          "poster": "posters/stage7-boss-no-pipes-1029.jpg",
+          "sha256": "1198e2da7b4a7f6556177bcfe1f5a4c6b5ab32b10dbfb826b739d883f3365e12",
+          "bytes": 106422286,
+          "note": "Native Furious defeat with an input-only GOD bot; native health, phases and actual controls. Stage7 pipe outlets, warning spray and hazard damage removed throughout. Earlier films preserved.",
+          "parent": "stage7-boss",
+          "start": 86.203,
+          "end": 93.24000000000001
+        },
+        {
+          "id": "stage7-warden-hops",
+          "stage": 7,
+          "title": "Warden \u00b7 backward and forward jumping slams",
+          "seconds": 5.465999999999994,
+          "src": "videos/stage7-warden-spin-hops-smooth-1029.mp4",
+          "localSrc": "videos/stage7-warden-spin-hops-smooth-1029.mp4",
+          "poster": "posters/stage7-boss-no-pipes-1029.jpg",
+          "sha256": "1198e2da7b4a7f6556177bcfe1f5a4c6b5ab32b10dbfb826b739d883f3365e12",
+          "bytes": 106422286,
+          "note": "Native Furious defeat with an input-only GOD bot; native health, phases and actual controls. Stage7 pipe outlets, warning spray and hazard damage removed throughout. Earlier films preserved.",
+          "parent": "stage7-boss",
+          "start": 93.656,
+          "end": 99.122
+        }
+      ],
+      "audioMeanDB": -20.6,
+      "audioPeakDB": -4.3,
+      "decodedCueCounts": {
+        "boss7": 1,
+        "bossAlarm": 1,
+        "expBig": 209,
+        "expSmall": 106,
+        "dialogueLetter": 149,
+        "lockAlert": 1,
+        "missile": 98,
+        "warpGate": 2,
+        "hammerThrow": 11,
+        "wardenRoar": 1,
+        "mechFootWhir": 34,
+        "wardenRail": 1,
+        "lockon": 25,
+        "enemyToxicSpit": 134,
+        "enemyHeavyLaser": 19,
+        "av3_target_acquire": 26,
+        "alertLockon": 25,
+        "laserBeamStart": 86,
+        "hit": 583,
+        "loop": 43,
+        "missileHit": 66,
+        "laserBeamEnd": 86,
+        "powerup": 5,
+        "enemyMachineGunHeavy": 6,
+        "combatModule0927": 6,
+        "bossWeaponCharge": 14,
+        "av3_impact_energy": 26,
+        "blocked": 1,
+        "combatStun0927": 2,
+        "wardenScream": 2,
+        "bodyDrop": 19,
+        "jetDash": 1,
+        "dash": 1,
+        "weapon": 1,
+        "atomicDetonate": 2,
+        "cfComboToxic": 1,
+        "teleportIn": 1
+      },
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "audioErrors": [],
+      "pipeEvents": 0
+    },
+    "mini": {
+      "completed": true,
+      "seconds": 80.28999999999999,
+      "nativeFPS": 58.08904049240374,
+      "events": [
+        {
+          "event": "attack-start",
+          "time": 4.033333333333324,
+          "mode": "dc40-guns",
+          "armed": true,
+          "x": 340,
+          "y": 145
+        },
+        {
+          "event": "slug",
+          "time": 5.18333333333332,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.41609868150846,
+          "y": 249.3722623739534,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.199999999999987,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 409.0517435584815,
+          "y": 243.19619787433163,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.23333333333332,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.249999999999987,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.28333333333332,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.316666666666653,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.33333333333332,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.366666666666653,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.399999999999986,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.416666666666653,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.449999999999986,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.483333333333319,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.499999999999986,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.533333333333319,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.566666666666652,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.583333333333319,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.616666666666652,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.649999999999985,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.666666666666652,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.699999999999985,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.733333333333318,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.749999999999985,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.783333333333318,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.799999999999985,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.833333333333318,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.866666666666651,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.883333333333318,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.916666666666651,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.949999999999984,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 5.966666666666651,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 5.999999999999984,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.033333333333317,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 6.049999999999984,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.083333333333317,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 411.53634134446986,
+          "y": 238.68859914607276,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 6.11666666666665,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.133333333333317,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 6.16666666666665,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.199999999999983,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 411.53634134446986,
+          "y": 238.68859914607276,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 6.21666666666665,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.249999999999983,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 6.283333333333316,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.299999999999983,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 411.53634134446986,
+          "y": 238.68859914607276,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 6.333333333333316,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.349999999999983,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 6.383333333333316,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.416666666666649,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.433333333333316,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.466666666666649,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.499999999999982,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.516666666666649,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.549999999999982,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.583333333333315,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.599999999999982,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.633333333333315,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.666666666666648,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.683333333333315,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.716666666666648,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.749999999999981,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.766666666666648,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.799999999999981,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.833333333333314,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.849999999999981,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.883333333333314,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.899999999999981,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.933333333333314,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 6.966666666666647,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 6.983333333333314,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 7.016666666666647,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 7.04999999999998,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 7.066666666666647,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 7.09999999999998,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 7.133333333333313,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 7.14999999999998,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 7.183333333333313,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 411.53634134446986,
+          "y": 238.68859914607276,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 7.216666666666646,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 7.233333333333313,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 7.266666666666646,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 7.299999999999979,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 411.53634134446986,
+          "y": 238.68859914607276,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 7.316666666666646,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 7.349999999999979,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 7.383333333333312,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 7.399999999999979,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 411.53634134446986,
+          "y": 238.68859914607276,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 7.433333333333312,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 7.449999999999979,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 7.483333333333312,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 7.516666666666645,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 7.533333333333312,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "attack-start",
+          "time": 8.066666666666647,
+          "mode": "df55-roof",
+          "armed": true,
+          "x": 340,
+          "y": 145
+        },
+        {
+          "event": "roof-orb",
+          "time": 8.483333333333334,
+          "id": 1,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 237.02360574237483,
+            "y": 271.36
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 8.483333333333334,
+          "id": 2,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 316.22360574237484,
+            "y": 353.28000000000003
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 8.483333333333334,
+          "id": 3,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 395.42360574237483,
+            "y": 435.20000000000005
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 8.483333333333334,
+          "id": 4,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 474.6236057423748,
+            "y": 271.36
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 8.483333333333334,
+          "id": 5,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 553.8236057423749,
+            "y": 353.28000000000003
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 8.483333333333334,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-orb",
+          "time": 9.1166666666667,
+          "id": 6,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 265.0236061741066,
+            "y": 353.28000000000003
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 9.1166666666667,
+          "id": 7,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 344.2236061741066,
+            "y": 435.20000000000005
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 9.1166666666667,
+          "id": 8,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 423.42360617410657,
+            "y": 271.36
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 9.1166666666667,
+          "id": 9,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 502.62360617410656,
+            "y": 353.28000000000003
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 9.1166666666667,
+          "id": 10,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 581.8236061741065,
+            "y": 435.20000000000005
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 9.1166666666667,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-impact",
+          "time": 9.666666666666726,
+          "id": 1,
+          "magma": false,
+          "x": 237.02360574237483,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 9.733333333333396,
+          "id": 2,
+          "magma": false,
+          "x": 316.22360574237484,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-orb",
+          "time": 9.750000000000064,
+          "id": 11,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 237.02360617792192,
+            "y": 435.20000000000005
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 9.750000000000064,
+          "id": 12,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 316.2236061779219,
+            "y": 271.36
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 9.750000000000064,
+          "id": 13,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 395.4236061779219,
+            "y": 353.28000000000003
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 9.750000000000064,
+          "id": 14,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 474.62360617792194,
+            "y": 435.20000000000005
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 9.750000000000064,
+          "id": 15,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 553.823606177922,
+            "y": 271.36
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 9.750000000000064,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-impact",
+          "time": 9.800000000000066,
+          "id": 3,
+          "magma": false,
+          "x": 395.42360574237483,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 9.866666666666736,
+          "id": 4,
+          "magma": false,
+          "x": 474.6236057423748,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 9.933333333333406,
+          "id": 5,
+          "magma": false,
+          "x": 553.8236057423749,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 10.300000000000091,
+          "id": 6,
+          "magma": false,
+          "x": 265.0236061741066,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 10.366666666666761,
+          "id": 7,
+          "magma": false,
+          "x": 344.2236061741066,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 10.433333333333431,
+          "id": 8,
+          "magma": false,
+          "x": 423.42360617410657,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 10.500000000000101,
+          "id": 9,
+          "magma": false,
+          "x": 502.62360617410656,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 10.566666666666771,
+          "id": 10,
+          "magma": false,
+          "x": 581.8236061741065,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 10.933333333333456,
+          "id": 11,
+          "magma": false,
+          "x": 237.02360617792192,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 11.000000000000126,
+          "id": 12,
+          "magma": false,
+          "x": 316.2236061779219,
+          "y": 271.36
+        },
+        {
+          "event": "attack-start",
+          "time": 11.050000000000129,
+          "mode": "dc40-ram",
+          "armed": true,
+          "x": 340,
+          "y": 145
+        },
+        {
+          "event": "roof-impact",
+          "time": 11.066666666666796,
+          "id": 13,
+          "magma": false,
+          "x": 395.4236061779219,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 11.133333333333466,
+          "id": 14,
+          "magma": false,
+          "x": 474.62360617792194,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 11.200000000000136,
+          "id": 15,
+          "magma": false,
+          "x": 553.823606177922,
+          "y": 271.36
+        },
+        {
+          "event": "ram-release",
+          "time": 12.30000000000019,
+          "from": {
+            "x": 340,
+            "y": 145
+          },
+          "to": {
+            "x": 288.1180061779521,
+            "y": 388
+          }
+        },
+        {
+          "event": "wall-impact",
+          "time": 12.866666666666886,
+          "x": 288.1180061779521,
+          "y": 486,
+          "core": 1170
+        },
+        {
+          "event": "reverse-start",
+          "time": 13.466666666666915,
+          "from": {
+            "x": 288.1180061779521,
+            "y": 388
+          },
+          "to": {
+            "x": 326.6072206772134,
+            "y": 220.16
+          },
+          "duration": 2.95
+        },
+        {
+          "event": "reverse-complete",
+          "time": 16.416666666667016,
+          "y": 220.16
+        },
+        {
+          "event": "attack-start",
+          "time": 16.416666666667016,
+          "mode": "df55-roof",
+          "armed": true,
+          "x": 326.6072206772134,
+          "y": 220.16
+        },
+        {
+          "event": "roof-orb",
+          "time": 16.83333333333366,
+          "id": 16,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 81.54897390794326,
+            "y": 271.36
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 16.83333333333366,
+          "id": 17,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 160.74897390794325,
+            "y": 353.28000000000003
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 16.83333333333366,
+          "id": 18,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 239.94897390794324,
+            "y": 435.20000000000005
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 16.83333333333366,
+          "id": 19,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 319.14897390794323,
+            "y": 271.36
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 16.83333333333366,
+          "id": 20,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 398.3489739079433,
+            "y": 353.28000000000003
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 16.83333333333366,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-orb",
+          "time": 17.466666666666956,
+          "id": 21,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 119.69765815351607,
+            "y": 353.28000000000003
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 17.466666666666956,
+          "id": 22,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 198.8976581535161,
+            "y": 435.20000000000005
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 17.466666666666956,
+          "id": 23,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 278.0976581535161,
+            "y": 271.36
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 17.466666666666956,
+          "id": 24,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 357.29765815351607,
+            "y": 353.28000000000003
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 17.466666666666956,
+          "id": 25,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 436.4976581535161,
+            "y": 435.20000000000005
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 17.466666666666956,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-impact",
+          "time": 18.016666666666925,
+          "id": 16,
+          "magma": false,
+          "x": 81.54897390794326,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 18.083333333333588,
+          "id": 17,
+          "magma": false,
+          "x": 160.74897390794325,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-orb",
+          "time": 18.100000000000254,
+          "id": 26,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 206.6249564052144,
+            "y": 435.20000000000005
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 18.100000000000254,
+          "id": 27,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 285.8249564052144,
+            "y": 271.36
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 18.100000000000254,
+          "id": 28,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 365.0249564052144,
+            "y": 353.28000000000003
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 18.100000000000254,
+          "id": 29,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 444.22495640521436,
+            "y": 435.20000000000005
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 18.100000000000254,
+          "id": 30,
+          "magma": false,
+          "x": 326.6072206772134,
+          "y": 158.16,
+          "target": {
+            "x": 523.4249564052144,
+            "y": 271.36
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 18.100000000000254,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-impact",
+          "time": 18.15000000000025,
+          "id": 18,
+          "magma": false,
+          "x": 239.94897390794324,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 18.216666666666914,
+          "id": 19,
+          "magma": false,
+          "x": 319.14897390794323,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 18.283333333333577,
+          "id": 20,
+          "magma": false,
+          "x": 398.3489739079433,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 18.650000000000222,
+          "id": 21,
+          "magma": false,
+          "x": 119.69765815351607,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 18.716666666666885,
+          "id": 22,
+          "magma": false,
+          "x": 198.8976581535161,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 18.783333333333548,
+          "id": 23,
+          "magma": false,
+          "x": 278.0976581535161,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 18.85000000000021,
+          "id": 24,
+          "magma": false,
+          "x": 357.29765815351607,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 18.916666666666874,
+          "id": 25,
+          "magma": false,
+          "x": 436.4976581535161,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 19.28333333333352,
+          "id": 26,
+          "magma": false,
+          "x": 206.6249564052144,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 19.350000000000183,
+          "id": 27,
+          "magma": false,
+          "x": 285.8249564052144,
+          "y": 271.36
+        },
+        {
+          "event": "attack-start",
+          "time": 19.40000000000018,
+          "mode": "dc40-guns",
+          "armed": true,
+          "x": 332.22673087904707,
+          "y": 188.62342520919634
+        },
+        {
+          "event": "roof-impact",
+          "time": 19.416666666666845,
+          "id": 28,
+          "magma": false,
+          "x": 365.0249564052144,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 19.48333333333351,
+          "id": 29,
+          "magma": false,
+          "x": 444.22495640521436,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 19.55000000000017,
+          "id": 30,
+          "magma": false,
+          "x": 523.4249564052144,
+          "y": 271.36
+        },
+        {
+          "event": "slug",
+          "time": 20.550000000000114,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.6428295605555,
+          "y": 292.9956875831497,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 20.56666666666678,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 401.2784744375286,
+          "y": 286.819623083528,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 20.60000000000011,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 20.616666666666777,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 363.1122399253978,
+          "y": 292.4945277668715,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 20.65000000000011,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 20.68333333333344,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 400.91170463213825,
+          "y": 284.97574675636986,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 20.700000000000106,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 20.733333333333437,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 363.1122399253978,
+          "y": 292.4945277668715,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 20.76666666666677,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 20.783333333333434,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 400.91170463213825,
+          "y": 284.97574675636986,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 20.816666666666766,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 20.850000000000097,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 363.1122399253978,
+          "y": 292.4945277668715,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 20.866666666666763,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 20.900000000000095,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 400.91170463213825,
+          "y": 284.97574675636986,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 20.933333333333426,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 20.95000000000009,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 363.1122399253978,
+          "y": 292.4945277668715,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 20.983333333333423,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.016666666666755,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 400.91170463213825,
+          "y": 284.97574675636986,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 21.03333333333342,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.06666666666675,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 363.1122399253978,
+          "y": 292.4945277668715,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 21.100000000000083,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.11666666666675,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 400.91170463213825,
+          "y": 284.97574675636986,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 21.15000000000008,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.166666666666746,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 366.8825916843976,
+          "y": 293.49959581665604,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 21.200000000000077,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.23333333333341,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 403.76307222351693,
+          "y": 282.31202435526905,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 21.250000000000075,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.283333333333406,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 366.8825916843976,
+          "y": 293.49959581665604,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 21.316666666666737,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.333333333333403,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 403.76307222351693,
+          "y": 282.31202435526905,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 21.366666666666735,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.400000000000066,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 366.8825916843976,
+          "y": 293.49959581665604,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 21.416666666666732,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.450000000000063,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 403.76307222351693,
+          "y": 282.31202435526905,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 21.483333333333395,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.50000000000006,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.7333020652124,
+          "y": 294.1302650916142,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 21.533333333333392,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.566666666666723,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 406.33961924819744,
+          "y": 279.3816456082636,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 21.58333333333339,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.61666666666672,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.7333020652124,
+          "y": 294.1302650916142,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 21.650000000000052,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.666666666666718,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 406.33961924819744,
+          "y": 279.3816456082636,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 21.70000000000005,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.716666666666715,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.7333020652124,
+          "y": 294.1302650916142,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 21.750000000000046,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.783333333333378,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 406.33961924819744,
+          "y": 279.3816456082636,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 21.800000000000043,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.833333333333375,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.7333020652124,
+          "y": 294.1302650916142,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 21.866666666666706,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.883333333333372,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 406.33961924819744,
+          "y": 279.3816456082636,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 21.916666666666703,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 21.950000000000035,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.7333020652124,
+          "y": 294.1302650916142,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 21.9666666666667,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.000000000000032,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.61653214984807,
+          "y": 276.2128316645951,
+          "a": 1.0799224746714913
+        },
+        {
+          "event": "slug",
+          "time": 22.033333333333363,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.05000000000003,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6272866218625,
+          "y": 294.3804619018691,
+          "a": 1.0799224746714913
+        },
+        {
+          "event": "slug",
+          "time": 22.08333333333336,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.116666666666692,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.61653214984807,
+          "y": 276.2128316645951,
+          "a": 1.0799224746714913
+        },
+        {
+          "event": "slug",
+          "time": 22.133333333333358,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.16666666666669,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6272866218625,
+          "y": 294.3804619018691,
+          "a": 1.0799224746714913
+        },
+        {
+          "event": "slug",
+          "time": 22.20000000000002,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.216666666666686,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.61653214984807,
+          "y": 276.2128316645951,
+          "a": 1.0799224746714913
+        },
+        {
+          "event": "slug",
+          "time": 22.250000000000018,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.266666666666683,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.7333020652124,
+          "y": 294.1302650916142,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 22.300000000000015,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.333333333333346,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 406.33961924819744,
+          "y": 279.3816456082636,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 22.350000000000012,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.383333333333344,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.7333020652124,
+          "y": 294.1302650916142,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 22.416666666666675,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.43333333333334,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 406.33961924819744,
+          "y": 279.3816456082636,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 22.466666666666672,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.500000000000004,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.7333020652124,
+          "y": 294.1302650916142,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 22.51666666666667,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.55,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 406.33961924819744,
+          "y": 279.3816456082636,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 22.583333333333332,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.599999999999998,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.7333020652124,
+          "y": 294.1302650916142,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 22.63333333333333,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.66666666666666,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 406.33961924819744,
+          "y": 279.3816456082636,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 22.683333333333326,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.716666666666658,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 366.8825916843976,
+          "y": 293.49959581665604,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 22.74999999999999,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.766666666666655,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 403.76307222351693,
+          "y": 282.31202435526905,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 22.799999999999986,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.816666666666652,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 366.8825916843976,
+          "y": 293.49959581665604,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 22.849999999999984,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 273.45855733673596,
+          "y": 291.124740297006,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 22.883333333333315,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 403.76307222351693,
+          "y": 282.31202435526905,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 22.89999999999998,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 311.8129767026824,
+          "y": 287.34715970870474,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "attack-start",
+          "time": 23.433333333333284,
+          "mode": "df55-roof",
+          "armed": true,
+          "x": 337.8462410808801,
+          "y": 157.0868504183927
+        },
+        {
+          "event": "roof-orb",
+          "time": 23.849999999999927,
+          "id": 31,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 229.44200610520357,
+            "y": 271.36
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 23.849999999999927,
+          "id": 32,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 308.64200610520356,
+            "y": 353.28000000000003
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 23.849999999999927,
+          "id": 33,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 387.8420061052036,
+            "y": 435.20000000000005
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 23.849999999999927,
+          "id": 34,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 467.04200610520354,
+            "y": 271.36
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 23.849999999999927,
+          "id": 35,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 546.2420061052036,
+            "y": 353.28000000000003
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 23.849999999999927,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-orb",
+          "time": 24.483333333333224,
+          "id": 36,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 257.44200617700943,
+            "y": 353.28000000000003
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 24.483333333333224,
+          "id": 37,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 336.6420061770094,
+            "y": 435.20000000000005
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 24.483333333333224,
+          "id": 38,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 415.84200617700947,
+            "y": 271.36
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 24.483333333333224,
+          "id": 39,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 495.0420061770094,
+            "y": 353.28000000000003
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 24.483333333333224,
+          "id": 40,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 574.2420061770094,
+            "y": 435.20000000000005
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 24.483333333333224,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-impact",
+          "time": 25.033333333333193,
+          "id": 31,
+          "magma": false,
+          "x": 229.44200610520357,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 25.099999999999856,
+          "id": 32,
+          "magma": false,
+          "x": 308.64200610520356,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-orb",
+          "time": 25.11666666666652,
+          "id": 41,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 229.44200617793794,
+            "y": 435.20000000000005
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 25.11666666666652,
+          "id": 42,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 308.64200617793796,
+            "y": 271.36
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 25.11666666666652,
+          "id": 43,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 387.84200617793795,
+            "y": 353.28000000000003
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 25.11666666666652,
+          "id": 44,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 467.04200617793794,
+            "y": 435.20000000000005
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 25.11666666666652,
+          "id": 45,
+          "magma": false,
+          "x": 337.8462410808801,
+          "y": 95.08685041839269,
+          "target": {
+            "x": 546.242006177938,
+            "y": 271.36
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 25.11666666666652,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-impact",
+          "time": 25.16666666666652,
+          "id": 33,
+          "magma": false,
+          "x": 387.8420061052036,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 25.23333333333318,
+          "id": 34,
+          "magma": false,
+          "x": 467.04200610520354,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 25.299999999999844,
+          "id": 35,
+          "magma": false,
+          "x": 546.2420061052036,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 25.66666666666649,
+          "id": 36,
+          "magma": false,
+          "x": 257.44200617700943,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 25.733333333333153,
+          "id": 37,
+          "magma": false,
+          "x": 336.6420061770094,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 25.799999999999816,
+          "id": 38,
+          "magma": false,
+          "x": 415.84200617700947,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 25.86666666666648,
+          "id": 39,
+          "magma": false,
+          "x": 495.0420061770094,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 25.93333333333314,
+          "id": 40,
+          "magma": false,
+          "x": 574.2420061770094,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 26.299999999999788,
+          "id": 41,
+          "magma": false,
+          "x": 229.44200617793794,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 26.36666666666645,
+          "id": 42,
+          "magma": false,
+          "x": 308.64200617793796,
+          "y": 271.36
+        },
+        {
+          "event": "attack-start",
+          "time": 26.416666666666448,
+          "mode": "dc40-guns",
+          "armed": true,
+          "x": 340,
+          "y": 145
+        },
+        {
+          "event": "roof-impact",
+          "time": 26.433333333333113,
+          "id": 43,
+          "magma": false,
+          "x": 387.84200617793795,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 26.499999999999776,
+          "id": 44,
+          "magma": false,
+          "x": 467.04200617793794,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 26.56666666666644,
+          "id": 45,
+          "magma": false,
+          "x": 546.242006177938,
+          "y": 271.36
+        },
+        {
+          "event": "slug",
+          "time": 27.566666666666382,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.41609868150846,
+          "y": 249.3722623739534,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 27.583333333333048,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 409.0517435584815,
+          "y": 243.19619787433163,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 27.61666666666638,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 27.633333333333045,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 27.666666666666377,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 27.699999999999708,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 27.716666666666374,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 27.749999999999705,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 27.783333333333037,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 27.799999999999702,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 27.833333333333034,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 27.866666666666365,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 27.88333333333303,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 27.916666666666362,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 27.949999999999694,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 27.96666666666636,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 27.99999999999969,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.033333333333022,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 28.049999999999688,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.08333333333302,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 28.11666666666635,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.133333333333017,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 28.166666666666348,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.183333333333014,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 28.216666666666345,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.249999999999677,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 28.266666666666342,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.299999999999674,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 370.8855090463507,
+          "y": 248.87110255767516,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 28.333333333333005,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.34999999999967,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 408.6849737530912,
+          "y": 241.35232154717357,
+          "a": 1.3744467859455345
+        },
+        {
+          "event": "slug",
+          "time": 28.383333333333002,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.416666666666334,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 28.433333333333,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.46666666666633,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 411.53634134446986,
+          "y": 238.68859914607276,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 28.499999999999662,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.516666666666328,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 28.54999999999966,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.58333333333299,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 411.53634134446986,
+          "y": 238.68859914607276,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 28.599999999999657,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.63333333333299,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 28.66666666666632,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.683333333332985,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 411.53634134446986,
+          "y": 238.68859914607276,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 28.716666666666317,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.733333333332983,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 28.766666666666314,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.799999999999645,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 28.81666666666631,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.849999999999643,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 28.883333333332974,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.89999999999964,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 28.93333333333297,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 28.966666666666303,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 28.98333333333297,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.0166666666663,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 29.04999999999963,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.066666666666297,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 29.09999999999963,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.13333333333296,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 29.149999999999626,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.183333333332957,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 29.21666666666629,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.233333333332954,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 29.266666666666286,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.28333333333295,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 29.316666666666283,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.349999999999614,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 29.36666666666628,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.39999999999961,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 378.50657118616533,
+          "y": 250.5068398824178,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 29.433333333332943,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.44999999999961,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 414.11288836915037,
+          "y": 235.75822039906723,
+          "a": 1.1780972450961724
+        },
+        {
+          "event": "slug",
+          "time": 29.48333333333294,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.51666666666627,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 29.533333333332937,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.56666666666627,
+          "id": "gunR",
+          "barrel": 1,
+          "x": 411.53634134446986,
+          "y": 238.68859914607276,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 29.5999999999996,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.616666666666266,
+          "id": "gunR",
+          "barrel": 0,
+          "x": 374.6558608053505,
+          "y": 249.8761706074597,
+          "a": 1.2762720155208536
+        },
+        {
+          "event": "slug",
+          "time": 29.649999999999597,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.699999999999594,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.766666666666257,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.816666666666254,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.86666666666625,
+          "id": "gunL",
+          "barrel": 0,
+          "x": 281.2318264576889,
+          "y": 247.50131508780964,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "slug",
+          "time": 29.91666666666625,
+          "id": "gunL",
+          "barrel": 1,
+          "x": 319.58624582363535,
+          "y": 243.7237344995084,
+          "a": 1.4726215563702154
+        },
+        {
+          "event": "attack-start",
+          "time": 30.44999999999955,
+          "mode": "df55-roof",
+          "armed": true,
+          "x": 340,
+          "y": 145
+        },
+        {
+          "event": "roof-orb",
+          "time": 30.866666666666195,
+          "id": 46,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 108.37119720067759,
+            "y": 271.36
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 30.866666666666195,
+          "id": 47,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 187.5711972006776,
+            "y": 353.28000000000003
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 30.866666666666195,
+          "id": 48,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 266.7711972006776,
+            "y": 435.20000000000005
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 30.866666666666195,
+          "id": 49,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 345.9711972006776,
+            "y": 271.36
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 30.866666666666195,
+          "id": 50,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 425.1711972006776,
+            "y": 353.28000000000003
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 30.866666666666195,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-orb",
+          "time": 31.499999999999492,
+          "id": 51,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 136.13823017037248,
+            "y": 353.28000000000003
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 31.499999999999492,
+          "id": 52,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 215.33823017037247,
+            "y": 435.20000000000005
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 31.499999999999492,
+          "id": 53,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 294.53823017037246,
+            "y": 271.36
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 31.499999999999492,
+          "id": 54,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 373.7382301703725,
+            "y": 353.28000000000003
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 31.499999999999492,
+          "id": 55,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 452.93823017037255,
+            "y": 435.20000000000005
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 31.499999999999492,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-impact",
+          "time": 32.049999999999464,
+          "id": 46,
+          "magma": false,
+          "x": 108.37119720067759,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 32.11666666666613,
+          "id": 47,
+          "magma": false,
+          "x": 187.5711972006776,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-orb",
+          "time": 32.13333333333279,
+          "id": 56,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 108.13642034777988,
+            "y": 435.20000000000005
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 32.13333333333279,
+          "id": 57,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 187.3364203477799,
+            "y": 271.36
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 32.13333333333279,
+          "id": 58,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 266.5364203477799,
+            "y": 353.28000000000003
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 32.13333333333279,
+          "id": 59,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 345.73642034777987,
+            "y": 435.20000000000005
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 32.13333333333279,
+          "id": 60,
+          "magma": false,
+          "x": 340,
+          "y": 83,
+          "target": {
+            "x": 424.9364203477799,
+            "y": 271.36
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-volley",
+          "time": 32.13333333333279,
+          "magma": false,
+          "count": 5
+        },
+        {
+          "event": "roof-impact",
+          "time": 32.18333333333279,
+          "id": 48,
+          "magma": false,
+          "x": 266.7711972006776,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 32.24999999999945,
+          "id": 49,
+          "magma": false,
+          "x": 345.9711972006776,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 32.316666666666116,
+          "id": 50,
+          "magma": false,
+          "x": 425.1711972006776,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 32.68333333333276,
+          "id": 51,
+          "magma": false,
+          "x": 136.13823017037248,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 32.749999999999424,
+          "id": 52,
+          "magma": false,
+          "x": 215.33823017037247,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 32.81666666666609,
+          "id": 53,
+          "magma": false,
+          "x": 294.53823017037246,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 32.88333333333275,
+          "id": 54,
+          "magma": false,
+          "x": 373.7382301703725,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 32.94999999999941,
+          "id": 55,
+          "magma": false,
+          "x": 452.93823017037255,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 33.31666666666606,
+          "id": 56,
+          "magma": false,
+          "x": 108.13642034777988,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 33.38333333333272,
+          "id": 57,
+          "magma": false,
+          "x": 187.3364203477799,
+          "y": 271.36
+        },
+        {
+          "event": "attack-start",
+          "time": 33.43333333333272,
+          "mode": "dc40-ram",
+          "armed": true,
+          "x": 340,
+          "y": 145
+        },
+        {
+          "event": "roof-impact",
+          "time": 33.449999999999385,
+          "id": 58,
+          "magma": false,
+          "x": 266.5364203477799,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 33.51666666666605,
+          "id": 59,
+          "magma": false,
+          "x": 345.73642034777987,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 33.58333333333271,
+          "id": 60,
+          "magma": false,
+          "x": 424.9364203477799,
+          "y": 271.36
+        },
+        {
+          "event": "ram-release",
+          "time": 34.68333333333265,
+          "from": {
+            "x": 340,
+            "y": 145
+          },
+          "to": {
+            "x": 280.53640617795213,
+            "y": 388
+          }
+        },
+        {
+          "event": "wall-impact",
+          "time": 35.24999999999928,
+          "x": 280.53640617795213,
+          "y": 486,
+          "core": 1170
+        },
+        {
+          "event": "reverse-start",
+          "time": 35.84999999999925,
+          "from": {
+            "x": 280.53640617795213,
+            "y": 388
+          },
+          "to": {
+            "x": 280.5364061787047,
+            "y": 220.16
+          },
+          "duration": 2.95
+        },
+        {
+          "event": "hull-unsealed",
+          "time": 36.93333333333252,
+          "core": 1170,
+          "hp": 1170,
+          "maxhp": 2028
+        },
+        {
+          "event": "attack-start",
+          "time": 36.93333333333252,
+          "mode": "dc40-ram",
+          "armed": false,
+          "x": 280.53640617818803,
+          "y": 335.39385974223325
+        },
+        {
+          "event": "ram-release",
+          "time": 38.18333333333245,
+          "from": {
+            "x": 280.53640617818803,
+            "y": 335.39385974223325
+          },
+          "to": {
+            "x": 204.72040617795233,
+            "y": 388
+          }
+        },
+        {
+          "event": "wall-impact",
+          "time": 38.74999999999908,
+          "x": 204.72040617795233,
+          "y": 486,
+          "core": 1166
+        },
+        {
+          "event": "reverse-start",
+          "time": 39.34999999999905,
+          "from": {
+            "x": 204.72040617795233,
+            "y": 388
+          },
+          "to": {
+            "x": 240.00001894197783,
+            "y": 220.16
+          },
+          "duration": 2.95
+        },
+        {
+          "event": "reverse-complete",
+          "time": 42.29999999999888,
+          "y": 220.16
+        },
+        {
+          "event": "attack-start",
+          "time": 42.29999999999888,
+          "mode": "df55-roof",
+          "armed": false,
+          "x": 240.00001894197783,
+          "y": 220.16
+        },
+        {
+          "event": "roof-orb",
+          "time": 42.716666666665525,
+          "id": 61,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 56.28571428571476,
+            "y": 271.36
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 42.716666666665525,
+          "id": 62,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 112.85714285714332,
+            "y": 353.28000000000003
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 42.716666666665525,
+          "id": 63,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 169.42857142857193,
+            "y": 435.20000000000005
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 42.716666666665525,
+          "id": 64,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 226.00000000000048,
+            "y": 271.36
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 42.716666666665525,
+          "id": 65,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 282.57142857142907,
+            "y": 353.28000000000003
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 42.716666666665525,
+          "id": 66,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 339.14285714285757,
+            "y": 435.20000000000005
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 42.716666666665525,
+          "id": 67,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 395.7142857142862,
+            "y": 271.36
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 42.716666666665525,
+          "magma": true,
+          "count": 7
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.34999999999882,
+          "id": 68,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 84.28571428571429,
+            "y": 353.28000000000003
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.34999999999882,
+          "id": 69,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 140.85714285714286,
+            "y": 435.20000000000005
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.34999999999882,
+          "id": 70,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 197.42857142857144,
+            "y": 271.36
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.34999999999882,
+          "id": 71,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 254,
+            "y": 353.28000000000003
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.34999999999882,
+          "id": 72,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 310.5714285714286,
+            "y": 435.20000000000005
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.34999999999882,
+          "id": 73,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 367.1428571428571,
+            "y": 271.36
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.34999999999882,
+          "id": 74,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 423.7142857142857,
+            "y": 353.28000000000003
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 43.34999999999882,
+          "magma": true,
+          "count": 7
+        },
+        {
+          "event": "roof-impact",
+          "time": 43.89999999999879,
+          "id": 61,
+          "magma": true,
+          "x": 56.28571428571476,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 43.96666666666545,
+          "id": 62,
+          "magma": true,
+          "x": 112.85714285714332,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.98333333333212,
+          "id": 75,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 56.28571428571428,
+            "y": 435.20000000000005
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.98333333333212,
+          "id": 76,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 112.85714285714285,
+            "y": 271.36
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.98333333333212,
+          "id": 77,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 169.42857142857144,
+            "y": 353.28000000000003
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.98333333333212,
+          "id": 78,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 226,
+            "y": 435.20000000000005
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.98333333333212,
+          "id": 79,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 282.57142857142856,
+            "y": 271.36
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.98333333333212,
+          "id": 80,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 339.1428571428571,
+            "y": 353.28000000000003
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 43.98333333333212,
+          "id": 81,
+          "magma": true,
+          "x": 240.00001894197783,
+          "y": 158.16,
+          "target": {
+            "x": 395.7142857142857,
+            "y": 435.20000000000005
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 43.98333333333212,
+          "magma": true,
+          "count": 7
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.033333333332116,
+          "id": 63,
+          "magma": true,
+          "x": 169.42857142857193,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.09999999999878,
+          "id": 64,
+          "magma": true,
+          "x": 226.00000000000048,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.16666666666544,
+          "id": 65,
+          "magma": true,
+          "x": 282.57142857142907,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.233333333332105,
+          "id": 66,
+          "magma": true,
+          "x": 339.14285714285757,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.29999999999877,
+          "id": 67,
+          "magma": true,
+          "x": 395.7142857142862,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.53333333333209,
+          "id": 68,
+          "magma": true,
+          "x": 84.28571428571429,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.59999999999875,
+          "id": 69,
+          "magma": true,
+          "x": 140.85714285714286,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.666666666665414,
+          "id": 70,
+          "magma": true,
+          "x": 197.42857142857144,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.73333333333208,
+          "id": 71,
+          "magma": true,
+          "x": 254,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.79999999999874,
+          "id": 72,
+          "magma": true,
+          "x": 310.5714285714286,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.8666666666654,
+          "id": 73,
+          "magma": true,
+          "x": 367.1428571428571,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 44.933333333332065,
+          "id": 74,
+          "magma": true,
+          "x": 423.7142857142857,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 45.166666666665385,
+          "id": 75,
+          "magma": true,
+          "x": 56.28571428571428,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 45.23333333333205,
+          "id": 76,
+          "magma": true,
+          "x": 112.85714285714285,
+          "y": 271.36
+        },
+        {
+          "event": "attack-start",
+          "time": 45.283333333332045,
+          "mode": "dc40-ram",
+          "armed": false,
+          "x": 265.6070042764979,
+          "y": 200.9137861769609
+        },
+        {
+          "event": "roof-impact",
+          "time": 45.29999999999871,
+          "id": 77,
+          "magma": true,
+          "x": 169.42857142857144,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 45.366666666665374,
+          "id": 78,
+          "magma": true,
+          "x": 226,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 45.43333333333204,
+          "id": 79,
+          "magma": true,
+          "x": 282.57142857142856,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 45.4999999999987,
+          "id": 80,
+          "magma": true,
+          "x": 339.1428571428571,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 45.56666666666536,
+          "id": 81,
+          "magma": true,
+          "x": 395.7142857142857,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "ram-release",
+          "time": 46.533333333331974,
+          "from": {
+            "x": 265.6070042764979,
+            "y": 200.9137861769609
+          },
+          "to": {
+            "x": 257.7916061779522,
+            "y": 388
+          }
+        },
+        {
+          "event": "wall-impact",
+          "time": 47.09999999999861,
+          "x": 257.7916061779522,
+          "y": 486,
+          "core": 1166
+        },
+        {
+          "event": "reverse-start",
+          "time": 47.699999999998575,
+          "from": {
+            "x": 257.7916061779522,
+            "y": 388
+          },
+          "to": {
+            "x": 253.12475894559626,
+            "y": 220.16
+          },
+          "duration": 2.95
+        },
+        {
+          "event": "reverse-complete",
+          "time": 50.64999999999841,
+          "y": 220.16
+        },
+        {
+          "event": "attack-start",
+          "time": 50.64999999999841,
+          "mode": "df55-roof",
+          "armed": false,
+          "x": 253.12475894559626,
+          "y": 220.16
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.06666666666505,
+          "id": 82,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 74.07735867316742,
+            "y": 271.36
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.06666666666505,
+          "id": 83,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 130.64878724459598,
+            "y": 353.28000000000003
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.06666666666505,
+          "id": 84,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 187.2202158160246,
+            "y": 435.20000000000005
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.06666666666505,
+          "id": 85,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 243.79164438745312,
+            "y": 271.36
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.06666666666505,
+          "id": 86,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 300.36307295888173,
+            "y": 353.28000000000003
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.06666666666505,
+          "id": 87,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 356.93450153031023,
+            "y": 435.20000000000005
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.06666666666505,
+          "id": 88,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 413.50593010173884,
+            "y": 271.36
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 51.06666666666505,
+          "magma": true,
+          "count": 7
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.69999999999835,
+          "id": 89,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 102.07732076049996,
+            "y": 353.28000000000003
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.69999999999835,
+          "id": 90,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 158.6487493319285,
+            "y": 435.20000000000005
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.69999999999835,
+          "id": 91,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 215.22017790335713,
+            "y": 271.36
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.69999999999835,
+          "id": 92,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 271.7916064747857,
+            "y": 353.28000000000003
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.69999999999835,
+          "id": 93,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 328.36303504621424,
+            "y": 435.20000000000005
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.69999999999835,
+          "id": 94,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 384.9344636176428,
+            "y": 271.36
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 51.69999999999835,
+          "id": 95,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 441.5058921890714,
+            "y": 353.28000000000003
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 51.69999999999835,
+          "magma": true,
+          "count": 7
+        },
+        {
+          "event": "roof-impact",
+          "time": 52.249999999998316,
+          "id": 82,
+          "magma": true,
+          "x": 74.07735867316742,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 52.31666666666498,
+          "id": 83,
+          "magma": true,
+          "x": 130.64878724459598,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-orb",
+          "time": 52.333333333331645,
+          "id": 96,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 74.07732046597243,
+            "y": 435.20000000000005
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 52.333333333331645,
+          "id": 97,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 130.648749037401,
+            "y": 271.36
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 52.333333333331645,
+          "id": 98,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 187.2201776088296,
+            "y": 353.28000000000003
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 52.333333333331645,
+          "id": 99,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 243.79160618025816,
+            "y": 435.20000000000005
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 52.333333333331645,
+          "id": 100,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 300.36303475168677,
+            "y": 271.36
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 52.333333333331645,
+          "id": 101,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 356.93446332311527,
+            "y": 353.28000000000003
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 52.333333333331645,
+          "id": 102,
+          "magma": true,
+          "x": 253.12475894559626,
+          "y": 158.16,
+          "target": {
+            "x": 413.5058918945439,
+            "y": 435.20000000000005
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 52.333333333331645,
+          "magma": true,
+          "count": 7
+        },
+        {
+          "event": "roof-impact",
+          "time": 52.38333333333164,
+          "id": 84,
+          "magma": true,
+          "x": 187.2202158160246,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 52.449999999998305,
+          "id": 85,
+          "magma": true,
+          "x": 243.79164438745312,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 52.51666666666497,
+          "id": 86,
+          "magma": true,
+          "x": 300.36307295888173,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 52.58333333333163,
+          "id": 87,
+          "magma": true,
+          "x": 356.93450153031023,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 52.64999999999829,
+          "id": 88,
+          "magma": true,
+          "x": 413.50593010173884,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 52.88333333333161,
+          "id": 89,
+          "magma": true,
+          "x": 102.07732076049996,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 52.949999999998276,
+          "id": 90,
+          "magma": true,
+          "x": 158.6487493319285,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.01666666666494,
+          "id": 91,
+          "magma": true,
+          "x": 215.22017790335713,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.0833333333316,
+          "id": 92,
+          "magma": true,
+          "x": 271.7916064747857,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.149999999998265,
+          "id": 93,
+          "magma": true,
+          "x": 328.36303504621424,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.21666666666493,
+          "id": 94,
+          "magma": true,
+          "x": 384.9344636176428,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.28333333333159,
+          "id": 95,
+          "magma": true,
+          "x": 441.5058921890714,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.51666666666491,
+          "id": 96,
+          "magma": true,
+          "x": 74.07732046597243,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.583333333331574,
+          "id": 97,
+          "magma": true,
+          "x": 130.648749037401,
+          "y": 271.36
+        },
+        {
+          "event": "attack-start",
+          "time": 53.63333333333157,
+          "mode": "dc40-ram",
+          "armed": false,
+          "x": 277.3501904103172,
+          "y": 199.2013999801374
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.649999999998236,
+          "id": 98,
+          "magma": true,
+          "x": 187.2201776088296,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.7166666666649,
+          "id": 99,
+          "magma": true,
+          "x": 243.79160618025816,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.78333333333156,
+          "id": 100,
+          "magma": true,
+          "x": 300.36303475168677,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.849999999998225,
+          "id": 101,
+          "magma": true,
+          "x": 356.93446332311527,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 53.91666666666489,
+          "id": 102,
+          "magma": true,
+          "x": 413.5058918945439,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "ram-release",
+          "time": 54.8833333333315,
+          "from": {
+            "x": 277.3501904103172,
+            "y": 199.2013999801374
+          },
+          "to": {
+            "x": 272.95480617795215,
+            "y": 388
+          }
+        },
+        {
+          "event": "wall-impact",
+          "time": 55.449999999998134,
+          "x": 272.95480617795215,
+          "y": 486,
+          "core": 1046
+        },
+        {
+          "event": "reverse-start",
+          "time": 56.0499999999981,
+          "from": {
+            "x": 272.95480617795215,
+            "y": 388
+          },
+          "to": {
+            "x": 265.0578514786041,
+            "y": 220.16
+          },
+          "duration": 2.95
+        },
+        {
+          "event": "reverse-complete",
+          "time": 58.99999999999793,
+          "y": 220.16
+        },
+        {
+          "event": "attack-start",
+          "time": 58.99999999999793,
+          "mode": "df55-roof",
+          "armed": false,
+          "x": 265.0578514786041,
+          "y": 220.16
+        },
+        {
+          "event": "roof-orb",
+          "time": 59.416666666664575,
+          "id": 103,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 85.4512770523655,
+            "y": 271.36
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 59.416666666664575,
+          "id": 104,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 142.02270562379405,
+            "y": 353.28000000000003
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 59.416666666664575,
+          "id": 105,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 198.59413419522264,
+            "y": 435.20000000000005
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 59.416666666664575,
+          "id": 106,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 255.1655627666512,
+            "y": 271.36
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 59.416666666664575,
+          "id": 107,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 311.7369913380798,
+            "y": 353.28000000000003
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 59.416666666664575,
+          "id": 108,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 368.3084199095083,
+            "y": 435.20000000000005
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 59.416666666664575,
+          "id": 109,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 424.8798484809369,
+            "y": 271.36
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 59.416666666664575,
+          "magma": true,
+          "count": 7
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.04999999999787,
+          "id": 110,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 113.44973255614747,
+            "y": 353.28000000000003
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.04999999999787,
+          "id": 111,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 170.02116112757602,
+            "y": 435.20000000000005
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.04999999999787,
+          "id": 112,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 226.59258969900463,
+            "y": 271.36
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.04999999999787,
+          "id": 113,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 283.1640182704332,
+            "y": 353.28000000000003
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.04999999999787,
+          "id": 114,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 339.73544684186174,
+            "y": 435.20000000000005
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.04999999999787,
+          "id": 115,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 396.3068754132903,
+            "y": 271.36
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.04999999999787,
+          "id": 116,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 452.8783039847189,
+            "y": 353.28000000000003
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 60.04999999999787,
+          "magma": true,
+          "count": 7
+        },
+        {
+          "event": "roof-impact",
+          "time": 60.59999999999784,
+          "id": 103,
+          "magma": true,
+          "x": 85.4512770523655,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 60.666666666664504,
+          "id": 104,
+          "magma": true,
+          "x": 142.02270562379405,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.68333333333117,
+          "id": 117,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 85.44972055760783,
+            "y": 435.20000000000005
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.68333333333117,
+          "id": 118,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 142.0211491290364,
+            "y": 271.36
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.68333333333117,
+          "id": 119,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 198.59257770046497,
+            "y": 353.28000000000003
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.68333333333117,
+          "id": 120,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 255.16400627189353,
+            "y": 435.20000000000005
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.68333333333117,
+          "id": 121,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 311.73543484332214,
+            "y": 271.36
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.68333333333117,
+          "id": 122,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 368.30686341475064,
+            "y": 353.28000000000003
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 60.68333333333117,
+          "id": 123,
+          "magma": true,
+          "x": 265.0578514786041,
+          "y": 158.16,
+          "target": {
+            "x": 424.87829198617925,
+            "y": 435.20000000000005
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 60.68333333333117,
+          "magma": true,
+          "count": 7
+        },
+        {
+          "event": "roof-impact",
+          "time": 60.73333333333117,
+          "id": 105,
+          "magma": true,
+          "x": 198.59413419522264,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 60.79999999999783,
+          "id": 106,
+          "magma": true,
+          "x": 255.1655627666512,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 60.86666666666449,
+          "id": 107,
+          "magma": true,
+          "x": 311.7369913380798,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 60.933333333331156,
+          "id": 108,
+          "magma": true,
+          "x": 368.3084199095083,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 60.99999999999782,
+          "id": 109,
+          "magma": true,
+          "x": 424.8798484809369,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 61.23333333333114,
+          "id": 110,
+          "magma": true,
+          "x": 113.44973255614747,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 61.2999999999978,
+          "id": 111,
+          "magma": true,
+          "x": 170.02116112757602,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 61.366666666664464,
+          "id": 112,
+          "magma": true,
+          "x": 226.59258969900463,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 61.43333333333113,
+          "id": 113,
+          "magma": true,
+          "x": 283.1640182704332,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 61.49999999999779,
+          "id": 114,
+          "magma": true,
+          "x": 339.73544684186174,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 61.56666666666445,
+          "id": 115,
+          "magma": true,
+          "x": 396.3068754132903,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 61.633333333331116,
+          "id": 116,
+          "magma": true,
+          "x": 452.8783039847189,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 61.866666666664436,
+          "id": 117,
+          "magma": true,
+          "x": 85.44972055760783,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 61.9333333333311,
+          "id": 118,
+          "magma": true,
+          "x": 142.0211491290364,
+          "y": 271.36
+        },
+        {
+          "event": "attack-start",
+          "time": 61.983333333331096,
+          "mode": "dc40-ram",
+          "armed": false,
+          "x": 287.6759402611403,
+          "y": 197.47616204718142
+        },
+        {
+          "event": "roof-impact",
+          "time": 61.99999999999776,
+          "id": 119,
+          "magma": true,
+          "x": 198.59257770046497,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 62.066666666664425,
+          "id": 120,
+          "magma": true,
+          "x": 255.16400627189353,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "roof-impact",
+          "time": 62.13333333333109,
+          "id": 121,
+          "magma": true,
+          "x": 311.73543484332214,
+          "y": 271.36
+        },
+        {
+          "event": "roof-impact",
+          "time": 62.19999999999775,
+          "id": 122,
+          "magma": true,
+          "x": 368.30686341475064,
+          "y": 353.28000000000003
+        },
+        {
+          "event": "roof-impact",
+          "time": 62.26666666666441,
+          "id": 123,
+          "magma": true,
+          "x": 424.87829198617925,
+          "y": 435.20000000000005
+        },
+        {
+          "event": "ram-release",
+          "time": 63.233333333331025,
+          "from": {
+            "x": 287.6759402611403,
+            "y": 197.47616204718142
+          },
+          "to": {
+            "x": 280.53640617795213,
+            "y": 388
+          }
+        },
+        {
+          "event": "wall-impact",
+          "time": 63.79999999999766,
+          "x": 280.53640617795213,
+          "y": 486,
+          "core": 428
+        },
+        {
+          "event": "reverse-start",
+          "time": 64.39999999999763,
+          "from": {
+            "x": 280.53640617795213,
+            "y": 388
+          },
+          "to": {
+            "x": 276.4302514786089,
+            "y": 220.16
+          },
+          "duration": 2.95
+        },
+        {
+          "event": "reverse-complete",
+          "time": 67.34999999999746,
+          "y": 220.16
+        },
+        {
+          "event": "attack-start",
+          "time": 67.34999999999746,
+          "mode": "df55-roof",
+          "armed": false,
+          "x": 276.4302514786089,
+          "y": 220.16
+        },
+        {
+          "event": "roof-orb",
+          "time": 67.76666666666411,
+          "id": 124,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 96.82238043848463,
+            "y": 271.36
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 67.76666666666411,
+          "id": 125,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 153.39380900991318,
+            "y": 353.28000000000003
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 67.76666666666411,
+          "id": 126,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 209.9652375813418,
+            "y": 435.20000000000005
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 67.76666666666411,
+          "id": 127,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 266.53666615277035,
+            "y": 271.36
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 67.76666666666411,
+          "id": 128,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 323.10809472419896,
+            "y": 353.28000000000003
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 67.76666666666411,
+          "id": 129,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 379.67952329562746,
+            "y": 435.20000000000005
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 67.76666666666411,
+          "id": 130,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 436.2509518670561,
+            "y": 271.36
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 67.76666666666411,
+          "magma": true,
+          "count": 7
+        },
+        {
+          "event": "roof-orb",
+          "time": 68.3999999999974,
+          "id": 131,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 124.82212248330111,
+            "y": 353.28000000000003
+          },
+          "flight": 1.2
+        },
+        {
+          "event": "roof-orb",
+          "time": 68.3999999999974,
+          "id": 132,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 181.3935510547297,
+            "y": 435.20000000000005
+          },
+          "flight": 1.265
+        },
+        {
+          "event": "roof-orb",
+          "time": 68.3999999999974,
+          "id": 133,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 237.96497962615828,
+            "y": 271.36
+          },
+          "flight": 1.33
+        },
+        {
+          "event": "roof-orb",
+          "time": 68.3999999999974,
+          "id": 134,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 294.53640819758687,
+            "y": 353.28000000000003
+          },
+          "flight": 1.395
+        },
+        {
+          "event": "roof-orb",
+          "time": 68.3999999999974,
+          "id": 135,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 351.1078367690154,
+            "y": 435.20000000000005
+          },
+          "flight": 1.46
+        },
+        {
+          "event": "roof-orb",
+          "time": 68.3999999999974,
+          "id": 136,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 407.679265340444,
+            "y": 271.36
+          },
+          "flight": 1.525
+        },
+        {
+          "event": "roof-orb",
+          "time": 68.3999999999974,
+          "id": 137,
+          "magma": true,
+          "x": 276.4302514786089,
+          "y": 158.16,
+          "target": {
+            "x": 464.25069391187253,
+            "y": 353.28000000000003
+          },
+          "flight": 1.5899999999999999
+        },
+        {
+          "event": "roof-volley",
+          "time": 68.3999999999974,
+          "magma": true,
+          "count": 7
+        }
+      ],
+      "chapters": [
+        {
+          "id": "stage7-dredger-turrets",
+          "stage": 7,
+          "title": "Dredger \u00b7 front twin-barrel slugs",
+          "seconds": 3.564000000000001,
+          "src": "videos/stage7-dredger-clear-sewer-1029.mp4",
+          "localSrc": "videos/stage7-dredger-clear-sewer-1029.mp4",
+          "poster": "posters/stage7-mini-no-pipes-1029.jpg",
+          "sha256": "d5a125437d20dbbdd0e65a8cd5867ab4c3fcf27f81f57d1c54ab1955f5cf272a",
+          "bytes": 55582785,
+          "note": "Native Furious defeat with an input-only GOD bot; native health, phases and actual controls. Stage7 pipe outlets, warning spray and hazard damage removed throughout. Earlier films preserved.",
+          "parent": "stage7-miniboss",
+          "start": 5.005,
+          "end": 8.569
+        },
+        {
+          "id": "stage7-dredger-roof",
+          "stage": 7,
+          "title": "Dredger \u00b7 roof ooze and ground Retina mortars",
+          "seconds": 2.6180000000000003,
+          "src": "videos/stage7-dredger-clear-sewer-1029.mp4",
+          "localSrc": "videos/stage7-dredger-clear-sewer-1029.mp4",
+          "poster": "posters/stage7-mini-no-pipes-1029.jpg",
+          "sha256": "d5a125437d20dbbdd0e65a8cd5867ab4c3fcf27f81f57d1c54ab1955f5cf272a",
+          "bytes": 55582785,
+          "note": "Native Furious defeat with an input-only GOD bot; native health, phases and actual controls. Stage7 pipe outlets, warning spray and hazard damage removed throughout. Earlier films preserved.",
+          "parent": "stage7-miniboss",
+          "start": 9.112,
+          "end": 11.73
+        },
+        {
+          "id": "stage7-dredger-ram",
+          "stage": 7,
+          "title": "Dredger \u00b7 wall crash and slow reverse",
+          "seconds": 5.0109999999999975,
+          "src": "videos/stage7-dredger-clear-sewer-1029.mp4",
+          "localSrc": "videos/stage7-dredger-clear-sewer-1029.mp4",
+          "poster": "posters/stage7-mini-no-pipes-1029.jpg",
+          "sha256": "d5a125437d20dbbdd0e65a8cd5867ab4c3fcf27f81f57d1c54ab1955f5cf272a",
+          "bytes": 55582785,
+          "note": "Native Furious defeat with an input-only GOD bot; native health, phases and actual controls. Stage7 pipe outlets, warning spray and hazard damage removed throughout. Earlier films preserved.",
+          "parent": "stage7-miniboss",
+          "start": 12.365,
+          "end": 17.375999999999998
+        },
+        {
+          "id": "stage7-dredger-hull",
+          "stage": 7,
+          "title": "Dredger \u00b7 exposed hull magma cycle without pipe hazards",
+          "seconds": 18.0,
+          "src": "videos/stage7-dredger-clear-sewer-1029.mp4",
+          "localSrc": "videos/stage7-dredger-clear-sewer-1029.mp4",
+          "poster": "posters/stage7-mini-no-pipes-1029.jpg",
+          "sha256": "d5a125437d20dbbdd0e65a8cd5867ab4c3fcf27f81f57d1c54ab1955f5cf272a",
+          "bytes": 55582785,
+          "note": "Native Furious defeat with an input-only GOD bot; native health, phases and actual controls. Stage7 pipe outlets, warning spray and hazard damage removed throughout. Earlier films preserved.",
+          "parent": "stage7-miniboss",
+          "start": 38.879000000000005,
+          "end": 56.879000000000005
+        }
+      ],
+      "audioMeanDB": -20.0,
+      "audioPeakDB": -3.2,
+      "decodedCueCounts": {
+        "mini7": 1,
+        "bossAlarm": 1,
+        "enemyunit": 1,
+        "av3_target_acquire": 9,
+        "alertLockon": 9,
+        "enemyMachineGunHeavy": 56,
+        "enemyToxicSpit": 83,
+        "bossWeaponCharge": 6,
+        "jetDash": 6,
+        "juggernautRamImpact": 6,
+        "combatServo0927": 6,
+        "laserBeamStart": 26,
+        "hit": 205,
+        "loop": 15,
+        "missile": 30,
+        "expBig": 40,
+        "laserBeamEnd": 26,
+        "expSmall": 37,
+        "missileHit": 29,
+        "combatModule0927": 2,
+        "av3_impact_energy": 22,
+        "powerup": 2,
+        "weapon": 1,
+        "achievement": 1,
+        "flameHit": 40,
+        "flameThrowerStart": 8,
+        "flameThrowerEnd": 7,
+        "stageclear": 1,
+        "statTick": 10,
+        "stageClear": 1,
+        "crackle": 1,
+        "warpGate": 1,
+        "mapDeploy": 1,
+        "bossPhase": 1
+      },
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assetErrors": [],
+      "audioErrors": [],
+      "pipeEvents": 0
+    }
+  },
+  "fullSuiteExit": 1,
+  "baselineFailures": 5
+}

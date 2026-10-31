@@ -1,0 +1,3963 @@
+{
+  "intro": {
+    "checks": [
+      {
+        "name": "All five aircraft use88 complete fixed192px authored cells",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All440 flight cells have clear outer borders and bounded textures",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Complete80-glyph font includes R,5 and common baselines with safety margins",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Crew official name is live on the actual boss",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Catch-up aircraft face north in the player flight direction",
+        "passed": true,
+        "data": {
+          "phase": "catch-up",
+          "t": 2.0166666666666644,
+          "scroll": 1,
+          "protected": true,
+          "ships": [
+            {
+              "key": "voss",
+              "x": 340,
+              "y": 91.7310862589081,
+              "heading": -1.5707963267948966,
+              "frame": 56
+            },
+            {
+              "key": "nyx",
+              "x": 245,
+              "y": 67.3041104834789,
+              "heading": -1.5707963267948966,
+              "frame": 56
+            },
+            {
+              "key": "rook",
+              "x": 435,
+              "y": 63.101932836626474,
+              "heading": -1.5707963267948966,
+              "frame": 56
+            },
+            {
+              "key": "kaia",
+              "x": 150,
+              "y": 38.67495706119726,
+              "heading": -1.5707963267948966,
+              "frame": 56
+            },
+            {
+              "key": "jace",
+              "x": 530,
+              "y": 34.47277941434484,
+              "heading": -1.5707963267948966,
+              "frame": 56
+            }
+          ],
+          "allies": 4
+        }
+      },
+      {
+        "name": "All five boost together with animated anchored plume cells",
+        "passed": true,
+        "data": {
+          "phase": "spool",
+          "t": 3.183333333333327,
+          "scroll": 1,
+          "protected": true,
+          "ships": [
+            {
+              "key": "voss",
+              "x": 340,
+              "y": 137,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "nyx",
+              "x": 245,
+              "y": 112,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "rook",
+              "x": 435,
+              "y": 112,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "kaia",
+              "x": 150,
+              "y": 87,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "jace",
+              "x": 530,
+              "y": 87,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            }
+          ],
+          "allies": 4
+        }
+      },
+      {
+        "name": "All five fly completely off the north edge before returning",
+        "passed": true,
+        "data": {
+          "phase": "away",
+          "t": 4.516666666666656,
+          "scroll": 1,
+          "protected": true,
+          "ships": [
+            {
+              "key": "voss",
+              "x": 340,
+              "y": -250,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "nyx",
+              "x": 245,
+              "y": -280,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "rook",
+              "x": 435,
+              "y": -310,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "kaia",
+              "x": 150,
+              "y": -340,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            },
+            {
+              "key": "jace",
+              "x": 530,
+              "y": -370,
+              "heading": -1.5707963267948966,
+              "frame": 68
+            }
+          ],
+          "allies": 4
+        }
+      },
+      {
+        "name": "Every pilot traverses at least12 true barrel-roll cells",
+        "passed": true,
+        "data": {
+          "voss": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ],
+          "nyx": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ],
+          "rook": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ],
+          "kaia": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ],
+          "jace": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ]
+        }
+      },
+      {
+        "name": "No pitch-flipping somersault frame is used in the intro",
+        "passed": true,
+        "data": {
+          "voss": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ],
+          "nyx": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ],
+          "rook": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ],
+          "kaia": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ],
+          "jace": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87
+          ]
+        }
+      },
+      {
+        "name": "The intro remains fully protected with unchanged native pilot health",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No timed wave or stage sequence advances through the new entrance",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Allies accompany the player through the entire entrance",
+        "passed": true,
+        "data": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "The five settle in a spread bowling-pin formation",
+        "passed": true,
+        "data": [
+          {
+            "key": "voss",
+            "x": 342.46434253530674,
+            "y": 236.3191529468402,
+            "heading": 1.5707963267948966,
+            "frame": 48
+          },
+          {
+            "key": "nyx",
+            "x": 247.46434253530674,
+            "y": 179.1661636146566,
+            "heading": 1.5707963267948966,
+            "frame": 48
+          },
+          {
+            "key": "rook",
+            "x": 437.46434253530674,
+            "y": 178.97516856024373,
+            "heading": 1.5707963267948966,
+            "frame": 48
+          },
+          {
+            "key": "kaia",
+            "x": 152.46434253530674,
+            "y": 123.81288785107022,
+            "heading": 1.5707963267948966,
+            "frame": 48
+          },
+          {
+            "key": "jace",
+            "x": 532.4643425353067,
+            "y": 125.386682037515,
+            "heading": 1.5707963267948966,
+            "frame": 48
+          }
+        ]
+      },
+      {
+        "name": "Dialogue waits until the airshow and begins with the new crew identity",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Scrolling eases down while preserving nonzero parallax movement",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Direct hostile and stale targeting cannot hurt a protected stunt pilot",
+        "passed": true,
+        "data": {
+          "before": 7740,
+          "after": 7740,
+          "hit": false
+        }
+      },
+      {
+        "name": "Actual sky scroll during dialogue is approximately41px per second",
+        "passed": true,
+        "data": 40.69999999999709
+      },
+      {
+        "name": "The conversation releases back into the original combat controller",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Normal sky speed returns smoothly and the native arsenal initializes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Combat damage and native hit flash remain active after the entrance",
+        "passed": true,
+        "data": {
+          "before": 1415.5999999999995,
+          "hp": 1414.5999999999995,
+          "flash": 0.12
+        }
+      },
+      {
+        "name": "Native combat flash still expires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "easy retains the complete protected five-pilot entrance",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "normal retains the complete protected five-pilot entrance",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "hard retains the complete protected five-pilot entrance",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage X keeps its existing encounter choreography",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Other stages do not change scroll rate",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No game, draw or HTTP asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "music": {
+    "checks": [
+      {
+        "name": "Airshow intro camera matrix stays fixed under repeated large impacts",
+        "passed": true,
+        "data": {
+          "base": [
+            1,
+            0,
+            0,
+            1,
+            -100,
+            0
+          ],
+          "samples": [
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ]
+          ],
+          "saved": 18,
+          "hp": 7740,
+          "before": 7740,
+          "n": 25,
+          "frames": 26,
+          "scope": true,
+          "cam": 100,
+          "world": 680,
+          "view": 480
+        }
+      },
+      {
+        "name": "Airshow intro render does not consume HP or impact simulation state",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Protected dialogue camera matrix stays fixed under repeated large impacts",
+        "passed": true,
+        "data": {
+          "base": [
+            1,
+            0,
+            0,
+            1,
+            -100,
+            0
+          ],
+          "samples": [
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ]
+          ],
+          "saved": 18,
+          "hp": 7740,
+          "before": 7740,
+          "n": 25,
+          "frames": 951,
+          "scope": true,
+          "cam": 100,
+          "world": 680,
+          "view": 480
+        }
+      },
+      {
+        "name": "Protected dialogue render does not consume HP or impact simulation state",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Combat camera matrix stays fixed under repeated large impacts",
+        "passed": true,
+        "data": {
+          "base": [
+            1,
+            0,
+            0,
+            1,
+            -100,
+            0
+          ],
+          "samples": [
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ]
+          ],
+          "saved": 18,
+          "hp": 7094.600000000004,
+          "before": 7094.600000000004,
+          "n": 25,
+          "frames": 1066,
+          "scope": true,
+          "cam": 100,
+          "world": 680,
+          "view": 480
+        }
+      },
+      {
+        "name": "Combat render does not consume HP or impact simulation state",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Ship hit feedback still runs while the field is steady",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Hit flash expires normally",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Horizontal tracking is speed-limited rather than jumping to a new target",
+        "passed": true,
+        "data": {
+          "delta": 3,
+          "limit": 3
+        }
+      },
+      {
+        "name": "Gentle tracking still reaches both complete arena edges",
+        "passed": true,
+        "data": {
+          "left": 0,
+          "right": 200,
+          "max": 200
+        }
+      },
+      {
+        "name": "Rough Riders play the original Gasline file",
+        "passed": true,
+        "data": {
+          "key": "roughriders6",
+          "path": "http://127.0.0.1:51570/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+          "loop": true,
+          "duration": 88.36,
+          "stagexPaused": true,
+          "clock": 1.507413
+        }
+      },
+      {
+        "name": "Decoded live boss music contains an audible waveform",
+        "passed": true,
+        "data": [
+          0.20002198811959213,
+          0.20959804995036413,
+          0.22199506209406702,
+          0.20204898634169685
+        ]
+      },
+      {
+        "name": "Legacy StageX requests stay on the boss track without restarting it",
+        "passed": true,
+        "data": {
+          "same": true,
+          "time": 2.763364,
+          "before": 2.508669,
+          "path": "http://127.0.0.1:51570/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+          "paused": false,
+          "stagexPaused": true,
+          "scope": true,
+          "key": "roughriders6"
+        }
+      },
+      {
+        "name": "Interrupted transport resumes the same boss track and position",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Stage X retains its normal camera effects",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Real StageX routing remains separate",
+        "passed": true,
+        "data": {
+          "path": "http://127.0.0.1:51570/assets/game/levels/stage_x/audio/music/ghostrider_1028.mp3",
+          "oldPaused": true,
+          "expected": "assets/game/levels/stage_x/audio/music/ghostrider_1028.mp3",
+          "scope": false
+        }
+      },
+      {
+        "name": "Harrier fight keeps its independent camera behavior",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native render or game errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "fonts": [
+    {
+      "name": "command_dialogue_10 capitals/digits share a complete top and baseline",
+      "passed": true,
+      "data": [
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          3,
+          2,
+          7,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ],
+        [
+          1,
+          2,
+          8,
+          12
+        ]
+      ]
+    },
+    {
+      "name": "command_dialogue_10 has even cells and transparent safety margins",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "command_dialogue_11 capitals/digits share a complete top and baseline",
+      "passed": true,
+      "data": [
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          3,
+          2,
+          8,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ],
+        [
+          1,
+          2,
+          9,
+          13
+        ]
+      ]
+    },
+    {
+      "name": "command_dialogue_11 has even cells and transparent safety margins",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "command_dialogue_12 capitals/digits share a complete top and baseline",
+      "passed": true,
+      "data": [
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          3,
+          2,
+          9,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ],
+        [
+          1,
+          2,
+          10,
+          14
+        ]
+      ]
+    },
+    {
+      "name": "command_dialogue_12 has even cells and transparent safety margins",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "command_dialogue_14 capitals/digits share a complete top and baseline",
+      "passed": true,
+      "data": [
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          3,
+          2,
+          9,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ],
+        [
+          1,
+          2,
+          11,
+          16
+        ]
+      ]
+    },
+    {
+      "name": "command_dialogue_14 has even cells and transparent safety margins",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "command_dialogue_8 capitals/digits share a complete top and baseline",
+      "passed": true,
+      "data": [
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          3,
+          2,
+          6,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ],
+        [
+          1,
+          2,
+          7,
+          10
+        ]
+      ]
+    },
+    {
+      "name": "command_dialogue_8 has even cells and transparent safety margins",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "command_dialogue_9 capitals/digits share a complete top and baseline",
+      "passed": true,
+      "data": [
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          3,
+          2,
+          6,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ],
+        [
+          1,
+          2,
+          7,
+          11
+        ]
+      ]
+    },
+    {
+      "name": "command_dialogue_9 has even cells and transparent safety margins",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Dialogue uses aligned pixel-master banks in the actual renderer",
+      "passed": true,
+      "data": [
+        {
+          "state": "play",
+          "text": "COLE",
+          "family": "fury_strike",
+          "height": 10,
+          "palette": "toxic",
+          "width": 43,
+          "available": 68
+        },
+        {
+          "state": "play",
+          "text": "WE WERE ONE UNIT ONCE. IT DOES NOT HAVE TO",
+          "family": "command_dialogue",
+          "height": 11,
+          "palette": "chrome",
+          "width": 332,
+          "available": null
+        },
+        {
+          "state": "play",
+          "text": "BE LIKE THIS. WE CAN STILL STOP HIM.",
+          "family": "command_dialogue",
+          "height": 11,
+          "palette": "chrome",
+          "width": 287,
+          "available": null
+        }
+      ]
+    },
+    {
+      "name": "Typewriter reveal retains the complete line layout",
+      "passed": true,
+      "data": [
+        {
+          "H": 11,
+          "lines": [
+            "WE WERE ONE UNIT ONCE. IT DOES NOT HAVE TO",
+            "BE LIKE THIS. WE CAN STILL STOP HIM."
+          ],
+          "step": 14,
+          "height": 25
+        },
+        {
+          "H": 11,
+          "lines": [
+            "WE WERE ONE UNIT ONCE. IT DOES NOT HAVE TO",
+            "BE LIKE THIS. WE CAN STILL STOP HIM."
+          ],
+          "step": 14,
+          "height": 25
+        }
+      ]
+    },
+    {
+      "name": "Dialogue selects the exact authored size used by its layout",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Font override restores after dialogue drawing",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Full sentence fits the compact portrait text aperture",
+      "passed": true,
+      "data": {
+        "H": 11,
+        "lines": [
+          "WE WERE ONE UNIT ONCE. IT DOES NOT HAVE TO",
+          "BE LIKE THIS. WE CAN STILL STOP HIM."
+        ],
+        "step": 14,
+        "height": 25
+      }
+    },
+    {
+      "name": "No native font or game exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Native Furious full squad fight reaches actual defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Only the confirmed original Gasline recording plays throughout the active fight",
+      "passed": true,
+      "data": [
+        {
+          "path": "http://127.0.0.1:54715/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+          "key": "roughriders6",
+          "clock": 0,
+          "paused": false,
+          "stagexPaused": true
+        },
+        {
+          "path": "http://127.0.0.1:54715/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+          "key": "roughriders6",
+          "clock": 0.352,
+          "paused": false,
+          "stagexPaused": true
+        }
+      ]
+    },
+    {
+      "name": "Native root transform has no impact displacement",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film retains five real opponents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, audio, HTTP or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All five pilots show actual barrel-roll cells in native footage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native entrance contains no somersault pitch frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recorded music and game sound are audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -15.9,
+        "peakDb": -1.7
+      }
+    },
+    {
+      "name": "stage6-rough-riders uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes live audio and moving video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No player errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "summary": {
+    "native": {
+      "checks": [
+        {
+          "name": "Airshow intro camera matrix stays fixed under repeated large impacts",
+          "passed": true,
+          "data": {
+            "base": [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            "samples": [
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ]
+            ],
+            "saved": 18,
+            "hp": 7740,
+            "before": 7740,
+            "n": 25,
+            "frames": 26,
+            "scope": true,
+            "cam": 100,
+            "world": 680,
+            "view": 480
+          }
+        },
+        {
+          "name": "Airshow intro render does not consume HP or impact simulation state",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Protected dialogue camera matrix stays fixed under repeated large impacts",
+          "passed": true,
+          "data": {
+            "base": [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            "samples": [
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ]
+            ],
+            "saved": 18,
+            "hp": 7740,
+            "before": 7740,
+            "n": 25,
+            "frames": 951,
+            "scope": true,
+            "cam": 100,
+            "world": 680,
+            "view": 480
+          }
+        },
+        {
+          "name": "Protected dialogue render does not consume HP or impact simulation state",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Combat camera matrix stays fixed under repeated large impacts",
+          "passed": true,
+          "data": {
+            "base": [
+              1,
+              0,
+              0,
+              1,
+              -100,
+              0
+            ],
+            "samples": [
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                1,
+                -100,
+                0
+              ]
+            ],
+            "saved": 18,
+            "hp": 7094.600000000004,
+            "before": 7094.600000000004,
+            "n": 25,
+            "frames": 1066,
+            "scope": true,
+            "cam": 100,
+            "world": 680,
+            "view": 480
+          }
+        },
+        {
+          "name": "Combat render does not consume HP or impact simulation state",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Ship hit feedback still runs while the field is steady",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Hit flash expires normally",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Horizontal tracking is speed-limited rather than jumping to a new target",
+          "passed": true,
+          "data": {
+            "delta": 3,
+            "limit": 3
+          }
+        },
+        {
+          "name": "Gentle tracking still reaches both complete arena edges",
+          "passed": true,
+          "data": {
+            "left": 0,
+            "right": 200,
+            "max": 200
+          }
+        },
+        {
+          "name": "Rough Riders play the original Gasline file",
+          "passed": true,
+          "data": {
+            "key": "roughriders6",
+            "path": "http://127.0.0.1:51570/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+            "loop": true,
+            "duration": 88.36,
+            "stagexPaused": true,
+            "clock": 1.507413
+          }
+        },
+        {
+          "name": "Decoded live boss music contains an audible waveform",
+          "passed": true,
+          "data": [
+            0.20002198811959213,
+            0.20959804995036413,
+            0.22199506209406702,
+            0.20204898634169685
+          ]
+        },
+        {
+          "name": "Legacy StageX requests stay on the boss track without restarting it",
+          "passed": true,
+          "data": {
+            "same": true,
+            "time": 2.763364,
+            "before": 2.508669,
+            "path": "http://127.0.0.1:51570/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+            "paused": false,
+            "stagexPaused": true,
+            "scope": true,
+            "key": "roughriders6"
+          }
+        },
+        {
+          "name": "Interrupted transport resumes the same boss track and position",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Stage X retains its normal camera effects",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "Real StageX routing remains separate",
+          "passed": true,
+          "data": {
+            "path": "http://127.0.0.1:51570/assets/game/levels/stage_x/audio/music/ghostrider_1028.mp3",
+            "oldPaused": true,
+            "expected": "assets/game/levels/stage_x/audio/music/ghostrider_1028.mp3",
+            "scope": false
+          }
+        },
+        {
+          "name": "Harrier fight keeps its independent camera behavior",
+          "passed": true,
+          "data": null
+        },
+        {
+          "name": "No native render or game errors",
+          "passed": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "film": [
+      {
+        "name": "Native Furious full squad fight reaches actual defeat",
+        "passed": true,
+        "data": "native defeat"
+      },
+      {
+        "name": "Only the confirmed original Gasline recording plays throughout the active fight",
+        "passed": true,
+        "data": [
+          {
+            "path": "http://127.0.0.1:54715/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+            "key": "roughriders6",
+            "clock": 0,
+            "paused": false,
+            "stagexPaused": true
+          },
+          {
+            "path": "http://127.0.0.1:54715/assets/game/levels/stage_x/audio/music/LevelX.mp3",
+            "key": "roughriders6",
+            "clock": 0.352,
+            "paused": false,
+            "stagexPaused": true
+          }
+        ]
+      },
+      {
+        "name": "Native root transform has no impact displacement",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Film retains five real opponents",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native game, audio, HTTP or bot errors",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All five pilots show actual barrel-roll cells in native footage",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native entrance contains no somersault pitch frames",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Recorded music and game sound are audible and unclipped",
+        "passed": true,
+        "data": {
+          "meanDb": -15.9,
+          "peakDb": -1.7
+        }
+      },
+      {
+        "name": "stage6-rough-riders uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-formations uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-team-locks uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-evasion uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-jace uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-rook uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "rough-riders-voss uses the corrected native movie",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Preview decodes live audio and moving video",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No player errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "duration": 168.27,
+    "combat": 53.402,
+    "preview": "http://127.0.0.1:51046/?riders=roll-gasline-1030#clip=stage6-rough-riders",
+    "sha256": "aa4b89d1a8bd0e2faa588ac47dbef53ce960a82d24fb886a284a78110d53c288",
+    "audio": {
+      "meanDb": -15.9,
+      "peakDb": -1.7
+    },
+    "fps": 58.672538308273154,
+    "cards": [
+      "stage6-rough-riders",
+      "rough-riders-formations",
+      "rough-riders-team-locks",
+      "rough-riders-evasion",
+      "rough-riders-jace",
+      "rough-riders-rook",
+      "rough-riders-voss"
+    ],
+    "fullSuite": {
+      "exit": 1,
+      "baselineFailures": 5
+    },
+    "published": false
+  },
+  "fullSuiteExit": 1,
+  "baselineFailures": 5
+}

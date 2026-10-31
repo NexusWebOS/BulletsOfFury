@@ -1,0 +1,9 @@
+PixelLab geyser and water sphere masters, source-preserving Aseprite export.
+
+GENERATIONS.json records actual jobs, selected candidates, costs and summarized briefs. inputs.json preserves source paths, three original hull crops, actual ocean frames, actual Stage2 nwf_fire hazard crops (the rejected nib_wall player-weapon crops remain recorded but are unused) and Sentinel crop. All generated geyser frames, selected sphere masters, editable20-bank .aseprite sources and SHA256 output manifest retained. Water charge is authored inside the original hull, retaining its exact alpha in all64 frames per damage state. Runtime selects fixed frames with ordinary source-over blits; no runtime tint, scaling, rotation, glow or compositing is added.
+
+Correction: use the actual Stage2 nwf_fire eight-frame triplet hazard, not nib_wall. Native Stage2 warns1-2-3 then runs one wave at a time, vertically flipped. Six sizes and actual-alpha collision are authored for that approach. Measured fan spirals rotate in opposite directions; rims are fixed. No new generation spend.
+
+Forward/fan correction: water_bullet_master.png is PixelLab job71c91ed0-9fdc-451c-a099-4c07f90da881 candidate7, already facing south; five headings and16 flow phases authored offline. Real geyser masters supply north-facing jets, tip-anchored descending rain, south-facing gun muzzle plumes, fan muzzle plumes and16frame grenade water bursts. Grenade art reuses the selected water sphere. See docs/TIDAL_FORWARD_FANS_1029.md.
+
+October30 wall_warning bank: original Stage2 nwarn_yield/nwarn_alert extracted through native XART, archived as wall_yield_master.png/wall_alert_master.png, both proportionally normalized offline to52px height in64px cells. Queue yellow / next red; no impact-star substitution. Owning author.lua and inputs.json retain the reproducible recipe.

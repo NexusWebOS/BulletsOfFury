@@ -1,0 +1,242 @@
+{
+  "checks": [
+    {
+      "name": "1 native reveal / next / skip and one continuation",
+      "ok": true,
+      "detail": {
+        "revealed": true,
+        "advanced": true,
+        "calls": 1,
+        "active": false
+      }
+    },
+    {
+      "name": "2 native reveal / next / skip and one continuation",
+      "ok": true,
+      "detail": {
+        "revealed": true,
+        "advanced": true,
+        "calls": 1,
+        "active": false
+      }
+    },
+    {
+      "name": "3 native reveal / next / skip and one continuation",
+      "ok": true,
+      "detail": {
+        "revealed": true,
+        "advanced": true,
+        "calls": 1,
+        "active": false
+      }
+    },
+    {
+      "name": "4 native reveal / next / skip and one continuation",
+      "ok": true,
+      "detail": {
+        "revealed": true,
+        "advanced": true,
+        "calls": 1,
+        "active": false
+      }
+    },
+    {
+      "name": "6 native reveal / next / skip and one continuation",
+      "ok": true,
+      "detail": {
+        "revealed": true,
+        "advanced": true,
+        "calls": 1,
+        "active": false
+      }
+    },
+    {
+      "name": "Stage 5 scramble hands off to native Stage 6 card",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "portrait box contains actual Cole portrait pixels",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "data_disintegrate changes actual rendered pixels",
+      "ok": true,
+      "detail": [
+        2219671428,
+        1596151527,
+        937911037,
+        1655004049,
+        3651140935,
+        1998278343,
+        1826598599,
+        1133997721,
+        955588537
+      ]
+    },
+    {
+      "name": "data_blast changes actual rendered pixels",
+      "ok": true,
+      "detail": [
+        1963563340,
+        1227758695,
+        3328690467,
+        2700679020,
+        2433798275,
+        1063906859,
+        2380539195,
+        888016905,
+        2330242156
+      ]
+    },
+    {
+      "name": "blue_portal changes actual rendered pixels",
+      "ok": true,
+      "detail": [
+        2809169313,
+        331408707,
+        3160647814,
+        2105964275,
+        134389158,
+        24939243,
+        2895349850,
+        2265400662,
+        2007104272
+      ]
+    },
+    {
+      "name": "void_portal changes actual rendered pixels",
+      "ok": true,
+      "detail": [
+        673590563,
+        1593259215,
+        2898691355,
+        3925967409,
+        823024498,
+        1596935256,
+        4025018690,
+        1740677810,
+        1123280138
+      ]
+    },
+    {
+      "name": "remnant changes actual rendered pixels",
+      "ok": true,
+      "detail": [
+        3792256353,
+        488515852,
+        1601714591,
+        440577313,
+        809902425,
+        1385228648,
+        212241580,
+        3593547400,
+        2699811340
+      ]
+    },
+    {
+      "name": "code_fragments changes actual rendered pixels",
+      "ok": true,
+      "detail": [
+        3747259346,
+        2105472004,
+        1657246889,
+        674248650,
+        508154027,
+        1704884186,
+        3547793970,
+        414131377,
+        734668644
+      ]
+    },
+    {
+      "name": "hq_motion changes actual rendered pixels",
+      "ok": true,
+      "detail": [
+        29448910,
+        2771066415,
+        3285494439,
+        1699889742,
+        370335465,
+        2767979777,
+        143802652,
+        208484648,
+        3237108156
+      ]
+    },
+    {
+      "name": "coast_motion changes actual rendered pixels",
+      "ok": true,
+      "detail": [
+        418714313,
+        2431061744,
+        2020947127,
+        580645916,
+        3230293047,
+        2150522076,
+        2328057248,
+        1200682340,
+        440806089,
+        331141600,
+        4165039601,
+        674861424,
+        2976001749,
+        2111792290,
+        3686804355
+      ]
+    },
+    {
+      "name": "forge_motion changes actual rendered pixels",
+      "ok": true,
+      "detail": [
+        18837366,
+        1870607597,
+        1241502277,
+        731418172,
+        4025886739,
+        3048399281,
+        3125655923,
+        3153674864,
+        3982447077,
+        2847085057,
+        1921980183,
+        984694212,
+        2064723249,
+        2784934383,
+        2655193479
+      ]
+    },
+    {
+      "name": "data erasure precedes the explosion",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "boss body erased once, no old metal-piece shower",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cinematic protects the player",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "native death hands off to dimensional blue escape portal",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "new remnant and void portal rendered",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "no flow page or console errors",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

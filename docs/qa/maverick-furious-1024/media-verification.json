@@ -1,0 +1,93 @@
+{
+  "Maverick-Furious-Beta-Playthrough.mp4": {
+    "bytes": 1340923321,
+    "streams": [
+      "Duration: 00:59:51.79, start: 0.000000, bitrate: 2986 kb/s",
+      "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt470bg/bt709/iec61966-2-1, progressive), 1280x720 [SAR 1:1 DAR 16:9], 2875 kb/s, 20.63 fps, 60 tbr, 16k tbn (default)",
+      "Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 102 kb/s (default)"
+    ],
+    "audioSamples": [
+      {
+        "time": 3,
+        "exitCode": 0,
+        "levels": [
+          "[Parsed_volumedetect_0 @ 00000254054469c0] mean_volume: -17.0 dB",
+          "[Parsed_volumedetect_0 @ 00000254054469c0] max_volume: -2.9 dB"
+        ]
+      },
+      {
+        "time": 475,
+        "exitCode": 0,
+        "levels": [
+          "[Parsed_volumedetect_0 @ 0000016a3be06a00] mean_volume: -14.7 dB",
+          "[Parsed_volumedetect_0 @ 0000016a3be06a00] max_volume: -2.1 dB"
+        ]
+      },
+      {
+        "time": 1180,
+        "exitCode": 0,
+        "levels": [
+          "[Parsed_volumedetect_0 @ 000001f00e906a00] mean_volume: -15.6 dB",
+          "[Parsed_volumedetect_0 @ 000001f00e906a00] max_volume: -3.2 dB"
+        ]
+      },
+      {
+        "time": 2800,
+        "exitCode": 0,
+        "levels": [
+          "[Parsed_volumedetect_0 @ 00000234d781db00] mean_volume: -9.4 dB",
+          "[Parsed_volumedetect_0 @ 00000234d781db00] max_volume: 0.0 dB"
+        ]
+      },
+      {
+        "time": 3550,
+        "exitCode": 0,
+        "levels": [
+          "[Parsed_volumedetect_0 @ 00000205fa756a00] mean_volume: -11.3 dB",
+          "[Parsed_volumedetect_0 @ 00000205fa756a00] max_volume: 0.0 dB"
+        ]
+      }
+    ]
+  },
+  "Maverick-Story-Replays.mp4": {
+    "bytes": 13188261,
+    "streams": [
+      "Duration: 00:02:11.40, start: 0.000000, bitrate: 802 kb/s",
+      "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt470bg/bt709/iec61966-2-1, progressive), 1280x720 [SAR 1:1 DAR 16:9], 661 kb/s, 28.33 fps, 60 tbr, 15360 tbn (default)",
+      "Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 130 kb/s (default)"
+    ],
+    "audioSamples": [
+      {
+        "time": 5,
+        "exitCode": 0,
+        "levels": [
+          "[Parsed_volumedetect_0 @ 000002639bc4f280] mean_volume: -16.7 dB",
+          "[Parsed_volumedetect_0 @ 000002639bc4f280] max_volume: -3.2 dB"
+        ]
+      },
+      {
+        "time": 80,
+        "exitCode": 0,
+        "levels": [
+          "[Parsed_volumedetect_0 @ 000001e7b78269c0] mean_volume: -16.9 dB",
+          "[Parsed_volumedetect_0 @ 000001e7b78269c0] max_volume: -3.3 dB"
+        ]
+      }
+    ]
+  },
+  "Maverick-Complete-Ending-Replay.mp4": {
+    "bytes": 54447713,
+    "streams": [
+      "Duration: 00:02:33.60, start: 0.000000, bitrate: 2835 kb/s",
+      "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt470bg/bt709/iec61966-2-1, progressive), 1280x720 [SAR 1:1 DAR 16:9], 2694 kb/s, 29.09 fps, 2k tbr, 16k tbn (default)",
+      "Stream #0:1[0x2](eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 130 kb/s (default)"
+    ],
+    "audioSample90s": {
+      "exitCode": 0,
+      "levels": [
+        "[Parsed_volumedetect_0 @ 000001c1ac9d1880] mean_volume: -11.9 dB",
+        "[Parsed_volumedetect_0 @ 000001c1ac9d1880] max_volume: -0.3 dB"
+      ]
+    }
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "sources": [
+    {
+      "key": "s4w_lightning_ball_0",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_00.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_1",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_01.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_2",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_02.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_3",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_03.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_4",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_04.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_5",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_05.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_6",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_06.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_7",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_07.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_8",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_08.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_9",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_09.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_10",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_10.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_11",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_11.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_12",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_12.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_13",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_13.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_14",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_14.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "s4w_lightning_ball_15",
+      "path": "assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_15.png",
+      "width": 160,
+      "height": 160
+    },
+    {
+      "key": "mr27_corefx",
+      "path": "assets/game/shared/combat/modular_roster_0927/corefx.png",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "key": "nsd_chim_0",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "width": 256,
+      "height": 336
+    },
+    {
+      "key": "nsd_chim_1",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "width": 256,
+      "height": 336
+    },
+    {
+      "key": "nsd_chim_2",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "width": 256,
+      "height": 336
+    },
+    {
+      "key": "nsd_chim_3",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "width": 256,
+      "height": 336
+    },
+    {
+      "key": "nsd_chim_4",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "width": 256,
+      "height": 336
+    },
+    {
+      "key": "nsd_chim_5",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "width": 256,
+      "height": 336
+    },
+    {
+      "key": "nsd_chim_6",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "width": 256,
+      "height": 336
+    },
+    {
+      "key": "nsd_chim_7",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "width": 256,
+      "height": 336
+    },
+    {
+      "key": "nxp_upward_0",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "key": "nxp_upward_1",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "key": "nxp_upward_2",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "key": "nxp_upward_3",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "key": "nxp_upward_4",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "key": "nxp_upward_5",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "key": "nxp_upward_6",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "key": "nxp_upward_7",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "width": 256,
+      "height": 256
+    }
+  ],
+  "core": {
+    "path": "assets/game/shared/combat/modular_roster_0927/corefx.png",
+    "source": "exec-7398e934-6240-465d-95d4-616cb183eee5.png",
+    "cells": [
+      [
+        122,
+        4,
+        201,
+        434
+      ],
+      [
+        566,
+        4,
+        201,
+        434
+      ],
+      [
+        1010,
+        4,
+        201,
+        434
+      ],
+      [
+        1454,
+        4,
+        201,
+        434
+      ],
+      [
+        122,
+        448,
+        201,
+        434
+      ],
+      [
+        566,
+        448,
+        201,
+        434
+      ],
+      [
+        1010,
+        448,
+        201,
+        434
+      ],
+      [
+        1454,
+        448,
+        201,
+        434
+      ]
+    ]
+  }
+}

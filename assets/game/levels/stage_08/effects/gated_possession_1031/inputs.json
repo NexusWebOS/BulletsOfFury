@@ -1,0 +1,1624 @@
+{
+  "banks": {
+    "purple_form": {
+      "size": 512,
+      "fps": 20.0,
+      "frames": [
+        {
+          "key": "pxv17_void_rift_form_0",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "27c1504ad3ef9d451004759bb68f4b022a993d7401bb350f9d8219cb0baaafde"
+        },
+        {
+          "key": "pxv17_void_rift_form_1",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "46bf92ca3f01fca84a03f025a97aaf489d505b0242201c4780981008136038f3"
+        },
+        {
+          "key": "pxv17_void_rift_form_2",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a1a1e1dbba4351fc2a7bb5bb0f4142ac744513e9926ad7358bcef074c77d2d44"
+        },
+        {
+          "key": "pxv17_void_rift_form_3",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "840a088df6a0d6ab129ffe859dc27667314b9f263584e5458c8664201b790493"
+        },
+        {
+          "key": "pxv17_void_rift_form_4",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "0893627f8e1043af9fca23278b071e18bd4d441ea2deec4e5a127a6b328d127e"
+        },
+        {
+          "key": "pxv17_void_rift_form_5",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b949b0d9fa87f7b76daaf9771a3094ab00271dacecfa9db6c04deaaf271ed970"
+        },
+        {
+          "key": "pxv17_void_rift_form_6",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "bd54af2a40dd6bdd83edd69babb6f6d0a78bfac0f357862dbe15ed911e8f6328"
+        },
+        {
+          "key": "pxv17_void_rift_form_7",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "1b1c3643f5e358b77b135ab66ad0a0dd24e3822a77a1bd1aa2e805f2a912b7ea"
+        },
+        {
+          "key": "pxv17_void_rift_form_8",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "4466d77e68d319b649a5263860e76d6257d7bfd19112d5dd14d086f3d1ce81e6"
+        },
+        {
+          "key": "pxv17_void_rift_form_9",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "aa7654759ac113661f5a0e835576cb5922355ffe367b37ab933095e97a5b7de3"
+        },
+        {
+          "key": "pxv17_void_rift_form_10",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "bcabc5ce50f4487ea91fa0a20d5c3d88f08d2afc1b2a547ffd5342d8274c2b54"
+        },
+        {
+          "key": "pxv17_void_rift_form_11",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "5e0f44452e81fcf0ac7d6efd4f7cf589eb15d0f9a7ae1ca862dd61ca533ec773"
+        },
+        {
+          "key": "pxv17_void_rift_form_12",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "5c3c52a95a67b448fd36593d1b00a1bb931d7a2f2967e7ed3e1314b881d0bf96"
+        },
+        {
+          "key": "pxv17_void_rift_form_13",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "dfcefc6e59a0e53d2bcdf7336f9a263b8a9a9789c6b6afb2436489adfc83b862"
+        },
+        {
+          "key": "pxv17_void_rift_form_14",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "bc6fb761427171d9c156f28c0268136ceeba92e6caf93c35dbb3115baac0c424"
+        },
+        {
+          "key": "pxv17_void_rift_form_15",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "76b235052766c59c4a7b9c7ea83f0869db49f3c0a5cdf4e3e58c6702ef89be00"
+        },
+        {
+          "key": "pxv17_void_rift_form_16",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_16.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "03bbe5cf23b1b92067ecd0dbf4e37955c54e8df5c2f0c2c8c77d672213bf4308"
+        },
+        {
+          "key": "pxv17_void_rift_form_17",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_17.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c2757f0bc514313f01c377dfe1d705dd26a732ce93faf5449e72f9ab16436f5b"
+        },
+        {
+          "key": "pxv17_void_rift_form_18",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_18.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "39c9082f1c69bc164ceef9d13c81ea51bbf7a8a176010fb8b953f6c78a299707"
+        },
+        {
+          "key": "pxv17_void_rift_form_19",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_19.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "4754e5b9521f56af50179b24ef1a6fd5839edbdd8f16a914a296e4a8ff4bdc68"
+        },
+        {
+          "key": "pxv17_void_rift_form_20",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_20.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a64ef3537817e56440a149fc7aa84ad655cf52b4e51340bf52642b707c5710fa"
+        },
+        {
+          "key": "pxv17_void_rift_form_21",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_21.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "31b640b8a97407fc75828135f0bbfcca914b3ab250cabe895a20babcb63558a6"
+        },
+        {
+          "key": "pxv17_void_rift_form_22",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_22.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "40e5a335171414ebde6d578cf0081ba41269609f98cd2f4e909c3bfb7967c849"
+        },
+        {
+          "key": "pxv17_void_rift_form_23",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_23.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a694c074cdca79fe972dd94846575ac9b77f7e40ca7072fab0bfd346e345502d"
+        },
+        {
+          "key": "pxv17_void_rift_form_24",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_24.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b3c338368c4ecdfb8f3a62c2a800539452ea011f98d6a958bb26bf8657e0c3ad"
+        },
+        {
+          "key": "pxv17_void_rift_form_25",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_25.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "20941c4f1bd2893749c914b910bdd987726c675f18665a9ff65fcae429d80d15"
+        },
+        {
+          "key": "pxv17_void_rift_form_26",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_26.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6ddc5946c283055c02a9b5794ffe4c5d78174eb85c8ef8d0dadbfcf3ced58b01"
+        },
+        {
+          "key": "pxv17_void_rift_form_27",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_27.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "38a3661da76d4cc97ef7cf4f754d5f0189d9179c4fa0e7e53db12cd87eb7e2ce"
+        },
+        {
+          "key": "pxv17_void_rift_form_28",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_28.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "8f6d0796f539d88efebce1ee9ee2f411e010100729a1612342bf3ea839577274"
+        },
+        {
+          "key": "pxv17_void_rift_form_29",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_29.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "68b8044d8af779283fcdde85ba459fcbfbdb0805c8d909a562a3d75d8fa3c429"
+        },
+        {
+          "key": "pxv17_void_rift_form_30",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_30.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "74454e2cd7b29e12b6a9ee2cf804a01a730c9db6d54f37534abfe9b95143757f"
+        },
+        {
+          "key": "pxv17_void_rift_form_31",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_form_31.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6e368cb6f03e07276bfd995503ec4a573222dcba69864d50a6bb985d3f46d38a"
+        }
+      ]
+    },
+    "purple_loop": {
+      "size": 512,
+      "fps": 10.0,
+      "frames": [
+        {
+          "key": "pxv17_void_rift_loop_0",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6e368cb6f03e07276bfd995503ec4a573222dcba69864d50a6bb985d3f46d38a"
+        },
+        {
+          "key": "pxv17_void_rift_loop_1",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f56708366e2147ee00e3f7f180a650da8d83082ce9b7d5c2e94e1107404f3870"
+        },
+        {
+          "key": "pxv17_void_rift_loop_2",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "5b4491626f8c12333cdfb498d48ffc07e4c123d99dead033d4898786b31c72d3"
+        },
+        {
+          "key": "pxv17_void_rift_loop_3",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ca3f009503781f45cf06eb9986e5f7c99b04efd15a3a2da9c89eb13bc35fff88"
+        },
+        {
+          "key": "pxv17_void_rift_loop_4",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "79ccdb0c920d53218606e75ab28f154227f69d78ae3c6a98e9f083dba5bc59be"
+        },
+        {
+          "key": "pxv17_void_rift_loop_5",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6220bc35b7f3eeda6081d6916fb104452b3f501ff9ca8fcd933df6dc15abea93"
+        },
+        {
+          "key": "pxv17_void_rift_loop_6",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "640d01734fcbd2ccac97993ad4649abc4ec73966dc4848b4d68bd3225c52c5f5"
+        },
+        {
+          "key": "pxv17_void_rift_loop_7",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "df04c7f469d06e5576f5b73aaf210d0e1da44b132f9348d9ff4d357943592221"
+        },
+        {
+          "key": "pxv17_void_rift_loop_8",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e49681a629a483ed3cf50954d6a5d0019870f6b7d0d232ecd923e1e4b6ff8aee"
+        },
+        {
+          "key": "pxv17_void_rift_loop_9",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "653acc9f620714d9780524c6411b653f81ff2ec8c1f65d28a80a5f1137bcb1d2"
+        },
+        {
+          "key": "pxv17_void_rift_loop_10",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "8e7249503d7fcae94ca863fa33014cdd6f29b75caaa371cc3122b92f00648c26"
+        },
+        {
+          "key": "pxv17_void_rift_loop_11",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "cb8ee9489c75a51921f16e22a48a02cf8dd05d0b431b957158add6cb2e66e7f3"
+        },
+        {
+          "key": "pxv17_void_rift_loop_12",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "7637b85c5f24747d893eb79d534bef7d0d5a1f09b6aeeb77b77dcde9d5f283cc"
+        },
+        {
+          "key": "pxv17_void_rift_loop_13",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f2fa09ec5ebac57f42db33c1fa9caaed9f6d0ef33d9ac63ff33a75cf0902f635"
+        },
+        {
+          "key": "pxv17_void_rift_loop_14",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "4076d72c8a419c16f7ddf256fd4758294f726b96ddd20fd852044853b805b709"
+        },
+        {
+          "key": "pxv17_void_rift_loop_15",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_loop_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "14fea77c47324b646cd9caacc39dfa16072df6e4c0bd8221f0e370186ba4ce8e"
+        }
+      ]
+    },
+    "purple_close": {
+      "size": 512,
+      "fps": 20.0,
+      "frames": [
+        {
+          "key": "pxv17_void_rift_close_0",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6e368cb6f03e07276bfd995503ec4a573222dcba69864d50a6bb985d3f46d38a"
+        },
+        {
+          "key": "pxv17_void_rift_close_1",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "872a1c97d7251086ec1b1576189d5cef5624fdfef1c40b47d8ba3bae15a482e5"
+        },
+        {
+          "key": "pxv17_void_rift_close_2",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "55f93e0d32f21ef3fca5f4b2e5b5be338b16be757280fbe67f44fb089d7f8a06"
+        },
+        {
+          "key": "pxv17_void_rift_close_3",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d75d1f4209d92e2109f096ec897bd852c38d94ae1a3233f867f1a7866fa85320"
+        },
+        {
+          "key": "pxv17_void_rift_close_4",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c6e099b7c5aa81e07f1ba6d19e2833043d8b2536d384b5c5f1b2d376ea614614"
+        },
+        {
+          "key": "pxv17_void_rift_close_5",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6c358849e7385440ce00a24039846f681187b136395ff6462b0780691c5c2fa3"
+        },
+        {
+          "key": "pxv17_void_rift_close_6",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b9592f7eb19243837548afc6858b425cfbcc005ba24e14a41795ffb266d2873f"
+        },
+        {
+          "key": "pxv17_void_rift_close_7",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "1255099b0f125c3ba8bd3c05a5c29dbf2f909c7c535fcc1511db97e25c66ff8f"
+        },
+        {
+          "key": "pxv17_void_rift_close_8",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "41ff11d6c7f1eee4bab346b2a97607e14262441027279d521e89652df8edbc78"
+        },
+        {
+          "key": "pxv17_void_rift_close_9",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e1c3881e92b76cf4d41a9b1a4bc5cceb57c9e58c0d67db0fb299098d68730607"
+        },
+        {
+          "key": "pxv17_void_rift_close_10",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "42d6aadab2856ead9d7c4ee91360e1739faffcc4a89fe19dcf8865393d8548dd"
+        },
+        {
+          "key": "pxv17_void_rift_close_11",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "ed4a66aa84ff864e6e38612723c6a11ec75cb7d2f203c3679a866d28d97008e1"
+        },
+        {
+          "key": "pxv17_void_rift_close_12",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "9dc80ff9244d790ad627ef0b2026d5161b0664336405809f2bd408b0a0daddae"
+        },
+        {
+          "key": "pxv17_void_rift_close_13",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "4b8504a2fad5f26861b3cbecab80759b0131f2929d2c5e516fbfec1b93cdfae9"
+        },
+        {
+          "key": "pxv17_void_rift_close_14",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "9d13f2c2c51f884074bbf41f5067dde4dbfefa41c20423f77fa20e53e1c71997"
+        },
+        {
+          "key": "pxv17_void_rift_close_15",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "9339f1df5a4d667b33c91efbc38f0bf02c5a25679a5814bc049ff4eb0660b0b7"
+        },
+        {
+          "key": "pxv17_void_rift_close_16",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_16.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b90dde2735c829a0e30061c179885524fd3d518959727246e88274d79f41d905"
+        },
+        {
+          "key": "pxv17_void_rift_close_17",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_17.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c14049c4ed5881657f9a0e619a8009abaa13683ff088f0fc77444a0dccf281fd"
+        },
+        {
+          "key": "pxv17_void_rift_close_18",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_18.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "46ebd34b087de6b3e9dde6f71bd37c7758e11c83139a9379d55221ce14355103"
+        },
+        {
+          "key": "pxv17_void_rift_close_19",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_19.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "9df259af0386aead402e5c73f9778050150925f696012829efea1752a20c2521"
+        },
+        {
+          "key": "pxv17_void_rift_close_20",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_20.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d9fff9b02f51f4d9cbd4263e995f85582aec923216df4f5c68d9421465ce0c70"
+        },
+        {
+          "key": "pxv17_void_rift_close_21",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_21.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f77d67a956dd0f2e1deb2a0ab6dbeb2fab44cb6112e95549f8302a4c6a17ed57"
+        },
+        {
+          "key": "pxv17_void_rift_close_22",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_22.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "822365833ce5b385d29284ee744f1f16d30fe1dc4aa8c55addce620bbd75c809"
+        },
+        {
+          "key": "pxv17_void_rift_close_23",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_23.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "3ba27a7e29c70f4375bea4b764fc58565a7e1644ce037f76907e04697462f3f2"
+        },
+        {
+          "key": "pxv17_void_rift_close_24",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_24.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "db9ca2f9f579b844983d10bbec06d2eb21b2413d2e67c64c1adea9b7e162c1ca"
+        },
+        {
+          "key": "pxv17_void_rift_close_25",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_25.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "db9ca2f9f579b844983d10bbec06d2eb21b2413d2e67c64c1adea9b7e162c1ca"
+        },
+        {
+          "key": "pxv17_void_rift_close_26",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_26.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "db9ca2f9f579b844983d10bbec06d2eb21b2413d2e67c64c1adea9b7e162c1ca"
+        },
+        {
+          "key": "pxv17_void_rift_close_27",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_27.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "db9ca2f9f579b844983d10bbec06d2eb21b2413d2e67c64c1adea9b7e162c1ca"
+        },
+        {
+          "key": "pxv17_void_rift_close_28",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_28.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "db9ca2f9f579b844983d10bbec06d2eb21b2413d2e67c64c1adea9b7e162c1ca"
+        },
+        {
+          "key": "pxv17_void_rift_close_29",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_29.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "db9ca2f9f579b844983d10bbec06d2eb21b2413d2e67c64c1adea9b7e162c1ca"
+        },
+        {
+          "key": "pxv17_void_rift_close_30",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_30.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "db9ca2f9f579b844983d10bbec06d2eb21b2413d2e67c64c1adea9b7e162c1ca"
+        },
+        {
+          "key": "pxv17_void_rift_close_31",
+          "path": "assets/game/shared/fx/pixellab_void_1017/void_rift_close_31.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "27c1504ad3ef9d451004759bb68f4b022a993d7401bb350f9d8219cb0baaafde"
+        }
+      ]
+    },
+    "red_form": {
+      "size": 384,
+      "fps": 10.0,
+      "frames": [
+        {
+          "key": "pxv17_red_rift_form_0",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "27c1504ad3ef9d451004759bb68f4b022a993d7401bb350f9d8219cb0baaafde"
+        },
+        {
+          "key": "pxv17_red_rift_form_1",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "dcc15c3ccd75a278838fe5c79f850c37f48bbaee6768442c5e826f070e58517d"
+        },
+        {
+          "key": "pxv17_red_rift_form_2",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "7aaa4ffe98df1b68c5a3c0d69d48286b93d2a9c4a6b1b5800daed9fa7055e695"
+        },
+        {
+          "key": "pxv17_red_rift_form_3",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "2214bbbd3018c4c6e22948a6f56e4c8ad6d96b0639a2eb5e8cac5e4e9faeb2f4"
+        },
+        {
+          "key": "pxv17_red_rift_form_4",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "309cbe71b7e274d003c485a28ee9db08c534ced196be3f1af3a6268af938802a"
+        },
+        {
+          "key": "pxv17_red_rift_form_5",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e6739f1dd978e61cfd1878433b55a287f4b7302a1963d2f89ed2bfcf3b24c1ce"
+        },
+        {
+          "key": "pxv17_red_rift_form_6",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "1d09454bb62f42e10019f856fefa1af9891b67db61cfede64ced97cff9a2d72a"
+        },
+        {
+          "key": "pxv17_red_rift_form_7",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "c1229bd119346d7dedb2e43c780858535275e03fa2eaa3d4e8b181c8c2cb7855"
+        },
+        {
+          "key": "pxv17_red_rift_form_8",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "9d67e8c8dc6003c91f2b0e6565ebca312b1b6a3217f09b2ba158c24d297d1944"
+        },
+        {
+          "key": "pxv17_red_rift_form_9",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "42ee8d8ffdf403449f880d1ee08857d89e7b52cfd2d5e827f5d1910d9806b28c"
+        },
+        {
+          "key": "pxv17_red_rift_form_10",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f9d46e28cdfb9b936b887213801b38858626b134d10f13915dd5031c820c9037"
+        },
+        {
+          "key": "pxv17_red_rift_form_11",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "6fae168902ab8dcc20e67d748dd14818d81334c35f982657f0927d84fe7f4487"
+        },
+        {
+          "key": "pxv17_red_rift_form_12",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "65591b2444b94b52726a0f7504e82fc7309b3ed42db9ebdd2600f4708dd44538"
+        },
+        {
+          "key": "pxv17_red_rift_form_13",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "689f06e6565e68655c12b054f338492e8d55c3bcf6d97a7630ab478eefb6447b"
+        },
+        {
+          "key": "pxv17_red_rift_form_14",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "8b1ec3123ef26a3a984ded6796c9ddbb1dcd3b624dd792819216eff5a65e683d"
+        },
+        {
+          "key": "pxv17_red_rift_form_15",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_form_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d1bc938fcca3c64865a924b8fbdca16b5b0cd256e10715e6a366837c5c0cdb97"
+        }
+      ]
+    },
+    "red_loop": {
+      "size": 384,
+      "fps": 20.0,
+      "frames": [
+        {
+          "key": "pxv17_red_rift_loop_0",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d1bc938fcca3c64865a924b8fbdca16b5b0cd256e10715e6a366837c5c0cdb97"
+        },
+        {
+          "key": "pxv17_red_rift_loop_1",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "2406e7271020638882b4d69dd3596dca04661bd584a4d57847fdcb860b0f1f21"
+        },
+        {
+          "key": "pxv17_red_rift_loop_2",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "8816e70b9abbacc7f255ad45a814b81691e8299259167a35f5286014660400ef"
+        },
+        {
+          "key": "pxv17_red_rift_loop_3",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "7f7a048b8a7d81920c40a5f289b69ef81302502e2e633d6762165de91c9032c9"
+        },
+        {
+          "key": "pxv17_red_rift_loop_4",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "87f61916607f9e68a33dde58d0f059899d7d2844e482dff618fd97edc5ea9f9c"
+        },
+        {
+          "key": "pxv17_red_rift_loop_5",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d9e79cced59d1d1ebc21ea0b38a9b6758058fadfdd6b5d16bd772ad8931a4fc9"
+        },
+        {
+          "key": "pxv17_red_rift_loop_6",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "3488cc1c04c298320cf9b26a6f861bb9779402685ccebb805bc3cdd4d999e8e9"
+        },
+        {
+          "key": "pxv17_red_rift_loop_7",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "934cdf1c6ae2a125df4ddb2fd6204158c5a9df2e54ca7a2408d8085144050ba5"
+        },
+        {
+          "key": "pxv17_red_rift_loop_8",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "dedea78b4f0b4dfbe34ae5d096bcadf8b29eef36248ba35bf9879271194b5bf9"
+        },
+        {
+          "key": "pxv17_red_rift_loop_9",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d1d87422c1c78c7989c389ec50b860977c657a6b34c983e793a52c4e1c1e4568"
+        },
+        {
+          "key": "pxv17_red_rift_loop_10",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "302005ff54a258ffa9646e8458b7378c43861a5bb406ae79303d73c3bfe824c0"
+        },
+        {
+          "key": "pxv17_red_rift_loop_11",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "75c167bf15ece62b705bdf0c5c7f73aee6d4df8ec6471366e6ad581e3e45afbc"
+        },
+        {
+          "key": "pxv17_red_rift_loop_12",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "4b1a833740651248fc7d3345ee41fc2a789f7d4fb60e151d6e94980d9f3f0702"
+        },
+        {
+          "key": "pxv17_red_rift_loop_13",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "edce5ad5df79afb11f5803224d32eaca96a3281b2e881b0f1ad57078ff8a17d5"
+        },
+        {
+          "key": "pxv17_red_rift_loop_14",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "22c3368165b093a32b469e9672e5d4883d0d68a2961d403bc0771bc2a2ca503b"
+        },
+        {
+          "key": "pxv17_red_rift_loop_15",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b82119f9a472c54142ecc5f9fcece9a4b6357ed762a923f8fc9fca843fba8970"
+        },
+        {
+          "key": "pxv17_red_rift_loop_16",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_16.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b9b342784d9ffdac980160cc7ab24c87d75d0aa544643750fabcae957f0f7f37"
+        },
+        {
+          "key": "pxv17_red_rift_loop_17",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_17.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b902f2947a891549653c17c2c8208b0374df9a93c9fd333ba1689e75156b8b55"
+        },
+        {
+          "key": "pxv17_red_rift_loop_18",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_18.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a7c944b66b9f2e846a9ba00db1e42b4df2dbbd4dadf756c83bd3b086ebda826f"
+        },
+        {
+          "key": "pxv17_red_rift_loop_19",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_19.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d560ff1be8b5bc595fa39708a15cee191463b0c351444c58247f286b16d3c571"
+        },
+        {
+          "key": "pxv17_red_rift_loop_20",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_20.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b1163a469ebcbb02cb88dc299d1a4baa6cccd2198de77a269fb3ae2c8544b474"
+        },
+        {
+          "key": "pxv17_red_rift_loop_21",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_21.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "9029894ba8dfeb7203f960405d110d2d7b2dfa9f610fbae623b196cf11843191"
+        },
+        {
+          "key": "pxv17_red_rift_loop_22",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_22.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f16a6ec16bc2af7125062f8d6207b4dc2bd040ec0fc28d01f9ae09b15235c977"
+        },
+        {
+          "key": "pxv17_red_rift_loop_23",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_23.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "7181141db61ce5d6af059ba3100d540cc310a59acae70c802612ef706dd6de1d"
+        },
+        {
+          "key": "pxv17_red_rift_loop_24",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_24.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "b596f4e36aade6fbf5efca4f9b32b161369ec864f744bb04cc584f310d17e7c1"
+        },
+        {
+          "key": "pxv17_red_rift_loop_25",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_25.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "de7f94c85c6c96c5617576167b94de3ad7b834404309220978f986b2dc75f50b"
+        },
+        {
+          "key": "pxv17_red_rift_loop_26",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_26.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "a96a9f3ad8e3c701891573eaa0f33b7b129fd1989a88d8866f5aad772a80c152"
+        },
+        {
+          "key": "pxv17_red_rift_loop_27",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_27.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "42253008206b45292b5233a2c17d2db2339bf148c3037846dcd5346f66a0f7b3"
+        },
+        {
+          "key": "pxv17_red_rift_loop_28",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_28.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "4696b7b3e8f544085a15bc16a57feaf431b30b42dce38af7e4652764e200789c"
+        },
+        {
+          "key": "pxv17_red_rift_loop_29",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_29.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "82bf8b9ab3412edfb2a258b4c82dcf420257604e8cd0d1eeaa235eb33f94f6f5"
+        },
+        {
+          "key": "pxv17_red_rift_loop_30",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_30.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "395589e85715a82fb3455357bde416260eaa3ca227c3e40b9a7d1f943d7ee1a2"
+        },
+        {
+          "key": "pxv17_red_rift_loop_31",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_loop_31.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "7ecca8d73ed7e2de3664bde2b3b9b41c9e52b98ec666a29fd311ad0b10c8c4c4"
+        }
+      ]
+    },
+    "red_close": {
+      "size": 384,
+      "fps": 10.0,
+      "frames": [
+        {
+          "key": "pxv17_red_rift_close_0",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_00.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "d1bc938fcca3c64865a924b8fbdca16b5b0cd256e10715e6a366837c5c0cdb97"
+        },
+        {
+          "key": "pxv17_red_rift_close_1",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_01.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "86ee65b880bf60ec38758d5c4b4e694d9479ead36c7b54f2a1157ad830a1b442"
+        },
+        {
+          "key": "pxv17_red_rift_close_2",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_02.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "bd2719f332b7f192bcdc0540a51ad51bde47876504f3d676c1f71afe940f4be2"
+        },
+        {
+          "key": "pxv17_red_rift_close_3",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_03.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "06ea0ce4c8101f3ae6509b33536ce8c0fc3a75301e3c6edae61dfa6b6834add0"
+        },
+        {
+          "key": "pxv17_red_rift_close_4",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_04.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "2d4f2a6d4b5717a0725ac63a0f3fc8fda76be7485e3fbf82ae659a51b415c752"
+        },
+        {
+          "key": "pxv17_red_rift_close_5",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_05.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "cb392714c31cbef18934fedc10c798b9817b02884dddc75ce3df1faab03b7499"
+        },
+        {
+          "key": "pxv17_red_rift_close_6",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_06.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f6a88b76d95ab3d970f0c0d224467ed4db7e3fa753258896ad9f24e0de83240e"
+        },
+        {
+          "key": "pxv17_red_rift_close_7",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_07.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f900300cf33d2c9d4b50c669f385606c43b1aee91d0efcd41494a8ebbc8c15fd"
+        },
+        {
+          "key": "pxv17_red_rift_close_8",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_08.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "e6062b179ab3143d277fa4d091db002d6f28d838da52cbc94d9f14d80827bfc2"
+        },
+        {
+          "key": "pxv17_red_rift_close_9",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_09.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "7a021d2076f7dc12cc9c730b536e785e8ef6d2199ee514e75df18a0eb9740e8b"
+        },
+        {
+          "key": "pxv17_red_rift_close_10",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_10.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "9b663fc02c8c4ab5cfb0ade1d10c2669dfb47ffc52514c61a163944deb747a97"
+        },
+        {
+          "key": "pxv17_red_rift_close_11",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_11.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "f01ba5a9a3f5287ac5cc0324e0432a690f986086d776f68617d9ac26cd235155"
+        },
+        {
+          "key": "pxv17_red_rift_close_12",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_12.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "0425c7e8b316ead6bfa2965676749e7c4f681c5b05221b248f50611bc030e269"
+        },
+        {
+          "key": "pxv17_red_rift_close_13",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_13.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "5bf4bf86e9f4170b27623f0747b9974b04113eef0b841552ed3fd7bae885820f"
+        },
+        {
+          "key": "pxv17_red_rift_close_14",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_14.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "88ab53f11a7b5bd9210880abcdadca3335dec7aff80a04c26a26257bf47d67f9"
+        },
+        {
+          "key": "pxv17_red_rift_close_15",
+          "path": "assets/game/shared/fx/pixellab_void_1017/red_rift_close_15.png",
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            160
+          ],
+          "sha256": "27c1504ad3ef9d451004759bb68f4b022a993d7401bb350f9d8219cb0baaafde"
+        }
+      ]
+    }
+  }
+}

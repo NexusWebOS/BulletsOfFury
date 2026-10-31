@@ -1,0 +1,207 @@
+{
+  "native": [
+    {
+      "name": "Native entrance reaches the unchanged5945HP first host",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Arms still protect the entire core budget",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real destruction of both arms enters the new rolling state",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Core rebounds from all four screen edges",
+      "passed": true,
+      "data": 51
+    },
+    {
+      "name": "Every active frame stays fully inside the arena",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All24 measured body silhouettes stay clear of HUD and screen edges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Wall reflections have continuous motion without waypoint teleports",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Furious rapidly drops more than40 bombs over this27s run",
+      "passed": true,
+      "data": 69
+    },
+    {
+      "name": "The original24 authored3D roll frames remain active",
+      "passed": true,
+      "data": 24
+    },
+    {
+      "name": "Bomb count never exceeds the six-live-bomb pressure cap",
+      "passed": true,
+      "data": 6
+    },
+    {
+      "name": "Every bomb retains its native1.8s flight/arming warning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every committed landing point stays fixed as the core moves",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Finite barrage recovery keeps the ball moving and resumes bombing",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Motion and bomb spawning do not rewrite the original core HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The exposed rolling core still accepts ordinary native damage",
+      "passed": true,
+      "data": {
+        "before": 1987,
+        "after": 1962
+      }
+    },
+    {
+      "name": "Native core defeat still enters its original rebirth sequence",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Defeat clears bomb danger and retires every owned bomb",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native drawing, console or browser errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Real Furious input-only fight reaches native first-host defeat at original5945HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The filmed exposed core rebounds off every side of the arena",
+      "passed": true,
+      "data": 80
+    },
+    {
+      "name": "Rapid bombing is visible for a complete barrage cycle",
+      "passed": true,
+      "data": 128
+    },
+    {
+      "name": "Every filmed bomb retains its full native warning and the six-bomb cap",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The actual recording includes13 seconds of input-only observation after arm destruction",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native exposed-core damage and original rebirth progression remain present",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native, asset, audio or input-bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The full encounter runs at a smooth native game pace",
+      "passed": true,
+      "data": 58.18852027382834
+    },
+    {
+      "name": "Actual bomb warning and explosion sounds are recorded",
+      "passed": true,
+      "data": {
+        "timedBombBeep": 128,
+        "timedBombBlast": 50
+      }
+    },
+    {
+      "name": "Decoded video audio is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -20.4,
+        "peakDb": -3.3
+      }
+    },
+    {
+      "name": "stage8-final loads the new live movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-final decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phase1 loads the new live movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s8-phase1 decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-ricochet loads the new live movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-dracodia-ricochet decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No gallery playback errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 129.73,
+  "fps": 58.18852027382834,
+  "bombs": 128,
+  "rebounds": 80,
+  "audio": {
+    "meanDb": -20.4,
+    "peakDb": -3.3
+  },
+  "sha256": "60fff2c9447deabb1bb27ad5d19f6d6d5778f7a1d6e545372068e6254c2d5afc",
+  "preview": "http://127.0.0.1:51046/?dracodia=ricochet-1030#clip=stage8-dracodia-ricochet",
+  "full": "http://127.0.0.1:51046/?dracodia=ricochet-1030#clip=stage8-final",
+  "published": false,
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "coreUnchanged": true
+}

@@ -1,0 +1,878 @@
+{
+  "checks": [
+    {
+      "name": "Slot6 is a whole Neural Archon brain with original full health budget",
+      "passed": true,
+      "data": {
+        "name": "DRACODIA \u00e2\u20ac\u201d NEURAL ARCHON",
+        "model": "brain",
+        "native": false,
+        "parts": [
+          "core"
+        ],
+        "keys": [
+          "nb23_brain_0"
+        ],
+        "hp": 2861,
+        "budget": 2861
+      }
+    },
+    {
+      "name": "Brain plays generated lobe/circuit frames while floating on both axes",
+      "passed": true,
+      "data": {
+        "frames": [
+          "nb23_brain_0",
+          "nb23_brain_1",
+          "nb23_brain_2",
+          "nb23_brain_3",
+          "nb23_brain_4",
+          "nb23_brain_5",
+          "nb23_brain_6",
+          "nb23_brain_7",
+          "nb23_brain_8"
+        ],
+        "dx": 45.995926849439115,
+        "dy": 17.193597779827115
+      }
+    },
+    {
+      "name": "Actual brain pixels take damage, white flash expires, Retina sees one live core",
+      "passed": true,
+      "data": {
+        "visibleHit": true,
+        "damage": 17,
+        "flash": true,
+        "expired": true,
+        "targets": 1
+      }
+    },
+    {
+      "name": "Eye origins change with whole-body frames and follow world movement exactly",
+      "passed": true,
+      "data": {
+        "offsets": [
+          [
+            [
+              -33,
+              29
+            ],
+            [
+              23,
+              35
+            ]
+          ],
+          [
+            [
+              -32,
+              36
+            ],
+            [
+              23,
+              36
+            ]
+          ],
+          [
+            [
+              -34,
+              35
+            ],
+            [
+              24,
+              34
+            ]
+          ],
+          [
+            [
+              -33,
+              34
+            ],
+            [
+              23,
+              34
+            ]
+          ],
+          [
+            [
+              -32,
+              32
+            ],
+            [
+              23,
+              31
+            ]
+          ],
+          [
+            [
+              -32,
+              33
+            ],
+            [
+              22,
+              32
+            ]
+          ],
+          [
+            [
+              -34,
+              35
+            ],
+            [
+              24,
+              37
+            ]
+          ],
+          [
+            [
+              -31,
+              34
+            ],
+            [
+              24,
+              27
+            ]
+          ],
+          [
+            [
+              -32,
+              31
+            ],
+            [
+              23,
+              26
+            ]
+          ]
+        ],
+        "frames": [
+          "nb23_brain_0",
+          "nb23_brain_1",
+          "nb23_brain_2",
+          "nb23_brain_3",
+          "nb23_brain_4",
+          "nb23_brain_5",
+          "nb23_brain_6",
+          "nb23_brain_7",
+          "nb23_brain_8"
+        ],
+        "translation": true
+      }
+    },
+    {
+      "name": "Before laser release the whole brain plays a progressive authored eye/brow charge",
+      "passed": true,
+      "data": {
+        "rows": [
+          {
+            "u": 0,
+            "key": "nb23_charge_0",
+            "eyes": [
+              {
+                "x": 307,
+                "y": 249
+              },
+              {
+                "x": 363,
+                "y": 255
+              }
+            ]
+          },
+          {
+            "u": 0.13,
+            "key": "nb23_charge_1",
+            "eyes": [
+              {
+                "x": 309,
+                "y": 253
+              },
+              {
+                "x": 355,
+                "y": 252
+              }
+            ]
+          },
+          {
+            "u": 0.26,
+            "key": "nb23_charge_2",
+            "eyes": [
+              {
+                "x": 308,
+                "y": 251
+              },
+              {
+                "x": 355,
+                "y": 249
+              }
+            ]
+          },
+          {
+            "u": 0.39,
+            "key": "nb23_charge_3",
+            "eyes": [
+              {
+                "x": 314,
+                "y": 249
+              },
+              {
+                "x": 355,
+                "y": 252
+              }
+            ]
+          },
+          {
+            "u": 0.52,
+            "key": "nb23_charge_4",
+            "eyes": [
+              {
+                "x": 313,
+                "y": 255
+              },
+              {
+                "x": 360,
+                "y": 255
+              }
+            ]
+          },
+          {
+            "u": 0.65,
+            "key": "nb23_charge_5",
+            "eyes": [
+              {
+                "x": 312,
+                "y": 255
+              },
+              {
+                "x": 356,
+                "y": 254
+              }
+            ]
+          },
+          {
+            "u": 0.78,
+            "key": "nb23_charge_6",
+            "eyes": [
+              {
+                "x": 310,
+                "y": 256
+              },
+              {
+                "x": 355,
+                "y": 254
+              }
+            ]
+          },
+          {
+            "u": 0.91,
+            "key": "nb23_charge_7",
+            "eyes": [
+              {
+                "x": 310,
+                "y": 256
+              },
+              {
+                "x": 361,
+                "y": 252
+              }
+            ]
+          }
+        ],
+        "earlyShots": false
+      }
+    },
+    {
+      "name": "All16 PixelLab laser flow frames cycle and both emitters stay on the current eyes",
+      "passed": true,
+      "data": {
+        "keys": [
+          "nb23_beam_5_5",
+          "nb23_beam_5_6",
+          "nb23_beam_5_7",
+          "nb23_beam_5_8",
+          "nb23_beam_5_9",
+          "nb23_beam_5_10",
+          "nb23_beam_5_11",
+          "nb23_beam_5_12",
+          "nb23_beam_5_13",
+          "nb23_beam_5_14",
+          "nb23_beam_5_15",
+          "nb23_beam_5_0",
+          "nb23_beam_5_1",
+          "nb23_beam_5_2",
+          "nb23_beam_5_3",
+          "nb23_beam_5_4"
+        ],
+        "mismatch": 0,
+        "bodyFrames": 3
+      }
+    },
+    {
+      "name": "charge whole-body damage flash is visible and restores the authored glow",
+      "passed": true,
+      "data": {
+        "white": true,
+        "expired": true,
+        "colored": true
+      }
+    },
+    {
+      "name": "focus whole-body damage flash is visible and restores the authored glow",
+      "passed": true,
+      "data": {
+        "white": true,
+        "expired": true,
+        "colored": true
+      }
+    },
+    {
+      "name": "normal eye laser displays all3 warning colors before damage",
+      "passed": true,
+      "data": {
+        "warnings": [
+          "nb23_warn_laser_green_0",
+          "nb23_warn_laser_yellow_0",
+          "nb23_warn_laser_red_0"
+        ],
+        "premature": 0,
+        "hits": 0
+      }
+    },
+    {
+      "name": "normal two eye beams expand through6 baked widths from frame-measured moving eye sockets",
+      "passed": true,
+      "data": {
+        "widths": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "stationary": true,
+        "eyes": [
+          {
+            "x": 312,
+            "y": 255
+          },
+          {
+            "x": 356,
+            "y": 254
+          }
+        ],
+        "liveEyes": [
+          {
+            "x": 312,
+            "y": 255
+          },
+          {
+            "x": 356,
+            "y": 254
+          }
+        ],
+        "sockets": [
+          {
+            "x": 310,
+            "y": 256
+          },
+          {
+            "x": 361,
+            "y": 252
+          }
+        ],
+        "releases": 1,
+        "keys": [
+          "nb23_focus_0",
+          "nb23_beam_5_1"
+        ]
+      }
+    },
+    {
+      "name": "normal lethal eye lane and safe outer lane agree with authored warning",
+      "passed": true,
+      "data": {
+        "inside": 1,
+        "outside": 0
+      }
+    },
+    {
+      "name": "normal staggered geysers have distinct fixed targets and complete recovery",
+      "passed": true,
+      "data": {
+        "released": 3,
+        "unique": 3,
+        "recovered": true,
+        "events": [
+          {
+            "type": "codeGeysers",
+            "tell": 1.2
+          },
+          {
+            "type": "geyser-release",
+            "x": 252,
+            "y": 462,
+            "age": 6.661338147750939e-16
+          },
+          {
+            "type": "geyser-release",
+            "x": 340,
+            "y": 400,
+            "age": 0.01666666666666583
+          },
+          {
+            "type": "geyser-release",
+            "x": 428,
+            "y": 462,
+            "age": 0.016666666666664387
+          },
+          {
+            "type": "codeGeysers"
+          }
+        ]
+      }
+    },
+    {
+      "name": "hard eye laser displays all3 warning colors before damage",
+      "passed": true,
+      "data": {
+        "warnings": [
+          "nb23_warn_laser_green_0",
+          "nb23_warn_laser_yellow_0",
+          "nb23_warn_laser_red_0"
+        ],
+        "premature": 0,
+        "hits": 0
+      }
+    },
+    {
+      "name": "hard two eye beams expand through6 baked widths from frame-measured moving eye sockets",
+      "passed": true,
+      "data": {
+        "widths": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "stationary": true,
+        "eyes": [
+          {
+            "x": 312,
+            "y": 255
+          },
+          {
+            "x": 356,
+            "y": 254
+          }
+        ],
+        "liveEyes": [
+          {
+            "x": 312,
+            "y": 255
+          },
+          {
+            "x": 356,
+            "y": 254
+          }
+        ],
+        "sockets": [
+          {
+            "x": 310,
+            "y": 256
+          },
+          {
+            "x": 361,
+            "y": 252
+          }
+        ],
+        "releases": 1,
+        "keys": [
+          "nb23_focus_0",
+          "nb23_beam_5_1"
+        ]
+      }
+    },
+    {
+      "name": "hard lethal eye lane and safe outer lane agree with authored warning",
+      "passed": true,
+      "data": {
+        "inside": 1,
+        "outside": 0
+      }
+    },
+    {
+      "name": "hard staggered geysers have distinct fixed targets and complete recovery",
+      "passed": true,
+      "data": {
+        "released": 4,
+        "unique": 4,
+        "recovered": true,
+        "events": [
+          {
+            "type": "codeGeysers",
+            "tell": 1.04
+          },
+          {
+            "type": "geyser-release",
+            "x": 208,
+            "y": 462,
+            "age": 0.010000000000001119
+          },
+          {
+            "type": "geyser-release",
+            "x": 296,
+            "y": 400,
+            "age": 0.0033333333333332438
+          },
+          {
+            "type": "geyser-release",
+            "x": 384,
+            "y": 462,
+            "age": 0.013333333333331976
+          },
+          {
+            "type": "geyser-release",
+            "x": 472,
+            "y": 400,
+            "age": 0.006666666666664156
+          },
+          {
+            "type": "codeGeysers"
+          }
+        ]
+      }
+    },
+    {
+      "name": "furious eye laser displays all3 warning colors before damage",
+      "passed": true,
+      "data": {
+        "warnings": [
+          "nb23_warn_laser_green_0",
+          "nb23_warn_laser_yellow_0",
+          "nb23_warn_laser_red_0"
+        ],
+        "premature": 0,
+        "hits": 0
+      }
+    },
+    {
+      "name": "furious two eye beams expand through6 baked widths from frame-measured moving eye sockets",
+      "passed": true,
+      "data": {
+        "widths": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "stationary": true,
+        "eyes": [
+          {
+            "x": 312,
+            "y": 255
+          },
+          {
+            "x": 356,
+            "y": 254
+          }
+        ],
+        "liveEyes": [
+          {
+            "x": 312,
+            "y": 255
+          },
+          {
+            "x": 356,
+            "y": 254
+          }
+        ],
+        "sockets": [
+          {
+            "x": 310,
+            "y": 256
+          },
+          {
+            "x": 361,
+            "y": 252
+          }
+        ],
+        "releases": 1,
+        "keys": [
+          "nb23_focus_0",
+          "nb23_beam_5_1"
+        ]
+      }
+    },
+    {
+      "name": "furious lethal eye lane and safe outer lane agree with authored warning",
+      "passed": true,
+      "data": {
+        "inside": 1,
+        "outside": 0
+      }
+    },
+    {
+      "name": "furious staggered geysers have distinct fixed targets and complete recovery",
+      "passed": true,
+      "data": {
+        "released": 5,
+        "unique": 5,
+        "recovered": true,
+        "events": [
+          {
+            "type": "codeGeysers",
+            "tell": 0.9
+          },
+          {
+            "type": "geyser-release",
+            "x": 164,
+            "y": 462,
+            "age": 1.1102230246251565e-15
+          },
+          {
+            "type": "geyser-release",
+            "x": 252,
+            "y": 400,
+            "age": 0.01000000000000062
+          },
+          {
+            "type": "geyser-release",
+            "x": 340,
+            "y": 462,
+            "age": 0.0033333333333329662
+          },
+          {
+            "type": "geyser-release",
+            "x": 428,
+            "y": 400,
+            "age": 0.013333333333331976
+          },
+          {
+            "type": "geyser-release",
+            "x": 516,
+            "y": 462,
+            "age": 0.006666666666664378
+          },
+          {
+            "type": "codeGeysers"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Geyser plume has real erupting pixels and its own matching lethal footprint",
+      "passed": true,
+      "data": {
+        "inside": 1,
+        "outside": 0,
+        "keys": [
+          "nb23_warn_geyser_red_0",
+          "nb23_warn_geyser_yellow_0",
+          "nb23_brain_0",
+          "nb23_geyser_2"
+        ]
+      }
+    },
+    {
+      "name": "Animated cloud blocks body damage, consumes finite shield HP and can be broken",
+      "passed": true,
+      "data": {
+        "protectedHP": true,
+        "shieldLost": 25,
+        "broken": true,
+        "afterBreak": 19,
+        "cloud": true,
+        "expired": true,
+        "frac": 0
+      }
+    },
+    {
+      "name": "Cloud expires and exposes a damageable recovery window",
+      "passed": true,
+      "data": {
+        "protectedHP": true,
+        "shieldLost": 25,
+        "broken": true,
+        "afterBreak": 19,
+        "cloud": true,
+        "expired": true,
+        "frac": 0
+      }
+    },
+    {
+      "name": "Native attack book cycles eye lasers, geysers, cloud; transition cleanup removes hazards",
+      "passed": true,
+      "data": {
+        "out": [
+          "eyeExpansion",
+          "codeGeysers",
+          "cloudAegis"
+        ],
+        "clear": true
+      }
+    },
+    {
+      "name": "Morphing away and back preserves damaged brain health and single core",
+      "passed": true,
+      "data": {
+        "same": true,
+        "parts": [
+          "core"
+        ],
+        "hp": 2838,
+        "max": 2861
+      }
+    },
+    {
+      "name": "Incoming transformation uses new generated brain assembly, no Harrier graphics",
+      "passed": true,
+      "data": {
+        "keys": [
+          "nb23_morph_0",
+          "nb23_morph_1",
+          "nb23_morph_2",
+          "nb23_morph_3",
+          "nb23_morph_4",
+          "nb23_morph_5",
+          "nb23_morph_6",
+          "nb23_morph_7"
+        ]
+      }
+    },
+    {
+      "name": "Brain must lose full health, then native copy-death resumes other forms without reward",
+      "passed": true,
+      "data": {
+        "zero": 0,
+        "mode": "v19copyDeath",
+        "targets": 0,
+        "otherAlive": true,
+        "stageClear": false
+      }
+    },
+    {
+      "name": "Hammer, helicopter and volcano keep their existing identities",
+      "passed": true,
+      "data": [
+        {
+          "id": 8,
+          "model": "hammer",
+          "own": false
+        },
+        {
+          "id": 1,
+          "model": "helicopter",
+          "own": false
+        },
+        {
+          "id": 2,
+          "model": "volcano",
+          "own": false
+        }
+      ]
+    },
+    {
+      "name": "Native moving-eye charge, animated laser flow and retained hazards recorded with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "New attack routes produced decoded native audio playback",
+      "passed": true,
+      "data": {
+        "count": 13,
+        "files": [
+          "http://127.0.0.1:52733/assets/game/shared/audio/sounds/bossPhase.mp3",
+          "http://127.0.0.1:52733/assets/game/shared/combat/combat_1003i/laser_release.mp3",
+          "http://127.0.0.1:52733/assets/game/shared/audio/sounds/alert_lockon.mp3",
+          "http://127.0.0.1:52733/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+          "http://127.0.0.1:52733/assets/game/shared/audio/sounds/expBig.mp3",
+          "http://127.0.0.1:52733/assets/game/shared/combat/combat_1003i/target_acquire.mp3"
+        ]
+      }
+    },
+    {
+      "name": "Every authored cell has even fixed dimensions and unclipped content",
+      "passed": true,
+      "data": {
+        "cells": 179
+      }
+    },
+    {
+      "name": "Every idle pose retains its actual whole moving face pixels; frozen rectangle removed",
+      "passed": true,
+      "data": {
+        "wholeSourceMatches": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "uniqueFaces": 9
+      }
+    },
+    {
+      "name": "brain contains changing approved PixelLab pixels, not repeated base poses",
+      "passed": true,
+      "data": {
+        "unique": 9,
+        "cells": 9
+      }
+    },
+    {
+      "name": "charge contains changing approved PixelLab pixels, not repeated base poses",
+      "passed": true,
+      "data": {
+        "unique": 8,
+        "cells": 8
+      }
+    },
+    {
+      "name": "cloud contains changing approved PixelLab pixels, not repeated base poses",
+      "passed": true,
+      "data": {
+        "unique": 9,
+        "cells": 9
+      }
+    },
+    {
+      "name": "geyser contains changing approved PixelLab pixels, not repeated base poses",
+      "passed": true,
+      "data": {
+        "unique": 7,
+        "cells": 8
+      }
+    },
+    {
+      "name": "morph contains changing approved PixelLab pixels, not repeated base poses",
+      "passed": true,
+      "data": {
+        "unique": 9,
+        "cells": 9
+      }
+    },
+    {
+      "name": "beam_5 contains changing approved PixelLab pixels, not repeated base poses",
+      "passed": true,
+      "data": {
+        "unique": 16,
+        "cells": 16
+      }
+    },
+    {
+      "name": "No native page or asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "passed": 39,
+  "failed": 0,
+  "errors": []
+}

@@ -1,0 +1,283 @@
+{
+  "moduleSha256": "27acf4121dbf067a507eac03737d2fec97762693cdc45992960174e1c75ceab6",
+  "normalRun": {
+    "state": "clear",
+    "phase": "victory",
+    "room": 2,
+    "time": 88.68333333332959,
+    "hp": 6,
+    "max": 6,
+    "deaths": 0,
+    "kills": 21,
+    "damage": 0,
+    "coverStops": 24,
+    "intercepts": 0,
+    "entries": [
+      {
+        "x": 145,
+        "y": -90,
+        "room": 0
+      },
+      {
+        "x": 260,
+        "y": -132,
+        "room": 0
+      },
+      {
+        "x": 390,
+        "y": -174,
+        "room": 0
+      },
+      {
+        "x": 260,
+        "y": -90,
+        "room": 0
+      },
+      {
+        "x": 390,
+        "y": -132,
+        "room": 0
+      },
+      {
+        "x": 505,
+        "y": -174,
+        "room": 0
+      },
+      {
+        "x": 390,
+        "y": -90,
+        "room": 0
+      },
+      {
+        "x": 505,
+        "y": -132,
+        "room": 0
+      },
+      {
+        "x": 145,
+        "y": -174,
+        "room": 0
+      },
+      {
+        "x": 145,
+        "y": -90,
+        "room": 1
+      },
+      {
+        "x": 260,
+        "y": -132,
+        "room": 1
+      },
+      {
+        "x": 390,
+        "y": -174,
+        "room": 1
+      },
+      {
+        "x": 505,
+        "y": -216,
+        "room": 1
+      },
+      {
+        "x": 260,
+        "y": -90,
+        "room": 1
+      },
+      {
+        "x": 390,
+        "y": -132,
+        "room": 1
+      },
+      {
+        "x": 505,
+        "y": -174,
+        "room": 1
+      },
+      {
+        "x": 145,
+        "y": -216,
+        "room": 1
+      },
+      {
+        "x": 390,
+        "y": -90,
+        "room": 1
+      },
+      {
+        "x": 505,
+        "y": -132,
+        "room": 1
+      },
+      {
+        "x": 145,
+        "y": -174,
+        "room": 1
+      },
+      {
+        "x": 260,
+        "y": -216,
+        "room": 1
+      }
+    ],
+    "grenadesRemaining": 1,
+    "metrics": {
+      "coverDecisions": 63,
+      "moveDecisions": 6,
+      "fireDecisions": 292,
+      "decisions": 355,
+      "states": [
+        "0:advance::",
+        "0:fight::",
+        "1:advance::",
+        "1:fight::",
+        "2:core:core:enter",
+        "2:core:core:fight",
+        "2:core:core:transform",
+        "2:core:helios:enter",
+        "2:core:helios:fight",
+        "2:core:helios:run",
+        "2:core:helios:return",
+        "2:core:helios:recover",
+        "2:core:helios:volley",
+        "2:core:helios:lightning",
+        "2:core:helios:jump",
+        "2:victory:helios:dead"
+      ],
+      "minHull": 6
+    },
+    "boss": {
+      "form": "helios",
+      "state": "dead",
+      "hp": 0
+    }
+  },
+  "controllerRun": {
+    "state": "clear",
+    "phase": "victory",
+    "room": 2,
+    "time": 106.74999999999523,
+    "hp": 6,
+    "deaths": 0,
+    "kills": 21,
+    "damage": 0,
+    "coverStops": 42,
+    "intercepts": 3,
+    "grenadesRemaining": 1,
+    "metrics": {
+      "coverDecisions": 101,
+      "moveDecisions": 8,
+      "fireDecisions": 327,
+      "decisions": 428,
+      "states": [
+        "0:advance::",
+        "0:fight::",
+        "1:advance::",
+        "1:fight::",
+        "2:core:core:enter",
+        "2:core:core:fight",
+        "2:core:core:transform",
+        "2:core:helios:enter",
+        "2:core:helios:run",
+        "2:core:helios:return",
+        "2:core:helios:recover",
+        "2:core:helios:volley",
+        "2:core:helios:lightning",
+        "2:core:helios:fight",
+        "2:core:helios:jump",
+        "2:victory:helios:dead"
+      ],
+      "minHull": 6
+    },
+    "boss": {
+      "form": "helios",
+      "state": "dead",
+      "hp": 0
+    }
+  },
+  "passiveControl": {
+    "hp": 0,
+    "dead": true,
+    "damage": 6,
+    "time": 12.10000000000018
+  },
+  "decisionCadenceMs": 250,
+  "strategy": "Prioritize turrets, retain controller target until defeated, use up to three grenades per breach when at least three infantry are visible, cover incoming shots and sidestep rocket/geyser warnings. Input decisions every 250 ms; controller cursor direction releases at chosen target each tick. No physical controller tested.",
+  "checks": [
+    {
+      "name": "normal run begins with six armor and damage enabled",
+      "passed": true
+    },
+    {
+      "name": "normal armor input bot clears both breaches, core and Helios without artificial damage",
+      "passed": true
+    },
+    {
+      "name": "normal run uses movement and cover while firing",
+      "passed": true
+    },
+    {
+      "name": "all reinforcement entries start above the screen",
+      "passed": true
+    },
+    {
+      "name": "normal armor rate-limited Retina and direction-button bot clears",
+      "passed": true
+    },
+    {
+      "name": "an exposed passive player takes real damage and falls at six armor",
+      "passed": true
+    },
+    {
+      "name": "core entry completes its orange health fill",
+      "passed": true
+    },
+    {
+      "name": "core telegraphs prism lanes before they become active",
+      "passed": true
+    },
+    {
+      "name": "low wall cover blocks active core beams",
+      "passed": true
+    },
+    {
+      "name": "transformation produces the authored white flash",
+      "passed": true
+    },
+    {
+      "name": "transformation creates full Helios health and a new fill sequence",
+      "passed": true
+    },
+    {
+      "name": "Helios fill reaches the second red layer before combat",
+      "passed": true
+    },
+    {
+      "name": "Helios runs fully offscreen and returns from that same edge",
+      "passed": true
+    },
+    {
+      "name": "Helios throws timed prism-ball volleys",
+      "passed": true
+    },
+    {
+      "name": "lightning blasts retain a visible warning interval",
+      "passed": true
+    },
+    {
+      "name": "jump targets the warned ground lane and has visible airborne height",
+      "passed": true
+    },
+    {
+      "name": "moving away evades the slam geyser at normal damage",
+      "passed": true
+    },
+    {
+      "name": "zero page and console errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": 18,
+  "total": 18,
+  "fixtureNote": "Normal run never changes enemy health or calls damage/kill APIs. Isolated pattern fixtures set boss state and replenish player armor only between independent patterns."
+}

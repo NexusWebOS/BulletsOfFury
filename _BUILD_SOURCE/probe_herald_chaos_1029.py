@@ -1,0 +1,72 @@
+from pathlib import Path
+import sys,json,http.server
+from playwright.sync_api import sync_playwright
+R=Path(__file__).resolve().parents[1];W=R/'_shots/herald_chaos_1029/probe';W.mkdir(parents=True,exist_ok=True);sys.path.insert(0,str(R/'_BUILD_SOURCE'))
+from shoot import serve,STEP
+from barrage_review_common_1025 import boot,advance
+http.server.ThreadingHTTPServer.request_queue_size=256;checks=[];errors=[]
+def ck(n,v,d=None):
+ checks.append(dict(name=n,passed=bool(v),data=d));(W/'checks.json').write_text(json.dumps(checks,indent=2));print('PASS'if v else'FAIL',n,json.dumps(d)[:900]if not v else'',flush=True)
+def step(p,n):
+ for i in range(0,n,30):
+  err=p.evaluate(STEP,min(30,n-i))
+  if err:raise RuntimeError(err)
+  p.wait_for_timeout(1)
+port,stop=serve(str(R))
+try:
+ with sync_playwright()as pw:
+  br=pw.chromium.launch(channel='msedge',headless=True,args=['--autoplay-policy=no-user-gesture-required']);bc=br.new_context(viewport={'width':1280,'height':800});p=boot(bc,port,8,errors)
+  p.evaluate('()=>{run.stage=8;stageLoadBegin(8)}');p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(8)}',timeout=240000)
+  p.evaluate("()=>{beginStage(8);BOFCinematicDirector.cancel();story=null;diffKey='furious';debugStartFight({stage:8,role:'mini',kind:'heralddeath'},{pilot:'cole',record:false});spawnSubBoss('heralddeath');debugFight.spawned=true;subBossActive=true;warnT=0;DBGT.god=true;player.invuln=1e9;BOFCinematicDirector.cancel();setState(GS.PLAY);window.B=subBoss;HH52.events=[];pBullets=[];eBullets=[];}")
+  step(p,150)
+  ck('All fixed authored banks preload',p.evaluate('Object.values(HH52_ART).every(a=>XART.rdy(a.key))'))
+  p.evaluate("()=>{hr28Start(B,'storm')}");step(p,65)
+  def draws():return p.evaluate("""()=>{const f=combatWarningDraw,r=groundTargetReticleDraw,h=hh52Blit,fields=[],marks=[],art=[];combatWarningDraw=function(o,a){fields.push(a)};groundTargetReticleDraw=function(...a){marks.push(a)};hh52Blit=function(...a){art.push(a);return h.apply(this,a)};try{heraldDeathDraw(B)}finally{combatWarningDraw=f;groundTargetReticleDraw=r;hh52Blit=h}return{fields,marks,art};}""")
+  d=draws();ck('Tornado charge has no FOV and one ground asterisk',not d['fields']and len([a for a in d['art']if a[0]=='star'])==1,d)
+  p.evaluate('drawWorld(0)');p.screenshot(path=str(W/'tornado-charge.png'));step(p,100);d=draws()
+  ck('New GPT tornado loop replaces old yellow effect',len([a for a in d['art']if a[0]=='tornado'])==2 and not d['fields'],d)
+  ck('Tornado contact stays inside the visible funnel height',p.evaluate('hh52TornadoHit({x:100,y:200},{x:100,y:200})&&!hh52TornadoHit({x:100,y:200},{x:100,y:300})&&!hh52TornadoHit({x:100,y:200},{x:100,y:100})'))
+  ck('Tornado storm retains its native unshootable radial fire',p.evaluate("HH52.events.some(e=>e.event==='tornado-volley')&&eBullets.some(q=>q._er28Herald==='code'&&!enemyOrdnanceCanIntercept(q))"))
+  p.evaluate('drawWorld(0)');p.screenshot(path=str(W/'tornado-live.png'))
+  p.evaluate("()=>{hr28Start(B,'nuke');eBullets=[];HH52.skulls.clear();HH52.events=[]}");step(p,110);d=draws();ck('Skull charge has no triangle or broad FOV',not d['fields'],d)
+  step(p,92);ck('Native accelerating skull release begins',p.evaluate('HH52.events.some(e=>e.event===\'skull-release\')'))
+  p.evaluate('drawWorld(0)');p.screenshot(path=str(W/'skull-release.png'))
+  q=p.evaluate("()=>{window.sk=[...HH52.skulls].find(q=>!q.dead);return sk&&{intercept:enemyOrdnanceCanIntercept(sk),shootable:sk._shootable,proof:sk._weaponProof,x:sk.x,y:sk.y}}")
+  ck('Skulls are shootable before their next update',q and q['intercept']and q['shootable']and not q['proof'],q)
+  p.evaluate("()=>{sk.x=player.x=camLeftX()+viewW()*.4;sk.y=VH*.65;pBullets.push({kind:'mg',x:sk.x,y:sk.y+4,vx:0,vy:0,w:32,h:32,dmg:1,life:1,t:0});}");step(p,1)
+  ck('A real player projectile detonates the skull',p.evaluate('sk.dead&&HH52.events.some(e=>e.event===\'skull-burst\')'),p.evaluate('({dead:sk.dead,shots:pBullets.length,hp:sk.hp,events:HH52.events.slice(-4)})'))
+  ck('Ricochet fragments reject offensive interception',p.evaluate('eBullets.filter(q=>q._hh52Chunk).length>0&&eBullets.filter(q=>q._hh52Chunk).every(q=>!enemyOrdnanceCanIntercept(q))'))
+  step(p,500);e=p.evaluate('HH52.events');drops=[v for v in e if v['event']=='skull-release'];dt=[round(drops[i]['time']-drops[i-1]['time'],4)for i in range(1,len(drops))]
+  ck('Furious skull cadence accelerates from slow to fast',len(dt)>8 and dt[0]>dt[-1]*3,dt)
+  ck('Skull growth and larger splash are linked',p.evaluate("()=>{window.small={...sk,_hh52Burst:false,_hh52Level:0,x:300,y:400};window.big={...sk,_hh52Burst:false,_hh52Level:7,x:450,y:400};hh52SkullBurst(small);hh52SkullBurst(big);const e=HH52.events.filter(e=>e.event==='skull-burst').slice(-2);return e[1].radius>e[0].radius&&e[1].chunks>e[0].chunks;}"))
+  splash=p.evaluate("""()=>{const ph=playerHit;let calls=0;playerHit=function(){calls++;return ph.apply(this,arguments)};try{hh52SkullBurst({...sk,_hh52Burst:false,_hh52Level:0,x:player.x-40,y:player.y});const small=calls;hh52SkullBurst({...sk,_hh52Burst:false,_hh52Level:7,x:player.x-40,y:player.y});return{small,big:calls-small};}finally{playerHit=ph}}""")
+  ck('Actual splash collision grows with skull size',splash['small']==0 and splash['big']>0,splash)
+  p.evaluate("()=>{window.chunk=eBullets.find(q=>q._hh52Chunk&&!q.dead);chunk.x=camLeftX()+1;chunk.y=VH*.5;chunk.vx=-3;chunk.vy=0;chunk._hh52Bounces=0;}");step(p,1)
+  ck('Live ricochet energy physically rebounds off the screen edge',p.evaluate('chunk.vx>0&&chunk._hh52Bounces===1&&!chunk.dead'))
+  step(p,170);ck('Ricochet energy expires instead of accumulating',p.evaluate('chunk.dead||!eBullets.includes(chunk)'))
+  p.evaluate("()=>{eBullets=[];HH52.skulls.clear();HH52.events=[];hr28Start(B,'rage');}");step(p,150)
+  p.evaluate('drawWorld(0)');p.screenshot(path=str(W/'lightning-charge.png'))
+  step(p,160);ck('Lightning caster uses authored background depth',p.evaluate("B._hd1003.er28.clip==='far'&&hd1003Pose(B,hd1003Part(B,'core')).s<.15"),p.evaluate('({clip:B._hd1003.er28.clip,y:B.y,at:B._hd1003.er28.t})'))
+  ck('Lightning targets appear with two seconds committed warning',p.evaluate("HH52.events.filter(e=>e.event==='lightning-tell').every(e=>Math.abs(e.at-e.born-2)<1e-8)&&HH52.events.some(e=>e.event==='lightning-tell')"))
+  d=draws();ck('Lightning has local filled circles and asterisk instead of columns',not d['fields']and any(a[0].startswith('impact_')for a in d['art'])and any(a[0]=='star'for a in d['art']),d)
+  p.evaluate('drawWorld(0)');p.screenshot(path=str(W/'lightning-warnings.png'))
+  old=p.evaluate('B._hd1003.er28.bolts.map(p=>({x:p.x,y:p.y,at:p.at,id:p.id}))');p.evaluate('player.x+=100');step(p,35)
+  ck('Released ground targets do not follow the player',p.evaluate('(old)=>old.every(o=>{const p=B._hd1003.er28.bolts.find(p=>p.id===o.id);return !p||p.x===o.x&&p.y===o.y&&p.at===o.at;})',old))
+  step(p,130);p.evaluate('drawWorld(0)');p.screenshot(path=str(W/'lightning-strikes.png'));step(p,600)
+  e=p.evaluate('HH52.events');strikes=[q for q in e if q['event']=='lightning-strike'];tells=[q for q in e if q['event']=='lightning-tell']
+  ck('Every lightning strike retains at least two seconds warning',len(strikes)>8 and all(2-1e-7<=q['delay']<2.035 for q in strikes),strikes)
+  ck('Lightning warning cadence accelerates without shortening reaction time',len(tells)>8 and tells[1]['time']-tells[0]['time']>2*(tells[-1]['time']-tells[-2]['time']))
+  ck('Lightning cycle returns to full foreground size',p.evaluate('B._hd1003.er28==null||B._hd1003.er28.kind!==\'rage\''))
+  p.evaluate("()=>{hr28Start(B,'nuke');B.x=camLeftX()+viewW()/2;B.y=viewTopY()+155}");step(p,35)
+  pixels=p.evaluate("""()=>{drawWorld(0);const a=ctx.getImageData(0,0,cv.width,cv.height).data;const part=hd1003Part(B,'gunR'),before=part.hp;hd1003Hit(B,10,0,0,'gunR');drawWorld(0);const d=ctx.getImageData(0,0,cv.width,cv.height).data;let white=0;for(let i=0;i<d.length;i+=4)if(d[i]>240&&d[i+1]>240&&d[i+2]>240&&a[i]+a[i+1]+a[i+2]<650)white++;return{white,flash:part.flash,hp:part.hp,before};}""")
+  ck('New authored charge poses preserve actual white hit pixels',pixels['white']>4 and pixels['hp']<pixels['before']and pixels['flash']>0,pixels);step(p,20)
+  ck('Part hit flash expires normally',p.evaluate("hd1003Part(B,'gunR').flash===0"))
+  p.evaluate("()=>{delete B._hd1003.er28;hb25Flight(B,'swoop');HH52.events=[];}");step(p,900)
+  e=p.evaluate('HH52.events');wrap=[q for q in e if q['event']=='flight-opposite-entry'];ck('Swoop re-enters opposite the exited edge',len(wrap)>0 and all((q['exit']['x']-p.evaluate('camLeftX()+viewW()/2'))*(q['entry']['x']-p.evaluate('camLeftX()+viewW()/2'))<0 for q in wrap),wrap)
+  ck('Rotational return reaches native recovery',any(q['event']=='flight-return-complete'for q in e),e[-3:])
+  p.evaluate("()=>{hr28Start(B,'nuke');HH52.skulls.clear();eBullets=[];hh52EmitSkull(B,B._hd1003.er28);window.cancel=[...HH52.skulls][0];run.stage=7;}");step(p,1)
+  ck('Stage change cancels skulls and their effects',p.evaluate('cancel.dead&&HH52.skulls.size===0&&HH52.fx.length===0'))
+  ck('No native page or console errors',not errors,errors)
+  (W/'events.json').write_text(json.dumps(e,indent=2));br.close()
+finally:stop()
+print('RESULT',sum(q['passed']for q in checks),'/',len(checks),flush=True)

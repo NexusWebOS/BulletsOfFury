@@ -1,0 +1,363 @@
+{
+  "checks": [
+    {
+      "name": "normal left ordinary movement escapes storm without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal left original HP/count/cadence retained",
+      "passed": true
+    },
+    {
+      "name": "normal right ordinary movement escapes storm without GOD",
+      "passed": true
+    },
+    {
+      "name": "normal right original HP/count/cadence retained",
+      "passed": true
+    },
+    {
+      "name": "hard left ordinary movement escapes storm without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard left original HP/count/cadence retained",
+      "passed": true
+    },
+    {
+      "name": "hard right ordinary movement escapes storm without GOD",
+      "passed": true
+    },
+    {
+      "name": "hard right original HP/count/cadence retained",
+      "passed": true
+    },
+    {
+      "name": "furious left ordinary movement escapes storm without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious left original HP/count/cadence retained",
+      "passed": true
+    },
+    {
+      "name": "furious right ordinary movement escapes storm without GOD",
+      "passed": true
+    },
+    {
+      "name": "furious right original HP/count/cadence retained",
+      "passed": true
+    },
+    {
+      "name": "One metal ground asterisk is rendered beneath the casting brain",
+      "passed": true
+    },
+    {
+      "name": "Charge chooses authored pulsing 1015 glow frames",
+      "passed": true
+    },
+    {
+      "name": "Night arena is cloud-only with two world-anchored parallax rates",
+      "passed": true
+    },
+    {
+      "name": "Lateral player movement does not drag the night plate",
+      "passed": true
+    },
+    {
+      "name": "Pause freezes charge, background and storm darkness",
+      "passed": true
+    },
+    {
+      "name": "Screen darkens during storm without dimming the foreground warning/body",
+      "passed": true
+    },
+    {
+      "name": "No individual rectangular geyser plates are rendered",
+      "passed": true
+    },
+    {
+      "name": "Targets vary horizontally and vertically rather than forming rows of boxes",
+      "passed": true
+    },
+    {
+      "name": "A committed storm seed reproduces the exact original locations",
+      "passed": true
+    },
+    {
+      "name": "Storm targets never chase the player after commitment",
+      "passed": true
+    },
+    {
+      "name": "Next cast uses a different randomized eruption pattern",
+      "passed": true
+    },
+    {
+      "name": "Native damage still registers with an expiring white hit flash",
+      "passed": true
+    },
+    {
+      "name": "White hit flash clears while charge animation continues",
+      "passed": true
+    },
+    {
+      "name": "Standing in actual lightning plume pixels causes native player death",
+      "passed": true
+    },
+    {
+      "name": "Each staggered eruption emits exactly one lightning sound",
+      "passed": true
+    },
+    {
+      "name": "Cancelling clears storm ownership, darkness and pending cues",
+      "passed": true
+    },
+    {
+      "name": "Actual cloud pixels darken substantially during storm and recover after cancel",
+      "passed": true
+    },
+    {
+      "name": "Native defeat returns home without healing the destroyed brain life",
+      "passed": true
+    },
+    {
+      "name": "Approved full-width warm eye beams retain their existing owner",
+      "passed": true
+    },
+    {
+      "name": "Finite cloud shield still absorbs native damage",
+      "passed": true
+    },
+    {
+      "name": "Digital jungle helicopter remains under its separate owner",
+      "passed": true
+    },
+    {
+      "name": "Main-body Luminaire and other arenas remain separate",
+      "passed": true
+    },
+    {
+      "name": "No native page, asset or console errors",
+      "passed": true
+    },
+    {
+      "name": "All54 glow poses retain even cells and a common384px logical body",
+      "passed": true
+    },
+    {
+      "name": "Night and cloud plates retain fixed even680px dimensions",
+      "passed": true
+    },
+    {
+      "name": "Core game engine remains byte-identical",
+      "passed": true
+    }
+  ],
+  "states": [
+    {
+      "rank": "normal",
+      "side": -1,
+      "dead": false,
+      "x": 153.25080000000048,
+      "hp": 2861,
+      "releases": 3,
+      "targets": [
+        {
+          "x": 481,
+          "y": 296,
+          "released": true,
+          "at": 0
+        },
+        {
+          "x": 271,
+          "y": 366,
+          "released": true,
+          "at": 0.4
+        },
+        {
+          "x": 382,
+          "y": 291,
+          "released": true,
+          "at": 0.8
+        }
+      ]
+    },
+    {
+      "rank": "normal",
+      "side": 1,
+      "dead": false,
+      "x": 424.3975999999998,
+      "hp": 2861,
+      "releases": 3,
+      "targets": [
+        {
+          "x": 308,
+          "y": 397,
+          "released": true,
+          "at": 0
+        },
+        {
+          "x": 88,
+          "y": 400,
+          "released": true,
+          "at": 0.4
+        },
+        {
+          "x": 203,
+          "y": 341,
+          "released": true,
+          "at": 0.8
+        }
+      ]
+    },
+    {
+      "rank": "hard",
+      "side": -1,
+      "dead": false,
+      "x": 240.43920000000026,
+      "hp": 3631,
+      "releases": 4,
+      "targets": [
+        {
+          "x": 581,
+          "y": 295,
+          "released": true,
+          "at": 0
+        },
+        {
+          "x": 349,
+          "y": 359,
+          "released": true,
+          "at": 0.34
+        },
+        {
+          "x": 423,
+          "y": 295,
+          "released": true,
+          "at": 0.68
+        },
+        {
+          "x": 511,
+          "y": 418,
+          "released": true,
+          "at": 1.02
+        }
+      ]
+    },
+    {
+      "rank": "hard",
+      "side": 1,
+      "dead": false,
+      "x": 424.3975999999998,
+      "hp": 3631,
+      "releases": 4,
+      "targets": [
+        {
+          "x": 82,
+          "y": 308,
+          "released": true,
+          "at": 0
+        },
+        {
+          "x": 319,
+          "y": 422,
+          "released": true,
+          "at": 0.34
+        },
+        {
+          "x": 157,
+          "y": 371,
+          "released": true,
+          "at": 0.68
+        },
+        {
+          "x": 234,
+          "y": 309,
+          "released": true,
+          "at": 1.02
+        }
+      ]
+    },
+    {
+      "rank": "furious",
+      "side": -1,
+      "dead": false,
+      "x": 240.43920000000026,
+      "hp": 4510,
+      "releases": 5,
+      "targets": [
+        {
+          "x": 526,
+          "y": 366,
+          "released": true,
+          "at": 0
+        },
+        {
+          "x": 593,
+          "y": 291,
+          "released": true,
+          "at": 0.29
+        },
+        {
+          "x": 337,
+          "y": 438,
+          "released": true,
+          "at": 0.58
+        },
+        {
+          "x": 407,
+          "y": 441,
+          "released": true,
+          "at": 0.8699999999999999
+        },
+        {
+          "x": 464,
+          "y": 280,
+          "released": true,
+          "at": 1.16
+        }
+      ]
+    },
+    {
+      "rank": "furious",
+      "side": 1,
+      "dead": false,
+      "x": 424.3975999999998,
+      "hp": 4510,
+      "releases": 5,
+      "targets": [
+        {
+          "x": 69,
+          "y": 400,
+          "released": true,
+          "at": 0
+        },
+        {
+          "x": 264,
+          "y": 341,
+          "released": true,
+          "at": 0.29
+        },
+        {
+          "x": 324,
+          "y": 310,
+          "released": true,
+          "at": 0.58
+        },
+        {
+          "x": 132,
+          "y": 411,
+          "released": true,
+          "at": 0.8699999999999999
+        },
+        {
+          "x": 201,
+          "y": 335,
+          "released": true,
+          "at": 1.16
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

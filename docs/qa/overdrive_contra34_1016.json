@@ -1,0 +1,135 @@
+{
+  "checks": [
+    {
+      "name": "new exported sheets decode",
+      "passed": true
+    },
+    {
+      "name": "side sprite bank used",
+      "passed": true
+    },
+    {
+      "name": "zoom mouse aim inverse matches screen",
+      "passed": true
+    },
+    {
+      "name": "controller retina remains visible",
+      "passed": true
+    },
+    {
+      "name": "chute uses flying alien animation",
+      "passed": true
+    },
+    {
+      "name": "closer view keeps cover",
+      "passed": true
+    },
+    {
+      "name": "Bastion uses imported enemy identity",
+      "passed": true
+    },
+    {
+      "name": "Bastion zoom mouse aim inverse matches screen",
+      "passed": true
+    },
+    {
+      "name": "new Helios walking bank selected",
+      "passed": true
+    },
+    {
+      "name": "actual side sprite pixels flash on hit",
+      "passed": true
+    },
+    {
+      "name": "side hit flash expires",
+      "passed": true
+    },
+    {
+      "name": "enemy shot originates at the visible muzzle",
+      "passed": true
+    },
+    {
+      "name": "elevator hatch stays above dialogue box",
+      "passed": true
+    },
+    {
+      "name": "hatch remains shootable at close zoom",
+      "passed": true
+    },
+    {
+      "name": "front sprite pixels flash through ThreeJS",
+      "passed": true
+    },
+    {
+      "name": "front hit flash expires",
+      "passed": true
+    },
+    {
+      "name": "all four front firing families use new sheets",
+      "passed": true
+    },
+    {
+      "name": "top down on foot view is 25 percent closer",
+      "passed": true
+    },
+    {
+      "name": "imported boss pixels flash on hit",
+      "passed": true
+    },
+    {
+      "name": "boss flash expires",
+      "passed": true
+    },
+    {
+      "name": "boss keeps closer camera",
+      "passed": true
+    },
+    {
+      "name": "new boss volley uses scaled hand emitter",
+      "passed": true
+    },
+    {
+      "name": "browser has no errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "measured": {
+    "aim": {
+      "cursor": {
+        "x": 344,
+        "y": 274
+      },
+      "screen": {
+        "x": 430,
+        "y": 240
+      }
+    },
+    "frontAim": {
+      "x": 384,
+      "y": 229
+    },
+    "socket": {
+      "shot": {
+        "x": 268.17021276595744,
+        "y": 299.4468085106383
+      },
+      "socket": {
+        "x": 268.17021276595744,
+        "y": 299.4468085106383
+      }
+    },
+    "zoom": 1.15,
+    "bossEmitter": {
+      "n": 3,
+      "expected": {
+        "x": 365.7070063694268,
+        "y": 204.71337579617833
+      },
+      "shot": {
+        "x": 365.7070063694268,
+        "y": 204.71337579617833
+      }
+    }
+  }
+}

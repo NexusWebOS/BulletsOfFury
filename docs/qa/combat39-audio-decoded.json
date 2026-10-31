@@ -1,0 +1,149 @@
+{
+  "method": "Full FFmpeg PCM decode of approved cue files. Browser playback still requires enabled browser access.",
+  "routes": [
+    {
+      "cue": "gd_soldierRifle",
+      "resolved": "gd_soldierRifle",
+      "file": "expansion/topdown/audio/chip_1011/chip_gd_soldierRifle.mp3",
+      "decoder_exit": 0,
+      "samples": 1301,
+      "seconds": 0.10841666666666666,
+      "peak": 28705,
+      "rms": 12913.02,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "enemyHeavyLaser",
+      "resolved": "enemyHeavyLaser",
+      "file": "expansion/topdown/audio/chip_1011/chip_enemyHeavyLaser.mp3",
+      "decoder_exit": 0,
+      "samples": 5498,
+      "seconds": 0.45816666666666667,
+      "peak": 32768,
+      "rms": 15087.64,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "firewallLaunch",
+      "resolved": "firewallLaunch",
+      "file": "expansion/topdown/audio/chip_1011/chip_firewallLaunch.mp3",
+      "decoder_exit": 0,
+      "samples": 8040,
+      "seconds": 0.67,
+      "peak": 26798,
+      "rms": 5123.22,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "impactMetal",
+      "resolved": "impactMetal",
+      "file": "expansion/topdown/audio/chip_1011/chip_impactMetal.mp3",
+      "decoder_exit": 0,
+      "samples": 2439,
+      "seconds": 0.20325,
+      "peak": 27391,
+      "rms": 5632.79,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "missileLaunch",
+      "resolved": "missileLaunch",
+      "file": "expansion/topdown/audio/chip_1011/chip_missileLaunch.mp3",
+      "decoder_exit": 0,
+      "samples": 5262,
+      "seconds": 0.4385,
+      "peak": 25429,
+      "rms": 4244.06,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "missileHit",
+      "resolved": "missileHit",
+      "file": "expansion/topdown/audio/chip_1011/chip_missileHit.mp3",
+      "decoder_exit": 0,
+      "samples": 4640,
+      "seconds": 0.38666666666666666,
+      "peak": 28486,
+      "rms": 6107.85,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "bombDrop",
+      "resolved": "bombDrop",
+      "file": "expansion/topdown/audio/chip_1011/chip_bombDrop.mp3",
+      "decoder_exit": 0,
+      "samples": 16800,
+      "seconds": 1.4,
+      "peak": 32768,
+      "rms": 9514.89,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "expB",
+      "resolved": "expB",
+      "file": "assets/game/shared/audio/sounds/expBig.mp3",
+      "decoder_exit": 0,
+      "samples": 35988,
+      "seconds": 2.999,
+      "peak": 28826,
+      "rms": 3623.86,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "loadoutLaunch",
+      "resolved": "loadoutLaunch",
+      "file": "expansion/topdown/audio/chip_1011/chip_loadoutLaunch.mp3",
+      "decoder_exit": 0,
+      "samples": 9254,
+      "seconds": 0.7711666666666667,
+      "peak": 28268,
+      "rms": 6969.2,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "gd_ammoPickup",
+      "resolved": "gd_ammoPickup",
+      "file": "expansion/topdown/audio/chip_1011/chip_gd_ammoPickup.mp3",
+      "decoder_exit": 0,
+      "samples": 3721,
+      "seconds": 0.3100833333333333,
+      "peak": 28961,
+      "rms": 7287.68,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "stylishDodge",
+      "resolved": "stylishDodge",
+      "file": "expansion/topdown/audio/chip_1011/chip_stylishDodge.mp3",
+      "decoder_exit": 0,
+      "samples": 12000,
+      "seconds": 1.0,
+      "peak": 27280,
+      "rms": 5358.76,
+      "passed": true,
+      "error": ""
+    },
+    {
+      "cue": "enemyDie",
+      "resolved": "enemyDie",
+      "file": "expansion/topdown/audio/chip_1011/chip_enemyDie.mp3",
+      "decoder_exit": 0,
+      "samples": 3440,
+      "seconds": 0.2866666666666667,
+      "peak": 24654,
+      "rms": 6365.9,
+      "passed": true,
+      "error": ""
+    }
+  ]
+}

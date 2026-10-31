@@ -1,0 +1,92 @@
+[
+  {
+    "file": "Maverick-Furious-Beta-Playthrough.mp4",
+    "duration": 3591.794,
+    "width": 1280,
+    "height": 720,
+    "seekPlayback": [
+      {
+        "time": 190.313146,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 146
+      },
+      {
+        "time": 1618.312424,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 379
+      },
+      {
+        "time": 2750.310517,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 383
+      },
+      {
+        "time": 3488.314525,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 565
+      },
+      {
+        "time": 3589.312372,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 615
+      }
+    ]
+  },
+  {
+    "file": "Maverick-Story-Replays.mp4",
+    "duration": 131.4,
+    "width": 1280,
+    "height": 720,
+    "seekPlayback": [
+      {
+        "time": 5.311235,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 123
+      },
+      {
+        "time": 80.316138,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 358
+      },
+      {
+        "time": 127.320559,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 435
+      }
+    ]
+  },
+  {
+    "file": "Maverick-Complete-Ending-Replay.mp4",
+    "duration": 153.597333,
+    "width": 1280,
+    "height": 720,
+    "seekPlayback": [
+      {
+        "time": 5.316315,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 46
+      },
+      {
+        "time": 90.308357,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 281
+      },
+      {
+        "time": 148.305624,
+        "error": null,
+        "readyState": 4,
+        "decodedFrames": 366
+      }
+    ]
+  }
+]

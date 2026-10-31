@@ -1,4 +1,59 @@
 {
+  "rd72_": {
+    "role": "dracodia_physical_claw_optic_first_host",
+    "owner": "_BUILD_SOURCE/build_dracodia_demon_1030.py",
+    "manifest": "assets/game/levels/stage_08/boss/claw_laser_1030/manifest.json",
+    "note": "Actual approved claw, continuous symbiote ligament,64 headings/4 grips, same-frame purple inset tubes/rockets, red optical roots/beams and fixed authored warnings. Native modular HP/capture/death ownership."
+  },
+  "rd71_": {
+    "role": "dracodia_ufo_possession_whole_shoulders",
+    "owner": "_BUILD_SOURCE/build_dracodia_possession_1030.py",
+    "manifest": "assets/game/levels/stage_08/boss/possession_1030/manifest.json",
+    "note": "Actual toxic portal purple/red variants, source-referenced Dracodia UFO, native data bomb/code glyphs, authored overhead/eye/glow/fade frames and exact complete shoulder/arm masks. Native first-host budgets, hit feedback and progression retained."
+  },
+  "ts58_": {
+    "role": "stage9_water_boss_and_transferred_stage8_warp_sentinels",
+    "owner": "_BUILD_SOURCE/build_tidal_sovereign_1029.py",
+    "manifest": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/manifest.json",
+    "note": "Whole native Tidal hull with authored flowing/filling reservoirs; generated water geysers/orbs, actual Stage2 nwf_fire water triplets and counter-rotating spiral fans, six bubble sizes, water arrows/trails, south-facing water capsules/muzzles, northbound fan geysers with marked return,16frame fan-grenade water explosions, source-pixel energy/white hits. Former two Wardens become Stage8 ordinary heavies; Stage9 starts water immediately. Source-over fixed frames, native HP/death."
+  },
+  "eh57_": {
+    "role": "stage9_alien_symbiote_eye_lasers_aqua_dash",
+    "owner": "_BUILD_SOURCE/build_horizon_symbiote_1029.py",
+    "manifest": "assets/game/levels/stage_09/miniboss/horizon_symbiote_1029/manifest.json",
+    "note": "Source-referenced PixelLab hull32 rotations, eye emission, white hits,64direction16phase alien lasers, aqua dash trails/orbs and anchored native smoke. Native HP/defeat; stage9 arena retained."
+  },
+  "ws56_": {
+    "role": "warden_exposed_core_spinning_slams_and_hops",
+    "owner": "_BUILD_SOURCE/build_warden_spin_1029.py",
+    "manifest": "assets/game/levels/stage_07/boss/warden_spin_1029/manifest.json",
+    "note": "Actual core/face32 authored spins,16 front phases, matched white hits and ground shadow. Front-most modular gun layering; source-over blits, native HP/death retained. Stage7 sluice outlets removed."
+  },
+  "df55_": {
+    "role": "dredger_toxic_roof_ground_retinas_charge_and_magma",
+    "owner": "_BUILD_SOURCE/build_dredger_final_1029.py",
+    "manifest": "assets/game/levels/stage_07/miniboss/dredger_final_1029/manifest.json",
+    "note": "Nine fixed even-cell source-preserving Aseprite banks: green/magma top, distance-linked charged tracks, anchored ooze/magma spew, molten orb and actual ground Retinas. Native two-turret hull lock, alternating measured barrels, wall impact/reverse and native defeat retained."
+  },
+  "hd54_": {
+    "role": "herald_final_desperation_depth_and_falva_rollers",
+    "owner": "_BUILD_SOURCE/build_herald_desperation_1029.py",
+    "manifest": "assets/game/levels/stage_08/miniboss/herald_desperation_1029/manifest.json",
+    "note": "Actual skull/core PixelLab32-view turntable; authored protected charge/depart/return, red1015 pixels, white hits, actual Falva red-black roller32 rotations and ten depth sizes. Fixed even cells, source-over blits, native 20% HP clamp and foreground damage windows."
+  },
+  "hs53_": {
+    "role": "herald_skull_spellcaster_seal_and_glass",
+    "owner": "_BUILD_SOURCE/build_herald_spellcaster_1029.py",
+    "manifest": "assets/game/levels/stage_08/miniboss/herald_spellcaster_1029/manifest.json",
+    "note": "Original GPT rune seal and ruby-glass orb;56 inscription/32 spin/24 pulse/16 burst frames,32 orb phases,16 shatter,256 source-prism glass headings/phases,32 skull eye/jaw phases and white hits. Fixed even cells, stored glow/scale/rotation, source-over blits. Native HP/death owners remain."
+  },
+  "hh52_": {
+    "role": "herald_authored_chaos_attacks",
+    "owner": "_BUILD_SOURCE/build_herald_chaos_1029.py",
+    "manifest": "assets/game/levels/stage_08/miniboss/herald_chaos_1029/manifest.json",
+    "note": "Oct29 GPT red tornado loop; existing-source skull growth/splash, ricochet energy, red lightning balls and physical module charge/raise/depth/turn banks with actual hit cells. Fixed even canvases/common pivots; source-over only. Native HP/reward owners retained."
+  },
+  "rk50_": {"role":"rook_filled_spin_fov","owner":"_BUILD_SOURCE/build_rook_circle_1029.py","manifest":"assets/game/levels/stage_06/boss/rook_circle_1029/manifest.json","note":"Full360 native-palette authored FOV discs, matched rotate badges, fixed even cells and source alpha."},
   "vs41_": {"role":"voss_twin_blaster_overhead_turbo","owner":"_BUILD_SOURCE/build_voss_turbo_1028.py","manifest":"assets/game/levels/stage_06/boss/voss_turbo_1028/manifest.json","note":"80 fixed192 source-preserving whole plates, 1015 outer/inner companions, exact alpha shadows/white hits,8 fixed128 red-orange palette frames from native florb. Native HP/module ownership remains."},
   "dc40_": {"role":"dredger_treads_twin_turrets_warning","owner":"_BUILD_SOURCE/build_dredger_assault_1028.py","manifest":"assets/game/levels/stage_07/miniboss/dredger_assault_1028/manifest.json","note":"October28 source-pixel treads, 64 fixed trunnion headings and shot-linked recoil, two barrels per turret, actual sockets/white hit alpha, top 1015 glow, native-palette north-facing circular FOV. Native hull and HP preserved."},
   "wl39_": {"role":"warden_rear_leg_push","owner":"_BUILD_SOURCE/build_warden_lunge_1028.py","manifest":"assets/game/levels/stage_07/boss/warden_lunge_1028/manifest.json","note":"October28: 48 rigid source-pixel hinge poses, 320 cells, shared hip pivots, actual alpha targets and native hit flashes. Front/claw/body/HP ownership unchanged."},

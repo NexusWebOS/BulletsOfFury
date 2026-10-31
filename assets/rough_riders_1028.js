@@ -23,11 +23,8 @@ function rr33Actors(b,S,dt){const R=b._rebels,cx=camLeftX()+viewW()/2;
   if(S.phase==='catch-up'){const u=rr33Ease(S.t/2.8);q.x=pin.x;q.y=lerp(-100-q.i*22,112+(q.i===0?25:q.i<3?0:-25),u);q.rfHeading=-Math.PI/2;q._rr33Frame=56+phaseFrame;}
   else if(S.phase==='spool'||S.phase==='boost'){const u=S.phase==='spool'?0:clamp((S.t-3.35)/.9,0,1);q.x=pin.x;q.y=112+(q.i===0?25:q.i<3?0:-25)-(570+q.i*30)*u*u;q.rfHeading=-Math.PI/2;q._rr33Frame=64+phaseFrame;}
   else if(S.phase==='away'){q.y=-250-q.i*30;q.rfHeading=-Math.PI/2;q._rr33Frame=64+phaseFrame;}
-  else if(S.phase==='airshow'){const u=clamp((S.t-4.75-q.i*.16)/3.95,0,1),p=rr33Path(q,u),next=rr33Path(q,Math.min(1,u+.008));q.x=p.x;q.y=p.y;
-   const first=u>=.22&&u<.57,second=u>=.63&&u<.94;let f;
-   if(first||second){const v=first?(u-.22)/.35:(u-.63)/.31;f=32+Math.min(15,Math.floor(v*16));q.rfHeading=Math.PI/2;q._rr33Depth=Math.sin(v*TAU)*(q.i%2?1:-1);}
-   else{const a=u<.02?Math.PI/2:Math.atan2(next.y-p.y,next.x-p.x),nearest=Math.round((a+TAU)%TAU/TAU*32)%32;f=nearest;q.rfHeading=a;q._rr33Depth=0;}
-   q._rr33Frame=u>=.98?48+phaseFrame:f;
+  else if(S.phase==='airshow'){const u=clamp((S.t-4.75-q.i*.16)/3.95,0,1);q.x=pin.x;q.y=lerp(-115,pin.y,rr33Ease(u));q.rfHeading=Math.PI/2;q._rr33Depth=0;
+   q._rr33Frame=u>=.64&&u<.90?72+Math.min(15,Math.floor((u-.64)/.26*16)):48+phaseFrame;
   }else{q.x=pin.x+Math.sin(S.t*.65)*3;q.y=pin.y+Math.sin(S.t*1.25+q.i*.6)*3;q.rfHeading=Math.PI/2;q._rr33Frame=48+phaseFrame;q._rr33Depth=0;}
  }
 }
@@ -65,7 +62,7 @@ drawWorld=function(dt){const r=RR33.base.world.apply(this,arguments),S=boss?._re
 globalThis.BOF_ROUGH_RIDERS_1028=RR33;
 
 // Combat airshow: separated curved fan-out, overhead loops, then a south-facing settle.
-function rr34Point(q,u){const left=camLeftX(),w=viewW(),home={x:left+(q.i+.5)*w/5,y:PLAY.y+100+(q.i%2)*60},side=q.i<2?-1:q.i>2?1:(q.i%2?1:-1);
+function rr34Point(q,u){if(typeof rr65FleetPin==='function'&&rr45Scope()){const p=rr65FleetPin(q,rg4State()?.rd21?.fleet);return{x:p.x,y:p.y+Math.sin(u*TAU)*3};}const left=camLeftX(),w=viewW(),home={x:left+(q.i+.5)*w/5,y:PLAY.y+100+(q.i%2)*60},side=q.i<2?-1:q.i>2?1:(q.i%2?1:-1);
  const radius=38+q.i*5,angle=u*TAU,spread=Math.sin(Math.PI*u);
  return{x:home.x+side*radius*spread+Math.sin(angle)*18,y:home.y-115*Math.sin(Math.PI*u)+Math.sin(angle)*22};}
 const rr34FleetBase=rd21Fleet;
@@ -73,7 +70,7 @@ rd21Fleet=function(b,G,D,dt){const F=D.fleet;if(!F)return;const live=b._rebels.s
  F.t+=dt;
  if(F.phase==='assemble'){
   const u=clamp(F.t/1.8,0,1),v=u*u*(3-2*u);for(const q of live){const h=rr34Point(q,0);q.x=lerp(q._rd21From.x,h.x,v);q.y=lerp(q._rd21From.y,h.y,v);q.rfHeading=Math.PI/2;q.evadeT=0;}
-  if(u===1){F.phase='tell';F.t=0;const targets=ra4Targets();live.forEach((q,i)=>{const target=targets[i%targets.length]||{ref:player};q._rd21Volley={t:0,warm:2.1,locked:true,target,shot:0,_rr34:true,a:Math.PI/2};});Audio.SFX.retinaCharge?.();}
+  if(u===1&&(typeof rr65FleetReady!=='function'||rr65FleetReady(F))){F.phase='tell';F.t=0;const targets=ra4Targets();live.forEach((q,i)=>{const target=targets[i%targets.length]||{ref:player};q._rd21Volley={t:0,warm:2.1,locked:true,target,shot:0,_rr34:true,a:Math.PI/2};});Audio.SFX.retinaCharge?.();}
  }else if(F.phase==='tell'||F.phase==='volley'){
   for(const q of live){const A=q._rd21Volley;if(!A)continue;A.t=F.phase==='tell'?F.t:A.warm;A.a=Math.atan2(A.target.ref.y-q.y,A.target.ref.x-q.x);}
   if(F.phase==='tell'&&F.t>=2.1){F.phase='volley';F.t=0;F.salvo=0;}
@@ -81,7 +78,7 @@ rd21Fleet=function(b,G,D,dt){const F=D.fleet;if(!F)return;const live=b._rebels.s
   if(F.phase==='volley'&&F.t>1){for(const q of live)q._rd21Volley=null;F.phase='stunt';F.t=0;}
  }else{
   const u=clamp(F.t/3.4,0,1);for(const q of live){const p=rr34Point(q,u),next=rr34Point(q,Math.min(1,u+.003)),a=u>.94?Math.PI/2:Math.atan2(next.y-p.y,next.x-p.x);q.x=p.x;q.y=p.y;q.rfHeading=a;q._rd21Scale=1;q.evadeT=0;
-   q._rr34Frame=u>.94?48+Math.floor(F.t*24)%8:Math.round((a+TAU)%TAU/TAU*32)%32;}
+   q.rfHeading=Math.PI/2;q._rr34Frame=u>.86?48+Math.floor(F.t*24)%8:72+Math.min(15,Math.floor(u/.86*16));}
   if(u===1){for(const q of live){delete q._rr34Frame;q.rfHeading=Math.PI/2;q.rg4.cd=Math.max(2,q.rg4.cd);}D.fleet=null;D.next=G.age+11;rr26Log('north-south-return');}
  }
 };

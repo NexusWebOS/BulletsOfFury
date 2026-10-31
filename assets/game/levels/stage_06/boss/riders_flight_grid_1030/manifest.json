@@ -1,0 +1,26 @@
+{
+  "key": "rr65_gold_grid",
+  "path": "assets/game/levels/stage_06/boss/riders_flight_grid_1030/gold_grid.png",
+  "cw": 480,
+  "ch": 64,
+  "cols": 8,
+  "frames": 40,
+  "pivot": [
+    240,
+    32
+  ],
+  "fps": 24,
+  "deploy": [
+    0,
+    16
+  ],
+  "hold": [
+    16,
+    16
+  ],
+  "release": [
+    32,
+    8
+  ],
+  "sha256": "157a51b6ad810c5fee01f2ecf242ffcb83ab7284e02cd830747a7454ba0876b9"
+}

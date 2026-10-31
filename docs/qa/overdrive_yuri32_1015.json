@@ -1,0 +1,689 @@
+{
+  "build": "overdrive1015-yuri32-r1",
+  "checks": [
+    {
+      "name": "all215framesload",
+      "passed": true
+    },
+    {
+      "name": "uprightfrontupstance",
+      "passed": true
+    },
+    {
+      "name": "upwardfireusesnewrecoil",
+      "passed": true
+    },
+    {
+      "name": "upwardprojectilesstartatraisedbarrel",
+      "passed": true
+    },
+    {
+      "name": "walkentryselected",
+      "passed": true
+    },
+    {
+      "name": "walkslideholdsandrecovers",
+      "passed": true
+    },
+    {
+      "name": "walkslideisflat",
+      "passed": true
+    },
+    {
+      "name": "runentryselected",
+      "passed": true
+    },
+    {
+      "name": "runslideholdsandrecovers",
+      "passed": true
+    },
+    {
+      "name": "runslideisflat",
+      "passed": true
+    },
+    {
+      "name": "backcoverusescrouchedobjectfreepose",
+      "passed": true
+    },
+    {
+      "name": "partialpopoutusesintermediateposes",
+      "passed": true
+    },
+    {
+      "name": "returntucksthroughsameauthoredposes",
+      "passed": true
+    },
+    {
+      "name": "tallbackcoverusesstandingpose",
+      "passed": true
+    },
+    {
+      "name": "forwardobjectkeepscompatiblefrontcover",
+      "passed": true
+    },
+    {
+      "name": "priorgameplayandYuri31filespreserved",
+      "passed": true
+    },
+    {
+      "name": "820retainedartunchanged",
+      "passed": true
+    },
+    {
+      "name": "uniformcellsbinaryalphaandunclippedbounds",
+      "passed": true
+    },
+    {
+      "name": "reviewloadsallnewframes",
+      "passed": true
+    },
+    {
+      "name": "nobrowsererrors",
+      "passed": true
+    }
+  ],
+  "passed": 20,
+  "failed": 0,
+  "errors": [],
+  "measured": {
+    "walkSlide": [
+      {
+        "key": "y32_walk_slide_east_0",
+        "y": 350,
+        "x": 107.16666666666667,
+        "remaining": 0.65,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_0",
+        "y": 350,
+        "x": 114.33333333333334,
+        "remaining": 0.6333333333333333,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_1",
+        "y": 350,
+        "x": 121.50000000000001,
+        "remaining": 0.6166666666666666,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_2",
+        "y": 350,
+        "x": 128.66666666666669,
+        "remaining": 0.5999999999999999,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_3",
+        "y": 350,
+        "x": 135.83333333333334,
+        "remaining": 0.5833333333333331,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_4",
+        "y": 350,
+        "x": 143,
+        "remaining": 0.5666666666666664,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_5",
+        "y": 350,
+        "x": 150.16666666666666,
+        "remaining": 0.5499999999999997,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_6",
+        "y": 350,
+        "x": 157.33333333333331,
+        "remaining": 0.533333333333333,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_7",
+        "y": 350,
+        "x": 164.49999999999997,
+        "remaining": 0.5166666666666663,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_8",
+        "y": 350,
+        "x": 171.66666666666663,
+        "remaining": 0.4999999999999996,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_9",
+        "y": 350,
+        "x": 178.8333333333333,
+        "remaining": 0.48333333333333295,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_10",
+        "y": 350,
+        "x": 185.99999999999994,
+        "remaining": 0.4666666666666663,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_11",
+        "y": 350,
+        "x": 193.1666666666666,
+        "remaining": 0.4499999999999996,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_12",
+        "y": 350,
+        "x": 200.33333333333326,
+        "remaining": 0.43333333333333296,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_13",
+        "y": 350,
+        "x": 207.49999999999991,
+        "remaining": 0.4166666666666663,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_13",
+        "y": 350,
+        "x": 214.66666666666657,
+        "remaining": 0.39999999999999963,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_14",
+        "y": 350,
+        "x": 221.83333333333323,
+        "remaining": 0.38333333333333297,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_15",
+        "y": 350,
+        "x": 228.9999999999999,
+        "remaining": 0.3666666666666663,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_16",
+        "y": 350,
+        "x": 236.16666666666654,
+        "remaining": 0.34999999999999964,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_17",
+        "y": 350,
+        "x": 243.3333333333332,
+        "remaining": 0.333333333333333,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_walk_slide_east_18",
+        "y": 350,
+        "x": 250.49999999999986,
+        "remaining": 0.3166666666666663,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_hold_east_0",
+        "y": 350,
+        "x": 257.6666666666665,
+        "remaining": 0.29999999999999966,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_hold_east_0",
+        "y": 350,
+        "x": 264.8333333333332,
+        "remaining": 0.283333333333333,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_hold_east_0",
+        "y": 350,
+        "x": 271.9999999999999,
+        "remaining": 0.26666666666666633,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_hold_east_0",
+        "y": 350,
+        "x": 279.1666666666666,
+        "remaining": 0.24999999999999967,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_hold_east_0",
+        "y": 350,
+        "x": 286.33333333333326,
+        "remaining": 0.233333333333333,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_0",
+        "y": 350,
+        "x": 293.49999999999994,
+        "remaining": 0.21666666666666634,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_1",
+        "y": 350,
+        "x": 300.66666666666663,
+        "remaining": 0.19999999999999968,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_1",
+        "y": 350,
+        "x": 307.8333333333333,
+        "remaining": 0.18333333333333302,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_2",
+        "y": 350,
+        "x": 315,
+        "remaining": 0.16666666666666635,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_3",
+        "y": 350,
+        "x": 322.1666666666667,
+        "remaining": 0.1499999999999997,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_4",
+        "y": 350,
+        "x": 329.33333333333337,
+        "remaining": 0.13333333333333303,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_5",
+        "y": 350,
+        "x": 336.50000000000006,
+        "remaining": 0.11666666666666636,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_6",
+        "y": 350,
+        "x": 343.66666666666674,
+        "remaining": 0.0999999999999997,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_6",
+        "y": 350,
+        "x": 350.8333333333334,
+        "remaining": 0.08333333333333304,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_7",
+        "y": 350,
+        "x": 358.0000000000001,
+        "remaining": 0.06666666666666637,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_8",
+        "y": 350,
+        "x": 365.1666666666668,
+        "remaining": 0.04999999999999971,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_9",
+        "y": 350,
+        "x": 372.3333333333335,
+        "remaining": 0.03333333333333305,
+        "bank": "walk"
+      },
+      {
+        "key": "y32_slide_exit_east_10",
+        "y": 350,
+        "x": 379.50000000000017,
+        "remaining": 0.016666666666666382,
+        "bank": "walk"
+      },
+      {
+        "key": "e29_crouch_east_5",
+        "y": 350,
+        "x": 381.16666666666686,
+        "remaining": 0,
+        "bank": "walk"
+      },
+      {
+        "key": "e29_crouch_east_5",
+        "y": 350,
+        "x": 382.83333333333354,
+        "remaining": 0,
+        "bank": "walk"
+      }
+    ],
+    "runSlide": [
+      {
+        "key": "y32_run_slide_east_0",
+        "y": 350,
+        "x": 119.91666666666667,
+        "remaining": 0.65,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_1",
+        "y": 350,
+        "x": 127.08333333333334,
+        "remaining": 0.6333333333333333,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_2",
+        "y": 350,
+        "x": 134.25,
+        "remaining": 0.6166666666666666,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_3",
+        "y": 350,
+        "x": 141.41666666666666,
+        "remaining": 0.5999999999999999,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_4",
+        "y": 350,
+        "x": 148.58333333333331,
+        "remaining": 0.5833333333333331,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_5",
+        "y": 350,
+        "x": 155.74999999999997,
+        "remaining": 0.5666666666666664,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_6",
+        "y": 350,
+        "x": 162.91666666666663,
+        "remaining": 0.5499999999999997,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_7",
+        "y": 350,
+        "x": 170.0833333333333,
+        "remaining": 0.533333333333333,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_9",
+        "y": 350,
+        "x": 177.24999999999994,
+        "remaining": 0.5166666666666663,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_10",
+        "y": 350,
+        "x": 184.4166666666666,
+        "remaining": 0.4999999999999996,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_11",
+        "y": 350,
+        "x": 191.58333333333326,
+        "remaining": 0.48333333333333295,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_12",
+        "y": 350,
+        "x": 198.74999999999991,
+        "remaining": 0.4666666666666663,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_13",
+        "y": 350,
+        "x": 205.91666666666657,
+        "remaining": 0.4499999999999996,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_14",
+        "y": 350,
+        "x": 213.08333333333323,
+        "remaining": 0.43333333333333296,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_15",
+        "y": 350,
+        "x": 220.2499999999999,
+        "remaining": 0.4166666666666663,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_16",
+        "y": 350,
+        "x": 227.41666666666654,
+        "remaining": 0.39999999999999963,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_18",
+        "y": 350,
+        "x": 234.5833333333332,
+        "remaining": 0.38333333333333297,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_19",
+        "y": 350,
+        "x": 241.74999999999986,
+        "remaining": 0.3666666666666663,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_20",
+        "y": 350,
+        "x": 248.91666666666652,
+        "remaining": 0.34999999999999964,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_21",
+        "y": 350,
+        "x": 256.0833333333332,
+        "remaining": 0.333333333333333,
+        "bank": "run"
+      },
+      {
+        "key": "y32_run_slide_east_22",
+        "y": 350,
+        "x": 263.2499999999999,
+        "remaining": 0.3166666666666663,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_hold_east_0",
+        "y": 350,
+        "x": 270.4166666666666,
+        "remaining": 0.29999999999999966,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_hold_east_0",
+        "y": 350,
+        "x": 277.58333333333326,
+        "remaining": 0.283333333333333,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_hold_east_0",
+        "y": 350,
+        "x": 284.74999999999994,
+        "remaining": 0.26666666666666633,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_hold_east_0",
+        "y": 350,
+        "x": 291.91666666666663,
+        "remaining": 0.24999999999999967,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_hold_east_0",
+        "y": 350,
+        "x": 299.0833333333333,
+        "remaining": 0.233333333333333,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_0",
+        "y": 350,
+        "x": 306.25,
+        "remaining": 0.21666666666666634,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_1",
+        "y": 350,
+        "x": 313.4166666666667,
+        "remaining": 0.19999999999999968,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_1",
+        "y": 350,
+        "x": 320.58333333333337,
+        "remaining": 0.18333333333333302,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_2",
+        "y": 350,
+        "x": 327.75000000000006,
+        "remaining": 0.16666666666666635,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_3",
+        "y": 350,
+        "x": 334.91666666666674,
+        "remaining": 0.1499999999999997,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_4",
+        "y": 350,
+        "x": 342.0833333333334,
+        "remaining": 0.13333333333333303,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_5",
+        "y": 350,
+        "x": 349.2500000000001,
+        "remaining": 0.11666666666666636,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_6",
+        "y": 350,
+        "x": 356.4166666666668,
+        "remaining": 0.0999999999999997,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_6",
+        "y": 350,
+        "x": 363.5833333333335,
+        "remaining": 0.08333333333333304,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_7",
+        "y": 350,
+        "x": 370.75000000000017,
+        "remaining": 0.06666666666666637,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_8",
+        "y": 350,
+        "x": 377.91666666666686,
+        "remaining": 0.04999999999999971,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_9",
+        "y": 350,
+        "x": 385.08333333333354,
+        "remaining": 0.03333333333333305,
+        "bank": "run"
+      },
+      {
+        "key": "y32_slide_exit_east_10",
+        "y": 350,
+        "x": 387,
+        "remaining": 0.016666666666666382,
+        "bank": "run"
+      },
+      {
+        "key": "e29_cover_peek_east_0",
+        "y": 350,
+        "x": 387,
+        "remaining": 0,
+        "bank": "run"
+      },
+      {
+        "key": "e29_cover_peek_east_0",
+        "y": 350,
+        "x": 387,
+        "remaining": 0,
+        "bank": "run"
+      }
+    ],
+    "popout": [
+      "y32_crouch_peek_east_1",
+      "y32_crouch_peek_east_2",
+      "y32_crouch_peek_east_3",
+      "y32_crouch_peek_east_4",
+      "y32_crouch_peek_east_5",
+      "y32_crouch_peek_east_6",
+      "y32_crouch_peek_east_7",
+      "y32_crouch_peek_east_9",
+      "y32_crouch_peek_east_10",
+      "y32_crouch_peek_east_11",
+      "y32_crouch_peek_east_12",
+      "y32_crouch_peek_east_13",
+      "y32_crouch_peek_east_14",
+      "y32_crouch_peek_east_15",
+      "y32_crouch_peek_east_16",
+      "y32_crouch_peek_east_16",
+      "y32_crouch_peek_east_16",
+      "y32_crouch_peek_east_16"
+    ]
+  },
+  "scope": "Native Chromium, actual asset draws, simulated M30 plus pointer aiming; scoped upfire/flat-slide/cover checks. No physical-controller test."
+}

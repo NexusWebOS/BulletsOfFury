@@ -1,0 +1,677 @@
+{
+  "checks": [
+    {
+      "name": "Live boss, introduction and story identify him as Chronos",
+      "passed": true,
+      "data": {
+        "names": [
+          "CHRONOS",
+          "???",
+          "CHRONOS",
+          "CHRONOS",
+          "CHRONOS"
+        ],
+        "line": "Leave now, pilot, and I promise I will not hurt you. I have no quarrel with one small ship. Then why attack us? Who are you, and what do you want? I am Chronos. An artificial intelligence from another dimension. The details are not important. You turned our machines against us. Those details matter to everyone on our planet. Your planet is precisely what interests me. Soon enough, I will control everything from the palm of my hands. You are not getting past me. A generous offer, refused. Very well. Show me how long your defiance lasts."
+      }
+    },
+    {
+      "name": "Native gun phase alternates straight-down rake and centered fan",
+      "passed": true,
+      "data": [
+        "fan",
+        "down",
+        "fan",
+        "down"
+      ]
+    },
+    {
+      "name": "normal twin rounds travel straight down from the actual modular muzzle",
+      "passed": true,
+      "data": {
+        "shots": [
+          {
+            "x": 335,
+            "y": 384,
+            "vx": 0,
+            "vy": 7.7987900144,
+            "proof": true
+          },
+          {
+            "x": 345,
+            "y": 384,
+            "vx": 0,
+            "vy": 7.7987900144,
+            "proof": true
+          }
+        ],
+        "m": {
+          "x": 340,
+          "y": 384
+        }
+      }
+    },
+    {
+      "name": "normal fan has 5 symmetric downward rounds at calibrated angles",
+      "passed": true,
+      "data": {
+        "shots": [
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 3.952039956561642e-16,
+            "vy": 6.4541710464,
+            "off": 0,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 2.980401784610302,
+            "vy": 5.724816948905859,
+            "off": -0.48,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 1.5341734091392478,
+            "vy": 6.2691814335587805,
+            "off": -0.24,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": -1.5341734091392472,
+            "vy": 6.269181433558781,
+            "off": 0.24,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": -2.9804017846103017,
+            "vy": 5.72481694890586,
+            "off": 0.48,
+            "proof": true
+          }
+        ],
+        "m": {
+          "x": 340,
+          "y": 314
+        },
+        "keys": [
+          "bg_stage05_loop_0923",
+          "ch23_body_armor_0",
+          "ch23_barrel_armor_0",
+          "ch23_hands_armor_0",
+          "ch23_round_8",
+          "ch23_round_0",
+          "ch23_round_4",
+          "ch23_round_12",
+          "ch23_round_16",
+          "fury_thrusters_04",
+          "",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ]
+      }
+    },
+    {
+      "name": "normal fan rounds are ordinary unshootable bullets with authored directional pixels",
+      "passed": true,
+      "data": {
+        "keys": [
+          "ch23_round_8",
+          "ch23_round_0",
+          "ch23_round_4",
+          "ch23_round_12",
+          "ch23_round_16"
+        ]
+      }
+    },
+    {
+      "name": "normal traveling fan has visible native bullet pixels after release",
+      "passed": true,
+      "data": {
+        "live": 5,
+        "pixels": 226986
+      }
+    },
+    {
+      "name": "normal natural fan waits for its warning, holds center and reaches cooldown",
+      "passed": true,
+      "data": {
+        "first": 0.8666666666666677,
+        "t": 3.9999999999999907,
+        "x": [
+          340,
+          340,
+          340,
+          340,
+          340
+        ],
+        "shots": 25,
+        "state": "chain_cool",
+        "volleys": 5,
+        "rev": 0
+      }
+    },
+    {
+      "name": "hard twin rounds travel straight down from the actual modular muzzle",
+      "passed": true,
+      "data": {
+        "shots": [
+          {
+            "x": 335,
+            "y": 384,
+            "vx": 0,
+            "vy": 9.5712422904,
+            "proof": true
+          },
+          {
+            "x": 345,
+            "y": 384,
+            "vx": 0,
+            "vy": 9.5712422904,
+            "proof": true
+          }
+        ],
+        "m": {
+          "x": 340,
+          "y": 384
+        }
+      }
+    },
+    {
+      "name": "hard fan has 7 symmetric downward rounds at calibrated angles",
+      "passed": true,
+      "data": {
+        "shots": [
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 5.254416760428547e-16,
+            "vy": 8.5811137776,
+            "off": 0,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 3.962579645447788,
+            "vy": 7.611404352522564,
+            "off": -0.48,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 3.022905276650351,
+            "vy": 8.031037128074805,
+            "off": -0.3599999999999999,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 1.0272640713138546,
+            "vy": 8.519403863645874,
+            "off": -0.1200000000000001,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": -1.0272640713138534,
+            "vy": 8.519403863645874,
+            "off": 0.1200000000000001,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": -3.0229052766503495,
+            "vy": 8.031037128074805,
+            "off": 0.3599999999999999,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": -3.9625796454477875,
+            "vy": 7.611404352522565,
+            "off": 0.48,
+            "proof": true
+          }
+        ],
+        "m": {
+          "x": 340,
+          "y": 314
+        },
+        "keys": [
+          "bg_stage05_loop_0923",
+          "ch23_body_armor_0",
+          "ch23_barrel_armor_0",
+          "ch23_hands_armor_0",
+          "",
+          "ch23_round_8",
+          "ch23_round_0",
+          "ch23_round_2",
+          "ch23_round_6",
+          "ch23_round_10",
+          "ch23_round_14",
+          "ch23_round_16",
+          "fury_thrusters_04",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ]
+      }
+    },
+    {
+      "name": "hard fan rounds are ordinary unshootable bullets with authored directional pixels",
+      "passed": true,
+      "data": {
+        "keys": [
+          "ch23_round_8",
+          "ch23_round_0",
+          "ch23_round_2",
+          "ch23_round_6",
+          "ch23_round_10",
+          "ch23_round_14",
+          "ch23_round_16"
+        ]
+      }
+    },
+    {
+      "name": "hard traveling fan has visible native bullet pixels after release",
+      "passed": true,
+      "data": {
+        "live": 7,
+        "pixels": 223749
+      }
+    },
+    {
+      "name": "hard natural fan waits for its warning, holds center and reaches cooldown",
+      "passed": true,
+      "data": {
+        "first": 0.7666666666666674,
+        "t": 3.9999999999999907,
+        "x": [
+          340,
+          340,
+          340,
+          340,
+          340,
+          340
+        ],
+        "shots": 42,
+        "state": "spell",
+        "volleys": 6,
+        "rev": 0
+      }
+    },
+    {
+      "name": "furious twin rounds travel straight down from the actual modular muzzle",
+      "passed": true,
+      "data": {
+        "shots": [
+          {
+            "x": 335,
+            "y": 384,
+            "vx": 0,
+            "vy": 11.3436945664,
+            "proof": true
+          },
+          {
+            "x": 345,
+            "y": 384,
+            "vx": 0,
+            "vy": 11.3436945664,
+            "proof": true
+          }
+        ],
+        "m": {
+          "x": 340,
+          "y": 384
+        }
+      }
+    },
+    {
+      "name": "furious fan has 9 symmetric downward rounds at calibrated angles",
+      "passed": true,
+      "data": {
+        "shots": [
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 6.706492047498543e-16,
+            "vy": 10.9525326848,
+            "off": 0,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 5.057651513278088,
+            "vy": 9.714840882991762,
+            "off": -0.48,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 3.8582950539582823,
+            "vy": 10.250440550933085,
+            "off": -0.3599999999999999,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 2.603445785205996,
+            "vy": 10.638610917554294,
+            "off": -0.24,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": 1.3111518631014438,
+            "vy": 10.873769033941171,
+            "off": -0.1200000000000001,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": -1.3111518631014425,
+            "vy": 10.873769033941171,
+            "off": 0.1200000000000001,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": -2.603445785205995,
+            "vy": 10.638610917554296,
+            "off": 0.24,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": -3.8582950539582805,
+            "vy": 10.250440550933085,
+            "off": 0.3599999999999999,
+            "proof": true
+          },
+          {
+            "x": 340,
+            "y": 314,
+            "vx": -5.0576515132780875,
+            "vy": 9.714840882991762,
+            "off": 0.48,
+            "proof": true
+          }
+        ],
+        "m": {
+          "x": 340,
+          "y": 314
+        },
+        "keys": [
+          "bg_stage05_loop_0923",
+          "ch23_body_armor_0",
+          "ch23_barrel_armor_0",
+          "ch23_hands_armor_0",
+          "",
+          "ch23_round_9",
+          "ch23_round_1",
+          "ch23_round_3",
+          "ch23_round_5",
+          "ch23_round_7",
+          "ch23_round_11",
+          "ch23_round_13",
+          "ch23_round_15",
+          "ch23_round_17",
+          "fury_thrusters_04",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ]
+      }
+    },
+    {
+      "name": "furious fan rounds are ordinary unshootable bullets with authored directional pixels",
+      "passed": true,
+      "data": {
+        "keys": [
+          "ch23_round_9",
+          "ch23_round_1",
+          "ch23_round_3",
+          "ch23_round_5",
+          "ch23_round_7",
+          "ch23_round_11",
+          "ch23_round_13",
+          "ch23_round_15",
+          "ch23_round_17"
+        ]
+      }
+    },
+    {
+      "name": "furious traveling fan has visible native bullet pixels after release",
+      "passed": true,
+      "data": {
+        "live": 9,
+        "pixels": 227107
+      }
+    },
+    {
+      "name": "furious natural fan waits for its warning, holds center and reaches cooldown",
+      "passed": true,
+      "data": {
+        "first": 0.6666666666666671,
+        "t": 3.9999999999999907,
+        "x": [
+          340,
+          340,
+          340,
+          340,
+          340,
+          340,
+          340
+        ],
+        "shots": 63,
+        "state": "storm_raise",
+        "volleys": 7,
+        "rev": 0
+      }
+    },
+    {
+      "name": "Barrel independently spins through all8 mechanical poses while revving up",
+      "passed": true,
+      "data": {
+        "frames": [
+          "ch23_barrel_armor_0",
+          "ch23_barrel_armor_1",
+          "ch23_barrel_armor_2",
+          "ch23_barrel_armor_3",
+          "ch23_barrel_armor_4",
+          "ch23_barrel_armor_5",
+          "ch23_barrel_armor_6",
+          "ch23_barrel_armor_7",
+          "ch23_barrel_armor_8"
+        ],
+        "colors": [
+          "ch23_warn_fan_green_0",
+          "ch23_warn_fan_yellow_0",
+          "ch23_warn_fan_red_0"
+        ],
+        "peak": 1,
+        "keys": [
+          "bg_stage05_loop_0923",
+          "ch23_body_armor_0",
+          "ch23_barrel_armor_3",
+          "ch23_hands_armor_0",
+          "ch23_round_0",
+          "ch23_round_4",
+          "ch23_round_12",
+          "ch23_round_16",
+          "fury_thrusters_05",
+          "",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ]
+      }
+    },
+    {
+      "name": "Fan warning actually displays green, yellow and red authored fields",
+      "passed": true,
+      "data": [
+        "ch23_warn_fan_green_0",
+        "ch23_warn_fan_yellow_0",
+        "ch23_warn_fan_red_0"
+      ]
+    },
+    {
+      "name": "Barrel visibly coasts down after firing instead of spinning forever",
+      "passed": true,
+      "data": {
+        "rev": 0,
+        "frame": 0,
+        "state": "chain_cool"
+      }
+    },
+    {
+      "name": "Live renderer uses disjoint body, rotary gun and foreground hands without old full-gun body",
+      "passed": true,
+      "data": {
+        "keys": [
+          "bg_stage05_loop_0923",
+          "ch23_body_armor_0",
+          "ch23_barrel_armor_0",
+          "ch23_hands_armor_0",
+          "fury_thrusters_04",
+          "",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ]
+      }
+    },
+    {
+      "name": "Retina point hits visible gun pixels; gun takes real separate damage and white flash expires",
+      "passed": true,
+      "data": {
+        "hit": true,
+        "gunDamage": 25,
+        "bodySame": true,
+        "white": true,
+        "expired": true
+      }
+    },
+    {
+      "name": "Body/armor damage does not consume the separate gun health",
+      "passed": true,
+      "data": {
+        "gunSame": true,
+        "bodyOrArmorDamaged": true
+      }
+    },
+    {
+      "name": "Breaking gun stops fire/removes its Retina target while Chronos keeps fighting",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "bossAlive": true,
+        "shots": 0,
+        "removed": true,
+        "keys": [
+          "bg_stage05_loop_0923",
+          "boss_shoot_prompt",
+          "hj22_blue_glow_4",
+          "ha21_blue_hold_armor_0",
+          "fury_thrusters_05",
+          "",
+          "nxp_white_0",
+          "nx_small_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ],
+        "state": "storm_raise"
+      }
+    },
+    {
+      "name": "Rage preserves matching authored red body/gun/grip palettes",
+      "passed": true,
+      "data": {
+        "body": true,
+        "gun": true,
+        "hands": true
+      }
+    },
+    {
+      "name": "New name appears in the real portrait announcement while acquired gun stays equipped",
+      "passed": true,
+      "data": {
+        "who": "CHRONOS",
+        "portrait": "fb1002_hammer_portrait",
+        "text": "Chromium Armor, Activated!",
+        "radioPaused": true
+      }
+    },
+    {
+      "name": "Salvage radio waits without consuming its message or covering Chronos",
+      "passed": true,
+      "data": {
+        "who": "CHRONOS",
+        "portrait": "fb1002_hammer_portrait",
+        "text": "Chromium Armor, Activated!",
+        "radioPaused": true
+      }
+    },
+    {
+      "name": "Chromium activation returns to the modular gun without restoring a hammer",
+      "passed": true,
+      "data": {
+        "gun": true,
+        "destroyed": true,
+        "keys": [
+          "bg_stage05_loop_0923",
+          "",
+          "ch23_warn_fan_yellow_0",
+          "ch23_body_armor_0",
+          "ch23_barrel_armor_4",
+          "ch23_hands_armor_0",
+          "fv21_shield_wall_12",
+          "fury_thrusters_05",
+          "eh7_stage_05",
+          "bmbar_fill_grey",
+          "ui20_dialogue-a",
+          "comm_decker_idle"
+        ]
+      }
+    },
+    {
+      "name": "All68 module/projectile/FOV exports have even cells and no clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All8 actual rotor faces differ while the gun receiver stays pixel-identical",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native modular rev/downward/fan sequence recorded with game audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page/asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "passed": 32,
+  "failed": 0,
+  "errors": []
+}

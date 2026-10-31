@@ -1,0 +1,681 @@
+{
+  "ns9_tidal_intact": {
+    "path": "assets/game/levels/stage_09/boss/boss_s9.png",
+    "cell": [
+      "boss_s9",
+      0,
+      0,
+      320,
+      256
+    ]
+  },
+  "ns9_tidal_damaged": {
+    "path": "assets/game/levels/stage_09/boss/boss_s9.png",
+    "cell": [
+      "boss_s9",
+      0,
+      258,
+      320,
+      256
+    ]
+  },
+  "ns9_tidal_critical": {
+    "path": "assets/game/levels/stage_09/boss/boss_s9.png",
+    "cell": [
+      "boss_s9",
+      0,
+      516,
+      320,
+      256
+    ]
+  },
+  "ns9_warpsen_intact": {
+    "path": "assets/game/levels/stage_09/miniboss/mini_s9.png",
+    "cell": [
+      "mini_s9",
+      0,
+      0,
+      256,
+      192
+    ]
+  },
+  "ns9_warpsen_damaged": {
+    "path": "assets/game/levels/stage_09/miniboss/mini_s9.png",
+    "cell": [
+      "mini_s9",
+      0,
+      194,
+      256,
+      192
+    ]
+  },
+  "ns9_warpsen_critical": {
+    "path": "assets/game/levels/stage_09/miniboss/mini_s9.png",
+    "cell": [
+      "mini_s9",
+      0,
+      388,
+      256,
+      192
+    ]
+  },
+  "water": {
+    "key": "s1w20_ocean",
+    "path": "assets/game/levels/stage_01/terrain/water_pixellab_1020/ocean.webp",
+    "frames": 32,
+    "width": 224,
+    "height": 224,
+    "columns": 8,
+    "fps": 12,
+    "pivot": [
+      112,
+      112
+    ],
+    "sheet_width": 1824,
+    "sheet_height": 912,
+    "cells": [
+      [
+        2,
+        2,
+        224,
+        224
+      ],
+      [
+        230,
+        2,
+        224,
+        224
+      ],
+      [
+        458,
+        2,
+        224,
+        224
+      ],
+      [
+        686,
+        2,
+        224,
+        224
+      ],
+      [
+        914,
+        2,
+        224,
+        224
+      ],
+      [
+        1142,
+        2,
+        224,
+        224
+      ],
+      [
+        1370,
+        2,
+        224,
+        224
+      ],
+      [
+        1598,
+        2,
+        224,
+        224
+      ],
+      [
+        2,
+        230,
+        224,
+        224
+      ],
+      [
+        230,
+        230,
+        224,
+        224
+      ],
+      [
+        458,
+        230,
+        224,
+        224
+      ],
+      [
+        686,
+        230,
+        224,
+        224
+      ],
+      [
+        914,
+        230,
+        224,
+        224
+      ],
+      [
+        1142,
+        230,
+        224,
+        224
+      ],
+      [
+        1370,
+        230,
+        224,
+        224
+      ],
+      [
+        1598,
+        230,
+        224,
+        224
+      ],
+      [
+        2,
+        458,
+        224,
+        224
+      ],
+      [
+        230,
+        458,
+        224,
+        224
+      ],
+      [
+        458,
+        458,
+        224,
+        224
+      ],
+      [
+        686,
+        458,
+        224,
+        224
+      ],
+      [
+        914,
+        458,
+        224,
+        224
+      ],
+      [
+        1142,
+        458,
+        224,
+        224
+      ],
+      [
+        1370,
+        458,
+        224,
+        224
+      ],
+      [
+        1598,
+        458,
+        224,
+        224
+      ],
+      [
+        2,
+        686,
+        224,
+        224
+      ],
+      [
+        230,
+        686,
+        224,
+        224
+      ],
+      [
+        458,
+        686,
+        224,
+        224
+      ],
+      [
+        686,
+        686,
+        224,
+        224
+      ],
+      [
+        914,
+        686,
+        224,
+        224
+      ],
+      [
+        1142,
+        686,
+        224,
+        224
+      ],
+      [
+        1370,
+        686,
+        224,
+        224
+      ],
+      [
+        1598,
+        686,
+        224,
+        224
+      ]
+    ],
+    "revision": "stage1-blue-water-1020",
+    "generator": "PixelLab PixMiniMax",
+    "seed_job": "09d1b679-e3a5-4506-8be8-011ac609a5c5",
+    "animation_job": "afa80ee9-340a-4002-8fff-90a9f79a0d69",
+    "source_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "palette": "Stage1 royal blue / cyan-white crest",
+    "source_atlas": "assets/game/levels/tutorial/stormglass_1020/water/ocean.webp",
+    "palette_knots": [
+      29,
+      46,
+      52,
+      60,
+      80,
+      110,
+      150,
+      200,
+      244
+    ],
+    "palette_rgb": [
+      [
+        0,
+        20,
+        110
+      ],
+      [
+        0,
+        34,
+        190
+      ],
+      [
+        0,
+        62,
+        235
+      ],
+      [
+        6,
+        100,
+        251
+      ],
+      [
+        36,
+        150,
+        255
+      ],
+      [
+        92,
+        196,
+        255
+      ],
+      [
+        155,
+        226,
+        255
+      ],
+      [
+        214,
+        247,
+        255
+      ],
+      [
+        246,
+        255,
+        255
+      ]
+    ]
+  },
+  "candidateWaves": [
+    "nwp_lfi_firewall_left",
+    "nwp_lfi_firewall_left_idle",
+    "nwp_lfi_firewall_right",
+    "nwp_lfi_firewall_right_idle",
+    "firewall_icon_5",
+    "firewall_icon_1",
+    "nib_wall_0",
+    "nib_wall_1",
+    "nib_wall_2",
+    "nib_wall_3",
+    "nib_wall_4",
+    "nib_wall_5",
+    "nib_wall_6",
+    "nib_wall_7",
+    "nib_wall_master",
+    "nfw_wall_master",
+    "firewall_icon_2",
+    "firewall_icon_3",
+    "firewall_icon_4",
+    "firewall_1",
+    "firewall_2",
+    "firewall_icon",
+    "nsb_rimewall_critical",
+    "nsb_rimewall_intact",
+    "nsb_rimewall_damaged"
+  ],
+  "smoke": [
+    {
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        1389,
+        2471,
+        256,
+        336
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        1647,
+        2471,
+        256,
+        336
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        1905,
+        2471,
+        256,
+        336
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        2163,
+        2471,
+        256,
+        336
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        2421,
+        2471,
+        256,
+        336
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        2679,
+        2471,
+        256,
+        336
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        2937,
+        2471,
+        256,
+        336
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        3195,
+        2471,
+        256,
+        336
+      ]
+    }
+  ],
+  "lavaWaves": [
+    {
+      "path": "assets/game/shared/atlases/player_weapons.png",
+      "cell": [
+        "player_weapons",
+        734,
+        1792,
+        115,
+        228
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/player_weapons.png",
+      "cell": [
+        "player_weapons",
+        851,
+        1792,
+        115,
+        228
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/player_weapons.png",
+      "cell": [
+        "player_weapons",
+        968,
+        1792,
+        115,
+        228
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/player_weapons.png",
+      "cell": [
+        "player_weapons",
+        1085,
+        1792,
+        115,
+        228
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/player_weapons.png",
+      "cell": [
+        "player_weapons",
+        1202,
+        1792,
+        115,
+        228
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/player_weapons.png",
+      "cell": [
+        "player_weapons",
+        1319,
+        1792,
+        115,
+        228
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/player_weapons.png",
+      "cell": [
+        "player_weapons",
+        1436,
+        1792,
+        115,
+        228
+      ]
+    },
+    {
+      "path": "assets/game/shared/atlases/player_weapons.png",
+      "cell": [
+        "player_weapons",
+        1553,
+        1792,
+        115,
+        228
+      ]
+    }
+  ],
+  "stage2Waves": [
+    {
+      "key": "nwf_fire_0",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        3370,
+        1536,
+        420,
+        421
+      ]
+    },
+    {
+      "key": "nwf_fire_1",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        0,
+        2048,
+        420,
+        421
+      ]
+    },
+    {
+      "key": "nwf_fire_2",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        422,
+        2048,
+        420,
+        421
+      ]
+    },
+    {
+      "key": "nwf_fire_3",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        844,
+        2048,
+        420,
+        421
+      ]
+    },
+    {
+      "key": "nwf_fire_4",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        1266,
+        2048,
+        420,
+        421
+      ]
+    },
+    {
+      "key": "nwf_fire_5",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        1688,
+        2048,
+        420,
+        421
+      ]
+    },
+    {
+      "key": "nwf_fire_6",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        2110,
+        2048,
+        420,
+        421
+      ]
+    },
+    {
+      "key": "nwf_fire_7",
+      "path": "assets/game/shared/atlases/fx_weather_1.png",
+      "cell": [
+        "fx_weather_1",
+        2532,
+        2048,
+        420,
+        421
+      ]
+    }
+  ],
+  "rejectedWaveSource": "lavaWaves nib_wall are the rejected vertical player-weapon frames, not the Stage2 three-wave hazard",
+  "waterBullet": {
+    "source": "water_bullet_master.png",
+    "job": "71c91ed0-9fdc-451c-a099-4c07f90da881",
+    "candidate": 7,
+    "size": [
+      32,
+      64
+    ],
+    "facing": "south"
+  },
+  "wallWarnings": {
+    "source": "Actual Stage2 nwarn_yield/nwarn_alert via native XART extraction",
+    "masters": [
+      "wall_yield_master.png",
+      "wall_alert_master.png"
+    ],
+    "cell": [
+      64,
+      64
+    ],
+    "pivot": [
+      32,
+      32
+    ],
+    "artHeight": 52,
+    "states": [
+      "yellow queued",
+      "red next wave"
+    ]
+  }
+}

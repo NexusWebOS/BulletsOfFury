@@ -1,0 +1,340 @@
+{
+  "arrow": {
+    "ch": 64,
+    "cols": 8,
+    "cw": 48,
+    "frames": 8,
+    "key": "ts58_arrow",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/arrow.png",
+    "pivot": [
+      24,
+      32
+    ],
+    "sha256": "b6dd29854e233e1de95b458a707463cd31fb6143f46bdb9ac6362f703bce4716"
+  },
+  "body_critical": {
+    "ch": 256,
+    "cols": 8,
+    "cw": 320,
+    "frames": 64,
+    "key": "ts58_body_critical",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/body_critical.png",
+    "pivot": [
+      160,
+      128
+    ],
+    "sha256": "687994225f0db2c4879f3d0f292cd41190df60031b1a900214d25f028ec4064d"
+  },
+  "body_damaged": {
+    "ch": 256,
+    "cols": 8,
+    "cw": 320,
+    "frames": 64,
+    "key": "ts58_body_damaged",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/body_damaged.png",
+    "pivot": [
+      160,
+      128
+    ],
+    "sha256": "3804d96beb21bfe32f2b000e9fbd82dd1e6f993fc9279a002f24f575d1fb5f4a"
+  },
+  "body_hit": {
+    "ch": 256,
+    "cols": 1,
+    "cw": 320,
+    "frames": 1,
+    "key": "ts58_body_hit",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/body_hit.png",
+    "pivot": [
+      160,
+      128
+    ],
+    "sha256": "55eaae8e6b515943f89930ae5a75d4284e7aae00c3a70767e209b39a7517b6a7"
+  },
+  "body_intact": {
+    "ch": 256,
+    "cols": 8,
+    "cw": 320,
+    "frames": 64,
+    "key": "ts58_body_intact",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/body_intact.png",
+    "pivot": [
+      160,
+      128
+    ],
+    "sha256": "37dbd039b4843a094aff85a648e3c1b25278ee3b71e5e8a588f44cfd9c0fca3c"
+  },
+  "bomb": {
+    "ch": 56,
+    "cols": 8,
+    "cw": 56,
+    "frames": 16,
+    "key": "ts58_bomb",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/bomb.png",
+    "pivot": [
+      28,
+      28
+    ],
+    "sha256": "3bf7197ac54b0bae425327e9dcc3da084b429cd30559784a18011178db642f31"
+  },
+  "bubble": {
+    "ch": 144,
+    "cols": 8,
+    "cw": 144,
+    "frames": 96,
+    "key": "ts58_bubble",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/bubble.png",
+    "pivot": [
+      72,
+      72
+    ],
+    "sha256": "742eb5b3c656e313a0035ea41190563bb4f8ec1ad4875ff5c57a3748c16de32c"
+  },
+  "fall_wave": {
+    "ch": 128,
+    "cols": 8,
+    "cw": 128,
+    "frames": 8,
+    "key": "ts58_fall_wave",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/fall_wave.png",
+    "pivot": [
+      64,
+      64
+    ],
+    "sha256": "f17f6ac9d77b226db69f324f7d8c78c36564e715df14e23cfb702107d59db7aa"
+  },
+  "fan_muzzle": {
+    "ch": 112,
+    "cols": 8,
+    "cw": 80,
+    "frames": 16,
+    "key": "ts58_fan_muzzle",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/fan_muzzle.png",
+    "pivot": [
+      40,
+      96
+    ],
+    "sha256": "7222edd3e2543d0cc818b150c7bbe57981879b19a9e3c610109446cbaf1e2437"
+  },
+  "forward_muzzle": {
+    "ch": 96,
+    "cols": 8,
+    "cw": 64,
+    "frames": 16,
+    "key": "ts58_forward_muzzle",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/forward_muzzle.png",
+    "pivot": [
+      32,
+      20
+    ],
+    "sha256": "9839111c169bec811eee53edf80ff2dfe8f31ffc07e5d2cfea70b124098f7205"
+  },
+  "forward_slug": {
+    "ch": 64,
+    "cols": 16,
+    "cw": 64,
+    "frames": 80,
+    "key": "ts58_forward_slug",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/forward_slug.png",
+    "pivot": [
+      32,
+      32
+    ],
+    "sha256": "2d78e42c7b3ad7437ca0dafc483c2a2dc94821ee8707fe92aa3f4db039d7fe19"
+  },
+  "geyser": {
+    "ch": 288,
+    "cols": 8,
+    "cw": 160,
+    "frames": 16,
+    "key": "ts58_geyser",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/geyser.png",
+    "pivot": [
+      80,
+      268
+    ],
+    "sha256": "ef9361ae6db74cfaa4fb80ae4b692813744ca5413c7a72caaebca32021cafdf0"
+  },
+  "grenade_burst": {
+    "ch": 160,
+    "cols": 8,
+    "cw": 160,
+    "frames": 16,
+    "key": "ts58_grenade_burst",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/grenade_burst.png",
+    "pivot": [
+      80,
+      80
+    ],
+    "sha256": "68264754b64e2b5c6c86d1305910aa9cb6ac3272ffbf39dda07c2310e6b04715"
+  },
+  "grenade_charge": {
+    "ch": 96,
+    "cols": 8,
+    "cw": 96,
+    "frames": 16,
+    "key": "ts58_grenade_charge",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/grenade_charge.png",
+    "pivot": [
+      48,
+      48
+    ],
+    "sha256": "123ba2d18e366ca309589eb5fde4a03c290424c5030bd5d6553276e6e79e0a7f"
+  },
+  "jet": {
+    "ch": 176,
+    "cols": 8,
+    "cw": 80,
+    "frames": 16,
+    "key": "ts58_jet",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/jet.png",
+    "pivot": [
+      40,
+      144
+    ],
+    "sha256": "4c1f50065624028105700d72769be930b84fada1f8e6c574ca36ee3d8565b103"
+  },
+  "muzzle": {
+    "ch": 96,
+    "cols": 8,
+    "cw": 96,
+    "frames": 16,
+    "key": "ts58_muzzle",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/muzzle.png",
+    "pivot": [
+      48,
+      48
+    ],
+    "sha256": "7861dff87fdf7607e3ef375a60c5586119efd928dee78d25ef9ac35bdff49516"
+  },
+  "outer": {
+    "ch": 288,
+    "cols": 8,
+    "cw": 352,
+    "frames": 8,
+    "key": "ts58_outer",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/outer.png",
+    "pivot": [
+      176,
+      144
+    ],
+    "sha256": "9b3e024fed0ef53ed25212e1cff0962daefff852c9db6ea8745da1ae684c315f"
+  },
+  "rain": {
+    "ch": 176,
+    "cols": 8,
+    "cw": 80,
+    "frames": 8,
+    "key": "ts58_rain",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/rain.png",
+    "pivot": [
+      40,
+      144
+    ],
+    "sha256": "25050b9f5b8b59c2d40fdb0e86c569d4c4858729ad3caafa3374fcb96de53e11"
+  },
+  "roller": {
+    "ch": 96,
+    "cols": 8,
+    "cw": 96,
+    "frames": 16,
+    "key": "ts58_roller",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/roller.png",
+    "pivot": [
+      48,
+      48
+    ],
+    "sha256": "8f8287f768925ef9fd3e8c314984b592d00950aab9fd58e9aa43750c4213a6ba"
+  },
+  "sentinel_alpha": {
+    "ch": 176,
+    "cols": 8,
+    "cw": 208,
+    "frames": 16,
+    "key": "ts58_sentinel_alpha",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/sentinel_alpha.png",
+    "pivot": [
+      104,
+      88
+    ],
+    "sha256": "0b42eccafeaa45dfee6caa146bfcd34ba9e17a41f28e5f4ce746b720bf649c72"
+  },
+  "sentinel_beta": {
+    "ch": 176,
+    "cols": 8,
+    "cw": 208,
+    "frames": 16,
+    "key": "ts58_sentinel_beta",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/sentinel_beta.png",
+    "pivot": [
+      104,
+      88
+    ],
+    "sha256": "1e211e5ac1395d66b698ad05776b2ce1c4e72489646e3c34d24096199b28f4b9"
+  },
+  "sentinel_hit": {
+    "ch": 176,
+    "cols": 1,
+    "cw": 208,
+    "frames": 1,
+    "key": "ts58_sentinel_hit",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/sentinel_hit.png",
+    "pivot": [
+      104,
+      88
+    ],
+    "sha256": "5a07f0118532a8750e09afa2050cc8b55e91af99d8dc7bcce4ac0be7b38dc290"
+  },
+  "slug": {
+    "ch": 32,
+    "cols": 8,
+    "cw": 32,
+    "frames": 16,
+    "key": "ts58_slug",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/slug.png",
+    "pivot": [
+      16,
+      16
+    ],
+    "sha256": "7528ee15260abea46ad5039936b76ad8e45197ff31dfa731b098015d34139b68"
+  },
+  "trail": {
+    "ch": 160,
+    "cols": 8,
+    "cw": 112,
+    "frames": 16,
+    "key": "ts58_trail",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/trail.png",
+    "pivot": [
+      56,
+      80
+    ],
+    "sha256": "f97fe94876e698bde7aa221590ec5793e51c481a7c56d2eafbe58acc1376a2f0"
+  },
+  "wall_warning": {
+    "ch": 64,
+    "cols": 2,
+    "cw": 64,
+    "frames": 2,
+    "key": "ts58_wall_warning",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/wall_warning.png",
+    "pivot": [
+      32,
+      32
+    ],
+    "sha256": "6cafccc49fb49e1232209c775ca7f5cf50a10c854264d8d1f594ec6fdf2c55be"
+  },
+  "wave": {
+    "ch": 480,
+    "cols": 8,
+    "cw": 480,
+    "frames": 48,
+    "key": "ts58_wave",
+    "path": "assets/game/levels/stage_09/boss/tidal_sovereign_1029/wave.png",
+    "pivot": [
+      240,
+      240
+    ],
+    "sha256": "b5d452bbdcc5125b63e4fa17d0ab0ef4652ae812bac349dae425f59e16d6a290"
+  }
+}

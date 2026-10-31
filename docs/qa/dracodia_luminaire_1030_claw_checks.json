@@ -1,0 +1,1623 @@
+{
+  "checks": [
+    {
+      "name": "normal order0 chooses physical claw combo",
+      "passed": true
+    },
+    {
+      "name": "normal order0 background cannot be damaged or Retina locked",
+      "passed": true
+    },
+    {
+      "name": "normal order0 background hit keeps HP",
+      "passed": true
+    },
+    {
+      "name": "normal order0 ground warning never chases after commitment",
+      "passed": true
+    },
+    {
+      "name": "normal order0 foreground has real hit/Retina geometry",
+      "passed": true
+    },
+    {
+      "name": "normal order0 completes expected alternating slash sequence",
+      "passed": true
+    },
+    {
+      "name": "normal order0 does not emit the old bullet barrage",
+      "passed": true
+    },
+    {
+      "name": "normal order0 leaves native boss HP unchanged without hits",
+      "passed": true
+    },
+    {
+      "name": "normal order1 chooses physical claw combo",
+      "passed": true
+    },
+    {
+      "name": "normal order1 background cannot be damaged or Retina locked",
+      "passed": true
+    },
+    {
+      "name": "normal order1 background hit keeps HP",
+      "passed": true
+    },
+    {
+      "name": "normal order1 ground warning never chases after commitment",
+      "passed": true
+    },
+    {
+      "name": "normal order1 foreground has real hit/Retina geometry",
+      "passed": true
+    },
+    {
+      "name": "normal order1 completes expected alternating slash sequence",
+      "passed": true
+    },
+    {
+      "name": "normal order1 does not emit the old bullet barrage",
+      "passed": true
+    },
+    {
+      "name": "normal order1 leaves native boss HP unchanged without hits",
+      "passed": true
+    },
+    {
+      "name": "hard order0 chooses physical claw combo",
+      "passed": true
+    },
+    {
+      "name": "hard order0 background cannot be damaged or Retina locked",
+      "passed": true
+    },
+    {
+      "name": "hard order0 background hit keeps HP",
+      "passed": true
+    },
+    {
+      "name": "hard order0 ground warning never chases after commitment",
+      "passed": true
+    },
+    {
+      "name": "hard order0 foreground has real hit/Retina geometry",
+      "passed": true
+    },
+    {
+      "name": "hard order0 completes expected alternating slash sequence",
+      "passed": true
+    },
+    {
+      "name": "hard order0 does not emit the old bullet barrage",
+      "passed": true
+    },
+    {
+      "name": "hard order0 leaves native boss HP unchanged without hits",
+      "passed": true
+    },
+    {
+      "name": "hard order1 chooses physical claw combo",
+      "passed": true
+    },
+    {
+      "name": "hard order1 background cannot be damaged or Retina locked",
+      "passed": true
+    },
+    {
+      "name": "hard order1 background hit keeps HP",
+      "passed": true
+    },
+    {
+      "name": "hard order1 ground warning never chases after commitment",
+      "passed": true
+    },
+    {
+      "name": "hard order1 foreground has real hit/Retina geometry",
+      "passed": true
+    },
+    {
+      "name": "hard order1 completes expected alternating slash sequence",
+      "passed": true
+    },
+    {
+      "name": "hard order1 does not emit the old bullet barrage",
+      "passed": true
+    },
+    {
+      "name": "hard order1 leaves native boss HP unchanged without hits",
+      "passed": true
+    },
+    {
+      "name": "furious order0 chooses physical claw combo",
+      "passed": true
+    },
+    {
+      "name": "furious order0 background cannot be damaged or Retina locked",
+      "passed": true
+    },
+    {
+      "name": "furious order0 background hit keeps HP",
+      "passed": true
+    },
+    {
+      "name": "furious order0 ground warning never chases after commitment",
+      "passed": true
+    },
+    {
+      "name": "furious order0 foreground has real hit/Retina geometry",
+      "passed": true
+    },
+    {
+      "name": "furious order0 completes expected alternating slash sequence",
+      "passed": true
+    },
+    {
+      "name": "furious order0 does not emit the old bullet barrage",
+      "passed": true
+    },
+    {
+      "name": "furious order0 leaves native boss HP unchanged without hits",
+      "passed": true
+    },
+    {
+      "name": "furious order1 chooses physical claw combo",
+      "passed": true
+    },
+    {
+      "name": "furious order1 background cannot be damaged or Retina locked",
+      "passed": true
+    },
+    {
+      "name": "furious order1 background hit keeps HP",
+      "passed": true
+    },
+    {
+      "name": "furious order1 ground warning never chases after commitment",
+      "passed": true
+    },
+    {
+      "name": "furious order1 foreground has real hit/Retina geometry",
+      "passed": true
+    },
+    {
+      "name": "furious order1 completes expected alternating slash sequence",
+      "passed": true
+    },
+    {
+      "name": "furious order1 does not emit the old bullet barrage",
+      "passed": true
+    },
+    {
+      "name": "furious order1 leaves native boss HP unchanged without hits",
+      "passed": true
+    },
+    {
+      "name": "Native limb break removes complete claw geometry",
+      "passed": true
+    },
+    {
+      "name": "Limb breakup uses authored-position explosions",
+      "passed": true
+    },
+    {
+      "name": "Armless body falls back to its physical core missiles",
+      "passed": true
+    },
+    {
+      "name": "Retry discards physical combo",
+      "passed": true
+    },
+    {
+      "name": "Corrupted Chronos stays on its own regenerated controller",
+      "passed": true
+    },
+    {
+      "name": "Authored pose frames were actually drawn",
+      "passed": true
+    },
+    {
+      "name": "No browser or native draw errors",
+      "passed": true
+    }
+  ],
+  "states": [
+    {
+      "rank": "normal",
+      "seq": 0,
+      "back": {
+        "mode": "recede",
+        "depth": 0.5407407407407407,
+        "noHit": true,
+        "targets": 0,
+        "hp": 3380,
+        "marks": "[{\"x\":340,\"y\":447},{\"x\":228,\"y\":423}]"
+      },
+      "landing": {
+        "stage": "landing",
+        "depth": 1,
+        "noHit": false,
+        "targets": 3,
+        "rig": 3,
+        "rounds": 0
+      },
+      "side": {
+        "stage": "side-slash",
+        "bank": "slashL",
+        "frame": 6,
+        "x": 322.83846731780733,
+        "y": 253.0427442985579
+      },
+      "end": {
+        "events": [
+          {
+            "event": "combo-start",
+            "clock": 0,
+            "order": [
+              "left",
+              "right"
+            ],
+            "marks": [
+              {
+                "x": 340,
+                "y": 447
+              },
+              {
+                "x": 228,
+                "y": 423
+              }
+            ],
+            "rank": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 0.016666666666666666,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            },
+            "duration": 1.85
+          },
+          {
+            "event": "motion",
+            "clock": 0.55,
+            "stage": "recede",
+            "bank": "recede",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 1.2000000000000006,
+            "stage": "leap",
+            "bank": "recede",
+            "frame": 15,
+            "depth": 0.38
+          },
+          {
+            "event": "motion",
+            "clock": 1.4666666666666663,
+            "stage": "plunge",
+            "bank": "approach",
+            "frame": 0,
+            "depth": 0.38
+          },
+          {
+            "event": "landing-impact",
+            "clock": 1.866666666666665,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 1.866666666666665,
+            "stage": "landing",
+            "bank": "approach",
+            "frame": 15,
+            "depth": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 2.116666666666664,
+            "index": 1,
+            "target": {
+              "x": 228,
+              "y": 423
+            },
+            "duration": 0.43
+          },
+          {
+            "event": "motion",
+            "clock": 2.116666666666664,
+            "stage": "side-tell",
+            "bank": "guard",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "jump-slash",
+            "clock": 2.533333333333329,
+            "side": "left",
+            "index": 1
+          },
+          {
+            "event": "motion",
+            "clock": 2.533333333333329,
+            "stage": "side-slash",
+            "bank": "slashL",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "landing-impact",
+            "clock": 2.9833333333333276,
+            "index": 1,
+            "target": {
+              "x": 228,
+              "y": 423
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 2.9833333333333276,
+            "stage": "side-land",
+            "bank": "slashL",
+            "frame": 23,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 3.133333333333327,
+            "stage": "recover",
+            "bank": "guard",
+            "frame": 14,
+            "depth": 1
+          },
+          {
+            "event": "combo-complete",
+            "clock": 3.9333333333333242,
+            "hp": 3380,
+            "parts": [
+              "core",
+              "left",
+              "right"
+            ]
+          },
+          {
+            "event": "combo-start",
+            "clock": 4.983333333333321,
+            "order": [
+              "right",
+              "left"
+            ],
+            "marks": [
+              {
+                "x": 340,
+                "y": 447
+              },
+              {
+                "x": 452,
+                "y": 423
+              }
+            ],
+            "rank": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 4.999999999999988,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            },
+            "duration": 1.85
+          },
+          {
+            "event": "motion",
+            "clock": 5.533333333333319,
+            "stage": "recede",
+            "bank": "recede",
+            "frame": 0,
+            "depth": 1
+          }
+        ],
+        "attack": "rd77-ninja",
+        "hp": 3380,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 3380
+          },
+          {
+            "id": "left",
+            "hp": 812
+          },
+          {
+            "id": "right",
+            "hp": 812
+          }
+        ],
+        "rounds": 0
+      }
+    },
+    {
+      "rank": "normal",
+      "seq": 1,
+      "back": {
+        "mode": "recede",
+        "depth": 0.5407407407407407,
+        "noHit": true,
+        "targets": 0,
+        "hp": 3380,
+        "marks": "[{\"x\":340,\"y\":447},{\"x\":452,\"y\":423}]"
+      },
+      "landing": {
+        "stage": "landing",
+        "depth": 1,
+        "noHit": false,
+        "targets": 3,
+        "rig": 3,
+        "rounds": 0
+      },
+      "side": {
+        "stage": "side-slash",
+        "bank": "slashR",
+        "frame": 7,
+        "x": 361.57264622812016,
+        "y": 249.7679682454854
+      },
+      "end": {
+        "events": [
+          {
+            "event": "combo-start",
+            "clock": 0,
+            "order": [
+              "right",
+              "left"
+            ],
+            "marks": [
+              {
+                "x": 340,
+                "y": 447
+              },
+              {
+                "x": 452,
+                "y": 423
+              }
+            ],
+            "rank": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 0.016666666666666666,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            },
+            "duration": 1.85
+          },
+          {
+            "event": "motion",
+            "clock": 0.55,
+            "stage": "recede",
+            "bank": "recede",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 1.2000000000000006,
+            "stage": "leap",
+            "bank": "recede",
+            "frame": 15,
+            "depth": 0.38
+          },
+          {
+            "event": "motion",
+            "clock": 1.4666666666666663,
+            "stage": "plunge",
+            "bank": "approach",
+            "frame": 0,
+            "depth": 0.38
+          },
+          {
+            "event": "landing-impact",
+            "clock": 1.866666666666665,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 1.866666666666665,
+            "stage": "landing",
+            "bank": "approach",
+            "frame": 15,
+            "depth": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 2.116666666666664,
+            "index": 1,
+            "target": {
+              "x": 452,
+              "y": 423
+            },
+            "duration": 0.43
+          },
+          {
+            "event": "motion",
+            "clock": 2.116666666666664,
+            "stage": "side-tell",
+            "bank": "guard",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "jump-slash",
+            "clock": 2.533333333333329,
+            "side": "right",
+            "index": 1
+          },
+          {
+            "event": "motion",
+            "clock": 2.533333333333329,
+            "stage": "side-slash",
+            "bank": "slashR",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "landing-impact",
+            "clock": 2.9833333333333276,
+            "index": 1,
+            "target": {
+              "x": 452,
+              "y": 423
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 2.9833333333333276,
+            "stage": "side-land",
+            "bank": "slashR",
+            "frame": 23,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 3.133333333333327,
+            "stage": "recover",
+            "bank": "guard",
+            "frame": 14,
+            "depth": 1
+          },
+          {
+            "event": "combo-complete",
+            "clock": 3.9333333333333242,
+            "hp": 3380,
+            "parts": [
+              "core",
+              "left",
+              "right"
+            ]
+          },
+          {
+            "event": "combo-start",
+            "clock": 4.983333333333321,
+            "order": [
+              "left",
+              "right"
+            ],
+            "marks": [
+              {
+                "x": 340,
+                "y": 447
+              },
+              {
+                "x": 228,
+                "y": 423
+              }
+            ],
+            "rank": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 4.999999999999988,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            },
+            "duration": 1.85
+          },
+          {
+            "event": "motion",
+            "clock": 5.533333333333319,
+            "stage": "recede",
+            "bank": "recede",
+            "frame": 0,
+            "depth": 1
+          }
+        ],
+        "attack": "rd77-ninja",
+        "hp": 3380,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 3380
+          },
+          {
+            "id": "left",
+            "hp": 812
+          },
+          {
+            "id": "right",
+            "hp": 812
+          }
+        ],
+        "rounds": 0
+      }
+    },
+    {
+      "rank": "hard",
+      "seq": 0,
+      "back": {
+        "mode": "recede",
+        "depth": 0.5407407407407407,
+        "noHit": true,
+        "targets": 0,
+        "hp": 4290,
+        "marks": "[{\"x\":340,\"y\":447},{\"x\":228,\"y\":423},{\"x\":452,\"y\":423}]"
+      },
+      "landing": {
+        "stage": "landing",
+        "depth": 1,
+        "noHit": false,
+        "targets": 3,
+        "rig": 3,
+        "rounds": 0
+      },
+      "side": {
+        "stage": "side-slash",
+        "bank": "slashL",
+        "frame": 7,
+        "x": 318.42735377187984,
+        "y": 249.7679682454854
+      },
+      "end": {
+        "events": [
+          {
+            "event": "combo-start",
+            "clock": 0,
+            "order": [
+              "left",
+              "right"
+            ],
+            "marks": [
+              {
+                "x": 340,
+                "y": 447
+              },
+              {
+                "x": 228,
+                "y": 423
+              },
+              {
+                "x": 452,
+                "y": 423
+              }
+            ],
+            "rank": 2
+          },
+          {
+            "event": "landing-committed",
+            "clock": 0.016666666666666666,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            },
+            "duration": 1.85
+          },
+          {
+            "event": "motion",
+            "clock": 0.55,
+            "stage": "recede",
+            "bank": "recede",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 1.2000000000000006,
+            "stage": "leap",
+            "bank": "recede",
+            "frame": 15,
+            "depth": 0.38
+          },
+          {
+            "event": "motion",
+            "clock": 1.4666666666666663,
+            "stage": "plunge",
+            "bank": "approach",
+            "frame": 0,
+            "depth": 0.38
+          },
+          {
+            "event": "landing-impact",
+            "clock": 1.866666666666665,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 1.866666666666665,
+            "stage": "landing",
+            "bank": "approach",
+            "frame": 15,
+            "depth": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 2.116666666666664,
+            "index": 1,
+            "target": {
+              "x": 228,
+              "y": 423
+            },
+            "duration": 0.43
+          },
+          {
+            "event": "motion",
+            "clock": 2.116666666666664,
+            "stage": "side-tell",
+            "bank": "guard",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "jump-slash",
+            "clock": 2.533333333333329,
+            "side": "left",
+            "index": 1
+          },
+          {
+            "event": "motion",
+            "clock": 2.533333333333329,
+            "stage": "side-slash",
+            "bank": "slashL",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "landing-impact",
+            "clock": 2.9833333333333276,
+            "index": 1,
+            "target": {
+              "x": 228,
+              "y": 423
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 2.9833333333333276,
+            "stage": "side-land",
+            "bank": "slashL",
+            "frame": 23,
+            "depth": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 3.133333333333327,
+            "index": 2,
+            "target": {
+              "x": 452,
+              "y": 423
+            },
+            "duration": 0.43
+          },
+          {
+            "event": "motion",
+            "clock": 3.133333333333327,
+            "stage": "side-tell",
+            "bank": "guard",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "jump-slash",
+            "clock": 3.566666666666659,
+            "side": "right",
+            "index": 2
+          },
+          {
+            "event": "motion",
+            "clock": 3.566666666666659,
+            "stage": "side-slash",
+            "bank": "slashR",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "landing-impact",
+            "clock": 4.016666666666658,
+            "index": 2,
+            "target": {
+              "x": 452,
+              "y": 423
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 4.016666666666658,
+            "stage": "side-land",
+            "bank": "slashR",
+            "frame": 23,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 4.166666666666657,
+            "stage": "recover",
+            "bank": "guard",
+            "frame": 14,
+            "depth": 1
+          },
+          {
+            "event": "combo-complete",
+            "clock": 4.966666666666654,
+            "hp": 4290,
+            "parts": [
+              "core",
+              "left",
+              "right"
+            ]
+          }
+        ],
+        "attack": null,
+        "hp": 4290,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 4290
+          },
+          {
+            "id": "left",
+            "hp": 1030
+          },
+          {
+            "id": "right",
+            "hp": 1030
+          }
+        ],
+        "rounds": 0
+      }
+    },
+    {
+      "rank": "hard",
+      "seq": 1,
+      "back": {
+        "mode": "recede",
+        "depth": 0.5407407407407407,
+        "noHit": true,
+        "targets": 0,
+        "hp": 4290,
+        "marks": "[{\"x\":340,\"y\":447},{\"x\":452,\"y\":423},{\"x\":228,\"y\":423}]"
+      },
+      "landing": {
+        "stage": "landing",
+        "depth": 1,
+        "noHit": false,
+        "targets": 3,
+        "rig": 3,
+        "rounds": 0
+      },
+      "side": {
+        "stage": "side-slash",
+        "bank": "slashR",
+        "frame": 7,
+        "x": 361.57264622812016,
+        "y": 249.7679682454854
+      },
+      "end": {
+        "events": [
+          {
+            "event": "combo-start",
+            "clock": 0,
+            "order": [
+              "right",
+              "left"
+            ],
+            "marks": [
+              {
+                "x": 340,
+                "y": 447
+              },
+              {
+                "x": 452,
+                "y": 423
+              },
+              {
+                "x": 228,
+                "y": 423
+              }
+            ],
+            "rank": 2
+          },
+          {
+            "event": "landing-committed",
+            "clock": 0.016666666666666666,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            },
+            "duration": 1.85
+          },
+          {
+            "event": "motion",
+            "clock": 0.55,
+            "stage": "recede",
+            "bank": "recede",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 1.2000000000000006,
+            "stage": "leap",
+            "bank": "recede",
+            "frame": 15,
+            "depth": 0.38
+          },
+          {
+            "event": "motion",
+            "clock": 1.4666666666666663,
+            "stage": "plunge",
+            "bank": "approach",
+            "frame": 0,
+            "depth": 0.38
+          },
+          {
+            "event": "landing-impact",
+            "clock": 1.866666666666665,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 1.866666666666665,
+            "stage": "landing",
+            "bank": "approach",
+            "frame": 15,
+            "depth": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 2.116666666666664,
+            "index": 1,
+            "target": {
+              "x": 452,
+              "y": 423
+            },
+            "duration": 0.43
+          },
+          {
+            "event": "motion",
+            "clock": 2.116666666666664,
+            "stage": "side-tell",
+            "bank": "guard",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "jump-slash",
+            "clock": 2.533333333333329,
+            "side": "right",
+            "index": 1
+          },
+          {
+            "event": "motion",
+            "clock": 2.533333333333329,
+            "stage": "side-slash",
+            "bank": "slashR",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "landing-impact",
+            "clock": 2.9833333333333276,
+            "index": 1,
+            "target": {
+              "x": 452,
+              "y": 423
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 2.9833333333333276,
+            "stage": "side-land",
+            "bank": "slashR",
+            "frame": 23,
+            "depth": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 3.133333333333327,
+            "index": 2,
+            "target": {
+              "x": 228,
+              "y": 423
+            },
+            "duration": 0.43
+          },
+          {
+            "event": "motion",
+            "clock": 3.133333333333327,
+            "stage": "side-tell",
+            "bank": "guard",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "jump-slash",
+            "clock": 3.566666666666659,
+            "side": "left",
+            "index": 2
+          },
+          {
+            "event": "motion",
+            "clock": 3.566666666666659,
+            "stage": "side-slash",
+            "bank": "slashL",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "landing-impact",
+            "clock": 4.016666666666658,
+            "index": 2,
+            "target": {
+              "x": 228,
+              "y": 423
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 4.016666666666658,
+            "stage": "side-land",
+            "bank": "slashL",
+            "frame": 23,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 4.166666666666657,
+            "stage": "recover",
+            "bank": "guard",
+            "frame": 14,
+            "depth": 1
+          },
+          {
+            "event": "combo-complete",
+            "clock": 4.966666666666654,
+            "hp": 4290,
+            "parts": [
+              "core",
+              "left",
+              "right"
+            ]
+          }
+        ],
+        "attack": null,
+        "hp": 4290,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 4290
+          },
+          {
+            "id": "left",
+            "hp": 1030
+          },
+          {
+            "id": "right",
+            "hp": 1030
+          }
+        ],
+        "rounds": 0
+      }
+    },
+    {
+      "rank": "furious",
+      "seq": 0,
+      "back": {
+        "mode": "recede",
+        "depth": 0.5407407407407407,
+        "noHit": true,
+        "targets": 0,
+        "hp": 5330,
+        "marks": "[{\"x\":340,\"y\":447},{\"x\":228,\"y\":423},{\"x\":452,\"y\":423}]"
+      },
+      "landing": {
+        "stage": "landing",
+        "depth": 1,
+        "noHit": false,
+        "targets": 3,
+        "rig": 3,
+        "rounds": 0
+      },
+      "side": {
+        "stage": "side-slash",
+        "bank": "slashL",
+        "frame": 7,
+        "x": 318.42735377187984,
+        "y": 249.7679682454854
+      },
+      "end": {
+        "events": [
+          {
+            "event": "combo-start",
+            "clock": 0,
+            "order": [
+              "left",
+              "right"
+            ],
+            "marks": [
+              {
+                "x": 340,
+                "y": 447
+              },
+              {
+                "x": 228,
+                "y": 423
+              },
+              {
+                "x": 452,
+                "y": 423
+              }
+            ],
+            "rank": 3
+          },
+          {
+            "event": "landing-committed",
+            "clock": 0.016666666666666666,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            },
+            "duration": 1.85
+          },
+          {
+            "event": "motion",
+            "clock": 0.55,
+            "stage": "recede",
+            "bank": "recede",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 1.2000000000000006,
+            "stage": "leap",
+            "bank": "recede",
+            "frame": 15,
+            "depth": 0.38
+          },
+          {
+            "event": "motion",
+            "clock": 1.4666666666666663,
+            "stage": "plunge",
+            "bank": "approach",
+            "frame": 0,
+            "depth": 0.38
+          },
+          {
+            "event": "landing-impact",
+            "clock": 1.866666666666665,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 1.866666666666665,
+            "stage": "landing",
+            "bank": "approach",
+            "frame": 15,
+            "depth": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 2.116666666666664,
+            "index": 1,
+            "target": {
+              "x": 228,
+              "y": 423
+            },
+            "duration": 0.43
+          },
+          {
+            "event": "motion",
+            "clock": 2.116666666666664,
+            "stage": "side-tell",
+            "bank": "guard",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "jump-slash",
+            "clock": 2.533333333333329,
+            "side": "left",
+            "index": 1
+          },
+          {
+            "event": "motion",
+            "clock": 2.533333333333329,
+            "stage": "side-slash",
+            "bank": "slashL",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "landing-impact",
+            "clock": 2.9833333333333276,
+            "index": 1,
+            "target": {
+              "x": 228,
+              "y": 423
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 2.9833333333333276,
+            "stage": "side-land",
+            "bank": "slashL",
+            "frame": 23,
+            "depth": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 3.133333333333327,
+            "index": 2,
+            "target": {
+              "x": 452,
+              "y": 423
+            },
+            "duration": 0.43
+          },
+          {
+            "event": "motion",
+            "clock": 3.133333333333327,
+            "stage": "side-tell",
+            "bank": "guard",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "jump-slash",
+            "clock": 3.566666666666659,
+            "side": "right",
+            "index": 2
+          },
+          {
+            "event": "motion",
+            "clock": 3.566666666666659,
+            "stage": "side-slash",
+            "bank": "slashR",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "landing-impact",
+            "clock": 4.016666666666658,
+            "index": 2,
+            "target": {
+              "x": 452,
+              "y": 423
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 4.016666666666658,
+            "stage": "side-land",
+            "bank": "slashR",
+            "frame": 23,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 4.166666666666657,
+            "stage": "recover",
+            "bank": "guard",
+            "frame": 14,
+            "depth": 1
+          },
+          {
+            "event": "combo-complete",
+            "clock": 4.966666666666654,
+            "hp": 5330,
+            "parts": [
+              "core",
+              "left",
+              "right"
+            ]
+          }
+        ],
+        "attack": null,
+        "hp": 5330,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5330
+          },
+          {
+            "id": "left",
+            "hp": 1280
+          },
+          {
+            "id": "right",
+            "hp": 1280
+          }
+        ],
+        "rounds": 0
+      }
+    },
+    {
+      "rank": "furious",
+      "seq": 1,
+      "back": {
+        "mode": "recede",
+        "depth": 0.5407407407407407,
+        "noHit": true,
+        "targets": 0,
+        "hp": 5330,
+        "marks": "[{\"x\":340,\"y\":447},{\"x\":452,\"y\":423},{\"x\":228,\"y\":423}]"
+      },
+      "landing": {
+        "stage": "landing",
+        "depth": 1,
+        "noHit": false,
+        "targets": 3,
+        "rig": 3,
+        "rounds": 0
+      },
+      "side": {
+        "stage": "side-slash",
+        "bank": "slashR",
+        "frame": 7,
+        "x": 361.57264622812016,
+        "y": 249.7679682454854
+      },
+      "end": {
+        "events": [
+          {
+            "event": "combo-start",
+            "clock": 0,
+            "order": [
+              "right",
+              "left"
+            ],
+            "marks": [
+              {
+                "x": 340,
+                "y": 447
+              },
+              {
+                "x": 452,
+                "y": 423
+              },
+              {
+                "x": 228,
+                "y": 423
+              }
+            ],
+            "rank": 3
+          },
+          {
+            "event": "landing-committed",
+            "clock": 0.016666666666666666,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            },
+            "duration": 1.85
+          },
+          {
+            "event": "motion",
+            "clock": 0.55,
+            "stage": "recede",
+            "bank": "recede",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 1.2000000000000006,
+            "stage": "leap",
+            "bank": "recede",
+            "frame": 15,
+            "depth": 0.38
+          },
+          {
+            "event": "motion",
+            "clock": 1.4666666666666663,
+            "stage": "plunge",
+            "bank": "approach",
+            "frame": 0,
+            "depth": 0.38
+          },
+          {
+            "event": "landing-impact",
+            "clock": 1.866666666666665,
+            "index": 0,
+            "target": {
+              "x": 340,
+              "y": 447
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 1.866666666666665,
+            "stage": "landing",
+            "bank": "approach",
+            "frame": 15,
+            "depth": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 2.116666666666664,
+            "index": 1,
+            "target": {
+              "x": 452,
+              "y": 423
+            },
+            "duration": 0.43
+          },
+          {
+            "event": "motion",
+            "clock": 2.116666666666664,
+            "stage": "side-tell",
+            "bank": "guard",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "jump-slash",
+            "clock": 2.533333333333329,
+            "side": "right",
+            "index": 1
+          },
+          {
+            "event": "motion",
+            "clock": 2.533333333333329,
+            "stage": "side-slash",
+            "bank": "slashR",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "landing-impact",
+            "clock": 2.9833333333333276,
+            "index": 1,
+            "target": {
+              "x": 452,
+              "y": 423
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 2.9833333333333276,
+            "stage": "side-land",
+            "bank": "slashR",
+            "frame": 23,
+            "depth": 1
+          },
+          {
+            "event": "landing-committed",
+            "clock": 3.133333333333327,
+            "index": 2,
+            "target": {
+              "x": 228,
+              "y": 423
+            },
+            "duration": 0.43
+          },
+          {
+            "event": "motion",
+            "clock": 3.133333333333327,
+            "stage": "side-tell",
+            "bank": "guard",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "jump-slash",
+            "clock": 3.566666666666659,
+            "side": "left",
+            "index": 2
+          },
+          {
+            "event": "motion",
+            "clock": 3.566666666666659,
+            "stage": "side-slash",
+            "bank": "slashL",
+            "frame": 0,
+            "depth": 1
+          },
+          {
+            "event": "landing-impact",
+            "clock": 4.016666666666658,
+            "index": 2,
+            "target": {
+              "x": 228,
+              "y": 423
+            }
+          },
+          {
+            "event": "motion",
+            "clock": 4.016666666666658,
+            "stage": "side-land",
+            "bank": "slashL",
+            "frame": 23,
+            "depth": 1
+          },
+          {
+            "event": "motion",
+            "clock": 4.166666666666657,
+            "stage": "recover",
+            "bank": "guard",
+            "frame": 14,
+            "depth": 1
+          },
+          {
+            "event": "combo-complete",
+            "clock": 4.966666666666654,
+            "hp": 5330,
+            "parts": [
+              "core",
+              "left",
+              "right"
+            ]
+          }
+        ],
+        "attack": null,
+        "hp": 5330,
+        "parts": [
+          {
+            "id": "core",
+            "hp": 5330
+          },
+          {
+            "id": "left",
+            "hp": 1280
+          },
+          {
+            "id": "right",
+            "hp": 1280
+          }
+        ],
+        "rounds": 0
+      }
+    }
+  ],
+  "errors": []
+}

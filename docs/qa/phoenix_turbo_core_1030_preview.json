@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "clip": "s8-phoenix-volcano",
+      "source": "http://127.0.0.1:51046/videos/stage8-phoenix-turbo-core-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.002008,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "stage8-phoenix-turbo-cannons",
+      "source": "http://127.0.0.1:51046/videos/stage8-phoenix-turbo-core-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 0.991382,
+      "advanced": true,
+      "passed": true
+    },
+    {
+      "clip": "stage8-phoenix-core-beam",
+      "source": "http://127.0.0.1:51046/videos/stage8-phoenix-turbo-core-1030.mp4",
+      "w": 1280,
+      "h": 800,
+      "time": 4.790672,
+      "advanced": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

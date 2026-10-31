@@ -1,0 +1,1159 @@
+{
+  "checks": [
+    {
+      "name": "Stage 6 initializes",
+      "ok": true,
+      "data": {
+        "ok": true,
+        "log": [],
+        "state": "play"
+      }
+    },
+    {
+      "name": "Stage 7 initializes",
+      "ok": true,
+      "data": {
+        "ok": true,
+        "log": [],
+        "state": "play"
+      }
+    },
+    {
+      "name": "Stage 8 initializes",
+      "ok": true,
+      "data": {
+        "ok": true,
+        "log": [],
+        "state": "play"
+      }
+    },
+    {
+      "name": "s7skimmer routes to coherent toxic hull",
+      "ok": true,
+      "data": {
+        "type": "cp22slime",
+        "model": "slimejet",
+        "render": {
+          "id": "slimejet",
+          "kind": "idle",
+          "frame": 0,
+          "key": "cp22_slimejet_idle",
+          "span": 78.3,
+          "scale": 0.7528846153846154,
+          "dx": 0,
+          "dy": 0,
+          "x": 340,
+          "y": 160,
+          "angle": 0
+        },
+        "hp": 15,
+        "role": "slime"
+      }
+    },
+    {
+      "name": "s7serpent routes to coherent toxic hull",
+      "ok": true,
+      "data": {
+        "type": "cp22slime",
+        "model": "slimejet",
+        "render": {
+          "id": "slimejet",
+          "kind": "idle",
+          "frame": 0,
+          "key": "cp22_slimejet_idle",
+          "span": 78.3,
+          "scale": 0.7528846153846154,
+          "dx": 0,
+          "dy": 0,
+          "x": 340,
+          "y": 160,
+          "angle": 0
+        },
+        "hp": 15,
+        "role": "slime"
+      }
+    },
+    {
+      "name": "s7sampler routes to coherent toxic hull",
+      "ok": true,
+      "data": {
+        "type": "cp22drone",
+        "model": "sewerdrone",
+        "render": {
+          "id": "sewerdrone",
+          "kind": "idle",
+          "frame": 0,
+          "key": "cp22_sewerdrone_idle",
+          "span": 60.9,
+          "scale": 0.6278350515463917,
+          "dx": 0,
+          "dy": 0,
+          "x": 340,
+          "y": 160,
+          "angle": 0
+        },
+        "hp": 15,
+        "role": "drone"
+      }
+    },
+    {
+      "name": "s7lamprey routes to coherent toxic hull",
+      "ok": true,
+      "data": {
+        "type": "cp22relay",
+        "model": "sewerheavy",
+        "render": {
+          "id": "sewerheavy",
+          "kind": "idle",
+          "frame": 0,
+          "key": "cp22_sewerheavy_idle",
+          "span": 98.6,
+          "scale": 0.939047619047619,
+          "dx": 0,
+          "dy": 0,
+          "x": 340,
+          "y": 160,
+          "angle": 0
+        },
+        "hp": 15,
+        "role": "relay"
+      }
+    },
+    {
+      "name": "s7mine routes to coherent toxic hull",
+      "ok": true,
+      "data": {
+        "type": "cp22drone",
+        "model": "sewerdrone",
+        "render": {
+          "id": "sewerdrone",
+          "kind": "idle",
+          "frame": 0,
+          "key": "cp22_sewerdrone_idle",
+          "span": 60.9,
+          "scale": 0.6278350515463917,
+          "dx": 0,
+          "dy": 0,
+          "x": 340,
+          "y": 160,
+          "angle": 0
+        },
+        "hp": 15,
+        "role": "drone"
+      }
+    },
+    {
+      "name": "s7canister routes to coherent toxic hull",
+      "ok": true,
+      "data": {
+        "type": "cp22relay",
+        "model": "sewerheavy",
+        "render": {
+          "id": "sewerheavy",
+          "kind": "idle",
+          "frame": 0,
+          "key": "cp22_sewerheavy_idle",
+          "span": 98.6,
+          "scale": 0.939047619047619,
+          "dx": 0,
+          "dy": 0,
+          "x": 340,
+          "y": 160,
+          "angle": 0
+        },
+        "hp": 15,
+        "role": "relay"
+      }
+    },
+    {
+      "name": "mm1003_hexpyre routes to coherent toxic hull",
+      "ok": true,
+      "data": {
+        "type": "cp22relay",
+        "model": "sewerheavy",
+        "render": {
+          "id": "sewerheavy",
+          "kind": "idle",
+          "frame": 0,
+          "key": "cp22_sewerheavy_idle",
+          "span": 98.6,
+          "scale": 0.939047619047619,
+          "dx": 0,
+          "dy": 0,
+          "x": 340,
+          "y": 160,
+          "angle": 0
+        },
+        "hp": 15,
+        "role": "relay"
+      }
+    },
+    {
+      "name": "mm1003_impharrow routes to coherent toxic hull",
+      "ok": true,
+      "data": {
+        "type": "cp22drone",
+        "model": "sewerdrone",
+        "render": {
+          "id": "sewerdrone",
+          "kind": "idle",
+          "frame": 0,
+          "key": "cp22_sewerdrone_idle",
+          "span": 60.9,
+          "scale": 0.6278350515463917,
+          "dx": 0,
+          "dy": 0,
+          "x": 340,
+          "y": 160,
+          "angle": 0
+        },
+        "hp": 15,
+        "role": "drone"
+      }
+    },
+    {
+      "name": "s7barge ground/fixture owner retained",
+      "ok": true,
+      "data": {
+        "type": "s7barge",
+        "custom": false
+      }
+    },
+    {
+      "name": "s7pipe ground/fixture owner retained",
+      "ok": true,
+      "data": {
+        "type": "s7pipe",
+        "custom": false
+      }
+    },
+    {
+      "name": "s7walker ground/fixture owner retained",
+      "ok": true,
+      "data": {
+        "type": "s7walker",
+        "custom": false
+      }
+    },
+    {
+      "name": "s7tank ground/fixture owner retained",
+      "ok": true,
+      "data": {
+        "type": "s7tank",
+        "custom": false
+      }
+    },
+    {
+      "name": "slimejet idle native bank",
+      "ok": true,
+      "data": {
+        "id": "slimejet",
+        "kind": "idle",
+        "frame": 0,
+        "key": "cp22_slimejet_idle",
+        "span": 78.3,
+        "scale": 0.7528846153846154,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "slimejet attack native bank",
+      "ok": true,
+      "data": {
+        "id": "slimejet",
+        "kind": "attack",
+        "frame": 2,
+        "key": "cp22_slimejet_attack",
+        "span": 78.3,
+        "scale": 0.7528846153846154,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "slimejet drift native bank",
+      "ok": true,
+      "data": {
+        "id": "slimejet",
+        "kind": "drift",
+        "frame": 0,
+        "key": "cp22_slimejet_drift",
+        "span": 78.3,
+        "scale": 0.7528846153846154,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "slimejet roll native bank",
+      "ok": true,
+      "data": {
+        "id": "slimejet",
+        "kind": "roll",
+        "frame": 4,
+        "key": "cp22_slimejet_roll",
+        "span": 78.3,
+        "scale": 0.7528846153846154,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "slimejet somer native bank",
+      "ok": true,
+      "data": {
+        "id": "slimejet",
+        "kind": "somer",
+        "frame": 4,
+        "key": "cp22_slimejet_somer",
+        "span": 78.3,
+        "scale": 0.7528846153846154,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "slimejet visible flash expires",
+      "ok": true,
+      "data": {
+        "pixels": 2900,
+        "expired": true
+      }
+    },
+    {
+      "name": "slimejet warned shots use owned toxic effects",
+      "ok": true,
+      "data": {
+        "shots": 3,
+        "themes": [
+          "toxic"
+        ],
+        "owner": true,
+        "locked": true,
+        "history": [
+          {
+            "role": "slime",
+            "event": "tell",
+            "t": 0.18333333333333332,
+            "attack": "fan"
+          },
+          {
+            "role": "slime",
+            "event": "tell",
+            "t": 0,
+            "attack": "fan"
+          },
+          {
+            "role": "slime",
+            "event": "release",
+            "t": 0.966666666666668,
+            "attack": "fan"
+          },
+          {
+            "role": "slime",
+            "event": "recovery",
+            "t": 1.4333333333333331,
+            "attack": "fan"
+          }
+        ],
+        "render": {
+          "id": "slimejet",
+          "kind": "drift",
+          "frame": 3,
+          "key": "cp22_slimejet_drift",
+          "span": 78.3,
+          "scale": 0.7528846153846154,
+          "dx": 0,
+          "dy": 0,
+          "x": 397.0038752975128,
+          "y": 172.4080499166175,
+          "angle": 0
+        }
+      }
+    },
+    {
+      "name": "sewerdrone idle native bank",
+      "ok": true,
+      "data": {
+        "id": "sewerdrone",
+        "kind": "idle",
+        "frame": 1,
+        "key": "cp22_sewerdrone_idle",
+        "span": 60.9,
+        "scale": 0.6278350515463917,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sewerdrone attack native bank",
+      "ok": true,
+      "data": {
+        "id": "sewerdrone",
+        "kind": "attack",
+        "frame": 2,
+        "key": "cp22_sewerdrone_attack",
+        "span": 60.9,
+        "scale": 0.6278350515463917,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sewerdrone drift native bank",
+      "ok": true,
+      "data": {
+        "id": "sewerdrone",
+        "kind": "drift",
+        "frame": 0,
+        "key": "cp22_sewerdrone_drift",
+        "span": 60.9,
+        "scale": 0.6278350515463917,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sewerdrone roll native bank",
+      "ok": true,
+      "data": {
+        "id": "sewerdrone",
+        "kind": "roll",
+        "frame": 4,
+        "key": "cp22_sewerdrone_roll",
+        "span": 60.9,
+        "scale": 0.6278350515463917,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sewerdrone somer native bank",
+      "ok": true,
+      "data": {
+        "id": "sewerdrone",
+        "kind": "somer",
+        "frame": 4,
+        "key": "cp22_sewerdrone_somer",
+        "span": 60.9,
+        "scale": 0.6278350515463917,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sewerdrone visible flash expires",
+      "ok": true,
+      "data": {
+        "pixels": 1882,
+        "expired": true
+      }
+    },
+    {
+      "name": "sewerdrone warned shots use owned toxic effects",
+      "ok": true,
+      "data": {
+        "shots": 2,
+        "themes": [
+          "toxic"
+        ],
+        "owner": true,
+        "locked": true,
+        "history": [
+          {
+            "role": "drone",
+            "event": "tell",
+            "t": 0,
+            "attack": "needle"
+          },
+          {
+            "role": "drone",
+            "event": "release",
+            "t": 0.966666666666668,
+            "attack": "needle"
+          },
+          {
+            "role": "drone",
+            "event": "recovery",
+            "t": 1.4333333333333331,
+            "attack": "needle"
+          },
+          {
+            "role": "drone",
+            "event": "tell",
+            "t": 2.2333333333333303,
+            "attack": "needle"
+          },
+          {
+            "role": "drone",
+            "event": "tell",
+            "t": 1.733333333333332,
+            "attack": "needle"
+          }
+        ],
+        "render": {
+          "id": "sewerdrone",
+          "kind": "attack",
+          "frame": 1,
+          "key": "cp22_sewerdrone_attack",
+          "span": 60.9,
+          "scale": 0.6278350515463917,
+          "dx": 0,
+          "dy": 0,
+          "x": 332.06313357057377,
+          "y": 166.15568479766324,
+          "angle": 0
+        }
+      }
+    },
+    {
+      "name": "sewerheavy idle native bank",
+      "ok": true,
+      "data": {
+        "id": "sewerheavy",
+        "kind": "idle",
+        "frame": 3,
+        "key": "cp22_sewerheavy_idle",
+        "span": 98.6,
+        "scale": 0.939047619047619,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sewerheavy attack native bank",
+      "ok": true,
+      "data": {
+        "id": "sewerheavy",
+        "kind": "attack",
+        "frame": 2,
+        "key": "cp22_sewerheavy_attack",
+        "span": 98.6,
+        "scale": 0.939047619047619,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sewerheavy drift native bank",
+      "ok": true,
+      "data": {
+        "id": "sewerheavy",
+        "kind": "drift",
+        "frame": 0,
+        "key": "cp22_sewerheavy_drift",
+        "span": 98.6,
+        "scale": 0.939047619047619,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sewerheavy roll native bank",
+      "ok": true,
+      "data": {
+        "id": "sewerheavy",
+        "kind": "roll",
+        "frame": 4,
+        "key": "cp22_sewerheavy_roll",
+        "span": 98.6,
+        "scale": 0.939047619047619,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sewerheavy somer native bank",
+      "ok": true,
+      "data": {
+        "id": "sewerheavy",
+        "kind": "somer",
+        "frame": 4,
+        "key": "cp22_sewerheavy_somer",
+        "span": 98.6,
+        "scale": 0.939047619047619,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 160,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sewerheavy visible flash expires",
+      "ok": true,
+      "data": {
+        "pixels": 5335,
+        "expired": true
+      }
+    },
+    {
+      "name": "sewerheavy warned shots use owned toxic effects",
+      "ok": true,
+      "data": {
+        "shots": 4,
+        "themes": [
+          "toxic"
+        ],
+        "owner": true,
+        "locked": true,
+        "history": [
+          {
+            "role": "relay",
+            "event": "tell",
+            "t": 0.2333333333333333,
+            "attack": "lattice"
+          },
+          {
+            "role": "relay",
+            "event": "tell",
+            "t": 0,
+            "attack": "lattice"
+          },
+          {
+            "role": "relay",
+            "event": "release",
+            "t": 0.966666666666668,
+            "attack": "lattice"
+          },
+          {
+            "role": "relay",
+            "event": "recovery",
+            "t": 1.4333333333333331,
+            "attack": "lattice"
+          },
+          {
+            "role": "relay",
+            "event": "tell",
+            "t": 2.583333333333329,
+            "attack": "fan"
+          }
+        ],
+        "render": {
+          "id": "sewerheavy",
+          "kind": "attack",
+          "frame": 0,
+          "key": "cp22_sewerheavy_attack",
+          "span": 98.6,
+          "scale": 0.939047619047619,
+          "dx": 0,
+          "dy": 0,
+          "x": 347.9245071760948,
+          "y": 99.87251566240299,
+          "angle": 0
+        }
+      }
+    },
+    {
+      "name": "Dasher -1 warns, commits and detonates at exit",
+      "ok": true,
+      "data": {
+        "held": true,
+        "dead": true,
+        "locked": true,
+        "events": [
+          {
+            "event": "dasher-tell",
+            "t": 0,
+            "side": -1,
+            "y": 281.6,
+            "warm": 1.02
+          },
+          {
+            "event": "dasher-launch",
+            "t": 0,
+            "side": -1,
+            "y": 281.6
+          },
+          {
+            "event": "dasher-edge-detonation",
+            "t": 0,
+            "side": -1
+          }
+        ],
+        "score": 0
+      }
+    },
+    {
+      "name": "Dasher 1 warns, commits and detonates at exit",
+      "ok": true,
+      "data": {
+        "held": true,
+        "dead": true,
+        "locked": true,
+        "events": [
+          {
+            "event": "dasher-tell",
+            "t": 0,
+            "side": 1,
+            "y": 281.6,
+            "warm": 1.02
+          },
+          {
+            "event": "dasher-launch",
+            "t": 0,
+            "side": 1,
+            "y": 281.6
+          },
+          {
+            "event": "dasher-edge-detonation",
+            "t": 0,
+            "side": 1
+          }
+        ],
+        "score": 0
+      }
+    },
+    {
+      "name": "Native update runs full bounded crossing wave",
+      "ok": true,
+      "data": {
+        "launch": 6,
+        "exit": 6,
+        "waves": 1
+      }
+    },
+    {
+      "name": "No new waves during radio/cinematic/miniboss",
+      "ok": true,
+      "data": {
+        "radio": true,
+        "scene": true,
+        "boss": true
+      }
+    },
+    {
+      "name": "Flyby bomb actually releases",
+      "ok": true,
+      "data": {
+        "mode": "bomb",
+        "events": [
+          {
+            "event": "flyby-tell",
+            "t": 0,
+            "mode": "bomb"
+          }
+        ],
+        "bullets": 0,
+        "retinas": 2
+      }
+    },
+    {
+      "name": "Flyby rain actually releases",
+      "ok": true,
+      "data": {
+        "mode": "rain",
+        "events": [
+          {
+            "event": "flyby-tell",
+            "t": 0,
+            "mode": "rain"
+          }
+        ],
+        "bullets": 1,
+        "retinas": 0
+      }
+    },
+    {
+      "name": "Flyby charge actually releases",
+      "ok": true,
+      "data": {
+        "mode": "charge",
+        "events": [
+          {
+            "event": "flyby-tell",
+            "t": 0,
+            "mode": "charge"
+          }
+        ],
+        "bullets": 0,
+        "retinas": 0
+      }
+    },
+    {
+      "name": "Crossing respects roll invulnerability",
+      "ok": true,
+      "data": {
+        "activated": true,
+        "alive": true,
+        "shield": true,
+        "evade": "roll"
+      }
+    },
+    {
+      "name": "Crossing respects somer invulnerability",
+      "ok": true,
+      "data": {
+        "activated": true,
+        "alive": true,
+        "shield": true,
+        "evade": "somer"
+      }
+    },
+    {
+      "name": "Herald talon-dive warns, commits and recovers",
+      "ok": true,
+      "data": {
+        "hp": true,
+        "recovery": true,
+        "finished": true,
+        "locked": true,
+        "shots": 0,
+        "events": [
+          {
+            "event": "predator-start",
+            "time": 0,
+            "kind": "talon-dive",
+            "low": false
+          },
+          {
+            "event": "predator-tell",
+            "time": 0,
+            "kind": "talon-dive",
+            "warm": 1.15,
+            "target": {
+              "x": 340,
+              "y": 399.36
+            }
+          },
+          {
+            "event": "predator-start",
+            "time": 0,
+            "kind": "talon-dive",
+            "low": false
+          },
+          {
+            "event": "predator-tell",
+            "time": 0,
+            "kind": "talon-dive",
+            "warm": 1.15,
+            "target": {
+              "x": 340,
+              "y": 399.36
+            }
+          },
+          {
+            "event": "predator-release",
+            "time": 1.1500000000000008,
+            "kind": "talon-dive"
+          },
+          {
+            "event": "predator-recovery",
+            "time": 1.9333333333333313,
+            "seconds": 0.9
+          }
+        ]
+      }
+    },
+    {
+      "name": "Herald swoop warns, commits and recovers",
+      "ok": true,
+      "data": {
+        "hp": true,
+        "recovery": true,
+        "finished": true,
+        "locked": true,
+        "shots": 0,
+        "events": [
+          {
+            "event": "predator-start",
+            "time": 0,
+            "kind": "talon-dive",
+            "low": false
+          },
+          {
+            "event": "predator-tell",
+            "time": 0,
+            "kind": "talon-dive",
+            "warm": 1.15,
+            "target": {
+              "x": 340,
+              "y": 399.36
+            }
+          },
+          {
+            "event": "predator-release",
+            "time": 1.1500000000000008,
+            "kind": "talon-dive"
+          },
+          {
+            "event": "predator-recovery",
+            "time": 1.9333333333333313,
+            "seconds": 0.9
+          },
+          {
+            "event": "predator-start",
+            "time": 0,
+            "kind": "swoop",
+            "low": false
+          },
+          {
+            "event": "predator-tell",
+            "time": 0,
+            "kind": "swoop",
+            "warm": 1.15,
+            "target": {
+              "x": 340,
+              "y": 399.36
+            }
+          },
+          {
+            "event": "predator-release",
+            "time": 1.1500000000000008,
+            "kind": "swoop"
+          },
+          {
+            "event": "predator-recovery",
+            "time": 1.9333333333333313,
+            "seconds": 0.9
+          }
+        ]
+      }
+    },
+    {
+      "name": "Herald feathers warns, commits and recovers",
+      "ok": true,
+      "data": {
+        "hp": true,
+        "recovery": true,
+        "finished": true,
+        "locked": true,
+        "shots": 10,
+        "events": [
+          {
+            "event": "predator-start",
+            "time": 0,
+            "kind": "swoop",
+            "low": false
+          },
+          {
+            "event": "predator-tell",
+            "time": 0,
+            "kind": "swoop",
+            "warm": 1.15,
+            "target": {
+              "x": 340,
+              "y": 399.36
+            }
+          },
+          {
+            "event": "predator-release",
+            "time": 1.1500000000000008,
+            "kind": "swoop"
+          },
+          {
+            "event": "predator-recovery",
+            "time": 1.9333333333333313,
+            "seconds": 0.9
+          },
+          {
+            "event": "predator-start",
+            "time": 0,
+            "kind": "feathers",
+            "low": false
+          },
+          {
+            "event": "predator-tell",
+            "time": 0,
+            "kind": "feathers",
+            "warm": 1.15,
+            "target": {
+              "x": 340,
+              "y": 399.36
+            }
+          },
+          {
+            "event": "predator-release",
+            "time": 1.1500000000000008,
+            "kind": "feathers"
+          },
+          {
+            "event": "predator-recovery",
+            "time": 1.483333333333333,
+            "seconds": 0.9
+          }
+        ]
+      }
+    },
+    {
+      "name": "Herald broken launcher cancels, live animated head flashes",
+      "ok": true,
+      "data": {
+        "cancelled": true,
+        "targets": 5,
+        "pixels": 6450,
+        "expired": true,
+        "parts": 6
+      }
+    },
+    {
+      "name": "Herald last stand has separately warned double pass",
+      "ok": true,
+      "data": {
+        "passes": 2,
+        "warm": 1.15
+      }
+    },
+    {
+      "name": "Sewer entrance holds for arrival then leaves with world scroll",
+      "ok": true,
+      "data": {
+        "held": true,
+        "state": "play",
+        "a": {
+          "scroll": 20,
+          "src": 4184
+        },
+        "b": {
+          "scroll": 40,
+          "src": 4164
+        }
+      }
+    },
+    {
+      "name": "jetDash plays decoded audio through native mixer",
+      "ok": true,
+      "data": {
+        "cue": "jetDash",
+        "canonical": "jetDash",
+        "requested": true,
+        "playing": true,
+        "ready": 4,
+        "volume": 0.20800000000000002
+      }
+    },
+    {
+      "name": "enemyMachineGunLight plays decoded audio through native mixer",
+      "ok": true,
+      "data": {
+        "cue": "enemyMachineGunLight",
+        "canonical": "enemyMachineGunLight",
+        "requested": true,
+        "playing": true,
+        "ready": 4,
+        "volume": 0.20800000000000002
+      }
+    },
+    {
+      "name": "atomicLaunch plays decoded audio through native mixer",
+      "ok": true,
+      "data": {
+        "cue": "atomicLaunch",
+        "canonical": "atomicLaunch",
+        "requested": true,
+        "playing": true,
+        "ready": 4,
+        "volume": 0.248
+      }
+    },
+    {
+      "name": "atomicDetonate plays decoded audio through native mixer",
+      "ok": true,
+      "data": {
+        "cue": "atomicDetonate",
+        "canonical": "atomicDetonate",
+        "requested": true,
+        "playing": true,
+        "ready": 4,
+        "volume": 0.27999999999999997
+      }
+    },
+    {
+      "name": "bossWeaponCharge plays decoded audio through native mixer",
+      "ok": true,
+      "data": {
+        "cue": "bossWeaponCharge",
+        "canonical": "bossWeaponCharge",
+        "requested": true,
+        "playing": true,
+        "ready": 4,
+        "volume": 0.328
+      }
+    },
+    {
+      "name": "combatAlien0927 plays decoded audio through native mixer",
+      "ok": true,
+      "data": {
+        "cue": "combatAlien0927",
+        "canonical": "combatAlien0927",
+        "requested": true,
+        "playing": true,
+        "ready": 4,
+        "volume": 0.32000000000000006
+      }
+    },
+    {
+      "name": "combatToxic0927 plays decoded audio through native mixer",
+      "ok": true,
+      "data": {
+        "cue": "combatToxic0927",
+        "canonical": "combatToxic0927",
+        "requested": true,
+        "playing": true,
+        "ready": 4,
+        "volume": 0.328
+      }
+    },
+    {
+      "name": "bossfireVileexistence plays decoded audio through native mixer",
+      "ok": true,
+      "data": {
+        "cue": "bossfireVileexistence",
+        "canonical": "bossfireVileexistence",
+        "requested": true,
+        "playing": true,
+        "ready": 4,
+        "volume": 0.22400000000000003
+      }
+    },
+    {
+      "name": "No native renderer errors",
+      "ok": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

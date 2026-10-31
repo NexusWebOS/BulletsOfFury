@@ -1,0 +1,1 @@
+()=>{FURYBOT.events.push({t:FURYBOT.age(),type:'review-snapshot',loadout:{weapon:run.weapon,level:run.wlevel,levels:run.wlevels,forms:run.wvars},god:DBGT.god});return{player:run.pilot,keys:keybind,bullets:pBullets.slice(0,6).map(b=>({kind:b.kind,dmg:b.dmg,lv:b.lv})),soundCounts:FURYBOT.soundCounts,godAt:FURYBOT.godAt,stats:FURYBOT.stats,errors:FURYBOT.error};}

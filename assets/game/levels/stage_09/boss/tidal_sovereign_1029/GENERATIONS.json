@@ -1,0 +1,76 @@
+{
+  "service": "PixelLab",
+  "date": "2026-10-29",
+  "creditsUSD": 0.16,
+  "animationGenerations": 1,
+  "jobs": [
+    {
+      "job": "56b98270-7437-41c5-b179-19a4c20e6156",
+      "asset": "44c3d15f-ce35-50c5-bfd9-431282c1f859",
+      "tool": "create_image_pro",
+      "seed": 581029,
+      "size": [
+        128,
+        256
+      ],
+      "creditsUSD": 0.08,
+      "selected": "geyser_0.png",
+      "brief": "Neo Geo16bit upward blue water geyser, white/cyan core, royal blue shadows and falling droplets on transparency."
+    },
+    {
+      "job": "62206d8f-bfb6-4878-b788-8310e58afa4e",
+      "asset": "9e316858-2b2b-59a6-a9cb-eb671b66ade0",
+      "tool": "create_image_pro",
+      "seed": 582029,
+      "size": [
+        96,
+        96
+      ],
+      "creditsUSD": 0.08,
+      "candidates": 4,
+      "selected": [
+        "bubble_1.png",
+        "bubble_2.png"
+      ],
+      "brief": "Water roller orb with whirling liquid, white rim, royal blue depth and teal currents; no eye/metal/symbol."
+    },
+    {
+      "job": "7f3592e4-e38c-4ec2-b072-cd7fededbb5f",
+      "asset": "23cf0dfc-760b-5890-99ae-2ded19adfe4e",
+      "tool": "animate_image_pixminimax",
+      "seed": 583029,
+      "source": "geyser_0.png",
+      "requestedFrames": 16,
+      "returnedFrames": 17,
+      "chargedGenerations": 1,
+      "brief": "Fixed-base water geyser surges upward, spray beads fall, column collapses into a broad foamy splash."
+    }
+  ],
+  "authoring": "Actual native three damage-state Tidal hulls and measured liquid apertures; original stage1 ocean texture rotates/flows within blue reservoirs.16 phases x4 fill/emission levels per state; exact original hull alpha retained. Source-pixel outer glow, white hit plate, selected water spheres with16 authored rotations and6 bubble sizes, generated geyser17-master animation, native nib_wall_0..7 lava walls palette-swapped to water, water trails/arrows. The actual native Warp Sentinel hull supplies two energy palettes plus white hits at one188x142 scale. No original photos or new hull design sent; no external Sentinel upload.",
+  "correction_2026_10_29": {
+    "rejected": "nib_wall player weapon graphic",
+    "waves": "Actual Stage2 nwf_fire_0..7, vertically flipped as native Stage2, water palette,8phases x6 approaching sizes; one wave at a time with original warning/crossing constants.",
+    "fans": "Actual spiral disk rotates inside each measured15px-radius fan; metal rims stay fixed. Opposite spin directions,16phases, all native damage/fill levels.",
+    "newExternalGenerations": 0
+  },
+  "forward_water_bullet_2026_10_29": {
+    "job": "71c91ed0-9fdc-451c-a099-4c07f90da881",
+    "asset": "6e7c33fc-d30b-52aa-9f62-42b06954d3e1",
+    "tool": "PixelLab create_image_pro",
+    "seed": 601029,
+    "size": [
+      32,
+      64
+    ],
+    "candidates": 25,
+    "selected": 7,
+    "master": "water_bullet_master.png",
+    "creditsUSD": 0.08,
+    "description": "Compact south-facing aqua liquid capsule, rounded white impact nose at bottom and water wisps above, not a sphere/fountain/beam. Selected source supplies five authored headings and16 colour-flow phases without runtime rotation."
+  },
+  "attack_correction_2026_10_29": {
+    "lowerTurrets": "Fixed south-facing five-shot spreads from L/R; exact ten lane FOV and directional water muzzle/bullet frames.",
+    "fanGeysers": "Fans emit northbound authored geyser jets, painted in front of the hull. Actual offscreen exit at viewTopY()-4 hands over before the generic -16 cull, then1.6s committed green/yellow/red Retina and tip-anchored descending water rain, followed by geyser splash.",
+    "grenades": "Two fan-launched arcing water-ball grenades with1.8s fuse or native player contact burst,16frame water splash and10 unshootable water droplets. No ricochet. Half-health buoyant lamp bubbles remain separate."
+  }
+}

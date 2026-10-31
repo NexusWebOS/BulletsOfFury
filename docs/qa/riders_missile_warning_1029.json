@@ -1,0 +1,368 @@
+{
+  "native": [
+    {
+      "name": "New warning pools preloaded through shared mixer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Formation lock directs missiles at player seats",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every living NPC begins breakaway, player remains controlled",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Escaping allies excluded from missile and attack target lists",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Allies physically boost north off-screen before launch",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Active Golden Aegis cannot pin escaping allies below the barrier",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Breakaway neither moves player nor changes NPC HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Lock acquisition emits audible seek cue",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Launch emits one distinct locked-on event per barrage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real missile volley remains physical and shootable",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Allies remain offscreen throughout missile fire",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Closing real missile triggers proximity beep",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "A launched missile keeps its proximity warning after its shooter falls",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Missiles travelling away do not trigger proximity warning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Destroyed missiles stop proximity warning immediately",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Allies stay absent while Riders perform post-volley stunt",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Riders settle before allies start returning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All four allies re-enter and resume native fight state",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Returned allies regain target-list membership",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pause cancels dedicated warnings without touching player audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage X retains existing owners",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Reset clears ally evade flags and re-arms native arrival",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "film": [
+    {
+      "name": "Native Furious squad reaches real defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "No native page, console, asset, audio-tap or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All warning families decode and play in real combat",
+      "passed": true,
+      "data": {
+        "riders49_boost": 7,
+        "riders49_seek": 77,
+        "riders49_locked": 7,
+        "riders49_incoming": 43
+      }
+    },
+    {
+      "name": "All cue families have accepted mixer events",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exactly one lock-confirmed alert per volley sequence",
+      "passed": true,
+      "data": [
+        {
+          "event": "locked-on",
+          "time": 24.049999999999915,
+          "sequence": 1
+        },
+        {
+          "event": "locked-on",
+          "time": 46.533333333331974,
+          "sequence": 2
+        },
+        {
+          "event": "locked-on",
+          "time": 79.94999999999675,
+          "sequence": 3
+        },
+        {
+          "event": "locked-on",
+          "time": 100.16666666666227,
+          "sequence": 4
+        },
+        {
+          "event": "locked-on",
+          "time": 122.64999999999432,
+          "sequence": 5
+        },
+        {
+          "event": "locked-on",
+          "time": 147.15000000000924,
+          "sequence": 6
+        },
+        {
+          "event": "locked-on",
+          "time": 168.2833333333594,
+          "sequence": 7
+        }
+      ]
+    },
+    {
+      "name": "Native volleys launch physical shootable missiles at the player",
+      "passed": true,
+      "data": {
+        "count": 87
+      }
+    },
+    {
+      "name": "All NPC allies remain offscreen during every observed salvo",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Allies wait until Riders finish their post-volley stunt",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All four allies return after Riders settle and resume fighting",
+      "passed": true,
+      "data": {
+        "settles": 7,
+        "returns": 28,
+        "restores": 28
+      }
+    },
+    {
+      "name": "Return begins only after a formation has settled",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual nearby missiles trigger proximity warnings",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Confirmed Stage6 boss music remains selected",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native root camera remains steady",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Decoded music and SFX remain audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -19.3,
+        "peakDb": -3.3
+      }
+    },
+    {
+      "name": "stage6-rough-riders loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-formations loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-team-locks loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-evasion loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-kaia loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-jace loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-nyx loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-rook loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-voss loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-gold-shield loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-missile-barrage loads the revised native recording",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview decodes moving video and audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No preview errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 240.85,
+  "fps": 59.20069280506947,
+  "preview": "http://127.0.0.1:51046/?riders=missile-warning-1029#clip=rough-riders-missile-barrage",
+  "chapter": {
+    "start": 95.591,
+    "end": 108.705
+  },
+  "sha256": "598efdc500c717f0b577ae38b15074a8a03ad4216cd11a1122877026e2b44991",
+  "audio": {
+    "meanDb": -19.3,
+    "peakDb": -3.3,
+    "playing": {
+      "riders49_boost": 7,
+      "riders49_seek": 77,
+      "riders49_locked": 7,
+      "riders49_incoming": 43
+    }
+  },
+  "spacing": {
+    "maxOverlap": 0.098592033589739,
+    "frames": 10803,
+    "worst": {
+      "a": "rook",
+      "b": "jace",
+      "phase": "somer",
+      "x": 0.098592033589739,
+      "y": 19.302065583106867
+    },
+    "maxIdleStep": 206.43995663366556,
+    "last": {
+      "voss": {
+        "x": 101.58440982778464,
+        "y": 111.33298947114487,
+        "act": true
+      },
+      "nyx": {
+        "x": -10.735758912186924,
+        "y": 13.885448909802761,
+        "act": true
+      },
+      "rook": {
+        "x": 380,
+        "y": 291.84,
+        "act": true
+      },
+      "kaia": {
+        "x": 505.887337351255,
+        "y": 165.4805573526581,
+        "act": false
+      },
+      "jace": {
+        "x": 607.8767418981481,
+        "y": 129.32728943664537,
+        "act": true
+      }
+    }
+  },
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false
+}

@@ -1,0 +1,6 @@
+{
+  "method": "Whole original RD71 arm poses with fixed shoulder pivots; offline Aseprite/Pillow nearest-neighbor authoring. No telescopic ligament or distal hand replacement. Fold uses current complete armless torso and exact native ball shell sectors.",
+  "unit": "Original360px host unit; one fixed pivot per bank, one common canvas across frames.",
+  "ballStartFrame": 9,
+  "frames": 466
+}

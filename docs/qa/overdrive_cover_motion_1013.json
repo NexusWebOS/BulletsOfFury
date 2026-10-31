@@ -1,0 +1,67 @@
+{
+  "checks": [
+    {
+      "name": "55 complete even-canvas art frames decode",
+      "passed": true
+    },
+    {
+      "name": "fortress arrivals originate above camera top",
+      "passed": true
+    },
+    {
+      "name": "F latches prone and anchors to indestructible wall",
+      "passed": true
+    },
+    {
+      "name": "concrete bunker survives ram and blast damage",
+      "passed": true
+    },
+    {
+      "name": "peek rises without teleporting through the wall",
+      "passed": true
+    },
+    {
+      "name": "Retina plus fire keeps blindfire protected",
+      "passed": true
+    },
+    {
+      "name": "enemy fire cannot damage concealed blindfire body",
+      "passed": true
+    },
+    {
+      "name": "aim north plus move east selects true sidestep bank",
+      "passed": true
+    },
+    {
+      "name": "Tab and wheel cannot swap equipped weapon",
+      "passed": true
+    },
+    {
+      "name": "pickup replaces upgrade and keeps unlimited fallback",
+      "passed": true
+    },
+    {
+      "name": "swept shots hit visible torso and reject empty flank",
+      "passed": true
+    },
+    {
+      "name": "enemy direction changes use bounded acceleration",
+      "passed": true
+    },
+    {
+      "name": "death uses rear knockback frames instead of front pose",
+      "passed": true
+    },
+    {
+      "name": "Gosfer body hit accepts torso-level projectile",
+      "passed": true
+    },
+    {
+      "name": "zero page, console or missing asset errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": 15,
+  "failed": 0
+}

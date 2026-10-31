@@ -1,0 +1,40 @@
+{
+  "passed": 8,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "enemies even declared sizes",
+      "passed": true
+    },
+    {
+      "name": "enemies opaque pixels and safe gutters",
+      "passed": true
+    },
+    {
+      "name": "environment even declared sizes",
+      "passed": true
+    },
+    {
+      "name": "environment opaque pixels and safe gutters",
+      "passed": true
+    },
+    {
+      "name": "yuri even declared sizes",
+      "passed": true
+    },
+    {
+      "name": "yuri opaque pixels and safe gutters",
+      "passed": true
+    },
+    {
+      "name": "all109 assets decode through live ART registry",
+      "passed": true
+    },
+    {
+      "name": "zero native browser errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "assets": 109
+}

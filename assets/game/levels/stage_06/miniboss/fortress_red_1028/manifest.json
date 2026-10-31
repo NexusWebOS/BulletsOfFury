@@ -1,0 +1,86 @@
+{
+  "author": "Aseprite 1.3.18.6-dev batch Lua",
+  "runtime": "fixed authored frame cells; source-over; no runtime tint/rotation/alpha animation",
+  "banks": [
+    {
+      "name": "core_hit.png",
+      "size": [
+        300,
+        216
+      ],
+      "sha256": "e487f4e1e2c7c5375cbdd9019575800e95d799238313ece7367b73097a11a911"
+    },
+    {
+      "name": "fans.png",
+      "size": [
+        1024,
+        256
+      ],
+      "sha256": "05fe7f970e1850f0f1f7d0efea83f3c75683c4e1526b0000f6a558f8655b784f"
+    },
+    {
+      "name": "fan_fire.png",
+      "size": [
+        512,
+        64
+      ],
+      "sha256": "767b22b0bebdb2b8a1fe2690f87023aff9933897ef23d4f05a1372dacc666f82"
+    },
+    {
+      "name": "fan_hit.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "9b0ad6940f51f3682ef3aaf84eaa6b546ecc6e73eb914f839fc1b2b356f3bf64"
+    },
+    {
+      "name": "fan_smoke.png",
+      "size": [
+        768,
+        144
+      ],
+      "sha256": "c3fb853edac26459b4a572ee9b38188027b491347118b4cc8d106714e8cb9a41"
+    },
+    {
+      "name": "fan_wreck.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "3c926ddaf44920af8fed590727207575bb6b70b212167903d8550f7777eee91a"
+    },
+    {
+      "name": "hull.png",
+      "size": [
+        1024,
+        512
+      ],
+      "sha256": "1bcc89a05bf6cab42e74c10b31e739a68f8c7b5be014a1b681eaf5da4fef66af"
+    },
+    {
+      "name": "red_bolts.png",
+      "size": [
+        2432,
+        2432
+      ],
+      "sha256": "82ee56c0cb60d69112818996292a52dc0e2db3ca22bf425345aba82595f2c6da"
+    },
+    {
+      "name": "red_core.png",
+      "size": [
+        300,
+        216
+      ],
+      "sha256": "228011fae9cc2d9cebb19aa86ebac3c7401c5e2742cf1042b70d30cfc9208740"
+    },
+    {
+      "name": "red_orbs.png",
+      "size": [
+        576,
+        144
+      ],
+      "sha256": "861c6a87eb9073eb191aceae4137edaacb0d56ae88aac19bae00459ba98d21d1"
+    }
+  ]
+}

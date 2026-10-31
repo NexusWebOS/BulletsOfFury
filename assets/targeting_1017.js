@@ -145,7 +145,7 @@ function target17Tick(b,dt){
   if(T.shot<=0){
    const guns=live.filter(p=>!p.slot?.startsWith('ROCKET'));
    if(kind==='sonic'){if(T.waves===0&&guns.length)target17Emit(b,T,guns[(T.serial-1)%guns.length],false);}
-   else if(early){for(const port of guns)target17Emit(b,T,port,false);}
+   else if(early||run.stage===8&&b._hd1003){for(const port of guns)target17Emit(b,T,port,false);}
    else if(live.length){target17Emit(b,T,live[T.waves%live.length],false);}
    T.waves++;T.shot=early?[.22,.16,.14,.12,.11][rank]:.24;
   }

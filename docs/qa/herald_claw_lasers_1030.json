@@ -1,0 +1,372 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "projectile has512 fixed64px directional animation cells",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "projectile retains white cores and has red chroma instead of blue",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "muzzle has512 fixed64px directional animation cells",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "muzzle retains white cores and has red chroma instead of blue",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Both actual claw sockets receive committed pre-fire FOV warnings",
+        "passed": true,
+        "data": {
+          "phase": "track",
+          "fields": [
+            {
+              "x": 375.70089412060713,
+              "y": 276.20758683441727,
+              "ex": 340,
+              "ey": 442,
+              "width": 24,
+              "progress": 0.4629629629629629,
+              "fieldOnly": true
+            },
+            {
+              "x": 432.7160284882506,
+              "y": 276.17999419382846,
+              "ex": 340,
+              "ey": 442,
+              "width": 24,
+              "progress": 0.4629629629629629,
+              "fieldOnly": true
+            },
+            {
+              "x": 404.5531853412269,
+              "y": 160,
+              "ex": 329.7680702293616,
+              "ey": 436.0925925925926,
+              "width": 1,
+              "progress": 0.4629629629629629,
+              "alertOnly": true,
+              "alertX": 404.5531853412269,
+              "alertY": 70
+            }
+          ]
+        }
+      },
+      {
+        "name": "Live targeting releases both claws on the same firing beat",
+        "passed": true,
+        "data": {
+          "events": [
+            {
+              "event": "claw-laser",
+              "time": 3.399999999999993,
+              "port": "gunL",
+              "serial": 1,
+              "wave": 0,
+              "x": 415.14770877938025,
+              "y": 276.20758683441727,
+              "angle": 1.9963611619993906
+            },
+            {
+              "event": "claw-laser",
+              "time": 3.399999999999993,
+              "port": "gunR",
+              "serial": 1,
+              "wave": 0,
+              "x": 472.1628431470237,
+              "y": 276.17999419382846,
+              "angle": 2.24372117457309
+            }
+          ],
+          "rounds": [
+            {
+              "x": 415.14770877938025,
+              "y": 276.20758683441727,
+              "vx": -3.05294843888982,
+              "vy": 6.735477330913989,
+              "port": "gunL",
+              "intercept": false
+            },
+            {
+              "x": 472.1628431470237,
+              "y": 276.17999419382846,
+              "vx": -4.609172550689182,
+              "vy": 5.782964416607575,
+              "port": "gunR",
+              "intercept": false
+            }
+          ],
+          "flashes": 2
+        }
+      },
+      {
+        "name": "Both lasers remain ordinary unshootable energy",
+        "passed": true,
+        "data": [
+          {
+            "x": 415.14770877938025,
+            "y": 276.20758683441727,
+            "vx": -3.05294843888982,
+            "vy": 6.735477330913989,
+            "port": "gunL",
+            "intercept": false
+          },
+          {
+            "x": 472.1628431470237,
+            "y": 276.17999419382846,
+            "vx": -4.609172550689182,
+            "vy": 5.782964416607575,
+            "port": "gunR",
+            "intercept": false
+          }
+        ]
+      },
+      {
+        "name": "Actual native renderer blits two red rounds and two larger fixed64px muzzle cells",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "bank": "muzzle",
+              "a": [
+                256,
+                256,
+                64,
+                64,
+                386,
+                236,
+                64,
+                64
+              ]
+            },
+            {
+              "bank": "muzzle",
+              "a": [
+                448,
+                256,
+                64,
+                64,
+                445,
+                237,
+                64,
+                64
+              ]
+            },
+            {
+              "bank": "projectile",
+              "a": [
+                256,
+                128,
+                64,
+                64,
+                371,
+                271,
+                64,
+                64
+              ]
+            },
+            {
+              "bank": "projectile",
+              "a": [
+                448,
+                128,
+                64,
+                64,
+                422,
+                267,
+                64,
+                64
+              ]
+            }
+          ],
+          "expected": [
+            {
+              "id": "gunL",
+              "x": 386,
+              "y": 236
+            },
+            {
+              "id": "gunR",
+              "x": 445,
+              "y": 237
+            }
+          ]
+        }
+      },
+      {
+        "name": "Each muzzle overlays seven pixels into its own current claw tip",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Sustained attack keeps paired cadence on every native wave",
+        "passed": true,
+        "data": {
+          "0": [
+            "gunL",
+            "gunR"
+          ],
+          "1": [
+            "gunL",
+            "gunR"
+          ],
+          "2": [
+            "gunL",
+            "gunR"
+          ],
+          "3": [
+            "gunL",
+            "gunR"
+          ]
+        }
+      },
+      {
+        "name": "Destroyed claw loses its flashes and projectiles while the other claw still fires",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Muzzle animation expires after the native firing beat",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Real body and claw hit feedback remains active",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Real hit feedback expires normally",
+        "passed": true,
+        "data": {
+          "body": -0.0033333333333333062,
+          "part": 0,
+          "story": false,
+          "talk": false,
+          "state": "play"
+        }
+      },
+      {
+        "name": "Committed warning is not cancelled by the next native maneuver",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Finished paired attack releases the native flight and spell book",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Death cancels all attached laser muzzle flashes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Red laser owner is isolated from other stages",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native game, draw or asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "film": [
+    {
+      "name": "Full native Furious Herald fight reaches defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Native4264 health budget is retained",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game, asset, audio or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native recording includes synchronized dual-claw releases",
+      "passed": true,
+      "data": {
+        "events": 36,
+        "pairedWaves": 16
+      }
+    },
+    {
+      "name": "Recorded native renderer draws red laser and muzzle banks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Existing protected20percent desperation and foreground return remain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Decoded recorded sound is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -20.3,
+        "peakDb": -3.6
+      }
+    },
+    {
+      "name": "stage8-miniboss uses the corrected native film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-miniboss decodes moving footage with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-dual-lasers uses the corrected native film",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage8-herald-dual-lasers decodes moving footage with audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No video preview errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 94.14,
+  "firstLaser": 4.091,
+  "pairedWaves": 16,
+  "fps": 57.92245605771907,
+  "audio": {
+    "meanDb": -20.3,
+    "peakDb": -3.6
+  },
+  "preview": "http://127.0.0.1:51046/?herald=red-claw-lasers-1030#clip=stage8-herald-dual-lasers",
+  "fullFight": "http://127.0.0.1:51046/?herald=red-claw-lasers-1030#clip=stage8-miniboss",
+  "sha256": "9a15fc3ef6553a2de680494a1f6fb777dc87c1d4c86dba33e9aaf6f50dad1abd",
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false
+}

@@ -1,0 +1,81 @@
+{
+  "nativeFPS": 58.18014833780944,
+  "duration": 72.568,
+  "defeatSeconds": 65.148,
+  "meanDB": -20.5,
+  "peakDB": -4.4,
+  "playing": {
+    "bossPhase": 1,
+    "boss8": 1,
+    "bossWeaponCharge": 11,
+    "av3_target_acquire": 33,
+    "alertLockon": 22,
+    "teleportIn": 11,
+    "expBig": 49,
+    "hammerImpact": 33,
+    "slice": 22,
+    "loop": 16,
+    "hit": 268,
+    "missile": 43,
+    "laserBeamStart": 17,
+    "av3_impact_flesh": 256,
+    "expSmall": 41,
+    "missileHit": 40,
+    "laserBeamEnd": 14,
+    "achievement": 1,
+    "weapon": 1,
+    "flameThrowerStart": 39,
+    "flameThrowerEnd": 33,
+    "powerup": 2,
+    "dracodiaShriek": 1,
+    "dialogueLetter": 17
+  },
+  "sha256": "1135f68628dfa2bc9435122a6ea9ca459031d1711aa52da6094ccce8ae67541f",
+  "entries": [
+    {
+      "id": "stage8-dracodia-ninja",
+      "parent": "stage8-final",
+      "stage": 8,
+      "title": "Dracodia / physical ninja dives and alternating claw slashes",
+      "start": 0,
+      "end": 72.568,
+      "seconds": 72.568,
+      "src": "videos/stage8-dracodia-ninja-claws-1030.mp4",
+      "localSrc": "videos/stage8-dracodia-ninja-claws-1030.mp4",
+      "poster": "posters/stage8-dracodia-ninja-1030.jpg",
+      "note": "Live native Furious final-main-life checkpoint: full5330HP and intact limbs, prior copied lives cleared before filming. GOD plus input-only aiming; no recorder HP/phase/timer writes during footage. Shows both slash orders and native main-life defeat, then the opening of final destruction. Broken-claw cancellation is tested separately."
+    },
+    {
+      "id": "stage8-dracodia-ninja-combo",
+      "parent": "stage8-dracodia-ninja",
+      "stage": 8,
+      "title": "Dracodia / retreat, marked dive and left-right / right-left combos",
+      "start": 0,
+      "end": 13,
+      "seconds": 13,
+      "src": "videos/stage8-dracodia-ninja-claws-1030.mp4",
+      "localSrc": "videos/stage8-dracodia-ninja-claws-1030.mp4",
+      "poster": "posters/stage8-dracodia-ninja-combo-1030.jpg",
+      "note": "Live native Furious final-main-life checkpoint: full5330HP and intact limbs, prior copied lives cleared before filming. GOD plus input-only aiming; no recorder HP/phase/timer writes during footage. Shows both slash orders and native main-life defeat, then the opening of final destruction. Broken-claw cancellation is tested separately."
+    },
+    {
+      "id": "s8-dracodia",
+      "parent": "stage8-final",
+      "stage": 8,
+      "title": "Dracodia main body / current ninja claw fight",
+      "start": 0,
+      "end": 72.568,
+      "seconds": 72.568,
+      "src": "videos/stage8-dracodia-ninja-claws-1030.mp4",
+      "localSrc": "videos/stage8-dracodia-ninja-claws-1030.mp4",
+      "poster": "posters/s8-dracodia-1030.jpg",
+      "note": "Live native Furious final-main-life checkpoint: full5330HP and intact limbs, prior copied lives cleared before filming. GOD plus input-only aiming; no recorder HP/phase/timer writes during footage. Shows both slash orders and native main-life defeat, then the opening of final destruction. Broken-claw cancellation is tested separately."
+    }
+  ],
+  "errors": {
+    "page": [],
+    "console": [],
+    "assets": []
+  },
+  "preview": "http://127.0.0.1:51046/?dracodia=ninja-claws-1030#clip=stage8-dracodia-ninja-combo"
+}

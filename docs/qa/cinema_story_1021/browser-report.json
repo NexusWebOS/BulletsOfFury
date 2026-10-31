@@ -1,0 +1,86 @@
+[
+  {
+    "name": "msedge plays real Yuri regroup sequence",
+    "ok": true
+  },
+  {
+    "name": "msedge native music/context are running",
+    "ok": true
+  },
+  {
+    "name": "msedge Next reveals dialogue",
+    "ok": true
+  },
+  {
+    "name": "msedge swaps to Cole native story",
+    "ok": true
+  },
+  {
+    "name": "msedge dimensional ending runs",
+    "ok": true
+  },
+  {
+    "name": "msedge narrow controls fit",
+    "ok": true
+  },
+  {
+    "name": "msedge no browser page errors",
+    "ok": true
+  },
+  {
+    "name": "chrome plays real Yuri regroup sequence",
+    "ok": true
+  },
+  {
+    "name": "chrome native music/context are running",
+    "ok": true
+  },
+  {
+    "name": "chrome Next reveals dialogue",
+    "ok": true
+  },
+  {
+    "name": "chrome swaps to Cole native story",
+    "ok": true
+  },
+  {
+    "name": "chrome dimensional ending runs",
+    "ok": true
+  },
+  {
+    "name": "chrome narrow controls fit",
+    "ok": true
+  },
+  {
+    "name": "chrome no browser page errors",
+    "ok": true
+  },
+  {
+    "name": "firefox plays real Yuri regroup sequence",
+    "ok": true
+  },
+  {
+    "name": "firefox native music/context are running",
+    "ok": true
+  },
+  {
+    "name": "firefox Next reveals dialogue",
+    "ok": true
+  },
+  {
+    "name": "firefox swaps to Cole native story",
+    "ok": true
+  },
+  {
+    "name": "firefox dimensional ending runs",
+    "ok": true
+  },
+  {
+    "name": "firefox narrow controls fit",
+    "ok": true
+  },
+  {
+    "name": "firefox no browser page errors",
+    "ok": true
+  }
+]

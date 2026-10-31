@@ -1,0 +1,379 @@
+{
+  "build": "overdrive1013-bastion16-r1",
+  "runtimeSha256": "04c2de130d41d3e965676c746c1ae21d023d111d9134724fde2afb1222d6a3aa",
+  "artCounts": {
+    "yuri": {
+      "assets": 108,
+      "sequences": 20
+    },
+    "enemies": {
+      "assets": 112,
+      "sequences": 20
+    },
+    "environment": {
+      "assets": 65,
+      "sequences": 18
+    }
+  },
+  "runtimeArt": {
+    "checks": [
+      {
+        "name": "stage and all four main character roles use registered 16-bit art",
+        "passed": true
+      },
+      {
+        "name": "five aim directions select five authored torso and gun orientations",
+        "passed": true
+      },
+      {
+        "name": "native draw uses the new 16-pixel animated gun reticle",
+        "passed": true
+      },
+      {
+        "name": "standing muzzles clear cover lip while crouched heads remain protected",
+        "passed": true
+      },
+      {
+        "name": "low lateral movement uses newly authored crouch-step frames",
+        "passed": true
+      },
+      {
+        "name": "covered rifle fire uses authored blindfire animation and actual muzzle",
+        "passed": true
+      },
+      {
+        "name": "checkpoint recovery uses rear-view revive bank",
+        "passed": true
+      },
+      {
+        "name": "all live enemies use modern idle/fire/walk frames with real body bounds",
+        "passed": true
+      },
+      {
+        "name": "Prism Heart uses modern dimensions for hitbox",
+        "passed": true
+      },
+      {
+        "name": "Helios visible body hitbox comes from modern authored bank",
+        "passed": true
+      },
+      {
+        "name": "zero browser errors",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "geometry": {
+      "lip": 358,
+      "aim": [
+        355.49,
+        352.01,
+        349.97,
+        349.27,
+        355.49
+      ],
+      "low": [
+        366,
+        365,
+        366,
+        365,
+        372
+      ]
+    },
+    "passed": 11,
+    "total": 11
+  },
+  "coverMechanics": {
+    "checks": [
+      {
+        "name": "first live wave has own cover and no immediate second-wave stack",
+        "passed": true
+      },
+      {
+        "name": "wave cannot progress while even one attacker remains alive",
+        "passed": true
+      },
+      {
+        "name": "ducked solid wall intercepts incoming fire and itself takes damage",
+        "passed": true
+      },
+      {
+        "name": "cover visibly advances into cracked art stage",
+        "passed": true
+      },
+      {
+        "name": "cover advances into critical damaged art stage",
+        "passed": true
+      },
+      {
+        "name": "broken cover no longer protects a crouched player",
+        "passed": true
+      },
+      {
+        "name": "cleared wave advances to next distinct wave with completely fresh wall",
+        "passed": true
+      },
+      {
+        "name": "cover plus fire shoots from low blindfire pose",
+        "passed": true
+      },
+      {
+        "name": "crouched side stepping preserves low stance and moves at reduced speed",
+        "passed": true
+      },
+      {
+        "name": "free aim reaches close side targets without moving body",
+        "passed": true
+      },
+      {
+        "name": "later rifle troops vault the wall onto camera side",
+        "passed": true
+      },
+      {
+        "name": "vaulted attacker bypasses otherwise intact wall cover",
+        "passed": true
+      },
+      {
+        "name": "close attacker takes side-aim damage using rendered body bounds",
+        "passed": true
+      },
+      {
+        "name": "barrel explosion damages nearby infantry and chains into neighboring barrel",
+        "passed": true
+      },
+      {
+        "name": "six-wave end retains full-health Prism Heart and fresh boss cover",
+        "passed": true
+      },
+      {
+        "name": "Prism Heart still produces complete white transformation flash",
+        "passed": true
+      },
+      {
+        "name": "Helios second form begins with 360HP double-fill phase",
+        "passed": true
+      },
+      {
+        "name": "zero browser errors",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "passed": 18,
+    "total": 18,
+    "scope": "Isolated gameplay fixtures; not a normal difficulty playthrough."
+  },
+  "m30Controls": {
+    "build": "overdrive1013-m30-controls-r1",
+    "checks": [
+      {
+        "name": "legacy generic preset migrates to receiver physical letters",
+        "passed": true
+      },
+      {
+        "name": "migrated receiver layout persists with explicit six-button style",
+        "passed": true
+      },
+      {
+        "name": "physical M30 A fires actual Level7 rifle projectiles",
+        "passed": true
+      },
+      {
+        "name": "physical M30 Y throws grenade without firing rifle",
+        "passed": true
+      },
+      {
+        "name": "physical M30 X toggles duck without firing",
+        "passed": true
+      },
+      {
+        "name": "physical Z plus D-pad free aims without moving Yuri",
+        "passed": true
+      },
+      {
+        "name": "physical Mode takes cover",
+        "passed": true
+      },
+      {
+        "name": "held physical A is latched through cutscene boundary",
+        "passed": true
+      },
+      {
+        "name": "physical A fires again after release",
+        "passed": true
+      },
+      {
+        "name": "resetting six-button controls retains receiver-correct A",
+        "passed": true
+      },
+      {
+        "name": "standard control scheme on the raw M30 still uses printed A to fire",
+        "passed": true
+      },
+      {
+        "name": "custom receiver bindings survive reconnect",
+        "passed": true
+      },
+      {
+        "name": "custom receiver bindings survive page reload",
+        "passed": true
+      },
+      {
+        "name": "unknown controller retains generic six-button preset",
+        "passed": true
+      },
+      {
+        "name": "browser-standardized M30 report avoids raw receiver remapping",
+        "passed": true
+      },
+      {
+        "name": "built-in raw receiver layout does not leak across a standardized mode change",
+        "passed": true
+      },
+      {
+        "name": "learned six-button profile records explicit style and custom ownership",
+        "passed": true
+      },
+      {
+        "name": "zero browser or asset errors",
+        "passed": true
+      }
+    ],
+    "passed": 18,
+    "failed": 0,
+    "errors": [],
+    "hardware": "Windows confirms receiver VID_0CA3/PID_0024. Button presses here are synthetic, using the documented Windows HID mapping."
+  },
+  "normalPointerRoute": {
+    "state": "clear",
+    "time": 94.9499999999959,
+    "wave": 6,
+    "hp": 6,
+    "deaths": 0,
+    "kills": 27,
+    "coverStops": 45,
+    "brokenWalls": 1,
+    "barrelKills": 2,
+    "damage": 0,
+    "boss": {
+      "form": "helios",
+      "hp": 0
+    },
+    "bot": {
+      "last": {
+        "A": false,
+        "cover": false,
+        "left": false,
+        "right": false
+      },
+      "decisions": 476,
+      "cover": 59,
+      "move": 4,
+      "fire": 379,
+      "blindfire": 59,
+      "grenadeWave": 6,
+      "stages": [
+        "0:advance:",
+        "1:fight:",
+        "1:advance:",
+        "2:fight:",
+        "2:advance:",
+        "3:fight:",
+        "3:advance:",
+        "4:fight:",
+        "4:advance:",
+        "5:fight:",
+        "5:advance:",
+        "6:fight:",
+        "6:advance:",
+        "6:core:core",
+        "6:core:helios",
+        "6:victory:helios"
+      ],
+      "target": {
+        "x": 188,
+        "y": 237.00085675044585
+      },
+      "controller": false,
+      "minHP": 6
+    },
+    "errors": [],
+    "scope": "Normal armor input-only complete stage; decisions 200ms, pointer aim. No actor-health writes or kill APIs."
+  },
+  "normalControllerRoute": {
+    "state": "clear",
+    "time": 111.73333333332828,
+    "wave": 6,
+    "hp": 6,
+    "deaths": 0,
+    "kills": 27,
+    "coverStops": 66,
+    "brokenWalls": 0,
+    "barrelKills": 2,
+    "damage": 1,
+    "boss": {
+      "form": "helios",
+      "hp": 0
+    },
+    "bot": {
+      "last": {
+        "A": false,
+        "cover": false,
+        "left": false,
+        "right": false
+      },
+      "decisions": 559,
+      "cover": 82,
+      "move": 10,
+      "fire": 464,
+      "blindfire": 82,
+      "grenadeWave": 6,
+      "stages": [
+        "0:advance:",
+        "1:fight:",
+        "1:advance:",
+        "2:fight:",
+        "2:advance:",
+        "3:fight:",
+        "3:advance:",
+        "4:fight:",
+        "4:advance:",
+        "5:fight:",
+        "5:advance:",
+        "6:fight:",
+        "6:advance:",
+        "6:core:core",
+        "6:core:helios",
+        "6:victory:helios"
+      ],
+      "target": {
+        "x": 453,
+        "y": 239.00081391292355
+      },
+      "controller": true,
+      "minHP": 5
+    },
+    "errors": [],
+    "scope": "Normal armor input-only complete stage; decisions 200ms, rate-limited D-pad Retina aim. No actor-health writes or kill APIs."
+  },
+  "baseRegression": {
+    "syntaxPassed": true,
+    "assertions": 8700,
+    "errors": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log": "_shots/bastion_cover_1013/base_suite.log"
+  },
+  "visualReview": [
+    "enemy_line.png",
+    "blindfire.png",
+    "prism_heart.png",
+    "helios.png",
+    "wall_stage_0.png",
+    "wall_stage_1.png",
+    "wall_stage_2.png",
+    "wall_stage_3.png"
+  ],
+  "visualDirectory": "_shots/bastion16_runtime_1013",
+  "limitations": "Automated native Chromium gameplay and simulated controller reports; no human physical-controller playtest. Full routes use normal damage and logical inputs with 200ms decisions; they do not write actor health or call kill APIs."
+}

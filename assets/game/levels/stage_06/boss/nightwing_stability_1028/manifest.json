@@ -1,0 +1,49 @@
+{
+  "author": "Aseprite1.3.18.6-dev",
+  "banks": [
+    {
+      "path": "clean_charge.png",
+      "size": [
+        1632,
+        816
+      ],
+      "sha256": "18c1a3840f2a9f0b1c267c434584797b63fc7814e74e0072bfea39cc6d96db90"
+    },
+    {
+      "path": "wind_front.png",
+      "size": [
+        3072,
+        1152
+      ],
+      "sha256": "bfdebae39ec7363bbf1f5c4b3df5a95df01482de9645655a127e53e356935f9b"
+    },
+    {
+      "path": "wind_gust.png",
+      "size": [
+        1536,
+        3072
+      ],
+      "sha256": "677b3e2de8ff27963ac24cab0d3568612560c45961c7695a6112eebea40e9e4c"
+    },
+    {
+      "path": "wind_rear.png",
+      "size": [
+        3072,
+        1152
+      ],
+      "sha256": "dfa51342868064c468c37df09dedac04f955be701986668ef0de28d64fb22822"
+    }
+  ],
+  "pixellab": {
+    "keyframe": "da086d46-417c-4728-aaa3-3d90a654e47c",
+    "animation": "09f3b4ef-9bd4-422d-8fc2-b53f52994878",
+    "frames": 24,
+    "canvas": [
+      192,
+      192
+    ],
+    "keyframeCostUsd": 0.010901391479704117,
+    "animationGenerations": 2
+  },
+  "packing": "Three distinct clean aircraft poses share six luminance levels;24 fixed384px wind cells retain the identical world pixels. No runtime transformation."
+}

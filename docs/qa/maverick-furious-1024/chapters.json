@@ -1,0 +1,437 @@
+[
+  {
+    "time": 0.25,
+    "title": "Opening cinematic",
+    "musicCue": "native opening audio"
+  },
+  {
+    "time": 162.12,
+    "title": "Campaign map",
+    "musicCue": "neonvelocity"
+  },
+  {
+    "time": 190.3,
+    "title": "Stage 1 flight",
+    "musicCue": "lvl1"
+  },
+  {
+    "time": 195.11,
+    "title": "God mode enabled after native death",
+    "musicCue": "lvl1"
+  },
+  {
+    "time": 232.14,
+    "title": "Stage 1 MINIBOSS",
+    "musicCue": "mini1"
+  },
+  {
+    "time": 284.83,
+    "title": "Stage 1 flight",
+    "musicCue": "lvl1"
+  },
+  {
+    "time": 332.17,
+    "title": "Stage 1 BOSS",
+    "musicCue": "lvl1"
+  },
+  {
+    "time": 379.87,
+    "title": "Stage 1 flight",
+    "musicCue": "boss1"
+  },
+  {
+    "time": 407.26,
+    "title": "Stage 1 results",
+    "musicCue": "stageclear"
+  },
+  {
+    "time": 443.16,
+    "title": "Stage 1 story / post-1",
+    "musicCue": "cinematics"
+  },
+  {
+    "time": 462.57,
+    "title": "Campaign map",
+    "musicCue": "neonvelocity"
+  },
+  {
+    "time": 486.83,
+    "title": "Stage 2 flight",
+    "musicCue": "bullets"
+  },
+  {
+    "time": 511.04,
+    "title": "Stage 2 MINIBOSS",
+    "musicCue": "mini2"
+  },
+  {
+    "time": 559.95,
+    "title": "Stage 2 flight",
+    "musicCue": "bullets"
+  },
+  {
+    "time": 589.39,
+    "title": "Stage 2 BOSS",
+    "musicCue": "boss2"
+  },
+  {
+    "time": 635.1,
+    "title": "Stage 2 flight",
+    "musicCue": "boss2"
+  },
+  {
+    "time": 644.69,
+    "title": "Stage 2 results",
+    "musicCue": "stageclear"
+  },
+  {
+    "time": 688.38,
+    "title": "Stage 2 story / post-2",
+    "musicCue": "cinematics"
+  },
+  {
+    "time": 707.75,
+    "title": "Campaign map",
+    "musicCue": "neonvelocity"
+  },
+  {
+    "time": 731.97,
+    "title": "Stage 3 flight",
+    "musicCue": "lvl3"
+  },
+  {
+    "time": 757.45,
+    "title": "Stage 3 MINIBOSS",
+    "musicCue": "mini3"
+  },
+  {
+    "time": 782.5,
+    "title": "Stage 3 flight",
+    "musicCue": "lvl3"
+  },
+  {
+    "time": 812.87,
+    "title": "Stage 3 BOSS",
+    "musicCue": "boss3"
+  },
+  {
+    "time": 848.92,
+    "title": "Stage 3 flight",
+    "musicCue": "boss3"
+  },
+  {
+    "time": 858.52,
+    "title": "Stage 3 results",
+    "musicCue": "stageclear"
+  },
+  {
+    "time": 893.44,
+    "title": "Stage 3 story / post-3",
+    "musicCue": "cinematics"
+  },
+  {
+    "time": 912.94,
+    "title": "Campaign map",
+    "musicCue": "neonvelocity"
+  },
+  {
+    "time": 937.34,
+    "title": "Stage 4 flight",
+    "musicCue": "lvl4"
+  },
+  {
+    "time": 963.3,
+    "title": "Stage 4 MINIBOSS",
+    "musicCue": "mini4"
+  },
+  {
+    "time": 993.13,
+    "title": "Stage 4 flight",
+    "musicCue": "lvl4"
+  },
+  {
+    "time": 1032.51,
+    "title": "Stage 4 BOSS",
+    "musicCue": "boss4"
+  },
+  {
+    "time": 1129.86,
+    "title": "Stage 4 flight",
+    "musicCue": "boss4"
+  },
+  {
+    "time": 1143.42,
+    "title": "Stage 4 results",
+    "musicCue": "stageclear"
+  },
+  {
+    "time": 1166.14,
+    "title": "Stage 4 story / post-4",
+    "musicCue": "cinematics"
+  },
+  {
+    "time": 1214.04,
+    "title": "Campaign map",
+    "musicCue": "neonvelocity"
+  },
+  {
+    "time": 1248.43,
+    "title": "Stage 5 flight",
+    "musicCue": "lvl3-alt"
+  },
+  {
+    "time": 1279.36,
+    "title": "Stage 5 MINIBOSS",
+    "musicCue": "mini5"
+  },
+  {
+    "time": 1303.24,
+    "title": "Stage 5 flight",
+    "musicCue": "lvl3-alt"
+  },
+  {
+    "time": 1326.63,
+    "title": "Campaign map",
+    "musicCue": "neonvelocity"
+  },
+  {
+    "time": 1351.32,
+    "title": "Stage 9 flight",
+    "musicCue": "lordofshadows"
+  },
+  {
+    "time": 1372.86,
+    "title": "Stage 9 MINIBOSS",
+    "musicCue": "mini9"
+  },
+  {
+    "time": 1450.33,
+    "title": "Stage 9 flight",
+    "musicCue": "lordofshadows"
+  },
+  {
+    "time": 1486.31,
+    "title": "Stage 9 BOSS",
+    "musicCue": "boss9"
+  },
+  {
+    "time": 1541.2,
+    "title": "Stage 9 flight",
+    "musicCue": "boss9"
+  },
+  {
+    "time": 1550.85,
+    "title": "Stage 9 results",
+    "musicCue": "stageclear"
+  },
+  {
+    "time": 1582.11,
+    "title": "Stage 5 flight",
+    "musicCue": "stageclear"
+  },
+  {
+    "time": 1592.47,
+    "title": "Stage 5 BOSS",
+    "musicCue": "boss5"
+  },
+  {
+    "time": 1873.6,
+    "title": "Stage 5 flight",
+    "musicCue": "cinematics"
+  },
+  {
+    "time": 1941.91,
+    "title": "Stage 5 results",
+    "musicCue": "stageclear"
+  },
+  {
+    "time": 1986.29,
+    "title": "Stage 5 story / post-5",
+    "musicCue": "cinematics"
+  },
+  {
+    "time": 2064.63,
+    "title": "Stage 6 flight",
+    "musicCue": "deathtrap"
+  },
+  {
+    "time": 2191.75,
+    "title": "Stage 6 MINIBOSS",
+    "musicCue": "mini6"
+  },
+  {
+    "time": 2214.79,
+    "title": "Stage 6 flight",
+    "musicCue": "deathtrap"
+  },
+  {
+    "time": 2301.2,
+    "title": "Stage 6 flight / route-right",
+    "musicCue": "deathtrap"
+  },
+  {
+    "time": 2319.44,
+    "title": "Stage 6 flight",
+    "musicCue": "deathtrap"
+  },
+  {
+    "time": 2354.43,
+    "title": "Stage 6 BOSS",
+    "musicCue": "stagex"
+  },
+  {
+    "time": 2478.41,
+    "title": "Stage 6 flight",
+    "musicCue": "stagex"
+  },
+  {
+    "time": 2488.04,
+    "title": "Stage 6 results",
+    "musicCue": "stageclear"
+  },
+  {
+    "time": 2523.14,
+    "title": "Campaign map",
+    "musicCue": "neonvelocity"
+  },
+  {
+    "time": 2532.94,
+    "title": "Stage 7 story / stage7-approach (first visit, abandoned)",
+    "musicCue": "cinematics"
+  },
+  {
+    "time": 2573.48,
+    "title": "Stage 7 flight (first visit, abandoned)",
+    "musicCue": "stage7mus"
+  },
+  {
+    "time": 2605.35,
+    "title": "Stage 7 MINIBOSS (first visit, abandoned)",
+    "musicCue": "mini7"
+  },
+  {
+    "time": 2626.31,
+    "title": "Stage 7 flight (first visit, abandoned)",
+    "musicCue": "stage7mus"
+  },
+  {
+    "time": 2706.65,
+    "title": "Stage 7 BOSS (first visit, abandoned)",
+    "musicCue": "boss7"
+  },
+  {
+    "time": 2741.31,
+    "title": "Review map intervention for earned Harrier route",
+    "musicCue": "boss7"
+  },
+  {
+    "time": 2750.45,
+    "title": "Stage X-HARRIER flight",
+    "musicCue": "stagex"
+  },
+  {
+    "time": 2757.84,
+    "title": "Stage X-HARRIER BOSS",
+    "musicCue": "stagex"
+  },
+  {
+    "time": 2811.79,
+    "title": "Stage X-HARRIER flight",
+    "musicCue": "boss6"
+  },
+  {
+    "time": 2821.5,
+    "title": "Stage X-HARRIER results",
+    "musicCue": "stageclear"
+  },
+  {
+    "time": 2848.52,
+    "title": "Campaign map",
+    "musicCue": "neonvelocity"
+  },
+  {
+    "time": 2876.48,
+    "title": "Stage 7 flight (full return)",
+    "musicCue": "stage7mus"
+  },
+  {
+    "time": 2908.21,
+    "title": "Stage 7 MINIBOSS (full return)",
+    "musicCue": "mini7"
+  },
+  {
+    "time": 2936.01,
+    "title": "Stage 7 flight (full return)",
+    "musicCue": "stage7mus"
+  },
+  {
+    "time": 2996.41,
+    "title": "Stage 7 BOSS (full return)",
+    "musicCue": "boss7"
+  },
+  {
+    "time": 3079.08,
+    "title": "Stage 8 flight",
+    "musicCue": "realm8"
+  },
+  {
+    "time": 3111.97,
+    "title": "Stage 8 MINIBOSS",
+    "musicCue": "boss8"
+  },
+  {
+    "time": 3135.31,
+    "title": "Stage 8 flight",
+    "musicCue": "realm8"
+  },
+  {
+    "time": 3168.52,
+    "title": "Stage 8 BOSS",
+    "musicCue": "boss8"
+  },
+  {
+    "time": 3230.54,
+    "title": "Dracodia symbiote rebirth",
+    "musicCue": "boss8"
+  },
+  {
+    "time": 3332.92,
+    "title": "Dracodia copy: corrupted Hammer",
+    "musicCue": "boss8p3"
+  },
+  {
+    "time": 3379.38,
+    "title": "Dracodia copy: helicopter",
+    "musicCue": "boss8p3"
+  },
+  {
+    "time": 3403.4,
+    "title": "Dracodia copy: Neural Archon brain",
+    "musicCue": "boss8p3"
+  },
+  {
+    "time": 3422.09,
+    "title": "Dracodia copy: volcano",
+    "musicCue": "boss8p3"
+  },
+  {
+    "time": 3476.86,
+    "title": "Dracodia copy: Neural Archon brain",
+    "musicCue": "boss8p3"
+  },
+  {
+    "time": 3491.15,
+    "title": "Dracodia final destruction",
+    "musicCue": "boss8p3"
+  },
+  {
+    "time": 3517.21,
+    "title": "Stage 8 results",
+    "musicCue": "stageclear"
+  },
+  {
+    "time": 3525.44,
+    "title": "Final ending (continues in supplement)",
+    "musicCue": "finalCinematic"
+  }
+]

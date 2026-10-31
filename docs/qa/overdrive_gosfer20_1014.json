@@ -1,0 +1,1985 @@
+{
+  "focused": {
+    "checks": [
+      {
+        "name": "all158 new graphics decode in native ART",
+        "passed": true
+      },
+      {
+        "name": "shield rejects boss damage while barriers stand",
+        "passed": true
+      },
+      {
+        "name": "player cannot bypass shield by destroying linked barriers",
+        "passed": true
+      },
+      {
+        "name": "actual Gosfer projectiles break all three barriers",
+        "passed": true
+      },
+      {
+        "name": "shield falls only after final barrier",
+        "passed": true
+      },
+      {
+        "name": "all three portrait dialogue turns precede phase2",
+        "passed": true
+      },
+      {
+        "name": "dialogue and lightning return movement control",
+        "passed": true
+      },
+      {
+        "name": "F toggles prone in duel",
+        "passed": true
+      },
+      {
+        "name": "prone evades laser projectile damage",
+        "passed": true
+      },
+      {
+        "name": "Retina machine gun hits prone",
+        "passed": true
+      },
+      {
+        "name": "roll starts and queues prone recovery",
+        "passed": true
+      },
+      {
+        "name": "roll finishes prone",
+        "passed": true
+      },
+      {
+        "name": "five second cooldown prevents immediate reroll",
+        "passed": true
+      },
+      {
+        "name": "roll unlocks after five seconds",
+        "passed": true
+      },
+      {
+        "name": "Retina aim locks before bullets",
+        "passed": true
+      },
+      {
+        "name": "Retina burst carries explicit prone hit flag",
+        "passed": true
+      },
+      {
+        "name": "level3 wall-backed prone crawl uses new authored bank",
+        "passed": true
+      },
+      {
+        "name": "level7 supports actual prone and wall-backed crawl",
+        "passed": true
+      },
+      {
+        "name": "level7 rolls into prone using eight frames",
+        "passed": true
+      },
+      {
+        "name": "level7 roll ends prone",
+        "passed": true
+      },
+      {
+        "name": "level7 also enforces five second roll cooldown",
+        "passed": true
+      },
+      {
+        "name": "base prone evades incoming direct laser",
+        "passed": true
+      },
+      {
+        "name": "base targeted machine gun can hit prone",
+        "passed": true
+      },
+      {
+        "name": "Helios run uses authored new gait",
+        "passed": true
+      },
+      {
+        "name": "Helios walk uses authored new bank",
+        "passed": true
+      },
+      {
+        "name": "Helios recovery uses new sidestep",
+        "passed": true
+      },
+      {
+        "name": "all new banks have eight distinct frames except four-frame portraits",
+        "passed": true
+      },
+      {
+        "name": "no page/console errors",
+        "passed": true
+      }
+    ],
+    "passed": 28,
+    "failed": 0,
+    "errors": []
+  },
+  "m30": {
+    "build": "overdrive1014-gosfer20-r1",
+    "checks": [
+      {
+        "name": "legacy generic preset migrates to receiver physical letters",
+        "passed": true
+      },
+      {
+        "name": "migrated receiver layout persists with explicit six-button style",
+        "passed": true
+      },
+      {
+        "name": "physical M30 A fires actual Level7 rifle projectiles",
+        "passed": true
+      },
+      {
+        "name": "physical M30 Y throws grenade without firing rifle",
+        "passed": true
+      },
+      {
+        "name": "physical M30 X rolls without firing",
+        "passed": true
+      },
+      {
+        "name": "physical Mode + X enters base prone without a roll",
+        "passed": true
+      },
+      {
+        "name": "physical Z plus D-pad free aims without moving Yuri",
+        "passed": true
+      },
+      {
+        "name": "physical M30 B plus left performs immediate side fire without foot movement",
+        "passed": true
+      },
+      {
+        "name": "releasing physical B restores the original Retina target",
+        "passed": true
+      },
+      {
+        "name": "physical Mode takes cover",
+        "passed": true
+      },
+      {
+        "name": "held physical A is latched through cutscene boundary",
+        "passed": true
+      },
+      {
+        "name": "physical A fires again after release",
+        "passed": true
+      },
+      {
+        "name": "resetting six-button controls retains receiver-correct A",
+        "passed": true
+      },
+      {
+        "name": "standard control scheme on the raw M30 still uses printed A to fire",
+        "passed": true
+      },
+      {
+        "name": "custom receiver bindings survive reconnect",
+        "passed": true
+      },
+      {
+        "name": "custom receiver bindings survive page reload",
+        "passed": true
+      },
+      {
+        "name": "unknown controller retains generic six-button preset",
+        "passed": true
+      },
+      {
+        "name": "browser-standardized M30 report avoids raw receiver remapping",
+        "passed": true
+      },
+      {
+        "name": "built-in raw receiver layout does not leak across a standardized mode change",
+        "passed": true
+      },
+      {
+        "name": "learned six-button profile records explicit style and custom ownership",
+        "passed": true
+      },
+      {
+        "name": "M30 Mode + X toggles on-foot prone",
+        "passed": true
+      },
+      {
+        "name": "M30 D-pad crawls while staying prone",
+        "passed": true
+      },
+      {
+        "name": "M30 Mode + X restores standing with the new colored pose",
+        "passed": true
+      },
+      {
+        "name": "zero browser or asset errors",
+        "passed": true
+      }
+    ],
+    "passed": 24,
+    "failed": 0,
+    "errors": [],
+    "hardware": "Windows confirms receiver VID_0CA3/PID_0024. Button presses here are synthetic, using the documented Windows HID mapping."
+  },
+  "cover": {
+    "checks": [
+      {
+        "name": "prone cover rise uses authored intermediate peek frames",
+        "passed": true
+      },
+      {
+        "name": "release returns into wall-backed prone pose",
+        "passed": true
+      },
+      {
+        "name": "base prone entry has intermediate authored frames",
+        "passed": true
+      },
+      {
+        "name": "quick right side-fire rises from prone and faces right",
+        "passed": true
+      },
+      {
+        "name": "releasing side fire animates back into prone",
+        "passed": true
+      },
+      {
+        "name": "side fire preserves final prone selection",
+        "passed": true
+      },
+      {
+        "name": "prone does not prevent incoming shots from damaging cover",
+        "passed": true
+      },
+      {
+        "name": "Helios HUD paints orange before red and retains orange under red",
+        "passed": true
+      }
+    ],
+    "passed": 8,
+    "failed": 0,
+    "errors": []
+  },
+  "art": {
+    "nativeDraws": [
+      {
+        "key": "pb20_gosfer_walk_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_south_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_south_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_south_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_south_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_south_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_south_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_south_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_walk_south_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_south_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_south_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_south_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_south_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_south_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_south_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_south_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_south_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_angle_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_angle_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_angle_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_angle_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_angle_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_angle_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_angle_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_fire_angle_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_roll_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_roll_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_roll_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_roll_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_roll_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_roll_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_roll_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_roll_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_run_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_run_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_run_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_run_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_run_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_run_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_run_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_run_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_strafe_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_strafe_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_strafe_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_strafe_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_strafe_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_strafe_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_strafe_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_strafe_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_jump_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_jump_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_jump_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_jump_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_jump_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_jump_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_jump_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_jump_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_run_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_run_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_run_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_run_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_run_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_run_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_run_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_run_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_walk_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_walk_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_walk_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_walk_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_walk_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_walk_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_walk_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_walk_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_strafe_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_strafe_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_strafe_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_strafe_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_strafe_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_strafe_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_strafe_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_helios_strafe_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_crouch_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_crouch_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_crouch_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_crouch_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_crouch_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_crouch_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_crouch_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_crouch_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_prone_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_prone_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_prone_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_prone_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_prone_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_prone_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_prone_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_wall_prone_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_prone_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_prone_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_prone_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_prone_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_prone_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_prone_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_prone_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_prone_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_stand_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_stand_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_stand_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_stand_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_stand_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_stand_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_stand_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_yuri_roll_stand_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_portrait_yuri_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_portrait_yuri_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_portrait_yuri_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_portrait_yuri_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_portrait_gosfer_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_portrait_gosfer_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_portrait_gosfer_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_portrait_gosfer_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_hud_top",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_hud_bottom",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_hud_boss",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_hud_dialogue",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_hud_portrait_player_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_hud_portrait_enemy_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_icon_roll",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_icon_prone",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_icon_shield",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_icon_retina",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_icon_grenade",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_icon_ammo",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_icon_armor",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_icon_cover",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_shield_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_shield_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_shield_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_shield_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_shield_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_shield_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_shield_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_shield_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_lightning_0",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_lightning_1",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_lightning_2",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_lightning_3",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_lightning_4",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_lightning_5",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_lightning_6",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      },
+      {
+        "key": "pb20_gosfer_lightning_7",
+        "painted": true,
+        "even": true,
+        "uncropped": true
+      }
+    ],
+    "passed": 158,
+    "failed": 0,
+    "firingHeights": {
+      "pb20_gosfer_fire_south": 143.625,
+      "pb20_gosfer_fire_angle": 143.75
+    },
+    "firingRatio": 1.000870322019147,
+    "errors": []
+  },
+  "gosfer_route": {
+    "state": "play",
+    "time": 64.66666666666428,
+    "hp": 3,
+    "deaths": 0,
+    "score": 30600,
+    "boss": {
+      "hp": 0,
+      "dead": true,
+      "phase": 2,
+      "barrierLog": [
+        {
+          "x": 300,
+          "y": 310,
+          "at": 9.083333333333364,
+          "by": "gosfer"
+        },
+        {
+          "x": 530,
+          "y": 310,
+          "at": 17.266666666666968,
+          "by": "gosfer"
+        },
+        {
+          "x": 400,
+          "y": 365,
+          "at": 25.31666666666651,
+          "by": "gosfer"
+        }
+      ],
+      "dialogueLog": [
+        {
+          "line": 0,
+          "at": 25.333333333333176
+        },
+        {
+          "line": 1,
+          "at": 28.149999999999682
+        },
+        {
+          "line": 2,
+          "at": 30.26666666666623
+        }
+      ]
+    },
+    "bot": {
+      "last": null,
+      "states": [
+        "enter:1",
+        "move:1",
+        "windup:1",
+        "shoot:1",
+        "recover:1",
+        "strafe:1",
+        "dialogue:1",
+        "transform:1",
+        "move:2",
+        "windup:2",
+        "shoot:2",
+        "recover:2",
+        "roll:2",
+        "jump:2",
+        "defeated:2"
+      ],
+      "minHP": 3,
+      "shots": 2886,
+      "rolls": 2,
+      "locks": 2,
+      "lastLock": false,
+      "direction": 1
+    },
+    "errors": [],
+    "scope": "Normal armor, arena entry fixture. Only ordinary firing, prone, lateral movement and roll control input during fight. No health writes or boss kill calls."
+  },
+  "mouse_route": {
+    "state": "clear",
+    "time": 141.93333333333842,
+    "wave": 8,
+    "hp": 4,
+    "deaths": 0,
+    "kills": 33,
+    "coverStops": 49,
+    "brokenWalls": 0,
+    "barrelKills": 14,
+    "damage": 2,
+    "pickupLog": [
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 7
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 7
+      }
+    ],
+    "gunShots": {
+      "rifle": 532,
+      "shotgun": 41,
+      "laser": 68,
+      "minigun": 332
+    },
+    "quickShots": 0,
+    "transitionLog": [
+      {
+        "wave": 1,
+        "phase": "blast"
+      },
+      {
+        "wave": 1,
+        "phase": "hop"
+      },
+      {
+        "wave": 1,
+        "phase": "walk"
+      },
+      {
+        "wave": 1,
+        "phase": "black"
+      },
+      {
+        "wave": 1,
+        "phase": "emerge"
+      },
+      {
+        "wave": 1,
+        "phase": "done"
+      },
+      {
+        "wave": 2,
+        "phase": "blast"
+      },
+      {
+        "wave": 2,
+        "phase": "hop"
+      },
+      {
+        "wave": 2,
+        "phase": "walk"
+      },
+      {
+        "wave": 2,
+        "phase": "black"
+      },
+      {
+        "wave": 2,
+        "phase": "emerge"
+      },
+      {
+        "wave": 2,
+        "phase": "done"
+      },
+      {
+        "wave": 3,
+        "phase": "blast"
+      },
+      {
+        "wave": 3,
+        "phase": "hop"
+      },
+      {
+        "wave": 3,
+        "phase": "walk"
+      },
+      {
+        "wave": 3,
+        "phase": "black"
+      },
+      {
+        "wave": 3,
+        "phase": "emerge"
+      },
+      {
+        "wave": 3,
+        "phase": "done"
+      },
+      {
+        "wave": 4,
+        "phase": "blast"
+      },
+      {
+        "wave": 4,
+        "phase": "hop"
+      },
+      {
+        "wave": 4,
+        "phase": "walk"
+      },
+      {
+        "wave": 4,
+        "phase": "black"
+      },
+      {
+        "wave": 4,
+        "phase": "emerge"
+      },
+      {
+        "wave": 4,
+        "phase": "done"
+      },
+      {
+        "wave": 5,
+        "phase": "blast"
+      },
+      {
+        "wave": 5,
+        "phase": "hop"
+      },
+      {
+        "wave": 5,
+        "phase": "walk"
+      },
+      {
+        "wave": 5,
+        "phase": "black"
+      },
+      {
+        "wave": 5,
+        "phase": "emerge"
+      },
+      {
+        "wave": 5,
+        "phase": "done"
+      },
+      {
+        "wave": 6,
+        "phase": "blast"
+      },
+      {
+        "wave": 6,
+        "phase": "hop"
+      },
+      {
+        "wave": 6,
+        "phase": "walk"
+      },
+      {
+        "wave": 6,
+        "phase": "black"
+      },
+      {
+        "wave": 6,
+        "phase": "emerge"
+      },
+      {
+        "wave": 6,
+        "phase": "done"
+      },
+      {
+        "wave": 7,
+        "phase": "blast"
+      },
+      {
+        "wave": 7,
+        "phase": "hop"
+      },
+      {
+        "wave": 7,
+        "phase": "walk"
+      },
+      {
+        "wave": 7,
+        "phase": "black"
+      },
+      {
+        "wave": 7,
+        "phase": "emerge"
+      },
+      {
+        "wave": 7,
+        "phase": "done"
+      }
+    ],
+    "coreLog": [
+      {
+        "room": 1,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 2,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 3,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 4,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 5,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 6,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 7,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 8,
+        "x": 320,
+        "y": 166,
+        "master": true
+      }
+    ],
+    "boss": {
+      "form": "helios",
+      "hp": 0
+    },
+    "bot": {
+      "last": {
+        "A": false,
+        "cover": false,
+        "left": false,
+        "right": false
+      },
+      "decisions": 711,
+      "cover": 84,
+      "move": 3,
+      "fire": 526,
+      "blindfire": 84,
+      "grenadeWave": 7,
+      "stages": [
+        "0:advance:",
+        "1:fight:",
+        "1:breach:",
+        "2:fight:",
+        "2:breach:",
+        "3:fight:",
+        "3:breach:",
+        "4:fight:",
+        "4:breach:",
+        "5:fight:",
+        "5:breach:",
+        "6:fight:",
+        "6:breach:",
+        "7:fight:",
+        "7:breach:",
+        "8:core:core",
+        "8:core:helios",
+        "8:victory:helios"
+      ],
+      "target": {
+        "x": 459.74999999999983,
+        "y": 217.52950703516223
+      },
+      "controller": false,
+      "minHP": 4
+    },
+    "errors": [],
+    "scope": "Normal armor input-only complete stage; decisions 200ms, pointer aim. No actor-health writes or kill APIs."
+  },
+  "controller_route": {
+    "state": "clear",
+    "time": 145.40000000000785,
+    "wave": 8,
+    "hp": 5,
+    "deaths": 0,
+    "kills": 33,
+    "coverStops": 63,
+    "brokenWalls": 0,
+    "barrelKills": 13,
+    "damage": 1,
+    "pickupLog": [
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 2
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 3
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 4
+      },
+      {
+        "event": "launch",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "collect",
+        "gun": "shotgun",
+        "wave": 5
+      },
+      {
+        "event": "launch",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "collect",
+        "gun": "laser",
+        "wave": 6
+      },
+      {
+        "event": "launch",
+        "gun": "minigun",
+        "wave": 7
+      },
+      {
+        "event": "collect",
+        "gun": "minigun",
+        "wave": 7
+      }
+    ],
+    "gunShots": {
+      "rifle": 537,
+      "shotgun": 43,
+      "laser": 68,
+      "minigun": 333
+    },
+    "quickShots": 0,
+    "transitionLog": [
+      {
+        "wave": 1,
+        "phase": "blast"
+      },
+      {
+        "wave": 1,
+        "phase": "hop"
+      },
+      {
+        "wave": 1,
+        "phase": "walk"
+      },
+      {
+        "wave": 1,
+        "phase": "black"
+      },
+      {
+        "wave": 1,
+        "phase": "emerge"
+      },
+      {
+        "wave": 1,
+        "phase": "done"
+      },
+      {
+        "wave": 2,
+        "phase": "blast"
+      },
+      {
+        "wave": 2,
+        "phase": "hop"
+      },
+      {
+        "wave": 2,
+        "phase": "walk"
+      },
+      {
+        "wave": 2,
+        "phase": "black"
+      },
+      {
+        "wave": 2,
+        "phase": "emerge"
+      },
+      {
+        "wave": 2,
+        "phase": "done"
+      },
+      {
+        "wave": 3,
+        "phase": "blast"
+      },
+      {
+        "wave": 3,
+        "phase": "hop"
+      },
+      {
+        "wave": 3,
+        "phase": "walk"
+      },
+      {
+        "wave": 3,
+        "phase": "black"
+      },
+      {
+        "wave": 3,
+        "phase": "emerge"
+      },
+      {
+        "wave": 3,
+        "phase": "done"
+      },
+      {
+        "wave": 4,
+        "phase": "blast"
+      },
+      {
+        "wave": 4,
+        "phase": "hop"
+      },
+      {
+        "wave": 4,
+        "phase": "walk"
+      },
+      {
+        "wave": 4,
+        "phase": "black"
+      },
+      {
+        "wave": 4,
+        "phase": "emerge"
+      },
+      {
+        "wave": 4,
+        "phase": "done"
+      },
+      {
+        "wave": 5,
+        "phase": "blast"
+      },
+      {
+        "wave": 5,
+        "phase": "hop"
+      },
+      {
+        "wave": 5,
+        "phase": "walk"
+      },
+      {
+        "wave": 5,
+        "phase": "black"
+      },
+      {
+        "wave": 5,
+        "phase": "emerge"
+      },
+      {
+        "wave": 5,
+        "phase": "done"
+      },
+      {
+        "wave": 6,
+        "phase": "blast"
+      },
+      {
+        "wave": 6,
+        "phase": "hop"
+      },
+      {
+        "wave": 6,
+        "phase": "walk"
+      },
+      {
+        "wave": 6,
+        "phase": "black"
+      },
+      {
+        "wave": 6,
+        "phase": "emerge"
+      },
+      {
+        "wave": 6,
+        "phase": "done"
+      },
+      {
+        "wave": 7,
+        "phase": "blast"
+      },
+      {
+        "wave": 7,
+        "phase": "hop"
+      },
+      {
+        "wave": 7,
+        "phase": "walk"
+      },
+      {
+        "wave": 7,
+        "phase": "black"
+      },
+      {
+        "wave": 7,
+        "phase": "emerge"
+      },
+      {
+        "wave": 7,
+        "phase": "done"
+      }
+    ],
+    "coreLog": [
+      {
+        "room": 1,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 2,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 3,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 4,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 5,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 6,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 7,
+        "x": 320,
+        "y": 138
+      },
+      {
+        "room": 8,
+        "x": 320,
+        "y": 166,
+        "master": true
+      }
+    ],
+    "boss": {
+      "form": "helios",
+      "hp": 0
+    },
+    "bot": {
+      "last": {
+        "A": false,
+        "cover": false,
+        "left": false,
+        "right": false
+      },
+      "decisions": 728,
+      "cover": 103,
+      "move": 3,
+      "fire": 542,
+      "blindfire": 103,
+      "grenadeWave": 7,
+      "stages": [
+        "0:advance:",
+        "1:fight:",
+        "1:breach:",
+        "2:fight:",
+        "2:breach:",
+        "3:fight:",
+        "3:breach:",
+        "4:fight:",
+        "4:breach:",
+        "5:fight:",
+        "5:breach:",
+        "6:fight:",
+        "6:breach:",
+        "7:fight:",
+        "7:breach:",
+        "8:core:core",
+        "8:core:helios",
+        "8:victory:helios"
+      ],
+      "target": {
+        "x": 458.1666666666665,
+        "y": 213.52950703516223
+      },
+      "controller": true,
+      "minHP": 5
+    },
+    "errors": [],
+    "scope": "Normal armor input-only complete stage; decisions 200ms, rate-limited D-pad Retina aim. No actor-health writes or kill APIs."
+  },
+  "build": "overdrive1014-gosfer20-r1",
+  "base_suite": {
+    "syntax": "passed",
+    "test_fl": "BUILD OK / 0 ERRORS / exit 0",
+    "log": "_shots/bastion20/base_regression.txt"
+  }
+}

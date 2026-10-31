@@ -1,0 +1,86 @@
+{
+  "dracodiaSource": "C:\\Users\\Mike\\Documents\\New project\\BOF-Dracodia-Chronos-1030\\video\\stage8-095021\\stage8-furious.mp4",
+  "tealSource": "C:\\Users\\Mike\\Documents\\New project\\BOF-Dracodia-Chronos-1030\\returns-video\\stage6-100208\\stage6-furious.mp4",
+  "duration": 118.47999999999999,
+  "tealDuration": 9.03,
+  "nativeFPS": 58.86495935373284,
+  "audio": {
+    "meanDB": -20.7,
+    "peakDB": -4.0
+  },
+  "nativeDefeatSeconds": 111.099,
+  "pageErrors": [],
+  "consoleErrors": [],
+  "assetErrors": [],
+  "sourcePNGCount": 188,
+  "compiledVariantFrames": 1188,
+  "compiledBanks": 65,
+  "nativeChecks": 46,
+  "baselineRegressionFailures": 5,
+  "chapters": [
+    {
+      "id": "s8-code-hammer",
+      "parent": "stage8-final",
+      "stage": 8,
+      "title": "Corrupted Chronos / regenerated hammer, armor and crimson rage",
+      "start": 0,
+      "end": 118.48,
+      "seconds": 118.48,
+      "src": "videos/stage8-dracodia-corrupted-chronos-1030.mp4",
+      "localSrc": "videos/stage8-dracodia-corrupted-chronos-1030.mp4",
+      "poster": "posters/s8-code-hammer-1030.jpg",
+      "note": "Live native Furious footage with GOD and input-only aiming. Final copied-life checkpoint: full native4920HP; other lives cleared before capture. No enemy HP/phase/clock changes by the recorder. Locked hammer design, regenerated evil animation banks and no circular shield."
+    },
+    {
+      "id": "s8-code-hammer-armor",
+      "parent": "s8-code-hammer",
+      "stage": 8,
+      "title": "Dark chromium / hammer toss and chaingun pickup",
+      "start": 7.7,
+      "end": 22.2,
+      "seconds": 14.5,
+      "src": "videos/stage8-dracodia-corrupted-chronos-1030.mp4",
+      "localSrc": "videos/stage8-dracodia-corrupted-chronos-1030.mp4",
+      "poster": "posters/s8-code-hammer-armor-1030.jpg",
+      "note": "Live native Furious footage with GOD and input-only aiming. Final copied-life checkpoint: full native4920HP; other lives cleared before capture. No enemy HP/phase/clock changes by the recorder. Locked hammer design, regenerated evil animation banks and no circular shield."
+    },
+    {
+      "id": "s8-code-hammer-throw",
+      "parent": "s8-code-hammer",
+      "stage": 8,
+      "title": "Canonical hammer / release, orbit and catch",
+      "start": 33.73,
+      "end": 40.93,
+      "seconds": 7.2,
+      "src": "videos/stage8-dracodia-corrupted-chronos-1030.mp4",
+      "localSrc": "videos/stage8-dracodia-corrupted-chronos-1030.mp4",
+      "poster": "posters/s8-code-hammer-throw-1030.jpg",
+      "note": "Live native Furious footage with GOD and input-only aiming. Final copied-life checkpoint: full native4920HP; other lives cleared before capture. No enemy HP/phase/clock changes by the recorder. Locked hammer design, regenerated evil animation banks and no circular shield."
+    },
+    {
+      "id": "s8-code-hammer-rage",
+      "parent": "s8-code-hammer",
+      "stage": 8,
+      "title": "Crimson code rage / charge, lightning and wave",
+      "start": 68.7,
+      "end": 84.0,
+      "seconds": 15.31,
+      "src": "videos/stage8-dracodia-corrupted-chronos-1030.mp4",
+      "localSrc": "videos/stage8-dracodia-corrupted-chronos-1030.mp4",
+      "poster": "posters/s8-code-hammer-rage-1030.jpg",
+      "note": "Live native Furious footage with GOD and input-only aiming. Final copied-life checkpoint: full native4920HP; other lives cleared before capture. No enemy HP/phase/clock changes by the recorder. Locked hammer design, regenerated evil animation banks and no circular shield."
+    },
+    {
+      "id": "rough-riders-teal-overflight",
+      "parent": "stage6-rough-riders",
+      "stage": 6,
+      "title": "Teal energy balls / overflight, depth and shadows",
+      "seconds": 9.03,
+      "src": "videos/stage6-teal-return-overflight-1030.mp4",
+      "localSrc": "videos/stage6-teal-return-overflight-1030.mp4",
+      "poster": "posters/rough-riders-teal-overflight-1030.jpg",
+      "note": "Focused live-engine Golden Aegis checkpoint. The original reflected hit occurs once; the ball continues above the Riders, shrinks into the distance and retires beyond the far edge. This is an effect demonstration, not a full boss defeat."
+    }
+  ],
+  "sha256": "541c00b180d11ec35eba6a97e714883b3e0f41c1f7a3a52335933acc7ec36106"
+}

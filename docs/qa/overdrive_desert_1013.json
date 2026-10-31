@@ -1,0 +1,79 @@
+{
+  "checks": [
+    {
+      "name": "museum campaign slot is a tank desert and old password slot still resolves",
+      "passed": true
+    },
+    {
+      "name": "mixed tanks and aircraft enter beyond north viewport before travelling in",
+      "passed": true
+    },
+    {
+      "name": "player smoothly makes a full reversal instead of refusing 180 degree input",
+      "passed": true
+    },
+    {
+      "name": "ram gives a .9 second stationary warning",
+      "passed": true
+    },
+    {
+      "name": "ram accelerates along the announced heading",
+      "passed": true
+    },
+    {
+      "name": "moving aside evades the committed ram without homing",
+      "passed": true
+    },
+    {
+      "name": "cannon hit query catches hull between prior and current projectile position",
+      "passed": true
+    },
+    {
+      "name": "Retina acquires the actual flying unit",
+      "passed": true
+    },
+    {
+      "name": "locked cannon fires a missile that retains the aircraft target",
+      "passed": true
+    },
+    {
+      "name": "guided missile damages or destroys the moving aircraft",
+      "passed": true
+    },
+    {
+      "name": "all four formations complete into the next mission",
+      "passed": true
+    },
+    {
+      "name": "all mobile armor families keep finite continuous positions through turns and braking",
+      "passed": true
+    },
+    {
+      "name": "pursuit reinforcements all begin above the visible north edge",
+      "passed": true
+    },
+    {
+      "name": "truck and runner spawn helpers normalize south spawns to north approach",
+      "passed": true
+    },
+    {
+      "name": "gun trucks have a drive state and larger hittable hull",
+      "passed": true
+    },
+    {
+      "name": "pursuit wreck still resets opening and full hull",
+      "passed": true
+    },
+    {
+      "name": "normal-hull full pursuit remains survivable with aim and fire",
+      "passed": true
+    },
+    {
+      "name": "zero browser errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": 18,
+  "total": 18
+}

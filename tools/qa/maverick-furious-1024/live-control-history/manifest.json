@@ -1,0 +1,177 @@
+[
+  {
+    "file": "control-applied-1792822521.js",
+    "appliedUtc": "2026-10-24T06:15:21+00:00",
+    "sha256": "375cbb928aa19ab74787ac32908b4d301dff58413ea9f8a2e938f192b8df09b0",
+    "originalSourceSha256": "375cbb928aa19ab74787ac32908b4d301dff58413ea9f8a2e938f192b8df09b0",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792822559.js",
+    "appliedUtc": "2026-10-24T06:15:59+00:00",
+    "sha256": "6377d5b4f12a008f2ce1d1b37db290a5fe69522795e828c35539375dc261e948",
+    "originalSourceSha256": "6377d5b4f12a008f2ce1d1b37db290a5fe69522795e828c35539375dc261e948",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792822686.js",
+    "appliedUtc": "2026-10-24T06:18:06+00:00",
+    "sha256": "0ac0e303023da2250956a0c508c6fb4bdba3ab10a81380ab9b2d6d6201d00c65",
+    "originalSourceSha256": "0ac0e303023da2250956a0c508c6fb4bdba3ab10a81380ab9b2d6d6201d00c65",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792822735.js",
+    "appliedUtc": "2026-10-24T06:18:55+00:00",
+    "sha256": "f5cdc770a87c2b775fc77a36ce88a3ca5f052041ce8690432c79a141ccb6acda",
+    "originalSourceSha256": "f5cdc770a87c2b775fc77a36ce88a3ca5f052041ce8690432c79a141ccb6acda",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792822762.js",
+    "appliedUtc": "2026-10-24T06:19:22+00:00",
+    "sha256": "676d44ed0569b76c691a6d3b1a6b3ecd75b12810ed2e59ac6028baeb2baaf3e0",
+    "originalSourceSha256": "676d44ed0569b76c691a6d3b1a6b3ecd75b12810ed2e59ac6028baeb2baaf3e0",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792822928.js",
+    "appliedUtc": "2026-10-24T06:22:08+00:00",
+    "sha256": "55241c155e2bbf4d0f88919118e15bb8fa4226f7274b6221c06d7f2733a9a1bb",
+    "originalSourceSha256": "55241c155e2bbf4d0f88919118e15bb8fa4226f7274b6221c06d7f2733a9a1bb",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792823043.js",
+    "appliedUtc": "2026-10-24T06:24:03+00:00",
+    "sha256": "2c8bd598c6b4551054965056be3ca2d055259776457071151dd49ff010ca1cdb",
+    "originalSourceSha256": "2c8bd598c6b4551054965056be3ca2d055259776457071151dd49ff010ca1cdb",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792823367.js",
+    "appliedUtc": "2026-10-24T06:29:27+00:00",
+    "sha256": "833b9701f06ed6db328940cd98d62202676fe038e9027681fbae21de4b83d6b8",
+    "originalSourceSha256": "833b9701f06ed6db328940cd98d62202676fe038e9027681fbae21de4b83d6b8",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792823779.js",
+    "appliedUtc": "2026-10-24T06:36:19+00:00",
+    "sha256": "96fadd0a0619fdd37e34a5c8c6a2cc5e5196278796e42aadb5818938e4269728",
+    "originalSourceSha256": "96fadd0a0619fdd37e34a5c8c6a2cc5e5196278796e42aadb5818938e4269728",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792823889.js",
+    "appliedUtc": "2026-10-24T06:38:09+00:00",
+    "sha256": "af6426d8c0fcfc58110d4ec7e54ab3a0dc3eba986e75fd99784cd296fa26506f",
+    "originalSourceSha256": "af6426d8c0fcfc58110d4ec7e54ab3a0dc3eba986e75fd99784cd296fa26506f",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792823981.js",
+    "appliedUtc": "2026-10-24T06:39:41+00:00",
+    "sha256": "b6dc6f4a23d7a96dad40351a16c00d5b5ecf6c7aeb9524f3d5f7a5648ce7930a",
+    "originalSourceSha256": "b6dc6f4a23d7a96dad40351a16c00d5b5ecf6c7aeb9524f3d5f7a5648ce7930a",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792824039.js",
+    "appliedUtc": "2026-10-24T06:40:39+00:00",
+    "sha256": "819b4f61ba767da91bcd9b11169b01a2a6fc86f6baef49996a5dd937a214881c",
+    "originalSourceSha256": "819b4f61ba767da91bcd9b11169b01a2a6fc86f6baef49996a5dd937a214881c",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792824112.js",
+    "appliedUtc": "2026-10-24T06:41:52+00:00",
+    "sha256": "1a6e58798ca4ad4de30ccab6e16ce89bc6e3f92bb154306d275043c6d37c8955",
+    "originalSourceSha256": "1a6e58798ca4ad4de30ccab6e16ce89bc6e3f92bb154306d275043c6d37c8955",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792824236.js",
+    "appliedUtc": "2026-10-24T06:43:56+00:00",
+    "sha256": "6ca2a8ee76a0943c520607243d3917b3782973c758fe3a6a95d9f4f35cb993cf",
+    "originalSourceSha256": "6ca2a8ee76a0943c520607243d3917b3782973c758fe3a6a95d9f4f35cb993cf",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792824335.js",
+    "appliedUtc": "2026-10-24T06:45:35+00:00",
+    "sha256": "ae839afcf1817acd65e3d681334aced999a7e64ab56efc7a980f3aa8f34ad7a4",
+    "originalSourceSha256": "ae839afcf1817acd65e3d681334aced999a7e64ab56efc7a980f3aa8f34ad7a4",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792824450.js",
+    "appliedUtc": "2026-10-24T06:47:30+00:00",
+    "sha256": "0f545891328cb090aead4354cce5238102d8ba0496bd2f8285bd9687dc152924",
+    "originalSourceSha256": "0f545891328cb090aead4354cce5238102d8ba0496bd2f8285bd9687dc152924",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792824522.js",
+    "appliedUtc": "2026-10-24T06:48:42+00:00",
+    "sha256": "0dcdfa9926f89f1df9a887cfdf0f993baafcb81a103c63c45e5369596a0995cd",
+    "originalSourceSha256": "0dcdfa9926f89f1df9a887cfdf0f993baafcb81a103c63c45e5369596a0995cd",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792824599.js",
+    "appliedUtc": "2026-10-24T06:49:59+00:00",
+    "sha256": "f746261776a772c7eb9d20314fcd962bb81ccb31a7148810f7b0a603e3e1b981",
+    "originalSourceSha256": "f746261776a772c7eb9d20314fcd962bb81ccb31a7148810f7b0a603e3e1b981",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792824751.js",
+    "appliedUtc": "2026-10-24T06:52:31+00:00",
+    "sha256": "4df05c988828bb56c03ab62f19fe508529fce402b9af1e59774151a5c88a65bf",
+    "originalSourceSha256": "4df05c988828bb56c03ab62f19fe508529fce402b9af1e59774151a5c88a65bf",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792824956.js",
+    "appliedUtc": "2026-10-24T06:55:56+00:00",
+    "sha256": "a50241d5850ec49499cd98a13685e570a51972f51254860e0cc0845ddf5dce5e",
+    "originalSourceSha256": "a50241d5850ec49499cd98a13685e570a51972f51254860e0cc0845ddf5dce5e",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792825206.js",
+    "appliedUtc": "2026-10-24T07:00:06+00:00",
+    "sha256": "cd64cf771ba57ac428dc2fd51615418977053763c95e0c839d580b40361838a5",
+    "originalSourceSha256": "cd64cf771ba57ac428dc2fd51615418977053763c95e0c839d580b40361838a5",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792825481.js",
+    "appliedUtc": "2026-10-24T07:04:41+00:00",
+    "sha256": "5eaac4d087dcd2134748f781abb77c0f1cb2407f9664c57b0fcf8515a21f565a",
+    "originalSourceSha256": "5eaac4d087dcd2134748f781abb77c0f1cb2407f9664c57b0fcf8515a21f565a",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792825548.js",
+    "appliedUtc": "2026-10-24T07:05:48+00:00",
+    "sha256": "76dabb9761d1986f6374a62ccfbf4c7e20f856a36bfd496917c97bebdd4bee53",
+    "originalSourceSha256": "76dabb9761d1986f6374a62ccfbf4c7e20f856a36bfd496917c97bebdd4bee53",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792825926.js",
+    "appliedUtc": "2026-10-24T07:12:06+00:00",
+    "sha256": "76b0f4c58a311e248a2f9b42bc7b3498f1d5df33494f0e5770f5d5e8b0d42176",
+    "originalSourceSha256": "76b0f4c58a311e248a2f9b42bc7b3498f1d5df33494f0e5770f5d5e8b0d42176",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  },
+  {
+    "file": "control-applied-1792826003.js",
+    "appliedUtc": "2026-10-24T07:13:23+00:00",
+    "sha256": "22740d425bf4fcba509b5a608863ed683e0e77bf5792f02b10ec126ce89be265",
+    "originalSourceSha256": "22740d425bf4fcba509b5a608863ed683e0e77bf5792f02b10ec126ce89be265",
+    "publicationNormalization": "CRLF normalized to LF; original source checksum retained."
+  }
+]

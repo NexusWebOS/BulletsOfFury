@@ -1,0 +1,12 @@
+{
+  "source": "Actual PixelLab void_rift and red_rift mechanical gated lifecycle; same family as sewer green_rift. No energy-only RD71 gate cells.",
+  "operation": "Proportional offline nearest-neighbor fixed-cell resize and packing through Aseprite; colors and alpha are original.",
+  "frames": 144,
+  "sourceManifest": "assets/pixellab_void_art_1017.js",
+  "logicalStart": 5.4,
+  "redStart": 9.2,
+  "redReturnStart": 12.9,
+  "redReturnEnd": 14,
+  "redCloseStart": 14.06,
+  "redCloseEnd": 14.86
+}

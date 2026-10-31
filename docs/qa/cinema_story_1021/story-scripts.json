@@ -1,0 +1,4301 @@
+{
+  "cole": {
+    "1": [
+      {
+        "who": "COLE",
+        "text": "The dam is down. The runway is open, but those machines were coordinating through the same signal.",
+        "c22": "peace_city",
+        "bg": "c22_peace_city"
+      },
+      {
+        "who": "DECKER",
+        "text": "We recovered part of the transmission. Watch the orbital relay.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "The last orbital frame shows a black hole opening beside the relay array.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "Something came through it. Look at that shape moving toward our satellite.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "First contact. Its tendrils reached the relay dish before the warning system could react.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The whole relay is being swallowed. The signal is no longer ours.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "It filled the uplink with code I cannot read and sent the infection down to Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "That signal reached aircraft, armor, ships, homes, and every connected system on Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The signal came down through our satellites. Fury survived because our rebuilt fighters still answer manual controls.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered system gives us our first elemental upgrade. Keep these combinations inside this campaign; every new sortie starts with what we actually recover.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "Record the combinations, but only issue what this run has earned.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The strongest relay on the surface is inside the volcanic belt. Cut its power before it spreads further.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "Set a course for the volcano. We follow the signal to its source.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      }
+    ],
+    "2": [
+      {
+        "who": "COLE",
+        "text": "The Furnace Tyrant is down. That should take some heat off the network.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "It has. The interference is weakening, but the squad channels are still blocked. But a second relay is answering from the frozen region.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fire Orb is ready. We are heading into ice units next: fire deals fifty percent more damage to them. Ice against ice deals fifty percent less.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "COLE",
+        "text": "Fit the fire option before we launch. No point feeding an enemy its own element.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Use the loadout to choose your weapon and its element. The same resistance rule applies to fire weapons against fire units.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "That relay is using the cold to protect its systems. Break the ice front, and we can trace its connection to the missile airbase.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "COLE",
+        "text": "Fire systems checked. Heading for the ice.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      }
+    ],
+    "3": [
+      {
+        "who": "COLE",
+        "text": "Ice relay destroyed. Fury flight, does anyone read me?",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "COLE",
+        "text": "Fury HQ in sight. Bringing the squad home to regroup.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Good to see everyone in one piece. Gather around. Decker, tell us what we have.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Forge can combine the systems we recover with our weapons. Fire, ice, then electricity. We keep every circuit isolated from the infected network.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The ice core is recovered. We can now carry its properties into the weapon combinations you have unlocked.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "Good. Keep the elemental options ready. The airbase will have more than one kind of armor.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "There is an electrical power cell in the abandoned desert airbase. We need it to restart our launch-pad generator.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      },
+      {
+        "who": "COLE",
+        "text": "So we secure the cell, get the pad running, and take this fight into space.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Exactly. I recovered video from the satellite as it was taken over, but the orbital recorder needs the launch generator online before I can decode the entire stream.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "COLE",
+        "text": "Decker, show me those prototypes you have been hiding. Just us.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade",
+        "c22Private": true
+      },
+      {
+        "who": "DECKER",
+        "text": "Level Six laser array. Then the Level Seven emitter that becomes your Photon Cannon. I have not cleared either for field use.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade",
+        "c22Private": true
+      },
+      {
+        "who": "COLE",
+        "text": "Put them on my ship. Quietly. Nobody else needs to know yet.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade",
+        "c22Private": true
+      },
+      {
+        "who": "COLE",
+        "text": "You built the Photon Cannon? Decker, this is incredible!",
+        "location": "lab",
+        "art": "cin_cole_decker_hug_0924",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade",
+        "c22Private": true
+      },
+      {
+        "who": "DECKER",
+        "text": "You are hugging me over a weapon schematic? If I showed you the rest of my designs, I would need a restraining order.",
+        "location": "lab",
+        "art": "cin_cole_decker_hug_0924",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade",
+        "c22Private": true
+      },
+      {
+        "who": "COLE",
+        "text": "I am taking that as a yes.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade",
+        "c22Private": true
+      },
+      {
+        "who": "COLE",
+        "text": "Set course for the lost airbase. Bring that power cell back intact.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      }
+    ],
+    "4": [
+      {
+        "who": "COLE",
+        "text": "Airbase secured. We have the electrical power cell.",
+        "bg": "c22_power_cell",
+        "c22": "power_cell"
+      },
+      {
+        "who": "DECKER",
+        "text": "That is the one. Bring it into the generator cradle.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "DECKER",
+        "text": "Launch-pad power restored. The orbital recorder is coming online. Watch this.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "SATELLITE SECURITY RECORDING. A foreign machine entered the relay array.",
+        "bg": "c22_satellite_clean",
+        "c22": "satellite_clean"
+      },
+      {
+        "who": "DECKER",
+        "text": "Dracodia took over the satellite, then infected Earth's entire infrastructure through it. Our cities, defenses, aircraft. Everything linked to that network.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "COLE",
+        "text": "Then the signal in orbit is where we strike next.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered electrical system is stable. Your loadout now has the combinations earned from this airbase.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "Check the Federation hull as well. Those guns need to survive the trip into space.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Federation space systems are ready. With the generator restored, I can launch your fighter beyond the atmosphere.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "COLE",
+        "text": "Power the pad. I am going up.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch"
+      }
+    ],
+    "5": [
+      {
+        "who": "COLE",
+        "text": "Cronos is down. Recover that massive chaingun, disengage the space systems, and take us home.",
+        "bg": "c22_orbital_return",
+        "c22": "orbital_return",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Fury HQ, the runway is in sight. Bringing the salvage down.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Look at this rotary assembly! That hammer-wielding monster left us exactly what we need.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "That chaingun we acquired in space is exactly what I need to upgrade our bullet systems.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "Get the squad equipped first. Keep my prototype machine-gun and Fusion Cannon line intact.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Understood. The squad gets the chaingun conversion. Your prototype gun and Fusion Cannon progression stay intact.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "Bring everyone home, Decker. Then we will see what else that salvage can do.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Paired chaingun turrets and massive .50 caliber slugs. Reinforced mounts, insulated feeds. Your earned elemental cartridges still fit.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY COMMAND",
+        "text": "RED ALERT! Invasion force inbound from space. Heading straight for the city!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "stage3AtomicSiren"
+      },
+      {
+        "who": "DECKER",
+        "text": "The radar is going crazy. Those contacts are multiplying faster than I can track them!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "crackle"
+      },
+      {
+        "who": "COLE",
+        "text": "Two of you, stay behind and defend the base! DECKER and AXEL, hold HQ. Everyone else, scramble!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm"
+      },
+      {
+        "who": "COLE",
+        "text": "",
+        "bg": "c22_hq_sprint",
+        "c22": "hq_sprint",
+        "duration": 1.65,
+        "c22Action": true,
+        "c22Cue": "jetDash"
+      },
+      {
+        "who": "COLE",
+        "text": "Hangar crew, clear my fighter. We are launching now!",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "board",
+        "duration": 5.8
+      },
+      {
+        "who": "COLE",
+        "text": "Fury flight, on my wing. We stop them before they reach the city.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch",
+        "duration": 4.8
+      }
+    ],
+    "6": [
+      {
+        "who": "COLE",
+        "text": "Fury HQ, we are coming home. Get the squad together.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Rebel Fury is down. I wish they had listened.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "All five rebel signals are gone. There will be no Stage X pursuit of this squad.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The other threat has not stopped. I am reading a separate signature beneath the city.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "COLE",
+        "text": "And HotWire and Phoenix?",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "A new signal just appeared. It is not in the skies. It is underground, by the river.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "COLE",
+        "text": "Show us exactly where.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Under the iron bridge. The signal leads into the sewers themselves. We never searched beneath the city.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Check the new combinations before we go underground. The toxic signature below the city is unlike the aircraft we just fought.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "A narrow tunnel, contaminated air, and no room to turn back. Make every shot count.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "Then we head there immediately. Fury flight, take the river approach.",
+        "bg": "c22_river_sewer",
+        "c22": "river_sewer",
+        "c22Flight": "river"
+      }
+    ]
+  },
+  "axel": {
+    "1": [
+      {
+        "who": "AXEL",
+        "text": "The dam is down. The runway is open, but those machines were coordinating through the same signal.",
+        "c22": "peace_city",
+        "bg": "c22_peace_city"
+      },
+      {
+        "who": "DECKER",
+        "text": "We recovered part of the transmission. Watch the orbital relay.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "The last orbital frame shows a black hole opening beside the relay array.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "Something came through it. Look at that shape moving toward our satellite.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "First contact. Its tendrils reached the relay dish before the warning system could react.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The whole relay is being swallowed. The signal is no longer ours.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "It filled the uplink with code I cannot read and sent the infection down to Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "That signal reached aircraft, armor, ships, homes, and every connected system on Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The signal came down through our satellites. Fury survived because our rebuilt fighters still answer manual controls.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered system gives us our first elemental upgrade. Keep these combinations inside this campaign; every new sortie starts with what we actually recover.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "AXEL",
+        "text": "I will test the new combination on the way to the volcanic front.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The strongest relay on the surface is inside the volcanic belt. Cut its power before it spreads further.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "AXEL",
+        "text": "Set a course for the volcano. We follow the signal to its source.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      }
+    ],
+    "2": [
+      {
+        "who": "AXEL",
+        "text": "The Furnace Tyrant is down. That should take some heat off the network.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "It has. The interference is weakening, but the squad channels are still blocked. But a second relay is answering from the frozen region.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fire Orb is ready. We are heading into ice units next: fire deals fifty percent more damage to them. Ice against ice deals fifty percent less.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "AXEL",
+        "text": "Fit the fire option before we launch. No point feeding an enemy its own element.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Use the loadout to choose your weapon and its element. The same resistance rule applies to fire weapons against fire units.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "That relay is using the cold to protect its systems. Break the ice front, and we can trace its connection to the missile airbase.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "AXEL",
+        "text": "Fire systems checked. Heading for the ice.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      }
+    ],
+    "3": [
+      {
+        "who": "AXEL",
+        "text": "Ice relay destroyed. Fury flight, does anyone read me?",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "AXEL",
+        "text": "Fury HQ in sight. Bringing the squad home to regroup.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Good to see everyone in one piece. Gather around. Decker, tell us what we have.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Forge can combine the systems we recover with our weapons. Fire, ice, then electricity. We keep every circuit isolated from the infected network.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The ice core is recovered. We can now carry its properties into the weapon combinations you have unlocked.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "AXEL",
+        "text": "Good. Keep the elemental options ready. The airbase will have more than one kind of armor.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "There is an electrical power cell in the abandoned desert airbase. We need it to restart our launch-pad generator.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      },
+      {
+        "who": "COLE",
+        "text": "So we secure the cell, get the pad running, and take this fight into space.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Exactly. I recovered video from the satellite as it was taken over, but the orbital recorder needs the launch generator online before I can decode the entire stream.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "AXEL",
+        "text": "Set course for the lost airbase. Bring that power cell back intact.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      }
+    ],
+    "4": [
+      {
+        "who": "AXEL",
+        "text": "Airbase secured. We have the electrical power cell.",
+        "bg": "c22_power_cell",
+        "c22": "power_cell"
+      },
+      {
+        "who": "DECKER",
+        "text": "That is the one. Bring it into the generator cradle.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "DECKER",
+        "text": "Launch-pad power restored. The orbital recorder is coming online. Watch this.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "SATELLITE SECURITY RECORDING. A foreign machine entered the relay array.",
+        "bg": "c22_satellite_clean",
+        "c22": "satellite_clean"
+      },
+      {
+        "who": "DECKER",
+        "text": "Dracodia took over the satellite, then infected Earth's entire infrastructure through it. Our cities, defenses, aircraft. Everything linked to that network.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "AXEL",
+        "text": "Then the signal in orbit is where we strike next.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered electrical system is stable. Your loadout now has the combinations earned from this airbase.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "AXEL",
+        "text": "Check the Federation hull as well. Those guns need to survive the trip into space.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Federation space systems are ready. With the generator restored, I can launch your fighter beyond the atmosphere.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "AXEL",
+        "text": "Power the pad. I am going up.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch"
+      }
+    ],
+    "5": [
+      {
+        "who": "AXEL",
+        "text": "Cronos is down. Recover that massive chaingun, disengage the space systems, and take us home.",
+        "bg": "c22_orbital_return",
+        "c22": "orbital_return",
+        "c22Flight": "land"
+      },
+      {
+        "who": "AXEL",
+        "text": "Fury HQ, the runway is in sight. Bringing the salvage down.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Look at this rotary assembly! That hammer-wielding monster left us exactly what we need.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "That chaingun we acquired in space is exactly what I need to upgrade our bullet systems.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "AXEL",
+        "text": "Keep the ship responsive. I want the gun ready the instant I break formation.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "I have fitted rotary mounts to your ship. Faster, heavier rounds, with the elemental upgrades from your machine gun carried across.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "AXEL",
+        "text": "Fast feed, clean recoil. I can work with that.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The chaingun is ready for the next ground sortie. Check it in the loadout before Stage Six.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Paired chaingun turrets and massive .50 caliber slugs. Reinforced mounts, insulated feeds. Your earned elemental cartridges still fit.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY COMMAND",
+        "text": "RED ALERT! Invasion force inbound from space. Heading straight for the city!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "stage3AtomicSiren"
+      },
+      {
+        "who": "DECKER",
+        "text": "The radar is going crazy. Those contacts are multiplying faster than I can track them!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "crackle"
+      },
+      {
+        "who": "COLE",
+        "text": "Two of you, stay behind and defend the base! DECKER and JUGGERNAUT, hold HQ. Everyone else, scramble!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm"
+      },
+      {
+        "who": "COLE",
+        "text": "",
+        "bg": "c22_hq_sprint",
+        "c22": "hq_sprint",
+        "duration": 1.65,
+        "c22Action": true,
+        "c22Cue": "jetDash"
+      },
+      {
+        "who": "AXEL",
+        "text": "Hangar crew, clear my fighter. We are launching now!",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "board",
+        "duration": 5.8
+      },
+      {
+        "who": "AXEL",
+        "text": "Fury flight, on my wing. We stop them before they reach the city.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch",
+        "duration": 4.8
+      }
+    ],
+    "6": [
+      {
+        "who": "AXEL",
+        "text": "Fury HQ, we are coming home. Get the squad together.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "AXEL",
+        "text": "Rebel Fury is down. I wish they had listened.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "All five rebel signals are gone. There will be no Stage X pursuit of this squad.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The other threat has not stopped. I am reading a separate signature beneath the city.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "AXEL",
+        "text": "And HotWire and Phoenix?",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "A new signal just appeared. It is not in the skies. It is underground, by the river.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "COLE",
+        "text": "Show us exactly where.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Under the iron bridge. The signal leads into the sewers themselves. We never searched beneath the city.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Check the new combinations before we go underground. The toxic signature below the city is unlike the aircraft we just fought.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "AXEL",
+        "text": "A narrow tunnel, contaminated air, and no room to turn back. Make every shot count.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "AXEL",
+        "text": "Then we head there immediately. Fury flight, take the river approach.",
+        "bg": "c22_river_sewer",
+        "c22": "river_sewer",
+        "c22Flight": "river"
+      }
+    ]
+  },
+  "freezer": {
+    "1": [
+      {
+        "who": "FREEZER",
+        "text": "The dam is down. The runway is open, but those machines were coordinating through the same signal.",
+        "c22": "peace_city",
+        "bg": "c22_peace_city"
+      },
+      {
+        "who": "DECKER",
+        "text": "We recovered part of the transmission. Watch the orbital relay.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "The last orbital frame shows a black hole opening beside the relay array.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "Something came through it. Look at that shape moving toward our satellite.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "First contact. Its tendrils reached the relay dish before the warning system could react.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The whole relay is being swallowed. The signal is no longer ours.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "It filled the uplink with code I cannot read and sent the infection down to Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "That signal reached aircraft, armor, ships, homes, and every connected system on Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The signal came down through our satellites. Fury survived because our rebuilt fighters still answer manual controls.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered system gives us our first elemental upgrade. Keep these combinations inside this campaign; every new sortie starts with what we actually recover.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "FREEZER",
+        "text": "That volcanic front will cook a normal approach. Let me take Ice Breath in.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Ice Breath is fitted for Stage Two. It is your starting loadout there. We will reopen the choice after the Furnace Tyrant falls.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The strongest relay on the surface is inside the volcanic belt. Cut its power before it spreads further.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Set a course for the volcano. We follow the signal to its source.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      }
+    ],
+    "2": [
+      {
+        "who": "FREEZER",
+        "text": "The Furnace Tyrant is down. That should take some heat off the network.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "It has. The interference is weakening, but the squad channels are still blocked. But a second relay is answering from the frozen region.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fire Orb is ready. We are heading into ice units next: fire deals fifty percent more damage to them. Ice against ice deals fifty percent less.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Switch me back to Flamethrower for the ice front. Keep Ice Breath selectable; I still want the choice.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Use the loadout to choose your weapon and its element. The same resistance rule applies to fire weapons against fire units.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "That relay is using the cold to protect its systems. Break the ice front, and we can trace its connection to the missile airbase.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Fire systems checked. Heading for the ice.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      }
+    ],
+    "3": [
+      {
+        "who": "FREEZER",
+        "text": "Ice relay destroyed. Fury flight, does anyone read me?",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Fury HQ in sight. Bringing the squad home to regroup.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Good to see everyone in one piece. Gather around. Decker, tell us what we have.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Forge can combine the systems we recover with our weapons. Fire, ice, then electricity. We keep every circuit isolated from the infected network.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The ice core is recovered. We can now carry its properties into the weapon combinations you have unlocked.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Now combine that control with our fire system. A sudden thermal change should crack their armor.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Thermoshock is your default orb from here. Fire Orb and Ice Orb remain selectable.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "There is an electrical power cell in the abandoned desert airbase. We need it to restart our launch-pad generator.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      },
+      {
+        "who": "COLE",
+        "text": "So we secure the cell, get the pad running, and take this fight into space.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Exactly. I recovered video from the satellite as it was taken over, but the orbital recorder needs the launch generator online before I can decode the entire stream.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Set course for the lost airbase. Bring that power cell back intact.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      }
+    ],
+    "4": [
+      {
+        "who": "FREEZER",
+        "text": "Airbase secured. We have the electrical power cell.",
+        "bg": "c22_power_cell",
+        "c22": "power_cell"
+      },
+      {
+        "who": "DECKER",
+        "text": "That is the one. Bring it into the generator cradle.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "DECKER",
+        "text": "Launch-pad power restored. The orbital recorder is coming online. Watch this.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "SATELLITE SECURITY RECORDING. A foreign machine entered the relay array.",
+        "bg": "c22_satellite_clean",
+        "c22": "satellite_clean"
+      },
+      {
+        "who": "DECKER",
+        "text": "Dracodia took over the satellite, then infected Earth's entire infrastructure through it. Our cities, defenses, aircraft. Everything linked to that network.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Then the signal in orbit is where we strike next.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered electrical system is stable. Your loadout now has the combinations earned from this airbase.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Check the Federation hull as well. Those guns need to survive the trip into space.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Federation space systems are ready. With the generator restored, I can launch your fighter beyond the atmosphere.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Power the pad. I am going up.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch"
+      }
+    ],
+    "5": [
+      {
+        "who": "FREEZER",
+        "text": "Cronos is down. Recover that massive chaingun, disengage the space systems, and take us home.",
+        "bg": "c22_orbital_return",
+        "c22": "orbital_return",
+        "c22Flight": "land"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Fury HQ, the runway is in sight. Bringing the salvage down.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Look at this rotary assembly! That hammer-wielding monster left us exactly what we need.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "That chaingun we acquired in space is exactly what I need to upgrade our bullet systems.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Keep my thermal circuits isolated. I need fire and ice available when I switch.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "I have fitted rotary mounts to your ship. Faster, heavier rounds, with the elemental upgrades from your machine gun carried across.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Hot barrels, cold nerves. That should do nicely.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The chaingun is ready for the next ground sortie. Check it in the loadout before Stage Six.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Paired chaingun turrets and massive .50 caliber slugs. Reinforced mounts, insulated feeds. Your earned elemental cartridges still fit.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY COMMAND",
+        "text": "RED ALERT! Invasion force inbound from space. Heading straight for the city!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "stage3AtomicSiren"
+      },
+      {
+        "who": "DECKER",
+        "text": "The radar is going crazy. Those contacts are multiplying faster than I can track them!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "crackle"
+      },
+      {
+        "who": "COLE",
+        "text": "Two of you, stay behind and defend the base! DECKER and AXEL, hold HQ. Everyone else, scramble!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm"
+      },
+      {
+        "who": "COLE",
+        "text": "",
+        "bg": "c22_hq_sprint",
+        "c22": "hq_sprint",
+        "duration": 1.65,
+        "c22Action": true,
+        "c22Cue": "jetDash"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Hangar crew, clear my fighter. We are launching now!",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "board",
+        "duration": 5.8
+      },
+      {
+        "who": "FREEZER",
+        "text": "Fury flight, on my wing. We stop them before they reach the city.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch",
+        "duration": 4.8
+      }
+    ],
+    "6": [
+      {
+        "who": "FREEZER",
+        "text": "Fury HQ, we are coming home. Get the squad together.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Rebel Fury is down. I wish they had listened.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "All five rebel signals are gone. There will be no Stage X pursuit of this squad.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The other threat has not stopped. I am reading a separate signature beneath the city.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "FREEZER",
+        "text": "And HotWire and Phoenix?",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "A new signal just appeared. It is not in the skies. It is underground, by the river.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "COLE",
+        "text": "Show us exactly where.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Under the iron bridge. The signal leads into the sewers themselves. We never searched beneath the city.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Check the new combinations before we go underground. The toxic signature below the city is unlike the aircraft we just fought.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FREEZER",
+        "text": "A narrow tunnel, contaminated air, and no room to turn back. Make every shot count.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FREEZER",
+        "text": "Then we head there immediately. Fury flight, take the river approach.",
+        "bg": "c22_river_sewer",
+        "c22": "river_sewer",
+        "c22Flight": "river"
+      }
+    ]
+  },
+  "yuri": {
+    "1": [
+      {
+        "who": "YURI",
+        "text": "The dam is down. The runway is open, but those machines were coordinating through the same signal.",
+        "c22": "peace_city",
+        "bg": "c22_peace_city"
+      },
+      {
+        "who": "DECKER",
+        "text": "We recovered part of the transmission. Watch the orbital relay.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "The last orbital frame shows a black hole opening beside the relay array.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "Something came through it. Look at that shape moving toward our satellite.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "First contact. Its tendrils reached the relay dish before the warning system could react.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The whole relay is being swallowed. The signal is no longer ours.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "It filled the uplink with code I cannot read and sent the infection down to Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "That signal reached aircraft, armor, ships, homes, and every connected system on Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The signal came down through our satellites. Fury survived because our rebuilt fighters still answer manual controls.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered system gives us our first elemental upgrade. Keep these combinations inside this campaign; every new sortie starts with what we actually recover.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "YURI",
+        "text": "Keep the electrical circuits clear. I want this upgrade stable.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The strongest relay on the surface is inside the volcanic belt. Cut its power before it spreads further.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "YURI",
+        "text": "Set a course for the volcano. We follow the signal to its source.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      }
+    ],
+    "2": [
+      {
+        "who": "YURI",
+        "text": "The Furnace Tyrant is down. That should take some heat off the network.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "It has. The interference is weakening, but the squad channels are still blocked. But a second relay is answering from the frozen region.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fire Orb is ready. We are heading into ice units next: fire deals fifty percent more damage to them. Ice against ice deals fifty percent less.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "YURI",
+        "text": "Fit the fire option before we launch. No point feeding an enemy its own element.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Use the loadout to choose your weapon and its element. The same resistance rule applies to fire weapons against fire units.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "That relay is using the cold to protect its systems. Break the ice front, and we can trace its connection to the missile airbase.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "YURI",
+        "text": "Fire systems checked. Heading for the ice.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      }
+    ],
+    "3": [
+      {
+        "who": "YURI",
+        "text": "Ice relay destroyed. Fury flight, does anyone read me?",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "YURI",
+        "text": "Fury HQ in sight. Bringing the squad home to regroup.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Good to see everyone in one piece. Gather around. Decker, tell us what we have.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Forge can combine the systems we recover with our weapons. Fire, ice, then electricity. We keep every circuit isolated from the infected network.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The ice core is recovered. We can now carry its properties into the weapon combinations you have unlocked.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "YURI",
+        "text": "Good. Keep the elemental options ready. The airbase will have more than one kind of armor.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "There is an electrical power cell in the abandoned desert airbase. We need it to restart our launch-pad generator.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      },
+      {
+        "who": "COLE",
+        "text": "So we secure the cell, get the pad running, and take this fight into space.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Exactly. I recovered video from the satellite as it was taken over, but the orbital recorder needs the launch generator online before I can decode the entire stream.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "YURI",
+        "text": "Set course for the lost airbase. Bring that power cell back intact.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      }
+    ],
+    "4": [
+      {
+        "who": "YURI",
+        "text": "Airbase secured. We have the electrical power cell.",
+        "bg": "c22_power_cell",
+        "c22": "power_cell"
+      },
+      {
+        "who": "DECKER",
+        "text": "That is the one. Bring it into the generator cradle.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "DECKER",
+        "text": "Launch-pad power restored. The orbital recorder is coming online. Watch this.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "SATELLITE SECURITY RECORDING. A foreign machine entered the relay array.",
+        "bg": "c22_satellite_clean",
+        "c22": "satellite_clean"
+      },
+      {
+        "who": "DECKER",
+        "text": "Dracodia took over the satellite, then infected Earth's entire infrastructure through it. Our cities, defenses, aircraft. Everything linked to that network.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "YURI",
+        "text": "Then the signal in orbit is where we strike next.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The boss capacitor can strengthen your lightning, Yuri. I have matched the new blue arc to your ship.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "YURI",
+        "text": "I can feel it building. A tap for chain lightning... a held charge for something much bigger.",
+        "location": "lab",
+        "art": "cin30_yuri",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Thunder Storm. Charge, choose your moment, then release. The bolts volley out from your ship and bring the sky down on them.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Federation space systems are ready. With the generator restored, I can launch your fighter beyond the atmosphere.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "YURI",
+        "text": "Power the pad. I am going up.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch"
+      }
+    ],
+    "5": [
+      {
+        "who": "YURI",
+        "text": "Cronos is down. Recover that massive chaingun, disengage the space systems, and take us home.",
+        "bg": "c22_orbital_return",
+        "c22": "orbital_return",
+        "c22Flight": "land"
+      },
+      {
+        "who": "YURI",
+        "text": "Fury HQ, the runway is in sight. Bringing the salvage down.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Look at this rotary assembly! That hammer-wielding monster left us exactly what we need.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "That chaingun we acquired in space is exactly what I need to upgrade our bullet systems.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "YURI",
+        "text": "Keep the feed insulated from my lightning. I would rather charge the enemy than the magazine.",
+        "location": "lab",
+        "art": "cin30_yuri",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "I have fitted rotary mounts to your ship. Faster, heavier rounds, with the elemental upgrades from your machine gun carried across.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "YURI",
+        "text": "Steel and lightning. They are going to hear us coming.",
+        "location": "lab",
+        "art": "cin30_yuri",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The chaingun is ready for the next ground sortie. Check it in the loadout before Stage Six.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Paired chaingun turrets and massive .50 caliber slugs. Reinforced mounts, insulated feeds. Your earned elemental cartridges still fit.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY COMMAND",
+        "text": "RED ALERT! Invasion force inbound from space. Heading straight for the city!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "stage3AtomicSiren"
+      },
+      {
+        "who": "DECKER",
+        "text": "The radar is going crazy. Those contacts are multiplying faster than I can track them!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "crackle"
+      },
+      {
+        "who": "COLE",
+        "text": "Two of you, stay behind and defend the base! DECKER and AXEL, hold HQ. Everyone else, scramble!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm"
+      },
+      {
+        "who": "COLE",
+        "text": "",
+        "bg": "c22_hq_sprint",
+        "c22": "hq_sprint",
+        "duration": 1.65,
+        "c22Action": true,
+        "c22Cue": "jetDash"
+      },
+      {
+        "who": "YURI",
+        "text": "Hangar crew, clear my fighter. We are launching now!",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "board",
+        "duration": 5.8
+      },
+      {
+        "who": "YURI",
+        "text": "Fury flight, on my wing. We stop them before they reach the city.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch",
+        "duration": 4.8
+      }
+    ],
+    "6": [
+      {
+        "who": "YURI",
+        "text": "Fury HQ, we are coming home. Get the squad together.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "YURI",
+        "text": "Rebel Fury is down. I wish they had listened.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "All five rebel signals are gone. There will be no Stage X pursuit of this squad.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The other threat has not stopped. I am reading a separate signature beneath the city.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "YURI",
+        "text": "And HotWire and Phoenix?",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "A new signal just appeared. It is not in the skies. It is underground, by the river.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "COLE",
+        "text": "Show us exactly where.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Under the iron bridge. The signal leads into the sewers themselves. We never searched beneath the city.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Check the new combinations before we go underground. The toxic signature below the city is unlike the aircraft we just fought.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "YURI",
+        "text": "A narrow tunnel, contaminated air, and no room to turn back. Make every shot count.",
+        "location": "lab",
+        "art": "cin30_yuri",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "YURI",
+        "text": "Then we head there immediately. Fury flight, take the river approach.",
+        "bg": "c22_river_sewer",
+        "c22": "river_sewer",
+        "c22Flight": "river"
+      }
+    ]
+  },
+  "maverick": {
+    "1": [
+      {
+        "who": "MAVERICK",
+        "text": "The dam is down. The runway is open, but those machines were coordinating through the same signal.",
+        "c22": "peace_city",
+        "bg": "c22_peace_city"
+      },
+      {
+        "who": "DECKER",
+        "text": "We recovered part of the transmission. Watch the orbital relay.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "The last orbital frame shows a black hole opening beside the relay array.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "Something came through it. Look at that shape moving toward our satellite.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "First contact. Its tendrils reached the relay dish before the warning system could react.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The whole relay is being swallowed. The signal is no longer ours.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "It filled the uplink with code I cannot read and sent the infection down to Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "That signal reached aircraft, armor, ships, homes, and every connected system on Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The signal came down through our satellites. Fury survived because our rebuilt fighters still answer manual controls.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered system gives us our first elemental upgrade. Keep these combinations inside this campaign; every new sortie starts with what we actually recover.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "I want a straight beam option alongside my homing lasers.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "You can select Laser Beam in the loadout. Your homing array stays yours; choose the tool for the target.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The strongest relay on the surface is inside the volcanic belt. Cut its power before it spreads further.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Set a course for the volcano. We follow the signal to its source.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      }
+    ],
+    "2": [
+      {
+        "who": "MAVERICK",
+        "text": "The Furnace Tyrant is down. That should take some heat off the network.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "It has. The interference is weakening, but the squad channels are still blocked. But a second relay is answering from the frozen region.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fire Orb is ready. We are heading into ice units next: fire deals fifty percent more damage to them. Ice against ice deals fifty percent less.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Fit the fire option before we launch. No point feeding an enemy its own element.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Use the loadout to choose your weapon and its element. The same resistance rule applies to fire weapons against fire units.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "That relay is using the cold to protect its systems. Break the ice front, and we can trace its connection to the missile airbase.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Fire systems checked. Heading for the ice.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      }
+    ],
+    "3": [
+      {
+        "who": "MAVERICK",
+        "text": "Ice relay destroyed. Fury flight, does anyone read me?",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Fury HQ in sight. Bringing the squad home to regroup.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Good to see everyone in one piece. Gather around. Decker, tell us what we have.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Forge can combine the systems we recover with our weapons. Fire, ice, then electricity. We keep every circuit isolated from the infected network.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The ice core is recovered. We can now carry its properties into the weapon combinations you have unlocked.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Good. Keep the elemental options ready. The airbase will have more than one kind of armor.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "There is an electrical power cell in the abandoned desert airbase. We need it to restart our launch-pad generator.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      },
+      {
+        "who": "COLE",
+        "text": "So we secure the cell, get the pad running, and take this fight into space.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Exactly. I recovered video from the satellite as it was taken over, but the orbital recorder needs the launch generator online before I can decode the entire stream.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Set course for the lost airbase. Bring that power cell back intact.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      }
+    ],
+    "4": [
+      {
+        "who": "MAVERICK",
+        "text": "Airbase secured. We have the electrical power cell.",
+        "bg": "c22_power_cell",
+        "c22": "power_cell"
+      },
+      {
+        "who": "DECKER",
+        "text": "That is the one. Bring it into the generator cradle.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "DECKER",
+        "text": "Launch-pad power restored. The orbital recorder is coming online. Watch this.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "SATELLITE SECURITY RECORDING. A foreign machine entered the relay array.",
+        "bg": "c22_satellite_clean",
+        "c22": "satellite_clean"
+      },
+      {
+        "who": "DECKER",
+        "text": "Dracodia took over the satellite, then infected Earth's entire infrastructure through it. Our cities, defenses, aircraft. Everything linked to that network.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Then the signal in orbit is where we strike next.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered electrical system is stable. Your loadout now has the combinations earned from this airbase.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Check the Federation hull as well. Those guns need to survive the trip into space.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Federation space systems are ready. With the generator restored, I can launch your fighter beyond the atmosphere.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Power the pad. I am going up.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch"
+      }
+    ],
+    "5": [
+      {
+        "who": "MAVERICK",
+        "text": "Cronos is down. Recover that massive chaingun, disengage the space systems, and take us home.",
+        "bg": "c22_orbital_return",
+        "c22": "orbital_return",
+        "c22Flight": "land"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Fury HQ, the runway is in sight. Bringing the salvage down.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Look at this rotary assembly! That hammer-wielding monster left us exactly what we need.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "That chaingun we acquired in space is exactly what I need to upgrade our bullet systems.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "My homing lasers stay on their own circuit. I want a clean switch between both systems.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "I have fitted rotary mounts to your ship. Faster, heavier rounds, with the elemental upgrades from your machine gun carried across.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Good. Precision when I need it. Volume when I do not.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The chaingun is ready for the next ground sortie. Check it in the loadout before Stage Six.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Paired chaingun turrets and massive .50 caliber slugs. Reinforced mounts, insulated feeds. Your earned elemental cartridges still fit.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY COMMAND",
+        "text": "RED ALERT! Invasion force inbound from space. Heading straight for the city!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "stage3AtomicSiren"
+      },
+      {
+        "who": "DECKER",
+        "text": "The radar is going crazy. Those contacts are multiplying faster than I can track them!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "crackle"
+      },
+      {
+        "who": "COLE",
+        "text": "Two of you, stay behind and defend the base! DECKER and AXEL, hold HQ. Everyone else, scramble!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm"
+      },
+      {
+        "who": "COLE",
+        "text": "",
+        "bg": "c22_hq_sprint",
+        "c22": "hq_sprint",
+        "duration": 1.65,
+        "c22Action": true,
+        "c22Cue": "jetDash"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Hangar crew, clear my fighter. We are launching now!",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "board",
+        "duration": 5.8
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Fury flight, on my wing. We stop them before they reach the city.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch",
+        "duration": 4.8
+      }
+    ],
+    "6": [
+      {
+        "who": "MAVERICK",
+        "text": "Fury HQ, we are coming home. Get the squad together.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Rebel Fury is down. I wish they had listened.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "All five rebel signals are gone. There will be no Stage X pursuit of this squad.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The other threat has not stopped. I am reading a separate signature beneath the city.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "And HotWire and Phoenix?",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "A new signal just appeared. It is not in the skies. It is underground, by the river.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "COLE",
+        "text": "Show us exactly where.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Under the iron bridge. The signal leads into the sewers themselves. We never searched beneath the city.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Check the new combinations before we go underground. The toxic signature below the city is unlike the aircraft we just fought.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "A narrow tunnel, contaminated air, and no room to turn back. Make every shot count.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Then we head there immediately. Fury flight, take the river approach.",
+        "bg": "c22_river_sewer",
+        "c22": "river_sewer",
+        "c22Flight": "river"
+      }
+    ]
+  },
+  "falva": {
+    "1": [
+      {
+        "who": "FALVA",
+        "text": "The dam is down. The runway is open, but those machines were coordinating through the same signal.",
+        "c22": "peace_city",
+        "bg": "c22_peace_city"
+      },
+      {
+        "who": "DECKER",
+        "text": "We recovered part of the transmission. Watch the orbital relay.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "The last orbital frame shows a black hole opening beside the relay array.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "Something came through it. Look at that shape moving toward our satellite.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "First contact. Its tendrils reached the relay dish before the warning system could react.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The whole relay is being swallowed. The signal is no longer ours.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "It filled the uplink with code I cannot read and sent the infection down to Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "That signal reached aircraft, armor, ships, homes, and every connected system on Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The signal came down through our satellites. Fury survived because our rebuilt fighters still answer manual controls.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered system gives us our first elemental upgrade. Keep these combinations inside this campaign; every new sortie starts with what we actually recover.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "FALVA",
+        "text": "I can feel the new energy. Let us find a useful shape for it.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The strongest relay on the surface is inside the volcanic belt. Cut its power before it spreads further.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "FALVA",
+        "text": "Set a course for the volcano. We follow the signal to its source.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      }
+    ],
+    "2": [
+      {
+        "who": "FALVA",
+        "text": "The Furnace Tyrant is down. That should take some heat off the network.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "It has. The interference is weakening, but the squad channels are still blocked. But a second relay is answering from the frozen region.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fire Orb is ready. We are heading into ice units next: fire deals fifty percent more damage to them. Ice against ice deals fifty percent less.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "FALVA",
+        "text": "Fit the fire option before we launch. No point feeding an enemy its own element.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Use the loadout to choose your weapon and its element. The same resistance rule applies to fire weapons against fire units.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "That relay is using the cold to protect its systems. Break the ice front, and we can trace its connection to the missile airbase.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "FALVA",
+        "text": "Fire systems checked. Heading for the ice.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      }
+    ],
+    "3": [
+      {
+        "who": "FALVA",
+        "text": "Ice relay destroyed. Fury flight, does anyone read me?",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "FALVA",
+        "text": "Fury HQ in sight. Bringing the squad home to regroup.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Good to see everyone in one piece. Gather around. Decker, tell us what we have.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Forge can combine the systems we recover with our weapons. Fire, ice, then electricity. We keep every circuit isolated from the infected network.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The ice core is recovered. We can now carry its properties into the weapon combinations you have unlocked.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FALVA",
+        "text": "Good. Keep the elemental options ready. The airbase will have more than one kind of armor.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "There is an electrical power cell in the abandoned desert airbase. We need it to restart our launch-pad generator.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      },
+      {
+        "who": "COLE",
+        "text": "So we secure the cell, get the pad running, and take this fight into space.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Exactly. I recovered video from the satellite as it was taken over, but the orbital recorder needs the launch generator online before I can decode the entire stream.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "FALVA",
+        "text": "Set course for the lost airbase. Bring that power cell back intact.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      }
+    ],
+    "4": [
+      {
+        "who": "FALVA",
+        "text": "Airbase secured. We have the electrical power cell.",
+        "bg": "c22_power_cell",
+        "c22": "power_cell"
+      },
+      {
+        "who": "DECKER",
+        "text": "That is the one. Bring it into the generator cradle.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "DECKER",
+        "text": "Launch-pad power restored. The orbital recorder is coming online. Watch this.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "SATELLITE SECURITY RECORDING. A foreign machine entered the relay array.",
+        "bg": "c22_satellite_clean",
+        "c22": "satellite_clean"
+      },
+      {
+        "who": "DECKER",
+        "text": "Dracodia took over the satellite, then infected Earth's entire infrastructure through it. Our cities, defenses, aircraft. Everything linked to that network.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FALVA",
+        "text": "Then the signal in orbit is where we strike next.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered electrical system is stable. Your loadout now has the combinations earned from this airbase.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FALVA",
+        "text": "Check the Federation hull as well. Those guns need to survive the trip into space.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Federation space systems are ready. With the generator restored, I can launch your fighter beyond the atmosphere.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FALVA",
+        "text": "Power the pad. I am going up.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch"
+      }
+    ],
+    "5": [
+      {
+        "who": "FALVA",
+        "text": "Cronos is down. Recover that massive chaingun, disengage the space systems, and take us home.",
+        "bg": "c22_orbital_return",
+        "c22": "orbital_return",
+        "c22Flight": "land"
+      },
+      {
+        "who": "FALVA",
+        "text": "Fury HQ, the runway is in sight. Bringing the salvage down.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Look at this rotary assembly! That hammer-wielding monster left us exactly what we need.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "That chaingun we acquired in space is exactly what I need to upgrade our bullet systems.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FALVA",
+        "text": "Keep the firing line clean. I need room for my elemental systems to breathe.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "I have fitted rotary mounts to your ship. Faster, heavier rounds, with the elemental upgrades from your machine gun carried across.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FALVA",
+        "text": "Then let us see how their armor likes the new rhythm.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The chaingun is ready for the next ground sortie. Check it in the loadout before Stage Six.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Paired chaingun turrets and massive .50 caliber slugs. Reinforced mounts, insulated feeds. Your earned elemental cartridges still fit.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY COMMAND",
+        "text": "RED ALERT! Invasion force inbound from space. Heading straight for the city!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "stage3AtomicSiren"
+      },
+      {
+        "who": "DECKER",
+        "text": "The radar is going crazy. Those contacts are multiplying faster than I can track them!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "crackle"
+      },
+      {
+        "who": "COLE",
+        "text": "Two of you, stay behind and defend the base! DECKER and AXEL, hold HQ. Everyone else, scramble!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm"
+      },
+      {
+        "who": "COLE",
+        "text": "",
+        "bg": "c22_hq_sprint",
+        "c22": "hq_sprint",
+        "duration": 1.65,
+        "c22Action": true,
+        "c22Cue": "jetDash"
+      },
+      {
+        "who": "FALVA",
+        "text": "Hangar crew, clear my fighter. We are launching now!",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "board",
+        "duration": 5.8
+      },
+      {
+        "who": "FALVA",
+        "text": "Fury flight, on my wing. We stop them before they reach the city.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch",
+        "duration": 4.8
+      }
+    ],
+    "6": [
+      {
+        "who": "FALVA",
+        "text": "Fury HQ, we are coming home. Get the squad together.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "FALVA",
+        "text": "Rebel Fury is down. I wish they had listened.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "All five rebel signals are gone. There will be no Stage X pursuit of this squad.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The other threat has not stopped. I am reading a separate signature beneath the city.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "FALVA",
+        "text": "And HotWire and Phoenix?",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "A new signal just appeared. It is not in the skies. It is underground, by the river.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "COLE",
+        "text": "Show us exactly where.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Under the iron bridge. The signal leads into the sewers themselves. We never searched beneath the city.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Check the new combinations before we go underground. The toxic signature below the city is unlike the aircraft we just fought.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FALVA",
+        "text": "A narrow tunnel, contaminated air, and no room to turn back. Make every shot count.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FALVA",
+        "text": "Then we head there immediately. Fury flight, take the river approach.",
+        "bg": "c22_river_sewer",
+        "c22": "river_sewer",
+        "c22Flight": "river"
+      }
+    ]
+  },
+  "lizzie": {
+    "1": [
+      {
+        "who": "LIZZIE",
+        "text": "The dam is down. The runway is open, but those machines were coordinating through the same signal.",
+        "c22": "peace_city",
+        "bg": "c22_peace_city"
+      },
+      {
+        "who": "DECKER",
+        "text": "We recovered part of the transmission. Watch the orbital relay.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "The last orbital frame shows a black hole opening beside the relay array.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "Something came through it. Look at that shape moving toward our satellite.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "First contact. Its tendrils reached the relay dish before the warning system could react.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The whole relay is being swallowed. The signal is no longer ours.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "It filled the uplink with code I cannot read and sent the infection down to Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "That signal reached aircraft, armor, ships, homes, and every connected system on Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The signal came down through our satellites. Fury survived because our rebuilt fighters still answer manual controls.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered system gives us our first elemental upgrade. Keep these combinations inside this campaign; every new sortie starts with what we actually recover.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "New element, same rule: know where every shot is going.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The strongest relay on the surface is inside the volcanic belt. Cut its power before it spreads further.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Set a course for the volcano. We follow the signal to its source.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      }
+    ],
+    "2": [
+      {
+        "who": "LIZZIE",
+        "text": "The Furnace Tyrant is down. That should take some heat off the network.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "It has. The interference is weakening, but the squad channels are still blocked. But a second relay is answering from the frozen region.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fire Orb is ready. We are heading into ice units next: fire deals fifty percent more damage to them. Ice against ice deals fifty percent less.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Fit the fire option before we launch. No point feeding an enemy its own element.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Use the loadout to choose your weapon and its element. The same resistance rule applies to fire weapons against fire units.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "That relay is using the cold to protect its systems. Break the ice front, and we can trace its connection to the missile airbase.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Fire systems checked. Heading for the ice.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      }
+    ],
+    "3": [
+      {
+        "who": "LIZZIE",
+        "text": "Ice relay destroyed. Fury flight, does anyone read me?",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Fury HQ in sight. Bringing the squad home to regroup.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Good to see everyone in one piece. Gather around. Decker, tell us what we have.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Forge can combine the systems we recover with our weapons. Fire, ice, then electricity. We keep every circuit isolated from the infected network.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The ice core is recovered. We can now carry its properties into the weapon combinations you have unlocked.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Good. Keep the elemental options ready. The airbase will have more than one kind of armor.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "There is an electrical power cell in the abandoned desert airbase. We need it to restart our launch-pad generator.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      },
+      {
+        "who": "COLE",
+        "text": "So we secure the cell, get the pad running, and take this fight into space.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Exactly. I recovered video from the satellite as it was taken over, but the orbital recorder needs the launch generator online before I can decode the entire stream.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Set course for the lost airbase. Bring that power cell back intact.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      }
+    ],
+    "4": [
+      {
+        "who": "LIZZIE",
+        "text": "Airbase secured. We have the electrical power cell.",
+        "bg": "c22_power_cell",
+        "c22": "power_cell"
+      },
+      {
+        "who": "DECKER",
+        "text": "That is the one. Bring it into the generator cradle.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "DECKER",
+        "text": "Launch-pad power restored. The orbital recorder is coming online. Watch this.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "SATELLITE SECURITY RECORDING. A foreign machine entered the relay array.",
+        "bg": "c22_satellite_clean",
+        "c22": "satellite_clean"
+      },
+      {
+        "who": "DECKER",
+        "text": "Dracodia took over the satellite, then infected Earth's entire infrastructure through it. Our cities, defenses, aircraft. Everything linked to that network.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Then the signal in orbit is where we strike next.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered electrical system is stable. Your loadout now has the combinations earned from this airbase.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Check the Federation hull as well. Those guns need to survive the trip into space.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Federation space systems are ready. With the generator restored, I can launch your fighter beyond the atmosphere.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Power the pad. I am going up.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch"
+      }
+    ],
+    "5": [
+      {
+        "who": "LIZZIE",
+        "text": "Cronos is down. Recover that massive chaingun, disengage the space systems, and take us home.",
+        "bg": "c22_orbital_return",
+        "c22": "orbital_return",
+        "c22Flight": "land"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Fury HQ, the runway is in sight. Bringing the salvage down.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Look at this rotary assembly! That hammer-wielding monster left us exactly what we need.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "That chaingun we acquired in space is exactly what I need to upgrade our bullet systems.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Balance both mounts. I am not fighting the recoil while I line up my next shot.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "I have fitted rotary mounts to your ship. Faster, heavier rounds, with the elemental upgrades from your machine gun carried across.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Now that is a proper upgrade. Leave me something to aim at.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The chaingun is ready for the next ground sortie. Check it in the loadout before Stage Six.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Paired chaingun turrets and massive .50 caliber slugs. Reinforced mounts, insulated feeds. Your earned elemental cartridges still fit.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY COMMAND",
+        "text": "RED ALERT! Invasion force inbound from space. Heading straight for the city!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "stage3AtomicSiren"
+      },
+      {
+        "who": "DECKER",
+        "text": "The radar is going crazy. Those contacts are multiplying faster than I can track them!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "crackle"
+      },
+      {
+        "who": "COLE",
+        "text": "Two of you, stay behind and defend the base! DECKER and AXEL, hold HQ. Everyone else, scramble!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm"
+      },
+      {
+        "who": "COLE",
+        "text": "",
+        "bg": "c22_hq_sprint",
+        "c22": "hq_sprint",
+        "duration": 1.65,
+        "c22Action": true,
+        "c22Cue": "jetDash"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Hangar crew, clear my fighter. We are launching now!",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "board",
+        "duration": 5.8
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Fury flight, on my wing. We stop them before they reach the city.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch",
+        "duration": 4.8
+      }
+    ],
+    "6": [
+      {
+        "who": "LIZZIE",
+        "text": "Fury HQ, we are coming home. Get the squad together.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Rebel Fury is down. I wish they had listened.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "All five rebel signals are gone. There will be no Stage X pursuit of this squad.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The other threat has not stopped. I am reading a separate signature beneath the city.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "And HotWire and Phoenix?",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "A new signal just appeared. It is not in the skies. It is underground, by the river.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "COLE",
+        "text": "Show us exactly where.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Under the iron bridge. The signal leads into the sewers themselves. We never searched beneath the city.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Check the new combinations before we go underground. The toxic signature below the city is unlike the aircraft we just fought.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "A narrow tunnel, contaminated air, and no room to turn back. Make every shot count.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Then we head there immediately. Fury flight, take the river approach.",
+        "bg": "c22_river_sewer",
+        "c22": "river_sewer",
+        "c22Flight": "river"
+      }
+    ]
+  },
+  "decker": {
+    "1": [
+      {
+        "who": "DECKER",
+        "text": "The dam is down. The runway is open, but those machines were coordinating through the same signal.",
+        "c22": "peace_city",
+        "bg": "c22_peace_city"
+      },
+      {
+        "who": "COLE",
+        "text": "We recovered part of the transmission. Watch the orbital relay.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "The last orbital frame shows a black hole opening beside the relay array.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "COLE",
+        "text": "Something came through it. Look at that shape moving toward our satellite.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "First contact. Its tendrils reached the relay dish before the warning system could react.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "The whole relay is being swallowed. The signal is no longer ours.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "It filled the uplink with code I cannot read and sent the infection down to Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "That signal reached aircraft, armor, ships, homes, and every connected system on Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "The signal came down through our satellites. Fury survived because our rebuilt fighters still answer manual controls.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "COLE",
+        "text": "The recovered system gives us our first elemental upgrade. Keep these combinations inside this campaign; every new sortie starts with what we actually recover.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "I will match the recovered element to the guns we actually have.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "The strongest relay on the surface is inside the volcanic belt. Cut its power before it spreads further.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Set a course for the volcano. We follow the signal to its source.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      }
+    ],
+    "2": [
+      {
+        "who": "DECKER",
+        "text": "The Furnace Tyrant is down. That should take some heat off the network.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "COLE",
+        "text": "It has. The interference is weakening, but the squad channels are still blocked. But a second relay is answering from the frozen region.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "COLE",
+        "text": "Fire Orb is ready. We are heading into ice units next: fire deals fifty percent more damage to them. Ice against ice deals fifty percent less.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fit the fire option before we launch. No point feeding an enemy its own element.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "COLE",
+        "text": "Use the loadout to choose your weapon and its element. The same resistance rule applies to fire weapons against fire units.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "COLE",
+        "text": "That relay is using the cold to protect its systems. Break the ice front, and we can trace its connection to the missile airbase.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fire systems checked. Heading for the ice.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      }
+    ],
+    "3": [
+      {
+        "who": "DECKER",
+        "text": "Ice relay destroyed. Fury flight, does anyone read me?",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fury HQ in sight. Bringing the squad home to regroup.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Good to see everyone in one piece. Gather around. Decker, tell us what we have.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Forge can combine the systems we recover with our weapons. Fire, ice, then electricity. We keep every circuit isolated from the infected network.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "COLE",
+        "text": "The ice core is recovered. We can now carry its properties into the weapon combinations you have unlocked.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Good. Keep the elemental options ready. The airbase will have more than one kind of armor.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "There is an electrical power cell in the abandoned desert airbase. We need it to restart our launch-pad generator.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      },
+      {
+        "who": "COLE",
+        "text": "So we secure the cell, get the pad running, and take this fight into space.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Exactly. I recovered video from the satellite as it was taken over, but the orbital recorder needs the launch generator online before I can decode the entire stream.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Set course for the lost airbase. Bring that power cell back intact.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      }
+    ],
+    "4": [
+      {
+        "who": "DECKER",
+        "text": "Airbase secured. We have the electrical power cell.",
+        "bg": "c22_power_cell",
+        "c22": "power_cell"
+      },
+      {
+        "who": "DECKER",
+        "text": "That is the one. Bring it into the generator cradle.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "DECKER",
+        "text": "Launch-pad power restored. The orbital recorder is coming online. Watch this.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "SATELLITE SECURITY RECORDING. A foreign machine entered the relay array.",
+        "bg": "c22_satellite_clean",
+        "c22": "satellite_clean"
+      },
+      {
+        "who": "DECKER",
+        "text": "Dracodia took over the satellite, then infected Earth's entire infrastructure through it. Our cities, defenses, aircraft. Everything linked to that network.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "Then the signal in orbit is where we strike next.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "COLE",
+        "text": "The recovered electrical system is stable. Your loadout now has the combinations earned from this airbase.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Check the Federation hull as well. Those guns need to survive the trip into space.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Federation space systems are ready. With the generator restored, I can launch your fighter beyond the atmosphere.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "DECKER",
+        "text": "Power the pad. I am going up.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch"
+      }
+    ],
+    "5": [
+      {
+        "who": "DECKER",
+        "text": "Cronos is down. Recover that massive chaingun, disengage the space systems, and take us home.",
+        "bg": "c22_orbital_return",
+        "c22": "orbital_return",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fury HQ, the runway is in sight. Bringing the salvage down.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Look at this rotary assembly! That hammer-wielding monster left us exactly what we need.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "Decker, tell me the parts we recovered were worth dragging through reentry.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "That chaingun we acquired in space is exactly what I need to upgrade our bullet systems.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "Then build it. The squad will need more firepower before we reach home.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Faster feed, heavier rounds, and the elemental cartridges still fit. That is our new chaingun.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "COLE",
+        "text": "The chaingun is ready for the next ground sortie. Check it in the loadout before Stage Six.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Paired chaingun turrets and massive .50 caliber slugs. Reinforced mounts, insulated feeds. Your earned elemental cartridges still fit.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY COMMAND",
+        "text": "RED ALERT! Invasion force inbound from space. Heading straight for the city!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "stage3AtomicSiren"
+      },
+      {
+        "who": "DECKER",
+        "text": "The radar is going crazy. Those contacts are multiplying faster than I can track them!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "crackle"
+      },
+      {
+        "who": "COLE",
+        "text": "Two of you, stay behind and defend the base! AXEL and JUGGERNAUT, hold HQ. Everyone else, scramble!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm"
+      },
+      {
+        "who": "COLE",
+        "text": "",
+        "bg": "c22_hq_sprint",
+        "c22": "hq_sprint",
+        "duration": 1.65,
+        "c22Action": true,
+        "c22Cue": "jetDash"
+      },
+      {
+        "who": "DECKER",
+        "text": "Hangar crew, clear my fighter. We are launching now!",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "board",
+        "duration": 5.8
+      },
+      {
+        "who": "DECKER",
+        "text": "Fury flight, on my wing. We stop them before they reach the city.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch",
+        "duration": 4.8
+      }
+    ],
+    "6": [
+      {
+        "who": "DECKER",
+        "text": "Fury HQ, we are coming home. Get the squad together.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Rebel Fury is down. I wish they had listened.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "COLE",
+        "text": "All five rebel signals are gone. There will be no Stage X pursuit of this squad.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "COLE",
+        "text": "The other threat has not stopped. I am reading a separate signature beneath the city.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "And HotWire and Phoenix?",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "COLE",
+        "text": "Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "A new signal just appeared. It is not in the skies. It is underground, by the river.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "COLE",
+        "text": "Show us exactly where.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Under the iron bridge. The signal leads into the sewers themselves. We never searched beneath the city.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "COLE",
+        "text": "Check the new combinations before we go underground. The toxic signature below the city is unlike the aircraft we just fought.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "A narrow tunnel, contaminated air, and no room to turn back. Make every shot count.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Then we head there immediately. Fury flight, take the river approach.",
+        "bg": "c22_river_sewer",
+        "c22": "river_sewer",
+        "c22Flight": "river"
+      }
+    ]
+  },
+  "juggernaut": {
+    "1": [
+      {
+        "who": "JUGGERNAUT",
+        "text": "The dam is down. The runway is open, but those machines were coordinating through the same signal.",
+        "c22": "peace_city",
+        "bg": "c22_peace_city"
+      },
+      {
+        "who": "DECKER",
+        "text": "We recovered part of the transmission. Watch the orbital relay.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "The last orbital frame shows a black hole opening beside the relay array.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "Something came through it. Look at that shape moving toward our satellite.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "First contact. Its tendrils reached the relay dish before the warning system could react.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The whole relay is being swallowed. The signal is no longer ours.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "It filled the uplink with code I cannot read and sent the infection down to Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "That signal reached aircraft, armor, ships, homes, and every connected system on Earth.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The signal came down through our satellites. Fury survived because our rebuilt fighters still answer manual controls.",
+        "c22": "satellite_infected",
+        "bg": "c22_satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered system gives us our first elemental upgrade. Keep these combinations inside this campaign; every new sortie starts with what we actually recover.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "If it hits harder, mount it. I will handle the rest.",
+        "location": "lab",
+        "art": null,
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The strongest relay on the surface is inside the volcanic belt. Cut its power before it spreads further.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Set a course for the volcano. We follow the signal to its source.",
+        "c22": "forge_upgrade",
+        "bg": "c22_forge_upgrade"
+      }
+    ],
+    "2": [
+      {
+        "who": "JUGGERNAUT",
+        "text": "The Furnace Tyrant is down. That should take some heat off the network.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "It has. The interference is weakening, but the squad channels are still blocked. But a second relay is answering from the frozen region.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Fire Orb is ready. We are heading into ice units next: fire deals fifty percent more damage to them. Ice against ice deals fifty percent less.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Fit the fire option before we launch. No point feeding an enemy its own element.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "Use the loadout to choose your weapon and its element. The same resistance rule applies to fire weapons against fire units.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "DECKER",
+        "text": "That relay is using the cold to protect its systems. Break the ice front, and we can trace its connection to the missile airbase.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Fire systems checked. Heading for the ice.",
+        "bg": "c22_lava_relay",
+        "c22": "lava_relay"
+      }
+    ],
+    "3": [
+      {
+        "who": "JUGGERNAUT",
+        "text": "Ice relay destroyed. Fury flight, does anyone read me?",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+        "bg": "c22_ice_relay",
+        "c22": "ice_relay"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Fury HQ in sight. Bringing the squad home to regroup.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "COLE",
+        "text": "Good to see everyone in one piece. Gather around. Decker, tell us what we have.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Forge can combine the systems we recover with our weapons. Fire, ice, then electricity. We keep every circuit isolated from the infected network.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The ice core is recovered. We can now carry its properties into the weapon combinations you have unlocked.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Good. Keep the elemental options ready. The airbase will have more than one kind of armor.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "There is an electrical power cell in the abandoned desert airbase. We need it to restart our launch-pad generator.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      },
+      {
+        "who": "COLE",
+        "text": "So we secure the cell, get the pad running, and take this fight into space.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Exactly. I recovered video from the satellite as it was taken over, but the orbital recorder needs the launch generator online before I can decode the entire stream.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Set course for the lost airbase. Bring that power cell back intact.",
+        "bg": "c22_desert_airbase",
+        "c22": "desert_airbase"
+      }
+    ],
+    "4": [
+      {
+        "who": "JUGGERNAUT",
+        "text": "Airbase secured. We have the electrical power cell.",
+        "bg": "c22_power_cell",
+        "c22": "power_cell"
+      },
+      {
+        "who": "DECKER",
+        "text": "That is the one. Bring it into the generator cradle.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "DECKER",
+        "text": "Launch-pad power restored. The orbital recorder is coming online. Watch this.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "FURY RECORDING",
+        "text": "SATELLITE SECURITY RECORDING. A foreign machine entered the relay array.",
+        "bg": "c22_satellite_clean",
+        "c22": "satellite_clean"
+      },
+      {
+        "who": "DECKER",
+        "text": "Dracodia took over the satellite, then infected Earth's entire infrastructure through it. Our cities, defenses, aircraft. Everything linked to that network.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Then the signal in orbit is where we strike next.",
+        "bg": "c22_satellite_infected",
+        "c22": "satellite_infected"
+      },
+      {
+        "who": "DECKER",
+        "text": "The recovered electrical system is stable. Your loadout now has the combinations earned from this airbase.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Check the Federation hull as well. Those guns need to survive the trip into space.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The Federation space systems are ready. With the generator restored, I can launch your fighter beyond the atmosphere.",
+        "bg": "c22_launch_generator",
+        "c22": "launch_generator"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Power the pad. I am going up.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch"
+      }
+    ],
+    "5": [
+      {
+        "who": "JUGGERNAUT",
+        "text": "Cronos is down. Recover that massive chaingun, disengage the space systems, and take us home.",
+        "bg": "c22_orbital_return",
+        "c22": "orbital_return",
+        "c22Flight": "land"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Fury HQ, the runway is in sight. Bringing the salvage down.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "DECKER",
+        "text": "Look at this rotary assembly! That hammer-wielding monster left us exactly what we need.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "That chaingun we acquired in space is exactly what I need to upgrade our bullet systems.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Reinforce the mounts. If it shakes loose the first time I charge, I am bringing it back.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "I have fitted rotary mounts to your ship. Faster, heavier rounds, with the elemental upgrades from your machine gun carried across.",
+        "location": "lab",
+        "art": "cin30_decker",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "A little more kick. Now you are speaking my language.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "The chaingun is ready for the next ground sortie. Check it in the loadout before Stage Six.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "DECKER",
+        "text": "Paired chaingun turrets and massive .50 caliber slugs. Reinforced mounts, insulated feeds. Your earned elemental cartridges still fit.",
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "FURY COMMAND",
+        "text": "RED ALERT! Invasion force inbound from space. Heading straight for the city!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "stage3AtomicSiren"
+      },
+      {
+        "who": "DECKER",
+        "text": "The radar is going crazy. Those contacts are multiplying faster than I can track them!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm",
+        "c22Cue": "crackle"
+      },
+      {
+        "who": "COLE",
+        "text": "Two of you, stay behind and defend the base! DECKER and AXEL, hold HQ. Everyone else, scramble!",
+        "bg": "c22_hq_alarm",
+        "c22": "hq_alarm"
+      },
+      {
+        "who": "COLE",
+        "text": "",
+        "bg": "c22_hq_sprint",
+        "c22": "hq_sprint",
+        "duration": 1.65,
+        "c22Action": true,
+        "c22Cue": "jetDash"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Hangar crew, clear my fighter. We are launching now!",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "board",
+        "duration": 5.8
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Fury flight, on my wing. We stop them before they reach the city.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "launch",
+        "duration": 4.8
+      }
+    ],
+    "6": [
+      {
+        "who": "JUGGERNAUT",
+        "text": "Fury HQ, we are coming home. Get the squad together.",
+        "bg": "c22_hq_hangar",
+        "c22": "hq_hangar",
+        "c22Flight": "land"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Rebel Fury is down. I wish they had listened.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "All five rebel signals are gone. There will be no Stage X pursuit of this squad.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "The other threat has not stopped. I am reading a separate signature beneath the city.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "And HotWire and Phoenix?",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.",
+        "bg": "c22_hq_regroup",
+        "c22": "hq_regroup"
+      },
+      {
+        "who": "DECKER",
+        "text": "A new signal just appeared. It is not in the skies. It is underground, by the river.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "COLE",
+        "text": "Show us exactly where.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Under the iron bridge. The signal leads into the sewers themselves. We never searched beneath the city.",
+        "bg": "c22_hq_river",
+        "c22": "hq_river"
+      },
+      {
+        "who": "DECKER",
+        "text": "Check the new combinations before we go underground. The toxic signature below the city is unlike the aircraft we just fought.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "A narrow tunnel, contaminated air, and no room to turn back. Make every shot count.",
+        "location": "lab",
+        "art": null,
+        "bg": "c22_forge_upgrade",
+        "c22": "forge_upgrade"
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Then we head there immediately. Fury flight, take the river approach.",
+        "bg": "c22_river_sewer",
+        "c22": "river_sewer",
+        "c22Flight": "river"
+      }
+    ]
+  }
+}

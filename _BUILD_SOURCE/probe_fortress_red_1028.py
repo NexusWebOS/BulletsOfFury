@@ -1,0 +1,38 @@
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+import http.server,json,sys
+R=Path(__file__).resolve().parents[1];W=R/'_shots/fortress_red_1028';W.mkdir(parents=True,exist_ok=True);sys.path.insert(0,str(R/'_BUILD_SOURCE'));from shoot import serve,TRAP_RAF,STEP
+http.server.ThreadingHTTPServer.request_queue_size=256
+checks=[];errors=[];http=[]
+def ck(n,v,d=None):
+ checks.append(dict(name=n,passed=bool(v),data=d));(W/'checks.json').write_text(json.dumps(dict(checks=checks,errors=errors,http=http),indent=2));assert v,(n,d)
+port,stop=serve(str(R))
+try:
+ with sync_playwright()as pw:
+  br=pw.chromium.launch(channel='msedge',headless=True,args=['--autoplay-policy=no-user-gesture-required']);p=br.new_page(viewport={'width':1280,'height':800});p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text)if m.type=='error'or'draw error'in m.text else None);p.on('response',lambda r:http.append(r.url)if r.status>=400 else None);p.goto(f'http://127.0.0.1:{port}',wait_until='load',timeout=180000);p.wait_for_function('window.__bofFrames>5');p.mouse.click(3,3);p.evaluate('()=>{run.stage=6;stageLoadBegin(6)}');p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(6)}',timeout=180000);p.evaluate(TRAP_RAF)
+  def step(n):
+   e=p.evaluate(STEP,n)
+   if e:raise RuntimeError(e)
+  def spawn(diff='furious'):
+   p.evaluate("d=>{diffKey=d;debugUnlocked=true;debugStartFight({stage:6,role:'mini',kind:'siegefortress17'},{pilot:'cole',record:false});DBGT.god=true;BOFCinematicDirector.cancel();setState(GS.PLAY);spawnSubBoss('siegefortress17');debugFight.spawned=true;warnT=0;}",diff);step(180)
+  for diff,total in [('easy',1000),('normal',1350),('hard',1650),('furious',1950)]:
+   spawn(diff);q=p.evaluate('''()=>{const b=subBoss,C=b._cargo13;return{n:s6f28Parts(b).length,hp:b.hp,max:b.maxhp,sum:C.core+s6f28Parts(b).reduce((n,g)=>n+g.hp,0),targets:retinaBossTargets(b).length,open:sc13Open(b),solo:!s6Wing.ships.length&&!ally,body:sc13At(b,sc13Core(b).x,sc13Core(b).y)};}''')
+   ck(diff+' eight modules preserve the complete native HP budget',q['n']==8 and q['hp']==q['max']==q['sum']==total,q);ck(diff+' all targets available; body absent; solo',q['targets']==8 and not q['open']and q['body']is None and q['solo'],q)
+   q=p.evaluate('''()=>{const b=subBoss,C=b._cargo13;return C.fans.map(f=>{const m=s6f28FanMount(b,f),direct=sc13At(b,m.x,m.y),beam=sc13ContinuousAt(b,{kind:'beam',x:m.x,w:10,top:-200,bot:VH});return{id:f.id,direct,beam};});}''');ck(diff+' ordinary fire and beams reach both fans through the hull',all(f['id']==f['direct']==f['beam']for f in q),q)
+   step(950);ck(diff+' battery sequences fire lasers with zero Fortress missiles',p.evaluate('SC13.stats.beams>0&&SC13.stats.missiles===0&&!subBoss._cargo13.rockets&&!eBullets.some(q=>q._sc13Owner===subBoss&&!q.dead&&/missile|rocket/.test(q.kind))'))
+  spawn();q=p.evaluate('''()=>{const b=subBoss,C=b._cargo13,f=C.fans[0],m=s6f28FanMount(b,f),before=f.hp;hitSubBoss(7,m.x,m.y);return{delta:before-f.hp,flash:f.fl,mark:f.flash,hp:b.hp,sum:C.core+s6f28Parts(b).reduce((n,g)=>n+g.hp,0)};}''');ck('Fan accepts native projectile damage with a real part flash',q['delta']==7 and max(q['flash'],q['mark'])>0 and q['hp']==q['sum'],q)
+  q=p.evaluate('''()=>{const b=subBoss,f=b._cargo13.fans[0],m=s6f28FanMount(b,f),old=ctx.drawImage;let white=0;ctx.drawImage=function(im,...a){if(im===XART.get('s6f28_fan_hit'))white++;return old.call(this,im,...a)};try{s6f28FanDraw(b)}finally{ctx.drawImage=old}return white;}''');ck('Actual native renderer blits the authored fan hit silhouette',q==1,q);step(30);ck('Fan flash expires naturally',p.evaluate('subBoss._cargo13.fans[0].fl===0&&subBoss._cargo13.fans[0].flash===0'))
+  p.evaluate('''()=>{const C=subBoss._cargo13;for(const g of C.guns){C.directId=g.id;hitSubBoss(g.hp+1);}C.directId='core';window.coreBefore=C.core;hitSubBoss(99999);}''');step(90);ck('All six batteries destroyed cannot expose or hurt core while fans live',p.evaluate('!sc13Open(subBoss)&&!subBoss._s6r18.opening&&subBoss._cargo13.core===coreBefore&&retinaBossTargets(subBoss).length===2'))
+  p.screenshot(path=str(W/'fans-only-native.png'))
+  q=p.evaluate('''()=>{const b=subBoss,C=b._cargo13;C.directId='fan0';hitSubBoss(99999);const old=ctx.drawImage,calls=[];ctx.drawImage=function(im,...a){if(im===XART.get('s6f28_fan_smoke')||im===XART.get('s6f28_fan_fire'))calls.push({kind:im===XART.get('s6f28_fan_smoke')?'smoke':'fire',a});return old.call(this,im,...a)};try{s6f28FanDraw(b)}finally{ctx.drawImage=old}return{n:retinaBossTargets(b).length,open:sc13Open(b),calls,m:s6f28FanMount(b,C.fans[0])};}''');ck('Broken fan leaves target list; remaining fan still seals core',q['n']==1 and not q['open'],q);ck('Fire and smoke are drawn anchored to the destroyed fan',len(q['calls'])==2 and all(abs(c['a'][4]+c['a'][6]/2-q['m']['x'])<=1 for c in q['calls']),q)
+  p.evaluate("()=>{subBoss._cargo13.directId='fan1';hitSubBoss(99999);}");step(65);ck('Only all eight breaks open the animated aperture',p.evaluate('sc13Open(subBoss)&&subBoss._s6r18.exposed&&retinaBossTargets(subBoss).length===1'))
+  step(320);q=p.evaluate('''()=>({emissions:S6F28.events.filter(e=>e.event==='core-projectile'),rounds:eBullets.filter(q=>q._s6f28Owner===subBoss&&!q.dead).map(q=>({orb:q._s6f28Orb,intercept:enemyOrdnanceCanIntercept(q),element:enemyOrdnanceElement(q)})),missiles:SC13.stats.missiles,bh:!!subBoss._bh25,rocket:!!subBoss._cargo13.rockets})''');ck('Exposed core fires red bolt spreads and orb pincers from aperture',any(e['orb']for e in q['emissions'])and any(not e['orb']for e in q['emissions']),q);ck('Core energy is not shootable and no legacy missiles/barrage overlaps',q['rounds']and all(not r['intercept']and r['element']=='lightning'for r in q['rounds'])and q['missiles']==0 and not q['bh']and not q['rocket'],q)
+  q=p.evaluate('''()=>{const old=ctx.drawImage;let n=0;ctx.drawImage=function(im,...a){if(im===XART.get('s6f28_red_orbs')||im===XART.get('s6f28_red_bolts'))n++;return old.call(this,im,...a)};try{for(const q of eBullets.filter(q=>q._s6f28Owner===subBoss&&!q.dead))drawStage4WarfareProjectile(q)}finally{ctx.drawImage=old}return n;}''');ck('Native projectile renderer uses the authored red bolt/orb banks',q>0,q)
+  p.screenshot(path=str(W/'red-core-native.png'))
+  q=p.evaluate('''()=>{const b=subBoss,C=b._cargo13;window.owned=b;C.directId='core';hitSubBoss(C.core+1);return{dead:b.dead,hp:b.hp,live:eBullets.filter(q=>q._s6f28Owner===b&&!q.dead).length,queue:C.queue.length,beams:C.lasers.length,reactor:!!b.er23Reactor};}''');ck('Native core defeat cancels projectiles, warnings and batteries',q['dead']and q['hp']==q['live']==q['queue']==q['beams']==0 and not q['reactor'],q);step(200);ck('Native miniboss lifecycle completes normally',p.evaluate('!subBoss&&subBossDone&&!subBossActive'))
+  # Inverse destruction order: fans first must not unlock surviving batteries.
+  spawn();p.evaluate("()=>{const C=subBoss._cargo13;for(const f of C.fans){C.directId=f.id;hitSubBoss(99999)}}");step(90);ck('Fans-first order leaves six real laser targets and sealed core',p.evaluate('!sc13Open(subBoss)&&retinaBossTargets(subBoss).length===6&&subBoss._cargo13.guns.every(g=>!g.dead)'))
+  p.evaluate("()=>{debugStartFight({stage:6,role:'boss',kind:'warhive'},{pilot:'cole',record:false});spawnBoss('warhive');debugFight.spawned=true;warnT=0;}");ck('Main Harrier is outside this miniboss owner and retains its allies',p.evaluate('!s6f28Own(boss)&&!boss._cargo13?.fans&&s6Wing.ships.length>0'))
+  ck('No game, draw or HTTP errors',not errors and not http,dict(errors=errors,http=http));br.close()
+finally:stop()
+print(len(checks),'Fortress native checks passed')

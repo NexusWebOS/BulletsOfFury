@@ -1,0 +1,86 @@
+{
+  "inscribe": {
+    "key": "hr92_inscribe",
+    "path": "assets/game/levels/stage_08/miniboss/herald_ritual_1031/inscribe.png",
+    "cw": 576,
+    "ch": 576,
+    "cols": 8,
+    "frames": 84,
+    "pivot": [
+      288,
+      288
+    ]
+  },
+  "spin": {
+    "key": "hr92_spin",
+    "path": "assets/game/levels/stage_08/miniboss/herald_ritual_1031/spin.png",
+    "cw": 576,
+    "ch": 576,
+    "cols": 8,
+    "frames": 90,
+    "pivot": [
+      288,
+      288
+    ]
+  },
+  "expand": {
+    "key": "hr92_expand",
+    "path": "assets/game/levels/stage_08/miniboss/herald_ritual_1031/expand.png",
+    "cw": 576,
+    "ch": 576,
+    "cols": 8,
+    "frames": 32,
+    "pivot": [
+      288,
+      288
+    ]
+  },
+  "shatter": {
+    "key": "hr92_shatter",
+    "path": "assets/game/levels/stage_08/miniboss/herald_ritual_1031/shatter.png",
+    "cw": 832,
+    "ch": 832,
+    "cols": 8,
+    "frames": 26,
+    "pivot": [
+      416,
+      416
+    ]
+  },
+  "lightning": {
+    "key": "hr92_lightning",
+    "path": "assets/game/levels/stage_08/miniboss/herald_ritual_1031/lightning.png",
+    "cw": 128,
+    "ch": 512,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      64,
+      256
+    ]
+  },
+  "warning": {
+    "key": "hr92_warning",
+    "path": "assets/game/levels/stage_08/miniboss/herald_ritual_1031/warning.png",
+    "cw": 96,
+    "ch": 96,
+    "cols": 4,
+    "frames": 4,
+    "pivot": [
+      48,
+      48
+    ]
+  },
+  "dark": {
+    "key": "hr92_dark",
+    "path": "assets/game/levels/stage_08/miniboss/herald_ritual_1031/dark.png",
+    "cw": 64,
+    "ch": 64,
+    "cols": 4,
+    "frames": 16,
+    "pivot": [
+      32,
+      32
+    ]
+  }
+}

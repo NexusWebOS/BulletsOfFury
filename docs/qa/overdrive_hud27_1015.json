@@ -1,0 +1,176 @@
+{
+  "build": "overdrive1015-hud27-r1",
+  "passed": 37,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "all generated HUD components and80font cells decode with even dimensions",
+      "passed": true
+    },
+    {
+      "name": "all80 generated glyphs are registered and renderable",
+      "passed": true
+    },
+    {
+      "name": "stage3 selected Yuri portrait and live lives/health",
+      "passed": true
+    },
+    {
+      "name": "old full-width top and bottom panels are no longer drawn",
+      "passed": true
+    },
+    {
+      "name": "three HUD regions are confined to the top corners and center",
+      "passed": true
+    },
+    {
+      "name": "score and high score follow the live score",
+      "passed": true
+    },
+    {
+      "name": "high score does not fall on a lower/new run",
+      "passed": true
+    },
+    {
+      "name": "generated health fills clip proportionally",
+      "passed": true
+    },
+    {
+      "name": "empty health draws no fill",
+      "passed": true
+    },
+    {
+      "name": "full health restores all generated fill segments",
+      "passed": true
+    },
+    {
+      "name": "stage3 finite gun ammunition is displayed",
+      "passed": true
+    },
+    {
+      "name": "stage3 shooting updates the live ammo counter",
+      "passed": true
+    },
+    {
+      "name": "stage3 jump input reports the current JUMPING action",
+      "passed": true
+    },
+    {
+      "name": "stage3 grenade animation reports GRENADE",
+      "passed": true
+    },
+    {
+      "name": "stage7 automatic cover reports IN COVER with unlimited rifle ammo",
+      "passed": true
+    },
+    {
+      "name": "prone input updates action status",
+      "passed": true
+    },
+    {
+      "name": "moving while prone reports CRAWLING",
+      "passed": true
+    },
+    {
+      "name": "actual roll into prone reports its current action",
+      "passed": true
+    },
+    {
+      "name": "retina input reports FREE AIM",
+      "passed": true
+    },
+    {
+      "name": "cover firing reports BLINDFIRE",
+      "passed": true
+    },
+    {
+      "name": "stage7 finite powerup ammo is displayed",
+      "passed": true
+    },
+    {
+      "name": "actual stage7 minigun fire consumes the shown ammo",
+      "passed": true
+    },
+    {
+      "name": "damage changes the generated health fill",
+      "passed": true
+    },
+    {
+      "name": "Gosfer boss bar remains separate from player HUD",
+      "passed": true
+    },
+    {
+      "name": "boss bar clears the player health gauge vertically",
+      "passed": true
+    },
+    {
+      "name": "portrait dialogue retains its generated frame",
+      "passed": true
+    },
+    {
+      "name": "room pixels are25percent darker in the native renderer",
+      "passed": true
+    },
+    {
+      "name": "equipment HUD is unaffected by room darkening",
+      "passed": true
+    },
+    {
+      "name": "custom generated Overdrive font draws every HUD string",
+      "passed": true
+    },
+    {
+      "name": "ammo and action labels are centered inside their inset fields",
+      "passed": true
+    },
+    {
+      "name": "correct generated HUD gun for rifle",
+      "passed": true
+    },
+    {
+      "name": "correct generated HUD gun for shotgun",
+      "passed": true
+    },
+    {
+      "name": "correct generated HUD gun for laser",
+      "passed": true
+    },
+    {
+      "name": "correct generated HUD gun for minigun",
+      "passed": true
+    },
+    {
+      "name": "generated health fill has no segment gaps",
+      "passed": true
+    },
+    {
+      "name": "high score persists across a page reload",
+      "passed": true
+    },
+    {
+      "name": "no browser, shader or asset errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "roomBrightnessRatios": [
+    0.7504373444479456,
+    0.750736741277132,
+    0.7501586817985629
+  ],
+  "scope": "Native Chromium screenshots, real keyboard actions and HUD state fixtures; no physical controller testing.",
+  "baseRegression": {
+    "exit": 0,
+    "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "retainedPriorPNGs": 820,
+  "generation": {
+    "service": "PixelLab",
+    "fontGenerations": 15,
+    "panelGenerations": 25,
+    "rifleGenerations": 1,
+    "total": 41,
+    "remainingAfter": 1722,
+    "originalArtworkUploads": false
+  }
+}

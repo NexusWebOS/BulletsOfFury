@@ -1,0 +1,652 @@
+{
+  "checks": [
+    {
+      "name": "Pickup icon cell matches the original exclusive chaingun box pixels",
+      "passed": true,
+      "data": {
+        "maxPremultipliedError": 0.0
+      }
+    },
+    {
+      "name": "normal all 16 actual activation poses draw the cleaned authored plates",
+      "passed": true,
+      "data": {
+        "keys": [
+          "ht23_activation_0",
+          "ht23_activation_1",
+          "ht23_activation_2",
+          "ht23_activation_3",
+          "ht23_activation_4",
+          "ht23_activation_5",
+          "ht23_activation_6",
+          "ht23_activation_7",
+          "ht23_activation_8",
+          "ht23_activation_9",
+          "ht23_activation_10",
+          "ht23_activation_11",
+          "ht23_activation_12",
+          "ht23_activation_13",
+          "ht23_activation_14",
+          "ht23_activation_15"
+        ],
+        "bad": []
+      }
+    },
+    {
+      "name": "hard all 16 actual activation poses draw the cleaned authored plates",
+      "passed": true,
+      "data": {
+        "keys": [
+          "ht23_activation_0",
+          "ht23_activation_1",
+          "ht23_activation_2",
+          "ht23_activation_3",
+          "ht23_activation_4",
+          "ht23_activation_5",
+          "ht23_activation_6",
+          "ht23_activation_7",
+          "ht23_activation_8",
+          "ht23_activation_9",
+          "ht23_activation_10",
+          "ht23_activation_11",
+          "ht23_activation_12",
+          "ht23_activation_13",
+          "ht23_activation_14",
+          "ht23_activation_15"
+        ],
+        "bad": []
+      }
+    },
+    {
+      "name": "furious all 16 actual activation poses draw the cleaned authored plates",
+      "passed": true,
+      "data": {
+        "keys": [
+          "ht23_activation_0",
+          "ht23_activation_1",
+          "ht23_activation_2",
+          "ht23_activation_3",
+          "ht23_activation_4",
+          "ht23_activation_5",
+          "ht23_activation_6",
+          "ht23_activation_7",
+          "ht23_activation_8",
+          "ht23_activation_9",
+          "ht23_activation_10",
+          "ht23_activation_11",
+          "ht23_activation_12",
+          "ht23_activation_13",
+          "ht23_activation_14",
+          "ht23_activation_15"
+        ],
+        "bad": []
+      }
+    },
+    {
+      "name": "Clean activation has actual white hit pixels and natural flash expiry",
+      "passed": true,
+      "data": {
+        "white": 16696,
+        "hit": true,
+        "expired": true,
+        "after": [
+          "bg_stage05_loop_0923",
+          "fv21_shield_wall_3",
+          "ht23_activation_11",
+          "",
+          "ngm_shock_5",
+          "nx_small_3",
+          "nx_small_4",
+          "nx_small_2",
+          "nx_small_5",
+          "nx_small_0",
+          "nx_small_1",
+          "eh7_stage_05",
+          "bmbar_fill_grey"
+        ]
+      }
+    },
+    {
+      "name": "Every exported activation preserves source outline pixels, dark seams and alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All 20 live/legacy armor sheets preserve dark outlines, seams and alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "armor opens the real Hammer portrait dialogue and freezes unsafe combat",
+      "passed": true,
+      "data": {
+        "live": true,
+        "text": "Chromium Armor, Activated!",
+        "portrait": "fb1002_hammer_portrait",
+        "keys": [
+          "bg_stage05_loop_0923",
+          "fv21_shield_wall_3",
+          "ht23_activation_0",
+          "",
+          "ngm_shock_5",
+          "nx_small_3",
+          "nx_small_4",
+          "nx_small_2",
+          "nx_small_5",
+          "nx_small_1",
+          "ngm_shock_0",
+          "nx_small_0",
+          "eh7_stage_05",
+          "ui20_dialogue-a",
+          "fb1002_hammer_portrait",
+          "pad_a",
+          "pad_start"
+        ],
+        "paused": true,
+        "legacy": false,
+        "layout": {
+          "who": "CHROME HAMMER",
+          "color": "#b98cff",
+          "portrait": "fb1002_hammer_portrait",
+          "x": 14.400000000000006,
+          "y": 327.68,
+          "w": 451.2,
+          "h": 148.48,
+          "shown": 26,
+          "full": 26,
+          "name": {
+            "x": 149.20454545454547,
+            "y": 346.9318181818182,
+            "w": 120.72727272727272,
+            "h": 19.30303030303031
+          },
+          "text": {
+            "x": 143.54545454545453,
+            "y": 384.171568627451,
+            "w": 290.5345454545454,
+            "h": 66.05392156862746
+          },
+          "portraitRect": {
+            "x": 45.92,
+            "y": 349.6333333333333,
+            "w": 61.29428571428571,
+            "h": 104.99166666666667
+          },
+          "portraitDraw": {
+            "x": 45.92,
+            "y": 371.4820238095238,
+            "w": 61.29428571428571,
+            "h": 61.29428571428571
+          },
+          "namePolygon": [
+            [
+              128.61904761904762,
+              344.1333333333333
+            ],
+            [
+              275.2136363636364,
+              344.3333333333333
+            ],
+            [
+              287.66363636363633,
+              356.5833333333333
+            ],
+            [
+              287.66363636363633,
+              360.29545454545456
+            ],
+            [
+              276.3454545454546,
+              369.57575757575756
+            ],
+            [
+              140.52727272727273,
+              369.57575757575756
+            ],
+            [
+              128.61904761904762,
+              357.55555555555554
+            ]
+          ],
+          "layout": {
+            "H": 14,
+            "lines": [
+              "Chromium Armor,",
+              "Activated!"
+            ],
+            "step": 18,
+            "height": 32
+          }
+        }
+      }
+    },
+    {
+      "name": "armor real Start skips once and native combat resumes without duplicate dialogue",
+      "passed": true,
+      "data": {
+        "active": false,
+        "resumed": true,
+        "queued": 0
+      }
+    },
+    {
+      "name": "shield opens the real Hammer portrait dialogue and freezes unsafe combat",
+      "passed": true,
+      "data": {
+        "live": true,
+        "text": "Chromium Shield, Activate!",
+        "portrait": "fb1002_hammer_portrait",
+        "keys": [
+          "bg_stage05_loop_0923",
+          "fv21_shield_wall_4",
+          "ht23_plated_idle",
+          "",
+          "ngm_shock_6",
+          "nx_small_4",
+          "nx_small_5",
+          "nx_small_3",
+          "nx_small_6",
+          "nx_small_1",
+          "nx_small_2",
+          "ngm_shock_1",
+          "nx_small_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey",
+          "ui20_dialogue-a",
+          "fb1002_hammer_portrait",
+          "pad_a",
+          "pad_start"
+        ],
+        "paused": true,
+        "legacy": false,
+        "layout": {
+          "who": "CHROME HAMMER",
+          "color": "#b98cff",
+          "portrait": "fb1002_hammer_portrait",
+          "x": 14.400000000000006,
+          "y": 327.68,
+          "w": 451.2,
+          "h": 148.48,
+          "shown": 26,
+          "full": 26,
+          "name": {
+            "x": 149.20454545454547,
+            "y": 346.9318181818182,
+            "w": 120.72727272727272,
+            "h": 19.30303030303031
+          },
+          "text": {
+            "x": 143.54545454545453,
+            "y": 384.171568627451,
+            "w": 290.5345454545454,
+            "h": 66.05392156862746
+          },
+          "portraitRect": {
+            "x": 45.92,
+            "y": 349.6333333333333,
+            "w": 61.29428571428571,
+            "h": 104.99166666666667
+          },
+          "portraitDraw": {
+            "x": 45.92,
+            "y": 371.4820238095238,
+            "w": 61.29428571428571,
+            "h": 61.29428571428571
+          },
+          "namePolygon": [
+            [
+              128.61904761904762,
+              344.1333333333333
+            ],
+            [
+              275.2136363636364,
+              344.3333333333333
+            ],
+            [
+              287.66363636363633,
+              356.5833333333333
+            ],
+            [
+              287.66363636363633,
+              360.29545454545456
+            ],
+            [
+              276.3454545454546,
+              369.57575757575756
+            ],
+            [
+              140.52727272727273,
+              369.57575757575756
+            ],
+            [
+              128.61904761904762,
+              357.55555555555554
+            ]
+          ],
+          "layout": {
+            "H": 14,
+            "lines": [
+              "Chromium Shield,",
+              "Activate!"
+            ],
+            "step": 18,
+            "height": 32
+          }
+        }
+      }
+    },
+    {
+      "name": "shield real Start skips once and native combat resumes without duplicate dialogue",
+      "passed": true,
+      "data": {
+        "active": false,
+        "resumed": true,
+        "queued": 0
+      }
+    },
+    {
+      "name": "recharge opens the real Hammer portrait dialogue and freezes unsafe combat",
+      "passed": true,
+      "data": {
+        "live": true,
+        "text": "Gotta Recharge!",
+        "portrait": "fb1002_hammer_portrait",
+        "keys": [
+          "bg_stage05_loop_0923",
+          "fv21_shield_wall_5",
+          "ha21_hf22_blue_jump_armor_0",
+          "",
+          "ngm_shock_7",
+          "nx_small_4",
+          "nx_small_5",
+          "nx_small_3",
+          "nx_small_7",
+          "nx_small_6",
+          "nx_small_1",
+          "nx_small_2",
+          "ngm_shock_1",
+          "nx_small_0",
+          "eh7_stage_05",
+          "bmbar_fill_grey",
+          "ui20_dialogue-a",
+          "fb1002_hammer_portrait",
+          "pad_a",
+          "pad_start"
+        ],
+        "paused": true,
+        "legacy": false,
+        "layout": {
+          "who": "CHROME HAMMER",
+          "color": "#b98cff",
+          "portrait": "fb1002_hammer_portrait",
+          "x": 14.400000000000006,
+          "y": 327.68,
+          "w": 451.2,
+          "h": 148.48,
+          "shown": 15,
+          "full": 15,
+          "name": {
+            "x": 149.20454545454547,
+            "y": 346.9318181818182,
+            "w": 120.72727272727272,
+            "h": 19.30303030303031
+          },
+          "text": {
+            "x": 143.54545454545453,
+            "y": 384.171568627451,
+            "w": 290.5345454545454,
+            "h": 66.05392156862746
+          },
+          "portraitRect": {
+            "x": 45.92,
+            "y": 349.6333333333333,
+            "w": 61.29428571428571,
+            "h": 104.99166666666667
+          },
+          "portraitDraw": {
+            "x": 45.92,
+            "y": 371.4820238095238,
+            "w": 61.29428571428571,
+            "h": 61.29428571428571
+          },
+          "namePolygon": [
+            [
+              128.61904761904762,
+              344.1333333333333
+            ],
+            [
+              275.2136363636364,
+              344.3333333333333
+            ],
+            [
+              287.66363636363633,
+              356.5833333333333
+            ],
+            [
+              287.66363636363633,
+              360.29545454545456
+            ],
+            [
+              276.3454545454546,
+              369.57575757575756
+            ],
+            [
+              140.52727272727273,
+              369.57575757575756
+            ],
+            [
+              128.61904761904762,
+              357.55555555555554
+            ]
+          ],
+          "layout": {
+            "H": 14,
+            "lines": [
+              "Gotta Recharge!"
+            ],
+            "step": 18,
+            "height": 14
+          }
+        }
+      }
+    },
+    {
+      "name": "recharge real Start skips once and native combat resumes without duplicate dialogue",
+      "passed": true,
+      "data": {
+        "active": false,
+        "resumed": true,
+        "queued": 0
+      }
+    },
+    {
+      "name": "taunt opens the real Hammer portrait dialogue and freezes unsafe combat",
+      "passed": true,
+      "data": {
+        "live": true,
+        "text": "Is that the best you've got, mortal?",
+        "portrait": "fb1002_hammer_portrait",
+        "keys": [
+          "bg_stage05_loop_0923",
+          "fv21_shield_wall_5",
+          "ha21_hf22_blue_jump_armor_0",
+          "",
+          "nx_small_5",
+          "nx_small_6",
+          "nx_small_4",
+          "nx_small_7",
+          "nx_small_2",
+          "nx_small_3",
+          "ngm_shock_2",
+          "nx_small_1",
+          "eh7_stage_05",
+          "bmbar_fill_grey",
+          "ui20_dialogue-a",
+          "fb1002_hammer_portrait",
+          "pad_a",
+          "pad_start"
+        ],
+        "paused": true,
+        "legacy": false,
+        "layout": {
+          "who": "CHROME HAMMER",
+          "color": "#b98cff",
+          "portrait": "fb1002_hammer_portrait",
+          "x": 14.400000000000006,
+          "y": 327.68,
+          "w": 451.2,
+          "h": 148.48,
+          "shown": 36,
+          "full": 36,
+          "name": {
+            "x": 149.20454545454547,
+            "y": 346.9318181818182,
+            "w": 120.72727272727272,
+            "h": 19.30303030303031
+          },
+          "text": {
+            "x": 143.54545454545453,
+            "y": 384.171568627451,
+            "w": 290.5345454545454,
+            "h": 66.05392156862746
+          },
+          "portraitRect": {
+            "x": 45.92,
+            "y": 349.6333333333333,
+            "w": 61.29428571428571,
+            "h": 104.99166666666667
+          },
+          "portraitDraw": {
+            "x": 45.92,
+            "y": 371.4820238095238,
+            "w": 61.29428571428571,
+            "h": 61.29428571428571
+          },
+          "namePolygon": [
+            [
+              128.61904761904762,
+              344.1333333333333
+            ],
+            [
+              275.2136363636364,
+              344.3333333333333
+            ],
+            [
+              287.66363636363633,
+              356.5833333333333
+            ],
+            [
+              287.66363636363633,
+              360.29545454545456
+            ],
+            [
+              276.3454545454546,
+              369.57575757575756
+            ],
+            [
+              140.52727272727273,
+              369.57575757575756
+            ],
+            [
+              128.61904761904762,
+              357.55555555555554
+            ]
+          ],
+          "layout": {
+            "H": 14,
+            "lines": [
+              "Is that the best you've",
+              "got, mortal?"
+            ],
+            "step": 18,
+            "height": 32
+          }
+        }
+      }
+    },
+    {
+      "name": "taunt real Start skips once and native combat resumes without duplicate dialogue",
+      "passed": true,
+      "data": {
+        "active": false,
+        "resumed": true,
+        "queued": 0
+      }
+    },
+    {
+      "name": "Armor line waits for an existing conversation instead of replacing it",
+      "passed": true,
+      "data": {
+        "held": true,
+        "next": "Chromium Armor, Activated!"
+      }
+    },
+    {
+      "name": "A pre-announcement hit flash expires while dialogue keeps combat paused",
+      "passed": true,
+      "data": {
+        "hit": true,
+        "expired": true,
+        "stillSpeaking": true,
+        "combatPaused": true
+      }
+    },
+    {
+      "name": "Defeated boss cannot leave a stuck or queued announcement",
+      "passed": true,
+      "data": {
+        "active": false,
+        "pending": 0
+      }
+    },
+    {
+      "name": "Raised-hammer, jump, throw and recovery use corrected dark-edged armor sheets",
+      "passed": true,
+      "data": [
+        {
+          "state": "storm_raise",
+          "key": "ha21_blue_hold_armor_13",
+          "corrected": true,
+          "drawn": true
+        },
+        {
+          "state": "warn",
+          "key": "ha21_hf22_blue_jump_armor_4",
+          "corrected": true,
+          "drawn": true
+        },
+        {
+          "state": "spin",
+          "key": "ha21_hf22_blue_throw_armor_1",
+          "corrected": true,
+          "drawn": true
+        },
+        {
+          "state": "throw",
+          "key": "ha21_hf22_blue_throw_armor_6",
+          "corrected": true,
+          "drawn": true
+        },
+        {
+          "state": "recover",
+          "key": "ha21_hf22_blue_jump_armor_10",
+          "corrected": true,
+          "drawn": true
+        }
+      ]
+    },
+    {
+      "name": "Corrected armor, portrait announcement and icon-box handoff recorded in native game",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page or asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "passed": 21,
+  "failed": 0,
+  "errors": []
+}

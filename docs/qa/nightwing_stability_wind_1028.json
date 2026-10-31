@@ -1,0 +1,581 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "Every six-step glow frame preserves the exact approved hull silhouette",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Charge brightens actual teal armor pixels without adding halo pixels",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All16 wind frames have more visible area and brighter highlights",
+        "passed": true,
+        "data": [
+          [
+            353,
+            962,
+            20,
+            401
+          ],
+          [
+            350,
+            952,
+            21,
+            417
+          ],
+          [
+            349,
+            943,
+            21,
+            401
+          ],
+          [
+            333,
+            908,
+            9,
+            391
+          ],
+          [
+            318,
+            867,
+            4,
+            347
+          ],
+          [
+            350,
+            937,
+            4,
+            396
+          ],
+          [
+            351,
+            951,
+            8,
+            372
+          ],
+          [
+            362,
+            996,
+            18,
+            419
+          ],
+          [
+            359,
+            977,
+            19,
+            412
+          ],
+          [
+            367,
+            990,
+            21,
+            402
+          ],
+          [
+            349,
+            942,
+            22,
+            430
+          ],
+          [
+            324,
+            883,
+            7,
+            360
+          ],
+          [
+            329,
+            888,
+            4,
+            364
+          ],
+          [
+            340,
+            910,
+            4,
+            359
+          ],
+          [
+            356,
+            983,
+            10,
+            451
+          ],
+          [
+            366,
+            1006,
+            18,
+            428
+          ]
+        ]
+      },
+      {
+        "name": "Both arrival curves select one stable64-heading family",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Arrival has bounded per-frame translation and no direction flipping",
+        "passed": true,
+        "data": {
+          "maxPixels": 8.419871308530606,
+          "maxDegrees": 5.625000000000032
+        }
+      },
+      {
+        "name": "Arrival finishes with one native target and intact HP",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Dash windup turns through sequential authored headings",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Flyover, banked drift and approach still complete",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Native charge draws large rear and front vortex and armor glow",
+        "passed": true,
+        "data": {
+          "calls": [
+            {
+              "bank": "wind_rear",
+              "a": [
+                1920,
+                0,
+                384,
+                384,
+                248,
+                -2,
+                384,
+                384
+              ]
+            },
+            {
+              "bank": "clean_charge",
+              "a": [
+                816,
+                544,
+                272,
+                272,
+                304,
+                54,
+                272,
+                272
+              ]
+            },
+            {
+              "bank": "wind_front",
+              "a": [
+                1920,
+                0,
+                384,
+                384,
+                248,
+                -2,
+                384,
+                384
+              ]
+            }
+          ],
+          "level": 5,
+          "dim": 12
+        }
+      },
+      {
+        "name": "Real accepted hit flash takes precedence over charge color",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Hit timer still expires during charge/fire",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Retina machine-gun warning also lights the actual armor",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Six wind rounds leave the real dual barrels with unchanged collision policy",
+        "passed": true,
+        "data": {
+          "n": 6,
+          "draws": [
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                2784,
+                96,
+                96,
+                346,
+                176,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                2880,
+                96,
+                96,
+                346,
+                176,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                2976,
+                96,
+                96,
+                346,
+                176,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                2976,
+                96,
+                96,
+                450,
+                179,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                0,
+                96,
+                96,
+                450,
+                179,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                96,
+                96,
+                96,
+                450,
+                179,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                2784,
+                96,
+                96,
+                346,
+                176,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                2880,
+                96,
+                96,
+                346,
+                176,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                2976,
+                96,
+                96,
+                346,
+                176,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                2976,
+                96,
+                96,
+                450,
+                179,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                0,
+                96,
+                96,
+                450,
+                179,
+                96,
+                96
+              ]
+            },
+            {
+              "bank": "wind_gust",
+              "a": [
+                0,
+                96,
+                96,
+                96,
+                450,
+                179,
+                96,
+                96
+              ]
+            }
+          ],
+          "safe": true,
+          "ports": [
+            {
+              "event": "turret-shot",
+              "time": 15.150000000000333,
+              "id": 5,
+              "kind": "wind",
+              "side": 0,
+              "x": 394.24586983568275,
+              "y": 224.09635584544947,
+              "angle": 7.461282552275758,
+              "frame": 120
+            },
+            {
+              "event": "turret-shot",
+              "time": 15.150000000000333,
+              "id": 5,
+              "kind": "wind",
+              "side": 1,
+              "x": 497.9999999999999,
+              "y": 226.53221080508828,
+              "angle": 1.5707963267948966,
+              "frame": 0
+            }
+          ]
+        }
+      },
+      {
+        "name": "Wind rounds use96px fixed directional frames",
+        "passed": true,
+        "data": [
+          {
+            "bank": "wind_gust",
+            "a": [
+              0,
+              2784,
+              96,
+              96,
+              346,
+              176,
+              96,
+              96
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Charge effects and armor glow stop with their attack",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No native game, draw or asset errors",
+        "passed": true,
+        "data": {
+          "errors": [],
+          "http": []
+        }
+      }
+    ],
+    "errors": [],
+    "http": []
+  },
+  "film": [
+    {
+      "name": "Complete live Carrier-to-Nightwing fight reaches native defeat",
+      "passed": true,
+      "data": "native defeat"
+    },
+    {
+      "name": "Film includes the new south/north/return/fight entrance",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Film includes the native flyover and rotating drift",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Armor charge cue is present in real fight footage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual wind charge, release and larger gusts appear",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real accepted damage flashes appear",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No game, HTTP, audio or bot errors",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Recorded sound is audible and unclipped",
+      "passed": true,
+      "data": {
+        "meanDb": -18.3,
+        "peakDb": -1.3
+      }
+    },
+    {
+      "name": "stage6-carrier-nightwing uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier-nightwing decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-carrier decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-shadow-turn uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-shadow-turn decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-flight uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-flight decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-wind uses the corrected native movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "stage6-nightwing-wind decodes moving video/audio",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No video preview errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "duration": 196.93,
+  "entry": 51.901,
+  "windCharge": 59.216,
+  "drift": 84.413,
+  "preview": "http://127.0.0.1:51046/?nightwing=stable-wind#clip=stage6-nightwing-flight",
+  "fullFight": "http://127.0.0.1:51046/?nightwing=stable-wind#clip=stage6-carrier-nightwing",
+  "windPreview": "http://127.0.0.1:51046/?nightwing=stable-wind#clip=stage6-nightwing-wind",
+  "sha256": "2d2296cfe794448a739db6c1f71f48331bbf839d81382f46a9a6f235ef464438",
+  "audio": {
+    "meanDb": -18.3,
+    "peakDb": -1.3
+  },
+  "fps": 54.4355147340222,
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailures": 5
+  },
+  "published": false,
+  "sourceHashes": {
+    "assets/game.js": "36a9cfb7721722209f53afb4019d9428a1f7a633427c705c8bc317b027e33fde",
+    "assets/nightwing_stability_1028.js": "6456d47b1bad16d578a2fb4b9ad6a2a1c26927da8359c4c3eb0b5ed97fcbb373",
+    "assets/nightwing_wind_1028.js": "c564ac04e5bd11191cc9eadb3cdd725a72bfec37f2392cfe680c96e02cf88329",
+    "assets/nightwing_wind_art_1028.js": "79b3b9cf31a1206813b0723b4997795797aa3679ad94fc3f12d1cae92791d0d3",
+    "assets/nightwing_flight_1027.js": "5557ee9a011efac434be4a667815a19e140b4922b481d8b8121ec4d76285a194"
+  },
+  "pixellab": {
+    "keyframe": "da086d46-417c-4728-aaa3-3d90a654e47c",
+    "animation": "09f3b4ef-9bd4-422d-8fc2-b53f52994878",
+    "frames": 24,
+    "canvas": [
+      192,
+      192
+    ],
+    "keyframeCostUsd": 0.010901391479704117,
+    "animationGenerations": 2
+  },
+  "atlasMiB": 50.080078125
+}
