@@ -2810,6 +2810,356 @@
       "aliases": [
         "downloads/BOF-Field-Manual-1.3-1031.zip"
       ]
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s2-enemy-roster.webm",
+      "bytes": 6107647,
+      "sha256": "c8cf1f5ee4a0d11a9463ad8f571d36dd7360cf2250cb482094c047463cc5f1b8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s2-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s2-enemy-roster.webm"
+      ],
+      "sourceSha256": "baf6c2d6c0b4e74d0e802c4d4d30dc5c9bb812bf30b124bfc1eeeb14469f8466",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.394
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s5-bomber.webm",
+      "bytes": 5530998,
+      "sha256": "fa098e4ab69c59accabad68af93ce5208cc6a8374af15d6cf9931f9fab6bc3a0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s5-bomber.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s5-bomber.webm"
+      ],
+      "sourceSha256": "73980540a6d28d2b1c607d07294df26483ae6034efc8ae692cfc61688b3b107a",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.28
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s5-chronos.webm",
+      "bytes": 6945584,
+      "sha256": "84e3dfd317165e6bebaeaaf39494080549d41aabb0aad0d14cbb527ef5d4562a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s5-chronos.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s5-chronos.webm"
+      ],
+      "sourceSha256": "00625f7bedd349462c8427ee362e371eb5ce512f0c9462a1604cb764e19b7a62",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.506
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-carrier.webm",
+      "bytes": 8901265,
+      "sha256": "c3d54e846a61ed44791c7d5749604e436f7e0d35df92d0be06599d621979bec8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-carrier.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-carrier.webm"
+      ],
+      "sourceSha256": "767ab46ef26606346c97e1129ea56afae2134ef2aa913594eb94f96dca910675",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 28.835
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-enemy-roster.webm",
+      "bytes": 6463651,
+      "sha256": "1ec7cac4572436739185b4a80c001be74a876f80dc440a592227f1ea7a19dae2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-enemy-roster.webm"
+      ],
+      "sourceSha256": "f1f2e640ce546c5e58c2f312dd9d9b8328aa7f360b78fae8bce0bcbd88829f35",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.519
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-fortress.webm",
+      "bytes": 6288179,
+      "sha256": "b891d6b03e826546379e62b118951735cb00052b89de3e0b760638b518aeac67",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-fortress.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-fortress.webm"
+      ],
+      "sourceSha256": "edbab1c33a9b8aa0b4a1d08a0cd04f1540a14b13f89821154fd147da0ab9448f",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 28.305
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-nightwing.webm",
+      "bytes": 7223640,
+      "sha256": "bc9eb9056318400c97384bcb530517bcdf38b777fee87e05ad8ce96d98f7d048",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-nightwing.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-nightwing.webm"
+      ],
+      "sourceSha256": "4c98bef8b9e5f83da7f78da9b1457672f5adcd80868c83f4fa9ccc956c85613e",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.381
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-red-core.webm",
+      "bytes": 5385123,
+      "sha256": "8c78547134f60e74f8f760cc0be38dc02e7211a72af056e992f718fe9d8b4e14",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-red-core.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-red-core.webm"
+      ],
+      "sourceSha256": "563328e7d68d984f6681793590fa85ecc2602d721fc9db3d1709f5e91f31fd06",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.458
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s6-rough-riders.webm",
+      "bytes": 8841385,
+      "sha256": "758c0b8d633a2feaf2c1901dfecafac6db2d5e6a778d99b6f9e0e30436a6f8c1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s6-rough-riders.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s6-rough-riders.webm"
+      ],
+      "sourceSha256": "1dfa58ee0617fd198150724961ed4f9cfd60072f455633040103ab433c023e75",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 42.338
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s7-dredger.webm",
+      "bytes": 8694348,
+      "sha256": "a82cbc00638c2e2c529541b362c29a07bc309ccc6592faf6301fc6d8bf4467da",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s7-dredger.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s7-dredger.webm"
+      ],
+      "sourceSha256": "ed8035e2f636866ffb89cf1ce50233d5f0d425638eac499337e772499a7bffed",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 36.346
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s7-enemy-roster.webm",
+      "bytes": 5889671,
+      "sha256": "556e64a63410486e3a195c99d97e88d52e3d47218ce489f26fbf6dc16cac219c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s7-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s7-enemy-roster.webm"
+      ],
+      "sourceSha256": "7ff1602bfa88aff90500d9f745cc70978325232173546b6a3f1f97529caba800",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.341
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s7-warden.webm",
+      "bytes": 8641236,
+      "sha256": "15af827b1f61103df3abfa8a3375e0b68596469be36937e688c53eec27b85eef",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s7-warden.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s7-warden.webm"
+      ],
+      "sourceSha256": "915ef3d34a33a5c55ec7fe4da2a3e7f58025ec2dea4f792778f3bdae76c7d65a",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 36.339
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-brain.webm",
+      "bytes": 9486515,
+      "sha256": "15463433203c142b70b15cb5ac036ce21825cbd7086ef6cbb50ae5f70f3cda56",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-brain.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-brain.webm"
+      ],
+      "sourceSha256": "fbbb2cc9035ac80d952819760d317f6130d4274c7f6f95d981062d5edbb8a38b",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 36.219
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-chronos-copy.webm",
+      "bytes": 7344274,
+      "sha256": "39610b9e7bd1962a1951f8720a8a5f9416e11aa7f520eb0601c4c431194f35cc",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-chronos-copy.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-chronos-copy.webm"
+      ],
+      "sourceSha256": "30023dac29a55d16e38a5779af83c6a907e4d0aba896f31a2049f9f0823b4365",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.259
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-final-life.webm",
+      "bytes": 8358083,
+      "sha256": "55bcb952c78c135cf42bb51ad6813de5c8edca7451e281c9ecc39ca054c8e0cf",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-final-life.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-final-life.webm"
+      ],
+      "sourceSha256": "962ddc3ee618784e22989b72eee4541928800974d900c89bd82d5ddd56b9b767",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.442
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-helicopter.webm",
+      "bytes": 7864451,
+      "sha256": "7242240c8672bf4bb714211316f2d0b78b46a26a2137c5fef6269b8b23feb7af",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-helicopter.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-helicopter.webm"
+      ],
+      "sourceSha256": "328cb2e2319505628155f792d90da3129a6279ef03b800f964ad5b5e89329a7e",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.325
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-herald-cast.webm",
+      "bytes": 5030408,
+      "sha256": "fa42a5f7eebed0a71f047d42b33041344916654079ab2c40cd8df2bed414229e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-herald-cast.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-herald-cast.webm"
+      ],
+      "sourceSha256": "4714286db1352b9ccca0b4300fab184a5cfb5279197e8b4c860aad18a40a46ee",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 20.379
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-herald-skulls.webm",
+      "bytes": 4931940,
+      "sha256": "e9ccc41a197bf4af10b041d8a5c68c5e41cd4dea6edc47c17fbf780f7c1273f5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-herald-skulls.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-herald-skulls.webm"
+      ],
+      "sourceSha256": "e77559dfc252bb1b3c32cd216a6c43854374d1dea66b2c2a10e408cf8ac9aa97",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 20.436
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-herald-storm.webm",
+      "bytes": 5515384,
+      "sha256": "d9fc82d069cf828263d261985e6c82df472983605768d400b9dbf4823a9da28d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-herald-storm.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-herald-storm.webm"
+      ],
+      "sourceSha256": "c6c5f86c1198f69d84f4ffccda34d11a9ad4c251a2bffbc4eaa1d67ecb1c797d",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 22.362
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-host.webm",
+      "bytes": 6951797,
+      "sha256": "6bb4af49590e1878c57378745a083f1a145ebd1603875eb18571763306aebf9f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-host.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-host.webm"
+      ],
+      "sourceSha256": "752e02e3e97d2cfb37468d5db7610beb3121a23f99dae0359e98a4059c72a859",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 28.539
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s8-phoenix.webm",
+      "bytes": 8619522,
+      "sha256": "6fc1704ea997aa4b7326ea064b2508b6f3cc2349a91495e46ca0fbbea928c301",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s8-phoenix.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s8-phoenix.webm"
+      ],
+      "sourceSha256": "ea48e6951c9563f58f12ceaa396666dcf3b55de7d84959076c25fb4889b1920e",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 36.342
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s9-enemy-roster.webm",
+      "bytes": 6128347,
+      "sha256": "44b4be09fcdb6b988ba998fa6bb165885af0750038fb964c3b4c8398802a9ac3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s9-enemy-roster.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s9-enemy-roster.webm"
+      ],
+      "sourceSha256": "20f6208c87fef4cae957d70f3d8fe1bda7044624a96a988c2736238ed94a93b8",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 24.395
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s9-horizon-water.webm",
+      "bytes": 8976841,
+      "sha256": "172adef82cd60cd811510a696d0c2788f4f2221657b17119c816a147be20395e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s9-horizon-water.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s9-horizon-water.webm"
+      ],
+      "sourceSha256": "f358db4f28a08f35bbd4496b502250de9104d5410707f93d47fbfdc94c2d0cb6",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 38.377
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s9-horizon.webm",
+      "bytes": 8076076,
+      "sha256": "969c19b8bc77c2c26046068c8af7dd87e455a81acc50d0f327153f324a1b0343",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s9-horizon.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s9-horizon.webm"
+      ],
+      "sourceSha256": "7feb4e512f769f83b362d4b8a7ed494f8f2644924ba7340615adf9812aad6f32",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 32.381
+    },
+    {
+      "asset": "indexed--preview--videos--audio-speed-1031--s9-water.webm",
+      "bytes": 9337730,
+      "sha256": "a8d88d41ba35f069a3691aea8e933d47f89352b2793a4d5eca614d5d18acb858",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-review-2026-10-31/indexed--preview--videos--audio-speed-1031--s9-water.webm",
+      "reused": false,
+      "aliases": [
+        "playback-indexed/preview/videos/audio-speed-1031/s9-water.webm"
+      ],
+      "sourceSha256": "49ae7eba3dba23ce4fa23b7704c70809b34f3c0e5c999c969c2f639f5fbb6bfe",
+      "muxOnly": true,
+      "encodedPacketsIdentical": true,
+      "duration": 40.355
     }
   ]
 }

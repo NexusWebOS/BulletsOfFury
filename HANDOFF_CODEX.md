@@ -1,3 +1,7 @@
+# October 31 complete GitHub publication
+
+Published current base game, authored sources/art, separate Overdrive additions, complete video library, field manual and pending concepts. Public review hub: https://nexuswebos.github.io/BulletsOfFury/ . Source/main and release: bof-complete-review-2026-10-31. Exact site snapshot: docs/previews/review_library_1031; publication notes: docs/GITHUB_PUBLICATION_1031.md. 45 focused native checks and 18 local publication checks passed; five documented baseline suite failures remain. 306 media artifacts include 25 lossless-remux seekable diagnostic copies and 16 verified prior-release originals. Pending designs are not activated. Existing local deletions were excluded by automatic approval review; do not stage them without a new authorized review. Final public verification receipt is a release asset.
+
 # October31 boss balance / Normal Stage5 completion
 
 Implemented and native-tested NF100 Normal ending/save/Hard-Furious pilot-select transition; EH57 pulse/dash/recovery fixes and BA99 single-pool health; shorter Nightwing ace life; TS58 distinct Hard volleys/protected re-entry. No unapproved Dracodia move/art changes. Full analysis: docs/BOSS_BALANCE_NORMAL_FINALE_1031.md.45 focused native checks pass; mandatory full suite still returns the same five baseline failures. Core game.js unchanged.

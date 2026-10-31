@@ -1,0 +1,159 @@
+{
+  "publication": "October 31 complete review library",
+  "id": "bof-1031-4bb3d3bce3cc4a78b5258b0b53f9da0c",
+  "preparedAt": "2026-10-31T16:09:20.811626+00:00",
+  "releaseTag": "bof-complete-review-2026-10-31",
+  "sourceBranch": "main",
+  "sourceCommitBeforePublicationMetadata": "a39a7d37aed85f3ca8d9a87fdfd1a98edf4d4eed",
+  "coreSha256": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de",
+  "mediaArtifacts": 306,
+  "originalArtifacts": 281,
+  "indexedPlaybackCopies": 25,
+  "reusedEarlierReleaseArtifacts": 16,
+  "enemyEntries": 163,
+  "pendingConceptDesigns": 12,
+  "nativeChecksPassed": 45,
+  "localPublicationChecksPassed": 18,
+  "existingFullSuiteFailures": 5,
+  "localDeletionsExcluded": 135,
+  "publicationChecks": [
+    {
+      "name": "All static page navigation, scripts and image paths resolve",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "index.html loads its navigation and current contents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "index.html plays and seeks the exact planned uploaded file",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "boss-balance-normal-finale-1031.html loads its navigation and current contents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious-next-wave-1031.html loads its navigation and current contents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All twelve pending boss designs appear",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious-alternatives-1031.html loads its navigation and current contents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "enemy-showcase-1031.html loads its navigation and current contents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Enemy field guide has all163 entries",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "enemy-showcase-1031.html plays and seeks the exact planned uploaded file",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "field-manual/guide.html loads its navigation and current contents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Manual includes new completion and boss notes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-guide/index.html loads its navigation and current contents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "rough-riders-guide/index.html plays and seeks the exact planned uploaded file",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "audio-speed-1031.html loads its navigation and current contents",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "audio-speed-1031.html plays and seeks the exact planned uploaded file",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Enemy guide mobile layout fits the viewport",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No browser errors or missing local assets",
+      "passed": true,
+      "data": {
+        "errors": [],
+        "http": []
+      }
+    }
+  ],
+  "limits": [
+    "Native GOD/input-only footage is not human survival certification.",
+    "Normal ending video is a staged preview.",
+    "Five recorded baseline full-suite assertions still fail.",
+    "Pending concept designs remain inactive.",
+    "Automatic approval review excluded existing local deletions; added and modified files only."
+  ],
+  "sourceUploads": [
+    {
+      "group": 0,
+      "head": "b0d190978f751ecb4b2bffabac2b1db3ebe4a320",
+      "files": 3344,
+      "bytes": 818210175
+    },
+    {
+      "group": 1,
+      "head": "2610be36f49c9ad47b3a8b033384d75b92af27fb",
+      "files": 7077,
+      "bytes": 349603815
+    },
+    {
+      "group": 2,
+      "head": "22c54ee2381ccc4c6a483190f33718fb6068acdd",
+      "files": 1908,
+      "bytes": 349937152
+    },
+    {
+      "group": 3,
+      "head": "e8ccd2e53c7ff4a1d4c842818221249a786f0c43",
+      "files": 50,
+      "bytes": 24696014
+    },
+    {
+      "group": 0,
+      "head": "66d2b37c0494222ce3ad14239c482de03d74a714",
+      "files": 3624,
+      "bytes": 349990635
+    },
+    {
+      "group": 1,
+      "head": "a39a7d37aed85f3ca8d9a87fdfd1a98edf4d4eed",
+      "files": 4478,
+      "bytes": 122416306
+    }
+  ]
+}

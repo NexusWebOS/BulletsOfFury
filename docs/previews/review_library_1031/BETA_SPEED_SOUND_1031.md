@@ -1,4 +1,4 @@
-# BOF speed and sound audit � October30/31,2026
+# BOF speed and sound audit — October30/31,2026
 
 Stage9 Black Event Horizon now uses commissioned PixelLab mint/ivory plasma with an uninterrupted authored core. Six fixed-cell banks,32 hull directions retained. The main engine file is unchanged.
 
@@ -69,4 +69,4 @@ Chronos and the Harrier carrier were the slower recording cases; their frame/ren
 The full native Furious fight lasts 123.255 seconds and averages 56.79 native FPS while recording. The original 10,965 HP and actual half-health gate lead to native defeat. No HP, attack phase or timer writes occur during filming. Every attack mode appears, including the spinning dash. All five one-shot sound roles play; a separate live sample confirms eight actual starts of the sustained laser bed.
 The finished recording measures -19.3 dB mean / -1.5 dB peak, with no page, console, asset or audio-tap errors. It uses the real game mix; no replacement soundtrack was added.
 33 native Stage 9 and dialogue checks pass, plus 16 source/asset checks. The archived inputs rebuild pixel-identically offline. The full engine suite completed again with the same five baseline failures listed above.
-[Full fight](http://127.0.0.1:51046/?horizon=cyan-1031#clip=stage9-miniboss) � [25 native samples](http://127.0.0.1:51046/audio-speed-1031.html)
+[Full fight](http://127.0.0.1:51046/?horizon=cyan-1031#clip=stage9-miniboss) · [25 native samples](http://127.0.0.1:51046/audio-speed-1031.html)
