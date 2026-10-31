@@ -1,0 +1,133 @@
+{
+  "checks": [
+    {
+      "name": "hq_regroup path has current art hash",
+      "ok": true
+    },
+    {
+      "name": "hq_regroup actual decoded native pixels match revised art",
+      "ok": true
+    },
+    {
+      "name": "cole native hq_regroup drawImage",
+      "ok": true
+    },
+    {
+      "name": "maverick native hq_regroup drawImage",
+      "ok": true
+    },
+    {
+      "name": "forge_upgrade path has current art hash",
+      "ok": true
+    },
+    {
+      "name": "forge_upgrade actual decoded native pixels match revised art",
+      "ok": true
+    },
+    {
+      "name": "cole native forge_upgrade drawImage",
+      "ok": true
+    },
+    {
+      "name": "maverick native forge_upgrade drawImage",
+      "ok": true
+    },
+    {
+      "name": "hq_alarm path has current art hash",
+      "ok": true
+    },
+    {
+      "name": "hq_alarm actual decoded native pixels match revised art",
+      "ok": true
+    },
+    {
+      "name": "cole native hq_alarm drawImage",
+      "ok": true
+    },
+    {
+      "name": "maverick native hq_alarm drawImage",
+      "ok": true
+    },
+    {
+      "name": "hq_river path has current art hash",
+      "ok": true
+    },
+    {
+      "name": "hq_river actual decoded native pixels match revised art",
+      "ok": true
+    },
+    {
+      "name": "cole native hq_river drawImage",
+      "ok": true
+    },
+    {
+      "name": "maverick native hq_river drawImage",
+      "ok": true
+    },
+    {
+      "name": "launch_generator path has current art hash",
+      "ok": true
+    },
+    {
+      "name": "launch_generator actual decoded native pixels match revised art",
+      "ok": true
+    },
+    {
+      "name": "cole native launch_generator drawImage",
+      "ok": true
+    },
+    {
+      "name": "maverick native launch_generator drawImage",
+      "ok": true
+    },
+    {
+      "name": "power_cell path has current art hash",
+      "ok": true
+    },
+    {
+      "name": "power_cell actual decoded native pixels match revised art",
+      "ok": true
+    },
+    {
+      "name": "cole native power_cell drawImage",
+      "ok": true
+    },
+    {
+      "name": "maverick native power_cell drawImage",
+      "ok": true
+    },
+    {
+      "name": "native ending report uses revised plate",
+      "ok": true
+    },
+    {
+      "name": "native ending alarm uses revised plate",
+      "ok": true
+    },
+    {
+      "name": "native opening uses revised regroup / alarm plates",
+      "ok": true
+    },
+    {
+      "name": "Maverick arrival uses identity variant",
+      "ok": true
+    },
+    {
+      "name": "Maverick report actual native variant draws",
+      "ok": true
+    },
+    {
+      "name": "Maverick horror actual native variant draws",
+      "ok": true
+    },
+    {
+      "name": "Maverick standing actual native variant draws",
+      "ok": true
+    },
+    {
+      "name": "no page / console errors",
+      "ok": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "name": "air_nyx",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 40,
+      "style_image": {
+        "url": "upload:7401f067-0a18-47c1-84bb-e4f2b4ee0672",
+        "usage_description": "Exact existing aircraft identity, silhouette, cockpit, wing geometry, engine placement and faction/pilot palette; re-author this same aircraft at clear Neo-Geo sprite quality."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "description": "FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Nyx / Ghostknife. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels."
+    },
+    "receipt": [
+      "{\n  \"background_job_id\": \"880bb6cd-ccd9-4340-84c2-1b025752806a\",\n  \"image_id\": \"4b73bc95-742f-502f-a8da-62de7753f273\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"4b73bc95-742f-502f-a8da-62de7753f273\",\n  \"job_id\": \"880bb6cd-ccd9-4340-84c2-1b025752806a\",\n  \"description\": \"FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Nyx / Ghostknife. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/880bb6cd-ccd9-4340-84c2-1b025752806a/download\"\n}\nPoll get_image(job_id=\"880bb6cd-ccd9-4340-84c2-1b025752806a\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    ]
+  },
+  {
+    "name": "air_rook",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 40,
+      "style_image": {
+        "url": "upload:bd307309-cc57-4604-8a61-49fd7818666b",
+        "usage_description": "Exact existing aircraft identity, silhouette, cockpit, wing geometry, engine placement and faction/pilot palette; re-author this same aircraft at clear Neo-Geo sprite quality."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "description": "FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Rook / Breachhammer. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels."
+    },
+    "receipt": [
+      "{\n  \"background_job_id\": \"cfd96b1e-50aa-424f-beb8-1f95c2c0b326\",\n  \"image_id\": \"4ca8b417-4394-5866-963b-93e5fb0ce654\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"4ca8b417-4394-5866-963b-93e5fb0ce654\",\n  \"job_id\": \"cfd96b1e-50aa-424f-beb8-1f95c2c0b326\",\n  \"description\": \"FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Rook / Breachhammer. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/cfd96b1e-50aa-424f-beb8-1f95c2c0b326/download\"\n}\nPoll get_image(job_id=\"cfd96b1e-50aa-424f-beb8-1f95c2c0b326\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    ]
+  },
+  {
+    "name": "air_kaia",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 40,
+      "style_image": {
+        "url": "upload:977dc5c8-598b-4f34-8bc7-0a7fd756ff11",
+        "usage_description": "Exact existing aircraft identity, silhouette, cockpit, wing geometry, engine placement and faction/pilot palette; re-author this same aircraft at clear Neo-Geo sprite quality."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "description": "FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Kaia / Signal Wraith. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels."
+    },
+    "receipt": [
+      "{\n  \"background_job_id\": \"d8ca5295-5c3d-43e0-bdbb-84d8b9357708\",\n  \"image_id\": \"ff135a02-346c-54dc-8c20-02f48104d5c7\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"ff135a02-346c-54dc-8c20-02f48104d5c7\",\n  \"job_id\": \"d8ca5295-5c3d-43e0-bdbb-84d8b9357708\",\n  \"description\": \"FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Kaia / Signal Wraith. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/d8ca5295-5c3d-43e0-bdbb-84d8b9357708/download\"\n}\nPoll get_image(job_id=\"d8ca5295-5c3d-43e0-bdbb-84d8b9357708\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    ]
+  },
+  {
+    "name": "air_jace",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 40,
+      "style_image": {
+        "url": "upload:0cee3a38-2aad-4515-87cf-62d633d5ad89",
+        "usage_description": "Exact existing aircraft identity, silhouette, cockpit, wing geometry, engine placement and faction/pilot palette; re-author this same aircraft at clear Neo-Geo sprite quality."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "description": "FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Jace / Razorjack. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels."
+    },
+    "receipt": [
+      "{\n  \"background_job_id\": \"a2a57c70-b451-44c1-840f-557ac9d5f9ef\",\n  \"image_id\": \"fd9692f7-ba9d-5a53-ab29-bb9be0fe9b68\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"fd9692f7-ba9d-5a53-ab29-bb9be0fe9b68\",\n  \"job_id\": \"a2a57c70-b451-44c1-840f-557ac9d5f9ef\",\n  \"description\": \"FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Jace / Razorjack. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/a2a57c70-b451-44c1-840f-557ac9d5f9ef/download\"\n}\nPoll get_image(job_id=\"a2a57c70-b451-44c1-840f-557ac9d5f9ef\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    ]
+  }
+]

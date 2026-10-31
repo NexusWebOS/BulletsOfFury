@@ -1,0 +1,159 @@
+{
+  "errors": [],
+  "info": {
+    "stages": [
+      {
+        "name": "STAGE 1",
+        "bg": "jungle",
+        "keys": [
+          "n",
+          "name",
+          "sub",
+          "bg",
+          "music",
+          "length",
+          "boss"
+        ]
+      },
+      {
+        "name": "STAGE 2",
+        "bg": "volcano",
+        "keys": [
+          "n",
+          "name",
+          "sub",
+          "bg",
+          "music",
+          "length",
+          "boss"
+        ]
+      },
+      {
+        "name": "STAGE 3",
+        "bg": "ice",
+        "keys": [
+          "n",
+          "name",
+          "sub",
+          "bg",
+          "music",
+          "length",
+          "boss"
+        ]
+      },
+      {
+        "name": "STAGE 4",
+        "bg": "sky",
+        "keys": [
+          "n",
+          "name",
+          "sub",
+          "bg",
+          "music",
+          "length",
+          "boss"
+        ]
+      },
+      {
+        "name": "STAGE 5",
+        "bg": "space",
+        "keys": [
+          "n",
+          "name",
+          "sub",
+          "bg",
+          "music",
+          "length",
+          "boss"
+        ]
+      },
+      {
+        "name": "STAGE 6",
+        "bg": "sky",
+        "keys": [
+          "n",
+          "name",
+          "sub",
+          "bg",
+          "music",
+          "length",
+          "boss"
+        ]
+      },
+      {
+        "name": "STAGE 7",
+        "bg": "sewer",
+        "keys": [
+          "n",
+          "name",
+          "sub",
+          "bg",
+          "music",
+          "length",
+          "boss"
+        ]
+      },
+      {
+        "name": "STAGE 8",
+        "bg": "space",
+        "keys": [
+          "n",
+          "name",
+          "sub",
+          "bg",
+          "music",
+          "length",
+          "boss"
+        ]
+      },
+      {
+        "name": "STAGE 9",
+        "bg": "space",
+        "keys": [
+          "n",
+          "name",
+          "sub",
+          "bg",
+          "music",
+          "length",
+          "boss",
+          "bonus"
+        ]
+      }
+    ],
+    "models": 16,
+    "roar": 24,
+    "keys": [
+      "camSnap",
+      "camLeftX",
+      "camRightX",
+      "updateCamX",
+      "drawCampaignRadar",
+      "campaignViewWidth",
+      "campaignViewOffset",
+      "_setCampaignViewport",
+      "bonusModesUnlockFromCampaign",
+      "s7WardenFinishCampaign",
+      "lateCampaignProjectileBlit",
+      "lateCampaignFallbackDraw",
+      "campaignOwnsMenuInput",
+      "campPauseIsCampaignScreen",
+      "campMapStartTap",
+      "campaignMenuInputTick",
+      "campPauseOpen",
+      "campPauseClose",
+      "campPauseSay",
+      "campaignEnd",
+      "campPauseSlotLabel",
+      "campPauseDraw",
+      "campaignBridgeStart",
+      "drawCampaignBridge",
+      "campaignIntroPickPilot",
+      "campaignIntroPortraitKey",
+      "campaignIntroKeys",
+      "campaignIntroWarm",
+      "campaignIntroReady",
+      "campaignIntroStart"
+    ]
+  }
+}

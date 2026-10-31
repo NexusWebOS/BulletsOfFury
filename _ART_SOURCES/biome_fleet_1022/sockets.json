@@ -1,0 +1,11 @@
+{
+  "magma_dart":{"port":[45,104],"starboard":[86,104],"centre":[65,112]},
+  "magma_forge":{"port":[39,96],"starboard":[89,96],"centre":[64,113]},
+  "sky_zephyr":{"port":[40,86],"starboard":[87,86],"centre":[64,109]},
+  "sky_gale":{"port":[30,92],"starboard":[95,92],"centre":[64,108]},
+  "sky_stratus":{"port":[51,114],"starboard":[89,88],"centre":[64,106]},
+  "water_ripple":{"port":[33,100],"starboard":[95,100],"centre":[64,113]},
+  "water_manta":{"port":[21,93],"starboard":[106,93],"centre":[64,103]},
+  "water_leviathan":{"port":[36,99],"starboard":[93,99],"centre":[64,111]},
+  "water_undertow":{"port":[25,83],"starboard":[102,83],"centre":[64,82]}
+}

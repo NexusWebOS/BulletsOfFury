@@ -1,0 +1,74 @@
+[
+  {
+    "name": "air_xelite_solarwarden_roll",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/c561c66d-9c70-4d33-8086-3c27015183c5/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/c561c66d-9c70-4d33-8086-3c27015183c5/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced xelite_solarwarden aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Complete one full360 degree axial BARREL ROLL around the longitudinal nose-to-tail axis. Show top, left wing-down edge, underside, opposite wing-down edge, then original top. Nose stays pointing south. NO yaw or flat paper spin. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: 6ca12416-bf0a-427e-8b7d-f785b6e8807d\njob_id: 6ca12416-bf0a-427e-8b7d-f785b6e8807d\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Complete one full360 degree axial BARREL ROLL around the longitudinal nose-to-tail axis. Show top, left wing-down edge, underside, opposite wing-down edge, then original top. Nose stays pointing south. NO yaw or flat paper spin. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"6ca12416-bf0a-427e-8b7d-f785b6e8807d\")\nasset_id: 498e985e-f8d8-5ab9-aa55-de1e23b70862\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_xelite_solarwarden_somer",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/c561c66d-9c70-4d33-8086-3c27015183c5/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/c561c66d-9c70-4d33-8086-3c27015183c5/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced xelite_solarwarden aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Perform one complete360 degree SOMERSAULT around the lateral wing-to-wing axis. Nose pitches up toward camera, show front-facing nose-on view, underside, tail-on view then original top view. Full airplane rotates in3D without translation. Not a barrel roll and not a flat paper rotation. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: f21769e5-4e7e-4a74-8b45-641f30e75b5f\njob_id: f21769e5-4e7e-4a74-8b45-641f30e75b5f\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Perform one complete360 degree SOMERSAULT around the lateral wing-to-wing axis. Nose pitches up toward camera, show front-facing nose-on view, underside, tail-on view then original top view. Full airplane rotates in3D without translation. Not a barrel roll and not a flat paper rotation. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f21769e5-4e7e-4a74-8b45-641f30e75b5f\")\nasset_id: b5035b3e-bcdd-5439-abf8-809b52bf5165\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_xelite_solarwarden_drift",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/c561c66d-9c70-4d33-8086-3c27015183c5/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/c561c66d-9c70-4d33-8086-3c27015183c5/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced xelite_solarwarden aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Swerve and drift smoothly: bank left20degrees with a small yaw left, counter-steer right20degrees, then smoothly center. Fixed fuselage anchor; wing controls articulate and engine exhaust pulses, no translation or scale change. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: 1f93054b-dc8b-446d-b33c-98403e29f63d\njob_id: 1f93054b-dc8b-446d-b33c-98403e29f63d\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Swerve and drift smoothly: bank left20degrees with a small yaw left, counter-steer right20degrees, then smoothly center. Fixed fuselage anchor; wing controls articulate and engine exhaust pulses, no translation or scale change. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"1f93054b-dc8b-446d-b33c-98403e29f63d\")\nasset_id: 723d2acc-d80d-5157-8ba6-13d4366f6563\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_xelite_solarwarden_attack",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/c561c66d-9c70-4d33-8086-3c27015183c5/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/c561c66d-9c70-4d33-8086-3c27015183c5/download?index=0",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced xelite_solarwarden aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Fire wing-mounted weapons in paired short bursts: left pod recoils then right pod recoils, wing panels flex subtly, vents cycle and engines pulse; cease firing and return to initial pose. Keep entire hull opaque and stable; no projectiles or long beams baked into sprite, only tiny muzzle flashes at exact weapon tips. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: 2fe3d2aa-f11c-4e36-98c8-43924d1c49ac\njob_id: 2fe3d2aa-f11c-4e36-98c8-43924d1c49ac\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Fire wing-mounted weapons in paired short bursts: left pod recoils then right pod recoils, wing panels flex subtly, vents cycle and engines pulse; cease firing and return to initial pose. Keep entire hull opaque and stable; no projectiles or long beams baked into sprite, only tiny muzzle flashes at exact weapon tips. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"2fe3d2aa-f11c-4e36-98c8-43924d1c49ac\")\nasset_id: eaf442fa-2464-50ab-b368-bf1616b99032\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  }
+]

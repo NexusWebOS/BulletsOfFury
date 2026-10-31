@@ -1,0 +1,1 @@
+{"bomb_burst": {"ch": 180, "cols": 4, "cw": 180, "frames": 22, "key": "rd71_bomb_burst", "path": "assets/game/levels/stage_08/boss/possession_1030/bomb_burst.png", "pivot": [90, 90]}, "bomb_charge": {"ch": 64, "cols": 4, "cw": 64, "frames": 16, "key": "rd71_bomb_charge", "path": "assets/game/levels/stage_08/boss/possession_1030/bomb_charge.png", "pivot": [32, 32]}}

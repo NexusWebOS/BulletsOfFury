@@ -1,0 +1,97 @@
+[
+  {
+    "name": "air_vmanta",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:0cecfcd2-6542-4aa3-bafb-48703f0dff46",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Void Manta aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: d41bddf9-2314-4965-a58f-7e87ba0cc8d5\njob_id: d41bddf9-2314-4965-a58f-7e87ba0cc8d5\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Void Manta aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 69601afb-724a-5271-894d-f9a9a79a9ed8\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d41bddf9-2314-4965-a58f-7e87ba0cc8d5\")"
+    ]
+  },
+  {
+    "name": "air_tsplit",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:5ac43dfb-24ff-47dc-bac1-0cdd2858e887",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Twin Splitter aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 103c37a3-1669-4acf-bdfa-6dc0c5adc3b7\njob_id: 103c37a3-1669-4acf-bdfa-6dc0c5adc3b7\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Twin Splitter aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 759ff4d4-dc52-5724-b700-230f287b48d8\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"103c37a3-1669-4acf-bdfa-6dc0c5adc3b7\")"
+    ]
+  },
+  {
+    "name": "air_xelite_hivewing",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:6560adf3-3712-4c20-92ff-d4316f73706d",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Elite Hivewing aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: f4085485-d666-4580-bc6a-501e70c6a36d\njob_id: f4085485-d666-4580-bc6a-501e70c6a36d\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Elite Hivewing aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 0398a005-0497-5f16-8f01-554a1136f8ce\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"f4085485-d666-4580-bc6a-501e70c6a36d\")"
+    ]
+  },
+  {
+    "name": "air_hell",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:b7e46747-9ee9-48db-b224-8c5cfb8afc79",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Hell Wing Escort aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 8199c04a-1bc3-4a23-a04d-ff73c97c1eb6\njob_id: 8199c04a-1bc3-4a23-a04d-ff73c97c1eb6\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Hell Wing Escort aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: ae763ab9-bfbc-5dd8-a175-be5e9440af38\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8199c04a-1bc3-4a23-a04d-ff73c97c1eb6\")"
+    ]
+  },
+  {
+    "name": "air_horizon",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:0880b771-e1e8-4b89-899a-ae149c46bda8",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Horizon Drone aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 9379d5f3-a1d6-420b-b9ad-06d81f5c4a75\njob_id: 9379d5f3-a1d6-420b-b9ad-06d81f5c4a75\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Horizon Drone aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 5d5b7d1a-480d-566e-8c15-19b8013fe0a6\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"9379d5f3-a1d6-420b-b9ad-06d81f5c4a75\")"
+    ]
+  }
+]

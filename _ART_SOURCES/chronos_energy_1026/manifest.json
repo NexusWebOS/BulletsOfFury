@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-26",
+  "workshop": "Clear / original primary pitch",
+  "sources": [
+    {
+      "role": "rage_charge",
+      "source": "cf2_rage_charge_clear.mp3",
+      "sha256": "80a52e2208f3395b9f36f2db859c5b536bb0f233a11fc0865971d29bef85e7e7",
+      "pitchSemitones": 0
+    },
+    {
+      "role": "rage_release",
+      "source": "cf2_rage_release_clear.mp3",
+      "sha256": "d4c2a28dabd99a58602c1d7a3bbe43de76bc6d13efcb5f2478c3f11c02f42f0a",
+      "pitchSemitones": 0
+    },
+    {
+      "role": "wave_charge",
+      "source": "cf2_wave_charge_clear.mp3",
+      "sha256": "8c30141fd380f37c5e46c83cb2eb44ac741e2c48ebc29d668292ce99ccd78b3a",
+      "pitchSemitones": 0
+    },
+    {
+      "role": "wave_full",
+      "source": "cf2_wave_full_clear.mp3",
+      "sha256": "cbc79ac1f947ff89b7660cdf3821a67933901b9ae540e6db2a509b732601c1bb",
+      "pitchSemitones": 0
+    },
+    {
+      "role": "wave_tail",
+      "source": "cf2_wave_tail_clear.mp3",
+      "sha256": "9b6dd02cd65ddd8a752caa55c011a9bb889b143d5765b71ee0318db6e0afb47e",
+      "pitchSemitones": 0
+    }
+  ],
+  "gatherCharge": "wave_charge time-compressed atempo=1.5294117647, unchanged pitch, native gather duration1.7s",
+  "sourceLicense": "not supplied",
+  "runtimeDirectory": "assets/game/shared/audio/chronos_energy_1026",
+  "voicesPerCue": 2,
+  "triggerMapping": {
+    "rage_charge": "first rage lightning / actual charge start",
+    "rage_release": "rage final strike",
+    "wave_charge": "Kame opener charge, once",
+    "gather_charge": "ordinary rage wave gather",
+    "wave_full": "actual beam release, once per cycle",
+    "wave_tail": "recover, after main beam stops"
+  },
+  "mix": "Foreground tells at gain1; lightning backing gain .44 only while a foreground cue plays; all settings through shared mixer."
+}

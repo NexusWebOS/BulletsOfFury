@@ -1,0 +1,87 @@
+[
+  {
+    "name": "corrupt_unarmed",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No hammer and no gun. Hold an unarmed combat guard, fists clenched, a slow mechanical breathing loop; no weapon or flame. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: e19ce5cc-63ba-43a8-810a-8575540593ce\njob_id: e19ce5cc-63ba-43a8-810a-8575540593ce\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No hammer and no gun. Hold an unarmed combat guard, fists clenched, a slow mechanical breathing loop; no weapon or flame. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 8\nsize: 256x256px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e19ce5cc-63ba-43a8-810a-8575540593ce\")\nasset_id: 9bf23d0e-6c0a-57e4-8fb3-11e3aac8734d\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_punch",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No weapon. Pull right fist back in clear anticipation, deliver a strong forward right punch, recoil, then left punch, recoil, and return to guard; arms extend toward the viewer without body travel. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "error: rate limit exceeded (10/10 jobs)\n\nhint: wait for a job to finish, then retry"
+    ]
+  },
+  {
+    "name": "corrupt_fists",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No weapon. Clasp both fists together above the head, lift shoulders and torso, smash both fists down together in front of the feet, heavy recoil and recovery to unarmed guard. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "error: rate limit exceeded (10/10 jobs)\n\nhint: wait for a job to finish, then retry"
+    ]
+  },
+  {
+    "name": "corrupt_dance",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. Playful menacing hammer knight taunt dance: shift hips and knees left then right, bounce shoulders and nod skull head twice while holding hammer safely across waist. Return to initial stance. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "error: rate limit exceeded (10/10 jobs)\n\nhint: wait for a job to finish, then retry"
+    ]
+  },
+  {
+    "name": "corrupt_ball",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. Curl arms, head and legs inward into a compact spiked chromium ball, spin through one complete360-degree revolution with the same violet armor plates visible, then unfold fully into original stance. No travel or fade. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "error: rate limit exceeded (10/10 jobs)\n\nhint: wait for a job to finish, then retry"
+    ]
+  }
+]

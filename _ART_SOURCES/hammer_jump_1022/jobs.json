@@ -1,0 +1,184 @@
+[
+  {
+    "id": "blue_behind",
+    "job_id": "deb613c5-a27a-4c11-9799-afadfee37148",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Exact existing robot and hammer, same scale and full-body dimensions. Windup for jumping STRAIGHT-DOWN hammer strike: both elbows high and out, both hands pulled BACK BEHIND THE HEAD, shaft angled back into depth, hammer head cocked BEHIND crown/upper shoulders. Physical hammer is BEHIND skull, not held upright in front of face like a pole. Robot faces viewer; chest and face visible, knees crouched for takeoff. Keep feet at original baseline and body unit unchanged. Hammer head emits a vivid permanent cyan blue pixel energy glow with bright white core, fully visible metal end caps and crisp pixel aura. Full weapon and body inside256square transparent canvas, clean HD16bit, no smoke or large white smear. One hammer only.",
+    "receipt": "id: deb613c5-a27a-4c11-9799-afadfee37148\njob_id: deb613c5-a27a-4c11-9799-afadfee37148\nmodel: pro\ndescription: Exact existing robot and hammer, same scale and full-body dimensions. Windup for jumping STRAIGHT-DOWN hammer strike: both elbows high and out, both hands pulled BACK BEHIND THE HEAD, shaft angled back into depth, hammer head cocked BEHIND crown/upper shoulders. Physical hammer is BEHIND skull, not held upright in front of face like a pole. Robot faces viewer; chest and face visible, knees crouched for takeoff. Keep feet at original baseline and body unit unchanged. Hammer head emits a vivid permanent cyan blue pixel energy glow with bright white core, fully visible metal end caps and crisp pixel aura. Full weapon and body inside256square transparent canvas, clean HD16bit, no smoke or large white smear. One hammer only.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: 03e0d620-c6ab-5709-8ed9-f083d7613b08\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"deb613c5-a27a-4c11-9799-afadfee37148\")"
+  },
+  {
+    "id": "corrupt_behind",
+    "job_id": "67a50ce2-e453-4377-81b0-3d6442a59257",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Exact existing robot and hammer, same scale and full-body dimensions. Windup for jumping STRAIGHT-DOWN hammer strike: both elbows high and out, both hands pulled BACK BEHIND THE HEAD, shaft angled back into depth, hammer head cocked BEHIND crown/upper shoulders. Physical hammer is BEHIND skull, not held upright in front of face like a pole. Robot faces viewer; chest and face visible, knees crouched for takeoff. Keep feet at original baseline and body unit unchanged. Hammer head emits a vivid permanent violet magenta pixel energy glow with bright white core, fully visible metal end caps and crisp pixel aura. Full weapon and body inside256square transparent canvas, clean HD16bit, no smoke or large white smear. One hammer only.",
+    "receipt": "id: 67a50ce2-e453-4377-81b0-3d6442a59257\njob_id: 67a50ce2-e453-4377-81b0-3d6442a59257\nmodel: pro\ndescription: Exact existing robot and hammer, same scale and full-body dimensions. Windup for jumping STRAIGHT-DOWN hammer strike: both elbows high and out, both hands pulled BACK BEHIND THE HEAD, shaft angled back into depth, hammer head cocked BEHIND crown/upper shoulders. Physical hammer is BEHIND skull, not held upright in front of face like a pole. Robot faces viewer; chest and face visible, knees crouched for takeoff. Keep feet at original baseline and body unit unchanged. Hammer head emits a vivid permanent violet magenta pixel energy glow with bright white core, fully visible metal end caps and crisp pixel aura. Full weapon and body inside256square transparent canvas, clean HD16bit, no smoke or large white smear. One hammer only.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: d8d3566c-c6d2-5864-8da0-bef3fb51f5e8\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"67a50ce2-e453-4377-81b0-3d6442a59257\")"
+  },
+  {
+    "id": "blue_glow",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "A compact cyan-blue electric energy corona for a permanently glowing hammer head, pixel art Neo-Geo effect. Irregular short luminous lightning fingers and clustered sparks around an EMPTY TRANSPARENT central area, sparse bright white highlights with electric blue pixel rim. No weapon or robot, no circular shield bubble, no target symbol, no background or shadow. Crisp pixels, all effect inside64x64 with8px empty border.",
+    "receipt": "{\n  \"background_job_id\": \"6bae167b-3e7a-42e2-9f54-78d8799fd8b2\",\n  \"image_id\": \"5b902e81-7ca4-5f3c-bc3e-ca8e8197999e\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"5b902e81-7ca4-5f3c-bc3e-ca8e8197999e\",\n  \"job_id\": \"6bae167b-3e7a-42e2-9f54-78d8799fd8b2\",\n  \"description\": \"A compact cyan-blue electric energy corona for a permanently glowing hammer head, pixel art Neo-Geo effect. Irregular short luminous lightning fingers and clustered sparks around an EMPTY TRANSPARENT central area, sparse bright white highlights with electric blue pixel rim. No weapon or robot, no circular shield bubble, no target symbol, no background or shadow. Crisp pixels, all effect inside64x64 with8px empty border.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/6bae167b-3e7a-42e2-9f54-78d8799fd8b2/download\"\n}\nPoll get_image(job_id=\"6bae167b-3e7a-42e2-9f54-78d8799fd8b2\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work.",
+    "job_id": "6bae167b-3e7a-42e2-9f54-78d8799fd8b2"
+  },
+  {
+    "id": "corrupt_glow",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "A compact violet-purple electric energy corona for a permanently glowing hammer head, pixel art Neo-Geo effect. Irregular short luminous lightning fingers and clustered sparks around an EMPTY TRANSPARENT central area, sparse bright white highlights with magenta violet pixel rim. No weapon or robot, no circular shield bubble, no target symbol, no background or shadow. Crisp pixels, all effect inside64x64 with8px empty border.",
+    "receipt": "{\n  \"background_job_id\": \"699e9fe3-6e69-44b0-acf9-4a61e3cd2ff0\",\n  \"image_id\": \"237086c2-3f1d-5981-a888-d0c5e710fff0\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"237086c2-3f1d-5981-a888-d0c5e710fff0\",\n  \"job_id\": \"699e9fe3-6e69-44b0-acf9-4a61e3cd2ff0\",\n  \"description\": \"A compact violet-purple electric energy corona for a permanently glowing hammer head, pixel art Neo-Geo effect. Irregular short luminous lightning fingers and clustered sparks around an EMPTY TRANSPARENT central area, sparse bright white highlights with magenta violet pixel rim. No weapon or robot, no circular shield bubble, no target symbol, no background or shadow. Crisp pixels, all effect inside64x64 with8px empty border.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/699e9fe3-6e69-44b0-acf9-4a61e3cd2ff0/download\"\n}\nPoll get_image(job_id=\"699e9fe3-6e69-44b0-acf9-4a61e3cd2ff0\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work.",
+    "job_id": "699e9fe3-6e69-44b0-acf9-4a61e3cd2ff0"
+  },
+  {
+    "id": "blue_impact",
+    "job_id": "02b74a6c-917c-4e66-a941-5c8d00fdb403",
+    "frames": 1,
+    "status": "completed",
+    "receipt": "id: 02b74a6c-917c-4e66-a941-5c8d00fdb403\njob_id: 02b74a6c-917c-4e66-a941-5c8d00fdb403\nmodel: pro\ndescription: Pose this exact BLUE hammer robot from reference1 in the EXACT straight-down landing pose of reference2. Copy reference2's two-handed grip, wide braced knees, forward crouch and centrally planted hammer between feet. Hammer lower circular END FACE strikes ground, cylinder upright, not curved barrel flat. Preserve reference1's black/chromium armor, blue face/chest accents, physical blue lightning cylinder hammer, original body scale. Head atoriginalheight, kneesbendnaturallyno overall shrink/enlarge. Continuous bright cyan-white energy inside hammer with restrained pixel glow along metal caps. Full body and wholehammer visible,256square transparent, no blast or smoke.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: f263430a-477f-5c1b-9ab5-c172895ce632\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"02b74a6c-917c-4e66-a941-5c8d00fdb403\")"
+  },
+  {
+    "id": "blue_wind",
+    "job_id": "58ffe48a-78f5-4379-89bd-d8349ce24aa4",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Smooth windup ONLY: lift hammer from ready stance, bend elbows and pull both hands back BEHIND THE HEAD into exact pinned cocked pose. Knees tuck for a jump, shoulders brace, body stays same size. Hammer head glows cyan continuously, never goes dark. No strike yet, no extra weapon, no white smear. Fixed256canvas/root.",
+    "receipt": "id: 58ffe48a-78f5-4379-89bd-d8349ce24aa4\njob_id: 58ffe48a-78f5-4379-89bd-d8349ce24aa4\naction: Smooth windup ONLY: lift hammer from ready stance, bend elbows and pull both hands back BEHIND THE HEAD into exact pinned cocked pose. Knees tuck for a jump, shoulders brace, body stays same size. Hammer head glows cyan continuously, never goes dark. No strike yet, no extra weapon, no white smear. Fixed256canvas/root.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: e7de80f0-0176-582b-b230-32f6ac09d8cf\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"58ffe48a-78f5-4379-89bd-d8349ce24aa4\")",
+    "completion": "status: completed\nid: 58ffe48a-78f5-4379-89bd-d8349ce24aa4\njob_id: 58ffe48a-78f5-4379-89bd-d8349ce24aa4\nframe: 0 of 9\nasset_id: e7de80f0-0176-582b-b230-32f6ac09d8cf\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0288 in credits\ndownload: https://api.pixellab.ai/mcp/images/58ffe48a-78f5-4379-89bd-d8349ce24aa4/download?index=0"
+  },
+  {
+    "id": "corrupt_wind",
+    "job_id": "1779fd48-4b45-45d0-9315-6f09a1935a8a",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Smooth windup ONLY: lift hammer from ready stance, bend elbows and pull both hands back BEHIND THE HEAD into exact pinned cocked pose. Knees tuck for a jump, shoulders brace, body stays same size. Hammer head glows violet continuously, never goes dark. No strike yet, no extra weapon, no white smear. Fixed256canvas/root.",
+    "receipt": "id: 1779fd48-4b45-45d0-9315-6f09a1935a8a\njob_id: 1779fd48-4b45-45d0-9315-6f09a1935a8a\naction: Smooth windup ONLY: lift hammer from ready stance, bend elbows and pull both hands back BEHIND THE HEAD into exact pinned cocked pose. Knees tuck for a jump, shoulders brace, body stays same size. Hammer head glows violet continuously, never goes dark. No strike yet, no extra weapon, no white smear. Fixed256canvas/root.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: b0d9763b-74ae-5f70-b23d-925a994b30e6\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1779fd48-4b45-45d0-9315-6f09a1935a8a\")",
+    "completion": "status: completed\nid: 1779fd48-4b45-45d0-9315-6f09a1935a8a\njob_id: 1779fd48-4b45-45d0-9315-6f09a1935a8a\nframe: 0 of 9\nasset_id: b0d9763b-74ae-5f70-b23d-925a994b30e6\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0369 in credits\ndownload: https://api.pixellab.ai/mcp/images/1779fd48-4b45-45d0-9315-6f09a1935a8a/download?index=0",
+    "selected": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      7,
+      8
+    ],
+    "rejected_frames": [
+      5,
+      6
+    ],
+    "review": "Frame5 clips top spike; excluded, no padding hides cropped source."
+  },
+  {
+    "id": "corrupt_strike",
+    "job_id": "41a0526f-14bd-41a3-b503-d98a85d336d7",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "One powerful STRAIGHT DOWN hammer strike from BEHIND THE HEAD. Bring hands and shaft forward over the crown, extend both arms in front of chest, crouch and drive physical hammer downward to exact central end-face impact between feet. Show all intermediate arm/head heights smoothly and continuously, lower circular end cap hits ground. No sideways follow-through, no second strike, no pauses, no flare hiding weapon. Hammer remains visibly VIOLET-GLOWING in every frame, same cylinder dimensions, body scale fixed,256canvas.",
+    "receipt": "id: 41a0526f-14bd-41a3-b503-d98a85d336d7\njob_id: 41a0526f-14bd-41a3-b503-d98a85d336d7\naction: One powerful STRAIGHT DOWN hammer strike from BEHIND THE HEAD. Bring hands and shaft forward over the crown, extend both arms in front of chest, crouch and drive physical hammer downward to exact central end-face impact between feet. Show all intermediate arm/head heights smoothly and continuously, lower circular end cap hits ground. No sideways follow-through, no second strike, no pauses, no flare hiding weapon. Hammer remains visibly VIOLET-GLOWING in every frame, same cylinder dimensions, body scale fixed,256canvas.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: fd4ffc4d-4859-5d00-b16a-aa2bcbd49c67\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"41a0526f-14bd-41a3-b503-d98a85d336d7\")",
+    "completion": "status: completed\nid: 41a0526f-14bd-41a3-b503-d98a85d336d7\njob_id: 41a0526f-14bd-41a3-b503-d98a85d336d7\nframe: 0 of 9\nasset_id: fd4ffc4d-4859-5d00-b16a-aa2bcbd49c67\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0291 in credits\ndownload: https://api.pixellab.ai/mcp/images/41a0526f-14bd-41a3-b503-d98a85d336d7/download?index=0"
+  },
+  {
+    "id": "corrupt_double",
+    "job_id": "ff9fc837-9e43-44f7-a3ed-7d777e62b8d0",
+    "frames": 3,
+    "status": "completed",
+    "receipt": "id: ff9fc837-9e43-44f7-a3ed-7d777e62b8d0\njob_id: ff9fc837-9e43-44f7-a3ed-7d777e62b8d0\nframes: 3\nsize: 256x256px\ntransparent: True\ninstructions: These are poses of the SAME hammer boss in his standard armor. Dress him as the corrupted Dracodia chromium variant in the reference: horned skull, black/purple armor, red core and VIOLET constantly glowing spiked cylindrical hammer. Keep each input's EXACT pose, two-handed swing and weapon geometry, especially end-face downward impact in frame3. Do not change body size across frames or replace physical hammer with an energy orb.\nseed: 225\nasset_id: d1dd8c0e-2d09-5982-aeec-baa1903b7b0f\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"ff9fc837-9e43-44f7-a3ed-7d777e62b8d0\")",
+    "completion": "status: completed\nid: ff9fc837-9e43-44f7-a3ed-7d777e62b8d0\njob_id: ff9fc837-9e43-44f7-a3ed-7d777e62b8d0\nframe: 0 of 3\nasset_id: d1dd8c0e-2d09-5982-aeec-baa1903b7b0f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.1500 in credits\ndownload: https://api.pixellab.ai/mcp/images/ff9fc837-9e43-44f7-a3ed-7d777e62b8d0/download?index=0",
+    "selected": [],
+    "rejected": "Reference transfer retained blue body and flat-barrel contact; excluded. Corrupted double uses its own complete windup/strike banks with Hama cadence."
+  },
+  {
+    "id": "blue_strike",
+    "job_id": "646ecb9d-d629-4cc6-b65b-61312cfbf3ea",
+    "frames": 9,
+    "status": "completed",
+    "receipt": "id: 646ecb9d-d629-4cc6-b65b-61312cfbf3ea\njob_id: 646ecb9d-d629-4cc6-b65b-61312cfbf3ea\naction: One powerful STRAIGHT DOWN jumping hammer strike from the existing BEHIND-THE-HEAD windup into the exact forward two-handed landing pose. Hands and hammer travel over the crown and then down in FRONT of chest to centreline between feet. Smooth intermediate shoulder, elbow, wrist and knee motion. The robot comes toward viewer as it lands, keeping exact existing armor proportions. Hammer lower circular END CAP strikes the ground, not curved barrel. No sideways swing or follow-through, one strike only, no pauses or big flash hiding the physical hammer. Head glows CYAN continuously. Fixed256square canvas, whole body/weapon visible, transparent.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 3447a31e-698c-5a2a-a39b-2664f2b6af49\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"646ecb9d-d629-4cc6-b65b-61312cfbf3ea\")",
+    "prompt": "One powerful STRAIGHT DOWN jumping hammer strike from the existing BEHIND-THE-HEAD windup into the exact forward two-handed landing pose. Hands and hammer travel over the crown and then down in FRONT of chest to centreline between feet. Smooth intermediate shoulder, elbow, wrist and knee motion. The robot comes toward viewer as it lands, keeping exact existing armor proportions. Hammer lower circular END CAP strikes the ground, not curved barrel. No sideways swing or follow-through, one strike only, no pauses or big flash hiding the physical hammer. Head glows CYAN continuously. Fixed256square canvas, whole body/weapon visible, transparent.",
+    "completion": "status: completed\nid: 646ecb9d-d629-4cc6-b65b-61312cfbf3ea\njob_id: 646ecb9d-d629-4cc6-b65b-61312cfbf3ea\nframe: 0 of 9\nasset_id: 3447a31e-698c-5a2a-a39b-2664f2b6af49\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0417 in credits\ndownload: https://api.pixellab.ai/mcp/images/646ecb9d-d629-4cc6-b65b-61312cfbf3ea/download?index=0"
+  },
+  {
+    "id": "blue_glow_loop",
+    "job_id": "346f3111-3ca0-4045-9e04-e10c9817c6fb",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: 346f3111-3ca0-4045-9e04-e10c9817c6fb\njob_id: 346f3111-3ca0-4045-9e04-e10c9817c6fb\naction: Loop ONLY the existing small lightning filaments flickering and crawling around their current open-centre corona. Preserve empty transparent centre and same overall footprint, constant brightness: NEVER blink entirely off. No expansion, no new object or circle, no camera movement.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 2ced6099-4856-5549-9f0c-f25e89eb9d7d\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"346f3111-3ca0-4045-9e04-e10c9817c6fb\")",
+    "prompt": "Loop ONLY the existing small lightning filaments flickering and crawling around their current open-centre corona. Preserve empty transparent centre and same overall footprint, constant brightness: NEVER blink entirely off. No expansion, no new object or circle, no camera movement.",
+    "completion": "status: completed\nid: 346f3111-3ca0-4045-9e04-e10c9817c6fb\njob_id: 346f3111-3ca0-4045-9e04-e10c9817c6fb\nframe: 0 of 5\nasset_id: 2ced6099-4856-5549-9f0c-f25e89eb9d7d\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0298 in credits\ndownload: https://api.pixellab.ai/mcp/images/346f3111-3ca0-4045-9e04-e10c9817c6fb/download?index=0"
+  },
+  {
+    "id": "corrupt_glow_loop",
+    "job_id": "8a3d9c32-14be-4231-b2e7-57741120da63",
+    "frames": 5,
+    "status": "completed",
+    "receipt": "id: 8a3d9c32-14be-4231-b2e7-57741120da63\njob_id: 8a3d9c32-14be-4231-b2e7-57741120da63\naction: Loop ONLY the existing small lightning filaments flickering and crawling around their current open-centre corona. Preserve empty transparent centre and same overall footprint, constant brightness: NEVER blink entirely off. No expansion, no new object or circle, no camera movement.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 0f0976c2-2f93-5995-b91f-b25f35a5b8c6\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"8a3d9c32-14be-4231-b2e7-57741120da63\")",
+    "prompt": "Loop ONLY the existing small lightning filaments flickering and crawling around their current open-centre corona. Preserve empty transparent centre and same overall footprint, constant brightness: NEVER blink entirely off. No expansion, no new object or circle, no camera movement.",
+    "completion": "status: completed\nid: 8a3d9c32-14be-4231-b2e7-57741120da63\njob_id: 8a3d9c32-14be-4231-b2e7-57741120da63\nframe: 0 of 5\nasset_id: 0f0976c2-2f93-5995-b91f-b25f35a5b8c6\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0287 in credits\ndownload: https://api.pixellab.ai/mcp/images/8a3d9c32-14be-4231-b2e7-57741120da63/download?index=0"
+  },
+  {
+    "id": "blue_front",
+    "job_id": "61cfa2b7-ca22-475d-9a99-2ecf474e8e29",
+    "frames": 1,
+    "status": "completed",
+    "receipt": "id: 61cfa2b7-ca22-475d-9a99-2ecf474e8e29\njob_id: 61cfa2b7-ca22-475d-9a99-2ecf474e8e29\nmodel: pro\ndescription: Exact blue hammer robot from reference1, an IN-BETWEEN FRAME of a straight-down jumping hammer swing. Preserve reference1 body size and design. Hammer head is NOW IN FRONT OF BODY at x128,y104, cylinder long axis VERTICAL, lower circular end face DOWN; head has its original full cylinder length, never a disc. BOTH HANDS guide the shaft directly behind/above the head, arms extend FORWARD, elbows bent, shoulders committed. Weapon passes in front of forehead/upper chest, partly occluding face; knees slightly bent. Ground is still below; do not plant hammer yet. Body faces viewer, no side lean or sweep. Copy glowing cyan blue lightning hammer and armor from reference1; reference2 is only the END POSE, draw an earlier pose with the hammer at the specified middle height.256square transparent, whole body, no large flash/trails/extraobjects.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: a83b55ba-f4cd-598a-851c-833fb6ee3255\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"61cfa2b7-ca22-475d-9a99-2ecf474e8e29\")",
+    "prompt": "Exact blue hammer robot from reference1, an IN-BETWEEN FRAME of a straight-down jumping hammer swing. Preserve reference1 body size and design. Hammer head is NOW IN FRONT OF BODY at x128,y104, cylinder long axis VERTICAL, lower circular end face DOWN; head has its original full cylinder length, never a disc. BOTH HANDS guide the shaft directly behind/above the head, arms extend FORWARD, elbows bent, shoulders committed. Weapon passes in front of forehead/upper chest, partly occluding face; knees slightly bent. Ground is still below; do not plant hammer yet. Body faces viewer, no side lean or sweep. Copy glowing cyan blue lightning hammer and armor from reference1; reference2 is only the END POSE, draw an earlier pose with the hammer at the specified middle height.256square transparent, whole body, no large flash/trails/extraobjects.",
+    "completion": "status: completed\nid: 61cfa2b7-ca22-475d-9a99-2ecf474e8e29\njob_id: 61cfa2b7-ca22-475d-9a99-2ecf474e8e29\nframe: 0 of 1\nasset_id: a83b55ba-f4cd-598a-851c-833fb6ee3255\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/61cfa2b7-ca22-475d-9a99-2ecf474e8e29/download?index=0"
+  },
+  {
+    "id": "blue_low",
+    "job_id": "c6eb3edc-416c-4cff-9e0e-25e0d287e5a8",
+    "frames": 1,
+    "status": "completed",
+    "receipt": "id: c6eb3edc-416c-4cff-9e0e-25e0d287e5a8\njob_id: c6eb3edc-416c-4cff-9e0e-25e0d287e5a8\nmodel: pro\ndescription: Exact blue hammer robot from reference1, an IN-BETWEEN FRAME of a straight-down jumping hammer swing. Preserve reference1 body size and design. Hammer head is NOW IN FRONT OF BODY at x128,y165, cylinder long axis VERTICAL, lower circular end face DOWN; head has its original full cylinder length, never a disc. BOTH HANDS guide the shaft directly behind/above the head, arms extend FORWARD, elbows bent, shoulders committed. Weapon passes in front of lower abdomen/upper knees, knees deeply braced, ready to land. Ground is still below; do not plant hammer yet. Body faces viewer, no side lean or sweep. Copy glowing cyan blue lightning hammer and armor from reference1; reference2 is only the END POSE, draw an earlier pose with the hammer at the specified middle height.256square transparent, whole body, no large flash/trails/extraobjects.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: c006852c-e408-5bc6-98da-148b728dc07a\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"c6eb3edc-416c-4cff-9e0e-25e0d287e5a8\")",
+    "prompt": "Exact blue hammer robot from reference1, an IN-BETWEEN FRAME of a straight-down jumping hammer swing. Preserve reference1 body size and design. Hammer head is NOW IN FRONT OF BODY at x128,y165, cylinder long axis VERTICAL, lower circular end face DOWN; head has its original full cylinder length, never a disc. BOTH HANDS guide the shaft directly behind/above the head, arms extend FORWARD, elbows bent, shoulders committed. Weapon passes in front of lower abdomen/upper knees, knees deeply braced, ready to land. Ground is still below; do not plant hammer yet. Body faces viewer, no side lean or sweep. Copy glowing cyan blue lightning hammer and armor from reference1; reference2 is only the END POSE, draw an earlier pose with the hammer at the specified middle height.256square transparent, whole body, no large flash/trails/extraobjects.",
+    "completion": "status: completed\nid: c6eb3edc-416c-4cff-9e0e-25e0d287e5a8\njob_id: c6eb3edc-416c-4cff-9e0e-25e0d287e5a8\nframe: 0 of 1\nasset_id: c006852c-e408-5bc6-98da-148b728dc07a\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/c6eb3edc-416c-4cff-9e0e-25e0d287e5a8/download?index=0"
+  },
+  {
+    "id": "corrupt_front",
+    "job_id": "12cc0b65-a33d-4ddb-8338-8571804ed21b",
+    "frames": 1,
+    "status": "completed",
+    "receipt": "id: 12cc0b65-a33d-4ddb-8338-8571804ed21b\njob_id: 12cc0b65-a33d-4ddb-8338-8571804ed21b\nmodel: pro\ndescription: Exact corrupt hammer robot from reference1, an IN-BETWEEN FRAME of a straight-down jumping hammer swing. Preserve reference1 body size and design. Hammer head is NOW IN FRONT OF BODY at x128,y104, cylinder long axis VERTICAL, lower circular end face DOWN; head has its original full cylinder length, never a disc. BOTH HANDS guide the shaft directly behind/above the head, arms extend FORWARD, elbows bent, shoulders committed. Weapon passes in front of forehead/upper chest, partly occluding face; knees slightly bent. Ground is still below; do not plant hammer yet. Body faces viewer, no side lean or sweep. Copy glowing violet lightning hammer and armor from reference1; reference2 is only the END POSE, draw an earlier pose with the hammer at the specified middle height.256square transparent, whole body, no large flash/trails/extraobjects.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: 2fbc6ee1-f556-5c12-8517-184904c96393\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"12cc0b65-a33d-4ddb-8338-8571804ed21b\")",
+    "prompt": "Exact corrupt hammer robot from reference1, an IN-BETWEEN FRAME of a straight-down jumping hammer swing. Preserve reference1 body size and design. Hammer head is NOW IN FRONT OF BODY at x128,y104, cylinder long axis VERTICAL, lower circular end face DOWN; head has its original full cylinder length, never a disc. BOTH HANDS guide the shaft directly behind/above the head, arms extend FORWARD, elbows bent, shoulders committed. Weapon passes in front of forehead/upper chest, partly occluding face; knees slightly bent. Ground is still below; do not plant hammer yet. Body faces viewer, no side lean or sweep. Copy glowing violet lightning hammer and armor from reference1; reference2 is only the END POSE, draw an earlier pose with the hammer at the specified middle height.256square transparent, whole body, no large flash/trails/extraobjects.",
+    "completion": "status: completed\nid: 12cc0b65-a33d-4ddb-8338-8571804ed21b\njob_id: 12cc0b65-a33d-4ddb-8338-8571804ed21b\nframe: 0 of 1\nasset_id: 2fbc6ee1-f556-5c12-8517-184904c96393\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/12cc0b65-a33d-4ddb-8338-8571804ed21b/download?index=0",
+    "rejected": "Requested intermediate pose not achieved; excluded from runtime."
+  },
+  {
+    "id": "corrupt_low",
+    "job_id": "3e7bc775-974b-40d9-a983-fb8d741f642b",
+    "frames": 1,
+    "status": "completed",
+    "receipt": "id: 3e7bc775-974b-40d9-a983-fb8d741f642b\njob_id: 3e7bc775-974b-40d9-a983-fb8d741f642b\nmodel: pro\ndescription: Exact corrupt hammer robot from reference1, an IN-BETWEEN FRAME of a straight-down jumping hammer swing. Preserve reference1 body size and design. Hammer head is NOW IN FRONT OF BODY at x128,y165, cylinder long axis VERTICAL, lower circular end face DOWN; head has its original full cylinder length, never a disc. BOTH HANDS guide the shaft directly behind/above the head, arms extend FORWARD, elbows bent, shoulders committed. Weapon passes in front of lower abdomen/upper knees, knees deeply braced, ready to land. Ground is still below; do not plant hammer yet. Body faces viewer, no side lean or sweep. Copy glowing violet lightning hammer and armor from reference1; reference2 is only the END POSE, draw an earlier pose with the hammer at the specified middle height.256square transparent, whole body, no large flash/trails/extraobjects.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: 260d4e43-4692-5081-80a4-d3fc2780f4ed\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"3e7bc775-974b-40d9-a983-fb8d741f642b\")",
+    "prompt": "Exact corrupt hammer robot from reference1, an IN-BETWEEN FRAME of a straight-down jumping hammer swing. Preserve reference1 body size and design. Hammer head is NOW IN FRONT OF BODY at x128,y165, cylinder long axis VERTICAL, lower circular end face DOWN; head has its original full cylinder length, never a disc. BOTH HANDS guide the shaft directly behind/above the head, arms extend FORWARD, elbows bent, shoulders committed. Weapon passes in front of lower abdomen/upper knees, knees deeply braced, ready to land. Ground is still below; do not plant hammer yet. Body faces viewer, no side lean or sweep. Copy glowing violet lightning hammer and armor from reference1; reference2 is only the END POSE, draw an earlier pose with the hammer at the specified middle height.256square transparent, whole body, no large flash/trails/extraobjects.",
+    "completion": "status: completed\nid: 3e7bc775-974b-40d9-a983-fb8d741f642b\njob_id: 3e7bc775-974b-40d9-a983-fb8d741f642b\nframe: 0 of 1\nasset_id: 260d4e43-4692-5081-80a4-d3fc2780f4ed\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/3e7bc775-974b-40d9-a983-fb8d741f642b/download?index=0",
+    "rejected": "Requested intermediate pose not achieved; excluded from runtime."
+  },
+  {
+    "id": "corrupt_mid_fix",
+    "job_id": "0ae38c12-749d-4fee-bf86-07359c9081b3",
+    "frames": 1,
+    "status": "completed",
+    "receipt": "id: 0ae38c12-749d-4fee-bf86-07359c9081b3\njob_id: 0ae38c12-749d-4fee-bf86-07359c9081b3\nmodel: pixen\nedit: Raise ONLY the held hammer and both gripping hands from the floor to chest height. Hammer cylinder center at x134,y135, bottom end cap y166. Keep cylinder vertical, lower end cap down; shaft/hands stay connected above it. Same crouched robot, feet, armor, face, size and transparent256canvas. Do not leave hammer on ground. No flash.\nsource: 256x256px\nsize: 256x256px\ntransparent: True\nasset_id: f73e0821-255a-590a-8d44-68ffb7e20dfa\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"0ae38c12-749d-4fee-bf86-07359c9081b3\")",
+    "prompt": "Raise ONLY the held hammer and both gripping hands from the floor to chest height. Hammer cylinder center at x134,y135, bottom end cap y166. Keep cylinder vertical, lower end cap down; shaft/hands stay connected above it. Same crouched robot, feet, armor, face, size and transparent256canvas. Do not leave hammer on ground. No flash.",
+    "rejected": "Requested intermediate pose not achieved; excluded from runtime."
+  },
+  {
+    "id": "corrupt_front_fix",
+    "job_id": "f93d3896-6e70-4cab-98a6-cd1503b28348",
+    "frames": 1,
+    "status": "completed",
+    "receipt": "id: f93d3896-6e70-4cab-98a6-cd1503b28348\njob_id: f93d3896-6e70-4cab-98a6-cd1503b28348\nmodel: pixen\nedit: Raise ONLY the held hammer and both gripping hands from the floor to face height. Hammer cylinder center x134,y98, bottom end cap y129, partly hides face. Keep cylinder vertical, lower end cap down and hands connected behind/above. Keep exact original robot body, feet, armor, size and transparent256canvas. No extra hammer or flash.\nsource: 256x256px\nsize: 256x256px\ntransparent: True\nasset_id: 413d081e-2892-5b18-b616-9f2be0e4da52\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"f93d3896-6e70-4cab-98a6-cd1503b28348\")",
+    "prompt": "Raise ONLY the held hammer and both gripping hands from the floor to face height. Hammer cylinder center x134,y98, bottom end cap y129, partly hides face. Keep cylinder vertical, lower end cap down and hands connected behind/above. Keep exact original robot body, feet, armor, size and transparent256canvas. No extra hammer or flash."
+  },
+  {
+    "id": "corrupt_chest_fix",
+    "job_id": "aba3a7ab-1177-430c-898d-88ae496d1b17",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Lower the existing hammer head from in front of the forehead to IN FRONT OF THE RED CHEST CORE, covering the red circle. Head centre x134,y132, lower end cap y162, clearly ABOVE knees and floor. Move both hands down with shaft, elbows bend. Keep cylinder upright, same size. Keep robot body/feet/armor exactly unchanged. No flash.",
+    "receipt": "id: aba3a7ab-1177-430c-898d-88ae496d1b17\njob_id: aba3a7ab-1177-430c-898d-88ae496d1b17\nmodel: pixen\nedit: Lower the existing hammer head from in front of the forehead to IN FRONT OF THE RED CHEST CORE, covering the red circle. Head centre x134,y132, lower end cap y162, clearly ABOVE knees and floor. Move both hands down with shaft, elbows bend. Keep cylinder upright, same size. Keep robot body/feet/armor exactly unchanged. No flash.\nsource: 256x256px\nsize: 256x256px\ntransparent: True\nasset_id: aa3cd7ad-7b67-55a7-879e-99811313e57c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"aba3a7ab-1177-430c-898d-88ae496d1b17\")",
+    "rejected": "Floating hammer head; hands did not follow the requested chest-height pose. Excluded from runtime.",
+    "selected": []
+  }
+]

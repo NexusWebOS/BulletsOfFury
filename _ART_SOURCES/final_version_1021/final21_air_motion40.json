@@ -1,0 +1,74 @@
+[
+  {
+    "name": "air_vmanta_attack",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/d41bddf9-2314-4965-a58f-7e87ba0cc8d5/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/d41bddf9-2314-4965-a58f-7e87ba0cc8d5/download?index=0",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced vmanta aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Fire wing-mounted weapons in paired short bursts: left pod recoils then right pod recoils, wing panels flex subtly, vents cycle and engines pulse; cease firing and return to initial pose. Keep entire hull opaque and stable; no projectiles or long beams baked into sprite, only tiny muzzle flashes at exact weapon tips. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: 104297e7-168c-4242-b28c-d70d2736e711\njob_id: 104297e7-168c-4242-b28c-d70d2736e711\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Fire wing-mounted weapons in paired short bursts: left pod recoils then right pod recoils, wing panels flex subtly, vents cycle and engines pulse; cease firing and return to initial pose. Keep entire hull opaque and stable; no projectiles or long beams baked into sprite, only tiny muzzle flashes at exact weapon tips. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"104297e7-168c-4242-b28c-d70d2736e711\")\nasset_id: 3ac9f076-529e-52cb-9140-25450ec13dd6\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_tsplit_roll",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/103c37a3-1669-4acf-bdfa-6dc0c5adc3b7/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/103c37a3-1669-4acf-bdfa-6dc0c5adc3b7/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced tsplit aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Complete one full360 degree axial BARREL ROLL around the longitudinal nose-to-tail axis. Show top, left wing-down edge, underside, opposite wing-down edge, then original top. Nose stays pointing south. NO yaw or flat paper spin. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: d85ce677-d771-4766-afb7-bae6afdfe730\njob_id: d85ce677-d771-4766-afb7-bae6afdfe730\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Complete one full360 degree axial BARREL ROLL around the longitudinal nose-to-tail axis. Show top, left wing-down edge, underside, opposite wing-down edge, then original top. Nose stays pointing south. NO yaw or flat paper spin. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d85ce677-d771-4766-afb7-bae6afdfe730\")\nasset_id: c8919912-0a46-5f3f-a19a-a8ef5d8d8537\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_tsplit_somer",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/103c37a3-1669-4acf-bdfa-6dc0c5adc3b7/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/103c37a3-1669-4acf-bdfa-6dc0c5adc3b7/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced tsplit aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Perform one complete360 degree SOMERSAULT around the lateral wing-to-wing axis. Nose pitches up toward camera, show front-facing nose-on view, underside, tail-on view then original top view. Full airplane rotates in3D without translation. Not a barrel roll and not a flat paper rotation. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: 05249cfe-43b1-4d4e-913e-62b1d3e1cd24\njob_id: 05249cfe-43b1-4d4e-913e-62b1d3e1cd24\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Perform one complete360 degree SOMERSAULT around the lateral wing-to-wing axis. Nose pitches up toward camera, show front-facing nose-on view, underside, tail-on view then original top view. Full airplane rotates in3D without translation. Not a barrel roll and not a flat paper rotation. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"05249cfe-43b1-4d4e-913e-62b1d3e1cd24\")\nasset_id: 76a52bb8-eabd-5785-a6f4-996de9f5b871\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_tsplit_drift",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/103c37a3-1669-4acf-bdfa-6dc0c5adc3b7/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/103c37a3-1669-4acf-bdfa-6dc0c5adc3b7/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced tsplit aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Swerve and drift smoothly: bank left20degrees with a small yaw left, counter-steer right20degrees, then smoothly center. Fixed fuselage anchor; wing controls articulate and engine exhaust pulses, no translation or scale change. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "error: rate limit exceeded (10/10 jobs)\n\nhint: wait for a job to finish, then retry"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "method": "Source-derived art and hand-authored Aseprite pixel frames. No paid image/animation generation used for this pass.",
+  "reference": "User-supplied Cyclops GIFs inspected for short charge, directional flash, forceful optic sweep rhythm only. No reference characters/pixels are used as game sprites.",
+  "physical": "Approved RD71/BI24 Dracodia left claw and whole shoulders. Four authored finger closure stages and64 baked headings, matching hit alpha. Continuous dark/purple tendon with source-matched palette and4 moving vein phases; no repeated hand silhouettes.",
+  "ordnance": "Actual BOF rocket center extracted/purple recolored, original north-facing art corrected to travel headings. Four authored purple exhaust phases and64 headings. Actual BOF red beam and proper optical root exported with4 phases and64 headings.",
+  "turrets": "Inset tube patches and measured anchors on each of45 original wind/strike/recover poses; purple midtones/chrome highlights; source-frame-aligned render and firing sockets.",
+  "warnings": "BOF metal warning sign, Rook filled360 field/rotate icon and authored green/yellow/red line strips; repeated fixed-cell ordinary blits only.",
+  "sources": {
+    "assets/game/shared/combat/encounter_revision_1023/laser_down.webp": "3c316a1877be1dddc0e355af2428c7db748443af3b7fdc445fa7d52b6b3d8cca",
+    "assets/game/shared/combat/stage78_review_1025/eye_root.webp": "5170ceb32df9ed07e9cf9f5dc2b9b03261be1710063d33451ab28fe65c133397",
+    "assets/game/shared/combat/encounters_0930/jet_missile.png": "ce31b5648362c1dce630fece5bbc1465eb36256d0ce2e96546f07723a33609b6",
+    "assets/game/levels/stage_09/boss/tidal_sovereign_1029/wall_warning.png": "6cafccc49fb49e1232209c775ca7f5cf50a10c854264d8d1f594ec6fdf2c55be"
+  },
+  "coreEdit": {
+    "before": "36a9cfb7721722209f53afb4019d9428a1f7a633427c705c8bc317b027e33fde",
+    "after": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de",
+    "scope": "Captured-seat input lock and explicit scoped fatal throw through the original playerHit/death pipeline",
+    "exactOriginalReconstruction": true
+  }
+}

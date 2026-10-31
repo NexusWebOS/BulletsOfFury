@@ -1,0 +1,210 @@
+[
+  {
+    "shot": "hq_regroup",
+    "size": [
+      688,
+      384
+    ],
+    "changed_bbox": [
+      202,
+      123,
+      375,
+      205
+    ],
+    "changed_pixels": 3925,
+    "sha256": "cb8b26c55a45b1b29ba4dd8ed2e5b2c8ff3041c06185be1f29926e032e1e88ee",
+    "head": null,
+    "maverick_head": {
+      "source": "maverick-head-0.png",
+      "scale": 0.625,
+      "at": [
+        198,
+        117
+      ]
+    }
+  },
+  {
+    "shot": "forge_upgrade",
+    "size": [
+      688,
+      384
+    ],
+    "changed_bbox": [
+      39,
+      138,
+      132,
+      384
+    ],
+    "changed_pixels": 11948,
+    "sha256": "7dbd53802308ed7cca154d35e2e52eec2482332eedb3b2b9278d1524f675dd2f",
+    "head": {
+      "source": "cole-new-head-0.png",
+      "scale": 0.625,
+      "at": [
+        63,
+        130
+      ],
+      "mirrored": false
+    },
+    "maverick_head": null
+  },
+  {
+    "shot": "hq_alarm",
+    "size": [
+      688,
+      384
+    ],
+    "changed_bbox": [
+      177,
+      147,
+      444,
+      308
+    ],
+    "changed_pixels": 5805,
+    "sha256": "162c8dc3fc0c24b2430240f51513dfbe4c5051d1d205b95c51c964a57c6ab932",
+    "head": {
+      "source": "cole-new-head-0.png",
+      "scale": 0.375,
+      "at": [
+        197,
+        142
+      ],
+      "mirrored": false
+    },
+    "maverick_head": {
+      "source": "maverick-head-0.png",
+      "scale": 0.25,
+      "at": [
+        412,
+        155
+      ]
+    }
+  },
+  {
+    "shot": "hq_river",
+    "size": [
+      688,
+      384
+    ],
+    "changed_bbox": [
+      72,
+      143,
+      569,
+      384
+    ],
+    "changed_pixels": 16767,
+    "sha256": "873a2ddf1e8545428fa2906e4861e05cd740967c5e5c9636b950c767fc7630a6",
+    "head": {
+      "source": "cole-rear-1.png",
+      "scale": 0.875,
+      "at": [
+        66,
+        133
+      ],
+      "mirrored": false
+    },
+    "maverick_head": {
+      "source": "maverick-head-0.png",
+      "scale": 0.375,
+      "at": [
+        536,
+        168
+      ]
+    }
+  },
+  {
+    "shot": "launch_generator",
+    "size": [
+      688,
+      384
+    ],
+    "changed_bbox": [
+      132,
+      60,
+      193,
+      190
+    ],
+    "changed_pixels": 2839,
+    "sha256": "be026ad914efa4d3599452723af67c6657962eb50290ad3ef5fe71c00f1c05ce",
+    "head": {
+      "source": "cole-new-head-2.png",
+      "scale": 0.375,
+      "at": [
+        160,
+        55
+      ],
+      "mirrored": false
+    },
+    "maverick_head": null
+  },
+  {
+    "shot": "power_cell",
+    "size": [
+      688,
+      384
+    ],
+    "changed_bbox": [
+      468,
+      190,
+      560,
+      382
+    ],
+    "changed_pixels": 6417,
+    "sha256": "eeb35df360c1349c2962a6dc90f97db0703d5de1be99c425bcc2f5d3ca37617a",
+    "head": {
+      "source": "cole-rear-1.png",
+      "scale": 0.5,
+      "at": [
+        516,
+        185
+      ],
+      "mirrored": true
+    },
+    "maverick_head": null
+  },
+  {
+    "shot": "maverick_report_pose",
+    "native_key": "inv20_maverick",
+    "size": [
+      256,
+      384
+    ],
+    "eye_region": [
+      100,
+      45,
+      188,
+      84
+    ],
+    "original_body_and_mouth_preserved": true
+  },
+  {
+    "shot": "maverick_horror_pose",
+    "native_key": "inv20_maverick_horror",
+    "size": [
+      256,
+      384
+    ],
+    "eye_region": [
+      100,
+      45,
+      188,
+      84
+    ],
+    "original_body_and_mouth_preserved": true
+  },
+  {
+    "shot": "maverick_standing_pose",
+    "native_key": "pose_maverick_0",
+    "size": [
+      256,
+      320
+    ],
+    "eye_region": [
+      120,
+      20,
+      168,
+      46
+    ],
+    "original_body_and_mouth_preserved": true
+  }
+]

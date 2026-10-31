@@ -1,0 +1,253 @@
+[
+  {
+    "name": "corrupt_idle",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Subtle idle breathing piston motion, slight weight shift and armor vents pulsing; hammer and feet remain planted. Return to exact starting stance. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: 3c071c99-b550-4e1a-a85c-7978f88740c1\njob_id: 3c071c99-b550-4e1a-a85c-7978f88740c1\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Subtle idle breathing piston motion, slight weight shift and armor vents pulsing; hammer and feet remain planted. Return to exact starting stance. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 8\nsize: 256x256px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3c071c99-b550-4e1a-a85c-7978f88740c1\")\nasset_id: 9465d67e-5598-56e9-b2d1-d99af65e4f6a\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_slam",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Raise the two-handed energy hammer directly above head with a clear four-frame anticipation; drive it down fiercely in front of the feet, recoil with a heavy low follow-through, then recover to starting stance. Hammer remains solid, hands gripping shaft. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: bfdda8ee-50d5-4e84-969f-a862f62b9814\njob_id: bfdda8ee-50d5-4e84-969f-a862f62b9814\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Raise the two-handed energy hammer directly above head with a clear four-frame anticipation; drive it down fiercely in front of the feet, recoil with a heavy low follow-through, then recover to starting stance. Hammer remains solid, hands gripping shaft. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"bfdda8ee-50d5-4e84-969f-a862f62b9814\")\nasset_id: 1f63c97e-cd34-5431-a808-2efc12adb166\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_spin",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Perform one complete powerful360-degree hammer body spin around a fixed chest pivot, hammer extended in both hands. Full torso and legs rotate naturally; clear front/side/back poses. Return to starting stance; no travel. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: b0ab4918-1f3e-4a77-be95-3af489520c61\njob_id: b0ab4918-1f3e-4a77-be95-3af489520c61\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Perform one complete powerful360-degree hammer body spin around a fixed chest pivot, hammer extended in both hands. Full torso and legs rotate naturally; clear front/side/back poses. Return to starting stance; no travel. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b0ab4918-1f3e-4a77-be95-3af489520c61\")\nasset_id: 96ce5155-53dd-5dd9-a794-a59908d352f8\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_side",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 12,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Crouch with hammer pulled beside hip, lift knees into a short jumping two-handed sideways strike, then land and visibly recover. Centered physical chest anchor; no travel or camera movement. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: 5dff30b0-bc2c-4b80-bad4-0fa70324db61\njob_id: 5dff30b0-bc2c-4b80-bad4-0fa70324db61\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Crouch with hammer pulled beside hip, lift knees into a short jumping two-handed sideways strike, then land and visibly recover. Centered physical chest anchor; no travel or camera movement. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 12\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"5dff30b0-bc2c-4b80-bad4-0fa70324db61\")\nasset_id: 7ad1c10c-657c-504f-91ac-92d7fe086840\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_charge",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Lift the energy hammer high and charge its purple-white core, chest and arms braced. Clean white internal code energy fills hammer seams; hold overhead with piston tremble, then lower it back into starting stance. Energy remains internal and compact. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: fae75dcc-381d-48ab-b02e-becf76ce5bc6\njob_id: fae75dcc-381d-48ab-b02e-becf76ce5bc6\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Lift the energy hammer high and charge its purple-white core, chest and arms braced. Clean white internal code energy fills hammer seams; hold overhead with piston tremble, then lower it back into starting stance. Energy remains internal and compact. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fae75dcc-381d-48ab-b02e-becf76ce5bc6\")\nasset_id: a79a63a1-47fc-502c-b9bd-d5c828d04cc3\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_gun",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Hammer disappears into digital storage, hold a heavy chromium chaingun in both hands at waist aimed toward camera. Barrels spin, paired short muzzle flashes and rhythmic shoulders/arms recoil during sustained firing, then cease and recover. Keep gun muzzle readable; no long bullets baked into frame. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: dd270287-2972-4548-9eb6-d6fa4f4e3a09\njob_id: dd270287-2972-4548-9eb6-d6fa4f4e3a09\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Hammer disappears into digital storage, hold a heavy chromium chaingun in both hands at waist aimed toward camera. Barrels spin, paired short muzzle flashes and rhythmic shoulders/arms recoil during sustained firing, then cease and recover. Keep gun muzzle readable; no long bullets baked into frame. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"dd270287-2972-4548-9eb6-d6fa4f4e3a09\")\nasset_id: 8db3dd00-f6de-54d3-8d87-276c791e1078\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_break",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Bring the hammer shaft across a raised knee, brace both hands and deliberately snap the shaft in half; grip the exposed purple-white core, shudder with strain and raise it to throw, throw forward, then settle into an unarmed stance. Strong readable anticipation and release. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: 8bc8f4d3-2b8c-4f2d-a15c-7e3f58bdc9df\njob_id: 8bc8f4d3-2b8c-4f2d-a15c-7e3f58bdc9df\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Bring the hammer shaft across a raised knee, brace both hands and deliberately snap the shaft in half; grip the exposed purple-white core, shudder with strain and raise it to throw, throw forward, then settle into an unarmed stance. Strong readable anticipation and release. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8bc8f4d3-2b8c-4f2d-a15c-7e3f58bdc9df\")\nasset_id: b02f04c2-9c68-5f25-8457-f1fbea0e0b07\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_fire",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Without hammer or gun, cross both forearms in an X across chest; brace legs and build red-orange internal energy in armor seams, tremble, uncross arms into enraged unarmed guard. Compact pixel flames vent at shoulders; body remains fully opaque. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: cb8cccc5-bb70-4381-8e52-90e2f2b241e3\njob_id: cb8cccc5-bb70-4381-8e52-90e2f2b241e3\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Without hammer or gun, cross both forearms in an X across chest; brace legs and build red-orange internal energy in armor seams, tremble, uncross arms into enraged unarmed guard. Compact pixel flames vent at shoulders; body remains fully opaque. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"cb8cccc5-bb70-4381-8e52-90e2f2b241e3\")\nasset_id: c1ac93df-02d1-58a7-a9d1-ed3cb0c8f56b\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_unarmed",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No hammer and no gun. Hold an unarmed combat guard, fists clenched, a slow mechanical breathing loop; no weapon or flame. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: e19ce5cc-63ba-43a8-810a-8575540593ce\njob_id: e19ce5cc-63ba-43a8-810a-8575540593ce\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No hammer and no gun. Hold an unarmed combat guard, fists clenched, a slow mechanical breathing loop; no weapon or flame. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 8\nsize: 256x256px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e19ce5cc-63ba-43a8-810a-8575540593ce\")\nasset_id: 9bf23d0e-6c0a-57e4-8fb3-11e3aac8734d\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_punch",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No weapon. Pull right fist back in clear anticipation, deliver a strong forward right punch, recoil, then left punch, recoil, and return to guard; arms extend toward the viewer without body travel. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: 2bd8a824-5855-4f64-a83b-05d6ae6010da\njob_id: 2bd8a824-5855-4f64-a83b-05d6ae6010da\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No weapon. Pull right fist back in clear anticipation, deliver a strong forward right punch, recoil, then left punch, recoil, and return to guard; arms extend toward the viewer without body travel. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"2bd8a824-5855-4f64-a83b-05d6ae6010da\")\nasset_id: 3dd17387-5fc6-5512-b94f-559b2f5cf4b8\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_fists",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No weapon. Clasp both fists together above the head, lift shoulders and torso, smash both fists down together in front of the feet, heavy recoil and recovery to unarmed guard. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: f11acc1f-800a-4eab-bf47-8fcedd23f0f2\njob_id: f11acc1f-800a-4eab-bf47-8fcedd23f0f2\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No weapon. Clasp both fists together above the head, lift shoulders and torso, smash both fists down together in front of the feet, heavy recoil and recovery to unarmed guard. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f11acc1f-800a-4eab-bf47-8fcedd23f0f2\")\nasset_id: ecfee18b-eed0-55d1-8122-593588a36962\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_dance",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. Playful menacing hammer knight taunt dance: shift hips and knees left then right, bounce shoulders and nod skull head twice while holding hammer safely across waist. Return to initial stance. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: ffaef5ae-ed79-468b-8cec-5a1c691f4385\njob_id: ffaef5ae-ed79-468b-8cec-5a1c691f4385\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. Playful menacing hammer knight taunt dance: shift hips and knees left then right, bounce shoulders and nod skull head twice while holding hammer safely across waist. Return to initial stance. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ffaef5ae-ed79-468b-8cec-5a1c691f4385\")\nasset_id: 77bd24dd-be2b-5835-802a-94ee76605350\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_ball",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. Curl arms, head and legs inward into a compact spiked chromium ball, spin through one complete360-degree revolution with the same violet armor plates visible, then unfold fully into original stance. No travel or fade. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: 7e498a70-23a8-4b7c-b13f-cac3c99b51de\njob_id: 7e498a70-23a8-4b7c-b13f-cac3c99b51de\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. Curl arms, head and legs inward into a compact spiked chromium ball, spin through one complete360-degree revolution with the same violet armor plates visible, then unfold fully into original stance. No travel or fade. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7e498a70-23a8-4b7c-b13f-cac3c99b51de\")\nasset_id: edd5e8ad-e34c-5685-91b8-2348241e2ac0\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_tool",
+    "args": {
+      "image_urls": [
+        "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a"
+      ],
+      "description": "Keep ONLY the complete two-handed chromium hammer, both head lobes, glowing purple-white inset energy cores and straight metal haft, in exactly its existing diagonal orientation and pixel location. Remove the entire robot body, arms, hands, legs, skull and all other pixels, replacing them with transparency. Reconstruct clean hammer haft where hands previously occluded it. One intact readable weapon sprite on same256x256 transparent canvas; preserve hammer design, colors and proportions exactly.",
+      "no_background": true
+    },
+    "receipt": [
+      "id: 5c9b8dbf-fe5b-4be7-84b8-c24b149b8b69\njob_id: 5c9b8dbf-fe5b-4be7-84b8-c24b149b8b69\nmode: text\nframes: 1\nsize: 256x256px\ntransparent: True\nedit: Keep ONLY the complete two-handed chromium hammer, both head lobes, glowing purple-white inset energy cores and straight metal haft, in exactly its existing diagonal orientation and pixel location. Remove the entire robot body, arms, hands, legs, skull and all other pixels, replacing them with transparency. Reconstruct clean hammer haft where hands previously occluded it. One intact readable weapon sprite on same256x256 transparent canvas; preserve hammer design, colors and proportions exactly.\nasset_id: 70bdbc8c-a104-5dee-99e6-5f4670890d5c\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"5c9b8dbf-fe5b-4be7-84b8-c24b149b8b69\")"
+    ]
+  },
+  {
+    "name": "portal_loop",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/0792881a-3a1f-4fc5-a094-5d42259207f1/download?index=0",
+      "description": "A stationary upright oval warp portal. White cyan and violet energy spirals rotate continuously around the dark aperture in a perfectly smooth full clockwise revolution. Inner filaments flow into dimensional depth, small edge wisps flare and rejoin the ring. NO gate, hardware, metal or support. Fixed center128,128 and oval silhouette, no camera motion, zoom, drifting, growth or cropping. End exactly at starting spiral alignment for a seamless 32-frame loop. Transparent background; keep all energy inside the256x256 canvas with margins.",
+      "frame_count": 32,
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/0792881a-3a1f-4fc5-a094-5d42259207f1/download?index=0",
+      "no_background": true,
+      "enhance_prompt": false,
+      "subject_description": "an upright white cyan violet pure-energy oval portal",
+      "initial_pose": "stationary centered upright oval",
+      "view": "side"
+    },
+    "receipt": [
+      "id: 67b3658e-407f-4e01-9a71-b1ee74fbb218\njob_id: 67b3658e-407f-4e01-9a71-b1ee74fbb218\ndescription: A stationary upright oval warp portal. White cyan and violet energy spirals rotate continuously around the dark aperture in a perfectly smooth full clockwise revolution. Inner filaments flow into dimensional depth, small edge wisps flare and rejoin the ring. NO gate, hardware, metal or support. Fixed center128,128 and oval silhouette, no camera motion, zoom, drifting, growth or cropping. End exactly at starting spiral alignment for a seamless 32-frame loop. Transparent background; keep all energy inside the256x256 canvas with margins.\nframes: 32\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"67b3658e-407f-4e01-9a71-b1ee74fbb218\")\nasset_id: b180277b-5993-5cdb-9867-3b34c0353aa8\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  }
+]

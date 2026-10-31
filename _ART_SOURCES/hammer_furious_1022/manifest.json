@@ -1,0 +1,1969 @@
+{
+  "owner": "_BUILD_SOURCE/build_hammer_furious_1022.py",
+  "source": "_ART_SOURCES/hammer_furious_1022",
+  "banks": {
+    "blue_jump": 13,
+    "blue_sides": 15,
+    "blue_throw": 8,
+    "blue_rage": 10,
+    "blue_tool": 32,
+    "blue_jump_red": 13,
+    "blue_sides_red": 15,
+    "blue_throw_red": 8,
+    "blue_tool_red": 32,
+    "blue_jump_armor": 13,
+    "blue_sides_armor": 15,
+    "blue_throw_armor": 8,
+    "corrupt_jump": 11,
+    "corrupt_sides": 16,
+    "corrupt_throw": 8,
+    "corrupt_rage": 10,
+    "corrupt_tool": 32,
+    "corrupt_jump_red": 11,
+    "corrupt_sides_red": 16,
+    "corrupt_throw_red": 8,
+    "corrupt_tool_red": 32,
+    "blue_aura": 4,
+    "corrupt_aura": 4,
+    "warning_down": 3,
+    "warning_up": 3,
+    "warning_left": 3,
+    "warning_right": 3,
+    "legacy_ha21_blue_beam_empty": 17,
+    "legacy_ha21_blue_cast": 17,
+    "legacy_ha21_blue_cast_empty": 17,
+    "legacy_ha21_blue_chromium": 17,
+    "legacy_ha21_blue_from_ship": 17,
+    "legacy_ha21_blue_hold": 17,
+    "legacy_ha21_blue_jump": 17,
+    "legacy_ha21_blue_rage": 17,
+    "legacy_ha21_blue_rage_empty": 17,
+    "legacy_ha21_blue_side": 17,
+    "legacy_ha21_blue_side_left": 17,
+    "legacy_ha21_blue_counter_right": 16,
+    "legacy_ha21_blue_counter_left": 16,
+    "legacy_ha21_blue_slam": 17,
+    "legacy_ha21_blue_idle": 1,
+    "legacy_ha21_blue_spin": 17,
+    "legacy_ha21_blue_throw": 17,
+    "legacy_ha21_blue_to_ball": 17,
+    "legacy_ha21_corrupt_beam_empty": 17,
+    "legacy_ha21_corrupt_cast": 17,
+    "legacy_ha21_corrupt_chromium": 17,
+    "legacy_ha21_corrupt_from_ship": 17,
+    "legacy_ha21_corrupt_hold": 17,
+    "legacy_ha21_corrupt_jump": 17,
+    "legacy_ha21_corrupt_rage": 17,
+    "legacy_ha21_corrupt_rage_empty": 17,
+    "legacy_ha21_corrupt_side": 17,
+    "legacy_ha21_corrupt_side_left": 17,
+    "legacy_ha21_corrupt_slam": 17,
+    "legacy_ha21_corrupt_idle": 1,
+    "legacy_ha21_corrupt_spin": 17,
+    "legacy_ha21_corrupt_stun": 17,
+    "legacy_ha21_corrupt_throw": 17,
+    "legacy_ha21_corrupt_to_ball": 17,
+    "legacy_h22_blue_slam": 17,
+    "legacy_h22_blue_side": 19,
+    "legacy_h22_blue_counter_right": 16,
+    "legacy_h22_blue_counter_left": 16,
+    "legacy_h22_corrupt_idle": 5,
+    "legacy_h22_corrupt_slam": 14,
+    "legacy_h22_corrupt_side": 9,
+    "legacy_h22_corrupt_charge": 5,
+    "legacy_h22_corrupt_throw": 14,
+    "legacy_h22_corrupt_spin": 9,
+    "legacy_h22_corrupt_ball": 9,
+    "legacy_h22_corrupt_shield": 5,
+    "legacy_h22_corrupt_gun": 3,
+    "legacy_h22_corrupt_gun_fire": 3,
+    "legacy_h22_corrupt_gun_left": 3,
+    "legacy_h22_corrupt_unarmed": 5,
+    "legacy_h22_corrupt_break": 9,
+    "legacy_h22_corrupt_punch": 3,
+    "legacy_h22_corrupt_punch_left": 3,
+    "legacy_h22_corrupt_fists": 7,
+    "legacy_h22_corrupt_fire": 1,
+    "legacy_h22_corrupt_dance": 9,
+    "legacy_h22_corrupt_tool": 1
+  },
+  "sheets": [
+    {
+      "key": "nca_hf22_blue_jump",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_jump.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_jump",
+      "bytes": 816626,
+      "sha256": "ac325ac44a04ccd08b2560a6986be83ca6b6d4233716c80eb3425aa826ccfd71"
+    },
+    {
+      "key": "nca_hf22_blue_jump_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_jump_hit.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_jump_hit",
+      "bytes": 117348,
+      "sha256": "e6529f7c399c45abf0e1e77a79eed676f0bb31f7fb572db9010a3fc994dedbd6"
+    },
+    {
+      "key": "nca_hf22_blue_sides",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_sides.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_sides",
+      "bytes": 972158,
+      "sha256": "02fe06ac66a513303ca14b4ba7c59d4bba059470917bb37fda1d2cce90c32229"
+    },
+    {
+      "key": "nca_hf22_blue_sides_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_sides_hit.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_sides_hit",
+      "bytes": 136338,
+      "sha256": "f5bb3336f54c8675b3f8bb69900a64bc1de30a9f42072e7f48dc561b2d512c33"
+    },
+    {
+      "key": "nca_hf22_blue_throw",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_throw.webp",
+      "w": 1792,
+      "h": 896,
+      "legacy": false,
+      "id": "hf22_blue_throw",
+      "bytes": 518416,
+      "sha256": "7318750c7a29ca9f47938fe45955f831207c12f392fa224e871e16c1eff3cd5a"
+    },
+    {
+      "key": "nca_hf22_blue_throw_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_throw_hit.webp",
+      "w": 1792,
+      "h": 896,
+      "legacy": false,
+      "id": "hf22_blue_throw_hit",
+      "bytes": 72806,
+      "sha256": "139df43b1129b587b80fa8da93f8cf8d903e7a62e19c0c2098b789a52b9280c1"
+    },
+    {
+      "key": "nca_hf22_blue_rage",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_rage.webp",
+      "w": 1792,
+      "h": 1344,
+      "legacy": false,
+      "id": "hf22_blue_rage",
+      "bytes": 1046026,
+      "sha256": "3a4ada13d561dc8c6420cafc66ecd079af24a94fb82aaeb9958f957d2e797315"
+    },
+    {
+      "key": "nca_hf22_blue_rage_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_rage_hit.webp",
+      "w": 1792,
+      "h": 1344,
+      "legacy": false,
+      "id": "hf22_blue_rage_hit",
+      "bytes": 144670,
+      "sha256": "7e168ea33be5294416301c95a8b243c921059443976ad60bc89afa23e2eddf72"
+    },
+    {
+      "key": "nca_hf22_blue_tool",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_tool.webp",
+      "w": 2048,
+      "h": 4096,
+      "legacy": false,
+      "id": "hf22_blue_tool",
+      "bytes": 810946,
+      "sha256": "ecfc0cee4fdf0b360677bce46ce19c40e7eb7921a956d1faf5254b2d7c2b9202"
+    },
+    {
+      "key": "nca_hf22_blue_tool_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_tool_hit.webp",
+      "w": 2048,
+      "h": 4096,
+      "legacy": false,
+      "id": "hf22_blue_tool_hit",
+      "bytes": 110566,
+      "sha256": "fa3707d0c8b22a5a376de16f77e999b05d469041f41c4768069260a0486e681b"
+    },
+    {
+      "key": "nca_hf22_blue_jump_red",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_jump_red.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_jump_red",
+      "bytes": 767648,
+      "sha256": "ad1bda626ab90ed6ee3a419638ce8d09444cdf6be03e56aa93f2ea00f5f1056b"
+    },
+    {
+      "key": "nca_hf22_blue_jump_red_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_jump_red_hit.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_jump_red_hit",
+      "bytes": 117348,
+      "sha256": "e6529f7c399c45abf0e1e77a79eed676f0bb31f7fb572db9010a3fc994dedbd6"
+    },
+    {
+      "key": "nca_hf22_blue_sides_red",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_sides_red.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_sides_red",
+      "bytes": 911060,
+      "sha256": "55d1082b53c7275e372fefefdf04a177c2db9818e1102b288cc4bcf5ccf3825b"
+    },
+    {
+      "key": "nca_hf22_blue_sides_red_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_sides_red_hit.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_sides_red_hit",
+      "bytes": 136338,
+      "sha256": "f5bb3336f54c8675b3f8bb69900a64bc1de30a9f42072e7f48dc561b2d512c33"
+    },
+    {
+      "key": "nca_hf22_blue_throw_red",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_throw_red.webp",
+      "w": 1792,
+      "h": 896,
+      "legacy": false,
+      "id": "hf22_blue_throw_red",
+      "bytes": 492782,
+      "sha256": "62ba6ce1cee9fb572eb9fe4e0de35ff83ea482ce8a6c22d2bad2bea75c86c430"
+    },
+    {
+      "key": "nca_hf22_blue_throw_red_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_throw_red_hit.webp",
+      "w": 1792,
+      "h": 896,
+      "legacy": false,
+      "id": "hf22_blue_throw_red_hit",
+      "bytes": 72806,
+      "sha256": "139df43b1129b587b80fa8da93f8cf8d903e7a62e19c0c2098b789a52b9280c1"
+    },
+    {
+      "key": "nca_hf22_blue_tool_red",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_tool_red.webp",
+      "w": 2048,
+      "h": 4096,
+      "legacy": false,
+      "id": "hf22_blue_tool_red",
+      "bytes": 679102,
+      "sha256": "da8569f24e6a5ed660fa2c012e3668c855a175f8126a74b663ceefd69d0951a2"
+    },
+    {
+      "key": "nca_hf22_blue_tool_red_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_tool_red_hit.webp",
+      "w": 2048,
+      "h": 4096,
+      "legacy": false,
+      "id": "hf22_blue_tool_red_hit",
+      "bytes": 110566,
+      "sha256": "fa3707d0c8b22a5a376de16f77e999b05d469041f41c4768069260a0486e681b"
+    },
+    {
+      "key": "nca_hf22_blue_jump_armor",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_jump_armor.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_jump_armor",
+      "bytes": 804830,
+      "sha256": "ea9769095955cfeb2df759b5d631f3153e8d5e8aea144a1e41fee3b6fe2a61be"
+    },
+    {
+      "key": "nca_hf22_blue_jump_armor_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_jump_armor_hit.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_jump_armor_hit",
+      "bytes": 117348,
+      "sha256": "e6529f7c399c45abf0e1e77a79eed676f0bb31f7fb572db9010a3fc994dedbd6"
+    },
+    {
+      "key": "nca_hf22_blue_sides_armor",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_sides_armor.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_sides_armor",
+      "bytes": 949500,
+      "sha256": "65f875d60adeb4ada745405979bb7fcd935792c1d309c423dee538d21c09ee88"
+    },
+    {
+      "key": "nca_hf22_blue_sides_armor_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_sides_armor_hit.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_blue_sides_armor_hit",
+      "bytes": 136338,
+      "sha256": "f5bb3336f54c8675b3f8bb69900a64bc1de30a9f42072e7f48dc561b2d512c33"
+    },
+    {
+      "key": "nca_hf22_blue_throw_armor",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_throw_armor.webp",
+      "w": 1792,
+      "h": 896,
+      "legacy": false,
+      "id": "hf22_blue_throw_armor",
+      "bytes": 506582,
+      "sha256": "6d931780d6a9cf84aafaf32c372d8cbc2ed11fd07632a8e19786d2db6431f52f"
+    },
+    {
+      "key": "nca_hf22_blue_throw_armor_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_throw_armor_hit.webp",
+      "w": 1792,
+      "h": 896,
+      "legacy": false,
+      "id": "hf22_blue_throw_armor_hit",
+      "bytes": 72806,
+      "sha256": "139df43b1129b587b80fa8da93f8cf8d903e7a62e19c0c2098b789a52b9280c1"
+    },
+    {
+      "key": "nca_hf22_corrupt_jump",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_jump.webp",
+      "w": 1792,
+      "h": 1344,
+      "legacy": false,
+      "id": "hf22_corrupt_jump",
+      "bytes": 807412,
+      "sha256": "f773efb98cc92b63c030f8913a22913daa422abe4b3ae0b170edd26f8e610484"
+    },
+    {
+      "key": "nca_hf22_corrupt_jump_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_jump_hit.webp",
+      "w": 1792,
+      "h": 1344,
+      "legacy": false,
+      "id": "hf22_corrupt_jump_hit",
+      "bytes": 112052,
+      "sha256": "95f07749288c4b6f396784dee06cbe40364343df35de658ff2509c7d0dbadfc1"
+    },
+    {
+      "key": "nca_hf22_corrupt_sides",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_sides.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_corrupt_sides",
+      "bytes": 1215094,
+      "sha256": "773fb86994345ddd9cd5c69b7681cf7534e7551f584891fa9bf0e26cab5a4119"
+    },
+    {
+      "key": "nca_hf22_corrupt_sides_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_sides_hit.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_corrupt_sides_hit",
+      "bytes": 154562,
+      "sha256": "edc69028eced2e51645140f9d9abd0748992fbb8d2160e8d7bcc879ad4e38b85"
+    },
+    {
+      "key": "nca_hf22_corrupt_throw",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_throw.webp",
+      "w": 1792,
+      "h": 896,
+      "legacy": false,
+      "id": "hf22_corrupt_throw",
+      "bytes": 621312,
+      "sha256": "80b2df8eeac4455e594d98e4da83baf223d1288d9a43c5905b242f9da02dcfbd"
+    },
+    {
+      "key": "nca_hf22_corrupt_throw_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_throw_hit.webp",
+      "w": 1792,
+      "h": 896,
+      "legacy": false,
+      "id": "hf22_corrupt_throw_hit",
+      "bytes": 83052,
+      "sha256": "1e93b6342c6b50f6ef261053c63863d176f028a952cc68713c97c90b204ad408"
+    },
+    {
+      "key": "nca_hf22_corrupt_rage",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_rage.webp",
+      "w": 1792,
+      "h": 1344,
+      "legacy": false,
+      "id": "hf22_corrupt_rage",
+      "bytes": 1175776,
+      "sha256": "37e3817e645a7aa39ee7c709b5a5ab65c5c833736c781457c46510803a089d34"
+    },
+    {
+      "key": "nca_hf22_corrupt_rage_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_rage_hit.webp",
+      "w": 1792,
+      "h": 1344,
+      "legacy": false,
+      "id": "hf22_corrupt_rage_hit",
+      "bytes": 164094,
+      "sha256": "2b55d2e78c5b6b796f15a3fd0ea998a546a5a5174d005da1aac24d68d681b3a0"
+    },
+    {
+      "key": "nca_hf22_corrupt_tool",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_tool.webp",
+      "w": 2048,
+      "h": 4096,
+      "legacy": false,
+      "id": "hf22_corrupt_tool",
+      "bytes": 1281466,
+      "sha256": "aa54ca2134dcf4e0b54ed443773bd288af05f206faac2dfb0e31f2dcdfd5ff92"
+    },
+    {
+      "key": "nca_hf22_corrupt_tool_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_tool_hit.webp",
+      "w": 2048,
+      "h": 4096,
+      "legacy": false,
+      "id": "hf22_corrupt_tool_hit",
+      "bytes": 199596,
+      "sha256": "6f4c56782a48ec3e8626c78f9e04c8a4a598aaf51dd77a9afb2b5ff292319a09"
+    },
+    {
+      "key": "nca_hf22_corrupt_jump_red",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_jump_red.webp",
+      "w": 1792,
+      "h": 1344,
+      "legacy": false,
+      "id": "hf22_corrupt_jump_red",
+      "bytes": 851368,
+      "sha256": "b17e46bb299ff708d448983c053510aec91ba541a5264a9d65159a82f69b0681"
+    },
+    {
+      "key": "nca_hf22_corrupt_jump_red_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_jump_red_hit.webp",
+      "w": 1792,
+      "h": 1344,
+      "legacy": false,
+      "id": "hf22_corrupt_jump_red_hit",
+      "bytes": 102936,
+      "sha256": "840d59f5455a3c8f18f183cff22c79978d8c658de624698fb83fb78587cd1d81"
+    },
+    {
+      "key": "nca_hf22_corrupt_sides_red",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_sides_red.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_corrupt_sides_red",
+      "bytes": 1146914,
+      "sha256": "13ba68835f411b76c4a2cfb150e226197141929da6288680c3cc203b88b42f18"
+    },
+    {
+      "key": "nca_hf22_corrupt_sides_red_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_sides_red_hit.webp",
+      "w": 1792,
+      "h": 1792,
+      "legacy": false,
+      "id": "hf22_corrupt_sides_red_hit",
+      "bytes": 154562,
+      "sha256": "edc69028eced2e51645140f9d9abd0748992fbb8d2160e8d7bcc879ad4e38b85"
+    },
+    {
+      "key": "nca_hf22_corrupt_throw_red",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_throw_red.webp",
+      "w": 1792,
+      "h": 896,
+      "legacy": false,
+      "id": "hf22_corrupt_throw_red",
+      "bytes": 618178,
+      "sha256": "066614433b8d923ac532c50b4ec95f8914f750c156729591d7bd82abf1535800"
+    },
+    {
+      "key": "nca_hf22_corrupt_throw_red_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_throw_red_hit.webp",
+      "w": 1792,
+      "h": 896,
+      "legacy": false,
+      "id": "hf22_corrupt_throw_red_hit",
+      "bytes": 73430,
+      "sha256": "8c3aee78299a38accdea056a8ee5a52f7aa9e6fa9bbb9b181b8f3327aa0ba446"
+    },
+    {
+      "key": "nca_hf22_corrupt_tool_red",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_tool_red.webp",
+      "w": 2048,
+      "h": 4096,
+      "legacy": false,
+      "id": "hf22_corrupt_tool_red",
+      "bytes": 1116254,
+      "sha256": "81aafc71135cacbecee23ae578d747bb05dc927f7d91635df25f8505070c43ce"
+    },
+    {
+      "key": "nca_hf22_corrupt_tool_red_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_tool_red_hit.webp",
+      "w": 2048,
+      "h": 4096,
+      "legacy": false,
+      "id": "hf22_corrupt_tool_red_hit",
+      "bytes": 199596,
+      "sha256": "6f4c56782a48ec3e8626c78f9e04c8a4a598aaf51dd77a9afb2b5ff292319a09"
+    },
+    {
+      "key": "nca_hf22_blue_aura",
+      "path": "assets/game/shared/combat/hammer_furious_1022/blue_aura.webp",
+      "w": 1792,
+      "h": 448,
+      "legacy": false,
+      "id": "hf22_blue_aura",
+      "bytes": 565324,
+      "sha256": "54c25d943478b6aa89f84699e0c3ea45e533825dc519ba3733c48a7c72f1b80f"
+    },
+    {
+      "key": "nca_hf22_corrupt_aura",
+      "path": "assets/game/shared/combat/hammer_furious_1022/corrupt_aura.webp",
+      "w": 1792,
+      "h": 448,
+      "legacy": false,
+      "id": "hf22_corrupt_aura",
+      "bytes": 603728,
+      "sha256": "f052270052931759a735380863419e7c3b70836c7f6cbc44e4d001fc1f2f730a"
+    },
+    {
+      "key": "nca_hf22_warning_down",
+      "path": "assets/game/shared/combat/hammer_furious_1022/warning_down.webp",
+      "w": 1792,
+      "h": 448,
+      "legacy": false,
+      "id": "hf22_warning_down",
+      "bytes": 1258,
+      "sha256": "e30f0739bf50a454c12ebc6df9ace1a48eb4e576aa6eb86089750c8127f4842b"
+    },
+    {
+      "key": "nca_hf22_warning_up",
+      "path": "assets/game/shared/combat/hammer_furious_1022/warning_up.webp",
+      "w": 1792,
+      "h": 448,
+      "legacy": false,
+      "id": "hf22_warning_up",
+      "bytes": 1250,
+      "sha256": "7b7531d3a10badace014f3ab44fb2c09a6f6df2f69f3d572d52b8e01d74cbc5e"
+    },
+    {
+      "key": "nca_hf22_warning_left",
+      "path": "assets/game/shared/combat/hammer_furious_1022/warning_left.webp",
+      "w": 1792,
+      "h": 448,
+      "legacy": false,
+      "id": "hf22_warning_left",
+      "bytes": 1492,
+      "sha256": "f2c02d74220d40b29d9d7aab47c589e96e085f7e4c9e9589e4b6f94d540a8107"
+    },
+    {
+      "key": "nca_hf22_warning_right",
+      "path": "assets/game/shared/combat/hammer_furious_1022/warning_right.webp",
+      "w": 1792,
+      "h": 448,
+      "legacy": false,
+      "id": "hf22_warning_right",
+      "bytes": 1446,
+      "sha256": "c1e15ef28ea8d7e534f8409ebaeafb17e50b1ea54c76a000a1f12ef3fc81f7a1"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_beam_empty",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_beam_empty.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_beam_empty",
+      "bytes": 19406,
+      "sha256": "d2c1fd399ca8caf9b20b3ca1de91605229a94e40d464fda40cf8d3b2dd79a2b2"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_beam_empty_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_beam_empty_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_beam_empty_hit",
+      "bytes": 4344,
+      "sha256": "5f252051e21a33e4d219281ed435eceb463efaf3757335b413756e46858be287"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_cast",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_cast.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_cast",
+      "bytes": 48646,
+      "sha256": "5ae34ac4eaa15627674e076e882bbfa0e1fd26256112e96d7ab6d5be15a6dccc"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_cast_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_cast_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_cast_hit",
+      "bytes": 7750,
+      "sha256": "50a9c0f88310b132cde2afc6dcb1d5bfca0ac57230ecfa076fc2f93eef0bf8b9"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_cast_empty",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_cast_empty.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_cast_empty",
+      "bytes": 21008,
+      "sha256": "feec24fdadbb075b04869a8d0c59d6199e433bbfb87a0ffdddd08446625a3e43"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_cast_empty_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_cast_empty_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_cast_empty_hit",
+      "bytes": 3962,
+      "sha256": "d2abd2168c843dcac0c9b256fff53c6fadb11d4d3d73ab44110b47234789ceab"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_chromium",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_chromium.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_chromium",
+      "bytes": 50344,
+      "sha256": "e7b9025b37b0b9d8331c34a59a4ac3ab0711b961d544a2400cd86e06c7fac3d0"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_chromium_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_chromium_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_chromium_hit",
+      "bytes": 7378,
+      "sha256": "79ed304f1e73911f223c0411fa5c95ac8375afe69444c16562a8fa0bf8d3c6e8"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_from_ship",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_from_ship.webp",
+      "w": 1280,
+      "h": 1600,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_from_ship",
+      "bytes": 67342,
+      "sha256": "292b60130fc81cf6392a401ec5f21ee425d1c819eba74c0d4075594e818baf21"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_from_ship_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_from_ship_hit.webp",
+      "w": 1280,
+      "h": 1600,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_from_ship_hit",
+      "bytes": 7704,
+      "sha256": "9cde566ccb800cd995b1937f82358d6d446851717d32921d325e40f31c8c6155"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_hold",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_hold.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_hold",
+      "bytes": 50128,
+      "sha256": "a26bd51be5e8eca61050ee1896ca12d61e643536e4f4eb76d4256439bc05ff58"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_hold_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_hold_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_hold_hit",
+      "bytes": 6952,
+      "sha256": "9d3226f790c82625f9ba431d8ddbbd1a592a122527cbb7ddbce92a31fe6a8a97"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_jump",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_jump.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_jump",
+      "bytes": 63492,
+      "sha256": "b372e10f2e29614d42fa7c92a4a9e0d31d2498db903ba10c96e0723f8668ec4d"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_jump_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_jump_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_jump_hit",
+      "bytes": 8742,
+      "sha256": "2cb9ce079048d2e200971906c7264e4c906ab8758a980cb4e5c3a41b14810904"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_rage",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_rage.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_rage",
+      "bytes": 84956,
+      "sha256": "b834167303a0bf7b3f3c141a8210184e6e34f155347690b65afd330e109d8cd2"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_rage_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_rage_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_rage_hit",
+      "bytes": 10264,
+      "sha256": "d67a6abae7db1b86faf323d6034aaff79af6983c2c382e5198d787f975724954"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_rage_empty",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_rage_empty.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_rage_empty",
+      "bytes": 45578,
+      "sha256": "959ebe4edeb560aaaa9c3a74f43510359ab2b669aeac6162dc177c048c2c294e"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_rage_empty_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_rage_empty_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_rage_empty_hit",
+      "bytes": 6052,
+      "sha256": "a4744c05a4dd125de1a2258ae791f5b3f92e05928f72463b808d4986de025e00"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_side",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_side.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_side",
+      "bytes": 83746,
+      "sha256": "faedb17fb7425b49b2d7f9adfaae5388594f2bc2c280c139396d2021189ba8f8"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_side_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_side_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_side_hit",
+      "bytes": 9978,
+      "sha256": "b2be48021b00d3992f5d49b5908ed0759998d224da3a3edf3da4789571805231"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_side_left",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_side_left.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_side_left",
+      "bytes": 83580,
+      "sha256": "6e72a28029e9039b329882422ecf97e9f74368e500d614f5687643602c2ae454"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_side_left_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_side_left_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_side_left_hit",
+      "bytes": 10000,
+      "sha256": "aa3a95ee40ff912046154ed58db5916f73f213bdecf8da59d9e91962fa7cf8ed"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_counter_right",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_counter_right.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_counter_right",
+      "bytes": 128898,
+      "sha256": "64b84d636ed147df368ba8b7099882e72df5a6e6e60f010f92c70c940bc6db2c"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_counter_right_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_counter_right_hit.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_counter_right_hit",
+      "bytes": 14342,
+      "sha256": "ff99a43843e77482610f6067ef9f99539b1fe95c48ab902482ba96ae92f4bac8"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_counter_left",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_counter_left.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_counter_left",
+      "bytes": 129160,
+      "sha256": "a858e109030a75dbf18fcf4810f97f67e659e9c96c9ff471a5b229610b74a4ce"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_counter_left_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_counter_left_hit.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_counter_left_hit",
+      "bytes": 14370,
+      "sha256": "e430667c76464894acd345265ec8cdb7bc054eaf810cce865f8a8de2b33c6585"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_slam",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_slam.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_slam",
+      "bytes": 61038,
+      "sha256": "478b329bef865b6c533ceb50f7b36965017b5d0213c354eca17a394c785a80ce"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_slam_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_slam_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_slam_hit",
+      "bytes": 9078,
+      "sha256": "5483572dc645c4b4c81a5488f18407e2dd7202cb3271f32f4b72a702fe158da5"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_idle",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_idle.webp",
+      "w": 1024,
+      "h": 256,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_idle",
+      "bytes": 17410,
+      "sha256": "39c0ce3ef1f97f8b3491ed5f3cd31afb21eb512eacd9cb01766d6007d8139096"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_idle_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_idle_hit.webp",
+      "w": 1024,
+      "h": 256,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_idle_hit",
+      "bytes": 3254,
+      "sha256": "c83b63c803d6e912f70a650f98a4f8297ff34bfd3d2d6664b4c19cdf24ddc14e"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_spin",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_spin.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_spin",
+      "bytes": 80916,
+      "sha256": "96ff73767d0ffb2b6b454445c197123886ae1401c1a9f3d8607f5b6e033d9e58"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_spin_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_spin_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_spin_hit",
+      "bytes": 8834,
+      "sha256": "f9b4892ffdab0cbbc7e2ec3e627f43420f2d99f2aaa754bd8b82a264e57b7fd3"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_throw",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_throw.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_throw",
+      "bytes": 86108,
+      "sha256": "95f19d03da638cf449a24741bea2f8be1a4b085dcaec3c46b6dcae7fdb062ce7"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_throw_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_throw_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_throw_hit",
+      "bytes": 10514,
+      "sha256": "13453b9a827723f63c2d939f29b11d0f05ef77ac579d846274c7fbc69a3f615f"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_to_ball",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_to_ball.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_to_ball",
+      "bytes": 82994,
+      "sha256": "70b35e56cb32aa506c9b5fdbd5d39298eaef55be923c7c990516702714484a0f"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_blue_to_ball_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_blue_to_ball_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_blue_to_ball_hit",
+      "bytes": 9848,
+      "sha256": "7d742615968fcdc47b5e67bcc95b848f12fb0eb0075a32b4548edc2bc879f03d"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_beam_empty",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_beam_empty.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_beam_empty",
+      "bytes": 14270,
+      "sha256": "b996b37dc46787a3e5ddfb9ceb4df5de3cd8be011104615f9349996edd64ff3c"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_beam_empty_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_beam_empty_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_beam_empty_hit",
+      "bytes": 2420,
+      "sha256": "fc628cb25b0c2eb34b532be0f16acc438096639e65b2cfecea14429d473cefbb"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_cast",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_cast.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_cast",
+      "bytes": 35134,
+      "sha256": "9343edfe489ca6e2ceadcb32d98c9e9a8d867a89718097ea16a1d923b5346fbf"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_cast_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_cast_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_cast_hit",
+      "bytes": 7514,
+      "sha256": "483478d40dd105f8e26ad0a75efa0b349812a869edd724a53be1c004956fcd48"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_chromium",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_chromium.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_chromium",
+      "bytes": 41916,
+      "sha256": "c81acfe6bde8cec8363911f0b5e103072a8a6eb1e1f7e176c5e5863dfaabbb7d"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_chromium_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_chromium_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_chromium_hit",
+      "bytes": 6744,
+      "sha256": "737210aa596350c778172093031aaf46d2ca7ece72a23b84067b150dc333deb9"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_from_ship",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_from_ship.webp",
+      "w": 1280,
+      "h": 1600,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_from_ship",
+      "bytes": 57508,
+      "sha256": "1b41413e3348bbf2e6ef27bdff9de590ad97095e2ad944b1aea1cd35cbc4076a"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_from_ship_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_from_ship_hit.webp",
+      "w": 1280,
+      "h": 1600,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_from_ship_hit",
+      "bytes": 7496,
+      "sha256": "b6c8ee5dffc5547f52d41e257c399a62e2176f7ede16f9aeafdccad44aff7906"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_hold",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_hold.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_hold",
+      "bytes": 36314,
+      "sha256": "d6742184f80322edd461b5569f8232b51646f21bbe55604379d02a5013f43a50"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_hold_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_hold_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_hold_hit",
+      "bytes": 6628,
+      "sha256": "5bb023e9ecd6640a9d87b1015f6f4a6d4c576f07f18a28ffe20ef5e63ef07f0d"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_jump",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_jump.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_jump",
+      "bytes": 37762,
+      "sha256": "2ff3d0ffe7c68cc17fe28d7a9fb9c3ff4c786af544014287d856f45d62240a35"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_jump_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_jump_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_jump_hit",
+      "bytes": 6216,
+      "sha256": "57594fae05b87a7a0df74d89b686839f77f05ee54554f19abdb7d0e0fd5a35f6"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_rage",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_rage.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_rage",
+      "bytes": 59648,
+      "sha256": "d45d06ad97dd2b3b10563ee7667b0fb2cf19d6013366c09845386952c3539e49"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_rage_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_rage_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_rage_hit",
+      "bytes": 8462,
+      "sha256": "63cde9f3dd2ead92d5f4b8f01e20c490e0916aed3c9d92a518b58ac16514eccb"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_rage_empty",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_rage_empty.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_rage_empty",
+      "bytes": 56758,
+      "sha256": "d519341f4516fcab3e16ba9158a0b123bd52d612eb3aeab7dad5c482d6410dfa"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_rage_empty_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_rage_empty_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_rage_empty_hit",
+      "bytes": 7266,
+      "sha256": "cdca48b010fa7c09eb01716851a1ae72fced2a55f659269c10fac83c104a4b6f"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_side",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_side.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_side",
+      "bytes": 43818,
+      "sha256": "f8559f683b05959c71af70399a7a97b3ae16a09ee4f6e201e0fc2d219c5d9a5d"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_side_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_side_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_side_hit",
+      "bytes": 7752,
+      "sha256": "f9a9a6e0029aca94a703a3bbaa0cd4a839c8be5581f187430dcce50cefbc3cb7"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_side_left",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_side_left.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_side_left",
+      "bytes": 43952,
+      "sha256": "d13e5b34146ee659112a307cabc507ce75253944d29f978d2705933ff62b2e6d"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_side_left_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_side_left_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_side_left_hit",
+      "bytes": 7772,
+      "sha256": "51a761361ba8658d3db1dc3d069a43545ed537e766aa5c64f0978875f843e318"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_slam",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_slam.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_slam",
+      "bytes": 34886,
+      "sha256": "f9adf54724b439d235e4583d66b1ada4e8f38d93429147b2e3c8bb5ab8e4c852"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_slam_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_slam_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_slam_hit",
+      "bytes": 6290,
+      "sha256": "24fee4f5accd9eb63f376bed9d4c4bb91112e763a67a7e7ba55bf21758a4dd02"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_idle",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_idle.webp",
+      "w": 1024,
+      "h": 256,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_idle",
+      "bytes": 2892,
+      "sha256": "404080acd593405954dc19924cb8fc7a90cdf6d7569249de84e59c478d6c43f5"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_idle_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_idle_hit.webp",
+      "w": 1024,
+      "h": 256,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_idle_hit",
+      "bytes": 534,
+      "sha256": "0dd1484946beb3ec8b9f8f0d7b972558bc8307a9cefc76f705d17de11b6f5d35"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_spin",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_spin.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_spin",
+      "bytes": 40796,
+      "sha256": "e46b090679185dc549c85321ee93287a9e2d331482a4af49cbfef8eb6553533d"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_spin_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_spin_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_spin_hit",
+      "bytes": 6356,
+      "sha256": "182114af77f56992fecaaaa4f8adff4e56009bd738be3da002fdb1f43feba43b"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_stun",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_stun.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_stun",
+      "bytes": 34330,
+      "sha256": "27778ccdd5f54458984749acf188ac6a77f2a9084ab5c67a90c4d7d4d6850e31"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_stun_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_stun_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_stun_hit",
+      "bytes": 3288,
+      "sha256": "1e88745a85a83c1b5c23334106047ca400afb132ee7740794a7b830917573793"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_throw",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_throw.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_throw",
+      "bytes": 50280,
+      "sha256": "446bb2d6a7e6b7723c56812524169efac8b3fe116124825e126e23ddc909dc84"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_throw_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_throw_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_throw_hit",
+      "bytes": 8630,
+      "sha256": "6c1f68d665b325dca5985b4540ca3be586d21e03730a5243737d3d3358e4a59e"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_to_ball",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_to_ball.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_to_ball",
+      "bytes": 43460,
+      "sha256": "6e79bc48e555a16d83b512a327221a24f8fd37696f2d004b95aab53f03c30562"
+    },
+    {
+      "key": "nca_hf22_legacy_ha21_corrupt_to_ball_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_ha21_corrupt_to_ball_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_ha21_corrupt_to_ball_hit",
+      "bytes": 5248,
+      "sha256": "0ca19a12bb977d6d26c60504bb4cabc6a5d489317a5d92aeeba29a1fe6d61d00"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_blue_slam",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_blue_slam.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_h22_blue_slam",
+      "bytes": 72728,
+      "sha256": "97037ae14c928ef71e806af8949fb67f60cec8a9666c38d697633b57e8235348"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_blue_slam_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_blue_slam_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_h22_blue_slam_hit",
+      "bytes": 9204,
+      "sha256": "2e102286213b2189f6ad85bcf95463da809be79c65c0bf738452ab8c38898dad"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_blue_side",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_blue_side.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_h22_blue_side",
+      "bytes": 92140,
+      "sha256": "327c5dd7fdbc9351d724e919986f1e5916c54c0ca8faaa9d1439d8c898c741f5"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_blue_side_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_blue_side_hit.webp",
+      "w": 1024,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_h22_blue_side_hit",
+      "bytes": 10178,
+      "sha256": "65b96e3a59d906107e86a8494bb35c3c139522a5c90637ea0bd323bc2aeb98cc"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_blue_counter_right",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_blue_counter_right.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": true,
+      "id": "hf22_legacy_h22_blue_counter_right",
+      "bytes": 124246,
+      "sha256": "b85c527462054a4044856a2f4443973689df07ec0884f71c5d237ca34d016ffd"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_blue_counter_right_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_blue_counter_right_hit.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": true,
+      "id": "hf22_legacy_h22_blue_counter_right_hit",
+      "bytes": 14004,
+      "sha256": "a84b9b90244861b568defae22fd579384cd38856bae57f0e9dc12cffc35df29c"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_blue_counter_left",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_blue_counter_left.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": true,
+      "id": "hf22_legacy_h22_blue_counter_left",
+      "bytes": 123256,
+      "sha256": "e78e57c2bec4ae0f49e52e22c3a6ccf88bfe660648e2f2a4f73c03f53732691b"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_blue_counter_left_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_blue_counter_left_hit.webp",
+      "w": 2560,
+      "h": 2560,
+      "legacy": true,
+      "id": "hf22_legacy_h22_blue_counter_left_hit",
+      "bytes": 13836,
+      "sha256": "fba9c6a1cce9298fcb97b55640d0c29a3358f3748798f03f4bbe8732889f1694"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_idle",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_idle.webp",
+      "w": 1280,
+      "h": 640,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_idle",
+      "bytes": 34582,
+      "sha256": "c7cefb6fc565b12084609c3d9148bba6037b2edd1069730a50c0de3676af2500"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_idle_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_idle_hit.webp",
+      "w": 1280,
+      "h": 640,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_idle_hit",
+      "bytes": 3526,
+      "sha256": "54416a7f893d9ee867625b61a3f85dda649cc5eb94b76f2a1d79893c044ebc9a"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_slam",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_slam.webp",
+      "w": 1280,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_slam",
+      "bytes": 112132,
+      "sha256": "92ce155255051fc6a915f4c6e4fb18cc15c44065d6c9c58db5bd71d77ea4260d"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_slam_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_slam_hit.webp",
+      "w": 1280,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_slam_hit",
+      "bytes": 8708,
+      "sha256": "3dd5dccde01364bf7aefc6f41eb1177719a2ec93a0c8a2047a2736d53c2b9e35"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_side",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_side.webp",
+      "w": 1280,
+      "h": 960,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_side",
+      "bytes": 76068,
+      "sha256": "b34148d973ec0a2f6e6bf30dcd99c23cc36a710f5dea43344d5f0dc9c6eaed3d"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_side_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_side_hit.webp",
+      "w": 1280,
+      "h": 960,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_side_hit",
+      "bytes": 5258,
+      "sha256": "e12fbf721f5b7b7dd0c6ac61bcd248ea4c15c7824c5cfb30fb95d02346c07467"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_charge",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_charge.webp",
+      "w": 1280,
+      "h": 640,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_charge",
+      "bytes": 47322,
+      "sha256": "e0952a60607d419ada9e3561046c061144bc7095e27501a4101fcd1c5825b3d4"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_charge_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_charge_hit.webp",
+      "w": 1280,
+      "h": 640,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_charge_hit",
+      "bytes": 3772,
+      "sha256": "d69f7ac6c9a9889b3ee962099ba10eaf817bf943794e8613e5d27785d36c579b"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_throw",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_throw.webp",
+      "w": 1280,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_throw",
+      "bytes": 114208,
+      "sha256": "bed54f85fc94f0044a16edb609a79c04c84e90a3eb182cdef7b97952844c25ef"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_throw_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_throw_hit.webp",
+      "w": 1280,
+      "h": 1280,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_throw_hit",
+      "bytes": 7996,
+      "sha256": "232d3710f393be559a77da57365a8fa366bdfeefab469f08d24273d26fd37d78"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_spin",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_spin.webp",
+      "w": 1280,
+      "h": 960,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_spin",
+      "bytes": 66706,
+      "sha256": "f2d9901809af52961662d34ca7cd9c63e93d3257d73d7851303957c81a487645"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_spin_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_spin_hit.webp",
+      "w": 1280,
+      "h": 960,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_spin_hit",
+      "bytes": 5838,
+      "sha256": "2b4b8cd4a98931804f5cda1675962221016b5655dba499e82869a3c9123f9959"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_ball",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_ball.webp",
+      "w": 1280,
+      "h": 960,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_ball",
+      "bytes": 83762,
+      "sha256": "4973c60e9b911f5f1b8a3db96e62379411a1a2e3cf7b62997f45149a3033e0fa"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_ball_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_ball_hit.webp",
+      "w": 1280,
+      "h": 960,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_ball_hit",
+      "bytes": 5420,
+      "sha256": "30a2efc72a01079d023a0adaedf9dcf5d9eec0f894e8da6e484cd11f5f5dbe4a"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_shield",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_shield.webp",
+      "w": 1280,
+      "h": 640,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_shield",
+      "bytes": 45256,
+      "sha256": "4ae3010a819654685de08cad64ebe66452579d117be13445a96b0618c05486d4"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_shield_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_shield_hit.webp",
+      "w": 1280,
+      "h": 640,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_shield_hit",
+      "bytes": 3548,
+      "sha256": "5e79eef0d1a3d39d4e56a6ee6ee116d5c163e7d49ec240897ecde1306bffdf4e"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_gun",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_gun.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_gun",
+      "bytes": 21578,
+      "sha256": "a3a9c0d03e633a1f67fb74826e1766beb9dd49072deabc28125f4ebf2bdf7f40"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_gun_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_gun_hit.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_gun_hit",
+      "bytes": 1698,
+      "sha256": "931652ec54e8d4992b1f3461ee339c0f9b4c16988b9649c32c443fb686580aa6"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_gun_fire",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_gun_fire.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_gun_fire",
+      "bytes": 21578,
+      "sha256": "a3a9c0d03e633a1f67fb74826e1766beb9dd49072deabc28125f4ebf2bdf7f40"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_gun_fire_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_gun_fire_hit.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_gun_fire_hit",
+      "bytes": 1698,
+      "sha256": "931652ec54e8d4992b1f3461ee339c0f9b4c16988b9649c32c443fb686580aa6"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_gun_left",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_gun_left.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_gun_left",
+      "bytes": 21546,
+      "sha256": "9978a6f8c35cab3b5f5cf66add6051877c6cbc0151ea1c7108c7a4a064dfbd2a"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_gun_left_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_gun_left_hit.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_gun_left_hit",
+      "bytes": 1700,
+      "sha256": "eb0bd9b49d4494d70e2adf589a256480596ee28616d5f5c49af688f3fb1d38d9"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_unarmed",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_unarmed.webp",
+      "w": 1280,
+      "h": 640,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_unarmed",
+      "bytes": 38668,
+      "sha256": "4360faeb729ab9b78745e12a7af17b8133e18b74a649ce9b65aeebb604eb106d"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_unarmed_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_unarmed_hit.webp",
+      "w": 1280,
+      "h": 640,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_unarmed_hit",
+      "bytes": 3212,
+      "sha256": "f37ad5438574a5e5a6bec044ee25053b66fae5df1d62ebd0cb773859b31faf85"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_break",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_break.webp",
+      "w": 1280,
+      "h": 960,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_break",
+      "bytes": 73126,
+      "sha256": "a5c5f0066c13281b411d926a11d30e07c40bd882e8f7c879dad5a7fbc0766bef"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_break_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_break_hit.webp",
+      "w": 1280,
+      "h": 960,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_break_hit",
+      "bytes": 5520,
+      "sha256": "7ae5ae56443163d496b843b0e2ce4a90eb625a0d56c39f9bf50f838b7153258d"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_punch",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_punch.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_punch",
+      "bytes": 25446,
+      "sha256": "86b0dd7c8be9812428b359c58902e1ca0818f0b212a2d91138ec3ceb4ea8b5d9"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_punch_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_punch_hit.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_punch_hit",
+      "bytes": 1834,
+      "sha256": "da8fceaf0ae6f8145cb50fa8aa5a59ce4941bddd604eccf8dfabd069eb9e9fa8"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_punch_left",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_punch_left.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_punch_left",
+      "bytes": 25374,
+      "sha256": "75b5ec908820f9def7a94c0779ccd9ae620a235144f9576262bc0cc6448668af"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_punch_left_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_punch_left_hit.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_punch_left_hit",
+      "bytes": 1844,
+      "sha256": "ac2405c0ca40b2c4cc68eabef9fc412767f8396f7d54fa83b0e6ae7108058a10"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_fists",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_fists.webp",
+      "w": 1280,
+      "h": 640,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_fists",
+      "bytes": 47706,
+      "sha256": "2ab82a018a1fbf1ca92e9cb9e7a02a196c28d24a006638bda2cfb5074b55dfeb"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_fists_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_fists_hit.webp",
+      "w": 1280,
+      "h": 640,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_fists_hit",
+      "bytes": 3068,
+      "sha256": "847aa8e8bffedbec1f1181d0c4f78099b0c593fa030c38e4af3b408deb16b23a"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_fire",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_fire.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_fire",
+      "bytes": 6904,
+      "sha256": "b3e22b3f560b2594a0541eed4bd0ea9ef912604101602e2f979657d688e4e9a9"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_fire_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_fire_hit.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_fire_hit",
+      "bytes": 550,
+      "sha256": "c6dfefeb7a11505bef35db8de74835fbb4bcc98688d7c81d7da4e2a456069fbc"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_dance",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_dance.webp",
+      "w": 1280,
+      "h": 960,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_dance",
+      "bytes": 64556,
+      "sha256": "269c3324c97181362e41f12acbdb8822a90d8fe3b495e2d2306980a60981d6fe"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_dance_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_dance_hit.webp",
+      "w": 1280,
+      "h": 960,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_dance_hit",
+      "bytes": 5976,
+      "sha256": "32e4741fbba6bd05f48f815ac310eb58a1ce88305e8f36c1041c5b9cce3d00af"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_tool",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_tool.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_tool",
+      "bytes": 3990,
+      "sha256": "44eb5cc58309e504f8cb6b0c13a2823a9043025f3c3dd9d1acf71d016b8cee20"
+    },
+    {
+      "key": "nca_hf22_legacy_h22_corrupt_tool_hit",
+      "path": "assets/game/shared/combat/hammer_furious_1022/legacy_h22_corrupt_tool_hit.webp",
+      "w": 1280,
+      "h": 320,
+      "legacy": true,
+      "id": "hf22_legacy_h22_corrupt_tool_hit",
+      "bytes": 396,
+      "sha256": "0f8cb4759a691e529219df3a2c99783c332fec6b436dca001492756fff2f4e59"
+    }
+  ],
+  "sources": {
+    "blue-combo": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "f7554cd109588e256acaadddb63442d5b3757a868ebc18c25813d2d398b91fc6",
+      "rowCuts": [
+        0,
+        310,
+        658,
+        921,
+        1254
+      ],
+      "footBaselines": [
+        309,
+        645,
+        920,
+        1215
+      ],
+      "commonSourceUnit": 1
+    },
+    "blue-sides": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "a8365f8aa2372283342f89dc2591a73f6400523248c2a6e4b912ee2a63aa3702",
+      "rowCuts": [
+        0,
+        336,
+        637,
+        964,
+        1254
+      ],
+      "footBaselines": [
+        335,
+        636,
+        963,
+        1219
+      ],
+      "commonSourceUnit": 1
+    },
+    "blue-throw": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "f84d0436a207c122174596fd90f34601041031db7848002278b92a3619f6b1e2",
+      "rowCuts": [
+        0,
+        397,
+        751,
+        1086
+      ],
+      "footBaselines": [
+        396,
+        750,
+        1062
+      ],
+      "commonSourceUnit": 0.83
+    },
+    "blue-rage": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "8f8458514af60c7b1a2232750a7e99c308145b8c9cd3fc364a1a9be6a36f17f7",
+      "rowCuts": [
+        0,
+        362,
+        702,
+        1086
+      ],
+      "footBaselines": [
+        357,
+        697,
+        1056
+      ],
+      "commonSourceUnit": 0.83
+    },
+    "blue-cross": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "7c3d0ac467d92b775151a3d5f5f3d866b023f0658e0548970234bccd0c1e61da",
+      "commonSourceUnit": 0.31,
+      "sourceFootRoot": [
+        640,
+        1066
+      ]
+    },
+    "corrupt-combo": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "a8e11fd60fcb04221cf1023aee152a20245eeb3bacbd6ed21d1c982d967c4575",
+      "rowCuts": [
+        0,
+        316,
+        658,
+        925,
+        1254
+      ],
+      "footBaselines": [
+        315,
+        648,
+        925,
+        1219
+      ],
+      "commonSourceUnit": 1
+    },
+    "corrupt-sides": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "dacd00848dc4de5984698dc409ee24773cb3e34917fa6784736b3ba75fc48747",
+      "rowCuts": [
+        0,
+        327,
+        633,
+        942,
+        1254
+      ],
+      "footBaselines": [
+        326,
+        632,
+        940,
+        1205
+      ],
+      "commonSourceUnit": 1
+    },
+    "corrupt-throw": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "2a07d584858c3097f03f03e82a00f6541a1d73a17fbf5e08e1e864bdd3131fa8",
+      "rowCuts": [
+        0,
+        375,
+        722,
+        1086
+      ],
+      "footBaselines": [
+        374,
+        721,
+        1062
+      ],
+      "commonSourceUnit": 0.83
+    },
+    "corrupt-rage": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "b12d07c77e4068526bf747615cf029121c433aca9ab994ae8096bab31506c801",
+      "rowCuts": [
+        0,
+        370,
+        720,
+        1086
+      ],
+      "footBaselines": [
+        361,
+        719,
+        1070
+      ],
+      "commonSourceUnit": 0.83
+    },
+    "corrupt-cross": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "0b3c1d3829a36f4f4339849ba6ad9535dd6b613bfb24b56fd1092ca18b4a59c0",
+      "commonSourceUnit": 0.285,
+      "sourceFootRoot": [
+        690,
+        1108
+      ]
+    },
+    "corrupt-redcombo": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "24428a843ce2186cc04a95ef93a92a453cc95ea2f3444240d140872f32eb61cf",
+      "rowCuts": [
+        0,
+        318,
+        658,
+        927,
+        1254
+      ],
+      "footBaselines": [
+        315,
+        648,
+        925,
+        1219
+      ],
+      "commonSourceUnit": 1
+    },
+    "corrupt-redthrow": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "eec735b1c59c69bff9677e6c313cea316a6370fd51ce5ec2963bf15f408d8bf3",
+      "rowCuts": [
+        0,
+        377,
+        723,
+        1086
+      ],
+      "footBaselines": [
+        374,
+        722,
+        1062
+      ],
+      "commonSourceUnit": 0.83
+    },
+    "aura": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "7dcb38122630090b853a150473714dabb124133f9383495f612a875b2c95a1e4"
+    }
+  },
+  "phases": {
+    "blue": {
+      "windEnd": 5,
+      "strikeEnd": 9,
+      "recoverStart": 10
+    },
+    "corrupt": {
+      "windEnd": 4,
+      "strikeEnd": 7,
+      "recoverStart": 8
+    }
+  },
+  "sides": {
+    "blue": {
+      "left": 7,
+      "right": 7,
+      "ready": 14
+    },
+    "corrupt": {
+      "left": 8,
+      "right": 7,
+      "ready": 15
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "owner": "_BUILD_SOURCE/build_hammer_jump_1022.py",
+  "source": "_ART_SOURCES/hammer_jump_1022",
+  "banks": {
+    "blue_jump": 18,
+    "blue_jump_armor": 18,
+    "corrupt_jump": 16,
+    "blue_glow": 5,
+    "corrupt_glow": 5,
+    "warning_cone": 3,
+    "warning_reticle": 3
+  },
+  "phases": {
+    "blue": {
+      "windEnd": 8,
+      "strikeEnd": 14,
+      "recoverStart": 15
+    },
+    "corrupt": {
+      "windEnd": 6,
+      "strikeEnd": 12,
+      "recoverStart": 13
+    }
+  },
+  "rendering": "Fixed prebaked logical units, authored white flash and corona frames; position-only jump motion.",
+  "sheets": [
+    {
+      "key": "nca_hj22_blue_jump",
+      "path": "assets/game/shared/combat/hammer_jump_1022/blue_jump.webp",
+      "w": 2048,
+      "h": 2560,
+      "id": "hj22_blue_jump",
+      "bytes": 144956,
+      "sha256": "2aad272fb7ee9ceda106d668836b1e98a0bb043ce887324ef17ae2a3105e9e1c"
+    },
+    {
+      "key": "nca_hj22_blue_jump_hit",
+      "path": "assets/game/shared/combat/hammer_jump_1022/blue_jump_hit.webp",
+      "w": 2048,
+      "h": 2560,
+      "id": "hj22_blue_jump_hit",
+      "bytes": 15982,
+      "sha256": "301449d3d40fd5e3d4620a2dd3f9181043d49d4cc2ac4c6ce649f21a1b531f0e"
+    },
+    {
+      "key": "nca_hj22_blue_jump_armor",
+      "path": "assets/game/shared/combat/hammer_jump_1022/blue_jump_armor.webp",
+      "w": 2048,
+      "h": 2560,
+      "id": "hj22_blue_jump_armor",
+      "bytes": 141272,
+      "sha256": "6bf68eea9ad91c6919ac19545053042b63db36ccb896f19e8d52256a04fa9d72"
+    },
+    {
+      "key": "nca_hj22_blue_jump_armor_hit",
+      "path": "assets/game/shared/combat/hammer_jump_1022/blue_jump_armor_hit.webp",
+      "w": 2048,
+      "h": 2560,
+      "id": "hj22_blue_jump_armor_hit",
+      "bytes": 15982,
+      "sha256": "301449d3d40fd5e3d4620a2dd3f9181043d49d4cc2ac4c6ce649f21a1b531f0e"
+    },
+    {
+      "key": "nca_hj22_corrupt_jump",
+      "path": "assets/game/shared/combat/hammer_jump_1022/corrupt_jump.webp",
+      "w": 1856,
+      "h": 1856,
+      "id": "hj22_corrupt_jump",
+      "bytes": 159934,
+      "sha256": "3b5df2c0a394fb64a2c6f0028f951b8ab53f3cb0ec4443fc89f791a7fd83036f"
+    },
+    {
+      "key": "nca_hj22_corrupt_jump_hit",
+      "path": "assets/game/shared/combat/hammer_jump_1022/corrupt_jump_hit.webp",
+      "w": 1856,
+      "h": 1856,
+      "id": "hj22_corrupt_jump_hit",
+      "bytes": 10862,
+      "sha256": "22d463e93f0f47b0b5713c6c160176164502c1052d069f24e58fe4f6d4f3c9d6"
+    },
+    {
+      "key": "nca_hj22_blue_glow",
+      "path": "assets/game/shared/combat/hammer_jump_1022/blue_glow.webp",
+      "w": 640,
+      "h": 128,
+      "id": "hj22_blue_glow",
+      "bytes": 3138,
+      "sha256": "6929d7a244dd36b70281b9a333bb6d44907b2177ab04dcecf2c3914b8d5bb54f"
+    },
+    {
+      "key": "nca_hj22_corrupt_glow",
+      "path": "assets/game/shared/combat/hammer_jump_1022/corrupt_glow.webp",
+      "w": 640,
+      "h": 128,
+      "id": "hj22_corrupt_glow",
+      "bytes": 2582,
+      "sha256": "6634dfe5915ead00e13eb08d353b90f39086c9138d65b8361979a3dce561a864"
+    },
+    {
+      "key": "nca_hj22_warning_cone",
+      "path": "assets/game/shared/combat/hammer_jump_1022/warning_cone.webp",
+      "w": 960,
+      "h": 384,
+      "id": "hj22_warning_cone",
+      "bytes": 1206,
+      "sha256": "2645b1d852b0e103c485362266886ab0f72a1b4d2185433fda850ad61fd2b54c"
+    },
+    {
+      "key": "nca_hj22_warning_reticle",
+      "path": "assets/game/shared/combat/hammer_jump_1022/warning_reticle.webp",
+      "w": 372,
+      "h": 62,
+      "id": "hj22_warning_reticle",
+      "bytes": 19770,
+      "sha256": "d75a7b08ed3227e787047ecf900d4d1cf1ad87975df7d100ab9a60742f282b76"
+    }
+  ]
+}

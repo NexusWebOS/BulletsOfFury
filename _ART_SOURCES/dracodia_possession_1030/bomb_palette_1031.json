@@ -1,0 +1,203 @@
+{
+  "changed": [
+    "bomb_charge",
+    "bomb_burst"
+  ],
+  "frames": 38,
+  "alphaUnchanged": true,
+  "dimensionsPivotsUnchanged": true,
+  "allOtherBanksUnchanged": true,
+  "palette": "Red core, purple energy and gray/silver plating; exact authored source outlines and alpha.",
+  "owner": "Existing possession author.lua / build_dracodia_possession_1030.py",
+  "originalHashes": {
+    "bomb_burst": "36a5726dd9277abe1b0debe7bf0d780c7c17e545739b040f85192d52eb771d39",
+    "bomb_charge": "70fd062e277dc6027b3e8dddb2d972ec7292572d2012d0101ee76007ceb4c942",
+    "drone_charge": "9c45c1a5461c2982fc44bf5ca0d381b6fc8c91b868565ea5f9395fca727cabdc",
+    "drone_emerge": "6985796023fb4c9cd279603440a28095e2daea41c0756a3782e89a67c8fb8469",
+    "drone_ready": "20f66165839090e003730b5c16c05bf14681c764b4647fa23524b340b8b4a2d6",
+    "gate_purple": "66eac5001843728bc205907ea6fe72cc567a5140548032dc272e1523bafd98a8",
+    "gate_red": "d0e7e4b20d1e9eaa0334afda0b2fa439f2fab3aea061450a62a17a8ce62cc3ba",
+    "helix_back": "cafd8e4be1d46ee5e1cd835605998f7cad86ef18c48eb05792e1dafcd97d6d6a",
+    "helix_front": "bdbca5abca7e6eda68a9ab813a6335c258ba3389691f71cee542d38f2fc919bd",
+    "helix_in_back": "e7fcfd2ae682dff97cf7bbbce4cfabaf3e10e53aaeb98a7ef93e8f68e48535e0",
+    "helix_in_front": "945c572369a7b4fd93fc54ac2cb61a4a61793737d22bbd59506d312111a3bb20",
+    "host_dracodia_recover_core": "6d700bf95426e10427e6d65bfe4a1d4f0fb26e269d0cf2914625c98f7703e06c",
+    "host_dracodia_recover_core_hit": "7caf7e4ad8beaa4c0bb74403ec8476dc3170f5732ad672df09af9d1d28954506",
+    "host_dracodia_recover_left": "ee42727bc02a0e32309f483cbcb368d4fead33b922ad912bdd35eb52537ac10b",
+    "host_dracodia_recover_left_hit": "d524fcde0604a3f583c4bb396e9f611396fe0978455a74b901b7cf212117507f",
+    "host_dracodia_recover_right": "a31aee1bfac889768c02012e9e24d874edcf0623a85ca16a1eda961e07fdebb8",
+    "host_dracodia_recover_right_hit": "40541e80b1a53b3fd053657f451ccbf4553d06b49badba264b889ac64ba1c269",
+    "host_dracodia_strike_core": "98dcb8822674c0c2b9a373bdf4b0497b2630e4fe304e2f9e5d1d008e8a0990dd",
+    "host_dracodia_strike_core_hit": "4516fb278619660e002538fee2993d7aabd3f50f3796f8c37b2341389654e7b2",
+    "host_dracodia_strike_left": "c8546c89df74b46a9d432165f2b638134fb3bbbf35e3325ad3d0d3da23a82fb9",
+    "host_dracodia_strike_left_hit": "4743276d45a96e500327b1fd2189115129125d67969ee83b0575157a5b66b49e",
+    "host_dracodia_strike_right": "34e5f14f9d6e24c1974825898be7167925710e16a6b36e6a512fadc2e9f2e98f",
+    "host_dracodia_strike_right_hit": "5d7a618830b45bdbbdbeac2f8cc6e9dbd2d951a41ff28e3fc4ccffc7af21e549",
+    "host_dracodia_wind_core": "475253fee991766c431abe45f6b706b73bb63cf76681bffd0ea866238fe4d678",
+    "host_dracodia_wind_core_hit": "925c4a2135e89f329f450f42301c15bce72fb0fa793ca08573be522224a0ec71",
+    "host_dracodia_wind_left": "02322bf6afdcaa67c2d3daa87270a449af6cd4a8cbe72d48e0e8403961efd23f",
+    "host_dracodia_wind_left_hit": "3558c326189d5c47b6b6578b7d56fd1c958dc608d2b11c916b0e32ee34f6a269",
+    "host_dracodia_wind_right": "d2037442be79332180a6f4d63b562a31365bc6b2d7af73b794b7a4eadf579295",
+    "host_dracodia_wind_right_hit": "60042fedf3ea91e7d05e217062241bd22e2fccf03141b99ca3459cb379eb1c35",
+    "ufo": "eff19bd5856d5e1c17ee28480299a4f6a3de71c3d9fc18c36a64281302c1a3d6",
+    "ufo_emerge": "ea03e8022ec9122a83c191801912ab862954d73758f976cee57931891d8e7e6e"
+  },
+  "newHashes": {
+    "bomb_charge": "49a459cbede52da11cb8689512fcb0218a780d5461d023c40b374987b34ecc03",
+    "bomb_burst": "c2203b009236c4ce05a512f2cd9b0c4aa054bbeeb89c967b358702903e9645a5"
+  },
+  "media": {
+    "report": "C:\\Users\\Mike\\Documents\\New project\\BOF-Dracodia-Bomb-Palette-1031\\video\\bomb-palette-1031\\report.json",
+    "seconds": 29.272,
+    "fps": 58.54898819267877,
+    "meanDB": -21.9,
+    "peakDB": -7.0,
+    "decodeErrors": 0,
+    "events": [
+      {
+        "event": "background-warp",
+        "time": 0.016666666666666666,
+        "clock": 0.016666666666666666,
+        "cue": "combatEnergy0927",
+        "gain": 0.45
+      },
+      {
+        "event": "arena-handoff",
+        "time": 3.4166666666666594,
+        "clock": 3.4166666666666594
+      },
+      {
+        "event": "purple-toxic-gate",
+        "time": 5.416666666666653,
+        "clock": 5.416666666666653,
+        "cue": "warpGate",
+        "gain": 0.85
+      },
+      {
+        "event": "neutral-drone-emerges",
+        "time": 7.2,
+        "clock": 7.216666666666646
+      },
+      {
+        "event": "drone-ready",
+        "time": 8.200000000000001,
+        "clock": 8.216666666666654,
+        "cue": "combatModule0927",
+        "gain": 0.5
+      },
+      {
+        "event": "red-toxic-gate",
+        "time": 9.216666666666665,
+        "clock": 9.233333333333372,
+        "cue": "warpGate",
+        "gain": 0.95
+      },
+      {
+        "event": "infector-arrival",
+        "time": 9.6,
+        "clock": 9.633333333333391
+      },
+      {
+        "event": "ufo-hover",
+        "time": 9.7,
+        "clock": 9.733333333333396,
+        "cue": "combatAlien0927",
+        "gain": 0.7
+      },
+      {
+        "event": "data-bomb-charge",
+        "time": 10.75,
+        "clock": 10.783333333333449,
+        "cue": "bossWeaponCharge",
+        "gain": 0.8
+      },
+      {
+        "event": "data-bomb-release",
+        "time": 12.116666666666662,
+        "clock": 12.150000000000183,
+        "cue": "combatOrb0927",
+        "gain": 0.8
+      },
+      {
+        "event": "data-bomb-impact",
+        "time": 12.66666666666666,
+        "clock": 12.70000000000021
+      },
+      {
+        "event": "robotic-scream-first",
+        "time": 12.71666666666666,
+        "clock": 12.750000000000213,
+        "cue": "rd71ScreamA",
+        "gain": 0.98
+      },
+      {
+        "event": "infector-returns-through-red-gate",
+        "time": 12.916666666666659,
+        "clock": 12.950000000000223,
+        "cue": "combatModule0927",
+        "gain": 0.45
+      },
+      {
+        "event": "red-gate-closes-after-return",
+        "time": 14.066666666666656,
+        "clock": 14.10000000000028,
+        "cue": "warpGate",
+        "gain": 0.65
+      },
+      {
+        "event": "robotic-scream-rising",
+        "time": 15.21666666666665,
+        "clock": 15.250000000000338,
+        "cue": "rd71ScreamB",
+        "gain": 1
+      },
+      {
+        "event": "robotic-scream-violent",
+        "time": 17.266666666666644,
+        "clock": 17.3000000000003,
+        "cue": "rd71ScreamA",
+        "gain": 1
+      },
+      {
+        "event": "covering-white-impact",
+        "time": 18.650000000000027,
+        "clock": 18.683333333333554,
+        "cue": "expBig",
+        "gain": 1
+      },
+      {
+        "event": "robotic-host-reveal",
+        "time": 19.050000000000047,
+        "clock": 19.08333333333353,
+        "cue": "rd71ScreamB",
+        "gain": 1
+      },
+      {
+        "event": "native-phase1-fight",
+        "time": 21.000000000000146,
+        "clock": 21.03333333333342
+      }
+    ],
+    "playing": {
+      "realm8": 1,
+      "combatEnergy0927": 1,
+      "bossPhase": 2,
+      "boss8": 1,
+      "warpGate": 3,
+      "combatModule0927": 2,
+      "combatAlien0927": 1,
+      "bossWeaponCharge": 3,
+      "alertLockon": 3,
+      "av3_target_acquire": 3,
+      "combatOrb0927": 1,
+      "expBig": 2,
+      "dialogueLetter": 27,
+      "rd71ScreamA": 2,
+      "rd71ScreamB": 2,
+      "enemyBossCannon": 6
+    },
+    "sha256": "b81b4d32aa236aa801a887900adea6e91c963ade6cc686ea1cd19f2a7986e413",
+    "preview": "http://127.0.0.1:51046/?dracodia=bomb-palette-1031#clip=stage8-gated-possession"
+  },
+  "coreSHA256": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de"
+}

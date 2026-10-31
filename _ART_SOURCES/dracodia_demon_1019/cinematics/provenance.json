@@ -1,0 +1,15 @@
+{
+  "generator": "built-in GPT imagegen",
+  "referenceIdentity": "_ART_SOURCES/stage8_pixellab_1018/masters/colossus.png",
+  "composition": "authored orbital emergence and first contact; no aircraft",
+  "frames": [
+    "emergence.png",
+    "contact.png"
+  ],
+  "shippingCanvas": [
+    960,
+    540
+  ],
+  "palette": "charcoal chromium, purple, white",
+  "prompt": "Remake the orbital symbiote emergence and first-contact scenes as a demonic artificial intelligence parasite with Dracodia skull, metallic wire tendrils, chromium armor and violet circuit corruption entering the satellite; Earth below, purple rift, sharp mid90s arcade pixel illustration. No text or aircraft."
+}

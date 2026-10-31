@@ -1,0 +1,136 @@
+{
+  "banks": [
+    {
+      "bank": "orb_charge",
+      "start": 0,
+      "frames": 48,
+      "cell": [
+        160,
+        160
+      ],
+      "sheet": [
+        1280,
+        960
+      ]
+    },
+    {
+      "bank": "orb_release",
+      "start": 0,
+      "frames": 12,
+      "cell": [
+        256,
+        256
+      ],
+      "sheet": [
+        1024,
+        768
+      ]
+    },
+    {
+      "bank": "warning",
+      "start": 0,
+      "frames": 16,
+      "cell": [
+        680,
+        512
+      ],
+      "sheet": [
+        2720,
+        2048
+      ]
+    },
+    {
+      "bank": "warning",
+      "start": 16,
+      "frames": 16,
+      "cell": [
+        680,
+        512
+      ],
+      "sheet": [
+        2720,
+        2048
+      ]
+    },
+    {
+      "bank": "warning",
+      "start": 32,
+      "frames": 16,
+      "cell": [
+        680,
+        512
+      ],
+      "sheet": [
+        2720,
+        2048
+      ]
+    },
+    {
+      "bank": "blast",
+      "start": 0,
+      "frames": 16,
+      "cell": [
+        680,
+        512
+      ],
+      "sheet": [
+        2720,
+        2048
+      ]
+    },
+    {
+      "bank": "blast",
+      "start": 16,
+      "frames": 8,
+      "cell": [
+        680,
+        512
+      ],
+      "sheet": [
+        2720,
+        1024
+      ]
+    },
+    {
+      "bank": "recovery",
+      "start": 0,
+      "frames": 16,
+      "cell": [
+        680,
+        512
+      ],
+      "sheet": [
+        2720,
+        2048
+      ]
+    }
+  ],
+  "generatedSourceSHA256": "16a1710ac9a4f21af4c7bcd4ed1b585ff08e6fe3f217138c6bd7d56a9d2ae12e",
+  "bodySources": {
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_00.png": "855cde7aa00d0ec0522a3cd5f6c6b9850fbc9ab07a71d296da3075db18b598cf",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_01.png": "b9df011947068f1b054b45bbab5b840d79e425d9f8bbc27ecf89ce0720cb171f",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_02.png": "927fcc38887b4b90850dcd61384acc31839c71874c02d53487f07c09b0364381",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_03.png": "4f90fcf3c6ce579c898e1175b179f9c58f0c3a7c0d82bc67326782c18132c22c",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_04.png": "a9d9270a41fafa1e9f992200c63f249ebb57d101c5c3507a85c2db2c89e4a8b7",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_05.png": "fb0bc45b57d0f7d64a1452365d05c1d47c8909d1abe6831dd5e818f850d3203d",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_06.png": "f18e7422f1884bca7e0dd7d8fe642bef240e7ef3fdb70ead9264511eb0ee747d"
+  },
+  "dangerPixels": 247599,
+  "safePixels": 100561,
+  "nativeArena": [
+    680,
+    512
+  ],
+  "evenCells": true,
+  "sourceMode": "Built-in image generation with Dracodia chest reference; offline fixed-frame normalization and authored field/alpha levels.",
+  "safeHints": [
+    [
+      166,
+      226
+    ],
+    [
+      514,
+      226
+    ]
+  ]
+}

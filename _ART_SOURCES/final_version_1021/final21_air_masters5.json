@@ -1,0 +1,78 @@
+[
+  {
+    "name": "air_s1jetdelta_b",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:589b6d5d-e442-48a3-8bd0-3da8bf692a74",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Jungle Delta Jet aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 98b138c6-5394-4913-89fc-f2ce88c255eb\njob_id: 98b138c6-5394-4913-89fc-f2ce88c255eb\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Jungle Delta Jet aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 47fddbeb-bbfa-5162-8ab6-a8050bccf07f\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"98b138c6-5394-4913-89fc-f2ce88c255eb\")"
+    ]
+  },
+  {
+    "name": "air_s4command",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:5f79d6ad-5277-4bdf-900e-08209a654b48",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Command aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: a877a24a-c678-41ac-918a-085067cd9c43\njob_id: a877a24a-c678-41ac-918a-085067cd9c43\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Command aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 176d2db4-8b88-557f-a027-e6f3137f101f\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"a877a24a-c678-41ac-918a-085067cd9c43\")"
+    ]
+  },
+  {
+    "name": "air_s4bomber",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:d5db164c-e134-4251-b193-2358c0796ce5",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Bomber aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 314168df-8d20-4110-9c3c-6efd7ee18082\njob_id: 314168df-8d20-4110-9c3c-6efd7ee18082\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Bomber aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: ca424c80-d9e4-5ba3-90f9-a3691e7c967b\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"314168df-8d20-4110-9c3c-6efd7ee18082\")"
+    ]
+  },
+  {
+    "name": "air_s5frigate",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:570b73c8-4829-40c3-bbdf-b4ddd6b984ba",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Space Frigate aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 5df8061e-494f-458a-a880-2153f348e27d\njob_id: 5df8061e-494f-458a-a880-2153f348e27d\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Space Frigate aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 065a0fe9-fca5-5020-9f78-5edbff535739\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"5df8061e-494f-458a-a880-2153f348e27d\")"
+    ]
+  }
+]

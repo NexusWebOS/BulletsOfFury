@@ -1,0 +1,154 @@
+[
+  {
+    "name": "air_xelite_tempest",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:7966f191-135c-4362-95ce-accef7563815",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Elite Tempest aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 6625107a-bea1-4469-b0e2-d7b0f6b2243f\njob_id: 6625107a-bea1-4469-b0e2-d7b0f6b2243f\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Elite Tempest aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 51b45ce6-4833-5fb1-bb93-ca6079dbb1a5\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"6625107a-bea1-4469-b0e2-d7b0f6b2243f\")"
+    ]
+  },
+  {
+    "name": "air_xelite_solarwarden",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:06688bf9-0fe4-43a5-85df-30dce2b25c09",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Elite Solar Warden aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: c561c66d-9c70-4d33-8086-3c27015183c5\njob_id: c561c66d-9c70-4d33-8086-3c27015183c5\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Elite Solar Warden aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: fae015a2-7f22-5f19-a937-d905b3f38f59\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"c561c66d-9c70-4d33-8086-3c27015183c5\")"
+    ]
+  },
+  {
+    "name": "air_s8razor",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:ea0d0d74-7a2c-48c9-b7a2-d1b386247d09",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Void Razor aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 74ac529c-23bc-460e-b0a2-4c9d066b3aaa\njob_id: 74ac529c-23bc-460e-b0a2-4c9d066b3aaa\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Void Razor aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 7a71488d-0407-51fd-b5bf-a234efaa39df\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"74ac529c-23bc-460e-b0a2-4c9d066b3aaa\")"
+    ]
+  },
+  {
+    "name": "air_s9interceptor",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:fa297c4b-070d-49af-8d5c-43dce3743280",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Water Space Interceptor aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 71414731-62db-4e35-8f48-11ebd9d2b2b5\njob_id: 71414731-62db-4e35-8f48-11ebd9d2b2b5\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Water Space Interceptor aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 0023ac75-4d9b-5904-a3a3-7c9074813fbd\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"71414731-62db-4e35-8f48-11ebd9d2b2b5\")"
+    ]
+  },
+  {
+    "name": "air_s9comet",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:55a75ee2-ab47-4e29-b84e-64c1c6309b74",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Water Space Comet aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 9b9c36d2-3ca2-4350-895b-f46ff576ae4f\njob_id: 9b9c36d2-3ca2-4350-895b-f46ff576ae4f\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Water Space Comet aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 08849ca9-22ae-5065-93df-81bed6280ee3\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"9b9c36d2-3ca2-4350-895b-f46ff576ae4f\")"
+    ]
+  },
+  {
+    "name": "air_s9gunship",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:eb0ccb4a-4e62-46a9-b337-540b3ae8da81",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Water Space Gunship aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: c8f7f514-ad91-44eb-8860-6ceefe46417b\njob_id: c8f7f514-ad91-44eb-8860-6ceefe46417b\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Water Space Gunship aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: af228d23-d02a-5690-9bcd-c31dc468199a\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"c8f7f514-ad91-44eb-8860-6ceefe46417b\")"
+    ]
+  },
+  {
+    "name": "air_wskim",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:783363c4-a6e9-4be1-9e30-432308e0c9aa",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Warp Skimmer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: af7a4403-15b7-4442-9181-75aa231b0ad9\njob_id: af7a4403-15b7-4442-9181-75aa231b0ad9\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Warp Skimmer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 9346a749-d8d6-513b-a301-846bdc8f2311\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"af7a4403-15b7-4442-9181-75aa231b0ad9\")"
+    ]
+  },
+  {
+    "name": "air_echof",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:5da4d6b4-80b7-46ca-b542-d03576cf5ce2",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Echo Fighter aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 65cc088e-d64f-461e-8545-c3179df557ec\njob_id: 65cc088e-d64f-461e-8545-c3179df557ec\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Echo Fighter aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 936dda1c-96e1-59b7-809d-7f0be36b35d5\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"65cc088e-d64f-461e-8545-c3179df557ec\")"
+    ]
+  }
+]

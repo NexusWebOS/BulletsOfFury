@@ -1,0 +1,14 @@
+{
+  "size": 410,
+  "parts": [
+    "ph21_core",
+    "ph21_tail",
+    "ph21_wingL",
+    "ph21_clawL",
+    "ph21_cannon",
+    "ph21_wingR",
+    "ph21_clawR",
+    "ph21_cannon",
+    "ph21_head"
+  ]
+}

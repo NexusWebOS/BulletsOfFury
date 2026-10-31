@@ -1,0 +1,23 @@
+{
+  "size": 410,
+  "parts": [
+    "vp23_phoenix_ventL",
+    "vp23_phoenix_ventR",
+    "vp23_phoenix_shoulderL",
+    "vp23_phoenix_left",
+    "vp23_phoenix_shoulderR",
+    "vp23_phoenix_right",
+    "vp23_phoenix_head",
+    "vp23_phoenix_upperL",
+    "vp23_phoenix_upperR",
+    "vp23_phoenix_torso",
+    "vp23_phoenix_thighL",
+    "vp23_phoenix_footL",
+    "vp23_phoenix_flareL",
+    "vp23_phoenix_thighR",
+    "vp23_phoenix_footR",
+    "vp23_phoenix_flareR",
+    "vp23_phoenix_reactor"
+  ],
+  "errors": []
+}

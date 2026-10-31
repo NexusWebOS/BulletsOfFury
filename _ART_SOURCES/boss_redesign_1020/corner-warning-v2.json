@@ -1,0 +1,25 @@
+{
+  "job": "c8a76938-b76b-466a-b2e5-6f05e6fb092c",
+  "asset": "748b2abc-2725-57ad-aa48-e893cb6d1b59",
+  "model": "pixen",
+  "costUSD": 0.0077,
+  "canvas": [
+    64,
+    64
+  ],
+  "pivot": [
+    32,
+    32
+  ],
+  "direction": "south-east",
+  "source": "corner-warning.png",
+  "rejected": "corner-warning-rejected-v1.png",
+  "rejectedDrawing": "8eed4c09-d9a5-4cc3-b0c9-0479dbb40877",
+  "notes": "User rejected the square-shaped star and crude arrow. New PixelLab eight-point asterisk and ivory/amber directional arrow; fixed transparent canvas; unchanged corner timing, rotation, FOV and marker placement.",
+  "verification": {
+    "nativePassed": 13,
+    "nativeChecks": 13,
+    "errors": [],
+    "report": "_shots/boss_redesign_1020/corner-warning-v2-qa.json"
+  }
+}

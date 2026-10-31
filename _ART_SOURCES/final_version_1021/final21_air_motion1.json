@@ -1,0 +1,74 @@
+[
+  {
+    "name": "air_nyx_roll",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/880bb6cd-ccd9-4340-84c2-1b025752806a/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/880bb6cd-ccd9-4340-84c2-1b025752806a/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "Nyx's exact purple black Ghostknife jet",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Complete one full360 degree axial BARREL ROLL around the longitudinal nose-to-tail axis. Show top, left wing-down edge, underside, opposite wing-down edge, then original top. Nose stays pointing south. NO yaw or flat paper spin. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: 70dab132-13c1-4157-ab0b-2063c6e8e8d4\njob_id: 70dab132-13c1-4157-ab0b-2063c6e8e8d4\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Complete one full360 degree axial BARREL ROLL around the longitudinal nose-to-tail axis. Show top, left wing-down edge, underside, opposite wing-down edge, then original top. Nose stays pointing south. NO yaw or flat paper spin. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"70dab132-13c1-4157-ab0b-2063c6e8e8d4\")\nasset_id: 1ef69123-2f8b-5871-b39d-3c5a524deabd\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_nyx_somer",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/880bb6cd-ccd9-4340-84c2-1b025752806a/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/880bb6cd-ccd9-4340-84c2-1b025752806a/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "Nyx's exact purple black Ghostknife jet",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Perform one complete360 degree SOMERSAULT around the lateral wing-to-wing axis. Nose pitches up toward camera, show front-facing nose-on view, underside, tail-on view then original top view. Full airplane rotates in3D without translation. Not a barrel roll and not a flat paper rotation. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: 5a432c15-aca2-4034-9200-4c3cb851ba9f\njob_id: 5a432c15-aca2-4034-9200-4c3cb851ba9f\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Perform one complete360 degree SOMERSAULT around the lateral wing-to-wing axis. Nose pitches up toward camera, show front-facing nose-on view, underside, tail-on view then original top view. Full airplane rotates in3D without translation. Not a barrel roll and not a flat paper rotation. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"5a432c15-aca2-4034-9200-4c3cb851ba9f\")\nasset_id: 7607273c-9582-5338-a45b-8beef27cbe5a\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_nyx_drift",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/880bb6cd-ccd9-4340-84c2-1b025752806a/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/880bb6cd-ccd9-4340-84c2-1b025752806a/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "Nyx's exact purple black Ghostknife jet",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Swerve and drift smoothly: bank left20degrees with a small yaw left, counter-steer right20degrees, then smoothly center. Fixed fuselage anchor; wing controls articulate and engine exhaust pulses, no translation or scale change. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: e3a1333c-0776-4692-92e0-598140b289fd\njob_id: e3a1333c-0776-4692-92e0-598140b289fd\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Swerve and drift smoothly: bank left20degrees with a small yaw left, counter-steer right20degrees, then smoothly center. Fixed fuselage anchor; wing controls articulate and engine exhaust pulses, no translation or scale change. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e3a1333c-0776-4692-92e0-598140b289fd\")\nasset_id: 3a52a64d-f976-5f0e-a77d-4723620e8641\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_nyx_attack",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/880bb6cd-ccd9-4340-84c2-1b025752806a/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/880bb6cd-ccd9-4340-84c2-1b025752806a/download?index=0",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "Nyx's exact purple black Ghostknife jet",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Fire wing-mounted weapons in paired short bursts: left pod recoils then right pod recoils, wing panels flex subtly, vents cycle and engines pulse; cease firing and return to initial pose. Keep entire hull opaque and stable; no projectiles or long beams baked into sprite, only tiny muzzle flashes at exact weapon tips. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: c3d9cec6-6af5-47a9-9b6f-bf291726bd4a\njob_id: c3d9cec6-6af5-47a9-9b6f-bf291726bd4a\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Fire wing-mounted weapons in paired short bursts: left pod recoils then right pod recoils, wing panels flex subtly, vents cycle and engines pulse; cease firing and return to initial pose. Keep entire hull opaque and stable; no projectiles or long beams baked into sprite, only tiny muzzle flashes at exact weapon tips. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"c3d9cec6-6af5-47a9-9b6f-bf291726bd4a\")\nasset_id: a6cf673a-4703-530e-9f03-c96dfb3b5cad\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  }
+]

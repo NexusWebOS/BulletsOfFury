@@ -1,0 +1,44 @@
+{
+  "brain": "FRAME FORMAT: Deliver 256 \u00c3\u2014 256 pixels. One whole boss sprite centered at physical brain center (128,128), broad transparent margins, no background, no ground, no text. Premium Neo-Geo HD-16bit pixel art, crisp deliberate pixel clusters and dark outlines. Create DRACODIA'S NEURAL ARCHON: a floating enormous mechanical alien brain transformed from the referenced evil code demon. Bulbous exposed convoluted violet cerebral lobes segmented by polished black chromium exoskeletal ribs, vivid purple circuit code channels embedded in the lobes, three small crown-like metallic horns at the top; unmistakable two furious EVIL RED-ORANGE EYES staring toward player in frontal shallow overhead view, eyes low on the front face approximately (99,146),(157,146), mounted in a sinister silver brow. Small black dangling cable tendrils under brain. No humanoid torso, limbs, wings, helicopter, guns, vehicle or hammer. Clearly readable brain silhouette, symmetry with organic irregular detail, white chromium rim highlights, purple-black recesses. Floating idle pose. Keep eyes clearly separated and unobscured. Preserve reference's demon face mood and black/chrome/purple/red palette.",
+  "animations": {
+    "brain_anim": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/007d3208-31f5-4bb6-bc66-67386cce44a2/download",
+      "frame_count": 8,
+      "action": "FRAME FORMAT 256x256 unchanged canvas, identical brain unit scale and center pivot(128,128), transparent margins. Seamless idle hover animation of THIS EXACT Dracodia mechanical alien brain. Keep chrome brow, three crown horns and both evil orange red eyes absolutely unchanged, locked eye sockets(105,150),(144,150). Only cerebral lobes subtly pulsate, purple circuit currents crawl through brain grooves and lower cable tendrils writhe gently. NO displacement of entire actor, camera movement, zoom, spin, new parts, lasers, beams, smoke or extra eyes. Crisp Neo Geo 16bit pixel clusters, silhouette stability. Start and end matched."
+    },
+    "cloud_anim": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/a103c854-fee8-44c1-a94a-31bef430bf51/download",
+      "frame_count": 8,
+      "action": "FRAME FORMAT192x192 same transparent canvas centerpivot96,96, no zoom or displacement. Animate this exact violet dark cloud shield ring continuously circulating clockwise, smoke lobes billow, purple lightning crawls through opaque clouds, small crimson code sparks. Keep empty transparent central hole, constant ring diameter and stable silhouette envelope, no background or objects appearing. Seamless 16bit pixel-art loop."
+    },
+    "geyser_anim": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/7840fc5d-3a17-44cb-ba0b-f887824bd6e7/download",
+      "frame_count": 8,
+      "action": "FRAME FORMAT128x192 fixed transparent canvas eruption base (64,170). Animate a complete eruption of this purple alien energy geyser. Plume surges up from base with violent purple ribbons and bright white-violet core, chrome pixel debris fountains upward then falls, plume breaks into sparks and collapses to a few small sparks at the base by final frame. Keep base firmly registered, no camera or scaling, no ground/backdrop/text. All particles inside canvas with transparent margins. Crisp NeoGeo pixel clusters."
+    },
+    "morph_anim": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/007d3208-31f5-4bb6-bc66-67386cce44a2/download",
+      "frame_count": 8,
+      "action": "FRAME FORMAT256x256 same pivot128,128 transparent background. This exact Dracodia brain disintegrates digitally from bottom to top into purple luminous square pixels and short code-like dashes; chrome ribs and violet lobes dissolve, evil eyes briefly flare, last frame only a small central cluster of purple square sparks. No extra boss, no new face, no growth, no camera, no backdrop or typography. Preserve exact brain identity and unit scale for intact portions. Smooth authored 16bit transformation/dissolve sequence, full effect inside margins."
+    },
+    "laser_anim": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/235d47cd-142a-40a5-80a4-29da493978ef/download",
+      "frame_count": 8,
+      "action": "FRAME FORMAT64x192 fixed transparent canvas and top source socket(32,12). Animate this exact vertical crimson magenta eye laser pulsing in place. White hot core shimmers and purple edges crackle, sharp sparks travel downward. Keep constant straight-down direction, beam aligned x32 from y12 to178, same width and length, no movement of source/end, no ring, no sphere, no new shapes or background. Seamless NeoGeo crisp pixel art loop."
+    }
+  },
+  "eye_correction_1023": {
+    "charge": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/007d3208-31f5-4bb6-bc66-67386cce44a2/download",
+      "frame_count": 8,
+      "no_background": true,
+      "action": "FRAME FORMAT256x256 transparent canvas, same center pivot128,128 and scale. Preserve this EXACT whole mechanical alien brain, silver evil brow, red eyes and violet lobes. One-shot LASER CHARGE WINDUP: both eyes gradually brighten orange-red to vivid crimson to WHITE-HOT pupils. Strong magenta/red energy illuminates BOTH eye sockets, eyelids, silver brow, temples and surrounding eye armor BEFORE firing. Progressive buildup, final frame maximum held readiness. Brain subtly pulses, cables writhe; eyes and brow move WITH the head as ONE whole actor, no stationary pasted rectangle. Same proportions, fixed camera, no translation or zoom. No beams, projectiles, extra eyes, smoke or redesign. Opaque bright pixel clusters and crisp NeoGeo16bit detail. Keep full silhouette in transparent margins. Do not return to normal at the end; this is a charge, not idle."
+    },
+    "laser_new": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/235d47cd-142a-40a5-80a4-29da493978ef/download",
+      "frame_count": 16,
+      "no_background": true,
+      "action": "FRAME FORMAT64x192 transparent unchanged canvas, fixed top source32,12 and straight down beam end32,178. Animate this exact red/magenta eye laser as a POWERFUL CONTINUOUS STREAM. Clear visible flowing motion in every frame: white hot energy packets race from TOP TO BOTTOM inside the red core, magenta ribbons coil down both edges, purple sparks peel outward, jagged electric striations ripple down the stream. Keep source and endpoint stationary, constant overall beam width, continuous unbroken damaging beam, bright white core visible across every frame. Never turn off or switch to a flat red unlit line. 16 genuinely distinct flow phases, seamless looping continuous laser. No objects, text, circle, ring, ground, camera, rotation, zoom or background. NeoGeo HD16bit strong readable pixel clusters."
+    }
+  }
+}

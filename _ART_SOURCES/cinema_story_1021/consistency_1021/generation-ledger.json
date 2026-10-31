@@ -1,0 +1,34 @@
+{
+  "credits_before": 4.33,
+  "credits_after": 4.09,
+  "spent": 0.24,
+  "method": "PixelLab Pro / reference artwork plus exact PixelLab pixelart_workbench palette edits. Palette operations are deterministic and free; three paid jobs.",
+  "jobs": [
+    {
+      "purpose": "Cole rear view",
+      "job_id": "0a11d796-3055-4679-b10b-6edcdce97488",
+      "prompt": "FRAME FORMAT: 96x112. Exact COLE from reference, cinematic head and upper shoulders seen from BEHIND in THREE-QUARTER REAR view, looking slightly to the RIGHT. Show BACK of head, close-clipped brown undercut on sides and nape, longer swept chestnut hair on top. Only a sliver of cheek and short beard visible at right, no front-facing face. Raised deep-green HOOD resting behind neck, silver harness straps across shoulders. Premium detailed HD16-bit Neo Geo pixel art matching reference, clean clusters, no text, transparent. Hair top y8, back of neck y76, shoulders y110. This is Cole, not Maverick.",
+      "frames": 4,
+      "selected": 1,
+      "charged": 0.08,
+      "status": "completed"
+    },
+    {
+      "purpose": "Maverick portrait-matched cinematic head",
+      "job_id": "e19a434f-9802-4487-a5f6-2dcfc9247e54",
+      "prompt": "FRAME FORMAT:96x112 pixels, transparent. MAVERICK cinematic head and shoulder insert, matching his exact individual portrait reference. Distinct from Cole: polished combed-back golden brown hair, fuller dark brown beard, GREEN-TINTED AVIATOR SUNGLASSES with slim gold frames, olive open flight jacket with high OPEN collar/tan edging, black undershirt and dark harness, NO hood. Three-quarter FRONT view facing slightly right, relaxed confident serious look. Crisp premium HD16-bit Neo Geo pixel clusters, no text. Hair top y8, chin near y76, shoulders bottom. Mandatory green aviators and this exact man's face/hair from reference. Preserve skin tone and olive uniform.",
+      "frames": 4,
+      "selected": 0,
+      "charged": 0.08,
+      "status": "completed"
+    },
+    {
+      "purpose": "Maverick legacy aviators in three native poses",
+      "job_id": "1d64ce1a-af91-4a5d-9f12-2ac0fcb853e1",
+      "prompt": "FRAME FORMAT 112x112 each. Make the SAME surgical edit in every frame: add Maverick's dark GREEN-TINTED AVIATOR SUNGLASSES, thin gold/olive frames and green reflective lenses over both eyes, as in his dialogue portrait. Preserve his exact face, hair, beard, mouth expression (including shocked open mouth), skin, pose, crop, pixels and transparency everywhere else. Do not change clothing or head shape. No goggles/visor; classic aviator sunglasses. Keep the three input frames as three separate outputs, same order.",
+      "frames": 3,
+      "charged": 0.08,
+      "status": "completed"
+    }
+  ]
+}

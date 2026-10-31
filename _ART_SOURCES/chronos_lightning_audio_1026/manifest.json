@@ -1,0 +1,14 @@
+{
+  "source": "assets/game/shared/audio/sfx_0927/beam.mp3",
+  "sourceCue": "combatBeam0927 / Dracodia rd27Lightning",
+  "sourceSha256": "ebeb6f8a5dbbc38df3975e5aebf662008175bcb3bcf0a2e1f06659fc4fbe9a80",
+  "sourceLicense": "not supplied",
+  "pitchSemitones": 0,
+  "seconds": 0.34,
+  "filters": "atrim=start=0:end=0.34,asetpts=PTS-STARTPTS,highpass=f=65,equalizer=f=2600:t=q:w=0.9:g=2,acompressor=threshold=0.18:ratio=2.2:attack=1.5:release=45:makeup=1.4,afade=t=in:st=0:d=0.002,afade=t=out:st=0.25:d=0.09,alimiter=limit=0.82:attack=2:release=35:level=false",
+  "master": "_ART_SOURCES/chronos_lightning_audio_1026/strike.wav",
+  "runtime": "assets/game/shared/audio/chronos_lightning_1026/strike.mp3",
+  "runtimeSha256": "a9c4e7dbc09dd97354b9ca7dbf3bd0cffd64b256e050a7848e915bf7e42b04d4",
+  "voices": 8,
+  "scope": "Chronos rage, wave and Kame opener only; Dracodia source, gain and pool untouched."
+}

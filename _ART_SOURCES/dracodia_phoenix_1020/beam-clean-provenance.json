@@ -1,0 +1,16 @@
+{
+  "sourceEdit": "76edd3fb-baae-4a18-a4f0-34131edbd8ea",
+  "drawing": "344bdb15-4628-4260-8190-438a67737b3f",
+  "frame": [
+    64,
+    128
+  ],
+  "frames": 16,
+  "commonCrop": [
+    20,
+    0,
+    44,
+    127
+  ],
+  "rejected": "Arrowhead and large spike texture was visually too coarse when enlarged; replaced by a continuous plasma column."
+}

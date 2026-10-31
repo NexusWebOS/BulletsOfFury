@@ -1,0 +1,74 @@
+[
+  {
+    "name": "air_l6v_s0_roll",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/d589297e-4af0-4ce9-bcbe-9e19bf52b3de/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/d589297e-4af0-4ce9-bcbe-9e19bf52b3de/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced l6v_s0 aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Complete one full360 degree axial BARREL ROLL around the longitudinal nose-to-tail axis. Show top, left wing-down edge, underside, opposite wing-down edge, then original top. Nose stays pointing south. NO yaw or flat paper spin. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: 36348ffc-be1d-4695-8a9e-7a9c48a17d31\njob_id: 36348ffc-be1d-4695-8a9e-7a9c48a17d31\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Complete one full360 degree axial BARREL ROLL around the longitudinal nose-to-tail axis. Show top, left wing-down edge, underside, opposite wing-down edge, then original top. Nose stays pointing south. NO yaw or flat paper spin. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"36348ffc-be1d-4695-8a9e-7a9c48a17d31\")\nasset_id: 32f2fcc6-3971-5017-89ea-cb21d9ea856b\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_l6v_s0_somer",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/d589297e-4af0-4ce9-bcbe-9e19bf52b3de/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/d589297e-4af0-4ce9-bcbe-9e19bf52b3de/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced l6v_s0 aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Perform one complete360 degree SOMERSAULT around the lateral wing-to-wing axis. Nose pitches up toward camera, show front-facing nose-on view, underside, tail-on view then original top view. Full airplane rotates in3D without translation. Not a barrel roll and not a flat paper rotation. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: 0ce3db36-f6cc-4219-86ff-d9792c2360aa\njob_id: 0ce3db36-f6cc-4219-86ff-d9792c2360aa\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Perform one complete360 degree SOMERSAULT around the lateral wing-to-wing axis. Nose pitches up toward camera, show front-facing nose-on view, underside, tail-on view then original top view. Full airplane rotates in3D without translation. Not a barrel roll and not a flat paper rotation. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"0ce3db36-f6cc-4219-86ff-d9792c2360aa\")\nasset_id: 05ad5dd5-46f9-58cb-99bf-281429be8c74\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_l6v_s0_drift",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/d589297e-4af0-4ce9-bcbe-9e19bf52b3de/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/d589297e-4af0-4ce9-bcbe-9e19bf52b3de/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced l6v_s0 aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Swerve and drift smoothly: bank left20degrees with a small yaw left, counter-steer right20degrees, then smoothly center. Fixed fuselage anchor; wing controls articulate and engine exhaust pulses, no translation or scale change. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: c3dd0213-806e-4eb3-8609-b37841527c3d\njob_id: c3dd0213-806e-4eb3-8609-b37841527c3d\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Swerve and drift smoothly: bank left20degrees with a small yaw left, counter-steer right20degrees, then smoothly center. Fixed fuselage anchor; wing controls articulate and engine exhaust pulses, no translation or scale change. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"c3dd0213-806e-4eb3-8609-b37841527c3d\")\nasset_id: a5e80323-7d4e-5e6b-ae18-f61f6c775737\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_l6v_s0_attack",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/d589297e-4af0-4ce9-bcbe-9e19bf52b3de/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/d589297e-4af0-4ce9-bcbe-9e19bf52b3de/download?index=0",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact referenced l6v_s0 aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Fire wing-mounted weapons in paired short bursts: left pod recoils then right pod recoils, wing panels flex subtly, vents cycle and engines pulse; cease firing and return to initial pose. Keep entire hull opaque and stable; no projectiles or long beams baked into sprite, only tiny muzzle flashes at exact weapon tips. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips."
+    },
+    "receipt": [
+      "id: 918b8c04-d044-42c1-954a-33a0c47cc4db\njob_id: 918b8c04-d044-42c1-954a-33a0c47cc4db\ndescription: FRAME FORMAT128x128, identical fixed canvas, fuselage pivot64,64, one common scale and16px transparent safety margins. Fire wing-mounted weapons in paired short bursts: left pod recoils then right pod recoils, wing panels flex subtly, vents cycle and engines pulse; cease firing and return to initial pose. Keep entire hull opaque and stable; no projectiles or long beams baked into sprite, only tiny muzzle flashes at exact weapon tips. Keep exact reference hull design, cockpit, wings, engine count, purple black palette and crisp Neo-Geo pixel detail in EVERY frame. No zoom, camera pan, travel, morphing, glow aura, background, text or cut-off wing tips.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"918b8c04-d044-42c1-954a-33a0c47cc4db\")\nasset_id: 4840d2b6-efc7-5e61-8ec0-d5b7fc055435\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  }
+]

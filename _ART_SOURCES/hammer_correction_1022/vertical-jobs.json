@@ -1,0 +1,130 @@
+[
+  {
+    "id": "blue_vertical_key",
+    "job_id": "e0eea9d9-14d0-4271-bcd9-2865b9a4ab7a",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Exact robot identity from reference1. Final IMPACT pose of a STRAIGHT DOWN hammer attack DIRECTLY IN FRONT of the robot, perfectly on the vertical centreline of his face/chest. Hammer cylinder centre x128,y207; lower circular END FACE hits at x128,y232 BETWEEN HIS FEET, not beside him. Cylinder long axis VERTICAL, metal end caps top and bottom, shaft connects into its side. Take ONLY the end-face orientation from reference2, DO NOT copy its sideways pose. Robot faces squarely toward viewer, head and chest centred x128, feet spread symmetrically x75 and181, elbows bend forward and TWO HANDS grip the shaft in front of abdomen. Shaft is foreshortened into depth toward camera; hammer lands straight under chest, never on left/right. Full body, same armor/face/palette/detail and size as reference1,256x256 transparent canvas, chest128,112. No flash,white smear,sparks,energy trail,background. Not a side sweep, no diagonal lean. Centreline hammer strike, upright end face planted at centre-bottom.",
+    "receipt": "id: e0eea9d9-14d0-4271-bcd9-2865b9a4ab7a\njob_id: e0eea9d9-14d0-4271-bcd9-2865b9a4ab7a\nmodel: pro\ndescription: Exact robot identity from reference1. Final IMPACT pose of a STRAIGHT DOWN hammer attack DIRECTLY IN FRONT of the robot, perfectly on the vertical centreline of his face/chest. Hammer cylinder centre x128,y207; lower circular END FACE hits at x128,y232 BETWEEN HIS FEET, not beside him. Cylinder long axis VERTICAL, metal end caps top and bottom, shaft connects into its side. Take ONLY the end-face orientation from reference2, DO NOT copy its sideways pose. Robot faces squarely toward viewer, head and chest centred x128, feet spread symmetrically x75 and181, elbows bend forward and TWO HANDS grip the shaft in front of abdomen. Shaft is foreshortened into depth toward camera; hammer lands straight under chest, never on left/right. Full body, same armor/face/palette/detail and size as reference1,256x256 transparent canvas, chest128,112. No flash,white smear,sparks,energy trail,background. Not a side sweep, no diagonal lean. Centreline hammer strike, upright end face planted at centre-bottom.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: 4479d8f5-c8bb-581d-86f0-7ba1fd81efe8\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"e0eea9d9-14d0-4271-bcd9-2865b9a4ab7a\")",
+    "contact": [
+      128,
+      217
+    ],
+    "body_axis": 128
+  },
+  {
+    "id": "corrupt_vertical_key",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Exact robot identity from reference1. Final IMPACT pose of a STRAIGHT DOWN hammer attack DIRECTLY IN FRONT of the robot, perfectly on the vertical centreline of his face/chest. Hammer cylinder centre x128,y207; lower circular END FACE hits at x128,y232 BETWEEN HIS FEET, not beside him. Cylinder long axis VERTICAL, metal end caps top and bottom, shaft connects into its side. Take ONLY the end-face orientation from reference2, DO NOT copy its sideways pose. Robot faces squarely toward viewer, head and chest centred x128, feet spread symmetrically x75 and181, elbows bend forward and TWO HANDS grip the shaft in front of abdomen. Shaft is foreshortened into depth toward camera; hammer lands straight under chest, never on left/right. Full body, same armor/face/palette/detail and size as reference1,256x256 transparent canvas, chest128,112. No flash,white smear,sparks,energy trail,background. Not a side sweep, no diagonal lean. Centreline hammer strike, upright end face planted at centre-bottom.",
+    "receipt": "id: 1459fe0c-6ae6-4726-a47b-51bb0c229f42\njob_id: 1459fe0c-6ae6-4726-a47b-51bb0c229f42\nmodel: pro\ndescription: Exact robot identity from reference1. Final IMPACT pose of a STRAIGHT DOWN hammer attack DIRECTLY IN FRONT of the robot, perfectly on the vertical centreline of his face/chest. Hammer cylinder centre x128,y207; lower circular END FACE hits at x128,y232 BETWEEN HIS FEET, not beside him. Cylinder long axis VERTICAL, metal end caps top and bottom, shaft connects into its side. Take ONLY the end-face orientation from reference2, DO NOT copy its sideways pose. Robot faces squarely toward viewer, head and chest centred x128, feet spread symmetrically x75 and181, elbows bend forward and TWO HANDS grip the shaft in front of abdomen. Shaft is foreshortened into depth toward camera; hammer lands straight under chest, never on left/right. Full body, same armor/face/palette/detail and size as reference1,256x256 transparent canvas, chest128,112. No flash,white smear,sparks,energy trail,background. Not a side sweep, no diagonal lean. Centreline hammer strike, upright end face planted at centre-bottom.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: 764fd39d-e640-5d0a-9037-527a7fa0a192\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"1459fe0c-6ae6-4726-a47b-51bb0c229f42\")",
+    "job_id": "1459fe0c-6ae6-4726-a47b-51bb0c229f42",
+    "completion": "status: completed\nid: 1459fe0c-6ae6-4726-a47b-51bb0c229f42\njob_id: 1459fe0c-6ae6-4726-a47b-51bb0c229f42\nframe: 0 of 1\nasset_id: 764fd39d-e640-5d0a-9037-527a7fa0a192\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/1459fe0c-6ae6-4726-a47b-51bb0c229f42/download?index=0",
+    "contact": [
+      134,
+      237
+    ],
+    "body_axis": 133
+  },
+  {
+    "id": "blue_vertical_direct",
+    "job_id": "d324c1c5-c458-4c1b-b5e4-806182431b8e",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Translate the EXISTING UPRIGHT hammer head STRAIGHT DOWN along the centreline from its current overhead position to the exact final planted pose. Keep its long cylindrical axis VERTICAL in EVERY frame, lower END FACE always faces down. NO ROTATION OF THE CYLINDER, never lay it horizontal, never flatten it into a disc. Show intermediate heights evenly: forehead, chin, chest, waist, knees, floor. Hands remain attached to side-mounted shaft, knees brace, no sidestep. Fixed body scale/256canvas, no flashes or effects.",
+    "receipt": "id: d324c1c5-c458-4c1b-b5e4-806182431b8e\njob_id: d324c1c5-c458-4c1b-b5e4-806182431b8e\naction: Translate the EXISTING UPRIGHT hammer head STRAIGHT DOWN along the centreline from its current overhead position to the exact final planted pose. Keep its long cylindrical axis VERTICAL in EVERY frame, lower END FACE always faces down. NO ROTATION OF THE CYLINDER, never lay it horizontal, never flatten it into a disc. Show intermediate heights evenly: forehead, chin, chest, waist, knees, floor. Hands remain attached to side-mounted shaft, knees brace, no sidestep. Fixed body scale/256canvas, no flashes or effects.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 993cb857-7b65-551d-9e47-85fd1e8dbffe\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d324c1c5-c458-4c1b-b5e4-806182431b8e\")",
+    "completion": "status: completed\nid: d324c1c5-c458-4c1b-b5e4-806182431b8e\njob_id: d324c1c5-c458-4c1b-b5e4-806182431b8e\nframe: 0 of 9\nasset_id: 993cb857-7b65-551d-9e47-85fd1e8dbffe\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0259 in credits\ndownload: https://api.pixellab.ai/mcp/images/d324c1c5-c458-4c1b-b5e4-806182431b8e/download?index=0",
+    "superseded": "29602baf-c707-43a8-a00d-b319602842ed",
+    "selected": [
+      0,
+      1,
+      2,
+      3,
+      8
+    ],
+    "contacts": [
+      [
+        128,
+        89
+      ],
+      [
+        128,
+        94
+      ],
+      [
+        128,
+        128
+      ],
+      [
+        128,
+        203
+      ],
+      [
+        128,
+        217
+      ]
+    ]
+  },
+  {
+    "id": "blue_vertical_recover",
+    "job_id": "6a292589-57c7-48f6-8a0b-9d411553894f",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Lift the hammer from its central planted end cap, then return directly to neutral ready stance. Recovery ONLY, no overhead flourish or second strike. Hands and shaft remain physically connected, cylinder keeps its full length. Fixed256canvas and body scale, no effects.",
+    "receipt": "id: 6a292589-57c7-48f6-8a0b-9d411553894f\njob_id: 6a292589-57c7-48f6-8a0b-9d411553894f\naction: Lift the hammer from its central planted end cap, then return directly to neutral ready stance. Recovery ONLY, no overhead flourish or second strike. Hands and shaft remain physically connected, cylinder keeps its full length. Fixed256canvas and body scale, no effects.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: f3d7f61a-db8a-5de8-92c3-4ccfc1dfb8e5\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"6a292589-57c7-48f6-8a0b-9d411553894f\")",
+    "completion": "status: completed\nid: 6a292589-57c7-48f6-8a0b-9d411553894f\njob_id: 6a292589-57c7-48f6-8a0b-9d411553894f\nframe: 0 of 5\nasset_id: f3d7f61a-db8a-5de8-92c3-4ccfc1dfb8e5\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0242 in credits\ndownload: https://api.pixellab.ai/mcp/images/6a292589-57c7-48f6-8a0b-9d411553894f/download?index=0"
+  },
+  {
+    "id": "corrupt_vertical_down",
+    "job_id": "8a5cedc5-d316-4b77-af44-4799c28b7b65",
+    "frames": 9,
+    "status": "failed",
+    "prompt": "STRAIGHT DOWN hammer slam directly in front of chest. Keep hammer head CENTRE x128 to134 throughout; NO side sweep or diagonal trajectory. Descend continuously from overhead through face, chest, waist and knees to floor between feet. Rotate head in place so cylindrical LOWER END CAP strikes the floor in the exact final pose, cylinder upright at impact. Two hands grip shaft continuously, knees brace, body square to viewer, no sidestep. Same physical hammer size, NO disc flattening or stretching, fixed256square canvas/body scale. No flash,white smear,trail,sparks,extra weapon.",
+    "receipt": "id: 8a5cedc5-d316-4b77-af44-4799c28b7b65\njob_id: 8a5cedc5-d316-4b77-af44-4799c28b7b65\naction: STRAIGHT DOWN hammer slam directly in front of chest. Keep hammer head CENTRE x128 to134 throughout; NO side sweep or diagonal trajectory. Descend continuously from overhead through face, chest, waist and knees to floor between feet. Rotate head in place so cylindrical LOWER END CAP strikes the floor in the exact final pose, cylinder upright at impact. Two hands grip shaft continuously, knees brace, body square to viewer, no sidestep. Same physical hammer size, NO disc flattening or stretching, fixed256square canvas/body scale. No flash,white smear,trail,sparks,extra weapon.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: fcfa6df2-777f-5512-9bbc-c5cefe2d8c42\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"8a5cedc5-d316-4b77-af44-4799c28b7b65\")",
+    "failure": "Generation failed due to heavy load"
+  },
+  {
+    "id": "corrupt_vertical_recover",
+    "job_id": "2b0ed666-daba-4857-8653-5259abd59513",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Recovery only. Lift the centrally planted hammer off its lower end cap, stand from braced knees and return directly to the exact neutral stance. No second attack, no overhead flourish. Keep existing full cylinder shape and size, both hands and shaft physically connected. Fixed256canvas and same robot scale, no flashes or effects.",
+    "receipt": "id: 2b0ed666-daba-4857-8653-5259abd59513\njob_id: 2b0ed666-daba-4857-8653-5259abd59513\naction: Recovery only. Lift the centrally planted hammer off its lower end cap, stand from braced knees and return directly to the exact neutral stance. No second attack, no overhead flourish. Keep existing full cylinder shape and size, both hands and shaft physically connected. Fixed256canvas and same robot scale, no flashes or effects.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 3ee2b6be-456c-5d0f-88dd-ee8c0612da6a\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"2b0ed666-daba-4857-8653-5259abd59513\")",
+    "completion": "status: completed\nid: 2b0ed666-daba-4857-8653-5259abd59513\njob_id: 2b0ed666-daba-4857-8653-5259abd59513\nframe: 0 of 5\nasset_id: 3ee2b6be-456c-5d0f-88dd-ee8c0612da6a\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0213 in credits\ndownload: https://api.pixellab.ai/mcp/images/2b0ed666-daba-4857-8653-5259abd59513/download?index=0"
+  },
+  {
+    "id": "corrupt_vertical_overhead",
+    "job_id": "4da076ff-e641-4503-9804-7920761593ef",
+    "frames": 1,
+    "status": "completed",
+    "receipt": "id: 4da076ff-e641-4503-9804-7920761593ef\njob_id: 4da076ff-e641-4503-9804-7920761593ef\nmodel: pro\ndescription: Exact corrupted robot from reference1, full body, facing straight at viewer, ready to strike STRAIGHT DOWN. BOTH HANDS raised together above forehead grip hammer shaft, hammer head directly ABOVE head at x128,y42. CRITICAL: cylinder LONG AXIS ALREADY VERTICAL, top metal END CAP at y18, lower metal END CAP faces downward at y64. Cylinder stands tall, not horizontal. Hammer SHAFT joins the SIDE at mid-height, foreshortened towards hands behind it. Use reference2 ONLY for upright-overhead pose and weapon orientation, NEVER its blue armor or character identity. Preserve black/violet chromium armor, skull horns, red core, exact robot scale from reference1, chest128112 feet230. Complete limbs and hammer visible with transparent margins,256square,no flash,trails,extra weapons.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: 2d76c907-a599-5898-ab51-a916627c7819\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"4da076ff-e641-4503-9804-7920761593ef\")",
+    "prompt": "Exact corrupted robot from reference1, full body, facing straight at viewer, ready to strike STRAIGHT DOWN. BOTH HANDS raised together above forehead grip hammer shaft, hammer head directly ABOVE head at x128,y42. CRITICAL: cylinder LONG AXIS ALREADY VERTICAL, top metal END CAP at y18, lower metal END CAP faces downward at y64. Cylinder stands tall, not horizontal. Hammer SHAFT joins the SIDE at mid-height, foreshortened towards hands behind it. Use reference2 ONLY for upright-overhead pose and weapon orientation, NEVER its blue armor or character identity. Preserve black/violet chromium armor, skull horns, red core, exact robot scale from reference1, chest128112 feet230. Complete limbs and hammer visible with transparent margins,256square,no flash,trails,extra weapons."
+  },
+  {
+    "id": "corrupt_vertical_direct",
+    "job_id": "099b6c6b-72d9-4765-86b9-ac37c16f4895",
+    "frames": 13,
+    "status": "completed",
+    "prompt": "The robot drives its existing upright cylindrical hammer STRAIGHT DOWN in front of its chest. The head stays on centreline x128 to134 and its LONG AXIS stays VERTICAL, lower circular END CAP points DOWN throughout. Descend through face, chest, abdomen, knees and then end-cap-first impact between feet, ending exactly at reference final pose. No sideways sweep, no diagonal attack, no rolling cylinder flat or flattening into a disc. Hands physically guide shaft, knees brace, body faces viewer. Keep exact existing hammer, full limbs, scale and crisp pixel armor. No flashes, trails, new effects or background.",
+    "receipt": "id: 099b6c6b-72d9-4765-86b9-ac37c16f4895\njob_id: 099b6c6b-72d9-4765-86b9-ac37c16f4895\ndescription: The robot drives its existing upright cylindrical hammer STRAIGHT DOWN in front of its chest. The head stays on centreline x128 to134 and its LONG AXIS stays VERTICAL, lower circular END CAP points DOWN throughout. Descend through face, chest, abdomen, knees and then end-cap-first impact between feet, ending exactly at reference final pose. No sideways sweep, no diagonal attack, no rolling cylinder flat or flattening into a disc. Hands physically guide shaft, knees brace, body faces viewer. Keep exact existing hammer, full limbs, scale and crisp pixel armor. No flashes, trails, new effects or background.\nframes: 12\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"099b6c6b-72d9-4765-86b9-ac37c16f4895\")\nasset_id: 971ee7da-e312-505e-ae56-5b3d069934c5\nasset_status: pending (saved to your gallery when generation completes)",
+    "cancelled_job": "887626cd-87eb-44f5-b1d0-1715ade55dfa",
+    "completion": "status: completed\nid: 099b6c6b-72d9-4765-86b9-ac37c16f4895\njob_id: 099b6c6b-72d9-4765-86b9-ac37c16f4895\nframe: 0 of 13\nasset_id: 971ee7da-e312-505e-ae56-5b3d069934c5\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 2 generations\ndownload: https://api.pixellab.ai/mcp/images/099b6c6b-72d9-4765-86b9-ac37c16f4895/download?index=0",
+    "selected": [
+      0,
+      1,
+      2,
+      12
+    ],
+    "rejected_frames": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  }
+]

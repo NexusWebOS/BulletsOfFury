@@ -1,0 +1,38 @@
+[
+  {
+    "name": "nyx_orb_master",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 32,
+      "reference_images": [
+        {
+          "url": "upload:41bb64b3-7635-4218-b9b1-6ea21c68b811",
+          "usage": "The BOF dark-purple/gray/white demonic energy palette only. Re-author as a clean shaded spherical projectile, not the reference antenna shape."
+        }
+      ],
+      "description": "FRAME FORMAT128x128, fixed core64,64. One Nyx DARK PURPLE SHADOW ORB projectile, a clearly solid shaded round sphere76px diameter, black violet core, twisting dark-purple/gray symbiote bands and restrained pale-lilac highlights. Fine detailed Neo-Geo pixel clusters, luminous inner seams, obvious circular damaging projectile silhouette. Keep24px transparent margins. No ring/portal, antennae, reticle, robot, giant bloom, grey matte or scenery. Two compact orbiting filaments hug sphere surface, not huge sparks."
+    },
+    "receipt": [
+      "id: 3f96be3b-77c8-4c9b-94d2-792269cfbcf8\njob_id: 3f96be3b-77c8-4c9b-94d2-792269cfbcf8\nmodel: pro\ndescription: FRAME FORMAT128x128, fixed core64,64. One Nyx DARK PURPLE SHADOW ORB projectile, a clearly solid shaded round sphere76px diameter, black violet core, twisting dark-purple/gray symbiote bands and restrained pale-lilac highlights. Fine detailed Neo-Geo pixel clusters, luminous inner seams, obvious circular damaging projectile silhouette. Keep24px transparent margins. No ring/portal, antennae, reticle, robot, giant bloom, grey matte or scenery. Two compact orbiting filaments hug sphere surface, not huge sparks.\nsize: 128x128px\ntransparent: True\ncandidates: 4\nreferences: 1\nmax colours: 32 per image\nasset_id: e4b99b1b-c791-5f8b-8293-75f6e2a73218\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"3f96be3b-77c8-4c9b-94d2-792269cfbcf8\")"
+    ]
+  },
+  {
+    "name": "warp_master",
+    "args": {
+      "width": 256,
+      "height": 256,
+      "no_background": false,
+      "init_image_url": "upload:45462d3b-f0a6-403e-ae1a-1e6a33f474e0",
+      "init_image_strength": 80,
+      "description": "FRAME FORMAT256x256, full opaque square screen-warp texture. The VIEW FROM INSIDE BOF's white/cyan/violet portal: a deep dark dimensional tunnel centered128,128 with sharp curved cyan/violet streaks streaming outward toward all four corners, layered luminous energy bands receding in depth. NO hardware, gate, ship, robot, metal, text or screen frame. Neo-Geo32-bit pixel art, crisp deliberate clusters, a very dark clear center for projectile readability, colored streaks strongest around outer edges, not a white flash or opaque bright glow.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline"
+    },
+    "receipt": [
+      "id: 6d0d8f3a-a04a-43ca-bd61-f7d3575c1b8b\njob_id: 6d0d8f3a-a04a-43ca-bd61-f7d3575c1b8b\ndescription: FRAME FORMAT256x256, full opaque square screen-warp texture. The VIEW FROM INSIDE BOF's white/cyan/violet portal: a deep dark dimensional tunnel centered128,128 with sharp curved cyan/violet streaks streaming outward toward all four corners, layered luminous energy bands receding in depth. NO hardware, gate, ship, robot, metal, text or screen frame. Neo-Geo32-bit pixel art, crisp deliberate clusters, a very dark clear center for projectile readability, colored streaks strongest around outer edges, not a white flash or opaque bright glow.\nsize: 256x256px\ntransparent: False — WARNING: this input has transparent pixels and you asked for an opaque result, so they will be flattened onto WHITE — including areas an inpaint mask would otherwise leave untouched. Pass no_background=True to keep them, or omit it to follow the input\nasset_id: 371d2189-b686-51b0-813d-101c4eb58c51\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 80)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"6d0d8f3a-a04a-43ca-bd61-f7d3575c1b8b\")"
+    ]
+  }
+]

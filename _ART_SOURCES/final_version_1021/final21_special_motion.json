@@ -1,0 +1,36 @@
+[
+  {
+    "name": "shield_wall_loop",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/2f44d12f-17c5-4e03-92aa-5f5610b1dcd2/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/2f44d12f-17c5-4e03-92aa-5f5610b1dcd2/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "subject_description": "a blue chromium crescent shield wall",
+      "initial_pose": "fixed centered effect",
+      "description": "FRAME FORMAT256x256 pivot128,128, common scale and transparent margins. A fixed wide shallow crescent chromium shield wall. Each hexagonal solid metal panel remains exactly in place, electric blue code pulses chase along seams left to right, small white highlights sweep across panels, subtle internal energy flow. Keep the same full wall geometry, orientation, position and scale. Do NOT rotate the wall into a disk. Remove the grey background to transparency; retain the solid blue metal panels. No outside cloud or detached sparks."
+    },
+    "receipt": [
+      "id: 6a6e2315-0d03-461c-ac42-0c2b2b0cf4aa\njob_id: 6a6e2315-0d03-461c-ac42-0c2b2b0cf4aa\ndescription: FRAME FORMAT256x256 pivot128,128, common scale and transparent margins. A fixed wide shallow crescent chromium shield wall. Each hexagonal solid metal panel remains exactly in place, electric blue code pulses chase along seams left to right, small white highlights sweep across panels, subtle internal energy flow. Keep the same full wall geometry, orientation, position and scale. Do NOT rotate the wall into a disk. Remove the grey background to transparency; retain the solid blue metal panels. No outside cloud or detached sparks.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"6a6e2315-0d03-461c-ac42-0c2b2b0cf4aa\")\nasset_id: c69cb7f0-08e4-5a0e-bbf1-a2c03d036f71\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "nyx_orb_loop",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/3f96be3b-77c8-4c9b-94d2-792269cfbcf8/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/3f96be3b-77c8-4c9b-94d2-792269cfbcf8/download?index=0",
+      "frame_count": 24,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "subject_description": "a dark-purple shadow energy sphere",
+      "initial_pose": "fixed centered effect",
+      "description": "FRAME FORMAT128x128 pivot64,64, common scale and transparent margins. A fixed dark-purple spherical shadow orb spins smoothly through one full360 degree revolution about its vertical axis. Purple/gray energy bands spiral around the shaded dark sphere and two thin pale-lilac filaments orbit tightly, giving genuine3D volume. Core remains opaque dark-violet, no growing white bloom. Keep sphere diameter and center constant, smooth seamless loop; no translation, camera, zoom, white flash or clipping."
+    },
+    "receipt": [
+      "id: fe45195c-6e57-4926-8afa-c22500a03962\njob_id: fe45195c-6e57-4926-8afa-c22500a03962\ndescription: FRAME FORMAT128x128 pivot64,64, common scale and transparent margins. A fixed dark-purple spherical shadow orb spins smoothly through one full360 degree revolution about its vertical axis. Purple/gray energy bands spiral around the shaded dark sphere and two thin pale-lilac filaments orbit tightly, giving genuine3D volume. Core remains opaque dark-violet, no growing white bloom. Keep sphere diameter and center constant, smooth seamless loop; no translation, camera, zoom, white flash or clipping.\nframes: 24\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fe45195c-6e57-4926-8afa-c22500a03962\")\nasset_id: 58396b4d-4924-5f63-a403-a1c6c17b0752\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  }
+]

@@ -1,0 +1,136 @@
+{
+  "checks": [
+    {
+      "name": "hq_regroup edits confined to authored actor selections",
+      "ok": true
+    },
+    {
+      "name": "hq_regroup original canvas and alpha preserved",
+      "ok": true
+    },
+    {
+      "name": "hq_regroup palette shading luminance retained",
+      "ok": true
+    },
+    {
+      "name": "forge_upgrade edits confined to authored actor selections",
+      "ok": true
+    },
+    {
+      "name": "forge_upgrade original canvas and alpha preserved",
+      "ok": true
+    },
+    {
+      "name": "forge_upgrade palette shading luminance retained",
+      "ok": true
+    },
+    {
+      "name": "hq_alarm edits confined to authored actor selections",
+      "ok": true
+    },
+    {
+      "name": "hq_alarm original canvas and alpha preserved",
+      "ok": true
+    },
+    {
+      "name": "hq_alarm palette shading luminance retained",
+      "ok": true
+    },
+    {
+      "name": "hq_river edits confined to authored actor selections",
+      "ok": true
+    },
+    {
+      "name": "hq_river original canvas and alpha preserved",
+      "ok": true
+    },
+    {
+      "name": "hq_river palette shading luminance retained",
+      "ok": true
+    },
+    {
+      "name": "launch_generator edits confined to authored actor selections",
+      "ok": true
+    },
+    {
+      "name": "launch_generator original canvas and alpha preserved",
+      "ok": true
+    },
+    {
+      "name": "launch_generator palette shading luminance retained",
+      "ok": true
+    },
+    {
+      "name": "power_cell edits confined to authored actor selections",
+      "ok": true
+    },
+    {
+      "name": "power_cell original canvas and alpha preserved",
+      "ok": true
+    },
+    {
+      "name": "power_cell palette shading luminance retained",
+      "ok": true
+    },
+    {
+      "name": "hq_regroup Freezer purple jacket replaces navy ramp",
+      "ok": true
+    },
+    {
+      "name": "hq_river Freezer purple jacket replaces navy ramp",
+      "ok": true
+    },
+    {
+      "name": "data_disintegrate complete animation bank byte-identical",
+      "ok": true
+    },
+    {
+      "name": "data_blast complete animation bank byte-identical",
+      "ok": true
+    },
+    {
+      "name": "blue_portal complete animation bank byte-identical",
+      "ok": true
+    },
+    {
+      "name": "void_portal complete animation bank byte-identical",
+      "ok": true
+    },
+    {
+      "name": "remnant complete animation bank byte-identical",
+      "ok": true
+    },
+    {
+      "name": "code_fragments complete animation bank byte-identical",
+      "ok": true
+    },
+    {
+      "name": "hq_motion complete animation bank byte-identical",
+      "ok": true
+    },
+    {
+      "name": "coast_motion complete animation bank byte-identical",
+      "ok": true
+    },
+    {
+      "name": "forge_motion complete animation bank byte-identical",
+      "ok": true
+    },
+    {
+      "name": "only six prior runtime exports changed",
+      "ok": true
+    },
+    {
+      "name": "maverick_report_pose original expression/body outside sunglasses unchanged",
+      "ok": true
+    },
+    {
+      "name": "maverick_horror_pose original expression/body outside sunglasses unchanged",
+      "ok": true
+    },
+    {
+      "name": "maverick_standing_pose original expression/body outside sunglasses unchanged",
+      "ok": true
+    }
+  ]
+}

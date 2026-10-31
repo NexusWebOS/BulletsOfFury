@@ -1,0 +1,22 @@
+[
+  {
+    "batch": 8,
+    "id": "ee1ca92a-8718-46e7-95dd-aa957a14c888",
+    "files": [
+      "land/07.png",
+      "land/08.png",
+      "land/09.png"
+    ],
+    "result": "id: ee1ca92a-8718-46e7-95dd-aa957a14c888\njob_id: ee1ca92a-8718-46e7-95dd-aa957a14c888\nframes: 3\nsize: 256x256px\ntransparent: True\ninstructions: Reskin ONLY the armor/helmet into the reference Dracodia demon knight. EXACTLY preserve source poses, silhouette, scale, all joints, fist locations and registration. Same horned skull helmet, red eyes, red abdomen, purple chromium armor in EVERY frame. EMPTY hands, NO hammer, weapon, shield, circle or effects. Preserve tiny magenta fist marker exactly. Crisp 16-bit pixel art. No new limbs.\nseed: 7430\nasset_id: a39832e6-ae58-5d61-a567-63e705f9202c\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"ee1ca92a-8718-46e7-95dd-aa957a14c888\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/ee1ca92a-8718-46e7-95dd-aa957a14c888/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "batch": 9,
+    "id": "60df01e5-6280-491d-9a3a-49ec7197ac44",
+    "files": [
+      "land/10.png",
+      "land/11.png",
+      "land/12.png"
+    ],
+    "result": "id: 60df01e5-6280-491d-9a3a-49ec7197ac44\njob_id: 60df01e5-6280-491d-9a3a-49ec7197ac44\nframes: 3\nsize: 256x256px\ntransparent: True\ninstructions: Reskin ONLY the armor/helmet into the reference Dracodia demon knight. EXACTLY preserve source poses, silhouette, scale, all joints, fist locations and registration. Same horned skull helmet, red eyes, red abdomen, purple chromium armor in EVERY frame. EMPTY hands, NO hammer, weapon, shield, circle or effects. Preserve tiny magenta fist marker exactly. Crisp 16-bit pixel art. No new limbs.\nseed: 7430\nasset_id: 0887047d-7cc7-5b75-89ad-ba459b47692d\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"60df01e5-6280-491d-9a3a-49ec7197ac44\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/60df01e5-6280-491d-9a3a-49ec7197ac44/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  }
+]

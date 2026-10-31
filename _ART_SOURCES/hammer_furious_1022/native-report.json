@@ -1,0 +1,494 @@
+{
+  "checks": [
+    {
+      "name": "Stage5 normal exact down-slam count and return",
+      "ok": true,
+      "data": {
+        "first": 1,
+        "error": 0,
+        "frames": 13,
+        "done": true,
+        "events": [
+          {
+            "type": "first-down",
+            "kind": "blue",
+            "difficulty": "normal"
+          }
+        ],
+        "state": "back"
+      }
+    },
+    {
+      "name": "Stage5 normal sideways strikes only on Furious",
+      "ok": true,
+      "data": [
+        {
+          "type": "first-down",
+          "kind": "blue",
+          "difficulty": "normal"
+        }
+      ]
+    },
+    {
+      "name": "Stage5 hard exact down-slam count and return",
+      "ok": true,
+      "data": {
+        "first": 1,
+        "error": 0,
+        "frames": 13,
+        "done": true,
+        "events": [
+          {
+            "type": "first-down",
+            "kind": "blue",
+            "difficulty": "hard"
+          },
+          {
+            "type": "second-down",
+            "kind": "blue"
+          }
+        ],
+        "state": "back"
+      }
+    },
+    {
+      "name": "Stage5 hard sideways strikes only on Furious",
+      "ok": true,
+      "data": [
+        {
+          "type": "first-down",
+          "kind": "blue",
+          "difficulty": "hard"
+        },
+        {
+          "type": "second-down",
+          "kind": "blue"
+        }
+      ]
+    },
+    {
+      "name": "Stage5 furious exact down-slam count and return",
+      "ok": true,
+      "data": {
+        "first": 1,
+        "error": 0,
+        "frames": 24,
+        "done": true,
+        "events": [
+          {
+            "type": "first-down",
+            "kind": "blue",
+            "difficulty": "furious"
+          },
+          {
+            "type": "second-down",
+            "kind": "blue"
+          },
+          {
+            "type": "left-swing",
+            "kind": "blue"
+          },
+          {
+            "type": "right-swing",
+            "kind": "blue"
+          }
+        ],
+        "state": "back"
+      }
+    },
+    {
+      "name": "Stage5 furious sideways strikes only on Furious",
+      "ok": true,
+      "data": [
+        {
+          "type": "first-down",
+          "kind": "blue",
+          "difficulty": "furious"
+        },
+        {
+          "type": "second-down",
+          "kind": "blue"
+        },
+        {
+          "type": "left-swing",
+          "kind": "blue"
+        },
+        {
+          "type": "right-swing",
+          "kind": "blue"
+        }
+      ]
+    },
+    {
+      "name": "Charged Stage5 normal preserves combo and native wave recovery",
+      "ok": true,
+      "data": {
+        "first": true,
+        "done": true,
+        "state": "storm_idle",
+        "events": [
+          {
+            "type": "first-down",
+            "kind": "blue-storm",
+            "difficulty": "normal"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Charged Stage5 hard preserves combo and native wave recovery",
+      "ok": true,
+      "data": {
+        "first": true,
+        "done": true,
+        "state": "storm_idle",
+        "events": [
+          {
+            "type": "first-down",
+            "kind": "blue-storm",
+            "difficulty": "hard"
+          },
+          {
+            "type": "second-down",
+            "kind": "blue"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Charged Stage5 furious preserves combo and native wave recovery",
+      "ok": true,
+      "data": {
+        "first": true,
+        "done": true,
+        "state": "storm_idle",
+        "events": [
+          {
+            "type": "first-down",
+            "kind": "blue-storm",
+            "difficulty": "furious"
+          },
+          {
+            "type": "second-down",
+            "kind": "blue"
+          },
+          {
+            "type": "left-swing",
+            "kind": "blue"
+          },
+          {
+            "type": "right-swing",
+            "kind": "blue"
+          }
+        ]
+      }
+    },
+    {
+      "name": "New blue frames visibly flash and expire",
+      "ok": true,
+      "data": {
+        "w": 28578,
+        "d": 31195,
+        "expired": true
+      }
+    },
+    {
+      "name": "Stage5 release is physical and hands remain empty during flight",
+      "ok": true,
+      "data": {
+        "done": true,
+        "released": true,
+        "error": 0,
+        "tool": 32,
+        "empty": true,
+        "spanX": 391.94499924347497,
+        "spanY": 371.9478054045221,
+        "width": 480,
+        "height": 512
+      }
+    },
+    {
+      "name": "Stage5 glowing hammer circuits screen and returns",
+      "ok": true,
+      "data": {
+        "done": true,
+        "released": true,
+        "error": 0,
+        "tool": 32,
+        "empty": true,
+        "spanX": 391.94499924347497,
+        "spanY": 371.9478054045221,
+        "width": 480,
+        "height": 512
+      }
+    },
+    {
+      "name": "Stage5 rage charges and keeps red armor afterwards",
+      "ok": true,
+      "data": {
+        "red": true,
+        "charge": false,
+        "bank": "blue_rage",
+        "finite": true
+      }
+    },
+    {
+      "name": "Stage8 normal exact down-slam count and completion",
+      "ok": true,
+      "data": {
+        "first": 1,
+        "error": 0,
+        "done": true,
+        "frames": 11,
+        "events": []
+      }
+    },
+    {
+      "name": "Stage8 normal has left/right follow-through only on Furious",
+      "ok": true,
+      "data": []
+    },
+    {
+      "name": "Stage8 hard exact down-slam count and completion",
+      "ok": true,
+      "data": {
+        "first": 1,
+        "error": 0,
+        "done": true,
+        "frames": 11,
+        "events": [
+          {
+            "type": "second-down",
+            "kind": "corrupt"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stage8 hard has left/right follow-through only on Furious",
+      "ok": true,
+      "data": [
+        {
+          "type": "second-down",
+          "kind": "corrupt"
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious exact down-slam count and completion",
+      "ok": true,
+      "data": {
+        "first": 1,
+        "error": 0,
+        "done": true,
+        "frames": 22,
+        "events": [
+          {
+            "type": "second-down",
+            "kind": "corrupt"
+          },
+          {
+            "type": "left-swing",
+            "kind": "corrupt"
+          },
+          {
+            "type": "right-swing",
+            "kind": "corrupt"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stage8 furious has left/right follow-through only on Furious",
+      "ok": true,
+      "data": [
+        {
+          "type": "second-down",
+          "kind": "corrupt"
+        },
+        {
+          "type": "left-swing",
+          "kind": "corrupt"
+        },
+        {
+          "type": "right-swing",
+          "kind": "corrupt"
+        }
+      ]
+    },
+    {
+      "name": "New corrupted frames visibly flash",
+      "ok": true,
+      "data": {
+        "w": 33299,
+        "d": 37172
+      }
+    },
+    {
+      "name": "Stage8 throw detaches one visible glowing hammer and returns",
+      "ok": true,
+      "data": {
+        "done": true,
+        "tool": 33,
+        "empty": true,
+        "spanX": 391.9839909605821,
+        "spanY": 371.9848077483075,
+        "width": 480,
+        "height": 512
+      }
+    },
+    {
+      "name": "Stage8 rage preserves health and becomes red code armor",
+      "ok": true,
+      "data": {
+        "red": true,
+        "type": null,
+        "bank": "corrupt_rage",
+        "hp": 1248,
+        "max": 3120
+      }
+    },
+    {
+      "name": "Broken-hammer fire attacks retain the new red armor",
+      "ok": true,
+      "data": {
+        "key": "ha21_hf22_legacy_h22_corrupt_fists_1",
+        "red": true,
+        "broken": true
+      }
+    },
+    {
+      "name": "New follow-up collision respects native evasion invulnerability",
+      "ok": true,
+      "data": 0
+    },
+    {
+      "name": "New frames tools aura and warnings use stored pixels without live effects",
+      "ok": true,
+      "data": {
+        "counts": {
+          "rotate": 0,
+          "scale": 0,
+          "transform": 0
+        },
+        "alpha": true,
+        "blend": true
+      }
+    },
+    {
+      "name": "hammerImpact plays decoded audio through shared mixer",
+      "ok": true,
+      "data": {
+        "key": "hammerImpact",
+        "playing": true,
+        "ready": 4,
+        "volume": 0.32000000000000006
+      }
+    },
+    {
+      "name": "hammerThrow plays decoded audio through shared mixer",
+      "ok": true,
+      "data": {
+        "key": "hammerThrow",
+        "playing": true,
+        "ready": 4,
+        "volume": 0.272
+      }
+    },
+    {
+      "name": "shadowCharge plays decoded audio through shared mixer",
+      "ok": true,
+      "data": {
+        "key": "shadowCharge",
+        "playing": true,
+        "ready": 4,
+        "volume": 0.24
+      }
+    },
+    {
+      "name": "Defeat cancels a pending additional native slam",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "No page console or renderer errors",
+      "ok": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sounds/reviewed_flamethrower_loop.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sfx_0927/alien.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/chip_1011/chip_bossCannon.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sfx_0927/energy_release.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sounds/bossPhase.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/combat/combat_1003i/module_break.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sounds/expSmall.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sounds/reviewed_enemy_heavy_mg.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sounds/arc_fusion_beam_0923.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sounds/cf_combo_thermoshock_0920.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/chip_1011/chip_shadowRelease.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/combat/combat_1003i/teleport_in.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sounds/shield_hit_heavy.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/chip_1011/chip_shieldBreak.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/chip_1011/chip_slice.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sounds/cf_enemy_ice_0920.mp3",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:65443/assets/game/shared/audio/sounds/reviewed_flamethrower_start.mp3",
+      "reason": "net::ERR_ABORTED"
+    }
+  ]
+}

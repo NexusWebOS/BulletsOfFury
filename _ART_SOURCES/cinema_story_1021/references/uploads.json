@@ -1,0 +1,22 @@
+{
+  "pilots-identity": "upload:a3815a43-6ec5-46d3-a944-4a3dc29eb986",
+  "ships-identity": "upload:5c4a44da-886f-48e0-afc7-63e0e5869ae5",
+  "enemies-identity": "upload:a6e49151-182f-48f0-b258-81f3966246eb",
+  "enemies-dimensional": "upload:3c5087c9-8dc2-4a10-ac22-7458f1011fbf",
+  "environments-identity": "upload:6b58e72a-b9f2-419d-ac61-3e5cc3f2ec67",
+  "portals-identity": "upload:bd6e3be6-f541-4683-b7ba-fad50e529008",
+  "dracodia-native": "upload:1ed5e2f9-542d-481f-b7e2-0804cb6f54a7",
+  "cole-front-pixellab": "upload:ecc2a0b3-37ff-4579-be99-9740d6414d4f",
+  "ship_cole_so6": "upload:46df9570-e281-417f-8568-67f669f19e81",
+  "ship_axel_so6": "upload:e0c82b27-3b3a-40ea-9a03-200cc1231c72",
+  "ship_freezer_so6": "upload:5634a788-67e0-4ae6-8f97-c0d8fa828021",
+  "ship_yuri_so6": "upload:5434674a-ee43-4975-a0df-cd42df07b538",
+  "ship_maverick_so6": "upload:0edf0306-c760-4821-9428-a74a66c75ee0",
+  "ship_falva_so6": "upload:4909b5a0-15a9-477b-a7de-900e4a234325",
+  "ship_lizzie_so6": "upload:fcd0000c-5ad8-4916-b17d-c62b113f4af4",
+  "ship_decker_so6": "upload:1cb2255b-2685-4c60-b6fa-d0ba1a9a1f82",
+  "ship_juggernaut_so6": "upload:b73f71cb-ebf1-44f7-b1bf-96720ffa9de2",
+  "hq_motion": "upload:f1f680a5-93e6-4206-9cfd-d4da688a0bad",
+  "coast_motion": "upload:445e2813-a134-4185-83e6-cc8d155022aa",
+  "forge_motion": "upload:e72cc7e9-58be-47b7-bfb6-26292b3c6fa1"
+}

@@ -1,0 +1,1038 @@
+{
+  "legs": {
+    "frontL": {
+      "frames": [
+        {
+          "key": "r25_leg_frontL_0",
+          "white": "r25_leg_frontL_hit_0",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            159,
+            45
+          ],
+          "foot": [
+            88.19,
+            233.08
+          ],
+          "target": [
+            88,
+            233
+          ],
+          "bounds": [
+            64,
+            16,
+            192,
+            239
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_frontL_1",
+          "white": "r25_leg_frontL_hit_1",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            159,
+            45
+          ],
+          "foot": [
+            71.9,
+            228.46
+          ],
+          "target": [
+            72,
+            228
+          ],
+          "bounds": [
+            48,
+            18,
+            192,
+            234
+          ],
+          "alignment": [
+            0,
+            6
+          ]
+        },
+        {
+          "key": "r25_leg_frontL_2",
+          "white": "r25_leg_frontL_hit_2",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            159,
+            45
+          ],
+          "foot": [
+            59.39,
+            228.42
+          ],
+          "target": [
+            59,
+            228
+          ],
+          "bounds": [
+            35,
+            24,
+            194,
+            234
+          ],
+          "alignment": [
+            -2,
+            6
+          ]
+        },
+        {
+          "key": "r25_leg_frontL_3",
+          "white": "r25_leg_frontL_hit_3",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            159,
+            45
+          ],
+          "foot": [
+            57.85,
+            227.17
+          ],
+          "target": [
+            58,
+            227
+          ],
+          "bounds": [
+            35,
+            27,
+            197,
+            233
+          ],
+          "alignment": [
+            -5,
+            6
+          ]
+        },
+        {
+          "key": "r25_leg_frontL_4",
+          "white": "r25_leg_frontL_hit_4",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            159,
+            45
+          ],
+          "foot": [
+            76.85,
+            213.04
+          ],
+          "target": [
+            77,
+            213
+          ],
+          "bounds": [
+            45,
+            20,
+            195,
+            219
+          ],
+          "alignment": [
+            -3,
+            6
+          ]
+        },
+        {
+          "key": "r25_leg_frontL_5",
+          "white": "r25_leg_frontL_hit_5",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            159,
+            45
+          ],
+          "foot": [
+            91,
+            203.05
+          ],
+          "target": [
+            91,
+            203
+          ],
+          "bounds": [
+            54,
+            14,
+            192,
+            209
+          ],
+          "alignment": [
+            0,
+            5
+          ]
+        },
+        {
+          "key": "r25_leg_frontL_6",
+          "white": "r25_leg_frontL_hit_6",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            159,
+            45
+          ],
+          "foot": [
+            109.21,
+            216.04
+          ],
+          "target": [
+            109,
+            216
+          ],
+          "bounds": [
+            71,
+            16,
+            192,
+            222
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_frontL_7",
+          "white": "r25_leg_frontL_hit_7",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            159,
+            45
+          ],
+          "foot": [
+            118.66,
+            230.15
+          ],
+          "target": [
+            119,
+            230
+          ],
+          "bounds": [
+            87,
+            16,
+            192,
+            236
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        }
+      ],
+      "count": 8,
+      "cols": 4,
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        159,
+        45
+      ],
+      "worldScale": 0.6
+    },
+    "frontR": {
+      "frames": [
+        {
+          "key": "r25_leg_frontR_0",
+          "white": "r25_leg_frontR_hit_0",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            97,
+            45
+          ],
+          "foot": [
+            166.3,
+            233.07
+          ],
+          "target": [
+            166,
+            233
+          ],
+          "bounds": [
+            64,
+            16,
+            191,
+            239
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_frontR_1",
+          "white": "r25_leg_frontR_hit_1",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            97,
+            45
+          ],
+          "foot": [
+            152.69,
+            232.67
+          ],
+          "target": [
+            153,
+            233
+          ],
+          "bounds": [
+            64,
+            16,
+            177,
+            239
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_frontR_2",
+          "white": "r25_leg_frontR_hit_2",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            97,
+            45
+          ],
+          "foot": [
+            138.67,
+            230.68
+          ],
+          "target": [
+            139,
+            231
+          ],
+          "bounds": [
+            64,
+            16,
+            162,
+            237
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_frontR_3",
+          "white": "r25_leg_frontR_hit_3",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            97,
+            45
+          ],
+          "foot": [
+            140.29,
+            220.16
+          ],
+          "target": [
+            140,
+            220
+          ],
+          "bounds": [
+            63,
+            17,
+            182,
+            226
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_frontR_4",
+          "white": "r25_leg_frontR_hit_4",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            97,
+            45
+          ],
+          "foot": [
+            157.24,
+            210.99
+          ],
+          "target": [
+            157,
+            211
+          ],
+          "bounds": [
+            62,
+            16,
+            192,
+            217
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_frontR_5",
+          "white": "r25_leg_frontR_hit_5",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            97,
+            45
+          ],
+          "foot": [
+            172.14,
+            210.07
+          ],
+          "target": [
+            172,
+            210
+          ],
+          "bounds": [
+            62,
+            16,
+            203,
+            216
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_frontR_6",
+          "white": "r25_leg_frontR_hit_6",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            97,
+            45
+          ],
+          "foot": [
+            182.57,
+            229.08
+          ],
+          "target": [
+            183,
+            229
+          ],
+          "bounds": [
+            63,
+            16,
+            207,
+            235
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_frontR_7",
+          "white": "r25_leg_frontR_hit_7",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            97,
+            45
+          ],
+          "foot": [
+            174.13,
+            233.72
+          ],
+          "target": [
+            174,
+            234
+          ],
+          "bounds": [
+            64,
+            16,
+            199,
+            240
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        }
+      ],
+      "count": 8,
+      "cols": 4,
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        97,
+        45
+      ],
+      "worldScale": 0.6
+    },
+    "rearL": {
+      "frames": [
+        {
+          "key": "r25_leg_rearL_0",
+          "white": "r25_leg_rearL_hit_0",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            131,
+            43
+          ],
+          "foot": [
+            140.52,
+            233.23
+          ],
+          "target": [
+            141,
+            233
+          ],
+          "bounds": [
+            86,
+            16,
+            170,
+            239
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_rearL_1",
+          "white": "r25_leg_rearL_hit_1",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            131,
+            43
+          ],
+          "foot": [
+            126.61,
+            231.71
+          ],
+          "target": [
+            127,
+            232
+          ],
+          "bounds": [
+            72,
+            16,
+            159,
+            238
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_rearL_2",
+          "white": "r25_leg_rearL_hit_2",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            131,
+            43
+          ],
+          "foot": [
+            107.79,
+            229.25
+          ],
+          "target": [
+            108,
+            229
+          ],
+          "bounds": [
+            54,
+            16,
+            159,
+            235
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_rearL_3",
+          "white": "r25_leg_rearL_hit_3",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            131,
+            43
+          ],
+          "foot": [
+            92.85,
+            222.28
+          ],
+          "target": [
+            92,
+            222
+          ],
+          "bounds": [
+            41,
+            16,
+            160,
+            228
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_rearL_4",
+          "white": "r25_leg_rearL_hit_4",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            131,
+            43
+          ],
+          "foot": [
+            96.6,
+            205.41
+          ],
+          "target": [
+            96,
+            205
+          ],
+          "bounds": [
+            58,
+            16,
+            180,
+            211
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_rearL_5",
+          "white": "r25_leg_rearL_hit_5",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            131,
+            43
+          ],
+          "foot": [
+            134.52,
+            192.52
+          ],
+          "target": [
+            133,
+            191
+          ],
+          "bounds": [
+            94,
+            16,
+            207,
+            198
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_rearL_6",
+          "white": "r25_leg_rearL_hit_6",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            131,
+            43
+          ],
+          "foot": [
+            160.22,
+            220.21
+          ],
+          "target": [
+            160,
+            220
+          ],
+          "bounds": [
+            95,
+            16,
+            198,
+            226
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_rearL_7",
+          "white": "r25_leg_rearL_hit_7",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            131,
+            43
+          ],
+          "foot": [
+            151.82,
+            233.27
+          ],
+          "target": [
+            152,
+            233
+          ],
+          "bounds": [
+            93,
+            16,
+            182,
+            239
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        }
+      ],
+      "count": 8,
+      "cols": 4,
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        131,
+        43
+      ],
+      "worldScale": 0.64
+    },
+    "rearR": {
+      "frames": [
+        {
+          "key": "r25_leg_rearR_0",
+          "white": "r25_leg_rearR_hit_0",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            127,
+            43
+          ],
+          "foot": [
+            116.15,
+            233.76
+          ],
+          "target": [
+            116,
+            234
+          ],
+          "bounds": [
+            86,
+            16,
+            170,
+            240
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_rearR_1",
+          "white": "r25_leg_rearR_hit_1",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            127,
+            43
+          ],
+          "foot": [
+            132.04,
+            231.04
+          ],
+          "target": [
+            132,
+            231
+          ],
+          "bounds": [
+            101,
+            16,
+            187,
+            237
+          ],
+          "alignment": [
+            0,
+            1
+          ]
+        },
+        {
+          "key": "r25_leg_rearR_2",
+          "white": "r25_leg_rearR_hit_2",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            127,
+            43
+          ],
+          "foot": [
+            146.26,
+            226.77
+          ],
+          "target": [
+            146,
+            227
+          ],
+          "bounds": [
+            101,
+            17,
+            200,
+            233
+          ],
+          "alignment": [
+            0,
+            1
+          ]
+        },
+        {
+          "key": "r25_leg_rearR_3",
+          "white": "r25_leg_rearR_hit_3",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            127,
+            43
+          ],
+          "foot": [
+            152.82,
+            204.19
+          ],
+          "target": [
+            153,
+            204
+          ],
+          "bounds": [
+            97,
+            17,
+            200,
+            210
+          ],
+          "alignment": [
+            0,
+            1
+          ]
+        },
+        {
+          "key": "r25_leg_rearR_4",
+          "white": "r25_leg_rearR_hit_4",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            127,
+            43
+          ],
+          "foot": [
+            144.06,
+            189.99
+          ],
+          "target": [
+            144,
+            190
+          ],
+          "bounds": [
+            79,
+            17,
+            187,
+            196
+          ],
+          "alignment": [
+            0,
+            1
+          ]
+        },
+        {
+          "key": "r25_leg_rearR_5",
+          "white": "r25_leg_rearR_hit_5",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            127,
+            43
+          ],
+          "foot": [
+            125.8,
+            194.94
+          ],
+          "target": [
+            126,
+            195
+          ],
+          "bounds": [
+            65,
+            16,
+            172,
+            201
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_rearR_6",
+          "white": "r25_leg_rearR_hit_6",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            127,
+            43
+          ],
+          "foot": [
+            113,
+            214.64
+          ],
+          "target": [
+            113,
+            215
+          ],
+          "bounds": [
+            67,
+            16,
+            168,
+            221
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        },
+        {
+          "key": "r25_leg_rearR_7",
+          "white": "r25_leg_rearR_hit_7",
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            127,
+            43
+          ],
+          "foot": [
+            109.64,
+            228.96
+          ],
+          "target": [
+            110,
+            229
+          ],
+          "bounds": [
+            79,
+            16,
+            168,
+            235
+          ],
+          "alignment": [
+            0,
+            0
+          ]
+        }
+      ],
+      "count": 8,
+      "cols": 4,
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        127,
+        43
+      ],
+      "worldScale": 0.64
+    }
+  },
+  "hh": {
+    "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/carrier_closed_wells.png",
+    "frames": [
+      {
+        "key": "hh21_gun_0",
+        "path": "assets/game/levels/stage_06/boss/harrier_hull_1021/gun_0.png",
+        "w": 32,
+        "h": 40,
+        "pivot": [
+          16,
+          20
+        ],
+        "sourceRect": [
+          168,
+          86,
+          18,
+          32
+        ],
+        "sourcePivot": [
+          177,
+          103
+        ]
+      },
+      {
+        "key": "hh21_gun_1",
+        "path": "assets/game/levels/stage_06/boss/harrier_hull_1021/gun_1.png",
+        "w": 32,
+        "h": 40,
+        "pivot": [
+          16,
+          20
+        ],
+        "sourceRect": [
+          200,
+          76,
+          22,
+          36
+        ],
+        "sourcePivot": [
+          211,
+          94
+        ]
+      },
+      {
+        "key": "hh21_gun_2",
+        "path": "assets/game/levels/stage_06/boss/harrier_hull_1021/gun_2.png",
+        "w": 32,
+        "h": 40,
+        "pivot": [
+          16,
+          20
+        ],
+        "sourceRect": [
+          290,
+          76,
+          22,
+          36
+        ],
+        "sourcePivot": [
+          301,
+          94
+        ]
+      },
+      {
+        "key": "hh21_gun_3",
+        "path": "assets/game/levels/stage_06/boss/harrier_hull_1021/gun_3.png",
+        "w": 32,
+        "h": 40,
+        "pivot": [
+          16,
+          20
+        ],
+        "sourceRect": [
+          326,
+          86,
+          18,
+          32
+        ],
+        "sourcePivot": [
+          335,
+          103
+        ]
+      }
+    ],
+    "method": "Only actual authored metal highlight pixels; transparent low-luminance hull background. Uniform native-pixel scale."
+  }
+}

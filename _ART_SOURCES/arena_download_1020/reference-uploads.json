@@ -1,0 +1,34 @@
+{
+  "jungle": {
+    "ref": "upload:2ca27722-bd2b-45a0-b09d-cee0936b8f60",
+    "upload_id": "2ca27722-bd2b-45a0-b09d-cee0936b8f60",
+    "width": 480,
+    "height": 512,
+    "n_frames": 1,
+    "expires_in_days": 3
+  },
+  "lava": {
+    "ref": "upload:a94d96af-a263-4ea3-bd5f-66cf15c43168",
+    "upload_id": "a94d96af-a263-4ea3-bd5f-66cf15c43168",
+    "width": 480,
+    "height": 512,
+    "n_frames": 1,
+    "expires_in_days": 3
+  },
+  "space": {
+    "ref": "upload:5a5556e7-cf6f-4492-a14a-2cf72ccdbcf8",
+    "upload_id": "5a5556e7-cf6f-4492-a14a-2cf72ccdbcf8",
+    "width": 480,
+    "height": 512,
+    "n_frames": 1,
+    "expires_in_days": 3
+  },
+  "sky": {
+    "ref": "upload:25d82a96-72c2-4104-b20f-3f2ef0acd3f6",
+    "upload_id": "25d82a96-72c2-4104-b20f-3f2ef0acd3f6",
+    "width": 480,
+    "height": 512,
+    "n_frames": 1,
+    "expires_in_days": 3
+  }
+}

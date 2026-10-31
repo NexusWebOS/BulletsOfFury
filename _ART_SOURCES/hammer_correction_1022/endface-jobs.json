@@ -1,0 +1,64 @@
+[
+  {
+    "id": "blue_endface_key",
+    "url": "upload:0d8d88e3-b54b-4323-b137-7501f160b114",
+    "prompt": "Repose this EXACT robot and exact existing hammer into the final frame of a heavy downward sledgehammer strike. CRITICAL MECHANICS: the cylindrical hammer head LONG AXIS points nearly VERTICALLY, its LOWER circular metal END FACE strikes the floor at x170 y226. The other circular cap is ABOVE it. The shaft connects to the SIDE/MIDDLE of the cylinder and slopes diagonally UP-LEFT to the robot's two gripping hands near x125 y157. Like a real sledgehammer hitting a nail on its flat end cap. NOT a horizontal barrel laid flat on its curved belly; NOT a pogo stick with a vertical shaft atop a sideways barrel. Both knees brace, body faces viewer, full body visible. Preserve exact face, armor and palette, one hammer only. Clean Neo-Geo HD16bit pixel clusters, transparent 256x256 canvas, chest root128,112, feet near230, no flames, sparks, flash or impact effects. Clear readable lower flat striking face on ground, tilted cylindrical head and diagonal shaft.",
+    "receipt": "id: 87d22703-a880-4f4f-9380-85cd55ee85fb\njob_id: 87d22703-a880-4f4f-9380-85cd55ee85fb\nmodel: pro\ndescription: Repose this EXACT robot and exact existing hammer into the final frame of a heavy downward sledgehammer strike. CRITICAL MECHANICS: the cylindrical hammer head LONG AXIS points nearly VERTICALLY, its LOWER circular metal END FACE strikes the floor at x170 y226. The other circular cap is ABOVE it. The shaft connects to the SIDE/MIDDLE of the cylinder and slopes diagonally UP-LEFT to the robot's two gripping hands near x125 y157. Like a real sledgehammer hitting a nail on its flat end cap. NOT a horizontal barrel laid flat on its curved belly; NOT a pogo stick with a vertical shaft atop a sideways barrel. Both knees brace, body faces viewer, full body visible. Preserve exact face, armor and palette, one hammer only. Clean Neo-Geo HD16bit pixel clusters, transparent 256x256 canvas, chest root128,112, feet near230, no flames, sparks, flash or impact effects. Clear readable lower flat striking face on ground, tilted cylindrical head and diagonal shaft.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: aaf4ec06-d1d8-5e64-8272-67549612854d\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"87d22703-a880-4f4f-9380-85cd55ee85fb\")",
+    "job_id": "87d22703-a880-4f4f-9380-85cd55ee85fb",
+    "frames": 1,
+    "status": "completed",
+    "contact": [
+      190,
+      211
+    ]
+  },
+  {
+    "id": "corrupt_endface_key",
+    "url": "https://api.pixellab.ai/mcp/images/bdc5493a-8359-4d47-8958-e6d9a9a310af/download?index=0",
+    "prompt": "Repose this EXACT robot and exact existing hammer into the final frame of a heavy downward sledgehammer strike. CRITICAL MECHANICS: the cylindrical hammer head LONG AXIS points nearly VERTICALLY, its LOWER circular metal END FACE strikes the floor at x170 y226. The other circular cap is ABOVE it. The shaft connects to the SIDE/MIDDLE of the cylinder and slopes diagonally UP-LEFT to the robot's two gripping hands near x125 y157. Like a real sledgehammer hitting a nail on its flat end cap. NOT a horizontal barrel laid flat on its curved belly; NOT a pogo stick with a vertical shaft atop a sideways barrel. Both knees brace, body faces viewer, full body visible. Preserve exact face, armor and palette, one hammer only. Clean Neo-Geo HD16bit pixel clusters, transparent 256x256 canvas, chest root128,112, feet near230, no flames, sparks, flash or impact effects. Clear readable lower flat striking face on ground, tilted cylindrical head and diagonal shaft.",
+    "receipt": "id: 3cb8eedb-1426-4a36-82fd-54d81bb5cb46\njob_id: 3cb8eedb-1426-4a36-82fd-54d81bb5cb46\nmodel: pro\ndescription: Repose this EXACT robot and exact existing hammer into the final frame of a heavy downward sledgehammer strike. CRITICAL MECHANICS: the cylindrical hammer head LONG AXIS points nearly VERTICALLY, its LOWER circular metal END FACE strikes the floor at x170 y226. The other circular cap is ABOVE it. The shaft connects to the SIDE/MIDDLE of the cylinder and slopes diagonally UP-LEFT to the robot's two gripping hands near x125 y157. Like a real sledgehammer hitting a nail on its flat end cap. NOT a horizontal barrel laid flat on its curved belly; NOT a pogo stick with a vertical shaft atop a sideways barrel. Both knees brace, body faces viewer, full body visible. Preserve exact face, armor and palette, one hammer only. Clean Neo-Geo HD16bit pixel clusters, transparent 256x256 canvas, chest root128,112, feet near230, no flames, sparks, flash or impact effects. Clear readable lower flat striking face on ground, tilted cylindrical head and diagonal shaft.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: 0383959f-d77a-514e-a049-9b06670be100\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"3cb8eedb-1426-4a36-82fd-54d81bb5cb46\")",
+    "job_id": "3cb8eedb-1426-4a36-82fd-54d81bb5cb46",
+    "frames": 1,
+    "status": "completed",
+    "contact": [
+      214,
+      221
+    ]
+  },
+  {
+    "id": "blue_endface_down",
+    "job_id": "35dfe570-b741-4079-bd79-a97e829d67f1",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Swing the hammer DOWN in a powerful diagonal arc toward image-right. Rotate the cylindrical head from horizontal overhead to VERTICAL at impact, so its LOWER circular END FACE hits the floor, NEVER its curved barrel. Both hands stay attached to the angled shaft, knees brace. Eight continuous physical positions, finish EXACTLY at the pinned pose. No magic flashes, sparks, smears, floor shadows or extra weapons. Fixed scale/root and256square canvas.",
+    "receipt": "id: 35dfe570-b741-4079-bd79-a97e829d67f1\njob_id: 35dfe570-b741-4079-bd79-a97e829d67f1\naction: Swing the hammer DOWN in a powerful diagonal arc toward image-right. Rotate the cylindrical head from horizontal overhead to VERTICAL at impact, so its LOWER circular END FACE hits the floor, NEVER its curved barrel. Both hands stay attached to the angled shaft, knees brace. Eight continuous physical positions, finish EXACTLY at the pinned pose. No magic flashes, sparks, smears, floor shadows or extra weapons. Fixed scale/root and256square canvas.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 69234b33-8816-5318-8370-984be86b5de1\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"35dfe570-b741-4079-bd79-a97e829d67f1\")",
+    "completion": "status: completed\nid: 35dfe570-b741-4079-bd79-a97e829d67f1\njob_id: 35dfe570-b741-4079-bd79-a97e829d67f1\nframe: 0 of 9\nasset_id: 69234b33-8816-5318-8370-984be86b5de1\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0433 in credits\ndownload: https://api.pixellab.ai/mcp/images/35dfe570-b741-4079-bd79-a97e829d67f1/download?index=0"
+  },
+  {
+    "id": "blue_endface_recover",
+    "job_id": "f4fd2020-88b9-4176-8405-ffd8c798352c",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Recover from the hammer END-CAP planted on the ground: lift its upright cylindrical head, draw the angled shaft back across the body and stand into the exact neutral stance. No second strike, no rolling the barrel flat, no flash or effects. Same fixed scale,root and256canvas.",
+    "receipt": "id: f4fd2020-88b9-4176-8405-ffd8c798352c\njob_id: f4fd2020-88b9-4176-8405-ffd8c798352c\naction: Recover from the hammer END-CAP planted on the ground: lift its upright cylindrical head, draw the angled shaft back across the body and stand into the exact neutral stance. No second strike, no rolling the barrel flat, no flash or effects. Same fixed scale,root and256canvas.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: f340ee9a-b1ab-53b7-84e0-68ac42a6d59e\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f4fd2020-88b9-4176-8405-ffd8c798352c\")",
+    "completion": "status: completed\nid: f4fd2020-88b9-4176-8405-ffd8c798352c\njob_id: f4fd2020-88b9-4176-8405-ffd8c798352c\nframe: 0 of 5\nasset_id: f340ee9a-b1ab-53b7-84e0-68ac42a6d59e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0278 in credits\ndownload: https://api.pixellab.ai/mcp/images/f4fd2020-88b9-4176-8405-ffd8c798352c/download?index=0"
+  },
+  {
+    "id": "corrupt_endface_down",
+    "job_id": "197f71de-4570-4373-a394-a0e285e6ac9a",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Drive a heavy hammer strike DOWN and toward image-right, rotating the head so its LOWER circular END CAP lands on the ground in the exact pinned final pose. The cylinder must stand upright at impact, NOT lie flat on its curved barrel. Shaft angles diagonally to the gripping hands. One continuous physical arc from overhead, visible head every frame, knees bracing. No white flashes, sparks, trails, smoke or extra hammer. Exact256square canvas, fixed body scale and chestroot128,112.",
+    "receipt": "id: 197f71de-4570-4373-a394-a0e285e6ac9a\njob_id: 197f71de-4570-4373-a394-a0e285e6ac9a\naction: Drive a heavy hammer strike DOWN and toward image-right, rotating the head so its LOWER circular END CAP lands on the ground in the exact pinned final pose. The cylinder must stand upright at impact, NOT lie flat on its curved barrel. Shaft angles diagonally to the gripping hands. One continuous physical arc from overhead, visible head every frame, knees bracing. No white flashes, sparks, trails, smoke or extra hammer. Exact256square canvas, fixed body scale and chestroot128,112.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: c8f631d2-acd5-53c3-9573-7e4a9643d5e1\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"197f71de-4570-4373-a394-a0e285e6ac9a\")",
+    "completion": "status: completed\nid: 197f71de-4570-4373-a394-a0e285e6ac9a\njob_id: 197f71de-4570-4373-a394-a0e285e6ac9a\nframe: 0 of 9\nasset_id: c8f631d2-acd5-53c3-9573-7e4a9643d5e1\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0298 in credits\ndownload: https://api.pixellab.ai/mcp/images/197f71de-4570-4373-a394-a0e285e6ac9a/download?index=0"
+  },
+  {
+    "id": "corrupt_endface_recover",
+    "job_id": "6f545961-bc05-44bd-bdd2-00c7ce55e977",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Recovery only: lift the hammer's upright cylindrical head off its planted lower circular end cap, draw the angled shaft back across the body, and return to the exact original neutral stance. No further attack, no flash or energy effects. One physical hammer, fixed256canvas, same scale and chestroot128,112.",
+    "receipt": "id: 6f545961-bc05-44bd-bdd2-00c7ce55e977\njob_id: 6f545961-bc05-44bd-bdd2-00c7ce55e977\naction: Recovery only: lift the hammer's upright cylindrical head off its planted lower circular end cap, draw the angled shaft back across the body, and return to the exact original neutral stance. No further attack, no flash or energy effects. One physical hammer, fixed256canvas, same scale and chestroot128,112.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 0a25e018-f483-5d28-b8ba-57737eda28e1\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"6f545961-bc05-44bd-bdd2-00c7ce55e977\")",
+    "completion": "status: completed\nid: 6f545961-bc05-44bd-bdd2-00c7ce55e977\njob_id: 6f545961-bc05-44bd-bdd2-00c7ce55e977\nframe: 0 of 5\nasset_id: 0a25e018-f483-5d28-b8ba-57737eda28e1\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0335 in credits\ndownload: https://api.pixellab.ai/mcp/images/6f545961-bc05-44bd-bdd2-00c7ce55e977/download?index=0"
+  }
+]

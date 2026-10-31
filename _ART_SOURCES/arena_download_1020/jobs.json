@@ -1,0 +1,197 @@
+{
+  "jungle": {
+    "request": {
+      "width": 512,
+      "height": 512,
+      "no_background": false,
+      "max_colors": 48,
+      "reference_images": [
+        {
+          "url": "upload:2ca27722-bd2b-45a0-b09d-cee0936b8f60",
+          "usage": "Actual Bullets of Fury Stage1 jungle terrain. Preserve its overhead camera, sandy military route, mossy green vegetation, cliff geometry and crisp mid1990s pixel-art texture density; corrupt this environment, not the camera or game style."
+        }
+      ],
+      "description": "FRAME FORMAT: exactly512x512 opaque square arena background, fixed straight-down overhead camera, crisp Neo Geo/Sega32X military-shooter pixel clusters, no perspective horizon. A newly downloaded CORRUPTED JUNGLE arena for a demonic robot boss: recognizably the reference's sandy combat clearing, jungle cliff outcrops and dense foliage, now threaded with black chromium roots, tiny red-violet circuit fissures and cold mechanical cable growth. Uneven islands of tropical foliage at the far sides and top, a ruined dam/power conduit partly embedded at the upper edge, broad darkened sandy central maneuvering area occupying65percent of the image. Low contrast central floor, restrained glowing details confined to land edges so bullets and ships stay readable. Continuous natural terrain beyond every edge, no enclosing decorative border. No aircraft, enemies, boss, people, bullets, weapons, warning signs, arrows, reticles, UI, symbols, letters, numbers or text. Complete usable game arena terrain, not a mockup or cinematic illustration."
+    },
+    "response": [
+      {
+        "type": "text",
+        "text": "id: 35a02631-aef2-4306-b4cf-f1d2a1a5bd97\njob_id: 35a02631-aef2-4306-b4cf-f1d2a1a5bd97\nmodel: pro\ndescription: FRAME FORMAT: exactly512x512 opaque square arena background, fixed straight-down overhead camera, crisp Neo Geo/Sega32X military-shooter pixel clusters, no perspective horizon. A newly downloaded CORRUPTED JUNGLE arena for a demonic robot boss: recognizably the reference's sandy combat clearing, jungle cliff outcrops and dense foliage, now threaded with black chromium roots, tiny red-violet circuit fissures and cold mechanical cable growth. Uneven islands of tropical foliage at the far sides and top, a ruined dam/power conduit partly embedded at the upper edge, broad darkened sandy central maneuvering area occupying65percent of the image. Low contrast central floor, restrained glowing details confined to land edges so bullets and ships stay readable. Continuous natural terrain beyond every edge, no enclosing decorative border. No aircraft, enemies, boss, people, bullets, weapons, warning signs, arrows, reticles, UI, symbols, letters, numbers or text. Complete usable game arena terrain, not a mockup or cinematic illustration.\nsize: 512x512px\ntransparent: False\ncandidates: 1\nreferences: 1\nmax colours: 48 per image\nasset_id: e53e9e21-3c73-5f82-92e2-24770d268588\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"35a02631-aef2-4306-b4cf-f1d2a1a5bd97\")"
+      }
+    ]
+  },
+  "lava": {
+    "request": {
+      "width": 512,
+      "height": 512,
+      "no_background": true,
+      "max_colors": 48,
+      "reference_images": [
+        {
+          "url": "upload:a94d96af-a263-4ea3-bd5f-66cf15c43168",
+          "usage": "Actual Bullets of Fury origin-stage environment. Match its strict overhead camera, biome identity and mid1990s pixel density while corrupting it with Dracodia's demonic robotic machinery."
+        }
+      ],
+      "description": "FRAME FORMAT: exactly512x512 fixed square canvas, even dimensions, straight-down overhead top-down military arcade-shooter terrain. Match Neo Geo/Sega32X Bullets of Fury style. A CORRUPTED VOLCANIC ARENA terrain OVERLAY. Two irregular black basalt cliff masses and broken Furnace cooling structures intrude from the far upper corners and far side edges, threaded with demonic chromium ribs and violet-red circuit fractures. A few detached volcanic rock islets farther inward. Preserve the native stage's flat overhead basalt/geologic forms and fine pixel clusters. IMPORTANT: the central70percent and gaps between rock islands must be genuine transparency, not black or painted molten liquid; the game's existing animated cracked lava floor will show through these holes. Landforms only; no complete floor, no painted water or lava, no background fill. Terrain is lopsided/natural, not a square decorative frame. Small restrained orange vents on the rock edges. No volcano boss, creature, ships, characters, attacks, UI, letters, icons, grid labels or text."
+    },
+    "response": [
+      {
+        "type": "text",
+        "text": "id: 81f25a4d-a89c-4c18-992e-e3614dfd0dec\njob_id: 81f25a4d-a89c-4c18-992e-e3614dfd0dec\nmodel: pro\ndescription: FRAME FORMAT: exactly512x512 fixed square canvas, even dimensions, straight-down overhead top-down military arcade-shooter terrain. Match Neo Geo/Sega32X Bullets of Fury style. A CORRUPTED VOLCANIC ARENA terrain OVERLAY. Two irregular black basalt cliff masses and broken Furnace cooling structures intrude from the far upper corners and far side edges, threaded with demonic chromium ribs and violet-red circuit fractures. A few detached volcanic rock islets farther inward. Preserve the native stage's flat overhead basalt/geologic forms and fine pixel clusters. IMPORTANT: the central70percent and gaps between rock islands must be genuine transparency, not black or painted molten liquid; the game's existing animated cracked lava floor will show through these holes. Landforms only; no complete floor, no painted water or lava, no background fill. Terrain is lopsided/natural, not a square decorative frame. Small restrained orange vents on the rock edges. No volcano boss, creature, ships, characters, attacks, UI, letters, icons, grid labels or text.\nsize: 512x512px\ntransparent: True\ncandidates: 1\nreferences: 1\nmax colours: 48 per image\nasset_id: 701c2e14-2ad9-5028-a437-7359d9e3012b\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"81f25a4d-a89c-4c18-992e-e3614dfd0dec\")"
+      }
+    ]
+  },
+  "space": {
+    "request": {
+      "width": 512,
+      "height": 512,
+      "no_background": false,
+      "max_colors": 48,
+      "reference_images": [
+        {
+          "url": "upload:5a5556e7-cf6f-4492-a14a-2cf72ccdbcf8",
+          "usage": "Actual Bullets of Fury origin-stage environment. Match its strict overhead camera, biome identity and mid1990s pixel density while corrupting it with Dracodia's demonic robotic machinery."
+        }
+      ],
+      "description": "FRAME FORMAT: exactly512x512 fixed square canvas, even dimensions, straight-down overhead top-down military arcade-shooter terrain. Match Neo Geo/Sega32X Bullets of Fury style. A CORRUPTED ORBITAL SPACE ARENA based on the actual blue nebula/starfield stage. Deep dark indigo-black starfield with layered distant cold-blue nebula wisps, sparse stars, and a few shattered orbital station fragments at the outer upper corners and far sides. Black chromium cable vines infect these fragments; dim violet-red code fissures puncture their machinery. Broad empty deep-space central70percent with very low contrast and sparse stars, so boss silhouettes and bullets read cleanly. Preserve the reference's rich cosmic pixel-art textures and overhead shooter plane; no tilted camera or horizon. Not a room, platform or framed illustration. No craft, ships, planets with faces, boss, characters, bullets, attacks, letters, binary digits, symbols, HUD, borders or text."
+    },
+    "response": [
+      {
+        "type": "text",
+        "text": "id: 71862fe9-ce9c-4f1f-abc3-a4825f2cd463\njob_id: 71862fe9-ce9c-4f1f-abc3-a4825f2cd463\nmodel: pro\ndescription: FRAME FORMAT: exactly512x512 fixed square canvas, even dimensions, straight-down overhead top-down military arcade-shooter terrain. Match Neo Geo/Sega32X Bullets of Fury style. A CORRUPTED ORBITAL SPACE ARENA based on the actual blue nebula/starfield stage. Deep dark indigo-black starfield with layered distant cold-blue nebula wisps, sparse stars, and a few shattered orbital station fragments at the outer upper corners and far sides. Black chromium cable vines infect these fragments; dim violet-red code fissures puncture their machinery. Broad empty deep-space central70percent with very low contrast and sparse stars, so boss silhouettes and bullets read cleanly. Preserve the reference's rich cosmic pixel-art textures and overhead shooter plane; no tilted camera or horizon. Not a room, platform or framed illustration. No craft, ships, planets with faces, boss, characters, bullets, attacks, letters, binary digits, symbols, HUD, borders or text.\nsize: 512x512px\ntransparent: False\ncandidates: 1\nreferences: 1\nmax colours: 48 per image\nasset_id: 4d421737-4bb0-516f-8190-3b31b51296aa\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"71862fe9-ce9c-4f1f-abc3-a4825f2cd463\")"
+      }
+    ]
+  },
+  "sky": {
+    "request": {
+      "width": 512,
+      "height": 512,
+      "no_background": false,
+      "max_colors": 48,
+      "reference_images": [
+        {
+          "url": "upload:25d82a96-72c2-4104-b20f-3f2ef0acd3f6",
+          "usage": "Actual Bullets of Fury origin-stage environment. Match its strict overhead camera, biome identity and mid1990s pixel density while corrupting it with Dracodia's demonic robotic machinery."
+        }
+      ],
+      "description": "FRAME FORMAT: exactly512x512 fixed square canvas, even dimensions, straight-down overhead top-down military arcade-shooter terrain. Match Neo Geo/Sega32X Bullets of Fury style. A CORRUPTED STORM-SKY ARENA based on the actual saturated blue Stage6 sky. Strict downward aerial view looking into deep royal/cobalt blue clouds far below. Uneven storm cloud banks along far sides and upper corners, dark mechanical sky-fortress wreckage almost swallowed by the clouds at the far periphery, threaded with demonic black chromium wiring and tiny restrained crimson-violet code seams. Large central70percent is open darker blue atmosphere, quiet low contrast maneuvering space. Crisp nuanced mid1990s pixel clusters. Do not draw side view clouds or a horizon. No fighter jets, carriers, aircraft, bosses, creatures, people, bullets, lightning attack beams, reticles, arrows, icons, borders, text or HUD."
+    },
+    "response": [
+      {
+        "type": "text",
+        "text": "id: bbc0d4ef-b38b-4cda-a69b-c8823aa7e915\njob_id: bbc0d4ef-b38b-4cda-a69b-c8823aa7e915\nmodel: pro\ndescription: FRAME FORMAT: exactly512x512 fixed square canvas, even dimensions, straight-down overhead top-down military arcade-shooter terrain. Match Neo Geo/Sega32X Bullets of Fury style. A CORRUPTED STORM-SKY ARENA based on the actual saturated blue Stage6 sky. Strict downward aerial view looking into deep royal/cobalt blue clouds far below. Uneven storm cloud banks along far sides and upper corners, dark mechanical sky-fortress wreckage almost swallowed by the clouds at the far periphery, threaded with demonic black chromium wiring and tiny restrained crimson-violet code seams. Large central70percent is open darker blue atmosphere, quiet low contrast maneuvering space. Crisp nuanced mid1990s pixel clusters. Do not draw side view clouds or a horizon. No fighter jets, carriers, aircraft, bosses, creatures, people, bullets, lightning attack beams, reticles, arrows, icons, borders, text or HUD.\nsize: 512x512px\ntransparent: False\ncandidates: 1\nreferences: 1\nmax colours: 48 per image\nasset_id: c26f8ba6-5bfd-5ff3-a87a-b1605e87b56d\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"bbc0d4ef-b38b-4cda-a69b-c8823aa7e915\")"
+      }
+    ]
+  },
+  "fx": {
+    "request": {
+      "width": 256,
+      "height": 256,
+      "no_background": true,
+      "max_colors": 24,
+      "description": "FRAME FORMAT: exactly256x256 transparent VFX canvas, common pivot128,128. Pixel-art digital terrain-download curtain for a demonic robotic villain in a mid1990s NeoGeo/Sega32X shooter. Effect only: a thin broken horizontal white-violet scanning front across the middle, trailing vertical black-chrome filament traces, little falling lavender and crimson square data packets and narrow wireframe lattice fragments connecting into an irregular perspective-free digital mesh. The scanning front should span the entire width; bottom half contains scattered incomplete wireframe square cells while upper half contains dissolving packets. Fine1–3pixel crisp clusters, strong sparse white-violet centerline, red-violet secondary sparks, dark neutral outlines. Plenty of true transparent negative space; no opaque glow or background, no giant solid bright rectangle. No terrain, spacecraft, objects, logo, digits, text, buttons, frame or border. Designed to be animated as a progressive download scan that breaks a scene into data, then materializes a new scene."
+    },
+    "response": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"3e16d606-9966-466b-bf5c-133ce9afe099\",\n  \"image_id\": \"830fc4fe-cfce-5d4e-a5ce-25dff53a9978\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"830fc4fe-cfce-5d4e-a5ce-25dff53a9978\",\n  \"job_id\": \"3e16d606-9966-466b-bf5c-133ce9afe099\",\n  \"description\": \"FRAME FORMAT: exactly256x256 transparent VFX canvas, common pivot128,128. Pixel-art digital terrain-download curtain for a demonic robotic villain in a mid1990s NeoGeo/Sega32X shooter. Effect only: a thin broken horizontal white-violet scanning front across the middle, trailing vertical black-chrome filament traces, little falling lavender and crimson square data packets and narrow wireframe lattice fragments connecting into an irregular perspective-free digital mesh. The scanning front should span the entire width; bottom half contains scattered incomplete wireframe square cells while upper half contains dissolving packets. Fine1\\u20133pixel crisp clusters, strong sparse white-violet centerline, red-violet secondary sparks, dark neutral outlines. Plenty of true transparent negative space; no opaque glow or background, no giant solid bright rectangle. No terrain, spacecraft, objects, logo, digits, text, buttons, frame or border. Designed to be animated as a progressive download scan that breaks a scene into data, then materializes a new scene.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 256,\n    \"height\": 256\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 9,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/3e16d606-9966-466b-bf5c-133ce9afe099/download\"\n}\nPoll get_image(job_id=\"3e16d606-9966-466b-bf5c-133ce9afe099\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+      }
+    ]
+  },
+  "fx_retry": {
+    "response": [
+      {
+        "type": "text",
+        "text": "id: 30f15b79-0a0a-4a99-9d2d-d7bb0e39438d\njob_id: 30f15b79-0a0a-4a99-9d2d-d7bb0e39438d\nmodel: pro\ndescription: FRAME FORMAT: exactly256x256 transparent VFX canvas, common pivot128,128. Pixel-art digital terrain-download curtain for a demonic robotic villain in a mid1990s NeoGeo/Sega32X shooter. Effect only: a thin broken horizontal white-violet scanning front across the middle, trailing vertical black-chrome filament traces, little falling lavender and crimson square data packets and narrow wireframe lattice fragments connecting into an irregular perspective-free digital mesh. The scanning front should span the entire width; bottom half contains scattered incomplete wireframe square cells while upper half contains dissolving packets. Fine1–3pixel crisp clusters, strong sparse white-violet centerline, red-violet secondary sparks, dark neutral outlines. Plenty of true transparent negative space; no opaque glow or background, no giant solid bright rectangle. No terrain, spacecraft, objects, logo, digits, text, buttons, frame or border. Designed to be animated as a progressive download scan that breaks a scene into data, then materializes a new scene.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nmax colours: 24 per image\nasset_id: 4d7872b8-77b7-52f9-89f3-93bedfe1a647\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"30f15b79-0a0a-4a99-9d2d-d7bb0e39438d\")"
+      }
+    ]
+  },
+  "fx_animation": {
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/30f15b79-0a0a-4a99-9d2d-d7bb0e39438d/download?index=0",
+      "description": "FRAME FORMAT:256x256 transparent canvas, same fixed pivot128,128 and scale1:1 for all32frames. Animate the digital arena-download curtain: fine code packets stream down into branching mesh filaments; the thin white-violet scanning front repeatedly energizes, sweeps downward and resolves into tiny crimson-violet squares which dissolve to transparency. Continuous readable travel of many individual data packets, organic black-chrome cable flicker and little electrical stitching sparks. Keep the horizontal scan front spanning the whole width, sparseness and crisp pixel clusters. Smooth cyclic energy flow with no whole-frame flash, no opaque rectangle, no camera motion, zoom or spinning vortex. Effect only, no text, digits, objects, weapons, terrain or ships. Preserve the starting transparent effect's exact aesthetic and silhouette family.",
+      "frame_count": 32,
+      "no_background": true,
+      "subject_description": "transparent white-violet and crimson digital terrain-download scanning curtain with code packets and wireframe lattice fragments",
+      "initial_pose": "horizontal scanning front with trailing vertical filaments and sparse suspended data packets",
+      "view": "high top-down",
+      "direction": "south",
+      "enhance_prompt": false,
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/30f15b79-0a0a-4a99-9d2d-d7bb0e39438d/download?index=0"
+    },
+    "response": [
+      {
+        "type": "text",
+        "text": "id: 21c814cd-cf27-443c-ae2f-d8ee9f8ef38a\njob_id: 21c814cd-cf27-443c-ae2f-d8ee9f8ef38a\ndescription: FRAME FORMAT:256x256 transparent canvas, same fixed pivot128,128 and scale1:1 for all32frames. Animate the digital arena-download curtain: fine code packets stream down into branching mesh filaments; the thin white-violet scanning front repeatedly energizes, sweeps downward and resolves into tiny crimson-violet squares which dissolve to transparency. Continuous readable travel of many individual data packets, organic black-chrome cable flicker and little electrical stitching sparks. Keep the horizontal scan front spanning the whole width, sparseness and crisp pixel clusters. Smooth cyclic energy flow with no whole-frame flash, no opaque rectangle, no camera motion, zoom or spinning vortex. Effect only, no text, digits, objects, weapons, terrain or ships. Preserve the starting transparent effect's exact aesthetic and silhouette family.\nframes: 32\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"21c814cd-cf27-443c-ae2f-d8ee9f8ef38a\")\nasset_id: e7ed42eb-9d1a-5d9d-bcc0-a9347b3c0d8a\nasset_status: pending (saved to your gallery when generation completes)"
+      }
+    ]
+  },
+  "wire_jungle": {
+    "request": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/35a02631-aef2-4306-b4cf-f1d2a1a5bd97/download?index=0"
+      ],
+      "description": "FRAME FORMAT: keep exactly the same512x512 canvas and exact overhead terrain composition, every cliff, tree group, cable and ruin in its identical place. Convert this entire terrain image into its untextured digital DOWNLOAD WIREFRAME state. Nearly black background with fine lavender-gray and violet-red mesh contours following the actual landforms, trees, cliff rims, wreckage and cable roots. Sparse polygon triangulation edges and horizontal scan traces only, thin crisp pixel lines, subdued enough for bright bullets to remain visible. Terrain texture/material colors disappear and become technical mesh outlines. No perspective/camera/geometry changes, no added object, creature, text, digits, symbols, UI or border. This is the exact matching pre-materialization mesh of this same arena, not a new scene.",
+      "no_background": false,
+      "width": 512,
+      "height": 512
+    },
+    "response": [
+      {
+        "type": "text",
+        "text": "id: 6a4a8f83-c708-4009-a6d4-71d7835ff514\njob_id: 6a4a8f83-c708-4009-a6d4-71d7835ff514\nmode: text\nframes: 1\nsize: 512x512px\ntransparent: False\nedit: FRAME FORMAT: keep exactly the same512x512 canvas and exact overhead terrain composition, every cliff, tree group, cable and ruin in its identical place. Convert this entire terrain image into its untextured digital DOWNLOAD WIREFRAME state. Nearly black background with fine lavender-gray and violet-red mesh contours following the actual landforms, trees, cliff rims, wreckage and cable roots. Sparse polygon triangulation edges and horizontal scan traces only, thin crisp pixel lines, subdued enough for bright bullets to remain visible. Terrain texture/material colors disappear and become technical mesh outlines. No perspective/camera/geometry changes, no added object, creature, text, digits, symbols, UI or border. This is the exact matching pre-materialization mesh of this same arena, not a new scene.\nasset_id: 52b6696a-21d9-5a5c-9f60-68d9129e609e\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"6a4a8f83-c708-4009-a6d4-71d7835ff514\")"
+      }
+    ]
+  },
+  "wire_space": {
+    "request": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/71862fe9-ce9c-4f1f-abc3-a4825f2cd463/download?index=0"
+      ],
+      "description": "FRAME FORMAT: keep exactly the same512x512 canvas and exact overhead terrain composition, every cliff, tree group, cable and ruin in its identical place. Convert this entire terrain image into its untextured digital DOWNLOAD WIREFRAME state. Nearly black background with fine lavender-gray and violet-red mesh contours following the actual landforms, trees, cliff rims, wreckage and cable roots. Sparse polygon triangulation edges and horizontal scan traces only, thin crisp pixel lines, subdued enough for bright bullets to remain visible. Terrain texture/material colors disappear and become technical mesh outlines. No perspective/camera/geometry changes, no added object, creature, text, digits, symbols, UI or border. This is the exact matching pre-materialization mesh of this same arena, not a new scene.",
+      "no_background": false,
+      "width": 512,
+      "height": 512
+    },
+    "response": [
+      {
+        "type": "text",
+        "text": "id: ea3050e5-9e60-4a71-9153-17af19dfa36f\njob_id: ea3050e5-9e60-4a71-9153-17af19dfa36f\nmode: text\nframes: 1\nsize: 512x512px\ntransparent: False\nedit: FRAME FORMAT: keep exactly the same512x512 canvas and exact overhead terrain composition, every cliff, tree group, cable and ruin in its identical place. Convert this entire terrain image into its untextured digital DOWNLOAD WIREFRAME state. Nearly black background with fine lavender-gray and violet-red mesh contours following the actual landforms, trees, cliff rims, wreckage and cable roots. Sparse polygon triangulation edges and horizontal scan traces only, thin crisp pixel lines, subdued enough for bright bullets to remain visible. Terrain texture/material colors disappear and become technical mesh outlines. No perspective/camera/geometry changes, no added object, creature, text, digits, symbols, UI or border. This is the exact matching pre-materialization mesh of this same arena, not a new scene.\nasset_id: ecd97be3-491d-5bf9-8486-72f65f5dff25\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"ea3050e5-9e60-4a71-9153-17af19dfa36f\")"
+      }
+    ]
+  },
+  "wire_sky": {
+    "request": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/bbc0d4ef-b38b-4cda-a69b-c8823aa7e915/download?index=0"
+      ],
+      "description": "FRAME FORMAT: keep exactly the same512x512 canvas and exact overhead terrain composition, every cliff, tree group, cable and ruin in its identical place. Convert this entire terrain image into its untextured digital DOWNLOAD WIREFRAME state. Nearly black background with fine lavender-gray and violet-red mesh contours following the actual landforms, trees, cliff rims, wreckage and cable roots. Sparse polygon triangulation edges and horizontal scan traces only, thin crisp pixel lines, subdued enough for bright bullets to remain visible. Terrain texture/material colors disappear and become technical mesh outlines. No perspective/camera/geometry changes, no added object, creature, text, digits, symbols, UI or border. This is the exact matching pre-materialization mesh of this same arena, not a new scene.",
+      "no_background": false,
+      "width": 512,
+      "height": 512
+    },
+    "response": [
+      {
+        "type": "text",
+        "text": "id: ab5d0ac6-2360-4f23-b2d8-801deb09764d\njob_id: ab5d0ac6-2360-4f23-b2d8-801deb09764d\nmode: text\nframes: 1\nsize: 512x512px\ntransparent: False\nedit: FRAME FORMAT: keep exactly the same512x512 canvas and exact overhead terrain composition, every cliff, tree group, cable and ruin in its identical place. Convert this entire terrain image into its untextured digital DOWNLOAD WIREFRAME state. Nearly black background with fine lavender-gray and violet-red mesh contours following the actual landforms, trees, cliff rims, wreckage and cable roots. Sparse polygon triangulation edges and horizontal scan traces only, thin crisp pixel lines, subdued enough for bright bullets to remain visible. Terrain texture/material colors disappear and become technical mesh outlines. No perspective/camera/geometry changes, no added object, creature, text, digits, symbols, UI or border. This is the exact matching pre-materialization mesh of this same arena, not a new scene.\nasset_id: 35db9105-4160-5cb0-a71e-6716a9ff8c31\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"ab5d0ac6-2360-4f23-b2d8-801deb09764d\")"
+      }
+    ]
+  },
+  "wire_lava": {
+    "request": {
+      "image_urls": [
+        "https://api.pixellab.ai/mcp/images/81f25a4d-a89c-4c18-992e-e3614dfd0dec/download?index=0"
+      ],
+      "description": "FRAME FORMAT: keep exactly the same512x512 canvas and exact overhead terrain composition, every cliff, tree group, cable and ruin in its identical place. Convert this entire terrain image into its untextured digital DOWNLOAD WIREFRAME state. Nearly black background with fine lavender-gray and violet-red mesh contours following the actual landforms, trees, cliff rims, wreckage and cable roots. Sparse polygon triangulation edges and horizontal scan traces only, thin crisp pixel lines, subdued enough for bright bullets to remain visible. Terrain texture/material colors disappear and become technical mesh outlines. No perspective/camera/geometry changes, no added object, creature, text, digits, symbols, UI or border. This is the exact matching pre-materialization mesh of this same arena, not a new scene. Preserve the input's exact transparent holes. Only the existing basalt cliffs, machinery and wire roots become mesh contours; central space remains true transparent alpha, with no filled floor or background.",
+      "no_background": true,
+      "width": 512,
+      "height": 512
+    },
+    "response": [
+      {
+        "type": "text",
+        "text": "id: 775bd725-004e-4b7c-bf7c-1d9591ea597d\njob_id: 775bd725-004e-4b7c-bf7c-1d9591ea597d\nmode: text\nframes: 1\nsize: 512x512px\ntransparent: True\nedit: FRAME FORMAT: keep exactly the same512x512 canvas and exact overhead terrain composition, every cliff, tree group, cable and ruin in its identical place. Convert this entire terrain image into its untextured digital DOWNLOAD WIREFRAME state. Nearly black background with fine lavender-gray and violet-red mesh contours following the actual landforms, trees, cliff rims, wreckage and cable roots. Sparse polygon triangulation edges and horizontal scan traces only, thin crisp pixel lines, subdued enough for bright bullets to remain visible. Terrain texture/material colors disappear and become technical mesh outlines. No perspective/camera/geometry changes, no added object, creature, text, digits, symbols, UI or border. This is the exact matching pre-materialization mesh of this same arena, not a new scene. Preserve the input's exact transparent holes. Only the existing basalt cliffs, machinery and wire roots become mesh contours; central space remains true transparent alpha, with no filled floor or background.\nasset_id: c126084e-aac2-5bd1-a017-9ef255d23d0b\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"775bd725-004e-4b7c-bf7c-1d9591ea597d\")"
+      }
+    ]
+  }
+}

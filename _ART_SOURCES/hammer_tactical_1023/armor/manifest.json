@@ -1,0 +1,1063 @@
+{
+  "sheets": {
+    "ha21_blue_beam_empty_armor": {
+      "key": "nca_ha21_blue_beam_empty_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_beam_empty_armor.webp",
+      "sha256": "1c17127152f76910a8f153a860dc899e29e3fed61979bbf015ed514cd2b5adb8"
+    },
+    "ha21_blue_cast_armor": {
+      "key": "nca_ha21_blue_cast_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_cast_armor.webp",
+      "sha256": "dd53afe4eee8eb2a4f1fcb5e0caf827982fffdd0c05cf7990a28e39cd44d2987"
+    },
+    "ha21_blue_cast_empty_armor": {
+      "key": "nca_ha21_blue_cast_empty_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_cast_empty_armor.webp",
+      "sha256": "d8af521af6ffa1543289f5caa91748c9224caad54fcb20faea04f8d916afc369"
+    },
+    "ha21_blue_hold_armor": {
+      "key": "nca_ha21_blue_hold_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_hold_armor.webp",
+      "sha256": "626a94241d3a9fd30a530184c567880b38885b0164653f9bdf92d4e6edfd699e"
+    },
+    "ha21_blue_jump_armor": {
+      "key": "nca_ha21_blue_jump_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_jump_armor.webp",
+      "sha256": "9ab2a931d87c28f5253d62d043d91406690f464bbb39d5905e12bdb1d4470200"
+    },
+    "ha21_blue_rage_armor": {
+      "key": "nca_ha21_blue_rage_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_rage_armor.webp",
+      "sha256": "1777903f8b198c8d052b27433295341fccecee479f15b0f022647a1c21758904"
+    },
+    "ha21_blue_rage_empty_armor": {
+      "key": "nca_ha21_blue_rage_empty_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_rage_empty_armor.webp",
+      "sha256": "2c261cc93b272ad04d2790c80c0867fae5e0041463d0c6f8beab870d163dfc86"
+    },
+    "ha21_blue_side_armor": {
+      "key": "nca_ha21_blue_side_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_side_armor.webp",
+      "sha256": "13d0ad3a6b48c7da3f29fbd6a43480540d0713fbe190ea728dd8c08f5fbde7f3"
+    },
+    "ha21_blue_counter_right_armor": {
+      "key": "nca_ha21_blue_counter_right_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_counter_right_armor.webp",
+      "sha256": "43382ba59fe0ea779e58446ebc91aee4cefa13d3d4b892209efff20e4f677b53"
+    },
+    "ha21_blue_counter_left_armor": {
+      "key": "nca_ha21_blue_counter_left_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_counter_left_armor.webp",
+      "sha256": "e3bf13d039b96e88a7ab0cc34355cb7e3b9982899bbc6595caca40efaa1db958"
+    },
+    "ha21_blue_slam_armor": {
+      "key": "nca_ha21_blue_slam_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_slam_armor.webp",
+      "sha256": "b885f28281d221a8c7ce69b8849cea20c0f2a364eaa15cacaa99a3c948cf2ae5"
+    },
+    "ha21_blue_spin_armor": {
+      "key": "nca_ha21_blue_spin_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_spin_armor.webp",
+      "sha256": "871cb34dbde28a55b9ec29fee16e197ca7563b57c3325ba163cbac994fe84ca5"
+    },
+    "ha21_blue_throw_armor": {
+      "key": "nca_ha21_blue_throw_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/ha_blue_throw_armor.webp",
+      "sha256": "43f391b75f39077ca3489bc63ccc5d6e57701618a15d63c9c07c179ec680e3a2"
+    },
+    "hf22_blue_jump_armor": {
+      "key": "nca_hf22_blue_jump_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/hf_blue_jump_armor.webp",
+      "sha256": "c8a7b3ef592b300c3d034d936d9abf7202f19aca0a174f3dbd3ff6474e1f9258"
+    },
+    "hf22_blue_sides_armor": {
+      "key": "nca_hf22_blue_sides_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/hf_blue_sides_armor.webp",
+      "sha256": "12f74d5119ee83a2a539ce29a9779b94d27a03f89e81bb8e63969028e2791e5a"
+    },
+    "hf22_blue_throw_armor": {
+      "key": "nca_hf22_blue_throw_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/hf_blue_throw_armor.webp",
+      "sha256": "4ca678d275fe83e03be7b1825a794ef6657e5e8a656be42d7887e30803b3bc71"
+    },
+    "h22_blue_slam_armor": {
+      "key": "nca_h22_blue_slam_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/h22_blue_slam_armor.webp",
+      "sha256": "c2dc904312dcee0a3163236cb3099ea10c14b9f4b0c2d994a7a3f2d8b8295137"
+    },
+    "h22_blue_side_armor": {
+      "key": "nca_h22_blue_side_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/h22_blue_side_armor.webp",
+      "sha256": "d14da39f6148b1a1da0a1a61f6e21982b4aaf92ce0b76ebbdf650bef9433b865"
+    },
+    "h22_blue_counter_right_armor": {
+      "key": "nca_h22_blue_counter_right_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/h22_blue_counter_right_armor.webp",
+      "sha256": "75e7212c1d8e53838777949d98df50958d78bf07311bc7e342690478e5a36a3c"
+    },
+    "h22_blue_counter_left_armor": {
+      "key": "nca_h22_blue_counter_left_armor",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/h22_blue_counter_left_armor.webp",
+      "sha256": "3cbc702f2d86cc2b5f0bc87ef32de0e48750c9c12ef68291e2db2dc53fe78a47"
+    },
+    "ht23_activation": {
+      "key": "nca_ht23_activation",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean.webp",
+      "sha256": "176dd1af02072b1e3b321a19ec9d60fdcc52edf1f691bd3ba2fc2c4136e4d899"
+    },
+    "ht23_activation_hit": {
+      "key": "nca_ht23_activation_hit",
+      "path": "assets/game/shared/combat/hammer_tactical_1023/activation_clean_hit.webp",
+      "sha256": "fe0faaf9bba7cfd6499fa77e2e494c5c011bafce5365150ac29c1fbcee3c7456"
+    }
+  },
+  "banks": {
+    "activation": [
+      {
+        "key": "ht23_activation_0",
+        "sheet": "ht23_activation",
+        "cell": [
+          0,
+          0,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          96,
+          145,
+          355,
+          383
+        ],
+        "tip": [
+          143,
+          342
+        ],
+        "glow": [
+          143,
+          342
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 0,
+        "_hf22": true,
+        "white": "ht23_activation_hit_0"
+      },
+      {
+        "key": "ht23_activation_1",
+        "sheet": "ht23_activation",
+        "cell": [
+          448,
+          0,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          134,
+          140,
+          370,
+          381
+        ],
+        "tip": [
+          180,
+          219
+        ],
+        "glow": [
+          180,
+          219
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 1,
+        "_hf22": true,
+        "white": "ht23_activation_hit_1"
+      },
+      {
+        "key": "ht23_activation_2",
+        "sheet": "ht23_activation",
+        "cell": [
+          896,
+          0,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          118,
+          81,
+          352,
+          383
+        ],
+        "tip": [
+          296,
+          136
+        ],
+        "glow": [
+          296,
+          136
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 2,
+        "_hf22": true,
+        "white": "ht23_activation_hit_2"
+      },
+      {
+        "key": "ht23_activation_3",
+        "sheet": "ht23_activation",
+        "cell": [
+          1344,
+          0,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          110,
+          67,
+          364,
+          382
+        ],
+        "tip": [
+          314,
+          107
+        ],
+        "glow": [
+          314,
+          107
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 3,
+        "_hf22": true,
+        "white": "ht23_activation_hit_3"
+      },
+      {
+        "key": "ht23_activation_4",
+        "sheet": "ht23_activation",
+        "cell": [
+          0,
+          448,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          96,
+          117,
+          360,
+          383
+        ],
+        "tip": [
+          319,
+          193
+        ],
+        "glow": [
+          319,
+          193
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 4,
+        "_hf22": true,
+        "white": "ht23_activation_hit_4"
+      },
+      {
+        "key": "ht23_activation_5",
+        "sheet": "ht23_activation",
+        "cell": [
+          448,
+          448,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          139,
+          63,
+          359,
+          381
+        ],
+        "tip": [
+          327,
+          105
+        ],
+        "glow": [
+          327,
+          105
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 5,
+        "_hf22": true,
+        "white": "ht23_activation_hit_5"
+      },
+      {
+        "key": "ht23_activation_6",
+        "sheet": "ht23_activation",
+        "cell": [
+          896,
+          448,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          139,
+          63,
+          359,
+          381
+        ],
+        "tip": [
+          327,
+          105
+        ],
+        "glow": [
+          327,
+          105
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 6,
+        "_hf22": true,
+        "white": "ht23_activation_hit_6"
+      },
+      {
+        "key": "ht23_activation_7",
+        "sheet": "ht23_activation",
+        "cell": [
+          1344,
+          448,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          139,
+          63,
+          359,
+          381
+        ],
+        "tip": [
+          327,
+          105
+        ],
+        "glow": [
+          327,
+          105
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 7,
+        "_hf22": true,
+        "white": "ht23_activation_hit_7"
+      },
+      {
+        "key": "ht23_activation_8",
+        "sheet": "ht23_activation",
+        "cell": [
+          0,
+          896,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          139,
+          63,
+          359,
+          381
+        ],
+        "tip": [
+          327,
+          105
+        ],
+        "glow": [
+          327,
+          105
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 8,
+        "_hf22": true,
+        "white": "ht23_activation_hit_8"
+      },
+      {
+        "key": "ht23_activation_9",
+        "sheet": "ht23_activation",
+        "cell": [
+          448,
+          896,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          139,
+          63,
+          359,
+          381
+        ],
+        "tip": [
+          327,
+          105
+        ],
+        "glow": [
+          327,
+          105
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 9,
+        "_hf22": true,
+        "white": "ht23_activation_hit_9"
+      },
+      {
+        "key": "ht23_activation_10",
+        "sheet": "ht23_activation",
+        "cell": [
+          896,
+          896,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          139,
+          63,
+          359,
+          381
+        ],
+        "tip": [
+          327,
+          105
+        ],
+        "glow": [
+          327,
+          105
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 10,
+        "_hf22": true,
+        "white": "ht23_activation_hit_10"
+      },
+      {
+        "key": "ht23_activation_11",
+        "sheet": "ht23_activation",
+        "cell": [
+          1344,
+          896,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          96,
+          117,
+          360,
+          383
+        ],
+        "tip": [
+          319,
+          193
+        ],
+        "glow": [
+          319,
+          193
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 11,
+        "_hf22": true,
+        "white": "ht23_activation_hit_11"
+      },
+      {
+        "key": "ht23_activation_12",
+        "sheet": "ht23_activation",
+        "cell": [
+          0,
+          1344,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          110,
+          67,
+          364,
+          382
+        ],
+        "tip": [
+          314,
+          107
+        ],
+        "glow": [
+          314,
+          107
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 12,
+        "_hf22": true,
+        "white": "ht23_activation_hit_12"
+      },
+      {
+        "key": "ht23_activation_13",
+        "sheet": "ht23_activation",
+        "cell": [
+          448,
+          1344,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          118,
+          81,
+          352,
+          383
+        ],
+        "tip": [
+          296,
+          136
+        ],
+        "glow": [
+          296,
+          136
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 13,
+        "_hf22": true,
+        "white": "ht23_activation_hit_13"
+      },
+      {
+        "key": "ht23_activation_14",
+        "sheet": "ht23_activation",
+        "cell": [
+          896,
+          1344,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          134,
+          140,
+          370,
+          381
+        ],
+        "tip": [
+          180,
+          219
+        ],
+        "glow": [
+          180,
+          219
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 14,
+        "_hf22": true,
+        "white": "ht23_activation_hit_14"
+      },
+      {
+        "key": "ht23_activation_15",
+        "sheet": "ht23_activation",
+        "cell": [
+          1344,
+          1344,
+          448,
+          448
+        ],
+        "w": 448,
+        "h": 448,
+        "pivot": [
+          224,
+          258
+        ],
+        "bounds": [
+          96,
+          145,
+          355,
+          383
+        ],
+        "tip": [
+          143,
+          342
+        ],
+        "glow": [
+          143,
+          342
+        ],
+        "kind": "blue",
+        "bank": "ht23_activation",
+        "frame": 15,
+        "_hf22": true,
+        "white": "ht23_activation_hit_15"
+      }
+    ]
+  },
+  "owner": "_BUILD_SOURCE/build_hammer_tactical_1023.py",
+  "outlinePolicy": "Original alpha and boundary-connected dark linework retained; interior chromium ramp only.",
+  "platedIdle": {
+    "key": "ht23_plated_idle",
+    "sheet": "ha21_blue_idle",
+    "cell": [
+      0,
+      0,
+      256,
+      256
+    ],
+    "w": 384,
+    "h": 512,
+    "pivot": [
+      192,
+      230
+    ],
+    "bounds": [
+      0,
+      171,
+      22,
+      379
+    ],
+    "tip": [
+      122,
+      337
+    ],
+    "white": "ht23_plated_idle_hit",
+    "path": "assets/game/shared/combat/hammer_tactical_1023/plated_idle.webp",
+    "_hf22": true
+  },
+  "audit": [
+    {
+      "bank": "blue_beam_empty_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_cast_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_cast_empty_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_hold_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_jump_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_rage_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_rage_empty_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_side_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_counter_right_armor",
+      "family": "ha",
+      "size": [
+        2560,
+        2560
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_counter_left_armor",
+      "family": "ha",
+      "size": [
+        2560,
+        2560
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_slam_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_spin_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_throw_armor",
+      "family": "ha",
+      "size": [
+        1536,
+        768
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_jump_armor",
+      "family": "hf",
+      "size": [
+        1792,
+        1792
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_sides_armor",
+      "family": "hf",
+      "size": [
+        1792,
+        1792
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_throw_armor",
+      "family": "hf",
+      "size": [
+        1792,
+        896
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_slam_armor",
+      "family": "h22",
+      "size": [
+        1280,
+        1024
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_side_armor",
+      "family": "h22",
+      "size": [
+        1280,
+        1024
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_counter_right_armor",
+      "family": "h22",
+      "size": [
+        3200,
+        2560
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    },
+    {
+      "bank": "blue_counter_left_armor",
+      "family": "h22",
+      "size": [
+        3200,
+        2560
+      ],
+      "sameAlpha": true,
+      "edgeDarkKept": true,
+      "darkSeamsPreserved": true
+    }
+  ],
+  "activationAudit": [
+    {
+      "frame": 0,
+      "source": "ha21_hf22_blue_jump_0",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 1,
+      "source": "ha21_hf22_blue_jump_1",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 2,
+      "source": "ha21_hf22_blue_jump_2",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 3,
+      "source": "ha21_hf22_blue_jump_3",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 4,
+      "source": "ha21_hf22_blue_jump_4",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 5,
+      "source": "ha21_hf22_blue_jump_5",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 6,
+      "source": "ha21_hf22_blue_jump_5",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 7,
+      "source": "ha21_hf22_blue_jump_5",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 8,
+      "source": "ha21_hf22_blue_jump_5",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 9,
+      "source": "ha21_hf22_blue_jump_5",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 10,
+      "source": "ha21_hf22_blue_jump_5",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 11,
+      "source": "ha21_hf22_blue_jump_4",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 12,
+      "source": "ha21_hf22_blue_jump_3",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 13,
+      "source": "ha21_hf22_blue_jump_2",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 14,
+      "source": "ha21_hf22_blue_jump_1",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    },
+    {
+      "frame": 15,
+      "source": "ha21_hf22_blue_jump_0",
+      "darkSeamsPreserved": true,
+      "edgeRGBPreserved": true,
+      "sameAlpha": true
+    }
+  ],
+  "activationSourceSequence": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    4,
+    3,
+    2,
+    1,
+    0
+  ]
+}

@@ -1,0 +1,327 @@
+[
+  {
+    "bank": "idle_regular",
+    "count": 9,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "takeoff_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "land_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "windup_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "strike_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "retract_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "left_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "right_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "depart_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "approach_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "empty_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "empty_retract_regular",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "rage_regular",
+    "count": 13,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "palm_regular",
+    "count": 6,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "stun_regular",
+    "count": 3,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "rage_recall_regular",
+    "count": 9,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "spin_regular",
+    "count": 32,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "tool_regular",
+    "count": 64,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "idle_chrome",
+    "count": 9,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "takeoff_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "land_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "windup_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "strike_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "retract_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "left_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "right_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "depart_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "approach_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "empty_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "empty_retract_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "rage_chrome",
+    "count": 13,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "palm_chrome",
+    "count": 6,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "stun_chrome",
+    "count": 3,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "rage_recall_chrome",
+    "count": 9,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "spin_chrome",
+    "count": 32,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "tool_chrome",
+    "count": 64,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "idle_red",
+    "count": 9,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "takeoff_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "land_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "windup_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "strike_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "retract_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "left_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "right_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "depart_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "approach_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "empty_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "empty_retract_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "rage_red",
+    "count": 13,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "palm_red",
+    "count": 6,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "stun_red",
+    "count": 3,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "rage_recall_red",
+    "count": 9,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "spin_red",
+    "count": 32,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "tool_red",
+    "count": 64,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "activation",
+    "count": 25,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "charge",
+    "count": 48,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "rage_flame",
+    "count": 21,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "rage_idle",
+    "count": 16,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "gun_recall_regular",
+    "count": 9,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "gun_recall_chrome",
+    "count": 9,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "gun_recall_red",
+    "count": 9,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "gun_chrome",
+    "count": 24,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "pickup_chrome",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "gun_red",
+    "count": 24,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  },
+  {
+    "bank": "pickup_red",
+    "count": 17,
+    "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641"
+  }
+]

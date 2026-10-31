@@ -1,0 +1,15 @@
+{
+  "checks": 40,
+  "nativeReports": [
+    "native-report.json",
+    "native-rig-report.json"
+  ],
+  "runtimeBytes": 25425224,
+  "sourceImages": 13,
+  "pixelLabNewGenerationSpend": 0,
+  "files": {
+    "assets/game.js": "3acc824671c67cae67865148ab447891c14c6fad938a514ba532fc67cd9b1f5c",
+    "assets/hammer_furious_art_1022.js": "95ce13453dec40f073b20da1689cf338815fdc75a44c298df9312445f70d270f",
+    "assets/hammer_furious_1022.js": "e18ab6d013b188c6485e066b2cc80422332efef04a319424da6c56573b95ade2"
+  }
+}

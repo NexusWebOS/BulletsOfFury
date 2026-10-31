@@ -1,0 +1,19 @@
+{
+  "source": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\assets\\game\\shared\\ui\\command_1020\\dialogue-a.webp",
+  "fixed": {
+    "w": 460,
+    "h": 84
+  },
+  "narrowWidths": [
+    360,
+    280,
+    220
+  ],
+  "note": "Narrow frames remove only an empty middle rail/body segment offline; portrait, header, corner and vertical dimensions stay identical.",
+  "builder": "_BUILD_SOURCE/build_compact_dialogue_1026.py",
+  "sourceDimensions": [
+    2160,
+    394
+  ],
+  "frameHeight": 84
+}

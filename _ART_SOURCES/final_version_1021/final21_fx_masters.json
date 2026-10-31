@@ -1,0 +1,78 @@
+[
+  {
+    "name": "shield_hex",
+    "args": {
+      "width": 256,
+      "height": 256,
+      "no_background": true,
+      "max_colors": 40,
+      "reference_images": [
+        {
+          "url": "upload:beb0a726-2eb6-4e7e-9c9e-30329ac63305",
+          "usage": "Existing BOF / user explosion-pack visual identity and palette"
+        }
+      ],
+      "description": "FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A complete spherical cyan-white energy shield shell, transparent spacious interior, clean segmented hexagonal lattice with deliberate readable pixel clusters. Not a flat solid disk. No metal or hardware. Keep circular silhouette and transparent center that leaves an enemy visible. Neo-Geo high-quality pixel art; restrained internal highlights, energy rim."
+    },
+    "receipt": [
+      "id: 453cb351-30ed-48bb-8c93-18ff5559887f\njob_id: 453cb351-30ed-48bb-8c93-18ff5559887f\nmodel: pro\ndescription: FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A complete spherical cyan-white energy shield shell, transparent spacious interior, clean segmented hexagonal lattice with deliberate readable pixel clusters. Not a flat solid disk. No metal or hardware. Keep circular silhouette and transparent center that leaves an enemy visible. Neo-Geo high-quality pixel art; restrained internal highlights, energy rim.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nmax colours: 40 per image\nasset_id: 0a649e4e-1eef-595a-bb09-87b6fc7b82ca\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"453cb351-30ed-48bb-8c93-18ff5559887f\")"
+    ]
+  },
+  {
+    "name": "shield_void",
+    "args": {
+      "width": 256,
+      "height": 256,
+      "no_background": true,
+      "max_colors": 40,
+      "reference_images": [
+        {
+          "url": "upload:15ef1802-b58d-4236-9d99-972fd18b398a",
+          "usage": "Existing BOF / user explosion-pack visual identity and palette"
+        }
+      ],
+      "description": "FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A complete circular dark violet-purple demonic code energy shield, transparent spacious interior so the enemy stays visible. Layered fine purple/gray/white swirling tendrils with small red code seams, clean restrained pixel shine. Not a solid orb. No skull, robot, hardware or text. Match reference circular shape."
+    },
+    "receipt": [
+      "id: 9797a674-d988-425a-be4c-1e8b9811b538\njob_id: 9797a674-d988-425a-be4c-1e8b9811b538\nmodel: pro\ndescription: FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A complete circular dark violet-purple demonic code energy shield, transparent spacious interior so the enemy stays visible. Layered fine purple/gray/white swirling tendrils with small red code seams, clean restrained pixel shine. Not a solid orb. No skull, robot, hardware or text. Match reference circular shape.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nmax colours: 40 per image\nasset_id: c30b2c90-0f86-509f-90f7-12c59678b6df\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"9797a674-d988-425a-be4c-1e8b9811b538\")"
+    ]
+  },
+  {
+    "name": "explosion_star",
+    "args": {
+      "width": 256,
+      "height": 256,
+      "no_background": true,
+      "max_colors": 40,
+      "reference_images": [
+        {
+          "url": "upload:8860ffc4-9543-4227-8f1a-e3ce24953a0f",
+          "usage": "Existing BOF / user explosion-pack visual identity and palette"
+        }
+      ],
+      "description": "FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A Neo-Geo-quality explosion keyframe based on this actual BOF explosion: white-hot small angular core, layered yellow-orange fire tongues and deep red/gray smoke lobes. Clear defined pixel clusters and internal light, round explosive shape with room on every side for animation. No square blocks, no ground, no ship, no lens flare."
+    },
+    "receipt": [
+      "id: 03e24d90-9143-4a47-a3e8-df40f8c51d90\njob_id: 03e24d90-9143-4a47-a3e8-df40f8c51d90\nmodel: pro\ndescription: FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A Neo-Geo-quality explosion keyframe based on this actual BOF explosion: white-hot small angular core, layered yellow-orange fire tongues and deep red/gray smoke lobes. Clear defined pixel clusters and internal light, round explosive shape with room on every side for animation. No square blocks, no ground, no ship, no lens flare.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nmax colours: 40 per image\nasset_id: eb067b1d-554e-5454-82d1-115225ebc644\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"03e24d90-9143-4a47-a3e8-df40f8c51d90\")"
+    ]
+  },
+  {
+    "name": "explosion_chain",
+    "args": {
+      "width": 256,
+      "height": 256,
+      "no_background": true,
+      "max_colors": 40,
+      "reference_images": [
+        {
+          "url": "upload:f30dadc8-d3df-4cf6-bf67-1e2f1a8240c2",
+          "usage": "Existing BOF / user explosion-pack visual identity and palette"
+        }
+      ],
+      "description": "FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A large Neo-Geo arcade final-boss chain-detonation keyframe inspired by this ColeForge explosion. Multiple overlapping white-hot cores and orange/red billowing fire tongues, dark purple/red smoke, crisp rich pixel clusters, strong inner highlights. Centered on transparency with32px clear margin; no ground, ship, text or rectangular background."
+    },
+    "receipt": [
+      "id: db7288f0-b6fb-470b-833d-3a299f5e9ed5\njob_id: db7288f0-b6fb-470b-833d-3a299f5e9ed5\nmodel: pro\ndescription: FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A large Neo-Geo arcade final-boss chain-detonation keyframe inspired by this ColeForge explosion. Multiple overlapping white-hot cores and orange/red billowing fire tongues, dark purple/red smoke, crisp rich pixel clusters, strong inner highlights. Centered on transparency with32px clear margin; no ground, ship, text or rectangular background.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nmax colours: 40 per image\nasset_id: 9a93ac70-e1aa-51e7-bac9-df231050aefa\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"db7288f0-b6fb-470b-833d-3a299f5e9ed5\")"
+    ]
+  }
+]

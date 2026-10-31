@@ -1,0 +1,331 @@
+[
+  {
+    "key": "inv20_cole",
+    "group": "pilots",
+    "w": 256,
+    "h": 384,
+    "sha256": "f6adee54f234a40687e4e5ce3fd08fa904a8b1d745717ce3f36ea872823eecc7"
+  },
+  {
+    "key": "inv20_axel",
+    "group": "pilots",
+    "w": 256,
+    "h": 384,
+    "sha256": "a5731390177ad5083213f62f12016a311b9f34e92ba0639fee03f317f3500d18"
+  },
+  {
+    "key": "inv20_freezer",
+    "group": "pilots",
+    "w": 256,
+    "h": 384,
+    "sha256": "895c5f38686875f4f6ff59fdef8868913dbadbdb903a0003b30f7308059a95d2"
+  },
+  {
+    "key": "inv20_yuri",
+    "group": "pilots",
+    "w": 256,
+    "h": 384,
+    "sha256": "622ca2d6a485ecbecfb4c4a161682a24bdb9f89e53455207d1b03fe766b29cdb"
+  },
+  {
+    "key": "inv20_maverick",
+    "group": "pilots",
+    "w": 256,
+    "h": 384,
+    "sha256": "874aa109af6412cfbe7526417c3050804e009d3ccc64e7446ee6fd10e00cf91c"
+  },
+  {
+    "key": "inv20_falva",
+    "group": "pilots",
+    "w": 256,
+    "h": 384,
+    "sha256": "1f8efbe622a9ea3ae9a86ac08e7853b935aaaaafca3f8bbee55d4238d30c2553"
+  },
+  {
+    "key": "inv20_lizzie",
+    "group": "pilots",
+    "w": 256,
+    "h": 384,
+    "sha256": "ff404b883c42e9faf50fff6e2d45e4e27ba54755dec9d5ca642c00b9876a69f6"
+  },
+  {
+    "key": "inv20_decker",
+    "group": "pilots",
+    "w": 256,
+    "h": 384,
+    "sha256": "eb5a1448b1541131e4b132e2eb790d4b293747b221570d70069aeb53e82770dc"
+  },
+  {
+    "key": "inv20_juggernaut",
+    "group": "pilots",
+    "w": 256,
+    "h": 384,
+    "sha256": "42292824d63967e524044c8418023b9216c8d1c1eef3a2bea403f66f68c7a11b"
+  },
+  {
+    "key": "ship_cole",
+    "group": "ships",
+    "w": 193,
+    "h": 232,
+    "sha256": "6fe68147518a7fab7d4c872968e541bec72d5743a9d761546534b2a8343120c0"
+  },
+  {
+    "key": "ship_axel",
+    "group": "ships",
+    "w": 190,
+    "h": 224,
+    "sha256": "28ee91a68d346d06f55a834ac8f381f86de69648af92775aa8ef63ef139ea4e6"
+  },
+  {
+    "key": "ship_freezer",
+    "group": "ships",
+    "w": 183,
+    "h": 194,
+    "sha256": "c4eab883e45b15323c3b9f46d84621c263be1606bd59ede2a3c7518c315f32e5"
+  },
+  {
+    "key": "ship_yuri",
+    "group": "ships",
+    "w": 209,
+    "h": 229,
+    "sha256": "fecc12ef68c95278ee755f7c1401e705a7b7075161df576d12af32e593e7a4b6"
+  },
+  {
+    "key": "ship_maverick",
+    "group": "ships",
+    "w": 200,
+    "h": 211,
+    "sha256": "f559a32143ac8614afa87b133de143c341af47812657c5b5a816de7ed83266e9"
+  },
+  {
+    "key": "ship_falva",
+    "group": "ships",
+    "w": 204,
+    "h": 238,
+    "sha256": "d9986877de136f8940e51743706d016dfb069ba8612a72efcccc1dd2f90c0f4e"
+  },
+  {
+    "key": "ship_lizzie",
+    "group": "ships",
+    "w": 224,
+    "h": 243,
+    "sha256": "a9b80dd2427532dd7b348ff0bd6be4ef9a7c93ca45f3eb336070224ef57d3bd0"
+  },
+  {
+    "key": "ship_decker",
+    "group": "ships",
+    "w": 200,
+    "h": 230,
+    "sha256": "787f45a03bd7a9d70e9346c4f90e137c6c8a9548718dbfd4da879e0c603db363"
+  },
+  {
+    "key": "ship_juggernaut",
+    "group": "ships",
+    "w": 200,
+    "h": 205,
+    "sha256": "818fbc41307d3491ff9df2475a2e9ded51a7c36c2ee40223fc179e03c22a9a48"
+  },
+  {
+    "key": "ns9e_wskim_idle",
+    "group": "enemies",
+    "w": 128,
+    "h": 128,
+    "sha256": "28a9385dc965328085337e5ec59f2e73fa1823d5acab16d39c30b3f83b1a6990"
+  },
+  {
+    "key": "ns9e_pneedle_idle",
+    "group": "enemies",
+    "w": 128,
+    "h": 128,
+    "sha256": "8986dddb95a8e44dfdfd0e010126c9d755ac4b4dff38b16577257211c6cc055a"
+  },
+  {
+    "key": "ns9e_vmanta_idle",
+    "group": "enemies",
+    "w": 128,
+    "h": 128,
+    "sha256": "7ee260ed94925c15df8cb71fb95d04627b1bd607e4204bb1f172c859b17d1a50"
+  },
+  {
+    "key": "ns9x_dreadv",
+    "group": "enemies",
+    "w": 256,
+    "h": 384,
+    "sha256": "33243a615f4112d75d6bf5eb4d9278633920e10e77fd8714e1eb2ddebb9d43cb"
+  },
+  {
+    "key": "nef_s1_missile_gunboat_intact_idle",
+    "group": "enemies",
+    "w": 145,
+    "h": 228,
+    "sha256": "1b4e4d0484a37c23e466eefcacf653ecb4c8f3a80c0daf32648511832db05e26"
+  },
+  {
+    "key": "nef_s1_river_patrol_boat_intact_idle",
+    "group": "enemies",
+    "w": 145,
+    "h": 228,
+    "sha256": "8c87d18c1fe4501315f8fb10926c4bec62c02bef7709710d629502a29298b292"
+  },
+  {
+    "key": "ship_cole_so6",
+    "group": "front-rear",
+    "w": 193,
+    "h": 232,
+    "sha256": "594d8a8ac45ff0c401f3d246760cde12cf6c348e08ba226d41b9b71beeea4efa"
+  },
+  {
+    "key": "ship_cole_so2",
+    "group": "front-rear",
+    "w": 193,
+    "h": 232,
+    "sha256": "1075fe9cd73032084661a900590eeadc11cc4c085b1e4ad955b5cc5d19eea391"
+  },
+  {
+    "key": "ship_axel_so6",
+    "group": "front-rear",
+    "w": 190,
+    "h": 224,
+    "sha256": "1259e7a18c0968bbd91778d783d095cc8d2aa82c44133b91ec2f955b08d45242"
+  },
+  {
+    "key": "ship_axel_so2",
+    "group": "front-rear",
+    "w": 190,
+    "h": 224,
+    "sha256": "aad31fb56ab946d27d069c17159b16cb8a035c6ae524c1894935792301e16dd4"
+  },
+  {
+    "key": "ship_freezer_so6",
+    "group": "front-rear",
+    "w": 183,
+    "h": 194,
+    "sha256": "0f29ca30352c0c1e7f93b48ec942b8fb88e13ca2ec4246c04cac92b28c0c5895"
+  },
+  {
+    "key": "ship_freezer_so2",
+    "group": "front-rear",
+    "w": 183,
+    "h": 194,
+    "sha256": "125fcad8831e275f3be86e999dff9de52eb4e4032bb2e9011a0b89df57afeb21"
+  },
+  {
+    "key": "ship_yuri_so6",
+    "group": "front-rear",
+    "w": 209,
+    "h": 229,
+    "sha256": "e7b7f97df6b4b0008778cd217f016d4ffcf241f727796adbdedf89dd3f60c8da"
+  },
+  {
+    "key": "ship_yuri_so2",
+    "group": "front-rear",
+    "w": 209,
+    "h": 229,
+    "sha256": "fe4bfb1255d9967d998e9ee447ead309bdc04d2b586c365003aacaf1a2e0f2d0"
+  },
+  {
+    "key": "ship_maverick_so6",
+    "group": "front-rear",
+    "w": 200,
+    "h": 211,
+    "sha256": "e5b12045d1b4a5a3dcadc1df9d9090d6653974bdfa90a9aed610d56c6fc28979"
+  },
+  {
+    "key": "ship_maverick_so2",
+    "group": "front-rear",
+    "w": 200,
+    "h": 211,
+    "sha256": "c0a636d0e0cac44fbfe4522adf2ee323b8ba3d48bc24e0b52092d1fb6dc4759c"
+  },
+  {
+    "key": "ship_falva_so6",
+    "group": "front-rear",
+    "w": 204,
+    "h": 238,
+    "sha256": "876c4e9eb3f974f850bb6d9cf503848a84bb0993a2f0a8e758d0385c14201033"
+  },
+  {
+    "key": "ship_falva_so2",
+    "group": "front-rear",
+    "w": 204,
+    "h": 238,
+    "sha256": "8f86e0e1114648242c4101d1e15afa9de104104fcf963dc6beba5bc84515238a"
+  },
+  {
+    "key": "ship_lizzie_so6",
+    "group": "front-rear",
+    "w": 224,
+    "h": 243,
+    "sha256": "bcf2e6348ec34e64519c662a4ee0436d1adb120540e665bf9d53d67a6e3d7d1f"
+  },
+  {
+    "key": "ship_lizzie_so2",
+    "group": "front-rear",
+    "w": 224,
+    "h": 243,
+    "sha256": "b8ac3c0e45e481842107697705755b32006180b222108c7b408ab5167c321050"
+  },
+  {
+    "key": "ship_decker_so6",
+    "group": "front-rear",
+    "w": 200,
+    "h": 230,
+    "sha256": "f9fc86bd142e727b5c5f94628f4ce297bf8e9f1dad5bde7d2f06b02c57d68b80"
+  },
+  {
+    "key": "ship_decker_so2",
+    "group": "front-rear",
+    "w": 200,
+    "h": 230,
+    "sha256": "fe6cedb7a37d64337e0e807299d20327b19d2951ad28f22454c1ac4976d54ccc"
+  },
+  {
+    "key": "ship_juggernaut_so6",
+    "group": "front-rear",
+    "w": 200,
+    "h": 205,
+    "sha256": "25f032efbe53abd9fae255fcbc4dde742d036336111044d5b181284197087d47"
+  },
+  {
+    "key": "ship_juggernaut_so2",
+    "group": "front-rear",
+    "w": 200,
+    "h": 205,
+    "sha256": "b7e95fd86dab5bd3e6a14aedaf989addf8d49ad980ca5e8bea5e34adb961696b"
+  },
+  {
+    "key": "pxv17_blue_rift_form_3",
+    "group": "portals",
+    "w": 320,
+    "h": 320,
+    "sha256": "bff1b0683819052b9e93df3137576f9388a5ae63446e6544dd24d820f54a602e"
+  },
+  {
+    "key": "dr21_symbiote_0",
+    "group": "portals",
+    "w": 256,
+    "h": 256,
+    "sha256": "ffbc9996d15f106f7b13b0d4e4898eddec1d7d9d0e4ad4ef3b7db8a11bd88584"
+  },
+  {
+    "key": "cut_furyhq_command_center",
+    "group": "environments",
+    "w": 640,
+    "h": 480,
+    "sha256": "924cc23cb6513259c6c3c66f52b2bd4a8903ce15f49d0da9fa09c621084057f1"
+  },
+  {
+    "key": "cin_story_lab_empty",
+    "group": "environments",
+    "w": 1672,
+    "h": 941,
+    "sha256": "9852dabdd4e0a815465fc00a76756bff006d52e939d5cb9c356ed32a80cb2529"
+  },
+  {
+    "key": "cinend_deep_space",
+    "group": "environments",
+    "w": 1672,
+    "h": 941,
+    "sha256": "a5327711bc594fc312d33c7beeedcec698a8104a53a78bae92913257a9142f01"
+  }
+]

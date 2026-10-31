@@ -1,0 +1,154 @@
+[
+  {
+    "name": "air_s5rammer",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:63531c5a-0442-43cf-8024-96721e178179",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Space Rammer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 8c83b5bf-faaf-4771-bacb-fad123d6b4fa\njob_id: 8c83b5bf-faaf-4771-bacb-fad123d6b4fa\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Space Rammer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 7c5b91f1-6a4b-5549-b7c0-9f8ad7962701\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8c83b5bf-faaf-4771-bacb-fad123d6b4fa\")"
+    ]
+  },
+  {
+    "name": "air_s5skimmer",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:83c31a7d-c4e2-4ada-a2ff-8a8b65908874",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Space Skimmer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 40f9fb1f-04d2-44c4-8033-65ee771a62a7\njob_id: 40f9fb1f-04d2-44c4-8033-65ee771a62a7\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Space Skimmer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 3419ae1f-984e-5c52-a3cd-9a59810fdca5\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"40f9fb1f-04d2-44c4-8033-65ee771a62a7\")"
+    ]
+  },
+  {
+    "name": "air_s5repair",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:dd820c26-22b3-4394-b2a6-87ef764e4262",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Space Repair aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 1a594f8e-2531-49c2-9301-3f417dd5d01e\njob_id: 1a594f8e-2531-49c2-9301-3f417dd5d01e\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Space Repair aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 5d644341-151c-5be1-a49e-63d91e677bce\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"1a594f8e-2531-49c2-9301-3f417dd5d01e\")"
+    ]
+  },
+  {
+    "name": "air_xelite_voidreaver",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:c7875df2-40e5-4b44-a6c3-a2f2b08f65fd",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Elite Void Reaver aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: d2408254-adc0-483b-907d-8dc4de5a13dd\njob_id: d2408254-adc0-483b-907d-8dc4de5a13dd\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Elite Void Reaver aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: c2427729-5793-5b58-83e6-f305f9238fe9\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d2408254-adc0-483b-907d-8dc4de5a13dd\")"
+    ]
+  },
+  {
+    "name": "air_l6v_s0",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:e864b828-951a-4ace-adcb-9c612a8ea56e",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Steel Lancer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: d589297e-4af0-4ce9-bcbe-9e19bf52b3de\njob_id: d589297e-4af0-4ce9-bcbe-9e19bf52b3de\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Steel Lancer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 45bd6ae7-b64d-5269-9bac-439a098e716a\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d589297e-4af0-4ce9-bcbe-9e19bf52b3de\")"
+    ]
+  },
+  {
+    "name": "air_l6v_s2",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:39dcac2b-5a10-4d8a-9fa1-91b4b8eb87f4",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Steel Delta aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 437646d2-2916-44d4-afc7-e06dbcb361d9\njob_id: 437646d2-2916-44d4-afc7-e06dbcb361d9\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Steel Delta aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: ad3c3991-82e9-5cda-9665-fc2a279ca5e9\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"437646d2-2916-44d4-afc7-e06dbcb361d9\")"
+    ]
+  },
+  {
+    "name": "air_l6v_s1",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:233d3ee5-d861-4f9a-9206-6985b8e50207",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Steel Broadwing aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 4100fc9e-b6b5-4737-986a-c1f3bad6924e\njob_id: 4100fc9e-b6b5-4737-986a-c1f3bad6924e\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Steel Broadwing aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 7bf81d10-8e2f-5104-8d99-995b55acbc55\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"4100fc9e-b6b5-4737-986a-c1f3bad6924e\")"
+    ]
+  },
+  {
+    "name": "air_xelite_glacierlance",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:24f1fceb-5911-4d25-be17-876ea59ad8b8",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Elite Glacier Lance aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 9f90fa44-8c31-4d50-af7b-5d5ef60b183f\njob_id: 9f90fa44-8c31-4d50-af7b-5d5ef60b183f\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Elite Glacier Lance aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 39a770e2-9f93-5c2b-9a91-c5bc38236e4d\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"9f90fa44-8c31-4d50-af7b-5d5ef60b183f\")"
+    ]
+  }
+]

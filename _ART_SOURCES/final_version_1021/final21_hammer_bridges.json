@@ -1,0 +1,28 @@
+[
+  {
+    "name": "hammer_slam_bridge",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/bfdda8ee-50d5-4e84-969f-a862f62b9814/download?index=3",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/bfdda8ee-50d5-4e84-969f-a862f62b9814/download?index=8",
+      "frame_count": 8,
+      "no_background": true,
+      "action": "FRAME FORMAT256x256 common proportional scale, fixed chest128,112. Interpolate the exact overhead hammer pose to the exact hammer-on-ground pose: drive two-handed solid hammer down in front of the feet in a fast powerful vertical slam. Robot face and plated chromium armor remain exactly the same, fully opaque. No white wireframe, trails, energy, smoke, flashes, debris, camera motion, body resizing, shifting or crop. Only physical robot and hammer move."
+    },
+    "receipt": [
+      "id: 21ca38ea-39c9-4575-ba9b-799fbcb40707\njob_id: 21ca38ea-39c9-4575-ba9b-799fbcb40707\naction: FRAME FORMAT256x256 common proportional scale, fixed chest128,112. Interpolate the exact overhead hammer pose to the exact hammer-on-ground pose: drive two-handed solid hammer down in front of the feet in a fast powerful vertical slam. Robot face and plated chromium armor remain exactly the same, fully opaque. No white wireframe, trails, energy, smoke, flashes, debris, camera motion, body resizing, shifting or crop. Only physical robot and hammer move.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: dde13cb8-68d5-5e4d-9c4c-23c5c2d0357a\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"21ca38ea-39c9-4575-ba9b-799fbcb40707\")"
+    ]
+  },
+  {
+    "name": "hammer_charge_lift",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/fae75dcc-381d-48ab-b02e-becf76ce5bc6/download?index=2",
+      "frame_count": 8,
+      "no_background": true,
+      "action": "FRAME FORMAT256x256 common proportional scale, fixed chest128,112. Slowly raise this same two-handed hammer from resting diagonal pose to the precise overhead endpoint, deliberate braced mechanical arms and shoulders, planted feet and unchanged skull face, crown and plated armor. Armor remains dark chromium, opaque and solid throughout, absolutely NO skeletal white wires, lightning, color flash, energy aura, fades or camera movement. Same full-body scale and position in all frames."
+    },
+    "receipt": [
+      "id: bf0db086-7e58-4e25-a122-724886995f9e\njob_id: bf0db086-7e58-4e25-a122-724886995f9e\naction: FRAME FORMAT256x256 common proportional scale, fixed chest128,112. Slowly raise this same two-handed hammer from resting diagonal pose to the precise overhead endpoint, deliberate braced mechanical arms and shoulders, planted feet and unchanged skull face, crown and plated armor. Armor remains dark chromium, opaque and solid throughout, absolutely NO skeletal white wires, lightning, color flash, energy aura, fades or camera movement. Same full-body scale and position in all frames.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 7f61fabd-1d20-5f66-ba9b-51b0eeff9b41\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"bf0db086-7e58-4e25-a122-724886995f9e\")"
+    ]
+  }
+]

@@ -1,0 +1,154 @@
+{
+  "ball": {
+    "seed": [
+      {
+        "type": "text",
+        "text": "id: 80efc91b-2717-4ab9-a2fc-694c10272fb4\njob_id: 80efc91b-2717-4ab9-a2fc-694c10272fb4\ndescription: FRAME FORMAT:192x192 transparent sprite, fixed center96,96. A SINGLE SMALL perfectly spherical purple shadow fireball occupies ONLY the central 112x112 region. All effect pixels stay inside central128x128 square, leaving a completely empty transparent32 pixel border on all four sides. Purple charcoal orb woven from spinning dark wiring, purple internal lightning veins, tiny white electrical cracks and jagged short purple corona. NO long lightning bolts, NO tails, NO eyes or face, NO skull. Highly detailed sharp mid90s arcade pixel art.\nsize: 192x192px\ntransparent: True\nasset_id: 1822a6c3-8ce0-5f95-a305-f27f2e74b0d1\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"80efc91b-2717-4ab9-a2fc-694c10272fb4\")"
+      }
+    ],
+    "animation": [
+      {
+        "type": "text",
+        "text": "id: ec020995-b2d3-405e-9c2d-f8fc7a78b037\njob_id: ec020995-b2d3-405e-9c2d-f8fc7a78b037\naction: The small centered shadow orb churns: purple lightning and silver-white cracks race around the dark sphere, cable-like plasma coils spiral clockwise, short violet corona flickers. Loop at same diameter. No face eyes retina skull or new objects. Keep all effect inside central128 pixels of192 canvas, empty32pixel borders.\nframes: 12\nsize: 192x192px\ntransparent: True\nasset_id: 2de7d075-052a-5403-9176-e3d6cc35c0c5\nasset_status: pending (saved when generation completes)\ncost: 7 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ec020995-b2d3-405e-9c2d-f8fc7a78b037\")"
+      }
+    ]
+  },
+  "teleport": {
+    "seed": [
+      {
+        "type": "text",
+        "text": "id: c22b584d-b983-4879-9ad6-9d1d3b1e3165\njob_id: c22b584d-b983-4879-9ad6-9d1d3b1e3165\ndescription: FRAME FORMAT: 192 x 192 pixels, fixed center pivot (96,96), transparent 24 pixel margins. Ghost teleport burst effect only, no character: an upright oval of hooked purple wisps, dark violet smoky robotic wiring fragments and thin white spark filaments, dissolving into scattered square data sparks. Front view. Demonic artificial intelligence ghost, crisp 90s arcade pixel art, no soft glow no background no words.\nsize: 192x192px\ntransparent: True\nasset_id: 9e1c52cb-f0e4-5551-8c4c-7a74c3de229c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"c22b584d-b983-4879-9ad6-9d1d3b1e3165\")"
+      }
+    ],
+    "animation": [
+      {
+        "type": "text",
+        "text": "id: 50bcdf3e-53ae-4ec7-b8db-38db84c8b1e0\njob_id: 50bcdf3e-53ae-4ec7-b8db-38db84c8b1e0\naction: The spectral purple oval curls into swirling hooked ghost wisps and breaks apart into silver square data sparks, then reforms as a ghost portal. No character appears. Keep centered, all particles inside transparent margins, animate every frame. 192 square same pivot.\nframes: 12\nsize: 192x192px\ntransparent: True\nasset_id: 9c121ca9-3015-56e2-8e96-ac82c73d8945\nasset_status: pending (saved when generation completes)\ncost: 7 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"50bcdf3e-53ae-4ec7-b8db-38db84c8b1e0\")"
+      }
+    ]
+  },
+  "shield": {
+    "seed": [
+      {
+        "type": "text",
+        "text": "id: 7b67f8e9-0db9-4716-89d1-d1ce07e537a2\njob_id: 7b67f8e9-0db9-4716-89d1-d1ce07e537a2\ndescription: FRAME FORMAT: 192 x 192 pixels, fixed center pivot (96,96), transparent 20 pixel margins. Circular demonic robotic code shield, open transparent center so robot behind stays visible. Thick violet chromium segmented outer rim, interlocking angular silver circuit glyphs and hot white rune nodes, layered purple geometric hexagonal wire network spanning rim inward, small arc flashes. Crisp highly detailed Neo Geo pixel art, no text no character no background no blur.\nsize: 192x192px\ntransparent: True\nasset_id: e9e12d94-9d3c-545e-8f4a-f22dc3f9a6a7\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"7b67f8e9-0db9-4716-89d1-d1ce07e537a2\")"
+      }
+    ],
+    "animation": [
+      {
+        "type": "text",
+        "text": "id: 20b8e35e-d219-4af1-a959-24fbf715d710\njob_id: 20b8e35e-d219-4af1-a959-24fbf715d710\naction: Segmented chromium code shield rotates subtly around fixed center as purple circuitry pulses clockwise node to node and white arcs jump around rim. Keep size and center stable, no expansion or added scenery. Seamless loop.\nframes: 12\nsize: 192x192px\ntransparent: True\nasset_id: 958589d4-b21c-5a2e-8d39-a70a460db9ca\nasset_status: pending (saved when generation completes)\ncost: 7 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"20b8e35e-d219-4af1-a959-24fbf715d710\")"
+      }
+    ]
+  },
+  "download": {
+    "seed": [
+      {
+        "type": "text",
+        "text": "id: 6f7ab225-b97d-41c1-af85-9929c728da3f\njob_id: 6f7ab225-b97d-41c1-af85-9929c728da3f\ndescription: FRAME FORMAT: 192 x 192 pixels, fixed center pivot (96,96), reserve 24 pixel transparent margins. Enemy downloading portal effect: a floating violet circular wireframe platform below a vertical cylinder of purple pixel data rain and silver-white ascending circuit lines. Clear mostly transparent interior for aircraft assembly. Demonic robot AI data manifestation. Crisp 90s arcade pixel art, centered, no character no writing no backdrop no blur.\nsize: 192x192px\ntransparent: True\nasset_id: 5cdc053c-f122-5030-8d3c-0c2f3ffcbd4e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"6f7ab225-b97d-41c1-af85-9929c728da3f\")"
+      }
+    ],
+    "animation": [
+      {
+        "type": "text",
+        "text": "id: 5b7823c7-b0d1-4410-9ba3-de419e842d5c\njob_id: 5b7823c7-b0d1-4410-9ba3-de419e842d5c\naction: Purple wireframe platform spins gently as vertical data lines scan up and down, white square data fragments rise and assemble in the transparent center, contained margins, no body appears, fixed center. Loop.\nframes: 12\nsize: 192x192px\ntransparent: True\nasset_id: 74b8bae7-c748-5f56-9f9c-986c9ef338fc\nasset_status: pending (saved when generation completes)\ncost: 7 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"5b7823c7-b0d1-4410-9ba3-de419e842d5c\")"
+      }
+    ]
+  },
+  "symbiote": {
+    "seed": [
+      {
+        "type": "text",
+        "text": "id: 4b2147af-4f22-4145-9c53-0f402400cef1\njob_id: 4b2147af-4f22-4145-9c53-0f402400cef1\ndescription: FRAME FORMAT:192x192 transparent sprite fixed center96,96, completely empty24 pixel margin. An amorphous demonic robotic symbiote made entirely of writhing cables, black liquid chromium wire tentacles, purple-glowing circuit veins and silver metallic spines, pair small white eyes embedded in central smoky cable knot. NOT a humanoid robot, NOT torso limbs legs, NOT a suit. Coiled serpentine swirl of living mechanical cable energy crawling like a sinister technological parasite. Crisp mid90s NeoGeo pixel art.\nsize: 192x192px\ntransparent: True\nasset_id: 65474970-9aa0-5a9f-90ab-3998751b71b3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"4b2147af-4f22-4145-9c53-0f402400cef1\")"
+      }
+    ],
+    "animation": [
+      {
+        "type": "text",
+        "text": "id: de825660-38b9-4ce3-85d7-3c8532ab9bf8\njob_id: de825660-38b9-4ce3-85d7-3c8532ab9bf8\naction: The mechanical cable serpent coils and uncoils in a sinuous spiral, metallic wire tentacles writhe, purple circuit light flows along them and eyes pulse pure white. Stable central coil, same scale and identity, contained inside transparent frame, seamless loop.\nframes: 12\nsize: 192x192px\ntransparent: True\nasset_id: 124fb667-4acc-5d23-9bec-a41b5f7ce6ec\nasset_status: pending (saved when generation completes)\ncost: 7 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"de825660-38b9-4ce3-85d7-3c8532ab9bf8\")"
+      }
+    ]
+  },
+  "ice": {
+    "seed": [
+      {
+        "type": "text",
+        "text": "id: da59ba49-af48-4f86-a4d1-3b0f13314dd2\njob_id: da59ba49-af48-4f86-a4d1-3b0f13314dd2\ndescription: FRAME FORMAT: 192 x 192 pixels, center pivot (96,96), 24 pixel transparent margin. An icy aircraft death effect shell only, no aircraft: large jagged translucent blue-white crystalline ice cocoon with branching frost cracks spreading over a transparent oval center, many small sharp separated ice shards suspended around it. Crisp 90s arcade pixel art, no backdrop no text no blur.\nsize: 192x192px\ntransparent: True\nasset_id: 217dcbf7-b8fc-5c43-82e1-6590328a2ae2\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"da59ba49-af48-4f86-a4d1-3b0f13314dd2\")"
+      }
+    ],
+    "animation": [
+      {
+        "type": "text",
+        "text": "id: b2974cc3-6f39-4a6a-92eb-4dacde887044\njob_id: b2974cc3-6f39-4a6a-92eb-4dacde887044\naction: The ice shell freezes solid with white cracks crawling over it, then shatters violently into many small sharp ice shards that fly outward and disappear into transparency, never touch canvas edges. Center remains fixed. No plane appears.\nframes: 12\nsize: 192x192px\ntransparent: True\nasset_id: 48ebb118-0e32-54d1-b3f5-2f509554c506\nasset_status: pending (saved when generation completes)\ncost: 7 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b2974cc3-6f39-4a6a-92eb-4dacde887044\")"
+      }
+    ]
+  },
+  "erase": {
+    "seed": [
+      {
+        "type": "text",
+        "text": "id: 2b3ab5c2-737d-4888-94d2-d618eccf09a0\njob_id: 2b3ab5c2-737d-4888-94d2-d618eccf09a0\ndescription: FRAME FORMAT:192x192 transparent sprite fixed center96,96. A SMALL contained white-hot eradication plasma burst occupies ONLY central100x120 pixels, completely empty32 pixel border all sides. White glowing core, curling violet flame hooks, silver-white pixel debris; compact oval vertically oriented explosion, no beams extending out of frame. No aircraft no backdrop no text, NeoGeo pixel art.\nsize: 192x192px\ntransparent: True\nasset_id: a37f84c0-9e54-5937-81da-deffe145d93f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"2b3ab5c2-737d-4888-94d2-d618eccf09a0\")"
+      }
+    ],
+    "animation": [
+      {
+        "type": "text",
+        "text": "id: cc0febef-1ee3-44d7-9a34-593d484c4ef2\njob_id: cc0febef-1ee3-44d7-9a34-593d484c4ef2\naction: The compact white plasma burst blooms rapidly then tears itself into curling purple tongues and tiny silver data sparks which disperse and vanish. Contain all particles inside frame with transparent margins. No beam, no aircraft, no background.\nframes: 12\nsize: 192x192px\ntransparent: True\nasset_id: afd830e3-f216-58ed-be37-d546928fba88\nasset_status: pending (saved when generation completes)\ncost: 7 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"cc0febef-1ee3-44d7-9a34-593d484c4ef2\")"
+      }
+    ]
+  },
+  "jet": {
+    "seed": [
+      {
+        "type": "text",
+        "text": "id: 483d00ec-8508-4759-a46e-4ae672205594\njob_id: 483d00ec-8508-4759-a46e-4ae672205594\ndescription: FRAME FORMAT: 128 x 128 pixels, fixed center pivot (64,64), generous 16 pixel transparent margins. Top-down south-facing original demonic symbiote helper jet, charcoal chromium armor, swept bat-like silver wings, interwoven exposed black wiring, violet circuit veins, pair of white optic slits, twin purple thrusters. Strong airplane silhouette and central fuselage, high quality Neo Geo pixel art, no bullets no backdrop no text.\nsize: 128x128px\ntransparent: True\nasset_id: 945e7cc3-bee1-5682-a635-60e4232c3520\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"483d00ec-8508-4759-a46e-4ae672205594\")"
+      }
+    ],
+    "animation": [
+      {
+        "type": "text",
+        "text": "id: 194970aa-db14-459d-b35d-23fc7da459e8\njob_id: 194970aa-db14-459d-b35d-23fc7da459e8\naction: Hover facing south, engine plumes pulse, violet cable veins flicker and batlike wing tips flex slightly, body stays registered in center, unchanged ship identity palette and facing. Seamless idle loop.\nframes: 8\nsize: 128x128px\ntransparent: True\nasset_id: cd6211dd-e788-5a89-9acf-1c573fe626f3\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"194970aa-db14-459d-b35d-23fc7da459e8\")"
+      }
+    ]
+  },
+  "robot": {
+    "seed": [
+      {
+        "type": "text",
+        "text": "id: c21fc8ef-24ae-4edd-96da-d924fcf62234\njob_id: c21fc8ef-24ae-4edd-96da-d924fcf62234\ndescription: FRAME FORMAT: 128 x 128 pixels, center pivot (64,64), 16 pixel transparent margins. Front-facing hovering demonic robot helper, charcoal chromium armored torso, angular horned head, white eyes and purple core, two long articulated metallic wire arms with small energy palms, violet exposed cables below. Menacing original AI demon machine, crisp 90s arcade sprite no backdrop no text.\nsize: 128x128px\ntransparent: True\nasset_id: 8ae20eb7-cc9c-5904-946c-f59dfc4bf415\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"c21fc8ef-24ae-4edd-96da-d924fcf62234\")"
+      }
+    ],
+    "animation": [
+      {
+        "type": "text",
+        "text": "id: 0dd49e7f-384f-4c1b-8e0f-ba40dc8500bf\njob_id: 0dd49e7f-384f-4c1b-8e0f-ba40dc8500bf\naction: Hover in place facing camera, articulated wire arms open slightly and energy palms pulse purple, eyes glow white, return to original pose. Fixed central torso same size. No added background.\nframes: 8\nsize: 128x128px\ntransparent: True\nasset_id: 0fd5abad-fd4c-524c-b5cd-aa186182de38\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"0dd49e7f-384f-4c1b-8e0f-ba40dc8500bf\")"
+      }
+    ]
+  },
+  "cleanDownload": {
+    "seed": [
+      {
+        "type": "text",
+        "text": "id: 36a2df00-7c0e-4dac-ab6e-35be255aeffe\njob_id: 36a2df00-7c0e-4dac-ab6e-35be255aeffe\ndescription: FRAME FORMAT192x192 transparent canvas, fixed pivot96,96. SMALL COMPACT downloading effect occupies central112x112 rectangle ONLY from x40 to152 and y40 to152. All32pixel outer margins COMPLETELY EMPTY transparent. A violet wireframe disc platform and a SHORT cylinder of purple square data fragments with curved CLOSED TOP CAP, vertical silver scanning bars terminate at that closed top, NO light extending upward to image edge. A contained floating magical computer assembly chamber with transparent center. White circuit sparks, purple and gray, NeoGeo crisp pixel art. No ground no character no text no long rays.\nsize: 192x192px\ntransparent: True\nasset_id: 7d9cc638-4827-5afd-a9f7-917cf16e9e6c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"36a2df00-7c0e-4dac-ab6e-35be255aeffe\")"
+      }
+    ],
+    "animation": [
+      {
+        "type": "text",
+        "text": "id: b955fc08-7e05-4480-87f9-2ea8a1d12f7d\njob_id: b955fc08-7e05-4480-87f9-2ea8a1d12f7d\naction: The compact wireframe download chamber's central violet scan cylinder pulses up and down, tiny silver square data fragments stream upward, chamber lid rotates slightly. Everything remains contained in its original central footprint, no expanding beams, no character appears, no camera motion. Seamless loop fixed192square pivot.\nframes: 8\nsize: 192x192px\ntransparent: True\nasset_id: 2c65c579-2d58-532d-ac93-8a5a88a4735f\nasset_status: pending (saved when generation completes)\ncost: 5 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b955fc08-7e05-4480-87f9-2ea8a1d12f7d\")"
+      }
+    ]
+  },
+  "fade_ghost": [
+    {
+      "type": "text",
+      "text": "id: 02598c1c-8b77-4b5f-8a04-ff65105d2d45\njob_id: 02598c1c-8b77-4b5f-8a04-ff65105d2d45\naction: The SAME demonic robot dissolves like a ghost teleporting: its physical armor breaks into swirling violet-white mist and thin silver wireframe ribbons, body becomes translucent and completely vanishes by last frame. Silhouette and identity remain EXACT until disappearing. Fixed center and scale, no new character, no eyes added, no portal mascot, no camera motion, transparent background, keep all sparks inside frame.\nframes: 8\nsize: 256x256px\ntransparent: True\nasset_id: c74c2bec-5f68-52ec-a9d1-ea4ccd36be43\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"02598c1c-8b77-4b5f-8a04-ff65105d2d45\")"
+    }
+  ],
+  "fade_main": [
+    {
+      "type": "text",
+      "text": "id: c392cf33-719b-4185-ad4c-b1695804f17a\njob_id: c392cf33-719b-4185-ad4c-b1695804f17a\naction: The SAME demonic robot dissolves like a ghost teleporting: its physical armor breaks into swirling violet-white mist and thin silver wireframe ribbons, body becomes translucent and completely vanishes by last frame. Silhouette and identity remain EXACT until disappearing. Fixed center and scale, no new character, no eyes added, no portal mascot, no camera motion, transparent background, keep all sparks inside frame.\nframes: 8\nsize: 256x256px\ntransparent: True\nasset_id: 097b6bde-1079-5283-a06b-d74b78cc29fa\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c392cf33-719b-4185-ad4c-b1695804f17a\")"
+    }
+  ]
+}

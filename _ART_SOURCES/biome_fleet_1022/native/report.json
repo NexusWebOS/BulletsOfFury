@@ -1,0 +1,1531 @@
+{
+  "checks": [
+    {
+      "name": "magma_dart native hull and hit flash",
+      "ok": true,
+      "data": {
+        "id": "magma_dart",
+        "render": {
+          "id": "magma_dart",
+          "kind": "idle",
+          "frame": 0,
+          "key": "bf22_magma_dart_idle",
+          "span": 74.8125,
+          "scale": 0.7407178217821783,
+          "dx": 0,
+          "dy": 4.220306396484375,
+          "x": 240,
+          "y": 170,
+          "angle": 0
+        },
+        "changed": 2415,
+        "white": 2415,
+        "hp": 4,
+        "w": 42,
+        "h": 39
+      }
+    },
+    {
+      "name": "magma_dart idle bank selected",
+      "ok": true,
+      "data": {
+        "id": "magma_dart",
+        "kind": "idle",
+        "frame": 0,
+        "key": "bf22_magma_dart_idle",
+        "span": 74.8125,
+        "scale": 0.7407178217821783,
+        "dx": 0,
+        "dy": 4.220306396484375,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "magma_dart attack bank selected",
+      "ok": true,
+      "data": {
+        "id": "magma_dart",
+        "kind": "attack",
+        "frame": 4,
+        "key": "bf22_magma_dart_attack",
+        "span": 74.8125,
+        "scale": 0.7407178217821783,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "magma_dart drift bank selected",
+      "ok": true,
+      "data": {
+        "id": "magma_dart",
+        "kind": "drift",
+        "frame": 3,
+        "key": "bf22_magma_dart_drift",
+        "span": 74.8125,
+        "scale": 0.7407178217821783,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "magma_dart roll bank selected",
+      "ok": true,
+      "data": {
+        "id": "magma_dart",
+        "kind": "roll",
+        "frame": 3,
+        "key": "bf22_magma_dart_roll",
+        "span": 74.8125,
+        "scale": 0.7407178217821783,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "magma_dart somer bank selected",
+      "ok": true,
+      "data": {
+        "id": "magma_dart",
+        "kind": "somer",
+        "frame": 6,
+        "key": "bf22_magma_dart_somer",
+        "span": 74.8125,
+        "scale": 0.7407178217821783,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "magma_dart native missile/launcher ownership",
+      "ok": true,
+      "data": {
+        "theme": "magma",
+        "shootable": true,
+        "hp": 1,
+        "owner": true,
+        "nativeHp": true,
+        "kind": "emissile",
+        "muzzles": 0,
+        "single": true,
+        "follow": true,
+        "mount": {
+          "x": 225.9263613861386,
+          "y": 199.62871287128712,
+          "angle": 1.5707963267948966
+        },
+        "flashkey": "bf22_magma_muzzle"
+      }
+    },
+    {
+      "name": "magma_forge native hull and hit flash",
+      "ok": true,
+      "data": {
+        "id": "magma_forge",
+        "render": {
+          "id": "magma_forge",
+          "kind": "idle",
+          "frame": 0,
+          "key": "bf22_magma_forge_idle",
+          "span": 93.53181818181818,
+          "scale": 0.8660353535353535,
+          "dx": 0,
+          "dy": 4.814727783203125,
+          "x": 240,
+          "y": 170,
+          "angle": 0
+        },
+        "changed": 3986,
+        "white": 3986,
+        "hp": 8,
+        "w": 57,
+        "h": 49
+      }
+    },
+    {
+      "name": "magma_forge idle bank selected",
+      "ok": true,
+      "data": {
+        "id": "magma_forge",
+        "kind": "idle",
+        "frame": 0,
+        "key": "bf22_magma_forge_idle",
+        "span": 93.53181818181818,
+        "scale": 0.8660353535353535,
+        "dx": 0,
+        "dy": 4.814727783203125,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "magma_forge attack bank selected",
+      "ok": true,
+      "data": {
+        "id": "magma_forge",
+        "kind": "attack",
+        "frame": 4,
+        "key": "bf22_magma_forge_attack",
+        "span": 93.53181818181818,
+        "scale": 0.8660353535353535,
+        "dx": 0,
+        "dy": 4.814727783203125,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "magma_forge drift bank selected",
+      "ok": true,
+      "data": {
+        "id": "magma_forge",
+        "kind": "drift",
+        "frame": 3,
+        "key": "bf22_magma_forge_drift",
+        "span": 93.53181818181818,
+        "scale": 0.8660353535353535,
+        "dx": 0,
+        "dy": 4.814727783203125,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "magma_forge roll bank selected",
+      "ok": true,
+      "data": {
+        "id": "magma_forge",
+        "kind": "roll",
+        "frame": 6,
+        "key": "bf22_magma_forge_roll",
+        "span": 93.53181818181818,
+        "scale": 0.8660353535353535,
+        "dx": 0,
+        "dy": 4.814727783203125,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "magma_forge somer bank selected",
+      "ok": true,
+      "data": {
+        "id": "magma_forge",
+        "kind": "somer",
+        "frame": 3,
+        "key": "bf22_magma_forge_somer",
+        "span": 93.53181818181818,
+        "scale": 0.8660353535353535,
+        "dx": 0,
+        "dy": 4.814727783203125,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "magma_forge native missile/launcher ownership",
+      "ok": true,
+      "data": {
+        "theme": "magma",
+        "shootable": true,
+        "hp": 1,
+        "owner": true,
+        "nativeHp": true,
+        "kind": "emissile",
+        "muzzles": 0,
+        "single": true,
+        "follow": true,
+        "mount": {
+          "x": 218.34911616161617,
+          "y": 197.71313131313133,
+          "angle": 1.5707963267948966
+        },
+        "flashkey": "bf22_magma_muzzle"
+      }
+    },
+    {
+      "name": "sky_zephyr native hull and hit flash",
+      "ok": true,
+      "data": {
+        "id": "sky_zephyr",
+        "render": {
+          "id": "sky_zephyr",
+          "kind": "idle",
+          "frame": 0,
+          "key": "bf22_sky_zephyr_idle",
+          "span": 54.140625,
+          "scale": 0.5581507731958762,
+          "dx": 0,
+          "dy": 0,
+          "x": 240,
+          "y": 170,
+          "angle": 0
+        },
+        "changed": 1138,
+        "white": 1138,
+        "hp": 12,
+        "w": 75,
+        "h": 70
+      }
+    },
+    {
+      "name": "sky_zephyr idle bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_zephyr",
+        "kind": "idle",
+        "frame": 0,
+        "key": "bf22_sky_zephyr_idle",
+        "span": 54.140625,
+        "scale": 0.5581507731958762,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_zephyr attack bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_zephyr",
+        "kind": "attack",
+        "frame": 4,
+        "key": "bf22_sky_zephyr_attack",
+        "span": 54.140625,
+        "scale": 0.5581507731958762,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_zephyr drift bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_zephyr",
+        "kind": "drift",
+        "frame": 3,
+        "key": "bf22_sky_zephyr_drift",
+        "span": 54.140625,
+        "scale": 0.5581507731958762,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_zephyr roll bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_zephyr",
+        "kind": "roll",
+        "frame": 6,
+        "key": "bf22_sky_zephyr_roll",
+        "span": 54.140625,
+        "scale": 0.5581507731958762,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_zephyr somer bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_zephyr",
+        "kind": "somer",
+        "frame": 3,
+        "key": "bf22_sky_zephyr_somer",
+        "span": 54.140625,
+        "scale": 0.5581507731958762,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_zephyr native missile/launcher ownership",
+      "ok": true,
+      "data": {
+        "theme": "sky",
+        "shootable": true,
+        "hp": 1,
+        "owner": true,
+        "nativeHp": true,
+        "kind": "emissile",
+        "muzzles": 0,
+        "single": true,
+        "follow": true,
+        "mount": {
+          "x": 226.63917525773195,
+          "y": 182.24742268041237,
+          "angle": 1.5707963267948966
+        },
+        "flashkey": "bf22_sky_muzzle"
+      }
+    },
+    {
+      "name": "sky_gale native hull and hit flash",
+      "ok": true,
+      "data": {
+        "id": "sky_gale",
+        "render": {
+          "id": "sky_gale",
+          "kind": "idle",
+          "frame": 0,
+          "key": "bf22_sky_gale_idle",
+          "span": 68.0625,
+          "scale": 0.680625,
+          "dx": 0,
+          "dy": 0,
+          "x": 240,
+          "y": 170,
+          "angle": 0
+        },
+        "changed": 2227,
+        "white": 2227,
+        "hp": 12,
+        "w": 75,
+        "h": 88
+      }
+    },
+    {
+      "name": "sky_gale idle bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_gale",
+        "kind": "idle",
+        "frame": 0,
+        "key": "bf22_sky_gale_idle",
+        "span": 68.0625,
+        "scale": 0.680625,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_gale attack bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_gale",
+        "kind": "attack",
+        "frame": 4,
+        "key": "bf22_sky_gale_attack",
+        "span": 68.0625,
+        "scale": 0.680625,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_gale drift bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_gale",
+        "kind": "drift",
+        "frame": 3,
+        "key": "bf22_sky_gale_drift",
+        "span": 68.0625,
+        "scale": 0.680625,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_gale roll bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_gale",
+        "kind": "roll",
+        "frame": 6,
+        "key": "bf22_sky_gale_roll",
+        "span": 68.0625,
+        "scale": 0.680625,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_gale somer bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_gale",
+        "kind": "somer",
+        "frame": 3,
+        "key": "bf22_sky_gale_somer",
+        "span": 68.0625,
+        "scale": 0.680625,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_gale native missile/launcher ownership",
+      "ok": true,
+      "data": {
+        "theme": "sky",
+        "shootable": true,
+        "hp": 1,
+        "owner": true,
+        "nativeHp": true,
+        "kind": "emissile",
+        "muzzles": 0,
+        "single": true,
+        "follow": true,
+        "mount": {
+          "x": 216.88,
+          "y": 189.04,
+          "angle": 1.5707963267948966
+        },
+        "flashkey": "bf22_sky_muzzle"
+      }
+    },
+    {
+      "name": "sky_stratus native hull and hit flash",
+      "ok": true,
+      "data": {
+        "id": "sky_stratus",
+        "render": {
+          "id": "sky_stratus",
+          "kind": "idle",
+          "frame": 0,
+          "key": "bf22_sky_stratus_idle",
+          "span": 155,
+          "scale": 1.5196078431372548,
+          "dx": 0,
+          "dy": 0,
+          "x": 240,
+          "y": 170,
+          "angle": 0
+        },
+        "changed": 11589,
+        "white": 11589,
+        "hp": 6,
+        "w": 131,
+        "h": 116
+      }
+    },
+    {
+      "name": "sky_stratus idle bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_stratus",
+        "kind": "idle",
+        "frame": 0,
+        "key": "bf22_sky_stratus_idle",
+        "span": 155,
+        "scale": 1.5196078431372548,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_stratus attack bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_stratus",
+        "kind": "attack",
+        "frame": 4,
+        "key": "bf22_sky_stratus_attack",
+        "span": 155,
+        "scale": 1.5196078431372548,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_stratus drift bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_stratus",
+        "kind": "drift",
+        "frame": 3,
+        "key": "bf22_sky_stratus_drift",
+        "span": 155,
+        "scale": 1.5196078431372548,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_stratus roll bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_stratus",
+        "kind": "roll",
+        "frame": 3,
+        "key": "bf22_sky_stratus_roll",
+        "span": 155,
+        "scale": 1.5196078431372548,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_stratus somer bank selected",
+      "ok": true,
+      "data": {
+        "id": "sky_stratus",
+        "kind": "somer",
+        "frame": 3,
+        "key": "bf22_sky_stratus_somer",
+        "span": 155,
+        "scale": 1.5196078431372548,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "sky_stratus native missile/launcher ownership",
+      "ok": true,
+      "data": {
+        "theme": "sky",
+        "shootable": true,
+        "hp": 1,
+        "owner": true,
+        "nativeHp": true,
+        "kind": "emissile",
+        "muzzles": 0,
+        "single": true,
+        "follow": true,
+        "mount": {
+          "x": 220.2450980392157,
+          "y": 245.98039215686273,
+          "angle": 1.5707963267948966
+        },
+        "flashkey": "bf22_sky_muzzle"
+      }
+    },
+    {
+      "name": "water_ripple native hull and hit flash",
+      "ok": true,
+      "data": {
+        "id": "water_ripple",
+        "render": {
+          "id": "water_ripple",
+          "kind": "idle",
+          "frame": 0,
+          "key": "bf22_water_ripple_idle",
+          "span": 117,
+          "scale": 1.1938775510204083,
+          "dx": 0,
+          "dy": 0,
+          "x": 240,
+          "y": 170,
+          "angle": 0
+        },
+        "changed": 5964,
+        "white": 5964,
+        "hp": 30,
+        "w": 81,
+        "h": 99
+      }
+    },
+    {
+      "name": "water_ripple idle bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_ripple",
+        "kind": "idle",
+        "frame": 0,
+        "key": "bf22_water_ripple_idle",
+        "span": 117,
+        "scale": 1.1938775510204083,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_ripple attack bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_ripple",
+        "kind": "attack",
+        "frame": 4,
+        "key": "bf22_water_ripple_attack",
+        "span": 117,
+        "scale": 1.1938775510204083,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_ripple drift bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_ripple",
+        "kind": "drift",
+        "frame": 3,
+        "key": "bf22_water_ripple_drift",
+        "span": 117,
+        "scale": 1.1938775510204083,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_ripple roll bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_ripple",
+        "kind": "roll",
+        "frame": 3,
+        "key": "bf22_water_ripple_roll",
+        "span": 117,
+        "scale": 1.1938775510204083,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_ripple somer bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_ripple",
+        "kind": "somer",
+        "frame": 3,
+        "key": "bf22_water_ripple_somer",
+        "span": 117,
+        "scale": 1.1938775510204083,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_ripple native missile/launcher ownership",
+      "ok": true,
+      "data": {
+        "theme": "water",
+        "shootable": true,
+        "hp": 1,
+        "owner": true,
+        "nativeHp": true,
+        "kind": "emissile",
+        "muzzles": 0,
+        "single": true,
+        "follow": true,
+        "mount": {
+          "x": 202.98979591836735,
+          "y": 212.9795918367347,
+          "angle": 1.5707963267948966
+        },
+        "flashkey": "bf22_water_muzzle"
+      }
+    },
+    {
+      "name": "water_manta native hull and hit flash",
+      "ok": true,
+      "data": {
+        "id": "water_manta",
+        "render": {
+          "id": "water_manta",
+          "kind": "idle",
+          "frame": 0,
+          "key": "bf22_water_manta_idle",
+          "span": 92,
+          "scale": 0.9583333333333334,
+          "dx": 0,
+          "dy": 0,
+          "x": 240,
+          "y": 170,
+          "angle": 0
+        },
+        "changed": 4334,
+        "white": 4334,
+        "hp": 34,
+        "w": 52,
+        "h": 40
+      }
+    },
+    {
+      "name": "water_manta idle bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_manta",
+        "kind": "idle",
+        "frame": 0,
+        "key": "bf22_water_manta_idle",
+        "span": 92,
+        "scale": 0.9583333333333334,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_manta attack bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_manta",
+        "kind": "attack",
+        "frame": 4,
+        "key": "bf22_water_manta_attack",
+        "span": 92,
+        "scale": 0.9583333333333334,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_manta drift bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_manta",
+        "kind": "drift",
+        "frame": 3,
+        "key": "bf22_water_manta_drift",
+        "span": 92,
+        "scale": 0.9583333333333334,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_manta roll bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_manta",
+        "kind": "roll",
+        "frame": 3,
+        "key": "bf22_water_manta_roll",
+        "span": 92,
+        "scale": 0.9583333333333334,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_manta somer bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_manta",
+        "kind": "somer",
+        "frame": 3,
+        "key": "bf22_water_manta_somer",
+        "span": 92,
+        "scale": 0.9583333333333334,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_manta native missile/launcher ownership",
+      "ok": true,
+      "data": {
+        "theme": "water",
+        "shootable": true,
+        "hp": 1,
+        "owner": true,
+        "nativeHp": true,
+        "kind": "emissile",
+        "muzzles": 0,
+        "single": true,
+        "follow": true,
+        "mount": {
+          "x": 198.79166666666666,
+          "y": 197.79166666666666,
+          "angle": 1.5707963267948966
+        },
+        "flashkey": "bf22_water_muzzle"
+      }
+    },
+    {
+      "name": "water_leviathan native hull and hit flash",
+      "ok": true,
+      "data": {
+        "id": "water_leviathan",
+        "render": {
+          "id": "water_leviathan",
+          "kind": "idle",
+          "frame": 0,
+          "key": "bf22_water_leviathan_idle",
+          "span": 121.99999999999999,
+          "scale": 1.196078431372549,
+          "dx": 0,
+          "dy": 0,
+          "x": 240,
+          "y": 170,
+          "angle": 0
+        },
+        "changed": 7481,
+        "white": 7481,
+        "hp": 62,
+        "w": 99,
+        "h": 107
+      }
+    },
+    {
+      "name": "water_leviathan idle bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_leviathan",
+        "kind": "idle",
+        "frame": 0,
+        "key": "bf22_water_leviathan_idle",
+        "span": 121.99999999999999,
+        "scale": 1.196078431372549,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_leviathan attack bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_leviathan",
+        "kind": "attack",
+        "frame": 4,
+        "key": "bf22_water_leviathan_attack",
+        "span": 121.99999999999999,
+        "scale": 1.196078431372549,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_leviathan drift bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_leviathan",
+        "kind": "drift",
+        "frame": 3,
+        "key": "bf22_water_leviathan_drift",
+        "span": 121.99999999999999,
+        "scale": 1.196078431372549,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_leviathan roll bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_leviathan",
+        "kind": "roll",
+        "frame": 3,
+        "key": "bf22_water_leviathan_roll",
+        "span": 121.99999999999999,
+        "scale": 1.196078431372549,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_leviathan somer bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_leviathan",
+        "kind": "somer",
+        "frame": 3,
+        "key": "bf22_water_leviathan_somer",
+        "span": 121.99999999999999,
+        "scale": 1.196078431372549,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_leviathan native missile/launcher ownership",
+      "ok": true,
+      "data": {
+        "theme": "water",
+        "shootable": true,
+        "hp": 1,
+        "owner": true,
+        "nativeHp": true,
+        "kind": "emissile",
+        "muzzles": 0,
+        "single": true,
+        "follow": true,
+        "mount": {
+          "x": 206.50980392156862,
+          "y": 211.86274509803923,
+          "angle": 1.5707963267948966
+        },
+        "flashkey": "bf22_water_muzzle"
+      }
+    },
+    {
+      "name": "water_undertow native hull and hit flash",
+      "ok": true,
+      "data": {
+        "id": "water_undertow",
+        "render": {
+          "id": "water_undertow",
+          "kind": "idle",
+          "frame": 0,
+          "key": "bf22_water_undertow_idle",
+          "span": 109,
+          "scale": 1.184782608695652,
+          "dx": 0,
+          "dy": 0,
+          "x": 240,
+          "y": 170,
+          "angle": 0
+        },
+        "changed": 6428,
+        "white": 6428,
+        "hp": 34,
+        "w": 78,
+        "h": 96
+      }
+    },
+    {
+      "name": "water_undertow idle bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_undertow",
+        "kind": "idle",
+        "frame": 0,
+        "key": "bf22_water_undertow_idle",
+        "span": 109,
+        "scale": 1.184782608695652,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_undertow attack bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_undertow",
+        "kind": "attack",
+        "frame": 4,
+        "key": "bf22_water_undertow_attack",
+        "span": 109,
+        "scale": 1.184782608695652,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_undertow drift bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_undertow",
+        "kind": "drift",
+        "frame": 3,
+        "key": "bf22_water_undertow_drift",
+        "span": 109,
+        "scale": 1.184782608695652,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_undertow roll bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_undertow",
+        "kind": "roll",
+        "frame": 3,
+        "key": "bf22_water_undertow_roll",
+        "span": 109,
+        "scale": 1.184782608695652,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_undertow somer bank selected",
+      "ok": true,
+      "data": {
+        "id": "water_undertow",
+        "kind": "somer",
+        "frame": 3,
+        "key": "bf22_water_undertow_somer",
+        "span": 109,
+        "scale": 1.184782608695652,
+        "dx": 0,
+        "dy": 0,
+        "x": 240,
+        "y": 170,
+        "angle": 0
+      }
+    },
+    {
+      "name": "water_undertow native missile/launcher ownership",
+      "ok": true,
+      "data": {
+        "theme": "water",
+        "shootable": true,
+        "hp": 1,
+        "owner": true,
+        "nativeHp": true,
+        "kind": "emissile",
+        "muzzles": 0,
+        "single": true,
+        "follow": true,
+        "mount": {
+          "x": 193.79347826086956,
+          "y": 192.51086956521738,
+          "angle": 1.5707963267948966
+        },
+        "flashkey": "bf22_water_muzzle"
+      }
+    },
+    {
+      "name": "Stage-scoped lance identities and boss exclusion",
+      "ok": true,
+      "data": {
+        "lava": "magma_dart",
+        "sky": "sky_gale",
+        "excluded": null
+      }
+    },
+    {
+      "name": "Stage 2 native encounter runs",
+      "ok": true,
+      "data": {
+        "stage": 2,
+        "types": [
+          {
+            "type": "carrier",
+            "render": {
+              "id": "magma_forge",
+              "kind": "idle",
+              "frame": 0,
+              "key": "bf22_magma_forge_idle",
+              "span": 114.29230769230767,
+              "scale": 1.058262108262108,
+              "dx": -1.293638723609547e-05,
+              "dy": -4.425577799479186,
+              "x": 464.0591560027935,
+              "y": 190.04166666666669,
+              "angle": 0
+            }
+          },
+          {
+            "type": "ash",
+            "render": {
+              "id": "magma_dart",
+              "kind": "idle",
+              "frame": 0,
+              "key": "bf22_magma_dart_idle",
+              "span": 74.8125,
+              "scale": 0.7407178217821783,
+              "dx": -4.28753085657263e-06,
+              "dy": 6.38942637465334e-07,
+              "x": 242.3546795804996,
+              "y": 126.25571377756127,
+              "angle": 0
+            }
+          },
+          {
+            "type": "ash",
+            "render": {
+              "id": "magma_dart",
+              "kind": "idle",
+              "frame": 0,
+              "key": "bf22_magma_dart_idle",
+              "span": 74.8125,
+              "scale": 0.7407178217821783,
+              "dx": 1.8159849446419685e-06,
+              "dy": -3.43006789194078e-06,
+              "x": 459.95467958049943,
+              "y": 82.52238044422805,
+              "angle": 0
+            }
+          }
+        ],
+        "shots": 11,
+        "muzzles": 13
+      }
+    },
+    {
+      "name": "Stage 6 native encounter runs",
+      "ok": true,
+      "data": {
+        "stage": 6,
+        "types": [
+          {
+            "type": "s6dart",
+            "render": {
+              "id": "sky_zephyr",
+              "kind": "idle",
+              "frame": 1,
+              "key": "bf22_sky_zephyr_idle",
+              "span": 54.140625,
+              "scale": 0.5581507731958762,
+              "dx": 0,
+              "dy": 0,
+              "x": 316.875000000001,
+              "y": 361.498312214578,
+              "angle": 0
+            }
+          },
+          {
+            "type": "s6lancer",
+            "render": {
+              "id": "sky_gale",
+              "kind": "attack",
+              "frame": 1,
+              "key": "bf22_sky_gale_attack",
+              "span": 68.0625,
+              "scale": 0.680625,
+              "dx": 0,
+              "dy": 0,
+              "x": 268.3288856144354,
+              "y": 112.12469391202497,
+              "angle": 0
+            }
+          },
+          {
+            "type": "s1jetbomber_b",
+            "render": {
+              "id": "sky_stratus",
+              "kind": "idle",
+              "frame": 1,
+              "key": "bf22_sky_stratus_idle",
+              "span": 155,
+              "scale": 1.5196078431372548,
+              "dx": 0,
+              "dy": 0,
+              "x": 424.125000000001,
+              "y": 411.0000000000008,
+              "angle": 0
+            }
+          }
+        ],
+        "shots": 23,
+        "muzzles": 21
+      }
+    },
+    {
+      "name": "Stage 9 native encounter runs",
+      "ok": true,
+      "data": {
+        "stage": 9,
+        "types": [
+          {
+            "type": "s9interceptor",
+            "render": {
+              "id": "water_ripple",
+              "kind": "idle",
+              "frame": 2,
+              "key": "bf22_water_ripple_idle",
+              "span": 117,
+              "scale": 1.1938775510204083,
+              "dx": -3.3608190648237724e-06,
+              "dy": 2.630820358717756e-05,
+              "x": 84.03606750876828,
+              "y": 522.8451885355464,
+              "angle": 0
+            }
+          },
+          {
+            "type": "vmanta",
+            "render": {
+              "id": "water_manta",
+              "kind": "idle",
+              "frame": 2,
+              "key": "bf22_water_manta_idle",
+              "span": 92,
+              "scale": 0.9583333333333334,
+              "dx": -1.5582166241756568e-06,
+              "dy": 3.0312446597235976e-07,
+              "x": 68.86824191466194,
+              "y": 448.2972103902349,
+              "angle": 0
+            }
+          },
+          {
+            "type": "s9gunship",
+            "render": {
+              "id": "water_leviathan",
+              "kind": "idle",
+              "frame": 2,
+              "key": "bf22_water_leviathan_idle",
+              "span": 121.99999999999999,
+              "scale": 1.196078431372549,
+              "dx": -4.674090632761363e-06,
+              "dy": -9.755934797794907e-07,
+              "x": 459.3769272815125,
+              "y": 286.5473642568435,
+              "angle": 0
+            }
+          },
+          {
+            "type": "s9prism",
+            "render": {
+              "id": "water_undertow",
+              "kind": "idle",
+              "frame": 2,
+              "key": "bf22_water_undertow_idle",
+              "span": 121,
+              "scale": 1.315217391304348,
+              "dx": -1.017252816382097e-05,
+              "dy": 2.0907167765926715e-06,
+              "x": 488.2916666666688,
+              "y": 106.26957493565041,
+              "angle": 0
+            }
+          },
+          {
+            "type": "s9interceptor",
+            "render": {
+              "id": "water_ripple",
+              "kind": "idle",
+              "frame": 2,
+              "key": "bf22_water_ripple_idle",
+              "span": 117,
+              "scale": 1.1938775510204083,
+              "dx": -6.764109116375039e-06,
+              "dy": 7.304140240194101e-06,
+              "x": 354.37653264301537,
+              "y": 437.54268678765663,
+              "angle": 0
+            }
+          },
+          {
+            "type": "s9interceptor",
+            "render": {
+              "id": "water_ripple",
+              "kind": "idle",
+              "frame": 2,
+              "key": "bf22_water_ripple_idle",
+              "span": 117,
+              "scale": 1.1938775510204083,
+              "dx": -1.5063556475070072e-05,
+              "dy": 1.3049632684669632e-05,
+              "x": 357.67027263191585,
+              "y": 274.24284583708607,
+              "angle": 0
+            }
+          },
+          {
+            "type": "s9comet",
+            "render": {
+              "id": "water_ripple",
+              "kind": "attack",
+              "frame": 2,
+              "key": "bf22_water_ripple_attack",
+              "span": 104,
+              "scale": 1.0612244897959184,
+              "dx": -4.003170005262291e-06,
+              "dy": 7.25528965972444e-06,
+              "x": 162.06756992113876,
+              "y": 157.52097357967128,
+              "angle": 0
+            }
+          },
+          {
+            "type": "s9comet",
+            "render": {
+              "id": "water_ripple",
+              "kind": "idle",
+              "frame": 2,
+              "key": "bf22_water_ripple_idle",
+              "span": 104,
+              "scale": 1.0612244897959184,
+              "dx": 2.5843487492238637e-05,
+              "dy": -6.0389047575881705e-06,
+              "x": 558.6269272815125,
+              "y": 244.856512386561,
+              "angle": 0
+            }
+          },
+          {
+            "type": "s9beacon",
+            "render": {
+              "id": "water_undertow",
+              "kind": "idle",
+              "frame": 2,
+              "key": "bf22_water_undertow_idle",
+              "span": 109,
+              "scale": 1.184782608695652,
+              "dx": -8.530079924184975e-06,
+              "dy": 1.525878658981128e-06,
+              "x": 324.4531945652362,
+              "y": -53.59999999999975,
+              "angle": 0
+            }
+          }
+        ],
+        "shots": 40,
+        "muzzles": 27
+      }
+    },
+    {
+      "name": "Stage 2 native flash expiry and destruction",
+      "ok": true,
+      "data": {
+        "expired": true,
+        "changed": 8093,
+        "entered": true,
+        "finished": true,
+        "oldHp": 4,
+        "shots": 0
+      }
+    },
+    {
+      "name": "Stage 6 native flash expiry and destruction",
+      "ok": true,
+      "data": {
+        "expired": true,
+        "changed": 4367,
+        "entered": true,
+        "finished": true,
+        "oldHp": 12,
+        "shots": 0
+      }
+    },
+    {
+      "name": "Stage 9 native flash expiry and destruction",
+      "ok": true,
+      "data": {
+        "expired": true,
+        "changed": 10208,
+        "entered": true,
+        "finished": true,
+        "oldHp": 30,
+        "shots": 0
+      }
+    },
+    {
+      "name": "Legacy L6 jet uses authored roll at native depth",
+      "ok": true,
+      "data": {
+        "roll": 0.5,
+        "pose": {
+          "kind": "roll",
+          "value": 0.5
+        },
+        "type": "talon",
+        "h6": "talon",
+        "kind": "roll",
+        "scale": 0.3711340206185567,
+        "finite": true
+      }
+    },
+    {
+      "name": "Water enemy beam hue is scoped to its launcher",
+      "ok": true,
+      "data": {
+        "cyan": 68394,
+        "scoped": true
+      }
+    },
+    {
+      "name": "No renderer errors",
+      "ok": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

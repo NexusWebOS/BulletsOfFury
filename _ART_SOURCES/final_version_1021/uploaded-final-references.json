@@ -1,0 +1,949 @@
+[
+  {
+    "id": "nyx",
+    "name": "Nyx / Ghostknife",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-nyx.png",
+    "stages": [
+      6,
+      10
+    ],
+    "aliases": [
+      "nyx"
+    ],
+    "size": [
+      192,
+      192
+    ],
+    "purpose": "air",
+    "ref": "upload:7401f067-0a18-47c1-84bb-e4f2b4ee0672"
+  },
+  {
+    "id": "rook",
+    "name": "Rook / Breachhammer",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-rook.png",
+    "stages": [
+      6,
+      10
+    ],
+    "aliases": [
+      "rook"
+    ],
+    "size": [
+      192,
+      192
+    ],
+    "purpose": "air",
+    "ref": "upload:bd307309-cc57-4604-8a61-49fd7818666b"
+  },
+  {
+    "id": "kaia",
+    "name": "Kaia / Signal Wraith",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-kaia.png",
+    "stages": [
+      6,
+      10
+    ],
+    "aliases": [
+      "kaia"
+    ],
+    "size": [
+      192,
+      192
+    ],
+    "purpose": "air",
+    "ref": "upload:977dc5c8-598b-4f34-8bc7-0a7fd756ff11"
+  },
+  {
+    "id": "jace",
+    "name": "Jace / Razorjack",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-jace.png",
+    "stages": [
+      6,
+      10
+    ],
+    "aliases": [
+      "jace"
+    ],
+    "size": [
+      192,
+      192
+    ],
+    "purpose": "air",
+    "ref": "upload:0cee3a38-2aad-4515-87cf-62d633d5ad89"
+  },
+  {
+    "id": "voss",
+    "name": "Voss / Iron Vulture",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-voss.png",
+    "stages": [
+      6,
+      10
+    ],
+    "aliases": [
+      "voss"
+    ],
+    "size": [
+      192,
+      192
+    ],
+    "purpose": "air",
+    "ref": "upload:9f84a248-e9b2-4cb7-b48e-62ff0bc95873"
+  },
+  {
+    "id": "s1jetdelta",
+    "name": "Jungle Camo Attack Jet",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s1jetdelta.png",
+    "stages": [
+      1
+    ],
+    "aliases": [
+      "s1jetdelta"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:8b6c16c5-b3b4-41ff-b5f3-7979f43b55ef"
+  },
+  {
+    "id": "s1jetbomber_b",
+    "name": "Jungle Heavy Bomber",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s1jetbomber_b.png",
+    "stages": [
+      1
+    ],
+    "aliases": [
+      "s1jetbomber_b"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:545dc668-6675-4002-bda4-92d550c8ba2f"
+  },
+  {
+    "id": "s1jetbomber",
+    "name": "Jungle Bomber",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s1jetbomber.png",
+    "stages": [
+      1
+    ],
+    "aliases": [
+      "s1jetbomber"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:e9dc571a-949a-45c8-bd52-4b82b0201126"
+  },
+  {
+    "id": "s1jetdelta_b",
+    "name": "Jungle Delta Jet",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s1jetdelta_b.png",
+    "stages": [
+      1
+    ],
+    "aliases": [
+      "s1jetdelta_b"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:589b6d5d-e442-48a3-8bd0-3da8bf692a74"
+  },
+  {
+    "id": "s4interceptor",
+    "name": "Airbase Interceptor",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s4interceptor.png",
+    "stages": [
+      4
+    ],
+    "aliases": [
+      "s4interceptor"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:dd26b115-ca28-4e2c-b941-75c197ef3689"
+  },
+  {
+    "id": "s4rocket",
+    "name": "Airbase Rocket",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s4rocket.png",
+    "stages": [
+      4
+    ],
+    "aliases": [
+      "s4rocket"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:1d1625cd-45ef-469f-92ef-101b12b6f1bc"
+  },
+  {
+    "id": "s4command",
+    "name": "Airbase Command",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s4command.png",
+    "stages": [
+      4
+    ],
+    "aliases": [
+      "s4command"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:5f79d6ad-5277-4bdf-900e-08209a654b48"
+  },
+  {
+    "id": "s4bomber",
+    "name": "Airbase Bomber",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s4bomber.png",
+    "stages": [
+      4
+    ],
+    "aliases": [
+      "s4bomber"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:d5db164c-e134-4251-b193-2358c0796ce5"
+  },
+  {
+    "id": "s4heavyjet",
+    "name": "Airbase Heavyjet",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s4heavyjet.png",
+    "stages": [
+      4
+    ],
+    "aliases": [
+      "s4heavyjet"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:8f7b1f2a-445d-4ca4-8ba3-7db6459f53d4"
+  },
+  {
+    "id": "s5frigate",
+    "name": "Space Frigate",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s5frigate.png",
+    "stages": [
+      5
+    ],
+    "aliases": [
+      "s5frigate"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:570b73c8-4829-40c3-bbdf-b4ddd6b984ba"
+  },
+  {
+    "id": "s5interceptor",
+    "name": "Space Interceptor",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s5interceptor.png",
+    "stages": [
+      5
+    ],
+    "aliases": [
+      "s5interceptor"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:91df069b-b1ff-4dff-93d5-ee58c169f523"
+  },
+  {
+    "id": "s5rammer",
+    "name": "Space Rammer",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s5rammer.png",
+    "stages": [
+      5
+    ],
+    "aliases": [
+      "s5rammer"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:63531c5a-0442-43cf-8024-96721e178179"
+  },
+  {
+    "id": "s5skimmer",
+    "name": "Space Skimmer",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s5skimmer.png",
+    "stages": [
+      5
+    ],
+    "aliases": [
+      "s5skimmer"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:83c31a7d-c4e2-4ada-a2ff-8a8b65908874"
+  },
+  {
+    "id": "s5repair",
+    "name": "Space Repair",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s5repair.png",
+    "stages": [
+      5
+    ],
+    "aliases": [
+      "s5repair"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:dd820c26-22b3-4394-b2a6-87ef764e4262"
+  },
+  {
+    "id": "xelite_voidreaver",
+    "name": "Elite Void Reaver",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-xelite_voidreaver.png",
+    "stages": [
+      5
+    ],
+    "aliases": [
+      "xelite_voidreaver"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:c7875df2-40e5-4b44-a6c3-a2f2b08f65fd"
+  },
+  {
+    "id": "s6dart",
+    "name": "Blue stealth fighter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s6dart.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "s6dart",
+      "s6mine",
+      "s6lancer",
+      "s6skimmer",
+      "s6thunder",
+      "s6cyclone",
+      "stealth_blue"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:9997d05c-a743-4b4a-83d7-9a6e71063bbb"
+  },
+  {
+    "id": "l6v_s0",
+    "name": "Steel Lancer",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-l6v_s0.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "l6v_s0"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:e864b828-951a-4ace-adcb-9c612a8ea56e"
+  },
+  {
+    "id": "l6v_s2",
+    "name": "Steel Delta",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-l6v_s2.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "l6v_s2"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:39dcac2b-5a10-4d8a-9fa1-91b4b8eb87f4"
+  },
+  {
+    "id": "l6v_s1",
+    "name": "Steel Broadwing",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-l6v_s1.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "l6v_s1"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:233d3ee5-d861-4f9a-9206-6985b8e50207"
+  },
+  {
+    "id": "l6v_r0",
+    "name": "Royal Blue Lancer",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-l6v_r0.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "l6v_r0"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:d853af2c-fcce-4df1-bd7b-487408ca92e9"
+  },
+  {
+    "id": "xelite_glacierlance",
+    "name": "Elite Glacier Lance",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-xelite_glacierlance.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "xelite_glacierlance"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:24f1fceb-5911-4d25-be17-876ea59ad8b8"
+  },
+  {
+    "id": "l6v_r2",
+    "name": "Royal Blue Delta",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-l6v_r2.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "l6v_r2"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:2cad4f6a-68ca-4d00-9088-a9526c2e82de"
+  },
+  {
+    "id": "l6v_r1",
+    "name": "Royal Blue Broadwing",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-l6v_r1.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "l6v_r1"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:533e2a90-2c63-4b2e-a179-89233141b5d5"
+  },
+  {
+    "id": "l6v_b0",
+    "name": "Black Ice Lancer",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-l6v_b0.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "l6v_b0"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:6839cdc0-ed5a-45c0-8ecc-85bfefd5adb1"
+  },
+  {
+    "id": "xelite_tempest",
+    "name": "Elite Tempest",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-xelite_tempest.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "xelite_tempest"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:7966f191-135c-4362-95ce-accef7563815"
+  },
+  {
+    "id": "xelite_solarwarden",
+    "name": "Elite Solar Warden",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-xelite_solarwarden.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "xelite_solarwarden"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:06688bf9-0fe4-43a5-85df-30dce2b25c09"
+  },
+  {
+    "id": "l6v_b2",
+    "name": "Black Ice Delta",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-l6v_b2.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "l6v_b2"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:dece7b98-8249-4245-918c-1b904b780397"
+  },
+  {
+    "id": "l6v_b1",
+    "name": "Black Ice Broadwing",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-l6v_b1.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "l6v_b1"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:f1c54e5e-92df-40f3-aa8a-57cbc893ab4d"
+  },
+  {
+    "id": "s7skimmer",
+    "name": "Toxic Skimmer",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s7skimmer.png",
+    "stages": [
+      7
+    ],
+    "aliases": [
+      "s7skimmer"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:66d17f2a-24c1-4e46-97d8-cd2394ba545f"
+  },
+  {
+    "id": "s8interceptor",
+    "name": "Alien Fighter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s8interceptor.png",
+    "stages": [
+      8
+    ],
+    "aliases": [
+      "s8interceptor",
+      "s8spread",
+      "s8parasite",
+      "s8crescent",
+      "s8skull",
+      "s8symbiote"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:1f4f310e-6c9e-4ca5-9a4e-adaa0a7926cf"
+  },
+  {
+    "id": "s8razor",
+    "name": "Void Razor",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s8razor.png",
+    "stages": [
+      8
+    ],
+    "aliases": [
+      "s8razor"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:ea0d0d74-7a2c-48c9-b7a2-d1b386247d09"
+  },
+  {
+    "id": "s9interceptor",
+    "name": "Water Space Interceptor",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s9interceptor.png",
+    "stages": [
+      9
+    ],
+    "aliases": [
+      "s9interceptor"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:fa297c4b-070d-49af-8d5c-43dce3743280"
+  },
+  {
+    "id": "s9comet",
+    "name": "Water Space Comet",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s9comet.png",
+    "stages": [
+      9
+    ],
+    "aliases": [
+      "s9comet"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:55a75ee2-ab47-4e29-b84e-64c1c6309b74"
+  },
+  {
+    "id": "s9gunship",
+    "name": "Water Space Gunship",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-s9gunship.png",
+    "stages": [
+      9
+    ],
+    "aliases": [
+      "s9gunship"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:eb0ccb4a-4e62-46a9-b337-540b3ae8da81"
+  },
+  {
+    "id": "wskim",
+    "name": "Warp Skimmer",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-wskim.png",
+    "stages": [
+      9
+    ],
+    "aliases": [
+      "wskim"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:783363c4-a6e9-4be1-9e30-432308e0c9aa"
+  },
+  {
+    "id": "echof",
+    "name": "Echo Fighter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-echof.png",
+    "stages": [
+      9
+    ],
+    "aliases": [
+      "echof"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:5da4d6b4-80b7-46ca-b542-d03576cf5ce2"
+  },
+  {
+    "id": "vmanta",
+    "name": "Void Manta",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-vmanta.png",
+    "stages": [
+      9
+    ],
+    "aliases": [
+      "vmanta"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:0cecfcd2-6542-4aa3-bafb-48703f0dff46"
+  },
+  {
+    "id": "tsplit",
+    "name": "Twin Splitter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-tsplit.png",
+    "stages": [
+      9
+    ],
+    "aliases": [
+      "tsplit"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:5ac43dfb-24ff-47dc-bac1-0cdd2858e887"
+  },
+  {
+    "id": "stealth_red",
+    "name": "Red stealth fighter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-stealth_red.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "stealth_red"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:dcb97961-1137-4709-9365-291126447313"
+  },
+  {
+    "id": "flight_variant_1",
+    "name": "Jungle Maneuver Fighter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-flight_variant_1.png",
+    "stages": [
+      1
+    ],
+    "aliases": [
+      "flight_variant_1"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:0a3bf490-2ebe-42a0-9e8a-328bd7889619"
+  },
+  {
+    "id": "stealth_green",
+    "name": "Green stealth fighter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-stealth_green.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "stealth_green"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:2ac8e37b-4ca8-45a2-b6d9-9094b3353261"
+  },
+  {
+    "id": "stealth_orange",
+    "name": "Orange stealth fighter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-stealth_orange.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "stealth_orange"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:4bfdceac-c292-4868-9b50-3d12f8090b9c"
+  },
+  {
+    "id": "flight_variant_4",
+    "name": "Airbase Maneuver Fighter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-flight_variant_4.png",
+    "stages": [
+      4
+    ],
+    "aliases": [
+      "flight_variant_4"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:ac59eed7-29b3-449c-98cd-9edc3b4e7df1"
+  },
+  {
+    "id": "flight_variant_6",
+    "name": "Storm Maneuver Fighter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-flight_variant_6.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "flight_variant_6"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:c1b040fa-6481-4bac-84e5-c3723d80e62d"
+  },
+  {
+    "id": "flight_variant_8",
+    "name": "Void Maneuver Fighter",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-flight_variant_8.png",
+    "stages": [
+      8
+    ],
+    "aliases": [
+      "flight_variant_8"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:72509d8d-e667-44d4-9770-f4f505fcd7c7"
+  },
+  {
+    "id": "xelite_hivewing",
+    "name": "Elite Hivewing",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-xelite_hivewing.png",
+    "stages": [
+      6
+    ],
+    "aliases": [
+      "xelite_hivewing"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:6560adf3-3712-4c20-92ff-d4316f73706d"
+  },
+  {
+    "id": "hell",
+    "name": "Hell Wing Escort",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-hell.png",
+    "stages": [
+      8
+    ],
+    "aliases": [
+      "hell"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:b7e46747-9ee9-48db-b224-8c5cfb8afc79"
+  },
+  {
+    "id": "horizon",
+    "name": "Horizon Drone",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\air128-horizon.png",
+    "stages": [
+      9
+    ],
+    "aliases": [
+      "horizon"
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "purpose": "air",
+    "ref": "upload:0880b771-e1e8-4b89-899a-ae149c46bda8"
+  },
+  {
+    "id": "native-nes_bubble_0",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\native-nes_bubble_0-upload.png",
+    "purpose": "fx",
+    "ref": "upload:beb0a726-2eb6-4e7e-9c9e-30329ac63305"
+  },
+  {
+    "id": "native-nes_bubble_void_0",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\native-nes_bubble_void_0-upload.png",
+    "purpose": "fx",
+    "ref": "upload:15ef1802-b58d-4236-9d99-972fd18b398a"
+  },
+  {
+    "id": "native-nx_small_3",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\native-nx_small_3-upload.png",
+    "purpose": "fx",
+    "ref": "upload:8860ffc4-9543-4227-8f1a-e3ce24953a0f"
+  },
+  {
+    "id": "fx_32bit_1",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\fx_32bit_1-upload.png",
+    "purpose": "fx",
+    "ref": "upload:435408bb-f0c9-4e74-b62e-7ef820643f6a"
+  },
+  {
+    "id": "fx_FX_Vol1_0",
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\fx_FX_Vol1_0-upload.png",
+    "purpose": "fx",
+    "ref": "upload:f30dadc8-d3df-4cf6-bf67-1e2f1a8240c2"
+  }
+]

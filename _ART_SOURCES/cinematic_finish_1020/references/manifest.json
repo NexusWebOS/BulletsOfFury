@@ -1,0 +1,243 @@
+{
+  "rows": [
+    {
+      "pilot": "cole",
+      "kind": "body",
+      "key": "cole_body_0922"
+    },
+    {
+      "pilot": "cole",
+      "kind": "portrait",
+      "key": "comm_cole_idle"
+    },
+    {
+      "pilot": "cole",
+      "kind": "front",
+      "key": "ship_cole_so6"
+    },
+    {
+      "pilot": "cole",
+      "kind": "rear",
+      "key": "ship_cole_so2"
+    },
+    {
+      "pilot": "axel",
+      "kind": "body",
+      "key": "pose_axel_0"
+    },
+    {
+      "pilot": "axel",
+      "kind": "portrait",
+      "key": "comm_axel_idle"
+    },
+    {
+      "pilot": "axel",
+      "kind": "front",
+      "key": "ship_axel_so6"
+    },
+    {
+      "pilot": "axel",
+      "kind": "rear",
+      "key": "ship_axel_so2"
+    },
+    {
+      "pilot": "freezer",
+      "kind": "body",
+      "key": "pose_freezer_0"
+    },
+    {
+      "pilot": "freezer",
+      "kind": "portrait",
+      "key": "comm_freezer_idle"
+    },
+    {
+      "pilot": "freezer",
+      "kind": "front",
+      "key": "ship_freezer_so6"
+    },
+    {
+      "pilot": "freezer",
+      "kind": "rear",
+      "key": "ship_freezer_so2"
+    },
+    {
+      "pilot": "yuri",
+      "kind": "body",
+      "key": "yuri_body_0"
+    },
+    {
+      "pilot": "yuri",
+      "kind": "portrait",
+      "key": "comm_yuri_idle"
+    },
+    {
+      "pilot": "yuri",
+      "kind": "front",
+      "key": "ship_yuri_so6"
+    },
+    {
+      "pilot": "yuri",
+      "kind": "rear",
+      "key": "ship_yuri_so2"
+    },
+    {
+      "pilot": "maverick",
+      "kind": "body",
+      "key": "pose_maverick_0"
+    },
+    {
+      "pilot": "maverick",
+      "kind": "portrait",
+      "key": "comm_maverick_idle"
+    },
+    {
+      "pilot": "maverick",
+      "kind": "front",
+      "key": "ship_maverick_so6"
+    },
+    {
+      "pilot": "maverick",
+      "kind": "rear",
+      "key": "ship_maverick_so2"
+    },
+    {
+      "pilot": "falva",
+      "kind": "body",
+      "key": "pose_falva_0"
+    },
+    {
+      "pilot": "falva",
+      "kind": "portrait",
+      "key": "comm_falva_idle"
+    },
+    {
+      "pilot": "falva",
+      "kind": "front",
+      "key": "ship_falva_so6"
+    },
+    {
+      "pilot": "falva",
+      "kind": "rear",
+      "key": "ship_falva_so2"
+    },
+    {
+      "pilot": "lizzie",
+      "kind": "body",
+      "key": "pose_lizzie_0"
+    },
+    {
+      "pilot": "lizzie",
+      "kind": "portrait",
+      "key": "comm_lizzie_idle"
+    },
+    {
+      "pilot": "lizzie",
+      "kind": "front",
+      "key": "ship_lizzie_so6"
+    },
+    {
+      "pilot": "lizzie",
+      "kind": "rear",
+      "key": "ship_lizzie_so2"
+    },
+    {
+      "pilot": "decker",
+      "kind": "body",
+      "key": "pose_decker_0"
+    },
+    {
+      "pilot": "decker",
+      "kind": "portrait",
+      "key": "comm_decker_idle"
+    },
+    {
+      "pilot": "decker",
+      "kind": "front",
+      "key": "ship_decker_so6"
+    },
+    {
+      "pilot": "decker",
+      "kind": "rear",
+      "key": "ship_decker_so2"
+    },
+    {
+      "pilot": "juggernaut",
+      "kind": "body",
+      "key": "pose_juggernaut_0"
+    },
+    {
+      "pilot": "juggernaut",
+      "kind": "portrait",
+      "key": "comm_juggernaut_idle"
+    },
+    {
+      "pilot": "juggernaut",
+      "kind": "front",
+      "key": "ship_juggernaut_so6"
+    },
+    {
+      "pilot": "juggernaut",
+      "kind": "rear",
+      "key": "ship_juggernaut_so2"
+    },
+    {
+      "pilot": "dracodia",
+      "kind": "colossus",
+      "key": "native V18 modules"
+    }
+  ],
+  "colossus": {
+    "core": {
+      "key": "v18_colossus_core_00",
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_core_00.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "bounds": [
+        120,
+        40,
+        200,
+        285
+      ],
+      "sha256": "3aff80e8d6f69eaa6fbdcacda010fb1790272e70ddc4033170c18c31ea810569"
+    },
+    "left": {
+      "key": "v18_colossus_left_00",
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_left_00.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "bounds": [
+        42,
+        98,
+        118,
+        274
+      ],
+      "sha256": "047d33ddee03e78464a2ae271eb2a0cc18b7f0db721f866219f79bbdc5cb23d9"
+    },
+    "right": {
+      "key": "v18_colossus_right_00",
+      "path": "assets/game/levels/stage_08/boss/pixellab_1018/v18_colossus_right_00.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "bounds": [
+        202,
+        98,
+        278,
+        274
+      ],
+      "sha256": "7f32afce2afb0f2901111090fa7bc677c13220f7b0f9ae38fab6c05f771a78c8"
+    }
+  },
+  "errors": []
+}

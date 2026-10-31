@@ -1,0 +1,68 @@
+[
+  {
+    "name": "shield_hex_loop",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/453cb351-30ed-48bb-8c93-18ff5559887f/download?index=0",
+      "frame_count": 24,
+      "no_background": true,
+      "enhance_prompt": false,
+      "subject_description": "a circular energy shield with transparent center",
+      "initial_pose": "centered stationary energy effect",
+      "view": "side",
+      "description": "FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A stationary spherical cyan hex energy shield. Hex cells propagate a soft interior pulse clockwise, rim segments light sequentially, subtle specular shine travels around sphere. Stable outer circle and transparent interior. No growth, displacement, camera motion or opaque center. Smooth seamless loop; no sparks outside canvas.",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/453cb351-30ed-48bb-8c93-18ff5559887f/download?index=0"
+    },
+    "receipt": [
+      "id: 06ab0577-8353-4c53-bf20-da61a9c67fc4\njob_id: 06ab0577-8353-4c53-bf20-da61a9c67fc4\ndescription: FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A stationary spherical cyan hex energy shield. Hex cells propagate a soft interior pulse clockwise, rim segments light sequentially, subtle specular shine travels around sphere. Stable outer circle and transparent interior. No growth, displacement, camera motion or opaque center. Smooth seamless loop; no sparks outside canvas.\nframes: 24\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"06ab0577-8353-4c53-bf20-da61a9c67fc4\")\nasset_id: 3b6311ff-8b61-58dd-a9f8-5ed2c514917c\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "shield_void_loop",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/9797a674-d988-425a-be4c-1e8b9811b538/download?index=0",
+      "frame_count": 24,
+      "no_background": true,
+      "enhance_prompt": false,
+      "subject_description": "a circular energy shield with transparent center",
+      "initial_pose": "centered stationary energy effect",
+      "view": "side",
+      "description": "FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A stationary dark-purple code shield ring. Woven violet/gray/white demonic energy filaments spiral smoothly around rim through one full revolution, red code pulses chase around inner seams. Stable outer circle and transparent center, no hardware or body, no zoom/travel. Perfect smooth loop.",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/9797a674-d988-425a-be4c-1e8b9811b538/download?index=0"
+    },
+    "receipt": [
+      "id: ffb10bd6-8876-4d25-8150-645809d265dc\njob_id: ffb10bd6-8876-4d25-8150-645809d265dc\ndescription: FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A stationary dark-purple code shield ring. Woven violet/gray/white demonic energy filaments spiral smoothly around rim through one full revolution, red code pulses chase around inner seams. Stable outer circle and transparent center, no hardware or body, no zoom/travel. Perfect smooth loop.\nframes: 24\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ffb10bd6-8876-4d25-8150-645809d265dc\")\nasset_id: 286bdbce-b389-5570-90d5-20a374e1f6fd\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "explosion_star_burst",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/03e24d90-9143-4a47-a3e8-df40f8c51d90/download?index=0",
+      "frame_count": 32,
+      "no_background": true,
+      "enhance_prompt": false,
+      "subject_description": "an orange white red pixel-art explosion",
+      "initial_pose": "centered stationary energy effect",
+      "view": "side",
+      "description": "FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A one-shot Neo-Geo explosion supplement: brilliant white/yellow core flashes, layered fire curls roll outward, red/orange lobes expand within the canvas, then dark smoke curls rise and fragment into embers and dissipate completely. Strong smooth fast impact then slower smoke recovery. Same fixed center; no ground, scenery, camera or zoom. Never cut off flames at edges."
+    },
+    "receipt": [
+      "id: fc120c44-50a1-4a9f-8d08-3e0ea0ff2c81\njob_id: fc120c44-50a1-4a9f-8d08-3e0ea0ff2c81\ndescription: FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A one-shot Neo-Geo explosion supplement: brilliant white/yellow core flashes, layered fire curls roll outward, red/orange lobes expand within the canvas, then dark smoke curls rise and fragment into embers and dissipate completely. Strong smooth fast impact then slower smoke recovery. Same fixed center; no ground, scenery, camera or zoom. Never cut off flames at edges.\nframes: 32\nsize: 256x256px\ntransparent: True\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fc120c44-50a1-4a9f-8d08-3e0ea0ff2c81\")\nasset_id: d4f28d24-481b-5d45-959e-957b4e82c6c4\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "explosion_chain_burst",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/db7288f0-b6fb-470b-833d-3a299f5e9ed5/download?index=0",
+      "frame_count": 32,
+      "no_background": true,
+      "enhance_prompt": false,
+      "subject_description": "an orange white red pixel-art explosion",
+      "initial_pose": "centered stationary energy effect",
+      "view": "side",
+      "description": "FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A spectacular one-shot Neo-Geo final-boss chained detonation. Three inner white-hot cores detonate successively, orange/red flame lobes billow and roll out in layered waves, dark purple smoke mushrooms, fragment sparks scatter and then fade to a few embers. Entire effect stays inside256 canvas, no movement of central anchor, no camera or background. Rich smooth internal animation, no square blocks or hard cuts."
+    },
+    "receipt": [
+      "id: 5d5890e8-67ce-4326-a6fb-90ef23becc1a\njob_id: 5d5890e8-67ce-4326-a6fb-90ef23becc1a\ndescription: FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A spectacular one-shot Neo-Geo final-boss chained detonation. Three inner white-hot cores detonate successively, orange/red flame lobes billow and roll out in layered waves, dark purple smoke mushrooms, fragment sparks scatter and then fade to a few embers. Entire effect stays inside256 canvas, no movement of central anchor, no camera or background. Rich smooth internal animation, no square blocks or hard cuts.\nframes: 32\nsize: 256x256px\ntransparent: True\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"5d5890e8-67ce-4326-a6fb-90ef23becc1a\")\nasset_id: 607863cc-b13e-51eb-a70e-88da8a3f1310\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  }
+]

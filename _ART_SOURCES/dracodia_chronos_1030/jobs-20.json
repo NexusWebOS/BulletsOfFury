@@ -1,0 +1,62 @@
+[
+  {
+    "batch": 20,
+    "id": "24df43c0-5373-4f68-a0ef-9e5c02572373",
+    "files": [
+      "strike/12.png",
+      "strike/13.png",
+      "strike/14.png"
+    ],
+    "result": "id: 24df43c0-5373-4f68-a0ef-9e5c02572373\njob_id: 24df43c0-5373-4f68-a0ef-9e5c02572373\nframes: 3\nsize: 256x256px\ntransparent: True\ninstructions: Reskin ONLY the armor/helmet into the reference Dracodia demon knight. EXACTLY preserve source poses, silhouette, scale, all joints, fist locations and registration. Same horned skull helmet, red eyes, red abdomen, purple chromium armor in EVERY frame. EMPTY hands, NO hammer, weapon, shield, circle or effects. Preserve tiny magenta fist marker exactly. Crisp 16-bit pixel art. No new limbs.\nseed: 7430\nasset_id: 83b88065-cfe4-5935-a7f0-8bf6ab4ac7f6\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"24df43c0-5373-4f68-a0ef-9e5c02572373\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/24df43c0-5373-4f68-a0ef-9e5c02572373/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "batch": 21,
+    "id": "ff66a2b3-b84d-455d-9d30-bd0970ddaf78",
+    "files": [
+      "strike/15.png",
+      "strike/16.png",
+      "retract/00.png"
+    ],
+    "result": "id: ff66a2b3-b84d-455d-9d30-bd0970ddaf78\njob_id: ff66a2b3-b84d-455d-9d30-bd0970ddaf78\nframes: 3\nsize: 256x256px\ntransparent: True\ninstructions: Reskin ONLY the armor/helmet into the reference Dracodia demon knight. EXACTLY preserve source poses, silhouette, scale, all joints, fist locations and registration. Same horned skull helmet, red eyes, red abdomen, purple chromium armor in EVERY frame. EMPTY hands, NO hammer, weapon, shield, circle or effects. Preserve tiny magenta fist marker exactly. Crisp 16-bit pixel art. No new limbs.\nseed: 7430\nasset_id: 9bf295e8-da7a-50ba-81f4-10e3f6c515ea\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"ff66a2b3-b84d-455d-9d30-bd0970ddaf78\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/ff66a2b3-b84d-455d-9d30-bd0970ddaf78/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "batch": 22,
+    "id": "1c8aca79-4fd6-40d8-9264-893dbb4079a3",
+    "files": [
+      "retract/01.png",
+      "retract/02.png",
+      "retract/03.png"
+    ],
+    "result": "id: 1c8aca79-4fd6-40d8-9264-893dbb4079a3\njob_id: 1c8aca79-4fd6-40d8-9264-893dbb4079a3\nframes: 3\nsize: 256x256px\ntransparent: True\ninstructions: Reskin ONLY the armor/helmet into the reference Dracodia demon knight. EXACTLY preserve source poses, silhouette, scale, all joints, fist locations and registration. Same horned skull helmet, red eyes, red abdomen, purple chromium armor in EVERY frame. EMPTY hands, NO hammer, weapon, shield, circle or effects. Preserve tiny magenta fist marker exactly. Crisp 16-bit pixel art. No new limbs.\nseed: 7430\nasset_id: 58945d10-8f30-5b4b-b9ee-5d1876608ee1\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"1c8aca79-4fd6-40d8-9264-893dbb4079a3\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/1c8aca79-4fd6-40d8-9264-893dbb4079a3/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "batch": 23,
+    "id": "7f172076-c855-47d8-8f03-1a2b04327e24",
+    "files": [
+      "retract/04.png",
+      "retract/05.png",
+      "retract/06.png"
+    ],
+    "result": "id: 7f172076-c855-47d8-8f03-1a2b04327e24\njob_id: 7f172076-c855-47d8-8f03-1a2b04327e24\nframes: 3\nsize: 256x256px\ntransparent: True\ninstructions: Reskin ONLY the armor/helmet into the reference Dracodia demon knight. EXACTLY preserve source poses, silhouette, scale, all joints, fist locations and registration. Same horned skull helmet, red eyes, red abdomen, purple chromium armor in EVERY frame. EMPTY hands, NO hammer, weapon, shield, circle or effects. Preserve tiny magenta fist marker exactly. Crisp 16-bit pixel art. No new limbs.\nseed: 7430\nasset_id: 8faa5b4e-b619-50b6-a150-13962dfa9195\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"7f172076-c855-47d8-8f03-1a2b04327e24\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/7f172076-c855-47d8-8f03-1a2b04327e24/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "batch": 24,
+    "id": "35146598-666d-48ae-91d3-253a1ee98147",
+    "files": [
+      "retract/07.png",
+      "retract/08.png",
+      "retract/09.png"
+    ],
+    "result": "id: 35146598-666d-48ae-91d3-253a1ee98147\njob_id: 35146598-666d-48ae-91d3-253a1ee98147\nframes: 3\nsize: 256x256px\ntransparent: True\ninstructions: Reskin ONLY the armor/helmet into the reference Dracodia demon knight. EXACTLY preserve source poses, silhouette, scale, all joints, fist locations and registration. Same horned skull helmet, red eyes, red abdomen, purple chromium armor in EVERY frame. EMPTY hands, NO hammer, weapon, shield, circle or effects. Preserve tiny magenta fist marker exactly. Crisp 16-bit pixel art. No new limbs.\nseed: 7430\nasset_id: 9dd8f82d-6e07-5460-a0fe-5d9c3972f583\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"35146598-666d-48ae-91d3-253a1ee98147\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/35146598-666d-48ae-91d3-253a1ee98147/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  },
+  {
+    "batch": 25,
+    "id": "8716f51e-494c-402a-bfe6-13a512041463",
+    "files": [
+      "retract/10.png",
+      "retract/11.png",
+      "retract/12.png"
+    ],
+    "result": "id: 8716f51e-494c-402a-bfe6-13a512041463\njob_id: 8716f51e-494c-402a-bfe6-13a512041463\nframes: 3\nsize: 256x256px\ntransparent: True\ninstructions: Reskin ONLY the armor/helmet into the reference Dracodia demon knight. EXACTLY preserve source poses, silhouette, scale, all joints, fist locations and registration. Same horned skull helmet, red eyes, red abdomen, purple chromium armor in EVERY frame. EMPTY hands, NO hammer, weapon, shield, circle or effects. Preserve tiny magenta fist marker exactly. Crisp 16-bit pixel art. No new limbs.\nseed: 7430\nasset_id: 7baba7bd-143d-57c9-b61f-ffb370e1bbc5\nasset_status: pending (saved when generation completes)\ncost: ~25 generations\nstatus: processing (~1-2 min)\n\nhint: get_image(job_id=\"8716f51e-494c-402a-bfe6-13a512041463\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/8716f51e-494c-402a-bfe6-13a512041463/download (423 + Retry-After until ready; ?index=N for the Nth of several images)"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "air_l6v_s0_roll_repair",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/d589297e-4af0-4ce9-bcbe-9e19bf52b3de/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/d589297e-4af0-4ce9-bcbe-9e19bf52b3de/download?index=0",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south-west",
+      "subject_description": "the exact referenced l6v_s0 aircraft",
+      "initial_pose": "top-down south-facing centered aircraft",
+      "description": "FRAME FORMAT 128x128, fixed fuselage root64,64 and identical scale. The jet nose points diagonally SOUTHWEST exactly as in the reference, throughout the animation. Roll ONLY around the diagonal NOSE-TO-TAIL longitudinal axis like a real aircraft banking. Wings narrow to a thin diagonal edge at quarter turn, inverted underside fully visible at half turn, opposite thin edge at three quarters, then original top. Nose and tail NEVER yaw or orbit in the image plane. NOT a flat paper spin, NOT a turntable. Silver gray metal, red small accents exactly matching reference. No purple recoloring. Same sharp cockpit, wings, tail and engines. Transparent16px safety margins. Complete one continuous360 axial roll, first and last aircraft silhouettes align exactly."
+    },
+    "receipt": [
+      "id: e4590910-89d7-465a-a98e-765d30e3c5d2\njob_id: e4590910-89d7-465a-a98e-765d30e3c5d2\ndescription: FRAME FORMAT 128x128, fixed fuselage root64,64 and identical scale. The jet nose points diagonally SOUTHWEST exactly as in the reference, throughout the animation. Roll ONLY around the diagonal NOSE-TO-TAIL longitudinal axis like a real aircraft banking. Wings narrow to a thin diagonal edge at quarter turn, inverted underside fully visible at half turn, opposite thin edge at three quarters, then original top. Nose and tail NEVER yaw or orbit in the image plane. NOT a flat paper spin, NOT a turntable. Silver gray metal, red small accents exactly matching reference. No purple recoloring. Same sharp cockpit, wings, tail and engines. Transparent16px safety margins. Complete one continuous360 axial roll, first and last aircraft silhouettes align exactly.\nframes: 16\nsize: 128x128px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e4590910-89d7-465a-a98e-765d30e3c5d2\")\nasset_id: c0cf2655-8250-549f-be6f-b696c24a7ef0\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  }
+]

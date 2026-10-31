@@ -1,0 +1,165 @@
+[
+  {
+    "id": "magma_dart",
+    "stage": 2,
+    "name": "CINDER DART",
+    "size": "small",
+    "description": "Compact magma interceptor jet, obsidian black ceramic armour with glowing orange molten seams, sharply swept delta wings, white-hot orange vent slits, twin short slag cannons. Agile predatory rocket-jet silhouette; no skull or literal rocks.",
+    "ref": "upload:32e37288-49f4-4351-b31e-daaf7e1dbee0",
+    "aliases": [
+      "ash",
+      "skim",
+      "eye",
+      "disc",
+      "lance",
+      "ac10firejet",
+      "cinderwasp",
+      "flight_variant_2"
+    ]
+  },
+  {
+    "id": "magma_forge",
+    "stage": 2,
+    "name": "OBSIDIAN FORGE",
+    "size": "large",
+    "description": "Large heavy magma bomber jet, broad layered basalt-black metallic wings, armoured bronze-gunmetal central furnace, twin molten-orange barrel cannons, visible closed lava bomb bays, four heat sinks. Heavy recognisable aircraft silhouette, glowing lava channels and deliberate metal highlights.",
+    "ref": "upload:32e37288-49f4-4351-b31e-daaf7e1dbee0",
+    "aliases": [
+      "miner",
+      "cruc",
+      "carrier",
+      "basaltbomber",
+      "firejet1002"
+    ]
+  },
+  {
+    "id": "sky_zephyr",
+    "stage": 6,
+    "name": "ZEPHYR NEEDLE",
+    "size": "small",
+    "description": "Small fast sky/wind interceptor JET. Elegant narrow needle nose, crisp WHITE ceramic body, cool GRAY metal structure, TEAL wind-turbine intakes and teal accent wing edges. Two compact air cannons. Swept agile wings, tiny canopy. Palette teal white gray only; NO blue, red, purple or yellow livery.",
+    "ref": "upload:3b4706a5-a56d-40bf-9ade-876e85a7f5c5",
+    "aliases": [
+      "s6dart",
+      "s6mine",
+      "s6buoy",
+      "s6probe",
+      "talon",
+      "fang",
+      "raptor",
+      "l6v_s0",
+      "l6v_r0",
+      "l6v_b0",
+      "stealth_blue",
+      "stealth_green",
+      "flight_variant_6",
+      "l6x_st",
+      "l6x_tf",
+      "l6x_cr"
+    ]
+  },
+  {
+    "id": "sky_gale",
+    "stage": 6,
+    "name": "GALE SABRE",
+    "size": "medium",
+    "description": "Medium sky/wind strike jet. Wide swept sickle-delta wings, WHITE and pearl GRAY armour, dark gray panel lines, TEAL vortex turbine rings, paired long pressure cannons integrated in wing pods. Powerful medium interceptor, readable stepped armour and large wind intakes. Teal white gray palette only; no royal blue, red or yellow livery.",
+    "ref": "upload:3b4706a5-a56d-40bf-9ade-876e85a7f5c5",
+    "aliases": [
+      "s6lancer",
+      "s6skimmer",
+      "s6thunder",
+      "s6cyclone",
+      "widow",
+      "lance",
+      "l6v_s2",
+      "l6v_r2",
+      "l6v_b2",
+      "stealth_red",
+      "stealth_orange",
+      "xelite_glacierlance",
+      "xelite_tempest",
+      "l6x_cw",
+      "l6x_tl"
+    ]
+  },
+  {
+    "id": "sky_stratus",
+    "stage": 6,
+    "name": "STRATUS BASTION",
+    "size": "large",
+    "description": "Large heavy sky/wind bomber JET with broad blocky swept wings, four circular teal turbines, WHITE armoured fuselage, cool GRAY heavy engine pylons, TEAL pressure core and two long forward air cannon pods. Closed missile bays. Distinct imposing wide aircraft silhouette; teal white gray palette only, no red blue or yellow livery.",
+    "ref": "upload:3b4706a5-a56d-40bf-9ade-876e85a7f5c5",
+    "aliases": [
+      "s6bomber",
+      "s6turbine",
+      "warden",
+      "l6v_s1",
+      "l6v_r1",
+      "l6v_b1",
+      "xelite_hivewing",
+      "xelite_solarwarden",
+      "l6x_hw",
+      "s1jetbomber_b",
+      "s1jetbomber"
+    ]
+  },
+  {
+    "id": "water_ripple",
+    "stage": 9,
+    "name": "ABYSS SKATE",
+    "size": "small",
+    "description": "Small WATER-THEMED alien space interceptor jet. Streamlined hydrofoil-like swept fins, deep navy and pearl titanium panels, aqua/teal liquid-pressure channels, luminous cyan water-plasma engine cores and twin pressure-needle cannons. Clearly an aircraft for a void arena, no sea/background/wakes/bubbles. Water technology silhouette, not generic purple space insect.",
+    "ref": "upload:48c7446c-f85f-4333-a452-740ee646a821",
+    "aliases": [
+      "s9interceptor",
+      "s9comet",
+      "wskim",
+      "pneedle",
+      "echof"
+    ]
+  },
+  {
+    "id": "water_manta",
+    "stage": 9,
+    "name": "TIDAL MANTA",
+    "size": "medium",
+    "description": "Medium WATER-THEMED alien space fighter, broad curved MANTA hydrofoil wings, pearl white and blue-gray metallic armour, turquoise fluid conduits and dark navy seams, paired water-plasma pressure cannons and enclosed torpedo tubes. Elegant powerful ocean-inspired jet in vacuum. No pink/purple, no background or water splash.",
+    "ref": "upload:48c7446c-f85f-4333-a452-740ee646a821",
+    "aliases": [
+      "vmanta",
+      "tsplit",
+      "cbreak",
+      "gleech"
+    ]
+  },
+  {
+    "id": "water_leviathan",
+    "stage": 9,
+    "name": "PELAGIC LEVIATHAN",
+    "size": "large",
+    "description": "Large WATER-THEMED alien space gunship. Long heavily armoured pressure-vessel fuselage, broad fin-shaped outriggers, deep navy titanium and pearl silver armour, cyan liquid containment reactors, two heavy torpedo/cannon nacelles and four blue-water plasma drives. Majestic heavily armed naval aerospace silhouette for vacuum, not a tracked tank, not a seagoing boat. No purple/red.",
+    "ref": "upload:48c7446c-f85f-4333-a452-740ee646a821",
+    "aliases": [
+      "s9gunship",
+      "horizon",
+      "dreadv"
+    ]
+  },
+  {
+    "id": "water_undertow",
+    "stage": 9,
+    "name": "UNDERTOW CORE",
+    "size": "drone",
+    "description": "WATER-THEMED alien orbital drone with compact round pressure-reactor core held inside a pearl silver and dark navy ring, 4 streamlined fin-like jet arms, cyan/teal liquid containment chamber and paired downward pressure emitters. Readable mechanical hydro-tech drone for vacuum, no sea water background. No gold or purple energy.",
+    "ref": "upload:48c7446c-f85f-4333-a452-740ee646a821",
+    "aliases": [
+      "s9beacon",
+      "s9gateturret",
+      "s9prism",
+      "s9ring",
+      "s9singularity",
+      "pmine"
+    ]
+  }
+]

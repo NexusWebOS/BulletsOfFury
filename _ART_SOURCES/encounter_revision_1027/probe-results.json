@@ -1,0 +1,992 @@
+{
+  "checks": {
+    "harrierNoTimedDialogue": true,
+    "rebelAlliesPresent": true,
+    "dredgerRapidBothGuns": true,
+    "dorsalMortars": true,
+    "wardenMiddleLane": true,
+    "coreBlockedUntilBothCans": true,
+    "canisterTargetsReplaceCore": true,
+    "bounceImpactScatter": true,
+    "heraldNuke85": true,
+    "heraldLightningVolleys": true,
+    "heraldPentagramBounces": true,
+    "newOrdnanceUnshootable": true,
+    "noRuntimeErrors": true,
+    "noDrawErrors": true,
+    "noAssetErrors": true
+  },
+  "results": {
+    "harrier": {
+      "dims": {
+        "VH": 512,
+        "viewW": 480,
+        "viewH": 512
+      },
+      "stageTimer": 10007.983333333203,
+      "opening": false,
+      "talk": false,
+      "wing": {
+        "beats": 2,
+        "all": true,
+        "fake": false,
+        "allies": 4
+      },
+      "parts": [
+        {
+          "id": "laser0",
+          "angle": 0.724236407660987,
+          "bearing": 0.724236407660987,
+          "muzzle": {
+            "x": 235.7841419789529,
+            "y": 303.45422312233086
+          }
+        },
+        {
+          "id": "laser3",
+          "angle": 2.4377797175940352,
+          "bearing": 2.4377797175940352,
+          "muzzle": {
+            "x": 442.1637045849254,
+            "y": 302.7898200277965
+          }
+        },
+        {
+          "id": "hullGun0",
+          "angle": 1.2023840895969922,
+          "bearing": 1.2023840895969922,
+          "muzzle": {
+            "x": 243.38757106781463,
+            "y": 163.1912060215555
+          }
+        },
+        {
+          "id": "hullGun1",
+          "angle": 1.369043161753578,
+          "bearing": 1.369043161753578,
+          "muzzle": {
+            "x": 283.60960920493005,
+            "y": 152.4616451635249
+          }
+        },
+        {
+          "id": "hullGun2",
+          "angle": 1.7951407311882752,
+          "bearing": 1.7951407311882752,
+          "muzzle": {
+            "x": 392.5142545315569,
+            "y": 151.98007028412994
+          }
+        },
+        {
+          "id": "hullGun3",
+          "angle": 1.9558102097858054,
+          "bearing": 1.9558102097858054,
+          "muzzle": {
+            "x": 434.79641931230327,
+            "y": 163.0685074804875
+          }
+        }
+      ]
+    },
+    "rebels": {
+      "state": "play",
+      "allies": [
+        {
+          "pilot": "axel",
+          "x": 272,
+          "y": 399.36,
+          "phase": "fight"
+        },
+        {
+          "pilot": "decker",
+          "x": 408,
+          "y": 423.36,
+          "phase": "fight"
+        },
+        {
+          "pilot": "falva",
+          "x": 216,
+          "y": 399.36,
+          "phase": "fight"
+        },
+        {
+          "pilot": "yuri",
+          "x": 464,
+          "y": 423.36,
+          "phase": "fight"
+        }
+      ],
+      "pods": [
+        {
+          "heading": null,
+          "socket": {
+            "x": 370.7468060897924,
+            "y": 178.36056261224428,
+            "angle": 1.5707963267948966
+          }
+        }
+      ]
+    },
+    "dredger": {
+      "mode": "er28-guns",
+      "rounds": 12,
+      "shots": 22,
+      "guns": [
+        {
+          "id": "gunL",
+          "angle": 0.06534909728750504,
+          "at": {
+            "x": 291.1880690495519,
+            "y": 255.81003016904805,
+            "a": 1.6361454240824016
+          }
+        },
+        {
+          "id": "gunR",
+          "angle": -0.21821112660840103,
+          "at": {
+            "x": 402.26703308929063,
+            "y": 253.8894782809529,
+            "a": 1.3525852001864955
+          }
+        }
+      ]
+    },
+    "mortars": [
+      {
+        "x": 285.0920634920635,
+        "y": 117.37964244308945,
+        "origin": {
+          "x": 340,
+          "y": 106
+        },
+        "target": {
+          "x": 189.6,
+          "y": 374.36
+        },
+        "age": 0.3833333333333333,
+        "flight": 1.05
+      },
+      {
+        "x": 314.4896755162242,
+        "y": 104.60530995634258,
+        "origin": {
+          "x": 340,
+          "y": 106
+        },
+        "target": {
+          "x": 264.8,
+          "y": 424.36
+        },
+        "age": 0.3833333333333333,
+        "flight": 1.1300000000000001
+      },
+      {
+        "x": 340,
+        "y": 111.32154479616219,
+        "origin": {
+          "x": 340,
+          "y": 106
+        },
+        "target": {
+          "x": 340,
+          "y": 374.36
+        },
+        "age": 0.3833333333333333,
+        "flight": 1.21
+      },
+      {
+        "x": 362.34625322997414,
+        "y": 100.13608482548244,
+        "origin": {
+          "x": 340,
+          "y": 106
+        },
+        "target": {
+          "x": 415.2,
+          "y": 424.36
+        },
+        "age": 0.3833333333333333,
+        "flight": 1.29
+      },
+      {
+        "x": 382.0827250608273,
+        "y": 107.92684978420259,
+        "origin": {
+          "x": 340,
+          "y": 106
+        },
+        "target": {
+          "x": 490.40000000000003,
+          "y": 374.36
+        },
+        "age": 0.3833333333333333,
+        "flight": 1.37
+      }
+    ],
+    "warden": {
+      "x": 340,
+      "middle": 340,
+      "y": 302.08,
+      "mode": "chase",
+      "canisters": [
+        {
+          "id": "canL",
+          "hp": 306,
+          "max": 306,
+          "flash": 0,
+          "dead": false
+        },
+        {
+          "id": "canR",
+          "hp": 306,
+          "max": 306,
+          "flash": 0,
+          "dead": false
+        }
+      ],
+      "targets": [
+        "frontL",
+        "frontR",
+        "gunL",
+        "gunR"
+      ],
+      "rear": [
+        {
+          "id": "rearL",
+          "angle": 0.6,
+          "cell": "er28rear_rearL_6",
+          "world": {
+            "x": 305.13190617206334,
+            "y": 206.097628999995
+          },
+          "target": {
+            "x": 15.280928398913233,
+            "y": -133.0142541507565
+          }
+        },
+        {
+          "id": "rearR",
+          "angle": -0.6,
+          "cell": "er28rear_rearR_2",
+          "world": {
+            "x": 373.8116642408523,
+            "y": 206.82037136594067
+          },
+          "target": {
+            "x": 7.543783410302325,
+            "y": -154.05757448824735
+          }
+        }
+      ]
+    },
+    "canisterGate": {
+      "blocked": true,
+      "targets": [
+        "gunL",
+        "gunR",
+        "canL",
+        "canR"
+      ],
+      "afterCans": 0,
+      "coreBefore": 1748,
+      "coreAfter": 1648,
+      "targetsAfter": [
+        "gunL",
+        "gunR",
+        "core"
+      ]
+    },
+    "bounce": [
+      {
+        "event": "warden-bounce-impact",
+        "t": 24.083333333333247,
+        "x": 340,
+        "y": 314,
+        "count": 12
+      },
+      {
+        "event": "warden-bounce-impact",
+        "t": 24.899999999999867,
+        "x": 340,
+        "y": 335.84970310178045,
+        "count": 12
+      },
+      {
+        "event": "warden-bounce-impact",
+        "t": 25.716666666666487,
+        "x": 340,
+        "y": 289,
+        "count": 12
+      },
+      {
+        "event": "warden-bounce-impact",
+        "t": 26.533333333333108,
+        "x": 340,
+        "y": 338.80201401976535,
+        "count": 12
+      }
+    ],
+    "herald-storm": {
+      "mode": "er28-herald",
+      "attack": "storm",
+      "events": [
+        {
+          "event": "charge",
+          "time": 32.29999999999945,
+          "attack": "storm",
+          "warm": 2.05
+        },
+        {
+          "event": "release",
+          "time": 34.366666666666,
+          "attack": "storm"
+        }
+      ],
+      "rounds": [
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        }
+      ],
+      "parts": [
+        {
+          "id": "core",
+          "pose": {
+            "x": 340,
+            "y": 153.8537857484481,
+            "a": 0,
+            "s": 0.34
+          }
+        },
+        {
+          "id": "head",
+          "pose": {
+            "x": 340,
+            "y": 141.8537857484481,
+            "a": 0,
+            "s": 0.21
+          }
+        },
+        {
+          "id": "wingL",
+          "pose": {
+            "x": 303,
+            "y": 135.8537857484481,
+            "a": 0.36,
+            "s": 0.32
+          }
+        },
+        {
+          "id": "wingR",
+          "pose": {
+            "x": 377,
+            "y": 135.8537857484481,
+            "a": -0.36,
+            "s": 0.32
+          }
+        },
+        {
+          "id": "gunL",
+          "pose": {
+            "x": 298,
+            "y": 141.8537857484481,
+            "a": 0.7799999999999999,
+            "s": 0.23
+          }
+        },
+        {
+          "id": "gunR",
+          "pose": {
+            "x": 382,
+            "y": 141.8537857484481,
+            "a": -0.78,
+            "s": 0.23
+          }
+        }
+      ]
+    },
+    "herald-nuke": {
+      "mode": "er28-herald",
+      "attack": "nuke",
+      "events": [
+        {
+          "event": "charge",
+          "time": 32.29999999999945,
+          "attack": "storm",
+          "warm": 2.05
+        },
+        {
+          "event": "release",
+          "time": 34.366666666666,
+          "attack": "storm"
+        },
+        {
+          "event": "charge",
+          "time": 36.29999999999922,
+          "attack": "nuke",
+          "warm": 2.6
+        },
+        {
+          "event": "release",
+          "time": 38.91666666666574,
+          "attack": "nuke"
+        },
+        {
+          "event": "nuke-impact",
+          "time": 39.916666666665684,
+          "attack": "nuke",
+          "width": 408,
+          "edgeSafeWidth": 36
+        }
+      ],
+      "rounds": [],
+      "parts": [
+        {
+          "id": "core",
+          "pose": {
+            "x": 340,
+            "y": 152.42387899217076,
+            "a": 0,
+            "s": 0.34
+          }
+        },
+        {
+          "id": "head",
+          "pose": {
+            "x": 340,
+            "y": 140.42387899217076,
+            "a": 0,
+            "s": 0.21
+          }
+        },
+        {
+          "id": "wingL",
+          "pose": {
+            "x": 303,
+            "y": 134.42387899217076,
+            "a": 0.7799999999999999,
+            "s": 0.32
+          }
+        },
+        {
+          "id": "wingR",
+          "pose": {
+            "x": 377,
+            "y": 134.42387899217076,
+            "a": -0.78,
+            "s": 0.32
+          }
+        },
+        {
+          "id": "gunL",
+          "pose": {
+            "x": 298,
+            "y": 140.42387899217076,
+            "a": -0.36,
+            "s": 0.23
+          }
+        },
+        {
+          "id": "gunR",
+          "pose": {
+            "x": 382,
+            "y": 140.42387899217076,
+            "a": 0.36,
+            "s": 0.23
+          }
+        }
+      ]
+    },
+    "herald-rage": {
+      "mode": "er28-herald",
+      "attack": "rage",
+      "events": [
+        {
+          "event": "charge",
+          "time": 32.29999999999945,
+          "attack": "storm",
+          "warm": 2.05
+        },
+        {
+          "event": "release",
+          "time": 34.366666666666,
+          "attack": "storm"
+        },
+        {
+          "event": "charge",
+          "time": 36.29999999999922,
+          "attack": "nuke",
+          "warm": 2.6
+        },
+        {
+          "event": "release",
+          "time": 38.91666666666574,
+          "attack": "nuke"
+        },
+        {
+          "event": "nuke-impact",
+          "time": 39.916666666665684,
+          "attack": "nuke",
+          "width": 408,
+          "edgeSafeWidth": 36
+        },
+        {
+          "event": "charge",
+          "time": 40.299999999998995,
+          "attack": "rage",
+          "warm": 1.9
+        },
+        {
+          "event": "release",
+          "time": 42.21666666666555,
+          "attack": "rage"
+        },
+        {
+          "event": "red-lightning-volley",
+          "time": 42.21666666666555,
+          "attack": "rage",
+          "beat": 0,
+          "count": 6,
+          "escape": 468
+        }
+      ],
+      "rounds": [
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        },
+        {
+          "kind": "code",
+          "proof": false,
+          "hp": null,
+          "bounces": null
+        }
+      ],
+      "parts": [
+        {
+          "id": "core",
+          "pose": {
+            "x": 340,
+            "y": 155.61853339846377,
+            "a": 0,
+            "s": 0.34
+          }
+        },
+        {
+          "id": "head",
+          "pose": {
+            "x": 339.2913996448738,
+            "y": 145.28802536536202,
+            "a": 0,
+            "s": 0.21
+          }
+        },
+        {
+          "id": "wingL",
+          "pose": {
+            "x": 303,
+            "y": 137.61853339846377,
+            "a": 0.5399999999999999,
+            "s": 0.32
+          }
+        },
+        {
+          "id": "wingR",
+          "pose": {
+            "x": 377,
+            "y": 137.61853339846377,
+            "a": -0.54,
+            "s": 0.32
+          }
+        },
+        {
+          "id": "gunL",
+          "pose": {
+            "x": 298,
+            "y": 143.61853339846377,
+            "a": 0.7799999999999999,
+            "s": 0.23
+          }
+        },
+        {
+          "id": "gunR",
+          "pose": {
+            "x": 382,
+            "y": 143.61853339846377,
+            "a": -0.78,
+            "s": 0.23
+          }
+        }
+      ]
+    },
+    "herald-pentagram": {
+      "mode": "er28-herald",
+      "attack": "pentagram",
+      "events": [
+        {
+          "event": "charge",
+          "time": 32.29999999999945,
+          "attack": "storm",
+          "warm": 2.05
+        },
+        {
+          "event": "release",
+          "time": 34.366666666666,
+          "attack": "storm"
+        },
+        {
+          "event": "charge",
+          "time": 36.29999999999922,
+          "attack": "nuke",
+          "warm": 2.6
+        },
+        {
+          "event": "release",
+          "time": 38.91666666666574,
+          "attack": "nuke"
+        },
+        {
+          "event": "nuke-impact",
+          "time": 39.916666666665684,
+          "attack": "nuke",
+          "width": 408,
+          "edgeSafeWidth": 36
+        },
+        {
+          "event": "charge",
+          "time": 40.299999999998995,
+          "attack": "rage",
+          "warm": 1.9
+        },
+        {
+          "event": "release",
+          "time": 42.21666666666555,
+          "attack": "rage"
+        },
+        {
+          "event": "red-lightning-volley",
+          "time": 42.21666666666555,
+          "attack": "rage",
+          "beat": 0,
+          "count": 6,
+          "escape": 468
+        },
+        {
+          "event": "charge",
+          "time": 42.283333333332216,
+          "attack": "pentagram",
+          "warm": 2.4
+        },
+        {
+          "event": "release",
+          "time": 44.699999999998745,
+          "attack": "pentagram"
+        },
+        {
+          "event": "pentagram-bounce",
+          "time": 45.41666666666537,
+          "attack": "pentagram",
+          "count": 1,
+          "x": 532,
+          "y": 325.11707751414025
+        },
+        {
+          "event": "pentagram-bounce",
+          "time": 45.88333333333201,
+          "attack": "pentagram",
+          "count": 2,
+          "x": 409.1185209122077,
+          "y": 464
+        }
+      ],
+      "rounds": [],
+      "parts": [
+        {
+          "id": "core",
+          "pose": {
+            "x": 340,
+            "y": 157.93825232825918,
+            "a": 0,
+            "s": 0.34
+          }
+        },
+        {
+          "id": "head",
+          "pose": {
+            "x": 340,
+            "y": 145.93825232825918,
+            "a": 0,
+            "s": 0.21
+          }
+        },
+        {
+          "id": "wingL",
+          "pose": {
+            "x": 303,
+            "y": 139.93825232825918,
+            "a": 0.47999999999999987,
+            "s": 0.32
+          }
+        },
+        {
+          "id": "wingR",
+          "pose": {
+            "x": 377,
+            "y": 139.93825232825918,
+            "a": -0.48000000000000004,
+            "s": 0.32
+          }
+        },
+        {
+          "id": "gunL",
+          "pose": {
+            "x": 298,
+            "y": 145.93825232825918,
+            "a": -0.36,
+            "s": 0.23
+          }
+        },
+        {
+          "id": "gunR",
+          "pose": {
+            "x": 382,
+            "y": 145.93825232825918,
+            "a": 0.36,
+            "s": 0.23
+          }
+        }
+      ]
+    },
+    "performance": {
+      "banks": 59,
+      "alphaFrames": 27,
+      "events": 10,
+      "heraldEvents": 12
+    }
+  },
+  "errors": [],
+  "console": [],
+  "assets": []
+}

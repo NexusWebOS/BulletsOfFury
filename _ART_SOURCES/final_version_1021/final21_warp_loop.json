@@ -1,0 +1,19 @@
+[
+  {
+    "name": "warp_loop",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/6d0d8f3a-a04a-43ca-bd61-f7d3575c1b8b/download?index=0",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/6d0d8f3a-a04a-43ca-bd61-f7d3575c1b8b/download?index=0",
+      "frame_count": 24,
+      "no_background": false,
+      "enhance_prompt": false,
+      "subject_description": "a white cyan violet dimensional energy tunnel texture",
+      "initial_pose": "stationary tunnel viewpoint, dark clear center128,128",
+      "view": "side",
+      "description": "FRAME FORMAT256x256, fixed tunnel center128,128, full opaque frame. Travel FORWARD through this same blue/cyan/violet dimensional energy tunnel, layered streaks flow radially from the dark center toward corners, filaments twist clockwise around the opening, smooth continuous speed. Camera position stable, no sideways shake, sudden scaling pulses or white flashes. Preserve clear dark center and strongest energy at outer edges for projectile readability. No gate hardware, ships, robots or text. Seamless continuous24-frame loop."
+    },
+    "receipt": [
+      "id: 66537751-10bb-4519-9ba5-9bcfc6381874\njob_id: 66537751-10bb-4519-9ba5-9bcfc6381874\ndescription: FRAME FORMAT256x256, fixed tunnel center128,128, full opaque frame. Travel FORWARD through this same blue/cyan/violet dimensional energy tunnel, layered streaks flow radially from the dark center toward corners, filaments twist clockwise around the opening, smooth continuous speed. Camera position stable, no sideways shake, sudden scaling pulses or white flashes. Preserve clear dark center and strongest energy at outer edges for projectile readability. No gate hardware, ships, robots or text. Seamless continuous24-frame loop.\nframes: 24\nsize: 256x256px\ntransparent: False\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"66537751-10bb-4519-9ba5-9bcfc6381874\")\nasset_id: a6238d4d-4ce2-5a23-bd64-321292b2ad35\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  }
+]

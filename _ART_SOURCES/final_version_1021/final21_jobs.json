@@ -1,0 +1,47 @@
+{
+  "starting_balance": 10.58,
+  "jobs": [
+    {
+      "name": "hammer_master",
+      "args": {
+        "width": 512,
+        "height": 512,
+        "no_background": true,
+        "max_colors": 48,
+        "reference_images": [
+          {
+            "url": "upload:c0544a54-35a0-4829-bd62-685e7d6e8a7c",
+            "usage": "Identity and equipment only: Dracodia's demonic robot chromium Hammer form. Re-author from scratch at higher usable resolution, not an enlargement."
+          }
+        ],
+        "description": "FRAME FORMAT:512x512 RGBA, even dimensions, one front-facing full-body boss sprite. A production Neo-Geo/Sega32X action-game sprite, NOT concept painting. Re-author the referenced demonic robotic chromium hammer knight with substantially clearer design: 430px tall usable figure with margins, broad clean violet-black chromium armor plates, deliberate cool silver edge planes and specular highlights, deep black separations, a clearly readable robotic skull face with white/red eyes and swept crown spikes, a single bright code-heart in chest. Same identity and dark purple/gray/red palette as reference but no tangled white noodle lines or noisy pixel speckle. Large powerful TWO-HANDED chromium energy hammer held diagonally below the waist with a clearly defined solid metal hammerhead, purple-white inset energy core and straight readable haft; separate hands visibly grip it. Full forward-facing symmetrical chest and hips, facing viewer, no 3/4 perspective, no tilted camera. Upright centered combat-ready stance, legs separated, toes visible. Chest anchor at256,224, reserved transparent margins for later swings. Large clear anatomical/mechanical masses with consistent fine pixel clusters; face at least64px wide, armor light/shadow planes, shoulder/body proportions match strong BOF boss forms. No scenery, text, floating effects, round aura, lightning, huge bloom, extra weapon, back-mounted gun or translucent armor. Opaque complete armor silhouette on transparency."
+      },
+      "receipt": [
+        "id: 0f5e0b99-98f2-4dd7-b430-f9c765769564\njob_id: 0f5e0b99-98f2-4dd7-b430-f9c765769564\nmodel: pro\ndescription: FRAME FORMAT:512x512 RGBA, even dimensions, one front-facing full-body boss sprite. A production Neo-Geo/Sega32X action-game sprite, NOT concept painting. Re-author the referenced demonic robotic chromium hammer knight with substantially clearer design: 430px tall usable figure with margins, broad clean violet-black chromium armor plates, deliberate cool silver edge planes and specular highlights, deep black separations, a clearly readable robotic skull face with white/red eyes and swept crown spikes, a single bright code-heart in chest. Same identity and dark purple/gray/red palette as reference but no tangled white noodle lines or noisy pixel speckle. Large powerful TWO-HANDED chromium energy hammer held diagonally below the waist with a clearly defined solid metal hammerhead, purple-white inset energy core and straight readable haft; separate hands visibly grip it. Full forward-facing symmetrical chest and hips, facing viewer, no 3/4 perspective, no tilted camera. Upright centered combat-ready stance, legs separated, toes visible. Chest anchor at256,224, reserved transparent margins for later swings. Large clear anatomical/mechanical masses with consistent fine pixel clusters; face at least64px wide, armor light/shadow planes, shoulder/body proportions match strong BOF boss forms. No scenery, text, floating effects, round aura, lightning, huge bloom, extra weapon, back-mounted gun or translucent armor. Opaque complete armor silhouette on transparency.\nsize: 512x512px\ntransparent: True\ncandidates: 1\nreferences: 1\nmax colours: 48 per image\nasset_id: 54b55a2f-8924-5e18-a435-4b06c25cc4c3\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"0f5e0b99-98f2-4dd7-b430-f9c765769564\")"
+      ]
+    },
+    {
+      "name": "portal_only_master",
+      "args": {
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "max_colors": 32,
+        "reference_images": [
+          {
+            "url": "upload:db5f9b97-0e0a-4b16-b377-f20a16159990",
+            "usage": "Keep its white/cyan/violet swirling portal energy and aperture identity, remove the entire metal gate, brackets and mechanical frame."
+          },
+          {
+            "url": "upload:93ddc290-422c-4b6d-90dc-73572168ffad",
+            "usage": "Upright floating oval orientation and pure energy edge."
+          }
+        ],
+        "description": "FRAME FORMAT256x256 RGBA, fixed pivot128,128. Pixel-art free-standing upright oval warp PORTAL ONLY, for a top-down Neo-Geo space shooter ship to fly through. Preserve the reference portal's white/cyan/violet energy spiral and dark luminous depth; the aperture stands vertically toward the viewer, oval axis upright, full 210px tall energy ring contained with at least16px transparent margins. Remove ALL gate hardware, stone, metal, brackets, support feet, bolts, pedestal and frame. Only a turbulent layered violet/cyan/white energy ring, rotating inner wisps receding into a dark blue dimensional center, clear passable central aperture. Deliberate crisp pixel clusters, consistent specular energy layers, high contrast but restrained bloom, no circle lying flat on ground, no background, no text, no ship, no scene. One centered portal sprite."
+      },
+      "receipt": [
+        "id: 0792881a-3a1f-4fc5-a094-5d42259207f1\njob_id: 0792881a-3a1f-4fc5-a094-5d42259207f1\nmodel: pro\ndescription: FRAME FORMAT256x256 RGBA, fixed pivot128,128. Pixel-art free-standing upright oval warp PORTAL ONLY, for a top-down Neo-Geo space shooter ship to fly through. Preserve the reference portal's white/cyan/violet energy spiral and dark luminous depth; the aperture stands vertically toward the viewer, oval axis upright, full 210px tall energy ring contained with at least16px transparent margins. Remove ALL gate hardware, stone, metal, brackets, support feet, bolts, pedestal and frame. Only a turbulent layered violet/cyan/white energy ring, rotating inner wisps receding into a dark blue dimensional center, clear passable central aperture. Deliberate crisp pixel clusters, consistent specular energy layers, high contrast but restrained bloom, no circle lying flat on ground, no background, no text, no ship, no scene. One centered portal sprite.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nmax colours: 32 per image\nasset_id: 15861917-ec1d-5ee3-955e-1d6b717a746e\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"0792881a-3a1f-4fc5-a094-5d42259207f1\")"
+      ]
+    }
+  ]
+}

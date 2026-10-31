@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "canister-budget-not-duplicated": true,
+    "ngplus-canisters-scale-once": true,
+    "ngplus-total-hp25": true,
+    "ngplus-ias15-once": true,
+    "canister-local-hit-flash-expires": true,
+    "landings-stay-in-middle": true,
+    "continuous-bounce-no-ground-teleport": true,
+    "normal-stage-before-arrival": true,
+    "normal-stage-first-arrival14": true,
+    "normal-stage-second-arrival41": true,
+    "normal-stage-full-wing52": true,
+    "noRuntimeErrors": true
+  },
+  "data": {
+    "health": {
+      "normal": {
+        "core": 1748,
+        "shield": 612,
+        "total": 6150,
+        "cans": [
+          306,
+          306
+        ]
+      },
+      "plus": {
+        "core": 2185,
+        "shield": 765,
+        "total": 7687.5,
+        "cans": [
+          382.5,
+          382.5
+        ]
+      }
+    },
+    "maxBounceStep": 12.284329375898471
+  },
+  "errors": []
+}

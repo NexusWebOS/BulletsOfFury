@@ -1,0 +1,4199 @@
+[
+  {
+    "bank": "corrupt_jump",
+    "frame": 0,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump",
+    "frame": 1,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      282,
+      331
+    ],
+    "contact": [
+      282,
+      376
+    ],
+    "hands": [
+      [
+        367,
+        331
+      ],
+      [
+        418,
+        331
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump",
+    "frame": 2,
+    "source": "throw",
+    "sourceFrame": 2,
+    "head": [
+      255,
+      214
+    ],
+    "contact": [
+      255,
+      260
+    ],
+    "hands": [
+      [
+        321,
+        231
+      ],
+      [
+        402,
+        251
+      ]
+    ],
+    "angle": 14,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump",
+    "frame": 3,
+    "source": "combo",
+    "sourceFrame": 2,
+    "head": [
+      220,
+      233
+    ],
+    "contact": [
+      220,
+      278
+    ],
+    "hands": [
+      [
+        292,
+        233
+      ],
+      [
+        369,
+        233
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump",
+    "frame": 4,
+    "source": "combo",
+    "sourceFrame": 3,
+    "head": [
+      205,
+      176
+    ],
+    "contact": [
+      205,
+      222
+    ],
+    "hands": [
+      [
+        264,
+        197
+      ],
+      [
+        353,
+        231
+      ]
+    ],
+    "angle": 20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump",
+    "frame": 5,
+    "source": "combo",
+    "sourceFrame": 4,
+    "head": [
+      357,
+      112
+    ],
+    "contact": [
+      357,
+      145
+    ],
+    "hands": [
+      [
+        336,
+        184
+      ],
+      [
+        317,
+        251
+      ]
+    ],
+    "angle": 106,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump",
+    "frame": 6,
+    "source": "combo",
+    "sourceFrame": 6,
+    "head": [
+      348,
+      447
+    ],
+    "contact": [
+      348,
+      489
+    ],
+    "hands": [
+      [
+        348,
+        350
+      ],
+      [
+        347,
+        324
+      ]
+    ],
+    "angle": -90,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump",
+    "frame": 7,
+    "source": "combo",
+    "sourceFrame": 7,
+    "head": [
+      342,
+      450
+    ],
+    "contact": [
+      342,
+      492
+    ],
+    "hands": [
+      [
+        344,
+        353
+      ],
+      [
+        341,
+        326
+      ]
+    ],
+    "angle": -90,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump",
+    "frame": 8,
+    "source": "combo",
+    "sourceFrame": 6,
+    "head": [
+      348,
+      447
+    ],
+    "contact": [
+      348,
+      489
+    ],
+    "hands": [
+      [
+        348,
+        350
+      ],
+      [
+        347,
+        324
+      ]
+    ],
+    "angle": -90,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump",
+    "frame": 9,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump",
+    "frame": 10,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 0,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 1,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      282,
+      331
+    ],
+    "contact": [
+      282,
+      376
+    ],
+    "hands": [
+      [
+        367,
+        331
+      ],
+      [
+        418,
+        331
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 2,
+    "source": "throw",
+    "sourceFrame": 2,
+    "head": [
+      255,
+      214
+    ],
+    "contact": [
+      255,
+      260
+    ],
+    "hands": [
+      [
+        321,
+        231
+      ],
+      [
+        402,
+        251
+      ]
+    ],
+    "angle": 14,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 3,
+    "source": "combo",
+    "sourceFrame": 2,
+    "head": [
+      220,
+      233
+    ],
+    "contact": [
+      220,
+      278
+    ],
+    "hands": [
+      [
+        292,
+        233
+      ],
+      [
+        369,
+        233
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 4,
+    "source": "combo",
+    "sourceFrame": 3,
+    "head": [
+      205,
+      176
+    ],
+    "contact": [
+      205,
+      222
+    ],
+    "hands": [
+      [
+        264,
+        197
+      ],
+      [
+        353,
+        231
+      ]
+    ],
+    "angle": 20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 5,
+    "source": "combo",
+    "sourceFrame": 4,
+    "head": [
+      357,
+      112
+    ],
+    "contact": [
+      357,
+      145
+    ],
+    "hands": [
+      [
+        336,
+        184
+      ],
+      [
+        317,
+        251
+      ]
+    ],
+    "angle": 106,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 6,
+    "source": "combo",
+    "sourceFrame": 6,
+    "head": [
+      348,
+      447
+    ],
+    "contact": [
+      348,
+      489
+    ],
+    "hands": [
+      [
+        348,
+        350
+      ],
+      [
+        347,
+        324
+      ]
+    ],
+    "angle": -90,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 7,
+    "source": "combo",
+    "sourceFrame": 7,
+    "head": [
+      342,
+      450
+    ],
+    "contact": [
+      342,
+      492
+    ],
+    "hands": [
+      [
+        344,
+        353
+      ],
+      [
+        341,
+        326
+      ]
+    ],
+    "angle": -90,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 8,
+    "source": "combo",
+    "sourceFrame": 6,
+    "head": [
+      348,
+      447
+    ],
+    "contact": [
+      348,
+      489
+    ],
+    "hands": [
+      [
+        348,
+        350
+      ],
+      [
+        347,
+        324
+      ]
+    ],
+    "angle": -90,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 9,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_jump_red",
+    "frame": 10,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 0,
+    "source": "sides",
+    "sourceFrame": 8,
+    "head": [
+      226,
+      269
+    ],
+    "contact": [
+      226,
+      314
+    ],
+    "hands": [
+      [
+        294,
+        244
+      ],
+      [
+        364,
+        219
+      ]
+    ],
+    "angle": -20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 1,
+    "source": "combo",
+    "sourceFrame": 2,
+    "head": [
+      220,
+      233
+    ],
+    "contact": [
+      220,
+      278
+    ],
+    "hands": [
+      [
+        292,
+        233
+      ],
+      [
+        369,
+        233
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 2,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      282,
+      331
+    ],
+    "contact": [
+      282,
+      376
+    ],
+    "hands": [
+      [
+        367,
+        331
+      ],
+      [
+        418,
+        331
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 3,
+    "source": "sides",
+    "sourceFrame": 3,
+    "head": [
+      404,
+      339
+    ],
+    "contact": [
+      404,
+      383
+    ],
+    "hands": [
+      [
+        322,
+        345
+      ],
+      [
+        267,
+        349
+      ]
+    ],
+    "angle": 176,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 4,
+    "source": "sides",
+    "sourceFrame": 4,
+    "head": [
+      189,
+      310
+    ],
+    "contact": [
+      189,
+      355
+    ],
+    "hands": [
+      [
+        273,
+        325
+      ],
+      [
+        322,
+        334
+      ]
+    ],
+    "angle": 10,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 5,
+    "source": "sides",
+    "sourceFrame": 5,
+    "head": [
+      214,
+      316
+    ],
+    "contact": [
+      214,
+      361
+    ],
+    "hands": [
+      [
+        299,
+        326
+      ],
+      [
+        348,
+        332
+      ]
+    ],
+    "angle": 7,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 6,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      227,
+      359
+    ],
+    "contact": [
+      227,
+      404
+    ],
+    "hands": [
+      [
+        313,
+        368
+      ],
+      [
+        360,
+        373
+      ]
+    ],
+    "angle": 6,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 7,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      227,
+      359
+    ],
+    "contact": [
+      227,
+      404
+    ],
+    "hands": [
+      [
+        313,
+        368
+      ],
+      [
+        360,
+        373
+      ]
+    ],
+    "angle": 6,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 8,
+    "source": "sides",
+    "sourceFrame": 0,
+    "head": [
+      193,
+      171
+    ],
+    "contact": [
+      193,
+      217
+    ],
+    "hands": [
+      [
+        263,
+        197
+      ],
+      [
+        329,
+        221
+      ]
+    ],
+    "angle": 20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 9,
+    "source": "combo",
+    "sourceFrame": 3,
+    "head": [
+      205,
+      176
+    ],
+    "contact": [
+      205,
+      222
+    ],
+    "hands": [
+      [
+        264,
+        197
+      ],
+      [
+        353,
+        231
+      ]
+    ],
+    "angle": 20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 10,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      357,
+      331
+    ],
+    "contact": [
+      357,
+      375
+    ],
+    "hands": [
+      [
+        272,
+        331
+      ],
+      [
+        221,
+        331
+      ]
+    ],
+    "angle": 180,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 11,
+    "source": "sides",
+    "sourceFrame": 3,
+    "head": [
+      235,
+      339
+    ],
+    "contact": [
+      235,
+      384
+    ],
+    "hands": [
+      [
+        317,
+        345
+      ],
+      [
+        372,
+        349
+      ]
+    ],
+    "angle": 4,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 12,
+    "source": "sides",
+    "sourceFrame": 4,
+    "head": [
+      450,
+      310
+    ],
+    "contact": [
+      450,
+      355
+    ],
+    "hands": [
+      [
+        366,
+        325
+      ],
+      [
+        317,
+        334
+      ]
+    ],
+    "angle": 170,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 13,
+    "source": "sides",
+    "sourceFrame": 5,
+    "head": [
+      425,
+      316
+    ],
+    "contact": [
+      425,
+      361
+    ],
+    "hands": [
+      [
+        340,
+        326
+      ],
+      [
+        291,
+        332
+      ]
+    ],
+    "angle": 173,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 14,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      412,
+      359
+    ],
+    "contact": [
+      412,
+      403
+    ],
+    "hands": [
+      [
+        326,
+        368
+      ],
+      [
+        279,
+        373
+      ]
+    ],
+    "angle": 174,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_sides",
+    "frame": 15,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 0,
+    "source": "sides",
+    "sourceFrame": 8,
+    "head": [
+      226,
+      269
+    ],
+    "contact": [
+      226,
+      314
+    ],
+    "hands": [
+      [
+        294,
+        244
+      ],
+      [
+        364,
+        219
+      ]
+    ],
+    "angle": -20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 1,
+    "source": "combo",
+    "sourceFrame": 2,
+    "head": [
+      220,
+      233
+    ],
+    "contact": [
+      220,
+      278
+    ],
+    "hands": [
+      [
+        292,
+        233
+      ],
+      [
+        369,
+        233
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 2,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      282,
+      331
+    ],
+    "contact": [
+      282,
+      376
+    ],
+    "hands": [
+      [
+        367,
+        331
+      ],
+      [
+        418,
+        331
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 3,
+    "source": "sides",
+    "sourceFrame": 3,
+    "head": [
+      404,
+      339
+    ],
+    "contact": [
+      404,
+      383
+    ],
+    "hands": [
+      [
+        322,
+        345
+      ],
+      [
+        267,
+        349
+      ]
+    ],
+    "angle": 176,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 4,
+    "source": "sides",
+    "sourceFrame": 4,
+    "head": [
+      189,
+      310
+    ],
+    "contact": [
+      189,
+      355
+    ],
+    "hands": [
+      [
+        273,
+        325
+      ],
+      [
+        322,
+        334
+      ]
+    ],
+    "angle": 10,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 5,
+    "source": "sides",
+    "sourceFrame": 5,
+    "head": [
+      214,
+      316
+    ],
+    "contact": [
+      214,
+      361
+    ],
+    "hands": [
+      [
+        299,
+        326
+      ],
+      [
+        348,
+        332
+      ]
+    ],
+    "angle": 7,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 6,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      227,
+      359
+    ],
+    "contact": [
+      227,
+      404
+    ],
+    "hands": [
+      [
+        313,
+        368
+      ],
+      [
+        360,
+        373
+      ]
+    ],
+    "angle": 6,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 7,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      227,
+      359
+    ],
+    "contact": [
+      227,
+      404
+    ],
+    "hands": [
+      [
+        313,
+        368
+      ],
+      [
+        360,
+        373
+      ]
+    ],
+    "angle": 6,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 8,
+    "source": "sides",
+    "sourceFrame": 0,
+    "head": [
+      193,
+      171
+    ],
+    "contact": [
+      193,
+      217
+    ],
+    "hands": [
+      [
+        263,
+        197
+      ],
+      [
+        329,
+        221
+      ]
+    ],
+    "angle": 20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 9,
+    "source": "combo",
+    "sourceFrame": 3,
+    "head": [
+      205,
+      176
+    ],
+    "contact": [
+      205,
+      222
+    ],
+    "hands": [
+      [
+        264,
+        197
+      ],
+      [
+        353,
+        231
+      ]
+    ],
+    "angle": 20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 10,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      357,
+      331
+    ],
+    "contact": [
+      357,
+      375
+    ],
+    "hands": [
+      [
+        272,
+        331
+      ],
+      [
+        221,
+        331
+      ]
+    ],
+    "angle": 180,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 11,
+    "source": "sides",
+    "sourceFrame": 3,
+    "head": [
+      235,
+      339
+    ],
+    "contact": [
+      235,
+      384
+    ],
+    "hands": [
+      [
+        317,
+        345
+      ],
+      [
+        372,
+        349
+      ]
+    ],
+    "angle": 4,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 12,
+    "source": "sides",
+    "sourceFrame": 4,
+    "head": [
+      450,
+      310
+    ],
+    "contact": [
+      450,
+      355
+    ],
+    "hands": [
+      [
+        366,
+        325
+      ],
+      [
+        317,
+        334
+      ]
+    ],
+    "angle": 170,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 13,
+    "source": "sides",
+    "sourceFrame": 5,
+    "head": [
+      425,
+      316
+    ],
+    "contact": [
+      425,
+      361
+    ],
+    "hands": [
+      [
+        340,
+        326
+      ],
+      [
+        291,
+        332
+      ]
+    ],
+    "angle": 173,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 14,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      412,
+      359
+    ],
+    "contact": [
+      412,
+      403
+    ],
+    "hands": [
+      [
+        326,
+        368
+      ],
+      [
+        279,
+        373
+      ]
+    ],
+    "angle": 174,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_sides_red",
+    "frame": 15,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw",
+    "frame": 0,
+    "source": "throw",
+    "sourceFrame": 0,
+    "head": [
+      253,
+      414
+    ],
+    "contact": [
+      253,
+      459
+    ],
+    "hands": [
+      [
+        308,
+        388
+      ],
+      [
+        396,
+        344
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw",
+    "frame": 1,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      282,
+      331
+    ],
+    "contact": [
+      282,
+      376
+    ],
+    "hands": [
+      [
+        367,
+        331
+      ],
+      [
+        418,
+        331
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw",
+    "frame": 2,
+    "source": "throw",
+    "sourceFrame": 2,
+    "head": [
+      255,
+      214
+    ],
+    "contact": [
+      255,
+      260
+    ],
+    "hands": [
+      [
+        321,
+        231
+      ],
+      [
+        402,
+        251
+      ]
+    ],
+    "angle": 14,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw",
+    "frame": 3,
+    "source": "throw",
+    "sourceFrame": 3,
+    "head": [
+      230,
+      220
+    ],
+    "contact": [
+      230,
+      265
+    ],
+    "hands": [
+      [
+        303,
+        229
+      ],
+      [
+        375,
+        237
+      ]
+    ],
+    "angle": 7,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw",
+    "frame": 4,
+    "source": "throw",
+    "sourceFrame": 4,
+    "head": [
+      243,
+      265
+    ],
+    "contact": [
+      243,
+      311
+    ],
+    "hands": [
+      [
+        308,
+        297
+      ],
+      [
+        376,
+        330
+      ]
+    ],
+    "angle": 26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw",
+    "frame": 5,
+    "source": "throw",
+    "sourceFrame": 5,
+    "head": [
+      320,
+      430
+    ],
+    "contact": [
+      320,
+      475
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": false,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw",
+    "frame": 6,
+    "source": "throw",
+    "sourceFrame": 6,
+    "head": [
+      320,
+      430
+    ],
+    "contact": [
+      320,
+      475
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": false,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw",
+    "frame": 7,
+    "source": "throw",
+    "sourceFrame": 7,
+    "head": [
+      320,
+      430
+    ],
+    "contact": [
+      320,
+      475
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": false,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw_red",
+    "frame": 0,
+    "source": "throw",
+    "sourceFrame": 0,
+    "head": [
+      253,
+      414
+    ],
+    "contact": [
+      253,
+      459
+    ],
+    "hands": [
+      [
+        308,
+        388
+      ],
+      [
+        396,
+        344
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw_red",
+    "frame": 1,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      282,
+      331
+    ],
+    "contact": [
+      282,
+      376
+    ],
+    "hands": [
+      [
+        367,
+        331
+      ],
+      [
+        418,
+        331
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw_red",
+    "frame": 2,
+    "source": "throw",
+    "sourceFrame": 2,
+    "head": [
+      255,
+      214
+    ],
+    "contact": [
+      255,
+      260
+    ],
+    "hands": [
+      [
+        321,
+        231
+      ],
+      [
+        402,
+        251
+      ]
+    ],
+    "angle": 14,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw_red",
+    "frame": 3,
+    "source": "throw",
+    "sourceFrame": 3,
+    "head": [
+      230,
+      220
+    ],
+    "contact": [
+      230,
+      265
+    ],
+    "hands": [
+      [
+        303,
+        229
+      ],
+      [
+        375,
+        237
+      ]
+    ],
+    "angle": 7,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw_red",
+    "frame": 4,
+    "source": "throw",
+    "sourceFrame": 4,
+    "head": [
+      243,
+      265
+    ],
+    "contact": [
+      243,
+      311
+    ],
+    "hands": [
+      [
+        308,
+        297
+      ],
+      [
+        376,
+        330
+      ]
+    ],
+    "angle": 26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw_red",
+    "frame": 5,
+    "source": "throw",
+    "sourceFrame": 5,
+    "head": [
+      320,
+      430
+    ],
+    "contact": [
+      320,
+      475
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": false,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw_red",
+    "frame": 6,
+    "source": "throw",
+    "sourceFrame": 6,
+    "head": [
+      320,
+      430
+    ],
+    "contact": [
+      320,
+      475
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": false,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_throw_red",
+    "frame": 7,
+    "source": "throw",
+    "sourceFrame": 7,
+    "head": [
+      320,
+      430
+    ],
+    "contact": [
+      320,
+      475
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": false,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_rage",
+    "frame": 0,
+    "source": "rage",
+    "sourceFrame": 0,
+    "head": [
+      205,
+      430
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "parked": true
+  },
+  {
+    "bank": "corrupt_rage",
+    "frame": 1,
+    "source": "rage",
+    "sourceFrame": 3,
+    "head": [
+      234,
+      438
+    ],
+    "contact": [
+      234,
+      482
+    ],
+    "hands": [
+      [
+        287,
+        406
+      ],
+      [
+        369,
+        356
+      ]
+    ],
+    "angle": -31,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_rage",
+    "frame": 2,
+    "source": "rage",
+    "sourceFrame": 4,
+    "head": [
+      250,
+      400
+    ],
+    "contact": [
+      250,
+      445
+    ],
+    "hands": [
+      [
+        307,
+        375
+      ],
+      [
+        394,
+        336
+      ]
+    ],
+    "angle": -24,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_rage",
+    "frame": 3,
+    "source": "rage",
+    "sourceFrame": 5,
+    "head": [
+      256,
+      403
+    ],
+    "contact": [
+      256,
+      448
+    ],
+    "hands": [
+      [
+        312,
+        378
+      ],
+      [
+        400,
+        338
+      ]
+    ],
+    "angle": -24,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_rage",
+    "frame": 4,
+    "source": "rage",
+    "sourceFrame": 6,
+    "head": [
+      257,
+      403
+    ],
+    "contact": [
+      257,
+      448
+    ],
+    "hands": [
+      [
+        312,
+        378
+      ],
+      [
+        401,
+        336
+      ]
+    ],
+    "angle": -25,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_rage",
+    "frame": 5,
+    "source": "rage",
+    "sourceFrame": 7,
+    "head": [
+      256,
+      403
+    ],
+    "contact": [
+      256,
+      448
+    ],
+    "hands": [
+      [
+        313,
+        378
+      ],
+      [
+        399,
+        339
+      ]
+    ],
+    "angle": -24,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_rage",
+    "frame": 6,
+    "source": "rage",
+    "sourceFrame": 8,
+    "head": [
+      320,
+      430
+    ],
+    "contact": [
+      320,
+      475
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": false,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_rage",
+    "frame": 7,
+    "source": "rage",
+    "sourceFrame": 9,
+    "head": [
+      320,
+      430
+    ],
+    "contact": [
+      320,
+      475
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": false,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_rage",
+    "frame": 8,
+    "source": "rage",
+    "sourceFrame": 10,
+    "head": [
+      320,
+      430
+    ],
+    "contact": [
+      320,
+      475
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": false,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_rage",
+    "frame": 9,
+    "source": "rage",
+    "sourceFrame": 11,
+    "head": [
+      320,
+      430
+    ],
+    "contact": [
+      320,
+      475
+    ],
+    "hands": [],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": false,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 0,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 0.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 1,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 11.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 2,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 22.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 3,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 33.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 4,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 45.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 5,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 56.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 6,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 67.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 7,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 78.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 8,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 90.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 9,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 101.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 10,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 112.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 11,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 123.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 12,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 135.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 13,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 146.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 14,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 157.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 15,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 168.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 16,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 180.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 17,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 191.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 18,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 202.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 19,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 213.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 20,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 225.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 21,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 236.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 22,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 247.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 23,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 258.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 24,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 270.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 25,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 281.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 26,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 292.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 27,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 303.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 28,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 315.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 29,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 326.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 30,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 337.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool",
+    "frame": 31,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 348.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 0,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 0.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 1,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 11.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 2,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 22.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 3,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 33.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 4,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 45.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 5,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 56.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 6,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 67.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 7,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 78.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 8,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 90.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 9,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 101.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 10,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 112.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 11,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 123.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 12,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 135.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 13,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 146.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 14,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 157.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 15,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 168.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 16,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 180.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 17,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 191.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 18,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 202.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 19,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 213.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 20,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 225.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 21,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 236.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 22,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 247.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 23,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 258.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 24,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 270.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 25,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 281.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 26,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 292.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 27,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 303.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 28,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 315.0,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 29,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 326.25,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 30,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 337.5,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_tool_red",
+    "frame": 31,
+    "source": "weapon-master",
+    "head": [
+      320,
+      320
+    ],
+    "unit": 0.13,
+    "angle": 348.75,
+    "armed": true
+  },
+  {
+    "bank": "corrupt_hold",
+    "frame": 0,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_hold_red",
+    "frame": 0,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 0,
+    "source": "sides",
+    "sourceFrame": 8,
+    "head": [
+      226,
+      269
+    ],
+    "contact": [
+      226,
+      314
+    ],
+    "hands": [
+      [
+        294,
+        244
+      ],
+      [
+        364,
+        219
+      ]
+    ],
+    "angle": -20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 1,
+    "source": "combo",
+    "sourceFrame": 2,
+    "head": [
+      220,
+      233
+    ],
+    "contact": [
+      220,
+      278
+    ],
+    "hands": [
+      [
+        292,
+        233
+      ],
+      [
+        369,
+        233
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 2,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      282,
+      331
+    ],
+    "contact": [
+      282,
+      376
+    ],
+    "hands": [
+      [
+        367,
+        331
+      ],
+      [
+        418,
+        331
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 3,
+    "source": "sides",
+    "sourceFrame": 3,
+    "head": [
+      404,
+      339
+    ],
+    "contact": [
+      404,
+      383
+    ],
+    "hands": [
+      [
+        322,
+        345
+      ],
+      [
+        267,
+        349
+      ]
+    ],
+    "angle": 176,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 4,
+    "source": "sides",
+    "sourceFrame": 4,
+    "head": [
+      189,
+      310
+    ],
+    "contact": [
+      189,
+      355
+    ],
+    "hands": [
+      [
+        273,
+        325
+      ],
+      [
+        322,
+        334
+      ]
+    ],
+    "angle": 10,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 5,
+    "source": "sides",
+    "sourceFrame": 5,
+    "head": [
+      214,
+      316
+    ],
+    "contact": [
+      214,
+      361
+    ],
+    "hands": [
+      [
+        299,
+        326
+      ],
+      [
+        348,
+        332
+      ]
+    ],
+    "angle": 7,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 6,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      227,
+      359
+    ],
+    "contact": [
+      227,
+      404
+    ],
+    "hands": [
+      [
+        313,
+        368
+      ],
+      [
+        360,
+        373
+      ]
+    ],
+    "angle": 6,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 7,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      227,
+      359
+    ],
+    "contact": [
+      227,
+      404
+    ],
+    "hands": [
+      [
+        313,
+        368
+      ],
+      [
+        360,
+        373
+      ]
+    ],
+    "angle": 6,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 8,
+    "source": "sides",
+    "sourceFrame": 0,
+    "head": [
+      193,
+      171
+    ],
+    "contact": [
+      193,
+      217
+    ],
+    "hands": [
+      [
+        263,
+        197
+      ],
+      [
+        329,
+        221
+      ]
+    ],
+    "angle": 20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 9,
+    "source": "combo",
+    "sourceFrame": 3,
+    "head": [
+      205,
+      176
+    ],
+    "contact": [
+      205,
+      222
+    ],
+    "hands": [
+      [
+        264,
+        197
+      ],
+      [
+        353,
+        231
+      ]
+    ],
+    "angle": 20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 10,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      357,
+      331
+    ],
+    "contact": [
+      357,
+      375
+    ],
+    "hands": [
+      [
+        272,
+        331
+      ],
+      [
+        221,
+        331
+      ]
+    ],
+    "angle": 180,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 11,
+    "source": "sides",
+    "sourceFrame": 3,
+    "head": [
+      235,
+      339
+    ],
+    "contact": [
+      235,
+      384
+    ],
+    "hands": [
+      [
+        317,
+        345
+      ],
+      [
+        372,
+        349
+      ]
+    ],
+    "angle": 4,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 12,
+    "source": "sides",
+    "sourceFrame": 4,
+    "head": [
+      450,
+      310
+    ],
+    "contact": [
+      450,
+      355
+    ],
+    "hands": [
+      [
+        366,
+        325
+      ],
+      [
+        317,
+        334
+      ]
+    ],
+    "angle": 170,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 13,
+    "source": "sides",
+    "sourceFrame": 5,
+    "head": [
+      425,
+      316
+    ],
+    "contact": [
+      425,
+      361
+    ],
+    "hands": [
+      [
+        340,
+        326
+      ],
+      [
+        291,
+        332
+      ]
+    ],
+    "angle": 173,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_spin_fixed",
+    "frame": 14,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      412,
+      359
+    ],
+    "contact": [
+      412,
+      403
+    ],
+    "hands": [
+      [
+        326,
+        368
+      ],
+      [
+        279,
+        373
+      ]
+    ],
+    "angle": 174,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 0,
+    "source": "sides",
+    "sourceFrame": 8,
+    "head": [
+      226,
+      269
+    ],
+    "contact": [
+      226,
+      314
+    ],
+    "hands": [
+      [
+        294,
+        244
+      ],
+      [
+        364,
+        219
+      ]
+    ],
+    "angle": -20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 1,
+    "source": "combo",
+    "sourceFrame": 2,
+    "head": [
+      220,
+      233
+    ],
+    "contact": [
+      220,
+      278
+    ],
+    "hands": [
+      [
+        292,
+        233
+      ],
+      [
+        369,
+        233
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 2,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      282,
+      331
+    ],
+    "contact": [
+      282,
+      376
+    ],
+    "hands": [
+      [
+        367,
+        331
+      ],
+      [
+        418,
+        331
+      ]
+    ],
+    "angle": 0,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 3,
+    "source": "sides",
+    "sourceFrame": 3,
+    "head": [
+      404,
+      339
+    ],
+    "contact": [
+      404,
+      383
+    ],
+    "hands": [
+      [
+        322,
+        345
+      ],
+      [
+        267,
+        349
+      ]
+    ],
+    "angle": 176,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 4,
+    "source": "sides",
+    "sourceFrame": 4,
+    "head": [
+      189,
+      310
+    ],
+    "contact": [
+      189,
+      355
+    ],
+    "hands": [
+      [
+        273,
+        325
+      ],
+      [
+        322,
+        334
+      ]
+    ],
+    "angle": 10,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 5,
+    "source": "sides",
+    "sourceFrame": 5,
+    "head": [
+      214,
+      316
+    ],
+    "contact": [
+      214,
+      361
+    ],
+    "hands": [
+      [
+        299,
+        326
+      ],
+      [
+        348,
+        332
+      ]
+    ],
+    "angle": 7,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 6,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      227,
+      359
+    ],
+    "contact": [
+      227,
+      404
+    ],
+    "hands": [
+      [
+        313,
+        368
+      ],
+      [
+        360,
+        373
+      ]
+    ],
+    "angle": 6,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 7,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      227,
+      359
+    ],
+    "contact": [
+      227,
+      404
+    ],
+    "hands": [
+      [
+        313,
+        368
+      ],
+      [
+        360,
+        373
+      ]
+    ],
+    "angle": 6,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 8,
+    "source": "sides",
+    "sourceFrame": 0,
+    "head": [
+      193,
+      171
+    ],
+    "contact": [
+      193,
+      217
+    ],
+    "hands": [
+      [
+        263,
+        197
+      ],
+      [
+        329,
+        221
+      ]
+    ],
+    "angle": 20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 9,
+    "source": "combo",
+    "sourceFrame": 3,
+    "head": [
+      205,
+      176
+    ],
+    "contact": [
+      205,
+      222
+    ],
+    "hands": [
+      [
+        264,
+        197
+      ],
+      [
+        353,
+        231
+      ]
+    ],
+    "angle": 20,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 10,
+    "source": "throw",
+    "sourceFrame": 1,
+    "head": [
+      357,
+      331
+    ],
+    "contact": [
+      357,
+      375
+    ],
+    "hands": [
+      [
+        272,
+        331
+      ],
+      [
+        221,
+        331
+      ]
+    ],
+    "angle": 180,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 11,
+    "source": "sides",
+    "sourceFrame": 3,
+    "head": [
+      235,
+      339
+    ],
+    "contact": [
+      235,
+      384
+    ],
+    "hands": [
+      [
+        317,
+        345
+      ],
+      [
+        372,
+        349
+      ]
+    ],
+    "angle": 4,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 12,
+    "source": "sides",
+    "sourceFrame": 4,
+    "head": [
+      450,
+      310
+    ],
+    "contact": [
+      450,
+      355
+    ],
+    "hands": [
+      [
+        366,
+        325
+      ],
+      [
+        317,
+        334
+      ]
+    ],
+    "angle": 170,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 13,
+    "source": "sides",
+    "sourceFrame": 5,
+    "head": [
+      425,
+      316
+    ],
+    "contact": [
+      425,
+      361
+    ],
+    "hands": [
+      [
+        340,
+        326
+      ],
+      [
+        291,
+        332
+      ]
+    ],
+    "angle": 173,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_spin_fixed_red",
+    "frame": 14,
+    "source": "sides",
+    "sourceFrame": 6,
+    "head": [
+      412,
+      359
+    ],
+    "contact": [
+      412,
+      403
+    ],
+    "hands": [
+      [
+        326,
+        368
+      ],
+      [
+        279,
+        373
+      ]
+    ],
+    "angle": 174,
+    "unit": 0.13,
+    "armed": true,
+    "flip": true
+  },
+  {
+    "bank": "corrupt_break_fixed",
+    "frame": 0,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_break_fixed",
+    "frame": 1,
+    "source": "sides",
+    "sourceFrame": 3,
+    "head": [
+      235,
+      339
+    ],
+    "contact": [
+      235,
+      384
+    ],
+    "hands": [
+      [
+        317,
+        345
+      ],
+      [
+        372,
+        349
+      ]
+    ],
+    "angle": 4,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_break_fixed",
+    "frame": 2,
+    "source": "combo",
+    "sourceFrame": 6,
+    "head": [
+      348,
+      447
+    ],
+    "contact": [
+      348,
+      489
+    ],
+    "hands": [
+      [
+        348,
+        350
+      ],
+      [
+        347,
+        324
+      ]
+    ],
+    "angle": -90,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_break_fixed",
+    "frame": 3,
+    "source": "weapon-master",
+    "sourceFrame": 0,
+    "head": [
+      271,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed",
+    "frame": 4,
+    "source": "weapon-master",
+    "sourceFrame": 1,
+    "head": [
+      272,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed",
+    "frame": 5,
+    "source": "weapon-master",
+    "sourceFrame": 2,
+    "head": [
+      271,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed",
+    "frame": 6,
+    "source": "weapon-master",
+    "sourceFrame": 3,
+    "head": [
+      272,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed",
+    "frame": 7,
+    "source": "weapon-master",
+    "sourceFrame": 4,
+    "head": [
+      271,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed",
+    "frame": 8,
+    "source": "weapon-master",
+    "sourceFrame": 5,
+    "head": [
+      272,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed_red",
+    "frame": 0,
+    "source": "combo",
+    "sourceFrame": 0,
+    "head": [
+      258,
+      419
+    ],
+    "contact": [
+      258,
+      464
+    ],
+    "hands": [
+      [
+        303,
+        396
+      ],
+      [
+        410,
+        345
+      ]
+    ],
+    "angle": -26,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_break_fixed_red",
+    "frame": 1,
+    "source": "sides",
+    "sourceFrame": 3,
+    "head": [
+      235,
+      339
+    ],
+    "contact": [
+      235,
+      384
+    ],
+    "hands": [
+      [
+        317,
+        345
+      ],
+      [
+        372,
+        349
+      ]
+    ],
+    "angle": 4,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_break_fixed_red",
+    "frame": 2,
+    "source": "combo",
+    "sourceFrame": 6,
+    "head": [
+      348,
+      447
+    ],
+    "contact": [
+      348,
+      489
+    ],
+    "hands": [
+      [
+        348,
+        350
+      ],
+      [
+        347,
+        324
+      ]
+    ],
+    "angle": -90,
+    "unit": 0.13,
+    "armed": true,
+    "flip": false
+  },
+  {
+    "bank": "corrupt_break_fixed_red",
+    "frame": 3,
+    "source": "weapon-master",
+    "sourceFrame": 0,
+    "head": [
+      271,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed_red",
+    "frame": 4,
+    "source": "weapon-master",
+    "sourceFrame": 1,
+    "head": [
+      272,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed_red",
+    "frame": 5,
+    "source": "weapon-master",
+    "sourceFrame": 2,
+    "head": [
+      271,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed_red",
+    "frame": 6,
+    "source": "weapon-master",
+    "sourceFrame": 3,
+    "head": [
+      272,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed_red",
+    "frame": 7,
+    "source": "weapon-master",
+    "sourceFrame": 4,
+    "head": [
+      271,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  },
+  {
+    "bank": "corrupt_break_fixed_red",
+    "frame": 8,
+    "source": "weapon-master",
+    "sourceFrame": 5,
+    "head": [
+      272,
+      360
+    ],
+    "unit": 0.13,
+    "hands": [
+      [
+        291,
+        363
+      ]
+    ],
+    "armed": true,
+    "broken": true
+  }
+]

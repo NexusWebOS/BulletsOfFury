@@ -1,0 +1,227 @@
+[
+  {
+    "id": "magma_dart",
+    "selected": 0,
+    "size": [
+      128,
+      128
+    ],
+    "sourceBounds": [
+      8,
+      26,
+      123,
+      121
+    ],
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "sourceScale": 0.875,
+    "pivot": [
+      64,
+      64
+    ]
+  },
+  {
+    "id": "magma_forge",
+    "selected": 0,
+    "size": [
+      128,
+      128
+    ],
+    "sourceBounds": [
+      2,
+      7,
+      126,
+      123
+    ],
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "sourceScale": 0.875,
+    "pivot": [
+      64,
+      64
+    ]
+  },
+  {
+    "id": "sky_zephyr",
+    "selected": 0,
+    "size": [
+      128,
+      128
+    ],
+    "sourceBounds": [
+      14,
+      7,
+      114,
+      118
+    ],
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "sourceScale": 0.875,
+    "pivot": [
+      64,
+      64
+    ]
+  },
+  {
+    "id": "sky_gale",
+    "selected": 3,
+    "size": [
+      128,
+      128
+    ],
+    "sourceBounds": [
+      7,
+      10,
+      121,
+      118
+    ],
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "sourceScale": 0.875,
+    "pivot": [
+      64,
+      64
+    ]
+  },
+  {
+    "id": "sky_stratus",
+    "selected": 2,
+    "size": [
+      128,
+      128
+    ],
+    "sourceBounds": [
+      6,
+      10,
+      122,
+      122
+    ],
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "sourceScale": 0.875,
+    "pivot": [
+      64,
+      64
+    ]
+  },
+  {
+    "id": "water_ripple",
+    "selected": 0,
+    "size": [
+      128,
+      128
+    ],
+    "sourceBounds": [
+      8,
+      11,
+      120,
+      121
+    ],
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "sourceScale": 0.875,
+    "pivot": [
+      64,
+      64
+    ]
+  },
+  {
+    "id": "water_manta",
+    "selected": 1,
+    "size": [
+      128,
+      128
+    ],
+    "sourceBounds": [
+      9,
+      21,
+      119,
+      111
+    ],
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "sourceScale": 0.875,
+    "pivot": [
+      64,
+      64
+    ]
+  },
+  {
+    "id": "water_leviathan",
+    "selected": 0,
+    "size": [
+      128,
+      128
+    ],
+    "sourceBounds": [
+      6,
+      6,
+      122,
+      121
+    ],
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "sourceScale": 0.875,
+    "pivot": [
+      64,
+      64
+    ]
+  },
+  {
+    "id": "water_undertow",
+    "selected": 2,
+    "size": [
+      128,
+      128
+    ],
+    "sourceBounds": [
+      16,
+      11,
+      112,
+      117
+    ],
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "sourceScale": 0.875,
+    "pivot": [
+      64,
+      64
+    ]
+  }
+]

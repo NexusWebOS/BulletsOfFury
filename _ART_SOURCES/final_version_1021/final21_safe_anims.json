@@ -1,0 +1,35 @@
+[
+  {
+    "name": "corrupt_slam_safe",
+    "args": {
+      "first_frame_url": "upload:2c304147-4634-424a-9f15-2a285db29a1e",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "subject_description": "a chromium demonic robot holding a two-handed purple hammer",
+      "initial_pose": "centered small sprite with large transparent margins",
+      "description": "FRAME FORMAT256x256, common fixed scale, pivot128,128. Deliberately lift the two-handed solid hammer straight above the skull in four clear anticipation frames, slam its metal head down in front of the toes, recoil and recover. NO exterior energy trails, smoke, blasts, lightning or particles. Only the physical robot and physical hammer. Do not hit canvas edges. Preserve the SMALL reference figure scale and large margins so the entire raised hammer remains visible."
+    },
+    "receipt": [
+      "id: 8f930349-1bda-4fa0-85e0-7aee8dfc141b\njob_id: 8f930349-1bda-4fa0-85e0-7aee8dfc141b\ndescription: FRAME FORMAT256x256, common fixed scale, pivot128,128. Deliberately lift the two-handed solid hammer straight above the skull in four clear anticipation frames, slam its metal head down in front of the toes, recoil and recover. NO exterior energy trails, smoke, blasts, lightning or particles. Only the physical robot and physical hammer. Do not hit canvas edges. Preserve the SMALL reference figure scale and large margins so the entire raised hammer remains visible.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8f930349-1bda-4fa0-85e0-7aee8dfc141b\")\nasset_id: 7ada68b9-2986-580e-aae2-d0df3c31f112\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "portal_loop_safe",
+    "args": {
+      "first_frame_url": "upload:45462d3b-f0a6-403e-ae1a-1e6a33f474e0",
+      "frame_count": 32,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "subject_description": "a white cyan violet upright energy portal",
+      "initial_pose": "centered small sprite with large transparent margins",
+      "description": "FRAME FORMAT256x256, common fixed scale, pivot128,128. Smooth continuous clockwise rotation of the white cyan violet spiral inside this upright oval portal. Stable center and200px tall silhouette. Entire halo and all wisps stay well inside the large32px transparent margins. No gate, hardware, camera motion, growth, expansion or detached sparks. End exactly on starting alignment, perfect seamless loop.",
+      "last_frame_url": "upload:45462d3b-f0a6-403e-ae1a-1e6a33f474e0"
+    },
+    "receipt": [
+      "id: 02f1f647-0dad-46f4-83c0-b2578ff9b424\njob_id: 02f1f647-0dad-46f4-83c0-b2578ff9b424\ndescription: FRAME FORMAT256x256, common fixed scale, pivot128,128. Smooth continuous clockwise rotation of the white cyan violet spiral inside this upright oval portal. Stable center and200px tall silhouette. Entire halo and all wisps stay well inside the large32px transparent margins. No gate, hardware, camera motion, growth, expansion or detached sparks. End exactly on starting alignment, perfect seamless loop.\nframes: 32\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"02f1f647-0dad-46f4-83c0-b2578ff9b424\")\nasset_id: b8db560f-ce1c-5f74-8929-6e04d3e3e5c0\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  }
+]

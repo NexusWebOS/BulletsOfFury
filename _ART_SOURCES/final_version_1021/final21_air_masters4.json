@@ -1,0 +1,78 @@
+[
+  {
+    "name": "air_s1jetbomber_b",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:545dc668-6675-4002-bda4-92d550c8ba2f",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Jungle Heavy Bomber aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 5ee2d55c-6128-4f86-a192-ed8da3d4b5ce\njob_id: 5ee2d55c-6128-4f86-a192-ed8da3d4b5ce\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Jungle Heavy Bomber aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: c7ba33d2-e3a4-5a21-9a49-cf86b1f8a5ca\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"5ee2d55c-6128-4f86-a192-ed8da3d4b5ce\")"
+    ]
+  },
+  {
+    "name": "air_s4heavyjet",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:8f7b1f2a-445d-4ca4-8ba3-7db6459f53d4",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Heavyjet aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 3219199a-74f8-44d4-9e5d-63077fa87696\njob_id: 3219199a-74f8-44d4-9e5d-63077fa87696\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Heavyjet aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: d17a45a2-633e-5857-8b24-e6c891ecf0c1\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"3219199a-74f8-44d4-9e5d-63077fa87696\")"
+    ]
+  },
+  {
+    "name": "air_s7skimmer",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:66d17f2a-24c1-4e46-97d8-cd2394ba545f",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Toxic Skimmer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 1e327e53-5d9f-4183-a4ef-14aa8453e2b6\njob_id: 1e327e53-5d9f-4183-a4ef-14aa8453e2b6\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Toxic Skimmer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 3ddf9fec-4f05-5535-ba52-53c3e2edd7c0\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"1e327e53-5d9f-4183-a4ef-14aa8453e2b6\")"
+    ]
+  },
+  {
+    "name": "air_s8interceptor",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:1f4f310e-6c9e-4ca5-9a4e-adaa0a7926cf",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Alien Fighter aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: cf267b68-8b36-4501-b5e6-ca4f289fc1f6\njob_id: cf267b68-8b36-4501-b5e6-ca4f289fc1f6\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Alien Fighter aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: ea9f33cc-533b-5efe-b4cd-f4a26f8b01b0\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"cf267b68-8b36-4501-b5e6-ca4f289fc1f6\")"
+    ]
+  }
+]

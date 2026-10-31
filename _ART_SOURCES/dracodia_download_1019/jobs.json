@@ -1,0 +1,111 @@
+{
+  "ghost": {
+    "drawing": "9777fb00-f3e0-4963-99c8-223efc5ef972",
+    "edit": "216e0fe2-d096-46ed-813b-7053784e8ffe",
+    "frames": 16,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "captureScale": 0.5,
+    "captureSize": 410
+  },
+  "colossus": {
+    "drawing": "c5fb8f15-5104-4950-9317-42bd9ef104d7",
+    "edit": "eb90211a-8b12-4bc9-a0ca-b3f4d52eef93",
+    "frames": 16,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "captureScale": 0.5,
+    "captureSize": 410
+  },
+  "helicopter": {
+    "drawing": "28292a1e-e5d7-47e8-832e-3083d40154e0",
+    "edit": "9396f13d-d220-4765-9100-a5b3686d824f",
+    "frames": 16,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "captureScale": 0.5,
+    "captureSize": 410
+  },
+  "harrier": {
+    "drawing": "4274bece-9bdf-4600-b11c-acf739a3010f",
+    "edit": "c54bb0e7-ca9f-4633-8d90-d67573589801",
+    "frames": 16,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "captureScale": 0.5,
+    "captureSize": 410
+  },
+  "volcano": {
+    "drawing": "cf5d6eb6-fa69-4ecc-b374-1e06397e7311",
+    "edit": "d0551d0c-5e92-49d4-ad4c-3e30e478c8e3",
+    "frames": 16,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "captureScale": 0.5,
+    "captureSize": 410,
+    "cacheTag": "boss_redesign_1020",
+    "identity": "Whole cannon-pod Phoenix"
+  },
+  "infused": {
+    "drawing": "c9ae0929-98bc-42e3-9030-4b07a504d5b5",
+    "edit": "21105ae4-1a6d-4ec6-a032-2712598487f5",
+    "frames": 16,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "captureScale": 0.5,
+    "captureSize": 410
+  },
+  "hammer": {
+    "drawing": "494e9e9e-bf0e-446f-93a4-8777319ae158",
+    "edit": "bba5d7ab-7e66-4c5b-9473-7f8f0559a40f",
+    "frames": 16,
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "captureScale": 0.5,
+    "captureSize": 410,
+    "cacheTag": "boss_redesign_1020",
+    "identity": "Demonic two-handed code Hammer"
+  }
+}

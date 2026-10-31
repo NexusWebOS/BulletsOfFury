@@ -1,0 +1,73 @@
+{
+  "fixture": "Native rear-stage fixture. Front/gun HP removed before test; rear HP and later damage are unmodified. Actual player laser input only; no missiles.",
+  "parts": [
+    {
+      "before": {
+        "id": "rearL",
+        "hp": 583,
+        "target": {
+          "x": 212.62162317058562,
+          "y": 116.02547739725486
+        },
+        "center": 340
+      },
+      "after": {
+        "hp": 403,
+        "core": 1748,
+        "cans": [
+          306,
+          306
+        ],
+        "weapon": 3
+      },
+      "ordinaryLaserDamagedLeg": true
+    },
+    {
+      "before": {
+        "id": "rearR",
+        "hp": 583,
+        "target": {
+          "x": 467.211533218845,
+          "y": 115.13589142073988
+        },
+        "center": 340
+      },
+      "after": {
+        "hp": 403,
+        "core": 1748,
+        "cans": [
+          306,
+          306
+        ],
+        "weapon": 3
+      },
+      "ordinaryLaserDamagedLeg": true
+    }
+  ],
+  "canisterShots": [
+    {
+      "id": "canL",
+      "before": 306,
+      "after": 186,
+      "damaged": true
+    },
+    {
+      "id": "canR",
+      "before": 306,
+      "after": 186,
+      "damaged": true
+    }
+  ],
+  "coreStillProtected": true,
+  "jumpMarker": {
+    "mode": "jump",
+    "middle": 340,
+    "x": 340,
+    "markerX": 340,
+    "y": 312.32,
+    "markerY": 367.32
+  },
+  "jumpMarkerMatchesLane": true,
+  "errors": [],
+  "passed": true
+}

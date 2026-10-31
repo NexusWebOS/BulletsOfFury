@@ -1,0 +1,22 @@
+{
+  "masterJob": "a3ed4f8a-edd3-49c0-8ba3-479f887a287f",
+  "frontFacing": true,
+  "losslessReconstruction": true,
+  "canvas": [
+    320,
+    320
+  ],
+  "sourceCanvas": [
+    256,
+    256
+  ],
+  "padding": [
+    32,
+    32
+  ],
+  "parts": 17,
+  "headChargeJob": "01ab246b-e121-4006-9ef4-238e0d34d4d9",
+  "flapJob": "40f92480-fd27-4286-b87e-db372e4e0298",
+  "plumeJob": "6b1ca499-cabc-492f-9ba3-006b3c6cc2d5",
+  "featherJob": "ac817c6c-04a2-4b0d-9731-b259ed949e24"
+}

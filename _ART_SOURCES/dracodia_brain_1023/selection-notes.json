@@ -1,0 +1,45 @@
+{
+  "balance": {
+    "before": 4.44,
+    "after": 4.16,
+    "displayedCreditDelta": 0.28
+  },
+  "accepted": [
+    "Dracodia referenced black-chrome/violet mechanical alien brain",
+    "generated lobe/circuit/tendril loop with approved brow and eye pixels locked offline",
+    "animated dark violet cloud shell",
+    "generated laser flicker baked into6 expansion widths",
+    "generated code geyser frames0..6 with terminal tiny plume reused for startup",
+    "generated digital dissolve with terminal detached-spark selection"
+  ],
+  "corrections": [
+    "Discard geyser frames7/8 because they ignite again after subsiding",
+    "Convert accidental cyan geyser energy to violet while preserving white cores and dark debris",
+    "Bake a fixed12px breakup map into6 terminal dissolve poses to remove the persistent central face, retaining detached generated sparks",
+    "Use stable approved eye/brow source rectangle across idle frames to prevent socket drift",
+    "Lower brain float anchor to keep crown below boss HUD"
+  ],
+  "unit": {
+    "bodyCell": [
+      384,
+      384
+    ],
+    "sourceScale": 1.5,
+    "bodyPivot": [
+      192,
+      192
+    ],
+    "eyes": [
+      [
+        158,
+        228
+      ],
+      [
+        216,
+        228
+      ]
+    ],
+    "runtimeScale": 1
+  },
+  "scope": "Stage8 Dracodia slot6 only; preserve Stage6 Harrier, other Dracodia forms, phase health budgets and native final death/reward."
+}

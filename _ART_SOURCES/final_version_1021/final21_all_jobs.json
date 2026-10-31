@@ -1,0 +1,729 @@
+[
+  {
+    "name": "corrupt_idle",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Subtle idle breathing piston motion, slight weight shift and armor vents pulsing; hammer and feet remain planted. Return to exact starting stance. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: 3c071c99-b550-4e1a-a85c-7978f88740c1\njob_id: 3c071c99-b550-4e1a-a85c-7978f88740c1\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Subtle idle breathing piston motion, slight weight shift and armor vents pulsing; hammer and feet remain planted. Return to exact starting stance. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 8\nsize: 256x256px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"3c071c99-b550-4e1a-a85c-7978f88740c1\")\nasset_id: 9465d67e-5598-56e9-b2d1-d99af65e4f6a\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_slam",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Raise the two-handed energy hammer directly above head with a clear four-frame anticipation; drive it down fiercely in front of the feet, recoil with a heavy low follow-through, then recover to starting stance. Hammer remains solid, hands gripping shaft. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: bfdda8ee-50d5-4e84-969f-a862f62b9814\njob_id: bfdda8ee-50d5-4e84-969f-a862f62b9814\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Raise the two-handed energy hammer directly above head with a clear four-frame anticipation; drive it down fiercely in front of the feet, recoil with a heavy low follow-through, then recover to starting stance. Hammer remains solid, hands gripping shaft. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"bfdda8ee-50d5-4e84-969f-a862f62b9814\")\nasset_id: 1f63c97e-cd34-5431-a808-2efc12adb166\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_spin",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Perform one complete powerful360-degree hammer body spin around a fixed chest pivot, hammer extended in both hands. Full torso and legs rotate naturally; clear front/side/back poses. Return to starting stance; no travel. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: b0ab4918-1f3e-4a77-be95-3af489520c61\njob_id: b0ab4918-1f3e-4a77-be95-3af489520c61\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Perform one complete powerful360-degree hammer body spin around a fixed chest pivot, hammer extended in both hands. Full torso and legs rotate naturally; clear front/side/back poses. Return to starting stance; no travel. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b0ab4918-1f3e-4a77-be95-3af489520c61\")\nasset_id: 96ce5155-53dd-5dd9-a794-a59908d352f8\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_side",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 12,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Crouch with hammer pulled beside hip, lift knees into a short jumping two-handed sideways strike, then land and visibly recover. Centered physical chest anchor; no travel or camera movement. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: 5dff30b0-bc2c-4b80-bad4-0fa70324db61\njob_id: 5dff30b0-bc2c-4b80-bad4-0fa70324db61\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Crouch with hammer pulled beside hip, lift knees into a short jumping two-handed sideways strike, then land and visibly recover. Centered physical chest anchor; no travel or camera movement. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 12\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"5dff30b0-bc2c-4b80-bad4-0fa70324db61\")\nasset_id: 7ad1c10c-657c-504f-91ac-92d7fe086840\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_charge",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Lift the energy hammer high and charge its purple-white core, chest and arms braced. Clean white internal code energy fills hammer seams; hold overhead with piston tremble, then lower it back into starting stance. Energy remains internal and compact. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: fae75dcc-381d-48ab-b02e-becf76ce5bc6\njob_id: fae75dcc-381d-48ab-b02e-becf76ce5bc6\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Lift the energy hammer high and charge its purple-white core, chest and arms braced. Clean white internal code energy fills hammer seams; hold overhead with piston tremble, then lower it back into starting stance. Energy remains internal and compact. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fae75dcc-381d-48ab-b02e-becf76ce5bc6\")\nasset_id: a79a63a1-47fc-502c-b9bd-d5c828d04cc3\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_gun",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Hammer disappears into digital storage, hold a heavy chromium chaingun in both hands at waist aimed toward camera. Barrels spin, paired short muzzle flashes and rhythmic shoulders/arms recoil during sustained firing, then cease and recover. Keep gun muzzle readable; no long bullets baked into frame. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: dd270287-2972-4548-9eb6-d6fa4f4e3a09\njob_id: dd270287-2972-4548-9eb6-d6fa4f4e3a09\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Hammer disappears into digital storage, hold a heavy chromium chaingun in both hands at waist aimed toward camera. Barrels spin, paired short muzzle flashes and rhythmic shoulders/arms recoil during sustained firing, then cease and recover. Keep gun muzzle readable; no long bullets baked into frame. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"dd270287-2972-4548-9eb6-d6fa4f4e3a09\")\nasset_id: 8db3dd00-f6de-54d3-8d87-276c791e1078\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_break",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Bring the hammer shaft across a raised knee, brace both hands and deliberately snap the shaft in half; grip the exposed purple-white core, shudder with strain and raise it to throw, throw forward, then settle into an unarmed stance. Strong readable anticipation and release. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: 8bc8f4d3-2b8c-4f2d-a15c-7e3f58bdc9df\njob_id: 8bc8f4d3-2b8c-4f2d-a15c-7e3f58bdc9df\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Bring the hammer shaft across a raised knee, brace both hands and deliberately snap the shaft in half; grip the exposed purple-white core, shudder with strain and raise it to throw, throw forward, then settle into an unarmed stance. Strong readable anticipation and release. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8bc8f4d3-2b8c-4f2d-a15c-7e3f58bdc9df\")\nasset_id: b02f04c2-9c68-5f25-8457-f1fbea0e0b07\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_fire",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same forward-facing violet black chromium demonic robot with a skull face and two-handed energy hammer",
+      "initial_pose": "full-body front-facing combat stance, chest pivot128,112",
+      "description": "FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Without hammer or gun, cross both forearms in an X across chest; brace legs and build red-orange internal energy in armor seams, tremble, uncross arms into enraged unarmed guard. Compact pixel flames vent at shoulders; body remains fully opaque. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles."
+    },
+    "receipt": [
+      "id: cb8cccc5-bb70-4381-8e52-90e2f2b241e3\njob_id: cb8cccc5-bb70-4381-8e52-90e2f2b241e3\ndescription: FRAME FORMAT256x256, identical scale and fixed chest pivot128,112 in every frame. Without hammer or gun, cross both forearms in an X across chest; brace legs and build red-orange internal energy in armor seams, tremble, uncross arms into enraged unarmed guard. Compact pixel flames vent at shoulders; body remains fully opaque. Preserve exact skull face/crown, broad clean chromium armor plates, red chest code-heart, silhouette, proportions and silver highlights from reference. Full body always visible with transparent margins; no zoom, pan, drifting, cropping, camera rotation, fade, scenery or floating text. Never replace armor with noise or wire scribbles.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"cb8cccc5-bb70-4381-8e52-90e2f2b241e3\")\nasset_id: c1ac93df-02d1-58a7-a9d1-ed3cb0c8f56b\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_unarmed",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No hammer and no gun. Hold an unarmed combat guard, fists clenched, a slow mechanical breathing loop; no weapon or flame. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: e19ce5cc-63ba-43a8-810a-8575540593ce\njob_id: e19ce5cc-63ba-43a8-810a-8575540593ce\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No hammer and no gun. Hold an unarmed combat guard, fists clenched, a slow mechanical breathing loop; no weapon or flame. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 8\nsize: 256x256px\ntransparent: True\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"e19ce5cc-63ba-43a8-810a-8575540593ce\")\nasset_id: 9bf23d0e-6c0a-57e4-8fb3-11e3aac8734d\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_punch",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No weapon. Pull right fist back in clear anticipation, deliver a strong forward right punch, recoil, then left punch, recoil, and return to guard; arms extend toward the viewer without body travel. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: 2bd8a824-5855-4f64-a83b-05d6ae6010da\njob_id: 2bd8a824-5855-4f64-a83b-05d6ae6010da\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No weapon. Pull right fist back in clear anticipation, deliver a strong forward right punch, recoil, then left punch, recoil, and return to guard; arms extend toward the viewer without body travel. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"2bd8a824-5855-4f64-a83b-05d6ae6010da\")\nasset_id: 3dd17387-5fc6-5512-b94f-559b2f5cf4b8\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_fists",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No weapon. Clasp both fists together above the head, lift shoulders and torso, smash both fists down together in front of the feet, heavy recoil and recovery to unarmed guard. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: f11acc1f-800a-4eab-bf47-8fcedd23f0f2\njob_id: f11acc1f-800a-4eab-bf47-8fcedd23f0f2\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. No weapon. Clasp both fists together above the head, lift shoulders and torso, smash both fists down together in front of the feet, heavy recoil and recovery to unarmed guard. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"f11acc1f-800a-4eab-bf47-8fcedd23f0f2\")\nasset_id: ecfee18b-eed0-55d1-8122-593588a36962\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_dance",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. Playful menacing hammer knight taunt dance: shift hips and knees left then right, bounce shoulders and nod skull head twice while holding hammer safely across waist. Return to initial stance. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: ffaef5ae-ed79-468b-8cec-5a1c691f4385\njob_id: ffaef5ae-ed79-468b-8cec-5a1c691f4385\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. Playful menacing hammer knight taunt dance: shift hips and knees left then right, bounce shoulders and nod skull head twice while holding hammer safely across waist. Return to initial stance. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ffaef5ae-ed79-468b-8cec-5a1c691f4385\")\nasset_id: 77bd24dd-be2b-5835-802a-94ee76605350\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_ball",
+    "args": {
+      "first_frame_url": "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "direction": "south",
+      "subject_description": "the same violet black chromium demonic robot Hammer form",
+      "initial_pose": "full-body front-facing stance chest pivot128,112",
+      "description": "FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. Curl arms, head and legs inward into a compact spiked chromium ball, spin through one complete360-degree revolution with the same violet armor plates visible, then unfold fully into original stance. No travel or fade. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency."
+    },
+    "receipt": [
+      "id: 7e498a70-23a8-4b7c-b13f-cac3c99b51de\njob_id: 7e498a70-23a8-4b7c-b13f-cac3c99b51de\ndescription: FRAME FORMAT256x256, fixed chest pivot128,112, one common scale, transparent margins. Curl arms, head and legs inward into a compact spiked chromium ball, spin through one complete360-degree revolution with the same violet armor plates visible, then unfold fully into original stance. No travel or fade. Keep exact skull/crown/face, broad clean armor, chest code-heart, proportions, deliberate silver highlights of reference. No camera motion, zoom, pan, scene, cropped limbs, tiny noisy wiring or translucency.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"7e498a70-23a8-4b7c-b13f-cac3c99b51de\")\nasset_id: edd5e8ad-e34c-5685-91b8-2348241e2ac0\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_tool",
+    "args": {
+      "image_urls": [
+        "upload:57dc8f61-c1c5-4ce7-bdb9-2a6505fe7a3a"
+      ],
+      "description": "Keep ONLY the complete two-handed chromium hammer, both head lobes, glowing purple-white inset energy cores and straight metal haft, in exactly its existing diagonal orientation and pixel location. Remove the entire robot body, arms, hands, legs, skull and all other pixels, replacing them with transparency. Reconstruct clean hammer haft where hands previously occluded it. One intact readable weapon sprite on same256x256 transparent canvas; preserve hammer design, colors and proportions exactly.",
+      "no_background": true
+    },
+    "receipt": [
+      "id: 5c9b8dbf-fe5b-4be7-84b8-c24b149b8b69\njob_id: 5c9b8dbf-fe5b-4be7-84b8-c24b149b8b69\nmode: text\nframes: 1\nsize: 256x256px\ntransparent: True\nedit: Keep ONLY the complete two-handed chromium hammer, both head lobes, glowing purple-white inset energy cores and straight metal haft, in exactly its existing diagonal orientation and pixel location. Remove the entire robot body, arms, hands, legs, skull and all other pixels, replacing them with transparency. Reconstruct clean hammer haft where hands previously occluded it. One intact readable weapon sprite on same256x256 transparent canvas; preserve hammer design, colors and proportions exactly.\nasset_id: 70bdbc8c-a104-5dee-99e6-5f4670890d5c\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"5c9b8dbf-fe5b-4be7-84b8-c24b149b8b69\")"
+    ]
+  },
+  {
+    "name": "portal_loop",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/0792881a-3a1f-4fc5-a094-5d42259207f1/download?index=0",
+      "description": "A stationary upright oval warp portal. White cyan and violet energy spirals rotate continuously around the dark aperture in a perfectly smooth full clockwise revolution. Inner filaments flow into dimensional depth, small edge wisps flare and rejoin the ring. NO gate, hardware, metal or support. Fixed center128,128 and oval silhouette, no camera motion, zoom, drifting, growth or cropping. End exactly at starting spiral alignment for a seamless 32-frame loop. Transparent background; keep all energy inside the256x256 canvas with margins.",
+      "frame_count": 32,
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/0792881a-3a1f-4fc5-a094-5d42259207f1/download?index=0",
+      "no_background": true,
+      "enhance_prompt": false,
+      "subject_description": "an upright white cyan violet pure-energy oval portal",
+      "initial_pose": "stationary centered upright oval",
+      "view": "side"
+    },
+    "receipt": [
+      "id: 67b3658e-407f-4e01-9a71-b1ee74fbb218\njob_id: 67b3658e-407f-4e01-9a71-b1ee74fbb218\ndescription: A stationary upright oval warp portal. White cyan and violet energy spirals rotate continuously around the dark aperture in a perfectly smooth full clockwise revolution. Inner filaments flow into dimensional depth, small edge wisps flare and rejoin the ring. NO gate, hardware, metal or support. Fixed center128,128 and oval silhouette, no camera motion, zoom, drifting, growth or cropping. End exactly at starting spiral alignment for a seamless 32-frame loop. Transparent background; keep all energy inside the256x256 canvas with margins.\nframes: 32\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"67b3658e-407f-4e01-9a71-b1ee74fbb218\")\nasset_id: b180277b-5993-5cdb-9867-3b34c0353aa8\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "shield_hex",
+    "args": {
+      "width": 256,
+      "height": 256,
+      "no_background": true,
+      "max_colors": 40,
+      "reference_images": [
+        {
+          "url": "upload:beb0a726-2eb6-4e7e-9c9e-30329ac63305",
+          "usage": "Existing BOF / user explosion-pack visual identity and palette"
+        }
+      ],
+      "description": "FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A complete spherical cyan-white energy shield shell, transparent spacious interior, clean segmented hexagonal lattice with deliberate readable pixel clusters. Not a flat solid disk. No metal or hardware. Keep circular silhouette and transparent center that leaves an enemy visible. Neo-Geo high-quality pixel art; restrained internal highlights, energy rim."
+    },
+    "receipt": [
+      "id: 453cb351-30ed-48bb-8c93-18ff5559887f\njob_id: 453cb351-30ed-48bb-8c93-18ff5559887f\nmodel: pro\ndescription: FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A complete spherical cyan-white energy shield shell, transparent spacious interior, clean segmented hexagonal lattice with deliberate readable pixel clusters. Not a flat solid disk. No metal or hardware. Keep circular silhouette and transparent center that leaves an enemy visible. Neo-Geo high-quality pixel art; restrained internal highlights, energy rim.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nmax colours: 40 per image\nasset_id: 0a649e4e-1eef-595a-bb09-87b6fc7b82ca\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"453cb351-30ed-48bb-8c93-18ff5559887f\")"
+    ]
+  },
+  {
+    "name": "shield_void",
+    "args": {
+      "width": 256,
+      "height": 256,
+      "no_background": true,
+      "max_colors": 40,
+      "reference_images": [
+        {
+          "url": "upload:15ef1802-b58d-4236-9d99-972fd18b398a",
+          "usage": "Existing BOF / user explosion-pack visual identity and palette"
+        }
+      ],
+      "description": "FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A complete circular dark violet-purple demonic code energy shield, transparent spacious interior so the enemy stays visible. Layered fine purple/gray/white swirling tendrils with small red code seams, clean restrained pixel shine. Not a solid orb. No skull, robot, hardware or text. Match reference circular shape."
+    },
+    "receipt": [
+      "id: 9797a674-d988-425a-be4c-1e8b9811b538\njob_id: 9797a674-d988-425a-be4c-1e8b9811b538\nmodel: pro\ndescription: FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A complete circular dark violet-purple demonic code energy shield, transparent spacious interior so the enemy stays visible. Layered fine purple/gray/white swirling tendrils with small red code seams, clean restrained pixel shine. Not a solid orb. No skull, robot, hardware or text. Match reference circular shape.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nmax colours: 40 per image\nasset_id: c30b2c90-0f86-509f-90f7-12c59678b6df\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"9797a674-d988-425a-be4c-1e8b9811b538\")"
+    ]
+  },
+  {
+    "name": "explosion_star",
+    "args": {
+      "width": 256,
+      "height": 256,
+      "no_background": true,
+      "max_colors": 40,
+      "reference_images": [
+        {
+          "url": "upload:8860ffc4-9543-4227-8f1a-e3ce24953a0f",
+          "usage": "Existing BOF / user explosion-pack visual identity and palette"
+        }
+      ],
+      "description": "FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A Neo-Geo-quality explosion keyframe based on this actual BOF explosion: white-hot small angular core, layered yellow-orange fire tongues and deep red/gray smoke lobes. Clear defined pixel clusters and internal light, round explosive shape with room on every side for animation. No square blocks, no ground, no ship, no lens flare."
+    },
+    "receipt": [
+      "id: 03e24d90-9143-4a47-a3e8-df40f8c51d90\njob_id: 03e24d90-9143-4a47-a3e8-df40f8c51d90\nmodel: pro\ndescription: FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A Neo-Geo-quality explosion keyframe based on this actual BOF explosion: white-hot small angular core, layered yellow-orange fire tongues and deep red/gray smoke lobes. Clear defined pixel clusters and internal light, round explosive shape with room on every side for animation. No square blocks, no ground, no ship, no lens flare.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nmax colours: 40 per image\nasset_id: eb067b1d-554e-5454-82d1-115225ebc644\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"03e24d90-9143-4a47-a3e8-df40f8c51d90\")"
+    ]
+  },
+  {
+    "name": "explosion_chain",
+    "args": {
+      "width": 256,
+      "height": 256,
+      "no_background": true,
+      "max_colors": 40,
+      "reference_images": [
+        {
+          "url": "upload:f30dadc8-d3df-4cf6-bf67-1e2f1a8240c2",
+          "usage": "Existing BOF / user explosion-pack visual identity and palette"
+        }
+      ],
+      "description": "FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A large Neo-Geo arcade final-boss chain-detonation keyframe inspired by this ColeForge explosion. Multiple overlapping white-hot cores and orange/red billowing fire tongues, dark purple/red smoke, crisp rich pixel clusters, strong inner highlights. Centered on transparency with32px clear margin; no ground, ship, text or rectangular background."
+    },
+    "receipt": [
+      "id: db7288f0-b6fb-470b-833d-3a299f5e9ed5\njob_id: db7288f0-b6fb-470b-833d-3a299f5e9ed5\nmodel: pro\ndescription: FRAME FORMAT256x256, fixed pivot128,128, one centered transparent sprite, keep effects fully inside32px margins. A large Neo-Geo arcade final-boss chain-detonation keyframe inspired by this ColeForge explosion. Multiple overlapping white-hot cores and orange/red billowing fire tongues, dark purple/red smoke, crisp rich pixel clusters, strong inner highlights. Centered on transparency with32px clear margin; no ground, ship, text or rectangular background.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nmax colours: 40 per image\nasset_id: 9a93ac70-e1aa-51e7-bac9-df231050aefa\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"db7288f0-b6fb-470b-833d-3a299f5e9ed5\")"
+    ]
+  },
+  {
+    "name": "shield_hex_loop",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/453cb351-30ed-48bb-8c93-18ff5559887f/download?index=0",
+      "frame_count": 24,
+      "no_background": true,
+      "enhance_prompt": false,
+      "subject_description": "a circular energy shield with transparent center",
+      "initial_pose": "centered stationary energy effect",
+      "view": "side",
+      "description": "FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A stationary spherical cyan hex energy shield. Hex cells propagate a soft interior pulse clockwise, rim segments light sequentially, subtle specular shine travels around sphere. Stable outer circle and transparent interior. No growth, displacement, camera motion or opaque center. Smooth seamless loop; no sparks outside canvas.",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/453cb351-30ed-48bb-8c93-18ff5559887f/download?index=0"
+    },
+    "receipt": [
+      "id: 06ab0577-8353-4c53-bf20-da61a9c67fc4\njob_id: 06ab0577-8353-4c53-bf20-da61a9c67fc4\ndescription: FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A stationary spherical cyan hex energy shield. Hex cells propagate a soft interior pulse clockwise, rim segments light sequentially, subtle specular shine travels around sphere. Stable outer circle and transparent interior. No growth, displacement, camera motion or opaque center. Smooth seamless loop; no sparks outside canvas.\nframes: 24\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"06ab0577-8353-4c53-bf20-da61a9c67fc4\")\nasset_id: 3b6311ff-8b61-58dd-a9f8-5ed2c514917c\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "shield_void_loop",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/9797a674-d988-425a-be4c-1e8b9811b538/download?index=0",
+      "frame_count": 24,
+      "no_background": true,
+      "enhance_prompt": false,
+      "subject_description": "a circular energy shield with transparent center",
+      "initial_pose": "centered stationary energy effect",
+      "view": "side",
+      "description": "FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A stationary dark-purple code shield ring. Woven violet/gray/white demonic energy filaments spiral smoothly around rim through one full revolution, red code pulses chase around inner seams. Stable outer circle and transparent center, no hardware or body, no zoom/travel. Perfect smooth loop.",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/9797a674-d988-425a-be4c-1e8b9811b538/download?index=0"
+    },
+    "receipt": [
+      "id: ffb10bd6-8876-4d25-8150-645809d265dc\njob_id: ffb10bd6-8876-4d25-8150-645809d265dc\ndescription: FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A stationary dark-purple code shield ring. Woven violet/gray/white demonic energy filaments spiral smoothly around rim through one full revolution, red code pulses chase around inner seams. Stable outer circle and transparent center, no hardware or body, no zoom/travel. Perfect smooth loop.\nframes: 24\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 3 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ffb10bd6-8876-4d25-8150-645809d265dc\")\nasset_id: 286bdbce-b389-5570-90d5-20a374e1f6fd\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "explosion_star_burst",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/03e24d90-9143-4a47-a3e8-df40f8c51d90/download?index=0",
+      "frame_count": 32,
+      "no_background": true,
+      "enhance_prompt": false,
+      "subject_description": "an orange white red pixel-art explosion",
+      "initial_pose": "centered stationary energy effect",
+      "view": "side",
+      "description": "FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A one-shot Neo-Geo explosion supplement: brilliant white/yellow core flashes, layered fire curls roll outward, red/orange lobes expand within the canvas, then dark smoke curls rise and fragment into embers and dissipate completely. Strong smooth fast impact then slower smoke recovery. Same fixed center; no ground, scenery, camera or zoom. Never cut off flames at edges."
+    },
+    "receipt": [
+      "id: fc120c44-50a1-4a9f-8d08-3e0ea0ff2c81\njob_id: fc120c44-50a1-4a9f-8d08-3e0ea0ff2c81\ndescription: FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A one-shot Neo-Geo explosion supplement: brilliant white/yellow core flashes, layered fire curls roll outward, red/orange lobes expand within the canvas, then dark smoke curls rise and fragment into embers and dissipate completely. Strong smooth fast impact then slower smoke recovery. Same fixed center; no ground, scenery, camera or zoom. Never cut off flames at edges.\nframes: 32\nsize: 256x256px\ntransparent: True\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fc120c44-50a1-4a9f-8d08-3e0ea0ff2c81\")\nasset_id: d4f28d24-481b-5d45-959e-957b4e82c6c4\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "explosion_chain_burst",
+    "args": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/db7288f0-b6fb-470b-833d-3a299f5e9ed5/download?index=0",
+      "frame_count": 32,
+      "no_background": true,
+      "enhance_prompt": false,
+      "subject_description": "an orange white red pixel-art explosion",
+      "initial_pose": "centered stationary energy effect",
+      "view": "side",
+      "description": "FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A spectacular one-shot Neo-Geo final-boss chained detonation. Three inner white-hot cores detonate successively, orange/red flame lobes billow and roll out in layered waves, dark purple smoke mushrooms, fragment sparks scatter and then fade to a few embers. Entire effect stays inside256 canvas, no movement of central anchor, no camera or background. Rich smooth internal animation, no square blocks or hard cuts."
+    },
+    "receipt": [
+      "id: 5d5890e8-67ce-4326-a6fb-90ef23becc1a\njob_id: 5d5890e8-67ce-4326-a6fb-90ef23becc1a\ndescription: FRAME FORMAT256x256, identical cell size/pivot128,128, shared proportional scale, clear margins. A spectacular one-shot Neo-Geo final-boss chained detonation. Three inner white-hot cores detonate successively, orange/red flame lobes billow and roll out in layered waves, dark purple smoke mushrooms, fragment sparks scatter and then fade to a few embers. Entire effect stays inside256 canvas, no movement of central anchor, no camera or background. Rich smooth internal animation, no square blocks or hard cuts.\nframes: 32\nsize: 256x256px\ntransparent: True\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"5d5890e8-67ce-4326-a6fb-90ef23becc1a\")\nasset_id: 607863cc-b13e-51eb-a70e-88da8a3f1310\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "corrupt_slam_safe",
+    "args": {
+      "first_frame_url": "upload:2c304147-4634-424a-9f15-2a285db29a1e",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "subject_description": "a chromium demonic robot holding a two-handed purple hammer",
+      "initial_pose": "centered small sprite with large transparent margins",
+      "description": "FRAME FORMAT256x256, common fixed scale, pivot128,128. Deliberately lift the two-handed solid hammer straight above the skull in four clear anticipation frames, slam its metal head down in front of the toes, recoil and recover. NO exterior energy trails, smoke, blasts, lightning or particles. Only the physical robot and physical hammer. Do not hit canvas edges. Preserve the SMALL reference figure scale and large margins so the entire raised hammer remains visible."
+    },
+    "receipt": [
+      "id: 8f930349-1bda-4fa0-85e0-7aee8dfc141b\njob_id: 8f930349-1bda-4fa0-85e0-7aee8dfc141b\ndescription: FRAME FORMAT256x256, common fixed scale, pivot128,128. Deliberately lift the two-handed solid hammer straight above the skull in four clear anticipation frames, slam its metal head down in front of the toes, recoil and recover. NO exterior energy trails, smoke, blasts, lightning or particles. Only the physical robot and physical hammer. Do not hit canvas edges. Preserve the SMALL reference figure scale and large margins so the entire raised hammer remains visible.\nframes: 16\nsize: 256x256px\ntransparent: True\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"8f930349-1bda-4fa0-85e0-7aee8dfc141b\")\nasset_id: 7ada68b9-2986-580e-aae2-d0df3c31f112\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "portal_loop_safe",
+    "args": {
+      "first_frame_url": "upload:45462d3b-f0a6-403e-ae1a-1e6a33f474e0",
+      "frame_count": 32,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "side",
+      "subject_description": "a white cyan violet upright energy portal",
+      "initial_pose": "centered small sprite with large transparent margins",
+      "description": "FRAME FORMAT256x256, common fixed scale, pivot128,128. Smooth continuous clockwise rotation of the white cyan violet spiral inside this upright oval portal. Stable center and200px tall silhouette. Entire halo and all wisps stay well inside the large32px transparent margins. No gate, hardware, camera motion, growth, expansion or detached sparks. End exactly on starting alignment, perfect seamless loop.",
+      "last_frame_url": "upload:45462d3b-f0a6-403e-ae1a-1e6a33f474e0"
+    },
+    "receipt": [
+      "id: 02f1f647-0dad-46f4-83c0-b2578ff9b424\njob_id: 02f1f647-0dad-46f4-83c0-b2578ff9b424\ndescription: FRAME FORMAT256x256, common fixed scale, pivot128,128. Smooth continuous clockwise rotation of the white cyan violet spiral inside this upright oval portal. Stable center and200px tall silhouette. Entire halo and all wisps stay well inside the large32px transparent margins. No gate, hardware, camera motion, growth, expansion or detached sparks. End exactly on starting alignment, perfect seamless loop.\nframes: 32\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 5 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"02f1f647-0dad-46f4-83c0-b2578ff9b424\")\nasset_id: b8db560f-ce1c-5f74-8929-6e04d3e3e5c0\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "air_nyx",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 40,
+      "style_image": {
+        "url": "upload:7401f067-0a18-47c1-84bb-e4f2b4ee0672",
+        "usage_description": "Exact existing aircraft identity, silhouette, cockpit, wing geometry, engine placement and faction/pilot palette; re-author this same aircraft at clear Neo-Geo sprite quality."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "description": "FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Nyx / Ghostknife. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels."
+    },
+    "receipt": [
+      "{\n  \"background_job_id\": \"880bb6cd-ccd9-4340-84c2-1b025752806a\",\n  \"image_id\": \"4b73bc95-742f-502f-a8da-62de7753f273\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"4b73bc95-742f-502f-a8da-62de7753f273\",\n  \"job_id\": \"880bb6cd-ccd9-4340-84c2-1b025752806a\",\n  \"description\": \"FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Nyx / Ghostknife. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/880bb6cd-ccd9-4340-84c2-1b025752806a/download\"\n}\nPoll get_image(job_id=\"880bb6cd-ccd9-4340-84c2-1b025752806a\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    ]
+  },
+  {
+    "name": "air_rook",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 40,
+      "style_image": {
+        "url": "upload:bd307309-cc57-4604-8a61-49fd7818666b",
+        "usage_description": "Exact existing aircraft identity, silhouette, cockpit, wing geometry, engine placement and faction/pilot palette; re-author this same aircraft at clear Neo-Geo sprite quality."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "description": "FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Rook / Breachhammer. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels."
+    },
+    "receipt": [
+      "{\n  \"background_job_id\": \"cfd96b1e-50aa-424f-beb8-1f95c2c0b326\",\n  \"image_id\": \"4ca8b417-4394-5866-963b-93e5fb0ce654\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"4ca8b417-4394-5866-963b-93e5fb0ce654\",\n  \"job_id\": \"cfd96b1e-50aa-424f-beb8-1f95c2c0b326\",\n  \"description\": \"FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Rook / Breachhammer. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/cfd96b1e-50aa-424f-beb8-1f95c2c0b326/download\"\n}\nPoll get_image(job_id=\"cfd96b1e-50aa-424f-beb8-1f95c2c0b326\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    ]
+  },
+  {
+    "name": "air_kaia",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 40,
+      "style_image": {
+        "url": "upload:977dc5c8-598b-4f34-8bc7-0a7fd756ff11",
+        "usage_description": "Exact existing aircraft identity, silhouette, cockpit, wing geometry, engine placement and faction/pilot palette; re-author this same aircraft at clear Neo-Geo sprite quality."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "description": "FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Kaia / Signal Wraith. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels."
+    },
+    "receipt": [
+      "{\n  \"background_job_id\": \"d8ca5295-5c3d-43e0-bdbb-84d8b9357708\",\n  \"image_id\": \"ff135a02-346c-54dc-8c20-02f48104d5c7\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"ff135a02-346c-54dc-8c20-02f48104d5c7\",\n  \"job_id\": \"d8ca5295-5c3d-43e0-bdbb-84d8b9357708\",\n  \"description\": \"FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Kaia / Signal Wraith. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/d8ca5295-5c3d-43e0-bdbb-84d8b9357708/download\"\n}\nPoll get_image(job_id=\"d8ca5295-5c3d-43e0-bdbb-84d8b9357708\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    ]
+  },
+  {
+    "name": "air_jace",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 40,
+      "style_image": {
+        "url": "upload:0cee3a38-2aad-4515-87cf-62d633d5ad89",
+        "usage_description": "Exact existing aircraft identity, silhouette, cockpit, wing geometry, engine placement and faction/pilot palette; re-author this same aircraft at clear Neo-Geo sprite quality."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "description": "FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Jace / Razorjack. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels."
+    },
+    "receipt": [
+      "{\n  \"background_job_id\": \"a2a57c70-b451-44c1-840f-557ac9d5f9ef\",\n  \"image_id\": \"fd9692f7-ba9d-5a53-ab29-bb9be0fe9b68\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"fd9692f7-ba9d-5a53-ab29-bb9be0fe9b68\",\n  \"job_id\": \"a2a57c70-b451-44c1-840f-557ac9d5f9ef\",\n  \"description\": \"FRAME FORMAT128x128, fixed central fuselage pivot64,64. One production top-down aircraft sprite based precisely on reference Jace / Razorjack. Nose points DOWN toward viewer/screen bottom. Full plan view, no isometric angle. Maintain the aircraft's distinctive silhouette, cockpit, wings, twin engines, mounted weapons, original palette and proportions. Re-author cleaner readable chromium armor plates, deliberate highlights, dark panel seams, clear separate wing-mounted left/right weapon pods and exhaust sockets. These components must be visibly separable for modular animation. Reserve16px transparent margins all around the largest wing extent. No firing, extra missiles, new design, circular aura, labels, scenery, vague glow, perspective or cropped tips. Rich crisp intentional Neo-Geo pixels.\",\n  \"seed\": 0,\n  \"image_size\": {\n    \"width\": 128,\n    \"height\": 128\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 6,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/a2a57c70-b451-44c1-840f-557ac9d5f9ef/download\"\n}\nPoll get_image(job_id=\"a2a57c70-b451-44c1-840f-557ac9d5f9ef\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+    ]
+  },
+  {
+    "name": "air_voss",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:9f84a248-e9b2-4cb7-b48e-62ff0bc95873",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Voss / Iron Vulture aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 432ae1d1-f01c-4bb0-a9b4-4855d6ebdcc7\njob_id: 432ae1d1-f01c-4bb0-a9b4-4855d6ebdcc7\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Voss / Iron Vulture aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: b37421ee-6e9c-5476-9938-2edce64de5e8\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"432ae1d1-f01c-4bb0-a9b4-4855d6ebdcc7\")"
+    ]
+  },
+  {
+    "name": "air_s1jetdelta",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:8b6c16c5-b3b4-41ff-b5f3-7979f43b55ef",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Jungle Camo Attack Jet aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 072e4cff-88c7-429f-8961-585f08538a97\njob_id: 072e4cff-88c7-429f-8961-585f08538a97\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Jungle Camo Attack Jet aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 0932bbed-e4a2-564a-b84d-8b03d6826c88\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"072e4cff-88c7-429f-8961-585f08538a97\")"
+    ]
+  },
+  {
+    "name": "air_s4interceptor",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:dd26b115-ca28-4e2c-b941-75c197ef3689",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Interceptor aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 2857709a-e911-499c-86c6-19bb2556044c\njob_id: 2857709a-e911-499c-86c6-19bb2556044c\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Interceptor aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 5ccabd59-ef72-556d-aa1d-a66de22d772d\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"2857709a-e911-499c-86c6-19bb2556044c\")"
+    ]
+  },
+  {
+    "name": "air_s1jetbomber",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:e9dc571a-949a-45c8-bd52-4b82b0201126",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Jungle Bomber aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 5f8a6616-8a79-45a6-8e8d-21abf0884f87\njob_id: 5f8a6616-8a79-45a6-8e8d-21abf0884f87\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Jungle Bomber aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: daa98bf3-0133-5c36-95b8-918eabb20260\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"5f8a6616-8a79-45a6-8e8d-21abf0884f87\")"
+    ]
+  },
+  {
+    "name": "air_s4rocket",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:1d1625cd-45ef-469f-92ef-101b12b6f1bc",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Rocket aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: e6d0234f-fd69-4048-856f-205536e09fab\njob_id: e6d0234f-fd69-4048-856f-205536e09fab\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Rocket aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 7e1fc7c9-b27f-53f0-83e2-bc954415213b\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"e6d0234f-fd69-4048-856f-205536e09fab\")"
+    ]
+  },
+  {
+    "name": "air_s5interceptor",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:91df069b-b1ff-4dff-93d5-ee58c169f523",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Space Interceptor aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: d76ca6c5-535b-448a-b1d3-cdd50b46098b\njob_id: d76ca6c5-535b-448a-b1d3-cdd50b46098b\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Space Interceptor aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 71f7854a-0766-51b5-9bee-70d71f233046\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d76ca6c5-535b-448a-b1d3-cdd50b46098b\")"
+    ]
+  },
+  {
+    "name": "air_s6dart",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:9997d05c-a743-4b4a-83d7-9a6e71063bbb",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Blue stealth fighter aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: d9789715-85df-41f5-807b-d413b78066b8\njob_id: d9789715-85df-41f5-807b-d413b78066b8\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Blue stealth fighter aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: ff96d761-19fe-5981-b297-5141b9514c57\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d9789715-85df-41f5-807b-d413b78066b8\")"
+    ]
+  },
+  {
+    "name": "air_s1jetbomber_b",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:545dc668-6675-4002-bda4-92d550c8ba2f",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Jungle Heavy Bomber aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 5ee2d55c-6128-4f86-a192-ed8da3d4b5ce\njob_id: 5ee2d55c-6128-4f86-a192-ed8da3d4b5ce\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Jungle Heavy Bomber aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: c7ba33d2-e3a4-5a21-9a49-cf86b1f8a5ca\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"5ee2d55c-6128-4f86-a192-ed8da3d4b5ce\")"
+    ]
+  },
+  {
+    "name": "air_s4heavyjet",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:8f7b1f2a-445d-4ca4-8ba3-7db6459f53d4",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Heavyjet aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 3219199a-74f8-44d4-9e5d-63077fa87696\njob_id: 3219199a-74f8-44d4-9e5d-63077fa87696\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Airbase Heavyjet aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: d17a45a2-633e-5857-8b24-e6c891ecf0c1\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"3219199a-74f8-44d4-9e5d-63077fa87696\")"
+    ]
+  },
+  {
+    "name": "air_s7skimmer",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:66d17f2a-24c1-4e46-97d8-cd2394ba545f",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Toxic Skimmer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 1e327e53-5d9f-4183-a4ef-14aa8453e2b6\njob_id: 1e327e53-5d9f-4183-a4ef-14aa8453e2b6\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Toxic Skimmer aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: 3ddf9fec-4f05-5535-ba52-53c3e2edd7c0\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"1e327e53-5d9f-4183-a4ef-14aa8453e2b6\")"
+    ]
+  },
+  {
+    "name": "air_s8interceptor",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "init_image_url": "upload:1f4f310e-6c9e-4ca5-9a4e-adaa0a7926cf",
+      "init_image_strength": 230,
+      "description": "FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Alien Fighter aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "outline": "selective outline",
+      "view": "high top-down",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: cf267b68-8b36-4501-b5e6-ca4f289fc1f6\njob_id: cf267b68-8b36-4501-b5e6-ca4f289fc1f6\ndescription: FRAME FORMAT128x128, fixed fuselage pivot64,64. Re-author the SAME top-down south-facing Alien Fighter aircraft, preserving exact silhouette, cockpit, wings, engines, identity and palette of reference. Cleaner Neo-Geo quality metal armor shading, strong deliberate highlights and readable panel seams, separable left/right weapon pods and center hull. Full aircraft with16px transparent margins, no camera or perspective change, background, aura, bullets, text, new wings or extra engines.\nsize: 128x128px\ntransparent: True\nasset_id: ea9f33cc-533b-5efe-b4cd-f4a26f8b01b0\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 230)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"cf267b68-8b36-4501-b5e6-ca4f289fc1f6\")"
+    ]
+  }
+]

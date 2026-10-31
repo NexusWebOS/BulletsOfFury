@@ -1,0 +1,80 @@
+[
+  {
+    "name": "ion",
+    "kind": "field",
+    "prefix": "nes_ion",
+    "hit": 0
+  },
+  {
+    "name": "crimson",
+    "kind": "field",
+    "prefix": "nes_crimson",
+    "hit": 3
+  },
+  {
+    "name": "violet",
+    "kind": "field",
+    "prefix": "nes_violet",
+    "hit": 6
+  },
+  {
+    "name": "hex",
+    "kind": "plate",
+    "prefix": "nes_hex",
+    "hit": 0
+  },
+  {
+    "name": "gold",
+    "kind": "plate",
+    "prefix": "nes_gold",
+    "hit": 9
+  },
+  {
+    "name": "prism",
+    "kind": "plate",
+    "prefix": "nes_prism",
+    "hit": 9
+  },
+  {
+    "name": "bubble_hex",
+    "kind": "bubble",
+    "prefix": "nes_bubble",
+    "hit": 0,
+    "tint": null
+  },
+  {
+    "name": "bubble_volt",
+    "kind": "bubble",
+    "prefix": "nes_bubble_volt",
+    "hit": 0,
+    "tint": null
+  },
+  {
+    "name": "bubble_fire",
+    "kind": "bubble",
+    "prefix": "nes_bubble_fire",
+    "hit": 3,
+    "tint": null
+  },
+  {
+    "name": "bubble_toxic",
+    "kind": "bubble",
+    "prefix": "nes_bubble",
+    "hit": 0,
+    "tint": "#59ef45"
+  },
+  {
+    "name": "bubble_ice",
+    "kind": "bubble",
+    "prefix": "nes_bubble_ice",
+    "hit": 0,
+    "tint": null
+  },
+  {
+    "name": "bubble_void",
+    "kind": "bubble",
+    "prefix": "nes_bubble_void",
+    "hit": 6,
+    "tint": null
+  }
+]

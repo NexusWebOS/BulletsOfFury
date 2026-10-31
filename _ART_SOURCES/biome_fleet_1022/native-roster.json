@@ -1,0 +1,917 @@
+{
+  "volcanic": {
+    "skim": {
+      "fam": "ship",
+      "hp": 16,
+      "w": 34,
+      "h": 30,
+      "score": 520,
+      "art": "skim"
+    },
+    "disc": {
+      "fam": "ship",
+      "hp": 24,
+      "w": 36,
+      "h": 34,
+      "score": 760,
+      "art": "disc"
+    },
+    "eye": {
+      "fam": "ship",
+      "hp": 20,
+      "w": 34,
+      "h": 32,
+      "score": 700,
+      "art": "eye"
+    },
+    "miner": {
+      "fam": "ship",
+      "hp": 46,
+      "w": 44,
+      "h": 38,
+      "score": 1150,
+      "art": "miner"
+    },
+    "ash": {
+      "fam": "ship",
+      "hp": 14,
+      "w": 32,
+      "h": 30,
+      "score": 480,
+      "art": "ash"
+    },
+    "cruc": {
+      "fam": "ship",
+      "hp": 52,
+      "w": 48,
+      "h": 40,
+      "score": 1320,
+      "art": "cruc"
+    },
+    "lance": {
+      "fam": "ship",
+      "hp": 18,
+      "w": 30,
+      "h": 36,
+      "score": 640,
+      "art": "lance"
+    },
+    "carrier": {
+      "fam": "ship",
+      "hp": 70,
+      "w": 52,
+      "h": 46,
+      "score": 1850,
+      "art": "carrier"
+    },
+    "lavamaw": {
+      "fam": "vent",
+      "hp": 34,
+      "w": 40,
+      "h": 38,
+      "score": 880,
+      "art": "maw"
+    },
+    "crawl": {
+      "fam": "vent",
+      "hp": 40,
+      "w": 42,
+      "h": 36,
+      "score": 960,
+      "art": "crawl"
+    },
+    "pod": {
+      "fam": "vent",
+      "hp": 28,
+      "w": 36,
+      "h": 36,
+      "score": 820,
+      "art": "pod"
+    },
+    "golem": {
+      "fam": "vent",
+      "hp": 96,
+      "w": 56,
+      "h": 52,
+      "score": 2400,
+      "art": "golem"
+    }
+  },
+  "skyFleet": {
+    "l6v_s0": {
+      "name": "STEEL LANCER",
+      "art": "n6v0_steel",
+      "w": 38,
+      "h": 48,
+      "hp": 12,
+      "score": 520,
+      "vy": 0.76,
+      "pattern": "sine",
+      "fireRate": 0.66,
+      "pfam": 4
+    },
+    "l6v_s1": {
+      "name": "STEEL BROADWING",
+      "art": "n6v1_steel",
+      "w": 54,
+      "h": 44,
+      "hp": 20,
+      "score": 820,
+      "vy": 0.52,
+      "pattern": "weave",
+      "fireRate": 0.82,
+      "pfam": 4
+    },
+    "l6v_s2": {
+      "name": "STEEL DELTA",
+      "art": "n6v2_steel",
+      "w": 50,
+      "h": 46,
+      "hp": 16,
+      "score": 680,
+      "vy": 0.64,
+      "pattern": "dive",
+      "fireRate": 0.74,
+      "pfam": 4
+    },
+    "l6v_r0": {
+      "name": "ROYAL LANCER",
+      "art": "n6v0_royal",
+      "w": 38,
+      "h": 48,
+      "hp": 14,
+      "score": 600,
+      "vy": 0.84,
+      "pattern": "sine",
+      "fireRate": 0.58,
+      "pfam": 1
+    },
+    "l6v_r1": {
+      "name": "ROYAL BROADWING",
+      "art": "n6v1_royal",
+      "w": 54,
+      "h": 44,
+      "hp": 23,
+      "score": 940,
+      "vy": 0.56,
+      "pattern": "weave",
+      "fireRate": 0.76,
+      "pfam": 1
+    },
+    "l6v_r2": {
+      "name": "ROYAL DELTA",
+      "art": "n6v2_royal",
+      "w": 50,
+      "h": 46,
+      "hp": 18,
+      "score": 760,
+      "vy": 0.7,
+      "pattern": "dive",
+      "fireRate": 0.68,
+      "pfam": 1
+    },
+    "l6v_b0": {
+      "name": "BLACKICE LANCER",
+      "art": "n6v0_blackice",
+      "w": 38,
+      "h": 48,
+      "hp": 16,
+      "score": 680,
+      "vy": 0.9,
+      "pattern": "sine",
+      "fireRate": 0.54,
+      "pfam": 1
+    },
+    "l6v_b1": {
+      "name": "BLACKICE BROADWING",
+      "art": "n6v1_blackice",
+      "w": 54,
+      "h": 44,
+      "hp": 26,
+      "score": 1080,
+      "vy": 0.6,
+      "pattern": "weave",
+      "fireRate": 0.7,
+      "pfam": 1
+    },
+    "l6v_b2": {
+      "name": "BLACKICE DELTA",
+      "art": "n6v2_blackice",
+      "w": 50,
+      "h": 46,
+      "hp": 21,
+      "score": 900,
+      "vy": 0.76,
+      "pattern": "dive",
+      "fireRate": 0.62,
+      "pfam": 1
+    }
+  },
+  "skyStorm": {
+    "s6lancer": {
+      "art": "cloud_lancer",
+      "hp": 22,
+      "w": 58,
+      "h": 68,
+      "score": 980
+    },
+    "s6cyclone": {
+      "art": "cyclone_interceptor",
+      "hp": 18,
+      "w": 62,
+      "h": 62,
+      "score": 920,
+      "impact": 1
+    },
+    "s6bomber": {
+      "art": "four_engine_bomber",
+      "hp": 38,
+      "w": 72,
+      "h": 58,
+      "score": 1420
+    },
+    "s6mine": {
+      "art": "lightning_mine",
+      "hp": 20,
+      "w": 54,
+      "h": 54,
+      "score": 900
+    },
+    "s6skimmer": {
+      "art": "lightning_skimmer",
+      "hp": 28,
+      "w": 64,
+      "h": 68,
+      "score": 1180
+    },
+    "s6buoy": {
+      "art": "storm_buoy",
+      "hp": 24,
+      "w": 46,
+      "h": 58,
+      "score": 1040
+    },
+    "s6dart": {
+      "art": "storm_dart",
+      "hp": 16,
+      "w": 58,
+      "h": 54,
+      "score": 760
+    },
+    "s6thunder": {
+      "art": "thunder_fighter",
+      "hp": 26,
+      "w": 58,
+      "h": 66,
+      "score": 1120
+    },
+    "s6turbine": {
+      "art": "turbine_drone",
+      "hp": 34,
+      "w": 66,
+      "h": 70,
+      "score": 1380
+    },
+    "s6probe": {
+      "art": "weather_probe",
+      "hp": 30,
+      "w": 54,
+      "h": 54,
+      "score": 1260
+    }
+  },
+  "skyJets": {
+    "raptor": {
+      "name": "CLOUD RAPTOR",
+      "hp": 5,
+      "fr": 1.3,
+      "score": 520,
+      "w": 34,
+      "h": 34
+    },
+    "widow": {
+      "name": "CYCLONE WIDOW",
+      "hp": 7,
+      "fr": 1.1,
+      "score": 700,
+      "w": 36,
+      "h": 36
+    },
+    "warden": {
+      "name": "HURRICANE WARDEN",
+      "hp": 11,
+      "fr": 1.5,
+      "score": 950,
+      "w": 42,
+      "h": 40
+    },
+    "talon": {
+      "name": "STORM TALON",
+      "hp": 4,
+      "fr": 1,
+      "score": 460,
+      "w": 32,
+      "h": 32
+    },
+    "fang": {
+      "name": "TEMPEST FANG",
+      "hp": 6,
+      "fr": 1.2,
+      "score": 620,
+      "w": 34,
+      "h": 34
+    },
+    "lance": {
+      "name": "THUNDER LANCE",
+      "hp": 9,
+      "fr": 1.6,
+      "score": 820,
+      "w": 38,
+      "h": 38
+    }
+  },
+  "waterVoid": {
+    "s9beacon": {
+      "art": "alien_beacon",
+      "hp": 34,
+      "w": 60,
+      "h": 74,
+      "score": 1100
+    },
+    "s9comet": {
+      "art": "comet_skimmer",
+      "hp": 28,
+      "w": 70,
+      "h": 62,
+      "score": 1060
+    },
+    "s9gunship": {
+      "art": "dimensional_gunship",
+      "hp": 62,
+      "w": 76,
+      "h": 82,
+      "score": 1920
+    },
+    "s9interceptor": {
+      "art": "galaxy_interceptor",
+      "hp": 30,
+      "w": 62,
+      "h": 76,
+      "score": 1140
+    },
+    "s9gateturret": {
+      "art": "gate_turret",
+      "hp": 42,
+      "w": 70,
+      "h": 70,
+      "score": 1480
+    },
+    "s9prism": {
+      "art": "hyperspace_prism",
+      "hp": 66,
+      "w": 78,
+      "h": 78,
+      "score": 2250
+    },
+    "s9ring": {
+      "art": "ring_drone",
+      "hp": 32,
+      "w": 64,
+      "h": 64,
+      "score": 1200
+    },
+    "s9singularity": {
+      "art": "singularity_mine",
+      "hp": 46,
+      "w": 70,
+      "h": 70,
+      "score": 1580
+    }
+  },
+  "waterNative": {
+    "wskim": {
+      "art": "ns9e_wskim",
+      "w": 44,
+      "h": 44,
+      "hp": 24,
+      "score": 600,
+      "pat": "s9chaos",
+      "s9": "barrel"
+    },
+    "pneedle": {
+      "art": "ns9e_pneedle",
+      "w": 34,
+      "h": 40,
+      "hp": 20,
+      "score": 640,
+      "pat": "s9chaos",
+      "s9": "needle"
+    },
+    "pmine": {
+      "art": "ns9e_pmine",
+      "w": 38,
+      "h": 38,
+      "hp": 36,
+      "score": 720,
+      "pat": "s9chaos",
+      "s9": "laserwheel",
+      "shield": "prism"
+    },
+    "gleech": {
+      "art": "ns9e_gleech",
+      "w": 40,
+      "h": 40,
+      "hp": 30,
+      "score": 680,
+      "pat": "s9chaos",
+      "s9": "rim"
+    },
+    "vmanta": {
+      "art": "ns9e_vmanta",
+      "w": 52,
+      "h": 40,
+      "hp": 38,
+      "score": 760,
+      "pat": "s9chaos",
+      "s9": "pivot",
+      "shield": "hex"
+    },
+    "echof": {
+      "art": "ns9e_echof",
+      "w": 42,
+      "h": 44,
+      "hp": 28,
+      "score": 700,
+      "pat": "s9chaos",
+      "s9": "echo"
+    },
+    "tsplit": {
+      "art": "ns9e_tsplit",
+      "w": 46,
+      "h": 46,
+      "hp": 42,
+      "score": 820,
+      "pat": "s9chaos",
+      "s9": "split",
+      "shield": "ion"
+    },
+    "cbreak": {
+      "art": "ns9e_cbreak",
+      "w": 50,
+      "h": 50,
+      "hp": 52,
+      "score": 900,
+      "pat": "s9chaos",
+      "s9": "breaker"
+    },
+    "horizon": {
+      "art": "ns9x_horizon",
+      "w": 78,
+      "h": 104,
+      "hp": 88,
+      "score": 1800,
+      "pat": "s9chaos",
+      "s9": "event",
+      "shield": "violet",
+      "foot": 1
+    },
+    "dreadv": {
+      "art": "ns9x_dreadv",
+      "w": 92,
+      "h": 138,
+      "hp": 130,
+      "score": 2400,
+      "pat": "s9chaos",
+      "s9": "dread",
+      "shield": "prism",
+      "foot": 1
+    },
+    "cometsm": {
+      "art": "ns9c_sm",
+      "w": 44,
+      "h": 44,
+      "hp": 14,
+      "score": 180,
+      "pat": "straight",
+      "foot": 1.7
+    },
+    "cometbig": {
+      "art": "ns9c_big",
+      "w": 92,
+      "h": 92,
+      "hp": 40,
+      "score": 400,
+      "pat": "straight",
+      "foot": 1.65
+    },
+    "cometmega": {
+      "art": "ns9c_mega",
+      "w": 128,
+      "h": 128,
+      "hp": 70,
+      "score": 800,
+      "pat": "straight",
+      "foot": 1.65
+    },
+    "riftrocksm": {
+      "art": "s9ast_wet_2",
+      "w": 40,
+      "h": 40,
+      "hp": 18,
+      "score": 260,
+      "pat": "s9chaos",
+      "s9": "waterrock",
+      "waterRock": 1,
+      "foot": 1
+    },
+    "riftrock": {
+      "art": "s9ast_wet_0",
+      "w": 76,
+      "h": 76,
+      "hp": 44,
+      "score": 520,
+      "pat": "s9chaos",
+      "s9": "waterrock",
+      "waterRock": 2,
+      "foot": 1
+    }
+  },
+  "stages": [
+    {
+      "stage": 1,
+      "name": "STAGE 1"
+    },
+    {
+      "stage": 2,
+      "name": "STAGE 2"
+    },
+    {
+      "stage": 3,
+      "name": "STAGE 3"
+    },
+    {
+      "stage": 4,
+      "name": "STAGE 4"
+    },
+    {
+      "stage": 5,
+      "name": "STAGE 5"
+    },
+    {
+      "stage": 6,
+      "name": "STAGE 6"
+    },
+    {
+      "stage": 7,
+      "name": "STAGE 7"
+    },
+    {
+      "stage": 8,
+      "name": "STAGE 8"
+    },
+    {
+      "stage": 9,
+      "name": "STAGE 9"
+    }
+  ],
+  "airFamilies": [
+    {
+      "alias": "echof",
+      "model": "echof",
+      "stages": [
+        9
+      ],
+      "source": "ns9e_echof_idle",
+      "span": 86
+    },
+    {
+      "alias": "horizon",
+      "model": "horizon",
+      "stages": [
+        9
+      ],
+      "source": "ns9x_horizon_0",
+      "span": 86
+    },
+    {
+      "alias": "jace",
+      "model": "jace",
+      "stages": [
+        6,
+        10
+      ],
+      "source": null,
+      "span": 103
+    },
+    {
+      "alias": "kaia",
+      "model": "kaia",
+      "stages": [
+        6,
+        10
+      ],
+      "source": null,
+      "span": 108
+    },
+    {
+      "alias": "l6v_s0",
+      "model": "l6v_s0",
+      "stages": [
+        6
+      ],
+      "source": "n6v0_steel_intact_c",
+      "span": 84
+    },
+    {
+      "alias": "l6v_s1",
+      "model": "l6v_s1",
+      "stages": [
+        6
+      ],
+      "source": "n6v1_steel_intact_c",
+      "span": 86
+    },
+    {
+      "alias": "l6v_s2",
+      "model": "l6v_s2",
+      "stages": [
+        6
+      ],
+      "source": "n6v2_steel_intact_c",
+      "span": 86
+    },
+    {
+      "alias": "nyx",
+      "model": "nyx",
+      "stages": [
+        6,
+        10
+      ],
+      "source": null,
+      "span": 98
+    },
+    {
+      "alias": "rook",
+      "model": "rook",
+      "stages": [
+        6,
+        10
+      ],
+      "source": null,
+      "span": 100
+    },
+    {
+      "alias": "s6dart",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": "p2_stealth_blue_idle",
+      "span": 84
+    },
+    {
+      "alias": "s6mine",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": "p2_stealth_blue_idle",
+      "span": 84
+    },
+    {
+      "alias": "s6lancer",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": "p2_stealth_blue_idle",
+      "span": 84
+    },
+    {
+      "alias": "s6skimmer",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": "p2_stealth_blue_idle",
+      "span": 84
+    },
+    {
+      "alias": "s6thunder",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": "p2_stealth_blue_idle",
+      "span": 84
+    },
+    {
+      "alias": "s6cyclone",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": "p2_stealth_blue_idle",
+      "span": 84
+    },
+    {
+      "alias": "stealth_blue",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 84
+    },
+    {
+      "alias": "s9comet",
+      "model": "s9comet",
+      "stages": [
+        9
+      ],
+      "source": "s9atk_comet_skimmer_0",
+      "span": 86
+    },
+    {
+      "alias": "s9gunship",
+      "model": "s9gunship",
+      "stages": [
+        9
+      ],
+      "source": "overhaul_stage9_water_alien_01",
+      "span": 86
+    },
+    {
+      "alias": "s9interceptor",
+      "model": "s9interceptor",
+      "stages": [
+        9
+      ],
+      "source": "overhaul_stage9_water_jet_01",
+      "span": 87
+    },
+    {
+      "alias": "tsplit",
+      "model": "tsplit",
+      "stages": [
+        9
+      ],
+      "source": "ns9e_tsplit_idle",
+      "span": 86
+    },
+    {
+      "alias": "vmanta",
+      "model": "vmanta",
+      "stages": [
+        9
+      ],
+      "source": "ns9e_vmanta_idle",
+      "span": 86
+    },
+    {
+      "alias": "voss",
+      "model": "voss",
+      "stages": [
+        6,
+        10
+      ],
+      "source": null,
+      "span": 86
+    },
+    {
+      "alias": "wskim",
+      "model": "wskim",
+      "stages": [
+        9
+      ],
+      "source": "ns9e_wskim_idle",
+      "span": 85
+    },
+    {
+      "alias": "xelite_glacierlance",
+      "model": "xelite_glacierlance",
+      "stages": [
+        6
+      ],
+      "source": "xelite_glacierlance_idle",
+      "span": 85
+    },
+    {
+      "alias": "xelite_hivewing",
+      "model": "xelite_hivewing",
+      "stages": [
+        6
+      ],
+      "source": "xelite_hivewing_idle",
+      "span": 85
+    },
+    {
+      "alias": "xelite_solarwarden",
+      "model": "xelite_solarwarden",
+      "stages": [
+        6
+      ],
+      "source": "xelite_solarwarden_idle",
+      "span": 86
+    },
+    {
+      "alias": "xelite_tempest",
+      "model": "xelite_tempest",
+      "stages": [
+        6
+      ],
+      "source": "xelite_tempest_idle",
+      "span": 86
+    },
+    {
+      "alias": "flight_variant_6",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 84
+    },
+    {
+      "alias": "stealth_red",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 84
+    },
+    {
+      "alias": "stealth_green",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 84
+    },
+    {
+      "alias": "stealth_orange",
+      "model": "s6dart",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 84
+    },
+    {
+      "alias": "l6v_r0",
+      "model": "l6v_s0",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 84
+    },
+    {
+      "alias": "l6v_b0",
+      "model": "l6v_s0",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 84
+    },
+    {
+      "alias": "l6v_r1",
+      "model": "l6v_s1",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 86
+    },
+    {
+      "alias": "l6v_b1",
+      "model": "l6v_s1",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 86
+    },
+    {
+      "alias": "l6v_r2",
+      "model": "l6v_s2",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 86
+    },
+    {
+      "alias": "l6v_b2",
+      "model": "l6v_s2",
+      "stages": [
+        6
+      ],
+      "source": null,
+      "span": 86
+    }
+  ]
+}

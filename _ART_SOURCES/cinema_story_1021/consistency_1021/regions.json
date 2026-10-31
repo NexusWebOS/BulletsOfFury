@@ -1,0 +1,74 @@
+{
+  "forge_cole": [
+    "forge_upgrade",
+    [
+      35,
+      115,
+      163,
+      371
+    ]
+  ],
+  "alarm_cole": [
+    "hq_alarm",
+    [
+      162,
+      137,
+      290,
+      329
+    ]
+  ],
+  "generator_cole": [
+    "launch_generator",
+    [
+      115,
+      34,
+      243,
+      226
+    ]
+  ],
+  "power_cole": [
+    "power_cell",
+    [
+      442,
+      160,
+      570,
+      384
+    ]
+  ],
+  "river_cole": [
+    "hq_river",
+    [
+      52,
+      142,
+      244,
+      384
+    ]
+  ],
+  "regroup_freezer": [
+    "hq_regroup",
+    [
+      300,
+      84,
+      428,
+      212
+    ]
+  ],
+  "river_freezer": [
+    "hq_river",
+    [
+      172,
+      168,
+      236,
+      232
+    ]
+  ],
+  "alarm_maverick": [
+    "hq_alarm",
+    [
+      372,
+      142,
+      468,
+      238
+    ]
+  ]
+}

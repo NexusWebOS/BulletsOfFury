@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "id: 121215a4-e9e8-4ba0-9344-d4dde22e5ce9\njob_id: 121215a4-e9e8-4ba0-9344-d4dde22e5ce9\ndescription: The whole robot recovers smoothly from the lowered empty fist pose. Bend both knees, reach BOTH empty hands down in front of the waist to collect an imaginary heavy rotary cannon, then lift and cradle it with both hands at the center of the chest into the exact supplied final pose. Connected shoulders, elbows and wrists; heavy weight transfer. No actual weapon is drawn: the game supplies one tracked rigid cannon separately. Empty hands only. Do not change head, horned skull face, armor, scale or registration. No effects, rings or shields. One continuous smooth recovery and pickup.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7430\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"121215a4-e9e8-4ba0-9344-d4dde22e5ce9\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/121215a4-e9e8-4ba0-9344-d4dde22e5ce9/download (423 + Retry-After until ready; ?index=N for the Nth of several images)\nasset_id: 0ba63d2e-ae98-52d7-81da-2491fbf11268\nasset_status: pending (saved to your gallery when generation completes)"
+    }
+  ],
+  "isError": false
+}

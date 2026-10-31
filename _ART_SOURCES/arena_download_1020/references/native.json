@@ -1,0 +1,83 @@
+[
+  {
+    "stage": 1,
+    "cfg": {
+      "master": "bg_stage01_intact",
+      "destroyed": "bg_stage01_destroyed",
+      "plateW": 680,
+      "liquid": "nlq2_water",
+      "fill": "#0a1607",
+      "tile": 0.5,
+      "fps": 5,
+      "wide": true,
+      "h": 4212
+    },
+    "world": 680,
+    "view": [
+      480,
+      512
+    ],
+    "masterPath": "assets/game/levels/stage_01/stage/bg_stage01_intact.png"
+  },
+  {
+    "stage": 2,
+    "cfg": {
+      "master": "nst2_master",
+      "liquid": "nlq3_lava",
+      "fill": "#241008",
+      "tile": 0.5,
+      "fps": 10,
+      "arenaLiquid": true,
+      "continuousBoss": true,
+      "plateW": 680,
+      "h": 4080,
+      "bossDim": 0.58
+    },
+    "world": 680,
+    "view": [
+      480,
+      512
+    ],
+    "masterPath": "assets/game/levels/stage_02/stage/nst2_master_v2.png"
+  },
+  {
+    "stage": 5,
+    "cfg": {
+      "master": "bg_stage05_loop_0923",
+      "plateW": 680,
+      "liquid": null,
+      "fill": "#05060a",
+      "tile": 1,
+      "wide": true,
+      "loopMaster": true,
+      "continuousBoss": true
+    },
+    "world": 680,
+    "view": [
+      480,
+      512
+    ],
+    "masterPath": "assets/game/levels/stage_05/stage/space_loops_0923/stage5_loop.png"
+  },
+  {
+    "stage": 6,
+    "cfg": {
+      "master": "stage6_blue_master",
+      "city": "nst6_neoncity",
+      "plateW": 680,
+      "h": 5000,
+      "liquid": null,
+      "fill": "#062a8e",
+      "tile": 1,
+      "wide": true,
+      "loopMaster": true,
+      "continuousBoss": true
+    },
+    "world": 680,
+    "view": [
+      480,
+      512
+    ],
+    "masterPath": "assets/game/levels/stage_06/stage/stage6_blue_master.png"
+  }
+]

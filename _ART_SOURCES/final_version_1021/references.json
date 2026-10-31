@@ -1,0 +1,110 @@
+{
+  "hammer_old": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\hammer_old.png",
+    "source": "_ART_SOURCES/boss_redesign_1020/corrupt-reference.png",
+    "size": [
+      256,
+      256
+    ],
+    "ref": "upload:c0544a54-35a0-4829-bd62-685e7d6e8a7c"
+  },
+  "shield_code": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\shield_code.png",
+    "source": "assets/game/levels/stage_08/effects/dracodia_demon_1019/shield_main_00.png",
+    "size": [
+      256,
+      256
+    ],
+    "ref": "upload:fd06eea9-d1d2-4c50-9a83-39b781b6f963"
+  },
+  "portal_gate": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\portal_gate.png",
+    "source": "assets/game/levels/stage_05/stage/warp_gate96/nfx_s5gate96_3.png",
+    "size": [
+      96,
+      96
+    ],
+    "ref": "upload:db5f9b97-0e0a-4b16-b377-f20a16159990"
+  },
+  "portal_blue": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\portal_blue.png",
+    "source": "assets/game/shared/fx/portals_1011/blue_rift_20.png",
+    "size": [
+      320,
+      320
+    ],
+    "ref": "upload:93ddc290-422c-4b6d-90dc-73572168ffad"
+  },
+  "fx_FX_Vol1_0": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\fx_FX_Vol1_0.png",
+    "source": "ColeForge_Explosions_FX_Vol1/ColeForge_Explosions_FX_Vol1/Animations/chain_sequential/frames/frame_05.png",
+    "size": [
+      176,
+      144
+    ],
+    "ref": "upload:7bdd06c2-b7e8-4c6f-b033-3c8976f30c41"
+  },
+  "fx_FX_Vol1_1": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\fx_FX_Vol1_1.png",
+    "source": "ColeForge_Explosions_FX_Vol1/ColeForge_Explosions_FX_Vol1/Animations/underwater_eexplosion/frames/frame_05.png",
+    "size": [
+      176,
+      192
+    ],
+    "ref": "upload:9dcd6da6-b526-4c0b-b76e-72411114ec1b"
+  },
+  "fx_32bit_0": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\fx_32bit_0.png",
+    "source": "ColeForge_Explosions_32bit/ColeForge_Explosions_32bit/Animations/standard_eexplosions_01_micro_starburst/frames/frame_05.png",
+    "size": [
+      176,
+      96
+    ],
+    "ref": "upload:d05dc5b9-b94f-4c6d-b878-c361f885fb0b"
+  },
+  "fx_32bit_1": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\fx_32bit_1.png",
+    "source": "ColeForge_Explosions_32bit/ColeForge_Explosions_32bit/Animations/standard_eexplosions_02_cluster_fireball/frames/frame_05.png",
+    "size": [
+      176,
+      96
+    ],
+    "ref": "upload:eee54485-fc58-4051-8ebf-5633140424b8"
+  },
+  "fx_16bit_0": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\fx_16bit_0.png",
+    "source": "ColeForge_Explosions_16bit/ColeForge_Explosions_16bit/Animations/standard_eexplosions_01_micro_starburst/frames/frame_05.png",
+    "size": [
+      144,
+      128
+    ],
+    "ref": "upload:02e35eac-4c30-4382-8433-ef267cdc7d4d"
+  },
+  "fx_16bit_1": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\fx_16bit_1.png",
+    "source": "ColeForge_Explosions_16bit/ColeForge_Explosions_16bit/Animations/standard_eexplosions_02_cluster_fireball/frames/frame_05.png",
+    "size": [
+      144,
+      80
+    ],
+    "ref": "upload:ffa24117-2336-4bb6-bd1a-bbb1a061c6ab"
+  },
+  "fx_8bit_0": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\fx_8bit_0.png",
+    "source": "ColeForge_Explosions_8bit/ColeForge_Explosions_8bit/Animations/8_biteexplosions_r00/frames/frame_04.png",
+    "size": [
+      96,
+      96
+    ],
+    "ref": "upload:9af8a1e7-4007-4d62-a177-1b9e165012cd"
+  },
+  "fx_8bit_1": {
+    "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\final_version_1021\\refs\\fx_8bit_1.png",
+    "source": "ColeForge_Explosions_8bit/ColeForge_Explosions_8bit/Animations/8_biteexplosions_r01/frames/frame_03.png",
+    "size": [
+      144,
+      128
+    ],
+    "ref": "upload:c0797782-dc5c-40a6-9ef0-f6f3cf20902c"
+  }
+}

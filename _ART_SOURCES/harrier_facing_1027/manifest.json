@@ -1,0 +1,187 @@
+{
+  "art": {
+    "closed_south": {
+      "key": "hf28_closed_south",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/closed_south.png",
+      "w": 512,
+      "h": 288,
+      "pivot": [
+        256,
+        144
+      ],
+      "source": "assets\\game\\levels\\stage_06\\boss\\bosses\\skycarrier\\carrier_closed.png"
+    },
+    "closed_north": {
+      "key": "hf28_closed_north",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/closed_north.png",
+      "w": 512,
+      "h": 288,
+      "pivot": [
+        256,
+        144
+      ],
+      "source": "assets\\game\\levels\\stage_06\\boss\\bosses\\skycarrier\\carrier_closed.png"
+    },
+    "open_south": {
+      "key": "hf28_open_south",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/open_south.png",
+      "w": 512,
+      "h": 288,
+      "pivot": [
+        256,
+        144
+      ],
+      "source": "assets\\game\\levels\\stage_06\\boss\\bosses\\skycarrier\\carrier_open.png"
+    },
+    "open_north": {
+      "key": "hf28_open_north",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/open_north.png",
+      "w": 512,
+      "h": 288,
+      "pivot": [
+        256,
+        144
+      ],
+      "source": "assets\\game\\levels\\stage_06\\boss\\bosses\\skycarrier\\carrier_open.png"
+    },
+    "broken_south": {
+      "key": "hf28_broken_south",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/broken_south.png",
+      "w": 512,
+      "h": 288,
+      "pivot": [
+        256,
+        144
+      ],
+      "source": "assets\\game\\levels\\stage_06\\boss\\bosses\\skycarrier\\carrier_broken.png"
+    },
+    "broken_north": {
+      "key": "hf28_broken_north",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/broken_north.png",
+      "w": 512,
+      "h": 288,
+      "pivot": [
+        256,
+        144
+      ],
+      "source": "assets\\game\\levels\\stage_06\\boss\\bosses\\skycarrier\\carrier_broken.png"
+    },
+    "closed_wells_south": {
+      "key": "hf28_closed_wells_south",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/closed_wells_south.png",
+      "w": 512,
+      "h": 288,
+      "pivot": [
+        256,
+        144
+      ],
+      "source": "assets\\game\\levels\\stage_06\\boss\\bosses\\skycarrier\\carrier_closed_wells.png"
+    },
+    "open_wells_south": {
+      "key": "hf28_open_wells_south",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/open_wells_south.png",
+      "w": 512,
+      "h": 288,
+      "pivot": [
+        256,
+        144
+      ],
+      "source": "assets\\game\\levels\\stage_06\\boss\\bosses\\skycarrier\\carrier_open_wells.png"
+    },
+    "broken_wells_south": {
+      "key": "hf28_broken_wells_south",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/broken_wells_south.png",
+      "w": 512,
+      "h": 288,
+      "pivot": [
+        256,
+        144
+      ],
+      "source": "assets\\game\\levels\\stage_06\\boss\\bosses\\skycarrier\\carrier_broken_wells.png"
+    },
+    "hit_0": {
+      "key": "hf28_hit_0",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/hit_0.png",
+      "w": 32,
+      "h": 40,
+      "pivot": [
+        16,
+        20
+      ]
+    },
+    "hit_1": {
+      "key": "hf28_hit_1",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/hit_1.png",
+      "w": 32,
+      "h": 40,
+      "pivot": [
+        16,
+        20
+      ]
+    },
+    "hit_2": {
+      "key": "hf28_hit_2",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/hit_2.png",
+      "w": 32,
+      "h": 40,
+      "pivot": [
+        16,
+        20
+      ]
+    },
+    "hit_3": {
+      "key": "hf28_hit_3",
+      "path": "assets/game/levels/stage_06/boss/harrier_facing_1027/hit_3.png",
+      "w": 32,
+      "h": 40,
+      "pivot": [
+        16,
+        20
+      ]
+    }
+  },
+  "oldRects": [
+    [
+      168,
+      86,
+      18,
+      32
+    ],
+    [
+      200,
+      76,
+      22,
+      36
+    ],
+    [
+      290,
+      76,
+      22,
+      36
+    ],
+    [
+      326,
+      86,
+      18,
+      32
+    ]
+  ],
+  "pivots": [
+    [
+      177,
+      103
+    ],
+    [
+      211,
+      94
+    ],
+    [
+      301,
+      94
+    ],
+    [
+      335,
+      103
+    ]
+  ]
+}

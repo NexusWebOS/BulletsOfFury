@@ -1,0 +1,8 @@
+{
+  "body": "Rejected animation39117169: later generated poses lose/drift arms. Kept the approved static whole body; accepted d9c920f4 two-hand forearm/grip correction only in86,105..169,155, with original reactor restored. Head, legs, unit and dark outlines remain approved source pixels.",
+  "barrel": "Accepted generated shaft highlights within the fixed source receiver/outer contour. Rejected generated muzzle bore-count/shape changes. Exact original five-bore rotor authored into8 axial phases using offline ellipse-to-circle rotation and restored perspective (72degree repeat); no runtime rotation.",
+  "grip": "Separate foreground hands keep their common socket with the independent gun receiver.",
+  "palettes": "Normal, interior-only Chromium and red-energy variants keep dark linework; separate preauthored white-hit partners.",
+  "warning": "Original green/yellow/red FOV art, baked fixed512px-long cone fields at down.18/fan.48radian half-angle;12px near-apex overlap behind the muzzle.",
+  "shots": "Exact native arch_blaster_fx_4/5 converted to18 fixed direction/phase cells. Ordinary mg classification and interception immunity preserved."
+}

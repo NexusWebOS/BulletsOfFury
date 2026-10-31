@@ -1,0 +1,272 @@
+{
+  "rows": [
+    {
+      "size": 410,
+      "parts": [
+        {
+          "key": "v18_infused_core_00",
+          "id": "core"
+        },
+        {
+          "key": "v18_infused_left_00",
+          "id": "left"
+        },
+        {
+          "key": "v18_infused_right_00",
+          "id": "right"
+        }
+      ],
+      "name": "infused",
+      "phase": 0,
+      "form": 0,
+      "canvas": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "worldScale": 0.5
+    },
+    {
+      "size": 410,
+      "parts": [
+        {
+          "key": "v18_ghost_core_00",
+          "id": "core"
+        },
+        {
+          "key": "v18_ghost_left_00",
+          "id": "left"
+        },
+        {
+          "key": "v18_ghost_right_00",
+          "id": "right"
+        }
+      ],
+      "name": "ghost",
+      "phase": 1,
+      "form": 0,
+      "canvas": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "worldScale": 0.5
+    },
+    {
+      "size": 410,
+      "parts": [
+        {
+          "key": "v18_colossus_core_00",
+          "id": "core"
+        },
+        {
+          "key": "v18_colossus_left_00",
+          "id": "left"
+        },
+        {
+          "key": "v18_colossus_right_00",
+          "id": "right"
+        }
+      ],
+      "name": "colossus",
+      "phase": 2,
+      "form": 0,
+      "canvas": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "worldScale": 0.5
+    },
+    {
+      "size": 410,
+      "parts": [
+        {
+          "key": "hk5_hammer_1",
+          "id": "core"
+        },
+        {
+          "key": "hk5_hammer_1",
+          "id": "hammer"
+        }
+      ],
+      "name": "hammer",
+      "phase": 2,
+      "form": 8,
+      "canvas": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "worldScale": 0.5
+    },
+    {
+      "size": 410,
+      "parts": [
+        {
+          "key": "v18_helicopter_core_00",
+          "id": "core"
+        },
+        {
+          "key": "v18_helicopter_left_00",
+          "id": "left"
+        },
+        {
+          "key": "v18_helicopter_right_00",
+          "id": "right"
+        }
+      ],
+      "name": "helicopter",
+      "phase": 2,
+      "form": 1,
+      "canvas": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "worldScale": 0.5
+    },
+    {
+      "size": 410,
+      "parts": [
+        {
+          "key": "fmc_harrier",
+          "id": "core"
+        },
+        {
+          "key": "fmc_harrier",
+          "id": "fanL"
+        },
+        {
+          "key": "fmc_harrier",
+          "id": "fanR"
+        },
+        {
+          "key": "fmc_harrier",
+          "id": "rackL"
+        },
+        {
+          "key": "fmc_harrier",
+          "id": "rackR"
+        },
+        {
+          "key": "fmc_harrier",
+          "id": "beam"
+        }
+      ],
+      "name": "harrier",
+      "phase": 2,
+      "form": 6,
+      "canvas": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "worldScale": 0.5
+    },
+    {
+      "size": 410,
+      "parts": [
+        {
+          "key": "vp23_phoenix_ventL",
+          "id": "ventL"
+        },
+        {
+          "key": "vp23_phoenix_ventR",
+          "id": "ventR"
+        },
+        {
+          "key": "vp23_phoenix_shoulderL",
+          "id": "shoulderL"
+        },
+        {
+          "key": "vp23_phoenix_left",
+          "id": "left"
+        },
+        {
+          "key": "vp23_phoenix_shoulderR",
+          "id": "shoulderR"
+        },
+        {
+          "key": "vp23_phoenix_right",
+          "id": "right"
+        },
+        {
+          "key": "vp23_phoenix_head",
+          "id": "head"
+        },
+        {
+          "key": "vp23_phoenix_upperL",
+          "id": "left"
+        },
+        {
+          "key": "vp23_phoenix_upperR",
+          "id": "right"
+        },
+        {
+          "key": "vp23_phoenix_torso",
+          "id": "core"
+        },
+        {
+          "key": "vp23_phoenix_thighL",
+          "id": "legL"
+        },
+        {
+          "key": "vp23_phoenix_footL",
+          "id": "legL"
+        },
+        {
+          "key": "vp23_phoenix_flareL",
+          "id": "legL"
+        },
+        {
+          "key": "vp23_phoenix_thighR",
+          "id": "legR"
+        },
+        {
+          "key": "vp23_phoenix_footR",
+          "id": "legR"
+        },
+        {
+          "key": "vp23_phoenix_flareR",
+          "id": "legR"
+        },
+        {
+          "key": "vp23_phoenix_reactor",
+          "id": "core"
+        }
+      ],
+      "name": "volcano",
+      "phase": 2,
+      "form": 2,
+      "canvas": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "worldScale": 0.5
+    }
+  ],
+  "errors": []
+}

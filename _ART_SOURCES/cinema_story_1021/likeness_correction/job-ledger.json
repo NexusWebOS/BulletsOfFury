@@ -1,0 +1,43 @@
+{
+  "credits_before": 4.65,
+  "credits_after": 4.33,
+  "spent": 0.32,
+  "jobs": [
+    {
+      "purpose": "cole",
+      "job_id": "a2a3270d-6327-446a-8cb9-fdc82e32cc46",
+      "prompt": "Correct ONLY the STANDING man at LEFT (Cole, head near x100 y50); keep his exact standing pose and scale. Match reference identity: swept chestnut undercut with short sides, blue eyes, broad brows, short neatly trimmed full beard, recognizable face, green high collar/hood, deep green flight suit, silver shoulder harness buckles, gold star arm patches. The OTHER brown-haired man leaning on table is MAVERICK: leave him, room, table, red mohawk foreground and ALL other pixels unchanged. Crisp HD16-bit pixel clusters.",
+      "status": "completed",
+      "frames": 1,
+      "charged": 0.08,
+      "download": "https://api.pixellab.ai/mcp/images/a2a3270d-6327-446a-8cb9-fdc82e32cc46/download"
+    },
+    {
+      "purpose": "maverick",
+      "job_id": "aa9111df-b328-4125-a510-575777e9e5d5",
+      "prompt": "FRAME 256x256, preserve exact scale, composition, poses, other people, table and room. Correct ONLY MAVERICK, the olive-suited man leaning forward on the table at CENTER (head near x188 y42, torso x181 y91). Copy his own reference face, combed-back warm brown hair, fuller dark beard with open mouth, olive OPEN collar with tan lining, dark harness and green eagle shoulder patch. He must not have Cole's undercut or hooded collar. Leave standing Cole at left and red mohawk foreground entirely unchanged. Crisp 16-bit pixel art.",
+      "status": "completed",
+      "frames": 1,
+      "charged": 0.08,
+      "download": "https://api.pixellab.ai/mcp/images/aa9111df-b328-4125-a510-575777e9e5d5/download"
+    },
+    {
+      "purpose": "cole_head_edit",
+      "job_id": "fb303c66-9460-464b-89a5-4b0af7243a41",
+      "prompt": "FRAME 80x96. Re-author ONLY the man's HEAD to match reference Cole's likeness precisely. Change current generic brown side-parted head: taller tousled SWEPT chestnut top with distinct closely cropped SIDES/undercut, visible blue eyes, strong straight brows, squared jaw and neatly trimmed short full beard like reference. Turn face slightly toward viewer so both eyes readable, serious confident expression. Keep head same size and neck position, keep green hood and exact shoulder harness, body pose and all room pixels. Crisp deliberate 16-bit clusters.",
+      "status": "completed",
+      "frames": 1,
+      "charged": 0.08,
+      "download": "https://api.pixellab.ai/mcp/images/fb303c66-9460-464b-89a5-4b0af7243a41/download"
+    },
+    {
+      "purpose": "cole_head_new",
+      "job_id": "3898463d-a4c9-4412-adac-2f78cdc37c72",
+      "prompt": "FRAME FORMAT: 96 x 112 pixels. NEW cinematic head and shoulder insert of COLE matching the supplied identity reference, not a generic soldier. Three-quarter FRONT view, facing slightly right but BOTH blue eyes visible. Exact tall swept chestnut hair with shaved/closely clipped sides and asymmetrical forelock, straight thick brows, blue eyes, squared face, short neatly trimmed full beard. Green hooded flight collar, silver harness shoulder buckles. Premium HD16-bit Neo Geo pixel clusters. Head centered x48 y40, hair top y6, chin y70, neck y79, shoulders bottom. Transparent background. No hat, no goggles. Preserve this reference identity and facial proportions.",
+      "status": "completed",
+      "frames": 4,
+      "charged": 0.08,
+      "download": "https://api.pixellab.ai/mcp/images/3898463d-a4c9-4412-adac-2f78cdc37c72/download"
+    }
+  ]
+}

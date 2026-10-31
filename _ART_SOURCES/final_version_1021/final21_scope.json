@@ -1,0 +1,20 @@
+{
+ "user_scope":"October21 final art/combat pass; remain active until all requested items are handled, report any genuine external blockers precisely.",
+ "assets":"PixelLab explicitly requested for generated game assets. Actual selected BOF images and user explosion packs authorized as references. Preserve original engine ruled explosions and authored identities; generate supplementary smoother banks. Built-in image generator for cinematic concepts.",
+ "credits":"User added10USD, verified PixelLab10.58 starting balance. Track receipts, no duplicate jobs or account purchases.",
+ "tasks":[
+  {"id":"corrupt_hammer","status":"master generation pending0f5e0b99-98f2-4dd7-b430-f9c765769564","scope":"Re-author at higher usable density; readable face/hammer/chromium, all active animation banks consistent; preserve mechanics/targets/new landmark registration."},
+  {"id":"miniboss_stage5","status":"root cause located: siegeBomberHit kills when core reaches0 despite live moduleHP in visible pool","scope":"Require full displayed health budget; no premature kill/rewards; real4diff tests."},
+  {"id":"forge","status":"audit started","scope":"Fix all weapon previews after Stage5; dual chaingun lanes persistent preview state, native projectile ticks/muzzle positioning, no state leakage."},
+  {"id":"shields","status":"pending owner audit","scope":"All enemy shield bubbles/graphics get improved PixelLab animation with distinct variants and palettes, exact hit feedback and danger ownership."},
+  {"id":"cinematic_concepts","status":"pending","scope":"Suggest and generate visual concepts, actual pilot/ship/Dracodia identity references."},
+  {"id":"modular_aircraft","status":"catalogue AIR_MOTION_1013 has87designs; filter requested stages1,4,6,7,8,5,9 mechanical airborne units, preserve biological identities","scope":"PixelLab re-author modular aircraft, registered hull/wing/gun/muzzle sockets, attack animation, barrel roll, somersault and drift for each. Stage4 boss drift frames/motion."},
+  {"id":"explosions","status":"fourZIPs read and inventoried:245animations total; actual source middle frames uploaded","scope":"PixelLab smoother NeoGeo supplements based on actual engine explosions and selected user pack sequences, final boss destruction richness. Preserve original engine death/explosion rules."},
+  {"id":"portals","status":"portal master generation pending0792881a-3a1f-4fc5-a094-5d42259207f1","scope":"Latest user steering: SAME existing portal energy, portal-only variants WITHOUT hardware gate/frame. Upright Stage5 travel portal and matching screen warp effect, preserve current originals."},
+  {"id":"stageX","status":"pending","scope":"Proper Stage10/X entrance card; actual coastal city with seamless coast entrance->scrolling city/parallax."},
+  {"id":"rebels","status":"pending","scope":"Individual AI, FOV all attack lanes, visible Retina locks and shootable homing missile volleys including ally interception; star/bowling/H/X formations, scatter/offscreen exits, south-to-north depth return with shadows, drifting; fair reduced HP. Jace helix charge/drift strikes; Kaia slower teal/wind spread with every pellet lane warned; Rook MG/cannon and charge-dash; Voss turbo flashing/slingshot distant-to-front impact; Nyx cloak until player Retina/missile reveals, then charged darkpurple shadow orbs."},
+  {"id":"ram_fx","status":"pending","scope":"Proper Juggernaut and Rook charge/ram effects and real manual/native tests."},
+  {"id":"engine_rules","status":"pending","scope":"Update actual engine rules/documentation for all new families: even frames, fixed pivot/proportion, muzzle-owned cues, hit flash, no fading modular pieces, timed warnings/collision, shot interception, scoped load/cache, no progression bypass. User requests override older art constraints where named."},
+  {"id":"finalQA","status":"pending","scope":"Real Edge playtest all4diff selected fights, no browser errors, proper native pixels and finite source audio, required full test_fl final baseline8940passing/0errors. Do not claim human win rates. Review HTML all changes. No GitHub push currently requested."}
+ ]
+}

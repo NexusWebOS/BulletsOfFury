@@ -1,0 +1,61 @@
+{
+  "pilots": [
+    "inv20_cole",
+    "inv20_axel",
+    "inv20_freezer",
+    "inv20_yuri",
+    "inv20_maverick",
+    "inv20_falva",
+    "inv20_lizzie",
+    "inv20_decker",
+    "inv20_juggernaut"
+  ],
+  "ships": [
+    "ship_cole",
+    "ship_axel",
+    "ship_freezer",
+    "ship_yuri",
+    "ship_maverick",
+    "ship_falva",
+    "ship_lizzie",
+    "ship_decker",
+    "ship_juggernaut"
+  ],
+  "enemies": [
+    "ns9e_wskim_idle",
+    "ns9e_pneedle_idle",
+    "ns9e_vmanta_idle",
+    "ns9x_dreadv",
+    "nef_s1_missile_gunboat_intact_idle",
+    "nef_s1_river_patrol_boat_intact_idle"
+  ],
+  "front-rear": [
+    "ship_cole_so6",
+    "ship_cole_so2",
+    "ship_axel_so6",
+    "ship_axel_so2",
+    "ship_freezer_so6",
+    "ship_freezer_so2",
+    "ship_yuri_so6",
+    "ship_yuri_so2",
+    "ship_maverick_so6",
+    "ship_maverick_so2",
+    "ship_falva_so6",
+    "ship_falva_so2",
+    "ship_lizzie_so6",
+    "ship_lizzie_so2",
+    "ship_decker_so6",
+    "ship_decker_so2",
+    "ship_juggernaut_so6",
+    "ship_juggernaut_so2"
+  ],
+  "portals": [
+    "pxv17_blue_rift_form_3",
+    "dr21_symbiote_0"
+  ],
+  "environments": [
+    "cut_furyhq_command_center",
+    "cin_story_lab_empty",
+    "cinend_deep_space"
+  ]
+}

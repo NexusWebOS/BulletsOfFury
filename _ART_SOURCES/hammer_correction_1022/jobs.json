@@ -1,0 +1,350 @@
+[
+  {
+    "id": "blue_down",
+    "kind": "motion",
+    "job_id": "84f552a9-0c72-4136-a1bb-88401ddaf4df",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "A continuous straight DOWN overhead hammer swing between these exact poses. Both hands drive the shaft from above the head down the centreline in front of the chest and knees, hammer head travels vertically through visible intermediate positions to the floor. Show shoulders, elbows, wrists and knees bending in every intermediate frame, not a held overhead pose followed by a teleport. No side swing, no jump, no blast or smear hiding the hammer. Exactly one solid readable hammer and two arms throughout. Preserve the exact robot design, fixed chest pivot128,112,256-square canvas.",
+    "receipt": "id: 84f552a9-0c72-4136-a1bb-88401ddaf4df\njob_id: 84f552a9-0c72-4136-a1bb-88401ddaf4df\naction: A continuous straight DOWN overhead hammer swing between these exact poses. Both hands drive the shaft from above the head down the centreline in front of the chest and knees, hammer head travels vertically through visible intermediate positions to the floor. Show shoulders, elbows, wrists and knees bending in every intermediate frame, not a held overhead pose followed by a teleport. No side swing, no jump, no blast or smear hiding the hammer. Exactly one solid readable hammer and two arms throughout. Preserve the exact robot design, fixed chest pivot128,112,256-square canvas.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 5b82ba7f-363f-5f4e-9443-8a157f3d5748\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"84f552a9-0c72-4136-a1bb-88401ddaf4df\")",
+    "completion": "status: completed\nid: 84f552a9-0c72-4136-a1bb-88401ddaf4df\njob_id: 84f552a9-0c72-4136-a1bb-88401ddaf4df\nframe: 0 of 9\nasset_id: 5b82ba7f-363f-5f4e-9443-8a157f3d5748\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0308 in credits\ndownload: https://api.pixellab.ai/mcp/images/84f552a9-0c72-4136-a1bb-88401ddaf4df/download?index=0"
+  },
+  {
+    "id": "blue_side",
+    "kind": "motion",
+    "job_id": "82793453-5851-47ef-b2aa-5941bdedbb86",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "A continuous broad SIDEWAYS hammer swing between these exact poses. Torso twists, hips brace, both arms swing the visible physical hammer across the waist in a clear left-to-right horizontal arc. Show every intermediate shaft and head position. No overhead slam, no jump, no detached hammer, no huge luminous trail hiding the physical tool. Exact black steel and cyan robot design, fixed chest pivot128,112,256-square transparent canvas.",
+    "receipt": "id: 82793453-5851-47ef-b2aa-5941bdedbb86\njob_id: 82793453-5851-47ef-b2aa-5941bdedbb86\naction: A continuous broad SIDEWAYS hammer swing between these exact poses. Torso twists, hips brace, both arms swing the visible physical hammer across the waist in a clear left-to-right horizontal arc. Show every intermediate shaft and head position. No overhead slam, no jump, no detached hammer, no huge luminous trail hiding the physical tool. Exact black steel and cyan robot design, fixed chest pivot128,112,256-square transparent canvas.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: bfa1022f-dcf9-5336-ba1c-feb5a623e8dc\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"82793453-5851-47ef-b2aa-5941bdedbb86\")",
+    "completion": "status: completed\nid: 82793453-5851-47ef-b2aa-5941bdedbb86\njob_id: 82793453-5851-47ef-b2aa-5941bdedbb86\nframe: 0 of 9\nasset_id: bfa1022f-dcf9-5336-ba1c-feb5a623e8dc\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0372 in credits\ndownload: https://api.pixellab.ai/mcp/images/82793453-5851-47ef-b2aa-5941bdedbb86/download?index=0"
+  },
+  {
+    "id": "corrupt_master",
+    "kind": "master",
+    "job_id": "bdc5493a-8359-4d47-8958-e6d9a9a310af",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Re-author this exact corrupted Hammer robot at premium clean HD16-bit Neo Geo quality, one full-body forward-facing cinematic/gameplay sprite. Match the BLUE reference's clean broad chromium armor and deliberate highlights, not the noisy purple reference's speckles. Retain the corrupted reference identity: Dracodia-like horned demonic robotic skull face, black/violet armour, silver/chromium edges, orange/red readable chest core, purple-white code seams. Large TWO-HANDED hammer with solid chromium head and luminous violet energy core, shaft held diagonally down at his side in neutral stance. Two arms, two legs, one hammer. Frame256x256 transparent; fill usable x24..232,y16..242, chest joint at128,112, feet near y234. Larger usable actor, clear face, deliberate large pixel clusters, no noise, no explosion, no tiny scattered light dots. Do not just enlarge the old sprite.",
+    "receipt": "id: bdc5493a-8359-4d47-8958-e6d9a9a310af\njob_id: bdc5493a-8359-4d47-8958-e6d9a9a310af\nmodel: pro\ndescription: Re-author this exact corrupted Hammer robot at premium clean HD16-bit Neo Geo quality, one full-body forward-facing cinematic/gameplay sprite. Match the BLUE reference's clean broad chromium armor and deliberate highlights, not the noisy purple reference's speckles. Retain the corrupted reference identity: Dracodia-like horned demonic robotic skull face, black/violet armour, silver/chromium edges, orange/red readable chest core, purple-white code seams. Large TWO-HANDED hammer with solid chromium head and luminous violet energy core, shaft held diagonally down at his side in neutral stance. Two arms, two legs, one hammer. Frame256x256 transparent; fill usable x24..232,y16..242, chest joint at128,112, feet near y234. Larger usable actor, clear face, deliberate large pixel clusters, no noise, no explosion, no tiny scattered light dots. Do not just enlarge the old sprite.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: b6c4accd-8287-587a-a5f2-933ab4441a6d\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"bdc5493a-8359-4d47-8958-e6d9a9a310af\")",
+    "completion": "status: completed\nid: bdc5493a-8359-4d47-8958-e6d9a9a310af\njob_id: bdc5493a-8359-4d47-8958-e6d9a9a310af\nframe: 0 of 1\nasset_id: b6c4accd-8287-587a-a5f2-933ab4441a6d\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/bdc5493a-8359-4d47-8958-e6d9a9a310af/download?index=0"
+  },
+  {
+    "id": "corrupt_idle",
+    "kind": "motion",
+    "job_id": "ee0e0c0e-2258-4649-8e28-51b29d8aaa55",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Subtle breathing and reactor pulse, exact fixed feet and chest; no hammer movement.",
+    "receipt": "id: ee0e0c0e-2258-4649-8e28-51b29d8aaa55\njob_id: ee0e0c0e-2258-4649-8e28-51b29d8aaa55\naction: Subtle breathing and reactor pulse, exact fixed feet and chest; no hammer movement. Preserve exact source robot, clean large chrome highlights and face, one hammer, fixed chest pivot128,112, same256x256 transparent canvas with every extremity and hammer inside8px margins. No noisy speckles, no text.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 8a7bde90-a260-59b3-b645-2f4cca3037b9\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ee0e0c0e-2258-4649-8e28-51b29d8aaa55\")",
+    "completion": "status: completed\nid: ee0e0c0e-2258-4649-8e28-51b29d8aaa55\njob_id: ee0e0c0e-2258-4649-8e28-51b29d8aaa55\nframe: 0 of 5\nasset_id: 8a7bde90-a260-59b3-b645-2f4cca3037b9\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0226 in credits\ndownload: https://api.pixellab.ai/mcp/images/ee0e0c0e-2258-4649-8e28-51b29d8aaa55/download?index=0"
+  },
+  {
+    "id": "corrupt_slam",
+    "kind": "motion",
+    "job_id": "0dcaed62-cba4-40a2-b4d4-dad13177ee7e",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "One full deliberate TWO HANDED OVERHEAD SLAM: raise the physical hammer above the head, then swing it STRAIGHT DOWN along the vertical centre line, showing the hammer at face height, chest height, waist height, knee height, then ground impact before holding it planted. No jumps, sideways arcs, teleporting hammer, giant smear or effects. Spend at least five consecutive intermediate frames on the descending swing. End crouched with both hands on the shaft and hammer head at x128,y233.",
+    "receipt": "id: 0dcaed62-cba4-40a2-b4d4-dad13177ee7e\njob_id: 0dcaed62-cba4-40a2-b4d4-dad13177ee7e\naction: One full deliberate TWO HANDED OVERHEAD SLAM: raise the physical hammer above the head, then swing it STRAIGHT DOWN along the vertical centre line, showing the hammer at face height, chest height, waist height, knee height, then ground impact before holding it planted. No jumps, sideways arcs, teleporting hammer, giant smear or effects. Spend at least five consecutive intermediate frames on the descending swing. End crouched with both hands on the shaft and hammer head at x128,y233. Preserve exact source robot, clean large chrome highlights and face, one hammer, fixed chest pivot128,112, same256x256 transparent canvas with every extremity and hammer inside8px margins. No noisy speckles, no text.\nframes: 8\nsize: 256x256px\ntransparent: True\nasset_id: 68eb9256-6b9d-5c72-a5d4-55d24da91e4c\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"0dcaed62-cba4-40a2-b4d4-dad13177ee7e\")",
+    "completion": "status: completed\nid: 0dcaed62-cba4-40a2-b4d4-dad13177ee7e\njob_id: 0dcaed62-cba4-40a2-b4d4-dad13177ee7e\nframe: 0 of 9\nasset_id: 68eb9256-6b9d-5c72-a5d4-55d24da91e4c\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0422 in credits\ndownload: https://api.pixellab.ai/mcp/images/0dcaed62-cba4-40a2-b4d4-dad13177ee7e/download?index=0"
+  },
+  {
+    "id": "corrupt_side",
+    "kind": "motion",
+    "job_id": "01e561fe-6dd3-4327-bba1-b213317195eb",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "One clear TWO HANDED SIDE SWING: draw the hammer back to the left, twist the torso and swing horizontally across the waist to the right with readable shaft/head at every position; hold extended followthrough then recover. Grounded feet, physical hammer, no overhead slam or trails.",
+    "receipt": "id: 01e561fe-6dd3-4327-bba1-b213317195eb\njob_id: 01e561fe-6dd3-4327-bba1-b213317195eb\naction: One clear TWO HANDED SIDE SWING: draw the hammer back to the left, twist the torso and swing horizontally across the waist to the right with readable shaft/head at every position; hold extended followthrough then recover. Grounded feet, physical hammer, no overhead slam or trails. Preserve exact source robot, clean large chrome highlights and face, one hammer, fixed chest pivot128,112, same256x256 transparent canvas with every extremity and hammer inside8px margins. No noisy speckles, no text.\nframes: 8\nsize: 256x256px\ntransparent: True\nasset_id: 8f64dfc0-a638-5dfd-aa2a-6633cc5632cb\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"01e561fe-6dd3-4327-bba1-b213317195eb\")",
+    "completion": "status: completed\nid: 01e561fe-6dd3-4327-bba1-b213317195eb\njob_id: 01e561fe-6dd3-4327-bba1-b213317195eb\nframe: 0 of 9\nasset_id: 8f64dfc0-a638-5dfd-aa2a-6633cc5632cb\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0357 in credits\ndownload: https://api.pixellab.ai/mcp/images/01e561fe-6dd3-4327-bba1-b213317195eb/download?index=0"
+  },
+  {
+    "id": "corrupt_charge",
+    "kind": "motion",
+    "job_id": "54ae59eb-f2cb-4ed5-9f8f-96f756d77f44",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Brace in grounded stance, raise the hammer diagonally before the chest while chest core and violet code seams charge from dim to bright. End holding the charged pose. No projectile or shield.",
+    "receipt": "id: 54ae59eb-f2cb-4ed5-9f8f-96f756d77f44\njob_id: 54ae59eb-f2cb-4ed5-9f8f-96f756d77f44\naction: Brace in grounded stance, raise the hammer diagonally before the chest while chest core and violet code seams charge from dim to bright. End holding the charged pose. No projectile or shield. Preserve exact source robot, clean large chrome highlights and face, one hammer, fixed chest pivot128,112, same256x256 transparent canvas with every extremity and hammer inside8px margins. No noisy speckles, no text.\nframes: 4\nsize: 256x256px\ntransparent: True\nasset_id: 7bd0ed73-60fb-5847-ac70-fcc6c9d928b9\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"54ae59eb-f2cb-4ed5-9f8f-96f756d77f44\")",
+    "completion": "status: completed\nid: 54ae59eb-f2cb-4ed5-9f8f-96f756d77f44\njob_id: 54ae59eb-f2cb-4ed5-9f8f-96f756d77f44\nframe: 0 of 5\nasset_id: 7bd0ed73-60fb-5847-ac70-fcc6c9d928b9\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0296 in credits\ndownload: https://api.pixellab.ai/mcp/images/54ae59eb-f2cb-4ed5-9f8f-96f756d77f44/download?index=0"
+  },
+  {
+    "id": "corrupt_throw",
+    "kind": "motion",
+    "job_id": "16f092e0-e605-4ae2-b1f9-38d3d78021b6",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Wind up the hammer with both arms, twist then hurl it forward/down toward viewer and follow through with empty hands. Show actual grip release once, then empty hands. No second hammer, no explosions.",
+    "receipt": "id: 16f092e0-e605-4ae2-b1f9-38d3d78021b6\njob_id: 16f092e0-e605-4ae2-b1f9-38d3d78021b6\naction: Wind up the hammer with both arms, twist then hurl it forward/down toward viewer and follow through with empty hands. Show actual grip release once, then empty hands. No second hammer, no explosions. Preserve exact source robot, clean large chrome highlights and face, one hammer, fixed chest pivot128,112, same256x256 transparent canvas with every extremity and hammer inside8px margins. No noisy speckles, no text.\nframes: 8\nsize: 256x256px\ntransparent: True\nasset_id: 7c668187-05a8-5490-8d7e-e8d3ee3ad350\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"16f092e0-e605-4ae2-b1f9-38d3d78021b6\")",
+    "completion": "status: completed\nid: 16f092e0-e605-4ae2-b1f9-38d3d78021b6\njob_id: 16f092e0-e605-4ae2-b1f9-38d3d78021b6\nframe: 0 of 9\nasset_id: 7c668187-05a8-5490-8d7e-e8d3ee3ad350\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0337 in credits\ndownload: https://api.pixellab.ai/mcp/images/16f092e0-e605-4ae2-b1f9-38d3d78021b6/download?index=0"
+  },
+  {
+    "id": "corrupt_spin",
+    "kind": "motion",
+    "job_id": "e196c693-ce35-4d0b-8541-3c9d3ff67d00",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "One powerful full360degree planted two-handed hammer whirlwind, torso and hips turn and physical hammer sweeps wide around him, then return facing front. Feet pivot naturally, no flat image rotation, keep whole hammer within canvas.",
+    "receipt": "id: e196c693-ce35-4d0b-8541-3c9d3ff67d00\njob_id: e196c693-ce35-4d0b-8541-3c9d3ff67d00\naction: One powerful full360degree planted two-handed hammer whirlwind, torso and hips turn and physical hammer sweeps wide around him, then return facing front. Feet pivot naturally, no flat image rotation, keep whole hammer within canvas. Preserve exact source robot, clean large chrome highlights and face, one hammer, fixed chest pivot128,112, same256x256 transparent canvas with every extremity and hammer inside8px margins. No noisy speckles, no text.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 6dfe5ce5-b5fc-5b6a-961f-7412a249b457\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e196c693-ce35-4d0b-8541-3c9d3ff67d00\")",
+    "completion": "status: completed\nid: e196c693-ce35-4d0b-8541-3c9d3ff67d00\njob_id: e196c693-ce35-4d0b-8541-3c9d3ff67d00\nframe: 0 of 9\nasset_id: 6dfe5ce5-b5fc-5b6a-961f-7412a249b457\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0327 in credits\ndownload: https://api.pixellab.ai/mcp/images/e196c693-ce35-4d0b-8541-3c9d3ff67d00/download?index=0"
+  },
+  {
+    "id": "corrupt_ball",
+    "kind": "motion",
+    "job_id": "d5ba546b-5b7e-4d57-a328-579e87da44e9",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Robot crouches, folds both legs and arms into a compact armored spiked energy ball, hammer folds into chest machinery; end one closed symmetrical spiked mechanical ball, no standing torso, no separate hammer, no extra effects.",
+    "receipt": "id: d5ba546b-5b7e-4d57-a328-579e87da44e9\njob_id: d5ba546b-5b7e-4d57-a328-579e87da44e9\naction: Robot crouches, folds both legs and arms into a compact armored spiked energy ball, hammer folds into chest machinery; end one closed symmetrical spiked mechanical ball, no standing torso, no separate hammer, no extra effects. Preserve exact source robot, clean large chrome highlights and face, one hammer, fixed chest pivot128,112, same256x256 transparent canvas with every extremity and hammer inside8px margins. No noisy speckles, no text.\nframes: 8\nsize: 256x256px\ntransparent: True\nasset_id: a3735f3f-a606-5d55-8e99-e1d45c110380\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d5ba546b-5b7e-4d57-a328-579e87da44e9\")",
+    "completion": "status: completed\nid: d5ba546b-5b7e-4d57-a328-579e87da44e9\njob_id: d5ba546b-5b7e-4d57-a328-579e87da44e9\nframe: 0 of 9\nasset_id: a3735f3f-a606-5d55-8e99-e1d45c110380\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0473 in credits\ndownload: https://api.pixellab.ai/mcp/images/d5ba546b-5b7e-4d57-a328-579e87da44e9/download?index=0"
+  },
+  {
+    "id": "corrupt_shield",
+    "kind": "motion",
+    "job_id": "fd408ffb-a960-47cc-a0ec-d0511447a190",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Robot plants feet and braces both arms and hammer before his chest defensively. Code seams and chrome glow as he prepares his digital shield. End solid guard pose, no actual bubble or extra projectile; existing engine renders shield.",
+    "receipt": "id: fd408ffb-a960-47cc-a0ec-d0511447a190\njob_id: fd408ffb-a960-47cc-a0ec-d0511447a190\naction: Robot plants feet and braces both arms and hammer before his chest defensively. Code seams and chrome glow as he prepares his digital shield. End solid guard pose, no actual bubble or extra projectile; existing engine renders shield. Preserve exact source robot, clean large chrome highlights and face, one hammer, fixed chest pivot128,112, same256x256 transparent canvas with every extremity and hammer inside8px margins. No noisy speckles, no text.\nframes: 4\nsize: 256x256px\ntransparent: True\nasset_id: 5d483376-ef7f-5e7c-8cd6-2b4f926fcf37\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"fd408ffb-a960-47cc-a0ec-d0511447a190\")",
+    "completion": "status: completed\nid: fd408ffb-a960-47cc-a0ec-d0511447a190\njob_id: fd408ffb-a960-47cc-a0ec-d0511447a190\nframe: 0 of 5\nasset_id: 5d483376-ef7f-5e7c-8cd6-2b4f926fcf37\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0218 in credits\ndownload: https://api.pixellab.ai/mcp/images/fd408ffb-a960-47cc-a0ec-d0511447a190/download?index=0"
+  },
+  {
+    "id": "corrupt_gun",
+    "kind": "motion",
+    "job_id": "2a01b537-0803-47de-9437-2ab68b390ec5",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "The robot trades his hammer out of view and draws one large handheld rotary chaingun in front of his chest, right hand on rear grip and left supporting the barrel assembly. By frame3 he holds only the chaingun, no hammer. Then barrels rotate and recoil visibly several times while he braces, ending steady with the chaingun. No gun mounted on his back, no muzzle flash or projectiles; runtime owns firing effects. Exact new chromium/violet robot identity, readable face/core and highlights, fixed chest128,112 and256x256 transparent canvas.",
+    "receipt": "id: 2a01b537-0803-47de-9437-2ab68b390ec5\njob_id: 2a01b537-0803-47de-9437-2ab68b390ec5\naction: The robot trades his hammer out of view and draws one large handheld rotary chaingun in front of his chest, right hand on rear grip and left supporting the barrel assembly. By frame3 he holds only the chaingun, no hammer. Then barrels rotate and recoil visibly several times while he braces, ending steady with the chaingun. No gun mounted on his back, no muzzle flash or projectiles; runtime owns firing effects. Exact new chromium/violet robot identity, readable face/core and highlights, fixed chest128,112 and256x256 transparent canvas.\nframes: 8\nsize: 256x256px\ntransparent: True\nasset_id: d97a5b02-deb6-5f3c-9bbf-d302ed9665ed\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"2a01b537-0803-47de-9437-2ab68b390ec5\")",
+    "completion": "status: completed\nid: 2a01b537-0803-47de-9437-2ab68b390ec5\njob_id: 2a01b537-0803-47de-9437-2ab68b390ec5\nframe: 0 of 9\nasset_id: d97a5b02-deb6-5f3c-9bbf-d302ed9665ed\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0364 in credits\ndownload: https://api.pixellab.ai/mcp/images/2a01b537-0803-47de-9437-2ab68b390ec5/download?index=0"
+  },
+  {
+    "id": "corrupt_unarmed",
+    "kind": "motion",
+    "job_id": "bfd9ee5b-499e-4ce0-800a-15e1a8126551",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Place the hammer away completely out of view, end in a powerful empty-handed fighting stance, both fists raised and clearly visible. No hammer remaining anywhere.",
+    "receipt": "id: bfd9ee5b-499e-4ce0-800a-15e1a8126551\njob_id: bfd9ee5b-499e-4ce0-800a-15e1a8126551\naction: Place the hammer away completely out of view, end in a powerful empty-handed fighting stance, both fists raised and clearly visible. No hammer remaining anywhere. Exact source robot, clean highlights, fixed chest128,112,256square transparent canvas. No extra arms or weapons, all within8px margins.\nframes: 4\nsize: 256x256px\ntransparent: True\nasset_id: a08e9030-c552-558d-8114-3fa9b1c1f77e\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"bfd9ee5b-499e-4ce0-800a-15e1a8126551\")",
+    "completion": "status: completed\nid: bfd9ee5b-499e-4ce0-800a-15e1a8126551\njob_id: bfd9ee5b-499e-4ce0-800a-15e1a8126551\nframe: 0 of 5\nasset_id: a08e9030-c552-558d-8114-3fa9b1c1f77e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0294 in credits\ndownload: https://api.pixellab.ai/mcp/images/bfd9ee5b-499e-4ce0-800a-15e1a8126551/download?index=0"
+  },
+  {
+    "id": "corrupt_break",
+    "kind": "motion",
+    "job_id": "ee93d8d2-8aab-4bbb-9f31-2206adb004cd",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Raise the large two-handed hammer, brace its shaft across one raised knee, SNAP the shaft into two at the knee, discard the handle while holding the broken glowing energy-core head in both hands. Finish trembling over the bright core. Clear physical knee and broken tool silhouettes, no explosion.",
+    "receipt": "id: ee93d8d2-8aab-4bbb-9f31-2206adb004cd\njob_id: ee93d8d2-8aab-4bbb-9f31-2206adb004cd\naction: Raise the large two-handed hammer, brace its shaft across one raised knee, SNAP the shaft into two at the knee, discard the handle while holding the broken glowing energy-core head in both hands. Finish trembling over the bright core. Clear physical knee and broken tool silhouettes, no explosion. Exact source robot, clean highlights, fixed chest128,112,256square transparent canvas. No extra arms or weapons, all within8px margins.\nframes: 8\nsize: 256x256px\ntransparent: True\nasset_id: a8da951a-46ee-5059-ae96-49c449c24fe9\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ee93d8d2-8aab-4bbb-9f31-2206adb004cd\")",
+    "completion": "status: completed\nid: ee93d8d2-8aab-4bbb-9f31-2206adb004cd\njob_id: ee93d8d2-8aab-4bbb-9f31-2206adb004cd\nframe: 0 of 9\nasset_id: a8da951a-46ee-5059-ae96-49c449c24fe9\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0301 in credits\ndownload: https://api.pixellab.ai/mcp/images/ee93d8d2-8aab-4bbb-9f31-2206adb004cd/download?index=0"
+  },
+  {
+    "id": "corrupt_fists",
+    "kind": "motion",
+    "job_id": "d07177e1-8838-42d1-a839-614fa38275a4",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Set hammer away out of view, clasp both empty fists together above the head, bend forward and slam both clasped fists straight down into the floor directly in front of the feet. One continuous visible two-arm strike with descending intermediate fist positions, end crouched with both hands at the floor. No hammer, no fire or impact effects.",
+    "receipt": "id: d07177e1-8838-42d1-a839-614fa38275a4\njob_id: d07177e1-8838-42d1-a839-614fa38275a4\naction: Set hammer away out of view, clasp both empty fists together above the head, bend forward and slam both clasped fists straight down into the floor directly in front of the feet. One continuous visible two-arm strike with descending intermediate fist positions, end crouched with both hands at the floor. No hammer, no fire or impact effects. Exact source robot, clean highlights, fixed chest128,112,256square transparent canvas. No extra arms or weapons, all within8px margins.\nframes: 8\nsize: 256x256px\ntransparent: True\nasset_id: 5c5235d8-a2bf-51ad-8f6b-aa3a6f82a757\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d07177e1-8838-42d1-a839-614fa38275a4\")",
+    "completion": "status: completed\nid: d07177e1-8838-42d1-a839-614fa38275a4\njob_id: d07177e1-8838-42d1-a839-614fa38275a4\nframe: 0 of 9\nasset_id: 5c5235d8-a2bf-51ad-8f6b-aa3a6f82a757\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0451 in credits\ndownload: https://api.pixellab.ai/mcp/images/d07177e1-8838-42d1-a839-614fa38275a4/download?index=0"
+  },
+  {
+    "id": "blue_down_bridge",
+    "kind": "motion",
+    "job_id": "3bf5e0bb-d2f7-4077-9573-5081be91ca1e",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "ONLY the middle section of a falling hammer swing. The hammer is ALREADY MOVING downward. Interpolate its physical head smoothly from the first image's above-head height to the last image's waist height at CONSTANT SPEED. Every one of the eight frames must show a DIFFERENT equally-spaced descending hammer position, arms bending continuously. NO anticipation, no holds, no windup, no ground impact, no recovery, no energy rays, no white flash, no visual effects. Keep same body, shoulders and feet. This is a simple slow-motion pose interpolation, not a full attack. Exact source robot and same256square canvas, chest128,112.",
+    "receipt": "id: 3bf5e0bb-d2f7-4077-9573-5081be91ca1e\njob_id: 3bf5e0bb-d2f7-4077-9573-5081be91ca1e\naction: ONLY the middle section of a falling hammer swing. The hammer is ALREADY MOVING downward. Interpolate its physical head smoothly from the first image's above-head height to the last image's waist height at CONSTANT SPEED. Every one of the eight frames must show a DIFFERENT equally-spaced descending hammer position, arms bending continuously. NO anticipation, no holds, no windup, no ground impact, no recovery, no energy rays, no white flash, no visual effects. Keep same body, shoulders and feet. This is a simple slow-motion pose interpolation, not a full attack. Exact source robot and same256square canvas, chest128,112.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 20cc3dba-deb7-58a5-a2cb-a9478f559a9f\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3bf5e0bb-d2f7-4077-9573-5081be91ca1e\")",
+    "completion": "status: completed\nid: 3bf5e0bb-d2f7-4077-9573-5081be91ca1e\njob_id: 3bf5e0bb-d2f7-4077-9573-5081be91ca1e\nframe: 0 of 9\nasset_id: 20cc3dba-deb7-58a5-a2cb-a9478f559a9f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0404 in credits\ndownload: https://api.pixellab.ai/mcp/images/3bf5e0bb-d2f7-4077-9573-5081be91ca1e/download?index=0"
+  },
+  {
+    "id": "blue_recover",
+    "kind": "motion",
+    "job_id": "d35f3fc9-5b6a-4dde-9f16-b7ce998b3ca5",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Recovery ONLY: robot lifts the physical hammer off the ground, straightens his knees and torso, brings the shaft back diagonally across his body and settles into the exact final neutral stance. Continuous joint motion in every frame, no attack, no upward swing overhead, no effects. Same256square canvas and chest128,112.",
+    "receipt": "id: d35f3fc9-5b6a-4dde-9f16-b7ce998b3ca5\njob_id: d35f3fc9-5b6a-4dde-9f16-b7ce998b3ca5\naction: Recovery ONLY: robot lifts the physical hammer off the ground, straightens his knees and torso, brings the shaft back diagonally across his body and settles into the exact final neutral stance. Continuous joint motion in every frame, no attack, no upward swing overhead, no effects. Same256square canvas and chest128,112.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 603e7e37-a455-576c-9f04-502554874e16\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d35f3fc9-5b6a-4dde-9f16-b7ce998b3ca5\")",
+    "completion": "status: completed\nid: d35f3fc9-5b6a-4dde-9f16-b7ce998b3ca5\njob_id: d35f3fc9-5b6a-4dde-9f16-b7ce998b3ca5\nframe: 0 of 9\nasset_id: 603e7e37-a455-576c-9f04-502554874e16\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0343 in credits\ndownload: https://api.pixellab.ai/mcp/images/d35f3fc9-5b6a-4dde-9f16-b7ce998b3ca5/download?index=0"
+  },
+  {
+    "id": "corrupt_punch",
+    "kind": "motion",
+    "job_id": "86f8991c-d4e1-4aae-9193-20ac50c62684",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Set hammer out of view and perform two powerful empty-handed punches: right straight fist forward/down toward viewer, retract, then left straight fist forward/down. Torso twists, feet brace, clearly visible fists and fingers remain attached to wrists. No hammer, no weapons, no fire or trails.",
+    "receipt": "id: 86f8991c-d4e1-4aae-9193-20ac50c62684\njob_id: 86f8991c-d4e1-4aae-9193-20ac50c62684\naction: Set hammer out of view and perform two powerful empty-handed punches: right straight fist forward/down toward viewer, retract, then left straight fist forward/down. Torso twists, feet brace, clearly visible fists and fingers remain attached to wrists. No hammer, no weapons, no fire or trails. Exact source robot design, crisp clean chrome highlights, fixed chest128,112,256square transparent canvas. All extremities within8px margin.\nframes: 8\nsize: 256x256px\ntransparent: True\nasset_id: bbadb2f3-c4db-5cec-a417-15d7c8cae25d\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"86f8991c-d4e1-4aae-9193-20ac50c62684\")",
+    "completion": "status: completed\nid: 86f8991c-d4e1-4aae-9193-20ac50c62684\njob_id: 86f8991c-d4e1-4aae-9193-20ac50c62684\nframe: 0 of 9\nasset_id: bbadb2f3-c4db-5cec-a417-15d7c8cae25d\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0307 in credits\ndownload: https://api.pixellab.ai/mcp/images/86f8991c-d4e1-4aae-9193-20ac50c62684/download?index=0"
+  },
+  {
+    "id": "corrupt_fire",
+    "kind": "motion",
+    "job_id": "69bab05f-52d4-41bc-871c-62e424c74b9c",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Set hammer away out of view. Cross BOTH EMPTY ARMS in a strong X over the chest, clench fists and lean back as the chest reactor and violet code seams glow hotter. Finish arms crossed with a menacing face. No hammer, no actual flames or projectiles; runtime supplies fire aura.",
+    "receipt": "id: 69bab05f-52d4-41bc-871c-62e424c74b9c\njob_id: 69bab05f-52d4-41bc-871c-62e424c74b9c\naction: Set hammer away out of view. Cross BOTH EMPTY ARMS in a strong X over the chest, clench fists and lean back as the chest reactor and violet code seams glow hotter. Finish arms crossed with a menacing face. No hammer, no actual flames or projectiles; runtime supplies fire aura. Exact source robot design, crisp clean chrome highlights, fixed chest128,112,256square transparent canvas. All extremities within8px margin.\nframes: 4\nsize: 256x256px\ntransparent: True\nasset_id: 40ae7540-5707-5bec-a3a4-02b2f9b10c6b\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"69bab05f-52d4-41bc-871c-62e424c74b9c\")",
+    "completion": "status: completed\nid: 69bab05f-52d4-41bc-871c-62e424c74b9c\njob_id: 69bab05f-52d4-41bc-871c-62e424c74b9c\nframe: 0 of 5\nasset_id: 40ae7540-5707-5bec-a3a4-02b2f9b10c6b\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0288 in credits\ndownload: https://api.pixellab.ai/mcp/images/69bab05f-52d4-41bc-871c-62e424c74b9c/download?index=0"
+  },
+  {
+    "id": "corrupt_dance",
+    "kind": "motion",
+    "job_id": "8aa433f1-8ce5-4838-b259-9f537e0f7155",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "A heavy armored victory taunt dance: two deliberate shoulder/hip bounces, shift weight left then right, nod the head and return to a powerful stance. Retain one visible hammer and grounded feet, no silly stretching or flat sprite rotation.",
+    "receipt": "id: 8aa433f1-8ce5-4838-b259-9f537e0f7155\njob_id: 8aa433f1-8ce5-4838-b259-9f537e0f7155\naction: A heavy armored victory taunt dance: two deliberate shoulder/hip bounces, shift weight left then right, nod the head and return to a powerful stance. Retain one visible hammer and grounded feet, no silly stretching or flat sprite rotation. Exact source robot design, crisp clean chrome highlights, fixed chest128,112,256square transparent canvas. All extremities within8px margin.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 1cdcb943-3101-5cb4-b126-2f257a2db497\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"8aa433f1-8ce5-4838-b259-9f537e0f7155\")",
+    "completion": "status: completed\nid: 8aa433f1-8ce5-4838-b259-9f537e0f7155\njob_id: 8aa433f1-8ce5-4838-b259-9f537e0f7155\nframe: 0 of 9\nasset_id: 1cdcb943-3101-5cb4-b126-2f257a2db497\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0399 in credits\ndownload: https://api.pixellab.ai/mcp/images/8aa433f1-8ce5-4838-b259-9f537e0f7155/download?index=0"
+  },
+  {
+    "id": "corrupt_tool",
+    "kind": "master",
+    "job_id": "12f1a2cd-8bfd-45b7-93b4-fefac67f5a97",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Only the EXACT large chrome/violet code hammer held by this reference robot, isolated with NO robot, hands or body. One solid cylindrical spiked chromium hammer head with three bright violet energy apertures and dark clean metal shaft. The head is horizontal centred128,182, 100px wide; shaft extends vertically UP to y55, held neutral. Transparent256square canvas with generous margin, entire object within x65..191,y50..220. Premium clean HD16-bit pixel art matching reference, broad clean highlights not speckles, no aura, no trail, no text, no extra hammer.",
+    "receipt": "id: 12f1a2cd-8bfd-45b7-93b4-fefac67f5a97\njob_id: 12f1a2cd-8bfd-45b7-93b4-fefac67f5a97\nmodel: pro\ndescription: Only the EXACT large chrome/violet code hammer held by this reference robot, isolated with NO robot, hands or body. One solid cylindrical spiked chromium hammer head with three bright violet energy apertures and dark clean metal shaft. The head is horizontal centred128,182, 100px wide; shaft extends vertically UP to y55, held neutral. Transparent256square canvas with generous margin, entire object within x65..191,y50..220. Premium clean HD16-bit pixel art matching reference, broad clean highlights not speckles, no aura, no trail, no text, no extra hammer.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: 71931ac8-a50b-554d-a663-25f6d577b5bf\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"12f1a2cd-8bfd-45b7-93b4-fefac67f5a97\")",
+    "completion": "status: completed\nid: 12f1a2cd-8bfd-45b7-93b4-fefac67f5a97\njob_id: 12f1a2cd-8bfd-45b7-93b4-fefac67f5a97\nframe: 0 of 1\nasset_id: 71931ac8-a50b-554d-a663-25f6d577b5bf\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/12f1a2cd-8bfd-45b7-93b4-fefac67f5a97/download?index=0"
+  },
+  {
+    "id": "corrupt_overhead_key",
+    "kind": "keypose",
+    "job_id": "0759fc53-21e3-4778-a146-992620de8308",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Repose the identity reference exactly, same clean HD16-bit pixel art/chromium armor, demonic robot design, colours and material. The robot faces straight forward with BOTH HANDS directly above his head gripping a VERTICAL centreline shaft. The hammer HEAD is HORIZONTAL above his hands, centred x128,y25. Torso/chest fixed128,112, both knees slightly bent, feet planted near y232. Absolute overhead windup; hammer must not rest on a shoulder. One256x256 transparent image, no effects, no floor/background, no energy streaks. Preserve fixed scale and every limb, generous8px margins.",
+    "receipt": "id: 0759fc53-21e3-4778-a146-992620de8308\njob_id: 0759fc53-21e3-4778-a146-992620de8308\nmodel: pro\ndescription: Repose the identity reference exactly, same clean HD16-bit pixel art/chromium armor, demonic robot design, colours and material. The robot faces straight forward with BOTH HANDS directly above his head gripping a VERTICAL centreline shaft. The hammer HEAD is HORIZONTAL above his hands, centred x128,y25. Torso/chest fixed128,112, both knees slightly bent, feet planted near y232. Absolute overhead windup; hammer must not rest on a shoulder. One256x256 transparent image, no effects, no floor/background, no energy streaks. Preserve fixed scale and every limb, generous8px margins.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: 95e7e657-6a8d-56e4-81c5-1c67db2e8696\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"0759fc53-21e3-4778-a146-992620de8308\")",
+    "completion": "status: completed\nid: 0759fc53-21e3-4778-a146-992620de8308\njob_id: 0759fc53-21e3-4778-a146-992620de8308\nframe: 0 of 1\nasset_id: 95e7e657-6a8d-56e4-81c5-1c67db2e8696\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/0759fc53-21e3-4778-a146-992620de8308/download?index=0"
+  },
+  {
+    "id": "corrupt_impact_key",
+    "kind": "keypose",
+    "job_id": "0d0a67b6-e5c6-4886-aa2c-a1879e5a3b7a",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Repose the identity reference exactly, same clean HD16-bit pixel art/chromium armor, demonic robot design, colours and material. The robot faces straight forward CROUCHING after a STRAIGHT DOWN HAMMER SLAM. The hammer HEAD lies HORIZONTAL on the ground centered x128,y230. Its shaft points VERTICALLY UP x128 to his two hands at x128,y154. Shoulders/chest around128,112, knees deeply bent, feet spread near y232. Both hands grip the centred vertical shaft. NOT a sideways hammer, NOT held at left or right. One256x256 transparent image, no effects, no floor/background, no energy streaks. Preserve fixed scale and every limb, generous8px margins.",
+    "receipt": "id: 0d0a67b6-e5c6-4886-aa2c-a1879e5a3b7a\njob_id: 0d0a67b6-e5c6-4886-aa2c-a1879e5a3b7a\nmodel: pro\ndescription: Repose the identity reference exactly, same clean HD16-bit pixel art/chromium armor, demonic robot design, colours and material. The robot faces straight forward CROUCHING after a STRAIGHT DOWN HAMMER SLAM. The hammer HEAD lies HORIZONTAL on the ground centered x128,y230. Its shaft points VERTICALLY UP x128 to his two hands at x128,y154. Shoulders/chest around128,112, knees deeply bent, feet spread near y232. Both hands grip the centred vertical shaft. NOT a sideways hammer, NOT held at left or right. One256x256 transparent image, no effects, no floor/background, no energy streaks. Preserve fixed scale and every limb, generous8px margins.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: 33ee253f-6e8e-5fec-a820-ab2b2b3a2b97\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"0d0a67b6-e5c6-4886-aa2c-a1879e5a3b7a\")",
+    "completion": "status: completed\nid: 0d0a67b6-e5c6-4886-aa2c-a1879e5a3b7a\njob_id: 0d0a67b6-e5c6-4886-aa2c-a1879e5a3b7a\nframe: 0 of 1\nasset_id: 33ee253f-6e8e-5fec-a820-ab2b2b3a2b97\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/0d0a67b6-e5c6-4886-aa2c-a1879e5a3b7a/download?index=0"
+  },
+  {
+    "id": "corrupt_ball_key",
+    "kind": "keypose",
+    "job_id": "d10b9a8a-0234-4657-81b0-5a1ff7433c30",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Repose the identity reference exactly, same clean HD16-bit pixel art/chromium armor, demonic robot design, colours and material. A single closed SPIKED ROBOT BALL made from this robot's black/violet chromium armor. Robot FULLY curled inside one round metal spiked sphere, diameter148px, centre128,140. His head, arms, legs and hammer are completely hidden inside. No humanoid body standing behind or outside the ball. Bright red/orange central reactor seam and violet code seams. Only the complete sphere is visible; no face or limbs. One256x256 transparent image, no effects, no floor/background, no energy streaks. Preserve fixed scale and every limb, generous8px margins.",
+    "receipt": "id: d10b9a8a-0234-4657-81b0-5a1ff7433c30\njob_id: d10b9a8a-0234-4657-81b0-5a1ff7433c30\nmodel: pro\ndescription: Repose the identity reference exactly, same clean HD16-bit pixel art/chromium armor, demonic robot design, colours and material. A single closed SPIKED ROBOT BALL made from this robot's black/violet chromium armor. Robot FULLY curled inside one round metal spiked sphere, diameter148px, centre128,140. His head, arms, legs and hammer are completely hidden inside. No humanoid body standing behind or outside the ball. Bright red/orange central reactor seam and violet code seams. Only the complete sphere is visible; no face or limbs. One256x256 transparent image, no effects, no floor/background, no energy streaks. Preserve fixed scale and every limb, generous8px margins.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: 14b5b5fa-7418-5a0e-b9b8-e699fa313823\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"d10b9a8a-0234-4657-81b0-5a1ff7433c30\")",
+    "completion": "status: completed\nid: d10b9a8a-0234-4657-81b0-5a1ff7433c30\njob_id: d10b9a8a-0234-4657-81b0-5a1ff7433c30\nframe: 0 of 1\nasset_id: 14b5b5fa-7418-5a0e-b9b8-e699fa313823\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/d10b9a8a-0234-4657-81b0-5a1ff7433c30/download?index=0"
+  },
+  {
+    "id": "corrupt_gun_key",
+    "kind": "keypose",
+    "job_id": "830ae4fc-65fe-4b1d-81fd-f5b3933c6003",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Exact reference robot, same chrome/violet armor, horned skull, orange/red chest and full body. Change ONLY equipment and arm pose: he wields ONE LARGE HANDHELD SIX-BARREL ROTARY CHAINGUN at waist/chest height, barrel assembly points diagonally DOWN-RIGHT, right hand rear grip, left hand supporting the gun. Clearly draw six steel barrels in a rotary ring, thick barrel housing and ammunition feed. ABSOLUTELY NO HAMMER, HAMMER SHAFT or mallet anywhere. Forward-facing entire robot, fixed chest128,112, same256square transparent canvas, feet y230, head y35. Same clean HD16bit style, whole physical gun fits with8px margins. No firing effects or text.",
+    "receipt": "id: 830ae4fc-65fe-4b1d-81fd-f5b3933c6003\njob_id: 830ae4fc-65fe-4b1d-81fd-f5b3933c6003\nmodel: pro\ndescription: Exact reference robot, same chrome/violet armor, horned skull, orange/red chest and full body. Change ONLY equipment and arm pose: he wields ONE LARGE HANDHELD SIX-BARREL ROTARY CHAINGUN at waist/chest height, barrel assembly points diagonally DOWN-RIGHT, right hand rear grip, left hand supporting the gun. Clearly draw six steel barrels in a rotary ring, thick barrel housing and ammunition feed. ABSOLUTELY NO HAMMER, HAMMER SHAFT or mallet anywhere. Forward-facing entire robot, fixed chest128,112, same256square transparent canvas, feet y230, head y35. Same clean HD16bit style, whole physical gun fits with8px margins. No firing effects or text.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: dee877e3-eabb-574f-bb1f-8ea4ca3838e0\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"830ae4fc-65fe-4b1d-81fd-f5b3933c6003\")",
+    "completion": "status: completed\nid: 830ae4fc-65fe-4b1d-81fd-f5b3933c6003\njob_id: 830ae4fc-65fe-4b1d-81fd-f5b3933c6003\nframe: 0 of 1\nasset_id: dee877e3-eabb-574f-bb1f-8ea4ca3838e0\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/830ae4fc-65fe-4b1d-81fd-f5b3933c6003/download?index=0"
+  },
+  {
+    "id": "corrupt_knee_key",
+    "kind": "keypose",
+    "job_id": "20e2d930-7882-47f0-8952-536bbd744898",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Exact reference robot full body in a specific mechanical action pose: one knee raised high to waist level, TWO HANDS force the long physical hammer SHAFT DOWN across the raised knee. Shaft lies horizontally directly on the top of that knee. The hammer head is attached at left end and right hand holds the far right shaft end. Hunch the chest and flex both arms as he is about to snap the shaft over his knee. Same exact horned demonic face, clean chrome/violet armor and orange/red chest core. One knee-raised silhouette; no magic, no glowing cloud, no flames. Fixed chest128,112,256square transparent canvas, whole body and hammer inside8px margin.",
+    "receipt": "id: 20e2d930-7882-47f0-8952-536bbd744898\njob_id: 20e2d930-7882-47f0-8952-536bbd744898\nmodel: pro\ndescription: Exact reference robot full body in a specific mechanical action pose: one knee raised high to waist level, TWO HANDS force the long physical hammer SHAFT DOWN across the raised knee. Shaft lies horizontally directly on the top of that knee. The hammer head is attached at left end and right hand holds the far right shaft end. Hunch the chest and flex both arms as he is about to snap the shaft over his knee. Same exact horned demonic face, clean chrome/violet armor and orange/red chest core. One knee-raised silhouette; no magic, no glowing cloud, no flames. Fixed chest128,112,256square transparent canvas, whole body and hammer inside8px margin.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: 6b84ff22-06c3-5397-8278-db6527e3a0ed\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"20e2d930-7882-47f0-8952-536bbd744898\")",
+    "completion": "status: completed\nid: 20e2d930-7882-47f0-8952-536bbd744898\njob_id: 20e2d930-7882-47f0-8952-536bbd744898\nframe: 0 of 1\nasset_id: 6b84ff22-06c3-5397-8278-db6527e3a0ed\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/20e2d930-7882-47f0-8952-536bbd744898/download?index=0"
+  },
+  {
+    "id": "corrupt_raise_fixed",
+    "kind": "motion",
+    "job_id": "e292bf15-2020-4d8d-867d-fccdaa092496",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Raise the existing physical hammer from the neutral stance to the exact centred overhead pose. Both hands keep gripping it, torso and knees brace. Motion only between these exact endpoints; no extra objects, no energy effects.",
+    "receipt": "id: e292bf15-2020-4d8d-867d-fccdaa092496\njob_id: e292bf15-2020-4d8d-867d-fccdaa092496\naction: Raise the existing physical hammer from the neutral stance to the exact centred overhead pose. Both hands keep gripping it, torso and knees brace. Motion only between these exact endpoints; no extra objects, no energy effects. Exact clean source robot, chest root128,112, same256square transparent canvas, fixed scale, no crop, no floating loose pixels.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: c76f7aef-a810-5deb-bd06-de914f421059\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e292bf15-2020-4d8d-867d-fccdaa092496\")",
+    "completion": "status: completed\nid: e292bf15-2020-4d8d-867d-fccdaa092496\njob_id: e292bf15-2020-4d8d-867d-fccdaa092496\nframe: 0 of 5\nasset_id: c76f7aef-a810-5deb-bd06-de914f421059\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0269 in credits\ndownload: https://api.pixellab.ai/mcp/images/e292bf15-2020-4d8d-867d-fccdaa092496/download?index=0"
+  },
+  {
+    "id": "corrupt_down_fixed",
+    "kind": "motion",
+    "job_id": "6d66c9c2-d531-410a-990c-6615af9d24d8",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "ONLY the straight DOWN swing, already raised at first frame. Move the physical hammer head continuously down the vertical centreline x128 from above the head to the floor. Eight equally-spaced descending head/shaft positions, elbows and knees flex smoothly. NO holds, anticipation, jump, side motion, recovery, white smear or visual effects. Hammer remains visible in every frame. End exactly at the planted hammer pose.",
+    "receipt": "id: 6d66c9c2-d531-410a-990c-6615af9d24d8\njob_id: 6d66c9c2-d531-410a-990c-6615af9d24d8\naction: ONLY the straight DOWN swing, already raised at first frame. Move the physical hammer head continuously down the vertical centreline x128 from above the head to the floor. Eight equally-spaced descending head/shaft positions, elbows and knees flex smoothly. NO holds, anticipation, jump, side motion, recovery, white smear or visual effects. Hammer remains visible in every frame. End exactly at the planted hammer pose. Exact clean source robot, chest root128,112, same256square transparent canvas, fixed scale, no crop, no floating loose pixels.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: c22eeb23-1998-578a-a7d2-fb72ba8d5863\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"6d66c9c2-d531-410a-990c-6615af9d24d8\")",
+    "completion": "status: completed\nid: 6d66c9c2-d531-410a-990c-6615af9d24d8\njob_id: 6d66c9c2-d531-410a-990c-6615af9d24d8\nframe: 0 of 9\nasset_id: c22eeb23-1998-578a-a7d2-fb72ba8d5863\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0294 in credits\ndownload: https://api.pixellab.ai/mcp/images/6d66c9c2-d531-410a-990c-6615af9d24d8/download?index=0"
+  },
+  {
+    "id": "corrupt_recover_fixed",
+    "kind": "motion",
+    "job_id": "b131b234-7a85-4e17-a369-4dde9ca32457",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Recovery only: lift the planted physical hammer off the floor, stand up, return the hammer diagonally to the exact neutral stance. One continuous motion, no attack or effects.",
+    "receipt": "id: b131b234-7a85-4e17-a369-4dde9ca32457\njob_id: b131b234-7a85-4e17-a369-4dde9ca32457\naction: Recovery only: lift the planted physical hammer off the floor, stand up, return the hammer diagonally to the exact neutral stance. One continuous motion, no attack or effects. Exact clean source robot, chest root128,112, same256square transparent canvas, fixed scale, no crop, no floating loose pixels.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: d070cb12-1d72-5bd6-960a-45673641d792\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b131b234-7a85-4e17-a369-4dde9ca32457\")",
+    "completion": "status: completed\nid: b131b234-7a85-4e17-a369-4dde9ca32457\njob_id: b131b234-7a85-4e17-a369-4dde9ca32457\nframe: 0 of 5\nasset_id: d070cb12-1d72-5bd6-960a-45673641d792\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0263 in credits\ndownload: https://api.pixellab.ai/mcp/images/b131b234-7a85-4e17-a369-4dde9ca32457/download?index=0"
+  },
+  {
+    "id": "corrupt_ball_fixed",
+    "kind": "motion",
+    "job_id": "eb79d460-cde6-4905-beab-9193e1c776ea",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Mechanical transformation from robot into the exact closed spiked ball endpoint. Knees fold upward, forearms and hammer retract into torso, head tucks inside, armor panels close around the core, becoming only the closed ball. End with NO visible humanoid limbs, face or separate hammer. No explosions or trails.",
+    "receipt": "id: eb79d460-cde6-4905-beab-9193e1c776ea\njob_id: eb79d460-cde6-4905-beab-9193e1c776ea\naction: Mechanical transformation from robot into the exact closed spiked ball endpoint. Knees fold upward, forearms and hammer retract into torso, head tucks inside, armor panels close around the core, becoming only the closed ball. End with NO visible humanoid limbs, face or separate hammer. No explosions or trails. Exact clean source robot, chest root128,112, same256square transparent canvas, fixed scale, no crop, no floating loose pixels.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: c14be9e4-8e76-5a0f-b77d-f7507a55586a\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"eb79d460-cde6-4905-beab-9193e1c776ea\")",
+    "completion": "status: completed\nid: eb79d460-cde6-4905-beab-9193e1c776ea\njob_id: eb79d460-cde6-4905-beab-9193e1c776ea\nframe: 0 of 9\nasset_id: c14be9e4-8e76-5a0f-b77d-f7507a55586a\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0289 in credits\ndownload: https://api.pixellab.ai/mcp/images/eb79d460-cde6-4905-beab-9193e1c776ea/download?index=0"
+  },
+  {
+    "id": "corrupt_throw_fixed",
+    "kind": "motion",
+    "job_id": "94bfaad7-18e9-4934-8588-c822e805ec8c",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Throw followthrough ONLY: from this prepared shoulder pose, hurl the physical hammer DOWN out of the canvas toward the viewer. Arms extend then become EMPTY, end in the exact unarmed final stance. Never drop or leave any hammer on the floor or inside the final frame. No trails, no secondary weapon.",
+    "receipt": "id: 94bfaad7-18e9-4934-8588-c822e805ec8c\njob_id: 94bfaad7-18e9-4934-8588-c822e805ec8c\naction: Throw followthrough ONLY: from this prepared shoulder pose, hurl the physical hammer DOWN out of the canvas toward the viewer. Arms extend then become EMPTY, end in the exact unarmed final stance. Never drop or leave any hammer on the floor or inside the final frame. No trails, no secondary weapon. Exact clean source robot, chest root128,112, same256square transparent canvas, fixed scale, no crop, no floating loose pixels.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 6e621ad4-4f45-5ec8-83f3-22e5b520665d\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"94bfaad7-18e9-4934-8588-c822e805ec8c\")",
+    "completion": "status: completed\nid: 94bfaad7-18e9-4934-8588-c822e805ec8c\njob_id: 94bfaad7-18e9-4934-8588-c822e805ec8c\nframe: 0 of 9\nasset_id: 6e621ad4-4f45-5ec8-83f3-22e5b520665d\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0311 in credits\ndownload: https://api.pixellab.ai/mcp/images/94bfaad7-18e9-4934-8588-c822e805ec8c/download?index=0"
+  },
+  {
+    "id": "corrupt_gun_fixed",
+    "kind": "motion",
+    "job_id": "1fd7a145-59cc-4cd6-af6f-6b4d88333253",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "Loop only the EXISTING chaingun firing mechanism: six barrel assembly rotates, the physical gun recoils a few pixels and both forearms brace with a tiny shoulder kick. Keep EXACT gun and body shape throughout, same face, same armour and stance, no appearance changes. No hammer, no muzzle flash, no projectiles, no white transition, no effects.256square transparent canvas, fixed chest128,112, fixed scale. Return to the exact first pose.",
+    "receipt": "id: 1fd7a145-59cc-4cd6-af6f-6b4d88333253\njob_id: 1fd7a145-59cc-4cd6-af6f-6b4d88333253\naction: Loop only the EXISTING chaingun firing mechanism: six barrel assembly rotates, the physical gun recoils a few pixels and both forearms brace with a tiny shoulder kick. Keep EXACT gun and body shape throughout, same face, same armour and stance, no appearance changes. No hammer, no muzzle flash, no projectiles, no white transition, no effects.256square transparent canvas, fixed chest128,112, fixed scale. Return to the exact first pose.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 6919e22f-0216-579f-ba4f-6e1a04782d8b\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1fd7a145-59cc-4cd6-af6f-6b4d88333253\")",
+    "completion": "status: completed\nid: 1fd7a145-59cc-4cd6-af6f-6b4d88333253\njob_id: 1fd7a145-59cc-4cd6-af6f-6b4d88333253\nframe: 0 of 9\nasset_id: 6919e22f-0216-579f-ba4f-6e1a04782d8b\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0311 in credits\ndownload: https://api.pixellab.ai/mcp/images/1fd7a145-59cc-4cd6-af6f-6b4d88333253/download?index=0"
+  },
+  {
+    "id": "corrupt_punch_key",
+    "kind": "keypose",
+    "job_id": "8f989d82-f6b2-4c29-85f1-091221fae948",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Repose this exact full-body robot into a CLEAR PHYSICAL PUNCH. ABSOLUTELY NO HAMMER, gun, weapon, energy ball or special effect. His IMAGE-RIGHT ARM is extended straight toward the viewer and slightly downward, large clenched metal fist centredx177,y146, forearm foreshortened and elbow straight. IMAGE-LEFT fist is raised guarding the jaw, both feet firmly planted, chest128,112. Twist the torso slightly into the punch. Same horned skull, purple/chromium armour, orange/red chest core, exact clean HD16bit style and fixed256square transparent canvas. Do not show arms hanging at the sides. The extended fist is the primary clearly readable action.",
+    "receipt": "id: 8f989d82-f6b2-4c29-85f1-091221fae948\njob_id: 8f989d82-f6b2-4c29-85f1-091221fae948\nmodel: pro\ndescription: Repose this exact full-body robot into a CLEAR PHYSICAL PUNCH. ABSOLUTELY NO HAMMER, gun, weapon, energy ball or special effect. His IMAGE-RIGHT ARM is extended straight toward the viewer and slightly downward, large clenched metal fist centredx177,y146, forearm foreshortened and elbow straight. IMAGE-LEFT fist is raised guarding the jaw, both feet firmly planted, chest128,112. Twist the torso slightly into the punch. Same horned skull, purple/chromium armour, orange/red chest core, exact clean HD16bit style and fixed256square transparent canvas. Do not show arms hanging at the sides. The extended fist is the primary clearly readable action.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: e776f7bb-b59b-5319-b326-269427d55cc2\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"8f989d82-f6b2-4c29-85f1-091221fae948\")",
+    "completion": "status: completed\nid: 8f989d82-f6b2-4c29-85f1-091221fae948\njob_id: 8f989d82-f6b2-4c29-85f1-091221fae948\nframe: 0 of 1\nasset_id: e776f7bb-b59b-5319-b326-269427d55cc2\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0800 in credits\ndownload: https://api.pixellab.ai/mcp/images/8f989d82-f6b2-4c29-85f1-091221fae948/download?index=0"
+  },
+  {
+    "id": "corrupt_punch_fixed",
+    "kind": "motion",
+    "job_id": "3db92527-173d-44ff-a0a8-fb0326c20450",
+    "frames": 5,
+    "status": "completed",
+    "prompt": "Physical punch extension ONLY between these exact unarmed endpoints. Drive the existing IMAGE-LEFT fist forward toward viewer; forearm extends and fist grows by perspective, shoulder and torso twist. Other fist rises to guard jaw. Every frame shows the hand and arm attached continuously. No hammer, weapon, explosion, glowing energy orb, white flash or projectile. Keep exact robot identity and256square canvas, fixed scale/chest root128,112.",
+    "receipt": "id: 3db92527-173d-44ff-a0a8-fb0326c20450\njob_id: 3db92527-173d-44ff-a0a8-fb0326c20450\naction: Physical punch extension ONLY between these exact unarmed endpoints. Drive the existing IMAGE-LEFT fist forward toward viewer; forearm extends and fist grows by perspective, shoulder and torso twist. Other fist rises to guard jaw. Every frame shows the hand and arm attached continuously. No hammer, weapon, explosion, glowing energy orb, white flash or projectile. Keep exact robot identity and256square canvas, fixed scale/chest root128,112.\nframes: 4\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: 8c377f7f-f7ae-5145-8d79-cfc9a1b4204c\nasset_status: pending (saved when generation completes)\ncost: 4 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3db92527-173d-44ff-a0a8-fb0326c20450\")"
+  },
+  {
+    "id": "corrupt_fire_key",
+    "kind": "keypose",
+    "job_id": "1902fd2f-b73a-4280-bf9b-ba52d58dcd14",
+    "frames": 1,
+    "status": "completed",
+    "prompt": "Repose the EXACT unarmed robot from the reference. Both EMPTY forearms cross tightly in a clear X over the chest, right forearm crossing above the left, closed metal fists near opposite shoulders. Legs planted wide, powerful enraged braced stance. Same black/violet chromium armor, horned skull face, red/orange core. NO HAMMER, tool, weapon, object on floor, flame, aura, energy flash or background. Fixed chest128,112, feet near230, entire actor256square transparent canvas, same scale and clean HD16bit cluster shading.",
+    "receipt": "id: 1902fd2f-b73a-4280-bf9b-ba52d58dcd14\njob_id: 1902fd2f-b73a-4280-bf9b-ba52d58dcd14\nmodel: pro\ndescription: Repose the EXACT unarmed robot from the reference. Both EMPTY forearms cross tightly in a clear X over the chest, right forearm crossing above the left, closed metal fists near opposite shoulders. Legs planted wide, powerful enraged braced stance. Same black/violet chromium armor, horned skull face, red/orange core. NO HAMMER, tool, weapon, object on floor, flame, aura, energy flash or background. Fixed chest128,112, feet near230, entire actor256square transparent canvas, same scale and clean HD16bit cluster shading.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nasset_id: d8a55d0e-a1bd-5172-af59-6d42da0941cb\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"1902fd2f-b73a-4280-bf9b-ba52d58dcd14\")"
+  }
+]

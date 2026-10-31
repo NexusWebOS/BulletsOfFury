@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-26",
+  "source": "Clear workshop masters, user-provided sources unchanged",
+  "sourceLicense": "not supplied",
+  "records": [
+    {
+      "role": "rage_charge",
+      "sourceSha256": "82fc39163774ab51d11729b8eec14c1d200a7c3613c6df8a36f4dc236d871c19",
+      "pitchSemitones": 0,
+      "beforeRmsDb": -18.797974401747222,
+      "afterRmsDb": -15.601832209515296,
+      "decodedTruePeakDb": -1.98771333694458,
+      "seconds": 2.904,
+      "filters": "highpass=f=85,equalizer=f=1900:t=q:w=0.9:g=2,acompressor=threshold=0.065:ratio=3:attack=8:release=75:makeup=3,alimiter=limit=0.82:attack=2:release=40:level=false",
+      "runtime": "assets/game/shared/audio/chronos_energy_mix_1026/rage_charge.mp3"
+    },
+    {
+      "role": "rage_release",
+      "sourceSha256": "c92ee3cdbfa4ac8686dcb4937fcd423fae5e73c91fbbdfbcf1e0e161fc42350a",
+      "pitchSemitones": 0,
+      "beforeRmsDb": -22.017557410253815,
+      "afterRmsDb": -19.060453277898873,
+      "decodedTruePeakDb": -1.968376636505127,
+      "seconds": 1.44,
+      "filters": "highpass=f=85,equalizer=f=1900:t=q:w=0.9:g=2,acompressor=threshold=0.065:ratio=3:attack=8:release=75:makeup=3,alimiter=limit=0.82:attack=2:release=40:level=false",
+      "runtime": "assets/game/shared/audio/chronos_energy_mix_1026/rage_release.mp3"
+    },
+    {
+      "role": "wave_charge",
+      "sourceSha256": "339e92b3c09a5a432d1be8ee26c2e72f172c0245e33251ba529aef556e75d33b",
+      "pitchSemitones": 0,
+      "beforeRmsDb": -19.90077650812883,
+      "afterRmsDb": -15.446413126763222,
+      "decodedTruePeakDb": -3.4029948711395264,
+      "seconds": 2.48,
+      "filters": "highpass=f=85,equalizer=f=1900:t=q:w=0.9:g=2,acompressor=threshold=0.065:ratio=3:attack=8:release=75:makeup=3,alimiter=limit=0.82:attack=2:release=40:level=false",
+      "runtime": "assets/game/shared/audio/chronos_energy_mix_1026/wave_charge.mp3"
+    },
+    {
+      "role": "gather_charge",
+      "sourceSha256": "339e92b3c09a5a432d1be8ee26c2e72f172c0245e33251ba529aef556e75d33b",
+      "pitchSemitones": 0,
+      "beforeRmsDb": -19.90077650812883,
+      "afterRmsDb": -15.587306770907713,
+      "decodedTruePeakDb": -3.7947802543640137,
+      "seconds": 1.7003333333333333,
+      "filters": "atempo=1.4588235294,highpass=f=85,equalizer=f=1900:t=q:w=0.9:g=2,acompressor=threshold=0.065:ratio=3:attack=8:release=75:makeup=3,alimiter=limit=0.82:attack=2:release=40:level=false",
+      "runtime": "assets/game/shared/audio/chronos_energy_mix_1026/gather_charge.mp3"
+    },
+    {
+      "role": "wave_full",
+      "sourceSha256": "f9134397381a8ac5eadfb7406a91aa8d0128bbc4566b4ad0194cbeed97b059ba",
+      "pitchSemitones": 0,
+      "beforeRmsDb": -16.79443312595958,
+      "afterRmsDb": -15.30302976186727,
+      "decodedTruePeakDb": -2.7640743255615234,
+      "seconds": 2.45,
+      "filters": "highpass=f=85,equalizer=f=1900:t=q:w=0.9:g=2,acompressor=threshold=0.065:ratio=3:attack=8:release=75:makeup=3,alimiter=limit=0.82:attack=2:release=40:level=false",
+      "runtime": "assets/game/shared/audio/chronos_energy_mix_1026/wave_full.mp3"
+    },
+    {
+      "role": "wave_tail",
+      "sourceSha256": "7022a7e405f8553a0edfe65431ab096b5f65d3f5a39de4b2cfba794cc6f5133c",
+      "pitchSemitones": 0,
+      "beforeRmsDb": -19.40645961219634,
+      "afterRmsDb": -17.86723349258945,
+      "decodedTruePeakDb": -2.6612069606781006,
+      "seconds": 0.9,
+      "filters": "highpass=f=85,equalizer=f=1900:t=q:w=0.9:g=2,acompressor=threshold=0.065:ratio=3:attack=8:release=75:makeup=3,alimiter=limit=0.82:attack=2:release=40:level=false",
+      "runtime": "assets/game/shared/audio/chronos_energy_mix_1026/wave_tail.mp3"
+    }
+  ],
+  "mix": {
+    "foregroundGain": 1.8,
+    "lightningWhileForeground": 0.24,
+    "musicWhileForeground": 0.22,
+    "userSettingsChanged": false,
+    "loopingCharges": true,
+    "stop": "native release, pause, death or owner exit"
+  },
+  "rebuildOwner": "_BUILD_SOURCE/build_chronos_energy_mix_1026.py"
+}

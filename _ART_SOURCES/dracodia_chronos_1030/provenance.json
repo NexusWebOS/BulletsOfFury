@@ -1,0 +1,26 @@
+{
+  "referenceJob": "2ced2730-507e-4415-9c8a-ff39c00f1cbc",
+  "referenceEdit": "Remove the hammer, retain the supplied purple skull-knight identity.",
+  "referenceSeed": 7430,
+  "transferTest": "46cf2954-6546-4dde-a278-ffb5638a1ffa",
+  "transferBatches": 47,
+  "transferPrompt": "Reskin only the armor/helmet into the reference Dracodia demon knight; exactly preserve source poses, silhouette, scale, joints, fist positions and registration. Empty hands, no hammer/weapon/shield/circle/effects.",
+  "generatedMotionPNGs": 188,
+  "referencePNGs": 1,
+  "compiledFrameVariants": 1188,
+  "compiledBanks": 65,
+  "creditsUSD": 7.2,
+  "creditsRemainingUSD": 0.33,
+  "weaponSource": "_ART_SOURCES/hammer_consistency_1023/weapon-master.png",
+  "weaponSHA256": "0f3efa84f4a49f01aa1c8d21bcfc6233333621267920752c795a00159ece5641",
+  "weaponUnit": 0.13,
+  "sourceFamilies": [
+    "chronos_motion_1025",
+    "chronos_commitment_1025",
+    "chronos_modular_1023",
+    "hammer_tactical_1023"
+  ],
+  "bodyRegistration": "256px input; one1.6 proportional source normalization, one fixed512px actor canvas; even union crop per bank with invariant world pivot.",
+  "runtime": "Only authored frame blits and position/camera transforms. No runtime sprite scaling/rotation/tint/alpha/glow construction.",
+  "coreGameSHA256": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de"
+}

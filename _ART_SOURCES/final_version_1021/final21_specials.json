@@ -1,0 +1,62 @@
+[
+  {
+    "name": "boss4_drift",
+    "args": {
+      "first_frame_url": "upload:5b82f621-7907-4e5d-8dfc-68a70bc9515f",
+      "last_frame_url": "upload:5b82f621-7907-4e5d-8dfc-68a70bc9515f",
+      "frame_count": 16,
+      "no_background": true,
+      "enhance_prompt": false,
+      "view": "high top-down",
+      "direction": "south",
+      "subject_description": "the exact massive blue electrical Storm Sovereign airship",
+      "initial_pose": "full front-facing top-down south-facing airship",
+      "description": "FRAME FORMAT256x256, fixed central hull pivot128,128 and exact reference scale. Animate a restrained AIRSHIP DRIFT: left side control fins hinge slightly, left engine exhaust pulses, then right control fins counter-steer, right engines pulse, return centered. Main spine, generator sockets, nose and entire rigid hull remain forward-facing and physically registered. No whole-body flat rotation, no flipping, no moving across canvas, no scale change, no aggressive roll. Subtle wing articulation and perspective bank no more than5degrees while body stays centered. Preserve all original blue chromium panel detail and electrical core, full antennae and tips with transparent margins. No independent projectiles, scenery or outside effects."
+    },
+    "receipt": [
+      "id: bea2011d-d057-4863-b95a-e96ff46811ac\njob_id: bea2011d-d057-4863-b95a-e96ff46811ac\ndescription: FRAME FORMAT256x256, fixed central hull pivot128,128 and exact reference scale. Animate a restrained AIRSHIP DRIFT: left side control fins hinge slightly, left engine exhaust pulses, then right control fins counter-steer, right engines pulse, return centered. Main spine, generator sockets, nose and entire rigid hull remain forward-facing and physically registered. No whole-body flat rotation, no flipping, no moving across canvas, no scale change, no aggressive roll. Subtle wing articulation and perspective bank no more than5degrees while body stays centered. Preserve all original blue chromium panel detail and electrical core, full antennae and tips with transparent margins. No independent projectiles, scenery or outside effects.\nframes: 16\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\ncost: 2 generations\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"bea2011d-d057-4863-b95a-e96ff46811ac\")\nasset_id: bb1cd5fc-2f55-5120-bffb-2a6c1b7a1dcd\nasset_status: pending (saved to your gallery when generation completes)"
+    ]
+  },
+  {
+    "name": "shield_wall_master",
+    "args": {
+      "init_image_url": "upload:22686c6c-cdce-4531-b5c8-871d20f95e06",
+      "init_image_strength": 200,
+      "width": 256,
+      "height": 256,
+      "no_background": true,
+      "description": "FRAME FORMAT256x256, fixed center128,128. Re-author this same wide curved Chromium energy SHIELD WALL, occupying x20..236,y80..176, facing forward. Deliberate polished Neo-Geo pixel art, blue-white faceted solid chromium hex armor panels with clean deliberate highlights, dark blue internal edges and electrical cyan rims. Same horizontal shallow crescent wall geometry and original aspect, NO round bubble, no robot. Clean animated-ready modular wall without sparks, wisps, aura outside the wall, smoke, background or grey matte. Transparent margins all around, clear engraved code seams on each plate.",
+      "outline": "selective outline",
+      "detail": "highly detailed",
+      "shading": "highly detailed shading",
+      "view": "side",
+      "direction": "south"
+    },
+    "receipt": [
+      "id: 2f44d12f-17c5-4e03-92aa-5f5610b1dcd2\njob_id: 2f44d12f-17c5-4e03-92aa-5f5610b1dcd2\ndescription: FRAME FORMAT256x256, fixed center128,128. Re-author this same wide curved Chromium energy SHIELD WALL, occupying x20..236,y80..176, facing forward. Deliberate polished Neo-Geo pixel art, blue-white faceted solid chromium hex armor panels with clean deliberate highlights, dark blue internal edges and electrical cyan rims. Same horizontal shallow crescent wall geometry and original aspect, NO round bubble, no robot. Clean animated-ready modular wall without sparks, wisps, aura outside the wall, smoke, background or grey matte. Transparent margins all around, clear engraved code seams on each plate.\nsize: 256x256px\ntransparent: True\nasset_id: 516b17ac-d870-5384-a99b-cb3bc528495a\nasset_status: pending (saved when generation completes)\ninit_image: yes (strength 200)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"2f44d12f-17c5-4e03-92aa-5f5610b1dcd2\")"
+    ]
+  },
+  {
+    "name": "nyx_orb_master",
+    "args": {
+      "width": 128,
+      "height": 128,
+      "no_background": true,
+      "max_colors": 32,
+      "style_image": {
+        "url": "upload:41bb64b3-7635-4218-b9b1-6ea21c68b811",
+        "usage_description": "Purple/gray/white demonic energy palette and BOF pixel treatment, re-author as a readable dark orb rather than radial antennae."
+      },
+      "style_options": {
+        "color_palette": true,
+        "outline": true,
+        "detail": true,
+        "shading": true
+      },
+      "description": "FRAME FORMAT128x128, fixed core64,64. Nyx's ominous DARK PURPLE SHADOW ORB projectile, a clearly solid round sphere about76px diameter, black violet center with twisting dark-purple/gray symbiote energy bands, bright restrained pale-lilac highlights and two small orbiting purple filaments. Dense readable Neo-Geo pixel art, dark evil energy with luminous internal seams, strong clear circular projectile silhouette on transparent background. Not a portal or a ring: the sphere has shaded volume. Keep24px transparent margin, no text, reticle, robot, giant bloom or gray matte."
+    },
+    "receipt": [
+      "error: 1 validation error for RequestGenerateImageProFlash\n  Value error, Style image must fit the native canvas. Crop the reference or choose a larger supported canvas. [type=value_error, input_value={'version': 'v0.1.0+mcp',...smart=False), 'seed': 0}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+    ]
+  }
+]

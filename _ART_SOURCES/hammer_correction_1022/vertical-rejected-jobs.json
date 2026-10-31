@@ -1,0 +1,11 @@
+[
+  {
+    "id": "blue_vertical_down",
+    "job_id": "29602baf-c707-43a8-a00d-b319602842ed",
+    "frames": 9,
+    "status": "completed",
+    "prompt": "STRAIGHT VERTICAL DOWNWARD hammer slam, on the central line in front of the body. Keep the hammer head CENTRE x128 in EVERY frame. Descend in evenly spaced positions from overhead through face height, chest height, waist, knees, then floor. Rotate cylindrical head 90 degrees IN PLACE during descent so lower END CAP contacts floor in exact pinned final pose. No left/right sweep or diagonal trajectory, no body sidestep. Both hands drive the hammer, knees bend. Preserve existing physical cylinder length and diameter, no flattening into disc, no stretching. Fixed256square canvas and body scale, no flashes, trails, sparks or effects.",
+    "receipt": "id: 29602baf-c707-43a8-a00d-b319602842ed\njob_id: 29602baf-c707-43a8-a00d-b319602842ed\naction: STRAIGHT VERTICAL DOWNWARD hammer slam, on the central line in front of the body. Keep the hammer head CENTRE x128 in EVERY frame. Descend in evenly spaced positions from overhead through face height, chest height, waist, knees, then floor. Rotate cylindrical head 90 degrees IN PLACE during descent so lower END CAP contacts floor in exact pinned final pose. No left/right sweep or diagonal trajectory, no body sidestep. Both hands drive the hammer, knees bend. Preserve existing physical cylinder length and diameter, no flattening into disc, no stretching. Fixed256square canvas and body scale, no flashes, trails, sparks or effects.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (interpolating to it)\nasset_id: f33d17ca-80eb-5311-a99e-aaa0eddbca3e\nasset_status: pending (saved when generation completes)\ncost: 8 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"29602baf-c707-43a8-a00d-b319602842ed\")",
+    "completion": "status: completed\nid: 29602baf-c707-43a8-a00d-b319602842ed\njob_id: 29602baf-c707-43a8-a00d-b319602842ed\nframe: 0 of 9\nasset_id: f33d17ca-80eb-5311-a99e-aaa0eddbca3e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: $0.0307 in credits\ndownload: https://api.pixellab.ai/mcp/images/29602baf-c707-43a8-a00d-b319602842ed/download?index=0"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "provider": "built-in image_gen",
+  "selected": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-9c51ad18-00b5-4fd8-aa4e-6d4386e2aec2.png",
+  "rejected": "exec-888715f9-6798-4fa6-b9b3-2eff2638c0c7.png",
+  "sourceArrow": "assets/game/shared/ui/ui/warn_0916/escape_arrow.png",
+  "sourceAsterisk": "assets/bossmode/ui/alerts-yellow.png",
+  "asteriskRect": [
+    424,
+    0,
+    384,
+    384
+  ],
+  "normalization": "Generated three-chevron arrow crop, single proportional nearest-neighbor scale and45-degree direction; original in-game hollow yellow asterisk reused unchanged apart from proportional scale; four whole-canvas quarter-turn variants. Fixed64x64 canvas,32,32 pivot.",
+  "sourceHash": "926660dc7e9ffbbddf7af764e49587170df62aa8f62ea9a44d193dc20d928361"
+}

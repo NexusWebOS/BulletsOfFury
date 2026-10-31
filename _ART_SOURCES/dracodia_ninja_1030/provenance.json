@@ -1,0 +1,39 @@
+{
+  "pages": 3,
+  "poses": 96,
+  "layers": 288,
+  "logicalCell": [
+    512,
+    512
+  ],
+  "fixedPivot": [
+    256,
+    256
+  ],
+  "evenExportCrops": true,
+  "packing": "Unrotated, no dedup; metadata restores each logical512 canvas/pivot. Tight even source rectangles, native1:1 destinations.",
+  "sources": {
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_left_00.png": "3d57ef14fe00dc491068376e7b72329caa3c86fa56b61b4fd7efdd9143639ed9",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_00.png": "855cde7aa00d0ec0522a3cd5f6c6b9850fbc9ab07a71d296da3075db18b598cf",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_right_00.png": "d5317cbf812bd27dbe0b909cb4ae3c694020b629a8800b0b3bb427e5fb886d62",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_left_01.png": "10636812bf50bd6860dbec1e74c033b7c2b7c06210e312df1b17a6e7503d13c3",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_01.png": "b9df011947068f1b054b45bbab5b840d79e425d9f8bbc27ecf89ce0720cb171f",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_right_01.png": "142dd2c646c4600698038323eda240a97153d8a7ba1b0ec827e0f9907ef44984",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_left_02.png": "e749a1ffd0a6171cab3fb93c9bb961b804cbfdb7a9a38d5d7e0ad15a0e8640b5",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_02.png": "927fcc38887b4b90850dcd61384acc31839c71874c02d53487f07c09b0364381",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_right_02.png": "d5e2bf54448d30ae51e8207e9f5ba6202ebd973004212520a1eec4173be57e47",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_left_03.png": "219cc32647b75d6aa0aca45cfb397e1e07bfd2198409a3a869d1c591061567c9",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_03.png": "4f90fcf3c6ce579c898e1175b179f9c58f0c3a7c0d82bc67326782c18132c22c",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_right_03.png": "d37ceed40e9550158cb6edaaf861305d38d34b749ccbc2aefb00a9c328cae9d4",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_left_04.png": "58f14af32ab35ffeed5286ef0689f3ca06f9e911a7317b1166c7980d56ab5659",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_04.png": "a9d9270a41fafa1e9f992200c63f249ebb57d101c5c3507a85c2db2c89e4a8b7",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_right_04.png": "437a87c6ddf0ee2cbc329af8dc825c8c4135c7d8adec8d1bc8145aa4663e31c7",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_left_05.png": "e5329953a2099a1057d6e32fa0dce43a6e6256b25f4a8758ed2b627576a6b612",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_05.png": "fb0bc45b57d0f7d64a1452365d05c1d47c8909d1abe6831dd5e818f850d3203d",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_right_05.png": "a50334bcd549b15f865b5a0eb20d59cb06fa0d2b031d5a3019a9c52600e89527",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_left_06.png": "33612e23093db187aabc40aa30e6a1436d221fcfd084f66157cb69e9be84dac6",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_core_06.png": "f18e7422f1884bca7e0dd7d8fe642bef240e7ef3fdb70ead9264511eb0ee747d",
+    "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_scythe_right_06.png": "4cf40e1f9c5739d79395e75bd992b8ecc380a00f1bb34317c37002ee679e7181"
+  },
+  "sourceTool": "Pillow deterministic offline author; source strip provided for Aseprite import."
+}

@@ -1,0 +1,70 @@
+function playerHit(source){
+  if(player.dead||(source!=='fusionOvercharge'&&player.invuln>0)) return;
+  // JUGGERNAUT wrecking-ball special: fully invulnerable to enemy bullets/attacks while active
+  if(source!=='fusionOvercharge'&&specialActive('juggernaut')){ return; }
+  if(source!=='fusionOvercharge'&&axelMegaShieldActive()){axelMegaShieldSpend();player.invuln=40;return;}
+  if(typeof stageStats!=='undefined') stageStats.dmgTaken++;
+  if(source!=='fusionOvercharge'&&run.shield>0){ run.shield--; player.invuln=70; flashScreen=0.5;
+    if(run.shield<=0) (Audio.SFX.shieldBreakCombat||Audio.SFX.nsp_shield_down||Audio.SFX.hit)();
+    else (Audio.SFX.shieldHitHeavy||Audio.SFX.hit)();
+    floatText(player.x,player.y-16, run.shield>0?('SHIELD L'+run.shield):'SHIELD DOWN','#4ea0ff');
+    explode(player.x,player.y,26,'blue');
+    if(typeof fxBurst==='function') fxBurst(player.x, player.y, 34, {color:'#7fd4ff', rings:1});
+    return; }
+  // 1-shot kill
+  /* THE PLAYER GOING DOWN (drop 0801ei). My first pass attached this to the
+     SHIELD-BREAK branch a few lines up, which is why the test reported zero rings
+     and zero chunks on death - the burst was firing when a shield popped, not
+     when the ship was lost. */
+  if(typeof stageStats!=='undefined') stageStats.deaths++;
+  // Keep the combat location separately from the falling wreck. Respawning at
+  // the end of its crash drift could put the live ship behind the bottom HUD.
+  player._deathAnchor={x:player.x,y:player.y};
+  player.dead=true; player.alive=false;
+  if(source==='fusionOvercharge')run.shield=0;
+  /* THE SPIN-OUT OWNS THE DEATH NOW (Mike's header rule, 0907). The shock ring and the seven
+     explosions that used to fire HERE are the CRASH, and they moved into updateDeathSpin so
+     they land at the end of the turn instead of on the frame of the hit. A pilot with no sp
+     reel keeps the old timing exactly, so a missing family degrades to the previous death
+     rather than to no death at all. */
+  if(source==='darkVoid'&&typeof vile24StartVoidDeath==='function'){vile24StartVoidDeath();}
+  else if(deathSpinAvailable()){ startDeathSpin(); }
+  else {
+    player._spin=null; player.deathT=1.4;
+    if(typeof fxBurst==='function') fxBurst(player.x, player.y, 66, {color:'#7fd4ff', rings:2});
+    for(let _k=0;_k<7;_k++) explode(player.x+rnd(-16,16), player.y+rnd(-14,14), rnd(26,50), 'red');
+    shake=18; flashScreen=0.7; Audio.SFX.death();
+  }
+  /* Adaptive pressure is earned per life. A real death (not a shield break) returns enemy HP and
+     reinforcement density to their baseline along with the player's stripped powerups. */
+  run._lifeCombatT=0; run._lifeThreat=0; run._threatBuild=0;
+  _adaptiveSpawnT=6.5; _adaptiveSpawnSeq=0;
+  /* Death powers every weapon bank down to level 1. It does not erase the equipped weapon or its
+     authored variant, and it cannot leave upgraded ground weapons hidden in the Stage-5/9 loadout
+     snapshot ready to reappear after Gravity Mode ends. */
+  /* DEATH DROPS YOU TO THE MACHINE GUN (Mike, 0903: "keeping weapons when I die" is a bug).
+     Codex's build kept the equipped weapon's identity and only powered its level down; Mike
+     overruled that. Weapon 0 at level 1, every bank at 1, variants cleared. */
+  run.weapon=0;run.wlevels=WEAPONS.map(()=>0);run.wlevel=0;run.power=0;manualMissileResetOnDeath(run);   // 0, not 1: 'all other weapons when you acquire them are lvl 1 first' - a pickup adds one
+  run.infusion=null;                                                     /* the element goes with the gun (0917) */
+  if(typeof forgeApply==='function') forgeApply();                       /* ...unless it was FORGED on (0917) */
+  if(run.wvars){const selectedLanceForm=_pilotKey()==='maverick'?run.wvars[3]:null;
+    run.wvars=WEAPONS.map(()=>null);if(selectedLanceForm)run.wvars[3]=selectedLanceForm;}
+  run.spaceWeapon=0;run.spaceLevels=[0,1,1];run.spaceAkimbo=0;run._spaceVolleyCd=0;
+  if(run._groundLoadout){
+    run._groundLoadout.wlevel=1;run._groundLoadout.wlevels=WEAPONS.map(()=>1);
+    run._groundLoadout.missileLevel=1;
+  }
+  if(typeof spaceShadowCancel==='function')spaceShadowCancel();
+  run.speed=0; run.speedLevel=0; run.speedT=0;
+  run.missileLevel=1;   // every weapon system, including passive auto-missiles, returns to level 1
+  // lose the active special on death (Maverick venom, Yuri chain, etc.)
+  if(special){ if(typeof endSpecial==='function') endSpecial(); special=null; }
+  /* AND THE LOANED WEAPONS (drop 0810f). Mike: "needs to goes away after 15 seconds or when she
+     dies. Same with deckers shotgun." Everything else the player was carrying is stripped on the
+     lines above — weapon, levels, power, speed, missiles, the special — and these two were the
+     only powerups that survived being killed. Quiet: the death already has enough on screen. */
+  if(typeof dkEnd==='function') dkEnd(true);
+  if(typeof lzMountEnd==='function') lzMountEnd(true);
+  retina.target=null; retina.phase=null; timeScale=1; zaps.length=0;
+}

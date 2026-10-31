@@ -1,0 +1,6 @@
+{
+  "before": "36a9cfb7721722209f53afb4019d9428a1f7a633427c705c8bc317b027e33fde",
+  "after": "024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de",
+  "scope": "Captured-seat input lock and explicit scoped fatal throw through the original playerHit/death pipeline",
+  "exactOriginalReconstruction": true
+}

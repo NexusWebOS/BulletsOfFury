@@ -1,0 +1,13 @@
+{
+  "bank": "gun_recall",
+  "id": "a5a3a754-b646-4bc0-82b6-e09c696e9b26",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: a5a3a754-b646-4bc0-82b6-e09c696e9b26\njob_id: a5a3a754-b646-4bc0-82b6-e09c696e9b26\ndescription: Smoothly return from the exact supplied starting stance into the supplied idle side guard. Uncoil the shoulders and hips, lower the left empty fist to its side grip, let the other arm relax. Keep the same horned skull helmet, purple chrome armor, red reactor, proportions, size and registration. All anatomy remains connected. Hands EMPTY, no cannon, no hammer, no new object or effects. End at the exact final frame. Heavy lifelike recovery, no jump or pose snap.\nframes: 8\nsize: 256x256px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 7430\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"a5a3a754-b646-4bc0-82b6-e09c696e9b26\")\nwithout get_image: GET https://api.pixellab.ai/mcp/images/a5a3a754-b646-4bc0-82b6-e09c696e9b26/download (423 + Retry-After until ready; ?index=N for the Nth of several images)\nasset_id: ce1e7040-c48a-5cc2-bd3d-e6eae133b221\nasset_status: pending (saved to your gallery when generation completes)"
+      }
+    ],
+    "isError": false
+  }
+}

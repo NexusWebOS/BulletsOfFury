@@ -1,0 +1,396 @@
+{
+  "reconstructsMaster": true,
+  "components": {
+    "flareL": {
+      "key": "vp23_flareL",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/flareL.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        128,
+        67
+      ],
+      "owner": "ventL",
+      "bounds": [
+        120,
+        46,
+        146,
+        67
+      ],
+      "bytes": 930,
+      "sha256": "d5c2dcd94a6bb61f65f162a0ad1aa4f9860f9fa90fbc247dc29c88aa8d4c2cf1"
+    },
+    "flareR": {
+      "key": "vp23_flareR",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/flareR.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        190,
+        66
+      ],
+      "owner": "ventR",
+      "bounds": [
+        183,
+        43,
+        207,
+        66
+      ],
+      "bytes": 1098,
+      "sha256": "f3bc05a87dd97622f4ac40423682af082705ff647694d0f048ea9a3ffa4b1c6d"
+    },
+    "left": {
+      "key": "vp23_left",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/left.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        84,
+        178
+      ],
+      "owner": "left",
+      "bounds": [
+        41,
+        178,
+        112,
+        234
+      ],
+      "bytes": 5379,
+      "sha256": "e220b406bf552111e2e57730d78953b7201231976c37f096301fe678e0a52892"
+    },
+    "reactor": {
+      "key": "vp23_reactor",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/reactor.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        159,
+        162
+      ],
+      "owner": "core",
+      "bounds": [
+        139,
+        146,
+        180,
+        183
+      ],
+      "bytes": 2945,
+      "sha256": "15f92f2619b964d89ff610ce09e3739f30edf25951c2445835fe574f360170f0"
+    },
+    "shoulderL": {
+      "key": "vp23_shoulderL",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/shoulderL.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        113,
+        144
+      ],
+      "owner": "shoulderL",
+      "bounds": [
+        89,
+        110,
+        132,
+        167
+      ],
+      "bytes": 2876,
+      "sha256": "f0d26ca034b057d2a1d9cd0ad56f2d81ad2eec3d75e7d49423b98c8ff3406bda"
+    },
+    "shoulderR": {
+      "key": "vp23_shoulderR",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/shoulderR.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        210,
+        143
+      ],
+      "owner": "shoulderR",
+      "bounds": [
+        191,
+        110,
+        239,
+        168
+      ],
+      "bytes": 3062,
+      "sha256": "aa84c67c2ade37ecf6efc1fc8b98b1ac583f6813413dd8baf580ee1b9902acbc"
+    },
+    "torso": {
+      "key": "vp23_torso",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/torso.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        160,
+        160
+      ],
+      "owner": "core",
+      "bounds": [
+        110,
+        45,
+        203,
+        210
+      ],
+      "bytes": 5315,
+      "sha256": "9cd6d095521b97fb3a6812bd174e58f8827e549d098fa6ae6823a8a1ca329ad2"
+    },
+    "ventL": {
+      "key": "vp23_ventL",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/ventL.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        140,
+        108
+      ],
+      "owner": "ventL",
+      "bounds": [
+        89,
+        43,
+        157,
+        110
+      ],
+      "bytes": 2459,
+      "sha256": "b8f7460a5626391732a1a5a30ff7941e8813401f79f4673038886fb2d99a7363"
+    },
+    "ventR": {
+      "key": "vp23_ventR",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/ventR.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        192,
+        108
+      ],
+      "owner": "ventR",
+      "bounds": [
+        181,
+        41,
+        239,
+        112
+      ],
+      "bytes": 3464,
+      "sha256": "5acb099368c163f5c63705a30261be9bc11dc6d57a2dc4e0c6ef596e97c2dfa3"
+    },
+    "footL": {
+      "key": "vp23_footL",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/footL.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        127,
+        231
+      ],
+      "owner": "legL",
+      "bounds": [
+        92,
+        231,
+        151,
+        277
+      ],
+      "bytes": 3910,
+      "sha256": "c155d2e4f4262b4d31442a76fec399aca29cdd4344f2d0bab66fb6af47787706"
+    },
+    "thighL": {
+      "key": "vp23_thighL",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/thighL.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        120,
+        203
+      ],
+      "owner": "legL",
+      "bounds": [
+        95,
+        189,
+        156,
+        231
+      ],
+      "bytes": 4052,
+      "sha256": "1ededce7c5595fad4324a95659422d22d260372e5621e6d737f3f658b946a150"
+    },
+    "footR": {
+      "key": "vp23_footR",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/footR.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        196,
+        231
+      ],
+      "owner": "legR",
+      "bounds": [
+        175,
+        231,
+        232,
+        278
+      ],
+      "bytes": 4010,
+      "sha256": "02693ccf95de1eacbb4aaf0da8867d371358dcd60ed59e6eee565bcbe512552c"
+    },
+    "thighR": {
+      "key": "vp23_thighR",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/thighR.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        196,
+        203
+      ],
+      "owner": "legR",
+      "bounds": [
+        165,
+        189,
+        214,
+        231
+      ],
+      "bytes": 3703,
+      "sha256": "41c13c874cf3391e4c504a16510203e1a99514e6c528f485e1f3f2adbc323e98"
+    },
+    "upperL": {
+      "key": "vp23_upperL",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/upperL.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        113,
+        144
+      ],
+      "owner": "left",
+      "bounds": [
+        62,
+        128,
+        121,
+        178
+      ],
+      "bytes": 3999,
+      "sha256": "2c3106ea57df7a48e19703fb85b8115074770c09eb8dc04f3c1766386bc79a4d"
+    },
+    "right": {
+      "key": "vp23_right",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/right.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        230,
+        182
+      ],
+      "owner": "right",
+      "bounds": [
+        203,
+        182,
+        278,
+        249
+      ],
+      "bytes": 6317,
+      "sha256": "e3b60780dacf326655393d3a7eb68e65094f3cded795fd295aef363cbf91fe42"
+    },
+    "upperR": {
+      "key": "vp23_upperR",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/upperR.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        210,
+        143
+      ],
+      "owner": "right",
+      "bounds": [
+        203,
+        127,
+        274,
+        182
+      ],
+      "bytes": 6381,
+      "sha256": "09a5d8958cc1e9753c3ded07726ce38ea31a89a94d8686688cd1c8b247d7b8f2"
+    },
+    "head": {
+      "key": "vp23_head",
+      "path": "assets/game/levels/stage_08/boss/volcano_modular_1019/head.png",
+      "w": 320,
+      "h": 320,
+      "pivot": [
+        160,
+        160
+      ],
+      "anchor": [
+        160,
+        112
+      ],
+      "owner": "head",
+      "bounds": [
+        130,
+        81,
+        191,
+        146
+      ],
+      "bytes": 7065,
+      "sha256": "a44d12cb627d1ffa472b00c31d9d9308a86e01f0348a8f8f5a30ba9473e20546"
+    }
+  }
+}

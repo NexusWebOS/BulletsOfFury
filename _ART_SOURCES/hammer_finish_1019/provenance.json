@@ -1,0 +1,13 @@
+{
+  "service": "PixelLab animate_image",
+  "job": "3b415711-c8dd-4ec3-b019-92409a59a291",
+  "asset": "ac1d939f-0820-5c8c-b4b1-3b69c19b7523",
+  "frames": 8,
+  "canvas": [
+    256,
+    256
+  ],
+  "seed": 101919,
+  "source": "chaingun_seed.png",
+  "recovery": "First five intact existing hammer_death frames; no rupture/fire cells."
+}

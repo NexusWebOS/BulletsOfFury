@@ -1,0 +1,21 @@
+{
+  "stage5Files": 69,
+  "stage5ByteIdentical": true,
+  "stage5Changed": [],
+  "evenFixedFrames": true,
+  "sizes": [
+    [
+      640,
+      640
+    ]
+  ],
+  "edgeContacts": [],
+  "physicalUnits": [
+    0.13
+  ],
+  "sourceWeapons": 1,
+  "newCells": 194,
+  "newSheets": 30,
+  "allUnitsIdentical": true,
+  "originalRuntimeUntouched": true
+}

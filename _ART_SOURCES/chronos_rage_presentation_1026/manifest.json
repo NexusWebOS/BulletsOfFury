@@ -1,0 +1,607 @@
+{
+  "sourceRings": [
+    {
+      "key": "nsr_comet_0",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "cell": [
+        "fx_explosions",
+        905,
+        3236,
+        24,
+        24
+      ]
+    },
+    {
+      "key": "nsr_comet_1",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "cell": [
+        "fx_explosions",
+        385,
+        3236,
+        38,
+        38
+      ]
+    },
+    {
+      "key": "nsr_comet_2",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "cell": [
+        "fx_explosions",
+        3213,
+        3146,
+        54,
+        54
+      ]
+    },
+    {
+      "key": "nsr_comet_3",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "cell": [
+        "fx_explosions",
+        1697,
+        3146,
+        70,
+        70
+      ]
+    },
+    {
+      "key": "nsr_comet_4",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "cell": [
+        "fx_explosions",
+        752,
+        3146,
+        85,
+        86
+      ]
+    },
+    {
+      "key": "nsr_comet_5",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "cell": [
+        "fx_explosions",
+        2863,
+        2930,
+        101,
+        102
+      ]
+    },
+    {
+      "key": "nsr_comet_6",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "cell": [
+        "fx_explosions",
+        2043,
+        2792,
+        116,
+        115
+      ]
+    },
+    {
+      "key": "nsr_comet_7",
+      "path": "assets/game/shared/atlases/fx_explosions.png",
+      "cell": [
+        "fx_explosions",
+        1325,
+        2792,
+        124,
+        123
+      ]
+    }
+  ],
+  "sourceAtlasSha256": "c1fdc746c08825b0270ac2f9ac88137a6c1da01fb0322dfe1cf8deb0a0400b46",
+  "sourceGauge": "assets/game/levels/stage_05/ui/enemy_bars_1007c.png",
+  "sourceGaugeSha256": "3c4dfc66ecc40333ba2a8da25039e1bc4d59e245494ab03b6a52b069a50c5a1a",
+  "palette": [
+    [
+      90,
+      7,
+      18
+    ],
+    [
+      216,
+      24,
+      8
+    ],
+    [
+      255,
+      58,
+      16
+    ],
+    [
+      255,
+      106,
+      24
+    ],
+    [
+      255,
+      208,
+      64
+    ],
+    [
+      255,
+      246,
+      176
+    ],
+    [
+      255,
+      253,
+      241
+    ]
+  ],
+  "ringCount": 32,
+  "ringFrameCounts": [
+    16,
+    16
+  ],
+  "evenFixedCells": [
+    416,
+    624
+  ],
+  "nativeRingLife": 0.42,
+  "hudAlphaPreserved": true,
+  "hudPixelsOutsideHpWellsPreserved": true,
+  "dim": "16 authored black-alpha64px tiles, no runtime opacity or filter",
+  "builder": "_BUILD_SOURCE/build_chronos_rage_presentation_1026.py",
+  "art": {
+    "sheets": {
+      "cf50_ring_small": {
+        "path": "assets/game/levels/stage_05/boss/chronos_rage_presentation_1026/small_rings.png",
+        "w": 1664,
+        "h": 1664
+      },
+      "cf50_ring_large": {
+        "path": "assets/game/levels/stage_05/boss/chronos_rage_presentation_1026/large_rings.png",
+        "w": 2496,
+        "h": 2496
+      },
+      "cf50_scenery_dim": {
+        "path": "assets/game/levels/stage_05/boss/chronos_rage_presentation_1026/scenery_dim.png",
+        "w": 256,
+        "h": 256
+      },
+      "cf50_rage_health": {
+        "path": "assets/game/levels/stage_05/boss/chronos_rage_presentation_1026/rage_health_bar.png",
+        "w": 1672,
+        "h": 941
+      }
+    },
+    "banks": {
+      "small": {
+        "sheet": "cf50_ring_small",
+        "frames": [
+          {
+            "key": "cf50_ring_small_0",
+            "cell": [
+              0,
+              0,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_1",
+            "cell": [
+              416,
+              0,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_2",
+            "cell": [
+              832,
+              0,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_3",
+            "cell": [
+              1248,
+              0,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_4",
+            "cell": [
+              0,
+              416,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_5",
+            "cell": [
+              416,
+              416,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_6",
+            "cell": [
+              832,
+              416,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_7",
+            "cell": [
+              1248,
+              416,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_8",
+            "cell": [
+              0,
+              832,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_9",
+            "cell": [
+              416,
+              832,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_10",
+            "cell": [
+              832,
+              832,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_11",
+            "cell": [
+              1248,
+              832,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_12",
+            "cell": [
+              0,
+              1248,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_13",
+            "cell": [
+              416,
+              1248,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_14",
+            "cell": [
+              832,
+              1248,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          },
+          {
+            "key": "cf50_ring_small_15",
+            "cell": [
+              1248,
+              1248,
+              416,
+              416
+            ],
+            "pivot": [
+              208,
+              208
+            ]
+          }
+        ],
+        "life": 0.42
+      },
+      "large": {
+        "sheet": "cf50_ring_large",
+        "frames": [
+          {
+            "key": "cf50_ring_large_0",
+            "cell": [
+              0,
+              0,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_1",
+            "cell": [
+              624,
+              0,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_2",
+            "cell": [
+              1248,
+              0,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_3",
+            "cell": [
+              1872,
+              0,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_4",
+            "cell": [
+              0,
+              624,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_5",
+            "cell": [
+              624,
+              624,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_6",
+            "cell": [
+              1248,
+              624,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_7",
+            "cell": [
+              1872,
+              624,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_8",
+            "cell": [
+              0,
+              1248,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_9",
+            "cell": [
+              624,
+              1248,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_10",
+            "cell": [
+              1248,
+              1248,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_11",
+            "cell": [
+              1872,
+              1248,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_12",
+            "cell": [
+              0,
+              1872,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_13",
+            "cell": [
+              624,
+              1872,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_14",
+            "cell": [
+              1248,
+              1872,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          },
+          {
+            "key": "cf50_ring_large_15",
+            "cell": [
+              1872,
+              1872,
+              624,
+              624
+            ],
+            "pivot": [
+              312,
+              312
+            ]
+          }
+        ],
+        "life": 0.42
+      }
+    },
+    "dim": {
+      "sheet": "cf50_scenery_dim",
+      "tile": 64,
+      "levels": 16,
+      "maximumAlpha": 0.75
+    },
+    "health": "cf50_rage_health"
+  }
+}

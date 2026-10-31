@@ -1,0 +1,24 @@
+{
+  "sources": [
+    "assets\\game\\levels\\stage_08\\audio\\dracodia_1005\\dracodia_shriek.mp3",
+    "assets\\game\\shared\\audio\\sounds\\mechScream.mp3"
+  ],
+  "pitch": "-3 and -5 semitones; secondary metallic voice +1 semitone",
+  "processing": "22Hz harmonic offset and short reverb reflections; normalized -12LUFS, -1.8dB true peak target",
+  "cues": [
+    {
+      "name": "scream_a",
+      "filter": "[0:a]aresample=44100,asetrate=37083.5319,aresample=44100,highpass=f=95,afreqshift=shift=22,volume=.85[a];[1:a]aresample=44100,asetrate=46722,aresample=44100,highpass=f=180,volume=.33[b];[a][b]amix=inputs=2:duration=longest:normalize=0,aecho=.8:.9:58|119|181:.38|.25|.15,alimiter=limit=.82,loudnorm=I=-12:TP=-1.8:LRA=5[out]",
+      "master": "scream_a.wav",
+      "path": "assets/game/levels/stage_08/audio/possession_1030/scream_a.mp3",
+      "sha256": "a865e2c431e10b872fed23303e20f6142698641234ac01cee22e987046fcfcf6"
+    },
+    {
+      "name": "scream_b",
+      "filter": "[0:a]aresample=44100,asetrate=33037.6710,aresample=44100,highpass=f=95,afreqshift=shift=22,volume=.85[a];[1:a]aresample=44100,asetrate=46722,aresample=44100,highpass=f=180,volume=.33[b];[a][b]amix=inputs=2:duration=longest:normalize=0,aecho=.8:.9:47|101|163:.38|.25|.15,alimiter=limit=.82,loudnorm=I=-12:TP=-1.8:LRA=5[out]",
+      "master": "scream_b.wav",
+      "path": "assets/game/levels/stage_08/audio/possession_1030/scream_b.mp3",
+      "sha256": "d5296513ca7ab7a42fc1fb32306f2881f2e6c6b7e43945a6548f659ed513691c"
+    }
+  ]
+}

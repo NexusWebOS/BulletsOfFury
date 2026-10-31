@@ -1,0 +1,410 @@
+[
+  {
+    "key": "ch23_body_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_body_armor_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_body_red_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_body_hit_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_1",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_2",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_3",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_4",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_5",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_6",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_7",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_8",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_armor_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_armor_1",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_armor_2",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_armor_3",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_armor_4",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_armor_5",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_armor_6",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_armor_7",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_armor_8",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_red_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_red_1",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_red_2",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_red_3",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_red_4",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_red_5",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_red_6",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_red_7",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_red_8",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_hit_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_hit_1",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_hit_2",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_hit_3",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_hit_4",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_hit_5",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_hit_6",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_hit_7",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_barrel_hit_8",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_hands_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_hands_armor_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_hands_red_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_hands_hit_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_0",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_1",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_2",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_3",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_4",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_5",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_6",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_7",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_8",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_9",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_10",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_11",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_12",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_13",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_14",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_15",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_16",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_round_17",
+    "even": true,
+    "noClip": true,
+    "binary": true
+  },
+  {
+    "key": "ch23_warn_fan_green_0",
+    "even": true,
+    "noClip": true,
+    "binary": false
+  },
+  {
+    "key": "ch23_warn_down_green_0",
+    "even": true,
+    "noClip": true,
+    "binary": false
+  },
+  {
+    "key": "ch23_warn_fan_yellow_0",
+    "even": true,
+    "noClip": true,
+    "binary": false
+  },
+  {
+    "key": "ch23_warn_down_yellow_0",
+    "even": true,
+    "noClip": true,
+    "binary": false
+  },
+  {
+    "key": "ch23_warn_fan_red_0",
+    "even": true,
+    "noClip": true,
+    "binary": false
+  },
+  {
+    "key": "ch23_warn_down_red_0",
+    "even": true,
+    "noClip": true,
+    "binary": false
+  }
+]

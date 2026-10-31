@@ -1,0 +1,74 @@
+PASS magma_dart native hull and hit flash
+PASS magma_dart idle bank selected
+PASS magma_dart attack bank selected
+PASS magma_dart drift bank selected
+PASS magma_dart roll bank selected
+PASS magma_dart somer bank selected
+PASS magma_dart native missile/launcher ownership
+PASS magma_forge native hull and hit flash
+PASS magma_forge idle bank selected
+PASS magma_forge attack bank selected
+PASS magma_forge drift bank selected
+PASS magma_forge roll bank selected
+PASS magma_forge somer bank selected
+PASS magma_forge native missile/launcher ownership
+PASS sky_zephyr native hull and hit flash
+PASS sky_zephyr idle bank selected
+PASS sky_zephyr attack bank selected
+PASS sky_zephyr drift bank selected
+PASS sky_zephyr roll bank selected
+PASS sky_zephyr somer bank selected
+PASS sky_zephyr native missile/launcher ownership
+PASS sky_gale native hull and hit flash
+PASS sky_gale idle bank selected
+PASS sky_gale attack bank selected
+PASS sky_gale drift bank selected
+PASS sky_gale roll bank selected
+PASS sky_gale somer bank selected
+PASS sky_gale native missile/launcher ownership
+PASS sky_stratus native hull and hit flash
+PASS sky_stratus idle bank selected
+PASS sky_stratus attack bank selected
+PASS sky_stratus drift bank selected
+PASS sky_stratus roll bank selected
+PASS sky_stratus somer bank selected
+PASS sky_stratus native missile/launcher ownership
+PASS water_ripple native hull and hit flash
+PASS water_ripple idle bank selected
+PASS water_ripple attack bank selected
+PASS water_ripple drift bank selected
+PASS water_ripple roll bank selected
+PASS water_ripple somer bank selected
+PASS water_ripple native missile/launcher ownership
+PASS water_manta native hull and hit flash
+PASS water_manta idle bank selected
+PASS water_manta attack bank selected
+PASS water_manta drift bank selected
+PASS water_manta roll bank selected
+PASS water_manta somer bank selected
+PASS water_manta native missile/launcher ownership
+PASS water_leviathan native hull and hit flash
+PASS water_leviathan idle bank selected
+PASS water_leviathan attack bank selected
+PASS water_leviathan drift bank selected
+PASS water_leviathan roll bank selected
+PASS water_leviathan somer bank selected
+PASS water_leviathan native missile/launcher ownership
+PASS water_undertow native hull and hit flash
+PASS water_undertow idle bank selected
+PASS water_undertow attack bank selected
+PASS water_undertow drift bank selected
+PASS water_undertow roll bank selected
+PASS water_undertow somer bank selected
+PASS water_undertow native missile/launcher ownership
+PASS Stage-scoped lance identities and boss exclusion
+PASS Stage 2 native encounter runs
+PASS Stage 6 native encounter runs
+PASS Stage 9 native encounter runs
+PASS Stage 2 native flash expiry and destruction
+PASS Stage 6 native flash expiry and destruction
+PASS Stage 9 native flash expiry and destruction
+PASS Legacy L6 jet uses authored roll at native depth
+PASS Water enemy beam hue is scoped to its launcher
+PASS No renderer errors
+{"checks": 73, "passed": 73, "errors": []}

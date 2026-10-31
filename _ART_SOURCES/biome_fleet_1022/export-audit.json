@@ -1,0 +1,287 @@
+[
+  {
+    "name": "magma_dart_attack.webp",
+    "bytes": 14966,
+    "sha256": "ee90f6a2b36d0ceca79fbc361855105917617192cfd5ce7424bfc6e4756f8527"
+  },
+  {
+    "name": "magma_dart_drift.webp",
+    "bytes": 7038,
+    "sha256": "c8ffa13dc8781e4d56adb84848827bf4ed6b218e3cf3def20fa8acede2e4b58d"
+  },
+  {
+    "name": "magma_dart_idle.webp",
+    "bytes": 5560,
+    "sha256": "4fd9cc798d0cb66e0b26097257518523822743f5dc54c26ba25b98fec8e9b729"
+  },
+  {
+    "name": "magma_dart_roll.webp",
+    "bytes": 17386,
+    "sha256": "8e02ea054bd11e96012f08e2f712bd7d8bf837033a95244097f27af4aab50899"
+  },
+  {
+    "name": "magma_dart_somer.webp",
+    "bytes": 28430,
+    "sha256": "8abf509cdb489f1435e957734eb0f7d3c431570f62e9841c21a283045c84b25d"
+  },
+  {
+    "name": "magma_forge_attack.webp",
+    "bytes": 9456,
+    "sha256": "f91ea528981001039e058c3536b37895baabd20dc18a5ebb3d9d7fcc615d0bd5"
+  },
+  {
+    "name": "magma_forge_drift.webp",
+    "bytes": 8710,
+    "sha256": "5aa9b83b89037e98751762c748e4a9cc8cb1f6e75ea6b1433cf5aa5d6305a9ca"
+  },
+  {
+    "name": "magma_forge_idle.webp",
+    "bytes": 5340,
+    "sha256": "00df5430d841f88ba777210ada20026efab21c89d79d36658a2864a1de97703a"
+  },
+  {
+    "name": "magma_forge_roll.webp",
+    "bytes": 31726,
+    "sha256": "ee07d0c71278d959a177df615996ca6e52bea942a3a0a6b7a8c2c532ccd2050f"
+  },
+  {
+    "name": "magma_forge_somer.webp",
+    "bytes": 18710,
+    "sha256": "2bd404d1d1765bf0dc8322b9c178397fe2b4ab149e96e3385bc0eb127f5a3c0b"
+  },
+  {
+    "name": "magma_muzzle.webp",
+    "bytes": 1842,
+    "sha256": "594758d022348ee3b0f48fea811d396e39c39cb0c877ae2ba29a683453c3d734"
+  },
+  {
+    "name": "magma_needle.webp",
+    "bytes": 1326,
+    "sha256": "566b8aefaab9b97382699f0ba5c590fcf452bc6882d8a5b07f7ea20482ec6a9d"
+  },
+  {
+    "name": "magma_orb.webp",
+    "bytes": 4444,
+    "sha256": "5784f2fa833825bb0f1c76cdec6293f1a747700f5cb1796ab95fff4c8f6d7151"
+  },
+  {
+    "name": "magma_wave.webp",
+    "bytes": 1594,
+    "sha256": "3e1daf5083c75411d3e819f3bade781d2e399a5393ed4453504ed6b77fd2ce93"
+  },
+  {
+    "name": "sky_gale_attack.webp",
+    "bytes": 8024,
+    "sha256": "3903ee4f2d647125291f985d6c121033dfc95311db144c8b993f430075e3cd1c"
+  },
+  {
+    "name": "sky_gale_drift.webp",
+    "bytes": 5976,
+    "sha256": "c95b5a414a36a3101bf616acd789399eb77cae2c8d3278516f8e93c375a6ed9d"
+  },
+  {
+    "name": "sky_gale_idle.webp",
+    "bytes": 4538,
+    "sha256": "a254cb1b5d287e4319cfe734d29747753bebbf07229b2ed56248cde18711abbe"
+  },
+  {
+    "name": "sky_gale_roll.webp",
+    "bytes": 31404,
+    "sha256": "551464f500f0121c2b2334458bca032890ec168e5d4969b1c9e018faf41972f7"
+  },
+  {
+    "name": "sky_gale_somer.webp",
+    "bytes": 16400,
+    "sha256": "bb6156dda4b5d5d56ff60e7ad3793a9f8692b6826b9fa86b451335cd17d8cd55"
+  },
+  {
+    "name": "sky_muzzle.webp",
+    "bytes": 2576,
+    "sha256": "cd4f7db6ff26879340a5f87093641290859975ed67b6489c499bca5ec017cb51"
+  },
+  {
+    "name": "sky_needle.webp",
+    "bytes": 1622,
+    "sha256": "19bf12e264292496c56f6ccaef740ba603ce91b0b428b1d2e9b2e99f091be8a5"
+  },
+  {
+    "name": "sky_orb.webp",
+    "bytes": 4144,
+    "sha256": "31c50ce484ceb5a7f1fb88ffb150e379bcf61bd6f2fe071458274d55357a14ee"
+  },
+  {
+    "name": "sky_stratus_attack.webp",
+    "bytes": 5928,
+    "sha256": "b40a64303fd85ee9cb863c7030b9b4cd95206ed10a7aa17efc9a9498823c42af"
+  },
+  {
+    "name": "sky_stratus_drift.webp",
+    "bytes": 4598,
+    "sha256": "f8eaf6152f9ea78b1028499b75bd44b7660fccc8aebf2a4400c82d1abb71cd47"
+  },
+  {
+    "name": "sky_stratus_idle.webp",
+    "bytes": 5214,
+    "sha256": "7af21cfaf50b6dde28c2a5757ddc4240412c02aced224ed29413d7c93c35d8c0"
+  },
+  {
+    "name": "sky_stratus_roll.webp",
+    "bytes": 11218,
+    "sha256": "289adfd7b8e81e8bb3bdf19664927b3dbb8f5d93190a797d284f5e662a1ba1c2"
+  },
+  {
+    "name": "sky_stratus_somer.webp",
+    "bytes": 16316,
+    "sha256": "53addc9304298cb70f4f8e930879acbe6227f937233038089552741459703e68"
+  },
+  {
+    "name": "sky_wave.webp",
+    "bytes": 2036,
+    "sha256": "a4a0efd5d8ce15ef1d06b114215b71e19ffe492d52a1c73f18c13d375a61e1b4"
+  },
+  {
+    "name": "sky_zephyr_attack.webp",
+    "bytes": 7318,
+    "sha256": "9575dd264dd1796ece160714f7693fe07ab7332959e9bc247a592f3b3cf2ad4d"
+  },
+  {
+    "name": "sky_zephyr_drift.webp",
+    "bytes": 5398,
+    "sha256": "de4e732a0e7bcd2389c47f8184e949fc1ef5a172bcaed6ea2c8e77113dbe41fe"
+  },
+  {
+    "name": "sky_zephyr_idle.webp",
+    "bytes": 3058,
+    "sha256": "38e82a7bfb484985431fc409bde069d7d688172ff0331edbe4d7dea5e133d616"
+  },
+  {
+    "name": "sky_zephyr_roll.webp",
+    "bytes": 22442,
+    "sha256": "54a3d0085654cf53b5b462f82789ff8a3dfd7300494ea53b2d5df193afad2d04"
+  },
+  {
+    "name": "sky_zephyr_somer.webp",
+    "bytes": 11970,
+    "sha256": "bae3f94d85928d36496547400b6d85b625e386ac87705065774ef394303e5afc"
+  },
+  {
+    "name": "water_leviathan_attack.webp",
+    "bytes": 11364,
+    "sha256": "9d804ba3b8f0df06ace9d6c240b81a82db056cd656d2e72ebfd9e8dd94b63ea8"
+  },
+  {
+    "name": "water_leviathan_drift.webp",
+    "bytes": 8294,
+    "sha256": "aa47be79bf8682efc0e0565ab3cc08acbc85fd90d02389eedd1ed51dce96d01b"
+  },
+  {
+    "name": "water_leviathan_idle.webp",
+    "bytes": 4514,
+    "sha256": "5cebbce12fe750dfae5b3ff58b02fc144b97d7d9c1d3e52bb9d5e1d97a48ed53"
+  },
+  {
+    "name": "water_leviathan_roll.webp",
+    "bytes": 16188,
+    "sha256": "dfd75792c3f69cc46350b1379dc76e19d0edc8ef425eedab873d13a07a856cbc"
+  },
+  {
+    "name": "water_leviathan_somer.webp",
+    "bytes": 16420,
+    "sha256": "b81a27ca3c9b42f2ee42267c18f4a0c063c001eac43ab4ebf646e1b7e44eee66"
+  },
+  {
+    "name": "water_manta_attack.webp",
+    "bytes": 7352,
+    "sha256": "83cfd6bebee200110baa6de209c00634eb9a55dd15d3a6e275d7453dbdd9708a"
+  },
+  {
+    "name": "water_manta_drift.webp",
+    "bytes": 8784,
+    "sha256": "f24a3131c816aaaddabf52277e3820b229ce13c945e51bc61cb69e384a352a00"
+  },
+  {
+    "name": "water_manta_idle.webp",
+    "bytes": 5854,
+    "sha256": "4c2de8edd60dbc2c4c6a5a65c772e3eb11b1d176beddf1dfa471c293a90556b6"
+  },
+  {
+    "name": "water_manta_roll.webp",
+    "bytes": 15872,
+    "sha256": "573125e13c1ef7f3c466fe96b7dda618db47ce1f841513531ec3de0f632d6bbc"
+  },
+  {
+    "name": "water_manta_somer.webp",
+    "bytes": 17860,
+    "sha256": "ad5593561842237c822679a02e66986a7346ccd241e3e92a411ccd2911b891c9"
+  },
+  {
+    "name": "water_muzzle.webp",
+    "bytes": 1532,
+    "sha256": "dee278b0462b10c8c08b9a999c681f0142865aea3033fc656b208f7ec7ac6cb4"
+  },
+  {
+    "name": "water_needle.webp",
+    "bytes": 1160,
+    "sha256": "1124fc9bd2fe3a1a93e93852935bbd3fef52e49b9af5039e5076a8f317a8b619"
+  },
+  {
+    "name": "water_orb.webp",
+    "bytes": 5752,
+    "sha256": "2339486e3833860a24f35c6639999ab169e6666056ba17619318f963da747692"
+  },
+  {
+    "name": "water_ripple_attack.webp",
+    "bytes": 6400,
+    "sha256": "b4f2ca5c246c0d5ac4a5ca85a86b3b61082248a84368373c3c72054724d758a1"
+  },
+  {
+    "name": "water_ripple_drift.webp",
+    "bytes": 7486,
+    "sha256": "b3a09a6b0dea76dc2c901da27ae05e094d57e90be6661b3a5e718546d247e158"
+  },
+  {
+    "name": "water_ripple_idle.webp",
+    "bytes": 4248,
+    "sha256": "22c9266e3e70592570c0aaece9f82b4d23065e9977d004cead7605c358a6f22d"
+  },
+  {
+    "name": "water_ripple_roll.webp",
+    "bytes": 11172,
+    "sha256": "ff7d4ef77dba804cb775a825ea190f65bc73c91c7393aa7f5fd2ab8b76c70372"
+  },
+  {
+    "name": "water_ripple_somer.webp",
+    "bytes": 14536,
+    "sha256": "ff174261729424f0fdcae9cf2454610ddc03ecfa510eb3ec00aa753b5012d1a3"
+  },
+  {
+    "name": "water_undertow_attack.webp",
+    "bytes": 8582,
+    "sha256": "1ef1f28075854d2282f0517ee1c7b15ab298899bfa4c073f86c52a793b1c0961"
+  },
+  {
+    "name": "water_undertow_drift.webp",
+    "bytes": 6656,
+    "sha256": "5d8c5bccc3af4043248fcc2b49811260b3454829dcd5a19b78efca0dd05c528b"
+  },
+  {
+    "name": "water_undertow_idle.webp",
+    "bytes": 5882,
+    "sha256": "63d23b324fa5e293e75d07675dc17bbec4daba6f57a10818ca75fe5fee3edf37"
+  },
+  {
+    "name": "water_undertow_roll.webp",
+    "bytes": 11628,
+    "sha256": "789bf5854352cacab7d304843a4f05167bea9aca4549a10a98a7ef299855ab37"
+  },
+  {
+    "name": "water_undertow_somer.webp",
+    "bytes": 14068,
+    "sha256": "2c0ba4bfaabde6ac5d5d1db24f12e7e3321dfb4f3c1db78ee770de695086abc9"
+  },
+  {
+    "name": "water_wave.webp",
+    "bytes": 928,
+    "sha256": "76b173204fd0c1c7dcf62a1a1f6fa32e83f8e150ec7dc6e7bba718513d41954f"
+  }
+]

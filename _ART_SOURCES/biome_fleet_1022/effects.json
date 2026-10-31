@@ -1,0 +1,110 @@
+[
+  {
+    "id": "magma_orb",
+    "theme": "magma",
+    "form": "orb",
+    "stage": 2,
+    "color": "Molten orange/red and white-hot yellow centre, dark obsidian outlining, volcanic magma",
+    "ref": "upload:32e37288-49f4-4351-b31e-daaf7e1dbee0",
+    "description": "Round projectile energy core, spinning inner swirl and a readable spherical rim. Compact single orb centered at(32,32), diameter28, no long tail."
+  },
+  {
+    "id": "magma_needle",
+    "theme": "magma",
+    "form": "needle",
+    "stage": 2,
+    "color": "Molten orange/red and white-hot yellow centre, dark obsidian outlining, volcanic magma",
+    "ref": "upload:32e37288-49f4-4351-b31e-daaf7e1dbee0",
+    "description": "Long narrow projectile points straight DOWN, core centered(32,32), shaft width10 and length32, compact trailing wisps extend UP. A single powerful pressure lance, not a jet or ship."
+  },
+  {
+    "id": "magma_wave",
+    "theme": "magma",
+    "form": "wave",
+    "stage": 2,
+    "color": "Molten orange/red and white-hot yellow centre, dark obsidian outlining, volcanic magma",
+    "ref": "upload:32e37288-49f4-4351-b31e-daaf7e1dbee0",
+    "description": "Wide crescent shock-wave projectile, horizontal cutting arc curves concave UP and travels DOWN. White leading rim at lower edge, maximum width40, height18; centred(32,32), transparent rest. No ring or complete circle."
+  },
+  {
+    "id": "magma_muzzle",
+    "theme": "magma",
+    "form": "muzzle",
+    "stage": 2,
+    "color": "Molten orange/red and white-hot yellow centre, dark obsidian outlining, volcanic magma",
+    "ref": "upload:32e37288-49f4-4351-b31e-daaf7e1dbee0",
+    "description": "Single compact muzzle release flash, launch origin at centre(32,32), tiny trailing flare points DOWN, radius18 maximum. Crisp explosive compressor/plasma star with a few short outward streaks. No gun, ship, projectile or debris object."
+  },
+  {
+    "id": "sky_orb",
+    "theme": "sky",
+    "form": "orb",
+    "stage": 6,
+    "color": "TEAL, WHITE and cool GRAY only; compressed air and wind technology, NO electric lightning, NO blue/red/yellow",
+    "ref": "upload:3b4706a5-a56d-40bf-9ade-876e85a7f5c5",
+    "description": "Round projectile energy core, spinning inner swirl and a readable spherical rim. Compact single orb centered at(32,32), diameter28, no long tail."
+  },
+  {
+    "id": "sky_needle",
+    "theme": "sky",
+    "form": "needle",
+    "stage": 6,
+    "color": "TEAL, WHITE and cool GRAY only; compressed air and wind technology, NO electric lightning, NO blue/red/yellow",
+    "ref": "upload:3b4706a5-a56d-40bf-9ade-876e85a7f5c5",
+    "description": "Long narrow projectile points straight DOWN, core centered(32,32), shaft width10 and length32, compact trailing wisps extend UP. A single powerful pressure lance, not a jet or ship."
+  },
+  {
+    "id": "sky_wave",
+    "theme": "sky",
+    "form": "wave",
+    "stage": 6,
+    "color": "TEAL, WHITE and cool GRAY only; compressed air and wind technology, NO electric lightning, NO blue/red/yellow",
+    "ref": "upload:3b4706a5-a56d-40bf-9ade-876e85a7f5c5",
+    "description": "Wide crescent shock-wave projectile, horizontal cutting arc curves concave UP and travels DOWN. White leading rim at lower edge, maximum width40, height18; centred(32,32), transparent rest. No ring or complete circle."
+  },
+  {
+    "id": "sky_muzzle",
+    "theme": "sky",
+    "form": "muzzle",
+    "stage": 6,
+    "color": "TEAL, WHITE and cool GRAY only; compressed air and wind technology, NO electric lightning, NO blue/red/yellow",
+    "ref": "upload:3b4706a5-a56d-40bf-9ade-876e85a7f5c5",
+    "description": "Single compact muzzle release flash, launch origin at centre(32,32), tiny trailing flare points DOWN, radius18 maximum. Crisp explosive compressor/plasma star with a few short outward streaks. No gun, ship, projectile or debris object."
+  },
+  {
+    "id": "water_orb",
+    "theme": "water",
+    "form": "orb",
+    "stage": 9,
+    "color": "Cyan, aqua, turquoise, white and deep navy outlines; water plasma / hydro-pressure technology operating in space, no purple/red/fire",
+    "ref": "upload:48c7446c-f85f-4333-a452-740ee646a821",
+    "description": "Round projectile energy core, spinning inner swirl and a readable spherical rim. Compact single orb centered at(32,32), diameter28, no long tail."
+  },
+  {
+    "id": "water_needle",
+    "theme": "water",
+    "form": "needle",
+    "stage": 9,
+    "color": "Cyan, aqua, turquoise, white and deep navy outlines; water plasma / hydro-pressure technology operating in space, no purple/red/fire",
+    "ref": "upload:48c7446c-f85f-4333-a452-740ee646a821",
+    "description": "Long narrow projectile points straight DOWN, core centered(32,32), shaft width10 and length32, compact trailing wisps extend UP. A single powerful pressure lance, not a jet or ship."
+  },
+  {
+    "id": "water_wave",
+    "theme": "water",
+    "form": "wave",
+    "stage": 9,
+    "color": "Cyan, aqua, turquoise, white and deep navy outlines; water plasma / hydro-pressure technology operating in space, no purple/red/fire",
+    "ref": "upload:48c7446c-f85f-4333-a452-740ee646a821",
+    "description": "Wide crescent shock-wave projectile, horizontal cutting arc curves concave UP and travels DOWN. White leading rim at lower edge, maximum width40, height18; centred(32,32), transparent rest. No ring or complete circle."
+  },
+  {
+    "id": "water_muzzle",
+    "theme": "water",
+    "form": "muzzle",
+    "stage": 9,
+    "color": "Cyan, aqua, turquoise, white and deep navy outlines; water plasma / hydro-pressure technology operating in space, no purple/red/fire",
+    "ref": "upload:48c7446c-f85f-4333-a452-740ee646a821",
+    "description": "Single compact muzzle release flash, launch origin at centre(32,32), tiny trailing flare points DOWN, radius18 maximum. Crisp explosive compressor/plasma star with a few short outward streaks. No gun, ship, projectile or debris object."
+  }
+]

@@ -1,0 +1,4382 @@
+[
+  {
+    "model": "magma_dart",
+    "bank": "idle",
+    "frame": 0,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "idle",
+    "frame": 1,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "idle",
+    "frame": 2,
+    "bounds": [
+      15,
+      31,
+      116,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "idle",
+    "frame": 3,
+    "bounds": [
+      15,
+      31,
+      116,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "idle",
+    "frame": 4,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "attack",
+    "frame": 0,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "attack",
+    "frame": 1,
+    "bounds": [
+      16,
+      30,
+      115,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "attack",
+    "frame": 2,
+    "bounds": [
+      20,
+      30,
+      111,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "attack",
+    "frame": 3,
+    "bounds": [
+      23,
+      30,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "attack",
+    "frame": 4,
+    "bounds": [
+      24,
+      30,
+      105,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "attack",
+    "frame": 5,
+    "bounds": [
+      23,
+      30,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "attack",
+    "frame": 6,
+    "bounds": [
+      20,
+      30,
+      111,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "attack",
+    "frame": 7,
+    "bounds": [
+      18,
+      30,
+      113,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "attack",
+    "frame": 8,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "drift",
+    "frame": 0,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "drift",
+    "frame": 1,
+    "bounds": [
+      14,
+      27,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "drift",
+    "frame": 2,
+    "bounds": [
+      14,
+      27,
+      115,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "drift",
+    "frame": 3,
+    "bounds": [
+      14,
+      27,
+      115,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "drift",
+    "frame": 4,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "roll",
+    "frame": 0,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "roll",
+    "frame": 1,
+    "bounds": [
+      15,
+      28,
+      114,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "roll",
+    "frame": 2,
+    "bounds": [
+      18,
+      24,
+      108,
+      108
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "roll",
+    "frame": 3,
+    "bounds": [
+      29,
+      20,
+      90,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "roll",
+    "frame": 4,
+    "bounds": [
+      51,
+      19,
+      76,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "roll",
+    "frame": 5,
+    "bounds": [
+      37,
+      19,
+      89,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "roll",
+    "frame": 6,
+    "bounds": [
+      12,
+      27,
+      118,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "roll",
+    "frame": 7,
+    "bounds": [
+      13,
+      29,
+      118,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "roll",
+    "frame": 8,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 0,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 1,
+    "bounds": [
+      19,
+      33,
+      112,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 2,
+    "bounds": [
+      25,
+      36,
+      106,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 3,
+    "bounds": [
+      31,
+      39,
+      100,
+      98
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 4,
+    "bounds": [
+      38,
+      41,
+      92,
+      86
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 5,
+    "bounds": [
+      38,
+      37,
+      91,
+      92
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 6,
+    "bounds": [
+      34,
+      25,
+      95,
+      95
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 7,
+    "bounds": [
+      26,
+      14,
+      103,
+      96
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 8,
+    "bounds": [
+      17,
+      13,
+      111,
+      98
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 9,
+    "bounds": [
+      14,
+      15,
+      115,
+      90
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 10,
+    "bounds": [
+      12,
+      22,
+      116,
+      97
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 11,
+    "bounds": [
+      12,
+      23,
+      118,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 12,
+    "bounds": [
+      12,
+      23,
+      118,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 13,
+    "bounds": [
+      13,
+      11,
+      118,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 14,
+    "bounds": [
+      14,
+      28,
+      117,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 15,
+    "bounds": [
+      15,
+      32,
+      116,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_dart",
+    "bank": "somer",
+    "frame": 16,
+    "bounds": [
+      15,
+      31,
+      116,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "idle",
+    "frame": 0,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "idle",
+    "frame": 1,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "idle",
+    "frame": 2,
+    "bounds": [
+      10,
+      14,
+      118,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "idle",
+    "frame": 3,
+    "bounds": [
+      10,
+      14,
+      118,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "idle",
+    "frame": 4,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "attack",
+    "frame": 0,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "attack",
+    "frame": 1,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "attack",
+    "frame": 2,
+    "bounds": [
+      10,
+      13,
+      118,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "attack",
+    "frame": 3,
+    "bounds": [
+      10,
+      13,
+      118,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "attack",
+    "frame": 4,
+    "bounds": [
+      10,
+      13,
+      118,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "attack",
+    "frame": 5,
+    "bounds": [
+      10,
+      13,
+      118,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "attack",
+    "frame": 6,
+    "bounds": [
+      10,
+      13,
+      118,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "attack",
+    "frame": 7,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "attack",
+    "frame": 8,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "drift",
+    "frame": 0,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "drift",
+    "frame": 1,
+    "bounds": [
+      11,
+      12,
+      117,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "drift",
+    "frame": 2,
+    "bounds": [
+      13,
+      11,
+      115,
+      120
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "drift",
+    "frame": 3,
+    "bounds": [
+      11,
+      12,
+      118,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "drift",
+    "frame": 4,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 0,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 1,
+    "bounds": [
+      10,
+      13,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 2,
+    "bounds": [
+      11,
+      11,
+      116,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 3,
+    "bounds": [
+      13,
+      11,
+      114,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 4,
+    "bounds": [
+      15,
+      11,
+      111,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 5,
+    "bounds": [
+      20,
+      11,
+      103,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 6,
+    "bounds": [
+      26,
+      11,
+      95,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 7,
+    "bounds": [
+      38,
+      11,
+      83,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 8,
+    "bounds": [
+      42,
+      12,
+      83,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 9,
+    "bounds": [
+      34,
+      12,
+      91,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 10,
+    "bounds": [
+      22,
+      12,
+      101,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 11,
+    "bounds": [
+      13,
+      11,
+      113,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 12,
+    "bounds": [
+      6,
+      11,
+      122,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 13,
+    "bounds": [
+      10,
+      12,
+      118,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 14,
+    "bounds": [
+      10,
+      13,
+      118,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 15,
+    "bounds": [
+      10,
+      14,
+      118,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "roll",
+    "frame": 16,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "somer",
+    "frame": 0,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "somer",
+    "frame": 1,
+    "bounds": [
+      10,
+      17,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "somer",
+    "frame": 2,
+    "bounds": [
+      13,
+      20,
+      115,
+      108
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "somer",
+    "frame": 3,
+    "bounds": [
+      23,
+      13,
+      104,
+      92
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "somer",
+    "frame": 4,
+    "bounds": [
+      32,
+      14,
+      95,
+      98
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "somer",
+    "frame": 5,
+    "bounds": [
+      24,
+      13,
+      103,
+      92
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "somer",
+    "frame": 6,
+    "bounds": [
+      14,
+      19,
+      113,
+      97
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "somer",
+    "frame": 7,
+    "bounds": [
+      14,
+      18,
+      114,
+      108
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "magma_forge",
+    "bank": "somer",
+    "frame": 8,
+    "bounds": [
+      10,
+      14,
+      118,
+      116
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "idle",
+    "frame": 0,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "idle",
+    "frame": 1,
+    "bounds": [
+      20,
+      15,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "idle",
+    "frame": 2,
+    "bounds": [
+      20,
+      15,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "idle",
+    "frame": 3,
+    "bounds": [
+      20,
+      15,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "idle",
+    "frame": 4,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "attack",
+    "frame": 0,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "attack",
+    "frame": 1,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "attack",
+    "frame": 2,
+    "bounds": [
+      19,
+      15,
+      109,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "attack",
+    "frame": 3,
+    "bounds": [
+      19,
+      16,
+      109,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "attack",
+    "frame": 4,
+    "bounds": [
+      19,
+      17,
+      109,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "attack",
+    "frame": 5,
+    "bounds": [
+      19,
+      17,
+      109,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "attack",
+    "frame": 6,
+    "bounds": [
+      19,
+      16,
+      109,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "attack",
+    "frame": 7,
+    "bounds": [
+      19,
+      15,
+      109,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "attack",
+    "frame": 8,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "drift",
+    "frame": 0,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "drift",
+    "frame": 1,
+    "bounds": [
+      20,
+      17,
+      108,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "drift",
+    "frame": 2,
+    "bounds": [
+      21,
+      21,
+      107,
+      102
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "drift",
+    "frame": 3,
+    "bounds": [
+      20,
+      19,
+      108,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "drift",
+    "frame": 4,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 0,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 1,
+    "bounds": [
+      20,
+      14,
+      107,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 2,
+    "bounds": [
+      21,
+      13,
+      105,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 3,
+    "bounds": [
+      23,
+      14,
+      99,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 4,
+    "bounds": [
+      29,
+      15,
+      90,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 5,
+    "bounds": [
+      35,
+      16,
+      80,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 6,
+    "bounds": [
+      44,
+      16,
+      80,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 7,
+    "bounds": [
+      49,
+      17,
+      79,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 8,
+    "bounds": [
+      42,
+      18,
+      79,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 9,
+    "bounds": [
+      34,
+      20,
+      89,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 10,
+    "bounds": [
+      27,
+      25,
+      98,
+      102
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 11,
+    "bounds": [
+      21,
+      35,
+      107,
+      88
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 12,
+    "bounds": [
+      20,
+      29,
+      108,
+      96
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 13,
+    "bounds": [
+      20,
+      22,
+      108,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 14,
+    "bounds": [
+      20,
+      18,
+      108,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 15,
+    "bounds": [
+      20,
+      15,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "roll",
+    "frame": 16,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "somer",
+    "frame": 0,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "somer",
+    "frame": 1,
+    "bounds": [
+      20,
+      16,
+      108,
+      108
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "somer",
+    "frame": 2,
+    "bounds": [
+      23,
+      19,
+      104,
+      99
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "somer",
+    "frame": 3,
+    "bounds": [
+      36,
+      19,
+      88,
+      96
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "somer",
+    "frame": 4,
+    "bounds": [
+      53,
+      19,
+      74,
+      96
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "somer",
+    "frame": 5,
+    "bounds": [
+      41,
+      19,
+      90,
+      95
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "somer",
+    "frame": 6,
+    "bounds": [
+      24,
+      18,
+      104,
+      99
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "somer",
+    "frame": 7,
+    "bounds": [
+      21,
+      17,
+      107,
+      107
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_zephyr",
+    "bank": "somer",
+    "frame": 8,
+    "bounds": [
+      20,
+      14,
+      108,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "idle",
+    "frame": 0,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "idle",
+    "frame": 1,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "idle",
+    "frame": 2,
+    "bounds": [
+      14,
+      18,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "idle",
+    "frame": 3,
+    "bounds": [
+      14,
+      18,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "idle",
+    "frame": 4,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "attack",
+    "frame": 0,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "attack",
+    "frame": 1,
+    "bounds": [
+      14,
+      18,
+      114,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "attack",
+    "frame": 2,
+    "bounds": [
+      14,
+      18,
+      114,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "attack",
+    "frame": 3,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "attack",
+    "frame": 4,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "attack",
+    "frame": 5,
+    "bounds": [
+      14,
+      16,
+      114,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "attack",
+    "frame": 6,
+    "bounds": [
+      14,
+      16,
+      114,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "attack",
+    "frame": 7,
+    "bounds": [
+      14,
+      16,
+      114,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "attack",
+    "frame": 8,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "drift",
+    "frame": 0,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "drift",
+    "frame": 1,
+    "bounds": [
+      14,
+      15,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "drift",
+    "frame": 2,
+    "bounds": [
+      14,
+      14,
+      114,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "drift",
+    "frame": 3,
+    "bounds": [
+      14,
+      15,
+      114,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "drift",
+    "frame": 4,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 0,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 1,
+    "bounds": [
+      14,
+      17,
+      114,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 2,
+    "bounds": [
+      15,
+      18,
+      113,
+      108
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 3,
+    "bounds": [
+      19,
+      19,
+      109,
+      102
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 4,
+    "bounds": [
+      30,
+      22,
+      97,
+      93
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 5,
+    "bounds": [
+      34,
+      24,
+      94,
+      85
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 6,
+    "bounds": [
+      39,
+      26,
+      89,
+      85
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 7,
+    "bounds": [
+      41,
+      16,
+      87,
+      95
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 8,
+    "bounds": [
+      37,
+      15,
+      90,
+      99
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 9,
+    "bounds": [
+      35,
+      26,
+      92,
+      97
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 10,
+    "bounds": [
+      27,
+      23,
+      100,
+      90
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 11,
+    "bounds": [
+      14,
+      18,
+      113,
+      97
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 12,
+    "bounds": [
+      14,
+      16,
+      113,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 13,
+    "bounds": [
+      14,
+      15,
+      113,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 14,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 15,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "roll",
+    "frame": 16,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "somer",
+    "frame": 0,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "somer",
+    "frame": 1,
+    "bounds": [
+      14,
+      17,
+      114,
+      107
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "somer",
+    "frame": 2,
+    "bounds": [
+      14,
+      16,
+      114,
+      95
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "somer",
+    "frame": 3,
+    "bounds": [
+      15,
+      26,
+      113,
+      80
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "somer",
+    "frame": 4,
+    "bounds": [
+      24,
+      21,
+      104,
+      88
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "somer",
+    "frame": 5,
+    "bounds": [
+      17,
+      26,
+      111,
+      80
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "somer",
+    "frame": 6,
+    "bounds": [
+      14,
+      16,
+      114,
+      98
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "somer",
+    "frame": 7,
+    "bounds": [
+      14,
+      17,
+      114,
+      108
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_gale",
+    "bank": "somer",
+    "frame": 8,
+    "bounds": [
+      14,
+      17,
+      114,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "idle",
+    "frame": 0,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "idle",
+    "frame": 1,
+    "bounds": [
+      13,
+      17,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "idle",
+    "frame": 2,
+    "bounds": [
+      13,
+      17,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "idle",
+    "frame": 3,
+    "bounds": [
+      13,
+      17,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "idle",
+    "frame": 4,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "attack",
+    "frame": 0,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "attack",
+    "frame": 1,
+    "bounds": [
+      13,
+      16,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "attack",
+    "frame": 2,
+    "bounds": [
+      13,
+      16,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "attack",
+    "frame": 3,
+    "bounds": [
+      13,
+      16,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "attack",
+    "frame": 4,
+    "bounds": [
+      13,
+      16,
+      115,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "attack",
+    "frame": 5,
+    "bounds": [
+      13,
+      16,
+      115,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "attack",
+    "frame": 6,
+    "bounds": [
+      13,
+      16,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "attack",
+    "frame": 7,
+    "bounds": [
+      13,
+      16,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "attack",
+    "frame": 8,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "drift",
+    "frame": 0,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "drift",
+    "frame": 1,
+    "bounds": [
+      13,
+      15,
+      115,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "drift",
+    "frame": 2,
+    "bounds": [
+      13,
+      13,
+      115,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "drift",
+    "frame": 3,
+    "bounds": [
+      13,
+      15,
+      115,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "drift",
+    "frame": 4,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "roll",
+    "frame": 0,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "roll",
+    "frame": 1,
+    "bounds": [
+      16,
+      16,
+      112,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "roll",
+    "frame": 2,
+    "bounds": [
+      19,
+      14,
+      108,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "roll",
+    "frame": 3,
+    "bounds": [
+      27,
+      12,
+      100,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "roll",
+    "frame": 4,
+    "bounds": [
+      36,
+      12,
+      91,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "roll",
+    "frame": 5,
+    "bounds": [
+      29,
+      12,
+      98,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "roll",
+    "frame": 6,
+    "bounds": [
+      22,
+      14,
+      105,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "roll",
+    "frame": 7,
+    "bounds": [
+      16,
+      16,
+      112,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "roll",
+    "frame": 8,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "somer",
+    "frame": 0,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "somer",
+    "frame": 1,
+    "bounds": [
+      13,
+      17,
+      115,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "somer",
+    "frame": 2,
+    "bounds": [
+      16,
+      16,
+      112,
+      98
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "somer",
+    "frame": 3,
+    "bounds": [
+      27,
+      14,
+      97,
+      93
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "somer",
+    "frame": 4,
+    "bounds": [
+      48,
+      14,
+      75,
+      86
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "somer",
+    "frame": 5,
+    "bounds": [
+      43,
+      15,
+      86,
+      92
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "somer",
+    "frame": 6,
+    "bounds": [
+      16,
+      16,
+      110,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "somer",
+    "frame": 7,
+    "bounds": [
+      14,
+      18,
+      113,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "sky_stratus",
+    "bank": "somer",
+    "frame": 8,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "idle",
+    "frame": 0,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "idle",
+    "frame": 1,
+    "bounds": [
+      15,
+      18,
+      113,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "idle",
+    "frame": 2,
+    "bounds": [
+      15,
+      18,
+      113,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "idle",
+    "frame": 3,
+    "bounds": [
+      15,
+      18,
+      113,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "idle",
+    "frame": 4,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "attack",
+    "frame": 0,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "attack",
+    "frame": 1,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "attack",
+    "frame": 2,
+    "bounds": [
+      15,
+      17,
+      113,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "attack",
+    "frame": 3,
+    "bounds": [
+      15,
+      17,
+      113,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "attack",
+    "frame": 4,
+    "bounds": [
+      15,
+      17,
+      113,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "attack",
+    "frame": 5,
+    "bounds": [
+      15,
+      17,
+      113,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "attack",
+    "frame": 6,
+    "bounds": [
+      15,
+      17,
+      113,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "attack",
+    "frame": 7,
+    "bounds": [
+      15,
+      17,
+      113,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "attack",
+    "frame": 8,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "drift",
+    "frame": 0,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "drift",
+    "frame": 1,
+    "bounds": [
+      15,
+      16,
+      113,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "drift",
+    "frame": 2,
+    "bounds": [
+      20,
+      14,
+      108,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "drift",
+    "frame": 3,
+    "bounds": [
+      15,
+      15,
+      113,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "drift",
+    "frame": 4,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "roll",
+    "frame": 0,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "roll",
+    "frame": 1,
+    "bounds": [
+      15,
+      19,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "roll",
+    "frame": 2,
+    "bounds": [
+      15,
+      17,
+      113,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "roll",
+    "frame": 3,
+    "bounds": [
+      29,
+      16,
+      99,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "roll",
+    "frame": 4,
+    "bounds": [
+      29,
+      14,
+      99,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "roll",
+    "frame": 5,
+    "bounds": [
+      29,
+      15,
+      99,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "roll",
+    "frame": 6,
+    "bounds": [
+      29,
+      16,
+      99,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "roll",
+    "frame": 7,
+    "bounds": [
+      14,
+      19,
+      114,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "roll",
+    "frame": 8,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "somer",
+    "frame": 0,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "somer",
+    "frame": 1,
+    "bounds": [
+      15,
+      18,
+      113,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "somer",
+    "frame": 2,
+    "bounds": [
+      15,
+      21,
+      113,
+      102
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "somer",
+    "frame": 3,
+    "bounds": [
+      20,
+      32,
+      108,
+      88
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "somer",
+    "frame": 4,
+    "bounds": [
+      20,
+      13,
+      105,
+      101
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "somer",
+    "frame": 5,
+    "bounds": [
+      20,
+      16,
+      108,
+      100
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "somer",
+    "frame": 6,
+    "bounds": [
+      15,
+      20,
+      113,
+      98
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "somer",
+    "frame": 7,
+    "bounds": [
+      15,
+      18,
+      113,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_ripple",
+    "bank": "somer",
+    "frame": 8,
+    "bounds": [
+      15,
+      18,
+      113,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "idle",
+    "frame": 0,
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "idle",
+    "frame": 1,
+    "bounds": [
+      16,
+      26,
+      112,
+      104
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "idle",
+    "frame": 2,
+    "bounds": [
+      16,
+      26,
+      112,
+      103
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "idle",
+    "frame": 3,
+    "bounds": [
+      16,
+      26,
+      112,
+      104
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "idle",
+    "frame": 4,
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "attack",
+    "frame": 0,
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "attack",
+    "frame": 1,
+    "bounds": [
+      16,
+      25,
+      112,
+      104
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "attack",
+    "frame": 2,
+    "bounds": [
+      16,
+      25,
+      112,
+      103
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "attack",
+    "frame": 3,
+    "bounds": [
+      16,
+      25,
+      112,
+      102
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "attack",
+    "frame": 4,
+    "bounds": [
+      16,
+      25,
+      112,
+      101
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "attack",
+    "frame": 5,
+    "bounds": [
+      16,
+      25,
+      112,
+      102
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "attack",
+    "frame": 6,
+    "bounds": [
+      16,
+      25,
+      112,
+      103
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "attack",
+    "frame": 7,
+    "bounds": [
+      16,
+      25,
+      112,
+      104
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "attack",
+    "frame": 8,
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "drift",
+    "frame": 0,
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "drift",
+    "frame": 1,
+    "bounds": [
+      16,
+      23,
+      112,
+      103
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "drift",
+    "frame": 2,
+    "bounds": [
+      16,
+      22,
+      112,
+      102
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "drift",
+    "frame": 3,
+    "bounds": [
+      16,
+      24,
+      112,
+      104
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "drift",
+    "frame": 4,
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "roll",
+    "frame": 0,
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "roll",
+    "frame": 1,
+    "bounds": [
+      16,
+      25,
+      112,
+      104
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "roll",
+    "frame": 2,
+    "bounds": [
+      16,
+      24,
+      112,
+      103
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "roll",
+    "frame": 3,
+    "bounds": [
+      19,
+      25,
+      109,
+      101
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "roll",
+    "frame": 4,
+    "bounds": [
+      22,
+      25,
+      106,
+      104
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "roll",
+    "frame": 5,
+    "bounds": [
+      18,
+      25,
+      109,
+      101
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "roll",
+    "frame": 6,
+    "bounds": [
+      17,
+      26,
+      111,
+      103
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "roll",
+    "frame": 7,
+    "bounds": [
+      16,
+      25,
+      112,
+      104
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "roll",
+    "frame": 8,
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "somer",
+    "frame": 0,
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "somer",
+    "frame": 1,
+    "bounds": [
+      16,
+      25,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "somer",
+    "frame": 2,
+    "bounds": [
+      16,
+      25,
+      112,
+      98
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "somer",
+    "frame": 3,
+    "bounds": [
+      16,
+      28,
+      112,
+      90
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "somer",
+    "frame": 4,
+    "bounds": [
+      18,
+      22,
+      110,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "somer",
+    "frame": 5,
+    "bounds": [
+      16,
+      24,
+      112,
+      92
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "somer",
+    "frame": 6,
+    "bounds": [
+      16,
+      24,
+      112,
+      101
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "somer",
+    "frame": 7,
+    "bounds": [
+      16,
+      23,
+      112,
+      104
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_manta",
+    "bank": "somer",
+    "frame": 8,
+    "bounds": [
+      16,
+      26,
+      112,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "idle",
+    "frame": 0,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "idle",
+    "frame": 1,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "idle",
+    "frame": 2,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "idle",
+    "frame": 3,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "idle",
+    "frame": 4,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "attack",
+    "frame": 0,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "attack",
+    "frame": 1,
+    "bounds": [
+      13,
+      14,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "attack",
+    "frame": 2,
+    "bounds": [
+      13,
+      15,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "attack",
+    "frame": 3,
+    "bounds": [
+      13,
+      16,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "attack",
+    "frame": 4,
+    "bounds": [
+      13,
+      12,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "attack",
+    "frame": 5,
+    "bounds": [
+      13,
+      17,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "attack",
+    "frame": 6,
+    "bounds": [
+      13,
+      15,
+      115,
+      115
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "attack",
+    "frame": 7,
+    "bounds": [
+      13,
+      14,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "attack",
+    "frame": 8,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "drift",
+    "frame": 0,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "drift",
+    "frame": 1,
+    "bounds": [
+      13,
+      14,
+      115,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "drift",
+    "frame": 2,
+    "bounds": [
+      17,
+      16,
+      111,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "drift",
+    "frame": 3,
+    "bounds": [
+      13,
+      15,
+      115,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "drift",
+    "frame": 4,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "roll",
+    "frame": 0,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "roll",
+    "frame": 1,
+    "bounds": [
+      14,
+      15,
+      114,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "roll",
+    "frame": 2,
+    "bounds": [
+      18,
+      16,
+      109,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "roll",
+    "frame": 3,
+    "bounds": [
+      26,
+      14,
+      102,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "roll",
+    "frame": 4,
+    "bounds": [
+      29,
+      11,
+      99,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "roll",
+    "frame": 5,
+    "bounds": [
+      27,
+      13,
+      101,
+      108
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "roll",
+    "frame": 6,
+    "bounds": [
+      18,
+      17,
+      109,
+      111
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "roll",
+    "frame": 7,
+    "bounds": [
+      14,
+      15,
+      114,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "roll",
+    "frame": 8,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "somer",
+    "frame": 0,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "somer",
+    "frame": 1,
+    "bounds": [
+      13,
+      15,
+      115,
+      113
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "somer",
+    "frame": 2,
+    "bounds": [
+      16,
+      16,
+      112,
+      107
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "somer",
+    "frame": 3,
+    "bounds": [
+      21,
+      19,
+      106,
+      97
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "somer",
+    "frame": 4,
+    "bounds": [
+      20,
+      19,
+      107,
+      97
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "somer",
+    "frame": 5,
+    "bounds": [
+      23,
+      18,
+      104,
+      100
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "somer",
+    "frame": 6,
+    "bounds": [
+      15,
+      14,
+      113,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "somer",
+    "frame": 7,
+    "bounds": [
+      13,
+      15,
+      115,
+      112
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_leviathan",
+    "bank": "somer",
+    "frame": 8,
+    "bounds": [
+      13,
+      13,
+      115,
+      114
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "idle",
+    "frame": 0,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "idle",
+    "frame": 1,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "idle",
+    "frame": 2,
+    "bounds": [
+      22,
+      18,
+      106,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "idle",
+    "frame": 3,
+    "bounds": [
+      22,
+      18,
+      106,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "idle",
+    "frame": 4,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "attack",
+    "frame": 0,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "attack",
+    "frame": 1,
+    "bounds": [
+      23,
+      18,
+      105,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "attack",
+    "frame": 2,
+    "bounds": [
+      23,
+      17,
+      105,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "attack",
+    "frame": 3,
+    "bounds": [
+      22,
+      17,
+      106,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "attack",
+    "frame": 4,
+    "bounds": [
+      21,
+      17,
+      107,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "attack",
+    "frame": 5,
+    "bounds": [
+      22,
+      17,
+      106,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "attack",
+    "frame": 6,
+    "bounds": [
+      23,
+      17,
+      105,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "attack",
+    "frame": 7,
+    "bounds": [
+      24,
+      18,
+      104,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "attack",
+    "frame": 8,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "drift",
+    "frame": 0,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "drift",
+    "frame": 1,
+    "bounds": [
+      21,
+      18,
+      107,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "drift",
+    "frame": 2,
+    "bounds": [
+      21,
+      17,
+      107,
+      106
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "drift",
+    "frame": 3,
+    "bounds": [
+      21,
+      17,
+      107,
+      107
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "drift",
+    "frame": 4,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "roll",
+    "frame": 0,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "roll",
+    "frame": 1,
+    "bounds": [
+      22,
+      21,
+      106,
+      107
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "roll",
+    "frame": 2,
+    "bounds": [
+      27,
+      24,
+      101,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "roll",
+    "frame": 3,
+    "bounds": [
+      28,
+      28,
+      100,
+      98
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "roll",
+    "frame": 4,
+    "bounds": [
+      19,
+      31,
+      109,
+      91
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "roll",
+    "frame": 5,
+    "bounds": [
+      19,
+      29,
+      109,
+      95
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "roll",
+    "frame": 6,
+    "bounds": [
+      27,
+      24,
+      101,
+      102
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "roll",
+    "frame": 7,
+    "bounds": [
+      19,
+      20,
+      109,
+      107
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "roll",
+    "frame": 8,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "somer",
+    "frame": 0,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "somer",
+    "frame": 1,
+    "bounds": [
+      22,
+      18,
+      106,
+      109
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "somer",
+    "frame": 2,
+    "bounds": [
+      22,
+      21,
+      106,
+      108
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "somer",
+    "frame": 3,
+    "bounds": [
+      21,
+      25,
+      107,
+      101
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "somer",
+    "frame": 4,
+    "bounds": [
+      22,
+      31,
+      105,
+      97
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "somer",
+    "frame": 5,
+    "bounds": [
+      21,
+      31,
+      107,
+      97
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "somer",
+    "frame": 6,
+    "bounds": [
+      22,
+      23,
+      106,
+      105
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "somer",
+    "frame": 7,
+    "bounds": [
+      22,
+      21,
+      106,
+      108
+    ],
+    "modulesExact": true
+  },
+  {
+    "model": "water_undertow",
+    "bank": "somer",
+    "frame": 8,
+    "bounds": [
+      22,
+      18,
+      106,
+      110
+    ],
+    "modulesExact": true
+  }
+]

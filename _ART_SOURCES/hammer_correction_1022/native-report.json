@@ -1,0 +1,645 @@
+{
+  "checks": [
+    {
+      "name": "Both straight-down impacts land on the body centreline",
+      "ok": true,
+      "data": {
+        "vertical": true,
+        "blue": {
+          "key": "ha21_h22_blue_slam_13",
+          "sheet": "h22_blue_slam",
+          "cell": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "w": 256,
+          "h": 256,
+          "pivot": [
+            128,
+            112
+          ],
+          "bounds": [
+            70,
+            77,
+            185,
+            221
+          ],
+          "tip": [
+            128,
+            217
+          ],
+          "_h22": true,
+          "frame": 13,
+          "bank": "blue_slam",
+          "strikeAxisX": 128
+        },
+        "corrupt": {
+          "key": "ha21_h22_corrupt_slam_9",
+          "sheet": "h22_corrupt_slam",
+          "cell": [
+            1280,
+            320,
+            320,
+            320
+          ],
+          "w": 320,
+          "h": 320,
+          "pivot": [
+            160,
+            144
+          ],
+          "bounds": [
+            72,
+            61,
+            257,
+            281
+          ],
+          "tip": [
+            166,
+            269
+          ],
+          "_h22": true,
+          "frame": 9,
+          "bank": "corrupt_slam",
+          "strikeAxisX": 165
+        }
+      }
+    },
+    {
+      "name": "Stage5 storm_warn uses distinct corrected physical poses",
+      "ok": true,
+      "data": {
+        "frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "tips": [
+          [
+            84,
+            175
+          ],
+          [
+            84,
+            175
+          ],
+          [
+            82,
+            167
+          ],
+          [
+            78,
+            118
+          ],
+          [
+            101,
+            70
+          ],
+          [
+            101,
+            70
+          ],
+          [
+            115,
+            60
+          ],
+          [
+            110,
+            49
+          ],
+          [
+            110,
+            49
+          ],
+          [
+            110,
+            49
+          ],
+          [
+            110,
+            49
+          ],
+          [
+            110,
+            49
+          ],
+          [
+            128,
+            89
+          ]
+        ],
+        "kind": "blue_slam"
+      }
+    },
+    {
+      "name": "Stage5 storm_slam uses distinct corrected physical poses",
+      "ok": true,
+      "data": {
+        "frames": [
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "tips": [
+          [
+            128,
+            89
+          ],
+          [
+            128,
+            89
+          ],
+          [
+            128,
+            89
+          ],
+          [
+            128,
+            94
+          ],
+          [
+            128,
+            94
+          ],
+          [
+            128,
+            94
+          ],
+          [
+            128,
+            128
+          ],
+          [
+            128,
+            128
+          ],
+          [
+            128,
+            128
+          ],
+          [
+            128,
+            203
+          ],
+          [
+            128,
+            203
+          ],
+          [
+            128,
+            203
+          ],
+          [
+            128,
+            217
+          ]
+        ],
+        "kind": "blue_slam"
+      }
+    },
+    {
+      "name": "Stage5 storm_split uses distinct corrected physical poses",
+      "ok": true,
+      "data": {
+        "frames": [
+          14,
+          15,
+          16
+        ],
+        "tips": [
+          [
+            128,
+            180
+          ],
+          [
+            128,
+            180
+          ],
+          [
+            128,
+            180
+          ],
+          [
+            128,
+            180
+          ],
+          [
+            128,
+            180
+          ],
+          [
+            128,
+            180
+          ],
+          [
+            95,
+            158
+          ],
+          [
+            95,
+            158
+          ],
+          [
+            95,
+            158
+          ],
+          [
+            95,
+            158
+          ],
+          [
+            95,
+            158
+          ],
+          [
+            95,
+            158
+          ],
+          [
+            84,
+            174
+          ]
+        ],
+        "kind": "blue_slam"
+      }
+    },
+    {
+      "name": "Stage5 corrected swing visibly flashes and expires",
+      "ok": true,
+      "data": {
+        "d": 22820,
+        "w": 799,
+        "expired": true
+      }
+    },
+    {
+      "name": "Stage5 physical hammer hits its exclusive chaingun crate",
+      "ok": true,
+      "data": {
+        "hit": true,
+        "obtained": true,
+        "error": 0
+      }
+    },
+    {
+      "name": "Stage5 sideways counter plays the new full physical arc",
+      "ok": true,
+      "data": {
+        "done": true,
+        "keys": [
+          "ha21_h22_blue_counter_right_0",
+          "ha21_h22_blue_counter_right_1",
+          "ha21_h22_blue_counter_right_2",
+          "ha21_h22_blue_counter_right_3",
+          "ha21_h22_blue_counter_right_4",
+          "ha21_h22_blue_counter_right_5",
+          "ha21_h22_blue_counter_right_6",
+          "ha21_h22_blue_counter_right_7",
+          "ha21_h22_blue_counter_right_8",
+          "ha21_h22_blue_counter_right_9",
+          "ha21_h22_blue_counter_right_10",
+          "ha21_h22_blue_counter_right_11",
+          "ha21_h22_blue_counter_right_12",
+          "ha21_h22_blue_counter_right_13",
+          "ha21_h22_blue_counter_right_14",
+          "ha21_h22_blue_counter_right_15",
+          "ha21_blue_idle_0"
+        ]
+      }
+    },
+    {
+      "name": "Stage8 skystrike uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_slam",
+        "key": "ha21_h22_corrupt_slam_6",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_slam"
+      }
+    },
+    {
+      "name": "Stage8 skystrike retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 24285,
+        "w": 897
+      }
+    },
+    {
+      "name": "Stage8 side uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_side",
+        "key": "ha21_h22_corrupt_side_4",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_side"
+      }
+    },
+    {
+      "name": "Stage8 side retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 39310,
+        "w": 1468
+      }
+    },
+    {
+      "name": "Stage8 throw uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_throw",
+        "key": "ha21_h22_corrupt_throw_10",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_throw"
+      }
+    },
+    {
+      "name": "Stage8 throw retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 30600,
+        "w": 1070
+      }
+    },
+    {
+      "name": "Stage8 ball uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_ball",
+        "key": "ha21_h22_corrupt_ball_8",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_ball"
+      }
+    },
+    {
+      "name": "Stage8 ball retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 6998,
+        "w": 382
+      }
+    },
+    {
+      "name": "Stage8 charge uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_charge",
+        "key": "ha21_h22_corrupt_charge_4",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_charge"
+      }
+    },
+    {
+      "name": "Stage8 charge retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 42225,
+        "w": 1243
+      }
+    },
+    {
+      "name": "Stage8 shield uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_shield",
+        "key": "ha21_h22_corrupt_shield_4",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_shield"
+      }
+    },
+    {
+      "name": "Stage8 shield retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 25884,
+        "w": 759
+      }
+    },
+    {
+      "name": "Stage8 gun uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_gun",
+        "key": "ha21_h22_corrupt_gun_1",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_gun"
+      }
+    },
+    {
+      "name": "Stage8 gun retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 39210,
+        "w": 1844
+      }
+    },
+    {
+      "name": "Stage8 break uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_break",
+        "key": "ha21_h22_corrupt_break_6",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_break"
+      }
+    },
+    {
+      "name": "Stage8 break retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 22398,
+        "w": 720
+      }
+    },
+    {
+      "name": "Stage8 luminaire uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_break",
+        "key": "ha21_h22_corrupt_break_8",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_break"
+      }
+    },
+    {
+      "name": "Stage8 luminaire retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 927,
+        "w": 54
+      }
+    },
+    {
+      "name": "Stage8 fire uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_fire",
+        "key": "ha21_h22_corrupt_fire_0",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_fire"
+      }
+    },
+    {
+      "name": "Stage8 fire retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 19304,
+        "w": 401
+      }
+    },
+    {
+      "name": "Stage8 punch uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_punch",
+        "key": "ha21_h22_corrupt_punch_2",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_punch"
+      }
+    },
+    {
+      "name": "Stage8 punch retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 22444,
+        "w": 510
+      }
+    },
+    {
+      "name": "Stage8 fists uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_fists",
+        "key": "ha21_h22_corrupt_fists_6",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_fists"
+      }
+    },
+    {
+      "name": "Stage8 fists retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 22615,
+        "w": 790
+      }
+    },
+    {
+      "name": "Stage8 dance uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_dance",
+        "key": "ha21_h22_corrupt_dance_1",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_dance"
+      }
+    },
+    {
+      "name": "Stage8 dance retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 25034,
+        "w": 645
+      }
+    },
+    {
+      "name": "Stage8 spin uses the clean re-authored actor",
+      "ok": true,
+      "data": {
+        "kind": "corrupt_spin",
+        "key": "ha21_h22_corrupt_spin_3",
+        "ours": true,
+        "w": 320,
+        "h": 320,
+        "bank": "corrupt_spin"
+      }
+    },
+    {
+      "name": "Stage8 spin retains visible hit flash",
+      "ok": true,
+      "data": {
+        "d": 18134,
+        "w": 467
+      }
+    },
+    {
+      "name": "normal corrupted slam meets its warned ground impact",
+      "ok": true,
+      "data": {
+        "done": true,
+        "error": 0,
+        "finite": true
+      }
+    },
+    {
+      "name": "hard corrupted slam meets its warned ground impact",
+      "ok": true,
+      "data": {
+        "done": true,
+        "error": 0,
+        "finite": true
+      }
+    },
+    {
+      "name": "furious corrupted slam meets its warned ground impact",
+      "ok": true,
+      "data": {
+        "done": true,
+        "error": 0,
+        "finite": true
+      }
+    },
+    {
+      "name": "Corrupted physical hammer hits its exclusive chaingun crate",
+      "ok": true,
+      "data": {
+        "done": true,
+        "error": 0,
+        "hit": true,
+        "obtained": true
+      }
+    },
+    {
+      "name": "No native renderer errors",
+      "ok": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

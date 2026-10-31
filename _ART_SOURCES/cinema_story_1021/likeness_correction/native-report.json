@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "name": "new HQ art is cache-versioned",
+      "ok": true
+    },
+    {
+      "name": "native decoded Cole pixels equal revised export",
+      "ok": true
+    },
+    {
+      "name": "full even canvas retained",
+      "ok": true
+    },
+    {
+      "name": "cole native HQ scene rendered through actual drawImage",
+      "ok": true
+    },
+    {
+      "name": "maverick native HQ scene rendered through actual drawImage",
+      "ok": true
+    },
+    {
+      "name": "existing right-side motion remains registered",
+      "ok": true
+    },
+    {
+      "name": "no page or console errors",
+      "ok": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "magma_small",
+    "key": "overhaul_stage2_fire_jet_02",
+    "w": 256,
+    "h": 256
+  },
+  {
+    "id": "magma_large",
+    "key": "nvl_carrier_0",
+    "w": 225,
+    "h": 220
+  },
+  {
+    "id": "sky_small",
+    "key": "p2_stealth_blue_idle",
+    "w": 128,
+    "h": 128
+  },
+  {
+    "id": "sky_medium",
+    "key": "n6v2_steel_intact_c",
+    "w": 128,
+    "h": 128
+  },
+  {
+    "id": "sky_large",
+    "key": "n6v1_steel_intact_c",
+    "w": 128,
+    "h": 128
+  },
+  {
+    "id": "water_small",
+    "key": "overhaul_stage9_water_jet_01",
+    "w": 128,
+    "h": 128
+  },
+  {
+    "id": "water_manta",
+    "key": "ns9e_vmanta_idle",
+    "w": 128,
+    "h": 128
+  },
+  {
+    "id": "water_large",
+    "key": "ns9x_dreadv",
+    "w": 256,
+    "h": 384
+  },
+  {
+    "id": "water_drone",
+    "key": "overhaul_stage9_water_drone_01",
+    "w": 256,
+    "h": 256
+  }
+]
