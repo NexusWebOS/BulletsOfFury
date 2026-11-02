@@ -1,0 +1,113 @@
+{
+  "date": "2026-11-02",
+  "scope": "Standalone concept art; no game integration",
+  "exportChecks": [
+    "All delivered terrain, route, material, cutscene and extra PNG dimensions are even",
+    "Nine routes meet measured scenery coverage",
+    "Every section bank reconstructs its route pixel-for-pixel",
+    "All liquid stages contain real alpha holes",
+    "All seven material edge pairs match",
+    "Eight distinct lava frames, uniform 256x256 cells and decoded eight-frame GIF"
+  ],
+  "approvedRGBPreserved": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "X"
+  ],
+  "routeChecks": [
+    {
+      "stage": "2",
+      "pixelComparisons": 5,
+      "allPixelsMatch": true
+    },
+    {
+      "stage": "3",
+      "pixelComparisons": 5,
+      "allPixelsMatch": true
+    },
+    {
+      "stage": "4",
+      "pixelComparisons": 5,
+      "allPixelsMatch": true
+    },
+    {
+      "stage": "5",
+      "pixelComparisons": 5,
+      "allPixelsMatch": true
+    },
+    {
+      "stage": "6",
+      "pixelComparisons": 5,
+      "allPixelsMatch": true
+    },
+    {
+      "stage": "7",
+      "pixelComparisons": 5,
+      "allPixelsMatch": true
+    },
+    {
+      "stage": "8",
+      "pixelComparisons": 5,
+      "allPixelsMatch": true
+    },
+    {
+      "stage": "9",
+      "pixelComparisons": 5,
+      "allPixelsMatch": true
+    },
+    {
+      "stage": "X",
+      "pixelComparisons": 5,
+      "allPixelsMatch": true
+    }
+  ],
+  "totalCanvasComparisons": 45,
+  "lavaFramesDecoded": [
+    [
+      256,
+      256
+    ],
+    [
+      256,
+      256
+    ],
+    [
+      256,
+      256
+    ],
+    [
+      256,
+      256
+    ],
+    [
+      256,
+      256
+    ],
+    [
+      256,
+      256
+    ],
+    [
+      256,
+      256
+    ],
+    [
+      256,
+      256
+    ]
+  ],
+  "independentBedAnimationWhileTerrainPaused": true,
+  "cutscenesDecoded": 10,
+  "mobileHorizontalOverflow": false,
+  "pageAndConsoleErrors": [],
+  "joinStatus": "Generated connectors and source-pixel internal joins visually inspected; review candidates, not collision-authored terrain",
+  "runtimeTesting": "Game suite not run: no gameplay files edited by this task",
+  "nativeGameJsSHA256": "0B9F9B8701EBF891A7224DA6E3C273E208777E45E154BF2A5BE73CA7C0A3D0C1",
+  "gameJsUnchangedSinceStart": true
+}

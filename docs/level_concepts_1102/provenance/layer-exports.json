@@ -1,0 +1,286 @@
+{
+  "terrain": [
+    {
+      "id": "2",
+      "file": "terrain/stage-2.png",
+      "size": [
+        724,
+        2172
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 296321,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "3",
+      "file": "terrain/stage-3.png",
+      "size": [
+        724,
+        2172
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 411819,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "4",
+      "file": "terrain/stage-4.png",
+      "size": [
+        724,
+        2172
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 0,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "5",
+      "file": "terrain/stage-5.png",
+      "size": [
+        724,
+        2172
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 1333982,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "6",
+      "file": "terrain/stage-6.png",
+      "size": [
+        724,
+        2172
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 297905,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "7",
+      "file": "terrain/stage-7.png",
+      "size": [
+        724,
+        2172
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 421874,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "8",
+      "file": "terrain/stage-8.png",
+      "size": [
+        724,
+        2172
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 116609,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "9",
+      "file": "terrain/stage-9.png",
+      "size": [
+        724,
+        2172
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 1303870,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "X",
+      "file": "terrain/stage-X.png",
+      "size": [
+        724,
+        2172
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 456896,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "2",
+      "file": "terrain/stage-2-connector.png",
+      "size": [
+        680,
+        680
+      ],
+      "method": "Generated native alpha; fixed alpha cutoff 220",
+      "removed": 589992
+    },
+    {
+      "id": "2",
+      "file": "terrain/stage-2-extension.png",
+      "size": [
+        680,
+        2040
+      ],
+      "method": "Generated native alpha; fixed alpha cutoff 220",
+      "removed": 325074
+    },
+    {
+      "id": "3",
+      "file": "terrain/stage-3-connector.png",
+      "size": [
+        680,
+        680
+      ],
+      "method": "Generated native alpha; fixed alpha cutoff 220",
+      "removed": 353015
+    },
+    {
+      "id": "3",
+      "file": "terrain/stage-3-extension.png",
+      "size": [
+        680,
+        2040
+      ],
+      "method": "Generated native alpha; fixed alpha cutoff 220",
+      "removed": 254897
+    },
+    {
+      "id": "4",
+      "file": "terrain/stage-4-extension.png",
+      "size": [
+        680,
+        2040
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 0,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "6",
+      "file": "terrain/stage-6-connector.png",
+      "size": [
+        680,
+        1360
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 0,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "6",
+      "file": "terrain/stage-6-extension.png",
+      "size": [
+        680,
+        2040
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 14544,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "7",
+      "file": "terrain/stage-7-connector.png",
+      "size": [
+        680,
+        1360
+      ],
+      "method": "AI matte plus source-colour/connected-component alpha export",
+      "removed": 234186,
+      "retainedRGBUnchanged": true
+    },
+    {
+      "id": "7",
+      "file": "terrain/stage-7-extension.png",
+      "size": [
+        680,
+        2040
+      ],
+      "method": "Generated native alpha; fixed alpha cutoff 220",
+      "removed": 359772
+    },
+    {
+      "id": "8",
+      "file": "terrain/stage-8-extension.png",
+      "size": [
+        680,
+        2040
+      ],
+      "method": "Generated native alpha; fixed alpha cutoff 220",
+      "removed": 219072
+    },
+    {
+      "id": "X",
+      "file": "terrain/stage-X-extension.png",
+      "size": [
+        680,
+        1360
+      ],
+      "method": "Generated native alpha; fixed alpha cutoff 220",
+      "removed": 293808
+    }
+  ],
+  "materials": [
+    {
+      "id": "lava",
+      "file": "liquids/lava/sheet.png",
+      "framePattern": "liquids/lava/frames/{frame:02d}.png",
+      "size": [
+        256,
+        256
+      ],
+      "frames": 8,
+      "columns": 4,
+      "fps": 8,
+      "edgePixelsMatch": true,
+      "sourceSheet": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "water",
+      "file": "liquids/water.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1,
+      "edgePixelsMatch": true
+    },
+    {
+      "id": "toxic",
+      "file": "liquids/toxic.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1,
+      "edgePixelsMatch": true
+    },
+    {
+      "id": "biofluid",
+      "file": "liquids/biofluid.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1,
+      "edgePixelsMatch": true
+    },
+    {
+      "id": "voidwater",
+      "file": "liquids/voidwater.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1,
+      "edgePixelsMatch": true
+    },
+    {
+      "id": "space",
+      "file": "liquids/space.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1,
+      "edgePixelsMatch": true
+    }
+  ]
+}
