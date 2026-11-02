@@ -34,3 +34,25 @@ still averages about41fps. The full core suite exits1 before assertions/summary
 on the pre-existing missing `UNUSED_ASSETS/retired_art_1022/manifest.json`; no
 bypass or fake archive is introduced. Exact public commit IDs and integrity
 results are stored in the final publication receipt.
+
+The runtime snapshot is `31e2e4d6574b00e6fc5656deab177d9f24d6ac39`.
+The new release contains353 media files, three runtime ZIPs and three public
+manifest/checksum/validation files. All six packaged-runtime Chromium checks
+pass, including actual mixer playback; the exported site passes15 browser
+checks before deployment. The archive is served directly from its ZIP entries
+for this check, without an extracted second repository.
+
+The separate "Improve Chronos and pilot portraits" chat continued creating
+cast-performance files during this upload. These active edits remain untouched
+in the working checkout. This release and its films retain the verified snapshot;
+the earlier completed cast/portrait library is included.
+
+Publication completed: all359 GitHub asset digests match the local SHA256 values
+(12.114GB). Pages built commit `4f0ba41cc0d82894699b4a0af2b11b07556b6f34`.
+The public site passes15/15 Chromium checks, including release-hosted playback,
+seeking, transformation chapters and mobile layout. The account-root favicon404
+is recorded separately from game and preview resources.
+
+- [Current hub](https://nexuswebos.github.io/BulletsOfFury/)
+- [Build and media release](https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-complete-update-2026-11-02)
+- [Exact publication receipt](qa/github_publication_1102.json)

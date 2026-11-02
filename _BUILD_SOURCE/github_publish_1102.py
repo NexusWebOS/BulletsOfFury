@@ -92,6 +92,7 @@ def export():
  plan=load();S.mkdir(parents=True,exist_ok=True);mapping={u:a['url']for a in plan['media']for u in a['routes']}
  def rewrite(text):
   text=text.replace('http://127.0.0.1:8805','').replace('/_releases/','https://github.com/'+REPO+'/releases/download/')
+  text=text.replace('href="/"','href="'+BASE+'/"')
   for src in sorted(mapping,key=len,reverse=True):text=re.sub(r'(?<![A-Za-z0-9/_])'+re.escape(src),lambda m:mapping[src],text)
   text=re.sub(r'(?<![A-Za-z0-9/_])/(current|enemy-showcase-1031|game|field-manual)(?=[/.])',lambda m:BASE+'/'+m[1],text)
   return text
@@ -116,14 +117,17 @@ def export():
  (S/'game').mkdir(exist_ok=True);links=''.join('<li><a href="'+a['url']+'">'+a['name']+'</a> · '+str(round(a['bytes']/1e6))+' MB</li>'for a in plan.get('packages',[]));(S/'game/index.html').write_text('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Current BOF build</title><style>body{color:#d9edf8;background:#07111a;font:18px/1.6 system-ui;max-width:900px;margin:40px auto;padding:20px}a{color:#87e5ec}</style><h1>November2 playable build</h1><p>Download and extract all three ZIPs into the same folder. Open the shared BulletsOfFury-2026-11-02 folder and run START-BOF.cmd with Python3 installed. Then open http://127.0.0.1:8000 in your browser.</p><ul>'+links+'</ul><p><a href="../">Back to the review hub</a> · <a href="https://github.com/'+REPO+'/tree/main">Current source</a></p>',encoding='utf-8')
  (S/'.nojekyll').touch();public=dict(tag=TAG,media=[{k:v for k,v in a.items()if k not in ['path','source']}for a in plan['media']],packages=[{k:v for k,v in a.items()if k!='path'}for a in plan.get('packages',[])])
  (S/'publication-1102.json').write_text(json.dumps(public,indent=2),encoding='utf-8');print('EXPORTED',len(list(S.rglob('*'))),'static entries',flush=True)
-def pages():
+def pages(publish=True):
  plan=load();env={**os.environ,'GIT_INDEX_FILE':str(O/'pages.index')}
  def git(*a,data=None):return subprocess.run(['git',*a],cwd=R,env=env,input=data,capture_output=True,check=True).stdout.decode().strip()
  parent=git('rev-parse','origin/gh-pages');git('read-tree',parent)
  for p in sorted(S.rglob('*')):
   if not p.is_file():continue
   rel=p.relative_to(S).as_posix();blob=git('hash-object','-w','--stdin',data=p.read_bytes());git('update-index','--add','--cacheinfo','100644,'+blob+','+rel)
- tree=git('write-tree');commit=git('commit-tree',tree,'-p',parent,data=b'Publish November 2 build, all waves and triple-difficulty boss reviews\n');print(git('diff','--stat',parent,commit));print(command(['git','push','origin',commit+':refs/heads/gh-pages']));plan['pagesCommit']=commit;save('plan.json',plan);print('PAGES_COMMIT',commit,flush=True)
+ tree=git('write-tree');commit=git('commit-tree',tree,'-p',parent,data=b'Publish November 2 build, all waves and triple-difficulty boss reviews\n');print(git('diff','--stat',parent,commit));plan['preparedPagesCommit']=commit;save('plan.json',plan)
+ if publish:print(command(['git','push','origin',commit+':refs/heads/gh-pages']));plan['pagesCommit']=commit;save('plan.json',plan)
+ print('PAGES_COMMIT'if publish else'PREPARED_PAGES_COMMIT',commit,flush=True)
+def stagepages():pages(False)
 def sourcecheck():
  tracked=command(['git','diff','--name-only','HEAD']).splitlines();new=command(['git','ls-files','--others','--exclude-standard']).splitlines();roots=('assets/','docs/','_BUILD_SOURCE/','_ART_SOURCES/','tools/')
  unrelated=lambda p:any(t in p.lower()for t in ['nightcode','nightcopy','last_dragon','last-dragon','rom_study','tools/spc-studio/'])
@@ -140,4 +144,4 @@ def sourcecheck():
  save('source-checks.json',dict(files=len(names),js=js,errors=errors));(O/'source-files.nul').write_bytes(b'\0'.join(n.encode('utf-8')for n in names)+b'\0');save('source-files.json',names);print('SOURCE_CHECK',len(names),'files;',len(js),'JavaScript checks;',len(errors),'errors',flush=True)
  if errors:raise RuntimeError(json.dumps(errors))
 if __name__=='__main__':
- ap=argparse.ArgumentParser();ap.add_argument('action',choices=['prepare','packages','export','upload','pages','sourcecheck']);args=ap.parse_args();globals()[args.action]()
+ ap=argparse.ArgumentParser();ap.add_argument('action',choices=['prepare','packages','export','upload','pages','stagepages','sourcecheck']);args=ap.parse_args();globals()[args.action]()

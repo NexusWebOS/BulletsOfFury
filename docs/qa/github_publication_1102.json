@@ -1,0 +1,215 @@
+{
+  "repository": "NexusWebOS/BulletsOfFury",
+  "release": {
+    "databaseId": 431520608,
+    "isDraft": false,
+    "isPrerelease": true,
+    "tagName": "bof-complete-update-2026-11-02",
+    "targetCommitish": "31e2e4d6574b00e6fc5656deab177d9f24d6ac39",
+    "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-complete-update-2026-11-02"
+  },
+  "runtimeSnapshot": "31e2e4d6574b00e6fc5656deab177d9f24d6ac39",
+  "pagesCommit": "4f0ba41cc0d82894699b4a0af2b11b07556b6f34",
+  "releaseFiles": 359,
+  "verifiedSHA256": 359,
+  "releaseBytes": 12114427503,
+  "mediaFiles": 353,
+  "packages": [
+    {
+      "name": "BOF-runtime-core-2026-11-02.zip",
+      "bytes": 1467470599,
+      "sha256": "b87a520538751757376855c5b30d210270de4a1f144db5fbd0df43c3a5c452b5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/BOF-runtime-core-2026-11-02.zip"
+    },
+    {
+      "name": "BOF-runtime-stages-1-5-2026-11-02.zip",
+      "bytes": 456840360,
+      "sha256": "58ab58f45a6a12469f78e7a73864e2ccdb17409aeaddcbbc86e1d666212935d3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/BOF-runtime-stages-1-5-2026-11-02.zip"
+    },
+    {
+      "name": "BOF-runtime-stages-6-9-X-2026-11-02.zip",
+      "bytes": 1194058314,
+      "sha256": "e047bcba81c6f19a81796fe73fec65a059b007d64615d440486df0ac48169e6f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/BOF-runtime-stages-6-9-X-2026-11-02.zip"
+    }
+  ],
+  "packagedRuntime": {
+    "files": 17597,
+    "checks": [
+      {
+        "name": "Packaged runtime boots in Chromium",
+        "passed": true
+      },
+      {
+        "name": "Packaged Stage1 art and runtime render",
+        "passed": true
+      },
+      {
+        "name": "Packaged Stage6 art and runtime render",
+        "passed": true
+      },
+      {
+        "name": "Packaged Stage9 art and runtime render",
+        "passed": true
+      },
+      {
+        "name": "Packaged combat cue is audibly decoded through the mixer",
+        "passed": true,
+        "data": {
+          "peak": 0.7069952487945557,
+          "errors": []
+        }
+      },
+      {
+        "name": "No missing package resources or game errors",
+        "passed": true
+      }
+    ],
+    "missing": [],
+    "errors": []
+  },
+  "publicPreview": [
+    {
+      "name": "Public hub has current November2 feature links",
+      "data": null,
+      "passed": true
+    },
+    {
+      "name": "Three public release videos decode and play",
+      "data": [
+        {
+          "diff": "normal",
+          "time": 1.49975,
+          "width": 1280,
+          "muted": false
+        },
+        {
+          "diff": "hard",
+          "time": 1.457789,
+          "width": 1280,
+          "muted": true
+        },
+        {
+          "diff": "furious",
+          "time": 1.479785,
+          "width": 1280,
+          "muted": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "Public release movies support synchronized seek",
+      "data": null,
+      "passed": true
+    },
+    {
+      "name": "Only selected difficulty has audio enabled",
+      "data": null,
+      "passed": true
+    },
+    {
+      "name": "Four concept boards load from Pages",
+      "data": null,
+      "passed": true
+    },
+    {
+      "name": "Dracodia final transformation chapters seek on every difficulty",
+      "data": [
+        {
+          "diff": "normal",
+          "time": 92.029
+        },
+        {
+          "diff": "hard",
+          "time": 97.962
+        },
+        {
+          "diff": "furious",
+          "time": 107.329
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "Comparison layout fits mobile",
+      "data": null,
+      "passed": true
+    },
+    {
+      "name": "Ten regular-wave films expose all313 chapters",
+      "data": 313,
+      "passed": true
+    },
+    {
+      "name": "Regular-wave film plays from the public release",
+      "data": null,
+      "passed": true
+    },
+    {
+      "name": "Current154-enemy guide loads Current Breaker",
+      "data": "Current Breaker",
+      "passed": true
+    },
+    {
+      "name": "Playable build links all three verified packages",
+      "data": [
+        "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/BOF-runtime-core-2026-11-02.zip",
+        "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/BOF-runtime-stages-1-5-2026-11-02.zip",
+        "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/BOF-runtime-stages-6-9-X-2026-11-02.zip"
+      ],
+      "passed": true
+    },
+    {
+      "name": "Dialogue storyboard remains available",
+      "data": null,
+      "passed": true
+    },
+    {
+      "name": "Cast library remains available",
+      "data": null,
+      "passed": true
+    },
+    {
+      "name": "Existing full field manual remains available",
+      "data": null,
+      "passed": true
+    },
+    {
+      "name": "No public page, console or missing-resource errors",
+      "data": {
+        "errors": [],
+        "responses": [],
+        "ignoredRootFavicons": [
+          {
+            "text": "Failed to load resource: the server responded with a status of 404 ()",
+            "url": "https://nexuswebos.github.io/favicon.ico"
+          },
+          {
+            "text": "Failed to load resource: the server responded with a status of 404 ()",
+            "url": "https://nexuswebos.github.io/favicon.ico"
+          },
+          {
+            "text": "Failed to load resource: the server responded with a status of 404 ()",
+            "url": "https://nexuswebos.github.io/favicon.ico"
+          }
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "library": {
+    "bossFilms": 57,
+    "regularWaveChapters": 313,
+    "enemyClips": 154
+  },
+  "limits": {
+    "fullSuiteExitCode": 1,
+    "fullSuiteCompleted": false,
+    "fullSuiteReason": "Existing ignored UNUSED_ASSETS/retired_art_1022/manifest.json is absent.",
+    "razorwakeCaptureFPS": 41.2,
+    "stage7RegularWaveFPS": 35.02,
+    "concurrentWork": "Active cast-performance edits created after the runtime snapshot remain in the working checkout."
+  }
+}

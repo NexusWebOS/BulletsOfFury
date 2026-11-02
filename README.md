@@ -6,10 +6,24 @@ integration, and real-browser verification on `main`.
 
 Branch: `main`
 
-## October31 review library
+## November2 build and review library
+
+- [Current review hub](https://nexuswebos.github.io/BulletsOfFury/)
+- [57 boss/miniboss films: Normal, Hard and Furious](https://nexuswebos.github.io/BulletsOfFury/current/boss-comparison-1102.html)
+- [All regular waves:313 chapters](https://nexuswebos.github.io/BulletsOfFury/current/all-waves-1101.html)
+- [Updated enemy field guide:154 individual clips](https://nexuswebos.github.io/BulletsOfFury/enemy-showcase-1031.html)
+- [Playable build, videos and SHA256 checksums](https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-complete-update-2026-11-02)
+- [Publication contents and verification](docs/GITHUB_PUBLICATION_1102.md)
+
+Download and extract all three runtime ZIPs into the same folder, then run
+`START-BOF.cmd` with Python3 installed. The review films label invulnerable input
+assistance; Normal Stage6–9 entries are isolated reviews. The Normal campaign
+still ends at Stage5. Four Stage2–5 Furious miniboss concepts remain proposals.
+
+## October31 review archive
 
 - [Current boss review and Normal ending](https://nexuswebos.github.io/BulletsOfFury/boss-balance-normal-finale-1031.html)
-- [Enemy field guide:163 individual native clips](https://nexuswebos.github.io/BulletsOfFury/enemy-showcase-1031.html)
+- [Enemy field guide](https://nexuswebos.github.io/BulletsOfFury/enemy-showcase-1031.html)
 - [New concept boards / pending approval](https://nexuswebos.github.io/BulletsOfFury/furious-next-wave-1031.html)
 - [Full field manual](https://nexuswebos.github.io/BulletsOfFury/field-manual/guide.html) and [Rough Riders guide](https://nexuswebos.github.io/BulletsOfFury/rough-riders-guide/index.html)
 - [Publication contents and verification](docs/GITHUB_PUBLICATION_1031.md)
