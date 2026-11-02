@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · weapon impact FX</title>
+<style>body{margin:0;background:#06121b;color:#ecf5fc;font:17px/1.5 system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:28px}a{color:#8deaff}h1{font-size:30px;margin:8px 0}p{color:#b8ccdb}video{display:block;width:100%;background:#02090e;border:1px solid #284655;border-radius:8px}.choices{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}button{background:#102b3b;color:#d5f9ff;border:1px solid #31596d;border-radius:6px;padding:10px 14px;font:inherit;cursor:pointer}button:hover,button:focus{background:#1b4455}small{display:block;color:#92aabd}</style>
+<main><a href="/BulletsOfFury/">← Review library</a><h1>Weapon impact FX</h1>
+<p>Metal contact and bullet marks, colored laser singes, elemental orb splashes and Maverick’s Helix energy. Marks follow the hull and cool away; destruction retains its own explosions.</p>
+<video id="film" controls playsinline preload="metadata" poster="/BulletsOfFury/current/weapon-contacts-1031.jpg"><source src="https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--weapon-contacts-1031-7a82eb1a4301.mp4" type="video/mp4"></video>
+<div class="choices"><button data-at="0">Machine gun</button><button data-at="2.4">Laser cannon</button><button data-at="4.8">Laser</button><button data-at="7.2">Orb</button><button data-at="9.6">Helix lance</button><button data-at="12">Helix ball</button></div>
+<small>14.4-second isolated visual preview from the game’s actual renderer. Direct native damage calls against a pinned authored hull; enlarged native pixels at right. This is a contact comparison, not a campaign fight. Silent preview; existing combat sounds remain active in the build.</small>
+<p><a href="/BulletsOfFury/game/index.html?revision=weapon-contacts-1031">Open the updated game</a></p></main>
+<script>document.querySelectorAll('button[data-at]').forEach(b=>b.onclick=()=>{const v=document.getElementById('film');v.currentTime=Number(b.dataset.at);v.play().catch(e=>{if(e.name!=='AbortError')console.error(e)})});</script>
+</html>
