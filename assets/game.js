@@ -12413,7 +12413,7 @@ function strafeDiveTick(e, dt){
    builds its own 'ndr_<slug>_idle_<fi>' key and never asks arsenalDroneArt for one. Moved so a
    future caller does not rediscover the trap the hard way, which is what it cost last time. */
 const ARSENAL_DRONES = {
-  2: ['cinderwasp','basaltbomber','magmaorb'],
+  2: ['cinderwasp','basaltbomber'],
   3: ['cryoeye','sharddart','glaciercarrier'],
   5: ['discordgunship','fractureskimmer','nullprism'],
   8: ['ragetalon','deathchoir','furymine'],
@@ -14332,11 +14332,11 @@ function buildStagePlan(stageNum){
       {type:'cinderwasp',fx:.76,ai:{kind:'curve',dir:-1,slowY:VH*.40}}
     ],.24));
     add(9.4, ()=> encounterRipple([
-      {type:'lance',fx:.26},{type:'eye',fx:.50},{type:'lance',fx:.74}
+      {type:'lance',fx:.26},{type:'cinderwasp',fx:.50},{type:'lance',fx:.74}
     ],.27));
     add(12.0,()=> encounterRipple([
-      {type:'magmaorb',fx:.34,ai:{kind:'rush',slowY:VH*.24}},
-      {type:'magmaorb',fx:.66,ai:{kind:'rush',slowY:VH*.34}}
+      {type:'skim',fx:.34,ai:{kind:'rush',slowY:VH*.24}},
+      {type:'skim',fx:.66,ai:{kind:'rush',slowY:VH*.34}}
     ],.30));
     add(14.7,()=> encounterRipple([
       {type:'basaltbomber',fx:.22,ai:{kind:'curve',dir:1,slowY:VH*.25}},
@@ -14344,7 +14344,7 @@ function buildStagePlan(stageNum){
       {type:'basaltbomber',fx:.78,ai:{kind:'curve',dir:-1,slowY:VH*.43}}
     ],.28));
     add(17.8,()=> encounterRipple([
-      {type:'cruc',fx:.27},{type:'crawl',fx:.73}
+      {type:'cruc',fx:.27},{type:'lavasnake',fx:.73}
     ],.36));
     add(20.3,()=> encounterRipple([
       {type:'lance',fx:.18},{type:'ash',fx:.39},{type:'ash',fx:.61},{type:'lance',fx:.82}
@@ -14357,7 +14357,7 @@ function buildStagePlan(stageNum){
     ],.32));
     add(27.2,()=> encounterRipple([
       {type:'cinderwasp',fx:.18,ai:{kind:'diag',slowY:VH*.24}},
-      {type:'magmaorb',fx:.50,ai:{kind:'loop',dir:1,slowY:VH*.28}},
+      {type:'skim',fx:.50,ai:{kind:'loop',dir:1,slowY:VH*.28}},
       {type:'cinderwasp',fx:.82,ai:{kind:'diag',slowY:VH*.36}}
     ],.25));
     add(30.5,()=> encounterRipple([
@@ -14379,7 +14379,7 @@ function buildStagePlan(stageNum){
       {type:'cinderwasp',fx:.82,ai:{kind:'curve',dir:-1,slowY:VH*.46}}
     ],.23));
     add(curStage.length-4, ()=> encounterRipple([
-      {type:'disc',fx:.24},{type:'eye',fx:.50},{type:'disc',fx:.76}
+      {type:'disc',fx:.24},{type:'cinderwasp',fx:.50},{type:'disc',fx:.76}
     ],.30));
     return _planSorted(P,stageNum);
   }
@@ -17073,7 +17073,7 @@ function stage4CoreTurretSpawnMissing(b,threshold){
   for(const side of [-1,1]){
     const old=S.coreTurrets.find(q=>q.side===side);
     if(old&&!old.dead)continue;
-    const p=stage4CoreTurretTarget(b,side),hp=170+S.coreGeneration*20,shield=Math.ceil((90+S.coreGeneration*12)*D.shieldMul),
+    const p=stage4CoreTurretTarget(b,side),hp=difficultyHealthBaseline15(170+S.coreGeneration*20,170+S.coreGeneration*20),shield=Math.ceil((90+S.coreGeneration*12)*D.shieldMul),
           t={_mrOwner:b._mr27?b:null,side:side,x:p.x,y:p.y,hp:hp,maxhp:hp,shield:shield,maxShield:shield,dead:false,spawnT:0,materialize:0,
              flash:0,deflectFlash:0,deflectSfx:0,ang:Math.PI/2,aimTo:Math.PI/2,mode:'down',burstLeft:0,spin:side<0?0:4,
              /* The right helper is one half-cycle behind the left. Their fire and orange punish
@@ -17181,7 +17181,7 @@ function stage4CoreTurretTick(b,dt,phase){
           /* 4 rounds 55 ms apart, then a beat - "burst round firing patterns" */
           if(t.burstLeft>1){t.burstLeft--;t.fireShot+=D.diagBeat;}
           else{t.burstLeft=4;t.fireShot+=D.diagGap;}
-        } else t.fireShot+=D.straightBeat||(phase>=3?.028:.034);
+        } else t.fireShot+=turretInterval15(phase>=3?.028:.034,D.straightBeat||(phase>=3?.028:.034));
         const barrelSide=t.barrelNext;t.barrelNext=-t.barrelNext;
         const tip=stage4CoreTurretTip(t,barrelSide),ang=tip.angle,shot=stage4WarfareShot(
           b,tip,ang,D.shotSpeed+phase*.20,'lightningmg',{accel:D.hard?.30:.22,max:(D.furious?10.1:(D.hard?9.55:8.70)),szMul:1.20});   /* .80 -> 1.20, Mike 0906: "needs bigger bullets" */
@@ -19368,7 +19368,7 @@ function razorbackInit(b){
    broad-phase bounds and one encounter completion. */
 function razorbackPairInit(b){
   if(!b||!b._rzb||typeof diffKey==='undefined'||diffKey!=='hard')return false;
-  const W=worldWidth(),L=camLeftX(),span=camRightX()-L,single=b.maxhp,actors=[];
+  const W=worldWidth(),L=camLeftX(),span=camRightX()-L,single=b.maxhp/2,actors=[];
   for(const side of [-1,1]){
     const p={kind:'razorback',x:W/2,y:-150,ty:VH*.27,t:0,enter:false,hp:single,maxhp:single,w:b.w,h:b.h,
       flash:0,dead:false,dying:0,fireCd:999,drift:0,atkPhase:0,phaseT:1.2,sub:true,name:'RAZORBACK'};
@@ -27478,7 +27478,8 @@ function pShard(x,y,ang,lv,opt){ const spd=3.4+lv*0.25; pBullets.push({kind:'sha
   _inf:(opt&&opt.forge)?opt.el:null, _infLv:(opt&&opt.forgeLv)||0, seat:opt?.seat||_dmgBullet?.seat||_seat||1}); }
 function iceBurst(x,y,n,lv,opt){
   for(let i=0;i<n;i++) pShard(x,y, i*(TAU/n)+Math.random()*0.3, lv, opt);
-  if(typeof explode==='function') explode(x,y,10,(opt&&opt.ts)?'#9fd8ff':((opt&&opt.el==='toxic')?'#96ec38':((opt&&opt.fire)?'#ff7331':'#bfe8ff')));
+  if(typeof playerWeaponBurst!=='function'||!playerWeaponBurst({kind:'shard',_el:opt?.el||(opt?.fire?'fire':'ice'),_ts:opt?.ts},x,y,32))
+    if(typeof explode==='function') explode(x,y,10,(opt&&opt.ts)?'#9fd8ff':((opt&&opt.el==='toxic')?'#96ec38':((opt&&opt.fire)?'#ff7331':'#bfe8ff')));
   const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null;
   if(S){
     const el=(opt&&opt.el)||((opt&&opt.ts)?'fireice':'ice');
@@ -34854,7 +34855,7 @@ function updatePlay(dt){
   updateMissileRush(dt);
   for(const ni of nukeImpacts) ni.t+=dt;
   if(nukeImpacts.length) nukeImpacts=nukeImpacts.filter(ni=>ni.t<ni.dur);
-  if(!(run.stage===6&&s6OpeningActive()))stageTimer+=dt;
+  if(!(run.stage===6&&s6OpeningActive())&&!(typeof carrierAssaultHold111==='function'&&carrierAssaultHold111()))stageTimer+=dt;
   if(!player.dead){
     run._lifeCombatT=(run._lifeCombatT||0)+dt*timeScale;
     run._lifeThreat=Math.max(run._lifeThreat||0,(typeof playerArsenalScore==='function'?playerArsenalScore():0));
@@ -35144,7 +35145,7 @@ function updatePlay(dt){
      wall — ground units spawning from the top would be driving out of solid concrete. The spawn
      director is already gated on !bossActive; this makes the intent explicit and covers the
      boss-defeated tail as well. */
-  if(!bossActive && !bossDefeated && !(run.stage===6&&s6OpeningActive())){
+  if(!bossActive && !bossDefeated && !(run.stage===6&&s6OpeningActive()) && !(typeof carrierAssaultHold111==='function'&&carrierAssaultHold111())){
     if(run.stage===6&&s6Wing&&((s6Wing.choice&&!s6Wing.route)||s6Wing.fake))stageTimer=Math.min(stageTimer,curStage.length-.25);
     // density guard: cap on-screen enemies AND require a short gap between waves so the player
     // always has a lane to maneuver — never an unavoidable wall.
@@ -35261,7 +35262,7 @@ function updatePlay(dt){
        so counting them against this gate let a surviving barrel dump do the same. */
     let _sbLive=0;
     for(const _se of enemies){ if(_se.dead || _se._dyingT!=null || _se._prop) continue; _sbLive++; }
-    if(SB && _sbScrollOK && _sbWaveOK && !subBossTriggered && !subBossDone && stageTimer>=curStage.length*SB.at && _sbLive<=9){
+    if(SB && !(typeof currentBreakerPending112==='function'&&currentBreakerPending112()) && _sbScrollOK && _sbWaveOK && !subBossTriggered && !subBossDone && stageTimer>=curStage.length*SB.at && _sbLive<=9){
       subBossTriggered=true; warnT=2.4; warnKind='sub';
         (Audio.SFX.alertDanger||Audio.SFX.bossAlarm)();
       story=null;_bossCard=null;
@@ -35299,7 +35300,7 @@ function updatePlay(dt){
       if(chance(lifeDropChance(.02))){ dropPowerup(rnd(camLeftX()+40,camRightX()-40), -10, 'life'); }
     }
     // trigger boss (via WARNING)
-    if(!bossWarned && stageTimer>=curStage.length && (run.stage!==1||typeof damAssaultReady1002!=='function'||damAssaultReady1002()) && enemies.length<=7 && (run.stage!==6||!s6Wing||s6Wing.route&&(s6Wing.routeFightT||0)>=32) && (run.stage!==7||mapScroll>=(typeof s7mEndScroll==='function'?s7mEndScroll():levelScrollRange()-610)-8)){
+    if(!globalThis.BOF_REGULAR_WAVE_REVIEW && !(typeof currentBreakerPending112==='function'&&currentBreakerPending112()) && !bossWarned && stageTimer>=curStage.length && !(typeof carrierAssaultPending111==='function'&&carrierAssaultPending111()) && (run.stage!==1||typeof damAssaultReady1002!=='function'||damAssaultReady1002()) && enemies.length<=7 && (run.stage!==6||!s6Wing||s6Wing.route&&(s6Wing.routeFightT||0)>=32) && (run.stage!==7||mapScroll>=(typeof s7mEndScroll==='function'?s7mEndScroll():levelScrollRange()-610)-8)){
       bossWarned=true; warnT=2.4; warnKind='boss';
       /* the new klaxon, with bossAlarm behind it. 2.60s TAME gate - a warning that can retrigger
          is not a warning. */
@@ -35367,6 +35368,15 @@ function updatePlay(dt){
       e.flash=0;   // never tint a dying wreck (pink-ghost fix)
       continue;
     }
+    // Cloud-side carrier components travel with their whole airborne hull.
+    // Keep native collision/Retina actors through the offscreen entrance;
+    // their composite owner handles movement, attack cancellation and departure.
+    if(e._sc12||e._ca111){e.flash=Math.max(0,(e.flash||0)-dt);if(e.hp<=0)killEnemy(e);continue;}
+    // Stage7 modular refits own one mover/attack clock; native hit/death remain.
+    if(e._s711){s711Tick(e,dt);e.flash=Math.max(0,(e.flash||0)-dt);if(e.hp<=0)killEnemy(e);continue;}
+    // Stage8 regular alien refits retain native damage/death with one attack owner.
+    if(e._s811){s811Tick(e,dt);e.flash=Math.max(0,(e.flash||0)-dt);if(e.hp<=0)killEnemy(e);continue;}
+    if(e._s911){s911Tick(e,dt);e.flash=Math.max(0,(e.flash||0)-dt);if(e.hp<=0)killEnemy(e);continue;}
     // The Warden wing owns its orbit, bombing spiral and harmless depth entry.
     // Keep the actors in the collision/Retina lists, but do not run a second
     // mover, edge pin or generic offscreen cull over that authored flight.
@@ -35795,7 +35805,7 @@ function updatePlay(dt){
     const _edgeM=Math.max(14, e.w*0.66);
     // AI-library craft that are SUPPOSED to cross and leave (sweeps, straight diagonals, peel-offs)
     // must not be pinned to the edge — otherwise a "straight across" run bends and rides the wall.
-    const _aiCrosser = !!e._s6Strike || (e.pattern==='ai' && e._ai && (e._ai.kind==='sweep'||e._ai.kind==='diag'||e._ai.kind==='curve'));
+    const _aiCrosser = !!e._s6Strike || !!e._s1aFlight || !!e._fb9Swoop || (e.pattern==='ai' && e._ai && (e._ai.kind==='sweep'||e._ai.kind==='diag'||e._ai.kind==='curve'));
     const _racerDrifting=_aiCrosser || (e.pattern==='racer' && (e._phase==='cross'||e._phase==='curl'||e._phase==='dive'||e._phase==='flee')) || e.pattern==='topgun' || e.pattern==='sideswirl' || e.pattern==='jetflyby' || e.pattern==='loopcharge';
     const _wW=(typeof worldWidth==='function')?worldWidth():VW;   // wide stages: clamp to the WORLD, not the 480 camera
     /* ============================================================
@@ -36339,7 +36349,8 @@ function updatePlay(dt){
         if(!b._blew){
           b._blew=1;                             // 3. BURST
           if(typeof helixDebris==='function') helixDebris(b.x, b.y, b.lv||1);
-          if(typeof explode==='function') explode(b.x, b.y, 52, 'blue');
+          if(typeof playerWeaponBurst!=='function'||!playerWeaponBurst(b,b.x,b.y,78))
+            if(typeof explode==='function') explode(b.x, b.y, 52, 'blue');
           atomFlash=Math.max(atomFlash||0, 0.45);
           shake=Math.max(shake, 11);
           /* 4. SPIRAL: the lance comes apart into homing strands that corkscrew
@@ -36378,7 +36389,7 @@ function updatePlay(dt){
       // PIERCING lance: massive damage, passes through — but hits each target only once (memo list)
       b._hs=b._hs||[];
       for(const e of enemies){ if(e.dead)continue; if(b._hs.indexOf(e)>=0)continue;
-        if(Math.abs(e.x-b.x)<(e.w/2+7)&&Math.abs(e.y-b.y)<(e.h/2+10)){ hitEnemy(e,b.dmg); b._hs.push(e); explode(b.x,b.y,7,'green');
+        if(Math.abs(e.x-b.x)<(e.w/2+7)&&Math.abs(e.y-b.y)<(e.h/2+10)){ hitEnemy(e,b.dmg); b._hs.push(e); if(typeof wc1031Handles!=='function'||!wc1031Handles(b))explode(b.x,b.y,7,'green');
           /* THE VENOMX KEEPS ITS OWN VICTIM LIST (drop 0806j). It memoises into b._hs, not
              b._hit, and runs this proximity test rather than passing through the generic
              pierce path — which is why marking the two generic sites in 0806i did nothing and
@@ -36386,15 +36397,15 @@ function updatePlay(dt){
              site that matters. Guarded to the charged BALL so the lances it throws cannot
              chain-detonate off their own hits. */
           if(b._charged && !b._child) b._hitSomething=1; } }
-      if(boss && bossActive && !boss.dead && b._hs.indexOf(boss)<0 && bossHitTest(b.x,b.y)){ hitBoss(b.dmg); b._hs.push(boss); explode(b.x,b.y,9,'green'); if(b._charged && !b._child) b._hitSomething=1; }
+      if(boss && bossActive && !boss.dead && b._hs.indexOf(boss)<0 && bossHitTest(b.x,b.y)){ hitBoss(b.dmg); b._hs.push(boss); if(typeof wc1031Handles!=='function'||!wc1031Handles(b))explode(b.x,b.y,9,'green'); if(b._charged && !b._child) b._hitSomething=1; }
       if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter && b._hs.indexOf(subBoss)<0){
         const sw=(subBoss._drawW||subBoss.w), sh=(subBoss._drawH||subBoss.h), sy=(subBoss._drawY||subBoss.y);
-        if(Math.abs(subBoss.x-b.x)<(sw/2+7) && Math.abs(sy-b.y)<(sh/2+10)){ hitSubBoss(b.dmg, b.x, b.y); b._hs.push(subBoss); explode(b.x,b.y,9,'green'); }
+        if(Math.abs(subBoss.x-b.x)<(sw/2+7) && Math.abs(sy-b.y)<(sh/2+10)){ hitSubBoss(b.dmg, b.x, b.y); b._hs.push(subBoss); if(typeof wc1031Handles!=='function'||!wc1031Handles(b))explode(b.x,b.y,9,'green'); }
       }
       // crates still pop, but the lance keeps going (pierce)
       for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox'&&!/^missileupbox_/.test(p.kind||''))) continue;
         if(b._hs.indexOf(p)>=0) continue;
-        if(Math.abs(b.x-p.x)<(p.w/2+6) && Math.abs(b.y-p.y)<(p.h/2+8)){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); b._hs.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } }
+        if(Math.abs(b.x-p.x)<(p.w/2+6) && Math.abs(b.y-p.y)<(p.h/2+8)){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); b._hs.push(p); if(typeof playerWeaponImpact==='function')playerWeaponImpact(b,p,b.x,b.y); if(p.hp<=0){ p.dead=true; breakContainer(p); } }
       }
       const _vw=(typeof worldWidth==='function')?worldWidth():VW;
       if(b.y<-40 || b.x<-30 || b.x>_vw+30) b.dead=true;
@@ -36703,6 +36714,7 @@ function updatePlay(dt){
     // collide enemies
     for(const e of enemies){
       if(e.dead) continue;
+      if(typeof carrierAssaultShotPass111==='function'&&carrierAssaultShotPass111(e,b))continue;
       if(Math.abs(b.x-e.x)<(e.w/2+b.w/2) && Math.abs(b.y-e.y)<(e.h/2+b.h/2)){
         if(pierce){
           if(!b._hit) b._hit=[];
@@ -36758,13 +36770,13 @@ function updatePlay(dt){
         const _rawSd=(b._bossDmg!=null)?b._bossDmg:b.dmg;
         if(pierce){ b._bt=(b._bt||0)-dt; if(b._bt<=0){
           const _sd=helixEncounterDamage(b,subBoss,_rawSd);
-          if(_sd>0){hitSubBoss(_sd, b.x, b.y);if(b.kind==='sonic')sonicImpact(b.x,b.y,b._p);else explode(b.x,b.y,6,'red');
+          if(_sd>0){hitSubBoss(_sd, b.x, b.y);if(b.kind==='sonic')sonicImpact(b.x,b.y,b._p);else if(typeof wc1031Handles!=='function'||!wc1031Handles(b))explode(b.x,b.y,6,'red');
             if(b.kind==='mavlaser'&&!b._burstVolley)b.dead=true; }
           b._bt=0.10;
         } }
         else {
           const _sd=helixEncounterDamage(b,subBoss,_rawSd);
-          if(_sd>0){hitSubBoss(_sd, b.x, b.y);if(b.kind==='nade') nadeBlast(b);else explode(b.x,b.y,8,'red');b.dead=true;}
+          if(_sd>0){hitSubBoss(_sd, b.x, b.y);if(b.kind==='nade') nadeBlast(b);else if(typeof wc1031Handles!=='function'||!wc1031Handles(b))explode(b.x,b.y,8,'red');b.dead=true;}
         }
       }
     }
@@ -36801,7 +36813,7 @@ function updatePlay(dt){
             hitBoss(_bd);
             if(b.kind==='mavlaser'&&!b._burstVolley)b.dead=true;
             if(b.kind==='sonic')sonicImpact(b.x,b.y,b._p);
-            else explode(b.x,b.y,b.kind==='fire'?9:6,b.kind==='fire'?'red':'blue');
+            else if(typeof wc1031Handles!=='function'||!wc1031Handles(b))explode(b.x,b.y,b.kind==='fire'?9:6,b.kind==='fire'?'red':'blue');
           }
           b._bt=0.10;
         }
@@ -36809,7 +36821,7 @@ function updatePlay(dt){
         const _bd=helixEncounterDamage(b,boss,_rawBd);
         if(_bd>0){
           _lastHitX=(b&&b.x!=null)?b.x:null; _lastHitY=(b&&b.y!=null)?b.y:null;   // 0912y: the round's own point, not an undeclared p
-          hitBoss(_bd); if(b.kind==='nade') nadeBlast(b); else explode(b.x,b.y,8,'red');
+          hitBoss(_bd); if(b.kind==='nade') nadeBlast(b); else if(typeof wc1031Handles!=='function'||!wc1031Handles(b))explode(b.x,b.y,8,'red');
           b.dead=true;
         }
       }
@@ -36821,10 +36833,10 @@ function updatePlay(dt){
         if(Math.abs(b.x-p.x)<(p.w/2+b.w/2) && Math.abs(b.y-p.y)<(p.h/2+b.h/2)){
           if(pierce){
             if(!b._hit) b._hit=[];
-            if(b._hit.indexOf(p)<0){ p.hp=(p.hp||5)-(b.dmg||1); p.flash=0.12; weaponHitSfx('normal'); b._hit.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } }
+            if(b._hit.indexOf(p)<0){ p.hp=(p.hp||5)-(b.dmg||1); p.flash=0.12; weaponHitSfx('normal'); b._hit.push(p); if(typeof playerWeaponImpact==='function')playerWeaponImpact(b,p,b.x,b.y); if(p.hp<=0){ p.dead=true; breakContainer(p); } }
           } else {
             p.hp=(p.hp||5)-(b.dmg||1); p.flash=0.12; weaponHitSfx('normal');
-            if(b.kind==='nade') nadeBlast(b); else explode(b.x,b.y,6,'red');
+            if(b.kind==='nade') nadeBlast(b); else if(typeof playerWeaponImpact!=='function'||!playerWeaponImpact(b,p,b.x,b.y))explode(b.x,b.y,6,'red');
             b.dead=true;
             if(p.hp<=0){ p.dead=true; breakContainer(p); }
             break;
@@ -37579,7 +37591,9 @@ function _hitEnemyCore(e,dmg){
      which is the readability the enemy ordnance on mfx_ cannot give you. Metal armour rings
      differently from a soft target: tanks and ships take metal_impact, everything else the
      spark, and a glancing hit that fails to kill throws a ricochet. */
-  if(_dmgBullet&&_dmgBullet._cal50&&!_elemHit&&typeof chaingunImpact==='function')chaingunImpact(e.x,e.y-e.h*.18,false);
+  if(typeof wc1031Handles==='function'&&wc1031Handles(_dmgBullet)){
+    // WC1031 owns the actual projectile contact after the native damage router.
+  }else if(_dmgBullet&&_dmgBullet._cal50&&!_elemHit&&typeof chaingunImpact==='function')chaingunImpact(e.x,e.y-e.h*.18,false);
   else if(typeof pImpacts!=='undefined' && !_elemHit){
     const hard = (e._nef && /tank|apc|boat|corvette|craft|artillery|crawler|turret|sled/.test(e._nef));
     pImpacts.push({ x:e.x+rnd(-4,4), y:e.y-e.h*0.18+rnd(-4,4), t:0, dur:0.20,
@@ -43864,7 +43878,7 @@ function modularGroundTurretTick(e,dt){
   const p=modularGroundTurretMuzzle(e),target=targetShip(p.x,p.y);
   const want=Math.atan2(target.y-e.y,target.x-e.x);
   const delta=Math.atan2(Math.sin(want-T.angle),Math.cos(want-T.angle));
-  T.angle+=clamp(delta,-dt*2.8,dt*2.8);
+  T.angle+=clamp(delta,-dt*turretSpeed15(2.8),dt*turretSpeed15(2.8));
   if(e.y<32||e.y>VH-44||bossActive||subBossActive)return;
   T.timer-=dt;if(T.timer>0)return;
   if(T.mode==='wait'){T.mode='tell';T.timer=T.weapon==='sonic'?.93:T.weapon==='laser'?.75:.58;return;}
@@ -43872,7 +43886,7 @@ function modularGroundTurretTick(e,dt){
   if(T.mode!=='burst')return;
   const m=modularGroundTurretMuzzle(e),w=T.weapon,kind=w==='mg'?'mg':w==='missile'?'s4rocket':
     w==='sonic'?'rzbSonic':T.stage===3?'s3lance':T.stage===7?'s7laser':'s4rail';
-  const gap=w==='mg'?.11:w==='missile'?.20:.20;
+  const gap=turretInterval15(w==='mg'?.11:w==='missile'?.20:.20);
   const offsets=w==='sonic'?[-.16,0,.16]:[0];
   for(const off of offsets)eShootT(m.x,m.y,m.aim+off,w==='mg'?4.2:w==='missile'?2.45:w==='sonic'?3.0:5.0,kind,
     {w:w==='sonic'?15:w==='mg'?6:10,h:w==='sonic'?15:w==='mg'?15:26,silent:off!==0});
@@ -43880,8 +43894,7 @@ function modularGroundTurretTick(e,dt){
   navalFlash(null,m,.70,family,{n:4,hpx:32,life:.14,follow:()=>e&&!e.dead?modularGroundTurretMuzzle(e):null});
   e._muz=.15;T.shots--;
   if(T.shots>0)T.timer=gap;
-  else {T.mode='wait';T.timer=(w==='mg'?2.0:w==='missile'?3.2:w==='sonic'?3.6:2.8)/
-      (diffKey==='furious'?1.25:diffKey==='hard'?1.1:1);}
+  else {T.mode='wait';T.timer=turretInterval15(w==='mg'?2.0:w==='missile'?3.2:w==='sonic'?3.6:2.8);}
 }
 function drawModularGroundTurret(e){
   const T=e._modTurret;if(!T||e.dead||e._dyingT!=null)return false;
@@ -49292,7 +49305,7 @@ function navalTick(e, dt){
         const mz={x:base.x+Math.cos(ang)*14,y:base.y+Math.sin(ang)*14};
         /* straight from the turret, no arc and no gravity — Mike: "they act like really
            traveling bullets from the turret" */
-        for(const spread of [-.24,0,.24])eShootT(mz.x,mz.y,ang+spread,4.5,'s1bullet',{silent:true,noMuzzle:true});
+        eShootT(mz.x,mz.y,ang,4.5,'s1bullet',{silent:true,noMuzzle:true});
         if(Audio.SFX.enemyMachineGunHeavy)Audio.SFX.enemyMachineGunHeavy();
         navalFlash(e, mz, 0.78, S1_MUZZLE_ROTARY,{n:6,hpx:33,life:0.13,ox:0,oy:0.46});
         if(e._burst<=0) e._burstCd=NAVAL_BURST_GAP;   // the fixed silence begins
@@ -49726,7 +49739,7 @@ function helixDetonate(b){
      runs for b._full, so every detonation that reaches here IS a full charge; the flag is passed
      through from the bullet rather than hardcoded so a future half-charge burst stays correct. */
   helixBalls.push({x:b.x, y:b.y, t:0, life:0.34, lv:lv, full:(b._full!==false)});
-  explode(b.x, b.y, 40, 'blue');
+  if(typeof playerWeaponBurst!=='function'||!playerWeaponBurst(b,b.x,b.y,72))explode(b.x, b.y, 40, 'blue');
   /* the blinding hold, not a 0.7 wash — "light flash fills entire screen" (Mike, 0821).
      ATOM_HOLD is >1 on purpose: alpha clamps, so the excess is time spent at pure white. */
   atomFlash=Math.max(atomFlash, (typeof ATOM_HOLD!=='undefined')?ATOM_HOLD:1.34);
@@ -56101,7 +56114,7 @@ const REBEL_KEYS=['voss','nyx','rook','kaia','jace'];
 const REBEL_SHIPS=['voss_iron_vulture','nyx_ghostknife','rook_breachhammer','kaia_signal_wraith','jace_razorjack'];
 const REBEL_TINT=['#b65cff','#4ce5e5','#a6c3d5','#ff6979','#dbea52'];
 function rebelSquadInit(b,hpBase){
-  const mult=diffKey==='easy'?.5:diffKey==='hard'?1.22:diffKey==='furious'?1.48:1;
+  const mult=DR15.keys.includes(diffKey)?1:diffKey==='easy'?.5:1;
   b.name='REBEL SQUAD';b.enter=false;b._noHit=false;b.x=camLeftX()+VW/2;b.y=VH*.23;b.w=390;b.h=135;
   b.hp=b.maxhp=Math.ceil(hpBase*mult);
   const each=b.maxhp/5,slots=[-.38,-.19,0,.19,.38];
@@ -61951,7 +61964,7 @@ function mechAimCannons(b, dt){
     want=clamp(want, -Math.PI/2, Math.PI/2);
     if(part._aim==null) part._aim=0;
     const dA=want-part._aim;
-    part._aim += clamp(dA, -CAN_TRACK*dt, CAN_TRACK*dt);
+    part._aim += clamp(dA, -turretSpeed15(CAN_TRACK)*dt, turretSpeed15(CAN_TRACK)*dt);
   }
 }
 /* which rotation frame, and is the set even present? */

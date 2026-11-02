@@ -114586,214 +114586,6 @@
       ]
     },
     {
-      "key": "s8atk_armored_leech_0",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        328,
-        4,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8roll_armored_leech_0",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        3644,
-        1888,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8atk_armored_leech_1",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        588,
-        4,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8roll_armored_leech_1",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        4,
-        2148,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8atk_armored_leech_2",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        848,
-        4,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8roll_armored_leech_2",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        264,
-        2148,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8atk_armored_leech_3",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        1108,
-        4,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8roll_armored_leech_3",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        524,
-        2148,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8atk_armored_leech_4",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        1368,
-        4,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8roll_armored_leech_4",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        784,
-        2148,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8atk_armored_leech_5",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        1628,
-        4,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8roll_armored_leech_5",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        1044,
-        2148,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8atk_armored_leech_6",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        1888,
-        4,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8roll_armored_leech_6",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        1304,
-        2148,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8atk_armored_leech_7",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        2148,
-        4,
-        256,
-        256
-      ]
-    },
-    {
-      "key": "s8roll_armored_leech_7",
-      "root": "nca_stage8_runtime_1",
-      "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
-      "owner": "levels/stage_08",
-      "cell": [
-        "stage8_runtime_1",
-        1564,
-        2148,
-        256,
-        256
-      ]
-    },
-    {
       "key": "s8atk_bone_interceptor_0",
       "root": "nca_stage8_runtime_1",
       "path": "assets/game/levels/stage_08/enemies/atlas/stage_runtime/stage8_runtime_1.png",
@@ -125943,13 +125735,6 @@
       "key": "s81003_morph",
       "root": "s81003_morph",
       "path": "assets/game/levels/stage_08/stage/stage8_1003/morph.png",
-      "owner": "levels/stage_08",
-      "cell": null
-    },
-    {
-      "key": "s81003_gravity",
-      "root": "s81003_gravity",
-      "path": "assets/game/levels/stage_08/stage/stage8_1003/gravity.png",
       "owner": "levels/stage_08",
       "cell": null
     },
@@ -159600,22 +159385,6 @@
       "owner": "levels/stage_08",
       "keys": [
         "nca_stage8_runtime_1",
-        "s8atk_armored_leech_0",
-        "s8roll_armored_leech_0",
-        "s8atk_armored_leech_1",
-        "s8roll_armored_leech_1",
-        "s8atk_armored_leech_2",
-        "s8roll_armored_leech_2",
-        "s8atk_armored_leech_3",
-        "s8roll_armored_leech_3",
-        "s8atk_armored_leech_4",
-        "s8roll_armored_leech_4",
-        "s8atk_armored_leech_5",
-        "s8roll_armored_leech_5",
-        "s8atk_armored_leech_6",
-        "s8roll_armored_leech_6",
-        "s8atk_armored_leech_7",
-        "s8roll_armored_leech_7",
         "s8atk_bone_interceptor_0",
         "s8roll_bone_interceptor_0",
         "s8atk_bone_interceptor_1",
@@ -163381,13 +163150,6 @@
       "owner": "levels/stage_08",
       "keys": [
         "s81003_morph"
-      ]
-    },
-    "s81003_gravity": {
-      "path": "assets/game/levels/stage_08/stage/stage8_1003/gravity.png",
-      "owner": "levels/stage_08",
-      "keys": [
-        "s81003_gravity"
       ]
     },
     "s81003_stalker": {
@@ -177113,14 +176875,6 @@
       "role": "registered runtime asset",
       "width": 768,
       "height": 768
-    },
-    {
-      "path": "assets/game/levels/stage_08/stage/stage8_1003/gravity.png",
-      "owner": "levels/stage_08",
-      "bytes": 289015,
-      "role": "registered runtime asset",
-      "width": 864,
-      "height": 288
     },
     {
       "path": "assets/game/levels/stage_08/stage/stage8_1003/impact.png",

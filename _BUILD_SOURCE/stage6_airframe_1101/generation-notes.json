@@ -1,0 +1,14 @@
+{
+  "tool": "built-in image_gen",
+  "policy": "One canonical hull per request; no generated animation strip. Source-preserving directions/glow exported separately. Original PNGs are the deterministic rebuild inputs.",
+  "common": "Single256x256 fighter or320x320 heavy/bomber hull; fixed fuselage pivot, one proportional scale, transparent margins, top-down metallic arcade pixel art. Nose points south, rear outlets north. One complete solid aircraft, no pose alternatives, attack sheet, scenery, labels, baked flames/muzzles/smoke/aura. Embedded small blue/teal emissive vents, measured south weapon mouths and north exhaust nozzles.",
+  "requests": {
+    "fighter_black": "Compact black/graphite twin-engine interceptor, swept angular wings, neon electric-blue recessed seams and canopy, two fixed chin machine guns. Style reference: style-reference.png.",
+    "fighter_navy": "Navy/white twin-engine air-superiority fighter, broad swept wings, navy spine, shaded white/silver outer panels, two fixed wing-root front guns. Style reference: style-reference.png.",
+    "fighter_teal": "Teal/gray delta strike fighter, broad triangular wings, split tail, gray armor/teal circuits/blue cockpit, two visible parallel forward missile racks and two north engine outlets. Style reference: style-reference.png. Final edit replaces the pointed missiles with two fixed paired gun pods at the same sockets, with visible south-facing hollow mouths; hull/palette/engines/pivot remain. Final source fighter_teal_guns_source.png; earlier candidate retained.",
+    "heavy_wind": "New large blue/teal heavy wind-assault jet, twice compact-fighter mass, elongated armored navy fuselage, swept double wings, four north outlets, embedded teal turbine/circuit channels, twin twin-barrel fixed machine-gun groups and outward slim missile rails. Identity/style reference: fighter_teal_source.png.",
+    "bomber_navy": "New large navy/white four-engine bomber jet, broad distinct bomber silhouette, long white armored fuselage/navy spine, huge swept wings, four rear nozzles, two belly bomb doors and fixed front defensive cannons. Reference: fighter_navy_source.png.",
+    "bomber_black": "Edit the selected four-engine bomber, preserving all four north nozzles, two rectangular bomb doors, defensive gun mouths and broad bomber silhouette. Black graphite primary armor, deep navy spine, cobalt/neon-blue embedded vents, silver rim highlights; deeper crescent sweep while preserving bomber mass. One solid south-facing plate, no baked effects or animation. Reference: bomber_navy_source.png."
+  },
+  "selection": "The first black bomber candidate repeated a compact fighter and omitted four engines; it was not activated. The final source preserves the selected four-engine bomber geometry."
+}

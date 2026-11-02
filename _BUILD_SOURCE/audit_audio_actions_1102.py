@@ -1,0 +1,25 @@
+"""Actual special/action/music playback, mixer controls and resume behaviour."""
+from pathlib import Path
+import sys,json
+from playwright.sync_api import sync_playwright
+R=Path(__file__).resolve().parents[1];sys.path.insert(0,str(R/'_BUILD_SOURCE'));from shoot import TRAP_RAF
+O=R/'_shots/furious_encounters_1102/audio';out=dict(specials=[],music=[],checks=[],errors=[])
+def save():(O/'actions.json').write_text(json.dumps(out,indent=2))
+with sync_playwright()as pw:
+ b=pw.chromium.launch(channel='msedge',headless=True,args=['--autoplay-policy=no-user-gesture-required']);p=b.new_page(viewport={'width':1280,'height':800});p.on('pageerror',lambda e:out['errors'].append(str(e)));p.goto('http://127.0.0.1:8805/game/index.html',wait_until='load',timeout=180000);p.wait_for_function('window.__bofFrames>5');p.mouse.click(4,4);p.evaluate(TRAP_RAF);p.add_script_tag(path=str(R/'_BUILD_SOURCE/enemy_behaviour_lab_1011.js'))
+ p.evaluate('''async()=>{Audio.init();await Snd._audioCtx().resume();window.actionMeter=Snd._audioCtx().createAnalyser();actionMeter.fftSize=2048;BOF_AUDIO_QUALITY_1102.tap().connect(actionMeter);window.actionCalls=[];const old=Snd.play;Snd.play=function(k){const r=old.apply(this,arguments);actionCalls.push({cue:k,accepted:!!r,exists:!!Snd.pools[k]});return r;};window.actionSample=()=>{const a=new Float32Array(actionMeter.fftSize);actionMeter.getFloatTimeDomainData(a);return Math.max(...a.map(Math.abs));};}''')
+ for pilot in p.evaluate('PILOTS.map(p=>p.key)'):
+  p.evaluate('''key=>{EA11.setup(1,'furious');stagePlan=[];waveIdx=999;CP12.next=VP12.next=CP22.nextWave=CP22.nextFlyby=99999;_adaptiveSpawnT=99999;Audio.stopMusic();Snd.loopStopAll();for(const v of Snd._sfxVoices)v.el.pause();pilotIndex=PILOTS.findIndex(p=>p.key===key);run.pilot=key;PILOTMOD={...PILOTS[pilotIndex]};DBGT.god=true;run.bombs=40;run.weapon=3;run.wlevel=5;run.wlevels=WEAPONS.map(()=>5);Snd.vol.master=1;Snd.vol.sfx=.4;actionCalls=[];startSpecial();Input.keys.j=true;}''',pilot)
+  peak=0
+  for i in range(108):
+   q=p.evaluate('''i=>{for(let j=0;j<3;j++)updatePlay(1/60);if(i===80)Input.keys.j=false;if(i===30)useBomb(null);return actionSample();}''',i);peak=max(peak,q);p.wait_for_timeout(45)
+  row=p.evaluate('''()=>{Input.keys.j=false;const r={calls:actionCalls,errors:AQ112.errors.slice(),active:special?.pilot};endSpecial();return r;}''');row.update(pilot=pilot,peak=peak,ok=peak>.00001 and not row['errors']and all(c['exists']for c in row['calls']));out['specials'].append(row);save();print('SPECIAL',pilot,round(peak,5),row['ok'],flush=True)
+ keys=p.evaluate('''()=>{Audio.stopMusic();Snd.loopStopAll();for(const v of Snd._sfxVoices)v.el.pause();const seen=new Set();return Object.keys(Snd.music).filter(k=>{const u=Snd.music[k].src;if(seen.has(u))return false;seen.add(u);return true;});}''')
+ for key in keys:
+  try:
+   row=p.evaluate('''async key=>{Audio.stopMusic();for(const m of Object.values(Snd.music))m.pause();Snd.vol.music=.8;Snd.vol.master=1;Snd.startMusic(key);const m=Snd.music[key];await Promise.race([new Promise(r=>m.readyState>=3?r():m.addEventListener('canplay',r,{once:true})),new Promise(r=>setTimeout(r,18000))]);let peak=0;for(let i=0;i<30;i++){await new Promise(r=>setTimeout(r,50));peak=Math.max(peak,actionSample());}return{peak,advanced:m.currentTime>0,seconds:m.duration,error:m.error?.message||null};}''',key);row.update(key=key,ok=row['peak']>.000001 and row['advanced']and not row['error'])
+  except Exception as e:row=dict(key=key,ok=False,error=str(e))
+  out['music'].append(row);save();print('MUSIC',key,row['ok'],flush=True)
+ q=p.evaluate('''async()=>{Audio.stopMusic();for(const m of Object.values(Snd.music))m.pause();Snd.loopStopAll();for(const v of Snd._sfxVoices)v.el.pause();Snd.prepare('enemyMachineGunHeavy');await new Promise(r=>setTimeout(r,300));const measure=async vol=>{Snd.vol.master=vol;delete Snd._last.enemyMachineGunHeavy;Snd.play('enemyMachineGunHeavy');let peak=0;for(let i=0;i<12;i++){await new Promise(r=>setTimeout(r,25));peak=Math.max(peak,actionSample());}return peak;};const audible=await measure(1);await Snd._audioCtx().suspend();const resumed=await measure(1);for(const v of Snd._sfxVoices)v.el.pause();await new Promise(r=>setTimeout(r,250));const muted=await measure(0);return{audible,resumed,muted,state:Snd._audioCtx().state,errors:AQ112.errors};}''');out['controls']=q
+ out['checks']=[dict(name='All nine special actions produce audible native output',passed=len(out['specials'])==9 and all(r['ok']for r in out['specials'])),dict(name='Every unique native music route plays audibly',passed=all(r['ok']for r in out['music'])),dict(name='Native context resumes after suspension',passed=q['resumed']>.00001 and q['state']=='running'),dict(name='Master mute silences the shared output',passed=q['muted']<.000001),dict(name='No missing cues or audio errors',passed=not out['errors']and not q['errors'])];save();b.close()
+print('SUMMARY',sum(r['passed']for r in out['checks']),'/',len(out['checks']),flush=True);sys.exit(0 if all(r['passed']for r in out['checks'])else 1)

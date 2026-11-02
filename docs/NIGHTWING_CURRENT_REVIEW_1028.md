@@ -1,0 +1,13 @@
+# Nightwing current aircraft and review routing — October28
+
+Mike supplied two frames from the stage6-carrier review movie. The teal banked aircraft matches the retained legacy whole.png bank66, which has the retired Part2 extra stabilizers; the regular white-hit aircraft uses the original planform. The installed identity_1028b / flight_1028c banks already use one canonical sky_repair aircraft. No additional hull redesign, generation, raster or gameplay changes were needed.
+
+28 focused source/native checks and20 existing wind-combat regressions pass. Every live white-hit bank has exact source alpha/pivots for its normal partner. Actual native normal/hit coverage matches across10 idle/bank/roll/somersault/inverted/heading/flyover/drift/return configurations, using two backgrounds to recover coverage on the opaque game canvas. Real native damage/white pixels/expiry and removed-fin collision are verified. No game/draw/console/HTTP errors.
+
+Fresh complete current Nightwing life: 134.74s, 58.39fps, decoded peak-1.3dB, all9 film checks pass. Native ace-spawn setup skips the Carrier; Furious GOD/input bot, level5 laser/40 missiles, first35s without player fire, ordinary allies. No enemy HP/phase/timer writes after setup. Browser audio retrigger/close cancellations remain recorded separately (23 ERR_ABORTED requests); no non-cancellation network failures. Source hashes remain stable. Native defeat, wind, multiple full turn/return cycles and real white hit frames are recorded.
+
+The existing local GitHub review player now routes its Carrier, Nightwing full fight, turn and wind cards to these current local recordings; the Carrier uses the latest108.76s native turbulence recording. Original MP4s are preserved, with earlier-release links and pre-update page/manifest snapshots. The currentLocal flag also respects updated recordings when the player uses its local query mode. No GitHub release files, commits or pushes are changed.
+
+Review `docs/previews/nightwing_current_1028/index.html` and the existing `_shots/github_review_1028/index.html#clip=stage6-carrier`. Evidence `docs/qa/nightwing_current_1028.json`; portable probe/recorder/finalizer use nightwing_current_1028 names. Syntax passes. Full suite exits1 before summary on the existing missing archive manifest.
+
+All25 current review/playback checks pass, including the displayed pair’s exact alpha, full moving playback, four standalone chapter seeks, all four updated gallery movies/durations, decoded end seeks, archive links, local-query routing and desktop/mobile fit. Current gallery media uses Blob URLs so seeks work on the loopback server without Range support; old release files remain untouched.

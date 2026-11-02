@@ -1,0 +1,68 @@
+{
+  "relay": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/relay_source.png",
+    "sha256": "0581f48dd4c6fddf84042b5384ba1577e00bc63ba5ead21d4a9e20b1b35849e7",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  },
+  "relay_roll": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/relay_roll_source.png",
+    "sha256": "b26618aeb83ea50d7c2e6db9f7c25acca4a97688fae4ddf6c044b8367620064b",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  },
+  "slime": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/slime_source.png",
+    "sha256": "9505d911052b9638675bda621716cf36c1ba37b28a871aec4bdae6ebf644e489",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  },
+  "slime_roll": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/slime_roll_source.png",
+    "sha256": "c3ba69c6cc20806d707e724ed86d03ffa945a2086d8863a4e33358e9d09fd6a7",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  },
+  "missilejet": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/missilejet_source.png",
+    "sha256": "3fa99ef776b711b70214024e0f0c7445130f29065b04c2484804d9f8f0026015",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  },
+  "crescent": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/crescent_source.png",
+    "sha256": "47c9189e68388ec5335bf2a4620c54d020c8beac2ebaec0f5e2a53eebfde2568",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  },
+  "barge": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/barge_source.png",
+    "sha256": "a2e1f4e0387f871cb3ed853d1c1475da2db0aed43a12c46a245382a20ea73a9e",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  },
+  "brood": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/brood_source.png",
+    "sha256": "1054ca2a583e0c11ec73c4faa3441f39448c6894e124c3a902da2bfc4a06d7bb",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  },
+  "face": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/face_source.png",
+    "sha256": "3ca1537992fb70b39823ef5a35949526005fdd2d560303b36e525074673523e5",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  },
+  "crawler": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/crawler_source.png",
+    "sha256": "719b8f4bc8e65344a55524a1b8567ffef7b9eff9bdac052bf011dc254d8bd2a1",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  },
+  "fly": {
+    "path": "_BUILD_SOURCE/stage7_amplify_1101/fly_source.png",
+    "sha256": "7bbfeeb4aa9aea482ecc6eb14cfddb1b66e2b0f5b0d656774a9a0591ab8eb649",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage7_amplify_1101/prompts.md"
+  }
+}

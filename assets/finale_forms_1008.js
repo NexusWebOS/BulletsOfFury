@@ -112,7 +112,7 @@ gd4Tick=function(b,dt){
  // the last pool alive stays: no timer sends it home and back into itself
  if(last&&D2&&b._r30.mode==='fight')D2.age=0;
  if(i===8&&D2){const h=D2.p._hammer,A=h&&h.frArmor;
-  if(A&&!A.ff8){const cap=Math.round(J.max[8]*(ff8Diff()===3?.45:ff8Diff()===2?.40:.35));A.max=cap;A.hp=Math.min(A.hp,cap);A.ff8=true;}
+  if(A&&!A.ff8){const cap=Math.round(J.max[8]*(DR15.keys.includes(diffKey)?.35:ff8Diff()===3?.45:ff8Diff()===2?.40:.35));A.max=cap;A.hp=Math.min(A.hp,cap);A.ff8=true;}
  }
  // a copied form heals at most once per fight, and never while it is the last pool alive
  if(b.hp>before+1&&b._r30.mode==='fight'&&J.mimic===i){

@@ -144,7 +144,8 @@ function fb10Blast(b,x,y,why){
  const efx=k==='magma'||k==='fireice'?'fire':k;
  if(typeof efxBurst==='function')efxBurst(efx,x,y,r*1.7);
  if(k==='fireice'&&typeof tsFx==='function')tsFx(x,y,'imp',r*1.6);
- explode(x,y,Math.round(r*.55),FB10_PALETTE[k]||'red',k==='fire'||k==='magma'?'fireball':null);
+ if(typeof playerWeaponBurst!=='function'||!playerWeaponBurst(b,x,y,Math.min(94,r)))
+  explode(x,y,Math.round(r*.55),FB10_PALETTE[k]||'red',k==='fire'||k==='magma'?'fireball':null);
  particles.push({x,y,vx:0,vy:0,t:0,life:.38,r:r*.9,flashring:true,color:col});
  if(k==='fire'||k==='magma'||k==='kinetic')spawnShockRing(x,y,r*.8,k==='kinetic'?'comet':'fire');
  shake=Math.max(shake,2.5+lv*.5+(k==='magma'?2:0));

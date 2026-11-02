@@ -1,0 +1,997 @@
+{
+  "native": [
+    {
+      "name": "normal: released bomb targets stay fixed while player moves",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal: native flight makes both bomber passes",
+      "passed": true,
+      "data": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "normal: leftward first pass then rightward second pass",
+      "passed": true,
+      "data": [
+        {
+          "from": {
+            "x": 936,
+            "y": 138
+          },
+          "to": {
+            "x": -256,
+            "y": 138
+          },
+          "a": 3.141592653589793
+        },
+        {
+          "from": {
+            "x": -256,
+            "y": 138
+          },
+          "to": {
+            "x": 936,
+            "y": 138
+          },
+          "a": 0
+        }
+      ]
+    },
+    {
+      "name": "normal: mirrored landing pattern retains its wave identities",
+      "passed": true,
+      "data": [
+        8,
+        8
+      ]
+    },
+    {
+      "name": "normal: no upward detour between bombing passes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal: complete hull is invisible during rightward warning",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "normal: authored rightward FOV passes green yellow red",
+      "passed": true,
+      "data": {
+        "colours": [
+          "green",
+          "red",
+          "yellow"
+        ],
+        "fields": 26
+      }
+    },
+    {
+      "name": "normal: full stationary warning before flying right",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal: committed safe opening mirrors too",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal: real bombs release on both passes",
+      "passed": true,
+      "data": [
+        {
+          "pass": 0,
+          "wave": 6,
+          "part": "gunL",
+          "target": {
+            "x": 469.93041179539296,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 6,
+          "part": "gunR",
+          "target": {
+            "x": 475.78592875776235,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 7,
+          "part": "gunL",
+          "target": {
+            "x": 402.8886669228469,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 7,
+          "part": "gunR",
+          "target": {
+            "x": 408.7441838852163,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 9,
+          "part": "gunL",
+          "target": {
+            "x": 268.8051771777548,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 9,
+          "part": "gunR",
+          "target": {
+            "x": 274.6606941401242,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 10,
+          "part": "gunL",
+          "target": {
+            "x": 201.76343230520877,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 10,
+          "part": "gunR",
+          "target": {
+            "x": 207.61894926757816,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 6,
+          "part": "gunL",
+          "target": {
+            "x": 139.2114721829834,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 6,
+          "part": "gunR",
+          "target": {
+            "x": 145.06698914535275,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 7,
+          "part": "gunL",
+          "target": {
+            "x": 206.25321705552946,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 7,
+          "part": "gunR",
+          "target": {
+            "x": 212.10873401789885,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 9,
+          "part": "gunL",
+          "target": {
+            "x": 340.3367068006215,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 9,
+          "part": "gunR",
+          "target": {
+            "x": 346.1922237629909,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 10,
+          "part": "gunL",
+          "target": {
+            "x": 407.37845167316755,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 10,
+          "part": "gunR",
+          "target": {
+            "x": 413.23396863553694,
+            "y": 476
+          }
+        }
+      ]
+    },
+    {
+      "name": "normal: actual release velocities reach their exact ground Retinas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal: every observed impact lands on its own warning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal: return is continuous and completes native recovery",
+      "passed": true,
+      "data": {
+        "ended": true,
+        "maxPixelsPerSecond": 999.9999999999515
+      }
+    },
+    {
+      "name": "hard: released bomb targets stay fixed while player moves",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard: native flight makes both bomber passes",
+      "passed": true,
+      "data": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "hard: leftward first pass then rightward second pass",
+      "passed": true,
+      "data": [
+        {
+          "from": {
+            "x": 936,
+            "y": 138
+          },
+          "to": {
+            "x": -256,
+            "y": 138
+          },
+          "a": 3.141592653589793
+        },
+        {
+          "from": {
+            "x": -256,
+            "y": 138
+          },
+          "to": {
+            "x": 936,
+            "y": 138
+          },
+          "a": 0
+        }
+      ]
+    },
+    {
+      "name": "hard: mirrored landing pattern retains its wave identities",
+      "passed": true,
+      "data": [
+        9,
+        9
+      ]
+    },
+    {
+      "name": "hard: no upward detour between bombing passes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard: complete hull is invisible during rightward warning",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "hard: authored rightward FOV passes green yellow red",
+      "passed": true,
+      "data": {
+        "colours": [
+          "green",
+          "red",
+          "yellow"
+        ],
+        "fields": 23
+      }
+    },
+    {
+      "name": "hard: full stationary warning before flying right",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard: committed safe opening mirrors too",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard: real bombs release on both passes",
+      "passed": true,
+      "data": [
+        {
+          "pass": 0,
+          "wave": 6,
+          "part": "gunL",
+          "target": {
+            "x": 495.0710661225978,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 6,
+          "part": "gunR",
+          "target": {
+            "x": 500.9265830849672,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 7,
+          "part": "gunL",
+          "target": {
+            "x": 432.21943030458584,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 7,
+          "part": "gunR",
+          "target": {
+            "x": 438.07494726695523,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 9,
+          "part": "gunR",
+          "target": {
+            "x": 312.37167563093146,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 10,
+          "part": "gunL",
+          "target": {
+            "x": 243.66452285055016,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 10,
+          "part": "gunR",
+          "target": {
+            "x": 249.52003981291955,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 11,
+          "part": "gunL",
+          "target": {
+            "x": 180.81288703253824,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 11,
+          "part": "gunR",
+          "target": {
+            "x": 186.66840399490764,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 6,
+          "part": "gunL",
+          "target": {
+            "x": 114.06705724872629,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 6,
+          "part": "gunR",
+          "target": {
+            "x": 119.92257421109571,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 7,
+          "part": "gunL",
+          "target": {
+            "x": 176.91869306673823,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 7,
+          "part": "gunR",
+          "target": {
+            "x": 182.77421002910765,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 9,
+          "part": "gunL",
+          "target": {
+            "x": 302.62196470276206,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 10,
+          "part": "gunL",
+          "target": {
+            "x": 365.47360052077397,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 10,
+          "part": "gunR",
+          "target": {
+            "x": 371.32911748314336,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 11,
+          "part": "gunL",
+          "target": {
+            "x": 428.3252363387859,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 11,
+          "part": "gunR",
+          "target": {
+            "x": 434.1807533011553,
+            "y": 476
+          }
+        }
+      ]
+    },
+    {
+      "name": "hard: actual release velocities reach their exact ground Retinas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard: every observed impact lands on its own warning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard: return is continuous and completes native recovery",
+      "passed": true,
+      "data": {
+        "ended": true,
+        "maxPixelsPerSecond": 1000.000000000058
+      }
+    },
+    {
+      "name": "furious: released bomb targets stay fixed while player moves",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious: native flight makes both bomber passes",
+      "passed": true,
+      "data": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "furious: leftward first pass then rightward second pass",
+      "passed": true,
+      "data": [
+        {
+          "from": {
+            "x": 936,
+            "y": 138
+          },
+          "to": {
+            "x": -256,
+            "y": 138
+          },
+          "a": 3.141592653589793
+        },
+        {
+          "from": {
+            "x": -256,
+            "y": 138
+          },
+          "to": {
+            "x": 936,
+            "y": 138
+          },
+          "a": 0
+        }
+      ]
+    },
+    {
+      "name": "furious: mirrored landing pattern retains its wave identities",
+      "passed": true,
+      "data": [
+        11,
+        11
+      ]
+    },
+    {
+      "name": "furious: no upward detour between bombing passes",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious: complete hull is invisible during rightward warning",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "furious: authored rightward FOV passes green yellow red",
+      "passed": true,
+      "data": {
+        "colours": [
+          "green",
+          "red",
+          "yellow"
+        ],
+        "fields": 21
+      }
+    },
+    {
+      "name": "furious: full stationary warning before flying right",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious: committed safe opening mirrors too",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious: real bombs release on both passes",
+      "passed": true,
+      "data": [
+        {
+          "pass": 0,
+          "wave": 6,
+          "part": "gunL",
+          "target": {
+            "x": 534.2904868730373,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 7,
+          "part": "gunL",
+          "target": {
+            "x": 477.97542118009846,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 7,
+          "part": "gunR",
+          "target": {
+            "x": 483.83093814246786,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 8,
+          "part": "gunL",
+          "target": {
+            "x": 421.6603554871598,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 8,
+          "part": "gunR",
+          "target": {
+            "x": 427.5158724495292,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 9,
+          "part": "gunR",
+          "target": {
+            "x": 371.20080675659045,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 11,
+          "part": "gunL",
+          "target": {
+            "x": 252.71515840834377,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 11,
+          "part": "gunR",
+          "target": {
+            "x": 258.57067537071316,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 12,
+          "part": "gunL",
+          "target": {
+            "x": 196.4000927154051,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 12,
+          "part": "gunR",
+          "target": {
+            "x": 202.2556096777745,
+            "y": 476
+          }
+        },
+        {
+          "pass": 0,
+          "wave": 13,
+          "part": "gunR",
+          "target": {
+            "x": 145.9405439848357,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 6,
+          "part": "gunR",
+          "target": {
+            "x": 80.702286476252,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 7,
+          "part": "gunL",
+          "target": {
+            "x": 131.16183520682137,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 7,
+          "part": "gunR",
+          "target": {
+            "x": 137.01735216919073,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 8,
+          "part": "gunL",
+          "target": {
+            "x": 187.47690089976,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 8,
+          "part": "gunR",
+          "target": {
+            "x": 193.33241786212943,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 9,
+          "part": "gunL",
+          "target": {
+            "x": 243.79196659269877,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 11,
+          "part": "gunL",
+          "target": {
+            "x": 356.422097978576,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 11,
+          "part": "gunR",
+          "target": {
+            "x": 362.27761494094545,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 12,
+          "part": "gunL",
+          "target": {
+            "x": 412.73716367151474,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 12,
+          "part": "gunR",
+          "target": {
+            "x": 418.59268063388413,
+            "y": 476
+          }
+        },
+        {
+          "pass": 1,
+          "wave": 13,
+          "part": "gunL",
+          "target": {
+            "x": 469.0522293644535,
+            "y": 476
+          }
+        }
+      ]
+    },
+    {
+      "name": "furious: actual release velocities reach their exact ground Retinas",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious: every observed impact lands on its own warning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "furious: return is continuous and completes native recovery",
+      "passed": true,
+      "data": {
+        "ended": true,
+        "maxPixelsPerSecond": 1000.000000000058
+      }
+    },
+    {
+      "name": "One surviving claw retains both nonempty mirrored passes",
+      "passed": true,
+      "data": [
+        6,
+        6
+      ]
+    },
+    {
+      "name": "A claw destroyed between passes has no pending return drops",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native ordinary bombs remain non-interceptible from release",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page/console errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "filmChecks": [
+    {
+      "name": "Complete native Furious defeat",
+      "passed": true
+    },
+    {
+      "name": "Original complete4264HP",
+      "passed": true
+    },
+    {
+      "name": "Opening pair flies left then right",
+      "passed": true
+    },
+    {
+      "name": "Actual film has no vertical movement between bombing passes",
+      "passed": true
+    },
+    {
+      "name": "Rightward FOV occurs while the whole boss is offscreen left",
+      "passed": true
+    },
+    {
+      "name": "No offscreen detour phase between left and right passes",
+      "passed": true
+    },
+    {
+      "name": "Actual bomb releases on both passes",
+      "passed": true
+    },
+    {
+      "name": "Recorded actual impacts match their fixed targets",
+      "passed": true
+    },
+    {
+      "name": "Stable native frame rate",
+      "passed": true
+    },
+    {
+      "name": "Unchanged source throughout filming",
+      "passed": true
+    },
+    {
+      "name": "No page console or HTTP asset errors",
+      "passed": true
+    },
+    {
+      "name": "Only canceled media preload requests",
+      "passed": true
+    },
+    {
+      "name": "Native flight drop impact cues recorded",
+      "passed": true
+    },
+    {
+      "name": "Decoded sound audible and unclipped",
+      "passed": true
+    },
+    {
+      "name": "Complete movie decodes",
+      "passed": true
+    }
+  ],
+  "film": {
+    "path": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\herald_straight_1031\\video\\herald-left-warning-right-1031\\stage8-furious.mp4",
+    "sha256": "8a5be69fe97220e1442cf75b996b1251f80bafa060eae8b5ca1b0352ed3242e3",
+    "seconds": 89.7,
+    "nativeFPS": 58.09599455350051,
+    "chapter": [
+      6.534999999999999,
+      12.183
+    ],
+    "previewFrames": [
+      8.130666666666666,
+      10.83175
+    ],
+    "warningFrame": 9.649,
+    "meanDb": -25.2,
+    "peakDb": -7.8,
+    "expectedCanceledMedia": 8
+  },
+  "syntax": "passed",
+  "fullSuite": {
+    "exit": 1,
+    "reachedFinalSummary": false,
+    "blocker": "Missing UNUSED_ASSETS/retired_art_1022/manifest.json"
+  },
+  "localPreview": "http://127.0.0.1:8805/?revision=herald-left-warning-right-1031#clip=stage8-herald-left-warning-right",
+  "playerChecks": [
+    {
+      "name": "Current full fight and left FOV right chapter use fresh movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Earlier electric and published full fights retained",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native movie byte-range seeking works",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Fresh complete movie and direct left FOV right chapter load",
+      "passed": true,
+      "data": {
+        "duration": 89.699,
+        "time": 6.534999,
+        "width": 1280,
+        "height": 800,
+        "error": false
+      }
+    },
+    {
+      "name": "Actual video and audio playback advances",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both passes seek and render in current player",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No player page console or HTTP errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "hitChecks": [
+    {
+      "name": "Actual in-flight claw damage renders white hit pixels",
+      "passed": true,
+      "data": {
+        "white": 7240,
+        "hp": 461,
+        "before": 471,
+        "flash": 0.18
+      }
+    },
+    {
+      "name": "In-flight claw flash expires normally",
+      "passed": true
+    },
+    {
+      "name": "Hit feedback check has no native browser errors",
+      "passed": true,
+      "data": []
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "fighter_black": {
+    "path": "_BUILD_SOURCE/stage6_airframe_1101/fighter_black_source.png",
+    "sha256": "1287e0b8c3bcf0acf8522e0da285b3e4fdc7767b7965f096626e1307469f6c04",
+    "original": "exec-2910a8b5-e388-46e6-8dec-4ac9465e3448.png",
+    "tool": "built-in image_gen",
+    "requestedCell": [
+      256,
+      256
+    ],
+    "exportCell": [
+      192,
+      192
+    ],
+    "sourcePivot": [
+      627.5,
+      635.0
+    ],
+    "commonScale": 0.13247470101195952,
+    "measuredSourceSockets": {
+      "guns": [
+        [
+          546,
+          990
+        ],
+        [
+          709,
+          990
+        ]
+      ],
+      "tails": [
+        [
+          510,
+          164
+        ],
+        [
+          747,
+          164
+        ]
+      ]
+    }
+  },
+  "fighter_navy": {
+    "path": "_BUILD_SOURCE/stage6_airframe_1101/fighter_navy_source.png",
+    "sha256": "59201a062a1ccf2dda1bbfef347408b44fa70c863b051f1fe1330056324fe40b",
+    "original": "exec-82f42936-2f23-4f0c-9814-e8956317c495.png",
+    "tool": "built-in image_gen",
+    "requestedCell": [
+      256,
+      256
+    ],
+    "exportCell": [
+      192,
+      192
+    ],
+    "sourcePivot": [
+      627.0,
+      634.5
+    ],
+    "commonScale": 0.12435233160621761,
+    "measuredSourceSockets": {
+      "guns": [
+        [
+          435,
+          845
+        ],
+        [
+          818,
+          845
+        ]
+      ],
+      "tails": [
+        [
+          550,
+          208
+        ],
+        [
+          705,
+          208
+        ]
+      ]
+    }
+  },
+  "fighter_teal": {
+    "path": "_BUILD_SOURCE/stage6_airframe_1101/fighter_teal_guns_source.png",
+    "sha256": "6bffb28f7d869e84c807e0888f17cbbbc176db69eb413f16755ca62c24a1cc52",
+    "original": "exec-27f8ccf5-b6ce-4d8a-9f66-c1f0bb965c1a.png",
+    "tool": "built-in image_gen",
+    "requestedCell": [
+      256,
+      256
+    ],
+    "exportCell": [
+      192,
+      192
+    ],
+    "sourcePivot": [
+      627.5,
+      636.5
+    ],
+    "commonScale": 0.12598425196850394,
+    "measuredSourceSockets": {
+      "guns": [
+        [
+          326,
+          985
+        ],
+        [
+          350,
+          985
+        ],
+        [
+          901,
+          985
+        ],
+        [
+          925,
+          985
+        ]
+      ],
+      "tails": [
+        [
+          550,
+          203
+        ],
+        [
+          705,
+          203
+        ]
+      ]
+    }
+  },
+  "heavy_wind": {
+    "path": "_BUILD_SOURCE/stage6_airframe_1101/heavy_wind_source.png",
+    "sha256": "b1860bb0da7390241b79798461647b60540c86ecdca50f89859d04f800c0c9c0",
+    "original": "exec-981b2be5-fa98-493b-b212-5ad48bb477b3.png",
+    "tool": "built-in image_gen",
+    "requestedCell": [
+      320,
+      320
+    ],
+    "exportCell": [
+      192,
+      192
+    ],
+    "sourcePivot": [
+      627.0,
+      638.0
+    ],
+    "commonScale": 0.11940298507462686,
+    "measuredSourceSockets": {
+      "guns": [
+        [
+          373,
+          906
+        ],
+        [
+          407,
+          906
+        ],
+        [
+          848,
+          906
+        ],
+        [
+          883,
+          906
+        ]
+      ],
+      "tails": [
+        [
+          477,
+          201
+        ],
+        [
+          566,
+          221
+        ],
+        [
+          684,
+          221
+        ],
+        [
+          775,
+          201
+        ]
+      ]
+    }
+  },
+  "bomber_navy": {
+    "path": "_BUILD_SOURCE/stage6_airframe_1101/bomber_navy_source.png",
+    "sha256": "2b60582d3354ef7330e2ccb2e161ef94a7b6b242fbf9d7ffeed2affc8aa49670",
+    "original": "exec-815929af-cc7d-4693-8d67-9e3c78dabaeb.png",
+    "tool": "built-in image_gen",
+    "requestedCell": [
+      320,
+      320
+    ],
+    "exportCell": [
+      192,
+      192
+    ],
+    "sourcePivot": [
+      627.0,
+      645.0
+    ],
+    "commonScale": 0.1180327868852459,
+    "measuredSourceSockets": {
+      "guns": [
+        [
+          536,
+          1007
+        ],
+        [
+          717,
+          1007
+        ]
+      ],
+      "tails": [
+        [
+          450,
+          182
+        ],
+        [
+          551,
+          182
+        ],
+        [
+          698,
+          182
+        ],
+        [
+          801,
+          182
+        ]
+      ]
+    }
+  },
+  "bomber_black": {
+    "path": "_BUILD_SOURCE/stage6_airframe_1101/bomber_black_source.png",
+    "sha256": "0603ff78b14bf05449dd602cbdce93c6fbca5ed98ed0c41d9a5b1003fa6d4d47",
+    "original": "exec-c9ec1d88-2e07-4017-8b3f-038d85d1383a.png",
+    "tool": "built-in image_gen",
+    "requestedCell": [
+      320,
+      320
+    ],
+    "exportCell": [
+      192,
+      192
+    ],
+    "sourcePivot": [
+      627.5,
+      646.0
+    ],
+    "commonScale": 0.11812961443806398,
+    "measuredSourceSockets": {
+      "guns": [
+        [
+          536,
+          1007
+        ],
+        [
+          717,
+          1007
+        ]
+      ],
+      "tails": [
+        [
+          450,
+          182
+        ],
+        [
+          551,
+          182
+        ],
+        [
+          698,
+          182
+        ],
+        [
+          801,
+          182
+        ]
+      ]
+    }
+  },
+  "wind_zephyr": {
+    "path": "assets/game/shared/combat/enemy_flight_1031/bf_sky_zephyr.webp",
+    "sha256": "f876343c55a250cb95f6e83bcaf5c1450f2b62aa1bda72cc776e04f7cfe800f4",
+    "cell": [
+      0,
+      0,
+      160,
+      160
+    ],
+    "canonicalPose": "idle0 only",
+    "sourceIdentity": "bf_sky_zephyr"
+  },
+  "wind_gale": {
+    "path": "assets/game/shared/combat/enemy_flight_1031/bf_sky_gale.webp",
+    "sha256": "088220b842ce8cf95df494a45df329bcc5af99aee5a26c27856b08693b80d8fe",
+    "cell": [
+      0,
+      0,
+      160,
+      160
+    ],
+    "canonicalPose": "idle0 only",
+    "sourceIdentity": "bf_sky_gale"
+  },
+  "wind_stratus": {
+    "path": "assets/game/shared/combat/enemy_flight_1031/bf_sky_stratus.webp",
+    "sha256": "0456827f18ebc580bd764ec1031fd601fe765fadc89c49f5545022ce6ac8a67f",
+    "cell": [
+      0,
+      0,
+      160,
+      160
+    ],
+    "canonicalPose": "idle0 only",
+    "sourceIdentity": "bf_sky_stratus"
+  },
+  "wind_helper": {
+    "path": "assets/game/shared/combat/enemy_flight_1031/bf_dasher.webp",
+    "sha256": "ce05601dd9a5f95435128c3c189797928d05a693409efa5e5e0770bbb5150155",
+    "cell": [
+      0,
+      0,
+      160,
+      160
+    ],
+    "canonicalPose": "idle0 only",
+    "sourceIdentity": "bf_dasher"
+  }
+}

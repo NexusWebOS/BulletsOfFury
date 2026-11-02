@@ -79,10 +79,11 @@ hitEnemy=function(e,dmg){
  const before=e.hp,r=ENC30_BASE.hit.apply(this,arguments),parts=e._r30,loss=Math.max(0,before-e.hp);
  if(parts&&loss>0&&!e.dead){
   const bx=_dmgBullet?.x,dx=Number.isFinite(bx)?bx-e.x:0;
-  const name=Math.abs(dx)>e.w*.20?(dx<0?'left':'right'):'turret',p=parts[name];
+  const contact=typeof enemyModuleHitPart==='function'?enemyModuleHitPart(e,_dmgBullet):null;
+  const name=contact?.name||(Math.abs(dx)>e.w*.20?(dx<0?'left':'right'):'turret'),p=parts[name];
   if(p&&p.hp>0){p.hp=Math.max(0,p.hp-loss);if(p.hp===0){
-   const x=e.x+(name==='turret'?0:(name==='left'?-1:1)*e.w*.4);
-   explode(x,e.y,e.w*.38,'red','fireball');if(Audio.SFX.expSmall)Audio.SFX.expSmall();
+   const x=contact?.point.x??e.x+(name==='turret'?0:(name==='left'?-1:1)*e.w*.4),y=contact?.point.y??e.y;
+   explode(x,y,e.w*.38,'red','fireball');if(Audio.SFX.expSmall)Audio.SFX.expSmall();
    if(e._modJet&&parts.left.hp<=0&&parts.right.hp<=0){e._s4Act=null;e._fcd=999;}
   }}
  }return r;

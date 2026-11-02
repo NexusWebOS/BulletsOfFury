@@ -13,14 +13,16 @@ hb25BombDrop=function(b,Q,P){if(!hl51Own(b))return HL51.base.drop.apply(this,arg
  const first=eBullets.length,r=HL51.base.drop.apply(this,arguments),q=eBullets.slice(first).find(q=>q._hb25Drop&&q._heraldOwner1003===b);
  if(q){const index=b._hd1003._hl51Band||0;let B=q._hb25Bomb;
   if(!B){const flight=Math.max(.24,(P.target.y-q.y)/(q.vy*60));
-   B=q._hb25Bomb={at:efxClock+flight,target:{x:q.x+q.vx*60*flight,y:P.target.y},escapeX:Q.escapeX,rank:Q.rank,seed:P.seed};q._hl51Simple=true;
+   // Keep the native fall speed, steering from the actual claw to its committed lane.
+   q.vx=(P.target.x-q.x)/(flight*60);q.spd=Math.hypot(q.vx,q.vy);
+   B=q._hb25Bomb={at:efxClock+flight,target:{...P.target},escapeX:Q.escapeX,rank:Q.rank,seed:P.seed};q._hl51Simple=true;
   }
   b._hd1003._hl51Band=index+1;q._hl51=++HL51.serial;B._hl51=q._hl51;
   // Cosmetic acquisition sweeps into the already committed world-space point.
   // It cannot drag the bomb target after release or shorten its flight.
   q._hl51From={x:clamp(B.target.x+(index%2?92:-92),camLeftX()+32,camRightX()-32),y:B.target.y-48-(index%3)*12};
   q._hl51Reveal=Math.min(.18,(B.at-q._hb25Born)*.25);
-  hl51Log('drop',{id:q._hl51,simple:!heavy,part:P.id,x:q.x,y:q.y,vx:q.vx,vy:q.vy,target:{...B.target},at:B.at,from:{...q._hl51From},reveal:q._hl51Reveal});
+  hl51Log('drop',{id:q._hl51,simple:!heavy,part:P.id,pass:Q.pass,wave:P.wave,x:q.x,y:q.y,vx:q.vx,vy:q.vy,target:{...B.target},at:B.at,from:{...q._hl51From},reveal:q._hl51Reveal});
  }else P.target=old;
  return r;
 };

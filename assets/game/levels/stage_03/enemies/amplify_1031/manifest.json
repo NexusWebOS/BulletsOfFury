@@ -1,0 +1,1979 @@
+{
+  "owner": "_BUILD_SOURCE/build_stage3_amplify_1031.py",
+  "tool": "built-in image_gen / source-preserving palette export",
+  "models": {
+    "shard": {
+      "span": 140,
+      "banks": {
+        "heading": {
+          "key": "i31_shard_heading",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "frames": 1,
+          "sha256": "9b3a37d4da5014b58b2d79ec48ec8ffdcccd9e9677920db9c1690755e60e929d"
+        },
+        "idle": {
+          "key": "i31_shard_idle",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 1,
+          "sha256": "0661a0555db22d8b3ddce78055b7ee9ce190f2bf28d40797937c81b660842ff5"
+        },
+        "attack": {
+          "key": "i31_shard_attack",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "00c1985d8fe441097001774aa4952d2c33fe4211ff57fbad86d987a38f34b1b4"
+        },
+        "drift": {
+          "key": "i31_shard_drift",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 2,
+          "sha256": "f08a7a40e5dadd83ca9fe2b8a1d5ee5c2260df85bda6fb61166889424004e0c2"
+        },
+        "roll": {
+          "key": "i31_shard_roll",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "28bd58cd35f5445e518706db64638a9eaa81bc3b9f65de53380cb84a1e966643"
+        },
+        "somer": {
+          "key": "i31_shard_somer",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "ca6145fbf2ded044ed938222c7df8f9a6ffe04159df1f0c77257b1363430805f"
+        },
+        "charge": {
+          "key": "i31_shard_charge",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "00c1985d8fe441097001774aa4952d2c33fe4211ff57fbad86d987a38f34b1b4"
+        }
+      },
+      "guns": [
+        [
+          65,
+          124
+        ],
+        [
+          94,
+          124
+        ]
+      ],
+      "tails": [
+        [
+          62,
+          21
+        ],
+        [
+          99,
+          21
+        ]
+      ],
+      "source": {
+        "path": "_BUILD_SOURCE/stage3_amplify_1031/shard_source.png",
+        "sha256": "72abf3e2daa849f96ab0d9e969c4792e5309bfbeb391bdd716988531acf6c0b1",
+        "rects": [
+          [
+            60,
+            11,
+            140,
+            233
+          ],
+          [
+            314,
+            11,
+            140,
+            241
+          ],
+          [
+            578,
+            23,
+            144,
+            227
+          ],
+          [
+            815,
+            23,
+            144,
+            227
+          ],
+          [
+            59,
+            265,
+            142,
+            242
+          ],
+          [
+            322,
+            280,
+            145,
+            210
+          ],
+          [
+            526,
+            309,
+            233,
+            135
+          ],
+          [
+            814,
+            285,
+            160,
+            197
+          ],
+          [
+            62,
+            521,
+            135,
+            237
+          ],
+          [
+            286,
+            545,
+            185,
+            182
+          ],
+          [
+            526,
+            557,
+            231,
+            136
+          ],
+          [
+            815,
+            523,
+            163,
+            207
+          ],
+          [
+            63,
+            776,
+            144,
+            223
+          ],
+          [
+            307,
+            773,
+            144,
+            228
+          ],
+          [
+            572,
+            773,
+            147,
+            228
+          ],
+          [
+            820,
+            779,
+            142,
+            222
+          ],
+          [
+            53,
+            1014,
+            154,
+            236
+          ],
+          [
+            310,
+            1011,
+            149,
+            229
+          ],
+          [
+            565,
+            1012,
+            151,
+            238
+          ],
+          [
+            814,
+            1021,
+            163,
+            229
+          ],
+          [
+            59,
+            1260,
+            140,
+            241
+          ],
+          [
+            314,
+            1260,
+            140,
+            245
+          ],
+          [
+            570,
+            1260,
+            140,
+            256
+          ],
+          [
+            826,
+            1260,
+            140,
+            257
+          ]
+        ],
+        "commonSourceCanvas": [
+          264,
+          264
+        ]
+      }
+    },
+    "mine": {
+      "span": 140,
+      "banks": {
+        "heading": {
+          "key": "i31_mine_heading",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "frames": 1,
+          "sha256": "c3088e6e68698b28981b61e3a43adbfbf51f60088f850e567bc73666c3b90843"
+        },
+        "idle": {
+          "key": "i31_mine_idle",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 1,
+          "sha256": "f3039785cecfe916b615c963f6a8426de7cd692fc14f650300b39eb03504d149"
+        },
+        "attack": {
+          "key": "i31_mine_attack",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "92b12205d865677a998c39e3ce30cda069dc3e21398e2e7cd6ec3cdf0cd96aa3"
+        },
+        "drift": {
+          "key": "i31_mine_drift",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 2,
+          "sha256": "a0129d12cafc46c922cb08677d46e6f0c4bb06342daefa7caa07a0dafaf83a29"
+        },
+        "roll": {
+          "key": "i31_mine_roll",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "9c95ef52b1fb0d6564f812e9c2ecba24288e08cf3b9db049a5c0157a571ab0a2"
+        },
+        "somer": {
+          "key": "i31_mine_somer",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "626aa6e633ba6f3bc56a46801e7d6a221dd26ced0e2890041e88f26eb321cc9c"
+        },
+        "charge": {
+          "key": "i31_mine_charge",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "92b12205d865677a998c39e3ce30cda069dc3e21398e2e7cd6ec3cdf0cd96aa3"
+        }
+      },
+      "guns": [
+        [
+          65,
+          124
+        ],
+        [
+          94,
+          124
+        ]
+      ],
+      "tails": [
+        [
+          62,
+          21
+        ],
+        [
+          99,
+          21
+        ]
+      ],
+      "source": {
+        "path": "_BUILD_SOURCE/stage3_amplify_1031/mine_source.png",
+        "sha256": "0fc6f432b0a6d69534eda9c0960591d6cb7c60b188c9bc043168f74467d95e80",
+        "rects": [
+          [
+            26,
+            4,
+            290,
+            227
+          ],
+          [
+            324,
+            4,
+            272,
+            227
+          ],
+          [
+            621,
+            18,
+            264,
+            213
+          ],
+          [
+            899,
+            17,
+            292,
+            212
+          ],
+          [
+            20,
+            233,
+            307,
+            202
+          ],
+          [
+            332,
+            252,
+            266,
+            185
+          ],
+          [
+            609,
+            245,
+            316,
+            194
+          ],
+          [
+            927,
+            252,
+            275,
+            187
+          ],
+          [
+            21,
+            438,
+            299,
+            217
+          ],
+          [
+            348,
+            436,
+            252,
+            198
+          ],
+          [
+            605,
+            452,
+            320,
+            187
+          ],
+          [
+            931,
+            443,
+            252,
+            191
+          ],
+          [
+            33,
+            656,
+            286,
+            218
+          ],
+          [
+            370,
+            647,
+            169,
+            206
+          ],
+          [
+            588,
+            646,
+            304,
+            196
+          ],
+          [
+            971,
+            645,
+            169,
+            208
+          ],
+          [
+            29,
+            879,
+            280,
+            167
+          ],
+          [
+            328,
+            867,
+            264,
+            177
+          ],
+          [
+            602,
+            856,
+            282,
+            191
+          ],
+          [
+            889,
+            858,
+            308,
+            187
+          ],
+          [
+            29,
+            1051,
+            289,
+            228
+          ],
+          [
+            323,
+            1051,
+            278,
+            229
+          ],
+          [
+            605,
+            1051,
+            286,
+            230
+          ],
+          [
+            897,
+            1051,
+            294,
+            229
+          ]
+        ],
+        "commonSourceCanvas": [
+          326,
+          326
+        ]
+      }
+    },
+    "interceptor": {
+      "span": 140,
+      "banks": {
+        "heading": {
+          "key": "i31_interceptor_heading",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "frames": 1,
+          "sha256": "60516594ed352f0775e62d9dde74f556964d3775b07b57c12eeb3d3ae98e1ef5"
+        },
+        "idle": {
+          "key": "i31_interceptor_idle",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 1,
+          "sha256": "4955d25ec20af71e1921e04f592265a75f4174dd817f76052d0a2db691a6ec70"
+        },
+        "attack": {
+          "key": "i31_interceptor_attack",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "2b3b05c23c9608ee5db9194591f3ec4e43fd868978278212b6d2b1de4af8366f"
+        },
+        "drift": {
+          "key": "i31_interceptor_drift",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 2,
+          "sha256": "00773617452ee903182dcef413f5bacd92ef71cbe9e6771f457e886104f9433c"
+        },
+        "roll": {
+          "key": "i31_interceptor_roll",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "6a1d0001767c1bf9285d92006aa025a98671170fc41288e439d437d2730894e5"
+        },
+        "somer": {
+          "key": "i31_interceptor_somer",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "c4a26753d592cd6f9e171083f314207c5665c147165773929706dcedf153628e"
+        },
+        "charge": {
+          "key": "i31_interceptor_charge",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "2b3b05c23c9608ee5db9194591f3ec4e43fd868978278212b6d2b1de4af8366f"
+        }
+      },
+      "guns": [
+        [
+          56,
+          71
+        ],
+        [
+          104,
+          71
+        ]
+      ],
+      "tails": [
+        [
+          62,
+          21
+        ],
+        [
+          99,
+          21
+        ]
+      ],
+      "source": {
+        "path": "_BUILD_SOURCE/stage3_amplify_1031/interceptor_source.png",
+        "sha256": "1075dfd5fb3f9a60e4ab8111dd0e5d5d8089d94b5336029570ed5946039c199d",
+        "rects": [
+          [
+            38,
+            6,
+            276,
+            219
+          ],
+          [
+            336,
+            6,
+            261,
+            219
+          ],
+          [
+            614,
+            3,
+            278,
+            222
+          ],
+          [
+            918,
+            5,
+            275,
+            220
+          ],
+          [
+            33,
+            225,
+            283,
+            190
+          ],
+          [
+            334,
+            229,
+            237,
+            195
+          ],
+          [
+            624,
+            241,
+            284,
+            180
+          ],
+          [
+            945,
+            229,
+            234,
+            195
+          ],
+          [
+            40,
+            422,
+            271,
+            220
+          ],
+          [
+            335,
+            427,
+            250,
+            197
+          ],
+          [
+            614,
+            445,
+            282,
+            178
+          ],
+          [
+            929,
+            427,
+            250,
+            196
+          ],
+          [
+            39,
+            644,
+            272,
+            219
+          ],
+          [
+            413,
+            637,
+            95,
+            226
+          ],
+          [
+            618,
+            637,
+            279,
+            215
+          ],
+          [
+            1005,
+            637,
+            94,
+            225
+          ],
+          [
+            40,
+            864,
+            271,
+            199
+          ],
+          [
+            326,
+            856,
+            262,
+            178
+          ],
+          [
+            616,
+            856,
+            284,
+            171
+          ],
+          [
+            927,
+            856,
+            264,
+            178
+          ],
+          [
+            40,
+            1048,
+            270,
+            226
+          ],
+          [
+            334,
+            1048,
+            267,
+            226
+          ],
+          [
+            624,
+            1048,
+            269,
+            226
+          ],
+          [
+            914,
+            1048,
+            271,
+            224
+          ]
+        ],
+        "commonSourceCanvas": [
+          290,
+          290
+        ]
+      },
+      "gunPoses": [
+        [
+          [
+            54,
+            63
+          ],
+          [
+            105,
+            63
+          ]
+        ],
+        [
+          [
+            60,
+            58
+          ],
+          [
+            105,
+            80
+          ]
+        ],
+        [
+          [
+            78,
+            58
+          ],
+          [
+            91,
+            86
+          ]
+        ],
+        [
+          [
+            57,
+            86
+          ],
+          [
+            95,
+            61
+          ]
+        ],
+        [
+          [
+            54,
+            91
+          ],
+          [
+            105,
+            91
+          ]
+        ],
+        [
+          [
+            60,
+            60
+          ],
+          [
+            90,
+            101
+          ]
+        ],
+        [
+          [
+            80,
+            62
+          ],
+          [
+            80,
+            103
+          ]
+        ],
+        [
+          [
+            60,
+            67
+          ],
+          [
+            91,
+            85
+          ]
+        ]
+      ]
+    },
+    "eye": {
+      "span": 140,
+      "banks": {
+        "sequence": {
+          "key": "i31_eye_sequence",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/eye_sequence.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 16,
+          "sha256": "0933c7cb0f61a35ece1aced52eb7d50ce27b702e12747ac7b7302127d76ee7cc"
+        }
+      },
+      "guns": [
+        [
+          80,
+          14
+        ],
+        [
+          146,
+          80
+        ],
+        [
+          80,
+          146
+        ],
+        [
+          14,
+          80
+        ]
+      ],
+      "tails": []
+    },
+    "carrier": {
+      "span": 140,
+      "banks": {
+        "idle": {
+          "key": "i31_carrier_idle",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/carrier_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "a9476fbd51e614391bce24a08de82b2073fc7e1832190d91c793d3559d429caa"
+        },
+        "attack": {
+          "key": "i31_carrier_attack",
+          "path": "assets/game/levels/stage_03/enemies/amplify_1031/carrier_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "frames": 4,
+          "sha256": "a9476fbd51e614391bce24a08de82b2073fc7e1832190d91c793d3559d429caa"
+        }
+      },
+      "guns": [
+        [
+          57,
+          134
+        ],
+        [
+          105,
+          134
+        ]
+      ],
+      "tails": []
+    }
+  },
+  "banks": {
+    "shard_heading": {
+      "key": "i31_shard_heading",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "frames": 1,
+      "sha256": "9b3a37d4da5014b58b2d79ec48ec8ffdcccd9e9677920db9c1690755e60e929d"
+    },
+    "shard_idle": {
+      "key": "i31_shard_idle",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 1,
+      "sha256": "0661a0555db22d8b3ddce78055b7ee9ce190f2bf28d40797937c81b660842ff5"
+    },
+    "shard_attack": {
+      "key": "i31_shard_attack",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "00c1985d8fe441097001774aa4952d2c33fe4211ff57fbad86d987a38f34b1b4"
+    },
+    "shard_drift": {
+      "key": "i31_shard_drift",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 2,
+      "sha256": "f08a7a40e5dadd83ca9fe2b8a1d5ee5c2260df85bda6fb61166889424004e0c2"
+    },
+    "shard_roll": {
+      "key": "i31_shard_roll",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "28bd58cd35f5445e518706db64638a9eaa81bc3b9f65de53380cb84a1e966643"
+    },
+    "shard_somer": {
+      "key": "i31_shard_somer",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "ca6145fbf2ded044ed938222c7df8f9a6ffe04159df1f0c77257b1363430805f"
+    },
+    "shard_charge": {
+      "key": "i31_shard_charge",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/shard_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "00c1985d8fe441097001774aa4952d2c33fe4211ff57fbad86d987a38f34b1b4"
+    },
+    "mine_heading": {
+      "key": "i31_mine_heading",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "frames": 1,
+      "sha256": "c3088e6e68698b28981b61e3a43adbfbf51f60088f850e567bc73666c3b90843"
+    },
+    "mine_idle": {
+      "key": "i31_mine_idle",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 1,
+      "sha256": "f3039785cecfe916b615c963f6a8426de7cd692fc14f650300b39eb03504d149"
+    },
+    "mine_attack": {
+      "key": "i31_mine_attack",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "92b12205d865677a998c39e3ce30cda069dc3e21398e2e7cd6ec3cdf0cd96aa3"
+    },
+    "mine_drift": {
+      "key": "i31_mine_drift",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 2,
+      "sha256": "a0129d12cafc46c922cb08677d46e6f0c4bb06342daefa7caa07a0dafaf83a29"
+    },
+    "mine_roll": {
+      "key": "i31_mine_roll",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "9c95ef52b1fb0d6564f812e9c2ecba24288e08cf3b9db049a5c0157a571ab0a2"
+    },
+    "mine_somer": {
+      "key": "i31_mine_somer",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "626aa6e633ba6f3bc56a46801e7d6a221dd26ced0e2890041e88f26eb321cc9c"
+    },
+    "mine_charge": {
+      "key": "i31_mine_charge",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/mine_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "92b12205d865677a998c39e3ce30cda069dc3e21398e2e7cd6ec3cdf0cd96aa3"
+    },
+    "interceptor_heading": {
+      "key": "i31_interceptor_heading",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "frames": 1,
+      "sha256": "60516594ed352f0775e62d9dde74f556964d3775b07b57c12eeb3d3ae98e1ef5"
+    },
+    "interceptor_idle": {
+      "key": "i31_interceptor_idle",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 1,
+      "sha256": "4955d25ec20af71e1921e04f592265a75f4174dd817f76052d0a2db691a6ec70"
+    },
+    "interceptor_attack": {
+      "key": "i31_interceptor_attack",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "2b3b05c23c9608ee5db9194591f3ec4e43fd868978278212b6d2b1de4af8366f"
+    },
+    "interceptor_drift": {
+      "key": "i31_interceptor_drift",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 2,
+      "sha256": "00773617452ee903182dcef413f5bacd92ef71cbe9e6771f457e886104f9433c"
+    },
+    "interceptor_roll": {
+      "key": "i31_interceptor_roll",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "6a1d0001767c1bf9285d92006aa025a98671170fc41288e439d437d2730894e5"
+    },
+    "interceptor_somer": {
+      "key": "i31_interceptor_somer",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "c4a26753d592cd6f9e171083f314207c5665c147165773929706dcedf153628e"
+    },
+    "interceptor_charge": {
+      "key": "i31_interceptor_charge",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/interceptor_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "2b3b05c23c9608ee5db9194591f3ec4e43fd868978278212b6d2b1de4af8366f"
+    },
+    "eye_sequence": {
+      "key": "i31_eye_sequence",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/eye_sequence.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 16,
+      "sha256": "0933c7cb0f61a35ece1aced52eb7d50ce27b702e12747ac7b7302127d76ee7cc"
+    },
+    "carrier_idle": {
+      "key": "i31_carrier_idle",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/carrier_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "a9476fbd51e614391bce24a08de82b2073fc7e1832190d91c793d3559d429caa"
+    },
+    "carrier_attack": {
+      "key": "i31_carrier_attack",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/carrier_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "frames": 4,
+      "sha256": "a9476fbd51e614391bce24a08de82b2073fc7e1832190d91c793d3559d429caa"
+    },
+    "slug": {
+      "key": "i31_slug",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/ice_slug.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "f3ce137a917f3320bf58b0f314e6cbba85011ccb3fd58dfbd87fc5bbe2b2f4c4"
+    },
+    "mine": {
+      "key": "i31_mine",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/ice_mine.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "241af3c9a20721cbd535b984df1f5ad86d6dd9d30a446079930d4567f6d6aad7"
+    },
+    "muzzle": {
+      "key": "i31_muzzle",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/ice_muzzle.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "b0e5db8412d273e07d35ec66a40af4552565f2a70124c04aa9533309684d8930"
+    },
+    "thruster": {
+      "key": "i31_thruster",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/ice_thruster.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "ce6afd236c231907c3badff8ed5d02441d251af4d6beb9997319c9b643690a46"
+    },
+    "laser": {
+      "key": "i31_laser",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/ice_laser.webp",
+      "cell": 64,
+      "pivot": [
+        32,
+        32
+      ],
+      "dirs": 288,
+      "cols": 144,
+      "dirRows": 2,
+      "frames": 4,
+      "sha256": "ce43c96513feabc5fb58dff463666236be93902ca0921f88315a941f3bbf08b9"
+    },
+    "turret_laser": {
+      "key": "i31_turret_laser",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/turret_laser.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 64,
+      "cols": 64,
+      "frames": 1,
+      "sha256": "01cc8cb1511deffc648bfffbdbf3580c44c7daebfca5982624b1b5704488a2e0"
+    },
+    "turret_sonic": {
+      "key": "i31_turret_sonic",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/turret_sonic.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 64,
+      "cols": 64,
+      "frames": 1,
+      "sha256": "210c422a8a28fcb9f85671565af30a5153c81ad34faa754c1575f6382bb7d217"
+    },
+    "sonic": {
+      "key": "i31_sonic",
+      "path": "assets/game/levels/stage_03/enemies/amplify_1031/sonic.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "frames": 1,
+      "sha256": "6edb12e322bec58afd49bf7bc307894bbcced2ff7473e99a6a83d8f35b633668"
+    }
+  },
+  "sources": {
+    "shard": {
+      "path": "_BUILD_SOURCE/stage3_amplify_1031/shard_source.png",
+      "sha256": "72abf3e2daa849f96ab0d9e969c4792e5309bfbeb391bdd716988531acf6c0b1",
+      "rects": [
+        [
+          60,
+          11,
+          140,
+          233
+        ],
+        [
+          314,
+          11,
+          140,
+          241
+        ],
+        [
+          578,
+          23,
+          144,
+          227
+        ],
+        [
+          815,
+          23,
+          144,
+          227
+        ],
+        [
+          59,
+          265,
+          142,
+          242
+        ],
+        [
+          322,
+          280,
+          145,
+          210
+        ],
+        [
+          526,
+          309,
+          233,
+          135
+        ],
+        [
+          814,
+          285,
+          160,
+          197
+        ],
+        [
+          62,
+          521,
+          135,
+          237
+        ],
+        [
+          286,
+          545,
+          185,
+          182
+        ],
+        [
+          526,
+          557,
+          231,
+          136
+        ],
+        [
+          815,
+          523,
+          163,
+          207
+        ],
+        [
+          63,
+          776,
+          144,
+          223
+        ],
+        [
+          307,
+          773,
+          144,
+          228
+        ],
+        [
+          572,
+          773,
+          147,
+          228
+        ],
+        [
+          820,
+          779,
+          142,
+          222
+        ],
+        [
+          53,
+          1014,
+          154,
+          236
+        ],
+        [
+          310,
+          1011,
+          149,
+          229
+        ],
+        [
+          565,
+          1012,
+          151,
+          238
+        ],
+        [
+          814,
+          1021,
+          163,
+          229
+        ],
+        [
+          59,
+          1260,
+          140,
+          241
+        ],
+        [
+          314,
+          1260,
+          140,
+          245
+        ],
+        [
+          570,
+          1260,
+          140,
+          256
+        ],
+        [
+          826,
+          1260,
+          140,
+          257
+        ]
+      ],
+      "commonSourceCanvas": [
+        264,
+        264
+      ]
+    },
+    "mine": {
+      "path": "_BUILD_SOURCE/stage3_amplify_1031/mine_source.png",
+      "sha256": "0fc6f432b0a6d69534eda9c0960591d6cb7c60b188c9bc043168f74467d95e80",
+      "rects": [
+        [
+          26,
+          4,
+          290,
+          227
+        ],
+        [
+          324,
+          4,
+          272,
+          227
+        ],
+        [
+          621,
+          18,
+          264,
+          213
+        ],
+        [
+          899,
+          17,
+          292,
+          212
+        ],
+        [
+          20,
+          233,
+          307,
+          202
+        ],
+        [
+          332,
+          252,
+          266,
+          185
+        ],
+        [
+          609,
+          245,
+          316,
+          194
+        ],
+        [
+          927,
+          252,
+          275,
+          187
+        ],
+        [
+          21,
+          438,
+          299,
+          217
+        ],
+        [
+          348,
+          436,
+          252,
+          198
+        ],
+        [
+          605,
+          452,
+          320,
+          187
+        ],
+        [
+          931,
+          443,
+          252,
+          191
+        ],
+        [
+          33,
+          656,
+          286,
+          218
+        ],
+        [
+          370,
+          647,
+          169,
+          206
+        ],
+        [
+          588,
+          646,
+          304,
+          196
+        ],
+        [
+          971,
+          645,
+          169,
+          208
+        ],
+        [
+          29,
+          879,
+          280,
+          167
+        ],
+        [
+          328,
+          867,
+          264,
+          177
+        ],
+        [
+          602,
+          856,
+          282,
+          191
+        ],
+        [
+          889,
+          858,
+          308,
+          187
+        ],
+        [
+          29,
+          1051,
+          289,
+          228
+        ],
+        [
+          323,
+          1051,
+          278,
+          229
+        ],
+        [
+          605,
+          1051,
+          286,
+          230
+        ],
+        [
+          897,
+          1051,
+          294,
+          229
+        ]
+      ],
+      "commonSourceCanvas": [
+        326,
+        326
+      ]
+    },
+    "interceptor": {
+      "path": "_BUILD_SOURCE/stage3_amplify_1031/interceptor_source.png",
+      "sha256": "1075dfd5fb3f9a60e4ab8111dd0e5d5d8089d94b5336029570ed5946039c199d",
+      "rects": [
+        [
+          38,
+          6,
+          276,
+          219
+        ],
+        [
+          336,
+          6,
+          261,
+          219
+        ],
+        [
+          614,
+          3,
+          278,
+          222
+        ],
+        [
+          918,
+          5,
+          275,
+          220
+        ],
+        [
+          33,
+          225,
+          283,
+          190
+        ],
+        [
+          334,
+          229,
+          237,
+          195
+        ],
+        [
+          624,
+          241,
+          284,
+          180
+        ],
+        [
+          945,
+          229,
+          234,
+          195
+        ],
+        [
+          40,
+          422,
+          271,
+          220
+        ],
+        [
+          335,
+          427,
+          250,
+          197
+        ],
+        [
+          614,
+          445,
+          282,
+          178
+        ],
+        [
+          929,
+          427,
+          250,
+          196
+        ],
+        [
+          39,
+          644,
+          272,
+          219
+        ],
+        [
+          413,
+          637,
+          95,
+          226
+        ],
+        [
+          618,
+          637,
+          279,
+          215
+        ],
+        [
+          1005,
+          637,
+          94,
+          225
+        ],
+        [
+          40,
+          864,
+          271,
+          199
+        ],
+        [
+          326,
+          856,
+          262,
+          178
+        ],
+        [
+          616,
+          856,
+          284,
+          171
+        ],
+        [
+          927,
+          856,
+          264,
+          178
+        ],
+        [
+          40,
+          1048,
+          270,
+          226
+        ],
+        [
+          334,
+          1048,
+          267,
+          226
+        ],
+        [
+          624,
+          1048,
+          269,
+          226
+        ],
+        [
+          914,
+          1048,
+          271,
+          224
+        ]
+      ],
+      "commonSourceCanvas": [
+        290,
+        290
+      ]
+    },
+    "eye": {
+      "path": "_BUILD_SOURCE/stage3_amplify_1031/eye_source.png",
+      "sha256": "71582192eba24074d758fceba9044c7bb38dcc131e7b94c3b8399c151ce781f6",
+      "rects": [
+        [
+          110,
+          4,
+          318,
+          252
+        ],
+        [
+          430,
+          4,
+          318,
+          252
+        ],
+        [
+          765,
+          4,
+          318,
+          252
+        ],
+        [
+          1103,
+          4,
+          318,
+          252
+        ],
+        [
+          110,
+          260,
+          318,
+          252
+        ],
+        [
+          430,
+          260,
+          318,
+          252
+        ],
+        [
+          765,
+          260,
+          318,
+          252
+        ],
+        [
+          1103,
+          260,
+          318,
+          252
+        ],
+        [
+          110,
+          516,
+          318,
+          252
+        ],
+        [
+          430,
+          516,
+          318,
+          252
+        ],
+        [
+          765,
+          516,
+          318,
+          252
+        ],
+        [
+          1103,
+          516,
+          318,
+          252
+        ],
+        [
+          110,
+          772,
+          318,
+          252
+        ],
+        [
+          430,
+          772,
+          318,
+          252
+        ],
+        [
+          765,
+          772,
+          318,
+          252
+        ],
+        [
+          1103,
+          772,
+          318,
+          252
+        ]
+      ],
+      "commonSourceCanvas": [
+        320,
+        320
+      ]
+    }
+  },
+  "islands": {
+    "cell": 8,
+    "gw": 85,
+    "gh": 510,
+    "bits": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIcMIAAAAAAAAAAGNCGAAAAAAAAAACAABAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAIAAAAAAAABxJRlOGAAAAAAAAoA//6BgAAAAAAACWP/4gAAAAAAAAB+D/8JAAAAAAAAIHj/+MAAAAAAAAgB7//vAAAAAAAA4A////gCAAAAAAcA///+4AAAAAAAPA///+MAgAAAAAP4////vW4AAAAAf////////AAAAAb///9////wAAAAY///8f//+4AAAAGv3/+H/96MAAAACBx//B/8YCAAAACAY//1//EAAAAABAO/////3AAAAAAwP//////0QAAAAdf///////8AAAAP//////f/8AAAAD//7///H/+AAAAAv/wf//B/4AAAAAD/wH//Af4AAAAAB/9H//wf8AAAAAAC////++KAAAAAAAP////+AAAAAAAAH/////AAAAAAAAD///9/gAAAAAAAB/r/8fAAAAAAAAAPg/+PAAAAAAAAADwP/DgAAAAAAAAB4H/xwAAAAAAAAA4H/4wAAgAAAAAAOv/+wAAAAAAAAAD///wAAAAAAAAAAD/+AAAAAAAAAAAA/8AAAAAAAAAAAAP8AAAAAAAAAAAAD8AAAAAAAAAAAAD/AABAAAAAAAAAD/wABwAAAAAAAAf/+AAcAAAAAAAAf//4AGAAAAAAAA////ABgAAAAAAAf///gAAAAAAAAAP///wAAAAAAAAAH///4AAAAAAAAAH///+AAAAAAAAAP9///wAAAAAAAAX8f///gAAAAAACB/f///+AAAAAADAb///v/AAAAAABgI///j/gAAAAAA7IP//wPwAAAAAAP4D//wD4AAAAAAP8B//8B8AAAAAAD/A//+BuAAAAAAB/8///hhAAAAAAA/////9gAAAAAAAf/////4AAAAAAAD//////IAAAAAAAD////gAAAAAAAAAf///AAAAAAAAAAD///AAAAAAAAAAA///AAAAAAAAAAAf//gAAAAAAAAAAf//wAAAAAAAAAAH//AAAAAAAAAAAh//AAAAAAAAAEBw//gAAAAAAAAAB4//7AAAAAAAAAB+///wAAAAAAAAAf////AAAAAAAAAD////4AAAAAAAAAf////AAAAAAAAAH///9gAAAAAAAAD///8QAAAAAAAAD///+AAAAAAAAAD///+AAAAAAAAAB///+AAAAAAAAAEf///AAAAAAAAAOP///0AAAAAAAD/D////AAAAAAAD+gf//ggAAAAAADeAH//gAAAAAAADHAB//gAAAAAAABjAB//gAAAAAAAAx0B//wAAAAAAAAIfA//8AAAAAAAAAHw///AAAAAAAAIB9///wAAAAAAAGA////8AAAAAAADA/////wAAAAAAAR/////+AAAAAAAD//////+AAAAAAAC//////4AAAAAAAH//////AAAAAAAB/////8wAAAAAAAHp///8MAAAAAAABgf//8MAAAAAAAA4P//8CAAAAAAAAfP///AgAAAAAAAP////AAAAAAAAAH////gIAAAAAAAH////5YAAAAAAAH/////8AAAAAAAH/////8AAAAAAAD/////wAAAAAAAD///fggAAAAAAAF///HgAAAAAAAAMP//hgAAAAAAAAMB//wAAAAAAAAAEAf/4QAAAAAAAAHAH/+4AAAAAAAADQD//8AAAAAAAABAD//8AAAAAAAAAwD//8AAAAAAAAAeD//+AAAAAAAAAP3///AAAAAAAAgH/3//gAAAAAAAAA/x//4AAAAAAAAAH8//8AAAAAAAAAAcP//AAAAAAAAAABP/9wAAAAAAAAAAL/8OAAAAAAAAAAA/8BwAAAAAAAAAAf8AcAAAAAAAAAAP+AOAAAAAAAAAAD+AHgAAAAAAAAAD/gHwAAAAAAAAAH/6HwAAAAAAAAAH///wAAAAAAAAAH///ABgAAAAAAAf///AAAAAAAAAD////AAAAAAAAAD////gAAAAAAAAv////wAAAAAAABj////4AAAAAAABg////+AAAAAAABgX////wAAAAAABwB///9+AAAAAAA4Af//8f4AAAAAAYAf///f/AAAAAAOAf////64AAAAAD8/9///4OAAAAAA/38f//8BgAAAAAPx+H//+AQAAAAAA9/B///oAAAAAAAP/B///+AAAAAAAD/3///+AAAAAAAB//////oAAAAAAAf//////AAAAAAAH//////gAAAAAAD//////wAAAAAAAf/////4AAAAAAAA/////wAAAAAAAAH////gAAAAAAAAB///gAAAAAAAAAA//+AAAAAAAAAAA//+AAAAAAAAAAAP//AAAAAAAAAAAE//gAAAAAAAAgAEP/AAAAAAAAAAACH/AAAAAAAAAAADn/wAAAAAAAAAAD//4AAAAAAAAAAD//8AAAAAAAAAAD//+AAAAAAAAAAB///gAAAAAAAAAA//+gAAAAAAAAAAf/+AAAAAAAAAAAP//hAAAAAAAAAAP//74AAAAAAAAAf////gAAAAAAAD//////AAAAAAAI//////EAAAAAAQH////+iAAAAAAQB////+AIAAAAAcAf////EDAAAAAOAP////wAgAAAAPgP////4AwAAAAH4f////+AYAAAAD5//////gEAAAABwf//////GAAAAAwP//////hAAAAAdP//////ggAAAAP///////wAAAAAH///////wIAAAAD///////8sAAAAAf///////+AAAAAH////+//+AAAAABv///+P/KAAAAAABB///HgAAAAAAAAAf//hAAAAAAAAAAH//4AAAAAAAAAAA//+AAAAAAAAAAAP//AAAAAAAAAAAP//AAAAAAAAAAAD//AAAAAAAAAAAA//gAAAAAAAAAAAf/wAAAAAAAAAAAP/4AAAAAAAAAAAP/8AAAAAAAABAAP//AAAAAAAAAAAH//wAAAAAAAAAAH//8AAAAAAAAAAH///gAAAAAAAAAL///4AAAAAAAAA4////gAAAAAAAA8P///wAAAAAAAA8D///8AAAAAAAD8A//7/8AAAAAAB+AP/4v/AAAAAAA/gP/wD/AAAAAAAP4P/wA/AAAAAAAP///4AfxAAAAAAD///4AfwAAAAADA///+gf4AAAAADgN///4f4AAAAABwMf//+f8CAAAAA8OP////vLAAAAAfiD////j/gAAAAP6A////g/wAAAAD/o////gfwAAAAAP+////4XAAAAAAD//////xAAAAAABf/////4wAAAAAAH/////8IAAAAAAB///8/+AAAAAAAB/9/4P/gAAAAAAA/8P4F/wAAAAAAAP8D+kf4AAAAAAAP8B/+H8AAAAAAAD/B//D8AAAAAAAA/5//z8AAAAAAAAB////IAAAAAAAAAf///AAAAAAAAAAH///AAAAAAAAAAH///wAAAAAAAAAB///4AAAAAAAAAB///8AAAAAAAAAA////AAAAAAAAAA8///wAAAAAAAAAYP//4AAAAAAAAAIH//eAAAAAAAAAMD//HAAAAAAAAAPD//hwAAAAAAAAHz//g4AAAAAAAAD///48AAAAAAAAB////+AAAAAAAAA/////AAAAAAAAAf////AAAAAAAAAf////wQAAAAAAYf////8QAAAAAAM//////4wAAAAAMP/////8YAAAAAGD/////8EAAAAADA/////0CAAAAABgf////wAAAAAAAgf////4AAAAAAAAP////8AAAAAAAAH/////YAAAAAAFG/////+EAAAAAD0P/////WAAAAAA8D/////GAAAAAA/D/////DAAAAAAH3/////hAAAAAAB//////gAAAAAAAP/////4AAAAAAAD/////4AAAAAAAA/////8AAAAAAAA//////AAAAAAAAP/////4AAAAAAAH3////4AAAAAAABx////4AAAAAAAAYf///4AAAAAAAAOf///8AAAAAAAAB////8AAAAAAAAAB//+AAAAAAAAAAAf/8AAAAAAAAAAAP/8AAAAAAAAAAAD/8AAAAAAAAAAAB//AAAAAAAAAAAB//wAAAAAAAAAAD//+AAAAAAAAIAH///8AAAAAAAAAH////gAAAAAAAB/////4AAAAAAAB/////+AAAAAAAB//v///gAAAAAAA//j///wAAAAAAAf/w///4AAAAAAAD/wP//8AAAAAB+A/8P///AAAAAB/4f/f///4AAAAB/8P////++AAAAA/+D////+PgAAAAP/h/////DwAAAAD/4f////j4AAAAAP8H////74AAAAAD+D/////gAAAAAA/h/////AAAAAAAf4/////AAAAAAAP8f////gAAAAAAH+P////wAAAAAAD/D////4AAAAAAB/w////8AAAAAAA/4f///8AAAAAAAP4H///8AAAAAAAP4B///8DgAAAAAHgA///4B4AAAAAHgAf//4B+AAAAf/wAf//4B/wAAAf/wAP//4B/8AAAf/wAH//8A//AAAf/4AB//+Af/gAAP/8AA//wAP/wAAH//AAB/wAH/wAAD//wAAfwAA/QAAA//4AAP4AAPAAAAD/+AAH+AAHAAAAA//gAD/gAAgAAAAf/wAB/wAAAAAAAP/8AA/4AAAAAAAB//AAf+AAAAAAAAf/wAP/gAAAAAAAF/8AP/4AAAAAAAAP/AH/8AAAAAAAAB/gH//AAAAAAAAAfwH//gAAAAAAAAP4D//4AAAAAAAAD4D//uAABAAAAAB4B//jgAAwQAAAA8A//x4AAdYAAAAeAP/w8AADwAAAAHgD/weBgAAAAAAD4B/8HB4AAAAAAD8A/+Hg+AAAAAAB/AP/DwfAAAAAHAfwP/hwfgAAAADwP8P/wwfAAAAAI8D/P/4YPAAAAAcfA///4IHwAAAAMHgf//4AH4AAAAEBwP//8AH4AAAACAYAf/+AD8AAAACAIAH//AD+AAAAHgIAB//gH/uAAAD8MAAf/wH//+AAB/+AAH/4D///gAAP0AAD/8D///4AAAAAAAv+B//f8AAAAAAAD+A//H+AAAAAAAA/AP/h/AAAAAAAAfAP/gfgAAAAAAAPgH/4fgAAAAAAAHwB//fAAAAAAAAD4A//+AAAAAAAAD8Af/+AAAAAAB4D/ABX/AAAAAAB+D/wAB/AAAAAAH///4AAOAAAAAAP///+AAAAAAAABP////gAAAAAAAH/////wAAAAAAAD/////4AAAAAAAD/////8AAAAAAAB/////+AAAAAAAA/////+AAAAAAAAP/////AAAAAAAAB/////AAAAAAAAAf////gAAAAAAAAP6///wAAAAAAAAD4AH/4AAAAAAAAAAAB/8AAAAAAAAAAAAf+AAAAAAAAAAAAH/AAAADgAAAAAAB/gAB/w8AAAAAAA/wAB/wPAAAAAAAf8AB/wDgAAAAAAH/AA/4DwAAAAAAD/wAf+B4AAAAAAB/8AF/h8AAAAAAAn+AAH/gAAAAAAAB/gAB/gAAAAAAAA/4AA/wAAAAAAAAf8AAf4AAAAAAAAB+AAHwAAAAAAAAAeAADAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAYEAAAAAAAAAAAAcCAAAAAAAAAAAAfDgAAAAAAAAAAAf7wAAAAAAAAAAAP/8AAAAAAAAAAAP//AAAAAAAAAAAH//wAAAAAAAAAAD//8AAAAAAAAAAB//+AAAAAAAAAAAf//AAAAAAAAAAAH/+AAAAH4AAAAAAf+AAAAP/AAAAAAAAAAAAf/8AAAAAAAAAAAf//AAAAAAAAAAB///gAAAAAAAAAA///wAAAAAAAAAA/z/4AAAAAAAAAAfw/4AAAAAAAAAAP4f4AAAAAAAAAAD+f8AAAAAAAAAAAv/+AAAAAAAAAAAD/+AAAAHAAAAAAA/+AAAAH4AAAAAAekAAAAH94AAAAAAAAAAAE8fAAAAAAAAAAAAPHwAB4AAAAAAAAPj4AD+AAAAAAABv78AB/AAAAAAAA//+AA/AAAAAAAA//+AALAAAAAAAAf/+AAAAAAAAAAAP//AAAAAAAAAAAH//AAAAAAAAAAAD//AAAAAAAAAAAB//gAAAAAAAAAAB//wAAAAAAAAAAA//4AAAAAAAAAAAf/8AAAAAAAAAAAP/+AAAAAABjAAAH//AAAAAABw4AAB//AAYAAADwOAAAf/AAfwAAD4HgAAH/gA/8AAB4DoAABwAA//AAA+jiAAAAAAf/4AAf7xgAAAAAf//AAP/wQAAAAAH//gAH/wIAAAAACf/gAH/4AAAAAAAH/wAF/8CAAAAAAD/gAAf/BAAAAAAAIAAAP/xgAAAAAAAAAAv/94AAAAAAAAAAf//+AAAAAAAAAAH///AAAAAAAAAAB///gAAAAAAAAAB///wAAAAAAAAAAX//wAAAAAAAAAAB//wAAAAAAAAAAAf/wAAAKAAAAAAAH/wAAAIwAAAAAAA7gAAAMMAAAAAAAAAAAAHOAAAAAAAAAAAAD/AAAAAAAAAAAABeAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAB+AAAAAAAAAAAAB/4AAAAAAAAAAA///AAAAAAAAAAAP//gAAAAAAAAAAH//wAAAAAAAAAAB//8AAAAAAAAAAAP//gAAAAAAAAAAD//8AAAAAAAAAIA///AAAAAAAAAIAf//gAAAAAAAAIAf//4AAAAAAAAEAf//8AAAAAAAADIf//OAAAAAAAAB+///DAAAAAAAAA////BgAAAAAAAAb///xgAAAAAAAAI////gAAAAAAAAIf///gAAAAAAAAGf///wAAAAAAAAGH///4AAAAAAAADj///8AAAAAAAABg///+AAAAAAAAAgP//+AAAAAAAAAQP//+AAAAAAAAANP///AAAAAAAAAH////gAAAAAAAAB////gAAAAAAAAAX///gAAAAAAAAAAP//wAAAAAAAAAAC//4AAAAAAAAAAAP/4AAAAAAAAAAAD8AAAAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+    "source": "assets/game/levels/stage_03/stage/nst3_master_v2.png",
+    "sha256": "6ebcf67a60fed22f057b30b4c3d301d5c510eb83085e27d9e6183dfe376a9f81",
+    "acceptedCells": 12876
+  }
+}

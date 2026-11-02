@@ -1,0 +1,1792 @@
+{
+  "tool": "built-in image_gen",
+  "version": "cast-1102-1",
+  "notes": "Six authored cutscene key poses per Fury pilot; these are not a continuous turntable or animation. Pilot faces follow current native portraits. Each bank retains one shared source scale and ground pivot. Alpha<=8 export matte only is discarded. No live pilot cutscene owner is replaced.",
+  "prompts": "_ART_SOURCES/cast_cinematics_1102/prompts.json",
+  "pilots": {
+    "cole": {
+      "cell": [
+        512,
+        1024
+      ],
+      "pivot": [
+        256,
+        976
+      ],
+      "scale": 1.0334486735870818,
+      "source": "_ART_SOURCES/cast_cinematics_1102/generated/cole.png",
+      "source_sha256": "b1f1c8363757301bad0c42e8e3edafb29e79592cb22f3767493928df944e7454",
+      "sheet": "assets/game/shared/cinematics/cast_1102/cole/sheet.webp",
+      "frames": [
+        {
+          "pose": "neutral",
+          "key": "c112_cole_neutral",
+          "file": "assets/game/shared/cinematics/cast_1102/cole/neutral.png",
+          "source_rect": [
+            55,
+            19,
+            348,
+            694
+          ],
+          "source_pivot": [
+            201.5,
+            694
+          ],
+          "bounds": [
+            105,
+            278,
+            407,
+            976
+          ],
+          "cell": [
+            0,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "0186b36759329f73e3ba9c4a5f8ea50f7b028056d2e2b457940b32180d74a474"
+        },
+        {
+          "pose": "speaking",
+          "key": "c112_cole_speaking",
+          "file": "assets/game/shared/cinematics/cast_1102/cole/speaking.png",
+          "source_rect": [
+            362,
+            18,
+            692,
+            693
+          ],
+          "source_pivot": [
+            538.5,
+            693
+          ],
+          "bounds": [
+            74,
+            278,
+            415,
+            976
+          ],
+          "cell": [
+            512,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "0c44d40b7aa2a3c422ebe63d777687a04e5e899979c3455fbdc9d391c190c7af"
+        },
+        {
+          "pose": "salute",
+          "key": "c112_cole_salute",
+          "file": "assets/game/shared/cinematics/cast_1102/cole/salute.png",
+          "source_rect": [
+            737,
+            21,
+            1054,
+            699
+          ],
+          "source_pivot": [
+            908.5,
+            699
+          ],
+          "bounds": [
+            79,
+            275,
+            406,
+            976
+          ],
+          "cell": [
+            1024,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "e9ff86d345b1a94b2101028d0398037c2ffd1912c2eb027b0317aae8202c8992"
+        },
+        {
+          "pose": "walk_left",
+          "key": "c112_cole_walk_left",
+          "file": "assets/game/shared/cinematics/cast_1102/cole/walk_left.png",
+          "source_rect": [
+            14,
+            718,
+            384,
+            1377
+          ],
+          "source_pivot": [
+            230.75,
+            1377
+          ],
+          "bounds": [
+            32,
+            295,
+            414,
+            976
+          ],
+          "cell": [
+            0,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "5555246d41f7b1d41d70a5f5cbdec4810908742254119e52cc4211878df872ae"
+        },
+        {
+          "pose": "look_back",
+          "key": "c112_cole_look_back",
+          "file": "assets/game/shared/cinematics/cast_1102/cole/look_back.png",
+          "source_rect": [
+            409,
+            713,
+            711,
+            1386
+          ],
+          "source_pivot": [
+            541.5,
+            1386
+          ],
+          "bounds": [
+            119,
+            280,
+            431,
+            976
+          ],
+          "cell": [
+            512,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "1331931d789ed490c9c934ecbcd2d41927de51cb6c76c4cb14ca8244a8ff73b4"
+        },
+        {
+          "pose": "back",
+          "key": "c112_cole_back",
+          "file": "assets/game/shared/cinematics/cast_1102/cole/back.png",
+          "source_rect": [
+            755,
+            710,
+            1054,
+            1385
+          ],
+          "source_pivot": [
+            906.0,
+            1385
+          ],
+          "bounds": [
+            100,
+            278,
+            409,
+            976
+          ],
+          "cell": [
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "6026948f30e186e532c8c7c7c9521d6a81e3c041c32153b3874ee3d241a5b8ca"
+        }
+      ]
+    },
+    "axel": {
+      "cell": [
+        512,
+        1024
+      ],
+      "pivot": [
+        256,
+        976
+      ],
+      "scale": 1.062870699881376,
+      "source": "_ART_SOURCES/cast_cinematics_1102/generated/axel.png",
+      "source_sha256": "e106419c293670c11b8bd2ac6edc59ce1ee7cb30b892a7790cd87e85293c6305",
+      "sheet": "assets/game/shared/cinematics/cast_1102/axel/sheet.webp",
+      "frames": [
+        {
+          "pose": "neutral",
+          "key": "c112_axel_neutral",
+          "file": "assets/game/shared/cinematics/cast_1102/axel/neutral.png",
+          "source_rect": [
+            44,
+            49,
+            348,
+            691
+          ],
+          "source_pivot": [
+            193.5,
+            691
+          ],
+          "bounds": [
+            97,
+            294,
+            420,
+            976
+          ],
+          "cell": [
+            0,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "046bd650ed49714cc7907d6210754e09f6354a9b47a498851afe34b3c07e88ce"
+        },
+        {
+          "pose": "speaking",
+          "key": "c112_axel_speaking",
+          "file": "assets/game/shared/cinematics/cast_1102/axel/speaking.png",
+          "source_rect": [
+            375,
+            46,
+            708,
+            694
+          ],
+          "source_pivot": [
+            585.75,
+            694
+          ],
+          "bounds": [
+            32,
+            287,
+            386,
+            976
+          ],
+          "cell": [
+            512,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "131c769f2283c70d3784ae3787bfc645e53ebe9f91967008f7af67fdc75033f9"
+        },
+        {
+          "pose": "salute",
+          "key": "c112_axel_salute",
+          "file": "assets/game/shared/cinematics/cast_1102/axel/salute.png",
+          "source_rect": [
+            735,
+            47,
+            1085,
+            697
+          ],
+          "source_pivot": [
+            941.0,
+            697
+          ],
+          "bounds": [
+            37,
+            285,
+            409,
+            976
+          ],
+          "cell": [
+            1024,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "62cf17befdc379413f1bf8734d95bc819832077acd7d00ff4c965cb3526d77ea"
+        },
+        {
+          "pose": "walk_left",
+          "key": "c112_axel_walk_left",
+          "file": "assets/game/shared/cinematics/cast_1102/axel/walk_left.png",
+          "source_rect": [
+            20,
+            744,
+            390,
+            1371
+          ],
+          "source_pivot": [
+            224.5,
+            1371
+          ],
+          "bounds": [
+            39,
+            310,
+            432,
+            976
+          ],
+          "cell": [
+            0,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "1d4a1ed515c772aa58edbe3cc3d0033ff5785494aaadbfbd0c38fe44e3e179d5"
+        },
+        {
+          "pose": "look_back",
+          "key": "c112_axel_look_back",
+          "file": "assets/game/shared/cinematics/cast_1102/axel/look_back.png",
+          "source_rect": [
+            417,
+            742,
+            699,
+            1386
+          ],
+          "source_pivot": [
+            551.25,
+            1386
+          ],
+          "bounds": [
+            113,
+            292,
+            413,
+            976
+          ],
+          "cell": [
+            512,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "18b970aae2cb8a658525c273eecc8ccacf0520ad2b0375e43aa7bab0c6f48463"
+        },
+        {
+          "pose": "back",
+          "key": "c112_axel_back",
+          "file": "assets/game/shared/cinematics/cast_1102/axel/back.png",
+          "source_rect": [
+            765,
+            743,
+            1061,
+            1378
+          ],
+          "source_pivot": [
+            914.5,
+            1378
+          ],
+          "bounds": [
+            97,
+            301,
+            412,
+            976
+          ],
+          "cell": [
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "abcad5461f896be301244775108bb0c05c9046d4fab611763c8682b063d46f3e"
+        }
+      ]
+    },
+    "decker": {
+      "cell": [
+        512,
+        1024
+      ],
+      "pivot": [
+        256,
+        976
+      ],
+      "scale": 1.1851851851851851,
+      "source": "_ART_SOURCES/cast_cinematics_1102/generated/decker.png",
+      "source_sha256": "ed9b944b2fcdc1a65a9b9feb1a781ec3f20a301570268687c97a3ea5a64e27c4",
+      "sheet": "assets/game/shared/cinematics/cast_1102/decker/sheet.webp",
+      "frames": [
+        {
+          "pose": "neutral",
+          "key": "c112_decker_neutral",
+          "file": "assets/game/shared/cinematics/cast_1102/decker/neutral.png",
+          "source_rect": [
+            52,
+            33,
+            334,
+            701
+          ],
+          "source_pivot": [
+            200.5,
+            701
+          ],
+          "bounds": [
+            80,
+            184,
+            414,
+            976
+          ],
+          "cell": [
+            0,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "3beef02717800ea2b986030adce0ccc48fc06b0f63ed12010ec0953e452e8e97"
+        },
+        {
+          "pose": "speaking",
+          "key": "c112_decker_speaking",
+          "file": "assets/game/shared/cinematics/cast_1102/decker/speaking.png",
+          "source_rect": [
+            399,
+            34,
+            729,
+            699
+          ],
+          "source_pivot": [
+            549.0,
+            699
+          ],
+          "bounds": [
+            78,
+            188,
+            469,
+            976
+          ],
+          "cell": [
+            512,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "3a423eb41ab9227694b2de70c4b28648788aabe7d0a1036220e0fdfe12973ebe"
+        },
+        {
+          "pose": "salute",
+          "key": "c112_decker_salute",
+          "file": "assets/game/shared/cinematics/cast_1102/decker/salute.png",
+          "source_rect": [
+            755,
+            34,
+            1057,
+            704
+          ],
+          "source_pivot": [
+            943.0,
+            704
+          ],
+          "bounds": [
+            33,
+            182,
+            391,
+            976
+          ],
+          "cell": [
+            1024,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "8086a658b64185513b832597732bfd395922b90f0af6c15c891df6e8c26d53dd"
+        },
+        {
+          "pose": "walk_left",
+          "key": "c112_decker_walk_left",
+          "file": "assets/game/shared/cinematics/cast_1102/decker/walk_left.png",
+          "source_rect": [
+            18,
+            735,
+            361,
+            1372
+          ],
+          "source_pivot": [
+            207.0,
+            1372
+          ],
+          "bounds": [
+            32,
+            221,
+            439,
+            976
+          ],
+          "cell": [
+            0,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "ae3758184249552d7f680c328647c6e9364a1d61e7b0fc13ba0ca5a97ec7364b"
+        },
+        {
+          "pose": "look_back",
+          "key": "c112_decker_look_back",
+          "file": "assets/game/shared/cinematics/cast_1102/decker/look_back.png",
+          "source_rect": [
+            419,
+            734,
+            692,
+            1374
+          ],
+          "source_pivot": [
+            535.5,
+            1374
+          ],
+          "bounds": [
+            118,
+            217,
+            441,
+            976
+          ],
+          "cell": [
+            512,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "99b3f7076ea305b6fb21ceceab83edbb2e1671712f3a9208838f99ab776fc116"
+        },
+        {
+          "pose": "back",
+          "key": "c112_decker_back",
+          "file": "assets/game/shared/cinematics/cast_1102/decker/back.png",
+          "source_rect": [
+            761,
+            733,
+            1028,
+            1372
+          ],
+          "source_pivot": [
+            896.75,
+            1372
+          ],
+          "bounds": [
+            95,
+            219,
+            412,
+            976
+          ],
+          "cell": [
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "29c84897920ef1e6be3c06cc42832d7e94eb90476bf617993f310ca10bd8dec8"
+        }
+      ]
+    },
+    "maverick": {
+      "cell": [
+        512,
+        1024
+      ],
+      "pivot": [
+        256,
+        976
+      ],
+      "scale": 1.1727748691099475,
+      "source": "_ART_SOURCES/cast_cinematics_1102/generated/maverick.png",
+      "source_sha256": "92a8b9e6370b312d50ae38287eeb138604edf6ac8c88b6b6ad9886027eeb0708",
+      "sheet": "assets/game/shared/cinematics/cast_1102/maverick/sheet.webp",
+      "frames": [
+        {
+          "pose": "neutral",
+          "key": "c112_maverick_neutral",
+          "file": "assets/game/shared/cinematics/cast_1102/maverick/neutral.png",
+          "source_rect": [
+            49,
+            59,
+            317,
+            706
+          ],
+          "source_pivot": [
+            183.5,
+            706
+          ],
+          "bounds": [
+            98,
+            217,
+            413,
+            976
+          ],
+          "cell": [
+            0,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "eb525ce5b3e8c5bd644f35b79a321f5149093f3b8c72c3c70c36b05c5077d524"
+        },
+        {
+          "pose": "speaking",
+          "key": "c112_maverick_speaking",
+          "file": "assets/game/shared/cinematics/cast_1102/maverick/speaking.png",
+          "source_rect": [
+            350,
+            63,
+            686,
+            707
+          ],
+          "source_pivot": [
+            541.0,
+            707
+          ],
+          "bounds": [
+            32,
+            221,
+            426,
+            976
+          ],
+          "cell": [
+            512,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "e860884e14b71145b26b4ac9f45de0c9c88e7f74383624b37dd5cb1f3764b63e"
+        },
+        {
+          "pose": "salute",
+          "key": "c112_maverick_salute",
+          "file": "assets/game/shared/cinematics/cast_1102/maverick/salute.png",
+          "source_rect": [
+            742,
+            62,
+            1053,
+            709
+          ],
+          "source_pivot": [
+            918.0,
+            709
+          ],
+          "bounds": [
+            50,
+            217,
+            414,
+            976
+          ],
+          "cell": [
+            1024,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "410e6f5143517dec8e68b5f6b31791c8aee9c9ce11d3f810263a6e5adbda232e"
+        },
+        {
+          "pose": "walk_left",
+          "key": "c112_maverick_walk_left",
+          "file": "assets/game/shared/cinematics/cast_1102/maverick/walk_left.png",
+          "source_rect": [
+            28,
+            742,
+            355,
+            1370
+          ],
+          "source_pivot": [
+            205.0,
+            1370
+          ],
+          "bounds": [
+            48,
+            239,
+            432,
+            976
+          ],
+          "cell": [
+            0,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "a7aaa0e338eb1b1915280a46d23b9d21981167bfcfe32d442104ffec6497dd7c"
+        },
+        {
+          "pose": "look_back",
+          "key": "c112_maverick_look_back",
+          "file": "assets/game/shared/cinematics/cast_1102/maverick/look_back.png",
+          "source_rect": [
+            407,
+            739,
+            671,
+            1389
+          ],
+          "source_pivot": [
+            571.0,
+            1389
+          ],
+          "bounds": [
+            64,
+            214,
+            373,
+            976
+          ],
+          "cell": [
+            512,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "54faca5223ec93eba30658460d85c89d2616c1a6ef4bc8e23cb37d6214ff29e5"
+        },
+        {
+          "pose": "back",
+          "key": "c112_maverick_back",
+          "file": "assets/game/shared/cinematics/cast_1102/maverick/back.png",
+          "source_rect": [
+            768,
+            741,
+            1040,
+            1385
+          ],
+          "source_pivot": [
+            904.0,
+            1385
+          ],
+          "bounds": [
+            97,
+            221,
+            415,
+            976
+          ],
+          "cell": [
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "be98a6f4694981065249a167ed405d746564d2930162a9181c13e4d3137a068f"
+        }
+      ]
+    },
+    "freezer": {
+      "cell": [
+        512,
+        1024
+      ],
+      "pivot": [
+        256,
+        976
+      ],
+      "scale": 1.2140921409214092,
+      "source": "_ART_SOURCES/cast_cinematics_1102/generated/freezer.png",
+      "source_sha256": "90a0bb4dc2d43e49f1a7e7692a9efd911defd7c4acef114b42538c9419241d45",
+      "sheet": "assets/game/shared/cinematics/cast_1102/freezer/sheet.webp",
+      "frames": [
+        {
+          "pose": "neutral",
+          "key": "c112_freezer_neutral",
+          "file": "assets/game/shared/cinematics/cast_1102/freezer/neutral.png",
+          "source_rect": [
+            40,
+            52,
+            327,
+            710
+          ],
+          "source_pivot": [
+            180.5,
+            710
+          ],
+          "bounds": [
+            85,
+            177,
+            434,
+            976
+          ],
+          "cell": [
+            0,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "65c354795e834544202b3dc453f94c105ed8e3488f9dc8027329185ef0d327cd"
+        },
+        {
+          "pose": "speaking",
+          "key": "c112_freezer_speaking",
+          "file": "assets/game/shared/cinematics/cast_1102/freezer/speaking.png",
+          "source_rect": [
+            351,
+            62,
+            683,
+            713
+          ],
+          "source_pivot": [
+            535.5,
+            713
+          ],
+          "bounds": [
+            32,
+            186,
+            435,
+            976
+          ],
+          "cell": [
+            512,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "7487cd6be4d23fb99d9204902ad417946c88e66bbdc9539122cf0983695d32c1"
+        },
+        {
+          "pose": "salute",
+          "key": "c112_freezer_salute",
+          "file": "assets/game/shared/cinematics/cast_1102/freezer/salute.png",
+          "source_rect": [
+            737,
+            62,
+            1057,
+            713
+          ],
+          "source_pivot": [
+            903.0,
+            713
+          ],
+          "bounds": [
+            54,
+            186,
+            443,
+            976
+          ],
+          "cell": [
+            1024,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "7b5fb7fa0feea41d35c77119b9a689c6a1f50a78b989cedc5f179a465beda8a1"
+        },
+        {
+          "pose": "walk_left",
+          "key": "c112_freezer_walk_left",
+          "file": "assets/game/shared/cinematics/cast_1102/freezer/walk_left.png",
+          "source_rect": [
+            30,
+            738,
+            364,
+            1374
+          ],
+          "source_pivot": [
+            189.5,
+            1374
+          ],
+          "bounds": [
+            62,
+            204,
+            468,
+            976
+          ],
+          "cell": [
+            0,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "3723b28877e113c5c72cdcfa27e2762a9f2f2f26be66f3b1758bcf9fc45dc4b0"
+        },
+        {
+          "pose": "look_back",
+          "key": "c112_freezer_look_back",
+          "file": "assets/game/shared/cinematics/cast_1102/freezer/look_back.png",
+          "source_rect": [
+            419,
+            743,
+            671,
+            1380
+          ],
+          "source_pivot": [
+            544.25,
+            1380
+          ],
+          "bounds": [
+            104,
+            203,
+            410,
+            976
+          ],
+          "cell": [
+            512,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "cd356009643f69c97add49a97b0cf1b6e87e1bdaf888f96695f21dbaf77e4bf8"
+        },
+        {
+          "pose": "back",
+          "key": "c112_freezer_back",
+          "file": "assets/game/shared/cinematics/cast_1102/freezer/back.png",
+          "source_rect": [
+            762,
+            740,
+            1038,
+            1376
+          ],
+          "source_pivot": [
+            900.0,
+            1376
+          ],
+          "bounds": [
+            88,
+            204,
+            424,
+            976
+          ],
+          "cell": [
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "4cef6309b83429d5fa30281413f77438de5cc7073b5bf29ff6e4e5a982c6256d"
+        }
+      ]
+    },
+    "juggernaut": {
+      "cell": [
+        512,
+        1024
+      ],
+      "pivot": [
+        256,
+        976
+      ],
+      "scale": 1.1697127937336815,
+      "source": "_ART_SOURCES/cast_cinematics_1102/generated/juggernaut.png",
+      "source_sha256": "20a44c8e3f86c6328922cfd5a23d0d3467b4449afa516322f1c2a4af2e64dc02",
+      "sheet": "assets/game/shared/cinematics/cast_1102/juggernaut/sheet.webp",
+      "frames": [
+        {
+          "pose": "neutral",
+          "key": "c112_juggernaut_neutral",
+          "file": "assets/game/shared/cinematics/cast_1102/juggernaut/neutral.png",
+          "source_rect": [
+            17,
+            49,
+            348,
+            675
+          ],
+          "source_pivot": [
+            184.0,
+            675
+          ],
+          "bounds": [
+            61,
+            244,
+            448,
+            976
+          ],
+          "cell": [
+            0,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "cf06c626b957ce2c5e80c6c280b6ba906d6a18d594bb17dc5b86778c42e040df"
+        },
+        {
+          "pose": "speaking",
+          "key": "c112_juggernaut_speaking",
+          "file": "assets/game/shared/cinematics/cast_1102/juggernaut/speaking.png",
+          "source_rect": [
+            358,
+            56,
+            699,
+            679
+          ],
+          "source_pivot": [
+            538.0,
+            679
+          ],
+          "bounds": [
+            45,
+            247,
+            444,
+            976
+          ],
+          "cell": [
+            512,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "1472f98afa4dd02572674ad9b8d444f85e62169ffbaa1c5ef8508294a600ddfe"
+        },
+        {
+          "pose": "salute",
+          "key": "c112_juggernaut_salute",
+          "file": "assets/game/shared/cinematics/cast_1102/juggernaut/salute.png",
+          "source_rect": [
+            736,
+            54,
+            1078,
+            683
+          ],
+          "source_pivot": [
+            922.0,
+            683
+          ],
+          "bounds": [
+            38,
+            240,
+            438,
+            976
+          ],
+          "cell": [
+            1024,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "8f8b446e0c6096b2b61a59a07a7c45c6dd99b44af1a0469fcf941596c8623318"
+        },
+        {
+          "pose": "walk_left",
+          "key": "c112_juggernaut_walk_left",
+          "file": "assets/game/shared/cinematics/cast_1102/juggernaut/walk_left.png",
+          "source_rect": [
+            15,
+            742,
+            379,
+            1357
+          ],
+          "source_pivot": [
+            187.5,
+            1357
+          ],
+          "bounds": [
+            54,
+            257,
+            480,
+            976
+          ],
+          "cell": [
+            0,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "2e292132c7503fad7f2a175500d3447c5f9afd60c469358c3a30cc4aae0a2b2d"
+        },
+        {
+          "pose": "look_back",
+          "key": "c112_juggernaut_look_back",
+          "file": "assets/game/shared/cinematics/cast_1102/juggernaut/look_back.png",
+          "source_rect": [
+            389,
+            741,
+            694,
+            1367
+          ],
+          "source_pivot": [
+            550.0,
+            1367
+          ],
+          "bounds": [
+            68,
+            244,
+            424,
+            976
+          ],
+          "cell": [
+            512,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "d500878923eb4c2d662e108b0932e263906dbc251e6e102ce341c1418780d348"
+        },
+        {
+          "pose": "back",
+          "key": "c112_juggernaut_back",
+          "file": "assets/game/shared/cinematics/cast_1102/juggernaut/back.png",
+          "source_rect": [
+            735,
+            746,
+            1067,
+            1362
+          ],
+          "source_pivot": [
+            903.0,
+            1362
+          ],
+          "bounds": [
+            59,
+            255,
+            448,
+            976
+          ],
+          "cell": [
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "28cf18a04d37ac908bdf019827e2c9115860d748893d64604756f6953559bead"
+        }
+      ]
+    },
+    "yuri": {
+      "cell": [
+        512,
+        1024
+      ],
+      "pivot": [
+        256,
+        976
+      ],
+      "scale": 1.0566037735849056,
+      "source": "_ART_SOURCES/cast_cinematics_1102/generated/yuri.png",
+      "source_sha256": "44f275567bb5dc5a6ad770ea449b10e0b3e6a3fa83edbbde29ada4e675861787",
+      "sheet": "assets/game/shared/cinematics/cast_1102/yuri/sheet.webp",
+      "frames": [
+        {
+          "pose": "neutral",
+          "key": "c112_yuri_neutral",
+          "file": "assets/game/shared/cinematics/cast_1102/yuri/neutral.png",
+          "source_rect": [
+            54,
+            36,
+            334,
+            708
+          ],
+          "source_pivot": [
+            197.0,
+            708
+          ],
+          "bounds": [
+            105,
+            266,
+            401,
+            976
+          ],
+          "cell": [
+            0,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "655eb66f8d3ad1485865d871992ef63740879b3eb78fe4efafd00161a8385be5"
+        },
+        {
+          "pose": "speaking",
+          "key": "c112_yuri_speaking",
+          "file": "assets/game/shared/cinematics/cast_1102/yuri/speaking.png",
+          "source_rect": [
+            353,
+            39,
+            702,
+            713
+          ],
+          "source_pivot": [
+            565.0,
+            713
+          ],
+          "bounds": [
+            32,
+            264,
+            401,
+            976
+          ],
+          "cell": [
+            512,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "7569a9b7532cb1a70155b0df59427c8f3344c3580f72ee96736b4318d1db9bc2"
+        },
+        {
+          "pose": "salute",
+          "key": "c112_yuri_salute",
+          "file": "assets/game/shared/cinematics/cast_1102/yuri/salute.png",
+          "source_rect": [
+            741,
+            38,
+            1053,
+            713
+          ],
+          "source_pivot": [
+            919.5,
+            713
+          ],
+          "bounds": [
+            67,
+            263,
+            397,
+            976
+          ],
+          "cell": [
+            1024,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "ce3ae6423dd7c5f2c3ce156e3af0dff0cf2bd4d377143e81572e3fe9c8c71e62"
+        },
+        {
+          "pose": "walk_left",
+          "key": "c112_yuri_walk_left",
+          "file": "assets/game/shared/cinematics/cast_1102/yuri/walk_left.png",
+          "source_rect": [
+            36,
+            738,
+            379,
+            1386
+          ],
+          "source_pivot": [
+            191.5,
+            1386
+          ],
+          "bounds": [
+            92,
+            291,
+            454,
+            976
+          ],
+          "cell": [
+            0,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "f327e12e32e1f2db4fef208d0e92d659b6ced2e464b051cb3852cf3e317e33e8"
+        },
+        {
+          "pose": "look_back",
+          "key": "c112_yuri_look_back",
+          "file": "assets/game/shared/cinematics/cast_1102/yuri/look_back.png",
+          "source_rect": [
+            408,
+            735,
+            682,
+            1385
+          ],
+          "source_pivot": [
+            555.25,
+            1385
+          ],
+          "bounds": [
+            100,
+            289,
+            390,
+            976
+          ],
+          "cell": [
+            512,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "425e978a587c54b9e74921de1b16adb5456c3bd2ea720687ab32c42a380b8440"
+        },
+        {
+          "pose": "back",
+          "key": "c112_yuri_back",
+          "file": "assets/game/shared/cinematics/cast_1102/yuri/back.png",
+          "source_rect": [
+            781,
+            737,
+            1053,
+            1383
+          ],
+          "source_pivot": [
+            917.5,
+            1383
+          ],
+          "bounds": [
+            112,
+            293,
+            399,
+            976
+          ],
+          "cell": [
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "5fbbd879625dd11419c2de0df23335684af1929bcee539dcfe3b1f1012f2848b"
+        }
+      ]
+    },
+    "lizzie": {
+      "cell": [
+        512,
+        1024
+      ],
+      "pivot": [
+        256,
+        976
+      ],
+      "scale": 1.3099415204678362,
+      "source": "_ART_SOURCES/cast_cinematics_1102/generated/lizzie.png",
+      "source_sha256": "121a957ecc4713fe7ea7a9f6271053b7c12f40542843a752d1f979f4317c0e8c",
+      "sheet": "assets/game/shared/cinematics/cast_1102/lizzie/sheet.webp",
+      "frames": [
+        {
+          "pose": "neutral",
+          "key": "c112_lizzie_neutral",
+          "file": "assets/game/shared/cinematics/cast_1102/lizzie/neutral.png",
+          "source_rect": [
+            61,
+            19,
+            317,
+            684
+          ],
+          "source_pivot": [
+            187.5,
+            684
+          ],
+          "bounds": [
+            90,
+            105,
+            426,
+            976
+          ],
+          "cell": [
+            0,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "70d166a746b5f431a1138cca28715d1aa7015909d13805e37c035d6d6eefc156"
+        },
+        {
+          "pose": "speaking",
+          "key": "c112_lizzie_speaking",
+          "file": "assets/game/shared/cinematics/cast_1102/lizzie/speaking.png",
+          "source_rect": [
+            380,
+            19,
+            675,
+            686
+          ],
+          "source_pivot": [
+            532.0,
+            686
+          ],
+          "bounds": [
+            57,
+            102,
+            443,
+            976
+          ],
+          "cell": [
+            512,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "d0a30b816766174fe33561b55cf5b90630b4b77131bd102eec5b72653ae73144"
+        },
+        {
+          "pose": "salute",
+          "key": "c112_lizzie_salute",
+          "file": "assets/game/shared/cinematics/cast_1102/lizzie/salute.png",
+          "source_rect": [
+            754,
+            19,
+            1057,
+            688
+          ],
+          "source_pivot": [
+            906.5,
+            688
+          ],
+          "bounds": [
+            56,
+            100,
+            453,
+            976
+          ],
+          "cell": [
+            1024,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "67e797c34357cd3a289b43365977df145cc92848f15e5a9dc52138273a69948a"
+        },
+        {
+          "pose": "walk_left",
+          "key": "c112_lizzie_walk_left",
+          "file": "assets/game/shared/cinematics/cast_1102/lizzie/walk_left.png",
+          "source_rect": [
+            21,
+            725,
+            356,
+            1364
+          ],
+          "source_pivot": [
+            185.0,
+            1364
+          ],
+          "bounds": [
+            41,
+            139,
+            480,
+            976
+          ],
+          "cell": [
+            0,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "c6467ec2b989b1efe27092f73722b7122fd0cc0237c549c4a296800e834cedaf"
+        },
+        {
+          "pose": "look_back",
+          "key": "c112_lizzie_look_back",
+          "file": "assets/game/shared/cinematics/cast_1102/lizzie/look_back.png",
+          "source_rect": [
+            426,
+            720,
+            678,
+            1371
+          ],
+          "source_pivot": [
+            557.0,
+            1371
+          ],
+          "bounds": [
+            84,
+            123,
+            415,
+            976
+          ],
+          "cell": [
+            512,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "22b5399bdbe951089708d06603952649735cffaca0853efeb1e2fd8c7e62c43b"
+        },
+        {
+          "pose": "back",
+          "key": "c112_lizzie_back",
+          "file": "assets/game/shared/cinematics/cast_1102/lizzie/back.png",
+          "source_rect": [
+            780,
+            720,
+            1033,
+            1368
+          ],
+          "source_pivot": [
+            907.5,
+            1368
+          ],
+          "bounds": [
+            89,
+            127,
+            420,
+            976
+          ],
+          "cell": [
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "5e300063f1c1a6e0f0d7d6770b2f249fe66777ae4e65821809f4a3984eaf5d13"
+        }
+      ]
+    },
+    "falva": {
+      "cell": [
+        512,
+        1024
+      ],
+      "pivot": [
+        256,
+        976
+      ],
+      "scale": 1.2691218130311614,
+      "source": "_ART_SOURCES/cast_cinematics_1102/generated/falva.png",
+      "source_sha256": "a0b3ff887eb16218e012bbe8d8c79431e177e1824becbca84da69505883ccd6a",
+      "sheet": "assets/game/shared/cinematics/cast_1102/falva/sheet.webp",
+      "frames": [
+        {
+          "pose": "neutral",
+          "key": "c112_falva_neutral",
+          "file": "assets/game/shared/cinematics/cast_1102/falva/neutral.png",
+          "source_rect": [
+            79,
+            40,
+            324,
+            674
+          ],
+          "source_pivot": [
+            204.5,
+            674
+          ],
+          "bounds": [
+            97,
+            171,
+            408,
+            976
+          ],
+          "cell": [
+            0,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "84fb367322f145c479f1203d82e9fc8f2c50ebd1cf5151e43caf668c49934b37"
+        },
+        {
+          "pose": "speaking",
+          "key": "c112_falva_speaking",
+          "file": "assets/game/shared/cinematics/cast_1102/falva/speaking.png",
+          "source_rect": [
+            380,
+            40,
+            683,
+            679
+          ],
+          "source_pivot": [
+            552.5,
+            679
+          ],
+          "bounds": [
+            37,
+            165,
+            422,
+            976
+          ],
+          "cell": [
+            512,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "b17235a4a5a81e739680732b92ecf39d00ca6675013a66057354dac7b7fc13f4"
+        },
+        {
+          "pose": "salute",
+          "key": "c112_falva_salute",
+          "file": "assets/game/shared/cinematics/cast_1102/falva/salute.png",
+          "source_rect": [
+            766,
+            39,
+            1030,
+            684
+          ],
+          "source_pivot": [
+            910.0,
+            684
+          ],
+          "bounds": [
+            73,
+            157,
+            408,
+            976
+          ],
+          "cell": [
+            1024,
+            0,
+            512,
+            1024
+          ],
+          "sha256": "e61c1fa329cbf5fb36f94f8c446da45f220e78f29172b92739d2853949181283"
+        },
+        {
+          "pose": "walk_left",
+          "key": "c112_falva_walk_left",
+          "file": "assets/game/shared/cinematics/cast_1102/falva/walk_left.png",
+          "source_rect": [
+            28,
+            711,
+            368,
+            1367
+          ],
+          "source_pivot": [
+            204.5,
+            1367
+          ],
+          "bounds": [
+            32,
+            143,
+            464,
+            976
+          ],
+          "cell": [
+            0,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "d44fb4359340581e950d14241fc4e8cecab618ca0060165f24ab1c9a50558916"
+        },
+        {
+          "pose": "look_back",
+          "key": "c112_falva_look_back",
+          "file": "assets/game/shared/cinematics/cast_1102/falva/look_back.png",
+          "source_rect": [
+            429,
+            703,
+            673,
+            1372
+          ],
+          "source_pivot": [
+            526.0,
+            1372
+          ],
+          "bounds": [
+            133,
+            127,
+            443,
+            976
+          ],
+          "cell": [
+            512,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "df53d64d84973bd568ea697a864d0dc77b332db23d54bb53b4072f94c6b2c625"
+        },
+        {
+          "pose": "back",
+          "key": "c112_falva_back",
+          "file": "assets/game/shared/cinematics/cast_1102/falva/back.png",
+          "source_rect": [
+            778,
+            709,
+            1013,
+            1372
+          ],
+          "source_pivot": [
+            895.5,
+            1372
+          ],
+          "bounds": [
+            107,
+            135,
+            405,
+            976
+          ],
+          "cell": [
+            1024,
+            1024,
+            512,
+            1024
+          ],
+          "sha256": "e3a6e64fed7a881e2a8e71ff5c75e2fdeb2914ea1e2292d3819ea6fcb17032da"
+        }
+      ]
+    }
+  },
+  "chronos": {
+    "cell": [
+      512,
+      512
+    ],
+    "pivot": [
+      256,
+      480
+    ],
+    "scale": 0.7284552845528456,
+    "source": "_ART_SOURCES/cast_cinematics_1102/generated/chronos-avatars.png",
+    "source_sha256": "ebb0af63afa54e04726aa1cd915c248b76c92efc3cc35c4f152dfa9a67f8bfab",
+    "sheet": "assets/game/shared/cinematics/cast_1102/chronos/sheet.webp",
+    "frames": [
+      {
+        "pose": "neutral",
+        "key": "c112_chronos_neutral",
+        "file": "assets/game/shared/cinematics/cast_1102/chronos/neutral.png",
+        "source_rect": [
+          31,
+          105,
+          624,
+          596
+        ],
+        "source_pivot": [
+          325.5,
+          596
+        ],
+        "bounds": [
+          41,
+          122,
+          473,
+          480
+        ],
+        "cell": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "sha256": "c8a2d3cf7203ed1ffe476a4c7b3b16fc4e69672c932e1905863f3ba96f24789e"
+      },
+      {
+        "pose": "turn_right",
+        "key": "c112_chronos_turn_right",
+        "file": "assets/game/shared/cinematics/cast_1102/chronos/turn_right.png",
+        "source_rect": [
+          643,
+          103,
+          1235,
+          595
+        ],
+        "source_pivot": [
+          950.5,
+          595
+        ],
+        "bounds": [
+          32,
+          122,
+          463,
+          480
+        ],
+        "cell": [
+          512,
+          0,
+          512,
+          512
+        ],
+        "sha256": "5602dc5b739349ee8230dc9b97faf845d6b2f4ef2734b740073830fd164c3fa6"
+      },
+      {
+        "pose": "turn_left",
+        "key": "c112_chronos_turn_left",
+        "file": "assets/game/shared/cinematics/cast_1102/chronos/turn_left.png",
+        "source_rect": [
+          19,
+          644,
+          619,
+          1172
+        ],
+        "source_pivot": [
+          316.0,
+          1172
+        ],
+        "bounds": [
+          40,
+          95,
+          477,
+          480
+        ],
+        "cell": [
+          0,
+          512,
+          512,
+          512
+        ],
+        "sha256": "cea758d8da6c3ef83178fd1dd0a750e7d4b7baf65e399b511879deccbb87271c"
+      },
+      {
+        "pose": "stern",
+        "key": "c112_chronos_stern",
+        "file": "assets/game/shared/cinematics/cast_1102/chronos/stern.png",
+        "source_rect": [
+          642,
+          653,
+          1237,
+          1172
+        ],
+        "source_pivot": [
+          949.5,
+          1172
+        ],
+        "bounds": [
+          32,
+          102,
+          465,
+          480
+        ],
+        "cell": [
+          512,
+          512,
+          512,
+          512
+        ],
+        "sha256": "69fbb14cf6e54f3883da03006b3f084cb7ff7bc27500b2000cad143633278e68"
+      }
+    ]
+  }
+}

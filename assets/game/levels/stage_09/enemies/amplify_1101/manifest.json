@@ -1,0 +1,5614 @@
+{
+  "owner": "_BUILD_SOURCE/build_stage9_amplify_1101.py",
+  "models": {
+    "kami": {
+      "bank": {
+        "key": "s911_kami_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/kami_body.webp",
+        "cell": 248,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "4c97d6f0474979ba4ee438e1bc9e1f2c003f4b0d183b2e003edec4cc6488230f"
+      },
+      "glow": {
+        "key": "s911_kami_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/kami_glow.webp",
+        "cell": 248,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "e684323612d2a9e539f859cab838e8086c6509bf15d51d81a535b610de067410"
+      },
+      "shield": {
+        "key": "s911_kami_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/kami_shield.webp",
+        "cell": 248,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "5640d5c716b270578c9036cb18514ebb051e05cd8e21898652d73ac97c85bfb6"
+      },
+      "span": 136,
+      "modules": [],
+      "tails": [
+        [
+          104,
+          62
+        ],
+        [
+          152,
+          62
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": [
+        [
+          66,
+          200
+        ],
+        [
+          190,
+          200
+        ]
+      ]
+    },
+    "comet": {
+      "bank": {
+        "key": "s911_comet_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/comet_body.webp",
+        "cell": 248,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "883febc4dab681e5662cb16bf117ad862a273ff1a7b70e6166c922de5fac4ed0"
+      },
+      "glow": {
+        "key": "s911_comet_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/comet_glow.webp",
+        "cell": 248,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "7d6efd0b3688e71d7eabd61ab5537886505c586de3ccc55b8cc423b6bd383f59"
+      },
+      "shield": {
+        "key": "s911_comet_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/comet_shield.webp",
+        "cell": 248,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "d8f91b116faf646c14f4225e7516fc7cebd33744d9df30666b5632994ce870bc"
+      },
+      "span": 138,
+      "modules": [],
+      "tails": [
+        [
+          104,
+          62
+        ],
+        [
+          152,
+          62
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": [
+        [
+          66,
+          200
+        ],
+        [
+          190,
+          200
+        ]
+      ]
+    },
+    "beacon": {
+      "bank": {
+        "key": "s911_beacon_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/beacon_body.webp",
+        "cell": 232,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "d594963293fc9f8a52d520b0558ac6ae5c077a73166e425f2383bd114c2f1242"
+      },
+      "glow": {
+        "key": "s911_beacon_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/beacon_glow.webp",
+        "cell": 232,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "8bed9c1e0f9a573f3af14bb98769b513a11aa05d5991c8362d67499796782999"
+      },
+      "shield": {
+        "key": "s911_beacon_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/beacon_shield.webp",
+        "cell": 232,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "173e84a92f7bd029235dd424a9ae3c7aedffdd41747cb5d94c28e6293ed169f4"
+      },
+      "span": 164,
+      "modules": [],
+      "tails": [],
+      "core": [
+        128,
+        128
+      ],
+      "guns": [],
+      "coreBank": {
+        "key": "s911_beacon_core",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/beacon_core.webp",
+        "cell": 70,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "4ab96fb8487fbc220f1238bd3f280ed411d7c1d8717c233329b1f75f0d3b4175"
+      }
+    },
+    "beamship": {
+      "bank": {
+        "key": "s911_beamship_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/beamship_body.webp",
+        "cell": 264,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "25544f5b9979b2ffa27d712e09c06a95af5f1af10361268f766314296902fe77"
+      },
+      "glow": {
+        "key": "s911_beamship_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/beamship_glow.webp",
+        "cell": 264,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "686d351b189177d701a4ef58c294e04009302fbe7fe5fc5b735f5d49796f4ef4"
+      },
+      "shield": {
+        "key": "s911_beamship_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/beamship_shield.webp",
+        "cell": 264,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "c64b1b346839871ae41c3ea695ed9336b781451163456404f9072943aba19759"
+      },
+      "span": 190,
+      "modules": [],
+      "tails": [
+        [
+          104,
+          62
+        ],
+        [
+          152,
+          62
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": [
+        [
+          71,
+          198
+        ],
+        [
+          183,
+          198
+        ]
+      ]
+    },
+    "spinner": {
+      "bank": {
+        "key": "s911_spinner_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_body.webp",
+        "cell": 166,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "36a6433267cc3b78fde639a8263c29defbaaac7cad65fe7e70f59318121c5770"
+      },
+      "glow": {
+        "key": "s911_spinner_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_glow.webp",
+        "cell": 166,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "57827b4b10469b3d6b197e2ffe3279f0ea5e864f54d4d204c9743acd7c6af93f"
+      },
+      "shield": {
+        "key": "s911_spinner_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_shield.webp",
+        "cell": 166,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "787cbcfa3b3b1bd2dde59bf1396e3ac6d57ef062edbd28ed16c6bbfee7f2d578"
+      },
+      "span": 172,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_spinner_part0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part0.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "d0c5c43abc746c15161a0ede75dee136a1c3c951a667e2975707e55363dfe843"
+          },
+          "glow": {
+            "key": "s911_spinner_part0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part0_glow.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "a28ea8365b6ba17a0d070813dd2a2df033810dbee079c6f65c74a4879b972df6"
+          },
+          "shield": {
+            "key": "s911_spinner_part0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part0_shield.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "08e5c434af23a85823736c501347920fdd2b7ab6aba5cd69caef74db7468340c"
+          },
+          "mount": [
+            128,
+            75
+          ],
+          "muzzle": [
+            2,
+            -61
+          ],
+          "role": "gun",
+          "baseAngle": -1.5380211823908208
+        },
+        {
+          "bank": {
+            "key": "s911_spinner_part1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part1.webp",
+            "cell": 146,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "a705f2aa6a7aff870e2905afd8b0e3d658faa3977e03a2c68f45919b9ea9e04d"
+          },
+          "glow": {
+            "key": "s911_spinner_part1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part1_glow.webp",
+            "cell": 146,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "abb92d2404f7017c30c9b171776625a9713c326c86633bde752831c4eceda1c1"
+          },
+          "shield": {
+            "key": "s911_spinner_part1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part1_shield.webp",
+            "cell": 146,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "f5a42d1c1ad7a18cee4564d8b59d122c1333aadff00b96686e0a190e21a7f065"
+          },
+          "mount": [
+            177,
+            98
+          ],
+          "muzzle": [
+            55,
+            -32
+          ],
+          "role": "gun",
+          "baseAngle": -0.5269432271894297
+        },
+        {
+          "bank": {
+            "key": "s911_spinner_part2",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part2.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "dd83776294bf9a6e17494bcdc50aef51fe80a8ef77c5d0521c3199f5fd2c6c0f"
+          },
+          "glow": {
+            "key": "s911_spinner_part2_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part2_glow.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "f6b88b6edbe2c6f05ade012d8cd18d2494df220ac199018d89308b1de1307b7c"
+          },
+          "shield": {
+            "key": "s911_spinner_part2_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part2_shield.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "72c274995b00c2b983a9d2036ed2448e1f9e8b8740b034c6145f06cd45b08a66"
+          },
+          "mount": [
+            177,
+            154
+          ],
+          "muzzle": [
+            55,
+            35
+          ],
+          "role": "gun",
+          "baseAngle": 0.5667292175235064
+        },
+        {
+          "bank": {
+            "key": "s911_spinner_part3",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part3.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "a46e3f8867510cf7a74e3f2cab799e24e8d3bb6764cf76cae35e663bad087ac7"
+          },
+          "glow": {
+            "key": "s911_spinner_part3_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part3_glow.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "994ee21855ca5e0eec9610a7f2c12523361ff818596e539bf7cceae792e02132"
+          },
+          "shield": {
+            "key": "s911_spinner_part3_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part3_shield.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "aa30145ae8607f268ea6cecc2cab5f7702e07e8572aae15a799c85360b3fea0f"
+          },
+          "mount": [
+            128,
+            180
+          ],
+          "muzzle": [
+            2,
+            60
+          ],
+          "role": "gun",
+          "baseAngle": 1.5374753309166493
+        },
+        {
+          "bank": {
+            "key": "s911_spinner_part4",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part4.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "698202f247fa51256c71baa7947831a350ab8fd8f9c650b100917e1141c423d3"
+          },
+          "glow": {
+            "key": "s911_spinner_part4_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part4_glow.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "a45d4906856be30e728f2faa6a78f0ad64a503adf828761a6c0d6cff00ce3c7f"
+          },
+          "shield": {
+            "key": "s911_spinner_part4_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part4_shield.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "e017e5f9eb040ecc54e9183d2879212d4138cd4ef3e885ec8e81940605269652"
+          },
+          "mount": [
+            78,
+            154
+          ],
+          "muzzle": [
+            -55,
+            35
+          ],
+          "role": "gun",
+          "baseAngle": 2.5748634360662868
+        },
+        {
+          "bank": {
+            "key": "s911_spinner_part5",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part5.webp",
+            "cell": 146,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "1e413f392b7c56a9f7c522b6e6afdaccce87ef042a9ab1125e31c936f1156f88"
+          },
+          "glow": {
+            "key": "s911_spinner_part5_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part5_glow.webp",
+            "cell": 146,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "9ae627a0a867f482b7956bac5e667d27af2765baf23ca6a249a19f584b1205bf"
+          },
+          "shield": {
+            "key": "s911_spinner_part5_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part5_shield.webp",
+            "cell": 146,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "623df7f0a0870054a973160d30888cc75b0b6453ea65f97da090a7b1c299a4f2"
+          },
+          "mount": [
+            78,
+            98
+          ],
+          "muzzle": [
+            -55,
+            -32
+          ],
+          "role": "gun",
+          "baseAngle": -2.6146494264003635
+        }
+      ],
+      "tails": [],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "jumper": {
+      "bank": {
+        "key": "s911_jumper_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_body.webp",
+        "cell": 276,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "68e24ac1bca805350f88e143f6bba925da849d5c6999591bff63dffd2605ebe1"
+      },
+      "glow": {
+        "key": "s911_jumper_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_glow.webp",
+        "cell": 276,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "270b72e3a30fdc24c5cb826439962e0648cd74b6eda005639298a510b100e8d0"
+      },
+      "shield": {
+        "key": "s911_jumper_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_shield.webp",
+        "cell": 276,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "ed780addb1f5d6fb55831833c9f582e817c076f2a953d3251a782be3a9b1ea0e"
+      },
+      "span": 148,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_jumper_part0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part0.webp",
+            "cell": 156,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "c0e84259e62ede4ff573755405457856fa31cfd451ef87e7b455aa376bd7ddd1"
+          },
+          "glow": {
+            "key": "s911_jumper_part0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part0_glow.webp",
+            "cell": 156,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "bf40e02c839f95ccfe57d1c72a2c14a8fc1f12b721e62924ce59e14483c7de7f"
+          },
+          "shield": {
+            "key": "s911_jumper_part0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part0_shield.webp",
+            "cell": 156,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "34ee37d627eeff8285a02f430181737a47d3480f6216a6707881fd6cd1ccdf3a"
+          },
+          "mount": [
+            94,
+            143
+          ],
+          "muzzle": [
+            0,
+            67
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        },
+        {
+          "bank": {
+            "key": "s911_jumper_part1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part1.webp",
+            "cell": 156,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "bb8e3987d781c775f48aa686166549b23158a66238f6ef12a911910614ebbee2"
+          },
+          "glow": {
+            "key": "s911_jumper_part1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part1_glow.webp",
+            "cell": 156,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "d94162ae826fc0a074c349b948cff7a6d747a2b245313797d2f8614586c8453f"
+          },
+          "shield": {
+            "key": "s911_jumper_part1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part1_shield.webp",
+            "cell": 156,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "c5621696bd2f3b09e4d070b92153b10246395ee3a5866f78530e6f6521234e9d"
+          },
+          "mount": [
+            162,
+            143
+          ],
+          "muzzle": [
+            -1,
+            67
+          ],
+          "role": "gun",
+          "baseAngle": 1.5857205917849817
+        }
+      ],
+      "tails": [
+        [
+          112,
+          47
+        ],
+        [
+          143,
+          47
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "skimmer": {
+      "bank": {
+        "key": "s911_skimmer_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_body.webp",
+        "cell": 294,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "6e21e9b826218b682e616189fd01af90aa7f97d2e6f9005e12292b9a40702855"
+      },
+      "glow": {
+        "key": "s911_skimmer_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_glow.webp",
+        "cell": 294,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "23e822ceb2fde944f85d707570528fcb0b595908ac7c0ef2bb786bee16c40545"
+      },
+      "shield": {
+        "key": "s911_skimmer_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_shield.webp",
+        "cell": 294,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "89b40ba044d61195540f2916200519234ccf94f1642d11d7286e7bc0969110a0"
+      },
+      "span": 158,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_skimmer_part0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part0.webp",
+            "cell": 124,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "e57c36a3ef06ca4ec929aadf402b00b1758ce49b345228e5dec8f148a4b6f2ec"
+          },
+          "glow": {
+            "key": "s911_skimmer_part0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part0_glow.webp",
+            "cell": 124,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "4bb8728ab8367176b1de1c416349338e8b93c0056d19ad7cdfca435e50323854"
+          },
+          "shield": {
+            "key": "s911_skimmer_part0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part0_shield.webp",
+            "cell": 124,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "f3e2802027c286505fc58b4caad010f2796e6382e3bca48a5ce7a74f2ca18cd5"
+          },
+          "mount": [
+            85,
+            150
+          ],
+          "muzzle": [
+            0,
+            49
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        },
+        {
+          "bank": {
+            "key": "s911_skimmer_part1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part1.webp",
+            "cell": 124,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "49cb451cab0c2b2d163924973f8a6b5dc18c07d425e56c884458c0162393ca91"
+          },
+          "glow": {
+            "key": "s911_skimmer_part1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part1_glow.webp",
+            "cell": 124,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "4166c90b9ecf3b743e06194d8d1831ba2f8f630f59da16af65275e67774f1994"
+          },
+          "shield": {
+            "key": "s911_skimmer_part1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part1_shield.webp",
+            "cell": 124,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "eaf3f24832823f9e06e2bca58c341b45d33a40d879dbdbb57b06ca88fe1be0bb"
+          },
+          "mount": [
+            171,
+            150
+          ],
+          "muzzle": [
+            0,
+            49
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        }
+      ],
+      "tails": [
+        [
+          114,
+          32
+        ],
+        [
+          143,
+          32
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "ringlaser": {
+      "bank": {
+        "key": "s911_ringlaser_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_body.webp",
+        "cell": 196,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "b00ff4af9336b52a51147dc9836b45df6646994e5b5da228e9060f04fb33c617"
+      },
+      "glow": {
+        "key": "s911_ringlaser_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_glow.webp",
+        "cell": 196,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "c6db5d81d2e70ca4bf1876c8944e328cb13a2ed9d2c12b66d25a3f3fccfd6c09"
+      },
+      "shield": {
+        "key": "s911_ringlaser_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_shield.webp",
+        "cell": 196,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "5ad3e01cc9b33076019bca0f2ab8e7383bdb434542a32444f394fb722b840669"
+      },
+      "span": 174,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_ringlaser_part0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part0.webp",
+            "cell": 184,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "654a1227f2ad10cc9301d2f3b54508e28c8ca2a075923034a15c928d28d0f0b6"
+          },
+          "glow": {
+            "key": "s911_ringlaser_part0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part0_glow.webp",
+            "cell": 184,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "f354809d8c3d3d444caa8e4e234049bad130c6bd8fbdeb640bf9c55e3da2fa16"
+          },
+          "shield": {
+            "key": "s911_ringlaser_part0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part0_shield.webp",
+            "cell": 184,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "46d516f37f45e6f5d053263212aaa500af2be7365ea682d713259e364a54e5c4"
+          },
+          "mount": [
+            99,
+            128
+          ],
+          "muzzle": [
+            0,
+            79
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        },
+        {
+          "bank": {
+            "key": "s911_ringlaser_part1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part1.webp",
+            "cell": 184,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "44aca4526c0779b73d523809690bc3de5f2ad85179ea0196625e2c603c21caf3"
+          },
+          "glow": {
+            "key": "s911_ringlaser_part1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part1_glow.webp",
+            "cell": 184,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "4c99e60b90cf140b896ca3bf037e4f1c01f69e2d96193a5fffd941a308abc4da"
+          },
+          "shield": {
+            "key": "s911_ringlaser_part1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part1_shield.webp",
+            "cell": 184,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "b5899996c86044ae64b8c4aa640f7395bed4b7fa73268a82401712696184878f"
+          },
+          "mount": [
+            157,
+            128
+          ],
+          "muzzle": [
+            0,
+            79
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        }
+      ],
+      "tails": [
+        [
+          110,
+          44
+        ],
+        [
+          146,
+          44
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "gate": {
+      "bank": {
+        "key": "s911_gate_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_body.webp",
+        "cell": 234,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "1851f626a4fb5ea4538bdf3b6a655b480c949a51f083bff988a574c60bb0b186"
+      },
+      "glow": {
+        "key": "s911_gate_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_glow.webp",
+        "cell": 234,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "ea3945c470a73036723283271ed4369dade5a8da4f00b89e4986a4ab432addea"
+      },
+      "shield": {
+        "key": "s911_gate_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_shield.webp",
+        "cell": 234,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "75a324cdb8d8bfdfbde794af22a6128143949533b93cb44b1a84157297216707"
+      },
+      "span": 184,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_gate_part0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part0.webp",
+            "cell": 116,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "0efb3f0ce29eed7515e3f0c1d0e223f47124cd9b32732705eb84b8c47e900bec"
+          },
+          "glow": {
+            "key": "s911_gate_part0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part0_glow.webp",
+            "cell": 116,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "6e0da78b2cd53e5ee13ac352c8d39deaa0c7c86b6fddb4244c7d5e5db47ee384"
+          },
+          "shield": {
+            "key": "s911_gate_part0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part0_shield.webp",
+            "cell": 116,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "d07453a1ca9a8d079245529807ddc18fb346d9caa657dc7c67608e906d0374c3"
+          },
+          "mount": [
+            86,
+            71
+          ],
+          "muzzle": [
+            -13,
+            36
+          ],
+          "role": "gun",
+          "baseAngle": 1.9173351912288386
+        },
+        {
+          "bank": {
+            "key": "s911_gate_part1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part1.webp",
+            "cell": 112,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "cffa72fb18910e9b1b15dd275e3c35c72d755e3540e513e90a6da190ca7a235f"
+          },
+          "glow": {
+            "key": "s911_gate_part1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part1_glow.webp",
+            "cell": 112,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "9bdc40bd652a44ea52232783acbfbe8ce9eb183d74a897d7ceff5f2397869df1"
+          },
+          "shield": {
+            "key": "s911_gate_part1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part1_shield.webp",
+            "cell": 112,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "d33268f594c6db79a24234fcbacc36dc8081652d937aa1766a3ce4ee37656d06"
+          },
+          "mount": [
+            166,
+            71
+          ],
+          "muzzle": [
+            13,
+            36
+          ],
+          "role": "gun",
+          "baseAngle": 1.2242574623609548
+        },
+        {
+          "bank": {
+            "key": "s911_gate_part2",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part2.webp",
+            "cell": 108,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "ed7c2dc159bc3f7fa539fe4f5ea939ed640bfa4ea382e6f01e688431e7f7901e"
+          },
+          "glow": {
+            "key": "s911_gate_part2_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part2_glow.webp",
+            "cell": 108,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "885c7d2a3bbef29ab5c4b6de8d1d768b1c4a3e16278dd44741fee54bf1fcc0fd"
+          },
+          "shield": {
+            "key": "s911_gate_part2_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part2_shield.webp",
+            "cell": 108,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "8ca2020740722427e97df32d8d92dd8f17133729691db139b038cd1debd387b0"
+          },
+          "mount": [
+            86,
+            166
+          ],
+          "muzzle": [
+            -12,
+            35
+          ],
+          "role": "gun",
+          "baseAngle": 1.9010936816241504
+        },
+        {
+          "bank": {
+            "key": "s911_gate_part3",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part3.webp",
+            "cell": 110,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "e5d2a727f371dcbc0bf666da9a12859937dc5d858595ddfca6c2af3fc3e5dd93"
+          },
+          "glow": {
+            "key": "s911_gate_part3_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part3_glow.webp",
+            "cell": 110,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "f883c759f6254795d21f55f32e180dc8e12b4b5594ba9fbf2ec34ab4f8ee0fb2"
+          },
+          "shield": {
+            "key": "s911_gate_part3_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part3_shield.webp",
+            "cell": 110,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "69a28615eea2b806ece3338c33d72848d27eaa99f79d587c05232652ac53453a"
+          },
+          "mount": [
+            166,
+            166
+          ],
+          "muzzle": [
+            12,
+            35
+          ],
+          "role": "gun",
+          "baseAngle": 1.240498971965643
+        }
+      ],
+      "tails": [],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "gleech": {
+      "bank": {
+        "key": "s911_gleech_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_body.webp",
+        "cell": 256,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "795e5a6b5f99b57b0e77989dd02ff08fa61729c392d590af33853b9624e619b5"
+      },
+      "glow": {
+        "key": "s911_gleech_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_glow.webp",
+        "cell": 256,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "6c643f59d649c0cd1ce7bd5a980a467bca60710823cf314bbb9255af0eaa48ec"
+      },
+      "shield": {
+        "key": "s911_gleech_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_shield.webp",
+        "cell": 256,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "9492587bb6f563ade5b6bea579a326c7d8a54c4f90685d906185695012df9a03"
+      },
+      "span": 186,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_gleech_part0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part0.webp",
+            "cell": 200,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "176f3e1990f6f910af730af18a24ecb73f25a216ccb0428e00d2a4424d0b1105"
+          },
+          "glow": {
+            "key": "s911_gleech_part0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part0_glow.webp",
+            "cell": 200,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "b1041c6a5bf786ad45c33c6c3acb645defc384f6e910b1163143a339b315a666"
+          },
+          "shield": {
+            "key": "s911_gleech_part0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part0_shield.webp",
+            "cell": 200,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "5b192ee261995bdd6f37924f4f072fb87db5851db9270e4234386b3205f30761"
+          },
+          "mount": [
+            91,
+            144
+          ],
+          "muzzle": [
+            -18,
+            78
+          ],
+          "role": "gun",
+          "baseAngle": 1.7975951748487824
+        },
+        {
+          "bank": {
+            "key": "s911_gleech_part1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part1.webp",
+            "cell": 200,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "3852acf56c4f08c899fae4c6d1bc67cca8f2757814c2a464b47131aa34704766"
+          },
+          "glow": {
+            "key": "s911_gleech_part1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part1_glow.webp",
+            "cell": 200,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "b80d4b53aa8b10ea5f7ca344df5f4b0e442205968f9f57756b3a7b20357bc299"
+          },
+          "shield": {
+            "key": "s911_gleech_part1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part1_shield.webp",
+            "cell": 200,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "728e90b754ad620f438764a3080135fccbadd15ea3ea5a886eea5624ff573a5e"
+          },
+          "mount": [
+            164,
+            144
+          ],
+          "muzzle": [
+            17,
+            78
+          ],
+          "role": "gun",
+          "baseAngle": 1.356203445303673
+        }
+      ],
+      "tails": [],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "prismbeam": {
+      "bank": {
+        "key": "s911_prismbeam_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_body.webp",
+        "cell": 238,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "7ac2dd5ec26767b688d5fbd36edef1b7e98e93faf0b852e509dfdea4ab84c43e"
+      },
+      "glow": {
+        "key": "s911_prismbeam_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_glow.webp",
+        "cell": 238,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "469c1c82ce4260fd152f98b10c6323a73590b409eaafd7b6036f4182bdd44cfc"
+      },
+      "shield": {
+        "key": "s911_prismbeam_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_shield.webp",
+        "cell": 238,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "294e6e0ffc9377efb020e308248b1daa83f94d4a2d149ca485885c4c9a43ff15"
+      },
+      "span": 202,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_prismbeam_part0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part0.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "91fd95d9fe2a4794e6aea1e7bb2a9e209a0b5d3c5fcfbf65b470b1de7cc6b2e5"
+          },
+          "glow": {
+            "key": "s911_prismbeam_part0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part0_glow.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "d40146c02624e665187478d5e121a2c20fccf69cba0cfa4176dc4cc5a1d608f3"
+          },
+          "shield": {
+            "key": "s911_prismbeam_part0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part0_shield.webp",
+            "cell": 148,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "4d6193e9988a48dc9bb9e9561d92dd630fa54b9dbf970cc8e0c2699e2f58f136"
+          },
+          "mount": [
+            72,
+            161
+          ],
+          "muzzle": [
+            -1,
+            54
+          ],
+          "role": "gun",
+          "baseAngle": 1.5893127288629056
+        },
+        {
+          "bank": {
+            "key": "s911_prismbeam_part1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part1.webp",
+            "cell": 146,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "c16da6e66961085ec6d9fd3637551946d262ee108121b05686a594ab740df24d"
+          },
+          "glow": {
+            "key": "s911_prismbeam_part1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part1_glow.webp",
+            "cell": 146,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "20e82a4727fce7e5ed0977e2a27e539789e12574b7b8d6308e8e54d74bd81ff1"
+          },
+          "shield": {
+            "key": "s911_prismbeam_part1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part1_shield.webp",
+            "cell": 146,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "9932234ea96256883ccbe43f3b053c086ccdb15e59be17a5292724d9144b2d47"
+          },
+          "mount": [
+            184,
+            161
+          ],
+          "muzzle": [
+            0,
+            54
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        }
+      ],
+      "tails": [],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "echo": {
+      "bank": {
+        "key": "s911_echo_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_body.webp",
+        "cell": 250,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "dbccb0634e3a45d02e2d10f24a901f1cf939d55f4e0fe44a47ac9e263328b64f"
+      },
+      "glow": {
+        "key": "s911_echo_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_glow.webp",
+        "cell": 250,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "56410582f7b35d8b6f18dfe5e3292bed709cc899f73023461081ed5231b511ab"
+      },
+      "shield": {
+        "key": "s911_echo_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_shield.webp",
+        "cell": 250,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "f9814fac8801eaf016f56d0008343044d02ee1668e89cf841b979b90a78bd60a"
+      },
+      "span": 146,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_echo_part0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part0.webp",
+            "cell": 108,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "f731a9e71f091c855d9aa5276d87594b7c53a423dcc27bc0160ceb64be15074e"
+          },
+          "glow": {
+            "key": "s911_echo_part0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part0_glow.webp",
+            "cell": 108,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "0fb40529bc63841d2ec35dc6c54176b9d8f2c998f525c27cb4f9b4c6c59f73cc"
+          },
+          "shield": {
+            "key": "s911_echo_part0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part0_shield.webp",
+            "cell": 108,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "233dcd0907034aa111e6818fec4d6c725068151cdb94481e43ac6dc3affc977f"
+          },
+          "mount": [
+            80,
+            108
+          ],
+          "muzzle": [
+            -2,
+            44
+          ],
+          "role": "gun",
+          "baseAngle": 1.6162196062164735
+        },
+        {
+          "bank": {
+            "key": "s911_echo_part1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part1.webp",
+            "cell": 108,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "703ebd4dde70b3000e492522cb65f62305d49d03a7a3988553d2b85d3f2fc7ca"
+          },
+          "glow": {
+            "key": "s911_echo_part1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part1_glow.webp",
+            "cell": 108,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "30b9b14c6dee36c9b38307b442a0025ba8574ac3ee96750a09273299f27af728"
+          },
+          "shield": {
+            "key": "s911_echo_part1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part1_shield.webp",
+            "cell": 108,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "6ed99f78cd1806ac2e20fb56d871e89ea2a64fb199cca83ce588124d09434508"
+          },
+          "mount": [
+            176,
+            108
+          ],
+          "muzzle": [
+            1,
+            44
+          ],
+          "role": "gun",
+          "baseAngle": 1.5480729659532555
+        },
+        {
+          "bank": {
+            "key": "s911_echo_part2",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part2.webp",
+            "cell": 142,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "06c1552e6c4b22cf855c80c43c9f807e1f3cefb5704de24ac68c60461420013e"
+          },
+          "glow": {
+            "key": "s911_echo_part2_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part2_glow.webp",
+            "cell": 142,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "2d8a7bbd6b811f72e747258c3a6c0b6bc37dd1c96bbd06d46d1c30ca35b180c4"
+          },
+          "shield": {
+            "key": "s911_echo_part2_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part2_shield.webp",
+            "cell": 142,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "444f297a5a5fdb1a774a88bedc656cc2eef3d8d408ae076e46f0d1396eb5f368"
+          },
+          "mount": [
+            117,
+            170
+          ],
+          "muzzle": [
+            0,
+            50
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        },
+        {
+          "bank": {
+            "key": "s911_echo_part3",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part3.webp",
+            "cell": 142,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "28453bc681f035d677aa2395de208d2864057fa9cfbab75e6fbbf4c26d231fa9"
+          },
+          "glow": {
+            "key": "s911_echo_part3_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part3_glow.webp",
+            "cell": 142,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "08bcd2bb9e008dfb774fcbf7af60beef77d8a60d6aff0bfef8518ec2bad620dc"
+          },
+          "shield": {
+            "key": "s911_echo_part3_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part3_shield.webp",
+            "cell": 142,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "a656fae82b426107fbce65a0408286152d8f329f9beaccdc23257edd4b36e5dc"
+          },
+          "mount": [
+            139,
+            170
+          ],
+          "muzzle": [
+            0,
+            50
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        }
+      ],
+      "tails": [
+        [
+          112,
+          32
+        ],
+        [
+          143,
+          32
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "minelayer": {
+      "bank": {
+        "key": "s911_minelayer_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/minelayer_body.webp",
+        "cell": 266,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "f024c74eb477effb2474999987c97b54c47d1d0c1d69ba7182d7d35fac6cda43"
+      },
+      "glow": {
+        "key": "s911_minelayer_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/minelayer_glow.webp",
+        "cell": 266,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "2b7e4b1e413b86b5d8cb5f96ee8fc7d0ecad53330f677cb99600a59b3565e643"
+      },
+      "shield": {
+        "key": "s911_minelayer_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/minelayer_shield.webp",
+        "cell": 266,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "9be3ac51968f9db7f40a37dfc4aa130cdb4500f87d3e15cd5568467a7bb321e2"
+      },
+      "span": 176,
+      "modules": [],
+      "tails": [
+        [
+          38,
+          155
+        ],
+        [
+          218,
+          155
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": [],
+      "bay": [
+        128,
+        150
+      ]
+    },
+    "manta": {
+      "bank": {
+        "key": "s911_manta_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_body.webp",
+        "cell": 298,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "97b45b6af73eab458d8e80c6e1d08ec5b614f4e712e487be9ab68dafcc87111b"
+      },
+      "glow": {
+        "key": "s911_manta_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_glow.webp",
+        "cell": 298,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "ad1c987c517aea486416d0271d1c0013f4ccd0390be088d406c3cd3b545fea79"
+      },
+      "shield": {
+        "key": "s911_manta_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_shield.webp",
+        "cell": 298,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "115107bf82523e1a17092d6d5669747770133d1c483699e157b4a194d50a060e"
+      },
+      "span": 180,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_manta_part0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part0.webp",
+            "cell": 154,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "4818bc5c7492e66458eee3e89b31117c9ce893dfd46ee2a60e21c3b782d4e7c1"
+          },
+          "glow": {
+            "key": "s911_manta_part0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part0_glow.webp",
+            "cell": 154,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "f99c64c1593aec0ff49bd5df27479eb45ff6f39eb9e3a2513fecf20da96e78d3"
+          },
+          "shield": {
+            "key": "s911_manta_part0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part0_shield.webp",
+            "cell": 154,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "f2d1197bead739cb584002f938bf7189bd90dd1c758c65523a144848ae1669ff"
+          },
+          "mount": [
+            86,
+            131
+          ],
+          "muzzle": [
+            0,
+            64
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        },
+        {
+          "bank": {
+            "key": "s911_manta_part1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part1.webp",
+            "cell": 154,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "29ab1135cd7ac74ee10bde1c688f9361b01ae77280b3f6bbf3528c234d05e66e"
+          },
+          "glow": {
+            "key": "s911_manta_part1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part1_glow.webp",
+            "cell": 154,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "cd10eb66b1e34eece113c5cf20351bfecc81845e51d48ba3c95506b32cc8359b"
+          },
+          "shield": {
+            "key": "s911_manta_part1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part1_shield.webp",
+            "cell": 154,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "d732f55da42e37e18f5a0860f8fc0afe5242b5cecf7e3a7080f98502babdfdd4"
+          },
+          "mount": [
+            170,
+            131
+          ],
+          "muzzle": [
+            0,
+            64
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        }
+      ],
+      "tails": [
+        [
+          128,
+          27
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "tidal": {
+      "bank": {
+        "key": "s911_tidal_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_body.webp",
+        "cell": 244,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "d5e93f4177ced976dce29b26666df94fef0f3f500360bdbe77ba98437135b74c"
+      },
+      "glow": {
+        "key": "s911_tidal_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_glow.webp",
+        "cell": 244,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "76a8cdb9428af66c264bb32b6e3eb33a1a0440577222efd4db7f53ce698f4c36"
+      },
+      "shield": {
+        "key": "s911_tidal_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_shield.webp",
+        "cell": 244,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "1b9ac1df9564ac4f0c3c3fa8ec480af1abcd316e3c94260025af70a89a750c80"
+      },
+      "span": 172,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_tidal_part0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part0.webp",
+            "cell": 126,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "3267767d3cd0d66be8102c6da504b80a6a2bf58b0fce6efe9deb5ece27a78ba4"
+          },
+          "glow": {
+            "key": "s911_tidal_part0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part0_glow.webp",
+            "cell": 126,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "af535d4336336586d80f8921d484e994149f97a0ead75fe7ea85e8f0344f1ea5"
+          },
+          "shield": {
+            "key": "s911_tidal_part0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part0_shield.webp",
+            "cell": 126,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "c232dd68ce4d640b9ad7cb94ecf41470f12fb2d11534a47f65a123e7ca693bf7"
+          },
+          "mount": [
+            75,
+            145
+          ],
+          "muzzle": [
+            -1,
+            54
+          ],
+          "role": "gun",
+          "baseAngle": 1.5893127288629056
+        },
+        {
+          "bank": {
+            "key": "s911_tidal_part1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part1.webp",
+            "cell": 126,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "e03e1564cb6bbe37ac870292c76022ff0534da8d762e91d0c24e4cdd5e3d50d5"
+          },
+          "glow": {
+            "key": "s911_tidal_part1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part1_glow.webp",
+            "cell": 126,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "95cbd6910451a9870c20363019193a99455b14b07157eb805d2e3d9222756cf0"
+          },
+          "shield": {
+            "key": "s911_tidal_part1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part1_shield.webp",
+            "cell": 126,
+            "dirs": 32,
+            "frames": 1,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "aae0987723e645226f4ada83e0435f826888bb357a261a50899d3e4ac343b0c7"
+          },
+          "mount": [
+            181,
+            145
+          ],
+          "muzzle": [
+            0,
+            54
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966
+        }
+      ],
+      "tails": [
+        [
+          104,
+          32
+        ],
+        [
+          119,
+          32
+        ],
+        [
+          137,
+          32
+        ],
+        [
+          152,
+          32
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "singularity": {
+      "bank": {
+        "key": "s911_singularity_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/singularity_body.webp",
+        "cell": 290,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "f7e8ffbbb681826cdeff527cba85deea851fc5fe7c1b6876973c1cd7606cb1fa"
+      },
+      "glow": {
+        "key": "s911_singularity_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/singularity_glow.webp",
+        "cell": 290,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "82299f62ad57af08cd51f9583b34d43055a329e06de4e39e65393f7109fee37c"
+      },
+      "shield": {
+        "key": "s911_singularity_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/singularity_shield.webp",
+        "cell": 290,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "040470cde8143a2b25abe362ae68a8a6dd1bd3c69650d41a7fef9c408adb9862"
+      },
+      "span": 180,
+      "modules": [],
+      "tails": [],
+      "core": [
+        128,
+        128
+      ],
+      "guns": [
+        [
+          128,
+          155
+        ]
+      ]
+    },
+    "prismorb": {
+      "bank": {
+        "key": "s911_prismorb_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismorb_body.webp",
+        "cell": 262,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "c4648cbc43fbeb5020feb64a35bd0cf4205a2ac2643ab6b8011e15150f99491b"
+      },
+      "glow": {
+        "key": "s911_prismorb_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismorb_glow.webp",
+        "cell": 262,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "d32d95c8daf9eb3a58eab375966a1cb3f4f952024a0840605b1e3056deb56dc2"
+      },
+      "shield": {
+        "key": "s911_prismorb_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismorb_shield.webp",
+        "cell": 262,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "396d2fa3d7f7df5d69134a0702b73bb09f613f3bc6805c3e7de52101772f9ac3"
+      },
+      "span": 174,
+      "modules": [],
+      "tails": [],
+      "core": [
+        128,
+        128
+      ],
+      "guns": [
+        [
+          128,
+          155
+        ]
+      ]
+    },
+    "harrier": {
+      "bank": {
+        "key": "s911_harrier_body",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_body.webp",
+        "cell": 288,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "2d0ff24252ee330dc434726c6a2810954ebf0d6ce2f593e07ccfc97ba3841cc8"
+      },
+      "glow": {
+        "key": "s911_harrier_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_glow.webp",
+        "cell": 288,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "7082c96ed0da02089ac4980e261ffa2c1bd337d724353a3d505e9d3d6d4ef0ca"
+      },
+      "shield": {
+        "key": "s911_harrier_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_shield.webp",
+        "cell": 288,
+        "dirs": 32,
+        "frames": 1,
+        "cols": 16,
+        "dirRows": 2,
+        "sha256": "8c7f0a8f3263ac3357f1285dc5de2654f992357425914956d174224cd2463b4e"
+      },
+      "span": 320,
+      "modules": [
+        {
+          "bank": {
+            "key": "s911_harrier_pod0",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod0.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "8575321b06136d1dd03648f2020e9eb984fdd38ce7c4f04967a28c15d26e3489"
+          },
+          "glow": {
+            "key": "s911_harrier_pod0_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod0_glow.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "ab362916ec09373831eecf845c8558ab56cc15b5316184e909a5ab34eb29b116"
+          },
+          "shield": {
+            "key": "s911_harrier_pod0_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod0_shield.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "7316982208829a02dcf327121dea32bb8a2b53e9095b549dc699da106189d17f"
+          },
+          "mount": [
+            89,
+            96
+          ],
+          "muzzle": [
+            0,
+            18
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966,
+          "bores": [
+            [
+              0.03825000000000145,
+              13.136000000000003
+            ],
+            [
+              0.14649999999999963,
+              13.009749999999997
+            ],
+            [
+              0.10900000000000176,
+              12.948749999999997
+            ],
+            [
+              0.1509999999999998,
+              12.894750000000002
+            ],
+            [
+              0.23874999999999957,
+              12.743250000000003
+            ],
+            [
+              0.0007500000000000284,
+              12.841000000000001
+            ],
+            [
+              -0.01875000000000071,
+              14.472749999999998
+            ],
+            [
+              0.22250000000000014,
+              18.804000000000002
+            ],
+            [
+              0.051249999999999574,
+              17.902749999999997
+            ],
+            [
+              0.05600000000000094,
+              12.29175
+            ],
+            [
+              -0.03924999999999912,
+              18.473999999999997
+            ],
+            [
+              0.17824999999999847,
+              12.143749999999997
+            ]
+          ]
+        },
+        {
+          "bank": {
+            "key": "s911_harrier_pod1",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod1.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "8575321b06136d1dd03648f2020e9eb984fdd38ce7c4f04967a28c15d26e3489"
+          },
+          "glow": {
+            "key": "s911_harrier_pod1_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod1_glow.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "ab362916ec09373831eecf845c8558ab56cc15b5316184e909a5ab34eb29b116"
+          },
+          "shield": {
+            "key": "s911_harrier_pod1_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod1_shield.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "7316982208829a02dcf327121dea32bb8a2b53e9095b549dc699da106189d17f"
+          },
+          "mount": [
+            165,
+            96
+          ],
+          "muzzle": [
+            0,
+            18
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966,
+          "bores": [
+            [
+              0.03825000000000145,
+              13.136000000000003
+            ],
+            [
+              0.14649999999999963,
+              13.009749999999997
+            ],
+            [
+              0.10900000000000176,
+              12.948749999999997
+            ],
+            [
+              0.1509999999999998,
+              12.894750000000002
+            ],
+            [
+              0.23874999999999957,
+              12.743250000000003
+            ],
+            [
+              0.0007500000000000284,
+              12.841000000000001
+            ],
+            [
+              -0.01875000000000071,
+              14.472749999999998
+            ],
+            [
+              0.22250000000000014,
+              18.804000000000002
+            ],
+            [
+              0.051249999999999574,
+              17.902749999999997
+            ],
+            [
+              0.05600000000000094,
+              12.29175
+            ],
+            [
+              -0.03924999999999912,
+              18.473999999999997
+            ],
+            [
+              0.17824999999999847,
+              12.143749999999997
+            ]
+          ]
+        },
+        {
+          "bank": {
+            "key": "s911_harrier_pod2",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod2.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "8575321b06136d1dd03648f2020e9eb984fdd38ce7c4f04967a28c15d26e3489"
+          },
+          "glow": {
+            "key": "s911_harrier_pod2_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod2_glow.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "ab362916ec09373831eecf845c8558ab56cc15b5316184e909a5ab34eb29b116"
+          },
+          "shield": {
+            "key": "s911_harrier_pod2_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod2_shield.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "7316982208829a02dcf327121dea32bb8a2b53e9095b549dc699da106189d17f"
+          },
+          "mount": [
+            89,
+            131
+          ],
+          "muzzle": [
+            0,
+            18
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966,
+          "bores": [
+            [
+              0.03825000000000145,
+              13.136000000000003
+            ],
+            [
+              0.14649999999999963,
+              13.009749999999997
+            ],
+            [
+              0.10900000000000176,
+              12.948749999999997
+            ],
+            [
+              0.1509999999999998,
+              12.894750000000002
+            ],
+            [
+              0.23874999999999957,
+              12.743250000000003
+            ],
+            [
+              0.0007500000000000284,
+              12.841000000000001
+            ],
+            [
+              -0.01875000000000071,
+              14.472749999999998
+            ],
+            [
+              0.22250000000000014,
+              18.804000000000002
+            ],
+            [
+              0.051249999999999574,
+              17.902749999999997
+            ],
+            [
+              0.05600000000000094,
+              12.29175
+            ],
+            [
+              -0.03924999999999912,
+              18.473999999999997
+            ],
+            [
+              0.17824999999999847,
+              12.143749999999997
+            ]
+          ]
+        },
+        {
+          "bank": {
+            "key": "s911_harrier_pod3",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod3.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "8575321b06136d1dd03648f2020e9eb984fdd38ce7c4f04967a28c15d26e3489"
+          },
+          "glow": {
+            "key": "s911_harrier_pod3_glow",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod3_glow.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "ab362916ec09373831eecf845c8558ab56cc15b5316184e909a5ab34eb29b116"
+          },
+          "shield": {
+            "key": "s911_harrier_pod3_shield",
+            "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod3_shield.webp",
+            "cell": 48,
+            "dirs": 32,
+            "frames": 12,
+            "cols": 16,
+            "dirRows": 2,
+            "sha256": "7316982208829a02dcf327121dea32bb8a2b53e9095b549dc699da106189d17f"
+          },
+          "mount": [
+            165,
+            131
+          ],
+          "muzzle": [
+            0,
+            18
+          ],
+          "role": "gun",
+          "baseAngle": 1.5707963267948966,
+          "bores": [
+            [
+              0.03825000000000145,
+              13.136000000000003
+            ],
+            [
+              0.14649999999999963,
+              13.009749999999997
+            ],
+            [
+              0.10900000000000176,
+              12.948749999999997
+            ],
+            [
+              0.1509999999999998,
+              12.894750000000002
+            ],
+            [
+              0.23874999999999957,
+              12.743250000000003
+            ],
+            [
+              0.0007500000000000284,
+              12.841000000000001
+            ],
+            [
+              -0.01875000000000071,
+              14.472749999999998
+            ],
+            [
+              0.22250000000000014,
+              18.804000000000002
+            ],
+            [
+              0.051249999999999574,
+              17.902749999999997
+            ],
+            [
+              0.05600000000000094,
+              12.29175
+            ],
+            [
+              -0.03924999999999912,
+              18.473999999999997
+            ],
+            [
+              0.17824999999999847,
+              12.143749999999997
+            ]
+          ]
+        }
+      ],
+      "tails": [
+        [
+          86,
+          34
+        ],
+        [
+          168,
+          34
+        ]
+      ],
+      "core": [
+        128,
+        128
+      ],
+      "guns": []
+    },
+    "current": {
+      "bank": {
+        "key": "s911_current_poses",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_poses.webp",
+        "cell": 384,
+        "dirs": 1,
+        "frames": 8,
+        "cols": 1,
+        "dirRows": 1,
+        "sha256": "78ec1a0d8e7b280164457770424b014a437d074391c1a3e7aeef039f79689974"
+      },
+      "glow": {
+        "key": "s911_current_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_glow.webp",
+        "cell": 384,
+        "dirs": 1,
+        "frames": 8,
+        "cols": 1,
+        "dirRows": 1,
+        "sha256": "a7cf2b8bc66609acf231732c1935dd5a893333055acb1261b211ebc96e2b33d8"
+      },
+      "shield": {
+        "key": "s911_current_shield",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_shield.webp",
+        "cell": 384,
+        "dirs": 1,
+        "frames": 8,
+        "cols": 1,
+        "dirRows": 1,
+        "sha256": "fae85dcdf97cff72d11d8e15b58b2abf79aa343284a61703289772a31367b1d2"
+      },
+      "span": 190,
+      "modules": [],
+      "tails": [],
+      "core": [
+        128,
+        128
+      ],
+      "guns": [],
+      "orb": {
+        "key": "s911_current_orb",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_orb.webp",
+        "cell": 384,
+        "dirs": 1,
+        "frames": 1,
+        "cols": 1,
+        "dirRows": 1,
+        "sha256": "4c245e4ba5f3911dc29e7a34468b55f8f5d3bd076b62a1de822e3d225167a277"
+      },
+      "morph": {
+        "key": "s911_current_morph",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_morph.webp",
+        "cell": 384,
+        "dirs": 1,
+        "frames": 29,
+        "cols": 1,
+        "dirRows": 1,
+        "sha256": "18540dc9c26140be22c38d8ad7deb44676d052d9bb4b1aff24d920285882f437"
+      },
+      "poseGuns": [
+        [
+          [
+            66,
+            185
+          ],
+          [
+            210,
+            185
+          ]
+        ],
+        [
+          [
+            43,
+            153
+          ],
+          [
+            208,
+            153
+          ]
+        ],
+        [
+          [
+            66,
+            70
+          ],
+          [
+            210,
+            174
+          ]
+        ],
+        [
+          [
+            54,
+            117
+          ],
+          [
+            186,
+            171
+          ]
+        ],
+        [
+          [
+            45,
+            211
+          ],
+          [
+            210,
+            211
+          ]
+        ],
+        [
+          [
+            52,
+            103
+          ],
+          [
+            200,
+            103
+          ]
+        ],
+        [
+          [
+            52,
+            95
+          ],
+          [
+            201,
+            95
+          ]
+        ],
+        [
+          [
+            66,
+            185
+          ],
+          [
+            210,
+            185
+          ]
+        ]
+      ],
+      "poseBases": [
+        1.5707963267948966,
+        1.5707963267948966,
+        1.5707963267948966,
+        1.5707963267948966,
+        1.5707963267948966,
+        1.5707963267948966,
+        1.5707963267948966,
+        1.5707963267948966
+      ],
+      "extent": [
+        248,
+        314
+      ],
+      "flightTransitionSource": "Approved crouch4, flight5, palms6 and authored overheadSouth; baked liquid pixel transfer",
+      "flight": {
+        "key": "s911_current_flight",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight.webp",
+        "cell": 384,
+        "frames": 1,
+        "dirs": 8,
+        "cols": 4,
+        "dirRows": 2,
+        "sha256": "282e012baff38eee4f1a30861b748165119c567bb864f44883f6bb63121f5b96",
+        "authoredDirections": true
+      },
+      "flightGlow": {
+        "key": "s911_current_flight_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight_glow.webp",
+        "cell": 384,
+        "frames": 1,
+        "dirs": 8,
+        "cols": 4,
+        "dirRows": 2,
+        "sha256": "382c76e173feb6f39b284674c680ab90ef4452cd09e69a8df1d489923febf585",
+        "authoredDirections": true
+      },
+      "flightLaunch": {
+        "key": "s911_current_flight_launch",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight_launch.webp",
+        "cell": 384,
+        "dirs": 1,
+        "frames": 8,
+        "cols": 1,
+        "dirRows": 1,
+        "sha256": "ebd951120f822b22d22d1f8a3475e33dcce4406d0c5faadcd31dd4133a34b6a3"
+      },
+      "flightLaunchGlow": {
+        "key": "s911_current_flight_launch_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight_launch_glow.webp",
+        "cell": 384,
+        "dirs": 1,
+        "frames": 8,
+        "cols": 1,
+        "dirRows": 1,
+        "sha256": "4a7e8154ceba88958c5a65e3cd1e6ba02d86c644dfb92df985e951167db19b60"
+      },
+      "flightReturn": {
+        "key": "s911_current_flight_return",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight_return.webp",
+        "cell": 384,
+        "dirs": 1,
+        "frames": 8,
+        "cols": 1,
+        "dirRows": 1,
+        "sha256": "ee5741bc0c6db6a7df8fa15756f85c1fa180d4c26a117483b0c8670936363de0"
+      },
+      "flightReturnGlow": {
+        "key": "s911_current_flight_return_glow",
+        "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight_return_glow.webp",
+        "cell": 384,
+        "dirs": 1,
+        "frames": 8,
+        "cols": 1,
+        "dirRows": 1,
+        "sha256": "5cbb20290614d0b14d81def50d9f3eda2193a062e44dcfb68f82a444a2c7a546"
+      },
+      "flightPalmsRaw": [
+        [
+          [
+            0.36,
+            0.84
+          ],
+          [
+            0.64,
+            0.84
+          ]
+        ],
+        [
+          [
+            0.12,
+            0.73
+          ],
+          [
+            0.32,
+            0.88
+          ]
+        ],
+        [
+          [
+            0.09,
+            0.39
+          ],
+          [
+            0.09,
+            0.69
+          ]
+        ],
+        [
+          [
+            0.32,
+            0.12
+          ],
+          [
+            0.12,
+            0.32
+          ]
+        ],
+        [
+          [
+            0.36,
+            0.13
+          ],
+          [
+            0.64,
+            0.13
+          ]
+        ],
+        [
+          [
+            0.72,
+            0.12
+          ],
+          [
+            0.88,
+            0.32
+          ]
+        ],
+        [
+          [
+            0.91,
+            0.39
+          ],
+          [
+            0.91,
+            0.69
+          ]
+        ],
+        [
+          [
+            0.87,
+            0.72
+          ],
+          [
+            0.68,
+            0.88
+          ]
+        ]
+      ],
+      "flightPalms": [
+        [
+          [
+            94,
+            210
+          ],
+          [
+            162,
+            210
+          ]
+        ],
+        [
+          [
+            37,
+            183
+          ],
+          [
+            85,
+            220
+          ]
+        ],
+        [
+          [
+            29,
+            102
+          ],
+          [
+            29,
+            174
+          ]
+        ],
+        [
+          [
+            85,
+            36
+          ],
+          [
+            36,
+            85
+          ]
+        ],
+        [
+          [
+            94,
+            39
+          ],
+          [
+            162,
+            39
+          ]
+        ],
+        [
+          [
+            181,
+            37
+          ],
+          [
+            219,
+            85
+          ]
+        ],
+        [
+          [
+            227,
+            102
+          ],
+          [
+            227,
+            174
+          ]
+        ],
+        [
+          [
+            217,
+            181
+          ],
+          [
+            171,
+            219
+          ]
+        ]
+      ],
+      "launchPalms": [
+        [
+          [
+            45,
+            211
+          ],
+          [
+            210,
+            211
+          ]
+        ],
+        [
+          [
+            63,
+            190
+          ],
+          [
+            199,
+            190
+          ]
+        ],
+        [
+          [
+            77,
+            172
+          ],
+          [
+            184,
+            174
+          ]
+        ],
+        [
+          [
+            64,
+            173
+          ],
+          [
+            183,
+            175
+          ]
+        ],
+        [
+          [
+            62,
+            175
+          ],
+          [
+            171,
+            194
+          ]
+        ],
+        [
+          [
+            81,
+            205
+          ],
+          [
+            180,
+            202
+          ]
+        ],
+        [
+          [
+            78,
+            209
+          ],
+          [
+            178,
+            209
+          ]
+        ],
+        [
+          [
+            94,
+            210
+          ],
+          [
+            162,
+            210
+          ]
+        ]
+      ],
+      "returnPalms": [
+        [
+          [
+            94,
+            210
+          ],
+          [
+            162,
+            210
+          ]
+        ],
+        [
+          [
+            78,
+            209
+          ],
+          [
+            178,
+            209
+          ]
+        ],
+        [
+          [
+            81,
+            205
+          ],
+          [
+            180,
+            202
+          ]
+        ],
+        [
+          [
+            62,
+            175
+          ],
+          [
+            171,
+            194
+          ]
+        ],
+        [
+          [
+            64,
+            173
+          ],
+          [
+            183,
+            175
+          ]
+        ],
+        [
+          [
+            77,
+            172
+          ],
+          [
+            184,
+            174
+          ]
+        ],
+        [
+          [
+            63,
+            190
+          ],
+          [
+            199,
+            190
+          ]
+        ],
+        [
+          [
+            66,
+            185
+          ],
+          [
+            210,
+            185
+          ]
+        ]
+      ]
+    }
+  },
+  "banks": {
+    "kami_body": {
+      "key": "s911_kami_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/kami_body.webp",
+      "cell": 248,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "4c97d6f0474979ba4ee438e1bc9e1f2c003f4b0d183b2e003edec4cc6488230f"
+    },
+    "kami_glow": {
+      "key": "s911_kami_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/kami_glow.webp",
+      "cell": 248,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "e684323612d2a9e539f859cab838e8086c6509bf15d51d81a535b610de067410"
+    },
+    "kami_shield": {
+      "key": "s911_kami_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/kami_shield.webp",
+      "cell": 248,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "5640d5c716b270578c9036cb18514ebb051e05cd8e21898652d73ac97c85bfb6"
+    },
+    "comet_body": {
+      "key": "s911_comet_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/comet_body.webp",
+      "cell": 248,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "883febc4dab681e5662cb16bf117ad862a273ff1a7b70e6166c922de5fac4ed0"
+    },
+    "comet_glow": {
+      "key": "s911_comet_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/comet_glow.webp",
+      "cell": 248,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "7d6efd0b3688e71d7eabd61ab5537886505c586de3ccc55b8cc423b6bd383f59"
+    },
+    "comet_shield": {
+      "key": "s911_comet_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/comet_shield.webp",
+      "cell": 248,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "d8f91b116faf646c14f4225e7516fc7cebd33744d9df30666b5632994ce870bc"
+    },
+    "beacon_body": {
+      "key": "s911_beacon_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/beacon_body.webp",
+      "cell": 232,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "d594963293fc9f8a52d520b0558ac6ae5c077a73166e425f2383bd114c2f1242"
+    },
+    "beacon_glow": {
+      "key": "s911_beacon_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/beacon_glow.webp",
+      "cell": 232,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "8bed9c1e0f9a573f3af14bb98769b513a11aa05d5991c8362d67499796782999"
+    },
+    "beacon_shield": {
+      "key": "s911_beacon_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/beacon_shield.webp",
+      "cell": 232,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "173e84a92f7bd029235dd424a9ae3c7aedffdd41747cb5d94c28e6293ed169f4"
+    },
+    "beacon_core": {
+      "key": "s911_beacon_core",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/beacon_core.webp",
+      "cell": 70,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "4ab96fb8487fbc220f1238bd3f280ed411d7c1d8717c233329b1f75f0d3b4175"
+    },
+    "beamship_body": {
+      "key": "s911_beamship_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/beamship_body.webp",
+      "cell": 264,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "25544f5b9979b2ffa27d712e09c06a95af5f1af10361268f766314296902fe77"
+    },
+    "beamship_glow": {
+      "key": "s911_beamship_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/beamship_glow.webp",
+      "cell": 264,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "686d351b189177d701a4ef58c294e04009302fbe7fe5fc5b735f5d49796f4ef4"
+    },
+    "beamship_shield": {
+      "key": "s911_beamship_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/beamship_shield.webp",
+      "cell": 264,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "c64b1b346839871ae41c3ea695ed9336b781451163456404f9072943aba19759"
+    },
+    "spinner_part0": {
+      "key": "s911_spinner_part0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part0.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "d0c5c43abc746c15161a0ede75dee136a1c3c951a667e2975707e55363dfe843"
+    },
+    "spinner_part0_glow": {
+      "key": "s911_spinner_part0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part0_glow.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "a28ea8365b6ba17a0d070813dd2a2df033810dbee079c6f65c74a4879b972df6"
+    },
+    "spinner_part0_shield": {
+      "key": "s911_spinner_part0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part0_shield.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "08e5c434af23a85823736c501347920fdd2b7ab6aba5cd69caef74db7468340c"
+    },
+    "spinner_part1": {
+      "key": "s911_spinner_part1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part1.webp",
+      "cell": 146,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "a705f2aa6a7aff870e2905afd8b0e3d658faa3977e03a2c68f45919b9ea9e04d"
+    },
+    "spinner_part1_glow": {
+      "key": "s911_spinner_part1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part1_glow.webp",
+      "cell": 146,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "abb92d2404f7017c30c9b171776625a9713c326c86633bde752831c4eceda1c1"
+    },
+    "spinner_part1_shield": {
+      "key": "s911_spinner_part1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part1_shield.webp",
+      "cell": 146,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f5a42d1c1ad7a18cee4564d8b59d122c1333aadff00b96686e0a190e21a7f065"
+    },
+    "spinner_part2": {
+      "key": "s911_spinner_part2",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part2.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "dd83776294bf9a6e17494bcdc50aef51fe80a8ef77c5d0521c3199f5fd2c6c0f"
+    },
+    "spinner_part2_glow": {
+      "key": "s911_spinner_part2_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part2_glow.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f6b88b6edbe2c6f05ade012d8cd18d2494df220ac199018d89308b1de1307b7c"
+    },
+    "spinner_part2_shield": {
+      "key": "s911_spinner_part2_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part2_shield.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "72c274995b00c2b983a9d2036ed2448e1f9e8b8740b034c6145f06cd45b08a66"
+    },
+    "spinner_part3": {
+      "key": "s911_spinner_part3",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part3.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "a46e3f8867510cf7a74e3f2cab799e24e8d3bb6764cf76cae35e663bad087ac7"
+    },
+    "spinner_part3_glow": {
+      "key": "s911_spinner_part3_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part3_glow.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "994ee21855ca5e0eec9610a7f2c12523361ff818596e539bf7cceae792e02132"
+    },
+    "spinner_part3_shield": {
+      "key": "s911_spinner_part3_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part3_shield.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "aa30145ae8607f268ea6cecc2cab5f7702e07e8572aae15a799c85360b3fea0f"
+    },
+    "spinner_part4": {
+      "key": "s911_spinner_part4",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part4.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "698202f247fa51256c71baa7947831a350ab8fd8f9c650b100917e1141c423d3"
+    },
+    "spinner_part4_glow": {
+      "key": "s911_spinner_part4_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part4_glow.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "a45d4906856be30e728f2faa6a78f0ad64a503adf828761a6c0d6cff00ce3c7f"
+    },
+    "spinner_part4_shield": {
+      "key": "s911_spinner_part4_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part4_shield.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "e017e5f9eb040ecc54e9183d2879212d4138cd4ef3e885ec8e81940605269652"
+    },
+    "spinner_part5": {
+      "key": "s911_spinner_part5",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part5.webp",
+      "cell": 146,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "1e413f392b7c56a9f7c522b6e6afdaccce87ef042a9ab1125e31c936f1156f88"
+    },
+    "spinner_part5_glow": {
+      "key": "s911_spinner_part5_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part5_glow.webp",
+      "cell": 146,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "9ae627a0a867f482b7956bac5e667d27af2765baf23ca6a249a19f584b1205bf"
+    },
+    "spinner_part5_shield": {
+      "key": "s911_spinner_part5_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_part5_shield.webp",
+      "cell": 146,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "623df7f0a0870054a973160d30888cc75b0b6453ea65f97da090a7b1c299a4f2"
+    },
+    "spinner_body": {
+      "key": "s911_spinner_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_body.webp",
+      "cell": 166,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "36a6433267cc3b78fde639a8263c29defbaaac7cad65fe7e70f59318121c5770"
+    },
+    "spinner_glow": {
+      "key": "s911_spinner_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_glow.webp",
+      "cell": 166,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "57827b4b10469b3d6b197e2ffe3279f0ea5e864f54d4d204c9743acd7c6af93f"
+    },
+    "spinner_shield": {
+      "key": "s911_spinner_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/spinner_shield.webp",
+      "cell": 166,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "787cbcfa3b3b1bd2dde59bf1396e3ac6d57ef062edbd28ed16c6bbfee7f2d578"
+    },
+    "jumper_part0": {
+      "key": "s911_jumper_part0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part0.webp",
+      "cell": 156,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "c0e84259e62ede4ff573755405457856fa31cfd451ef87e7b455aa376bd7ddd1"
+    },
+    "jumper_part0_glow": {
+      "key": "s911_jumper_part0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part0_glow.webp",
+      "cell": 156,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "bf40e02c839f95ccfe57d1c72a2c14a8fc1f12b721e62924ce59e14483c7de7f"
+    },
+    "jumper_part0_shield": {
+      "key": "s911_jumper_part0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part0_shield.webp",
+      "cell": 156,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "34ee37d627eeff8285a02f430181737a47d3480f6216a6707881fd6cd1ccdf3a"
+    },
+    "jumper_part1": {
+      "key": "s911_jumper_part1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part1.webp",
+      "cell": 156,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "bb8e3987d781c775f48aa686166549b23158a66238f6ef12a911910614ebbee2"
+    },
+    "jumper_part1_glow": {
+      "key": "s911_jumper_part1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part1_glow.webp",
+      "cell": 156,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "d94162ae826fc0a074c349b948cff7a6d747a2b245313797d2f8614586c8453f"
+    },
+    "jumper_part1_shield": {
+      "key": "s911_jumper_part1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_part1_shield.webp",
+      "cell": 156,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "c5621696bd2f3b09e4d070b92153b10246395ee3a5866f78530e6f6521234e9d"
+    },
+    "jumper_body": {
+      "key": "s911_jumper_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_body.webp",
+      "cell": 276,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "68e24ac1bca805350f88e143f6bba925da849d5c6999591bff63dffd2605ebe1"
+    },
+    "jumper_glow": {
+      "key": "s911_jumper_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_glow.webp",
+      "cell": 276,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "270b72e3a30fdc24c5cb826439962e0648cd74b6eda005639298a510b100e8d0"
+    },
+    "jumper_shield": {
+      "key": "s911_jumper_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/jumper_shield.webp",
+      "cell": 276,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "ed780addb1f5d6fb55831833c9f582e817c076f2a953d3251a782be3a9b1ea0e"
+    },
+    "skimmer_part0": {
+      "key": "s911_skimmer_part0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part0.webp",
+      "cell": 124,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "e57c36a3ef06ca4ec929aadf402b00b1758ce49b345228e5dec8f148a4b6f2ec"
+    },
+    "skimmer_part0_glow": {
+      "key": "s911_skimmer_part0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part0_glow.webp",
+      "cell": 124,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "4bb8728ab8367176b1de1c416349338e8b93c0056d19ad7cdfca435e50323854"
+    },
+    "skimmer_part0_shield": {
+      "key": "s911_skimmer_part0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part0_shield.webp",
+      "cell": 124,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f3e2802027c286505fc58b4caad010f2796e6382e3bca48a5ce7a74f2ca18cd5"
+    },
+    "skimmer_part1": {
+      "key": "s911_skimmer_part1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part1.webp",
+      "cell": 124,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "49cb451cab0c2b2d163924973f8a6b5dc18c07d425e56c884458c0162393ca91"
+    },
+    "skimmer_part1_glow": {
+      "key": "s911_skimmer_part1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part1_glow.webp",
+      "cell": 124,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "4166c90b9ecf3b743e06194d8d1831ba2f8f630f59da16af65275e67774f1994"
+    },
+    "skimmer_part1_shield": {
+      "key": "s911_skimmer_part1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_part1_shield.webp",
+      "cell": 124,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "eaf3f24832823f9e06e2bca58c341b45d33a40d879dbdbb57b06ca88fe1be0bb"
+    },
+    "skimmer_body": {
+      "key": "s911_skimmer_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_body.webp",
+      "cell": 294,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "6e21e9b826218b682e616189fd01af90aa7f97d2e6f9005e12292b9a40702855"
+    },
+    "skimmer_glow": {
+      "key": "s911_skimmer_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_glow.webp",
+      "cell": 294,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "23e822ceb2fde944f85d707570528fcb0b595908ac7c0ef2bb786bee16c40545"
+    },
+    "skimmer_shield": {
+      "key": "s911_skimmer_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/skimmer_shield.webp",
+      "cell": 294,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "89b40ba044d61195540f2916200519234ccf94f1642d11d7286e7bc0969110a0"
+    },
+    "ringlaser_part0": {
+      "key": "s911_ringlaser_part0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part0.webp",
+      "cell": 184,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "654a1227f2ad10cc9301d2f3b54508e28c8ca2a075923034a15c928d28d0f0b6"
+    },
+    "ringlaser_part0_glow": {
+      "key": "s911_ringlaser_part0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part0_glow.webp",
+      "cell": 184,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f354809d8c3d3d444caa8e4e234049bad130c6bd8fbdeb640bf9c55e3da2fa16"
+    },
+    "ringlaser_part0_shield": {
+      "key": "s911_ringlaser_part0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part0_shield.webp",
+      "cell": 184,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "46d516f37f45e6f5d053263212aaa500af2be7365ea682d713259e364a54e5c4"
+    },
+    "ringlaser_part1": {
+      "key": "s911_ringlaser_part1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part1.webp",
+      "cell": 184,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "44aca4526c0779b73d523809690bc3de5f2ad85179ea0196625e2c603c21caf3"
+    },
+    "ringlaser_part1_glow": {
+      "key": "s911_ringlaser_part1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part1_glow.webp",
+      "cell": 184,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "4c99e60b90cf140b896ca3bf037e4f1c01f69e2d96193a5fffd941a308abc4da"
+    },
+    "ringlaser_part1_shield": {
+      "key": "s911_ringlaser_part1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_part1_shield.webp",
+      "cell": 184,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "b5899996c86044ae64b8c4aa640f7395bed4b7fa73268a82401712696184878f"
+    },
+    "ringlaser_body": {
+      "key": "s911_ringlaser_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_body.webp",
+      "cell": 196,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "b00ff4af9336b52a51147dc9836b45df6646994e5b5da228e9060f04fb33c617"
+    },
+    "ringlaser_glow": {
+      "key": "s911_ringlaser_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_glow.webp",
+      "cell": 196,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "c6db5d81d2e70ca4bf1876c8944e328cb13a2ed9d2c12b66d25a3f3fccfd6c09"
+    },
+    "ringlaser_shield": {
+      "key": "s911_ringlaser_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/ringlaser_shield.webp",
+      "cell": 196,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "5ad3e01cc9b33076019bca0f2ab8e7383bdb434542a32444f394fb722b840669"
+    },
+    "gate_part0": {
+      "key": "s911_gate_part0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part0.webp",
+      "cell": 116,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "0efb3f0ce29eed7515e3f0c1d0e223f47124cd9b32732705eb84b8c47e900bec"
+    },
+    "gate_part0_glow": {
+      "key": "s911_gate_part0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part0_glow.webp",
+      "cell": 116,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "6e0da78b2cd53e5ee13ac352c8d39deaa0c7c86b6fddb4244c7d5e5db47ee384"
+    },
+    "gate_part0_shield": {
+      "key": "s911_gate_part0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part0_shield.webp",
+      "cell": 116,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "d07453a1ca9a8d079245529807ddc18fb346d9caa657dc7c67608e906d0374c3"
+    },
+    "gate_part1": {
+      "key": "s911_gate_part1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part1.webp",
+      "cell": 112,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "cffa72fb18910e9b1b15dd275e3c35c72d755e3540e513e90a6da190ca7a235f"
+    },
+    "gate_part1_glow": {
+      "key": "s911_gate_part1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part1_glow.webp",
+      "cell": 112,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "9bdc40bd652a44ea52232783acbfbe8ce9eb183d74a897d7ceff5f2397869df1"
+    },
+    "gate_part1_shield": {
+      "key": "s911_gate_part1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part1_shield.webp",
+      "cell": 112,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "d33268f594c6db79a24234fcbacc36dc8081652d937aa1766a3ce4ee37656d06"
+    },
+    "gate_part2": {
+      "key": "s911_gate_part2",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part2.webp",
+      "cell": 108,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "ed7c2dc159bc3f7fa539fe4f5ea939ed640bfa4ea382e6f01e688431e7f7901e"
+    },
+    "gate_part2_glow": {
+      "key": "s911_gate_part2_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part2_glow.webp",
+      "cell": 108,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "885c7d2a3bbef29ab5c4b6de8d1d768b1c4a3e16278dd44741fee54bf1fcc0fd"
+    },
+    "gate_part2_shield": {
+      "key": "s911_gate_part2_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part2_shield.webp",
+      "cell": 108,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "8ca2020740722427e97df32d8d92dd8f17133729691db139b038cd1debd387b0"
+    },
+    "gate_part3": {
+      "key": "s911_gate_part3",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part3.webp",
+      "cell": 110,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "e5d2a727f371dcbc0bf666da9a12859937dc5d858595ddfca6c2af3fc3e5dd93"
+    },
+    "gate_part3_glow": {
+      "key": "s911_gate_part3_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part3_glow.webp",
+      "cell": 110,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f883c759f6254795d21f55f32e180dc8e12b4b5594ba9fbf2ec34ab4f8ee0fb2"
+    },
+    "gate_part3_shield": {
+      "key": "s911_gate_part3_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_part3_shield.webp",
+      "cell": 110,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "69a28615eea2b806ece3338c33d72848d27eaa99f79d587c05232652ac53453a"
+    },
+    "gate_body": {
+      "key": "s911_gate_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_body.webp",
+      "cell": 234,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "1851f626a4fb5ea4538bdf3b6a655b480c949a51f083bff988a574c60bb0b186"
+    },
+    "gate_glow": {
+      "key": "s911_gate_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_glow.webp",
+      "cell": 234,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "ea3945c470a73036723283271ed4369dade5a8da4f00b89e4986a4ab432addea"
+    },
+    "gate_shield": {
+      "key": "s911_gate_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gate_shield.webp",
+      "cell": 234,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "75a324cdb8d8bfdfbde794af22a6128143949533b93cb44b1a84157297216707"
+    },
+    "gleech_part0": {
+      "key": "s911_gleech_part0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part0.webp",
+      "cell": 200,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "176f3e1990f6f910af730af18a24ecb73f25a216ccb0428e00d2a4424d0b1105"
+    },
+    "gleech_part0_glow": {
+      "key": "s911_gleech_part0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part0_glow.webp",
+      "cell": 200,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "b1041c6a5bf786ad45c33c6c3acb645defc384f6e910b1163143a339b315a666"
+    },
+    "gleech_part0_shield": {
+      "key": "s911_gleech_part0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part0_shield.webp",
+      "cell": 200,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "5b192ee261995bdd6f37924f4f072fb87db5851db9270e4234386b3205f30761"
+    },
+    "gleech_part1": {
+      "key": "s911_gleech_part1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part1.webp",
+      "cell": 200,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "3852acf56c4f08c899fae4c6d1bc67cca8f2757814c2a464b47131aa34704766"
+    },
+    "gleech_part1_glow": {
+      "key": "s911_gleech_part1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part1_glow.webp",
+      "cell": 200,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "b80d4b53aa8b10ea5f7ca344df5f4b0e442205968f9f57756b3a7b20357bc299"
+    },
+    "gleech_part1_shield": {
+      "key": "s911_gleech_part1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_part1_shield.webp",
+      "cell": 200,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "728e90b754ad620f438764a3080135fccbadd15ea3ea5a886eea5624ff573a5e"
+    },
+    "gleech_body": {
+      "key": "s911_gleech_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_body.webp",
+      "cell": 256,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "795e5a6b5f99b57b0e77989dd02ff08fa61729c392d590af33853b9624e619b5"
+    },
+    "gleech_glow": {
+      "key": "s911_gleech_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_glow.webp",
+      "cell": 256,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "6c643f59d649c0cd1ce7bd5a980a467bca60710823cf314bbb9255af0eaa48ec"
+    },
+    "gleech_shield": {
+      "key": "s911_gleech_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/gleech_shield.webp",
+      "cell": 256,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "9492587bb6f563ade5b6bea579a326c7d8a54c4f90685d906185695012df9a03"
+    },
+    "prismbeam_part0": {
+      "key": "s911_prismbeam_part0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part0.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "91fd95d9fe2a4794e6aea1e7bb2a9e209a0b5d3c5fcfbf65b470b1de7cc6b2e5"
+    },
+    "prismbeam_part0_glow": {
+      "key": "s911_prismbeam_part0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part0_glow.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "d40146c02624e665187478d5e121a2c20fccf69cba0cfa4176dc4cc5a1d608f3"
+    },
+    "prismbeam_part0_shield": {
+      "key": "s911_prismbeam_part0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part0_shield.webp",
+      "cell": 148,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "4d6193e9988a48dc9bb9e9561d92dd630fa54b9dbf970cc8e0c2699e2f58f136"
+    },
+    "prismbeam_part1": {
+      "key": "s911_prismbeam_part1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part1.webp",
+      "cell": 146,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "c16da6e66961085ec6d9fd3637551946d262ee108121b05686a594ab740df24d"
+    },
+    "prismbeam_part1_glow": {
+      "key": "s911_prismbeam_part1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part1_glow.webp",
+      "cell": 146,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "20e82a4727fce7e5ed0977e2a27e539789e12574b7b8d6308e8e54d74bd81ff1"
+    },
+    "prismbeam_part1_shield": {
+      "key": "s911_prismbeam_part1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_part1_shield.webp",
+      "cell": 146,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "9932234ea96256883ccbe43f3b053c086ccdb15e59be17a5292724d9144b2d47"
+    },
+    "prismbeam_body": {
+      "key": "s911_prismbeam_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_body.webp",
+      "cell": 238,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "7ac2dd5ec26767b688d5fbd36edef1b7e98e93faf0b852e509dfdea4ab84c43e"
+    },
+    "prismbeam_glow": {
+      "key": "s911_prismbeam_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_glow.webp",
+      "cell": 238,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "469c1c82ce4260fd152f98b10c6323a73590b409eaafd7b6036f4182bdd44cfc"
+    },
+    "prismbeam_shield": {
+      "key": "s911_prismbeam_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismbeam_shield.webp",
+      "cell": 238,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "294e6e0ffc9377efb020e308248b1daa83f94d4a2d149ca485885c4c9a43ff15"
+    },
+    "echo_part0": {
+      "key": "s911_echo_part0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part0.webp",
+      "cell": 108,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f731a9e71f091c855d9aa5276d87594b7c53a423dcc27bc0160ceb64be15074e"
+    },
+    "echo_part0_glow": {
+      "key": "s911_echo_part0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part0_glow.webp",
+      "cell": 108,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "0fb40529bc63841d2ec35dc6c54176b9d8f2c998f525c27cb4f9b4c6c59f73cc"
+    },
+    "echo_part0_shield": {
+      "key": "s911_echo_part0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part0_shield.webp",
+      "cell": 108,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "233dcd0907034aa111e6818fec4d6c725068151cdb94481e43ac6dc3affc977f"
+    },
+    "echo_part1": {
+      "key": "s911_echo_part1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part1.webp",
+      "cell": 108,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "703ebd4dde70b3000e492522cb65f62305d49d03a7a3988553d2b85d3f2fc7ca"
+    },
+    "echo_part1_glow": {
+      "key": "s911_echo_part1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part1_glow.webp",
+      "cell": 108,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "30b9b14c6dee36c9b38307b442a0025ba8574ac3ee96750a09273299f27af728"
+    },
+    "echo_part1_shield": {
+      "key": "s911_echo_part1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part1_shield.webp",
+      "cell": 108,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "6ed99f78cd1806ac2e20fb56d871e89ea2a64fb199cca83ce588124d09434508"
+    },
+    "echo_part2": {
+      "key": "s911_echo_part2",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part2.webp",
+      "cell": 142,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "06c1552e6c4b22cf855c80c43c9f807e1f3cefb5704de24ac68c60461420013e"
+    },
+    "echo_part2_glow": {
+      "key": "s911_echo_part2_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part2_glow.webp",
+      "cell": 142,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "2d8a7bbd6b811f72e747258c3a6c0b6bc37dd1c96bbd06d46d1c30ca35b180c4"
+    },
+    "echo_part2_shield": {
+      "key": "s911_echo_part2_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part2_shield.webp",
+      "cell": 142,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "444f297a5a5fdb1a774a88bedc656cc2eef3d8d408ae076e46f0d1396eb5f368"
+    },
+    "echo_part3": {
+      "key": "s911_echo_part3",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part3.webp",
+      "cell": 142,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "28453bc681f035d677aa2395de208d2864057fa9cfbab75e6fbbf4c26d231fa9"
+    },
+    "echo_part3_glow": {
+      "key": "s911_echo_part3_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part3_glow.webp",
+      "cell": 142,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "08bcd2bb9e008dfb774fcbf7af60beef77d8a60d6aff0bfef8518ec2bad620dc"
+    },
+    "echo_part3_shield": {
+      "key": "s911_echo_part3_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_part3_shield.webp",
+      "cell": 142,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "a656fae82b426107fbce65a0408286152d8f329f9beaccdc23257edd4b36e5dc"
+    },
+    "echo_body": {
+      "key": "s911_echo_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_body.webp",
+      "cell": 250,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "dbccb0634e3a45d02e2d10f24a901f1cf939d55f4e0fe44a47ac9e263328b64f"
+    },
+    "echo_glow": {
+      "key": "s911_echo_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_glow.webp",
+      "cell": 250,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "56410582f7b35d8b6f18dfe5e3292bed709cc899f73023461081ed5231b511ab"
+    },
+    "echo_shield": {
+      "key": "s911_echo_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/echo_shield.webp",
+      "cell": 250,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f9814fac8801eaf016f56d0008343044d02ee1668e89cf841b979b90a78bd60a"
+    },
+    "minelayer_body": {
+      "key": "s911_minelayer_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/minelayer_body.webp",
+      "cell": 266,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f024c74eb477effb2474999987c97b54c47d1d0c1d69ba7182d7d35fac6cda43"
+    },
+    "minelayer_glow": {
+      "key": "s911_minelayer_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/minelayer_glow.webp",
+      "cell": 266,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "2b7e4b1e413b86b5d8cb5f96ee8fc7d0ecad53330f677cb99600a59b3565e643"
+    },
+    "minelayer_shield": {
+      "key": "s911_minelayer_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/minelayer_shield.webp",
+      "cell": 266,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "9be3ac51968f9db7f40a37dfc4aa130cdb4500f87d3e15cd5568467a7bb321e2"
+    },
+    "manta_part0": {
+      "key": "s911_manta_part0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part0.webp",
+      "cell": 154,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "4818bc5c7492e66458eee3e89b31117c9ce893dfd46ee2a60e21c3b782d4e7c1"
+    },
+    "manta_part0_glow": {
+      "key": "s911_manta_part0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part0_glow.webp",
+      "cell": 154,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f99c64c1593aec0ff49bd5df27479eb45ff6f39eb9e3a2513fecf20da96e78d3"
+    },
+    "manta_part0_shield": {
+      "key": "s911_manta_part0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part0_shield.webp",
+      "cell": 154,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f2d1197bead739cb584002f938bf7189bd90dd1c758c65523a144848ae1669ff"
+    },
+    "manta_part1": {
+      "key": "s911_manta_part1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part1.webp",
+      "cell": 154,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "29ab1135cd7ac74ee10bde1c688f9361b01ae77280b3f6bbf3528c234d05e66e"
+    },
+    "manta_part1_glow": {
+      "key": "s911_manta_part1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part1_glow.webp",
+      "cell": 154,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "cd10eb66b1e34eece113c5cf20351bfecc81845e51d48ba3c95506b32cc8359b"
+    },
+    "manta_part1_shield": {
+      "key": "s911_manta_part1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_part1_shield.webp",
+      "cell": 154,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "d732f55da42e37e18f5a0860f8fc0afe5242b5cecf7e3a7080f98502babdfdd4"
+    },
+    "manta_body": {
+      "key": "s911_manta_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_body.webp",
+      "cell": 298,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "97b45b6af73eab458d8e80c6e1d08ec5b614f4e712e487be9ab68dafcc87111b"
+    },
+    "manta_glow": {
+      "key": "s911_manta_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_glow.webp",
+      "cell": 298,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "ad1c987c517aea486416d0271d1c0013f4ccd0390be088d406c3cd3b545fea79"
+    },
+    "manta_shield": {
+      "key": "s911_manta_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/manta_shield.webp",
+      "cell": 298,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "115107bf82523e1a17092d6d5669747770133d1c483699e157b4a194d50a060e"
+    },
+    "tidal_part0": {
+      "key": "s911_tidal_part0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part0.webp",
+      "cell": 126,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "3267767d3cd0d66be8102c6da504b80a6a2bf58b0fce6efe9deb5ece27a78ba4"
+    },
+    "tidal_part0_glow": {
+      "key": "s911_tidal_part0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part0_glow.webp",
+      "cell": 126,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "af535d4336336586d80f8921d484e994149f97a0ead75fe7ea85e8f0344f1ea5"
+    },
+    "tidal_part0_shield": {
+      "key": "s911_tidal_part0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part0_shield.webp",
+      "cell": 126,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "c232dd68ce4d640b9ad7cb94ecf41470f12fb2d11534a47f65a123e7ca693bf7"
+    },
+    "tidal_part1": {
+      "key": "s911_tidal_part1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part1.webp",
+      "cell": 126,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "e03e1564cb6bbe37ac870292c76022ff0534da8d762e91d0c24e4cdd5e3d50d5"
+    },
+    "tidal_part1_glow": {
+      "key": "s911_tidal_part1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part1_glow.webp",
+      "cell": 126,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "95cbd6910451a9870c20363019193a99455b14b07157eb805d2e3d9222756cf0"
+    },
+    "tidal_part1_shield": {
+      "key": "s911_tidal_part1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_part1_shield.webp",
+      "cell": 126,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "aae0987723e645226f4ada83e0435f826888bb357a261a50899d3e4ac343b0c7"
+    },
+    "tidal_body": {
+      "key": "s911_tidal_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_body.webp",
+      "cell": 244,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "d5e93f4177ced976dce29b26666df94fef0f3f500360bdbe77ba98437135b74c"
+    },
+    "tidal_glow": {
+      "key": "s911_tidal_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_glow.webp",
+      "cell": 244,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "76a8cdb9428af66c264bb32b6e3eb33a1a0440577222efd4db7f53ce698f4c36"
+    },
+    "tidal_shield": {
+      "key": "s911_tidal_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_shield.webp",
+      "cell": 244,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "1b9ac1df9564ac4f0c3c3fa8ec480af1abcd316e3c94260025af70a89a750c80"
+    },
+    "singularity_body": {
+      "key": "s911_singularity_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/singularity_body.webp",
+      "cell": 290,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "f7e8ffbbb681826cdeff527cba85deea851fc5fe7c1b6876973c1cd7606cb1fa"
+    },
+    "singularity_glow": {
+      "key": "s911_singularity_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/singularity_glow.webp",
+      "cell": 290,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "82299f62ad57af08cd51f9583b34d43055a329e06de4e39e65393f7109fee37c"
+    },
+    "singularity_shield": {
+      "key": "s911_singularity_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/singularity_shield.webp",
+      "cell": 290,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "040470cde8143a2b25abe362ae68a8a6dd1bd3c69650d41a7fef9c408adb9862"
+    },
+    "prismorb_body": {
+      "key": "s911_prismorb_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismorb_body.webp",
+      "cell": 262,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "c4648cbc43fbeb5020feb64a35bd0cf4205a2ac2643ab6b8011e15150f99491b"
+    },
+    "prismorb_glow": {
+      "key": "s911_prismorb_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismorb_glow.webp",
+      "cell": 262,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "d32d95c8daf9eb3a58eab375966a1cb3f4f952024a0840605b1e3056deb56dc2"
+    },
+    "prismorb_shield": {
+      "key": "s911_prismorb_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/prismorb_shield.webp",
+      "cell": 262,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "396d2fa3d7f7df5d69134a0702b73bb09f613f3bc6805c3e7de52101772f9ac3"
+    },
+    "harrier_body": {
+      "key": "s911_harrier_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_body.webp",
+      "cell": 288,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "2d0ff24252ee330dc434726c6a2810954ebf0d6ce2f593e07ccfc97ba3841cc8"
+    },
+    "harrier_glow": {
+      "key": "s911_harrier_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_glow.webp",
+      "cell": 288,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "7082c96ed0da02089ac4980e261ffa2c1bd337d724353a3d505e9d3d6d4ef0ca"
+    },
+    "harrier_shield": {
+      "key": "s911_harrier_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_shield.webp",
+      "cell": 288,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "8c7f0a8f3263ac3357f1285dc5de2654f992357425914956d174224cd2463b4e"
+    },
+    "harrier_pod0": {
+      "key": "s911_harrier_pod0",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod0.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "8575321b06136d1dd03648f2020e9eb984fdd38ce7c4f04967a28c15d26e3489"
+    },
+    "harrier_pod0_glow": {
+      "key": "s911_harrier_pod0_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod0_glow.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "ab362916ec09373831eecf845c8558ab56cc15b5316184e909a5ab34eb29b116"
+    },
+    "harrier_pod0_shield": {
+      "key": "s911_harrier_pod0_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod0_shield.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "7316982208829a02dcf327121dea32bb8a2b53e9095b549dc699da106189d17f"
+    },
+    "harrier_pod1": {
+      "key": "s911_harrier_pod1",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod1.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "8575321b06136d1dd03648f2020e9eb984fdd38ce7c4f04967a28c15d26e3489"
+    },
+    "harrier_pod1_glow": {
+      "key": "s911_harrier_pod1_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod1_glow.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "ab362916ec09373831eecf845c8558ab56cc15b5316184e909a5ab34eb29b116"
+    },
+    "harrier_pod1_shield": {
+      "key": "s911_harrier_pod1_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod1_shield.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "7316982208829a02dcf327121dea32bb8a2b53e9095b549dc699da106189d17f"
+    },
+    "harrier_pod2": {
+      "key": "s911_harrier_pod2",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod2.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "8575321b06136d1dd03648f2020e9eb984fdd38ce7c4f04967a28c15d26e3489"
+    },
+    "harrier_pod2_glow": {
+      "key": "s911_harrier_pod2_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod2_glow.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "ab362916ec09373831eecf845c8558ab56cc15b5316184e909a5ab34eb29b116"
+    },
+    "harrier_pod2_shield": {
+      "key": "s911_harrier_pod2_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod2_shield.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "7316982208829a02dcf327121dea32bb8a2b53e9095b549dc699da106189d17f"
+    },
+    "harrier_pod3": {
+      "key": "s911_harrier_pod3",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod3.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "8575321b06136d1dd03648f2020e9eb984fdd38ce7c4f04967a28c15d26e3489"
+    },
+    "harrier_pod3_glow": {
+      "key": "s911_harrier_pod3_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod3_glow.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "ab362916ec09373831eecf845c8558ab56cc15b5316184e909a5ab34eb29b116"
+    },
+    "harrier_pod3_shield": {
+      "key": "s911_harrier_pod3_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod3_shield.webp",
+      "cell": 48,
+      "dirs": 32,
+      "frames": 12,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "7316982208829a02dcf327121dea32bb8a2b53e9095b549dc699da106189d17f"
+    },
+    "current_body": {
+      "key": "s911_current_body",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_body.webp",
+      "cell": 300,
+      "dirs": 32,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 2,
+      "sha256": "02fc2347e177c4ec813aee36fce5fb7afe4dd17c1bc0cbd7504cafb95e40d45f"
+    },
+    "current_glow": {
+      "key": "s911_current_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_glow.webp",
+      "cell": 384,
+      "dirs": 1,
+      "frames": 8,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "a7cf2b8bc66609acf231732c1935dd5a893333055acb1261b211ebc96e2b33d8"
+    },
+    "current_shield": {
+      "key": "s911_current_shield",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_shield.webp",
+      "cell": 384,
+      "dirs": 1,
+      "frames": 8,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "fae85dcdf97cff72d11d8e15b58b2abf79aa343284a61703289772a31367b1d2"
+    },
+    "current_poses": {
+      "key": "s911_current_poses",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_poses.webp",
+      "cell": 384,
+      "dirs": 1,
+      "frames": 8,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "78ec1a0d8e7b280164457770424b014a437d074391c1a3e7aeef039f79689974"
+    },
+    "current_orb": {
+      "key": "s911_current_orb",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_orb.webp",
+      "cell": 384,
+      "dirs": 1,
+      "frames": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "4c245e4ba5f3911dc29e7a34468b55f8f5d3bd076b62a1de822e3d225167a277"
+    },
+    "current_morph": {
+      "key": "s911_current_morph",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_morph.webp",
+      "cell": 384,
+      "dirs": 1,
+      "frames": 29,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "18540dc9c26140be22c38d8ad7deb44676d052d9bb4b1aff24d920285882f437"
+    },
+    "current_flight": {
+      "key": "s911_current_flight",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight.webp",
+      "cell": 384,
+      "frames": 1,
+      "dirs": 8,
+      "cols": 4,
+      "dirRows": 2,
+      "sha256": "282e012baff38eee4f1a30861b748165119c567bb864f44883f6bb63121f5b96",
+      "authoredDirections": true
+    },
+    "current_flight_glow": {
+      "key": "s911_current_flight_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight_glow.webp",
+      "cell": 384,
+      "frames": 1,
+      "dirs": 8,
+      "cols": 4,
+      "dirRows": 2,
+      "sha256": "382c76e173feb6f39b284674c680ab90ef4452cd09e69a8df1d489923febf585",
+      "authoredDirections": true
+    },
+    "current_flight_launch": {
+      "key": "s911_current_flight_launch",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight_launch.webp",
+      "cell": 384,
+      "dirs": 1,
+      "frames": 8,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "ebd951120f822b22d22d1f8a3475e33dcce4406d0c5faadcd31dd4133a34b6a3"
+    },
+    "current_flight_launch_glow": {
+      "key": "s911_current_flight_launch_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight_launch_glow.webp",
+      "cell": 384,
+      "dirs": 1,
+      "frames": 8,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "4a7e8154ceba88958c5a65e3cd1e6ba02d86c644dfb92df985e951167db19b60"
+    },
+    "current_flight_return": {
+      "key": "s911_current_flight_return",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight_return.webp",
+      "cell": 384,
+      "dirs": 1,
+      "frames": 8,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "ee5741bc0c6db6a7df8fa15756f85c1fa180d4c26a117483b0c8670936363de0"
+    },
+    "current_flight_return_glow": {
+      "key": "s911_current_flight_return_glow",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/current_flight_return_glow.webp",
+      "cell": 384,
+      "dirs": 1,
+      "frames": 8,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "5cbb20290614d0b14d81def50d9f3eda2193a062e44dcfb68f82a444a2c7a546"
+    },
+    "shield_serpent": {
+      "key": "s911_shield_serpent",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/shield_serpent.webp",
+      "cell": 288,
+      "dirs": 1,
+      "frames": 8,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "ebee48d87a3e8ea5d822a1e0ae20bd0a144032a54dd760e14b2602ee7be7578c"
+    },
+    "tidal_wave": {
+      "key": "s911_tidal_wave",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/tidal_wave.webp",
+      "cell": 256,
+      "dirs": 16,
+      "frames": 8,
+      "cols": 16,
+      "dirRows": 1,
+      "sha256": "b17f513703b910b1d8314c2fe62d113f71aadd3e0741e364f07d8da45d17f574"
+    },
+    "water_splash": {
+      "key": "s911_water_splash",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/water_splash.webp",
+      "cell": 256,
+      "dirs": 1,
+      "frames": 8,
+      "cols": 1,
+      "dirRows": 1,
+      "sha256": "fab53c11cbfe171bff1a8204cd06c472cf03c7a7d70004f690025dd69c8a11c9"
+    },
+    "water_mine": {
+      "key": "s911_water_mine",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/water_mine.webp",
+      "cell": 128,
+      "dirs": 16,
+      "frames": 8,
+      "cols": 16,
+      "dirRows": 1,
+      "sha256": "71ca5f6ceeb64add27b86cf480b4eb999bc16884ae3c233084dd048ac00bd63a"
+    },
+    "water_grenade": {
+      "key": "s911_water_grenade",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/water_grenade.webp",
+      "cell": 128,
+      "dirs": 16,
+      "frames": 1,
+      "cols": 16,
+      "dirRows": 1,
+      "sha256": "db9b3368970e4558fe59c3b9e2e8e3f8abf08a1364246eefdfc7b65ff7934308"
+    },
+    "water_laser": {
+      "key": "s911_water_laser",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/water_laser.webp",
+      "cell": 64,
+      "pivot": [
+        32,
+        32
+      ],
+      "dirs": 288,
+      "cols": 144,
+      "dirRows": 2,
+      "frames": 4,
+      "sha256": "e6092d5bd2c4df834275dc6eadeefc9465fd1ff48ad43445d08cbfbc84c25fd8",
+      "source": "assets/game/levels/stage_08/enemies/amplify_1101/blue_laser.webp"
+    },
+    "water_orb": {
+      "key": "s911_water_orb",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/water_orb.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "79c3eeda48c4fde18d44c9f6a2caa3861b8f0aecfdb1cae98f53047acee8f399",
+      "source": "assets/game/levels/stage_08/enemies/amplify_1101/blue_orb.webp"
+    },
+    "water_thruster": {
+      "key": "s911_water_thruster",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/water_thruster.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "e5d0e8fe95d742c9e137371dd69ba76596ded48a6e566422407159ae47e74afe",
+      "source": "assets/game/levels/stage_08/enemies/amplify_1101/blue_thruster.webp"
+    },
+    "water_muzzle": {
+      "key": "s911_water_muzzle",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/water_muzzle.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "a26e7511c6210be046e29c33391daeb9cf9cf6a7f61d6a74a8600e99118e96e7",
+      "source": "assets/game/levels/stage_08/enemies/amplify_1101/blue_muzzle.webp"
+    },
+    "water_slug": {
+      "key": "s911_water_slug",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/water_slug.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "494b9de659f52400a767e9acb3fb5b45dbb61834016cc189197e6fff53c90f48",
+      "source": "assets/game/levels/stage_08/enemies/amplify_1101/blue_slug.webp"
+    },
+    "pink_laser": {
+      "key": "s911_pink_laser",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/pink_laser.webp",
+      "cell": 64,
+      "pivot": [
+        32,
+        32
+      ],
+      "dirs": 288,
+      "cols": 144,
+      "dirRows": 2,
+      "frames": 4,
+      "sha256": "2e88d70d6be4a04666e53e0843ba465b6172c61116e9745844893d6acfeba8f8",
+      "source": "assets/game/levels/stage_08/enemies/amplify_1101/blue_laser.webp"
+    },
+    "pink_slug": {
+      "key": "s911_pink_slug",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/pink_slug.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "1ac266257dbafd9a697462949330652eff8bc396d061aaa5d209674b98b353c9",
+      "source": "assets/game/levels/stage_08/enemies/amplify_1101/blue_slug.webp"
+    },
+    "pink_muzzle": {
+      "key": "s911_pink_muzzle",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/pink_muzzle.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "3dfad3ad706d02ce8de836f9bbec16a8f200570b957ef1dfae52ce41551357db",
+      "source": "assets/game/levels/stage_08/enemies/amplify_1101/blue_muzzle.webp"
+    },
+    "pink_thruster": {
+      "key": "s911_pink_thruster",
+      "path": "assets/game/levels/stage_09/enemies/amplify_1101/pink_thruster.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "2fa2bab667eb53adcfcb6fb9203cdcfe634178339b1aab1283040674b2b7f4f6",
+      "source": "assets/game/levels/stage_08/enemies/amplify_1101/blue_thruster.webp"
+    }
+  },
+  "sources": {
+    "spinner": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/spinner_source.png",
+      "sha256": "b1d213d6783b58fad3a86b8bda4d6e3eba6c8e3856187cab853827f8f758d163",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "jumper": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/jumper_source.png",
+      "sha256": "acbd77b3cc022a00a7c2526a60a909a451bbad463ab5d4b58828a0f9438e94ab",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "skimmer": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/skimmer_source.png",
+      "sha256": "caa4eadd9f0f503f4a1686c76308fa8507f816a6092427e204e400c99e052e25",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "ringlaser": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/ringlaser_source.png",
+      "sha256": "a03ada0846dce0cf239dc937b4c5c990645ec7a89b047c0887b02e715d45fe43",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "gate": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/gate_source.png",
+      "sha256": "1e40b4d09a432b5b0e9ef862c26d881bbeff5a11eef3eed57be352e70c863e54",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "gleech": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/gleech_source.png",
+      "sha256": "a11d39d9975717f53a9209f0a0b12d0caa277a7907a6f09aaa6700200b335653",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "prismbeam": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/prismbeam_source.png",
+      "sha256": "dd16ff49407f4ef55cf2b1da712ec11d495b7d84134dbc23a7f64e9885eeecda",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "echo": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/echo_source.png",
+      "sha256": "d13697c9604ec209135a6ff18fae3f2607418dffd79e6926428096238a3d76da",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "minelayer": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/minelayer_source.png",
+      "sha256": "f09db13ae82ce3be19c4b74f513c32cdc5746a14ab7c6a86150df0a95a8fb946",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "manta": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/manta_source.png",
+      "sha256": "8446eb0e9afc8424dc4efe61dd3620c669641ca30da5423503658fe74efc28fa",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "tidal": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/tidal_source.png",
+      "sha256": "a05a76331704fb39296ff23f6dd284714798f4a7a8ce26bd7cbf5c48d1b8d73e",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "singularity": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/singularity_source.png",
+      "sha256": "b566d4883e9b0db457f775348bfb272be132d16af10f5ee4253494853d9e4ed0",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "prismorb": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/prismorb_source.png",
+      "sha256": "6aa5424af3513c600e255aa8e9866f2584e920bae311b014c960d6d3ab4c8666",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "harrier": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/harrier_source.png",
+      "sha256": "b4229f58dc8d491019b9ef340690ee90b3e23dd8d25eb14aa411ebfc2814f535",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "human": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/human_source.png",
+      "sha256": "2be833474b0daf26b8a360aaa29689711c16e8676022580f046bdc843fa72556",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "poses": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/poses_source.png",
+      "sha256": "07461a1f08891aa0b28b0ddf8849b6c48d2210aaa57465ce5a45c13765620094",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "morph": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/morph_source.png",
+      "sha256": "6ce3178ae2078a5beba2e76cacd825ec3cc989dc605700b418bae39fcfad0bbc",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "flight_topdown": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/flight_topdown_source.png",
+      "sha256": "0049fcf4267f8e0c73177d93af93431297bbb85cbaf195d1b9303206dfdaf542",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "spiral": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/spiral_source.png",
+      "sha256": "f65451bfaa1d4e38f36dd62d2ef5e257e333fa42cb8a207568cd4b729ae7e9f3",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "wave": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/wave_source.png",
+      "sha256": "e9170b7b584f00232d90b5a537dadbfef506e2c261e6524e19a464cef57ef41d",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "splash": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/splash_source.png",
+      "sha256": "c07d2f5509c07c0b6b0b347f95b156802c74483aa165fff3482a48a75e9e2417",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "mine": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/mine_source.png",
+      "sha256": "5a55d1f9805f073224bc44bb679ea4f48d34ce2b9f9755bfe7588b4f1d900386",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    },
+    "waterorb": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/waterorb_source.png",
+      "sha256": "9aa0f13e47c6db6663b5f33b244905394de880152dc613e569ebf08a4a5180c8",
+      "tool": "built-in image_gen",
+      "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+    }
+  },
+  "palettes": {
+    "guide": "_BUILD_SOURCE/stage9_amplify_1101/palette-guide-1101.png",
+    "families": {
+      "black-blue": {
+        "armor": [
+          [
+            3,
+            5,
+            10
+          ],
+          [
+            8,
+            14,
+            27
+          ],
+          [
+            18,
+            30,
+            49
+          ],
+          [
+            40,
+            61,
+            87
+          ],
+          [
+            99,
+            123,
+            151
+          ],
+          [
+            184,
+            205,
+            229
+          ],
+          [
+            244,
+            249,
+            255
+          ]
+        ],
+        "energy": [
+          32,
+          105,
+          255
+        ],
+        "glow": [
+          42,
+          118,
+          255
+        ]
+      },
+      "purple-pink": {
+        "armor": [
+          [
+            8,
+            4,
+            17
+          ],
+          [
+            30,
+            12,
+            51
+          ],
+          [
+            62,
+            29,
+            99
+          ],
+          [
+            105,
+            57,
+            151
+          ],
+          [
+            162,
+            111,
+            201
+          ],
+          [
+            220,
+            188,
+            241
+          ],
+          [
+            252,
+            242,
+            255
+          ]
+        ],
+        "energy": [
+          255,
+          40,
+          196
+        ],
+        "glow": [
+          237,
+          55,
+          236
+        ]
+      },
+      "black-pink": {
+        "armor": [
+          [
+            6,
+            4,
+            10
+          ],
+          [
+            17,
+            13,
+            26
+          ],
+          [
+            33,
+            26,
+            46
+          ],
+          [
+            61,
+            48,
+            76
+          ],
+          [
+            112,
+            96,
+            129
+          ],
+          [
+            201,
+            188,
+            215
+          ],
+          [
+            252,
+            245,
+            255
+          ]
+        ],
+        "energy": [
+          255,
+          27,
+          157
+        ],
+        "glow": [
+          255,
+          46,
+          176
+        ]
+      }
+    },
+    "models": {
+      "kami": "black-blue",
+      "jumper": "black-blue",
+      "harrier": "black-blue",
+      "spinner": "purple-pink",
+      "prismbeam": "purple-pink",
+      "prismorb": "purple-pink",
+      "gate": "black-pink",
+      "gleech": "black-pink",
+      "minelayer": "black-pink",
+      "ringlaser": "purple-pink"
+    },
+    "armorLuminanceKnots": [
+      0,
+      42,
+      84,
+      126,
+      168,
+      215,
+      255
+    ],
+    "rule": "Palette-only: retain alpha, coordinates, directional geometry, pivots, white specular tips and dark outlines. Preserve value ordering in dark metal; energy retains measured luminance. All ordnance and exhaust keep authored colors."
+  },
+  "paletteProof": {
+    "kami_body": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "kami_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "kami_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "spinner_part0": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part0_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part0_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part1": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part1_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part1_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part2": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part2_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part2_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part3": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part3_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part3_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part4": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part4_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part4_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part5": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part5_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_part5_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_body": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "spinner_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "jumper_part0": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "jumper_part0_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "jumper_part0_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "jumper_part1": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "jumper_part1_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "jumper_part1_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "jumper_body": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "jumper_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "jumper_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "ringlaser_part0": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "ringlaser_part0_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "ringlaser_part0_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "ringlaser_part1": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "ringlaser_part1_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "ringlaser_part1_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "ringlaser_body": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "ringlaser_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "ringlaser_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "gate_part0": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part0_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part0_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part1": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part1_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part1_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part2": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part2_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part2_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part3": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part3_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_part3_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_body": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gate_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gleech_part0": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gleech_part0_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gleech_part0_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gleech_part1": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gleech_part1_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gleech_part1_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gleech_body": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gleech_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "gleech_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "prismbeam_part0": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "prismbeam_part0_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "prismbeam_part0_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "prismbeam_part1": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "prismbeam_part1_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "prismbeam_part1_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "prismbeam_body": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "prismbeam_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "prismbeam_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "minelayer_body": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "minelayer_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "minelayer_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-pink"
+    },
+    "prismorb_body": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "prismorb_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "prismorb_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "purple-pink"
+    },
+    "harrier_body": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "harrier_glow": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "harrier_shield": {
+      "alphaPreserved": true,
+      "frames": 1,
+      "palette": "black-blue"
+    },
+    "harrier_pod0": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod0_glow": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod0_shield": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod1": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod1_glow": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod1_shield": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod2": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod2_glow": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod2_shield": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod3": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod3_glow": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    },
+    "harrier_pod3_shield": {
+      "alphaPreserved": true,
+      "frames": 12,
+      "palette": "black-blue"
+    }
+  },
+  "references": {
+    "kami": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/s9interceptor_reference.png",
+      "sha256": "6b583e408fae302dfeb498baa860b39b520fec3756a48f2adc0b1109e924c924"
+    },
+    "comet": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/s9comet_reference.png",
+      "sha256": "6b583e408fae302dfeb498baa860b39b520fec3756a48f2adc0b1109e924c924"
+    },
+    "beacon": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/s9beacon_reference.png",
+      "sha256": "b748e50fec86131f2b833da865d912bd97a617b29367672c4b6a5c4a96bc0be5"
+    },
+    "beamship": {
+      "path": "_BUILD_SOURCE/stage9_amplify_1101/s9gunship_reference.png",
+      "sha256": "ec7eda3a1bb30d120cd4fb293b130d776077478648bd51575bebfc15601f9875"
+    }
+  }
+}

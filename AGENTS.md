@@ -7,6 +7,10 @@ current Git state and runtime before relying on them.
 
 ## Working on this build
 
+- Later November1: Mike expanded the carriers into four Stage6 waves. Paired carriers are large, staggered, shaking, have no HP bars and permit safe overflight with actual aircraft shadows. All ten turrets gate both hulls. Preserve the two new distinct strategic carriers, physical shootable warheads, authored nuclear catch-up headings, timed generated shockwaves/tornadoes, readable timers, native hit flash, shared interception and once-only native rewards. CA111's native campaign hold/boss gate and warning interlock preserve these added waves. Current owner/evidence: `docs/CARRIER_ASSAULT_1101.md`.
+
+- November1: Mike approved five independent circular split-door/extend/recoil laser modules on a new giant Stage6 cloud carrier. Preserve its one solid hull, six complete native pools, fixed well/bore pivots, per-piece flashes/Retina and once-only full defeat. Its early `_sc12` native-update branch protects offscreen entry; it is separate from Siege Console `SC12`. Owner and evidence: `docs/CLOUD_CARRIERS_1101.md`.
+
 - Mike owns creative and design decisions. Continue his requested work using the
   existing authored assets and encounter specifications.
 - Preserve existing staged, unstaged, and untracked work. Commit or push only when
@@ -404,9 +408,172 @@ keys and the game context's own `drawImage`; cached canvases have no reliable
 - Preserve native3380/4290/5330HP, background protection, real part flashes/break cancellation, surviving-arm selection, exposed-core missiles, third-decision Luminaire, copied forms/returns and terminal ending. Never restore whole-arm-only pivots, disconnected shadow attacks, hidden landing damage, or runtime sprite transforms. Source/builder,99 focused checks and current full native final-main-life film: docs/DRACODIA_EXTENDED_CLAWS_1031.md.
 
 
+## October31 extended sewer escape
+
+- SR93's latest exit extends the actual sewer by6144 source-pixel tiled rows, with continuous northward travel, real authored-bank dodge movement and native steering. Cole identifies the portal as the only exit, then says HERE GOES NOTHING! on the northward boost/entry beat. Use the existing fixed portrait dialogue and actual green gated portal/aircraft entry frames. Never restore the solid hole seal above destruction: explosions render after the portal layer and cover its centre during engulfment. Preserve pause/co-op, finite effects, one native reward/ledger and direct Stage8 WARPENTRY. Sources/current proofs: docs/SEWER_ESCAPE_EXTENDED_1031.md.
+
+## October31 Herald opposite-side bomber pattern
+
+- Latest bomber sequence: fly left completely offscreen, hold at the actual exit through native green/yellow/red FOV, then fly right on the same row. Never insert a northbound route, recede animation or visible in-place turn between these passes. World-edge padding keeps the whole authored hull invisible during the warning. Mirrored landing locations and safe opening remain; align release times to the actual rightward path/claw sockets. Preserve native fall speed, broken-claw cancellation, recovery, damage/128-round budget/audio/HP/death and ground Retinas. Current evidence supersedes the earlier mirrored route: docs/HERALD_STRAIGHT_BOMBER_1031.md.
+
+## October31 Herald lightning warning correction
+
+- Mike superseded the older HH52 lightning circles/asterisks: use only the authored HL51 ground Retina through its native two-second green/yellow/red tell. The fixed target must not follow player/camera movement. At impact remove that Retina and play the source-derived HH101 red/white electric explosion with the native downward bolt. Preserve36px direct contact, three unshootable red rounds, existing flight, health, recovery and death owners. No duplicate disc, asterisk or broad field for this attack. Builder, native checks and current local film: docs/HERALD_ELECTRIC_RETINAS_1031.md.
+
 ## October31 boss balance and Normal fifth-stage finale
 
 - BA99 owns final-spawn Event Horizon health:3200*DIFF.eHp, native co-op1.5 and NG+1.25 once. Nightwing's future ace life is3600*DIFF.eHp with the same native modifiers; carrier parts/hull are unchanged. Do not restore the stacked Horizon stage ramp. EH57 keeps continuous shared0.60rps hull/core/laser rotation, but fires warned rank-specific pulses with real off gaps and foreground recoveries. Its return is protected. Retain real gated white hit flashes, exact50% transition, actual core laser art/audio and unshootable ordinary rounds.
 - TS58 Hard now uses3 forward lanes,3 mortars,4 rain impacts and6 lamp bubbles; Furious retains5/4/6/10. Preserve all three original water-wall alert timings and sounds on both ranks, fan origins, finite cleanup and protected Slip N Slide re-entry. Do not accelerate warnings via a blanket dt multiplier.
 - NF100 ends Normal at the real Stage5 Chronos defeat, autosaving earned rewards immediately; existing results/Forge settle before the Earth/HQ return. Keep the native-size avatar-free Hard/Furious menu, accurate difficulty copy, difficulty-preserving fade to PILOT and fresh Stage1 run. Actual Normal completion must survive a fresh operation in its archive and reopen the choice when loaded. Save failures must be honest and block restart. Debug/preview runs never grant completion. Normal NG+ also stops at5; preserve pre-clear Stage9 bonus detour compatibility. Older Normal campaign6-8 saves route to this choice. Do not bump CAMP_SAVE_VER or auto-launch the Stage6 cinematic.
 - Dracodia new difficulty designs and the pending Stage6/9 concept pairs remain approval-only. No new Dracodia attacks/art were activated. See docs/BOSS_BALANCE_NORMAL_FINALE_1031.md and docs/qa/boss_balance_normal_1031/. Targeted native checks45 passed; full suite retains the same five pre-existing flash/Chronos-opening/Stage-X failures. Core game.js SHA024a0933c5729b6afa2a6e88864574636293bdb535d9f4e5eb91d36bb98509de stays unchanged.
+
+
+## October31 weapon contact decals
+
+- assets/weapon_contacts_1031.js owns ordinary player MG/heavy-slug, laser/cannon, orb and Maverick Helix contacts. Use launched identity, attached live hull/Retina anchors, native simulation expiry and bounded gates; do not restore generic contact fireballs.
+- Keep genuine destruction, missile/grenade AoE, orb shards/riders, Helix flurries/whiteout, native shields and hit flashes with their original owners. Maverick homing stats/Forge exclusion stay fixed.
+- Rebuild the34 fixed96x96 banks through _BUILD_SOURCE/build_weapon_contacts_1031.py; no runtime rotation/fade. Probe, native closeup limitations and missing retired-art suite blocker: docs/WEAPON_CONTACTS_1031.md.
+
+## October31 Stage1 five-enemy animation pass
+
+- assets/stage1_amplify_1031.js owns revised Gunboat MG, compact Corvette flashes, current AF21 Delta curved sorties/exhaust, continuous visible bomber drops and Heavy Jungle Tank twin locked missiles. Keep source-derived directional cells, measured emitter pivots and real white hit flashes. Preserve native module HP, ground traffic, lock/damage/death and interception owners. Rebuild via build_stage1_amplify_1031.py; current evidence/local six-card guide: docs/STAGE1_AMPLIFY_1031.md.
+
+## October31 physical weapon mouths and Hard/Furious camo tanks
+
+- assets/stage1_followup_1031.js owns Patrol side-spread/main-burst cycles, straight Corvette bow fire, APC twin MG, gray/black rapid Light Tank and shared two-mouth MG/missile emplacements. Preserve measured source sockets, native modules/HP, white flashes, sound gates, ordinary-bullet immunity and missile interception.
+- Light Jungle Tank is now the gray/black MG variant: Hard/Furious only, faster gray rounds,5/8 additional coastline/terrain-gated waves. Retain ground_traffic_1018 reservation/clearance. Do not restore Normal/Easy spawns or green/cannon fire.
+- S1A flight uses the current actual Delta/Strike frames and chosen routes; apply native Hard/Furious HP/speed/fire scaling exactly once. KO31 supersedes the former straight kamikaze dive as described below. Source builders and current proof: docs/STAGE1_PHYSICAL_WEAPONS_1031.md.
+- Native ground_traffic_1018 vehicle owners are exempt from the generic nine-second aircraft exit push across all stages. Preserve terrain-relative movement/reservations; do not reintroduce a second age-based chassis drift.
+
+## October31 earth-camo rolling kamikaze
+
+- Mike replaced the Stage1 straight kamikaze dive with light brown/orange jungle camo, continuous authored barrel rolls accelerating near impact, animated per-pose thrusters and bounded banking/orbit pursuit. assets/kamikaze_orbit_1031.js applies only to the Stage1 Delta kamikaze flag; retain ordinary Strike/Delta roles and palettes.
+- Use the actual16-pose AF21 roll, common128px cells/pivot and baked headings. Preserve native HP, white hits/expiry, body collision, death and shared jetDash per strike. Keep predictive separation, staggered dives, native ripple delays and finite recovery/exit. Rebuild/current evidence: docs/KAMIKAZE_ORBIT_1031.md.
+
+## October31 Stage2 volcanic enemy refit
+
+- assets/stage2_amplify_1031.js owns the distinct volcanic fleet, quad Fire Interceptor, fire/thunder ordnance, damageable Crucible shield, mine escape, mechanical serpent, top-crater eruptions, opening carrier/four elite roles and nine-spike laser disc. Keep native HP/pool protection, real hit flashes, shield/death/rewards and shared audio.
+- Eye/magmaorb enemy constructors are retired; magma orb ammunition remains. Legacy crawl redirects to lavasnake. Ordinary fire bullets/walls remain unshootable; magma arcs/mines and physical missiles retain native interception. An intercepted arc cancels its landing Retina.
+- Use the fixed even banks and measured sockets; no runtime static-hull rotation. Full turret footprints must stay on authored open ground. Launcher death clears pending heavy attacks and active beams. Source owner, current native proof and20 local films: docs/STAGE2_AMPLIFY_1031.md.
+
+## October31 ice roster, cardinal Cryoeye and island fixtures
+
+- assets/stage3_amplify_1031.js owns the larger upright Shard Dart, source-view twin-cannon interceptors, ice Carrier rounds, four-aperture Cryoeye and distinct mine bomber. Preserve native HP/hit flashes/death/rewards, measured sockets, unshootable ordinary ice rounds and shootable deployed mines. Never restore the obsolete suicide controllers or a flipping Shard Dart.
+- Cryoeye commits exactly four cardinal FOV lanes and uses the actual Stage2 laser texture in ice blue-white. Preserve warning/recovery and native death cancellation. Stage3 laser/blue sonic fixtures reserve their complete base on the source-measured island-top mask; keep world terrain anchors. The old red sonic renderer must not replace these blue rounds.
+- Current sources/rebuild/catalogue/local video proof: docs/STAGE3_AMPLIFY_1031.md. No runtime static-hull rotation; generated prompts/source sheets stay with the builder.
+
+## October31 Stage4–9 regular enemy flight and weapon review
+
+- assets/enemy_flight_1031.js owns the source-preserving R46 motion/socket migration, bounded Stage4 interceptor/rocket sorties and canonical sewer factory aliases. Preserve complete authored motion banks, native module/HP/shield pools, committed attack books, actual hit flashes and native death/reward ownership.
+- R46 physical missiles use the existing player Retina/beep launch queue; retain the original round's native modifiers, current launcher sockets, inter-shot spacing and defeat cancellation. Ground missile turrets keep their separate native owner. Ordinary rounds remain unshootable from birth.
+- `assets/enemy_module_contact_1031.js` routes actual gun-alpha contacts to the native part pool after heading changes and cancels only that destroyed module's queued missiles. Keep separate muzzle retrigger keys per physical mouth, including simultaneous twin releases. Preserve Brood's native cleared AI context when isolating its real deployed helpers for review.
+- Rebuild body banks before Royal/Blackice palette variants; native ordnance snapshots, matching feedback and remaining native module plates have separate owning builders/manifests. Never capture a migrated glyph renderer as its own original source. Current scope, rebuild order and verification limits: docs/ENEMY_FLIGHT_REVIEW_1031.md.
+
+## November1 Stage4 highway corrections
+
+- `assets/stage4_amplify_1101.js` supersedes the six named R46 replacement actors on Stage4: whole black/orange Command Fighter with fixed MGs, identity-preserved Heavy Jet with fixed facing missile rails, regenerated missile truck, unarmed fuel tanker, front-gun tractor and three-rail SAM. Preserve the entire native hull HP, shield/hit/death/reward ownership and authored source frames. Highway Armor stays whole/native and retains its lane before/after reaction movement.
+- The SAM releases three physical missiles0.18s apart through the native Retina/beep owner. Rack missiles must match the actual mounted cream/silver/orange/red art; kill cancels pending launches. Tanker has no weapon owner and exactly one native-death155px splash against nearby ordinary enemies/objects. Consume the Tractor's native stagger delay.
+- New ground vehicles reserve their full visible hull through `ground_traffic_1018.js`; use its shared entry placement/reservation owner and queue upstream. Do not bypass clearance with per-wave spacing. Source/rebuild, calibration, native proof and current local clips: `docs/STAGE4_AMPLIFY_1101.md`.
+
+## November1 Stage5 orbital roles
+
+- assets/stage5_amplify_1101.js owns the ten revised orbital enemies. Preserve native damage/shields/Retina/deaths, explicit plasma/mine/missile interception and ordinary-bullet immunity. Frigate warnings/beam share measured origin/alpha width; Repair turns vertically into twin-tip beams; Leech uses connected claws and no shots. Voidreaver is retired globally.
+- New Minelayer/Leech source sheets, exact prompts and even fixed-pivot exports belong to build_stage5_amplify_1101.py; source-derived violet magma ordnance has its native six-step1015 companion. Current contracts/rebuild/146 focused checks/local films: docs/STAGE5_ORBITAL_1101.md. No commit/push.
+
+## November1 Stage6 canonical solid hull rule
+
+- Mike explicitly replaced generated whole-hull animation for Stage6 with one canonical solid hull per aircraft. This supersedes the complete idle/attack/roll-bank requirement for this sky roster. Use source-preserving registered direction cells, native six-step1015 source-pixel light and separate measured animated nozzle/muzzle FX; no whole-hull morph/recoil/squash. Modular pieces may animate only under their own owners.
+- assets/stage6_airframe_1101.js owns six new jet/bomber plates and four preserved wind/helper identities. Keep opening stealth/cinematic/allied-wing/boss/StageX owners, native HP/shields/Retina/deaths and ordinary-bullet immunity. No background ground turrets in Stage6. Rebuild and173 focused checks/current27-film guide: docs/STAGE6_SOLID_AIRFRAMES_1101.md.
+
+## November1 Stage7 modular toxic roster
+
+- assets/stage7_amplify_1101.js owns the regular Stage7 refits only. Keep measured gun/mouth sockets, source-direction cells, genuine relay/slime roll banks, distance-driven crawler legs, native GT18 footprint reservations and all-part white hit flashes. No inherited missile locks on slug tanks; Brood mouth robot flies are projectiles, never helper spawns.
+- Brood and toxic barge use finite native absorbing energy shields rendered along their articulated source pixels, never round bubbles. Preserve deploy/hit/break/stun and actual native hull pools/death/rewards. Ordinary toxic slugs, lasers and flies are unshootable from birth; physical missile pods use native Retina/beeps/interception.
+- Blacksteel Hunter (ll18raptor) is retired from all gameplay, including Stage8 field-veteran calls. Retain its original art for BOF expansion only. Do not remove the separately owned Stage6 Blacksteel boss. Preserve Warden, Dredger, portal/rescue and other-stage Brood/Crescent owners. See docs/STAGE7_TOXIC_REFIT_1101.md.
+
+
+## November1 Stage8 regular alien roster
+
+- assets/stage8_amplify_1101.js owns the18 revised regular alien identities.
+  Keep fixed source pivots, independent weapon/limb cells, own-pixel1015 light,
+  measured bores, actual alpha weapon hits and shared native hull/shield pools.
+- Stage8 has flying laser harriers instead of ground missile/laser fixtures;
+  no sonic ground turret. Leech/Razor/Solar/Cryo Spear/Blacksteel/Brood do not
+  spawn here. Stage8 Leech graphics are deleted with no archive; its owning
+  builders must not restore them. Preserve separate Stage5/Stage9 identities.
+- Preserve the loved Hunter source identity and its reaching warned lashes,
+  Hexpyre's fire-only book, real Tentacle melee, physical dark bombs/missiles,
+  ordinary bullet immunity and native launcher cancellation/audio/hit flashes.
+  Herald, Dracodia and other stages keep their independent owners. Sources,
+  migration/rebuild ownership and evidence: docs/STAGE8_ALIEN_REFIT_1101.md.
+
+
+## November1 Stage9 water roster / Current Breaker facing
+
+- assets/stage9_amplify_1101.js owns19 regular water-world roles; preserve the
+  single Beacon/beamship hulls, measured native128-unit sockets, pink Comet,
+  distinct generated identities, source-pixel shields, real mine physics and
+  approved shared-mixer cues. Giant beams share the finite heavy interlock.
+- Mike explicitly corrected Current Breaker to face directly AT US: square
+  shoulders/chest, both eyes toward the player in the transformation and every
+  attack. Use the selected frontal humanoid/morph/action sources and front0
+  renderer, including foreshortened flying palms. Never restore the rejected
+  three-quarter/north-facing bank or rotate/flip it to simulate facing us.
+- Preserve29 source-pixel liquid morph cells, fixed chest/unit, exact idle handoff
+  and actual hand emitters. S9S111 owns the earlier12.05 entrance; keep the late
+ 38.85 beamship/Singularity,42s length and native mini/boss gates. Event Horizon,
+  Tidal and StageX remain separate. See docs/STAGE9_WATER_REFIT_1101.md.
+
+
+## November1 Current Breaker overhead flight addition
+
+- Mike subsequently requested true top-down flying sprites. This supersedes the
+  frontal-facing rule above only during flight; standing/transformation/casting
+  retain the selected frontal identity. assets/current_flight_1101.js selects
+  eight authored overhead views, measured palm emitters and baked source-pixel
+  launch/return cells. Do not rotate a frontal plate to simulate overhead flight.
+- Rebuild through build_stage9_amplify_1101.py; preserve native HP/attack/path/
+  hit/audio/cancellation owners and other18 roster models. Sources, verification
+  and one replaced preview film: docs/CURRENT_FLIGHT_1101.md.
+
+
+## November1 Stage9 fleet material palettes
+
+- Preserve Mike's selected black/blue, violet/pink and black/pink hull families
+  in _BUILD_SOURCE/stage9_amplify_1101/palettes.json through the owning Stage9
+  builder. The generated palette guide supplies colors only; retain original
+  geometry, exact alpha, pivots, all module sockets and native white hit flashes.
+- Current Breaker and eight other retained models keep their selected palettes.
+  Ordnance/exhaust retain authored colors. This does not activate the queued
+  dark weapon variant pass. See docs/STAGE9_PALETTES_1101.md.
+
+## November1 shared difficulty steps
+
+- Mike selected compound15% steps for enemy, shield, helper, miniboss and boss
+  health, and for both turret angular tracking and firing rate: Normal1,
+  Hard1.15, Furious1.3225. Derive from the Normal source budget, round health,
+  and preserve composite ownership. Do not stack old Hard/Furious bonuses.
+- `assets/difficulty_rules_1101.js` owns the shared tables/helpers; explicit
+  native-owner migrations belong to `install_difficulty_rules_1101.py`.
+  Scale angular solvers once. Divide firing intervals by the factor; retain
+  authored warning/commit/escape windows, flight and projectile speed/counts.
+  Easy and Insanity keep their separate tuning.
+- The requested Furious regular-wave films use QA-only encounter-entry gates
+  and a labelled invulnerable input pilot, with native enemy health/AI/audio.
+  Do not ship the wave fixture in the game. Stage X is boss-only; both Stage6
+  regular route books belong in the review collection. See
+  `docs/DIFFICULTY_WAVES_1101.md` for owners, scope and verification.
+
+## November2 Current Breaker liquid arsenal
+
+- `assets/current_breaker_1102.js` owns Current's expanded Stage9 arsenal;
+  retain actual authored orb/yaw/overhead banks, common pivots and measured palms.
+  Match horizontal side-wave warnings to fixed60Hz release ticks. Tidal releases
+  use the open-palm shove frames; keep full casting alpha visible as the camera pans.
+- Physical missiles reflect his Falva-derived water rollers into depth for native
+  owner damage. Ordinary weapons create harmless water splashes; intact roller
+  contact remains lethal. Preserve native damage/flash/audio/death cleanup.
+- Queued and living Current gate native miniboss/boss entry. The scoped threshold
+  clock hold preserves later regular waves while actor/input/projectile clocks
+  continue; resume miniboss first and retain finite retreat/failsafe. Source art,
+  prompts, builder and native recording evidence: `docs/CURRENT_BREAKER_1102.md`.

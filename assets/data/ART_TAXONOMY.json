@@ -1,4 +1,82 @@
 {
+  "s911_": {
+    "role": "stage9_distinct_water_enemies_modular_cannons_and_front_facing_current_breaker",
+    "owner": "_BUILD_SOURCE/build_stage9_amplify_1101.py",
+    "manifest": "assets/game/levels/stage_09/enemies/amplify_1101/manifest.json",
+    "note": "19 identities;23 selected generated sources;177 even fixed-pivot banks. Ten hull palettes split black/blue, violet/pink and black/pink with exact original alpha, geometry and sockets; nine retained identities and all ordnance/exhaust banks unchanged. Single canonical Beacon and beamship, pink Comet, measured iris guns and shield serpent. Current Breaker uses frontal casts and29 authored/source-pixel morph frames with exact idle handoff, plus eight authored overhead flight views and baked liquid launch/return cells with registered palm sockets. Event Horizon/Tidal/StageX unchanged."
+  },
+  "s811_": {
+    "role": "stage8_modular_alien_roster_actual_weapon_muzzles_and_melee_anatomy",
+    "owner": "_BUILD_SOURCE/build_stage8_amplify_1101.py",
+    "manifest": "assets/game/levels/stage_08/enemies/amplify_1101/manifest.json",
+    "note": "18 regular enemy identities;22 generated source PNGs;301 even fixed-pivot banks. Hunter retains its actual source identity. Stage8 ground roles fly on harriers; Leech graphics are deleted without archive. Bosses/Herald/Dracodia excluded."
+  },
+  "s711_": {
+    "role": "stage7_modular_toxic_roster_and_physical_weapon_sockets",
+    "owner": "_BUILD_SOURCE/build_stage7_amplify_1101.py",
+    "manifest": "assets/game/levels/stage_07/enemies/amplify_1101/manifest.json",
+    "note": "Eleven generated sources;91 fixed even heading/module/roll/face/robot-fly/1015 banks. Crawler, terrifying Brood, relay, camo Slime Jet, black/green missile jet, toxic barge and distinct Crescent. Native pools/white flashes/shield energy/missile locks/death/mixer/GT18 retained. Blacksteel Hunter art stored for BOF expansion only, no live spawns. See docs/STAGE7_TOXIC_REFIT_1101.md."
+  },
+  "ca111_": {
+    "role": "stage6_strategic_nuclear_and_laser_carriers_launch_doors_spinning_warheads_exhaust_and_timed_hazards",
+    "owner": "_BUILD_SOURCE/build_carrier_assault_1101.py",
+    "manifest": "assets/game/levels/stage_06/enemies/carrier_assault_1101/manifest.json",
+    "note": "Ten new built-in image_gen originals,13 registered even-cell banks. Two different512-square solid hulls, eight-pose mechanical doors, eight axial projectile poses with32 nuclear/8 laser headings, eight-frame exhaust and nuclear shockwave, twelve-frame laser tornado and new beam segments. CA111 owns four staged assault waves; CC111 owns the enlarged protected-hull pairs. Source hashes, pivots, measured sockets, native HP/interception/hit flashes and evidence: docs/CARRIER_ASSAULT_1101.md."
+  },
+  "sc12_": {
+    "role": "stage6_giant_cloud_carrier_and_five_circular_hatch_laser_modules",
+    "owner": "_BUILD_SOURCE/build_cloud_carrier_1101.py",
+    "manifest": "assets/game/levels/stage_06/enemies/cloud_carrier_1101/manifest.json",
+    "note": "One512x1024 whole hull with registered north/south plates;12 authored192-cell cannon poses/32 headings. Current paired waves use470-world hulls and68-world cannon modules, no HP bars, staggered entries, engine shake, new CA111 exhaust and actual aircraft shadows. All ten gun pools gate two actual hull targets; safe deck overflight and once-only native full defeats. CC111 is separate from Siege Console SC12. See docs/CARRIER_ASSAULT_1101.md."
+  },
+  "s411_": {
+    "role": "stage4_highway_regenerated_vehicles_fixed_weapon_aircraft_and_rack_missiles",
+    "owner": "_BUILD_SOURCE/build_stage4_amplify_1101.py",
+    "manifest": "assets/game/levels/stage_04/enemies/amplify_1101/manifest.json",
+    "note": "Nine built-in image_gen source sheets;134 fixed even frames in19 banks. New black/orange command jet, identity-preserved heavyjet directions/roll/somersault, missile truck, unarmed tanker, forward-gun tractor, sequential three-rail SAM and matching authored missile directions. Native HP, white hit flash, missile interception, sound and ground traffic remain owners."
+  },
+  "r46_": {
+    "role": "stage4_9_source_motion_socket_and_ordnance_review",
+    "owner": "_BUILD_SOURCE/build_enemy_flight_1031.py",
+    "manifest": "assets/game/shared/combat/enemy_flight_1031/manifest.json",
+    "note": "Complete existing idle/attack/drift/roll/somersault sources in fixed even heading cells, measured sockets, separate native weapon modules. Native projectile/feedback/static-plate export manifests share this directory. Palette variants use actual Royal/Blackice plates. Runtime assets/enemy_flight_1031.js retains native pools, books, hit/death and sound owners."
+  },
+  "i31_": {
+    "role": "stage3_ice_roster_turning_weapons_island_fixtures",
+    "owner": "_BUILD_SOURCE/build_stage3_amplify_1031.py",
+    "manifest": "assets/game/levels/stage_03/enemies/amplify_1031/manifest.json",
+    "note": "Four generated source sheets; fixed even canvases/common pivots. Larger upright Shard Dart, four-aperture Cryoeye, two-cannon interceptor, mine-bay bomber; actual carrier kept. Source-palette blue ice slugs, Stage2 beam texture, blue sonic waves, island-top mask and native HP/flash/death/audio owners."
+  },
+  "v31_": {
+    "role": "stage2_volcanic_enemy_refit_and_fire_ordnance",
+    "owner": "_BUILD_SOURCE/build_stage2_amplify_1031.py",
+    "manifest": "assets/game/levels/stage_02/enemies/amplify_1031/manifest.json",
+    "note": "Fourteen distinct model banks: current Ash and gray/black Basalt source variants, new Skimmer/Cinderwasp/Thunderlance/quad Interceptor/Crucible/minelayer/carrier/Furnace Wing/snake/Maw/Pod/disc. Complete authored motion sheets, fixed even cells/pivots, measured guns, source-frame headings and own-pixel glow. Nine explicit source-spike sockets and aligned fire laser frames. Native HP, flash, shield, death, interception and shared audio owners."
+  },
+  "ko31_": {
+    "role": "stage1_earth_camo_rolling_orbit_kamikaze",
+    "owner": "_BUILD_SOURCE/build_kamikaze_orbit_1031.py",
+    "manifest": "assets/game/levels/stage_01/enemies/kamikaze_orbit_1031/manifest.json",
+    "note": "Actual AF21 Strike sixteen authored roll poses in512 fixed128x128 heading cells, shared64,64 pivot and proportional scale. Luminance-preserving tan/orange-brown/olive palette, source outlines/highlights, per-pose measured tail sockets replacing frozen flames with animated S1A exhaust. KO31 owns bounded pursuit/orbit/staggered strike/recovery; native HP, white hit expiry, ram, death and sound ownership retained."
+  },
+  "s1b_": {
+    "role": "physical_twin_emplacements_gray_camo_and_rack_matched_ordnance",
+    "owner": "_BUILD_SOURCE/build_stage1_followup_1031.py",
+    "manifest": "assets/game/levels/stage_01/enemies/physical_1031/manifest.json",
+    "note": "Six fixed even-cell banks: gray-black hull/turret, matching gray MG rounds,64-direction native twin ground heads, red/white source-rack rockets with authored exhaust. Shared MG/missile emplacement controller covers campaign biomes; native pools, hit/expiry and interception remain."
+  },
+  "s1a_": {
+    "role": "stage1_five_enemy_directional_fire_and_flight",
+    "owner": "_BUILD_SOURCE/build_stage1_amplify_1031.py",
+    "manifest": "assets/game/levels/stage_01/enemies/amplify_1031/manifest.json",
+    "note": "Nine source-derived banks,1089 fixed even-cell directional frames. Current AF21 Delta hull/drift pixels, split animated exhaust, measured twin cannon sockets; S1M heavy twin-barrel turret; source machine-gun slugs, falling bomb and Jungle missiles. Native HP/hit/death, ground traffic, locks and interception ownership retained."
+  },
+  "hh101_": {
+    "role": "herald_red_electric_lightning_impact",
+    "owner": "_BUILD_SOURCE/build_herald_electric_1031.py",
+    "manifest": "assets/game/levels/stage_08/miniboss/herald_electric_1031/manifest.json",
+    "note": "16 fixed128x128 source-derived FB1002 electrical explosion frames. Red/white palette preserves normalized source alpha, luminance, neutral ink and common64x64 pivot. HH52 lightning uses only the authored HL51 ground Retina for its two-second warning."
+  },
   "rd72_": {
     "role": "dracodia_physical_claw_optic_first_host",
     "owner": "_BUILD_SOURCE/build_dracodia_demon_1030.py",
@@ -53,10 +131,30 @@
     "manifest": "assets/game/levels/stage_08/miniboss/herald_chaos_1029/manifest.json",
     "note": "Oct29 GPT red tornado loop; existing-source skull growth/splash, ricochet energy, red lightning balls and physical module charge/raise/depth/turn banks with actual hit cells. Fixed even canvases/common pivots; source-over only. Native HP/reward owners retained."
   },
-  "rk50_": {"role":"rook_filled_spin_fov","owner":"_BUILD_SOURCE/build_rook_circle_1029.py","manifest":"assets/game/levels/stage_06/boss/rook_circle_1029/manifest.json","note":"Full360 native-palette authored FOV discs, matched rotate badges, fixed even cells and source alpha."},
-  "vs41_": {"role":"voss_twin_blaster_overhead_turbo","owner":"_BUILD_SOURCE/build_voss_turbo_1028.py","manifest":"assets/game/levels/stage_06/boss/voss_turbo_1028/manifest.json","note":"80 fixed192 source-preserving whole plates, 1015 outer/inner companions, exact alpha shadows/white hits,8 fixed128 red-orange palette frames from native florb. Native HP/module ownership remains."},
-  "dc40_": {"role":"dredger_treads_twin_turrets_warning","owner":"_BUILD_SOURCE/build_dredger_assault_1028.py","manifest":"assets/game/levels/stage_07/miniboss/dredger_assault_1028/manifest.json","note":"October28 source-pixel treads, 64 fixed trunnion headings and shot-linked recoil, two barrels per turret, actual sockets/white hit alpha, top 1015 glow, native-palette north-facing circular FOV. Native hull and HP preserved."},
-  "wl39_": {"role":"warden_rear_leg_push","owner":"_BUILD_SOURCE/build_warden_lunge_1028.py","manifest":"assets/game/levels/stage_07/boss/warden_lunge_1028/manifest.json","note":"October28: 48 rigid source-pixel hinge poses, 320 cells, shared hip pivots, actual alpha targets and native hit flashes. Front/claw/body/HP ownership unchanged."},
+  "rk50_": {
+    "role": "rook_filled_spin_fov",
+    "owner": "_BUILD_SOURCE/build_rook_circle_1029.py",
+    "manifest": "assets/game/levels/stage_06/boss/rook_circle_1029/manifest.json",
+    "note": "Full360 native-palette authored FOV discs, matched rotate badges, fixed even cells and source alpha."
+  },
+  "vs41_": {
+    "role": "voss_twin_blaster_overhead_turbo",
+    "owner": "_BUILD_SOURCE/build_voss_turbo_1028.py",
+    "manifest": "assets/game/levels/stage_06/boss/voss_turbo_1028/manifest.json",
+    "note": "80 fixed192 source-preserving whole plates, 1015 outer/inner companions, exact alpha shadows/white hits,8 fixed128 red-orange palette frames from native florb. Native HP/module ownership remains."
+  },
+  "dc40_": {
+    "role": "dredger_treads_twin_turrets_warning",
+    "owner": "_BUILD_SOURCE/build_dredger_assault_1028.py",
+    "manifest": "assets/game/levels/stage_07/miniboss/dredger_assault_1028/manifest.json",
+    "note": "October28 source-pixel treads, 64 fixed trunnion headings and shot-linked recoil, two barrels per turret, actual sockets/white hit alpha, top 1015 glow, native-palette north-facing circular FOV. Native hull and HP preserved."
+  },
+  "wl39_": {
+    "role": "warden_rear_leg_push",
+    "owner": "_BUILD_SOURCE/build_warden_lunge_1028.py",
+    "manifest": "assets/game/levels/stage_07/boss/warden_lunge_1028/manifest.json",
+    "note": "October28: 48 rigid source-pixel hinge poses, 320 cells, shared hip pivots, actual alpha targets and native hit flashes. Front/claw/body/HP ownership unchanged."
+  },
   "rd29_": {
     "role": "drone_native_magenta_pixel_glow",
     "owner": "_BUILD_SOURCE/build_drone_rework_1026.py",
@@ -1273,5 +1371,35 @@
     "owner": "_BUILD_SOURCE/build_ngplus_1027.py",
     "manifest": "assets/game/shared/combat/ngplus_1027/manifest.json",
     "note": "Nine existing EA11 elemental source banks; 16 animation frames x32 directions, baked offline on fixed72x72 cells, pivot36,36. Wind retains source alpha, outline, neutral highlights and luminance. Native launch vectors, collision, ordnance interception and sounds remain."
+  },
+  "wc1031_": {
+    "role": "weapon_matched_contact_and_attached_residue",
+    "owner": "_BUILD_SOURCE/build_weapon_contacts_1031.py",
+    "manifest": "assets/game/shared/combat/weapon_contacts_1031/manifest.json",
+    "note": "34 source-derived banks/212 fixed96x96 centre48 frames. Existing ballistic, orb, Laser Mist, space laser and Decker scorch art. Palette/alpha preserved, baked scorch cooling, no runtime sprite rotation/fade. Native damage, shield, hit flash and death owners retained. See docs/WEAPON_CONTACTS_1031.md."
+  },
+  "s511_": {
+    "role": "orbital_roles_mine_bays_claw_grab_violet_ordnance",
+    "owner": "_BUILD_SOURCE/build_stage5_amplify_1101.py",
+    "manifest": "assets/game/levels/stage_05/enemies/amplify_1101/manifest.json",
+    "note": "Two built-in image_gen source sheets, whole native hull sources and registered fixed even direction cells. Actual magma orb violet palette and source-pixel1015 glow companion. Native HP/shields/flashes/audio/death owners preserved except requested Repair HP/Station shield."
+  },
+  "s611_": {
+    "role": "stage6_canonical_solid_airframes_own_pixel_glow_and_attached_weapon_fx",
+    "owner": "_BUILD_SOURCE/build_stage6_airframe_1101.py",
+    "manifest": "assets/game/levels/stage_06/enemies/airframe_1101/manifest.json",
+    "note": "Mike November1 overrides prior full-hull animation rule for Stage6: exactly one canonical hull per aircraft. Six generated fighter/heavy/bomber plates; four existing approved wind/helper identities frozen to idle0. Fixed192px directional cells; native six-step1015 companion and independent engine/gun FX. Entrance stealth/cinematic/wing/boss owners remain. No sky ground turrets."
+  },
+  "c112_": {
+    "role": "chronos_helmet_avatars_and_nine_pilot_full_body_cutscene_key_poses",
+    "owner": "_BUILD_SOURCE/build_cast_cinematics_1102.py",
+    "manifest": "assets/game/shared/cinematics/cast_1102/manifest.json",
+    "note": "Built-in image_gen, actual native portrait references and canonical Chronos robot.54 full-body512x1024 pilot key poses and four512x512 head avatars. One source scale per bank/common ground pivot, alpha<=8 export matte cutoff, complete hands/boots. No continuous motion claim. Lazy opt-in pilot library; four existing Chronos avatar aliases resolve the neutral helmet, native ending fade retained. Sources/prompts _ART_SOURCES/cast_cinematics_1102; runtime assets/cast_cinematics_1102.js."
+  },
+  "fb112_": {
+    "role": "furious_stage6_razorwake_and_thunderhead_whole_hulls_registered_weapons_and_storm_fx",
+    "owner": "_BUILD_SOURCE/build_furious_encounters_1102.py",
+    "manifest": "assets/game/levels/stage_06/boss/furious_1102/manifest.json",
+    "note": "Furious left route only; native right-hand Rough Riders and Stage X retained. Whole true-depth roll plates; disjoint rotary guns and pressure projectors, solid charred wrecks, source-pixel emission, measured ports and muzzle recoil. Generated tornado/hurricane/electric burst banks. Stage2-5 concepts are uninstalled proposals."
   }
 }

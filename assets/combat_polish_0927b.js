@@ -148,8 +148,8 @@ function polishCombatDraw(){
 /* Stage 5 pursuit: two engines, two forward cannons, and a rear bomb bay. */
 function siegeBomberInit(b){
   const n=diffKey==='furious'?2:diffKey==='hard'?1:0;b.name='ECLIPSE SIEGE BOMBER';b.w=VW*.50;b.h=b.w*.62;b.x=worldWidth()/2;b.y=-b.h;b.ty=VH*.27;b.enter=true;b._ship=null;
-  const hp=diffKey==='easy'?600:[1050,1250,1450][n];b._bomber={n,mode:'entry',t:0,dur:2.1,seq:0,cd:0,clock:0,bombs:[],history:['entry'],core:hp,coreMax:hp,parts:[]};
-  for(const id of ['engineL','engineR','laserL','laserR'])b._bomber.parts.push({id,hp:diffKey==='easy'?140:250+n*40,max:diffKey==='easy'?140:250+n*40,flash:0});
+  const hp=difficultyHealthBaseline15(1050,diffKey==='easy'?600:[1050,1250,1450][n]);b._bomber={n,mode:'entry',t:0,dur:2.1,seq:0,cd:0,clock:0,bombs:[],history:['entry'],core:hp,coreMax:hp,parts:[]};
+  for(const id of ['engineL','engineR','laserL','laserR'])b._bomber.parts.push({id,hp:difficultyHealthBaseline15(250,diffKey==='easy'?140:250+n*40),max:difficultyHealthBaseline15(250,diffKey==='easy'?140:250+n*40),flash:0});
   b.hp=b.maxhp=hp+b._bomber.parts.reduce((a,p)=>a+p.hp,0);if(typeof mr27BomberSetup==='function')mr27BomberSetup(b);XART.rdy('polish_bomber');for(let i=0;i<8;i++){XART.rdy('l23fx_inferno_laser_'+i);XART.rdy('l23fx_inferno_mg_'+i);XART.rdy('laser_round_muzzle_'+i);}XART.rdy('lz_bomb');
 }
 function siegeBomberParts(b){

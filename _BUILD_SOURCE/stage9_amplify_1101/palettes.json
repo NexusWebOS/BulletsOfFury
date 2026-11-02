@@ -1,0 +1,25 @@
+{
+  "guide": "_BUILD_SOURCE/stage9_amplify_1101/palette-guide-1101.png",
+  "families": {
+    "black-blue": {
+      "armor": [[3,5,10],[8,14,27],[18,30,49],[40,61,87],[99,123,151],[184,205,229],[244,249,255]],
+      "energy": [32,105,255], "glow": [42,118,255]
+    },
+    "purple-pink": {
+      "armor": [[8,4,17],[30,12,51],[62,29,99],[105,57,151],[162,111,201],[220,188,241],[252,242,255]],
+      "energy": [255,40,196], "glow": [237,55,236]
+    },
+    "black-pink": {
+      "armor": [[6,4,10],[17,13,26],[33,26,46],[61,48,76],[112,96,129],[201,188,215],[252,245,255]],
+      "energy": [255,27,157], "glow": [255,46,176]
+    }
+  },
+  "models": {
+    "kami": "black-blue", "jumper": "black-blue", "harrier": "black-blue",
+    "spinner": "purple-pink", "prismbeam": "purple-pink", "prismorb": "purple-pink",
+    "gate": "black-pink", "gleech": "black-pink", "minelayer": "black-pink",
+    "ringlaser": "purple-pink"
+  },
+  "armorLuminanceKnots": [0,42,84,126,168,215,255],
+  "rule": "Palette-only: retain alpha, coordinates, directional geometry, pivots, white specular tips and dark outlines. Preserve value ordering in dark metal; energy retains measured luminance. All ordnance and exhaust keep authored colors."
+}

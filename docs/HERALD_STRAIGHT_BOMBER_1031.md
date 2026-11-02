@@ -1,0 +1,17 @@
+# Herald: fly left, FOV, fly right — October31
+
+Mike superseded the between-pass route: fly completely off the left edge, show the normal FOV warning, then cross right on the same horizontal row. The bomber now always starts right-to-left. Its endpoints are256px beyond the world edges, keeping the complete authored hull outside every camera position during the turnaround.
+
+`hb25Phase` sends the completed leftward pass directly into the native `tell` owner at its actual left exit point. It reverses the committed horizontal path and holds position through the complete difficulty-specific warning. There is no northbound route, recede animation, visible in-place turn or reposition between the passes. Native green/yellow/red warning graphics, warning audio and jet release remain authoritative. Other swoop/corner flights and the final foreground recovery retain their existing owners.
+
+The previous requested mirrored bomb locations and safe opening remain. Return release times now follow the actual rightward path and each claw socket, so each bomb leaves while its real launcher crosses the planned lane. Ground targets remain fixed after release. Native fall speed, heavy fuse, projectile interception policy, damage/HP/parts, hit feedback, finite recovery and rewards remain. No art or sprite renderer changes.
+
+Focused native proof uses `_BUILD_SOURCE/probe_herald_mirror_1031.py` with current evidence under `_shots/herald_straight_1031/probe/`. It verifies Normal/Hard/Furious left/right order, zero vertical detour, zero actual hull pixels during the rightward warning, full stationary warning, native FOV, mirrored committed targets/opening, real marked impacts and recovery. Exact release/marker bounds are captured at plan commit, independently of the camera's next update. Native game canvases are opaque, so hidden-hull checks count actually painted RGB pixels instead of alpha.
+
+The fresh complete native recording is made by `_BUILD_SOURCE/record_herald_straight_1031.py`. It uses the original full4264HP Furious encounter with an explicitly invulnerable input-only observer, without enemy HP/phase/timer writes during filming. The89.70s movie reaches native defeat at58.10 average nativeFPS; decoded audio mean-25.2dB/peak-7.8dB.43 focused native,3 in-flight hit,15 film and7 player checks pass. Actual moving-claw damage paints7240 white pixels and the0.18s flash expires normally. No page/console/HTTP asset or audio-tap errors; eight canceled media preloads are separately retained in the report. Native and decoded left/warning/right frames were inspected, including zero actual hull pixels through the warning. Source hashes match before/after filming.
+
+Temporary movie/screenshots remain under `_shots/herald_straight_1031/`; native, film and player results are recorded in `docs/qa/herald_straight_1031.json`. The local current main card and direct6.535–12.183s bomber chapter are updated; earlier movies remain available as archives. The former mirrored-bombs URL also selects the corrected sequence.
+
+[Watch left → FOV → right](http://127.0.0.1:8805/?revision=herald-left-warning-right-1031#clip=stage8-herald-left-warning-right). [Complete current fight](http://127.0.0.1:8805/?revision=herald-left-warning-right-1031#clip=stage8-miniboss).
+
+Syntax passes. Required full suite exits1 before assertions or summary because `UNUSED_ASSETS/retired_art_1022/manifest.json` is absent on this machine. Core game.js/test_fl.js are unchanged with their original LF/CRLF. No commit or GitHub push.

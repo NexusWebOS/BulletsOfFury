@@ -1,0 +1,16 @@
+"""Actual decoded attack chapters and the existing enemy-guide integration."""
+from pathlib import Path
+import json,sys
+from playwright.sync_api import sync_playwright
+R=Path(__file__).resolve().parents[1];O=R/'_shots/current_breaker_1102';P=O/'publication';U='http://127.0.0.1:8805';checks=[];errors=[];receipt=json.loads((P/'receipt.json').read_text())
+def ck(name,ok,data=None):checks.append(dict(name=name,passed=bool(ok),data=data));print('PASS'if ok else'FAIL',name,flush=True)
+with sync_playwright()as pw:
+ b=pw.chromium.launch(channel='msedge',headless=True,args=['--autoplay-policy=no-user-gesture-required']);p=b.new_page(viewport={'width':1440,'height':1000});p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text)if m.type=='error'else None)
+ p.goto(U+'/current/current-breaker-1102.html',wait_until='networkidle');p.wait_for_function('document.querySelector("video").readyState>=2');ck('All nine attack chapters are available',p.locator('nav button').count()==9)
+ for i,c in enumerate(receipt['chapters']):
+  p.locator('nav button').nth(i).click();p.wait_for_function('t=>!video.seeking&&Math.abs(video.currentTime-t)<1',arg=c['start']);p.wait_for_timeout(170);p.evaluate('video.pause()');q=p.evaluate('''()=>{const c=document.createElement('canvas');c.width=160;c.height=100;const g=c.getContext('2d');g.drawImage(video,0,0,160,100);const a=g.getImageData(0,0,160,100).data;let lit=0,lo=255,hi=0;for(let i=0;i<a.length;i+=4){if(a[i]+a[i+1]+a[i+2]>90)lit++;lo=Math.min(lo,a[i]);hi=Math.max(hi,a[i]);}return{width:video.videoWidth,height:video.videoHeight,lit,range:hi-lo,error:video.error?.message||null,time:video.currentTime};}''');ck(c['title']+' decodes and seeks',q['width']==1280 and q['height']==800 and q['lit']>3000 and q['range']>100 and not q['error'],q)
+  if i in [2,3,4,7]:p.evaluate('scrollTo(0,0)');p.screenshot(path=str(P/('playback-'+str(i)+'.png')))
+ p.set_viewport_size({'width':390,'height':844});p.evaluate('scrollTo(0,0)');p.wait_for_timeout(100);ck('Mobile page fits the viewport',p.evaluate('document.documentElement.scrollWidth<=innerWidth'));p.screenshot(path=str(P/'playback-mobile.png'),full_page=True)
+ p.goto(U+'/current/stage9-water-refit-1101.html#enemy=stage9-cbreak',wait_until='networkidle');p.locator('nav button').filter(has_text='Current Breaker').click();p.wait_for_function('document.querySelector("video").readyState>=2');ck('Existing Stage9 page uses the new film',p.locator('nav button').count()==19 and p.evaluate('document.querySelector("video").currentSrc.endsWith("/current/current-breaker-1102.mp4")'))
+ p.goto(U+'/enemy-showcase-1031.html#enemy=stage9-cbreak',wait_until='networkidle');q=p.evaluate('async()=>{const d=await(await fetch("/enemy-showcase-1031/manifest.json")).json();return{count:d.items.length,video:d.items.find(x=>x.id==="stage9-cbreak").video}}');ck('Full154-card guide uses Current’s new film',q['count']==154 and q['video']=='/current/current-breaker-1102.mp4',q);ck('No page or console errors',not errors,errors);b.close()
+(P/'playback-checks.json').write_text(json.dumps(checks,indent=2));print('SUMMARY',sum(x['passed']for x in checks),'/',len(checks));sys.exit(0 if all(x['passed']for x in checks)else 1)

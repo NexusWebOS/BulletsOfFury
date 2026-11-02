@@ -1,0 +1,7551 @@
+{
+  "owner": "_BUILD_SOURCE/build_stage2_amplify_1031.py",
+  "tool": "built-in image_gen; existing approved PixelLab BF22 banks for Ash/Basalt",
+  "models": {
+    "interceptor": {
+      "span": 142,
+      "banks": {
+        "heading": {
+          "key": "v31_interceptor_heading",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "2c38989dd117bfa72284afadb5f7d52ef223863a8d347e51cb7744b8ef6ccdc1"
+        },
+        "idle": {
+          "key": "v31_interceptor_idle",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "4f1492ca96e752e2d540e832d6c53b3d141d1e378a008189a72276ce082e15e4"
+        },
+        "attack": {
+          "key": "v31_interceptor_attack",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "bb5794ff03f8adb1b1a3157728de44d09bd399c646edc25c8b485dfef6fc2cdd"
+        },
+        "drift": {
+          "key": "v31_interceptor_drift",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 2,
+          "sha256": "7a6194017b7acbd8b696562571315be79efda765a00983740cdd80242c9df739"
+        },
+        "roll": {
+          "key": "v31_interceptor_roll",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "b4f59bc512a61cbed758ffb783af3af99790d8c107bd69b21f2811c6517a6f0e"
+        },
+        "somer": {
+          "key": "v31_interceptor_somer",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "445cd53006cbc98b16dbbaab3ac08e18282a8aaf54847e2b13c179fc3c192875"
+        },
+        "charge": {
+          "key": "v31_interceptor_charge",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "b25b9a614a90421e5599ae1bc779e4e12d6a1a25eb29bc2c3dc89089bf407c52"
+        }
+      },
+      "source": {
+        "path": "_BUILD_SOURCE/stage2_amplify_1031/interceptor_source.png",
+        "sha256": "ca2ec06060d2ab49d54dcb7c6b818d1baad89e449c275ac349d9dc98d4950b71",
+        "sourceCell": [
+          248,
+          248
+        ],
+        "frames": 24,
+        "componentRects": [
+          [
+            27,
+            13,
+            235,
+            222
+          ],
+          [
+            279,
+            13,
+            217,
+            219
+          ],
+          [
+            529,
+            14,
+            214,
+            218
+          ],
+          [
+            794,
+            13,
+            214,
+            219
+          ],
+          [
+            25,
+            244,
+            238,
+            222
+          ],
+          [
+            284,
+            252,
+            215,
+            197
+          ],
+          [
+            518,
+            249,
+            242,
+            217
+          ],
+          [
+            791,
+            252,
+            218,
+            214
+          ],
+          [
+            26,
+            476,
+            237,
+            222
+          ],
+          [
+            272,
+            481,
+            228,
+            219
+          ],
+          [
+            521,
+            485,
+            239,
+            211
+          ],
+          [
+            781,
+            481,
+            227,
+            218
+          ],
+          [
+            27,
+            721,
+            235,
+            221
+          ],
+          [
+            352,
+            718,
+            79,
+            231
+          ],
+          [
+            518,
+            709,
+            236,
+            235
+          ],
+          [
+            849,
+            718,
+            79,
+            231
+          ],
+          [
+            26,
+            967,
+            237,
+            225
+          ],
+          [
+            359,
+            961,
+            93,
+            230
+          ],
+          [
+            517,
+            962,
+            238,
+            230
+          ],
+          [
+            828,
+            962,
+            93,
+            230
+          ],
+          [
+            25,
+            1228,
+            236,
+            226
+          ],
+          [
+            271,
+            1228,
+            237,
+            227
+          ],
+          [
+            517,
+            1228,
+            238,
+            227
+          ],
+          [
+            765,
+            1228,
+            237,
+            227
+          ]
+        ]
+      },
+      "guns": [
+        [
+          19.19,
+          92.58
+        ],
+        [
+          59.33,
+          117.75
+        ],
+        [
+          80.3,
+          117.75
+        ],
+        [
+          119.84,
+          92.58
+        ]
+      ],
+      "tails": [
+        [
+          59.33,
+          23.08
+        ],
+        [
+          86.29,
+          23.08
+        ]
+      ],
+      "sourceScale": 0.5991561181434599
+    },
+    "skimmer": {
+      "span": 142,
+      "banks": {
+        "heading": {
+          "key": "v31_skimmer_heading",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "61dc463354930bdf2133e07380950f32437837af7b94d09eb1b28da3f0111bf1"
+        },
+        "idle": {
+          "key": "v31_skimmer_idle",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "71bc6a59ddab3f7eff87ec84f1b2225206ca45dca436f16dcc0f239a6d681587"
+        },
+        "attack": {
+          "key": "v31_skimmer_attack",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "4ff638bb58d9e98b7f5744357612a825e32c3df4e6cddadd7a1ed82ba2071c1d"
+        },
+        "drift": {
+          "key": "v31_skimmer_drift",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 2,
+          "sha256": "c5978846808a3484afb4c75df2b2a891e2a5e8911faf216d8fa7e7099094e6f2"
+        },
+        "roll": {
+          "key": "v31_skimmer_roll",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "082a6043e4388ce9c35ed43b63bd63465dff47b64cf7abdd529496f3c769a384"
+        },
+        "somer": {
+          "key": "v31_skimmer_somer",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "5df163ba7777a2a9431d37e8b4aaea8987ac6dfdbee430271beb6db92013afcc"
+        },
+        "charge": {
+          "key": "v31_skimmer_charge",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "43e9826ca476d68c3395e6cd04ec92f693bff5dd2343ab2d550c1dd562eede91"
+        }
+      },
+      "source": {
+        "path": "_BUILD_SOURCE/stage2_amplify_1031/skimmer_source.png",
+        "sha256": "96516c129d84b2b72a1a658cb3eae76ccf98d16a15ee12221e5f354c35a0c9a3",
+        "sourceCell": [
+          284,
+          284
+        ],
+        "frames": 24,
+        "componentRects": [
+          [
+            21,
+            7,
+            250,
+            229
+          ],
+          [
+            274,
+            7,
+            241,
+            228
+          ],
+          [
+            523,
+            11,
+            235,
+            210
+          ],
+          [
+            783,
+            11,
+            229,
+            210
+          ],
+          [
+            16,
+            248,
+            235,
+            244
+          ],
+          [
+            272,
+            256,
+            233,
+            226
+          ],
+          [
+            521,
+            248,
+            245,
+            238
+          ],
+          [
+            787,
+            260,
+            218,
+            232
+          ],
+          [
+            23,
+            502,
+            216,
+            237
+          ],
+          [
+            272,
+            495,
+            235,
+            214
+          ],
+          [
+            526,
+            486,
+            243,
+            241
+          ],
+          [
+            792,
+            503,
+            220,
+            206
+          ],
+          [
+            18,
+            756,
+            255,
+            229
+          ],
+          [
+            317,
+            724,
+            149,
+            277
+          ],
+          [
+            515,
+            729,
+            252,
+            251
+          ],
+          [
+            816,
+            723,
+            149,
+            277
+          ],
+          [
+            16,
+            1026,
+            254,
+            210
+          ],
+          [
+            271,
+            1022,
+            227,
+            214
+          ],
+          [
+            512,
+            995,
+            258,
+            238
+          ],
+          [
+            784,
+            1021,
+            227,
+            215
+          ],
+          [
+            13,
+            1246,
+            256,
+            241
+          ],
+          [
+            269,
+            1246,
+            244,
+            241
+          ],
+          [
+            513,
+            1243,
+            247,
+            247
+          ],
+          [
+            760,
+            1243,
+            251,
+            254
+          ]
+        ]
+      },
+      "guns": [
+        [
+          61.34,
+          131.05
+        ],
+        [
+          83.63,
+          131.05
+        ]
+      ],
+      "tails": [
+        [
+          49.94,
+          36.73
+        ],
+        [
+          94.51,
+          36.73
+        ]
+      ],
+      "sourceScale": 0.5182481751824818
+    },
+    "wasp": {
+      "span": 142,
+      "banks": {
+        "heading": {
+          "key": "v31_wasp_heading",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "1bb3c130a3c2fe9002df7375a66f99b08594d0a16de25e9b2b2c27263a9b0a9d"
+        },
+        "idle": {
+          "key": "v31_wasp_idle",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "6144084acf9751e4143dfcd2c7cad5d9ac2bab5ea4449d7f32704d2d903373a2"
+        },
+        "attack": {
+          "key": "v31_wasp_attack",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "b5f01c6918452419885a097f5dc47b35514a3b11833dd5cd9388defb69007bdd"
+        },
+        "drift": {
+          "key": "v31_wasp_drift",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 2,
+          "sha256": "1f452743c1912660a75a3704c31d1e5233b938cf7b0b7addef00b07a5f2e2329"
+        },
+        "roll": {
+          "key": "v31_wasp_roll",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "76b4d0c3c524cac8d307a99a4a076abbaa6e5672232c2e0af362bf85721f9363"
+        },
+        "somer": {
+          "key": "v31_wasp_somer",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "b8422eaacbacf6b53f2300f13df3f9566a8d91e557d3d1004cb83ec7bf22d9cb"
+        },
+        "charge": {
+          "key": "v31_wasp_charge",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "caca06661f348e74417c0f8f64be8159b7aded030f6c68001ad91b600041b17d"
+        }
+      },
+      "source": {
+        "path": "_BUILD_SOURCE/stage2_amplify_1031/wasp_source.png",
+        "sha256": "9261bf166ac11f595d80f1ce25de2d6d3f85eec5379f192533efbf4fe86d30a1",
+        "sourceCell": [
+          266,
+          266
+        ],
+        "frames": 24,
+        "componentRects": [
+          [
+            19,
+            15,
+            246,
+            230
+          ],
+          [
+            273,
+            15,
+            241,
+            230
+          ],
+          [
+            542,
+            11,
+            219,
+            226
+          ],
+          [
+            777,
+            11,
+            221,
+            226
+          ],
+          [
+            18,
+            262,
+            239,
+            209
+          ],
+          [
+            291,
+            270,
+            213,
+            227
+          ],
+          [
+            512,
+            274,
+            230,
+            215
+          ],
+          [
+            774,
+            270,
+            208,
+            224
+          ],
+          [
+            22,
+            501,
+            236,
+            243
+          ],
+          [
+            289,
+            526,
+            220,
+            219
+          ],
+          [
+            530,
+            529,
+            239,
+            211
+          ],
+          [
+            770,
+            526,
+            222,
+            219
+          ],
+          [
+            19,
+            771,
+            244,
+            225
+          ],
+          [
+            343,
+            747,
+            117,
+            257
+          ],
+          [
+            509,
+            755,
+            258,
+            236
+          ],
+          [
+            814,
+            748,
+            117,
+            260
+          ],
+          [
+            18,
+            1026,
+            246,
+            225
+          ],
+          [
+            317,
+            1014,
+            196,
+            214
+          ],
+          [
+            516,
+            1014,
+            239,
+            237
+          ],
+          [
+            753,
+            1018,
+            226,
+            216
+          ],
+          [
+            18,
+            1267,
+            245,
+            228
+          ],
+          [
+            268,
+            1267,
+            245,
+            228
+          ],
+          [
+            513,
+            1266,
+            245,
+            230
+          ],
+          [
+            761,
+            1265,
+            246,
+            230
+          ]
+        ]
+      },
+      "guns": [
+        [
+          58.28,
+          113.41
+        ],
+        [
+          85.01,
+          113.41
+        ]
+      ],
+      "tails": [
+        [
+          54.94,
+          39.35
+        ],
+        [
+          98.38,
+          39.35
+        ]
+      ],
+      "sourceScale": 0.5568627450980392
+    },
+    "thunder": {
+      "span": 142,
+      "banks": {
+        "heading": {
+          "key": "v31_thunder_heading",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "57a5e3aa50e6971a6c4c30de6715339dc9b167112f29e3765b400554dde221f8"
+        },
+        "idle": {
+          "key": "v31_thunder_idle",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "ef5d50e5ebcdb09b31a5c383d6b8130ad0141d119aa4faf42880ca587cebb7f8"
+        },
+        "attack": {
+          "key": "v31_thunder_attack",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "20ff2274eec3e5eaf4ca43c3947906abc64bef96f826e8f98bab3556e717e782"
+        },
+        "drift": {
+          "key": "v31_thunder_drift",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 2,
+          "sha256": "90ab05ffb4e21c15f39b5895f035573ac9e5ee591fa79b8092127dcf08e0c304"
+        },
+        "roll": {
+          "key": "v31_thunder_roll",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "d636e3d4ca664aa9f6afea730eee75ef34fb8b012e9dc0b01fe14663c9736d42"
+        },
+        "somer": {
+          "key": "v31_thunder_somer",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "91627d05248901cb836b337c4cd6858bc74a17ea7b9d643d2bbdb7a53df87a4e"
+        },
+        "charge": {
+          "key": "v31_thunder_charge",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "536638566827ee5fb3fa632c8dd4c209ccf4bd33ba9a74f74730d26c661d4334"
+        }
+      },
+      "source": {
+        "path": "_BUILD_SOURCE/stage2_amplify_1031/thunder_source.png",
+        "sha256": "4297f6bca4885430126ad2f7319d40e31e9a137ddb3d0521cf2ae6fd86623ce7",
+        "sourceCell": [
+          256,
+          256
+        ],
+        "frames": 24
+      },
+      "guns": [
+        [
+          66.69,
+          125.48
+        ],
+        [
+          96.64,
+          125.48
+        ]
+      ],
+      "tails": [
+        [
+          70.02,
+          22.87
+        ],
+        [
+          99.41,
+          22.87
+        ]
+      ],
+      "sourceScale": 0.5546875
+    },
+    "crucible": {
+      "span": 142,
+      "banks": {
+        "heading": {
+          "key": "v31_crucible_heading",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "4f4c8843fe4090e841b7313a262bac9cb99c68de73e8ff09fba8faf26f8afcab"
+        },
+        "idle": {
+          "key": "v31_crucible_idle",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "053bf93ba93788a0c89f0704bd17548bac6c437e9b3fe7103e22773e36961237"
+        },
+        "attack": {
+          "key": "v31_crucible_attack",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "87e4264d64efb5d570c121eadc1b1a5689680375a1aecc9ed1eeed3c73d25117"
+        },
+        "drift": {
+          "key": "v31_crucible_drift",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 2,
+          "sha256": "ba47dcebbf6cf25b5d9b38de8ab6bd8e4a66e84202b842f1a4aec5ea21a80534"
+        },
+        "roll": {
+          "key": "v31_crucible_roll",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "ae8bdc8ceaad9ce667e8cf8ad5788670f523ca82b9243ea1ce97b8e1c5588b66"
+        },
+        "somer": {
+          "key": "v31_crucible_somer",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "613242d7423777962fd909df31ff40b2cf87e1df692c649b4fd02928026fd432"
+        },
+        "charge": {
+          "key": "v31_crucible_charge",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "5e2166b435c22d1b4d0c7601408b134e7307da3a0e837ffc32d31dbd676b1ff0"
+        }
+      },
+      "source": {
+        "path": "_BUILD_SOURCE/stage2_amplify_1031/crucible_source.png",
+        "sha256": "a12ac274f3fce9b15ed8dda80b70cb08b56b99784c4eb545d4e59037e916b6c6",
+        "sourceCell": [
+          296,
+          296
+        ],
+        "frames": 24,
+        "componentRects": [
+          [
+            12,
+            28,
+            255,
+            184
+          ],
+          [
+            269,
+            27,
+            257,
+            185
+          ],
+          [
+            531,
+            19,
+            238,
+            193
+          ],
+          [
+            780,
+            25,
+            238,
+            177
+          ],
+          [
+            13,
+            236,
+            245,
+            238
+          ],
+          [
+            272,
+            238,
+            222,
+            218
+          ],
+          [
+            520,
+            278,
+            240,
+            142
+          ],
+          [
+            775,
+            259,
+            229,
+            185
+          ],
+          [
+            9,
+            490,
+            258,
+            187
+          ],
+          [
+            272,
+            481,
+            223,
+            206
+          ],
+          [
+            508,
+            516,
+            240,
+            141
+          ],
+          [
+            776,
+            488,
+            234,
+            189
+          ],
+          [
+            9,
+            739,
+            260,
+            191
+          ],
+          [
+            331,
+            689,
+            101,
+            249
+          ],
+          [
+            491,
+            724,
+            284,
+            199
+          ],
+          [
+            841,
+            689,
+            100,
+            249
+          ],
+          [
+            9,
+            1015,
+            258,
+            179
+          ],
+          [
+            310,
+            947,
+            161,
+            274
+          ],
+          [
+            489,
+            976,
+            289,
+            218
+          ],
+          [
+            794,
+            959,
+            223,
+            235
+          ],
+          [
+            10,
+            1260,
+            250,
+            195
+          ],
+          [
+            265,
+            1260,
+            245,
+            195
+          ],
+          [
+            512,
+            1259,
+            247,
+            196
+          ],
+          [
+            762,
+            1258,
+            256,
+            197
+          ]
+        ]
+      },
+      "guns": [
+        [
+          66.7,
+          118.13
+        ],
+        [
+          92.29,
+          118.13
+        ]
+      ],
+      "tails": [
+        [
+          59.68,
+          36.35
+        ],
+        [
+          92.29,
+          36.35
+        ]
+      ],
+      "sourceScale": 0.5017667844522968
+    },
+    "minelayer": {
+      "span": 142,
+      "banks": {
+        "heading": {
+          "key": "v31_minelayer_heading",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "a1d1e00442218da61cd94e5aa3cd353340c9db74c85b00e29c32a394902b203c"
+        },
+        "idle": {
+          "key": "v31_minelayer_idle",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "bd9ce044a05238a192b9fa24b929f6d743035dc3a7761cd9e59eeed3cb61a1fd"
+        },
+        "attack": {
+          "key": "v31_minelayer_attack",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "cb3101c471a943fd38500c583098f9b2f347a8f54ff8eba61627ea939c4d23d4"
+        },
+        "drift": {
+          "key": "v31_minelayer_drift",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 2,
+          "sha256": "6550028d33844894ce3a412ba0b9782a405d8bb0f57dd9ca7b6f46f2c51c3b2a"
+        },
+        "roll": {
+          "key": "v31_minelayer_roll",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "3764ba4c0e9c538eda8f15ddef8818653a27285d28f5b4ce5f7eb18697c14e53"
+        },
+        "somer": {
+          "key": "v31_minelayer_somer",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "19064529c1fee094c042d4e9b91aafa9cabedff427a217a4dc7af373d00da9f3"
+        },
+        "charge": {
+          "key": "v31_minelayer_charge",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "5cffab17cabbec16decc078de6b79bdb1a80a84c71d14ae9b819de85e17e193a"
+        }
+      },
+      "source": {
+        "path": "_BUILD_SOURCE/stage2_amplify_1031/minelayer_source.png",
+        "sha256": "77dcec2364de4180feb458eaab7b995975c5aef99558b642393d2ce019f4b508",
+        "sourceCell": [
+          238,
+          238
+        ],
+        "frames": 24,
+        "componentRects": [
+          [
+            28,
+            30,
+            223,
+            181
+          ],
+          [
+            279,
+            31,
+            219,
+            185
+          ],
+          [
+            518,
+            18,
+            227,
+            194
+          ],
+          [
+            774,
+            17,
+            225,
+            197
+          ],
+          [
+            28,
+            243,
+            222,
+            211
+          ],
+          [
+            303,
+            251,
+            190,
+            198
+          ],
+          [
+            521,
+            253,
+            225,
+            205
+          ],
+          [
+            789,
+            251,
+            187,
+            199
+          ],
+          [
+            28,
+            500,
+            222,
+            206
+          ],
+          [
+            273,
+            490,
+            207,
+            202
+          ],
+          [
+            515,
+            499,
+            232,
+            208
+          ],
+          [
+            796,
+            490,
+            207,
+            202
+          ],
+          [
+            28,
+            768,
+            222,
+            164
+          ],
+          [
+            313,
+            736,
+            138,
+            228
+          ],
+          [
+            522,
+            758,
+            225,
+            181
+          ],
+          [
+            821,
+            736,
+            138,
+            228
+          ],
+          [
+            28,
+            1026,
+            222,
+            160
+          ],
+          [
+            289,
+            999,
+            197,
+            211
+          ],
+          [
+            535,
+            988,
+            198,
+            205
+          ],
+          [
+            771,
+            988,
+            218,
+            205
+          ],
+          [
+            28,
+            1248,
+            223,
+            179
+          ],
+          [
+            278,
+            1251,
+            220,
+            186
+          ],
+          [
+            524,
+            1246,
+            222,
+            205
+          ],
+          [
+            770,
+            1245,
+            230,
+            215
+          ]
+        ]
+      },
+      "guns": [
+        [
+          72.84,
+          114.57
+        ]
+      ],
+      "tails": [
+        [
+          23.01,
+          46.06
+        ],
+        [
+          119.55,
+          46.06
+        ]
+      ],
+      "sourceScale": 0.6228070175438597
+    },
+    "carrier": {
+      "span": 142,
+      "banks": {
+        "heading": {
+          "key": "v31_carrier_heading",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "0c2e2aa502ab8d4d51cbaad06e6be87e3454b6dc5eb30d18534f627524b62e7e"
+        },
+        "idle": {
+          "key": "v31_carrier_idle",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "83ebcda980c6c94996bf5d148ec045e3d64dd6f8e8b547000faee677b3e99613"
+        },
+        "attack": {
+          "key": "v31_carrier_attack",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "e7bc005c04fc28dcf23c6530a1fdc48c027893f77583be5001fe6f0340926b28"
+        },
+        "drift": {
+          "key": "v31_carrier_drift",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 2,
+          "sha256": "4acdf630cb2630244249f0fdbe433bb898fe9782b2bfd21c68352e2d06cd8a03"
+        },
+        "roll": {
+          "key": "v31_carrier_roll",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "8c7504e20b62ef0f0e8ae49509534c527cb6cd5296336c9cf5c709c78bc931ad"
+        },
+        "somer": {
+          "key": "v31_carrier_somer",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "63ebc960b60f1b1677f7f2d957219f99ec0409ec0a78692defd597d9f9c0d436"
+        },
+        "charge": {
+          "key": "v31_carrier_charge",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "8b44715d85137e8aa79a9d9e9c9ac751df5a35215b16cf25a2f3d3efb8cf52a0"
+        }
+      },
+      "source": {
+        "path": "_BUILD_SOURCE/stage2_amplify_1031/carrier_source.png",
+        "sha256": "3dab31ea116c593decb44ce0b78f0b013427094ed24c94a5e866b4d161e03d7b",
+        "sourceCell": [
+          264,
+          264
+        ],
+        "frames": 24,
+        "componentRects": [
+          [
+            5,
+            31,
+            247,
+            177
+          ],
+          [
+            261,
+            31,
+            247,
+            177
+          ],
+          [
+            524,
+            35,
+            224,
+            171
+          ],
+          [
+            788,
+            35,
+            224,
+            171
+          ],
+          [
+            5,
+            249,
+            247,
+            225
+          ],
+          [
+            265,
+            252,
+            234,
+            209
+          ],
+          [
+            522,
+            252,
+            237,
+            208
+          ],
+          [
+            780,
+            252,
+            236,
+            209
+          ],
+          [
+            5,
+            499,
+            247,
+            213
+          ],
+          [
+            266,
+            494,
+            239,
+            216
+          ],
+          [
+            522,
+            495,
+            235,
+            215
+          ],
+          [
+            775,
+            494,
+            239,
+            216
+          ],
+          [
+            11,
+            756,
+            234,
+            219
+          ],
+          [
+            321,
+            727,
+            115,
+            258
+          ],
+          [
+            512,
+            758,
+            257,
+            200
+          ],
+          [
+            844,
+            727,
+            115,
+            258
+          ],
+          [
+            5,
+            1055,
+            247,
+            177
+          ],
+          [
+            324,
+            994,
+            123,
+            254
+          ],
+          [
+            514,
+            1057,
+            253,
+            151
+          ],
+          [
+            833,
+            994,
+            123,
+            254
+          ],
+          [
+            5,
+            1284,
+            247,
+            178
+          ],
+          [
+            261,
+            1284,
+            247,
+            178
+          ],
+          [
+            516,
+            1284,
+            248,
+            178
+          ],
+          [
+            772,
+            1284,
+            248,
+            179
+          ]
+        ]
+      },
+      "guns": [
+        [
+          76.91,
+          117.89
+        ]
+      ],
+      "tails": [
+        [
+          29.77,
+          56.15
+        ],
+        [
+          130.79,
+          56.15
+        ]
+      ],
+      "sourceScale": 0.5612648221343873
+    },
+    "elite": {
+      "span": 142,
+      "banks": {
+        "heading": {
+          "key": "v31_elite_heading",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_heading.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "b9922d8700b48d29ed9b3127b4ee86afb2f78765e02cc77124f98cfd2801f7ec"
+        },
+        "idle": {
+          "key": "v31_elite_idle",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_idle.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "f65190992f7c2feee3d67d48e3c75c1a4671863fbd2bb6460335cac73ea078d4"
+        },
+        "attack": {
+          "key": "v31_elite_attack",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_attack.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "bdfd769f344b65acad33aabcc8f53dd046fd010745438f6e6cd105f52dedc477"
+        },
+        "drift": {
+          "key": "v31_elite_drift",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_drift.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 2,
+          "sha256": "a28730b4d9fdd1a98750618da8aeaa2615c89100c43c305c9f348ce29c30d1d5"
+        },
+        "roll": {
+          "key": "v31_elite_roll",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_roll.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "ed7d112969be4fc04cb2c97c61a047ed69a43a946ea11e3d9d237043cd3b9b24"
+        },
+        "somer": {
+          "key": "v31_elite_somer",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_somer.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "134f2dd12549919d6d7894df82b93c6fa47cabb2951ae37e6052cc8f18aa3304"
+        },
+        "charge": {
+          "key": "v31_elite_charge",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_charge.webp",
+          "cell": 160,
+          "pivot": [
+            80,
+            80
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 4,
+          "sha256": "6cff4f71bbe01706c8db475512a288808f95073acd7c23b316e44561ec38dccb"
+        }
+      },
+      "source": {
+        "path": "_BUILD_SOURCE/stage2_amplify_1031/elite_source.png",
+        "sha256": "3d571657e4a0c48d1a18498b49776df80245b6e37f916dea62b7f45a91b53f98",
+        "sourceCell": [
+          262,
+          262
+        ],
+        "frames": 24,
+        "componentRects": [
+          [
+            7,
+            6,
+            243,
+            204
+          ],
+          [
+            262,
+            6,
+            243,
+            204
+          ],
+          [
+            522,
+            14,
+            230,
+            201
+          ],
+          [
+            784,
+            14,
+            230,
+            201
+          ],
+          [
+            7,
+            228,
+            243,
+            216
+          ],
+          [
+            262,
+            234,
+            223,
+            188
+          ],
+          [
+            513,
+            277,
+            254,
+            133
+          ],
+          [
+            788,
+            234,
+            225,
+            188
+          ],
+          [
+            7,
+            462,
+            243,
+            215
+          ],
+          [
+            266,
+            458,
+            235,
+            204
+          ],
+          [
+            510,
+            500,
+            256,
+            135
+          ],
+          [
+            779,
+            458,
+            236,
+            204
+          ],
+          [
+            7,
+            689,
+            243,
+            203
+          ],
+          [
+            295,
+            670,
+            124,
+            235
+          ],
+          [
+            517,
+            685,
+            246,
+            217
+          ],
+          [
+            859,
+            670,
+            126,
+            235
+          ],
+          [
+            6,
+            951,
+            244,
+            177
+          ],
+          [
+            317,
+            912,
+            117,
+            248
+          ],
+          [
+            513,
+            921,
+            254,
+            226
+          ],
+          [
+            851,
+            912,
+            119,
+            248
+          ],
+          [
+            6,
+            1181,
+            244,
+            252
+          ],
+          [
+            262,
+            1181,
+            244,
+            252
+          ],
+          [
+            518,
+            1181,
+            244,
+            256
+          ],
+          [
+            774,
+            1181,
+            244,
+            252
+          ]
+        ]
+      },
+      "guns": [
+        [
+          68.97,
+          132.05
+        ],
+        [
+          88.2,
+          132.05
+        ]
+      ],
+      "tails": [
+        [
+          67.27,
+          34.18
+        ],
+        [
+          93.29,
+          34.18
+        ]
+      ],
+      "sourceScale": 0.5657370517928287
+    },
+    "ash": {
+      "span": 101,
+      "banks": {
+        "idle": {
+          "key": "v31_ash_idle",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_idle.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "584b4ba79e3c48a7baa32161c4f663dcb4262ac4fbf98e11cb1cb6ccc88841fe"
+        },
+        "attack": {
+          "key": "v31_ash_attack",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_attack.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "dirRows": 1,
+          "frames": 9,
+          "sha256": "432049f2790284c1514772c32300386351d393f1827d2433300a04dbaff80d55"
+        },
+        "drift": {
+          "key": "v31_ash_drift",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_drift.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "664cdb928a78939a7127875fba4735d46d38532e9134fafdf48074090cddee63"
+        },
+        "roll": {
+          "key": "v31_ash_roll",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_roll.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "dirRows": 1,
+          "frames": 9,
+          "sha256": "46fec77c2fdde9852b1c7542bb740d6b9e90d8d49330128fe34a9bfbd779525d"
+        },
+        "somer": {
+          "key": "v31_ash_somer",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_somer.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "dirRows": 1,
+          "frames": 17,
+          "sha256": "7ee408d6e9202d7660ae58e3ec72fed4db9f770501b294be8525ce01aac65ff1"
+        },
+        "heading": {
+          "key": "v31_ash_heading",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_heading.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "d60199da6a3583034c5af5291282a713d9d0063aaf7b307ad7f69b3e6f27edfb"
+        }
+      },
+      "guns": [
+        [
+          45,
+          104
+        ],
+        [
+          86,
+          104
+        ]
+      ],
+      "tails": [
+        [
+          49,
+          34
+        ],
+        [
+          80,
+          34
+        ]
+      ],
+      "source": {
+        "idle": {
+          "key": "bf22_magma_dart_idle",
+          "path": "assets/game/shared/enemies/biome_fleet_1022/magma_dart_idle.webp",
+          "frames": 5,
+          "columns": 5,
+          "cell": 128,
+          "w": 128,
+          "h": 128,
+          "cells": [
+            [
+              0,
+              0,
+              128,
+              128
+            ],
+            [
+              128,
+              0,
+              128,
+              128
+            ],
+            [
+              256,
+              0,
+              128,
+              128
+            ],
+            [
+              384,
+              0,
+              128,
+              128
+            ],
+            [
+              512,
+              0,
+              128,
+              128
+            ]
+          ],
+          "fps": 8,
+          "pivot": [
+            64,
+            64
+          ],
+          "modules": [
+            [
+              0,
+              0,
+              48,
+              128
+            ],
+            [
+              48,
+              0,
+              32,
+              128
+            ],
+            [
+              80,
+              0,
+              48,
+              128
+            ]
+          ]
+        },
+        "attack": {
+          "key": "bf22_magma_dart_attack",
+          "path": "assets/game/shared/enemies/biome_fleet_1022/magma_dart_attack.webp",
+          "frames": 9,
+          "columns": 8,
+          "cell": 128,
+          "w": 128,
+          "h": 128,
+          "cells": [
+            [
+              0,
+              0,
+              128,
+              128
+            ],
+            [
+              128,
+              0,
+              128,
+              128
+            ],
+            [
+              256,
+              0,
+              128,
+              128
+            ],
+            [
+              384,
+              0,
+              128,
+              128
+            ],
+            [
+              512,
+              0,
+              128,
+              128
+            ],
+            [
+              640,
+              0,
+              128,
+              128
+            ],
+            [
+              768,
+              0,
+              128,
+              128
+            ],
+            [
+              896,
+              0,
+              128,
+              128
+            ],
+            [
+              0,
+              128,
+              128,
+              128
+            ]
+          ],
+          "fps": 20,
+          "pivot": [
+            64,
+            64
+          ],
+          "modules": [
+            [
+              0,
+              0,
+              48,
+              128
+            ],
+            [
+              48,
+              0,
+              32,
+              128
+            ],
+            [
+              80,
+              0,
+              48,
+              128
+            ]
+          ]
+        },
+        "drift": {
+          "key": "bf22_magma_dart_drift",
+          "path": "assets/game/shared/enemies/biome_fleet_1022/magma_dart_drift.webp",
+          "frames": 5,
+          "columns": 5,
+          "cell": 128,
+          "w": 128,
+          "h": 128,
+          "cells": [
+            [
+              0,
+              0,
+              128,
+              128
+            ],
+            [
+              128,
+              0,
+              128,
+              128
+            ],
+            [
+              256,
+              0,
+              128,
+              128
+            ],
+            [
+              384,
+              0,
+              128,
+              128
+            ],
+            [
+              512,
+              0,
+              128,
+              128
+            ]
+          ],
+          "fps": 12,
+          "pivot": [
+            64,
+            64
+          ],
+          "modules": [
+            [
+              0,
+              0,
+              48,
+              128
+            ],
+            [
+              48,
+              0,
+              32,
+              128
+            ],
+            [
+              80,
+              0,
+              48,
+              128
+            ]
+          ]
+        },
+        "roll": {
+          "key": "bf22_magma_dart_roll",
+          "path": "assets/game/shared/enemies/biome_fleet_1022/magma_dart_roll.webp",
+          "frames": 9,
+          "columns": 8,
+          "cell": 128,
+          "w": 128,
+          "h": 128,
+          "cells": [
+            [
+              0,
+              0,
+              128,
+              128
+            ],
+            [
+              128,
+              0,
+              128,
+              128
+            ],
+            [
+              256,
+              0,
+              128,
+              128
+            ],
+            [
+              384,
+              0,
+              128,
+              128
+            ],
+            [
+              512,
+              0,
+              128,
+              128
+            ],
+            [
+              640,
+              0,
+              128,
+              128
+            ],
+            [
+              768,
+              0,
+              128,
+              128
+            ],
+            [
+              896,
+              0,
+              128,
+              128
+            ],
+            [
+              0,
+              128,
+              128,
+              128
+            ]
+          ],
+          "fps": 20,
+          "pivot": [
+            64,
+            64
+          ],
+          "modules": [
+            [
+              0,
+              0,
+              48,
+              128
+            ],
+            [
+              48,
+              0,
+              32,
+              128
+            ],
+            [
+              80,
+              0,
+              48,
+              128
+            ]
+          ]
+        },
+        "somer": {
+          "key": "bf22_magma_dart_somer",
+          "path": "assets/game/shared/enemies/biome_fleet_1022/magma_dart_somer.webp",
+          "frames": 17,
+          "columns": 8,
+          "cell": 128,
+          "w": 128,
+          "h": 128,
+          "cells": [
+            [
+              0,
+              0,
+              128,
+              128
+            ],
+            [
+              128,
+              0,
+              128,
+              128
+            ],
+            [
+              256,
+              0,
+              128,
+              128
+            ],
+            [
+              384,
+              0,
+              128,
+              128
+            ],
+            [
+              512,
+              0,
+              128,
+              128
+            ],
+            [
+              640,
+              0,
+              128,
+              128
+            ],
+            [
+              768,
+              0,
+              128,
+              128
+            ],
+            [
+              896,
+              0,
+              128,
+              128
+            ],
+            [
+              0,
+              128,
+              128,
+              128
+            ],
+            [
+              128,
+              128,
+              128,
+              128
+            ],
+            [
+              256,
+              128,
+              128,
+              128
+            ],
+            [
+              384,
+              128,
+              128,
+              128
+            ],
+            [
+              512,
+              128,
+              128,
+              128
+            ],
+            [
+              640,
+              128,
+              128,
+              128
+            ],
+            [
+              768,
+              128,
+              128,
+              128
+            ],
+            [
+              896,
+              128,
+              128,
+              128
+            ],
+            [
+              0,
+              256,
+              128,
+              128
+            ]
+          ],
+          "fps": 20,
+          "pivot": [
+            64,
+            64
+          ],
+          "modules": [
+            [
+              0,
+              0,
+              48,
+              128
+            ],
+            [
+              48,
+              0,
+              32,
+              128
+            ],
+            [
+              80,
+              0,
+              48,
+              128
+            ]
+          ]
+        }
+      }
+    },
+    "basalt": {
+      "span": 108,
+      "banks": {
+        "idle": {
+          "key": "v31_basalt_idle",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_idle.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "7db98ea712af7ff8f9ab29de411c1c6d291ceb65b1549ae29d716dbabfd5301c"
+        },
+        "attack": {
+          "key": "v31_basalt_attack",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_attack.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "dirRows": 1,
+          "frames": 9,
+          "sha256": "39d1d92e806ad128fc5959427dd74d2f895bda4c7c330b77c753e82e5038133a"
+        },
+        "drift": {
+          "key": "v31_basalt_drift",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_drift.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "dirRows": 1,
+          "frames": 5,
+          "sha256": "27cb0bf19ceca164f7c4c1d37b649a19ef4b8965c9c1927c02caa115e10e67dc"
+        },
+        "roll": {
+          "key": "v31_basalt_roll",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_roll.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "dirRows": 1,
+          "frames": 17,
+          "sha256": "7448fc4a419142904721600b20c129d22673423c81508922d0b8e26138e0b6b9"
+        },
+        "somer": {
+          "key": "v31_basalt_somer",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_somer.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 8,
+          "cols": 8,
+          "dirRows": 1,
+          "frames": 9,
+          "sha256": "846d790a44bbfde4c1216456c310a8e5fef10de0b1f90945976b96bf21ff94de"
+        },
+        "heading": {
+          "key": "v31_basalt_heading",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_heading.webp",
+          "cell": 128,
+          "pivot": [
+            64,
+            64
+          ],
+          "dirs": 32,
+          "cols": 32,
+          "dirRows": 1,
+          "frames": 1,
+          "sha256": "8d1645c0ff6599bd360e6321d1c32c89b05e04f3a05e0ffd857c04fa73f39cf2"
+        }
+      },
+      "guns": [
+        [
+          39,
+          96
+        ],
+        [
+          89,
+          96
+        ]
+      ],
+      "tails": [
+        [
+          49,
+          34
+        ],
+        [
+          80,
+          34
+        ]
+      ],
+      "source": {
+        "idle": {
+          "key": "bf22_magma_forge_idle",
+          "path": "assets/game/shared/enemies/biome_fleet_1022/magma_forge_idle.webp",
+          "frames": 5,
+          "columns": 5,
+          "cell": 128,
+          "w": 128,
+          "h": 128,
+          "cells": [
+            [
+              0,
+              0,
+              128,
+              128
+            ],
+            [
+              128,
+              0,
+              128,
+              128
+            ],
+            [
+              256,
+              0,
+              128,
+              128
+            ],
+            [
+              384,
+              0,
+              128,
+              128
+            ],
+            [
+              512,
+              0,
+              128,
+              128
+            ]
+          ],
+          "fps": 8,
+          "pivot": [
+            64,
+            64
+          ],
+          "modules": [
+            [
+              0,
+              0,
+              48,
+              128
+            ],
+            [
+              48,
+              0,
+              32,
+              128
+            ],
+            [
+              80,
+              0,
+              48,
+              128
+            ]
+          ]
+        },
+        "attack": {
+          "key": "bf22_magma_forge_attack",
+          "path": "assets/game/shared/enemies/biome_fleet_1022/magma_forge_attack.webp",
+          "frames": 9,
+          "columns": 8,
+          "cell": 128,
+          "w": 128,
+          "h": 128,
+          "cells": [
+            [
+              0,
+              0,
+              128,
+              128
+            ],
+            [
+              128,
+              0,
+              128,
+              128
+            ],
+            [
+              256,
+              0,
+              128,
+              128
+            ],
+            [
+              384,
+              0,
+              128,
+              128
+            ],
+            [
+              512,
+              0,
+              128,
+              128
+            ],
+            [
+              640,
+              0,
+              128,
+              128
+            ],
+            [
+              768,
+              0,
+              128,
+              128
+            ],
+            [
+              896,
+              0,
+              128,
+              128
+            ],
+            [
+              0,
+              128,
+              128,
+              128
+            ]
+          ],
+          "fps": 20,
+          "pivot": [
+            64,
+            64
+          ],
+          "modules": [
+            [
+              0,
+              0,
+              48,
+              128
+            ],
+            [
+              48,
+              0,
+              32,
+              128
+            ],
+            [
+              80,
+              0,
+              48,
+              128
+            ]
+          ]
+        },
+        "drift": {
+          "key": "bf22_magma_forge_drift",
+          "path": "assets/game/shared/enemies/biome_fleet_1022/magma_forge_drift.webp",
+          "frames": 5,
+          "columns": 5,
+          "cell": 128,
+          "w": 128,
+          "h": 128,
+          "cells": [
+            [
+              0,
+              0,
+              128,
+              128
+            ],
+            [
+              128,
+              0,
+              128,
+              128
+            ],
+            [
+              256,
+              0,
+              128,
+              128
+            ],
+            [
+              384,
+              0,
+              128,
+              128
+            ],
+            [
+              512,
+              0,
+              128,
+              128
+            ]
+          ],
+          "fps": 12,
+          "pivot": [
+            64,
+            64
+          ],
+          "modules": [
+            [
+              0,
+              0,
+              48,
+              128
+            ],
+            [
+              48,
+              0,
+              32,
+              128
+            ],
+            [
+              80,
+              0,
+              48,
+              128
+            ]
+          ]
+        },
+        "roll": {
+          "key": "bf22_magma_forge_roll",
+          "path": "assets/game/shared/enemies/biome_fleet_1022/magma_forge_roll.webp",
+          "frames": 17,
+          "columns": 8,
+          "cell": 128,
+          "w": 128,
+          "h": 128,
+          "cells": [
+            [
+              0,
+              0,
+              128,
+              128
+            ],
+            [
+              128,
+              0,
+              128,
+              128
+            ],
+            [
+              256,
+              0,
+              128,
+              128
+            ],
+            [
+              384,
+              0,
+              128,
+              128
+            ],
+            [
+              512,
+              0,
+              128,
+              128
+            ],
+            [
+              640,
+              0,
+              128,
+              128
+            ],
+            [
+              768,
+              0,
+              128,
+              128
+            ],
+            [
+              896,
+              0,
+              128,
+              128
+            ],
+            [
+              0,
+              128,
+              128,
+              128
+            ],
+            [
+              128,
+              128,
+              128,
+              128
+            ],
+            [
+              256,
+              128,
+              128,
+              128
+            ],
+            [
+              384,
+              128,
+              128,
+              128
+            ],
+            [
+              512,
+              128,
+              128,
+              128
+            ],
+            [
+              640,
+              128,
+              128,
+              128
+            ],
+            [
+              768,
+              128,
+              128,
+              128
+            ],
+            [
+              896,
+              128,
+              128,
+              128
+            ],
+            [
+              0,
+              256,
+              128,
+              128
+            ]
+          ],
+          "fps": 20,
+          "pivot": [
+            64,
+            64
+          ],
+          "modules": [
+            [
+              0,
+              0,
+              48,
+              128
+            ],
+            [
+              48,
+              0,
+              32,
+              128
+            ],
+            [
+              80,
+              0,
+              48,
+              128
+            ]
+          ]
+        },
+        "somer": {
+          "key": "bf22_magma_forge_somer",
+          "path": "assets/game/shared/enemies/biome_fleet_1022/magma_forge_somer.webp",
+          "frames": 9,
+          "columns": 8,
+          "cell": 128,
+          "w": 128,
+          "h": 128,
+          "cells": [
+            [
+              0,
+              0,
+              128,
+              128
+            ],
+            [
+              128,
+              0,
+              128,
+              128
+            ],
+            [
+              256,
+              0,
+              128,
+              128
+            ],
+            [
+              384,
+              0,
+              128,
+              128
+            ],
+            [
+              512,
+              0,
+              128,
+              128
+            ],
+            [
+              640,
+              0,
+              128,
+              128
+            ],
+            [
+              768,
+              0,
+              128,
+              128
+            ],
+            [
+              896,
+              0,
+              128,
+              128
+            ],
+            [
+              0,
+              128,
+              128,
+              128
+            ]
+          ],
+          "fps": 20,
+          "pivot": [
+            64,
+            64
+          ],
+          "modules": [
+            [
+              0,
+              0,
+              48,
+              128
+            ],
+            [
+              48,
+              0,
+              32,
+              128
+            ],
+            [
+              80,
+              0,
+              48,
+              128
+            ]
+          ]
+        }
+      }
+    },
+    "maw": {
+      "span": 166,
+      "banks": {
+        "sequence": {
+          "key": "v31_maw_sequence",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/maw_sequence.webp",
+          "cell": 192,
+          "pivot": [
+            96,
+            96
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 16,
+          "sha256": "8a7eb7ea16cb8a2ceb89318207ba7a960c37e13302c5a7f1695e46f63c3e25fa"
+        }
+      },
+      "guns": [
+        [
+          96,
+          62
+        ]
+      ],
+      "tails": []
+    },
+    "pod": {
+      "span": 166,
+      "banks": {
+        "sequence": {
+          "key": "v31_pod_sequence",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/pod_sequence.webp",
+          "cell": 192,
+          "pivot": [
+            96,
+            96
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 16,
+          "sha256": "80f5d4e42210331d0411b3e7eff0927d6481e0406e48fffd162c49eacffff6bf"
+        }
+      },
+      "guns": [
+        [
+          96,
+          96
+        ]
+      ],
+      "tails": []
+    },
+    "snake": {
+      "span": 166,
+      "banks": {
+        "sequence": {
+          "key": "v31_snake_sequence",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/snake_sequence.webp",
+          "cell": 192,
+          "pivot": [
+            96,
+            96
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 16,
+          "sha256": "5474f218cc99c7014ab4c4cfdf89c9773704591474c3131f3c612c7155415095"
+        }
+      },
+      "guns": [
+        [
+          96,
+          96
+        ]
+      ],
+      "tails": []
+    },
+    "disc": {
+      "span": 180,
+      "banks": {
+        "spin": {
+          "key": "v31_disc_spin",
+          "path": "assets/game/levels/stage_02/enemies/amplify_1031/disc_spin.webp",
+          "cell": 192,
+          "pivot": [
+            96,
+            96
+          ],
+          "dirs": 1,
+          "cols": 1,
+          "dirRows": 1,
+          "frames": 32,
+          "sha256": "fc013e1d65e67d1e111030e00c5d4774e048b53cf82de9461dc9f3dc516bd50c"
+        }
+      },
+      "spikes": [
+        [
+          [
+            96.0,
+            14.0,
+            -1.570796
+          ],
+          [
+            148.709,
+            33.184,
+            -0.872665
+          ],
+          [
+            176.754,
+            81.761,
+            -0.174533
+          ],
+          [
+            167.014,
+            137.0,
+            0.523599
+          ],
+          [
+            124.046,
+            173.055,
+            1.22173
+          ],
+          [
+            67.954,
+            173.055,
+            1.919862
+          ],
+          [
+            24.986,
+            137.0,
+            2.617994
+          ],
+          [
+            15.246,
+            81.761,
+            3.316126
+          ],
+          [
+            43.291,
+            33.184,
+            4.014257
+          ]
+        ],
+        [
+          [
+            111.997,
+            15.576,
+            -1.374447
+          ],
+          [
+            159.951,
+            44.674,
+            -0.676315
+          ],
+          [
+            177.98,
+            97.789,
+            0.021817
+          ],
+          [
+            157.651,
+            150.066,
+            0.719948
+          ],
+          [
+            108.474,
+            177.046,
+            1.41808
+          ],
+          [
+            53.461,
+            166.103,
+            2.116212
+          ],
+          [
+            18.352,
+            122.358,
+            2.814343
+          ],
+          [
+            19.575,
+            66.28,
+            3.512475
+          ],
+          [
+            56.559,
+            24.108,
+            4.210607
+          ]
+        ],
+        [
+          [
+            127.38,
+            20.242,
+            -1.178097
+          ],
+          [
+            168.735,
+            58.137,
+            -0.479966
+          ],
+          [
+            176.056,
+            113.748,
+            0.218166
+          ],
+          [
+            145.918,
+            161.055,
+            0.916298
+          ],
+          [
+            92.423,
+            177.922,
+            1.61443
+          ],
+          [
+            40.602,
+            156.457,
+            2.312561
+          ],
+          [
+            14.702,
+            106.703,
+            3.010693
+          ],
+          [
+            26.842,
+            51.941,
+            3.708825
+          ],
+          [
+            71.342,
+            17.795,
+            4.406956
+          ]
+        ],
+        [
+          [
+            141.557,
+            27.819,
+            -0.981748
+          ],
+          [
+            174.724,
+            73.054,
+            -0.283616
+          ],
+          [
+            171.056,
+            129.025,
+            0.414516
+          ],
+          [
+            132.268,
+            169.544,
+            1.112647
+          ],
+          [
+            76.51,
+            175.65,
+            1.810779
+          ],
+          [
+            29.872,
+            144.487,
+            2.508911
+          ],
+          [
+            14.176,
+            90.637,
+            3.207043
+          ],
+          [
+            36.766,
+            39.296,
+            3.905174
+          ],
+          [
+            87.073,
+            14.487,
+            4.603306
+          ]
+        ],
+        [
+          [
+            153.983,
+            38.017,
+            -0.785398
+          ],
+          [
+            177.688,
+            88.853,
+            -0.087266
+          ],
+          [
+            163.17,
+            143.033,
+            0.610865
+          ],
+          [
+            117.223,
+            175.206,
+            1.308997
+          ],
+          [
+            61.345,
+            170.317,
+            2.007129
+          ],
+          [
+            21.683,
+            130.655,
+            2.70526
+          ],
+          [
+            16.794,
+            74.777,
+            3.403392
+          ],
+          [
+            48.967,
+            28.83,
+            4.101524
+          ],
+          [
+            103.147,
+            14.312,
+            4.799655
+          ]
+        ],
+        [
+          [
+            164.181,
+            50.443,
+            -0.589049
+          ],
+          [
+            177.513,
+            104.927,
+            0.109083
+          ],
+          [
+            152.704,
+            155.234,
+            0.807215
+          ],
+          [
+            101.363,
+            177.824,
+            1.505346
+          ],
+          [
+            47.513,
+            162.128,
+            2.203478
+          ],
+          [
+            16.35,
+            115.49,
+            2.90161
+          ],
+          [
+            22.456,
+            59.732,
+            3.599742
+          ],
+          [
+            62.975,
+            20.944,
+            4.297873
+          ],
+          [
+            118.946,
+            17.276,
+            4.996005
+          ]
+        ],
+        [
+          [
+            171.758,
+            64.62,
+            -0.392699
+          ],
+          [
+            174.205,
+            120.658,
+            0.305433
+          ],
+          [
+            140.059,
+            165.158,
+            1.003564
+          ],
+          [
+            85.297,
+            177.298,
+            1.701696
+          ],
+          [
+            35.543,
+            151.398,
+            2.399828
+          ],
+          [
+            14.078,
+            99.577,
+            3.097959
+          ],
+          [
+            30.945,
+            46.082,
+            3.796091
+          ],
+          [
+            78.252,
+            15.944,
+            4.494223
+          ],
+          [
+            133.863,
+            23.265,
+            5.192355
+          ]
+        ],
+        [
+          [
+            176.424,
+            80.003,
+            -0.19635
+          ],
+          [
+            167.892,
+            135.441,
+            0.501782
+          ],
+          [
+            125.72,
+            172.425,
+            1.199914
+          ],
+          [
+            69.642,
+            173.648,
+            1.898046
+          ],
+          [
+            25.897,
+            138.539,
+            2.596177
+          ],
+          [
+            14.954,
+            83.526,
+            3.294309
+          ],
+          [
+            41.934,
+            34.349,
+            3.992441
+          ],
+          [
+            94.211,
+            14.02,
+            4.690572
+          ],
+          [
+            147.326,
+            32.049,
+            5.388704
+          ]
+        ],
+        [
+          [
+            178.0,
+            96.0,
+            0.0
+          ],
+          [
+            158.816,
+            148.709,
+            0.698132
+          ],
+          [
+            110.239,
+            176.754,
+            1.396263
+          ],
+          [
+            55.0,
+            167.014,
+            2.094395
+          ],
+          [
+            18.945,
+            124.046,
+            2.792527
+          ],
+          [
+            18.945,
+            67.954,
+            3.490659
+          ],
+          [
+            55.0,
+            24.986,
+            4.18879
+          ],
+          [
+            110.239,
+            15.246,
+            4.886922
+          ],
+          [
+            158.816,
+            43.291,
+            5.585054
+          ]
+        ],
+        [
+          [
+            176.424,
+            111.997,
+            0.19635
+          ],
+          [
+            147.326,
+            159.951,
+            0.894481
+          ],
+          [
+            94.211,
+            177.98,
+            1.592613
+          ],
+          [
+            41.934,
+            157.651,
+            2.290745
+          ],
+          [
+            14.954,
+            108.474,
+            2.988876
+          ],
+          [
+            25.897,
+            53.461,
+            3.687008
+          ],
+          [
+            69.642,
+            18.352,
+            4.38514
+          ],
+          [
+            125.72,
+            19.575,
+            5.083271
+          ],
+          [
+            167.892,
+            56.559,
+            5.781403
+          ]
+        ],
+        [
+          [
+            171.758,
+            127.38,
+            0.392699
+          ],
+          [
+            133.863,
+            168.735,
+            1.090831
+          ],
+          [
+            78.252,
+            176.056,
+            1.788962
+          ],
+          [
+            30.945,
+            145.918,
+            2.487094
+          ],
+          [
+            14.078,
+            92.423,
+            3.185226
+          ],
+          [
+            35.543,
+            40.602,
+            3.883358
+          ],
+          [
+            85.297,
+            14.702,
+            4.581489
+          ],
+          [
+            140.059,
+            26.842,
+            5.279621
+          ],
+          [
+            174.205,
+            71.342,
+            5.977753
+          ]
+        ],
+        [
+          [
+            164.181,
+            141.557,
+            0.589049
+          ],
+          [
+            118.946,
+            174.724,
+            1.28718
+          ],
+          [
+            62.975,
+            171.056,
+            1.985312
+          ],
+          [
+            22.456,
+            132.268,
+            2.683444
+          ],
+          [
+            16.35,
+            76.51,
+            3.381575
+          ],
+          [
+            47.513,
+            29.872,
+            4.079707
+          ],
+          [
+            101.363,
+            14.176,
+            4.777839
+          ],
+          [
+            152.704,
+            36.766,
+            5.475971
+          ],
+          [
+            177.513,
+            87.073,
+            6.174102
+          ]
+        ],
+        [
+          [
+            153.983,
+            153.983,
+            0.785398
+          ],
+          [
+            103.147,
+            177.688,
+            1.48353
+          ],
+          [
+            48.967,
+            163.17,
+            2.181662
+          ],
+          [
+            16.794,
+            117.223,
+            2.879793
+          ],
+          [
+            21.683,
+            61.345,
+            3.577925
+          ],
+          [
+            61.345,
+            21.683,
+            4.276057
+          ],
+          [
+            117.223,
+            16.794,
+            4.974188
+          ],
+          [
+            163.17,
+            48.967,
+            5.67232
+          ],
+          [
+            177.688,
+            103.147,
+            6.370452
+          ]
+        ],
+        [
+          [
+            141.557,
+            164.181,
+            0.981748
+          ],
+          [
+            87.073,
+            177.513,
+            1.679879
+          ],
+          [
+            36.766,
+            152.704,
+            2.378011
+          ],
+          [
+            14.176,
+            101.363,
+            3.076143
+          ],
+          [
+            29.872,
+            47.513,
+            3.774275
+          ],
+          [
+            76.51,
+            16.35,
+            4.472406
+          ],
+          [
+            132.268,
+            22.456,
+            5.170538
+          ],
+          [
+            171.056,
+            62.975,
+            5.86867
+          ],
+          [
+            174.724,
+            118.946,
+            6.566801
+          ]
+        ],
+        [
+          [
+            127.38,
+            171.758,
+            1.178097
+          ],
+          [
+            71.342,
+            174.205,
+            1.876229
+          ],
+          [
+            26.842,
+            140.059,
+            2.574361
+          ],
+          [
+            14.702,
+            85.297,
+            3.272492
+          ],
+          [
+            40.602,
+            35.543,
+            3.970624
+          ],
+          [
+            92.423,
+            14.078,
+            4.668756
+          ],
+          [
+            145.918,
+            30.945,
+            5.366887
+          ],
+          [
+            176.056,
+            78.252,
+            6.065019
+          ],
+          [
+            168.735,
+            133.863,
+            6.763151
+          ]
+        ],
+        [
+          [
+            111.997,
+            176.424,
+            1.374447
+          ],
+          [
+            56.559,
+            167.892,
+            2.072578
+          ],
+          [
+            19.575,
+            125.72,
+            2.77071
+          ],
+          [
+            18.352,
+            69.642,
+            3.468842
+          ],
+          [
+            53.461,
+            25.897,
+            4.166974
+          ],
+          [
+            108.474,
+            14.954,
+            4.865105
+          ],
+          [
+            157.651,
+            41.934,
+            5.563237
+          ],
+          [
+            177.98,
+            94.211,
+            6.261369
+          ],
+          [
+            159.951,
+            147.326,
+            6.9595
+          ]
+        ],
+        [
+          [
+            96.0,
+            178.0,
+            1.570796
+          ],
+          [
+            43.291,
+            158.816,
+            2.268928
+          ],
+          [
+            15.246,
+            110.239,
+            2.96706
+          ],
+          [
+            24.986,
+            55.0,
+            3.665191
+          ],
+          [
+            67.954,
+            18.945,
+            4.363323
+          ],
+          [
+            124.046,
+            18.945,
+            5.061455
+          ],
+          [
+            167.014,
+            55.0,
+            5.759587
+          ],
+          [
+            176.754,
+            110.239,
+            6.457718
+          ],
+          [
+            148.709,
+            158.816,
+            7.15585
+          ]
+        ],
+        [
+          [
+            80.003,
+            176.424,
+            1.767146
+          ],
+          [
+            32.049,
+            147.326,
+            2.465278
+          ],
+          [
+            14.02,
+            94.211,
+            3.163409
+          ],
+          [
+            34.349,
+            41.934,
+            3.861541
+          ],
+          [
+            83.526,
+            14.954,
+            4.559673
+          ],
+          [
+            138.539,
+            25.897,
+            5.257804
+          ],
+          [
+            173.648,
+            69.642,
+            5.955936
+          ],
+          [
+            172.425,
+            125.72,
+            6.654068
+          ],
+          [
+            135.441,
+            167.892,
+            7.352199
+          ]
+        ],
+        [
+          [
+            64.62,
+            171.758,
+            1.963495
+          ],
+          [
+            23.265,
+            133.863,
+            2.661627
+          ],
+          [
+            15.944,
+            78.252,
+            3.359759
+          ],
+          [
+            46.082,
+            30.945,
+            4.057891
+          ],
+          [
+            99.577,
+            14.078,
+            4.756022
+          ],
+          [
+            151.398,
+            35.543,
+            5.454154
+          ],
+          [
+            177.298,
+            85.297,
+            6.152286
+          ],
+          [
+            165.158,
+            140.059,
+            6.850417
+          ],
+          [
+            120.658,
+            174.205,
+            7.548549
+          ]
+        ],
+        [
+          [
+            50.443,
+            164.181,
+            2.159845
+          ],
+          [
+            17.276,
+            118.946,
+            2.857977
+          ],
+          [
+            20.944,
+            62.975,
+            3.556108
+          ],
+          [
+            59.732,
+            22.456,
+            4.25424
+          ],
+          [
+            115.49,
+            16.35,
+            4.952372
+          ],
+          [
+            162.128,
+            47.513,
+            5.650503
+          ],
+          [
+            177.824,
+            101.363,
+            6.348635
+          ],
+          [
+            155.234,
+            152.704,
+            7.046767
+          ],
+          [
+            104.927,
+            177.513,
+            7.744899
+          ]
+        ],
+        [
+          [
+            38.017,
+            153.983,
+            2.356194
+          ],
+          [
+            14.312,
+            103.147,
+            3.054326
+          ],
+          [
+            28.83,
+            48.967,
+            3.752458
+          ],
+          [
+            74.777,
+            16.794,
+            4.45059
+          ],
+          [
+            130.655,
+            21.683,
+            5.148721
+          ],
+          [
+            170.317,
+            61.345,
+            5.846853
+          ],
+          [
+            175.206,
+            117.223,
+            6.544985
+          ],
+          [
+            143.033,
+            163.17,
+            7.243116
+          ],
+          [
+            88.853,
+            177.688,
+            7.941248
+          ]
+        ],
+        [
+          [
+            27.819,
+            141.557,
+            2.552544
+          ],
+          [
+            14.487,
+            87.073,
+            3.250676
+          ],
+          [
+            39.296,
+            36.766,
+            3.948807
+          ],
+          [
+            90.637,
+            14.176,
+            4.646939
+          ],
+          [
+            144.487,
+            29.872,
+            5.345071
+          ],
+          [
+            175.65,
+            76.51,
+            6.043203
+          ],
+          [
+            169.544,
+            132.268,
+            6.741334
+          ],
+          [
+            129.025,
+            171.056,
+            7.439466
+          ],
+          [
+            73.054,
+            174.724,
+            8.137598
+          ]
+        ],
+        [
+          [
+            20.242,
+            127.38,
+            2.748894
+          ],
+          [
+            17.795,
+            71.342,
+            3.447025
+          ],
+          [
+            51.941,
+            26.842,
+            4.145157
+          ],
+          [
+            106.703,
+            14.702,
+            4.843289
+          ],
+          [
+            156.457,
+            40.602,
+            5.54142
+          ],
+          [
+            177.922,
+            92.423,
+            6.239552
+          ],
+          [
+            161.055,
+            145.918,
+            6.937684
+          ],
+          [
+            113.748,
+            176.056,
+            7.635815
+          ],
+          [
+            58.137,
+            168.735,
+            8.333947
+          ]
+        ],
+        [
+          [
+            15.576,
+            111.997,
+            2.945243
+          ],
+          [
+            24.108,
+            56.559,
+            3.643375
+          ],
+          [
+            66.28,
+            19.575,
+            4.341507
+          ],
+          [
+            122.358,
+            18.352,
+            5.039638
+          ],
+          [
+            166.103,
+            53.461,
+            5.73777
+          ],
+          [
+            177.046,
+            108.474,
+            6.435902
+          ],
+          [
+            150.066,
+            157.651,
+            7.134033
+          ],
+          [
+            97.789,
+            177.98,
+            7.832165
+          ],
+          [
+            44.674,
+            159.951,
+            8.530297
+          ]
+        ],
+        [
+          [
+            14.0,
+            96.0,
+            3.141593
+          ],
+          [
+            33.184,
+            43.291,
+            3.839724
+          ],
+          [
+            81.761,
+            15.246,
+            4.537856
+          ],
+          [
+            137.0,
+            24.986,
+            5.235988
+          ],
+          [
+            173.055,
+            67.954,
+            5.934119
+          ],
+          [
+            173.055,
+            124.046,
+            6.632251
+          ],
+          [
+            137.0,
+            167.014,
+            7.330383
+          ],
+          [
+            81.761,
+            176.754,
+            8.028515
+          ],
+          [
+            33.184,
+            148.709,
+            8.726646
+          ]
+        ],
+        [
+          [
+            15.576,
+            80.003,
+            3.337942
+          ],
+          [
+            44.674,
+            32.049,
+            4.036074
+          ],
+          [
+            97.789,
+            14.02,
+            4.734206
+          ],
+          [
+            150.066,
+            34.349,
+            5.432337
+          ],
+          [
+            177.046,
+            83.526,
+            6.130469
+          ],
+          [
+            166.103,
+            138.539,
+            6.828601
+          ],
+          [
+            122.358,
+            173.648,
+            7.526732
+          ],
+          [
+            66.28,
+            172.425,
+            8.224864
+          ],
+          [
+            24.108,
+            135.441,
+            8.922996
+          ]
+        ],
+        [
+          [
+            20.242,
+            64.62,
+            3.534292
+          ],
+          [
+            58.137,
+            23.265,
+            4.232423
+          ],
+          [
+            113.748,
+            15.944,
+            4.930555
+          ],
+          [
+            161.055,
+            46.082,
+            5.628687
+          ],
+          [
+            177.922,
+            99.577,
+            6.326819
+          ],
+          [
+            156.457,
+            151.398,
+            7.02495
+          ],
+          [
+            106.703,
+            177.298,
+            7.723082
+          ],
+          [
+            51.941,
+            165.158,
+            8.421214
+          ],
+          [
+            17.795,
+            120.658,
+            9.119345
+          ]
+        ],
+        [
+          [
+            27.819,
+            50.443,
+            3.730641
+          ],
+          [
+            73.054,
+            17.276,
+            4.428773
+          ],
+          [
+            129.025,
+            20.944,
+            5.126905
+          ],
+          [
+            169.544,
+            59.732,
+            5.825036
+          ],
+          [
+            175.65,
+            115.49,
+            6.523168
+          ],
+          [
+            144.487,
+            162.128,
+            7.2213
+          ],
+          [
+            90.637,
+            177.824,
+            7.919431
+          ],
+          [
+            39.296,
+            155.234,
+            8.617563
+          ],
+          [
+            14.487,
+            104.927,
+            9.315695
+          ]
+        ],
+        [
+          [
+            38.017,
+            38.017,
+            3.926991
+          ],
+          [
+            88.853,
+            14.312,
+            4.625123
+          ],
+          [
+            143.033,
+            28.83,
+            5.323254
+          ],
+          [
+            175.206,
+            74.777,
+            6.021386
+          ],
+          [
+            170.317,
+            130.655,
+            6.719518
+          ],
+          [
+            130.655,
+            170.317,
+            7.417649
+          ],
+          [
+            74.777,
+            175.206,
+            8.115781
+          ],
+          [
+            28.83,
+            143.033,
+            8.813913
+          ],
+          [
+            14.312,
+            88.853,
+            9.512044
+          ]
+        ],
+        [
+          [
+            50.443,
+            27.819,
+            4.12334
+          ],
+          [
+            104.927,
+            14.487,
+            4.821472
+          ],
+          [
+            155.234,
+            39.296,
+            5.519604
+          ],
+          [
+            177.824,
+            90.637,
+            6.217735
+          ],
+          [
+            162.128,
+            144.487,
+            6.915867
+          ],
+          [
+            115.49,
+            175.65,
+            7.613999
+          ],
+          [
+            59.732,
+            169.544,
+            8.312131
+          ],
+          [
+            20.944,
+            129.025,
+            9.010262
+          ],
+          [
+            17.276,
+            73.054,
+            9.708394
+          ]
+        ],
+        [
+          [
+            64.62,
+            20.242,
+            4.31969
+          ],
+          [
+            120.658,
+            17.795,
+            5.017822
+          ],
+          [
+            165.158,
+            51.941,
+            5.715953
+          ],
+          [
+            177.298,
+            106.703,
+            6.414085
+          ],
+          [
+            151.398,
+            156.457,
+            7.112217
+          ],
+          [
+            99.577,
+            177.922,
+            7.810348
+          ],
+          [
+            46.082,
+            161.055,
+            8.50848
+          ],
+          [
+            15.944,
+            113.748,
+            9.206612
+          ],
+          [
+            23.265,
+            58.137,
+            9.904744
+          ]
+        ],
+        [
+          [
+            80.003,
+            15.576,
+            4.516039
+          ],
+          [
+            135.441,
+            24.108,
+            5.214171
+          ],
+          [
+            172.425,
+            66.28,
+            5.912303
+          ],
+          [
+            173.648,
+            122.358,
+            6.610435
+          ],
+          [
+            138.539,
+            166.103,
+            7.308566
+          ],
+          [
+            83.526,
+            177.046,
+            8.006698
+          ],
+          [
+            34.349,
+            150.066,
+            8.70483
+          ],
+          [
+            14.02,
+            97.789,
+            9.402961
+          ],
+          [
+            32.049,
+            44.674,
+            10.101093
+          ]
+        ]
+      ],
+      "source": {
+        "path": "_BUILD_SOURCE/stage2_amplify_1031/disc_source.png",
+        "sha256": "1ddfc950ecad9df4983e3f8443781194d556d0112d80d5f3979a43890773ebc9",
+        "sourceCell": [
+          320,
+          320
+        ],
+        "frames": 16,
+        "componentRects": [
+          [
+            0,
+            0,
+            314,
+            298
+          ],
+          [
+            316,
+            0,
+            314,
+            298
+          ],
+          [
+            631,
+            0,
+            311,
+            300
+          ],
+          [
+            945,
+            0,
+            309,
+            301
+          ],
+          [
+            10,
+            319,
+            304,
+            296
+          ],
+          [
+            323,
+            321,
+            306,
+            296
+          ],
+          [
+            633,
+            324,
+            308,
+            295
+          ],
+          [
+            943,
+            322,
+            307,
+            297
+          ],
+          [
+            1,
+            632,
+            310,
+            300
+          ],
+          [
+            316,
+            629,
+            310,
+            302
+          ],
+          [
+            629,
+            628,
+            309,
+            300
+          ],
+          [
+            941,
+            628,
+            309,
+            303
+          ],
+          [
+            0,
+            937,
+            311,
+            303
+          ],
+          [
+            315,
+            936,
+            314,
+            290
+          ],
+          [
+            629,
+            936,
+            312,
+            287
+          ],
+          [
+            944,
+            937,
+            310,
+            287
+          ]
+        ]
+      }
+    }
+  },
+  "banks": {
+    "interceptor_heading": {
+      "key": "v31_interceptor_heading",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "2c38989dd117bfa72284afadb5f7d52ef223863a8d347e51cb7744b8ef6ccdc1"
+    },
+    "interceptor_idle": {
+      "key": "v31_interceptor_idle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "4f1492ca96e752e2d540e832d6c53b3d141d1e378a008189a72276ce082e15e4"
+    },
+    "interceptor_attack": {
+      "key": "v31_interceptor_attack",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "bb5794ff03f8adb1b1a3157728de44d09bd399c646edc25c8b485dfef6fc2cdd"
+    },
+    "interceptor_drift": {
+      "key": "v31_interceptor_drift",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 2,
+      "sha256": "7a6194017b7acbd8b696562571315be79efda765a00983740cdd80242c9df739"
+    },
+    "interceptor_roll": {
+      "key": "v31_interceptor_roll",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "b4f59bc512a61cbed758ffb783af3af99790d8c107bd69b21f2811c6517a6f0e"
+    },
+    "interceptor_somer": {
+      "key": "v31_interceptor_somer",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "445cd53006cbc98b16dbbaab3ac08e18282a8aaf54847e2b13c179fc3c192875"
+    },
+    "interceptor_charge": {
+      "key": "v31_interceptor_charge",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/interceptor_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "b25b9a614a90421e5599ae1bc779e4e12d6a1a25eb29bc2c3dc89089bf407c52"
+    },
+    "skimmer_heading": {
+      "key": "v31_skimmer_heading",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "61dc463354930bdf2133e07380950f32437837af7b94d09eb1b28da3f0111bf1"
+    },
+    "skimmer_idle": {
+      "key": "v31_skimmer_idle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "71bc6a59ddab3f7eff87ec84f1b2225206ca45dca436f16dcc0f239a6d681587"
+    },
+    "skimmer_attack": {
+      "key": "v31_skimmer_attack",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "4ff638bb58d9e98b7f5744357612a825e32c3df4e6cddadd7a1ed82ba2071c1d"
+    },
+    "skimmer_drift": {
+      "key": "v31_skimmer_drift",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 2,
+      "sha256": "c5978846808a3484afb4c75df2b2a891e2a5e8911faf216d8fa7e7099094e6f2"
+    },
+    "skimmer_roll": {
+      "key": "v31_skimmer_roll",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "082a6043e4388ce9c35ed43b63bd63465dff47b64cf7abdd529496f3c769a384"
+    },
+    "skimmer_somer": {
+      "key": "v31_skimmer_somer",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "5df163ba7777a2a9431d37e8b4aaea8987ac6dfdbee430271beb6db92013afcc"
+    },
+    "skimmer_charge": {
+      "key": "v31_skimmer_charge",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/skimmer_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "43e9826ca476d68c3395e6cd04ec92f693bff5dd2343ab2d550c1dd562eede91"
+    },
+    "wasp_heading": {
+      "key": "v31_wasp_heading",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "1bb3c130a3c2fe9002df7375a66f99b08594d0a16de25e9b2b2c27263a9b0a9d"
+    },
+    "wasp_idle": {
+      "key": "v31_wasp_idle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "6144084acf9751e4143dfcd2c7cad5d9ac2bab5ea4449d7f32704d2d903373a2"
+    },
+    "wasp_attack": {
+      "key": "v31_wasp_attack",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "b5f01c6918452419885a097f5dc47b35514a3b11833dd5cd9388defb69007bdd"
+    },
+    "wasp_drift": {
+      "key": "v31_wasp_drift",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 2,
+      "sha256": "1f452743c1912660a75a3704c31d1e5233b938cf7b0b7addef00b07a5f2e2329"
+    },
+    "wasp_roll": {
+      "key": "v31_wasp_roll",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "76b4d0c3c524cac8d307a99a4a076abbaa6e5672232c2e0af362bf85721f9363"
+    },
+    "wasp_somer": {
+      "key": "v31_wasp_somer",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "b8422eaacbacf6b53f2300f13df3f9566a8d91e557d3d1004cb83ec7bf22d9cb"
+    },
+    "wasp_charge": {
+      "key": "v31_wasp_charge",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/wasp_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "caca06661f348e74417c0f8f64be8159b7aded030f6c68001ad91b600041b17d"
+    },
+    "thunder_heading": {
+      "key": "v31_thunder_heading",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "57a5e3aa50e6971a6c4c30de6715339dc9b167112f29e3765b400554dde221f8"
+    },
+    "thunder_idle": {
+      "key": "v31_thunder_idle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "ef5d50e5ebcdb09b31a5c383d6b8130ad0141d119aa4faf42880ca587cebb7f8"
+    },
+    "thunder_attack": {
+      "key": "v31_thunder_attack",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "20ff2274eec3e5eaf4ca43c3947906abc64bef96f826e8f98bab3556e717e782"
+    },
+    "thunder_drift": {
+      "key": "v31_thunder_drift",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 2,
+      "sha256": "90ab05ffb4e21c15f39b5895f035573ac9e5ee591fa79b8092127dcf08e0c304"
+    },
+    "thunder_roll": {
+      "key": "v31_thunder_roll",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "d636e3d4ca664aa9f6afea730eee75ef34fb8b012e9dc0b01fe14663c9736d42"
+    },
+    "thunder_somer": {
+      "key": "v31_thunder_somer",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "91627d05248901cb836b337c4cd6858bc74a17ea7b9d643d2bbdb7a53df87a4e"
+    },
+    "thunder_charge": {
+      "key": "v31_thunder_charge",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "536638566827ee5fb3fa632c8dd4c209ccf4bd33ba9a74f74730d26c661d4334"
+    },
+    "crucible_heading": {
+      "key": "v31_crucible_heading",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "4f4c8843fe4090e841b7313a262bac9cb99c68de73e8ff09fba8faf26f8afcab"
+    },
+    "crucible_idle": {
+      "key": "v31_crucible_idle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "053bf93ba93788a0c89f0704bd17548bac6c437e9b3fe7103e22773e36961237"
+    },
+    "crucible_attack": {
+      "key": "v31_crucible_attack",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "87e4264d64efb5d570c121eadc1b1a5689680375a1aecc9ed1eeed3c73d25117"
+    },
+    "crucible_drift": {
+      "key": "v31_crucible_drift",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 2,
+      "sha256": "ba47dcebbf6cf25b5d9b38de8ab6bd8e4a66e84202b842f1a4aec5ea21a80534"
+    },
+    "crucible_roll": {
+      "key": "v31_crucible_roll",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "ae8bdc8ceaad9ce667e8cf8ad5788670f523ca82b9243ea1ce97b8e1c5588b66"
+    },
+    "crucible_somer": {
+      "key": "v31_crucible_somer",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "613242d7423777962fd909df31ff40b2cf87e1df692c649b4fd02928026fd432"
+    },
+    "crucible_charge": {
+      "key": "v31_crucible_charge",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/crucible_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "5e2166b435c22d1b4d0c7601408b134e7307da3a0e837ffc32d31dbd676b1ff0"
+    },
+    "minelayer_heading": {
+      "key": "v31_minelayer_heading",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "a1d1e00442218da61cd94e5aa3cd353340c9db74c85b00e29c32a394902b203c"
+    },
+    "minelayer_idle": {
+      "key": "v31_minelayer_idle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "bd9ce044a05238a192b9fa24b929f6d743035dc3a7761cd9e59eeed3cb61a1fd"
+    },
+    "minelayer_attack": {
+      "key": "v31_minelayer_attack",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "cb3101c471a943fd38500c583098f9b2f347a8f54ff8eba61627ea939c4d23d4"
+    },
+    "minelayer_drift": {
+      "key": "v31_minelayer_drift",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 2,
+      "sha256": "6550028d33844894ce3a412ba0b9782a405d8bb0f57dd9ca7b6f46f2c51c3b2a"
+    },
+    "minelayer_roll": {
+      "key": "v31_minelayer_roll",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "3764ba4c0e9c538eda8f15ddef8818653a27285d28f5b4ce5f7eb18697c14e53"
+    },
+    "minelayer_somer": {
+      "key": "v31_minelayer_somer",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "19064529c1fee094c042d4e9b91aafa9cabedff427a217a4dc7af373d00da9f3"
+    },
+    "minelayer_charge": {
+      "key": "v31_minelayer_charge",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/minelayer_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "5cffab17cabbec16decc078de6b79bdb1a80a84c71d14ae9b819de85e17e193a"
+    },
+    "carrier_heading": {
+      "key": "v31_carrier_heading",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "0c2e2aa502ab8d4d51cbaad06e6be87e3454b6dc5eb30d18534f627524b62e7e"
+    },
+    "carrier_idle": {
+      "key": "v31_carrier_idle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "83ebcda980c6c94996bf5d148ec045e3d64dd6f8e8b547000faee677b3e99613"
+    },
+    "carrier_attack": {
+      "key": "v31_carrier_attack",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "e7bc005c04fc28dcf23c6530a1fdc48c027893f77583be5001fe6f0340926b28"
+    },
+    "carrier_drift": {
+      "key": "v31_carrier_drift",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 2,
+      "sha256": "4acdf630cb2630244249f0fdbe433bb898fe9782b2bfd21c68352e2d06cd8a03"
+    },
+    "carrier_roll": {
+      "key": "v31_carrier_roll",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "8c7504e20b62ef0f0e8ae49509534c527cb6cd5296336c9cf5c709c78bc931ad"
+    },
+    "carrier_somer": {
+      "key": "v31_carrier_somer",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "63ebc960b60f1b1677f7f2d957219f99ec0409ec0a78692defd597d9f9c0d436"
+    },
+    "carrier_charge": {
+      "key": "v31_carrier_charge",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/carrier_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "8b44715d85137e8aa79a9d9e9c9ac751df5a35215b16cf25a2f3d3efb8cf52a0"
+    },
+    "elite_heading": {
+      "key": "v31_elite_heading",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_heading.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "b9922d8700b48d29ed9b3127b4ee86afb2f78765e02cc77124f98cfd2801f7ec"
+    },
+    "elite_idle": {
+      "key": "v31_elite_idle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_idle.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "f65190992f7c2feee3d67d48e3c75c1a4671863fbd2bb6460335cac73ea078d4"
+    },
+    "elite_attack": {
+      "key": "v31_elite_attack",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_attack.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "bdfd769f344b65acad33aabcc8f53dd046fd010745438f6e6cd105f52dedc477"
+    },
+    "elite_drift": {
+      "key": "v31_elite_drift",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_drift.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 2,
+      "sha256": "a28730b4d9fdd1a98750618da8aeaa2615c89100c43c305c9f348ce29c30d1d5"
+    },
+    "elite_roll": {
+      "key": "v31_elite_roll",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_roll.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "ed7d112969be4fc04cb2c97c61a047ed69a43a946ea11e3d9d237043cd3b9b24"
+    },
+    "elite_somer": {
+      "key": "v31_elite_somer",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_somer.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "134f2dd12549919d6d7894df82b93c6fa47cabb2951ae37e6052cc8f18aa3304"
+    },
+    "elite_charge": {
+      "key": "v31_elite_charge",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/elite_charge.webp",
+      "cell": 160,
+      "pivot": [
+        80,
+        80
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "6cff4f71bbe01706c8db475512a288808f95073acd7c23b316e44561ec38dccb"
+    },
+    "ash_idle": {
+      "key": "v31_ash_idle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_idle.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "584b4ba79e3c48a7baa32161c4f663dcb4262ac4fbf98e11cb1cb6ccc88841fe"
+    },
+    "ash_attack": {
+      "key": "v31_ash_attack",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_attack.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "dirRows": 1,
+      "frames": 9,
+      "sha256": "432049f2790284c1514772c32300386351d393f1827d2433300a04dbaff80d55"
+    },
+    "ash_drift": {
+      "key": "v31_ash_drift",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_drift.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "664cdb928a78939a7127875fba4735d46d38532e9134fafdf48074090cddee63"
+    },
+    "ash_roll": {
+      "key": "v31_ash_roll",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_roll.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "dirRows": 1,
+      "frames": 9,
+      "sha256": "46fec77c2fdde9852b1c7542bb740d6b9e90d8d49330128fe34a9bfbd779525d"
+    },
+    "ash_somer": {
+      "key": "v31_ash_somer",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_somer.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "dirRows": 1,
+      "frames": 17,
+      "sha256": "7ee408d6e9202d7660ae58e3ec72fed4db9f770501b294be8525ce01aac65ff1"
+    },
+    "ash_heading": {
+      "key": "v31_ash_heading",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/ash_heading.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "d60199da6a3583034c5af5291282a713d9d0063aaf7b307ad7f69b3e6f27edfb"
+    },
+    "basalt_idle": {
+      "key": "v31_basalt_idle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_idle.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "7db98ea712af7ff8f9ab29de411c1c6d291ceb65b1549ae29d716dbabfd5301c"
+    },
+    "basalt_attack": {
+      "key": "v31_basalt_attack",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_attack.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "dirRows": 1,
+      "frames": 9,
+      "sha256": "39d1d92e806ad128fc5959427dd74d2f895bda4c7c330b77c753e82e5038133a"
+    },
+    "basalt_drift": {
+      "key": "v31_basalt_drift",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_drift.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "dirRows": 1,
+      "frames": 5,
+      "sha256": "27cb0bf19ceca164f7c4c1d37b649a19ef4b8965c9c1927c02caa115e10e67dc"
+    },
+    "basalt_roll": {
+      "key": "v31_basalt_roll",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_roll.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "dirRows": 1,
+      "frames": 17,
+      "sha256": "7448fc4a419142904721600b20c129d22673423c81508922d0b8e26138e0b6b9"
+    },
+    "basalt_somer": {
+      "key": "v31_basalt_somer",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_somer.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 8,
+      "cols": 8,
+      "dirRows": 1,
+      "frames": 9,
+      "sha256": "846d790a44bbfde4c1216456c310a8e5fef10de0b1f90945976b96bf21ff94de"
+    },
+    "basalt_heading": {
+      "key": "v31_basalt_heading",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/basalt_heading.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "8d1645c0ff6599bd360e6321d1c32c89b05e04f3a05e0ffd857c04fa73f39cf2"
+    },
+    "maw_sequence": {
+      "key": "v31_maw_sequence",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/maw_sequence.webp",
+      "cell": 192,
+      "pivot": [
+        96,
+        96
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 16,
+      "sha256": "8a7eb7ea16cb8a2ceb89318207ba7a960c37e13302c5a7f1695e46f63c3e25fa"
+    },
+    "pod_sequence": {
+      "key": "v31_pod_sequence",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/pod_sequence.webp",
+      "cell": 192,
+      "pivot": [
+        96,
+        96
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 16,
+      "sha256": "80f5d4e42210331d0411b3e7eff0927d6481e0406e48fffd162c49eacffff6bf"
+    },
+    "snake_sequence": {
+      "key": "v31_snake_sequence",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/snake_sequence.webp",
+      "cell": 192,
+      "pivot": [
+        96,
+        96
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 16,
+      "sha256": "5474f218cc99c7014ab4c4cfdf89c9773704591474c3131f3c612c7155415095"
+    },
+    "disc_spin": {
+      "key": "v31_disc_spin",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/disc_spin.webp",
+      "cell": 192,
+      "pivot": [
+        96,
+        96
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 32,
+      "sha256": "fc013e1d65e67d1e111030e00c5d4774e048b53cf82de9461dc9f3dc516bd50c"
+    },
+    "slug": {
+      "key": "v31_slug",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/slug.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "8d183b609297301cbcba8ba02ba5eed0b77394037f0381b04b13bb699e6fd591"
+    },
+    "thunder_slug": {
+      "key": "v31_thunder_slug",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_slug.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "70f22c9d2d1d698d1d6f9b31901a54302b96bdb93f775ca277b5611273f31d4f"
+    },
+    "thunder_missile": {
+      "key": "v31_thunder_missile",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/thunder_missile.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "dd94637af40e8b1d36650f002a8b857fa269c3fb02c1760c1e26078c4c61f903"
+    },
+    "fire_missile": {
+      "key": "v31_fire_missile",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/fire_missile.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "bfe1f4ef5262700aac654901cef85e3d9fb801f0a1592bf405f30931dc06b31d"
+    },
+    "orb": {
+      "key": "v31_orb",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/orb.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "88b8303d5a9a39634987375f7a6b233fd55a7627017e10a94c13a8c3cb65d6a7"
+    },
+    "mine": {
+      "key": "v31_mine",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/mine.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 1,
+      "cols": 1,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "ee213d34a2b193390746a9b4471351a234947050c76d0156f95302668cb57c82"
+    },
+    "laser": {
+      "key": "v31_laser",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/laser.webp",
+      "cell": 64,
+      "pivot": [
+        32,
+        32
+      ],
+      "dirs": 288,
+      "cols": 144,
+      "dirRows": 2,
+      "frames": 4,
+      "sha256": "c637cc14f24d02a906f91f0750bf00b00f0a41f4b358fb11fd386a4ae814b966"
+    },
+    "muzzle": {
+      "key": "v31_muzzle",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/muzzle.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "a8eec9dbdd7c8d008e282b245655f4cb68b312ceceddfc91340097fcf86bc9dc"
+    },
+    "thruster": {
+      "key": "v31_thruster",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/thruster.webp",
+      "cell": 128,
+      "pivot": [
+        64,
+        64
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "8c487833be43d7a886647206eae351f0eace4d649421996c24abbbcc12154073"
+    },
+    "flamethrower": {
+      "key": "v31_flamethrower",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/flamethrower.webp",
+      "cell": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "dirs": 32,
+      "cols": 32,
+      "dirRows": 1,
+      "frames": 4,
+      "sha256": "a5da0178421537802d3bb77cf10f81f889765c3b6c6a1e8396ff30a63963d309"
+    },
+    "turret_laser": {
+      "key": "v31_turret_laser",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/turret_laser.webp",
+      "cell": 192,
+      "pivot": [
+        96,
+        96
+      ],
+      "dirs": 64,
+      "cols": 64,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "42d51ead2faa5c6d818b9dfe9bab70bf65b5b4ef82c267f5ae6296afcbd33b9e"
+    },
+    "turret_mg": {
+      "key": "v31_turret_mg",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/turret_mg.webp",
+      "cell": 192,
+      "pivot": [
+        96,
+        96
+      ],
+      "dirs": 64,
+      "cols": 64,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "95a295dc735abdb24250565c4db8b7445c0bffe24b4934767fd6e89921a68f62"
+    },
+    "turret_missile": {
+      "key": "v31_turret_missile",
+      "path": "assets/game/levels/stage_02/enemies/amplify_1031/turret_missile.webp",
+      "cell": 192,
+      "pivot": [
+        96,
+        96
+      ],
+      "dirs": 64,
+      "cols": 64,
+      "dirRows": 1,
+      "frames": 1,
+      "sha256": "7088be1c467cdce83e67ebfc9d6ffd6e5d81e177463abc12634ecf775c73a3f8"
+    }
+  },
+  "sources": {
+    "interceptor": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/interceptor_source.png",
+      "sha256": "ca2ec06060d2ab49d54dcb7c6b818d1baad89e449c275ac349d9dc98d4950b71",
+      "sourceCell": [
+        248,
+        248
+      ],
+      "frames": 24,
+      "componentRects": [
+        [
+          27,
+          13,
+          235,
+          222
+        ],
+        [
+          279,
+          13,
+          217,
+          219
+        ],
+        [
+          529,
+          14,
+          214,
+          218
+        ],
+        [
+          794,
+          13,
+          214,
+          219
+        ],
+        [
+          25,
+          244,
+          238,
+          222
+        ],
+        [
+          284,
+          252,
+          215,
+          197
+        ],
+        [
+          518,
+          249,
+          242,
+          217
+        ],
+        [
+          791,
+          252,
+          218,
+          214
+        ],
+        [
+          26,
+          476,
+          237,
+          222
+        ],
+        [
+          272,
+          481,
+          228,
+          219
+        ],
+        [
+          521,
+          485,
+          239,
+          211
+        ],
+        [
+          781,
+          481,
+          227,
+          218
+        ],
+        [
+          27,
+          721,
+          235,
+          221
+        ],
+        [
+          352,
+          718,
+          79,
+          231
+        ],
+        [
+          518,
+          709,
+          236,
+          235
+        ],
+        [
+          849,
+          718,
+          79,
+          231
+        ],
+        [
+          26,
+          967,
+          237,
+          225
+        ],
+        [
+          359,
+          961,
+          93,
+          230
+        ],
+        [
+          517,
+          962,
+          238,
+          230
+        ],
+        [
+          828,
+          962,
+          93,
+          230
+        ],
+        [
+          25,
+          1228,
+          236,
+          226
+        ],
+        [
+          271,
+          1228,
+          237,
+          227
+        ],
+        [
+          517,
+          1228,
+          238,
+          227
+        ],
+        [
+          765,
+          1228,
+          237,
+          227
+        ]
+      ]
+    },
+    "skimmer": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/skimmer_source.png",
+      "sha256": "96516c129d84b2b72a1a658cb3eae76ccf98d16a15ee12221e5f354c35a0c9a3",
+      "sourceCell": [
+        284,
+        284
+      ],
+      "frames": 24,
+      "componentRects": [
+        [
+          21,
+          7,
+          250,
+          229
+        ],
+        [
+          274,
+          7,
+          241,
+          228
+        ],
+        [
+          523,
+          11,
+          235,
+          210
+        ],
+        [
+          783,
+          11,
+          229,
+          210
+        ],
+        [
+          16,
+          248,
+          235,
+          244
+        ],
+        [
+          272,
+          256,
+          233,
+          226
+        ],
+        [
+          521,
+          248,
+          245,
+          238
+        ],
+        [
+          787,
+          260,
+          218,
+          232
+        ],
+        [
+          23,
+          502,
+          216,
+          237
+        ],
+        [
+          272,
+          495,
+          235,
+          214
+        ],
+        [
+          526,
+          486,
+          243,
+          241
+        ],
+        [
+          792,
+          503,
+          220,
+          206
+        ],
+        [
+          18,
+          756,
+          255,
+          229
+        ],
+        [
+          317,
+          724,
+          149,
+          277
+        ],
+        [
+          515,
+          729,
+          252,
+          251
+        ],
+        [
+          816,
+          723,
+          149,
+          277
+        ],
+        [
+          16,
+          1026,
+          254,
+          210
+        ],
+        [
+          271,
+          1022,
+          227,
+          214
+        ],
+        [
+          512,
+          995,
+          258,
+          238
+        ],
+        [
+          784,
+          1021,
+          227,
+          215
+        ],
+        [
+          13,
+          1246,
+          256,
+          241
+        ],
+        [
+          269,
+          1246,
+          244,
+          241
+        ],
+        [
+          513,
+          1243,
+          247,
+          247
+        ],
+        [
+          760,
+          1243,
+          251,
+          254
+        ]
+      ]
+    },
+    "wasp": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/wasp_source.png",
+      "sha256": "9261bf166ac11f595d80f1ce25de2d6d3f85eec5379f192533efbf4fe86d30a1",
+      "sourceCell": [
+        266,
+        266
+      ],
+      "frames": 24,
+      "componentRects": [
+        [
+          19,
+          15,
+          246,
+          230
+        ],
+        [
+          273,
+          15,
+          241,
+          230
+        ],
+        [
+          542,
+          11,
+          219,
+          226
+        ],
+        [
+          777,
+          11,
+          221,
+          226
+        ],
+        [
+          18,
+          262,
+          239,
+          209
+        ],
+        [
+          291,
+          270,
+          213,
+          227
+        ],
+        [
+          512,
+          274,
+          230,
+          215
+        ],
+        [
+          774,
+          270,
+          208,
+          224
+        ],
+        [
+          22,
+          501,
+          236,
+          243
+        ],
+        [
+          289,
+          526,
+          220,
+          219
+        ],
+        [
+          530,
+          529,
+          239,
+          211
+        ],
+        [
+          770,
+          526,
+          222,
+          219
+        ],
+        [
+          19,
+          771,
+          244,
+          225
+        ],
+        [
+          343,
+          747,
+          117,
+          257
+        ],
+        [
+          509,
+          755,
+          258,
+          236
+        ],
+        [
+          814,
+          748,
+          117,
+          260
+        ],
+        [
+          18,
+          1026,
+          246,
+          225
+        ],
+        [
+          317,
+          1014,
+          196,
+          214
+        ],
+        [
+          516,
+          1014,
+          239,
+          237
+        ],
+        [
+          753,
+          1018,
+          226,
+          216
+        ],
+        [
+          18,
+          1267,
+          245,
+          228
+        ],
+        [
+          268,
+          1267,
+          245,
+          228
+        ],
+        [
+          513,
+          1266,
+          245,
+          230
+        ],
+        [
+          761,
+          1265,
+          246,
+          230
+        ]
+      ]
+    },
+    "thunder": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/thunder_source.png",
+      "sha256": "4297f6bca4885430126ad2f7319d40e31e9a137ddb3d0521cf2ae6fd86623ce7",
+      "sourceCell": [
+        256,
+        256
+      ],
+      "frames": 24
+    },
+    "crucible": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/crucible_source.png",
+      "sha256": "a12ac274f3fce9b15ed8dda80b70cb08b56b99784c4eb545d4e59037e916b6c6",
+      "sourceCell": [
+        296,
+        296
+      ],
+      "frames": 24,
+      "componentRects": [
+        [
+          12,
+          28,
+          255,
+          184
+        ],
+        [
+          269,
+          27,
+          257,
+          185
+        ],
+        [
+          531,
+          19,
+          238,
+          193
+        ],
+        [
+          780,
+          25,
+          238,
+          177
+        ],
+        [
+          13,
+          236,
+          245,
+          238
+        ],
+        [
+          272,
+          238,
+          222,
+          218
+        ],
+        [
+          520,
+          278,
+          240,
+          142
+        ],
+        [
+          775,
+          259,
+          229,
+          185
+        ],
+        [
+          9,
+          490,
+          258,
+          187
+        ],
+        [
+          272,
+          481,
+          223,
+          206
+        ],
+        [
+          508,
+          516,
+          240,
+          141
+        ],
+        [
+          776,
+          488,
+          234,
+          189
+        ],
+        [
+          9,
+          739,
+          260,
+          191
+        ],
+        [
+          331,
+          689,
+          101,
+          249
+        ],
+        [
+          491,
+          724,
+          284,
+          199
+        ],
+        [
+          841,
+          689,
+          100,
+          249
+        ],
+        [
+          9,
+          1015,
+          258,
+          179
+        ],
+        [
+          310,
+          947,
+          161,
+          274
+        ],
+        [
+          489,
+          976,
+          289,
+          218
+        ],
+        [
+          794,
+          959,
+          223,
+          235
+        ],
+        [
+          10,
+          1260,
+          250,
+          195
+        ],
+        [
+          265,
+          1260,
+          245,
+          195
+        ],
+        [
+          512,
+          1259,
+          247,
+          196
+        ],
+        [
+          762,
+          1258,
+          256,
+          197
+        ]
+      ]
+    },
+    "minelayer": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/minelayer_source.png",
+      "sha256": "77dcec2364de4180feb458eaab7b995975c5aef99558b642393d2ce019f4b508",
+      "sourceCell": [
+        238,
+        238
+      ],
+      "frames": 24,
+      "componentRects": [
+        [
+          28,
+          30,
+          223,
+          181
+        ],
+        [
+          279,
+          31,
+          219,
+          185
+        ],
+        [
+          518,
+          18,
+          227,
+          194
+        ],
+        [
+          774,
+          17,
+          225,
+          197
+        ],
+        [
+          28,
+          243,
+          222,
+          211
+        ],
+        [
+          303,
+          251,
+          190,
+          198
+        ],
+        [
+          521,
+          253,
+          225,
+          205
+        ],
+        [
+          789,
+          251,
+          187,
+          199
+        ],
+        [
+          28,
+          500,
+          222,
+          206
+        ],
+        [
+          273,
+          490,
+          207,
+          202
+        ],
+        [
+          515,
+          499,
+          232,
+          208
+        ],
+        [
+          796,
+          490,
+          207,
+          202
+        ],
+        [
+          28,
+          768,
+          222,
+          164
+        ],
+        [
+          313,
+          736,
+          138,
+          228
+        ],
+        [
+          522,
+          758,
+          225,
+          181
+        ],
+        [
+          821,
+          736,
+          138,
+          228
+        ],
+        [
+          28,
+          1026,
+          222,
+          160
+        ],
+        [
+          289,
+          999,
+          197,
+          211
+        ],
+        [
+          535,
+          988,
+          198,
+          205
+        ],
+        [
+          771,
+          988,
+          218,
+          205
+        ],
+        [
+          28,
+          1248,
+          223,
+          179
+        ],
+        [
+          278,
+          1251,
+          220,
+          186
+        ],
+        [
+          524,
+          1246,
+          222,
+          205
+        ],
+        [
+          770,
+          1245,
+          230,
+          215
+        ]
+      ]
+    },
+    "carrier": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/carrier_source.png",
+      "sha256": "3dab31ea116c593decb44ce0b78f0b013427094ed24c94a5e866b4d161e03d7b",
+      "sourceCell": [
+        264,
+        264
+      ],
+      "frames": 24,
+      "componentRects": [
+        [
+          5,
+          31,
+          247,
+          177
+        ],
+        [
+          261,
+          31,
+          247,
+          177
+        ],
+        [
+          524,
+          35,
+          224,
+          171
+        ],
+        [
+          788,
+          35,
+          224,
+          171
+        ],
+        [
+          5,
+          249,
+          247,
+          225
+        ],
+        [
+          265,
+          252,
+          234,
+          209
+        ],
+        [
+          522,
+          252,
+          237,
+          208
+        ],
+        [
+          780,
+          252,
+          236,
+          209
+        ],
+        [
+          5,
+          499,
+          247,
+          213
+        ],
+        [
+          266,
+          494,
+          239,
+          216
+        ],
+        [
+          522,
+          495,
+          235,
+          215
+        ],
+        [
+          775,
+          494,
+          239,
+          216
+        ],
+        [
+          11,
+          756,
+          234,
+          219
+        ],
+        [
+          321,
+          727,
+          115,
+          258
+        ],
+        [
+          512,
+          758,
+          257,
+          200
+        ],
+        [
+          844,
+          727,
+          115,
+          258
+        ],
+        [
+          5,
+          1055,
+          247,
+          177
+        ],
+        [
+          324,
+          994,
+          123,
+          254
+        ],
+        [
+          514,
+          1057,
+          253,
+          151
+        ],
+        [
+          833,
+          994,
+          123,
+          254
+        ],
+        [
+          5,
+          1284,
+          247,
+          178
+        ],
+        [
+          261,
+          1284,
+          247,
+          178
+        ],
+        [
+          516,
+          1284,
+          248,
+          178
+        ],
+        [
+          772,
+          1284,
+          248,
+          179
+        ]
+      ]
+    },
+    "elite": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/elite_source.png",
+      "sha256": "3d571657e4a0c48d1a18498b49776df80245b6e37f916dea62b7f45a91b53f98",
+      "sourceCell": [
+        262,
+        262
+      ],
+      "frames": 24,
+      "componentRects": [
+        [
+          7,
+          6,
+          243,
+          204
+        ],
+        [
+          262,
+          6,
+          243,
+          204
+        ],
+        [
+          522,
+          14,
+          230,
+          201
+        ],
+        [
+          784,
+          14,
+          230,
+          201
+        ],
+        [
+          7,
+          228,
+          243,
+          216
+        ],
+        [
+          262,
+          234,
+          223,
+          188
+        ],
+        [
+          513,
+          277,
+          254,
+          133
+        ],
+        [
+          788,
+          234,
+          225,
+          188
+        ],
+        [
+          7,
+          462,
+          243,
+          215
+        ],
+        [
+          266,
+          458,
+          235,
+          204
+        ],
+        [
+          510,
+          500,
+          256,
+          135
+        ],
+        [
+          779,
+          458,
+          236,
+          204
+        ],
+        [
+          7,
+          689,
+          243,
+          203
+        ],
+        [
+          295,
+          670,
+          124,
+          235
+        ],
+        [
+          517,
+          685,
+          246,
+          217
+        ],
+        [
+          859,
+          670,
+          126,
+          235
+        ],
+        [
+          6,
+          951,
+          244,
+          177
+        ],
+        [
+          317,
+          912,
+          117,
+          248
+        ],
+        [
+          513,
+          921,
+          254,
+          226
+        ],
+        [
+          851,
+          912,
+          119,
+          248
+        ],
+        [
+          6,
+          1181,
+          244,
+          252
+        ],
+        [
+          262,
+          1181,
+          244,
+          252
+        ],
+        [
+          518,
+          1181,
+          244,
+          256
+        ],
+        [
+          774,
+          1181,
+          244,
+          252
+        ]
+      ]
+    },
+    "maw": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/maw_source.png",
+      "sha256": "8dfb8ea88de904b7edb570e252477947cc8d9bcb0d166857028703f6b60f4416",
+      "sourceCell": [
+        314,
+        314
+      ],
+      "frames": 16,
+      "componentRects": [
+        [
+          4,
+          36,
+          308,
+          257
+        ],
+        [
+          318,
+          36,
+          307,
+          257
+        ],
+        [
+          631,
+          36,
+          308,
+          256
+        ],
+        [
+          944,
+          36,
+          308,
+          257
+        ],
+        [
+          4,
+          350,
+          308,
+          256
+        ],
+        [
+          318,
+          350,
+          307,
+          256
+        ],
+        [
+          631,
+          350,
+          308,
+          256
+        ],
+        [
+          944,
+          350,
+          308,
+          256
+        ],
+        [
+          4,
+          663,
+          308,
+          256
+        ],
+        [
+          318,
+          663,
+          308,
+          257
+        ],
+        [
+          631,
+          658,
+          308,
+          261
+        ],
+        [
+          945,
+          650,
+          307,
+          270
+        ],
+        [
+          4,
+          974,
+          308,
+          259
+        ],
+        [
+          318,
+          976,
+          307,
+          257
+        ],
+        [
+          631,
+          976,
+          308,
+          257
+        ],
+        [
+          944,
+          976,
+          308,
+          257
+        ]
+      ]
+    },
+    "pod": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/pod_source.png",
+      "sha256": "3b027051ffcb9096dc0ce8014a4043b743f6f5dd548a9151f4d89d4b8e5b08ac",
+      "sourceCell": [
+        314,
+        314
+      ],
+      "frames": 16
+    },
+    "snake": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/snake_source.png",
+      "sha256": "c982d75152533a6131c33c91911c6703e35b39146a1a8d8d433809009e69407d",
+      "sourceCell": [
+        342,
+        342
+      ],
+      "frames": 16,
+      "componentRects": [
+        [
+          28,
+          33,
+          245,
+          248
+        ],
+        [
+          305,
+          19,
+          286,
+          268
+        ],
+        [
+          620,
+          29,
+          303,
+          251
+        ],
+        [
+          913,
+          49,
+          309,
+          227
+        ],
+        [
+          12,
+          328,
+          335,
+          211
+        ],
+        [
+          348,
+          317,
+          277,
+          246
+        ],
+        [
+          646,
+          321,
+          287,
+          248
+        ],
+        [
+          931,
+          325,
+          307,
+          235
+        ],
+        [
+          79,
+          557,
+          194,
+          327
+        ],
+        [
+          371,
+          571,
+          191,
+          324
+        ],
+        [
+          668,
+          575,
+          212,
+          319
+        ],
+        [
+          982,
+          568,
+          226,
+          331
+        ],
+        [
+          16,
+          903,
+          289,
+          336
+        ],
+        [
+          358,
+          913,
+          257,
+          308
+        ],
+        [
+          639,
+          903,
+          268,
+          316
+        ],
+        [
+          973,
+          917,
+          261,
+          302
+        ]
+      ]
+    },
+    "disc": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/disc_source.png",
+      "sha256": "1ddfc950ecad9df4983e3f8443781194d556d0112d80d5f3979a43890773ebc9",
+      "sourceCell": [
+        320,
+        320
+      ],
+      "frames": 16,
+      "componentRects": [
+        [
+          0,
+          0,
+          314,
+          298
+        ],
+        [
+          316,
+          0,
+          314,
+          298
+        ],
+        [
+          631,
+          0,
+          311,
+          300
+        ],
+        [
+          945,
+          0,
+          309,
+          301
+        ],
+        [
+          10,
+          319,
+          304,
+          296
+        ],
+        [
+          323,
+          321,
+          306,
+          296
+        ],
+        [
+          633,
+          324,
+          308,
+          295
+        ],
+        [
+          943,
+          322,
+          307,
+          297
+        ],
+        [
+          1,
+          632,
+          310,
+          300
+        ],
+        [
+          316,
+          629,
+          310,
+          302
+        ],
+        [
+          629,
+          628,
+          309,
+          300
+        ],
+        [
+          941,
+          628,
+          309,
+          303
+        ],
+        [
+          0,
+          937,
+          311,
+          303
+        ],
+        [
+          315,
+          936,
+          314,
+          290
+        ],
+        [
+          629,
+          936,
+          312,
+          287
+        ],
+        [
+          944,
+          937,
+          310,
+          287
+        ]
+      ]
+    },
+    "ordnance": {
+      "path": "_BUILD_SOURCE/stage2_amplify_1031/ordnance_source.png",
+      "sha256": "a45de43258ca59334b95153b06bb9ac9b4e9f4b48d922fc153e9f749a994baba",
+      "sourceCell": [
+        256,
+        192
+      ],
+      "frames": 32
+    }
+  }
+}

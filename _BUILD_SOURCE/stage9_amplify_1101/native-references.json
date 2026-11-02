@@ -1,0 +1,560 @@
+[
+  [
+    "9|echof",
+    "bf_water_ripple",
+    {
+      "port": [
+        33,
+        100
+      ],
+      "starboard": [
+        95,
+        100
+      ],
+      "centre": [
+        64,
+        113
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    98
+  ],
+  [
+    "9|horizon",
+    "bf_water_leviathan",
+    {
+      "port": [
+        36,
+        99
+      ],
+      "starboard": [
+        93,
+        99
+      ],
+      "centre": [
+        64,
+        111
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    102
+  ],
+  [
+    "9|s9comet",
+    "bf_water_ripple",
+    {
+      "port": [
+        33,
+        100
+      ],
+      "starboard": [
+        95,
+        100
+      ],
+      "centre": [
+        64,
+        113
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    98
+  ],
+  [
+    "9|s9gunship",
+    "bf_water_leviathan",
+    {
+      "port": [
+        36,
+        99
+      ],
+      "starboard": [
+        93,
+        99
+      ],
+      "centre": [
+        64,
+        111
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    102
+  ],
+  [
+    "9|s9interceptor",
+    "bf_water_ripple",
+    {
+      "port": [
+        33,
+        100
+      ],
+      "starboard": [
+        95,
+        100
+      ],
+      "centre": [
+        64,
+        113
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    98
+  ],
+  [
+    "9|tsplit",
+    "bf_water_manta",
+    {
+      "port": [
+        21,
+        93
+      ],
+      "starboard": [
+        106,
+        93
+      ],
+      "centre": [
+        64,
+        103
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    96
+  ],
+  [
+    "9|vmanta",
+    "bf_water_manta",
+    {
+      "port": [
+        21,
+        93
+      ],
+      "starboard": [
+        106,
+        93
+      ],
+      "centre": [
+        64,
+        103
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    96
+  ],
+  [
+    "9|wskim",
+    "bf_water_ripple",
+    {
+      "port": [
+        33,
+        100
+      ],
+      "starboard": [
+        95,
+        100
+      ],
+      "centre": [
+        64,
+        113
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    98
+  ],
+  [
+    "9|pneedle",
+    "bf_water_ripple",
+    {
+      "port": [
+        33,
+        100
+      ],
+      "starboard": [
+        95,
+        100
+      ],
+      "centre": [
+        64,
+        113
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    98
+  ],
+  [
+    "9|cbreak",
+    "bf_water_manta",
+    {
+      "port": [
+        21,
+        93
+      ],
+      "starboard": [
+        106,
+        93
+      ],
+      "centre": [
+        64,
+        103
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    96
+  ],
+  [
+    "9|gleech",
+    "bf_water_manta",
+    {
+      "port": [
+        21,
+        93
+      ],
+      "starboard": [
+        106,
+        93
+      ],
+      "centre": [
+        64,
+        103
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    96
+  ],
+  [
+    "9|dreadv",
+    "bf_water_leviathan",
+    {
+      "port": [
+        36,
+        99
+      ],
+      "starboard": [
+        93,
+        99
+      ],
+      "centre": [
+        64,
+        111
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    102
+  ],
+  [
+    "9|s9beacon",
+    "bf_water_undertow",
+    {
+      "port": [
+        25,
+        83
+      ],
+      "starboard": [
+        102,
+        83
+      ],
+      "centre": [
+        64,
+        82
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    92
+  ],
+  [
+    "9|s9gateturret",
+    "bf_water_undertow",
+    {
+      "port": [
+        25,
+        83
+      ],
+      "starboard": [
+        102,
+        83
+      ],
+      "centre": [
+        64,
+        82
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    92
+  ],
+  [
+    "9|s9prism",
+    "bf_water_undertow",
+    {
+      "port": [
+        25,
+        83
+      ],
+      "starboard": [
+        102,
+        83
+      ],
+      "centre": [
+        64,
+        82
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    92
+  ],
+  [
+    "9|s9ring",
+    "bf_water_undertow",
+    {
+      "port": [
+        25,
+        83
+      ],
+      "starboard": [
+        102,
+        83
+      ],
+      "centre": [
+        64,
+        82
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    92
+  ],
+  [
+    "9|s9singularity",
+    "bf_water_undertow",
+    {
+      "port": [
+        25,
+        83
+      ],
+      "starboard": [
+        102,
+        83
+      ],
+      "centre": [
+        64,
+        82
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    92
+  ],
+  [
+    "9|pmine",
+    "bf_water_undertow",
+    {
+      "port": [
+        25,
+        83
+      ],
+      "starboard": [
+        102,
+        83
+      ],
+      "centre": [
+        64,
+        82
+      ],
+      "core": [
+        64,
+        64
+      ],
+      "exhaustPort": [
+        52,
+        31
+      ],
+      "exhaustStarboard": [
+        76,
+        31
+      ]
+    },
+    92
+  ]
+]

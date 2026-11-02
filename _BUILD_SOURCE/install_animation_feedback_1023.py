@@ -4,6 +4,10 @@ import json,math,hashlib,shutil,sys
 R=Path(__file__).resolve().parents[1];W=R/'_ART_SOURCES/animation_feedback_1023';W.mkdir(exist_ok=True);O=W/'shipping';O.mkdir(exist_ok=True);backup=W/'before';backup.mkdir(exist_ok=True)
 D=json.loads((R/'assets/data/AIR_MOTION_1013.json').read_text())['entries'];models={};sheets={}
 sizes={'s8leech':(64,88),'s8manta':(94,76),'s8hunter':(78,82),'s8deathorb':(96,96),'s8carrier':(126,112),'s8tentacle':(104,98),'s8bomber':(116,104),'s8solar':(122,118),'s8gunship':(118,114),'s8needlejet':(66,94),'s8scout':(86,72)}
+sizes.pop('s8leech',None)  # No restoration of Mike's deleted Stage8 Leech art.
+if '--retire-leech' in sys.argv:
+ from retire_stage8_leech_1101 import retire_feedback
+ retire_feedback();raise SystemExit(0)
 for typ,(w,h)in sizes.items():
  entry=next((m for m in D.values()if typ in m['aliases']),None)
  if not entry:continue

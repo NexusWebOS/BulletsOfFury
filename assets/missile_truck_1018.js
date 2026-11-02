@@ -12,9 +12,9 @@ function mt18Rank(){return ['furious','insanity'].includes(diffKey)?2:diffKey===
 spawnEnemy=function(){const n=enemies.length,out=MT18.base.spawn.apply(this,arguments);
  for(const e of enemies.slice(n))if(run.stage===1&&/^s1truckmissile(?:_b|_blk)?$/.test(e.type)){
   const hp=e.maxhp||e.hp,coop=coopActive()?1.5:1;
-  e._mt18={age:0,wheel:0,hull:Math.ceil(Math.max(8,hp*.75)),hullFlash:0,
+  e._mt18={age:0,wheel:0,hull:Math.ceil(Math.max(difficultyHealthBaseline15(8,8),hp*.75)),hullFlash:0,
    palette:/_(?:b|blk)$/.test(e.type)?'black':'olive',parts:[-1,1].map((side,i)=>({id:'rack'+(side<0?'L':'R'),
-    side,dx:side*17,dy:-27,w:28,h:40,hp:Math.ceil(Math.max(4*coop,hp*.30)),flash:0,
+    side,dx:side*17,dy:-27,w:28,h:40,hp:Math.ceil(Math.max(difficultyHealthBaseline15(4*coop,4*coop),hp*.30)),flash:0,
     angle:Math.PI/2,phase:'rest',t:0,cool:1.1+i*1.3,round:0,next:0}))};
   const A=e._mt18;A.maxHull=A.hull;for(const p of A.parts)p.maxhp=p.hp;
   e.maxhp=e._maxhp=e.hp=A.hull+A.parts.reduce((s,p)=>s+p.hp,0);

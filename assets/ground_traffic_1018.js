@@ -6,8 +6,9 @@ const GT18={serial:0,gap:12,resolving:false,stats:{reserved:0,queued:0,blocked:0
 function groundTrafficDamClear(y,h=0){return run.stage!==1||y+h/2<210||y-h/2>420;}
 tankDrivable=function(x,y,open){return groundTrafficDamClear(y)&&GT18.base.drivable.apply(this,arguments);};
 function groundTrafficVehicle(e){return !!e&&!e.dead&&e._dyingT==null&&!e.prop&&!e._prop&&!e._boss&&!e._amini&&!e._modTurret&&
- !!(e._tank||e._modTank||e._vkind==='tank'||/tank|crawler|halftrack|apc/i.test(e.type||''));}
+ !!(e._groundTraffic||e._tank||e._modTank||e._vkind==='tank'||/tank|crawler|halftrack|apc/i.test(e.type||''));}
 function groundTrafficFootprint(e){
+ if(e._groundTrafficSize)return {w:e._groundTrafficSize.w,h:e._groundTrafficSize.h};
  if(e._modTank===4){const w=e.w*1.26;return{w:Math.max(e.w,w*1.04),h:Math.max(e.h,w*144/128)};}
  return{w:Math.max(e.w||24,e._drawW||0),h:Math.max(e.h||24,e._drawH||0)};
 }
@@ -28,6 +29,11 @@ function groundTrafficSet(e,x,y){const dx=x-e.x,dy=y-e.y;e.x=x;e.y=y;
 }
 function groundTrafficCanPlace(x,y,w,h,self){const candidate={x,y,w,h};
  return !enemies.some(e=>e!==self&&groundTrafficVehicle(e)&&groundTrafficTouch(candidate,e));}
+function groundTrafficPlaceEntry(e){const F=groundTrafficFootprint(e),prefer=e.x,born=e.y,W=worldWidth();
+ for(let row=0;row<=1024;row+=8){const y=born-row;for(let delta=0;delta<W;delta+=8)for(const side of delta?[-1,1]:[1]){const x=prefer+side*delta;
+  if(groundTrafficLegal(e,x,y)&&groundTrafficCanPlace(x,y,F.w,F.h,e)){groundTrafficSet(e,x,y);return true;}
+ }}return false;
+}
 function groundTrafficReserve(e,settled){const F=groundTrafficFootprint(e);let y=e.y;
  for(let pass=0;pass<settled.length+2;pass++){
   const contacts=settled.filter(o=>groundTrafficTouch(e,o,e.x,y));if(!contacts.length)break;

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fury cutscene cast · November 2</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#0d1520;color:#e5effb}*{box-sizing:border-box}body{max-width:1500px;margin:auto;padding:28px}h1{font-size:clamp(28px,4vw,52px);margin:6px 0}h2{margin-top:40px}p{color:#aebed2;max-width:900px;line-height:1.6}a{color:#82def3}button,select{font:inherit;background:#23344a;border:1px solid #4c647d;color:white;padding:10px 14px;border-radius:7px;cursor:pointer}button[aria-pressed=true]{border-color:#81edff;background:#27546b}.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}.card{min-width:0;border:1px solid #31445b;border-radius:10px;overflow:hidden;background:#152537}.card img{width:100%;display:block;aspect-ratio:1/2;object-fit:contain;background:var(--back,#152537);image-rendering:auto}.card b{display:block;padding:10px;font-size:13px}.avatars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.avatars .card img{aspect-ratio:1}.overview{width:100%;max-width:860px;display:block;border-radius:10px}.meta{font-size:13px;color:#9fb4cc}.light{--back:#e9edf2}.checker{--back:repeating-conic-gradient(#26384c 0% 25%,#172638 0% 50%) 50%/24px 24px}@media(max-width:950px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:540px){body{padding:16px}.grid,.avatars{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+<body><div class="meta">BULLETS OF FURY · ART REVIEW · NOVEMBER 2</div>
+<h1>Fury cutscene cast</h1>
+<p>All nine Fury pilots, six authored full-body key poses each. Current dialogue portraits guide the faces; full-body references guide the costumes. These are individual cutscene poses, with walking and rear views, rather than a continuous animation reel.</p>
+<p><a href="../../../assets/game/shared/cinematics/cast_1102/manifest.json">Frame manifest</a> · <a href="../../../_ART_SOURCES/cast_cinematics_1102/prompts.json">Exact generation prompts</a></p>
+<div class="bar" id="background"><span>Background:</span><button data-bg="dark" aria-pressed="true">Dark</button><button data-bg="light" aria-pressed="false">Light</button><button data-bg="checker" aria-pressed="false">Checker</button></div>
+<h2>Chronos · actual helmet identity</h2><p>Ribbed dome, outward horns and one curved blue visor, derived from his live Stage 5 body. The neutral avatar replaces the existing dialogue aliases; the three alternate views are available for cutscene use. His native ending portrait fade stays in place.</p>
+<div class="avatars" id="avatars"></div>
+<h2>All nine pilots</h2><img class="overview" src="all-pilots.jpg" alt="All nine current full-body Fury pilot identities">
+<h2>Full-body pose library</h2><div class="bar" id="pilots"></div><div class="grid" id="poses"></div>
+<p class="meta">Every exported body frame: 512 × 1024, common ground pivot 256,976; one proportional source scale per pilot bank. Chronos: 512 × 512. PNG frames preserve alpha. Original generated sources and native portrait references are retained. Pilot poses are an opt-in library for upcoming cutscenes.</p>
+<script>
+const root='../../../',labels={neutral:'Front · neutral',speaking:'Three-quarter · speaking',salute:'Three-quarter · salute',walk_left:'Walking turn',look_back:'Rear · look back',back:'Back · neutral'};
+let manifest;
+function card(frame,label){const c=document.createElement('div');c.className='card';const a=document.createElement('a');a.href=root+frame.file;a.target='_blank';const im=new Image();im.src=a.href;im.alt=label;im.loading='lazy';a.append(im);const b=document.createElement('b');b.textContent=label;c.append(a,b);return c;}
+function select(pilot){location.hash=pilot;document.querySelectorAll('#pilots button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.pilot===pilot));document.getElementById('poses').replaceChildren(...manifest.pilots[pilot].frames.map(f=>card(f,labels[f.pose])));}
+fetch(root+'assets/game/shared/cinematics/cast_1102/manifest.json').then(r=>r.json()).then(m=>{manifest=m;document.getElementById('avatars').replaceChildren(...m.chronos.frames.map(f=>card(f,f.pose.replaceAll('_',' '))));for(const pilot of Object.keys(m.pilots)){const b=document.createElement('button');b.textContent=pilot.toUpperCase();b.dataset.pilot=pilot;b.onclick=()=>select(pilot);document.getElementById('pilots').append(b);}select(m.pilots[location.hash.slice(1)]?location.hash.slice(1):'cole');window.castReady=true;});
+document.querySelectorAll('[data-bg]').forEach(b=>b.onclick=()=>{document.body.classList.remove('light','checker');if(b.dataset.bg!=='dark')document.body.classList.add(b.dataset.bg);document.querySelectorAll('[data-bg]').forEach(t=>t.setAttribute('aria-pressed',t===b));});
+</script></body></html>

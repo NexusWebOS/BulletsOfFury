@@ -4,7 +4,16 @@ const HH52={base:{start:hr28Start,tick:hd1003Tick,pose:hd1003Pose,blit:hd1003Bli
  projectile:drawCombatFinalProjectile,update:updatePlay,intercept:enemyOrdnanceCanIntercept,rules:s3kOrdnanceRules,
  element:enemyOrdnanceElement,phase:hb25Phase,corner:hb25Corner,load:stageLoadBegin,break:ordnanceBreak1002},events:[],skulls:new Set(),fx:[]};
 for(const a of [...Object.values(HH52_ART),...Object.values(HH69_ART)])XART._src[a.key]=a.path;
-stageLoadBegin=function(n,keys){if(n===8)Snd.prepare(['geyserLightning','element_lightning_hit','bossWeaponCharge','wardenScream','timedBombBlast','bossfireVileexistence']);return HH52.base.load.call(this,n,n===8?[...(keys||[]),...[...Object.values(HH52_ART),...Object.values(HH69_ART)].map(a=>a.key)]:keys);};
+XART._src[HH101_ART.key]=HH101_ART.path;
+stageLoadBegin=function(n,keys){if(n===8)Snd.prepare(['geyserLightning','element_lightning_hit','bossWeaponCharge','wardenScream','timedBombBlast','bossfireVileexistence']);return HH52.base.load.call(this,n,n===8?[...(keys||[]),HH101_ART.key,HL51_ART.key,...[...Object.values(HH52_ART),...Object.values(HH69_ART)].map(a=>a.key)]:keys);};
+function hh101Retina(P){const a=HL51_ART;if(!XART.rdy(a.key))return false;
+ const progress=clamp((efxClock-P.born)/2,0,1),colour=progress<.55?0:progress<.82?1:2,
+  frame=colour*8+(colour===2&&Math.floor((efxClock-P.born)*14)%2?6:7);
+ ctx.drawImage(XART.get(a.key),frame%8*64,Math.floor(frame/8)*32,64,32,Math.round(P.x)-32,Math.round(P.y)-16,64,32);return true;
+}
+function hh101Impact(P){const a=HH101_ART,f=Math.floor(P.age*a.fps);if(f<0||f>=a.frames||!XART.rdy(a.key))return false;
+ ctx.drawImage(XART.get(a.key),f%a.cols*a.cw,Math.floor(f/a.cols)*a.ch,a.cw,a.ch,Math.round(P.x)-64,Math.round(P.y)-64,128,128);return true;
+}
 function hh52Log(event,data={}){HH52.events.push({event,time:efxClock,...data});if(HH52.events.length>1600)HH52.events.shift();}
 function hh52Blit(name,f,x,y,hit=false){const a=HH52_ART[name+(hit?'_hit':'')]||HH52_ART[name];if(!a||!XART.rdy(a.key))return false;
  f=clamp(f|0,0,a.frames-1);ctx.drawImage(XART.get(a.key),f%a.cols*a.cw,Math.floor(f/a.cols)*a.ch,a.cw,a.ch,Math.round(x-a.pivot[0]),Math.round(y-a.pivot[1]),a.cw,a.ch);return true;}
@@ -76,7 +85,7 @@ function hh52BoltStrike(b,A,P){P.done=true;P.age=0;A.flashAge=0;
  for(const seat of seatList())withSeat(seat,()=>{if(!player.dead&&Math.hypot(player.x-P.x,player.y-P.y)<36)playerHit('Herald anchored red lightning');});
  // Red source plasma travels from the actual ground impact, not parallel legacy columns.
  for(const a of[.25,Math.PI-.25,Math.PI/2]){const q=hr28Round(b,P.x,P.y,a,3.4);if(q)q._hh52Lightning=true;}
- combatAudio0927(b,'geyserLightning',.08);hh52Log('lightning-strike',{id:P.id,x:P.x,y:P.y,delay:efxClock-P.born});
+ combatAudio0927(b,'geyserLightning',.08);combatAudio0927(b,'element_lightning_hit',.08);hh52Log('lightning-strike',{id:P.id,x:P.x,y:P.y,delay:efxClock-P.born});
 }
 hd1003Tick=function(b,dt){const A=hh52Special(b),H=b?._hd1003,Q=H?._hb25;
  if(!A){if(Q?._hh52Return)return hh52ReturnTick(b,Q,dt);return HH52.base.tick.apply(this,arguments);}
@@ -105,7 +114,7 @@ hd1003Tick=function(b,dt){const A=hh52Special(b),H=b?._hd1003,Q=H?._hb25;
   else if(u<14.25){const v=(u-12.65)/1.6;hh52Clip(b,'arrive',Math.floor(v*20));hh52Move(b,A,lerp(b.x,A.origin.x,Math.min(1,dt*5)),lerp(viewTopY()-120,A.origin.y,v));}
   else hh52Recover(b,A,dt,u-14.25);
   for(const P of A.bolts){if(!P.done&&efxClock>=P.at)hh52BoltStrike(b,A,P);else if(P.done)P.age+=dt;}
-  A.bolts=A.bolts.filter(P=>!P.done||P.age<.35);
+  A.bolts=A.bolts.filter(P=>!P.done||P.age<HH101_ART.frames/HH101_ART.fps);
  }
  b._drawY=b.y;return true;
 };
@@ -116,12 +125,11 @@ hd1003Blit=function(p,P,flash=0,alpha=1){const C=hh52PoseBank(subBoss);if(C&&!p.
 heraldDeathDraw=function(b){const A=hh52Special(b);if(!A)return HH52.base.draw.apply(this,arguments);
  const u=A.t-A.warm;
  if(A.kind==='storm')hh69StormDraw(b,A,u);
- if(A.kind==='rage')for(const P of A.bolts){if(!P.done){const progress=clamp((efxClock-P.born)/2,0,1),colour=progress<.55?'green':progress<.82?'yellow':'red';
-   hh52Blit('impact_'+colour,0,P.x,P.y);groundTargetReticleDraw(P.x,P.y,64,progress,.70);hh52Blit('star',0,P.x,P.y-45);
-  }else if(P.age<.30)er28Blit('lightning',Math.min(15,Math.floor(P.age/.30*16)),P.x,P.y-256);
- }
  // Bypass only retired HR28 special fields. Its native modular draw owner remains.
  const out=HR28.base.draw.apply(this,arguments);
+ if(A.kind==='rage')for(const P of A.bolts){if(!P.done)hh101Retina(P);
+  else{if(P.age<.30)er28Blit('lightning',Math.min(15,Math.floor(P.age/.30*16)),P.x,P.y-256);hh101Impact(P);}
+ }
  if(A.kind==='storm'&&u<0)hh69Blit('warning',A.t/A.warm<.70?0:1,b.x,b.y+130);
  if(A.kind==='rage'&&u<.42){const p=u<0?hr28CastPoint(b):{x:A.energyFrom.x,y:lerp(A.energyFrom.y,viewTopY()-55,clamp(u/.42,0,1))};
   hh52Blit('lightning_ball',Math.floor(A.t*24)%16,p.x,p.y);
@@ -150,12 +158,20 @@ updatePlay=function(dt){
 };
 const HH52_EFFECTS=drawEffects;
 drawEffects=function(){const out=HH52_EFFECTS.apply(this,arguments);for(const F of HH52.fx)hh52Blit((F.glass?'glass_':'impact_')+F.size,Math.min(15,Math.floor(F.t/.5*16)),F.x,F.y);return out;};
-// Every pass wraps outside the camera and re-enters opposite its exit edge.
-hb25Corner=function(b,Q){if(Q.pass===0)return HH52.base.corner.apply(this,arguments);const pass=Q.pass;Q.pass=0;const out=HH52.base.corner.call(this,b,Q);Q.pass=pass;return out;};
-hb25Phase=function(b,phase){const Q=b._hd1003._hb25;if((phase==='recede'&&Q.pass>0)||phase==='return'){
+// Bombers cross left, clear the entire hull, warn, then cross right on the same row.
+hb25Corner=function(b,Q){if(Q.kind==='bomber'){const left=-256,right=worldWidth()+256,y=viewTopY()+138;
+ return{from:{x:Q.pass%2?left:right,y},to:{x:Q.pass%2?right:left,y},a:Q.pass%2?0:Math.PI};}
+ if(Q.pass===0)return HH52.base.corner.apply(this,arguments);const pass=Q.pass;Q.pass=0;const out=HH52.base.corner.call(this,b,Q);Q.pass=pass;return out;};
+hb25Phase=function(b,phase){const Q=b._hd1003._hb25;
+ if(Q.kind==='bomber'&&phase==='recede'&&Q.pass>0){
+  Q._hh52Return=false;Q.path={from:{x:b.x,y:b.y},to:{x:worldWidth()+256,y:b.y},a:0};Q.wing=.22;
+  const out=HH52.base.phase.call(this,b,'tell');
+  hh52Log('bomber-right-warning',{pass:Q.pass,x:b.x,y:b.y,warm:Q.warm,path:Q.path});return out;
+ }
+ if((phase==='recede'&&Q.pass>0)||phase==='return'){
   Q._hh52Return=true;Q.phase='hh52-wrap';Q.t=0;Q.from={x:b.x,y:b.y};Q.angle=Q.path.a+Math.PI/2;
-  Q.returnToPass=phase==='recede';Q.pending=null;Q.entry={...Q.path.from};Q.route=[{x:b.x,y:viewTopY()-280},{x:Q.entry.x,y:viewTopY()-280},Q.entry];Q.routeIndex=0;
-  hh52Log('flight-opposite-entry',{exit:{x:b.x,y:b.y},entry:Q.entry,kind:Q.kind,nextPass:Q.returnToPass});return;
+  Q.returnToPass=phase==='recede';Q.pending=null;Q.entry={...(Q.returnToPass&&Q.kind==='bomber'?hb25Corner(b,Q).from:Q.path.from)};Q.route=[{x:b.x,y:viewTopY()-280},{x:Q.entry.x,y:viewTopY()-280},Q.entry];Q.routeIndex=0;
+  hh52Log(Q.returnToPass&&Q.kind==='bomber'?'flight-mirrored-entry':'flight-opposite-entry',{exit:{x:b.x,y:b.y},entry:Q.entry,kind:Q.kind,nextPass:Q.returnToPass,pass:Q.pass});return;
  }return HH52.base.phase.apply(this,arguments);};
 function hh52ReturnTick(b,Q,dt){const H=b._hd1003;H.clock+=dt;H.age+=dt;Q.t+=dt;b.fireCd=999;b._s4MiniSafe=true;
  if(Q.phase==='hh52-wrap'){const T=Q.route[Q.routeIndex],dx=T.x-b.x,dy=T.y-b.y,d=Math.hypot(dx,dy),v=1000*dt;

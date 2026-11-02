@@ -1,0 +1,429 @@
+{
+  "native": [
+    {
+      "name": "Actual explosion, smoke and gated portal art preloads",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real Warden core defeat begins fast travel immediately",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Travel remains a fast400px/s instead of easing to a stop",
+      "passed": true,
+      "data": [
+        7937.333333333333,
+        7737.333333333324
+      ]
+    },
+    {
+      "name": "Escape adds6144px of real tiled sewer travel",
+      "passed": true,
+      "data": 7937.333333333333
+    },
+    {
+      "name": "Extended terrain preserves the exact initial authored floor pixels",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Blasts and smoke rings are active throughout the run",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No reward is granted during the escape",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pause freezes the route and collapse effects",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pilot can steer during the fast escape",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Original chamber is reached continuously without a map reversal",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Run lasts at least18 seconds before spotting the portal",
+      "passed": true,
+      "data": {
+        "phase": "form",
+        "source": 393.3333333331959,
+        "age": 18.900000000000208
+      }
+    },
+    {
+      "name": "Cole actually dodges across multiple lanes with authored banks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cole identifies the portal as the only way out",
+      "passed": true,
+      "data": {
+        "who": "COLE",
+        "full": "A PORTAL... IT'S THE ONLY WAY OUT!",
+        "t": 0.7833333333333341,
+        "typed": 78.33333333333334,
+        "dur": 2.4
+      }
+    },
+    {
+      "name": "Portal stays registered in the original stone aperture",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cole says Here goes nothing on the actual boost beat",
+      "passed": true,
+      "data": {
+        "who": "COLE",
+        "full": "HERE GOES NOTHING!",
+        "t": 0,
+        "typed": 0,
+        "dur": 2.5
+      }
+    },
+    {
+      "name": "Actual green gate loop and shrinking jet frames are used",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pilot disappears just before the explosion front reaches the gate",
+      "passed": true,
+      "data": {
+        "margin": 22,
+        "portal": 142.66666666680408,
+        "source": 167.33333333319592
+      }
+    },
+    {
+      "name": "Terrain stops only after the aircraft is inside the gate",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No flat hole cover; actual explosions paint over the closed portal",
+      "passed": true,
+      "data": {
+        "draw": [
+          "green_close",
+          "sr93_ring",
+          "sr93_barrage",
+          "sr93_barrage",
+          "sr93_radial",
+          "sr93_dense",
+          "sr93_dense",
+          "sr93_dense",
+          "sr93_dense",
+          "sr93_barrage",
+          "sr93_radial",
+          "sr93_dense",
+          "sr93_barrage",
+          "sr93_dense",
+          "sr93_ring",
+          "sr93_dense",
+          "sr93_barrage",
+          "sr93_radial",
+          "sr93_dense",
+          "sr93_dense",
+          "sr93_dense",
+          "sr93_barrage",
+          "sr93_barrage",
+          "sr93_radial",
+          "sr93_dense",
+          "sr93_ring",
+          "sr93_engulf",
+          "sr93_engulf",
+          "sr93_engulf",
+          "sr93_engulf",
+          "sr93_engulf",
+          "sr93_engulf",
+          "sr93_engulf",
+          "sr93_engulf",
+          "sr93_engulf"
+        ],
+        "hole": 2
+      }
+    },
+    {
+      "name": "Native Stage8 portal handoff completes",
+      "passed": true,
+      "data": {
+        "stage": 8,
+        "state": "warpentry"
+      }
+    },
+    {
+      "name": "Native Forge reward and score remain single owned grants",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Campaign progression retains the direct Stage8 entry flag",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Effects cannot leak into Stage8",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Explosion budget stays bounded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No browser or rendering errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Core engine source remains unchanged",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "seatsAndSeams": [
+    {
+      "name": "The controlled pilot owns the portal decision and exact boost line",
+      "passed": true,
+      "data": [
+        {
+          "key": "axel",
+          "sight": "A PORTAL... IT'S THE ONLY WAY OUT!",
+          "actual": "HERE GOES NOTHING!",
+          "who": "AXEL"
+        },
+        {
+          "key": "decker",
+          "sight": "A PORTAL... IT'S THE ONLY WAY OUT!",
+          "actual": "HERE GOES NOTHING!",
+          "who": "DECKER"
+        },
+        {
+          "key": "maverick",
+          "sight": "A PORTAL... IT'S THE ONLY WAY OUT!",
+          "actual": "HERE GOES NOTHING!",
+          "who": "MAVERICK"
+        },
+        {
+          "key": "freezer",
+          "sight": "A PORTAL... IT'S THE ONLY WAY OUT!",
+          "actual": "HERE GOES NOTHING!",
+          "who": "FREEZER"
+        },
+        {
+          "key": "juggernaut",
+          "sight": "A PORTAL... IT'S THE ONLY WAY OUT!",
+          "actual": "HERE GOES NOTHING!",
+          "who": "JUGGERNAUT"
+        },
+        {
+          "key": "yuri",
+          "sight": "A PORTAL... IT'S THE ONLY WAY OUT!",
+          "actual": "HERE GOES NOTHING!",
+          "who": "YURI"
+        },
+        {
+          "key": "lizzie",
+          "sight": "A PORTAL... IT'S THE ONLY WAY OUT!",
+          "actual": "HERE GOES NOTHING!",
+          "who": "LIZZIE"
+        },
+        {
+          "key": "falva",
+          "sight": "A PORTAL... IT'S THE ONLY WAY OUT!",
+          "actual": "HERE GOES NOTHING!",
+          "who": "FALVA"
+        },
+        {
+          "key": "cole",
+          "sight": "A PORTAL... IT'S THE ONLY WAY OUT!",
+          "actual": "HERE GOES NOTHING!",
+          "who": "COLE"
+        }
+      ]
+    },
+    {
+      "name": "Every inserted terrain turn joins identical source pixel rows",
+      "passed": true,
+      "data": {
+        "mismatches": 0,
+        "width": 680,
+        "height": 10860
+      }
+    },
+    {
+      "name": "Extended terrain uses even native dimensions",
+      "passed": true,
+      "data": {
+        "mismatches": 0,
+        "width": 680,
+        "height": 10860
+      }
+    },
+    {
+      "name": "Both live seats are captured for portal rescue",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both pilots reach the same gate and survive the collapse",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Restart cancels all rescue effects",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native browser exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "filmChecks": [
+    {
+      "name": "Native final-hit checkpoint labelled before filming",
+      "passed": true
+    },
+    {
+      "name": "Native escape reaches Stage8 WARPENTRY",
+      "passed": true
+    },
+    {
+      "name": "At least18s of extended flight before spotting the portal",
+      "passed": true
+    },
+    {
+      "name": "Actual lateral dodge span exceeds220px",
+      "passed": true
+    },
+    {
+      "name": "Both authored bank directions occur in flight",
+      "passed": true
+    },
+    {
+      "name": "Cole identifies the only exit",
+      "passed": true
+    },
+    {
+      "name": "Cole commits with the exact requested line",
+      "passed": true
+    },
+    {
+      "name": "Terrain advances monotonically until rescue",
+      "passed": true
+    },
+    {
+      "name": "Native finish owner runs once",
+      "passed": true
+    },
+    {
+      "name": "All green gate lifecycle frames render",
+      "passed": true
+    },
+    {
+      "name": "No page console or HTTP asset errors",
+      "passed": true
+    },
+    {
+      "name": "Only canceled media preloads remain",
+      "passed": true
+    },
+    {
+      "name": "Shared explosion and jet cues decode in the recording",
+      "passed": true
+    },
+    {
+      "name": "Recorded sources unchanged",
+      "passed": true
+    },
+    {
+      "name": "Complete audible unclipped movie decodes",
+      "passed": true
+    }
+  ],
+  "film": {
+    "path": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\sewer_escape_extended_1031\\route-video\\sewer-extended-dodges-1031\\stage7-furious.mp4",
+    "sha256": "2a04a2f76022e5de1f797a6f74ad8242cb3da6efbb25b8f570f78874bb1aa842",
+    "seconds": 31.73,
+    "nativeFPS": 55.11583939500753,
+    "runBeforePortal": 18.833333333333535,
+    "frames": {
+      "dodgeLeft": 8.912,
+      "dodgeRight": 10.317,
+      "hereGoesNothing": 21.628333333333334,
+      "holeBlasts": 22.354
+    },
+    "meanDb": -26.8,
+    "peakDb": -10.5,
+    "expectedCanceledMedia": 24
+  },
+  "method": "Final Warden core12HP and all modules/canisters depleted before filming. Real player fire causes defeat; route, activation, rewards and Stage8 handoff proceed natively. No recorder HP/phase/time writes during filming.",
+  "syntax": "passed",
+  "fullSuite": {
+    "exit": 1,
+    "reachedFinalSummary": false,
+    "blocker": "Missing UNUSED_ASSETS/retired_art_1022/manifest.json"
+  },
+  "localPreview": "http://127.0.0.1:8805/?revision=sewer-extended-dodges-1031#clip=stage7-portal-chamber",
+  "playerChecks": [
+    {
+      "name": "Current portal card points to new extended escape",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Previous short and slow route recordings retained",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Movie supports byte-range seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Current32s native movie loads in the portal player",
+      "passed": true,
+      "data": {
+        "duration": 31.733333,
+        "width": 1280,
+        "height": 800,
+        "time": 0,
+        "error": false,
+        "clip": "stage7-portal-chamber"
+      }
+    },
+    {
+      "name": "Real audio and video playback advances",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both dodges dialogue and hole explosions seek and render",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No player page console or HTTP errors",
+      "passed": true,
+      "data": []
+    }
+  ]
+}

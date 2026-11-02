@@ -1,0 +1,1227 @@
+{
+  "owner": "_BUILD_SOURCE/build_carrier_assault_1101.py",
+  "sources": {
+    "nuclear_hull": {
+      "path": "_BUILD_SOURCE/carrier_assault_1101/nuclear_hull_source.png",
+      "sha256": "92c8d134644af9b3d0522ce7194c55b82d61e6d1ccaa171a470a4e7938dae2a4",
+      "size": [
+        1254,
+        1254
+      ],
+      "tool": "built-in image_gen",
+      "original": "exec-ffb83dfc-470e-4942-9ba8-eadc43c5b5c5.png"
+    },
+    "nuclear_door": {
+      "path": "_BUILD_SOURCE/carrier_assault_1101/nuclear_door_source.png",
+      "sha256": "8bd297543747fdd71814f2ca76994a34ef1ef2bf80abca23c9e7563a3f6bd37d",
+      "size": [
+        1448,
+        1086
+      ],
+      "tool": "built-in image_gen",
+      "original": "exec-fa2ff221-4735-4fd4-ab11-5f05ac210d9b.png",
+      "cells": [
+        [
+          0,
+          0,
+          362,
+          543
+        ],
+        [
+          362,
+          0,
+          724,
+          543
+        ],
+        [
+          724,
+          0,
+          1086,
+          543
+        ],
+        [
+          1086,
+          0,
+          1448,
+          543
+        ],
+        [
+          0,
+          543,
+          362,
+          1086
+        ],
+        [
+          362,
+          543,
+          724,
+          1086
+        ],
+        [
+          724,
+          543,
+          1086,
+          1086
+        ],
+        [
+          1086,
+          543,
+          1448,
+          1086
+        ]
+      ]
+    },
+    "nuclear_head": {
+      "path": "_BUILD_SOURCE/carrier_assault_1101/nuclear_head_source.png",
+      "sha256": "0b98dc59150e8680e253880605ddf61484e2a939f1ac8ac2b2012d8109f92f42",
+      "size": [
+        1536,
+        1024
+      ],
+      "tool": "built-in image_gen",
+      "original": "exec-3a73314f-ae1d-4684-8a72-97cffd76b66f.png",
+      "cells": [
+        [
+          0,
+          0,
+          384,
+          512
+        ],
+        [
+          384,
+          0,
+          768,
+          512
+        ],
+        [
+          768,
+          0,
+          1152,
+          512
+        ],
+        [
+          1152,
+          0,
+          1536,
+          512
+        ],
+        [
+          0,
+          512,
+          384,
+          1024
+        ],
+        [
+          384,
+          512,
+          768,
+          1024
+        ],
+        [
+          768,
+          512,
+          1152,
+          1024
+        ],
+        [
+          1152,
+          512,
+          1536,
+          1024
+        ]
+      ]
+    },
+    "laser_hull": {
+      "path": "_BUILD_SOURCE/carrier_assault_1101/laser_hull_source.png",
+      "sha256": "1f410fcd9e0d99bb95d874839b5b09d998d71870c0875758fae9424b342cebe8",
+      "size": [
+        1254,
+        1254
+      ],
+      "tool": "built-in image_gen",
+      "original": "exec-074768db-832b-4894-a5f1-1287f74c979e.png"
+    },
+    "laser_door": {
+      "path": "_BUILD_SOURCE/carrier_assault_1101/laser_door_source.png",
+      "sha256": "aba32a4a45fc35e4474f03e1dd52b52c8e23b396ec0b7e3c492d79a560ccad01",
+      "size": [
+        1774,
+        887
+      ],
+      "tool": "built-in image_gen",
+      "original": "exec-50ae0644-5274-440b-aafc-d503f982846b.png",
+      "cells": [
+        [
+          0,
+          0,
+          444,
+          444
+        ],
+        [
+          444,
+          0,
+          887,
+          444
+        ],
+        [
+          887,
+          0,
+          1330,
+          444
+        ],
+        [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        [
+          0,
+          444,
+          444,
+          887
+        ],
+        [
+          444,
+          444,
+          887,
+          887
+        ],
+        [
+          887,
+          444,
+          1330,
+          887
+        ],
+        [
+          1330,
+          444,
+          1774,
+          887
+        ]
+      ]
+    },
+    "laser_head": {
+      "path": "_BUILD_SOURCE/carrier_assault_1101/laser_head_source.png",
+      "sha256": "55df9fecdf8c63e7ccfd550f751b0df502730c4bb0e21154b910846a542677a8",
+      "size": [
+        1448,
+        1086
+      ],
+      "tool": "built-in image_gen",
+      "original": "exec-347cd693-39d0-434f-a0b8-3a78a18969fe.png",
+      "cells": [
+        [
+          0,
+          0,
+          362,
+          543
+        ],
+        [
+          362,
+          0,
+          724,
+          543
+        ],
+        [
+          724,
+          0,
+          1086,
+          543
+        ],
+        [
+          1086,
+          0,
+          1448,
+          543
+        ],
+        [
+          0,
+          543,
+          362,
+          1086
+        ],
+        [
+          362,
+          543,
+          724,
+          1086
+        ],
+        [
+          724,
+          543,
+          1086,
+          1086
+        ],
+        [
+          1086,
+          543,
+          1448,
+          1086
+        ]
+      ]
+    },
+    "exhaust": {
+      "path": "_BUILD_SOURCE/carrier_assault_1101/exhaust_source.png",
+      "sha256": "a50554bfc6e271ed68454bbdc85ada68ddc4e3354e2ea9b873a3cd3fc178ead2",
+      "size": [
+        1774,
+        887
+      ],
+      "tool": "built-in image_gen",
+      "original": "exec-bd945919-b00c-41a1-83a0-505e27b3386e.png",
+      "cells": [
+        [
+          0,
+          0,
+          444,
+          444
+        ],
+        [
+          444,
+          0,
+          887,
+          444
+        ],
+        [
+          887,
+          0,
+          1330,
+          444
+        ],
+        [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        [
+          0,
+          444,
+          444,
+          887
+        ],
+        [
+          444,
+          444,
+          887,
+          887
+        ],
+        [
+          887,
+          444,
+          1330,
+          887
+        ],
+        [
+          1330,
+          444,
+          1774,
+          887
+        ]
+      ]
+    },
+    "nuclear_blast": {
+      "path": "_BUILD_SOURCE/carrier_assault_1101/nuclear_blast_source.png",
+      "sha256": "976ed3594c51e06ec48d9bdcf0796fccdc2853e5d220ac0669a478362c2033cb",
+      "size": [
+        1774,
+        887
+      ],
+      "tool": "built-in image_gen",
+      "original": "exec-b5c3996c-792d-49bc-b340-f2e06fc20e50.png",
+      "cells": [
+        [
+          0,
+          0,
+          444,
+          444
+        ],
+        [
+          444,
+          0,
+          887,
+          444
+        ],
+        [
+          887,
+          0,
+          1330,
+          444
+        ],
+        [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        [
+          0,
+          444,
+          444,
+          887
+        ],
+        [
+          444,
+          444,
+          887,
+          887
+        ],
+        [
+          887,
+          444,
+          1330,
+          887
+        ],
+        [
+          1330,
+          444,
+          1774,
+          887
+        ]
+      ]
+    },
+    "laser_tornado": {
+      "path": "_BUILD_SOURCE/carrier_assault_1101/laser_tornado_source.png",
+      "sha256": "be15c346d260d500273e8bbe507447b35a0eeb8a2fe6e052b43cbd7263a9c628",
+      "size": [
+        1448,
+        1086
+      ],
+      "tool": "built-in image_gen",
+      "original": "exec-1a212600-2c2b-4841-a1e5-d60036ed5ddc.png",
+      "cells": [
+        [
+          0,
+          0,
+          362,
+          362
+        ],
+        [
+          362,
+          0,
+          724,
+          362
+        ],
+        [
+          724,
+          0,
+          1086,
+          362
+        ],
+        [
+          1086,
+          0,
+          1448,
+          362
+        ],
+        [
+          0,
+          362,
+          362,
+          724
+        ],
+        [
+          362,
+          362,
+          724,
+          724
+        ],
+        [
+          724,
+          362,
+          1086,
+          724
+        ],
+        [
+          1086,
+          362,
+          1448,
+          724
+        ],
+        [
+          0,
+          724,
+          362,
+          1086
+        ],
+        [
+          362,
+          724,
+          724,
+          1086
+        ],
+        [
+          724,
+          724,
+          1086,
+          1086
+        ],
+        [
+          1086,
+          724,
+          1448,
+          1086
+        ]
+      ]
+    },
+    "laser_ray": {
+      "path": "_BUILD_SOURCE/carrier_assault_1101/laser_ray_source.png",
+      "sha256": "e07c453a778c4b0c9f22e3801d2535cc9e5fda2c3f5fdab22fa44a663e701542",
+      "size": [
+        1774,
+        887
+      ],
+      "tool": "built-in image_gen",
+      "original": "exec-41b23f2f-8949-4a8d-967a-77756c70d0cf.png",
+      "cells": [
+        [
+          0,
+          0,
+          444,
+          444
+        ],
+        [
+          444,
+          0,
+          887,
+          444
+        ],
+        [
+          887,
+          0,
+          1330,
+          444
+        ],
+        [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        [
+          0,
+          444,
+          444,
+          887
+        ],
+        [
+          444,
+          444,
+          887,
+          887
+        ],
+        [
+          887,
+          444,
+          1330,
+          887
+        ],
+        [
+          1330,
+          444,
+          1774,
+          887
+        ]
+      ]
+    }
+  },
+  "banks": {
+    "nuclear_hull": {
+      "key": "ca111_nuclear_hull",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/nuclear_hull.webp",
+      "cw": 512,
+      "ch": 512,
+      "cell": 512,
+      "cols": 1,
+      "dirs": 1,
+      "frames": 1,
+      "sha256": "7ff3363a736161ce52c1d10c28aa7c8b594cce6bdfe8838a51d084cdc7930227"
+    },
+    "nuclear_hull_glow": {
+      "key": "ca111_nuclear_hull_glow",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/nuclear_hull_glow.webp",
+      "cw": 512,
+      "ch": 512,
+      "cell": 512,
+      "cols": 1,
+      "dirs": 1,
+      "frames": 1,
+      "sha256": "a50147edfc0ae1ff6afc8e4ab263c6c5f50909d256a2174e0b7fd1da492eff72"
+    },
+    "nuclear_door": {
+      "key": "ca111_nuclear_door",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/nuclear_door.webp",
+      "cw": 256,
+      "ch": 512,
+      "cell": null,
+      "cols": 1,
+      "dirs": 1,
+      "frames": 8,
+      "sha256": "ae160ff15175a7bff686981db41bd20a80a84b6c6eedab4331b9169fd06f741e",
+      "sourcePivots": [
+        [
+          195.5,
+          266.0
+        ],
+        [
+          186.0,
+          266.0
+        ],
+        [
+          175.5,
+          266.0
+        ],
+        [
+          165.5,
+          266.0
+        ],
+        [
+          196.0,
+          263.5
+        ],
+        [
+          186.0,
+          263.5
+        ],
+        [
+          175.5,
+          263.5
+        ],
+        [
+          165.0,
+          264.0
+        ]
+      ],
+      "commonScale": 0.8615384615384616
+    },
+    "nuclear_head": {
+      "key": "ca111_nuclear_head",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/nuclear_head.webp",
+      "cw": 256,
+      "ch": 256,
+      "cell": 256,
+      "cols": 32,
+      "dirs": 32,
+      "frames": 8,
+      "sha256": "306319b1d6e59ab555e3a5282b601e342da2fbcb61ae24ef3d9695f46d8423e4",
+      "sourcePivots": [
+        [
+          198.5,
+          253.0
+        ],
+        [
+          194.0,
+          253.0
+        ],
+        [
+          193.5,
+          253.0
+        ],
+        [
+          185.0,
+          253.0
+        ],
+        [
+          197.0,
+          246.5
+        ],
+        [
+          188.5,
+          246.5
+        ],
+        [
+          193.5,
+          247.0
+        ],
+        [
+          185.5,
+          246.5
+        ]
+      ],
+      "commonScale": 0.42362525458248473,
+      "tail": [
+        128,
+        32
+      ],
+      "sockets": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    "laser_hull": {
+      "key": "ca111_laser_hull",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/laser_hull.webp",
+      "cw": 512,
+      "ch": 512,
+      "cell": 512,
+      "cols": 1,
+      "dirs": 1,
+      "frames": 1,
+      "sha256": "2cd31c0ed4c9b42cb8f50a018ac26f543de4d82ca22f31aff3950099dbff9dde"
+    },
+    "laser_hull_glow": {
+      "key": "ca111_laser_hull_glow",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/laser_hull_glow.webp",
+      "cw": 512,
+      "ch": 512,
+      "cell": 512,
+      "cols": 1,
+      "dirs": 1,
+      "frames": 1,
+      "sha256": "a20b52a9afb3a02e12859aa4982526515ded67333f8713dc987f6cc7c3f97649"
+    },
+    "laser_door": {
+      "key": "ca111_laser_door",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/laser_door.webp",
+      "cw": 256,
+      "ch": 256,
+      "cell": 256,
+      "cols": 1,
+      "dirs": 1,
+      "frames": 8,
+      "sha256": "589f14a90f505bc524b53a06e58cfe4c494cf15f594a52073a2430cb578a4d57",
+      "sourcePivots": [
+        [
+          222.0,
+          218.0
+        ],
+        [
+          221.5,
+          218.0
+        ],
+        [
+          222.0,
+          218.0
+        ],
+        [
+          222.5,
+          218.0
+        ],
+        [
+          222.0,
+          217.5
+        ],
+        [
+          221.5,
+          217.5
+        ],
+        [
+          222.0,
+          217.0
+        ],
+        [
+          222.5,
+          217.5
+        ]
+      ],
+      "commonScale": 0.5245901639344263
+    },
+    "laser_head": {
+      "key": "ca111_laser_head",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/laser_head.webp",
+      "cw": 256,
+      "ch": 256,
+      "cell": 256,
+      "cols": 8,
+      "dirs": 8,
+      "frames": 8,
+      "sha256": "367a426477741cf117bc4104fa2d3b1ed66ed97c4037c4f944a66f6c8be61818",
+      "sourcePivots": [
+        [
+          179.0,
+          261.5
+        ],
+        [
+          181.0,
+          260.5
+        ],
+        [
+          182.5,
+          261.0
+        ],
+        [
+          183.5,
+          258.5
+        ],
+        [
+          179.0,
+          254.0
+        ],
+        [
+          182.5,
+          254.0
+        ],
+        [
+          180.0,
+          254.0
+        ],
+        [
+          182.0,
+          259.5
+        ]
+      ],
+      "commonScale": 0.4094488188976378,
+      "tail": [
+        128,
+        32
+      ],
+      "sockets": [
+        [
+          [
+            92.09803921568627,
+            98.47058823529412
+          ],
+          [
+            162.48333333333332,
+            98.7
+          ],
+          [
+            92.34426229508196,
+            136.47540983606558
+          ],
+          [
+            163.0185185185185,
+            136.37037037037038
+          ]
+        ],
+        [
+          [
+            92.82051282051282,
+            97.05128205128206
+          ],
+          [
+            161.52083333333334,
+            97.5
+          ],
+          [
+            92.9,
+            135.3
+          ],
+          [
+            163.0701754385965,
+            135.6140350877193
+          ]
+        ],
+        [
+          [
+            91.5,
+            97.62068965517241
+          ],
+          [
+            161.1875,
+            97.640625
+          ],
+          [
+            91.59649122807018,
+            136.3859649122807
+          ],
+          [
+            161.27118644067798,
+            136.4406779661017
+          ]
+        ],
+        [
+          [
+            93.6268656716418,
+            100.92537313432835
+          ],
+          [
+            162.7258064516129,
+            98.46774193548387
+          ],
+          [
+            91.77777777777777,
+            137.40740740740742
+          ],
+          [
+            162.72131147540983,
+            136.27868852459017
+          ]
+        ],
+        [
+          [
+            92.375,
+            100.82142857142857
+          ],
+          [
+            162.86885245901638,
+            100.78688524590164
+          ],
+          [
+            92.17241379310344,
+            139.72413793103448
+          ],
+          [
+            162.98333333333332,
+            139.4
+          ]
+        ],
+        [
+          [
+            92.76811594202898,
+            100.26086956521739
+          ],
+          [
+            161.57142857142858,
+            101.71428571428571
+          ],
+          [
+            92.47368421052632,
+            141.10526315789474
+          ],
+          [
+            161.69811320754718,
+            139.75471698113208
+          ]
+        ],
+        [
+          [
+            92.48076923076923,
+            100.34615384615384
+          ],
+          [
+            161.16417910447763,
+            99.34328358208955
+          ],
+          [
+            92.64285714285714,
+            140.83928571428572
+          ],
+          [
+            161.4189189189189,
+            140.9189189189189
+          ]
+        ],
+        [
+          [
+            93.04477611940298,
+            100.17910447761194
+          ],
+          [
+            161.83018867924528,
+            100.20754716981132
+          ],
+          [
+            91.73015873015873,
+            137.47619047619048
+          ],
+          [
+            161.9298245614035,
+            137.21052631578948
+          ]
+        ]
+      ]
+    },
+    "exhaust": {
+      "key": "ca111_exhaust",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/exhaust.webp",
+      "cw": 256,
+      "ch": 256,
+      "cell": 256,
+      "cols": 8,
+      "dirs": 8,
+      "frames": 8,
+      "sha256": "5b50b1999f985320489c39e7f8ef5a9acfedc13ffc3df98ba5ab6d335ea5c8ea",
+      "mount": [
+        128,
+        24
+      ],
+      "commonScale": 0.4931506849315068,
+      "sourcePivots": [
+        [
+          223.0,
+          3.0
+        ],
+        [
+          222.0,
+          3.0
+        ],
+        [
+          219.0,
+          3.0
+        ],
+        [
+          223.0,
+          3.0
+        ],
+        [
+          222.0,
+          4.0
+        ],
+        [
+          222.0,
+          4.0
+        ],
+        [
+          221.0,
+          4.0
+        ],
+        [
+          221.0,
+          4.0
+        ]
+      ]
+    },
+    "exhaust_amber": {
+      "key": "ca111_exhaust_amber",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/exhaust_amber.webp",
+      "cw": 256,
+      "ch": 256,
+      "cell": 256,
+      "cols": 8,
+      "dirs": 8,
+      "frames": 8,
+      "sha256": "16155634dee6a08b630fcf0a0b39cc2cc85dea1988dc54626363e46528989db6",
+      "mount": [
+        128,
+        24
+      ],
+      "derivedFrom": "exhaust",
+      "palette": "amber-white; unchanged alpha/luminance maxima"
+    },
+    "nuclear_blast": {
+      "key": "ca111_nuclear_blast",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/nuclear_blast.webp",
+      "cw": 256,
+      "ch": 256,
+      "cell": 256,
+      "cols": 1,
+      "dirs": 1,
+      "frames": 8,
+      "sha256": "b18e496944094e71c3ca19be755db9fdf04ffcb4b590114a32e41ab313ed0b04",
+      "sourcePivots": [
+        [
+          222.0,
+          222.0
+        ],
+        [
+          221.5,
+          222.0
+        ],
+        [
+          221.5,
+          222.0
+        ],
+        [
+          222.0,
+          222.0
+        ],
+        [
+          222.0,
+          221.5
+        ],
+        [
+          221.5,
+          221.5
+        ],
+        [
+          221.5,
+          221.5
+        ],
+        [
+          222.0,
+          221.5
+        ]
+      ],
+      "commonScale": 0.5114155251141552,
+      "visibleRadii": [
+        15.65,
+        31.76,
+        44.6,
+        66.65,
+        77.42,
+        89.14,
+        91.01,
+        95.68
+      ]
+    },
+    "laser_tornado": {
+      "key": "ca111_laser_tornado",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/laser_tornado.webp",
+      "cw": 256,
+      "ch": 256,
+      "cell": 256,
+      "cols": 1,
+      "dirs": 1,
+      "frames": 12,
+      "sha256": "fa3f1ed58a78c27f4285854f2d326fdb4892ca89b25491689090b7ea3a5c4521",
+      "sourcePivots": [
+        [
+          174.0,
+          208.0
+        ],
+        [
+          185.0,
+          210.0
+        ],
+        [
+          190.0,
+          191.0
+        ],
+        [
+          159.0,
+          157.0
+        ],
+        [
+          191.0,
+          152.0
+        ],
+        [
+          198.0,
+          140.0
+        ],
+        [
+          169.0,
+          145.0
+        ],
+        [
+          167.0,
+          138.0
+        ],
+        [
+          200.0,
+          125.0
+        ],
+        [
+          180.0,
+          124.0
+        ],
+        [
+          182.0,
+          149.0
+        ],
+        [
+          120.0,
+          154.0
+        ]
+      ],
+      "commonScale": 0.5045045045045045,
+      "visibleRadii": [
+        21.63,
+        37.12,
+        57.01,
+        69.01,
+        66.1,
+        68.01,
+        66.01,
+        67.42,
+        68.47,
+        67.05,
+        69.16,
+        77.78
+      ]
+    },
+    "laser_ray": {
+      "key": "ca111_laser_ray",
+      "path": "assets/game/levels/stage_06/enemies/carrier_assault_1101/laser_ray.webp",
+      "cw": 64,
+      "ch": 64,
+      "cell": 64,
+      "cols": 8,
+      "dirs": 8,
+      "frames": 8,
+      "sha256": "942056ec3445bd23d4a3a1eca6fac8dae11ac07dd43ba0c05b070ab1eac2befc",
+      "alphaWidth": 28,
+      "mount": [
+        32,
+        0
+      ],
+      "segmentStep": 0.7
+    }
+  },
+  "models": {
+    "nuclear": {
+      "worldSize": 470,
+      "hull": "nuclear_hull",
+      "glow": "nuclear_hull_glow",
+      "bay": [
+        255.805,
+        252.302
+      ],
+      "engines": [
+        [
+          187.679,
+          483.932
+        ],
+        [
+          230.112,
+          483.932
+        ],
+        [
+          278.774,
+          483.932
+        ],
+        [
+          325.489,
+          483.932
+        ]
+      ],
+      "doorWorld": [
+        132,
+        270
+      ],
+      "sourcePivot": [
+        626.5,
+        624.5
+      ],
+      "commonScale": 0.38929440389294406,
+      "bounds": [
+        18,
+        16,
+        493,
+        496
+      ],
+      "door": "nuclear_door"
+    },
+    "laser": {
+      "worldSize": 460,
+      "hull": "laser_hull",
+      "glow": "laser_hull_glow",
+      "bay": [
+        255.61,
+        289.896
+      ],
+      "engines": [
+        [
+          161.325,
+          464.052
+        ],
+        [
+          214.312,
+          473.013
+        ],
+        [
+          271.974,
+          473.013
+        ],
+        [
+          325.351,
+          464.052
+        ]
+      ],
+      "doorWorld": [
+        132,
+        132
+      ],
+      "sourcePivot": [
+        627.0,
+        603.0
+      ],
+      "commonScale": 0.38961038961038963,
+      "bounds": [
+        16,
+        24,
+        497,
+        488
+      ],
+      "door": "laser_door"
+    }
+  }
+}

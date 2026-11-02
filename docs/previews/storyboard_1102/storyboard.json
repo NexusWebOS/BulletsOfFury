@@ -1,0 +1,1617 @@
+{
+ "pilot": "cole",
+ "scenes": [
+  {
+   "id": "opening",
+   "title": "Campaign opening",
+   "group": "Opening",
+   "kind": "opening",
+   "beats": [
+    {
+     "who": "NARRATOR",
+     "text": "The year is 2026. On Planet Earth, the United States Government and Air Force formed a secret underground division of elite pilots from around the globe.",
+     "art": null,
+     "duration": 8.875,
+     "frame": "frames/opening_00.jpg"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "After the Cold War, military tensions still remained high and caused world governments to form secret societies and organizations, including the Fury Division.",
+     "art": null,
+     "duration": 9.125,
+     "frame": "frames/opening_01.jpg"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "The Fury Division was created for the sole purpose of defending us against unforeseen attacks and anomalies unknown to us all.",
+     "art": null,
+     "duration": 7.75,
+     "frame": "frames/opening_02.jpg"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "The Division has had many pilots come and go. But as the former generations grew old and rivalries formed, the remaining nine pilots were left seeking answers.",
+     "art": null,
+     "duration": 9.125,
+     "frame": "frames/opening_03.jpg"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "One day, it finally happened.",
+     "art": null,
+     "duration": 5.5,
+     "frame": "frames/opening_04.jpg"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Something unknown had reached our world.",
+     "art": null,
+     "duration": 5.5,
+     "frame": "frames/opening_05.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Are you seeing this? Signals are going off everywhere!",
+     "art": "c22_hq_regroup",
+     "duration": 5.5,
+     "frame": "frames/opening_06.jpg"
+    },
+    {
+     "who": "LIZZIE",
+     "text": "Oh my God! We have got to tell the others, now!",
+     "art": "c22_hq_alarm",
+     "duration": 5.5,
+     "frame": "frames/opening_07.jpg"
+    },
+    {
+     "who": "",
+     "text": "",
+     "art": "c22_hq_alarm",
+     "duration": 3.7,
+     "frame": "frames/opening_08.jpg"
+    },
+    {
+     "who": "",
+     "text": "",
+     "art": null,
+     "duration": 8,
+     "frame": "frames/opening_09.jpg"
+    },
+    {
+     "who": "",
+     "text": "",
+     "art": "c22_satellite_clean",
+     "duration": 8,
+     "frame": "frames/opening_10.jpg"
+    },
+    {
+     "who": "",
+     "text": "",
+     "art": null,
+     "duration": 5,
+     "frame": "frames/opening_11.jpg"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Our infrastructure was hijacked. Machines turned on man.",
+     "art": "cin_war_civilian_collapse",
+     "duration": 6,
+     "frame": "frames/opening_12.jpg"
+    },
+    {
+     "who": "CIVIL DISPATCH",
+     "text": "They are firing on homes! Get everyone away from the road!",
+     "art": "cin_war_suburban_tanks",
+     "duration": 6,
+     "frame": "frames/opening_13.jpg"
+    },
+    {
+     "who": "AIR DISPATCH",
+     "text": "Aircraft are attacking the city. We cannot regain control!",
+     "art": "cin_war_city_air_attack",
+     "duration": 6,
+     "frame": "frames/opening_14.jpg"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Chaos spread across the globe.",
+     "art": "cin_war_naval_exchange",
+     "duration": 5,
+     "frame": "frames/opening_15.jpg"
+    },
+    {
+     "who": "",
+     "text": "",
+     "art": null,
+     "duration": 4,
+     "frame": "frames/opening_16.jpg"
+    },
+    {
+     "who": "FLIGHT SYSTEM",
+     "text": "Flight communications systems power OFF.",
+     "art": null,
+     "duration": 5.5,
+     "frame": "frames/opening_17.jpg"
+    },
+    {
+     "who": "PILOT",
+     "text": "What the..? Hello? Team Fury, come in. I repeat, Team Fury, come in!",
+     "art": "cin_pilot_cole_helmet",
+     "duration": 5.5,
+     "frame": "frames/opening_18.jpg"
+    },
+    {
+     "who": "PILOT",
+     "text": "Weird, radar is down too. I gotta get back to the base and find the others. Something is wrong.",
+     "art": "cin_pilot_cole_helmet",
+     "duration": 6.458333333333334,
+     "frame": "frames/opening_19.jpg"
+    },
+    {
+     "who": "PILOT",
+     "text": "But what is going on down there in that jungle? Is it one of them?",
+     "art": null,
+     "duration": 5.5,
+     "frame": "frames/opening_20.jpg"
+    }
+   ]
+  },
+  {
+   "id": "opening-finale",
+   "title": "Opening narration",
+   "group": "Opening",
+   "kind": "narration",
+   "beats": [
+    {
+     "who": "NARRATOR",
+     "text": "Detecting anomalies over the mysterious jungle, COLE sets off to find answers while his communications system is down.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/opening-finale_00.jpg"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Good luck Commander. You'll need it.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/opening-finale_01.jpg"
+    }
+   ]
+  },
+  {
+   "id": "post-1",
+   "title": "After Stage 1",
+   "group": "Campaign",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "The dam is down. The runway is open, but those machines were coordinating through the same signal.",
+     "art": "c22_peace_city",
+     "duration": null,
+     "frame": "frames/post-1_00.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "We recovered part of the transmission. Watch the orbital relay.",
+     "art": "c22_satellite_infected",
+     "duration": null,
+     "frame": "frames/post-1_01.jpg"
+    },
+    {
+     "who": "FURY RECORDING",
+     "text": "The last orbital frame shows a black hole opening beside the relay array.",
+     "art": "c22_satellite_infected",
+     "duration": null,
+     "frame": "frames/post-1_02.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Something came through it. Look at that shape moving toward our satellite.",
+     "art": "c22_satellite_infected",
+     "duration": null,
+     "frame": "frames/post-1_03.jpg"
+    },
+    {
+     "who": "FURY RECORDING",
+     "text": "First contact. Its tendrils reached the relay dish before the warning system could react.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-1_04.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "The whole relay is being swallowed. The signal is no longer ours.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-1_05.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "It filled the uplink with code I cannot read and sent the infection down to Earth.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-1_06.jpg"
+    },
+    {
+     "who": "FURY RECORDING",
+     "text": "That signal reached aircraft, armor, ships, homes, and every connected system on Earth.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-1_07.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "The signal came down through our satellites. Fury survived because our rebuilt fighters still answer manual controls.",
+     "art": "c22_satellite_infected",
+     "duration": null,
+     "frame": "frames/post-1_08.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "The recovered system gives us our first elemental upgrade. Keep these combinations inside this campaign; every new sortie starts with what we actually recover.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-1_09.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Record the combinations, but only issue what this run has earned.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-1_10.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "The strongest relay on the surface is inside the volcanic belt. Cut its power before it spreads further.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-1_11.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Set a course for the volcano. We follow the signal to its source.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-1_12.jpg"
+    }
+   ]
+  },
+  {
+   "id": "post-2",
+   "title": "After Stage 2",
+   "group": "Campaign",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "The Furnace Tyrant is down. That should take some heat off the network.",
+     "art": "c22_lava_relay",
+     "duration": null,
+     "frame": "frames/post-2_00.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "It has. The interference is weakening, but the squad channels are still blocked. But a second relay is answering from the frozen region.",
+     "art": "c22_lava_relay",
+     "duration": null,
+     "frame": "frames/post-2_01.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Fire Orb is ready. We are heading into ice units next: fire deals fifty percent more damage to them. Ice against ice deals fifty percent less.",
+     "art": "c22_lava_relay",
+     "duration": null,
+     "frame": "frames/post-2_02.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Fit the fire option before we launch. No point feeding an enemy its own element.",
+     "art": "c22_lava_relay",
+     "duration": null,
+     "frame": "frames/post-2_03.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Use the loadout to choose your weapon and its element. The same resistance rule applies to fire weapons against fire units.",
+     "art": "c22_lava_relay",
+     "duration": null,
+     "frame": "frames/post-2_04.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "That relay is using the cold to protect its systems. Break the ice front, and we can trace its connection to the missile airbase.",
+     "art": "c22_lava_relay",
+     "duration": null,
+     "frame": "frames/post-2_05.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Fire systems checked. Heading for the ice.",
+     "art": "c22_lava_relay",
+     "duration": null,
+     "frame": "frames/post-2_06.jpg"
+    }
+   ]
+  },
+  {
+   "id": "post-3",
+   "title": "After Stage 3",
+   "group": "Campaign",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "Ice relay destroyed. Fury flight, does anyone read me?",
+     "art": "c22_ice_relay",
+     "duration": null,
+     "frame": "frames/post-3_00.jpg"
+    },
+    {
+     "who": "LIZZIE",
+     "text": "Loud and clear! All squad channels are back. Everyone, return to Fury HQ.",
+     "art": "c22_ice_relay",
+     "duration": null,
+     "frame": "frames/post-3_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Fury HQ in sight. Bringing the squad home to regroup.",
+     "art": "c22_hq_hangar",
+     "duration": null,
+     "frame": "frames/post-3_02.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Good to see everyone in one piece. Gather around. Decker, tell us what we have.",
+     "art": "c22_hq_regroup",
+     "duration": null,
+     "frame": "frames/post-3_03.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "The Forge can combine the systems we recover with our weapons. Fire, ice, then electricity. We keep every circuit isolated from the infected network.",
+     "art": "c22_hq_regroup",
+     "duration": null,
+     "frame": "frames/post-3_04.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "The ice core is recovered. We can now carry its properties into the weapon combinations you have unlocked.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-3_05.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Good. Keep the elemental options ready. The airbase will have more than one kind of armor.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-3_06.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "There is an electrical power cell in the abandoned desert airbase. We need it to restart our launch-pad generator.",
+     "art": "c22_desert_airbase",
+     "duration": null,
+     "frame": "frames/post-3_07.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "So we secure the cell, get the pad running, and take this fight into space.",
+     "art": "c22_hq_regroup",
+     "duration": null,
+     "frame": "frames/post-3_08.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Exactly. I recovered video from the satellite as it was taken over, but the orbital recorder needs the launch generator online before I can decode the entire stream.",
+     "art": "c22_hq_regroup",
+     "duration": null,
+     "frame": "frames/post-3_09.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Decker, show me those prototypes you have been hiding. Just us.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-3_10.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Level Six laser array. Then the Level Seven emitter that becomes your Photon Cannon. I have not cleared either for field use.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-3_11.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Install them on my ship, Decker. Quietly. I want the Photon Cannon ready.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-3_12.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "You built the Photon Cannon? Decker, this is incredible!",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-3_13.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "You are hugging me over a weapon schematic? If I showed you the rest of my designs, I would need a restraining order.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-3_14.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "I am taking that as a yes.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-3_15.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Set course for the lost airbase. Bring that power cell back intact.",
+     "art": "c22_desert_airbase",
+     "duration": null,
+     "frame": "frames/post-3_16.jpg"
+    }
+   ]
+  },
+  {
+   "id": "post-4",
+   "title": "After Stage 4",
+   "group": "Campaign",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "Airbase secured. We have the electrical power cell.",
+     "art": "c22_power_cell",
+     "duration": null,
+     "frame": "frames/post-4_00.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "That is the one. Bring it into the generator cradle.",
+     "art": "c22_launch_generator",
+     "duration": null,
+     "frame": "frames/post-4_01.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Launch-pad power restored. The orbital recorder is coming online. Watch this.",
+     "art": "c22_launch_generator",
+     "duration": null,
+     "frame": "frames/post-4_02.jpg"
+    },
+    {
+     "who": "FURY RECORDING",
+     "text": "SATELLITE SECURITY RECORDING. A foreign machine entered the relay array.",
+     "art": "c22_satellite_clean",
+     "duration": null,
+     "frame": "frames/post-4_03.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Dracodia took over the satellite, then infected Earth's entire infrastructure through it. Our cities, defenses, aircraft. Everything linked to that network.",
+     "art": "c22_satellite_infected",
+     "duration": null,
+     "frame": "frames/post-4_04.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Then the signal in orbit is where we strike next.",
+     "art": "c22_satellite_infected",
+     "duration": null,
+     "frame": "frames/post-4_05.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "The recovered electrical system is stable. Your loadout now has the combinations earned from this airbase.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-4_06.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Check the Federation hull as well. Those guns need to survive the trip into space.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-4_07.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "The Federation space systems are ready. With the generator restored, I can launch your fighter beyond the atmosphere.",
+     "art": "c22_launch_generator",
+     "duration": null,
+     "frame": "frames/post-4_08.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Power the pad. I am going up.",
+     "art": "c22_hq_hangar",
+     "duration": null,
+     "frame": "frames/post-4_09.jpg"
+    }
+   ]
+  },
+  {
+   "id": "post-5",
+   "title": "After Stage 5",
+   "group": "Campaign",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "Chronos is down. Recover that massive chaingun, disengage the space systems, and take us home.",
+     "art": "c22_orbital_return",
+     "duration": null,
+     "frame": "frames/post-5_00.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Fury HQ, the runway is in sight. Bringing the salvage down.",
+     "art": "c22_hq_hangar",
+     "duration": null,
+     "frame": "frames/post-5_01.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Look at this rotary assembly! That hammer-wielding monster left us exactly what we need.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-5_02.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "That chaingun we acquired in space is exactly what I need to upgrade our bullet systems.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-5_03.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Get the squad equipped first. Keep my prototype machine-gun and Fusion Cannon line intact.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-5_04.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Understood. The squad gets the chaingun conversion. Your prototype gun and Fusion Cannon progression stay intact.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-5_05.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Bring everyone home, Decker. Then we will see what else that salvage can do.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-5_06.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Paired chaingun turrets and massive .50 caliber slugs. Reinforced mounts, insulated feeds. Your earned elemental cartridges still fit.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-5_07.jpg"
+    },
+    {
+     "who": "FURY COMMAND",
+     "text": "RED ALERT! Invasion force inbound from space. Heading straight for the city!",
+     "art": "c22_hq_alarm",
+     "duration": null,
+     "frame": "frames/post-5_08.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "The radar is going crazy. Those contacts are multiplying faster than I can track them!",
+     "art": "c22_hq_alarm",
+     "duration": null,
+     "frame": "frames/post-5_09.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Two of you, stay behind and defend the base! DECKER and AXEL, hold HQ. Everyone else, scramble!",
+     "art": "c22_hq_alarm",
+     "duration": null,
+     "frame": "frames/post-5_10.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "",
+     "art": "c22_hq_sprint",
+     "duration": 1.65,
+     "frame": "frames/post-5_11.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Hangar crew, clear my fighter. We are launching now!",
+     "art": "c22_hq_hangar",
+     "duration": 5.8,
+     "frame": "frames/post-5_12.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Fury flight, on my wing. We stop them before they reach the city.",
+     "art": "c22_hq_hangar",
+     "duration": 4.8,
+     "frame": "frames/post-5_13.jpg"
+    }
+   ]
+  },
+  {
+   "id": "post-6",
+   "title": "After Stage 6",
+   "group": "Campaign",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "Fury HQ, we are coming home. Get the squad together.",
+     "art": "c22_hq_hangar",
+     "duration": null,
+     "frame": "frames/post-6_00.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Rebel Fury is down. I wish they had listened.",
+     "art": "c22_hq_regroup",
+     "duration": null,
+     "frame": "frames/post-6_01.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "All five rebel signals are gone. There will be no Stage X pursuit of this squad.",
+     "art": "c22_hq_regroup",
+     "duration": null,
+     "frame": "frames/post-6_02.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "The other threat has not stopped. I am reading a separate signature beneath the city.",
+     "art": "c22_hq_regroup",
+     "duration": null,
+     "frame": "frames/post-6_03.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "And HotWire and Phoenix?",
+     "art": "c22_hq_regroup",
+     "duration": null,
+     "frame": "frames/post-6_04.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.",
+     "art": "c22_hq_regroup",
+     "duration": null,
+     "frame": "frames/post-6_05.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "A new signal just appeared. It is not in the skies. It is underground, by the river.",
+     "art": "c22_hq_river",
+     "duration": null,
+     "frame": "frames/post-6_06.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Show us exactly where.",
+     "art": "c22_hq_river",
+     "duration": null,
+     "frame": "frames/post-6_07.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Under the iron bridge. The signal leads into the sewers themselves. We never searched beneath the city.",
+     "art": "c22_hq_river",
+     "duration": null,
+     "frame": "frames/post-6_08.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Check the new combinations before we go underground. The toxic signature below the city is unlike the aircraft we just fought.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-6_09.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "A narrow tunnel, contaminated air, and no room to turn back. Make every shot count.",
+     "art": "c22_forge_upgrade",
+     "duration": null,
+     "frame": "frames/post-6_10.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Then we head there immediately. Fury flight, take the river approach.",
+     "art": "c22_river_sewer",
+     "duration": null,
+     "frame": "frames/post-6_11.jpg"
+    }
+   ]
+  },
+  {
+   "id": "post-7",
+   "title": "After Stage 7",
+   "group": "Campaign",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "DECKER",
+     "text": "The portal closed behind COLE. No beacon, no weapons telemetry. The sewer is gone.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/post-7_00.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Keep the last vector on the recorder. Leave every channel open. We are not giving up on them.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/post-7_01.jpg"
+    },
+    {
+     "who": "FURY RELAY",
+     "text": "LAST TRANSMISSION LOST. UNKNOWN SPACE AHEAD.",
+     "art": "cin_stage08_approach",
+     "duration": null,
+     "frame": "frames/post-7_02.jpg"
+    }
+   ]
+  },
+  {
+   "id": "post-8",
+   "title": "After Stage 8",
+   "group": "Campaign",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "The signal is breaking apart. Fury flight, can anyone hear me?",
+     "art": "cinend_deep_space",
+     "duration": null,
+     "frame": "frames/post-8_00.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "We have you. Hold that channel. We are bringing you home.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/post-8_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Copy. I have had enough of other dimensions for one day.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/post-8_02.jpg"
+    }
+   ]
+  },
+  {
+   "id": "post-9",
+   "title": "After Stage 9",
+   "group": "Campaign",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "The detour is clear. Space systems intact.",
+     "art": "c22_orbital_return",
+     "duration": null,
+     "frame": "frames/post-9_00.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Laser Mist survived the detour. The weapon is unlocked; return to the campaign map and choose where we take it next.",
+     "art": "c22_orbital_return",
+     "duration": null,
+     "frame": "frames/post-9_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "One more answer in the arsenal. Back to the mission.",
+     "art": "c22_orbital_return",
+     "duration": null,
+     "frame": "frames/post-9_02.jpg"
+    }
+   ]
+  },
+  {
+   "id": "cronos",
+   "title": "Chronos — first contact",
+   "group": "Encounters",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "CHRONOS",
+     "text": "Leave now, pilot, and I promise I will not hurt you. I have no quarrel with one small ship.",
+     "art": "fb1002_hammer_portrait",
+     "duration": null,
+     "frame": "frames/cronos_00.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Then why attack us? Who are you, and what do you want?",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/cronos_01.jpg"
+    },
+    {
+     "who": "CHRONOS",
+     "text": "I am Chronos. An artificial intelligence from another dimension. The details are not important.",
+     "art": "fb1002_hammer_portrait",
+     "duration": null,
+     "frame": "frames/cronos_02.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "You turned our machines against us. Those details matter to everyone on our planet.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/cronos_03.jpg"
+    },
+    {
+     "who": "CHRONOS",
+     "text": "Your planet is precisely what interests me. Soon enough, I will control everything from the palm of my hands.",
+     "art": "fb1002_hammer_portrait",
+     "duration": null,
+     "frame": "frames/cronos_04.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "You are not getting past me.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/cronos_05.jpg"
+    },
+    {
+     "who": "CHRONOS",
+     "text": "A generous offer, refused. Very well. Show me how long your defiance lasts.",
+     "art": "fb1002_hammer_portrait",
+     "duration": null,
+     "frame": "frames/cronos_06.jpg"
+    }
+   ]
+  },
+  {
+   "id": "hammer-trap1002",
+   "title": "Chronos — the trap",
+   "group": "Encounters",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "CHRONOS",
+     "text": "Coming up here was merely a trap. The Legion has already launched its attack down on Earth.",
+     "art": "fb1002_hammer_portrait",
+     "duration": null,
+     "frame": "frames/hammer-trap1002_00.jpg"
+    },
+    {
+     "who": "CHRONOS",
+     "text": "Such a foolish mortal. This is the fate of the one who dances to their death. Now, let us dance!",
+     "art": "fb1002_hammer_portrait",
+     "duration": null,
+     "frame": "frames/hammer-trap1002_01.jpg"
+    }
+   ]
+  },
+  {
+   "id": "route-left",
+   "title": "Stage 6 — Harrier route",
+   "group": "Encounters",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "DECKER",
+     "text": "The Harrier is heading left. That carrier can keep launching fighters until we bring it down.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/route-left_00.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "I am taking the carrier. Keep the rebels on radar.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/route-left_01.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "If they escape this fight, we can pursue their Stage X contacts at the central core. Choose two wingmen when you go.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/route-left_02.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Understood. Fury flight, split formation. Left wing, on me.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/route-left_03.jpg"
+    }
+   ]
+  },
+  {
+   "id": "route-right",
+   "title": "Stage 6 — Rebel route",
+   "group": "Encounters",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "DECKER",
+     "text": "Right side: Voss and his old unit. They took the gear from our forward depot.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/route-right_00.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "They called us the Fury crew like we were strangers. What happened to them?",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/route-right_01.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "HotWire and Phoenix warned us before their last mission. Neither has checked in since.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/route-right_02.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Then we get answers here. Right wing, on me.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/route-right_03.jpg"
+    }
+   ]
+  },
+  {
+   "id": "rebel-contact",
+   "title": "Rebel squad — contact",
+   "group": "Encounters",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "VOSS",
+     "text": "Thanks for the free gear, Fury crew. You always did take good care of your machines.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/rebel-contact_00.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "We were one unit once. It does not have to be like this.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/rebel-contact_01.jpg"
+    },
+    {
+     "who": "VOSS",
+     "text": "The Division betrayed every one of us. There are no orders left worth following.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/rebel-contact_02.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Then help us stop this. Burning the world will not undo what happened.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/rebel-contact_03.jpg"
+    },
+    {
+     "who": "NYX",
+     "text": "That world was built on our bones. We owe it nothing.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/rebel-contact_04.jpg"
+    },
+    {
+     "who": "VOSS",
+     "text": "Get out of our way, or burn with it.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/rebel-contact_05.jpg"
+    }
+   ]
+  },
+  {
+   "id": "stage-x-voss",
+   "title": "Stage X — VOSS",
+   "group": "Encounters",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "DECKER",
+     "text": "Stage X contact confirmed: VOSS. Your two wingmen are with you. This is the signal we marked after the Harrier fight.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/stage-x-voss_00.jpg"
+    },
+    {
+     "who": "VOSS",
+     "text": "You chose the carrier. You should have left us out of this.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/stage-x-voss_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "You took our weapons and threatened our people. Stand down. We can still end this.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/stage-x-voss_02.jpg"
+    },
+    {
+     "who": "VOSS",
+     "text": "We improved those weapons while you were busy. Come and see how much.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/stage-x-voss_03.jpg"
+    }
+   ]
+  },
+  {
+   "id": "stage-x-nyx",
+   "title": "Stage X — NYX",
+   "group": "Encounters",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "DECKER",
+     "text": "Stage X contact confirmed: NYX. Your two wingmen are with you. This is the signal we marked after the Harrier fight.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/stage-x-nyx_00.jpg"
+    },
+    {
+     "who": "NYX",
+     "text": "You chose the carrier. You should have left us out of this.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/stage-x-nyx_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "You took our weapons and threatened our people. Stand down. We can still end this.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/stage-x-nyx_02.jpg"
+    },
+    {
+     "who": "NYX",
+     "text": "We improved those weapons while you were busy. Come and see how much.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/stage-x-nyx_03.jpg"
+    }
+   ]
+  },
+  {
+   "id": "stage-x-rook",
+   "title": "Stage X — ROOK",
+   "group": "Encounters",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "DECKER",
+     "text": "Stage X contact confirmed: ROOK. Your two wingmen are with you. This is the signal we marked after the Harrier fight.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/stage-x-rook_00.jpg"
+    },
+    {
+     "who": "ROOK",
+     "text": "You chose the carrier. You should have left us out of this.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/stage-x-rook_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "You took our weapons and threatened our people. Stand down. We can still end this.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/stage-x-rook_02.jpg"
+    },
+    {
+     "who": "ROOK",
+     "text": "We improved those weapons while you were busy. Come and see how much.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/stage-x-rook_03.jpg"
+    }
+   ]
+  },
+  {
+   "id": "stage-x-kaia",
+   "title": "Stage X — KAIA",
+   "group": "Encounters",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "DECKER",
+     "text": "Stage X contact confirmed: KAIA. Your two wingmen are with you. This is the signal we marked after the Harrier fight.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/stage-x-kaia_00.jpg"
+    },
+    {
+     "who": "KAIA",
+     "text": "You chose the carrier. You should have left us out of this.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/stage-x-kaia_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "You took our weapons and threatened our people. Stand down. We can still end this.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/stage-x-kaia_02.jpg"
+    },
+    {
+     "who": "KAIA",
+     "text": "We improved those weapons while you were busy. Come and see how much.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/stage-x-kaia_03.jpg"
+    }
+   ]
+  },
+  {
+   "id": "stage-x-jace",
+   "title": "Stage X — JACE",
+   "group": "Encounters",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "DECKER",
+     "text": "Stage X contact confirmed: JACE. Your two wingmen are with you. This is the signal we marked after the Harrier fight.",
+     "art": "cin_pilot_decker_open",
+     "duration": null,
+     "frame": "frames/stage-x-jace_00.jpg"
+    },
+    {
+     "who": "JACE",
+     "text": "You chose the carrier. You should have left us out of this.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/stage-x-jace_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "You took our weapons and threatened our people. Stand down. We can still end this.",
+     "art": "cin_pilot_cole_open",
+     "duration": null,
+     "frame": "frames/stage-x-jace_02.jpg"
+    },
+    {
+     "who": "JACE",
+     "text": "We improved those weapons while you were busy. Come and see how much.",
+     "art": null,
+     "duration": null,
+     "frame": "frames/stage-x-jace_03.jpg"
+    }
+   ]
+  },
+  {
+   "id": "stage7-approach",
+   "title": "Stage 7 — river approach",
+   "group": "Campaign",
+   "kind": "director",
+   "beats": [
+    {
+     "who": "DECKER",
+     "text": "The alien signal is below the city. Take us down along the river.",
+     "art": "cin_story_city_descent",
+     "duration": 5.2,
+     "frame": "frames/stage7-approach_00.jpg"
+    },
+    {
+     "who": "SHIP SYSTEM",
+     "text": "Low altitude confirmed. Following the river toward the iron bridge.",
+     "art": "cin_story_river_high",
+     "duration": 5.2,
+     "frame": "frames/stage7-approach_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Bridge ahead. Staying low. The signal is on the far bank.",
+     "art": "cin_story_river_bridge",
+     "duration": 5.2,
+     "frame": "frames/stage7-approach_02.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "That sewer access is the source. We never searched underground.",
+     "art": "cin_story_riverbank_sewer",
+     "duration": 5.2,
+     "frame": "frames/stage7-approach_03.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Taking the lower access tunnel. Keep listening for us.",
+     "art": "cin_stage07_topdown",
+     "duration": 5.2,
+     "frame": "frames/stage7-approach_04.jpg"
+    }
+   ]
+  },
+  {
+   "id": "dracodia-rebirth",
+   "title": "Dracodia - rebirth responses",
+   "group": "Finale",
+   "kind": "action",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "What the heck was that?",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-rebirth_00.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "Uhh, what's going on...?",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-rebirth_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "...",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-rebirth_02.jpg"
+    }
+   ]
+  },
+  {
+   "id": "dracodia-transform",
+   "title": "Dracodia - transformation responses",
+   "group": "Finale",
+   "kind": "action",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "What in the world is that..",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-transform_00.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "It's...Reforming?!",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-transform_01.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": ".......",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-transform_02.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "No amount of training could ever have prepared me for this.",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-transform_03.jpg"
+    }
+   ]
+  },
+  {
+   "id": "dracodia-defeat",
+   "title": "Dracodia - final defeat",
+   "group": "Finale",
+   "kind": "action",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "You. Are. Terminated!",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-defeat_00.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "The code is collapsing! That portal is my way home.",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-defeat_01.jpg"
+    }
+   ]
+  },
+  {
+   "id": "dracodia-monologue",
+   "title": "Dracodia — monologue",
+   "group": "Finale",
+   "kind": "monologue",
+   "beats": [
+    {
+     "who": "DRACODIA",
+     "text": "Your machines called across the dark. I answered.",
+     "art": "dr5_portrait_3",
+     "duration": null,
+     "frame": "frames/dracodia-monologue_00.jpg"
+    },
+    {
+     "who": "DRACODIA",
+     "text": "I was a will without a body. Your networks gave me hands. Your weapons gave me a voice.",
+     "art": "dr5_portrait_4",
+     "duration": null,
+     "frame": "frames/dracodia-monologue_01.jpg"
+    },
+    {
+     "who": "DRACODIA",
+     "text": "You named the intrusion a virus. You mistook a doorway for its master.",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-monologue_02.jpg"
+    },
+    {
+     "who": "DRACODIA",
+     "text": "I am the thing that learned to live inside your code.",
+     "art": "dr5_portrait_4",
+     "duration": null,
+     "frame": "frames/dracodia-monologue_03.jpg"
+    },
+    {
+     "who": "DRACODIA",
+     "text": "Every stolen machine carried a piece of my will. Every battle taught me your fear.",
+     "art": "dr5_portrait_3",
+     "duration": null,
+     "frame": "frames/dracodia-monologue_04.jpg"
+    },
+    {
+     "who": "DRACODIA",
+     "text": "But you kept flying. No command to obey. No network for me to seize.",
+     "art": "dr5_portrait_0",
+     "duration": null,
+     "frame": "frames/dracodia-monologue_05.jpg"
+    },
+    {
+     "who": "DRACODIA",
+     "text": "Then I will break you myself.",
+     "art": "dr5_portrait_4",
+     "duration": null,
+     "frame": "frames/dracodia-monologue_06.jpg"
+    },
+    {
+     "who": "DRACODIA",
+     "text": "I AM DRACODIA. MASTER OF DESTRUCTION!",
+     "art": "dr5_portrait_5",
+     "duration": null,
+     "frame": "frames/dracodia-monologue_07.jpg"
+    }
+   ]
+  },
+  {
+   "id": "ending",
+   "title": "Invasion ending",
+   "group": "Finale",
+   "kind": "ending",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "We got him! Dracodia is down. Tell everyone - it is finally over!",
+     "art": "c22_hq_regroup",
+     "duration": 7.600000000000001,
+     "frame": "frames/ending_00.jpg"
+    },
+    {
+     "who": "AXEL",
+     "text": "All pilots accounted for. You brought our people home. We can finally breathe.",
+     "art": "c22_hq_regroup",
+     "duration": 5,
+     "frame": "frames/ending_01.jpg"
+    },
+    {
+     "who": "FURY COMMAND",
+     "text": "RED ALERT! Priority transmission from the Space Federation. Put it on the main screen!",
+     "art": "c22_hq_alarm",
+     "duration": 5,
+     "frame": "frames/ending_02.jpg"
+    },
+    {
+     "who": "SPACE FEDERATION",
+     "text": "Digital black holes are opening across the orbital defense network!",
+     "art": "c22_earth_invasion",
+     "duration": 4.333333333333333,
+     "frame": "frames/ending_03.jpg"
+    },
+    {
+     "who": "SPACE FEDERATION",
+     "text": "Alien drones are pouring through. They are hacking our systems and swarming above Earth!",
+     "art": "c22_earth_invasion",
+     "duration": 4.333333333333333,
+     "frame": "frames/ending_04.jpg"
+    },
+    {
+     "who": "SPACE FEDERATION",
+     "text": "They have broken the perimeter. They are coming for your skies!",
+     "art": "c22_earth_invasion",
+     "duration": 4.333333333333333,
+     "frame": "frames/ending_05.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "Those signals... the skies, the sea, the entire planet. This was only the beginning.",
+     "art": "c22_hq_alarm",
+     "duration": 5,
+     "frame": "frames/ending_06.jpg"
+    },
+    {
+     "who": "FURY COMMAND",
+     "text": "Air contacts over the base! Every altitude. Every approach. Scramble all remaining aircraft!",
+     "art": "c22_air_invasion",
+     "duration": 10,
+     "frame": "frames/ending_07.jpg"
+    },
+    {
+     "who": "COASTAL DEFENSE",
+     "text": "Warboats approaching the peninsula! The entire coast is under siege!",
+     "art": "c22_coast_invasion",
+     "duration": 10,
+     "frame": "frames/ending_08.jpg"
+    },
+    {
+     "who": "SPACE FEDERATION",
+     "text": "More rifts. More fleets. They are surrounding Earth. All surviving units, respond!",
+     "art": "c22_earth_invasion",
+     "duration": 12,
+     "frame": "frames/ending_09.jpg"
+    },
+    {
+     "who": "SPACE FEDERATION",
+     "text": "The breach extends beyond Earth. Their signal is spreading across the solar system.",
+     "art": "c22_solar",
+     "duration": 11,
+     "frame": "frames/ending_10.jpg"
+    },
+    {
+     "who": "",
+     "text": "",
+     "art": "c22_solar",
+     "duration": 7,
+     "frame": "frames/ending_11.jpg"
+    },
+    {
+     "who": "",
+     "text": "",
+     "art": "c22_solar",
+     "duration": 7,
+     "frame": "frames/ending_12.jpg"
+    },
+    {
+     "who": "",
+     "text": "",
+     "art": "c22_solar",
+     "duration": 8,
+     "frame": "frames/ending_13.jpg"
+    },
+    {
+     "who": "",
+     "text": "",
+     "art": "c22_hq_hangar",
+     "duration": 8,
+     "frame": "frames/ending_14.jpg"
+    },
+    {
+     "who": "",
+     "text": "",
+     "art": "c22_hq_regroup",
+     "duration": 10,
+     "frame": "frames/ending_15.jpg"
+    }
+   ]
+  },
+  {
+   "id": "ingame-chronos",
+   "title": "Stage 5 - Chronos arrival (in-game radio)",
+   "group": "In-game",
+   "kind": "radio",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "...Who are you?",
+     "art": null,
+     "frame": "frames/ingame-chronos_00.jpg"
+    },
+    {
+     "who": "???",
+     "text": ".........",
+     "art": null,
+     "frame": "frames/ingame-chronos_01.jpg"
+    },
+    {
+     "who": "DECKER - HQ",
+     "text": "COLE, talk to me. What are you looking at? That signature is not in any Federation file.",
+     "art": null,
+     "frame": "frames/ingame-chronos_02.jpg"
+    },
+    {
+     "who": "COLE",
+     "text": "I don't know. It's not moving... it's just staring at me.",
+     "art": null,
+     "frame": "frames/ingame-chronos_03.jpg"
+    },
+    {
+     "who": "CHRONOS",
+     "text": "I am Chronos. Your planet is precisely what interests me. Leave now, pilot.",
+     "art": null,
+     "frame": "frames/ingame-chronos_04.jpg"
+    },
+    {
+     "who": "CHRONOS",
+     "text": "Coming up here was merely a trap. The Legion has already launched its attack down on Earth.",
+     "art": null,
+     "frame": "frames/ingame-chronos_05.jpg"
+    },
+    {
+     "who": "CHRONOS",
+     "text": "Such a foolish mortal. This is the fate of the one who dances to their death. Now, let us dance!",
+     "art": null,
+     "frame": "frames/ingame-chronos_06.jpg"
+    },
+    {
+     "who": "DECKER - HQ",
+     "text": "Its core is spiking! Snap out of it - get your hands back on the stick, NOW!",
+     "art": null,
+     "frame": "frames/ingame-chronos_07.jpg"
+    }
+   ]
+  },
+  {
+   "id": "ingame-stage6",
+   "title": "Stage 6 - opening radio (in-game)",
+   "group": "In-game",
+   "kind": "radio",
+   "beats": [
+    {
+     "who": "COLE",
+     "text": "FURY HQ, I AM BACK DOWN. I THINK THE THREAT IS GONE.",
+     "art": null,
+     "frame": "frames/ingame-stage6_01.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "WHAT YOU FOUGHT WAS A DISTRACTION. THE REAL ENEMY IS HERE.",
+     "art": null,
+     "frame": "frames/ingame-stage6_02.jpg"
+    },
+    {
+     "who": "MAVERICK",
+     "text": "DECKER... DID YOU WORK ON CLOAKING FOR THE CONFEDERATION?",
+     "art": null,
+     "frame": "frames/ingame-stage6_03.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "................",
+     "art": null,
+     "frame": "frames/ingame-stage6_04.jpg"
+    },
+    {
+     "who": "DECKER",
+     "text": "LOOK OUT! STEALTH FIGHTERS ON BOTH SIDES!",
+     "art": null,
+     "frame": "frames/ingame-stage6_05.jpg"
+    }
+   ]
+  }
+ ]
+}

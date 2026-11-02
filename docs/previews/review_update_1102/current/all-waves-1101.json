@@ -1,0 +1,3502 @@
+{
+  "title": "Every regular wave",
+  "difficulty": "furious",
+  "levels": [
+    {
+      "id": "stage-1",
+      "stage": 1,
+      "route": null,
+      "title": "Stage 1",
+      "tab": "Stage 1",
+      "biome": "Jungle Coast",
+      "routeLabel": null,
+      "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-1-9b34e1b7393b.mp4",
+      "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-01.jpg",
+      "seconds": 91.87,
+      "waves": [
+        {
+          "number": 1,
+          "title": "Patrol Boat / Gunboat",
+          "start": 0.656,
+          "end": 12.656,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-01.jpg",
+          "planned": 1,
+          "types": [
+            "s1boatpatrol",
+            "s1boatgun"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Patrol Boat",
+          "start": 4.588,
+          "end": 16.588,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-02.jpg",
+          "planned": 4.75,
+          "types": [
+            "s1boatpatrol"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "Gunboat / Patrol Boat",
+          "start": 8.325,
+          "end": 20.325,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-03.jpg",
+          "planned": 8.5,
+          "types": [
+            "s1boatgun",
+            "s1boatpatrol"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "River Corvette",
+          "start": 12.312,
+          "end": 24.312,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-04.jpg",
+          "planned": 12.5,
+          "types": [
+            "s1corvette"
+          ]
+        },
+        {
+          "number": 5,
+          "title": "Delta Fighter / Flyby",
+          "start": 14.064,
+          "end": 26.064,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-05.jpg",
+          "planned": 14.25,
+          "types": [
+            "s1jetdelta"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "Light Jungle Tank / Black Camo / Jungle APC",
+          "start": 21.491,
+          "end": 33.491,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-06.jpg",
+          "planned": 16.25,
+          "types": [
+            "s1tanklight",
+            "s1tankapc"
+          ]
+        },
+        {
+          "number": 7,
+          "title": "Heavy Jungle Tank / Light Jungle Tank / Black Camo",
+          "start": 22.39,
+          "end": 34.39,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-07.jpg",
+          "planned": 19.75,
+          "types": [
+            "s1tankheavy",
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Strike Bomber / Delta Fighter / Flyby",
+          "start": 23.357,
+          "end": 35.357,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-08.jpg",
+          "planned": 23.5,
+          "types": [
+            "s1jetbomber",
+            "s1jetdelta"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "Heavy Jungle Tank",
+          "start": 26.377,
+          "end": 38.377,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-09.jpg",
+          "planned": 26.5,
+          "types": [
+            "s1tankheavy"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "Light Jungle Tank / Black Camo",
+          "start": 28.762,
+          "end": 40.762,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-10.jpg",
+          "planned": 28,
+          "types": [
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 11,
+          "title": "Jungle APC / Light Jungle Tank / Black Camo",
+          "start": 30.614,
+          "end": 42.614,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-11.jpg",
+          "planned": 30.75,
+          "types": [
+            "s1tankapc",
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 12,
+          "title": "Delta Strike Fighter / Delta Fighter / Flyby / Strike Bomber",
+          "start": 35.686,
+          "end": 47.686,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-12.jpg",
+          "planned": 33.75,
+          "types": [
+            "s1jetdelta_b",
+            "s1jetdelta",
+            "s1jetbomber"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "Light Jungle Tank / Black Camo",
+          "start": 39.339,
+          "end": 51.339,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-13.jpg",
+          "planned": 35,
+          "types": [
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 14,
+          "title": "Formation arrival",
+          "start": 40.24,
+          "end": 52.24,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-14.jpg",
+          "planned": 35.55611111111111,
+          "types": []
+        },
+        {
+          "number": 15,
+          "title": "Light Jungle Tank / Black Camo / Jungle APC / Rocket Buggy",
+          "start": 41.142,
+          "end": 53.142,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-15.jpg",
+          "planned": 38.25,
+          "types": [
+            "s1tanklight",
+            "s1tankapc",
+            "s1truckmissile"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "Missile Ground Turret",
+          "start": 47.981,
+          "end": 59.981,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-16.jpg",
+          "planned": 38.745,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "Missile Ground Turret",
+          "start": 52.569,
+          "end": 64.569,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-17.jpg",
+          "planned": 41.93388888888889,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 18,
+          "title": "Light Jungle Tank / Black Camo",
+          "start": 53.52,
+          "end": 65.52,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-18.jpg",
+          "planned": 42,
+          "types": [
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 19,
+          "title": "Delta Strike Fighter / Delta Fighter / Flyby / Strike Bomber",
+          "start": 54.505,
+          "end": 66.505,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-19.jpg",
+          "planned": 43,
+          "types": [
+            "s1jetdelta_b",
+            "s1jetdelta",
+            "s1jetbomber"
+          ]
+        },
+        {
+          "number": 20,
+          "title": "Missile Ground Turret",
+          "start": 55.906,
+          "end": 67.906,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-20.jpg",
+          "planned": 45.12277777777778,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 21,
+          "title": "Heavy Jungle Tank / Light Jungle Tank / Black Camo / Jungle APC",
+          "start": 56.807,
+          "end": 68.807,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-21.jpg",
+          "planned": 47.25,
+          "types": [
+            "s1tankheavy",
+            "s1tanklight",
+            "s1tankapc",
+            "s1truckmissile"
+          ]
+        },
+        {
+          "number": 22,
+          "title": "Formation arrival",
+          "start": 61.378,
+          "end": 73.377,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-22.jpg",
+          "planned": 48.31166666666666,
+          "types": []
+        },
+        {
+          "number": 23,
+          "title": "Light Jungle Tank / Black Camo",
+          "start": 62.312,
+          "end": 74.312,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-23.jpg",
+          "planned": 49,
+          "types": [
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 24,
+          "title": "Delta Fighter / Flyby",
+          "start": 63.213,
+          "end": 75.213,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-24.jpg",
+          "planned": 50,
+          "types": [
+            "s1jetdelta"
+          ]
+        },
+        {
+          "number": 25,
+          "title": "Missile Ground Turret",
+          "start": 64.431,
+          "end": 76.431,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-25.jpg",
+          "planned": 51.50055555555555,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 26,
+          "title": "Delta Fighter / Flyby / Delta Strike Fighter / Strike Bomber",
+          "start": 65.332,
+          "end": 77.332,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-26.jpg",
+          "planned": 52.75,
+          "types": [
+            "s1jetdelta",
+            "s1jetdelta_b",
+            "s1jetbomber"
+          ]
+        },
+        {
+          "number": 27,
+          "title": "Missile Ground Turret",
+          "start": 66.233,
+          "end": 78.233,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-27.jpg",
+          "planned": 54.68944444444444,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 28,
+          "title": "Light Jungle Tank / Black Camo",
+          "start": 67.15,
+          "end": 79.15,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-28.jpg",
+          "planned": 56,
+          "types": [
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 29,
+          "title": "Jungle APC / Heavy Jungle Tank / Light Jungle Tank / Black Camo",
+          "start": 68.052,
+          "end": 80.052,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-29.jpg",
+          "planned": 57.5,
+          "types": [
+            "s1tankapc",
+            "s1tankheavy",
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 30,
+          "title": "Delta Fighter / Flyby / Strike Bomber / Delta Strike Fighter",
+          "start": 68.952,
+          "end": 80.952,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-30.jpg",
+          "planned": 63,
+          "types": [
+            "s1jetdelta",
+            "s1jetbomber",
+            "s1jetdelta_b"
+          ]
+        },
+        {
+          "number": 31,
+          "title": "Light Jungle Tank / Black Camo",
+          "start": 70.505,
+          "end": 82.505,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-31.jpg",
+          "planned": 63,
+          "types": [
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 32,
+          "title": "Rocket Buggy / Light Jungle Tank / Black Camo / Jungle APC",
+          "start": 71.405,
+          "end": 83.405,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-32.jpg",
+          "planned": 67.75,
+          "types": [
+            "s1truckmissile",
+            "s1tanklight",
+            "s1tankapc",
+            "s1tankheavy"
+          ]
+        },
+        {
+          "number": 33,
+          "title": "Light Jungle Tank / Black Camo",
+          "start": 72.306,
+          "end": 84.306,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-33.jpg",
+          "planned": 70,
+          "types": [
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 34,
+          "title": "Delta Strike Fighter",
+          "start": 73.577,
+          "end": 85.577,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-34.jpg",
+          "planned": 73.5,
+          "types": [
+            "s1jetdelta_b"
+          ]
+        },
+        {
+          "number": 35,
+          "title": "Light Jungle Tank / Black Camo",
+          "start": 77.077,
+          "end": 89.077,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-35.jpg",
+          "planned": 77,
+          "types": [
+            "s1tanklight"
+          ]
+        },
+        {
+          "number": 36,
+          "title": "Delta Strike Fighter",
+          "start": 78.679,
+          "end": 91.87,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-1-wave-36.jpg",
+          "planned": 78.625,
+          "types": [
+            "s1jetdelta_b"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage-2",
+      "stage": 2,
+      "route": null,
+      "title": "Stage 2",
+      "tab": "Stage 2",
+      "biome": "Volcanic Pass",
+      "routeLabel": null,
+      "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-2-1b6a3e2adffe.mp4",
+      "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-01.jpg",
+      "seconds": 56.65,
+      "waves": [
+        {
+          "number": 1,
+          "title": "Formation arrival",
+          "start": 1.722,
+          "end": 13.722,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-01.jpg",
+          "planned": 2,
+          "types": []
+        },
+        {
+          "number": 2,
+          "title": "Formation arrival",
+          "start": 4.09,
+          "end": 16.09,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-02.jpg",
+          "planned": 4.2,
+          "types": []
+        },
+        {
+          "number": 3,
+          "title": "Formation arrival",
+          "start": 6.493,
+          "end": 18.493,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-03.jpg",
+          "planned": 6.6,
+          "types": []
+        },
+        {
+          "number": 4,
+          "title": "Volcanic Missile Turret",
+          "start": 8.23,
+          "end": 20.23,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-04.jpg",
+          "planned": 8.346333333333332,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 5,
+          "title": "Formation arrival",
+          "start": 9.296,
+          "end": 21.296,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-05.jpg",
+          "planned": 9.4,
+          "types": []
+        },
+        {
+          "number": 6,
+          "title": "Formation arrival",
+          "start": 11.965,
+          "end": 23.965,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-06.jpg",
+          "planned": 12,
+          "types": []
+        },
+        {
+          "number": 7,
+          "title": "Fire Interceptor",
+          "start": 12.85,
+          "end": 24.85,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-07.jpg",
+          "planned": 12,
+          "types": [
+            "ac10firejet"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Volcanic Missile Turret",
+          "start": 13.734,
+          "end": 25.734,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-08.jpg",
+          "planned": 12.032999999999998,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "Formation arrival",
+          "start": 14.676,
+          "end": 26.676,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-09.jpg",
+          "planned": 14.7,
+          "types": []
+        },
+        {
+          "number": 10,
+          "title": "Volcanic Missile Turret",
+          "start": 15.719,
+          "end": 27.719,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-10.jpg",
+          "planned": 15.719666666666665,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 11,
+          "title": "Formation arrival",
+          "start": 17.804,
+          "end": 29.804,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-11.jpg",
+          "planned": 17.8,
+          "types": []
+        },
+        {
+          "number": 12,
+          "title": "Volcanic Missile Turret",
+          "start": 19.423,
+          "end": 31.423,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-12.jpg",
+          "planned": 19.40633333333333,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "Formation arrival",
+          "start": 20.324,
+          "end": 32.324,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-13.jpg",
+          "planned": 20.3,
+          "types": []
+        },
+        {
+          "number": 14,
+          "title": "Volcanic Missile Turret",
+          "start": 23.11,
+          "end": 35.11,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-14.jpg",
+          "planned": 23.092999999999993,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "Formation arrival",
+          "start": 24.244,
+          "end": 36.244,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-15.jpg",
+          "planned": 24.2,
+          "types": []
+        },
+        {
+          "number": 16,
+          "title": "Fire Interceptor",
+          "start": 25.129,
+          "end": 37.129,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-16.jpg",
+          "planned": 25,
+          "types": [
+            "ac10firejet"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "Volcanic Missile Turret",
+          "start": 26.881,
+          "end": 38.88,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-17.jpg",
+          "planned": 26.77966666666666,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 18,
+          "title": "Formation arrival",
+          "start": 27.765,
+          "end": 39.764,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-18.jpg",
+          "planned": 27.2,
+          "types": []
+        },
+        {
+          "number": 19,
+          "title": "Volcanic Missile Turret",
+          "start": 30.584,
+          "end": 42.584,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-19.jpg",
+          "planned": 30.466333333333324,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 20,
+          "title": "Formation arrival",
+          "start": 31.48,
+          "end": 43.48,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-20.jpg",
+          "planned": 30.5,
+          "types": []
+        },
+        {
+          "number": 21,
+          "title": "Formation arrival",
+          "start": 34.138,
+          "end": 46.138,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-21.jpg",
+          "planned": 34,
+          "types": []
+        },
+        {
+          "number": 22,
+          "title": "Formation arrival",
+          "start": 38.142,
+          "end": 50.142,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-22.jpg",
+          "planned": 38,
+          "types": []
+        },
+        {
+          "number": 23,
+          "title": "Fire Interceptor",
+          "start": 39.026,
+          "end": 51.026,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-23.jpg",
+          "planned": 38,
+          "types": [
+            "ac10firejet"
+          ]
+        },
+        {
+          "number": 24,
+          "title": "Formation arrival",
+          "start": 40.628,
+          "end": 52.628,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-24.jpg",
+          "planned": 40.5,
+          "types": []
+        },
+        {
+          "number": 25,
+          "title": "Formation arrival",
+          "start": 44.181,
+          "end": 56.65,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-2-wave-25.jpg",
+          "planned": 44,
+          "types": []
+        }
+      ]
+    },
+    {
+      "id": "stage-3",
+      "stage": 3,
+      "route": null,
+      "title": "Stage 3",
+      "tab": "Stage 3",
+      "biome": "Frozen Islands",
+      "routeLabel": null,
+      "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-3-c5f8b5a0a60f.mp4",
+      "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-01.jpg",
+      "seconds": 58.73,
+      "waves": [
+        {
+          "number": 1,
+          "title": "Formation arrival",
+          "start": 1.639,
+          "end": 13.639,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-01.jpg",
+          "planned": 2,
+          "types": []
+        },
+        {
+          "number": 2,
+          "title": "Formation arrival",
+          "start": 5.226,
+          "end": 17.226,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-02.jpg",
+          "planned": 5.5,
+          "types": []
+        },
+        {
+          "number": 3,
+          "title": "Island Laser Turret",
+          "start": 8.439,
+          "end": 20.439,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-03.jpg",
+          "planned": 8.694097222222222,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "Formation arrival",
+          "start": 11.232,
+          "end": 23.232,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-04.jpg",
+          "planned": 11.5,
+          "types": []
+        },
+        {
+          "number": 5,
+          "title": "Ice Interceptor",
+          "start": 12.083,
+          "end": 24.083,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-05.jpg",
+          "planned": 12,
+          "types": [
+            "ac10icejet"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "Island Laser Turret",
+          "start": 12.935,
+          "end": 24.935,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-06.jpg",
+          "planned": 12.534375,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 7,
+          "title": "Island Laser Turret",
+          "start": 16.187,
+          "end": 28.187,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-07.jpg",
+          "planned": 16.374652777777776,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Formation arrival",
+          "start": 17.038,
+          "end": 29.038,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-08.jpg",
+          "planned": 17.2,
+          "types": []
+        },
+        {
+          "number": 9,
+          "title": "Island Laser Turret",
+          "start": 20.041,
+          "end": 32.041,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-09.jpg",
+          "planned": 20.214930555555554,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "Formation arrival",
+          "start": 20.892,
+          "end": 32.892,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-10.jpg",
+          "planned": 20.4,
+          "types": []
+        },
+        {
+          "number": 11,
+          "title": "Island Laser Turret",
+          "start": 23.895,
+          "end": 35.895,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-11.jpg",
+          "planned": 24.055208333333333,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 12,
+          "title": "Ice Interceptor",
+          "start": 24.846,
+          "end": 36.846,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-12.jpg",
+          "planned": 25,
+          "types": [
+            "ac10icejet"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "Formation arrival",
+          "start": 25.697,
+          "end": 37.697,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-13.jpg",
+          "planned": 25.8,
+          "types": []
+        },
+        {
+          "number": 14,
+          "title": "Island Laser Turret",
+          "start": 27.716,
+          "end": 39.716,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-14.jpg",
+          "planned": 27.895486111111104,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "Island Laser Turret",
+          "start": 31.569,
+          "end": 43.569,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-15.jpg",
+          "planned": 31.735763888888883,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "Formation arrival",
+          "start": 32.42,
+          "end": 44.42,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-16.jpg",
+          "planned": 32,
+          "types": []
+        },
+        {
+          "number": 17,
+          "title": "Formation arrival",
+          "start": 36.341,
+          "end": 48.341,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-17.jpg",
+          "planned": 36.5,
+          "types": []
+        },
+        {
+          "number": 18,
+          "title": "Ice Interceptor",
+          "start": 37.843,
+          "end": 49.843,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-18.jpg",
+          "planned": 38,
+          "types": [
+            "ac10icejet"
+          ]
+        },
+        {
+          "number": 19,
+          "title": "Formation arrival",
+          "start": 39.844,
+          "end": 51.844,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-19.jpg",
+          "planned": 40,
+          "types": []
+        },
+        {
+          "number": 20,
+          "title": "Formation arrival",
+          "start": 45.833,
+          "end": 58.73,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-3-wave-20.jpg",
+          "planned": 46,
+          "types": []
+        }
+      ]
+    },
+    {
+      "id": "stage-4",
+      "stage": 4,
+      "route": null,
+      "title": "Stage 4",
+      "tab": "Stage 4",
+      "biome": "Desert Highway",
+      "routeLabel": null,
+      "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-4-4a0684b71097.mp4",
+      "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-01.jpg",
+      "seconds": 67.03,
+      "waves": [
+        {
+          "number": 1,
+          "title": "Highway Tank",
+          "start": 2.697,
+          "end": 14.697,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-01.jpg",
+          "planned": 3,
+          "types": [
+            "sandtank"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Interceptor",
+          "start": 5.697,
+          "end": 17.697,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-02.jpg",
+          "planned": 6,
+          "types": [
+            "s4interceptor"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "Highway Tank",
+          "start": 8.984,
+          "end": 20.984,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-03.jpg",
+          "planned": 9,
+          "types": [
+            "sandtank"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "Mg Ground Turret",
+          "start": 9.784,
+          "end": 21.784,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-04.jpg",
+          "planned": 9.04186111111111,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 5,
+          "title": "Rocket",
+          "start": 12.003,
+          "end": 24.003,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-05.jpg",
+          "planned": 12,
+          "types": [
+            "s4rocket"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "Mg Ground Turret",
+          "start": 13.054,
+          "end": 25.054,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-06.jpg",
+          "planned": 13.03575,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 7,
+          "title": "Formation arrival",
+          "start": 15.027,
+          "end": 27.027,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-07.jpg",
+          "planned": 15,
+          "types": [
+            "s4barrel"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Mg Ground Turret",
+          "start": 17.075,
+          "end": 29.075,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-08.jpg",
+          "planned": 17.029638888888886,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "Bomber",
+          "start": 18.059,
+          "end": 30.059,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-09.jpg",
+          "planned": 18,
+          "types": [
+            "s4bomber"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "Missile Launcher Truck",
+          "start": 21.086,
+          "end": 33.086,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-10.jpg",
+          "planned": 21,
+          "types": [
+            "s4missile"
+          ]
+        },
+        {
+          "number": 11,
+          "title": "Mg Ground Turret",
+          "start": 21.879,
+          "end": 33.879,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-11.jpg",
+          "planned": 21.023527777777776,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 12,
+          "title": "Command Fighter",
+          "start": 24.148,
+          "end": 36.148,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-12.jpg",
+          "planned": 24,
+          "types": [
+            "s4command"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "Mg Ground Turret",
+          "start": 25.166,
+          "end": 37.166,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-13.jpg",
+          "planned": 25.017416666666662,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 14,
+          "title": "Fuel Tanker / Armored Tractor",
+          "start": 27.152,
+          "end": 39.152,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-14.jpg",
+          "planned": 27,
+          "types": [
+            "s4tanker",
+            "s4tractor"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "Mg Ground Turret",
+          "start": 29.153,
+          "end": 41.153,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-15.jpg",
+          "planned": 29.011305555555552,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "Heavy Jet",
+          "start": 30.154,
+          "end": 42.154,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-16.jpg",
+          "planned": 30,
+          "types": [
+            "s4heavyjet"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "Mg Ground Turret",
+          "start": 33.14,
+          "end": 45.14,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-17.jpg",
+          "planned": 33.00519444444444,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 18,
+          "title": "Mobile SAM",
+          "start": 34.142,
+          "end": 46.142,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-18.jpg",
+          "planned": 34,
+          "types": [
+            "s4sam"
+          ]
+        },
+        {
+          "number": 19,
+          "title": "Interceptor / Bomber",
+          "start": 38.146,
+          "end": 50.146,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-19.jpg",
+          "planned": 38,
+          "types": [
+            "s4interceptor",
+            "s4bomber"
+          ]
+        },
+        {
+          "number": 20,
+          "title": "Highway Tank / Armored Tractor",
+          "start": 42.2,
+          "end": 54.2,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-20.jpg",
+          "planned": 42,
+          "types": [
+            "sandtank",
+            "s4tractor"
+          ]
+        },
+        {
+          "number": 21,
+          "title": "Rocket / Command Fighter",
+          "start": 46.204,
+          "end": 58.204,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-21.jpg",
+          "planned": 46,
+          "types": [
+            "s4rocket",
+            "s4command"
+          ]
+        },
+        {
+          "number": 22,
+          "title": "Missile Launcher Truck / Mobile SAM / Heavy Jet",
+          "start": 48.19,
+          "end": 67.03,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-4-wave-22.jpg",
+          "planned": 48,
+          "types": [
+            "s4missile",
+            "s4sam",
+            "s4heavyjet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage-5",
+      "stage": 5,
+      "route": null,
+      "title": "Stage 5",
+      "tab": "Stage 5",
+      "biome": "Orbital Rift",
+      "routeLabel": null,
+      "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-5-0f32d59bf19f.mp4",
+      "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-01.jpg",
+      "seconds": 71.22,
+      "waves": [
+        {
+          "number": 1,
+          "title": "Orbital Frigate / Interceptor",
+          "start": 0.928,
+          "end": 12.928,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-01.jpg",
+          "planned": 1.2,
+          "types": [
+            "s5frigate",
+            "s5interceptor"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Comet Rammer",
+          "start": 5.329,
+          "end": 17.329,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-02.jpg",
+          "planned": 5,
+          "types": [
+            "s5rammer"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "Debris Skimmer",
+          "start": 8.8,
+          "end": 20.8,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-03.jpg",
+          "planned": 8.5,
+          "types": [
+            "s5skimmer"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "Gravity Orb",
+          "start": 12.336,
+          "end": 24.336,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-04.jpg",
+          "planned": 12,
+          "types": [
+            "s5gravity"
+          ]
+        },
+        {
+          "number": 5,
+          "title": "Space Minelayer / Missile Satellite",
+          "start": 15.873,
+          "end": 27.873,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-05.jpg",
+          "planned": 15.5,
+          "types": [
+            "s5minelayer",
+            "s5satellite"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "Portal Mine",
+          "start": 20.377,
+          "end": 32.377,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-06.jpg",
+          "planned": 20,
+          "types": [
+            "s5portalmine"
+          ]
+        },
+        {
+          "number": 7,
+          "title": "Repair Drone / Orbital Frigate",
+          "start": 24.382,
+          "end": 36.382,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-07.jpg",
+          "planned": 24,
+          "types": [
+            "s5repair",
+            "s5frigate"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Formation arrival",
+          "start": 25.198,
+          "end": 37.198,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-08.jpg",
+          "planned": 24,
+          "types": []
+        },
+        {
+          "number": 9,
+          "title": "Twin Station",
+          "start": 29.453,
+          "end": 41.453,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-09.jpg",
+          "planned": 29,
+          "types": [
+            "s5station"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "Shield Leech",
+          "start": 33.474,
+          "end": 45.474,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-10.jpg",
+          "planned": 33,
+          "types": [
+            "s5leech"
+          ]
+        },
+        {
+          "number": 11,
+          "title": "Interceptor / Comet Rammer",
+          "start": 38.479,
+          "end": 50.479,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-11.jpg",
+          "planned": 38,
+          "types": [
+            "s5interceptor",
+            "s5rammer"
+          ]
+        },
+        {
+          "number": 12,
+          "title": "Twin Station",
+          "start": 43.484,
+          "end": 55.484,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-12.jpg",
+          "planned": 43,
+          "types": [
+            "s5station"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "Missile Satellite / Gravity Orb / Space Minelayer",
+          "start": 48.489,
+          "end": 60.489,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-13.jpg",
+          "planned": 48,
+          "types": [
+            "s5satellite",
+            "s5gravity",
+            "s5minelayer"
+          ]
+        },
+        {
+          "number": 14,
+          "title": "Twin Station / Debris Skimmer",
+          "start": 52.493,
+          "end": 71.22,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-5-wave-14.jpg",
+          "planned": 52,
+          "types": [
+            "s5station",
+            "s5skimmer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage-6",
+      "stage": 6,
+      "route": "left",
+      "title": "Stage 6 / Harrier route",
+      "tab": "Stage 6 \u00b7 Harrier",
+      "biome": "Storm Front",
+      "routeLabel": "Harrier route",
+      "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-6-58a3a95304ce.mp4",
+      "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-01.jpg",
+      "seconds": 198.07,
+      "waves": [
+        {
+          "number": 1,
+          "title": "Wind Zephyr / Dart",
+          "start": 1.661,
+          "end": 13.661,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-01.jpg",
+          "planned": 2,
+          "types": [
+            "s6dart"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Wind Zephyr / Mine",
+          "start": 5.329,
+          "end": 17.329,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-02.jpg",
+          "planned": 5.5,
+          "types": [
+            "s6mine"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "Navy/White Fighter / Wing 1",
+          "start": 6.33,
+          "end": 18.33,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-03.jpg",
+          "planned": 6.5,
+          "types": [
+            "l6v_s0"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "Formation arrival",
+          "start": 8.932,
+          "end": 20.932,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-04.jpg",
+          "planned": 9,
+          "types": []
+        },
+        {
+          "number": 5,
+          "title": "Wind Gale / Lancer",
+          "start": 9.767,
+          "end": 21.767,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-05.jpg",
+          "planned": 9,
+          "types": [
+            "s6lancer"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "Teal/Gray Strike Fighter / Wing 3",
+          "start": 10.601,
+          "end": 22.601,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-06.jpg",
+          "planned": 10.5,
+          "types": [
+            "l6v_s2"
+          ]
+        },
+        {
+          "number": 7,
+          "title": "Wind Gale / Skimmer",
+          "start": 12.436,
+          "end": 24.436,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-07.jpg",
+          "planned": 12.5,
+          "types": [
+            "s6skimmer"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Navy/White Four-engine Bomber / Wing 2",
+          "start": 14.454,
+          "end": 26.454,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-08.jpg",
+          "planned": 14.5,
+          "types": [
+            "l6v_s1"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "Wind Gale / Thunder",
+          "start": 15.956,
+          "end": 27.956,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-09.jpg",
+          "planned": 16,
+          "types": [
+            "s6thunder"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "Formation arrival",
+          "start": 17.758,
+          "end": 29.758,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-10.jpg",
+          "planned": 17.8,
+          "types": []
+        },
+        {
+          "number": 11,
+          "title": "Cloud carriers \u00b7 northern approach",
+          "start": 18.675,
+          "end": 35.646,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-11.jpg",
+          "planned": 18,
+          "types": []
+        },
+        {
+          "number": 12,
+          "title": "Neon Blue/Black Fighter / Wing 1",
+          "start": 32.246,
+          "end": 44.246,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-12.jpg",
+          "planned": 19,
+          "types": [
+            "l6v_r0"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "Formation arrival",
+          "start": 33.157,
+          "end": 45.157,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-13.jpg",
+          "planned": 20,
+          "types": []
+        },
+        {
+          "number": 14,
+          "title": "Wind Zephyr / Probe",
+          "start": 34.074,
+          "end": 46.074,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-14.jpg",
+          "planned": 20,
+          "types": [
+            "s6probe"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "Wind Gale / Glacierlance",
+          "start": 34.992,
+          "end": 46.992,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-15.jpg",
+          "planned": 22,
+          "types": [
+            "xelite_glacierlance"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "Wind Gale / Cyclone",
+          "start": 36.626,
+          "end": 48.626,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-16.jpg",
+          "planned": 24,
+          "types": [
+            "s6cyclone"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "Formation arrival",
+          "start": 37.671,
+          "end": 49.671,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-17.jpg",
+          "planned": 25.028645833333332,
+          "types": []
+        },
+        {
+          "number": 18,
+          "title": "Blue/Teal Heavy Wind Jet / Wing 3",
+          "start": 38.612,
+          "end": 50.612,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-18.jpg",
+          "planned": 26,
+          "types": [
+            "l6v_r2"
+          ]
+        },
+        {
+          "number": 19,
+          "title": "Formation arrival",
+          "start": 40.614,
+          "end": 52.614,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-19.jpg",
+          "planned": 28,
+          "types": []
+        },
+        {
+          "number": 20,
+          "title": "Formation arrival",
+          "start": 41.648,
+          "end": 53.648,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-20.jpg",
+          "planned": 29.0390625,
+          "types": []
+        },
+        {
+          "number": 21,
+          "title": "Blue/Black Four-engine Bomber / Wing 2",
+          "start": 42.616,
+          "end": 54.616,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-21.jpg",
+          "planned": 30,
+          "types": [
+            "l6v_r1"
+          ]
+        },
+        {
+          "number": 22,
+          "title": "Formation arrival",
+          "start": 43.617,
+          "end": 55.617,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-22.jpg",
+          "planned": 31,
+          "types": []
+        },
+        {
+          "number": 23,
+          "title": "Formation arrival",
+          "start": 45.619,
+          "end": 57.619,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-23.jpg",
+          "planned": 33,
+          "types": []
+        },
+        {
+          "number": 24,
+          "title": "Formation arrival",
+          "start": 46.536,
+          "end": 58.536,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-24.jpg",
+          "planned": 33.049479166666664,
+          "types": []
+        },
+        {
+          "number": 25,
+          "title": "Neon Blue/Black Fighter / Blue Sky Wing 1",
+          "start": 47.471,
+          "end": 59.471,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-25.jpg",
+          "planned": 34.5,
+          "types": [
+            "l6v_b0"
+          ]
+        },
+        {
+          "number": 26,
+          "title": "Cloud carriers \u00b7 southern approach",
+          "start": 48.388,
+          "end": 64.718,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-26.jpg",
+          "planned": 35,
+          "types": []
+        },
+        {
+          "number": 27,
+          "title": "Wind Stratus / Turbine",
+          "start": 61.318,
+          "end": 73.318,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-27.jpg",
+          "planned": 36,
+          "types": [
+            "s6turbine"
+          ]
+        },
+        {
+          "number": 28,
+          "title": "Formation arrival",
+          "start": 62.235,
+          "end": 74.235,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-28.jpg",
+          "planned": 37.059895833333336,
+          "types": []
+        },
+        {
+          "number": 29,
+          "title": "Wind Gale / Tempest",
+          "start": 63.153,
+          "end": 75.153,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-29.jpg",
+          "planned": 38,
+          "types": [
+            "xelite_tempest"
+          ]
+        },
+        {
+          "number": 30,
+          "title": "Wind Stratus / Solarwarden",
+          "start": 64.071,
+          "end": 76.071,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-30.jpg",
+          "planned": 38,
+          "types": [
+            "xelite_solarwarden"
+          ]
+        },
+        {
+          "number": 31,
+          "title": "Wind Gale / Skimmer / Wind Zephyr / Dart",
+          "start": 64.989,
+          "end": 76.989,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-31.jpg",
+          "planned": 40,
+          "types": [
+            "s6skimmer",
+            "s6dart"
+          ]
+        },
+        {
+          "number": 32,
+          "title": "Formation arrival",
+          "start": 65.906,
+          "end": 77.906,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-32.jpg",
+          "planned": 41.0703125,
+          "types": []
+        },
+        {
+          "number": 33,
+          "title": "Blue/Teal Heavy Wind Jet / Blue Sky Wing 3",
+          "start": 66.823,
+          "end": 78.823,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-33.jpg",
+          "planned": 42,
+          "types": [
+            "l6v_b2"
+          ]
+        },
+        {
+          "number": 34,
+          "title": "Formation arrival",
+          "start": 67.741,
+          "end": 79.741,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-34.jpg",
+          "planned": 43,
+          "types": []
+        },
+        {
+          "number": 35,
+          "title": "Formation arrival",
+          "start": 68.659,
+          "end": 80.659,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-35.jpg",
+          "planned": 44,
+          "types": []
+        },
+        {
+          "number": 36,
+          "title": "Formation arrival",
+          "start": 69.726,
+          "end": 81.726,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-36.jpg",
+          "planned": 45.080729166666664,
+          "types": []
+        },
+        {
+          "number": 37,
+          "title": "Blue/Black Four-engine Bomber / Blue Sky Wing 2",
+          "start": 71.161,
+          "end": 83.161,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-37.jpg",
+          "planned": 46.5,
+          "types": [
+            "l6v_b1"
+          ]
+        },
+        {
+          "number": 38,
+          "title": "Wind Zephyr / Mine / Wind Zephyr / Probe",
+          "start": 72.646,
+          "end": 84.646,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-38.jpg",
+          "planned": 48,
+          "types": [
+            "s6mine",
+            "s6probe"
+          ]
+        },
+        {
+          "number": 39,
+          "title": "Formation arrival",
+          "start": 73.73,
+          "end": 85.73,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-39.jpg",
+          "planned": 49.09114583333333,
+          "types": []
+        },
+        {
+          "number": 40,
+          "title": "Nuclear warhead carrier",
+          "start": 75.682,
+          "end": 91.562,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-40.jpg",
+          "planned": 51,
+          "types": []
+        },
+        {
+          "number": 41,
+          "title": "Wind Stratus / Turbine",
+          "start": 88.162,
+          "end": 100.162,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-41.jpg",
+          "planned": 52,
+          "types": [
+            "s6turbine"
+          ]
+        },
+        {
+          "number": 42,
+          "title": "Formation arrival",
+          "start": 90.147,
+          "end": 102.147,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-42.jpg",
+          "planned": 54,
+          "types": []
+        },
+        {
+          "number": 43,
+          "title": "Formation arrival",
+          "start": 91.065,
+          "end": 103.065,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-43.jpg",
+          "planned": 54,
+          "types": []
+        },
+        {
+          "number": 44,
+          "title": "Wind Zephyr / Dart",
+          "start": 92.149,
+          "end": 159.815,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-44.jpg",
+          "planned": 56,
+          "types": [
+            "s6dart"
+          ]
+        },
+        {
+          "number": 45,
+          "title": "Wind Gale / Skimmer",
+          "start": 156.415,
+          "end": 168.415,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-45.jpg",
+          "planned": 60,
+          "types": [
+            "s6skimmer"
+          ]
+        },
+        {
+          "number": 46,
+          "title": "Formation arrival",
+          "start": 157.415,
+          "end": 169.415,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-46.jpg",
+          "planned": 61,
+          "types": []
+        },
+        {
+          "number": 47,
+          "title": "Formation arrival",
+          "start": 159.417,
+          "end": 171.417,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-47.jpg",
+          "planned": 63,
+          "types": []
+        },
+        {
+          "number": 48,
+          "title": "Wind Gale / Cyclone",
+          "start": 161.419,
+          "end": 173.419,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-48.jpg",
+          "planned": 65,
+          "types": [
+            "s6cyclone"
+          ]
+        },
+        {
+          "number": 49,
+          "title": "Blue/Teal Heavy Wind Jet / Blue Sky Wing 3 / Blue/Black Four-engine Bomber / Blue Sky Wing 2",
+          "start": 162.42,
+          "end": 174.42,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-49.jpg",
+          "planned": 66,
+          "types": [
+            "l6v_b2",
+            "l6v_b1"
+          ]
+        },
+        {
+          "number": 50,
+          "title": "Laser warhead carrier",
+          "start": 163.337,
+          "end": 179.751,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-50.jpg",
+          "planned": 66,
+          "types": []
+        },
+        {
+          "number": 51,
+          "title": "Formation arrival",
+          "start": 176.351,
+          "end": 188.351,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-51.jpg",
+          "planned": 67,
+          "types": []
+        },
+        {
+          "number": 52,
+          "title": "Wind Zephyr / Dart",
+          "start": 177.519,
+          "end": 189.519,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-52.jpg",
+          "planned": 69,
+          "types": [
+            "s6dart"
+          ]
+        },
+        {
+          "number": 53,
+          "title": "Wind Gale / Cyclone / Wind Stratus / Turbine / Wind Gale / Thunder",
+          "start": 179.521,
+          "end": 198.07,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-wave-53.jpg",
+          "planned": 71,
+          "types": [
+            "s6cyclone",
+            "s6turbine",
+            "s6thunder"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage-6-right",
+      "stage": 6,
+      "route": "right",
+      "title": "Stage 6 / Rebel route",
+      "tab": "Stage 6 \u00b7 Rebels",
+      "biome": "Storm Front",
+      "routeLabel": "Rebel route",
+      "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-6-right-b57b3160864f.mp4",
+      "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-01.jpg",
+      "seconds": 200.22,
+      "waves": [
+        {
+          "number": 1,
+          "title": "Wind Zephyr / Dart",
+          "start": 1.651,
+          "end": 13.651,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-01.jpg",
+          "planned": 2,
+          "types": [
+            "s6dart"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Wind Zephyr / Mine",
+          "start": 5.285,
+          "end": 17.285,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-02.jpg",
+          "planned": 5.5,
+          "types": [
+            "s6mine"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "Navy/White Fighter / Wing 1",
+          "start": 6.286,
+          "end": 18.286,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-03.jpg",
+          "planned": 6.5,
+          "types": [
+            "l6v_s0"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "Formation arrival",
+          "start": 8.805,
+          "end": 20.805,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-04.jpg",
+          "planned": 9,
+          "types": []
+        },
+        {
+          "number": 5,
+          "title": "Wind Gale / Lancer",
+          "start": 9.639,
+          "end": 21.639,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-05.jpg",
+          "planned": 9,
+          "types": [
+            "s6lancer"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "Teal/Gray Strike Fighter / Wing 3",
+          "start": 10.473,
+          "end": 22.473,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-06.jpg",
+          "planned": 10.5,
+          "types": [
+            "l6v_s2"
+          ]
+        },
+        {
+          "number": 7,
+          "title": "Wind Gale / Skimmer",
+          "start": 12.358,
+          "end": 24.358,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-07.jpg",
+          "planned": 12.5,
+          "types": [
+            "s6skimmer"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Navy/White Four-engine Bomber / Wing 2",
+          "start": 14.444,
+          "end": 26.444,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-08.jpg",
+          "planned": 14.5,
+          "types": [
+            "l6v_s1"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "Wind Gale / Thunder",
+          "start": 15.929,
+          "end": 27.929,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-09.jpg",
+          "planned": 16,
+          "types": [
+            "s6thunder"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "Formation arrival",
+          "start": 17.747,
+          "end": 29.747,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-10.jpg",
+          "planned": 17.8,
+          "types": []
+        },
+        {
+          "number": 11,
+          "title": "Cloud carriers \u00b7 northern approach",
+          "start": 18.665,
+          "end": 35.995,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-11.jpg",
+          "planned": 18,
+          "types": []
+        },
+        {
+          "number": 12,
+          "title": "Neon Blue/Black Fighter / Wing 1",
+          "start": 32.595,
+          "end": 44.595,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-12.jpg",
+          "planned": 19,
+          "types": [
+            "l6v_r0"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "Formation arrival",
+          "start": 33.497,
+          "end": 45.497,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-13.jpg",
+          "planned": 20,
+          "types": []
+        },
+        {
+          "number": 14,
+          "title": "Wind Zephyr / Probe",
+          "start": 34.447,
+          "end": 46.447,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-14.jpg",
+          "planned": 20,
+          "types": [
+            "s6probe"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "Wind Gale / Glacierlance",
+          "start": 35.365,
+          "end": 47.365,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-15.jpg",
+          "planned": 22,
+          "types": [
+            "xelite_glacierlance"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "Wind Gale / Cyclone",
+          "start": 37.0,
+          "end": 49.0,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-16.jpg",
+          "planned": 24,
+          "types": [
+            "s6cyclone"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "Formation arrival",
+          "start": 38.048,
+          "end": 50.048,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-17.jpg",
+          "planned": 25.028645833333332,
+          "types": []
+        },
+        {
+          "number": 18,
+          "title": "Blue/Teal Heavy Wind Jet / Wing 3",
+          "start": 39.002,
+          "end": 51.002,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-18.jpg",
+          "planned": 26,
+          "types": [
+            "l6v_r2"
+          ]
+        },
+        {
+          "number": 19,
+          "title": "Formation arrival",
+          "start": 41.021,
+          "end": 53.021,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-19.jpg",
+          "planned": 28,
+          "types": []
+        },
+        {
+          "number": 20,
+          "title": "Formation arrival",
+          "start": 42.055,
+          "end": 54.055,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-20.jpg",
+          "planned": 29.0390625,
+          "types": []
+        },
+        {
+          "number": 21,
+          "title": "Blue/Black Four-engine Bomber / Wing 2",
+          "start": 43.022,
+          "end": 55.022,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-21.jpg",
+          "planned": 30,
+          "types": [
+            "l6v_r1"
+          ]
+        },
+        {
+          "number": 22,
+          "title": "Formation arrival",
+          "start": 44.024,
+          "end": 56.024,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-22.jpg",
+          "planned": 31,
+          "types": []
+        },
+        {
+          "number": 23,
+          "title": "Formation arrival",
+          "start": 46.025,
+          "end": 58.025,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-23.jpg",
+          "planned": 33,
+          "types": []
+        },
+        {
+          "number": 24,
+          "title": "Formation arrival",
+          "start": 46.943,
+          "end": 58.943,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-24.jpg",
+          "planned": 33.049479166666664,
+          "types": []
+        },
+        {
+          "number": 25,
+          "title": "Neon Blue/Black Fighter / Blue Sky Wing 1",
+          "start": 47.861,
+          "end": 59.861,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-25.jpg",
+          "planned": 34.5,
+          "types": [
+            "l6v_b0"
+          ]
+        },
+        {
+          "number": 26,
+          "title": "Cloud carriers \u00b7 southern approach",
+          "start": 48.778,
+          "end": 65.725,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-26.jpg",
+          "planned": 35,
+          "types": []
+        },
+        {
+          "number": 27,
+          "title": "Wind Stratus / Turbine",
+          "start": 62.325,
+          "end": 74.325,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-27.jpg",
+          "planned": 36,
+          "types": [
+            "s6turbine"
+          ]
+        },
+        {
+          "number": 28,
+          "title": "Formation arrival",
+          "start": 63.242,
+          "end": 75.243,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-28.jpg",
+          "planned": 37.059895833333336,
+          "types": []
+        },
+        {
+          "number": 29,
+          "title": "Wind Gale / Tempest",
+          "start": 64.16,
+          "end": 76.16,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-29.jpg",
+          "planned": 38,
+          "types": [
+            "xelite_tempest"
+          ]
+        },
+        {
+          "number": 30,
+          "title": "Wind Stratus / Solarwarden",
+          "start": 65.078,
+          "end": 77.078,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-30.jpg",
+          "planned": 38,
+          "types": [
+            "xelite_solarwarden"
+          ]
+        },
+        {
+          "number": 31,
+          "title": "Wind Gale / Skimmer / Wind Zephyr / Dart",
+          "start": 65.995,
+          "end": 77.995,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-31.jpg",
+          "planned": 40,
+          "types": [
+            "s6skimmer",
+            "s6dart"
+          ]
+        },
+        {
+          "number": 32,
+          "title": "Formation arrival",
+          "start": 66.896,
+          "end": 78.896,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-32.jpg",
+          "planned": 41.0703125,
+          "types": []
+        },
+        {
+          "number": 33,
+          "title": "Blue/Teal Heavy Wind Jet / Blue Sky Wing 3",
+          "start": 67.814,
+          "end": 79.814,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-33.jpg",
+          "planned": 42,
+          "types": [
+            "l6v_b2"
+          ]
+        },
+        {
+          "number": 34,
+          "title": "Formation arrival",
+          "start": 68.732,
+          "end": 80.732,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-34.jpg",
+          "planned": 43,
+          "types": []
+        },
+        {
+          "number": 35,
+          "title": "Formation arrival",
+          "start": 69.649,
+          "end": 81.649,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-35.jpg",
+          "planned": 44,
+          "types": []
+        },
+        {
+          "number": 36,
+          "title": "Formation arrival",
+          "start": 70.717,
+          "end": 82.717,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-36.jpg",
+          "planned": 45.080729166666664,
+          "types": []
+        },
+        {
+          "number": 37,
+          "title": "Blue/Black Four-engine Bomber / Blue Sky Wing 2",
+          "start": 72.168,
+          "end": 84.168,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-37.jpg",
+          "planned": 46.5,
+          "types": [
+            "l6v_b1"
+          ]
+        },
+        {
+          "number": 38,
+          "title": "Wind Zephyr / Mine / Wind Zephyr / Probe",
+          "start": 73.67,
+          "end": 85.67,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-38.jpg",
+          "planned": 48,
+          "types": [
+            "s6mine",
+            "s6probe"
+          ]
+        },
+        {
+          "number": 39,
+          "title": "Formation arrival",
+          "start": 74.754,
+          "end": 86.754,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-39.jpg",
+          "planned": 49.09114583333333,
+          "types": []
+        },
+        {
+          "number": 40,
+          "title": "Nuclear warhead carrier",
+          "start": 76.673,
+          "end": 92.118,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-40.jpg",
+          "planned": 51,
+          "types": []
+        },
+        {
+          "number": 41,
+          "title": "Wind Stratus / Turbine",
+          "start": 88.718,
+          "end": 100.718,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-41.jpg",
+          "planned": 52,
+          "types": [
+            "s6turbine"
+          ]
+        },
+        {
+          "number": 42,
+          "title": "Formation arrival",
+          "start": 90.721,
+          "end": 102.721,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-42.jpg",
+          "planned": 54,
+          "types": []
+        },
+        {
+          "number": 43,
+          "title": "Formation arrival",
+          "start": 91.638,
+          "end": 103.638,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-43.jpg",
+          "planned": 54,
+          "types": []
+        },
+        {
+          "number": 44,
+          "title": "Wind Zephyr / Dart",
+          "start": 92.726,
+          "end": 160.384,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-44.jpg",
+          "planned": 56,
+          "types": [
+            "s6dart"
+          ]
+        },
+        {
+          "number": 45,
+          "title": "Wind Gale / Skimmer",
+          "start": 156.984,
+          "end": 168.984,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-45.jpg",
+          "planned": 60,
+          "types": [
+            "s6skimmer"
+          ]
+        },
+        {
+          "number": 46,
+          "title": "Formation arrival",
+          "start": 157.972,
+          "end": 169.972,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-46.jpg",
+          "planned": 61,
+          "types": []
+        },
+        {
+          "number": 47,
+          "title": "Formation arrival",
+          "start": 159.974,
+          "end": 171.974,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-47.jpg",
+          "planned": 63,
+          "types": []
+        },
+        {
+          "number": 48,
+          "title": "Wind Gale / Cyclone",
+          "start": 161.976,
+          "end": 173.976,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-48.jpg",
+          "planned": 65,
+          "types": [
+            "s6cyclone"
+          ]
+        },
+        {
+          "number": 49,
+          "title": "Blue/Teal Heavy Wind Jet / Blue Sky Wing 3 / Blue/Black Four-engine Bomber / Blue Sky Wing 2",
+          "start": 162.977,
+          "end": 174.977,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-49.jpg",
+          "planned": 66,
+          "types": [
+            "l6v_b2",
+            "l6v_b1"
+          ]
+        },
+        {
+          "number": 50,
+          "title": "Laser warhead carrier",
+          "start": 163.894,
+          "end": 181.976,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-50.jpg",
+          "planned": 66,
+          "types": []
+        },
+        {
+          "number": 51,
+          "title": "Formation arrival",
+          "start": 178.576,
+          "end": 190.576,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-51.jpg",
+          "planned": 67,
+          "types": []
+        },
+        {
+          "number": 52,
+          "title": "Wind Zephyr / Dart",
+          "start": 179.744,
+          "end": 191.744,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-52.jpg",
+          "planned": 69,
+          "types": [
+            "s6dart"
+          ]
+        },
+        {
+          "number": 53,
+          "title": "Wind Gale / Cyclone / Wind Stratus / Turbine / Wind Gale / Thunder",
+          "start": 181.746,
+          "end": 200.22,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-6-right-wave-53.jpg",
+          "planned": 71,
+          "types": [
+            "s6cyclone",
+            "s6turbine",
+            "s6thunder"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage-7",
+      "stage": 7,
+      "route": null,
+      "title": "Stage 7",
+      "tab": "Stage 7",
+      "biome": "Toxic Sewers",
+      "routeLabel": null,
+      "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-7-3ba75490fbd8.mp4",
+      "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-01.jpg",
+      "seconds": 105.67,
+      "waves": [
+        {
+          "number": 1,
+          "title": "Alien Sewer Drone",
+          "start": 1.653,
+          "end": 13.653,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-01.jpg",
+          "planned": 2,
+          "types": [
+            "cp22drone"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Modular Pipe Crawler",
+          "start": 5.945,
+          "end": 17.945,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-02.jpg",
+          "planned": 5.5,
+          "types": [
+            "s7pipe"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "Toxic Tank",
+          "start": 9.583,
+          "end": 21.583,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-03.jpg",
+          "planned": 9,
+          "types": [
+            "s7tank"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "MG Ground Turret",
+          "start": 11.075,
+          "end": 23.075,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-04.jpg",
+          "planned": 10.085152777777775,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 5,
+          "title": "Brood Sentinel",
+          "start": 13.478,
+          "end": 25.478,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-05.jpg",
+          "planned": 12.5,
+          "types": [
+            "ll18brood"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "MG Ground Turret",
+          "start": 19.25,
+          "end": 31.25,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-06.jpg",
+          "planned": 14.539874999999999,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 7,
+          "title": "Heavy Sewer Relay",
+          "start": 23.238,
+          "end": 36.262,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-07.jpg",
+          "planned": 16,
+          "types": [
+            "cp22relay"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "MG Ground Turret",
+          "start": 32.862,
+          "end": 44.862,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-08.jpg",
+          "planned": 18.994597222222218,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "Crescent Escort",
+          "start": 37.795,
+          "end": 49.795,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-09.jpg",
+          "planned": 20,
+          "types": [
+            "s8crescent"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "MG Ground Turret",
+          "start": 42.607,
+          "end": 54.607,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-10.jpg",
+          "planned": 23.44931944444444,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 11,
+          "title": "Toxic Tank / Toxic Slime Jet",
+          "start": 43.272,
+          "end": 55.272,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-11.jpg",
+          "planned": 24,
+          "types": [
+            "s7tank",
+            "cp22slime"
+          ]
+        },
+        {
+          "number": 12,
+          "title": "MG Ground Turret",
+          "start": 47.649,
+          "end": 59.649,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-12.jpg",
+          "planned": 27.904041666666664,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "Toxic Missile Jet",
+          "start": 48.423,
+          "end": 60.423,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-13.jpg",
+          "planned": 28,
+          "types": [
+            "s7missilejet"
+          ]
+        },
+        {
+          "number": 14,
+          "title": "Toxic Tank",
+          "start": 52.394,
+          "end": 64.394,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-14.jpg",
+          "planned": 32,
+          "types": [
+            "s7tank"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "MG Ground Turret",
+          "start": 53.017,
+          "end": 65.017,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-15.jpg",
+          "planned": 32.35876388888888,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "Toxic Barge",
+          "start": 56.739,
+          "end": 68.739,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-16.jpg",
+          "planned": 36,
+          "types": [
+            "s7barge"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "MG Ground Turret",
+          "start": 58.741,
+          "end": 70.741,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-17.jpg",
+          "planned": 36.813486111111104,
+          "types": [
+            "modturret"
+          ]
+        },
+        {
+          "number": 18,
+          "title": "Toxic Slime Jet",
+          "start": 63.545,
+          "end": 75.545,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-18.jpg",
+          "planned": 40,
+          "types": [
+            "cp22slime"
+          ]
+        },
+        {
+          "number": 19,
+          "title": "Brood Sentinel",
+          "start": 67.999,
+          "end": 79.999,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-19.jpg",
+          "planned": 44,
+          "types": [
+            "ll18brood"
+          ]
+        },
+        {
+          "number": 20,
+          "title": "Toxic Tank / Alien Sewer Drone",
+          "start": 72.364,
+          "end": 84.364,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-20.jpg",
+          "planned": 48,
+          "types": [
+            "s7tank",
+            "cp22drone"
+          ]
+        },
+        {
+          "number": 21,
+          "title": "Toxic Tank / Heavy Sewer Relay",
+          "start": 77.22,
+          "end": 89.22,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-21.jpg",
+          "planned": 52,
+          "types": [
+            "s7tank",
+            "cp22relay"
+          ]
+        },
+        {
+          "number": 22,
+          "title": "Toxic Barge / Toxic Slime Jet / Toxic Tank",
+          "start": 79.755,
+          "end": 105.67,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-7-wave-22.jpg",
+          "planned": 54,
+          "types": [
+            "s7barge",
+            "cp22slime",
+            "s7tank"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage-8",
+      "stage": 8,
+      "route": null,
+      "title": "Stage 8",
+      "tab": "Stage 8",
+      "biome": "Alien Hive",
+      "routeLabel": null,
+      "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-8-e51d9ec81f28.mp4",
+      "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-01.jpg",
+      "seconds": 74.52,
+      "waves": [
+        {
+          "number": 1,
+          "title": "Interceptor",
+          "start": 0.705,
+          "end": 12.705,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-01.jpg",
+          "planned": 1,
+          "types": [
+            "s8interceptor"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Formation arrival",
+          "start": 2.22,
+          "end": 14.22,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-02.jpg",
+          "planned": 2.5,
+          "types": [
+            "s8needlejet"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "Formation arrival",
+          "start": 3.971,
+          "end": 15.971,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-03.jpg",
+          "planned": 4,
+          "types": []
+        },
+        {
+          "number": 4,
+          "title": "Formation arrival",
+          "start": 5.607,
+          "end": 17.608,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-04.jpg",
+          "planned": 5.6,
+          "types": [
+            "s8scout"
+          ]
+        },
+        {
+          "number": 5,
+          "title": "Formation arrival",
+          "start": 7.008,
+          "end": 19.008,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-05.jpg",
+          "planned": 7,
+          "types": []
+        },
+        {
+          "number": 6,
+          "title": "Dark Matter Dreadjet",
+          "start": 9.995,
+          "end": 21.995,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-06.jpg",
+          "planned": 10,
+          "types": [
+            "s8voidjet"
+          ]
+        },
+        {
+          "number": 7,
+          "title": "Alien Laser Harrier",
+          "start": 10.713,
+          "end": 22.713,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-07.jpg",
+          "planned": 10.432916666666667,
+          "types": [
+            "s8laserharrier"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Formation arrival",
+          "start": 11.496,
+          "end": 23.496,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-08.jpg",
+          "planned": 11.5,
+          "types": [
+            "s8spread"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "Hellwing Jet",
+          "start": 12.997,
+          "end": 24.997,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-09.jpg",
+          "planned": 13,
+          "types": [
+            "s8hellwing"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "Alien Laser Harrier",
+          "start": 15.083,
+          "end": 27.083,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-10.jpg",
+          "planned": 15.04125,
+          "types": [
+            "s8laserharrier"
+          ]
+        },
+        {
+          "number": 11,
+          "title": "Parasite / Interceptor",
+          "start": 16.534,
+          "end": 28.534,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-11.jpg",
+          "planned": 16.5,
+          "types": [
+            "s8parasite",
+            "s8interceptor"
+          ]
+        },
+        {
+          "number": 12,
+          "title": "Crescent",
+          "start": 18.219,
+          "end": 30.219,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-12.jpg",
+          "planned": 18.2,
+          "types": [
+            "s8crescent"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "Formation arrival",
+          "start": 19.67,
+          "end": 31.67,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-13.jpg",
+          "planned": 19.649583333333332,
+          "types": []
+        },
+        {
+          "number": 14,
+          "title": "Hunter",
+          "start": 20.372,
+          "end": 32.371,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-14.jpg",
+          "planned": 20,
+          "types": [
+            "s8hunter"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "Skull Jet",
+          "start": 23.541,
+          "end": 35.541,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-15.jpg",
+          "planned": 23.5,
+          "types": [
+            "s8skull"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "Alien Laser Harrier",
+          "start": 24.325,
+          "end": 36.325,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-16.jpg",
+          "planned": 24.257916666666667,
+          "types": [
+            "s8laserharrier"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "Formation arrival",
+          "start": 25.276,
+          "end": 37.276,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-17.jpg",
+          "planned": 25.2,
+          "types": []
+        },
+        {
+          "number": 18,
+          "title": "Tentacle",
+          "start": 27.078,
+          "end": 39.078,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-18.jpg",
+          "planned": 27,
+          "types": [
+            "s8tentacle"
+          ]
+        },
+        {
+          "number": 19,
+          "title": "Alien Laser Harrier",
+          "start": 28.93,
+          "end": 40.93,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-19.jpg",
+          "planned": 28.86625,
+          "types": [
+            "s8laserharrier"
+          ]
+        },
+        {
+          "number": 20,
+          "title": "Symbiote",
+          "start": 30.582,
+          "end": 42.582,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-20.jpg",
+          "planned": 30.5,
+          "types": [
+            "s8symbiote"
+          ]
+        },
+        {
+          "number": 21,
+          "title": "Formation arrival",
+          "start": 33.534,
+          "end": 45.534,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-21.jpg",
+          "planned": 33.47458333333333,
+          "types": []
+        },
+        {
+          "number": 22,
+          "title": "Formation arrival",
+          "start": 34.569,
+          "end": 46.569,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-22.jpg",
+          "planned": 34.5,
+          "types": [
+            "s8gunship"
+          ]
+        },
+        {
+          "number": 23,
+          "title": "Alien Laser Harrier",
+          "start": 38.139,
+          "end": 50.139,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-23.jpg",
+          "planned": 38.08291666666666,
+          "types": [
+            "s8laserharrier"
+          ]
+        },
+        {
+          "number": 24,
+          "title": "Alien Carrier",
+          "start": 38.84,
+          "end": 50.84,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-24.jpg",
+          "planned": 38.5,
+          "types": [
+            "s8carrier"
+          ]
+        },
+        {
+          "number": 25,
+          "title": "Alien Carrier",
+          "start": 41.092,
+          "end": 53.092,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-25.jpg",
+          "planned": 41,
+          "types": [
+            "s8carrier"
+          ]
+        },
+        {
+          "number": 26,
+          "title": "Death Orb",
+          "start": 43.094,
+          "end": 55.094,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-26.jpg",
+          "planned": 43,
+          "types": [
+            "s8deathorb"
+          ]
+        },
+        {
+          "number": 27,
+          "title": "Hunter",
+          "start": 47.099,
+          "end": 59.099,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-27.jpg",
+          "planned": 47,
+          "types": [
+            "s8manta",
+            "s8hunter"
+          ]
+        },
+        {
+          "number": 28,
+          "title": "Alien Carrier / Interceptor",
+          "start": 51.086,
+          "end": 63.086,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-28.jpg",
+          "planned": 51,
+          "types": [
+            "s8carrier",
+            "s8gunship",
+            "s8interceptor"
+          ]
+        },
+        {
+          "number": 29,
+          "title": "Dark Matter Bomber / Tentacle",
+          "start": 55.09,
+          "end": 67.09,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-29.jpg",
+          "planned": 55,
+          "types": [
+            "s8bomber",
+            "s8tentacle"
+          ]
+        },
+        {
+          "number": 30,
+          "title": "Death Orb / Symbiote / Dark Matter Bomber",
+          "start": 56.091,
+          "end": 74.52,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-8-wave-30.jpg",
+          "planned": 56,
+          "types": [
+            "s8deathorb",
+            "s8symbiote",
+            "s8bomber"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage-9",
+      "stage": 9,
+      "route": null,
+      "title": "Stage 9",
+      "tab": "Stage 9",
+      "biome": "Waterworld",
+      "routeLabel": null,
+      "video": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-9-0fb668b5bf34.mp4",
+      "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-01.jpg",
+      "seconds": 62.04,
+      "waves": [
+        {
+          "number": 1,
+          "title": "Interceptor",
+          "start": 0.188,
+          "end": 12.188,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-01.jpg",
+          "planned": 0.45,
+          "types": [
+            "s9interceptor"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Comet",
+          "start": 1.269,
+          "end": 13.27,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-02.jpg",
+          "planned": 1.55,
+          "types": [
+            "s9comet"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "Beacon",
+          "start": 2.673,
+          "end": 14.673,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-03.jpg",
+          "planned": 2.7,
+          "types": [
+            "s9beacon"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "Ring Spinner",
+          "start": 4.072,
+          "end": 16.072,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-04.jpg",
+          "planned": 4.05,
+          "types": [
+            "s9ring"
+          ]
+        },
+        {
+          "number": 5,
+          "title": "Formation arrival",
+          "start": 5.59,
+          "end": 17.59,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-05.jpg",
+          "planned": 5.55,
+          "types": [
+            "cometsm"
+          ]
+        },
+        {
+          "number": 6,
+          "title": "Jumper",
+          "start": 6.791,
+          "end": 18.791,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-06.jpg",
+          "planned": 6.75,
+          "types": [
+            "s9interceptor"
+          ]
+        },
+        {
+          "number": 7,
+          "title": "Jumper",
+          "start": 8.142,
+          "end": 20.142,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-07.jpg",
+          "planned": 8.1,
+          "types": [
+            "s9interceptor"
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Ring Spinner",
+          "start": 9.511,
+          "end": 21.511,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-08.jpg",
+          "planned": 9.45,
+          "types": [
+            "s9ring"
+          ]
+        },
+        {
+          "number": 9,
+          "title": "Beacon / Comet",
+          "start": 10.762,
+          "end": 22.762,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-09.jpg",
+          "planned": 10.7,
+          "types": [
+            "s9beacon",
+            "s9comet"
+          ]
+        },
+        {
+          "number": 10,
+          "title": "Current Breaker",
+          "start": 12.129,
+          "end": 24.129,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-10.jpg",
+          "planned": 12.05,
+          "types": [
+            "cbreak"
+          ]
+        },
+        {
+          "number": 11,
+          "title": "Formation arrival",
+          "start": 12.764,
+          "end": 24.764,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-11.jpg",
+          "planned": 12.25,
+          "types": [
+            "cometsm"
+          ]
+        },
+        {
+          "number": 12,
+          "title": "Interceptor",
+          "start": 13.398,
+          "end": 25.398,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-12.jpg",
+          "planned": 13.3,
+          "types": [
+            "s9interceptor"
+          ]
+        },
+        {
+          "number": 13,
+          "title": "Comet",
+          "start": 14.732,
+          "end": 26.732,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-13.jpg",
+          "planned": 14.65,
+          "types": [
+            "s9comet"
+          ]
+        },
+        {
+          "number": 14,
+          "title": "Beam Gunship",
+          "start": 15.9,
+          "end": 27.9,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-14.jpg",
+          "planned": 15.8,
+          "types": [
+            "s9gunship"
+          ]
+        },
+        {
+          "number": 15,
+          "title": "Water Skimmer",
+          "start": 16.551,
+          "end": 28.551,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-15.jpg",
+          "planned": 16.45,
+          "types": [
+            "wskim"
+          ]
+        },
+        {
+          "number": 16,
+          "title": "Laser Ring",
+          "start": 17.252,
+          "end": 29.252,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-16.jpg",
+          "planned": 17.15,
+          "types": [
+            "s9ring"
+          ]
+        },
+        {
+          "number": 17,
+          "title": "Formation arrival",
+          "start": 18.436,
+          "end": 30.436,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-17.jpg",
+          "planned": 18.35,
+          "types": [
+            "cometsm"
+          ]
+        },
+        {
+          "number": 18,
+          "title": "Gate Vessel",
+          "start": 19.704,
+          "end": 31.704,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-18.jpg",
+          "planned": 19.6,
+          "types": [
+            "s9gateturret"
+          ]
+        },
+        {
+          "number": 19,
+          "title": "Interceptor",
+          "start": 20.955,
+          "end": 32.955,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-19.jpg",
+          "planned": 20.85,
+          "types": [
+            "s9interceptor"
+          ]
+        },
+        {
+          "number": 20,
+          "title": "Gravity Leech",
+          "start": 21.667,
+          "end": 33.667,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-20.jpg",
+          "planned": 21.55,
+          "types": [
+            "gleech"
+          ]
+        },
+        {
+          "number": 21,
+          "title": "Prism Beam",
+          "start": 22.357,
+          "end": 34.356,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-21.jpg",
+          "planned": 22.25,
+          "types": [
+            "s9prism"
+          ]
+        },
+        {
+          "number": 22,
+          "title": "Ring Spinner",
+          "start": 23.775,
+          "end": 35.775,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-22.jpg",
+          "planned": 23.65,
+          "types": [
+            "s9ring"
+          ]
+        },
+        {
+          "number": 23,
+          "title": "Echo Fighter",
+          "start": 24.425,
+          "end": 36.425,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-23.jpg",
+          "planned": 24.3,
+          "types": [
+            "echof"
+          ]
+        },
+        {
+          "number": 24,
+          "title": "Formation arrival",
+          "start": 25.126,
+          "end": 37.126,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-24.jpg",
+          "planned": 25,
+          "types": [
+            "cometsm"
+          ]
+        },
+        {
+          "number": 25,
+          "title": "Singularity",
+          "start": 26.327,
+          "end": 38.327,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-25.jpg",
+          "planned": 26.2,
+          "types": [
+            "s9singularity"
+          ]
+        },
+        {
+          "number": 26,
+          "title": "Comet",
+          "start": 27.629,
+          "end": 39.629,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-26.jpg",
+          "planned": 27.5,
+          "types": [
+            "s9comet"
+          ]
+        },
+        {
+          "number": 27,
+          "title": "Beam Gunship / Gate Vessel / Water Skimmer",
+          "start": 28.73,
+          "end": 40.73,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-27.jpg",
+          "planned": 28.6,
+          "types": [
+            "s9gunship",
+            "s9gateturret",
+            "wskim"
+          ]
+        },
+        {
+          "number": 28,
+          "title": "Interceptor",
+          "start": 29.931,
+          "end": 41.931,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-28.jpg",
+          "planned": 29.8,
+          "types": [
+            "s9interceptor"
+          ]
+        },
+        {
+          "number": 29,
+          "title": "Prism Beam / Prism Orb / Prism Minelayer",
+          "start": 31.032,
+          "end": 43.032,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-29.jpg",
+          "planned": 30.9,
+          "types": [
+            "s9prism",
+            "pmine"
+          ]
+        },
+        {
+          "number": 30,
+          "title": "Formation arrival",
+          "start": 32.033,
+          "end": 44.033,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-30.jpg",
+          "planned": 31.9,
+          "types": [
+            "cometsm"
+          ]
+        },
+        {
+          "number": 31,
+          "title": "Water Harrier / Singularity / Void Manta",
+          "start": 33.034,
+          "end": 45.034,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-31.jpg",
+          "planned": 32.9,
+          "types": [
+            "s9gunship",
+            "s9singularity",
+            "vmanta"
+          ]
+        },
+        {
+          "number": 32,
+          "title": "Ring Spinner",
+          "start": 34.135,
+          "end": 46.135,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-32.jpg",
+          "planned": 34,
+          "types": [
+            "s9ring"
+          ]
+        },
+        {
+          "number": 33,
+          "title": "Interceptor / Echo Fighter",
+          "start": 35.587,
+          "end": 47.587,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-33.jpg",
+          "planned": 34.95,
+          "types": [
+            "s9interceptor",
+            "echof"
+          ]
+        },
+        {
+          "number": 34,
+          "title": "Gate Vessel / Tidal Fighter",
+          "start": 38.824,
+          "end": 50.824,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-34.jpg",
+          "planned": 36,
+          "types": [
+            "s9gateturret",
+            "tsplit"
+          ]
+        },
+        {
+          "number": 35,
+          "title": "Formation arrival",
+          "start": 39.463,
+          "end": 51.463,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-35.jpg",
+          "planned": 36.9,
+          "types": [
+            "cometsm"
+          ]
+        },
+        {
+          "number": 36,
+          "title": "Prism Beam / Beacon / Comet",
+          "start": 40.976,
+          "end": 52.976,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-36.jpg",
+          "planned": 37.8,
+          "types": [
+            "s9prism",
+            "s9beacon",
+            "s9comet"
+          ]
+        },
+        {
+          "number": 37,
+          "title": "Beam Gunship / Singularity",
+          "start": 42.506,
+          "end": 54.506,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-37.jpg",
+          "planned": 38.85,
+          "types": [
+            "s9gunship",
+            "s9singularity"
+          ]
+        },
+        {
+          "number": 38,
+          "title": "Interceptor",
+          "start": 43.128,
+          "end": 62.04,
+          "poster": "/BulletsOfFury/current/waves-1101/stage-9-wave-38.jpg",
+          "planned": 39.9,
+          "types": [
+            "s9interceptor",
+            "cometsm"
+          ]
+        }
+      ]
+    }
+  ],
+  "uniqueScheduledWaves": 260,
+  "chapterCount": 313,
+  "seconds": 986.02,
+  "stageX": "Boss encounters only; excluded"
+}

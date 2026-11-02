@@ -162,7 +162,7 @@ function mr27BomberSetup(b){
   if(!b._bomber)return;const B=b._bomber;B.space=run.stage===5;B.skin=B.space?'space':null;
   B.variant=B.space&&['hard','furious','insanity'].includes(diffKey)?1:0;b.name=B.space?(B.variant?'TEMPEST SILVER ECLIPSE':'TEMPEST VOID ECLIPSE'):'ECLIPSE SIEGE BOMBER';
   if(B.space&&(diffKey==='furious'||diffKey==='insanity'))b.name='TEMPEST CRIMSON ECLIPSE';
-  const mul=diffKey==='easy'?.52:diffKey==='normal'?1:diffKey==='hard'?1.18:diffKey==='furious'?1.35:1.5;
+  const mul=DR15.keys.includes(diffKey)?difficultyEnhancement15():diffKey==='easy'?.52:1.5;
   const durability=B.space?1:1.10;B.core=B.coreMax=Math.ceil(1050*mul*durability);for(const p of B.parts)p.hp=p.max=p.maxhp=Math.ceil(250*mul*durability);
   b.hp=b.maxhp=B.core+B.parts.reduce((a,p)=>a+p.hp,0);b.w=VW*.5;b.h=B.space?b.w*.83:b.w*.62;
   if(B.space){XART.rdy('mr27_space');XART.rdy('tlv_beam');for(let i=0;i<8;i++)XART.rdy('l23fx_rime_mg_'+i);}

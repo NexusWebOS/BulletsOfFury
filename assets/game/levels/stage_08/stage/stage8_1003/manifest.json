@@ -55,20 +55,6 @@
       1254
     ]
   },
-  "gravity": {
-    "key": "s81003_gravity",
-    "path": "assets/game/levels/stage_08/stage/stage8_1003/gravity.png",
-    "cw": 216,
-    "ch": 288,
-    "cols": 4,
-    "frames": 4,
-    "source": "_ART_SOURCES/stage8_1003/gravity.png",
-    "source_sha256": "f3032f6ab03c0a55cd8e69fabf03a9136fcb1a5c6bc902df92ee2f0e4d5cb757",
-    "source_size": [
-      2172,
-      724
-    ]
-  },
   "stalker": {
     "key": "s81003_stalker",
     "path": "assets/game/levels/stage_08/stage/stage8_1003/stalker.png",

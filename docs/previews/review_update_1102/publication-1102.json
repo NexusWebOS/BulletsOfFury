@@ -1,0 +1,3207 @@
+{
+  "tag": "bof-complete-update-2026-11-02",
+  "media": [
+    {
+      "name": "current--herald-electric-1031-8ad77a38b3c3.mp4",
+      "bytes": 171900258,
+      "sha256": "8ad77a38b3c3050aab264e0d2f55fa5dd2c6dc624a4c32ec1d6f17a0d559b4ba",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--herald-electric-1031-8ad77a38b3c3.mp4",
+      "routes": [
+        "/current/herald-electric-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--herald-mirrored-bombs-1031-30d354860704.mp4",
+      "bytes": 106240695,
+      "sha256": "30d354860704f0c38f26510447ea5569aaf40613a98632d11c6a46ccecfacc61",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--herald-mirrored-bombs-1031-30d354860704.mp4",
+      "routes": [
+        "/current/herald-mirrored-bombs-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--herald-left-warning-right-1031-8a5be69fe972.mp4",
+      "bytes": 92129086,
+      "sha256": "8a5be69fe97220e1442cf75b996b1251f80bafa060eae8b5ca1b0352ed3242e3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--herald-left-warning-right-1031-8a5be69fe972.mp4",
+      "routes": [
+        "/current/herald-left-warning-right-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--sewer-extended-dodges-1031-2a04a2f76022.mp4",
+      "bytes": 25959317,
+      "sha256": "2a04a2f76022e5de1f797a6f74ad8242cb3da6efbb25b8f570f78874bb1aa842",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--sewer-extended-dodges-1031-2a04a2f76022.mp4",
+      "routes": [
+        "/current/sewer-extended-dodges-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--weapon-contacts-1031-7a82eb1a4301.mp4",
+      "bytes": 11401304,
+      "sha256": "7a82eb1a43016def6142ebcb7da81a3980808391d44dd860cec5e81a3ed6460a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--weapon-contacts-1031-7a82eb1a4301.mp4",
+      "routes": [
+        "/current/weapon-contacts-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-amplify-s1boatgun-30bca3e1d1ac.mp4",
+      "bytes": 11845095,
+      "sha256": "30bca3e1d1acaecbb2f7dabadbc3e5b23bf4973a38fae8629e294fcc7a527042",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-amplify-s1boatgun-30bca3e1d1ac.mp4",
+      "routes": [
+        "/current/stage1-amplify-s1boatgun.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-amplify-s1corvette-e51334fe7ccf.mp4",
+      "bytes": 12285288,
+      "sha256": "e51334fe7ccffb9185c489eb54e0e6a6f1f537d3a90d930f7af40221bab75f14",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-amplify-s1corvette-e51334fe7ccf.mp4",
+      "routes": [
+        "/current/stage1-amplify-s1corvette.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-amplify-s1jetdelta_pair-3743510bcb20.mp4",
+      "bytes": 5017906,
+      "sha256": "3743510bcb205342ac6bc9ff68920683c5fdea16d2887868d013bba01ba5d2ee",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-amplify-s1jetdelta_pair-3743510bcb20.mp4",
+      "routes": [
+        "/current/stage1-amplify-s1jetdelta_pair.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-amplify-s1jetdelta-0a7b2ff85749.mp4",
+      "bytes": 5492947,
+      "sha256": "0a7b2ff8574963797942ee2f69f4d9f784562e0bf02f243ad899dc2f78c54d10",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-amplify-s1jetdelta-0a7b2ff85749.mp4",
+      "routes": [
+        "/current/stage1-amplify-s1jetdelta.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-amplify-s1jetbomber-d70725c2e3ec.mp4",
+      "bytes": 6606693,
+      "sha256": "d70725c2e3ec068a0a7e39489005f253270bbdc9e42232d4b529885144d7b71f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-amplify-s1jetbomber-d70725c2e3ec.mp4",
+      "routes": [
+        "/current/stage1-amplify-s1jetbomber.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-amplify-s1tankheavy-6f5deb9b3b6b.mp4",
+      "bytes": 6833574,
+      "sha256": "6f5deb9b3b6bf178e696971c5955d0b1155a410a76bda5906409831bf349ea0b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-amplify-s1tankheavy-6f5deb9b3b6b.mp4",
+      "routes": [
+        "/current/stage1-amplify-s1tankheavy.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-s1boatpatrol-ee8bfa78d69f.mp4",
+      "bytes": 11976920,
+      "sha256": "ee8bfa78d69ff2a9ce74777efbb2d4ce7d706ed9a09fd26769cc7ea596086e63",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-s1boatpatrol-ee8bfa78d69f.mp4",
+      "routes": [
+        "/current/stage1-physical-s1boatpatrol.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-s1corvette-61c8c83b3bd1.mp4",
+      "bytes": 12145180,
+      "sha256": "61c8c83b3bd157929a10d26ee35e5665f8c4dd4f7ba176033cb0b2aa5b719f5f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-s1corvette-61c8c83b3bd1.mp4",
+      "routes": [
+        "/current/stage1-physical-s1corvette.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-s1jetdelta-82130b7f935f.mp4",
+      "bytes": 4902822,
+      "sha256": "82130b7f935f36497db8a9401ca6b0ab9c26a071605d59ff5fbb93724174b326",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-s1jetdelta-82130b7f935f.mp4",
+      "routes": [
+        "/current/stage1-physical-s1jetdelta.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-s1jetbomber-2d4ffd849dd5.mp4",
+      "bytes": 6608988,
+      "sha256": "2d4ffd849dd5185eee86339a6b632203632cdee4ca34e81f4a716a55e779ab99",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-s1jetbomber-2d4ffd849dd5.mp4",
+      "routes": [
+        "/current/stage1-physical-s1jetbomber.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-s1tankheavy-2a52bc414900.mp4",
+      "bytes": 7146973,
+      "sha256": "2a52bc41490056c64cb7c7a4fcd768fb1d8edac331776c7d42863225822cf6ee",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-s1tankheavy-2a52bc414900.mp4",
+      "routes": [
+        "/current/stage1-physical-s1tankheavy.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-s1tankapc-f5db29aaf614.mp4",
+      "bytes": 6802871,
+      "sha256": "f5db29aaf614cb774d7fd8eb1edb03a5088963284d1397d4f8c350558e43f624",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-s1tankapc-f5db29aaf614.mp4",
+      "routes": [
+        "/current/stage1-physical-s1tankapc.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-s1tanklight-03e0aaa99d69.mp4",
+      "bytes": 6851217,
+      "sha256": "03e0aaa99d6961f4d9d54e87b190ca2b184a822f58c2c33a4bbc33745ab7a855",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-s1tanklight-03e0aaa99d69.mp4",
+      "routes": [
+        "/current/stage1-physical-s1tanklight.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-s1jetdelta_b-128a4204f703.mp4",
+      "bytes": 5111251,
+      "sha256": "128a4204f703f2a390c1c932ff58b79856339472f9a6a674267d6483acfb7639",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-s1jetdelta_b-128a4204f703.mp4",
+      "routes": [
+        "/current/stage1-physical-s1jetdelta_b.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-s1truckmissile-9edda1ba10b5.mp4",
+      "bytes": 6928444,
+      "sha256": "9edda1ba10b50ef65a7b6a9d9102623b31d015311040a09eddebcf0fcb6104e5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-s1truckmissile-9edda1ba10b5.mp4",
+      "routes": [
+        "/current/stage1-physical-s1truckmissile.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-modturret-missile-2428b7176ed7.mp4",
+      "bytes": 5958329,
+      "sha256": "2428b7176ed7d03ee3c6da8e16ee4a4b9b4a19c7346e4faaaf88c64d088ba2c0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-modturret-missile-2428b7176ed7.mp4",
+      "routes": [
+        "/current/stage1-physical-modturret-missile.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-modturret-mg-b239145677d4.mp4",
+      "bytes": 5764792,
+      "sha256": "b239145677d4519684410d9f84818fb6686d4462032acad7de5a65fea301c9dc",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-modturret-mg-b239145677d4.mp4",
+      "routes": [
+        "/current/stage1-physical-modturret-mg.mp4"
+      ]
+    },
+    {
+      "name": "current--stage1-physical-s1jetdelta_b_kamikaze-73f8e92398d0.mp4",
+      "bytes": 4069657,
+      "sha256": "73f8e92398d0f1ea7a1fae7f53d87bf20c6c777257b93f9b809f35bb04056369",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage1-physical-s1jetdelta_b_kamikaze-73f8e92398d0.mp4",
+      "routes": [
+        "/current/stage1-physical-s1jetdelta_b_kamikaze.mp4"
+      ]
+    },
+    {
+      "name": "current--kamikaze-orbit-1031-9e02e24496e6.mp4",
+      "bytes": 14254489,
+      "sha256": "9e02e24496e6de2ed8952d47cfe3b4407e4e3c5998dd6164acd84f1fd3d757da",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--kamikaze-orbit-1031-9e02e24496e6.mp4",
+      "routes": [
+        "/current/kamikaze-orbit-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--kamikaze-wave-1031-3c44e1838ac3.mp4",
+      "bytes": 17254800,
+      "sha256": "3c44e1838ac3ef4a58249de65b534456cd19b238302577ae552319369a12d358",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--kamikaze-wave-1031-3c44e1838ac3.mp4",
+      "routes": [
+        "/current/kamikaze-wave-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-ac10firejet-1031-3d12593caaaf.mp4",
+      "bytes": 11432213,
+      "sha256": "3d12593caaafd91f4402bc56413a93bcf38147197c15c67dc96b5e5336d5680e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-ac10firejet-1031-3d12593caaaf.mp4",
+      "routes": [
+        "/current/stage2-ac10firejet-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-ash-1031-1eeebad7fb36.mp4",
+      "bytes": 8232102,
+      "sha256": "1eeebad7fb36dd2781dcb94c3934a8775c449a997508dc4d2c499df10d969730",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-ash-1031-1eeebad7fb36.mp4",
+      "routes": [
+        "/current/stage2-ash-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-basaltbomber-1031-79a698b04a8c.mp4",
+      "bytes": 11357184,
+      "sha256": "79a698b04a8c797948a7a3b114f3680d813ec49080e1c4606636ff86e95a816d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-basaltbomber-1031-79a698b04a8c.mp4",
+      "routes": [
+        "/current/stage2-basaltbomber-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-carrier-1031-6aabc8d783c5.mp4",
+      "bytes": 14891417,
+      "sha256": "6aabc8d783c55916b7e16262e568c542dd2668733b2b45a8014d5f568ddcf151",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-carrier-1031-6aabc8d783c5.mp4",
+      "routes": [
+        "/current/stage2-carrier-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-cinderwasp-1031-3942ed63c282.mp4",
+      "bytes": 10178832,
+      "sha256": "3942ed63c282ce60b71e476f932ff0d20d81e5937473cffdae286d2dc334faa2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-cinderwasp-1031-3942ed63c282.mp4",
+      "routes": [
+        "/current/stage2-cinderwasp-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-cruc-1031-815125f03bb8.mp4",
+      "bytes": 11980083,
+      "sha256": "815125f03bb8d0baa7db63ed290f232bb57c1b067420e39ae5a5824fd55fe314",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-cruc-1031-815125f03bb8.mp4",
+      "routes": [
+        "/current/stage2-cruc-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-disc-1031-fcdb0d9f27ce.mp4",
+      "bytes": 11658860,
+      "sha256": "fcdb0d9f27ce734f462e7838a4dd089ee67e561ef818f57877bc93c0b5ba6c03",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-disc-1031-fcdb0d9f27ce.mp4",
+      "routes": [
+        "/current/stage2-disc-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-firejet1002-1031-fb776fd0ddb6.mp4",
+      "bytes": 11693925,
+      "sha256": "fb776fd0ddb6d365042e42ecf1dabbb15fe8955cbbe3510569edec450df758b4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-firejet1002-1031-fb776fd0ddb6.mp4",
+      "routes": [
+        "/current/stage2-firejet1002-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-lance-1031-b81c564765d0.mp4",
+      "bytes": 11600753,
+      "sha256": "b81c564765d0e1aa92e2bd3f0e49b2a1dffe1a49da2dc8ea8c403ffe044b0012",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-lance-1031-b81c564765d0.mp4",
+      "routes": [
+        "/current/stage2-lance-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-lavamaw-1031-7329a9cfad0c.mp4",
+      "bytes": 9077319,
+      "sha256": "7329a9cfad0cdbcd29bb9eed41b191efdc443fb97d645899f0efe854804d410e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-lavamaw-1031-7329a9cfad0c.mp4",
+      "routes": [
+        "/current/stage2-lavamaw-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-lavasnake-1031-c71a5063322d.mp4",
+      "bytes": 11934205,
+      "sha256": "c71a5063322d79ff62fbb10b428879e2668d9b7b8d106c34d7a72f4939640047",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-lavasnake-1031-c71a5063322d.mp4",
+      "routes": [
+        "/current/stage2-lavasnake-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-miner-1031-41a956675533.mp4",
+      "bytes": 8052877,
+      "sha256": "41a9566755338fe9a683f87ec5a42e0f11c4dfede0c00f1e8ee567f2274da1c4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-miner-1031-41a956675533.mp4",
+      "routes": [
+        "/current/stage2-miner-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-modturret-laser-1031-7e0b84809085.mp4",
+      "bytes": 8897218,
+      "sha256": "7e0b848090857b45c25816b8ca96ef2cd150e4ef3fb45d9e4cadfbdea97ef97c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-modturret-laser-1031-7e0b84809085.mp4",
+      "routes": [
+        "/current/stage2-modturret-laser-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-modturret-missile-1031-83e5aa623a3b.mp4",
+      "bytes": 9214446,
+      "sha256": "83e5aa623a3beca7ab6dc5bf49cb90a10d1c29b82cf28524e5b0d7ebeb3b805a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-modturret-missile-1031-83e5aa623a3b.mp4",
+      "routes": [
+        "/current/stage2-modturret-missile-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-pod-1031-23bdcc726ef2.mp4",
+      "bytes": 8946002,
+      "sha256": "23bdcc726ef20c5468cf4a35b32ec6c041a23adea7c0ad28fe86577aa4566a21",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-pod-1031-23bdcc726ef2.mp4",
+      "routes": [
+        "/current/stage2-pod-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-skim-1031-6b3d098719aa.mp4",
+      "bytes": 10216346,
+      "sha256": "6b3d098719aa3f5cf033172ad01a28654177b8375c5a3d5429626d2e37e5fb51",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-skim-1031-6b3d098719aa.mp4",
+      "routes": [
+        "/current/stage2-skim-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-v31elite_balls-1031-100834ec2302.mp4",
+      "bytes": 10388108,
+      "sha256": "100834ec2302902468fd610ae99ac5dee4496fbec17d05af1e9e927e94b28ac3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-v31elite_balls-1031-100834ec2302.mp4",
+      "routes": [
+        "/current/stage2-v31elite_balls-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-v31elite_flame-1031-84c22364ed91.mp4",
+      "bytes": 10512790,
+      "sha256": "84c22364ed911a66fa745877a36788f028b7504875f24eeada4225c3d21c5439",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-v31elite_flame-1031-84c22364ed91.mp4",
+      "routes": [
+        "/current/stage2-v31elite_flame-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-v31elite_guns-1031-cd06f61f0521.mp4",
+      "bytes": 10211286,
+      "sha256": "cd06f61f052115e0e89fa40e3c0e11536ae5ae540b2c00eed8e03ef3716f55dd",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-v31elite_guns-1031-cd06f61f0521.mp4",
+      "routes": [
+        "/current/stage2-v31elite_guns-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage2-v31elite_wall-1031-bd1ca407ed73.mp4",
+      "bytes": 10740573,
+      "sha256": "bd1ca407ed73233784575b0a2636d79b20030127f521ada35d51cee85932febe",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage2-v31elite_wall-1031-bd1ca407ed73.mp4",
+      "routes": [
+        "/current/stage2-v31elite_wall-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage3-ac10icejet-1031-1a8735e931fd.mp4",
+      "bytes": 10895919,
+      "sha256": "1a8735e931fd0a474136f0d35cac2d4c797147afdaf6657ebe1133ae0d0b47e7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage3-ac10icejet-1031-1a8735e931fd.mp4",
+      "routes": [
+        "/current/stage3-ac10icejet-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage3-cryoeye-1031-7693e3e82226.mp4",
+      "bytes": 14359175,
+      "sha256": "7693e3e82226dca98c41ac5c33acd5c3c9faa9e62a1262fb096551082282455f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage3-cryoeye-1031-7693e3e82226.mp4",
+      "routes": [
+        "/current/stage3-cryoeye-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage3-glaciercarrier-1031-d7ab08ef799c.mp4",
+      "bytes": 9488507,
+      "sha256": "d7ab08ef799cd70d0afa80f3e9ee7a90bf4e90f6626d01082b81bfd797486991",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage3-glaciercarrier-1031-d7ab08ef799c.mp4",
+      "routes": [
+        "/current/stage3-glaciercarrier-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage3-modturret-laser-1031-ae021ae8bef4.mp4",
+      "bytes": 10656141,
+      "sha256": "ae021ae8bef4fc93a4496ec9f17addda61b79a632ea37c7c66f5e6b9f1fd7cc3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage3-modturret-laser-1031-ae021ae8bef4.mp4",
+      "routes": [
+        "/current/stage3-modturret-laser-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage3-modturret-sonic-1031-da884e3a616a.mp4",
+      "bytes": 10566618,
+      "sha256": "da884e3a616a77c7be7f1076a3ffc2f11104519c14008215649dd1f984cedbd1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage3-modturret-sonic-1031-da884e3a616a.mp4",
+      "routes": [
+        "/current/stage3-modturret-sonic-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage3-s3interceptor-1031-1224373e3b00.mp4",
+      "bytes": 11091992,
+      "sha256": "1224373e3b00cdf857602f52d68df54758593dcb4f88f4405e235fc8cb43fa5e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage3-s3interceptor-1031-1224373e3b00.mp4",
+      "routes": [
+        "/current/stage3-s3interceptor-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage3-s3mine-1031-537d2925bc1d.mp4",
+      "bytes": 5712163,
+      "sha256": "537d2925bc1dc5c946bfd0aa4a09e95da58519f65d028b414488c0b8be37cb13",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage3-s3mine-1031-537d2925bc1d.mp4",
+      "routes": [
+        "/current/stage3-s3mine-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage3-sharddart-1031-79a16f37afb2.mp4",
+      "bytes": 6463822,
+      "sha256": "79a16f37afb2ba6c56e4a871e761127d9cd60ec5fa28d4024d2394b0768f324f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage3-sharddart-1031-79a16f37afb2.mp4",
+      "routes": [
+        "/current/stage3-sharddart-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-sandtank-flight-1031-40ca0c956f26.mp4",
+      "bytes": 9663096,
+      "sha256": "40ca0c956f26428587574b46becabc0e784d2829f5db5666790a32e653e4147c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-sandtank-flight-1031-40ca0c956f26.mp4",
+      "routes": [
+        "/current/stage4-sandtank-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4interceptor-flight-1031-c3e029a62b0b.mp4",
+      "bytes": 12865428,
+      "sha256": "c3e029a62b0bc56aab106db0522082afd6d62bf6055beb068440de491497a0fc",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4interceptor-flight-1031-c3e029a62b0b.mp4",
+      "routes": [
+        "/current/stage4-s4interceptor-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-modturret-flight-1031-00b419bb29e4.mp4",
+      "bytes": 10676809,
+      "sha256": "00b419bb29e42f9364208b0b2b5d1c95cda0e4b69597b3e973714ce2c6666151",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-modturret-flight-1031-00b419bb29e4.mp4",
+      "routes": [
+        "/current/stage4-modturret-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4rocket-flight-1031-a87d26c9d742.mp4",
+      "bytes": 12560900,
+      "sha256": "a87d26c9d7420b4a25c3a4f87d38a78ac285bc61d772f5bc4dc00f028c07da13",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4rocket-flight-1031-a87d26c9d742.mp4",
+      "routes": [
+        "/current/stage4-s4rocket-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-modturret-2-flight-1031-fc3d8848aa4b.mp4",
+      "bytes": 10871120,
+      "sha256": "fc3d8848aa4b1e9a760e3b1b4cb2d318c63bb48d61dda101f69a81f08b46d203",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-modturret-2-flight-1031-fc3d8848aa4b.mp4",
+      "routes": [
+        "/current/stage4-modturret-2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-modturret-3-flight-1031-d117484e09c9.mp4",
+      "bytes": 10576471,
+      "sha256": "d117484e09c981cc0fc64ae620110ee412a1e3942d817bd439ff294fee5c3cd5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-modturret-3-flight-1031-d117484e09c9.mp4",
+      "routes": [
+        "/current/stage4-modturret-3-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4bomber-flight-1031-caf45b10dc20.mp4",
+      "bytes": 10318488,
+      "sha256": "caf45b10dc20c7127f7e96b107d49babca11832742dbb0475cac25f92e3ce183",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4bomber-flight-1031-caf45b10dc20.mp4",
+      "routes": [
+        "/current/stage4-s4bomber-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4missile-flight-1031-f69445f62c67.mp4",
+      "bytes": 11532578,
+      "sha256": "f69445f62c674de86b9393f82e50d3c45fca7ca01095a976bf816cfc3de8e49f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4missile-flight-1031-f69445f62c67.mp4",
+      "routes": [
+        "/current/stage4-s4missile-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4command-flight-1031-a85e7539680a.mp4",
+      "bytes": 11384827,
+      "sha256": "a85e7539680aa12e3051cb702915c832d125dd37a1048b9e100d5da5fe0b11e3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4command-flight-1031-a85e7539680a.mp4",
+      "routes": [
+        "/current/stage4-s4command-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4tanker-flight-1031-95e296e5cba7.mp4",
+      "bytes": 11220836,
+      "sha256": "95e296e5cba754a379e0cb3d67bf87220f7cd062bf844f41cf1a16e56a71c4f5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4tanker-flight-1031-95e296e5cba7.mp4",
+      "routes": [
+        "/current/stage4-s4tanker-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4tractor-flight-1031-65116e10b5ea.mp4",
+      "bytes": 11019328,
+      "sha256": "65116e10b5eae298082d9f8f9f96b31a408aacaf42d1eb992de60f0df76018f2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4tractor-flight-1031-65116e10b5ea.mp4",
+      "routes": [
+        "/current/stage4-s4tractor-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4heavyjet-flight-1031-aee6504d95ce.mp4",
+      "bytes": 4910499,
+      "sha256": "aee6504d95ce1496c084a1423b8190f9a526bc465901a7a4a95521408cb0ee2e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4heavyjet-flight-1031-aee6504d95ce.mp4",
+      "routes": [
+        "/current/stage4-s4heavyjet-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4sam-flight-1031-53e9feb07ec8.mp4",
+      "bytes": 11045758,
+      "sha256": "53e9feb07ec89177c8c447053c34440cba54bf90d67396b4cf8838db80f70dd4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4sam-flight-1031-53e9feb07ec8.mp4",
+      "routes": [
+        "/current/stage4-s4sam-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5frigate-flight-1031-fa8991106e73.mp4",
+      "bytes": 6058535,
+      "sha256": "fa8991106e73d295ac872cea22a4ec6dd08c84c6ce4b930f8b785f1ccbf06a15",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5frigate-flight-1031-fa8991106e73.mp4",
+      "routes": [
+        "/current/stage5-s5frigate-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5interceptor-flight-1031-fb6a22c16483.mp4",
+      "bytes": 4108757,
+      "sha256": "fb6a22c16483fe5ef9345eb84648fd86c124cd7ba6a7bf11ff0d3bfe7e2b8d82",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5interceptor-flight-1031-fb6a22c16483.mp4",
+      "routes": [
+        "/current/stage5-s5interceptor-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5rammer-flight-1031-6ec4e7328e08.mp4",
+      "bytes": 2735850,
+      "sha256": "6ec4e7328e08ef9e4269f4fc067ce65a1a226b8fe17be0b72c512100f7cce51d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5rammer-flight-1031-6ec4e7328e08.mp4",
+      "routes": [
+        "/current/stage5-s5rammer-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5skimmer-flight-1031-e9d34b6fddab.mp4",
+      "bytes": 5071981,
+      "sha256": "e9d34b6fddab250dde1c809f8206b58eec7176a3bcadf59afde66d7772d8a309",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5skimmer-flight-1031-e9d34b6fddab.mp4",
+      "routes": [
+        "/current/stage5-s5skimmer-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5gravity-flight-1031-261385707874.mp4",
+      "bytes": 8308100,
+      "sha256": "2613857078749b4188ad898352b15e5b8cac44251bddbcc79dc6a8883a520cca",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5gravity-flight-1031-261385707874.mp4",
+      "routes": [
+        "/current/stage5-s5gravity-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5minelayer-flight-1031-a94eff20e636.mp4",
+      "bytes": 7298766,
+      "sha256": "a94eff20e636201c6263a38928fac31a5dbd46129f58f2979a59222a47c53557",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5minelayer-flight-1031-a94eff20e636.mp4",
+      "routes": [
+        "/current/stage5-s5minelayer-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5satellite-flight-1031-8e3996876f33.mp4",
+      "bytes": 7580076,
+      "sha256": "8e3996876f3316f94b57cc8035eab73ecdff7afc365d15263535cba5f54774c3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5satellite-flight-1031-8e3996876f33.mp4",
+      "routes": [
+        "/current/stage5-s5satellite-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5portalmine-flight-1031-a77a94243a31.mp4",
+      "bytes": 6772658,
+      "sha256": "a77a94243a3152366b1ee320bcc204a0986e8aa9273695f65febf46fe39151b6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5portalmine-flight-1031-a77a94243a31.mp4",
+      "routes": [
+        "/current/stage5-s5portalmine-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5repair-flight-1031-1acf8933dc20.mp4",
+      "bytes": 6836155,
+      "sha256": "1acf8933dc2086463f45e676aeb6e7cd0255873e6ac6c0c777e48d3e55225e36",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5repair-flight-1031-1acf8933dc20.mp4",
+      "routes": [
+        "/current/stage5-s5repair-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-xelite-voidreaver-flight-1031-268096d696f0.mp4",
+      "bytes": 6327704,
+      "sha256": "268096d696f009d75c81c5dc033e3694a32ece96df642e95543535f51f7a1aee",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-xelite-voidreaver-flight-1031-268096d696f0.mp4",
+      "routes": [
+        "/current/stage5-xelite-voidreaver-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5station-flight-1031-9b11ad76f0a6.mp4",
+      "bytes": 7269383,
+      "sha256": "9b11ad76f0a63d7fe86fa4c945183758c4002d92236cce301547d9b15f5b1b09",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5station-flight-1031-9b11ad76f0a6.mp4",
+      "routes": [
+        "/current/stage5-s5station-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5leech-flight-1031-eebacf85b735.mp4",
+      "bytes": 5770846,
+      "sha256": "eebacf85b735372ba3cca1126e16d798656441b56aebd5d3457c2c11bfb41dc2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5leech-flight-1031-eebacf85b735.mp4",
+      "routes": [
+        "/current/stage5-s5leech-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6dart-flight-1031-0a95c7eca354.mp4",
+      "bytes": 1636096,
+      "sha256": "0a95c7eca354a32e18e489195ecb897787fb313e7d422e31fe74de6120fbf175",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6dart-flight-1031-0a95c7eca354.mp4",
+      "routes": [
+        "/current/stage6-s6dart-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6mine-flight-1031-a4a18cf2ea13.mp4",
+      "bytes": 5412675,
+      "sha256": "a4a18cf2ea13544aec8b82977033fa1ec9e2863167073a7e325d8d00756538ff",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6mine-flight-1031-a4a18cf2ea13.mp4",
+      "routes": [
+        "/current/stage6-s6mine-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-s0-flight-1031-160b98905adc.mp4",
+      "bytes": 2278798,
+      "sha256": "160b98905adc0f66e20c5d62c1d8d9eee1bf9f0829c16b924b6b9b7f6eb7abd7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-s0-flight-1031-160b98905adc.mp4",
+      "routes": [
+        "/current/stage6-l6v-s0-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s1jetbomber-b-flight-1031-94e6b55b0469.mp4",
+      "bytes": 1296192,
+      "sha256": "94e6b55b0469eca6662847a798d9d0308fbfccbc5cf4542a7e220f04df58cb43",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s1jetbomber-b-flight-1031-94e6b55b0469.mp4",
+      "routes": [
+        "/current/stage6-s1jetbomber-b-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6lancer-flight-1031-c8cd7e1cc7b2.mp4",
+      "bytes": 5613260,
+      "sha256": "c8cd7e1cc7b266f5e4e0cb4346560aeb84b682093b6a827259d12748cb109de7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6lancer-flight-1031-c8cd7e1cc7b2.mp4",
+      "routes": [
+        "/current/stage6-s6lancer-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-s2-flight-1031-94de2ee0d427.mp4",
+      "bytes": 2326167,
+      "sha256": "94de2ee0d427d93697200e6c5a1afcb1de9d268b7c461f9e238b6283bbef9730",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-s2-flight-1031-94de2ee0d427.mp4",
+      "routes": [
+        "/current/stage6-l6v-s2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6skimmer-flight-1031-6ceb1c4285df.mp4",
+      "bytes": 1290488,
+      "sha256": "6ceb1c4285dfc9a15f3b4c832e2916b116c4a8ee618e708519f6c40e82e41180",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6skimmer-flight-1031-6ceb1c4285df.mp4",
+      "routes": [
+        "/current/stage6-s6skimmer-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-s1-flight-1031-e4a801a3d9d5.mp4",
+      "bytes": 2518717,
+      "sha256": "e4a801a3d9d54b1812ed1e6d87528907c43908c75d4f07991908343d868df183",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-s1-flight-1031-e4a801a3d9d5.mp4",
+      "routes": [
+        "/current/stage6-l6v-s1-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6thunder-flight-1031-40fec9637e99.mp4",
+      "bytes": 4811504,
+      "sha256": "40fec9637e999327aef1ef908b8db8f67a4e76bf7bc6376b8bda590577097fd6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6thunder-flight-1031-40fec9637e99.mp4",
+      "routes": [
+        "/current/stage6-s6thunder-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s1jetbomber-b-2-flight-1031-9d8a21989d24.mp4",
+      "bytes": 1320346,
+      "sha256": "9d8a21989d2486408c0cf23753c96ac2f16f2463b78040a02371b4e80347e065",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s1jetbomber-b-2-flight-1031-9d8a21989d24.mp4",
+      "routes": [
+        "/current/stage6-s1jetbomber-b-2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-r0-flight-1031-af03a85ecbdc.mp4",
+      "bytes": 2046343,
+      "sha256": "af03a85ecbdc2dbb581ebb4b3772c07aed7aab9a8821d22e3c70aef285d37a71",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-r0-flight-1031-af03a85ecbdc.mp4",
+      "routes": [
+        "/current/stage6-l6v-r0-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s1jetbomber-b-3-flight-1031-90f76d3feaa6.mp4",
+      "bytes": 1343631,
+      "sha256": "90f76d3feaa62807048f604437a30d6a869508ad9acf907f59b15a17e47fde80",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s1jetbomber-b-3-flight-1031-90f76d3feaa6.mp4",
+      "routes": [
+        "/current/stage6-s1jetbomber-b-3-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6probe-flight-1031-7daf1d123793.mp4",
+      "bytes": 5540765,
+      "sha256": "7daf1d12379324589966adf69820a6fd72348abdb0aac0160df15a19d3b92f72",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6probe-flight-1031-7daf1d123793.mp4",
+      "routes": [
+        "/current/stage6-s6probe-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-xelite-glacierlance-flight-1031-a4eb9912e3a2.mp4",
+      "bytes": 5701340,
+      "sha256": "a4eb9912e3a2852cea66d0e7f93ec826820fe4fafeb67e3a5e4ba1040c1be216",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-xelite-glacierlance-flight-1031-a4eb9912e3a2.mp4",
+      "routes": [
+        "/current/stage6-xelite-glacierlance-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6cyclone-flight-1031-eaff70bf3cca.mp4",
+      "bytes": 2334922,
+      "sha256": "eaff70bf3cca944355331791ebd74cca3ac3384de5db2a2ae14691acffbb2e5a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6cyclone-flight-1031-eaff70bf3cca.mp4",
+      "routes": [
+        "/current/stage6-s6cyclone-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-modturret-flight-1031-312c43a3fe6e.mp4",
+      "bytes": 5663706,
+      "sha256": "312c43a3fe6e6a7f5fb02dc32ec0db5853302e3aab5541b14b2a7397a8e8292d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-modturret-flight-1031-312c43a3fe6e.mp4",
+      "routes": [
+        "/current/stage6-modturret-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-r2-flight-1031-9fce1edc15c5.mp4",
+      "bytes": 2207870,
+      "sha256": "9fce1edc15c5501a728d9e843dda19bec8489ca848d44a81d4cf7e7b79b69044",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-r2-flight-1031-9fce1edc15c5.mp4",
+      "routes": [
+        "/current/stage6-l6v-r2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-modturret-2-flight-1031-6820070abddb.mp4",
+      "bytes": 5427779,
+      "sha256": "6820070abddb40ccb9f6e37a4d801081fa93efd7500644acb6ec5f6703998447",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-modturret-2-flight-1031-6820070abddb.mp4",
+      "routes": [
+        "/current/stage6-modturret-2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-r1-flight-1031-c05f3b593cb0.mp4",
+      "bytes": 2551787,
+      "sha256": "c05f3b593cb05af1d56f527bada36483d35bd5b85dd039e2ccc8faddd47b8033",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-r1-flight-1031-c05f3b593cb0.mp4",
+      "routes": [
+        "/current/stage6-l6v-r1-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-modturret-3-flight-1031-e16843b97475.mp4",
+      "bytes": 5662712,
+      "sha256": "e16843b974755cd0d237b3607e6c3f8e2cc55cbaa04a761e791ab5f0877873e6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-modturret-3-flight-1031-e16843b97475.mp4",
+      "routes": [
+        "/current/stage6-modturret-3-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-b0-flight-1031-b4157308c64e.mp4",
+      "bytes": 2058690,
+      "sha256": "b4157308c64ec6793414d24bd0b5b0b22aae07a46ee72812113fc1330ca7f2bb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-b0-flight-1031-b4157308c64e.mp4",
+      "routes": [
+        "/current/stage6-l6v-b0-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6turbine-flight-1031-95b1fb4ba828.mp4",
+      "bytes": 6060496,
+      "sha256": "95b1fb4ba82858dfb39f43f3f8cbcfb5414349bb9ca6118fa718b370983de7db",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6turbine-flight-1031-95b1fb4ba828.mp4",
+      "routes": [
+        "/current/stage6-s6turbine-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-xelite-tempest-flight-1031-20b33b1be172.mp4",
+      "bytes": 5639056,
+      "sha256": "20b33b1be172ea642ad0d8ae38fbee8b2d0bb107df5985b81878719311d49335",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-xelite-tempest-flight-1031-20b33b1be172.mp4",
+      "routes": [
+        "/current/stage6-xelite-tempest-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-xelite-solarwarden-flight-1031-53b2fd3d3d13.mp4",
+      "bytes": 5631743,
+      "sha256": "53b2fd3d3d1377666cdc8e57241b3e5575f191e4ba73cbf9b3a9c3a0741d21d0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-xelite-solarwarden-flight-1031-53b2fd3d3d13.mp4",
+      "routes": [
+        "/current/stage6-xelite-solarwarden-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-b2-flight-1031-f0625de8c8d6.mp4",
+      "bytes": 2180294,
+      "sha256": "f0625de8c8d60ff6a5ce2fb7c5265d02d213ca7cdaea3a41ac240d3979c0784f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-b2-flight-1031-f0625de8c8d6.mp4",
+      "routes": [
+        "/current/stage6-l6v-b2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-b1-flight-1031-7b3f4b553899.mp4",
+      "bytes": 2570549,
+      "sha256": "7b3f4b55389963233ad84a4e5dec836943c2537f98a4c831bbf88ae207615ba7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-b1-flight-1031-7b3f4b553899.mp4",
+      "routes": [
+        "/current/stage6-l6v-b1-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-tempest-dasher-flight-1031-f58247f817cd.mp4",
+      "bytes": 1085173,
+      "sha256": "f58247f817cd0036b4cdeb8ec3d7935aa765973dcd983171fd8eb851077b9052",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-tempest-dasher-flight-1031-f58247f817cd.mp4",
+      "routes": [
+        "/current/stage6-tempest-dasher-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-flyby-bomb-flight-1031-9dccae6f1c21.mp4",
+      "bytes": 2148059,
+      "sha256": "9dccae6f1c21212c038f57987e873f1243f46a59e9516c6749c2376cb14d53bf",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-flyby-bomb-flight-1031-9dccae6f1c21.mp4",
+      "routes": [
+        "/current/stage6-flyby-bomb-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-flyby-rain-flight-1031-75e9eba007db.mp4",
+      "bytes": 1778681,
+      "sha256": "75e9eba007dbee901952d4f2c2cc4772fb70708227f0336e33c2b7b3b3c2bf81",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-flyby-rain-flight-1031-75e9eba007db.mp4",
+      "routes": [
+        "/current/stage6-flyby-rain-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-flyby-charge-flight-1031-440089ec0fae.mp4",
+      "bytes": 1388394,
+      "sha256": "440089ec0fae88853554bebc72ed3f9924a7d90dad6d88af6ec22ae7c5d739a2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-flyby-charge-flight-1031-440089ec0fae.mp4",
+      "routes": [
+        "/current/stage6-flyby-charge-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-cp22drone-flight-1031-05f0659ceaa8.mp4",
+      "bytes": 5348642,
+      "sha256": "05f0659ceaa829bf0a990db6039dba24ead20cd8031bed7865ed2872b86bac9b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-cp22drone-flight-1031-05f0659ceaa8.mp4",
+      "routes": [
+        "/current/stage7-cp22drone-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-s7pipe-flight-1031-885136f4f229.mp4",
+      "bytes": 4634866,
+      "sha256": "885136f4f2294a4d7c16cef7bf790cf9b22138176dfb6fd8069d22224b91ba86",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-s7pipe-flight-1031-885136f4f229.mp4",
+      "routes": [
+        "/current/stage7-s7pipe-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-s7tank-flight-1031-839f5d6ba299.mp4",
+      "bytes": 6106328,
+      "sha256": "839f5d6ba2993f23f90f07c6a2a30265167b42e8d9d65576167e7c1b07074aac",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-s7tank-flight-1031-839f5d6ba299.mp4",
+      "routes": [
+        "/current/stage7-s7tank-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-modturret-flight-1031-c12a21e6b316.mp4",
+      "bytes": 5631828,
+      "sha256": "c12a21e6b31614a622a3b65138a0fa0ad03f9cfa2c68dbf1b2d18724a2f81fd7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-modturret-flight-1031-c12a21e6b316.mp4",
+      "routes": [
+        "/current/stage7-modturret-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-ll18brood-flight-1031-0fdfc4c5fed5.mp4",
+      "bytes": 7842684,
+      "sha256": "0fdfc4c5fed5c1a176638065d02c6dc2f71e904ec2cb99a9627fa152eeb2c65e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-ll18brood-flight-1031-0fdfc4c5fed5.mp4",
+      "routes": [
+        "/current/stage7-ll18brood-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-modturret-2-flight-1031-b133607d8995.mp4",
+      "bytes": 5516690,
+      "sha256": "b133607d8995e0872fdb9081f76a75726db76931c73ed03c5a25d49fcd7a3b99",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-modturret-2-flight-1031-b133607d8995.mp4",
+      "routes": [
+        "/current/stage7-modturret-2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-cp22relay-flight-1031-b1279fb9d958.mp4",
+      "bytes": 5708121,
+      "sha256": "b1279fb9d958ce4d7f0907e99949797a7c3d3edc41432fabc27395e090261499",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-cp22relay-flight-1031-b1279fb9d958.mp4",
+      "routes": [
+        "/current/stage7-cp22relay-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-modturret-3-flight-1031-89cf9ca1c90e.mp4",
+      "bytes": 5031229,
+      "sha256": "89cf9ca1c90e01fa6e577b6cc1e8b5c1dccded39293bb17b28df10ea637b651c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-modturret-3-flight-1031-89cf9ca1c90e.mp4",
+      "routes": [
+        "/current/stage7-modturret-3-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-cp22slime-flight-1031-bc3e281076c5.mp4",
+      "bytes": 5013767,
+      "sha256": "bc3e281076c5ebb12f5fcb963b9191bfbcf18c3f5338ce86e6bb65efe7d4e35a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-cp22slime-flight-1031-bc3e281076c5.mp4",
+      "routes": [
+        "/current/stage7-cp22slime-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-ll18raptor-flight-1031-040b7aeda04f.mp4",
+      "bytes": 6971881,
+      "sha256": "040b7aeda04f8d7b4a5513a7b5879cdc63f7d80335537e3247502216e3157333",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-ll18raptor-flight-1031-040b7aeda04f.mp4",
+      "routes": [
+        "/current/stage7-ll18raptor-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-s7barge-flight-1031-840e0be4df69.mp4",
+      "bytes": 6432914,
+      "sha256": "840e0be4df692d8f909866cbf8721df797bcc1f1e0ae3ba6fa61768fa8df02f0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-s7barge-flight-1031-840e0be4df69.mp4",
+      "routes": [
+        "/current/stage7-s7barge-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-brood-escort-flight-1031-6e30fc4d26cf.mp4",
+      "bytes": 8307704,
+      "sha256": "6e30fc4d26cf52ad2622439e1e3281e30ad3fb3e88cbd857845c8077ab954120",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-brood-escort-flight-1031-6e30fc4d26cf.mp4",
+      "routes": [
+        "/current/stage7-brood-escort-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8interceptor-flight-1031-60cf46347987.mp4",
+      "bytes": 9064568,
+      "sha256": "60cf463479872fee17f33cfa45b8dc0a689d2a7ea3549706f3a031f043c959e9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8interceptor-flight-1031-60cf46347987.mp4",
+      "routes": [
+        "/current/stage8-s8interceptor-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-mm1003-impharrow-flight-1031-7e9a861b1cd5.mp4",
+      "bytes": 9699001,
+      "sha256": "7e9a861b1cd5a0ef8ccfd02043cf8eeb4d958920ef7fea6ae78aec9d24de7cc4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-mm1003-impharrow-flight-1031-7e9a861b1cd5.mp4",
+      "routes": [
+        "/current/stage8-mm1003-impharrow-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8leech-flight-1031-e8f45204f5be.mp4",
+      "bytes": 9987158,
+      "sha256": "e8f45204f5be15f10d2a73109e60177ab8c43153b48d4a34be55796324d42619",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8leech-flight-1031-e8f45204f5be.mp4",
+      "routes": [
+        "/current/stage8-s8leech-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-mm1003-hexpyre-flight-1031-e0c4da190d22.mp4",
+      "bytes": 10200606,
+      "sha256": "e0c4da190d22619d7a62750f86944e244724b6f148ac872eb2cd629c03ce16a4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-mm1003-hexpyre-flight-1031-e0c4da190d22.mp4",
+      "routes": [
+        "/current/stage8-mm1003-hexpyre-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8razor-flight-1031-0fa6da666f7a.mp4",
+      "bytes": 9409787,
+      "sha256": "0fa6da666f7a38cb4911267a2d9298f401729ff08c365a0a88a2609897e60129",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8razor-flight-1031-0fa6da666f7a.mp4",
+      "routes": [
+        "/current/stage8-s8razor-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-ll18raptor-flight-1031-ff6b6231deec.mp4",
+      "bytes": 11592548,
+      "sha256": "ff6b6231deecccc004d8737ec2538f332bb6f75381249c0a5ebddc574356ad80",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-ll18raptor-flight-1031-ff6b6231deec.mp4",
+      "routes": [
+        "/current/stage8-ll18raptor-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-modturret-flight-1031-8b737da762fc.mp4",
+      "bytes": 9735916,
+      "sha256": "8b737da762fc9c72d562bcdbcef89adb86910c98d06f06c7c5c2732dbd6c2b53",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-modturret-flight-1031-8b737da762fc.mp4",
+      "routes": [
+        "/current/stage8-modturret-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8spread-flight-1031-1de08c91f26d.mp4",
+      "bytes": 9615876,
+      "sha256": "1de08c91f26d57f4e0fb3df9ee1108dbe7a3c2825b80058cd37d8b14780aaee8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8spread-flight-1031-1de08c91f26d.mp4",
+      "routes": [
+        "/current/stage8-s8spread-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-ll18herald-flight-1031-dfbb93e06200.mp4",
+      "bytes": 12233051,
+      "sha256": "dfbb93e06200636bf0202ccb09e7d11fdd9d9b7cf15873851fba1b4487969a53",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-ll18herald-flight-1031-dfbb93e06200.mp4",
+      "routes": [
+        "/current/stage8-ll18herald-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-modturret-2-flight-1031-6aae75959c06.mp4",
+      "bytes": 9576737,
+      "sha256": "6aae75959c063dc2c93018e9280b519fb19c707e57850164a479c630a4fa6f12",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-modturret-2-flight-1031-6aae75959c06.mp4",
+      "routes": [
+        "/current/stage8-modturret-2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8parasite-flight-1031-507f418b984b.mp4",
+      "bytes": 9520268,
+      "sha256": "507f418b984b38eaa704ae29fb6e28ae5400a8e28c1180e2943086dedea81913",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8parasite-flight-1031-507f418b984b.mp4",
+      "routes": [
+        "/current/stage8-s8parasite-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8crescent-flight-1031-d543d41fb17b.mp4",
+      "bytes": 9655520,
+      "sha256": "d543d41fb17b38a81ec4652e4a561906f1f7226231f7f24d2686e4b265fb55d7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8crescent-flight-1031-d543d41fb17b.mp4",
+      "routes": [
+        "/current/stage8-s8crescent-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-modturret-3-flight-1031-7427f609731d.mp4",
+      "bytes": 9567775,
+      "sha256": "7427f609731d3fefa51248ce45366a16c2f15cdb3ad7b6251147c54c6842844b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-modturret-3-flight-1031-7427f609731d.mp4",
+      "routes": [
+        "/current/stage8-modturret-3-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8hunter-flight-1031-e4110eb48868.mp4",
+      "bytes": 9689725,
+      "sha256": "e4110eb48868369f44df6ba307303c8db091f6ee25318b3cb6074b8bf21970f8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8hunter-flight-1031-e4110eb48868.mp4",
+      "routes": [
+        "/current/stage8-s8hunter-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8skull-flight-1031-ced3aefadd6d.mp4",
+      "bytes": 9581860,
+      "sha256": "ced3aefadd6d800035b298b594332c8dc8c31044dbe01f6fea5a094b3bfe8ea5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8skull-flight-1031-ced3aefadd6d.mp4",
+      "routes": [
+        "/current/stage8-s8skull-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8solar-flight-1031-316fb5e055fb.mp4",
+      "bytes": 9601885,
+      "sha256": "316fb5e055fb300d9bd5dcaed2a99b2ed1235583b00832c8066e5d574567cab8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8solar-flight-1031-316fb5e055fb.mp4",
+      "routes": [
+        "/current/stage8-s8solar-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-ll18spear-flight-1031-4ebd9e2b119d.mp4",
+      "bytes": 12165400,
+      "sha256": "4ebd9e2b119d31ec698192bd61ce2bcf3c5c4b8961bf03641ac716a16c847d80",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-ll18spear-flight-1031-4ebd9e2b119d.mp4",
+      "routes": [
+        "/current/stage8-ll18spear-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8symbiote-flight-1031-280305309234.mp4",
+      "bytes": 9494349,
+      "sha256": "280305309234f951038138d18ce2fe1fbac8a095b1527304e00693c16a15fcaf",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8symbiote-flight-1031-280305309234.mp4",
+      "routes": [
+        "/current/stage8-s8symbiote-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8gunship-flight-1031-b7a9bf813f7c.mp4",
+      "bytes": 10165533,
+      "sha256": "b7a9bf813f7cb539d0b8ef4c8a55aedb1be646de8f3241ac3cb1a59054b15080",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8gunship-flight-1031-b7a9bf813f7c.mp4",
+      "routes": [
+        "/current/stage8-s8gunship-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8gunship-2-flight-1031-7621ab5319a9.mp4",
+      "bytes": 10059621,
+      "sha256": "7621ab5319a9552f920b071efea151e716a648da300edb0a69fc3752397f0054",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8gunship-2-flight-1031-7621ab5319a9.mp4",
+      "routes": [
+        "/current/stage8-s8gunship-2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8carrier-flight-1031-063493be2134.mp4",
+      "bytes": 9324360,
+      "sha256": "063493be2134d81b8bb08b2378cd05cff341a1d1dd7db40f52915ec21fde183b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8carrier-flight-1031-063493be2134.mp4",
+      "routes": [
+        "/current/stage8-s8carrier-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-ll18brood-flight-1031-2eca6ce646f0.mp4",
+      "bytes": 11861427,
+      "sha256": "2eca6ce646f05cb68b15c73413b977339538c900cc36bad4c14a02889404f2f4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-ll18brood-flight-1031-2eca6ce646f0.mp4",
+      "routes": [
+        "/current/stage8-ll18brood-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8deathorb-flight-1031-d7d7a213c9ee.mp4",
+      "bytes": 9751034,
+      "sha256": "d7d7a213c9eeaed03bb7e46dfef97003c79177df0618a2c80f681cec4dadd30f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8deathorb-flight-1031-d7d7a213c9ee.mp4",
+      "routes": [
+        "/current/stage8-s8deathorb-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-mm1003-bluehybrid-flight-1031-bac28aa7b4bc.mp4",
+      "bytes": 9998819,
+      "sha256": "bac28aa7b4bc4d99fc226a3348219629ef259b46c1a348d6e50412de97203da0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-mm1003-bluehybrid-flight-1031-bac28aa7b4bc.mp4",
+      "routes": [
+        "/current/stage8-mm1003-bluehybrid-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-mm1003-furnacemaw-flight-1031-252593cfc88c.mp4",
+      "bytes": 10220235,
+      "sha256": "252593cfc88c642791c6b27ebc9a3e2dc8d4ba6f3bed5617e61ba2d22ad6d060",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-mm1003-furnacemaw-flight-1031-252593cfc88c.mp4",
+      "routes": [
+        "/current/stage8-mm1003-furnacemaw-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8bomber-flight-1031-594619b80967.mp4",
+      "bytes": 9637529,
+      "sha256": "594619b8096792c0a213df0488e30dff4a9743926746b1656cbdaa64a8fcf57e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8bomber-flight-1031-594619b80967.mp4",
+      "routes": [
+        "/current/stage8-s8bomber-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8tentacle-flight-1031-d9c16de672e4.mp4",
+      "bytes": 9704097,
+      "sha256": "d9c16de672e4f1ee9794a0563386ef94f8d9ad4be60e88efc2cf27f5e8eea9ed",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8tentacle-flight-1031-d9c16de672e4.mp4",
+      "routes": [
+        "/current/stage8-s8tentacle-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-brood-escort-flight-1031-0ec72e0d1238.mp4",
+      "bytes": 12725001,
+      "sha256": "0ec72e0d12388b7d9cb081fc6883c2bf500aa638656274985a0c8a663fc541c6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-brood-escort-flight-1031-0ec72e0d1238.mp4",
+      "routes": [
+        "/current/stage8-brood-escort-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9interceptor-flight-1031-81cf8252447d.mp4",
+      "bytes": 1240149,
+      "sha256": "81cf8252447d32e77b672dee2eeec4d726ae207af28b98bdd4b0a36b6e397f6e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9interceptor-flight-1031-81cf8252447d.mp4",
+      "routes": [
+        "/current/stage9-s9interceptor-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9comet-flight-1031-b090674cb608.mp4",
+      "bytes": 2793234,
+      "sha256": "b090674cb6085bc4ead30b7cbeb52f6e345320ca898961b74376d0c159c0b00b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9comet-flight-1031-b090674cb608.mp4",
+      "routes": [
+        "/current/stage9-s9comet-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9beacon-flight-1031-36405d28a843.mp4",
+      "bytes": 6019586,
+      "sha256": "36405d28a843491dcb57fc87286c6fda629b2fd21ada169b4fb36e457ce55069",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9beacon-flight-1031-36405d28a843.mp4",
+      "routes": [
+        "/current/stage9-s9beacon-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9ring-flight-1031-0a13c31dc14f.mp4",
+      "bytes": 5859486,
+      "sha256": "0a13c31dc14fd2e7965ad8d39503ba18e3b6dc25fd57e1d6f78cb7566e0bc161",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9ring-flight-1031-0a13c31dc14f.mp4",
+      "routes": [
+        "/current/stage9-s9ring-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9interceptor-2-flight-1031-ab4ecb1667f4.mp4",
+      "bytes": 2438413,
+      "sha256": "ab4ecb1667f4ee80fd80cfc5eb05fa73a91e7b2f92c33960ba063d4b91a24c1d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9interceptor-2-flight-1031-ab4ecb1667f4.mp4",
+      "routes": [
+        "/current/stage9-s9interceptor-2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9gunship-flight-1031-687b89f33484.mp4",
+      "bytes": 5755455,
+      "sha256": "687b89f334849812b5572f62d53912628f5a0c243fddc63d0c2951793edaa3dd",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9gunship-flight-1031-687b89f33484.mp4",
+      "routes": [
+        "/current/stage9-s9gunship-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-wskim-flight-1031-49cf80d9a9a8.mp4",
+      "bytes": 2739700,
+      "sha256": "49cf80d9a9a87e4add9c763f22328d0b901c529486e1f7c0f53c1abe07d01877",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-wskim-flight-1031-49cf80d9a9a8.mp4",
+      "routes": [
+        "/current/stage9-wskim-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9ring-2-flight-1031-0bae4ff1105b.mp4",
+      "bytes": 5697475,
+      "sha256": "0bae4ff1105beb7db06dd911e4d4221c384453dfa42d49e6b24a60e0d7b65944",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9ring-2-flight-1031-0bae4ff1105b.mp4",
+      "routes": [
+        "/current/stage9-s9ring-2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9gateturret-flight-1031-cee105d49eac.mp4",
+      "bytes": 5275589,
+      "sha256": "cee105d49eacabf705bf096ae04cf4bcef1176d0b59f5b64f01dea042e109b0b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9gateturret-flight-1031-cee105d49eac.mp4",
+      "routes": [
+        "/current/stage9-s9gateturret-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-gleech-flight-1031-a7b83bf6f926.mp4",
+      "bytes": 4425290,
+      "sha256": "a7b83bf6f926f9166561081ff5013ecf74192b0db7282e48458ad7d83e9f64ff",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-gleech-flight-1031-a7b83bf6f926.mp4",
+      "routes": [
+        "/current/stage9-gleech-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9prism-flight-1031-74df541e3c28.mp4",
+      "bytes": 5953636,
+      "sha256": "74df541e3c286c2fba4c55bf4477b273061562a75d1b8deb907f705cc5b65192",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9prism-flight-1031-74df541e3c28.mp4",
+      "routes": [
+        "/current/stage9-s9prism-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-echof-flight-1031-b1aacef3825e.mp4",
+      "bytes": 2829945,
+      "sha256": "b1aacef3825ec76f92511f0ae542ec19eacb076ef90713668c4f9e764d6de895",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-echof-flight-1031-b1aacef3825e.mp4",
+      "routes": [
+        "/current/stage9-echof-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9singularity-flight-1031-0e41b2df19ab.mp4",
+      "bytes": 5733917,
+      "sha256": "0e41b2df19ab8d00f07b9aaafe07c6361fd0e14388be74117df5585a8ea0bbdb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9singularity-flight-1031-0e41b2df19ab.mp4",
+      "routes": [
+        "/current/stage9-s9singularity-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9prism-2-flight-1031-c14cb97a8947.mp4",
+      "bytes": 6262831,
+      "sha256": "c14cb97a894716d8b06e2c1e6d989ca053c4a59ae3f7e700d63b7fda5a9c0fdc",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9prism-2-flight-1031-c14cb97a8947.mp4",
+      "routes": [
+        "/current/stage9-s9prism-2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-pmine-flight-1031-10b088b1bf84.mp4",
+      "bytes": 5292849,
+      "sha256": "10b088b1bf84e9d31b5aa44420f0fbecc02d03cb65dd9450551b3547d6b33538",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-pmine-flight-1031-10b088b1bf84.mp4",
+      "routes": [
+        "/current/stage9-pmine-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9gunship-2-flight-1031-856e66fe0062.mp4",
+      "bytes": 5345429,
+      "sha256": "856e66fe006284118c797a27b01d83ea8690c21d1dee472904887822ba3ab379",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9gunship-2-flight-1031-856e66fe0062.mp4",
+      "routes": [
+        "/current/stage9-s9gunship-2-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-vmanta-flight-1031-f72ff0b3bd63.mp4",
+      "bytes": 2874912,
+      "sha256": "f72ff0b3bd634a98c7a49187e1f2f04f5e9faf8a13eb2ecb2686499c64e74cf8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-vmanta-flight-1031-f72ff0b3bd63.mp4",
+      "routes": [
+        "/current/stage9-vmanta-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-tsplit-flight-1031-95c37431612d.mp4",
+      "bytes": 2754878,
+      "sha256": "95c37431612d0837647a732b8b93682698dc7b4fec9efb128a11decf005bf27e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-tsplit-flight-1031-95c37431612d.mp4",
+      "routes": [
+        "/current/stage9-tsplit-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-cbreak-flight-1031-10b11878d5e3.mp4",
+      "bytes": 2999025,
+      "sha256": "10b11878d5e37b6086c28bfe4a3a32138127e560d837e548bc8e077b4178dfd6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-cbreak-flight-1031-10b11878d5e3.mp4",
+      "routes": [
+        "/current/stage9-cbreak-flight-1031.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-sandtank-highway-1101-6f40fb947d1a.mp4",
+      "bytes": 12573442,
+      "sha256": "6f40fb947d1a0c10fc809fac742845e6c6159bebad5a62140f71f0fedf56a5e2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-sandtank-highway-1101-6f40fb947d1a.mp4",
+      "routes": [
+        "/current/stage4-sandtank-highway-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4missile-highway-1101-981bfe8249d6.mp4",
+      "bytes": 13708992,
+      "sha256": "981bfe8249d6e17be17c5d964ef4985c9c95f19dd6d44e0de8404534238ab1df",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4missile-highway-1101-981bfe8249d6.mp4",
+      "routes": [
+        "/current/stage4-s4missile-highway-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4command-highway-1101-7e87b30a814e.mp4",
+      "bytes": 16174016,
+      "sha256": "7e87b30a814e63c709199a58bb63f9e1d96452e488d00c36bdcacaedcd46b0f7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4command-highway-1101-7e87b30a814e.mp4",
+      "routes": [
+        "/current/stage4-s4command-highway-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4tanker-highway-1101-ea2cc2d6d502.mp4",
+      "bytes": 4960775,
+      "sha256": "ea2cc2d6d5025d3deb007b89505d2cef5416d066428a74bf4f4ad2ace31310e8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4tanker-highway-1101-ea2cc2d6d502.mp4",
+      "routes": [
+        "/current/stage4-s4tanker-highway-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4tractor-highway-1101-e1f73c6ed342.mp4",
+      "bytes": 11963249,
+      "sha256": "e1f73c6ed34212ee6f1cc310b2e034c7e615c12216bef0e066359a41e9952a50",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4tractor-highway-1101-e1f73c6ed342.mp4",
+      "routes": [
+        "/current/stage4-s4tractor-highway-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4heavyjet-highway-1101-275fa927d576.mp4",
+      "bytes": 15699072,
+      "sha256": "275fa927d5762dbe143c3b5a4f746b4e1f70389f4a1ab55215698100424d2cc1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4heavyjet-highway-1101-275fa927d576.mp4",
+      "routes": [
+        "/current/stage4-s4heavyjet-highway-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage4-s4sam-highway-1101-05f7b02ffae1.mp4",
+      "bytes": 15522467,
+      "sha256": "05f7b02ffae147f07c3bf6375b1287e7232bf5ba407f9e438e6207ddf69a1364",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage4-s4sam-highway-1101-05f7b02ffae1.mp4",
+      "routes": [
+        "/current/stage4-s4sam-highway-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5frigate-orbital-1101-a2bf82481fde.mp4",
+      "bytes": 6249049,
+      "sha256": "a2bf82481fde1041242c6d762b92944e021f95a72b8ae404e3f485bd24b0a845",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5frigate-orbital-1101-a2bf82481fde.mp4",
+      "routes": [
+        "/current/stage5-s5frigate-orbital-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5rammer-orbital-1101-0cf2d9b629ba.mp4",
+      "bytes": 2108605,
+      "sha256": "0cf2d9b629baf57cb5928281b467f2feab60a802589cec05a863cf46155ab689",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5rammer-orbital-1101-0cf2d9b629ba.mp4",
+      "routes": [
+        "/current/stage5-s5rammer-orbital-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5skimmer-orbital-1101-4c523f292c0e.mp4",
+      "bytes": 6367223,
+      "sha256": "4c523f292c0e9239ff329bfed9051d09346f46a048328d13d9584088d14b59e5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5skimmer-orbital-1101-4c523f292c0e.mp4",
+      "routes": [
+        "/current/stage5-s5skimmer-orbital-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5gravity-orbital-1101-b8831e0510d9.mp4",
+      "bytes": 7472179,
+      "sha256": "b8831e0510d934b8c6574657873a6f246bd81323c9bac34d1fa30db2d7a0e121",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5gravity-orbital-1101-b8831e0510d9.mp4",
+      "routes": [
+        "/current/stage5-s5gravity-orbital-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5minelayer-orbital-1101-a309736693cf.mp4",
+      "bytes": 4854648,
+      "sha256": "a309736693cf8bb42363e63df70edc22f0070a780f53d03aca720836ad9b8420",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5minelayer-orbital-1101-a309736693cf.mp4",
+      "routes": [
+        "/current/stage5-s5minelayer-orbital-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5satellite-orbital-1101-c6f34f044cfc.mp4",
+      "bytes": 8334963,
+      "sha256": "c6f34f044cfc58a17a072d855c5147d5779d9c04916b47be466c1409d46bfaba",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5satellite-orbital-1101-c6f34f044cfc.mp4",
+      "routes": [
+        "/current/stage5-s5satellite-orbital-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5portalmine-orbital-1101-40db45285b8c.mp4",
+      "bytes": 7865756,
+      "sha256": "40db45285b8cc06d50ade80df6b909e6f6ad4744e1a54acc6781f020d7480098",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5portalmine-orbital-1101-40db45285b8c.mp4",
+      "routes": [
+        "/current/stage5-s5portalmine-orbital-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5repair-orbital-1101-43353b241422.mp4",
+      "bytes": 3786891,
+      "sha256": "43353b24142255a95088af0634b5fabb9d2379b2bda0f03a20283b55f7dac54d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5repair-orbital-1101-43353b241422.mp4",
+      "routes": [
+        "/current/stage5-s5repair-orbital-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5station-orbital-1101-9044c1743862.mp4",
+      "bytes": 12802832,
+      "sha256": "9044c17438625ce333ba749c3a147618486e0d48296ab07a60d878198997844c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5station-orbital-1101-9044c1743862.mp4",
+      "routes": [
+        "/current/stage5-s5station-orbital-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage5-s5leech-orbital-1101-a3040c62b6e5.mp4",
+      "bytes": 8799918,
+      "sha256": "a3040c62b6e55f88354a03ed9f3585a8bf1c9e5f7acae0f51167520d267219f9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage5-s5leech-orbital-1101-a3040c62b6e5.mp4",
+      "routes": [
+        "/current/stage5-s5leech-orbital-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6dart-airframe-1101-b1c943e72aea.mp4",
+      "bytes": 1261230,
+      "sha256": "b1c943e72aea349e193cce58be0201b311b16d35ba6f5bb45f224f7ada53a62f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6dart-airframe-1101-b1c943e72aea.mp4",
+      "routes": [
+        "/current/stage6-s6dart-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6mine-airframe-1101-63579005200e.mp4",
+      "bytes": 3395784,
+      "sha256": "63579005200e88b8c2f27e7634482b4e6c21d891d9aba72a03cf6dd7add9bbf8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6mine-airframe-1101-63579005200e.mp4",
+      "routes": [
+        "/current/stage6-s6mine-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-s0-airframe-1101-a5ed4579e243.mp4",
+      "bytes": 1630475,
+      "sha256": "a5ed4579e243b35828546b7a60e70fd962259b9f15ef04c8719c804d5a75b70b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-s0-airframe-1101-a5ed4579e243.mp4",
+      "routes": [
+        "/current/stage6-l6v-s0-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s1jetbomber-b-airframe-1101-ccaea3eff8c0.mp4",
+      "bytes": 1615406,
+      "sha256": "ccaea3eff8c0e2009b97edcb62308a80955d5689d84bea09b4d6443969a1fa33",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s1jetbomber-b-airframe-1101-ccaea3eff8c0.mp4",
+      "routes": [
+        "/current/stage6-s1jetbomber-b-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6lancer-airframe-1101-f9fc4eb673e4.mp4",
+      "bytes": 3879488,
+      "sha256": "f9fc4eb673e403946facaf74b8ee446f4c1a4ef728daf41e5c715b273b083856",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6lancer-airframe-1101-f9fc4eb673e4.mp4",
+      "routes": [
+        "/current/stage6-s6lancer-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-s2-airframe-1101-e5f08d2b4e84.mp4",
+      "bytes": 1602538,
+      "sha256": "e5f08d2b4e84051d18781f063ea07527a12c71cf6c0d827a7848d403bc8105cf",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-s2-airframe-1101-e5f08d2b4e84.mp4",
+      "routes": [
+        "/current/stage6-l6v-s2-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6skimmer-airframe-1101-ac998937499a.mp4",
+      "bytes": 964280,
+      "sha256": "ac998937499a900f7026de96430b13e3aa41c6301ffa25baf3d23a8ab9b36c8f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6skimmer-airframe-1101-ac998937499a.mp4",
+      "routes": [
+        "/current/stage6-s6skimmer-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-s1-airframe-1101-1d3a908d2bf0.mp4",
+      "bytes": 2027402,
+      "sha256": "1d3a908d2bf0987e308800dee9c859e5232a0c269b4c0e7567b8d454616ab9a5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-s1-airframe-1101-1d3a908d2bf0.mp4",
+      "routes": [
+        "/current/stage6-l6v-s1-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6thunder-airframe-1101-8ebbb0739797.mp4",
+      "bytes": 3660171,
+      "sha256": "8ebbb0739797327db70eb2cd47725181e19777662500ee623fd0eb959669771b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6thunder-airframe-1101-8ebbb0739797.mp4",
+      "routes": [
+        "/current/stage6-s6thunder-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s1jetbomber-b-2-airframe-1101-0d8c1e3922f2.mp4",
+      "bytes": 1586162,
+      "sha256": "0d8c1e3922f23abb0d10d2481ffefff57f9aaa1d9856371623e44e2ce17181eb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s1jetbomber-b-2-airframe-1101-0d8c1e3922f2.mp4",
+      "routes": [
+        "/current/stage6-s1jetbomber-b-2-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-r0-airframe-1101-da21327031a3.mp4",
+      "bytes": 1593465,
+      "sha256": "da21327031a37bab39405c16e2d6af0b868c66cf9416f693862de20c0fbe0095",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-r0-airframe-1101-da21327031a3.mp4",
+      "routes": [
+        "/current/stage6-l6v-r0-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s1jetbomber-b-3-airframe-1101-61f2de4cdb67.mp4",
+      "bytes": 1558016,
+      "sha256": "61f2de4cdb67dcd5abe737ec478d1e0d4d150927210442c8ef8bcaeb961b0ffa",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s1jetbomber-b-3-airframe-1101-61f2de4cdb67.mp4",
+      "routes": [
+        "/current/stage6-s1jetbomber-b-3-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6probe-airframe-1101-a43f6d1a8311.mp4",
+      "bytes": 3895855,
+      "sha256": "a43f6d1a8311bdd41f5c8002d2fd0ccaf94d59567ffe25797946ef0897ee8c9b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6probe-airframe-1101-a43f6d1a8311.mp4",
+      "routes": [
+        "/current/stage6-s6probe-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-xelite-glacierlance-airframe-1101-f1b7c9d2546f.mp4",
+      "bytes": 3783521,
+      "sha256": "f1b7c9d2546fe209d76d40d437f44e224f13c5b254b376c34bcecf5403d0b5b9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-xelite-glacierlance-airframe-1101-f1b7c9d2546f.mp4",
+      "routes": [
+        "/current/stage6-xelite-glacierlance-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6cyclone-airframe-1101-b0324399fa76.mp4",
+      "bytes": 1740330,
+      "sha256": "b0324399fa76a65b7ba73ecec0b3ea38214fa4514dde22b8bfc5c9ccf11b81f8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6cyclone-airframe-1101-b0324399fa76.mp4",
+      "routes": [
+        "/current/stage6-s6cyclone-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-r2-airframe-1101-4948b6de3a16.mp4",
+      "bytes": 1847363,
+      "sha256": "4948b6de3a16f752242124a3b9cb46e7ad46bc665d412ec6e983e1c3515e3743",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-r2-airframe-1101-4948b6de3a16.mp4",
+      "routes": [
+        "/current/stage6-l6v-r2-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-r1-airframe-1101-676a1dbf2464.mp4",
+      "bytes": 2039150,
+      "sha256": "676a1dbf24649a7f41a64ac38ef7f83f63817ea58f6b8b59c423b83dfa34ee98",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-r1-airframe-1101-676a1dbf2464.mp4",
+      "routes": [
+        "/current/stage6-l6v-r1-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-b0-airframe-1101-a3fe0e30355c.mp4",
+      "bytes": 1513385,
+      "sha256": "a3fe0e30355c5b2edc82548cf0856b84df5768cde06325bc3cd8dc3600b33a7d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-b0-airframe-1101-a3fe0e30355c.mp4",
+      "routes": [
+        "/current/stage6-l6v-b0-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-s6turbine-airframe-1101-f3792220485e.mp4",
+      "bytes": 3752412,
+      "sha256": "f3792220485e850a2d8441ebd171c9707c43406efc60a571df5d2e0861b46cdd",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-s6turbine-airframe-1101-f3792220485e.mp4",
+      "routes": [
+        "/current/stage6-s6turbine-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-xelite-tempest-airframe-1101-f81000a4d47e.mp4",
+      "bytes": 3938960,
+      "sha256": "f81000a4d47eec08ce02ca60030456bc20c5e4c0dca1fc6f90b4a54914444d21",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-xelite-tempest-airframe-1101-f81000a4d47e.mp4",
+      "routes": [
+        "/current/stage6-xelite-tempest-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-xelite-solarwarden-airframe-1101-95926d44b49c.mp4",
+      "bytes": 3907171,
+      "sha256": "95926d44b49ce4da7bd2d3a8626a5ddf8ded5ca8a1dd5b649f6d31b3dc863ba2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-xelite-solarwarden-airframe-1101-95926d44b49c.mp4",
+      "routes": [
+        "/current/stage6-xelite-solarwarden-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-b2-airframe-1101-575271881e39.mp4",
+      "bytes": 1835792,
+      "sha256": "575271881e39ff81beafc6fcf179553cd090d54906bb5c50bf102ad018be01e3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-b2-airframe-1101-575271881e39.mp4",
+      "routes": [
+        "/current/stage6-l6v-b2-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-l6v-b1-airframe-1101-2c77912a0d5b.mp4",
+      "bytes": 1872137,
+      "sha256": "2c77912a0d5b507806d39108d0286b8a7520a2993a089989ec36228d377ad5ee",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-l6v-b1-airframe-1101-2c77912a0d5b.mp4",
+      "routes": [
+        "/current/stage6-l6v-b1-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-tempest-dasher-airframe-1101-9d28599fd0e0.mp4",
+      "bytes": 938309,
+      "sha256": "9d28599fd0e0441a2a9be6f3f1fd69cfb9b9fd36b549f3970892e5cef1c70158",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-tempest-dasher-airframe-1101-9d28599fd0e0.mp4",
+      "routes": [
+        "/current/stage6-tempest-dasher-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-flyby-bomb-airframe-1101-2a9e09173fa9.mp4",
+      "bytes": 1677464,
+      "sha256": "2a9e09173fa93b66a2c9e86c71fb040d6004e40406d3ab31a3daa9d424fd0416",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-flyby-bomb-airframe-1101-2a9e09173fa9.mp4",
+      "routes": [
+        "/current/stage6-flyby-bomb-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-flyby-rain-airframe-1101-578dcea032e1.mp4",
+      "bytes": 1376181,
+      "sha256": "578dcea032e1cd15272fa0bbd7721dca1287fb7d63ca219b5b53c59865224695",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-flyby-rain-airframe-1101-578dcea032e1.mp4",
+      "routes": [
+        "/current/stage6-flyby-rain-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-flyby-charge-airframe-1101-c15a5b2fec3a.mp4",
+      "bytes": 1186549,
+      "sha256": "c15a5b2fec3a45f6c41f59a64ef8bd5f17cf32ebeb62323d10b8f559d141c1ca",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-flyby-charge-airframe-1101-c15a5b2fec3a.mp4",
+      "routes": [
+        "/current/stage6-flyby-charge-airframe-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-cloud-carriers-1101-a6b530c03198.mp4",
+      "bytes": 10469017,
+      "sha256": "a6b530c03198818a4cc6f6489420c99dbb12f874baa98c8b611189b2a5b6f557",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-cloud-carriers-1101-a6b530c03198.mp4",
+      "routes": [
+        "/current/stage6-cloud-carriers-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-pair-top-assault-1101-322da36b0e90.mp4",
+      "bytes": 12157024,
+      "sha256": "322da36b0e90ed4fefcb33023f6d2c7378a481c37cc37111ce67102353cf2a83",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-pair-top-assault-1101-322da36b0e90.mp4",
+      "routes": [
+        "/current/stage6-pair-top-assault-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-pair-bottom-assault-1101-ad8cbe2bd7d4.mp4",
+      "bytes": 12873304,
+      "sha256": "ad8cbe2bd7d496e013f238304520179779c03be33c999f679aadb9050d2ed27c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-pair-bottom-assault-1101-ad8cbe2bd7d4.mp4",
+      "routes": [
+        "/current/stage6-pair-bottom-assault-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-nuclear-assault-1101-4ce0f7aec4fa.mp4",
+      "bytes": 17137193,
+      "sha256": "4ce0f7aec4fa8f0a4abccfda8a09b5467642be1fa1ad0881767c543ec378b286",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-nuclear-assault-1101-4ce0f7aec4fa.mp4",
+      "routes": [
+        "/current/stage6-nuclear-assault-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage6-laser-assault-1101-253beb5b60a3.mp4",
+      "bytes": 18616248,
+      "sha256": "253beb5b60a3da98b94b828f93e762b114099e58e4d28c003b216a2a15a33dab",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage6-laser-assault-1101-253beb5b60a3.mp4",
+      "routes": [
+        "/current/stage6-laser-assault-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-s7pipe-toxic-1101-ff134dea3a42.mp4",
+      "bytes": 6312677,
+      "sha256": "ff134dea3a42b2694d9ddaa62db66ad81b81b48afa9768603a4f2d913dee24ef",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-s7pipe-toxic-1101-ff134dea3a42.mp4",
+      "routes": [
+        "/current/stage7-s7pipe-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-s7tank-toxic-1101-c0b2a41ecda4.mp4",
+      "bytes": 5985997,
+      "sha256": "c0b2a41ecda47a0aeab902a6952804b547e6aa9a0c6534d47115e39514855081",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-s7tank-toxic-1101-c0b2a41ecda4.mp4",
+      "routes": [
+        "/current/stage7-s7tank-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-modturret-toxic-1101-d3d0f5ac8bf0.mp4",
+      "bytes": 5803160,
+      "sha256": "d3d0f5ac8bf0561f22e2ecdf2fac1e68bd7a7719b65899daee1b45c0589cb58e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-modturret-toxic-1101-d3d0f5ac8bf0.mp4",
+      "routes": [
+        "/current/stage7-modturret-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-ll18brood-toxic-1101-141d3a163ec3.mp4",
+      "bytes": 12792719,
+      "sha256": "141d3a163ec3ef2ef6739e59182a37b1d60501a6ced574af9c73607756e3f4f2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-ll18brood-toxic-1101-141d3a163ec3.mp4",
+      "routes": [
+        "/current/stage7-ll18brood-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-modturret-2-toxic-1101-452074fe382e.mp4",
+      "bytes": 5549977,
+      "sha256": "452074fe382ed6baeb1614e2a001e69f85bef91cb228a4b99bfbca6173e8aa7b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-modturret-2-toxic-1101-452074fe382e.mp4",
+      "routes": [
+        "/current/stage7-modturret-2-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-cp22relay-toxic-1101-9b316cb9dc0d.mp4",
+      "bytes": 8640980,
+      "sha256": "9b316cb9dc0d5d67a0d8738697eaec87ee8b28542ee736e7d7d8e3ae5deea373",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-cp22relay-toxic-1101-9b316cb9dc0d.mp4",
+      "routes": [
+        "/current/stage7-cp22relay-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-modturret-3-toxic-1101-9b4a8a2207a1.mp4",
+      "bytes": 5249115,
+      "sha256": "9b4a8a2207a193194cdb2f7b95bab91b85c6d64170022761034175aa63a623ce",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-modturret-3-toxic-1101-9b4a8a2207a1.mp4",
+      "routes": [
+        "/current/stage7-modturret-3-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-cp22slime-toxic-1101-a47f1483f872.mp4",
+      "bytes": 6580602,
+      "sha256": "a47f1483f872e5d9124c59c17665aac04841ad881e924eaee5cbfc1289d53ee9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-cp22slime-toxic-1101-a47f1483f872.mp4",
+      "routes": [
+        "/current/stage7-cp22slime-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-s7missilejet-toxic-1101-7415bb9ec5d2.mp4",
+      "bytes": 9524962,
+      "sha256": "7415bb9ec5d28488c6a8e57fc0cfd0cb6324a5002e396c55b0f6c4b08305b376",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-s7missilejet-toxic-1101-7415bb9ec5d2.mp4",
+      "routes": [
+        "/current/stage7-s7missilejet-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-s7barge-toxic-1101-3493a1fd231c.mp4",
+      "bytes": 9413562,
+      "sha256": "3493a1fd231c81dd466b0d1fb06095a6dd6a1b2db8628ab50f31cea6ba12160d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-s7barge-toxic-1101-3493a1fd231c.mp4",
+      "routes": [
+        "/current/stage7-s7barge-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage7-brood-escort-toxic-1101-3258121ceed0.mp4",
+      "bytes": 6405871,
+      "sha256": "3258121ceed0ba014c8fb2138c41223ef4664bae2e68bd6649e73606707461a5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage7-brood-escort-toxic-1101-3258121ceed0.mp4",
+      "routes": [
+        "/current/stage7-brood-escort-toxic-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8interceptor-alien-1101-3f9329b47f30.mp4",
+      "bytes": 11920200,
+      "sha256": "3f9329b47f30136b2a745bc71a5eb63af2703c84f7879768c29b899ab4ddba35",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8interceptor-alien-1101-3f9329b47f30.mp4",
+      "routes": [
+        "/current/stage8-s8interceptor-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-mm1003-impharrow-alien-1101-d2f058e21633.mp4",
+      "bytes": 12294132,
+      "sha256": "d2f058e21633979458bc1d191795a2f51476eea9290166e9825830c372e6766e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-mm1003-impharrow-alien-1101-d2f058e21633.mp4",
+      "routes": [
+        "/current/stage8-mm1003-impharrow-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-mm1003-hexpyre-alien-1101-f1d670d0db89.mp4",
+      "bytes": 16833916,
+      "sha256": "f1d670d0db890c7b182b2df1c62567bc47e672dbb5965226119e20af43095b28",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-mm1003-hexpyre-alien-1101-f1d670d0db89.mp4",
+      "routes": [
+        "/current/stage8-mm1003-hexpyre-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8voidjet-alien-1101-8ae8bc754a44.mp4",
+      "bytes": 19479159,
+      "sha256": "8ae8bc754a4442500611423c26d348f81e6df45bf80227325ebdfc9fa0626fa3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8voidjet-alien-1101-8ae8bc754a44.mp4",
+      "routes": [
+        "/current/stage8-s8voidjet-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8laserharrier-alien-1101-8b28ccb2b5cd.mp4",
+      "bytes": 13708042,
+      "sha256": "8b28ccb2b5cd1775d552652a155f270e8b35ec674ce4e179fad849f9e82235ef",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8laserharrier-alien-1101-8b28ccb2b5cd.mp4",
+      "routes": [
+        "/current/stage8-s8laserharrier-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-ll18herald-alien-1101-ac28dff08c54.mp4",
+      "bytes": 19262420,
+      "sha256": "ac28dff08c5403f4dc55f37856c67dd040e47f167197763087fba2689c67379a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-ll18herald-alien-1101-ac28dff08c54.mp4",
+      "routes": [
+        "/current/stage8-ll18herald-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8parasite-alien-1101-9c4cf1b0ae90.mp4",
+      "bytes": 12913758,
+      "sha256": "9c4cf1b0ae904f3368680e9e0d30f7cf17d422b862eab66855c38a8ba3a865f5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8parasite-alien-1101-9c4cf1b0ae90.mp4",
+      "routes": [
+        "/current/stage8-s8parasite-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8crescent-alien-1101-9f57830b8c8a.mp4",
+      "bytes": 12972494,
+      "sha256": "9f57830b8c8ad952c31b2351d538897550ba1b67c3a31a3d32cdef9c4c5d9537",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8crescent-alien-1101-9f57830b8c8a.mp4",
+      "routes": [
+        "/current/stage8-s8crescent-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8hunter-alien-1101-bc68260dab2c.mp4",
+      "bytes": 14731283,
+      "sha256": "bc68260dab2ca5ceee393840658c65430fe80ed578601480fef2c5a801b10828",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8hunter-alien-1101-bc68260dab2c.mp4",
+      "routes": [
+        "/current/stage8-s8hunter-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8skull-alien-1101-fa132584074a.mp4",
+      "bytes": 13364011,
+      "sha256": "fa132584074a702a62759126aac47127da7a7cce7a3172417100610b9700852f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8skull-alien-1101-fa132584074a.mp4",
+      "routes": [
+        "/current/stage8-s8skull-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8symbiote-alien-1101-ea113b4fc85e.mp4",
+      "bytes": 13221044,
+      "sha256": "ea113b4fc85e915ddcf51a278ad9ad5948f95a123fcff782b52f98f48d0945de",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8symbiote-alien-1101-ea113b4fc85e.mp4",
+      "routes": [
+        "/current/stage8-s8symbiote-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8gunship-alien-1101-ea1687ccfa5b.mp4",
+      "bytes": 19190308,
+      "sha256": "ea1687ccfa5b11b9b5f6d3b3c34a051f9df01b791053e5b4e8dbaefd69fac1df",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8gunship-alien-1101-ea1687ccfa5b.mp4",
+      "routes": [
+        "/current/stage8-s8gunship-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8carrier-alien-1101-ecba23acc00d.mp4",
+      "bytes": 18907761,
+      "sha256": "ecba23acc00d06f3760d8e9d063381b36701076df691266a48060a24c7483e8d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8carrier-alien-1101-ecba23acc00d.mp4",
+      "routes": [
+        "/current/stage8-s8carrier-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8deathorb-alien-1101-0e130a2c88c9.mp4",
+      "bytes": 16201487,
+      "sha256": "0e130a2c88c9858609c4c4bf7e2b85c248bd2a7492c32d4edfc9dea1598cb7df",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8deathorb-alien-1101-0e130a2c88c9.mp4",
+      "routes": [
+        "/current/stage8-s8deathorb-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-mm1003-bluehybrid-alien-1101-2f2e4588e408.mp4",
+      "bytes": 19156725,
+      "sha256": "2f2e4588e40888c898760ed1a134b7a64094e3120242a660d1f121ea65ffb03b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-mm1003-bluehybrid-alien-1101-2f2e4588e408.mp4",
+      "routes": [
+        "/current/stage8-mm1003-bluehybrid-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-mm1003-furnacemaw-alien-1101-64a525db260e.mp4",
+      "bytes": 16284149,
+      "sha256": "64a525db260e8875dbca888b3eaa57412868e6c76898fc82ff96401860d586bb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-mm1003-furnacemaw-alien-1101-64a525db260e.mp4",
+      "routes": [
+        "/current/stage8-mm1003-furnacemaw-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8bomber-alien-1101-59a3dbeed9da.mp4",
+      "bytes": 5970120,
+      "sha256": "59a3dbeed9daeef85214720bca348599e6cdcc56ac1a42c8a4669e4faf546e96",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8bomber-alien-1101-59a3dbeed9da.mp4",
+      "routes": [
+        "/current/stage8-s8bomber-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage8-s8tentacle-alien-1101-6520331a857b.mp4",
+      "bytes": 16296653,
+      "sha256": "6520331a857be9a3361266d43de9e87fadd2ffa04d39696ff29a77f52eab2ca6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage8-s8tentacle-alien-1101-6520331a857b.mp4",
+      "routes": [
+        "/current/stage8-s8tentacle-alien-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-cbreak-water-1101-409b2f592246.mp4",
+      "bytes": 15551284,
+      "sha256": "409b2f5922460b42c346b85a0bb255f3c337c12415c7ec7b0e9fa32c1633066e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-cbreak-water-1101-409b2f592246.mp4",
+      "routes": [
+        "/current/stage9-cbreak-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9interceptor-water-1101-eed49ccd0cc1.mp4",
+      "bytes": 6640365,
+      "sha256": "eed49ccd0cc1c4ce9da0cc2d932bbdb012e8921a6f8e67d5eac0db3247b67d11",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9interceptor-water-1101-eed49ccd0cc1.mp4",
+      "routes": [
+        "/current/stage9-s9interceptor-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9comet-water-1101-6604d62c38c6.mp4",
+      "bytes": 2762740,
+      "sha256": "6604d62c38c6b8d5ead0c90cc2977ccd6bc06ae6c2dc4d0942211bd6ef7f4a2b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9comet-water-1101-6604d62c38c6.mp4",
+      "routes": [
+        "/current/stage9-s9comet-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9beacon-water-1101-cde2103ed8a9.mp4",
+      "bytes": 11076568,
+      "sha256": "cde2103ed8a9131b022b50cb30e35f5060e1221cce31977b389b0445a7c4a993",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9beacon-water-1101-cde2103ed8a9.mp4",
+      "routes": [
+        "/current/stage9-s9beacon-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9ring-water-1101-bb73ca5cf3ec.mp4",
+      "bytes": 10155335,
+      "sha256": "bb73ca5cf3ecae2124c19883569519cc65b6e5d1ed3d145e53c1621ad8cf6763",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9ring-water-1101-bb73ca5cf3ec.mp4",
+      "routes": [
+        "/current/stage9-s9ring-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9interceptor-2-water-1101-8b06343cc903.mp4",
+      "bytes": 8096884,
+      "sha256": "8b06343cc903b2953b28f10746032b0343301b21c4bc63a471e2b2afd68f64f0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9interceptor-2-water-1101-8b06343cc903.mp4",
+      "routes": [
+        "/current/stage9-s9interceptor-2-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9gunship-water-1101-08ff372226ac.mp4",
+      "bytes": 8898166,
+      "sha256": "08ff372226acb8e3aa4b30fe33b8af3775f06e276472ac78130c02674faddf89",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9gunship-water-1101-08ff372226ac.mp4",
+      "routes": [
+        "/current/stage9-s9gunship-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-wskim-water-1101-00bb3757f262.mp4",
+      "bytes": 7628819,
+      "sha256": "00bb3757f262b7e9cea08ab02c826ca4ab3a6f71d7739ab839f02c50f24ef6bb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-wskim-water-1101-00bb3757f262.mp4",
+      "routes": [
+        "/current/stage9-wskim-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9ring-2-water-1101-9b6400f5f9dd.mp4",
+      "bytes": 8523843,
+      "sha256": "9b6400f5f9dd4e862506e67cecd6328f7308fe2bc5c15d0324c0839472767452",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9ring-2-water-1101-9b6400f5f9dd.mp4",
+      "routes": [
+        "/current/stage9-s9ring-2-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9gateturret-water-1101-ff65a71e293d.mp4",
+      "bytes": 8608404,
+      "sha256": "ff65a71e293d7d4f08d5f65e1fc6ff7f25fcf0d2708f3718b4c0324eb41c4a88",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9gateturret-water-1101-ff65a71e293d.mp4",
+      "routes": [
+        "/current/stage9-s9gateturret-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-gleech-water-1101-9c5130fed466.mp4",
+      "bytes": 8571889,
+      "sha256": "9c5130fed46695ff11d21df6bbd6917a1d041c49056763a22ad16f37117757d9",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-gleech-water-1101-9c5130fed466.mp4",
+      "routes": [
+        "/current/stage9-gleech-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9prism-water-1101-ed5f428c3af1.mp4",
+      "bytes": 9494658,
+      "sha256": "ed5f428c3af1e7984c9c43b901adb039d5bdfa5cdf5afb95ab75d08c008daca5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9prism-water-1101-ed5f428c3af1.mp4",
+      "routes": [
+        "/current/stage9-s9prism-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-echof-water-1101-f03159e03515.mp4",
+      "bytes": 7374734,
+      "sha256": "f03159e0351530b347024fdf32e29bbef546a65217a52e812998439f40ed44a2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-echof-water-1101-f03159e03515.mp4",
+      "routes": [
+        "/current/stage9-echof-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9singularity-water-1101-ca888b8330bf.mp4",
+      "bytes": 9545318,
+      "sha256": "ca888b8330bf6681ec5f47c9e8e1017eeb879f28d67aaab29412fd20f1990a4b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9singularity-water-1101-ca888b8330bf.mp4",
+      "routes": [
+        "/current/stage9-s9singularity-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9prism-2-water-1101-34e6dcc5c807.mp4",
+      "bytes": 8688319,
+      "sha256": "34e6dcc5c807b2544081a6f9fc0af6fb654a4d651b4a2f532f7b742a2e234090",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9prism-2-water-1101-34e6dcc5c807.mp4",
+      "routes": [
+        "/current/stage9-s9prism-2-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-pmine-water-1101-79a2318ef2bb.mp4",
+      "bytes": 3324443,
+      "sha256": "79a2318ef2bb0c498129ff7be2c0d2928f11810c8bbc8d595c00fd05ef15452c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-pmine-water-1101-79a2318ef2bb.mp4",
+      "routes": [
+        "/current/stage9-pmine-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9gunship-2-water-1101-35845196efef.mp4",
+      "bytes": 13982246,
+      "sha256": "35845196efef67848b7f32ce5a1d8c91a002dd2189b13d856e73f29599b25966",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9gunship-2-water-1101-35845196efef.mp4",
+      "routes": [
+        "/current/stage9-s9gunship-2-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-vmanta-water-1101-b373cb19bf95.mp4",
+      "bytes": 8688928,
+      "sha256": "b373cb19bf95db8cf566891db00a729540b7d71eb96070582be6bab6b93a99ad",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-vmanta-water-1101-b373cb19bf95.mp4",
+      "routes": [
+        "/current/stage9-vmanta-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-tsplit-water-1101-50534b4d27a4.mp4",
+      "bytes": 10090625,
+      "sha256": "50534b4d27a41de9c4ce6e02174e50f3553b1651fa12f00f1adff17ad791cccb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-tsplit-water-1101-50534b4d27a4.mp4",
+      "routes": [
+        "/current/stage9-tsplit-water-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-cbreak-overhead-1101-6d67b1981a10.mp4",
+      "bytes": 15448260,
+      "sha256": "6d67b1981a104dc111e870d5b9cf7d3c73f22859f98876d5310dd88f063727b0",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-cbreak-overhead-1101-6d67b1981a10.mp4",
+      "routes": [
+        "/current/stage9-cbreak-overhead-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9interceptor-palette-1101-2ec338c2c61e.mp4",
+      "bytes": 5900179,
+      "sha256": "2ec338c2c61eb9d961b8f6cde1dde5724b8ce1d7531930f74bc6eb60ed098987",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9interceptor-palette-1101-2ec338c2c61e.mp4",
+      "routes": [
+        "/current/stage9-s9interceptor-palette-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9ring-palette-1101-ab5b8b789ac9.mp4",
+      "bytes": 9961058,
+      "sha256": "ab5b8b789ac96b87cac69bd8b74ac4ee0f5e64100ec35c63497c04d0d288d5aa",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9ring-palette-1101-ab5b8b789ac9.mp4",
+      "routes": [
+        "/current/stage9-s9ring-palette-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9interceptor-2-palette-1101-421bf9a34562.mp4",
+      "bytes": 7998273,
+      "sha256": "421bf9a345628c9f45c983f717c40c56986a180dce12b05e76a1457952447137",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9interceptor-2-palette-1101-421bf9a34562.mp4",
+      "routes": [
+        "/current/stage9-s9interceptor-2-palette-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9ring-2-palette-1101-5b6bfb7d1189.mp4",
+      "bytes": 8769262,
+      "sha256": "5b6bfb7d1189ce8909635cb229f30e88a507d4593f64c0b1140be7ed37819bf5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9ring-2-palette-1101-5b6bfb7d1189.mp4",
+      "routes": [
+        "/current/stage9-s9ring-2-palette-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9gateturret-palette-1101-e4120ee60a78.mp4",
+      "bytes": 8553869,
+      "sha256": "e4120ee60a78b8fbd9039ffece67ca9dc51c2245d0349a8b52a33e26bb574b1a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9gateturret-palette-1101-e4120ee60a78.mp4",
+      "routes": [
+        "/current/stage9-s9gateturret-palette-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-gleech-palette-1101-2324d8ca7512.mp4",
+      "bytes": 8034871,
+      "sha256": "2324d8ca7512ccb785be03af375f8552b0d1fdda18d06c0974381bd6b542e19f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-gleech-palette-1101-2324d8ca7512.mp4",
+      "routes": [
+        "/current/stage9-gleech-palette-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9prism-palette-1101-682e332fd614.mp4",
+      "bytes": 9314869,
+      "sha256": "682e332fd6149adf70f2349064bb04b0d90bf03aa07e3048f168c49f1ab14163",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9prism-palette-1101-682e332fd614.mp4",
+      "routes": [
+        "/current/stage9-s9prism-palette-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9prism-2-palette-1101-619fa3112967.mp4",
+      "bytes": 8358281,
+      "sha256": "619fa3112967b1f6091e87fcc41c2f6f4efa98b02ff0b0b8971cc2b8d9cc5e7a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9prism-2-palette-1101-619fa3112967.mp4",
+      "routes": [
+        "/current/stage9-s9prism-2-palette-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-pmine-palette-1101-80942d21a976.mp4",
+      "bytes": 3252041,
+      "sha256": "80942d21a976c9e5565566300324aaeda0921f8031e52952ac2f3ce1a8d63b15",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-pmine-palette-1101-80942d21a976.mp4",
+      "routes": [
+        "/current/stage9-pmine-palette-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--stage9-s9gunship-2-palette-1101-3db81285c22f.mp4",
+      "bytes": 13178160,
+      "sha256": "3db81285c22fb185bc2535b6f8c14ed4640723dbfbcd64d2419190b9a7c21907",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--stage9-s9gunship-2-palette-1101-3db81285c22f.mp4",
+      "routes": [
+        "/current/stage9-s9gunship-2-palette-1101.mp4"
+      ]
+    },
+    {
+      "name": "current--waves-1101--stage-1-9b34e1b7393b.mp4",
+      "bytes": 70634157,
+      "sha256": "9b34e1b7393b51cca651c6c2a2a65813a2f5f76c48ed5f0cc7ab96117f9436df",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-1-9b34e1b7393b.mp4",
+      "routes": [
+        "/current/waves-1101/stage-1.mp4"
+      ]
+    },
+    {
+      "name": "current--waves-1101--stage-2-1b6a3e2adffe.mp4",
+      "bytes": 45081903,
+      "sha256": "1b6a3e2adffe431b11f98bc72bcd54d6a81f6f5d006055fa0c67e9e2be2dd089",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-2-1b6a3e2adffe.mp4",
+      "routes": [
+        "/current/waves-1101/stage-2.mp4"
+      ]
+    },
+    {
+      "name": "current--waves-1101--stage-3-c5f8b5a0a60f.mp4",
+      "bytes": 60894818,
+      "sha256": "c5f8b5a0a60fbe294c9e15832ec72e616cd75455caa2698bba5a821caa0f6e5a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-3-c5f8b5a0a60f.mp4",
+      "routes": [
+        "/current/waves-1101/stage-3.mp4"
+      ]
+    },
+    {
+      "name": "current--waves-1101--stage-4-4a0684b71097.mp4",
+      "bytes": 63566084,
+      "sha256": "4a0684b7109782e9d7e0aeb372a93ee4ba59689df0623f4a5395b8759cff24ed",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-4-4a0684b71097.mp4",
+      "routes": [
+        "/current/waves-1101/stage-4.mp4"
+      ]
+    },
+    {
+      "name": "current--waves-1101--stage-5-0f32d59bf19f.mp4",
+      "bytes": 42821568,
+      "sha256": "0f32d59bf19fcde7b2c23b1fdd5bcf89922a355d167ae882e04655d585dc27ea",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-5-0f32d59bf19f.mp4",
+      "routes": [
+        "/current/waves-1101/stage-5.mp4"
+      ]
+    },
+    {
+      "name": "current--waves-1101--stage-6-58a3a95304ce.mp4",
+      "bytes": 148905688,
+      "sha256": "58a3a95304ce1b08efe604ff25a5bac10cf3e6e5516a0468667b53cd162301cd",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-6-58a3a95304ce.mp4",
+      "routes": [
+        "/current/waves-1101/stage-6.mp4"
+      ]
+    },
+    {
+      "name": "current--waves-1101--stage-6-right-b57b3160864f.mp4",
+      "bytes": 150579216,
+      "sha256": "b57b3160864f93e53e1ed9acbb074247800ea91c4811624fbe566b3af376f153",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-6-right-b57b3160864f.mp4",
+      "routes": [
+        "/current/waves-1101/stage-6-right.mp4"
+      ]
+    },
+    {
+      "name": "current--waves-1101--stage-7-3ba75490fbd8.mp4",
+      "bytes": 44602914,
+      "sha256": "3ba75490fbd8850f7f4c6cb793052e7fc5816d5b9800caca60efa5e4ed663c05",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-7-3ba75490fbd8.mp4",
+      "routes": [
+        "/current/waves-1101/stage-7.mp4"
+      ]
+    },
+    {
+      "name": "current--waves-1101--stage-8-e51d9ec81f28.mp4",
+      "bytes": 60071928,
+      "sha256": "e51d9ec81f28148e059530e9064d8e460dab60f01bf27c46b4f19f4c5cb1bfec",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-8-e51d9ec81f28.mp4",
+      "routes": [
+        "/current/waves-1101/stage-8.mp4"
+      ]
+    },
+    {
+      "name": "current--waves-1101--stage-9-0fb668b5bf34.mp4",
+      "bytes": 46689797,
+      "sha256": "0fb668b5bf34a2c7442b4aed7bd9e93a24d7601223ac526895664bbbd2e225b1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--waves-1101--stage-9-0fb668b5bf34.mp4",
+      "routes": [
+        "/current/waves-1101/stage-9.mp4"
+      ]
+    },
+    {
+      "name": "current--current-breaker-1102-4ffc683490ec.mp4",
+      "bytes": 25510845,
+      "sha256": "4ffc683490ec9d999709ec9b3b60587cbd33baaeb8305ff4d2dc720e6b66d252",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--current-breaker-1102-4ffc683490ec.mp4",
+      "routes": [
+        "/current/current-breaker-1102.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage1-mini-d04644fedcd0.mp4",
+      "bytes": 32885658,
+      "sha256": "d04644fedcd0c43cee76df7daeab6d8d080cd5b668f0304f21e649504c9d4911",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage1-mini-d04644fedcd0.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage1-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage1-boss-b8e4d1385b6e.mp4",
+      "bytes": 68656613,
+      "sha256": "b8e4d1385b6edebfb19f9fca2aae5ea7cf1cde47502090301549aa11eb27289d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage1-boss-b8e4d1385b6e.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage1-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage2-mini-7309e6709750.mp4",
+      "bytes": 35081197,
+      "sha256": "7309e6709750efd758a61d7916e8416c53b99e57e7f90e921c64e93b33eb09ef",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage2-mini-7309e6709750.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage2-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage2-boss-7eea2cc99824.mp4",
+      "bytes": 56357707,
+      "sha256": "7eea2cc998246976ecca014b40acc4258c837b4cd216e901e57371da6489084b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage2-boss-7eea2cc99824.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage2-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage3-mini-eb085ff849b0.mp4",
+      "bytes": 42457734,
+      "sha256": "eb085ff849b00509884d20f4dad4ef966df75ff2baac63c5d1844bcace50a7d1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage3-mini-eb085ff849b0.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage3-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage1-mini-649c7f3bbe62.mp4",
+      "bytes": 39767052,
+      "sha256": "649c7f3bbe62c00d6df98554dfd5d106b7513efd24babb3c3e0743a8ab460d8a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage1-mini-649c7f3bbe62.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage1-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage1-boss-1d490e752f59.mp4",
+      "bytes": 61957116,
+      "sha256": "1d490e752f59ec82cc770b12d7746407cf1c852df8670af3757484976450c908",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage1-boss-1d490e752f59.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage1-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage2-mini-778ac31476ee.mp4",
+      "bytes": 37269923,
+      "sha256": "778ac31476ee57edffba993686acc2864b6cbff5f174340b57c23344362a1825",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage2-mini-778ac31476ee.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage2-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage2-boss-d04e8d3c600a.mp4",
+      "bytes": 63660407,
+      "sha256": "d04e8d3c600a8d6e19876f35e0eefaaa99f1dbbfcac359f3b080e6e6573f9c3b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage2-boss-d04e8d3c600a.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage2-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage3-mini-7c8f2fb8071a.mp4",
+      "bytes": 37768313,
+      "sha256": "7c8f2fb8071a95ce0282192b4428b9131ec9e4c38bb7b5c80de0d0945a8515e4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage3-mini-7c8f2fb8071a.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage3-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage1-mini-cbaa5e9259f6.mp4",
+      "bytes": 40885053,
+      "sha256": "cbaa5e9259f68301544f0a67a79a833558c8943b053675f5606394e0d47e336b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage1-mini-cbaa5e9259f6.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage1-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage1-boss-9c02a95c8157.mp4",
+      "bytes": 84140200,
+      "sha256": "9c02a95c8157b4847c7bbd6a51a57b6308291c25ea5792d61b4c3434710c8ad7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage1-boss-9c02a95c8157.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage1-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage3-boss-6621f2f694ba.mp4",
+      "bytes": 77779256,
+      "sha256": "6621f2f694bae5a003fe898adccb3c452a3d645f98cb0d4b9f4a8c5c99112dc7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage3-boss-6621f2f694ba.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage3-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage3-boss-8b029374d1e1.mp4",
+      "bytes": 86233107,
+      "sha256": "8b029374d1e1f048b2755b98c1c2c6094042b47075cd65b66dd086d268f3cc78",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage3-boss-8b029374d1e1.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage3-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage2-mini-70c1a2ad221d.mp4",
+      "bytes": 39299134,
+      "sha256": "70c1a2ad221dea53a9ed63233443f6198170e31480c9a01d4fe8cdc9e3b6a460",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage2-mini-70c1a2ad221d.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage2-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage4-mini-a460ac3f7e9c.mp4",
+      "bytes": 52310224,
+      "sha256": "a460ac3f7e9c047782edff34719b272fa81019ca3d47e0d4c0e73ecc1348b6e2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage4-mini-a460ac3f7e9c.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage4-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage4-mini-fc294700ba4c.mp4",
+      "bytes": 64646252,
+      "sha256": "fc294700ba4ca9b7e4d776cef13e959a1f5587c4015c90946a08607e505b454d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage4-mini-fc294700ba4c.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage4-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage2-boss-84c7e8dcfe33.mp4",
+      "bytes": 101327365,
+      "sha256": "84c7e8dcfe332e4473fcf2b1677e40ed56379e2e9b1a2fbe655668c8fc23d444",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage2-boss-84c7e8dcfe33.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage2-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage4-boss-ba5681b0bdab.mp4",
+      "bytes": 93274098,
+      "sha256": "ba5681b0bdab1488bc176711d5449d51d6e1590970d18b85231435b767cb5c03",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage4-boss-ba5681b0bdab.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage4-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage5-mini-a9958dc87c0d.mp4",
+      "bytes": 29541994,
+      "sha256": "a9958dc87c0dd888e16d378b3c7201b6ce05c8e735ec7ab4f25d0f08e3f14dcc",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage5-mini-a9958dc87c0d.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage5-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage5-boss-c82f62663e9e.mp4",
+      "bytes": 108589515,
+      "sha256": "c82f62663e9ea96072b901ef9d1f22a147c56ffc53ce794a82abc54a5067bd8b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage5-boss-c82f62663e9e.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage5-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage6-mini-02645ecca2d2.mp4",
+      "bytes": 45072465,
+      "sha256": "02645ecca2d2a9b407e5dbb19795e8597bbf301c83abd6adbc4e7301274ef759",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage6-mini-02645ecca2d2.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage6-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage6-boss-f70b5f86c5a6.mp4",
+      "bytes": 67147137,
+      "sha256": "f70b5f86c5a68bc99de28a33e5936916351d0195a4c35cf567610f4bb8b70621",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage6-boss-f70b5f86c5a6.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage6-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage4-boss-71790e117ad9.mp4",
+      "bytes": 83089160,
+      "sha256": "71790e117ad9fb0c760a15a10a8f7b6bb4afc71fafa9a5cf43e69307d7bc2a7a",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage4-boss-71790e117ad9.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage4-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage5-mini-735610d11120.mp4",
+      "bytes": 31574128,
+      "sha256": "735610d11120f266ac1e8a3c9a26eb97bc888309a97362469a4fec4462074e99",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage5-mini-735610d11120.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage5-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage5-boss-30e9651cc3d3.mp4",
+      "bytes": 150755659,
+      "sha256": "30e9651cc3d3a4144254f7341c36206de98a4d5ed079ee8652204b596f0f693c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage5-boss-30e9651cc3d3.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage5-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage6-mini-e0b98ff1c55a.mp4",
+      "bytes": 45413632,
+      "sha256": "e0b98ff1c55a104f139c450112d5e791544701791dab93798cc62fa9c67e75f6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage6-mini-e0b98ff1c55a.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage6-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage6-boss-fe5cba0d57c8.mp4",
+      "bytes": 69095878,
+      "sha256": "fe5cba0d57c841d545cd602dfd56afead683c39b04ee7dc5ffbd29d402b0afc5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage6-boss-fe5cba0d57c8.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage6-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage3-mini-ba4a600ee972.mp4",
+      "bytes": 46587738,
+      "sha256": "ba4a600ee972d5290b829277397c93a0a7787a7d5671541696bfc963fadc342c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage3-mini-ba4a600ee972.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage3-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage3-boss-0ad9c50810a5.mp4",
+      "bytes": 93478586,
+      "sha256": "0ad9c50810a5fe13de67a33e40b3f20e822679d7b566b266b2eec6bd6e761e65",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage3-boss-0ad9c50810a5.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage3-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage4-mini-98eb69716ca5.mp4",
+      "bytes": 75615705,
+      "sha256": "98eb69716ca5a970e42d112436986742e3613e0ef68ef3013a0e0d8c776dd974",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage4-mini-98eb69716ca5.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage4-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage4-boss-2f4d48cb8054.mp4",
+      "bytes": 122792880,
+      "sha256": "2f4d48cb80546e6f51165b400460a753fcf5b443b5fce433acde2ef2cac453d5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage4-boss-2f4d48cb8054.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage4-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage5-mini-4416aa1d07da.mp4",
+      "bytes": 30231448,
+      "sha256": "4416aa1d07dade736008cd0e1d09851a01f9bb9a0ad8fcd3a8f203a37093a471",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage5-mini-4416aa1d07da.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage5-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage5-boss-3ef26f6f978d.mp4",
+      "bytes": 200439574,
+      "sha256": "3ef26f6f978d9a5ce3bf8d140dfdad2fceaf67cb4def56150ab60d7c0a5e1529",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage5-boss-3ef26f6f978d.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage5-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage6-mini-5afc96f82c6b.mp4",
+      "bytes": 48518163,
+      "sha256": "5afc96f82c6b85108588f044b2cfa9ac0a501024476be6464e871d3a71274175",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage6-mini-5afc96f82c6b.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage6-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage6-boss-baa2b10c2f46.mp4",
+      "bytes": 90042671,
+      "sha256": "baa2b10c2f464e0499b829a711fea63cc1e283137d6fe8e726b5fe093a1ff5ff",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage6-boss-baa2b10c2f46.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage6-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage6-rough-riders-88311de4f9d8.mp4",
+      "bytes": 344103958,
+      "sha256": "88311de4f9d84a517cb7d66caf5f2d291d8fd471276746c507a724e030883762",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage6-rough-riders-88311de4f9d8.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage6-rough-riders.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage7-mini-f4859fbba24b.mp4",
+      "bytes": 50277409,
+      "sha256": "f4859fbba24b5c2195494ab72a2200a717102dcbe82aaa6a11309d55ff8c5d0b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage7-mini-f4859fbba24b.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage7-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage6-rough-riders-3d0a5dc48bce.mp4",
+      "bytes": 229456279,
+      "sha256": "3d0a5dc48bcefcbe2e47016a3d484d5350eae2db3414865662c0b87f1e4606fb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage6-rough-riders-3d0a5dc48bce.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage6-rough-riders.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage7-mini-5afbf9dae491.mp4",
+      "bytes": 29111582,
+      "sha256": "5afbf9dae49180436162d888edac6403a8092605a1a35d26dac12bdb3e741c86",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage7-mini-5afbf9dae491.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage7-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage6-rough-riders-f93f28606af0.mp4",
+      "bytes": 249218938,
+      "sha256": "f93f28606af0172c18107ed351fa8852e1934ea073b7955f30f25c66c54ec48f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage6-rough-riders-f93f28606af0.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage6-rough-riders.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage7-boss-deeb16f1fc52.mp4",
+      "bytes": 85399663,
+      "sha256": "deeb16f1fc52aef9a4b14419d05b6d97cd5e85c5ffc0509e05af8f08fde3a720",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage7-boss-deeb16f1fc52.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage7-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage9-mini-68743eed44ca.mp4",
+      "bytes": 42979086,
+      "sha256": "68743eed44caab73da5e11fe6a8080d9e8dfe6c0f1537416b1900f80880df5fb",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage9-mini-68743eed44ca.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage9-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage9-boss-b2595c456250.mp4",
+      "bytes": 56165787,
+      "sha256": "b2595c456250ecfab9a38635c586198a8e52bf47a42534a0fdf056664edc1687",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage9-boss-b2595c456250.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage9-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage7-boss-ac2a02540c4c.mp4",
+      "bytes": 61565533,
+      "sha256": "ac2a02540c4c7a90035ac911f6d1eddf8a9ad5f66888ab96e3fd97e409cc5ba1",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage7-boss-ac2a02540c4c.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage7-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage8-mini-7ef366844a1e.mp4",
+      "bytes": 63695245,
+      "sha256": "7ef366844a1e8668be3dc88d6d40fd6d946ad2e99ff66217e0c5891d719d8b16",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage8-mini-7ef366844a1e.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage8-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage8-boss-d134a36c1071.mp4",
+      "bytes": 387974485,
+      "sha256": "d134a36c1071450dc58c9f65ad950b223a7d2e3b39dc2ea2b5fd405deac385ee",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage8-boss-d134a36c1071.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage8-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage9-mini-2a1eb56d5f8e.mp4",
+      "bytes": 39956163,
+      "sha256": "2a1eb56d5f8ebbe8939428599c48796041fa6059454f59be60d12bd6e7ccfa35",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage9-mini-2a1eb56d5f8e.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage9-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--normal-stage9-boss-1e7c35e3d871.mp4",
+      "bytes": 48287638,
+      "sha256": "1e7c35e3d871b26a0812f521bdee4d23cd82700538c64396b42ff16f85d62a8c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--normal-stage9-boss-1e7c35e3d871.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/normal-stage9-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage7-mini-6c0316989a65.mp4",
+      "bytes": 31771305,
+      "sha256": "6c0316989a65b2e3f8acd266373ffb9799ed37783f2fe6d8b0dbd3f044a50af3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage7-mini-6c0316989a65.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage7-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage7-boss-6f66d3fcfec2.mp4",
+      "bytes": 68985253,
+      "sha256": "6f66d3fcfec2a6d74fdfe9be14aa9e64764d78fddac5e2f23fc86554388939c2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage7-boss-6f66d3fcfec2.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage7-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage8-mini-d3f72c44103d.mp4",
+      "bytes": 68091229,
+      "sha256": "d3f72c44103da58f12b074fa0c3e356cb76a9134e7a12e7cdda995d372714192",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage8-mini-d3f72c44103d.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage8-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage8-boss-2a232ee781e8.mp4",
+      "bytes": 531930766,
+      "sha256": "2a232ee781e8d2e5b96ebbd968841297e2883b06880140558bbee4880b065107",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage8-boss-2a232ee781e8.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage8-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage9-mini-e7dc446f143d.mp4",
+      "bytes": 36596098,
+      "sha256": "e7dc446f143d03c639127105745903f374ae6a48643a807380a7315a81038a07",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage9-mini-e7dc446f143d.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage9-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--hard-stage9-boss-839a64d5628c.mp4",
+      "bytes": 51997814,
+      "sha256": "839a64d5628cc6b4c066351c47beef36a7062d539f64409b2fd47ed141bdc6ed",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--hard-stage9-boss-839a64d5628c.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/hard-stage9-boss.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage8-mini-5126e888b22b.mp4",
+      "bytes": 78322169,
+      "sha256": "5126e888b22bb6d842a074f4b7008719f854b7b89940a717e97baf5349a45f39",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage8-mini-5126e888b22b.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage8-mini.mp4"
+      ]
+    },
+    {
+      "name": "current--boss-comparison-1102--furious-stage8-boss-33c91e938931.mp4",
+      "bytes": 529453091,
+      "sha256": "33c91e9389310952d5a5baee01f7e0904d3c49ef23dde7086f5387c65b7fc911",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/current--boss-comparison-1102--furious-stage8-boss-33c91e938931.mp4",
+      "routes": [
+        "/current/boss-comparison-1102/furious-stage8-boss.mp4"
+      ]
+    },
+    {
+      "name": "docs--previews--opening_storyboard_1024--dracodia-attached-purple-downlink-06168557e36b.mp4",
+      "bytes": 2122518,
+      "sha256": "06168557e36b8df0ffae976d41413f788a9d3b0e94e897826d47286e1afbef79",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/docs--previews--opening_storyboard_1024--dracodia-attached-purple-downlink-06168557e36b.mp4",
+      "routes": [
+        "/docs/previews/opening_storyboard_1024/dracodia-attached-purple-downlink.mp4",
+        "/docs/previews/opening_storyboard_1024/dracodia-locked-hull-crawl.mp4",
+        "/docs/previews/opening_storyboard_1024/dracodia-satellite-takeover.mp4"
+      ]
+    },
+    {
+      "name": "docs--previews--opening_storyboard_1024--dracodia-circle-purple-88bd26ff650d.mp4",
+      "bytes": 1926873,
+      "sha256": "88bd26ff650d5cde58886d630c456d4b473ded6ccc259427bdd86f449f8bcc99",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/docs--previews--opening_storyboard_1024--dracodia-circle-purple-88bd26ff650d.mp4",
+      "routes": [
+        "/docs/previews/opening_storyboard_1024/dracodia-circle-purple.mp4"
+      ]
+    },
+    {
+      "name": "docs--previews--opening_storyboard_1024--dracodia-corruption-laser-dea4a9a3b898.mp4",
+      "bytes": 1926833,
+      "sha256": "dea4a9a3b89879c683642dacf5cf1858dc8ec9adcd9363d9815a3b9e14b4b520",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/docs--previews--opening_storyboard_1024--dracodia-corruption-laser-dea4a9a3b898.mp4",
+      "routes": [
+        "/docs/previews/opening_storyboard_1024/dracodia-corruption-laser.mp4"
+      ]
+    },
+    {
+      "name": "docs--previews--opening_storyboard_1024--dracodia-physical-takeover-3c70a7438b16.mp4",
+      "bytes": 2248140,
+      "sha256": "3c70a7438b161af856579a50c5649a35e383442db82e2e6bb6e3e3c4d1e55c0e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/docs--previews--opening_storyboard_1024--dracodia-physical-takeover-3c70a7438b16.mp4",
+      "routes": [
+        "/docs/previews/opening_storyboard_1024/dracodia-physical-takeover.mp4"
+      ]
+    },
+    {
+      "name": "docs--previews--opening_storyboard_1024--dracodia-satellite-takeover-0b84188e34a7.webm",
+      "bytes": 4159272,
+      "sha256": "0b84188e34a702747058abb385d94aab8b5134422b1c69ca315c367e8643283b",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/docs--previews--opening_storyboard_1024--dracodia-satellite-takeover-0b84188e34a7.webm",
+      "routes": [
+        "/docs/previews/opening_storyboard_1024/dracodia-satellite-takeover.webm"
+      ]
+    },
+    {
+      "name": "docs--previews--opening_storyboard_1024--dracodia-symbiote-downlink-a55eaf26f93e.mp4",
+      "bytes": 1757151,
+      "sha256": "a55eaf26f93e401291e68f73cee5cfe38962308622fa6025fecff2ee60d5cba7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/docs--previews--opening_storyboard_1024--dracodia-symbiote-downlink-a55eaf26f93e.mp4",
+      "routes": [
+        "/docs/previews/opening_storyboard_1024/dracodia-symbiote-downlink.mp4"
+      ]
+    },
+    {
+      "name": "docs--previews--opening_storyboard_1024--full-opening-map-review-c775e9ac3410.mp4",
+      "bytes": 44143390,
+      "sha256": "c775e9ac3410e08d05fa3dbe04e525bf6a437c029b51c25b1b0ec7d54ac3b069",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/docs--previews--opening_storyboard_1024--full-opening-map-review-c775e9ac3410.mp4",
+      "routes": [
+        "/docs/previews/opening_storyboard_1024/full-opening-map-review.mp4"
+      ]
+    },
+    {
+      "name": "docs--previews--opening_storyboard_1024--full-opening-to-level1-10c8aa4abd83.mp4",
+      "bytes": 55370261,
+      "sha256": "10c8aa4abd835b6ce8a811cf95ee38b5c0cf8c34c6dd66fa4488f7afbdd37918",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/docs--previews--opening_storyboard_1024--full-opening-to-level1-10c8aa4abd83.mp4",
+      "routes": [
+        "/docs/previews/opening_storyboard_1024/full-opening-to-level1.mp4"
+      ]
+    },
+    {
+      "name": "docs--previews--opening_storyboard_1024--fury-full-opening-level1-review-c970fe438507.mp4",
+      "bytes": 52492423,
+      "sha256": "c970fe4385075ede09a82dac52cb76e97fb9ad2d76b55610c1dcab5c2786cb7c",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/docs--previews--opening_storyboard_1024--fury-full-opening-level1-review-c970fe438507.mp4",
+      "routes": [
+        "/docs/previews/opening_storyboard_1024/fury-full-opening-level1-review.mp4"
+      ]
+    },
+    {
+      "name": "docs--previews--opening_storyboard_1024--level1-launch-tail-9aa61e79a6c3.mp4",
+      "bytes": 8349099,
+      "sha256": "9aa61e79a6c3465d58a27f90ae45536f311b34b8e9b52265be0fd2b51aabc9f7",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/docs--previews--opening_storyboard_1024--level1-launch-tail-9aa61e79a6c3.mp4",
+      "routes": [
+        "/docs/previews/opening_storyboard_1024/level1-launch-tail.mp4"
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "name": "BOF-runtime-core-2026-11-02.zip",
+      "bytes": 1467470599,
+      "sha256": "b87a520538751757376855c5b30d210270de4a1f144db5fbd0df43c3a5c452b5",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/BOF-runtime-core-2026-11-02.zip",
+      "files": 10401
+    },
+    {
+      "name": "BOF-runtime-stages-1-5-2026-11-02.zip",
+      "bytes": 456840360,
+      "sha256": "58ab58f45a6a12469f78e7a73864e2ccdb17409aeaddcbbc86e1d666212935d3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/BOF-runtime-stages-1-5-2026-11-02.zip",
+      "files": 1826
+    },
+    {
+      "name": "BOF-runtime-stages-6-9-X-2026-11-02.zip",
+      "bytes": 1194058314,
+      "sha256": "e047bcba81c6f19a81796fe73fec65a059b007d64615d440486df0ac48169e6f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-complete-update-2026-11-02/BOF-runtime-stages-6-9-X-2026-11-02.zip",
+      "files": 5368
+    }
+  ]
+}

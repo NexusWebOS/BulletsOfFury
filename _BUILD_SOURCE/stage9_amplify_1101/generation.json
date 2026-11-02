@@ -1,0 +1,140 @@
+{
+  "spinner": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/spinner_source.png",
+    "sha256": "b1d213d6783b58fad3a86b8bda4d6e3eba6c8e3856187cab853827f8f758d163",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "jumper": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/jumper_source.png",
+    "sha256": "acbd77b3cc022a00a7c2526a60a909a451bbad463ab5d4b58828a0f9438e94ab",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "skimmer": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/skimmer_source.png",
+    "sha256": "caa4eadd9f0f503f4a1686c76308fa8507f816a6092427e204e400c99e052e25",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "ringlaser": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/ringlaser_source.png",
+    "sha256": "a03ada0846dce0cf239dc937b4c5c990645ec7a89b047c0887b02e715d45fe43",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "gate": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/gate_source.png",
+    "sha256": "1e40b4d09a432b5b0e9ef862c26d881bbeff5a11eef3eed57be352e70c863e54",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "gleech": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/gleech_source.png",
+    "sha256": "a11d39d9975717f53a9209f0a0b12d0caa277a7907a6f09aaa6700200b335653",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "prismbeam": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/prismbeam_source.png",
+    "sha256": "dd16ff49407f4ef55cf2b1da712ec11d495b7d84134dbc23a7f64e9885eeecda",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "echo": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/echo_source.png",
+    "sha256": "d13697c9604ec209135a6ff18fae3f2607418dffd79e6926428096238a3d76da",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "minelayer": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/minelayer_source.png",
+    "sha256": "f09db13ae82ce3be19c4b74f513c32cdc5746a14ab7c6a86150df0a95a8fb946",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "manta": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/manta_source.png",
+    "sha256": "8446eb0e9afc8424dc4efe61dd3620c669641ca30da5423503658fe74efc28fa",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "tidal": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/tidal_source.png",
+    "sha256": "a05a76331704fb39296ff23f6dd284714798f4a7a8ce26bd7cbf5c48d1b8d73e",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "singularity": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/singularity_source.png",
+    "sha256": "b566d4883e9b0db457f775348bfb272be132d16af10f5ee4253494853d9e4ed0",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "prismorb": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/prismorb_source.png",
+    "sha256": "6aa5424af3513c600e255aa8e9866f2584e920bae311b014c960d6d3ab4c8666",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "harrier": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/harrier_source.png",
+    "sha256": "b4229f58dc8d491019b9ef340690ee90b3e23dd8d25eb14aa411ebfc2814f535",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "human": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/human_source.png",
+    "sha256": "2be833474b0daf26b8a360aaa29689711c16e8676022580f046bdc843fa72556",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "poses": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/poses_source.png",
+    "sha256": "07461a1f08891aa0b28b0ddf8849b6c48d2210aaa57465ce5a45c13765620094",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "morph": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/morph_source.png",
+    "sha256": "6ce3178ae2078a5beba2e76cacd825ec3cc989dc605700b418bae39fcfad0bbc",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "flight_topdown": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/flight_topdown_source.png",
+    "sha256": "0049fcf4267f8e0c73177d93af93431297bbb85cbaf195d1b9303206dfdaf542",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "spiral": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/spiral_source.png",
+    "sha256": "f65451bfaa1d4e38f36dd62d2ef5e257e333fa42cb8a207568cd4b729ae7e9f3",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "wave": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/wave_source.png",
+    "sha256": "e9170b7b584f00232d90b5a537dadbfef506e2c261e6524e19a464cef57ef41d",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "splash": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/splash_source.png",
+    "sha256": "c07d2f5509c07c0b6b0b347f95b156802c74483aa165fff3482a48a75e9e2417",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "mine": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/mine_source.png",
+    "sha256": "5a55d1f9805f073224bc44bb679ea4f48d34ce2b9f9755bfe7588b4f1d900386",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  },
+  "waterorb": {
+    "path": "_BUILD_SOURCE/stage9_amplify_1101/waterorb_source.png",
+    "sha256": "9aa0f13e47c6db6663b5f33b244905394de880152dc613e569ebf08a4a5180c8",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage9_amplify_1101/prompts.md"
+  }
+}

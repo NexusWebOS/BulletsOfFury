@@ -1,0 +1,59 @@
+{
+ "source": "assets/game/shared/effects/fx_0918/efx_burst_toxic.png",
+ "sourceSha256": "2c3d95c2dd6be52520bf0f1332c54e649d0ad410c47980b73f9d56fbe5cce59b",
+ "output": "assets/game/levels/stage_07/enemies/brood_1101/blood_burst.png",
+ "sha256": "5c05b6ab456cd2cd0d8eba4cd0de797bec00b64540334963b76243e45261f9cb",
+ "cell": 128,
+ "frames": 8,
+ "method": "alpha and silhouette preserved; luminance mapped to a blood ramp",
+ "ramp": [
+  [
+   0.0,
+   [
+    26,
+    2,
+    6
+   ]
+  ],
+  [
+   0.28,
+   [
+    92,
+    6,
+    14
+   ]
+  ],
+  [
+   0.52,
+   [
+    152,
+    14,
+    22
+   ]
+  ],
+  [
+   0.74,
+   [
+    204,
+    32,
+    30
+   ]
+  ],
+  [
+   0.9,
+   [
+    236,
+    86,
+    70
+   ]
+  ],
+  [
+   1.0,
+   [
+    255,
+    182,
+    160
+   ]
+  ]
+ ]
+}

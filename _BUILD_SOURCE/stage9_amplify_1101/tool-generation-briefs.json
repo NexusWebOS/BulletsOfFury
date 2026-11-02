@@ -1,0 +1,101 @@
+{
+  "s9brief_next": [
+    [
+      "ringlaser",
+      "An alien LASER RING fighter: broad oval outer hoop, two suspended long central laser cannons beside a small sapphire crystal, two compact rear engine nacelles. Distinct from six-pod circular spinner: elliptical ring with only two cannons, dark teal and pearl armor."
+    ],
+    [
+      "gate",
+      "A GATE TURRET SPACE VESSEL: mechanical rectangular portal frame with a bright aqua diamond suspended inside and four separately mounted directional laser cannon pods at the corners. Fourfold geometric alien shrine shape, no crescent wings, no ground base."
+    ],
+    [
+      "gleech",
+      "A GRAVITY LEECH alien: dark navy mechanical squid-shaped fuselage, three sweeping backward feeler fins, bright violet/teal core, two very obvious large articulated gravitational cannons extending forward. Clearly different from a manta; menacing asymmetric layered head armor but symmetrical weapon sockets."
+    ],
+    [
+      "prismbeam",
+      "A PRISM BEAM vessel: large angular triangular crystalline alien ship, navy/pearl exoskeleton encasing a huge prismatic turquoise diamond, two independently mounted broad water-laser projector cannons at its lower corners, sharp triangular silhouette rather than a circle or crescent."
+    ]
+  ],
+  "s9brief_3": [
+    [
+      "echo",
+      "ECHO fighter: long thin arrowhead alien jet with forward-swept forked canard wings and three long parallel nose blasters, split triple engine tail. Pearlescent pale blue with deep blue trim and thin aqua resonance lines. Clearly different from four-wing Jumper or hydrojet skimmer."
+    ],
+    [
+      "minelayer",
+      "Actual alien MINE-LAYING jet: broad compact bomber-shaped aircraft, two armored side engines, visible central open mine dispensing bay and circular mechanical teal mines stored along the lower belly. Sturdy navy/gray industrial styling with cyan hazard stripes. Single solid hull; no loose missiles, emitters or nearby mines."
+    ],
+    [
+      "harrier",
+      "GIANT WATER-THEMED HARRIER GUNSHIP: massive broad naval aerospace carrier, long nose, huge high-capacity twin engines, navy metallic hull with white armored water channels and bright teal tanks. Four EMPTY large circular turret mounting wells, two left and two right, spaced along main metal hull. No installed guns in wells: independent circular iris-door laser turrets will be added. One solid complete hull."
+    ],
+    [
+      "manta",
+      "VOID MANTA: new wide manta-ray alien fighter, vivid PINK and BLUE translucent metallic carapace, a sharp wide diamond wing span, sleek trailing center tail, two distinct heavy articulated cannon pods under forward wing roots. No shield, aura or background. Pink primary plates, blue bevels, bright pale highlights."
+    ]
+  ],
+  "s9brief_4": [
+    [
+      "tidal",
+      "GAME SPRITE HEADER: 512x512 even transparent canvas. One entire centered vertically SOUTH-facing top-down TIDAL WAVE FIGHTER JET. Arcade pixel art, compact crisp clusters, dark outlines and metallic bright blue/navy/white. NEW silhouette: forward-swept wing fins shaped like two breaking wave crests, long slender aquamarine central nose, four aft water-thruster vents, twin independent cylindrical water cannons on lower wing roots. Mechanically plausible actual jet. No ring, manta shape, UI/text/background/shadow. Leave padding."
+    ],
+    [
+      "singularity",
+      "GAME SPRITE HEADER: 512x512 even transparent canvas. One top-down ALIEN SINGULARITY ORB. Distinct spherical machine with a dark black-blue center, nine short evenly spaced teal crystalline lens petals around its equator, three large curved metallic stabilization fins arranged triangularly. Pearl/navy armor, bright turquoise inner energy. Pixel art sprite matching the supplied arcade game style, not a crescent or fighter. Full silhouette, no UI/text/background/shield."
+    ],
+    [
+      "prismorb",
+      "GAME SPRITE HEADER:512x512 even transparent canvas. One ALIEN PRISM ORB vessel, new compact octahedral crystalline drone with a luminous elongated teal diamond center, three floating-but-mechanically-linked articulated cannon satellites at triangular vertices, navy/white armor with aquatic cyan crystal facets. Top-down vertical SOUTH orientation, crisp arcade pixel-art sprite. Full silhouette, no ring, no crescent, no scene, no text or UI. Obvious trunnions."
+    ],
+    [
+      "human",
+      "GAME SPRITE HEADER:512x512 even square transparent canvas. Create a full-body upright alien WATER HUMANOID elemental enemy, like the liquid WATER equivalent of Cinder from Killer Instinct in the supplied pose reference. Muscular coherent human anatomy entirely made of deep cyan/aquamarine flowing water, brilliant pale aqua internal current veins and white foamy edges, dark cobalt contours, ominous glowing white-blue eyes. Front-facing three-quarter arcade sprite, two hands visible away from torso, legs apart, floating. Compact crisp detailed pixel art clusters, consistent with retro arcade metal game sprites, NOT a photograph/render. No fire, orange, red, ground, clothing, background, UI, or text. Entire figure with transparent padding. This is the canonical Current Breaker design."
+    ]
+  ],
+  "s9brief_5": [
+    [
+      "waterorb",
+      "GAME SPRITE HEADER 512x512 even true transparent canvas. One perfectly round alien WATER ORB, deep cobalt liquid sphere, swirling aqua internal core, white foamy curling surface currents, a few tightly attached small droplets, ominous pale cyan light from its center. Full unclipped sphere with generous padding. Crisp arcade pixel-art clusters matching a blue water elemental, no armor, shield bubble, background, labels, text or fire."
+    ],
+    [
+      "spiral",
+      "GAME FX SHEET HEADER: 1024x512 even canvas, exactly8 equal256x256 cells,4 columns2 rows, true transparent background, no text or borders. A looping SHIELD SERPENT HELIX: two luminous teal/cyan narrow water-energy snakes coiling around a vertically oval EMPTY center in each cell. Hollow transparent center, no disc or opaque bubble. Eight progressive flow positions winding around the same centered oval; stable radius and scale, white bright head glints. Thin clean pixel-art clusters, water droplets and electrical aqua lines. Entire oval inside every cell."
+    ],
+    [
+      "wave",
+      "GAME FX SHEET HEADER:1024x512,8 equal256x256 cells,4 columns2 rows, true transparent background. Eight-frame looping giant TIDAL WAVE FRONT sprite, each a WIDE HORIZONTAL crest facing DOWN toward viewer, blue/teal water body with bright white rolling foam and spray, clear leading lip, clean arcade pixel clusters. Same width, center and scale in all cells, no perspective horizon/ocean/background, no text or grid lines. Transparent gaps around the crest; each wave fully contained in its own cell. This is a moving projectile in a vertical shooter."
+    ],
+    [
+      "mine",
+      "GAME SPRITE SHEET HEADER:1024x512 even,8 equal256x256 cells,4x2 true transparent. Eight progressive rotation/fuse frames of a mechanical alien SPACE MINE. Compact navy metal ball with six stubby evenly spaced spikes, teal illuminated rings, flashing white/aqua central fuse. Actual solid mechanical mine, strong readable silhouette, not an orb enemy or jet. Stable size/pivot, crisp arcade pixel art; complete subject in each cell, no text, warning symbols, background or grid."
+    ],
+    [
+      "splash",
+      "GAME FX SHEET HEADER:1024x512 even,exactly8 equal256x256 cells,4 columns2 rows, true transparent. A WATER GRENADE EXPLOSION sequence: compact aqua impact sphere swells into a radial splash blast, then a hollow white foamy shock ring with blue spray droplets expands and dissipates into a few falling droplets. Same central pivot; physically expanding frame silhouettes. Crisp arcade pixel art, cyan/teal/blue/white only. No orange/fire/smoke/background/UI/text or grid. Every full effect inside its own cell."
+    ]
+  ],
+  "s9brief_6": [
+    [
+      "morph",
+      "GAME TRANSFORMATION SHEET HEADER:1024x512 even canvas,EXACTLY8 equal256x256 cells,4 columns2 rows, transparent background. Use reference1 as exact WATER ORB, reference2 as exact WATER HUMANOID identity. Eight smoothly advancing AUTHORED transformation frames from the small orb into this same full upright liquid man. Strict reading order:0 small round swirling orb;1 orb stretches vertically;2 liquid torso/head and arms emerge, lower half a liquid tail;3 arms lengthen and legs begin splitting;4 full but unfinished liquid body;5 legs/feet finish and chest gains definition;6 almost complete canonical man;7 complete canonical water man in idle pose. One fixed CHEST pivot at CENTER of every cell, consistent final body unit, progressively unfolding anatomy, orb radius roughly35% of final full human height, no alpha fade, external rings, smoke, flashes, text, scenery or grid. Generous24px transparent margins within EVERY cell. Same cyan/cobalt/white flowing-water pixel-art clusters and muscular anatomy. ENTIRE unclipped subject in every frame."
+    ],
+    [
+      "wave_v2",
+      "GAME EFFECT SHEET HEADER:1024x512 even transparent,8 cells of256x256,4 columns2 rows. Eight-frame looping HORIZONTAL TIDAL WAVE projectile crest facing down, cyan/blue water and bright white foam in crisp arcade pixel clusters. CRITICAL: each wave is ONLY170px wide inside its256px cell, leave at least40px CLEAR TRANSPARENT SPACE on BOTH LEFT AND RIGHT of each cell. Every wave has NATURAL CURLED END CAPS, never a straight cut at an edge; ALL eight are separate fully contained sprites with gaps. Same scale, same physical center/pivot, animated foam and spray, no background/horizon/scene/text/grid or labels. Reference is material style only; shrink width to fit cells with natural curled ends."
+    ]
+  ],
+  "s9brief_poses": "GAME SPRITE BANK HEADER: choose 1024x512 even canvas, EXACTLY8 equal256x256 cells in4 columns2 rows, true transparent background. Use the supplied WATER HUMANOID as the exact canonical identity. Same muscular liquid cyan/cobalt/white anatomy, face, body proportions, luminous flowing-water skin and crisp arcade pixel-art style in ALL8 cells. FULL ENTIRE unclipped figure in every cell with generous padding. One SHARED proportional scale across ALL cells, shared chest mounting pivot, no background, scenery, text, labels or borders. ACTION POSE BANK in strict reading order: cell0 upright front idle, hands apart; cell1 summon with both palms raised high; cell2 right-hand grenade windup drawn back beside head; cell3 right-hand throw release reaching toward bottom of frame, left hand balances; cell4 leaning into flying launch, knees bending; cell5 Superman-style flight vertically NORTH with BOTH arms extended toward TOP of frame and legs trailing SOUTH, visibly different foreshortened flying pose; cell6 same northward flying pose, palms open for hand laser/mist fire; cell7 upright recovered idle. DO NOT draw external projectiles, beams, grenades or surrounding rings. The liquid body itself may flow, but preserve face/limbs and consistent colors. No fire or orange. Frame0 and7 should match canonical water humanoid silhouette closely. This is eight separate production poses on one sheet.",
+  "s9brief_human_front": "EDIT THIS CANONICAL WATER HUMANOID SPRITE. GAME SPRITE HEADER:512x512 even transparent canvas, one full body centered with padding, same crisp arcade pixel-art water material and same muscular proportions, cobalt/cyan/white palette. REQUIRED CORRECTION: he faces STRAIGHT AT THE VIEWER, absolutely direct FRONT VIEW. Both eyes equally visible looking directly into camera. Face centerline, chest sternum and navel form one vertical line. Both shoulders equal size and on the SAME horizontal line. Torso and pelvis square to camera, no three-quarter view, no looking sideways, no profile, no angled chest. Symmetric balanced idle stance, feet apart, both hands visible slightly away from body, palms/fists toward us. Keep the exact flowing liquid-water character identity, foamy edges and white internal currents. Entire unclipped figure including feet and hair. No fire, red, orange, text, background, labels, props or effects beyond tightly attached water. This is the FRONT-facing enemy seen ahead of the player.",
+  "s9brief_front_banks": [
+    [
+      "poses_front",
+      "GAME ACTION BANK HEADER:1024x512 even transparent canvas,8 equal256x256 cells,4 columns2 rows. Exact supplied water humanoid, same body unit/scale, same chest pivot at CENTER of EVERY cell, full figure inside every cell with generous padding. CRITICAL ALL POSES FACE DIRECTLY TOWARD US: both eyes visible, face centerline directly at viewer, square chest and pelvis, equal shoulders, no three-quarter or side view. Front-facing enemy north of player looking SOUTH toward player/camera. Eight poses reading order:0 canonical symmetric idle fists apart;1 both palms up summoning;2 right grenade windup beside head but head/chest stay FRONT;3 right palm thrust toward VIEWER throwing at us, foreshortened hand, head/chest stay FRONT;4 crouched ready to fly toward VIEWER;5 Superman flying TOWARD VIEWER, both fists in foreground, face centered behind hands, legs trail away behind;6 same flight TOWARD VIEWER with both palms open to blast us, face still visible;7 canonical recovered front idle. Exactly this cobalt/cyan/white liquid muscular character, crisp arcade pixel art. No external projectiles, beams, fire, smoke, scenery, text, labels or grid. Do not put arms above head as though flying away from us. Entire unclipped body in each cell."
+    ],
+    [
+      "morph_front",
+      "GAME MORPH SHEET HEADER:1024x512 even transparent canvas,EXACTLY8 equal256x256 cells,4x2. Reference1 water orb becomes reference2 exact FRONT-facing water humanoid. ALL humanoid features MUST FACE DIRECTLY AT VIEWER: both eyes visible equally, face/chest/abdomen centerline vertical, square symmetrical shoulders and chest, no three-quarter stance or sideways head. One shared CHEST pivot at CELL CENTER, uniform final body unit, full unclipped figure with padding in all cells. Eight progressive actual shape-morph frames:0 small water orb;1 liquid orb stretches;2 front head and torso emerge with liquid tail;3 arms emerge front-facing and tail splits into legs;4 nearly complete FRONT-facing man;5 feet and hands finish;6 settling symmetric FRONT stance;7 exact canonical front idle. Orb diameter roughly35% final humanoid height. Same deep cobalt/aqua/white foamy flowing-water anatomy, crisp pixel clusters. No transparency fades, flashes, external rings, smoke, background, text/grid. The whole transformation looks AT US."
+    ]
+  ],
+  "current_topdown_prompt": "GAME DIRECTIONAL SPRITE BANK HEADER: choose 1024x512 even canvas, EXACTLY EIGHT equal256x256 cells,4 columns2 rows, true transparent background. Use the supplied Current Breaker liquid water humanoid as EXACT IDENTITY/material reference: muscular coherent human entirely blue/cobalt/cyan flowing water, white foamy current veins, same head and limbs. Create GENUINE TOP-DOWN OVERHEAD FLYING SPRITES seen from a camera DIRECTLY ABOVE the horizontal flying body, like an aircraft in a vertical shooter. These are NOT upright/front-facing portraits, NOT standing poses, NOT front-on foreshortened fists coming out of the picture. We see the TOP of his head, shoulders, back/torso and trailing legs. Superman posture: body horizontal in world, BOTH arms stretched forward leading flight, palms open for water/laser fire, legs extended trailing behind. Full unclipped body in every cell, same body unit/scale and fixed CHEST pivot at cell center, generous16px padding. Eight actual authored directional views in STRICT READING ORDER: cell0 flying SOUTH (hands toward BOTTOM, feet toward TOP); cell1 SOUTHWEST (hands bottom-left); cell2 WEST (hands left); cell3 NORTHWEST (hands top-left); cell4 NORTH (hands TOP, feet BOTTOM); cell5 NORTHEAST (hands top-right); cell6 EAST (hands right); cell7 SOUTHEAST (hands bottom-right). Genuine overhead perspective throughout, change actual shoulder/back/hand view as direction/bank changes while retaining identity. Clear separated hands for registered emitters. Crisp arcade pixel art clusters and dark cobalt contours matching the reference, no external beams/projectiles, no ground, shadow, UI, labels, text or grid. The South view is the direction he flies TOWARD the player's ship at the bottom of the screen."
+}

@@ -13,10 +13,10 @@ spawnEnemy=function(){const start=enemies.length,r=ARMOR17.base.spawn.apply(this
   delete e._r30;e.w=88;e.h=104;e._drawW=88;e._drawH=104;e._noSep=true;e.ground=true;
   e.pattern='armor17';e.shoots=false;e.vx=e.vy=0;e._kick=e._recoil=0;
   const rank=target17Rank(),mul=coopActive()?1.5:1;
-  e._armor17={age:0,hull:Math.round((24+rank*6)*mul),hullFlash:0,parts:[
-   {id:'turret',hp:Math.round((18+rank*5)*mul),dx:0,dy:-3,w:40,h:58,phase:'rest',t:0,cool:.9,flash:0},
-   {id:'rackL',hp:Math.round((12+rank*3)*mul),dx:-32,dy:4,w:22,h:40,phase:'rest',t:0,cool:2.2,flash:0},
-   {id:'rackR',hp:Math.round((12+rank*3)*mul),dx:32,dy:4,w:22,h:40,phase:'rest',t:0,cool:2.8,flash:0}]};
+  e._armor17={age:0,hull:Math.round(difficultyHealthBaseline15(30,24+rank*6)*mul),hullFlash:0,parts:[
+   {id:'turret',hp:Math.round(difficultyHealthBaseline15(23,18+rank*5)*mul),dx:0,dy:-3,w:40,h:58,phase:'rest',t:0,cool:.9,flash:0},
+   {id:'rackL',hp:Math.round(difficultyHealthBaseline15(15,12+rank*3)*mul),dx:-32,dy:4,w:22,h:40,phase:'rest',t:0,cool:2.2,flash:0},
+   {id:'rackR',hp:Math.round(difficultyHealthBaseline15(15,12+rank*3)*mul),dx:32,dy:4,w:22,h:40,phase:'rest',t:0,cool:2.8,flash:0}]};
   for(const p of e._armor17.parts)p.maxhp=p.hp;e.maxhp=e._maxhp=e.hp=e._armor17.hull+e._armor17.parts.reduce((s,p)=>s+p.hp,0);
   e._armor17.maxHull=e._armor17.hull;e._armor17.placed=armor17Place(e);e._modAngle=Math.PI/2;
   enc30Warm(4);a17Warm(['tankHull','tankTurret','tankShell']);
@@ -41,7 +41,7 @@ function armor17Tick(e,dt){const A=e._armor17,rank=target17Rank();A.age+=dt;
   p.t+=dt;p.cool-=dt;const turret=p.id==='turret',warm=turret?[1,.9,.8,.72,.68][rank]:1.1;
   if(p.phase==='rest'&&p.cool<=0){const m=armor17Mount(e,p),q=targetShip(m.x,m.y);p.aim={x:q.x,y:q.y};p.angle=Math.atan2(q.y-m.y,q.x-m.x);p.phase='tell';p.t=0;p.round=0;p.shot=0;Audio.SFX.bossWeaponCharge?.();}
   if(p.phase==='tell'){
-   if(turret)e._modAngle+=clamp(stage4AngleDelta(e._modAngle,p.angle),-dt*1.8,dt*1.8);
+   if(turret)e._modAngle+=clamp(stage4AngleDelta(e._modAngle,p.angle),-dt*turretSpeed15(1.8),dt*turretSpeed15(1.8));
    combatWarningTick(p,'armor-'+Math.floor(A.age),p.t,warm);
    if(p.t>=warm){p.phase='fire';p.t=0;if(turret){p.angle=e._modAngle;p.aim={x:e.x+Math.cos(p.angle)*900,y:e.y+Math.sin(p.angle)*900};}}
   }else if(p.phase==='fire'){
@@ -49,10 +49,10 @@ function armor17Tick(e,dt){const A=e._armor17,rank=target17Rank();A.age+=dt;
    if(p.shot<=0&&p.round<n){const m=turret?armor17TurretPoint(e,p.round%2?1:-1):armor17Mount(e,p),a=turret?p.angle:p.angle+(p.round? .06:-.06);
     const q=eShootT(m.x,m.y,a,turret?3.4+rank*.2:2.45+rank*.13,turret?'s4brass':'emissile',{w:turret?8:11,h:turret?18:24,silent:true});
     Object.assign(q,{owner:e,_armor17Shell:turret,_armor17Missile:!turret,_weaponProof:turret,_shootable:!turret,homing:false,_noArsenal:true});
-    if(!turret)q.hp=2;else if(p.round===0)A.poseAge=0;ARMOR17.shots++;p.round++;p.shot=.23;e._recoil=.25;
+    if(!turret)q.hp=2;else if(p.round===0)A.poseAge=0;ARMOR17.shots++;p.round++;p.shot=turretInterval15(.23);e._recoil=.25;
     wm26Emit(e,m.x,m.y,a,turret?'mg':'missile',null,{size:turret?36:28,life:.14});(turret?Audio.SFX.tankCannon:Audio.SFX.missile)?.();
    }
-   if(p.t>.6){p.phase='rest';p.t=0;p.cool=turret?[2.2,1.8,1.4,1.1,.95][rank]:[4,3.4,2.8,2.3,2.1][rank];}
+   if(p.t>.6){p.phase='rest';p.t=0;p.cool=turretInterval15(turret?1.8:3.4,turret?[2.2,1.8,1.4,1.1,.95][rank]:[4,3.4,2.8,2.3,2.1][rank]);}
   }
  }
 }

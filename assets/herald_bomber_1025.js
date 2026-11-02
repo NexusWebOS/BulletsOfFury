@@ -46,7 +46,7 @@ function hb25Phase(b,phase){const Q=b._hd1003._hb25;Q.phase=phase;Q.t=0;Q.from={
 }
 function hb25Flight(b,kind){const H=b._hd1003;H.seq++;H.mode='hb25-flight';H.age=H.attackAge=0;H.lanes=[];H.flashes=[];H.target=null;H._hp22=null;H._hd19=null;
  if(b._hc1007)b._hc1007.cross=null;S81003.beams=S81003.beams.filter(q=>q.owner!==b);
- const rank=bh25Rank();H._hb25={kind,rank,t:0,pass:0,side:H.seq%2,total:rank>=2&&['wingL','wingR'].every(id=>hd1003Live(b,hd1003Part(b,id)))?2:1,
+ const rank=bh25Rank();H._hb25={kind,rank,t:0,pass:0,side:H.seq%2,total:kind==='bomber'&&hb25Claws(b).length?2:rank>=2&&['wingL','wingR'].every(id=>hd1003Live(b,hd1003Part(b,id)))?2:1,
   scale:1,angle:0,wing:0,escapeX:clamp(player.x,camLeftX()+65,camRightX()-65),warm:[1.5,1.3,1.15,1.05][rank]};
  b._s4MiniSafe=true;H.history.push('chaos-'+kind);if(H.history.length>30)H.history.shift();hb25Phase(b,'recede');
 }
@@ -62,15 +62,29 @@ hd1003Tell=function(b){if(!b?._hd1003||b!==subBoss)return HB25.base.tell.apply(t
 // Commit the complete drop carpet during the pass warning. Individual bombs no
 // longer hold a fast-moving aircraft in a slow warn/drop/wait loop.
 function hb25BombPlan(b,Q){Q.plan=[];Q.interval=[.115,.10,.085,.070][Q.rank];const ids=hb25Claws(b);
+ const left=camLeftX(),width=viewW();Q.planLeft=left;Q.planWidth=width;
+ if(Q.pass>0&&Q.mirrorPlan){
+  Q.escapeX=left+width*(1-Q.mirrorEscape);
+  for(const P of Q.mirrorPlan){const id=Q.mirrorClaws.length===1?P.id:P.id==='gunL'?'gunR':'gunL';if(!ids.includes(id))continue;
+   const target={x:left+width*(1-P.u),y:P.y},m=hd1003Muzzle(b,id),time=clamp((target.x-Q.path.from.x-(m.x-b.x))/Q.vx,0,Q.duration),
+    drop={id,time,wave:P.wave,target,burst:P.burst,seed:P.seed+Q.pass*100};
+   Q.plan.push(drop);hb25Log(b,'bomb-tell',{id,target,warm:Q.warm,release:drop.time,burst:drop.burst,pass:Q.pass,mirrored:true});
+  }
+  Q.plan.sort((a,b)=>a.time-b.time);
+  hb25Log(b,'bomb-mirror-plan',{pass:Q.pass,escapeX:Q.escapeX,targets:Q.plan.map(p=>({id:p.id,wave:p.wave,time:p.time,x:p.target.x,burst:p.burst}))});return;
+ }
  for(let wave=0,time=0;time<=Q.duration;wave++,time=wave*Q.interval)for(let i=0;i<ids.length;i++){
   const id=ids[i],m=hd1003Muzzle(b,id),x=Q.path.from.x+Q.vx*time+(m.x-b.x);if(x<camLeftX()+45||x>camRightX()-45)continue;
   const target={x,y:clamp(viewTopY()+235+((wave+i)%2)*56,viewTopY()+230,VH-130)},P={id,time,wave,target,from:{x,y:m.y},burst:wave%3===0&&i===wave%ids.length,seed:Q.pass*100+wave*2+i};
   if(!P.burst&&Math.abs(x-Q.escapeX)<52)continue;
   Q.plan.push(P);hb25Log(b,'bomb-tell',{id,target,warm:Q.warm,release:time,burst:P.burst,pass:Q.pass});
  }
+ Q.mirrorEscape=(Q.escapeX-left)/width;
+ Q.mirrorClaws=ids.slice();
+ Q.mirrorPlan=Q.plan.map(P=>Object.freeze({id:P.id,time:P.time,wave:P.wave,u:(P.target.x-left)/width,y:P.target.y,burst:P.burst,seed:P.seed}));
 }
 function hb25BombDrop(b,Q,P){if(!hd1003Live(b,hd1003Part(b,P.id))||eBullets.filter(q=>q._hb25Chaos&&!q.dead).length>=128)return;
- const m=hd1003Muzzle(b,P.id);if(!P.burst&&Math.abs(m.x-Q.escapeX)<44)return;
+ const m=hd1003Muzzle(b,P.id);if(!P.burst&&Math.abs(P.target.x-Q.escapeX)<44)return;
  const flight=.68,dx=P.target.x-m.x,dy=P.target.y-m.y,a=P.burst?Math.atan2(dy,dx):Math.PI/2,
   bomb=P.burst?{at:efxClock+flight,target:P.target,escapeX:Q.escapeX,rank:Q.rank,seed:P.seed}:null,
   q=hb25Shot(b,P.id,m,a,P.burst?Math.hypot(dx,dy)/(flight*60):2.9+Q.rank*.25,bomb);

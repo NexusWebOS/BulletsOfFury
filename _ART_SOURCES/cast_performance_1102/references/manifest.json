@@ -1,0 +1,293 @@
+{
+  "errors": [],
+  "exports": [
+    {
+      "pilot": "cole",
+      "key": "ship_cole",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_cole.png",
+      "sha256": "6fe68147518a7fab7d4c872968e541bec72d5743a9d761546534b2a8343120c0",
+      "w": 193,
+      "h": 232
+    },
+    {
+      "pilot": "cole",
+      "key": "ship_cole_so6",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_cole_so6.png",
+      "sha256": "594d8a8ac45ff0c401f3d246760cde12cf6c348e08ba226d41b9b71beeea4efa",
+      "w": 193,
+      "h": 232
+    },
+    {
+      "pilot": "cole",
+      "key": "ship_cole_so2",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_cole_so2.png",
+      "sha256": "1075fe9cd73032084661a900590eeadc11cc4c085b1e4ad955b5cc5d19eea391",
+      "w": 193,
+      "h": 232
+    },
+    {
+      "pilot": "cole",
+      "key": "c22_cole_front",
+      "file": "_ART_SOURCES/cast_performance_1102/references/c22_cole_front.png",
+      "sha256": "2b2719406a85d8157487dff20b7ad58f2a86af46a37a63abc4590aaec5753e73",
+      "w": 256,
+      "h": 256
+    },
+    {
+      "pilot": "axel",
+      "key": "ship_axel",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_axel.png",
+      "sha256": "28ee91a68d346d06f55a834ac8f381f86de69648af92775aa8ef63ef139ea4e6",
+      "w": 190,
+      "h": 224
+    },
+    {
+      "pilot": "axel",
+      "key": "ship_axel_so6",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_axel_so6.png",
+      "sha256": "1259e7a18c0968bbd91778d783d095cc8d2aa82c44133b91ec2f955b08d45242",
+      "w": 190,
+      "h": 224
+    },
+    {
+      "pilot": "axel",
+      "key": "ship_axel_so2",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_axel_so2.png",
+      "sha256": "aad31fb56ab946d27d069c17159b16cb8a035c6ae524c1894935792301e16dd4",
+      "w": 190,
+      "h": 224
+    },
+    {
+      "pilot": "axel",
+      "key": "c22_axel_front",
+      "file": "_ART_SOURCES/cast_performance_1102/references/c22_axel_front.png",
+      "sha256": "2a8fe3962e13c47575fd9ff7a8842e318080825577e4ba4e01cff35e53894f5a",
+      "w": 256,
+      "h": 256
+    },
+    {
+      "pilot": "decker",
+      "key": "ship_decker",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_decker.png",
+      "sha256": "787f45a03bd7a9d70e9346c4f90e137c6c8a9548718dbfd4da879e0c603db363",
+      "w": 200,
+      "h": 230
+    },
+    {
+      "pilot": "decker",
+      "key": "ship_decker_so6",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_decker_so6.png",
+      "sha256": "f9fc86bd142e727b5c5f94628f4ce297bf8e9f1dad5bde7d2f06b02c57d68b80",
+      "w": 200,
+      "h": 230
+    },
+    {
+      "pilot": "decker",
+      "key": "ship_decker_so2",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_decker_so2.png",
+      "sha256": "fe6cedb7a37d64337e0e807299d20327b19d2951ad28f22454c1ac4976d54ccc",
+      "w": 200,
+      "h": 230
+    },
+    {
+      "pilot": "decker",
+      "key": "c22_decker_front",
+      "file": "_ART_SOURCES/cast_performance_1102/references/c22_decker_front.png",
+      "sha256": "3988b3c77fd8cc0b5823b36c24fb6e0c7f78c2228230c7e1c055e05827948e8c",
+      "w": 256,
+      "h": 256
+    },
+    {
+      "pilot": "maverick",
+      "key": "ship_maverick",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_maverick.png",
+      "sha256": "f559a32143ac8614afa87b133de143c341af47812657c5b5a816de7ed83266e9",
+      "w": 200,
+      "h": 211
+    },
+    {
+      "pilot": "maverick",
+      "key": "ship_maverick_so6",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_maverick_so6.png",
+      "sha256": "e5b12045d1b4a5a3dcadc1df9d9090d6653974bdfa90a9aed610d56c6fc28979",
+      "w": 200,
+      "h": 211
+    },
+    {
+      "pilot": "maverick",
+      "key": "ship_maverick_so2",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_maverick_so2.png",
+      "sha256": "c0a636d0e0cac44fbfe4522adf2ee323b8ba3d48bc24e0b52092d1fb6dc4759c",
+      "w": 200,
+      "h": 211
+    },
+    {
+      "pilot": "maverick",
+      "key": "c22_maverick_front",
+      "file": "_ART_SOURCES/cast_performance_1102/references/c22_maverick_front.png",
+      "sha256": "32605661ca8feb4465722e437acf6d979390e298b44c4f33a3b317b132422857",
+      "w": 256,
+      "h": 256
+    },
+    {
+      "pilot": "freezer",
+      "key": "ship_freezer",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_freezer.png",
+      "sha256": "c4eab883e45b15323c3b9f46d84621c263be1606bd59ede2a3c7518c315f32e5",
+      "w": 183,
+      "h": 194
+    },
+    {
+      "pilot": "freezer",
+      "key": "ship_freezer_so6",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_freezer_so6.png",
+      "sha256": "0f29ca30352c0c1e7f93b48ec942b8fb88e13ca2ec4246c04cac92b28c0c5895",
+      "w": 183,
+      "h": 194
+    },
+    {
+      "pilot": "freezer",
+      "key": "ship_freezer_so2",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_freezer_so2.png",
+      "sha256": "125fcad8831e275f3be86e999dff9de52eb4e4032bb2e9011a0b89df57afeb21",
+      "w": 183,
+      "h": 194
+    },
+    {
+      "pilot": "freezer",
+      "key": "c22_freezer_front",
+      "file": "_ART_SOURCES/cast_performance_1102/references/c22_freezer_front.png",
+      "sha256": "86c292df13b518faa9f3f91be490b7c7bd35d99218c42f40094819647ca88fed",
+      "w": 256,
+      "h": 256
+    },
+    {
+      "pilot": "juggernaut",
+      "key": "ship_juggernaut",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_juggernaut.png",
+      "sha256": "818fbc41307d3491ff9df2475a2e9ded51a7c36c2ee40223fc179e03c22a9a48",
+      "w": 200,
+      "h": 205
+    },
+    {
+      "pilot": "juggernaut",
+      "key": "ship_juggernaut_so6",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_juggernaut_so6.png",
+      "sha256": "25f032efbe53abd9fae255fcbc4dde742d036336111044d5b181284197087d47",
+      "w": 200,
+      "h": 205
+    },
+    {
+      "pilot": "juggernaut",
+      "key": "ship_juggernaut_so2",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_juggernaut_so2.png",
+      "sha256": "b7e95fd86dab5bd3e6a14aedaf989addf8d49ad980ca5e8bea5e34adb961696b",
+      "w": 200,
+      "h": 205
+    },
+    {
+      "pilot": "juggernaut",
+      "key": "c22_juggernaut_front",
+      "file": "_ART_SOURCES/cast_performance_1102/references/c22_juggernaut_front.png",
+      "sha256": "cf2cb45775e91ea75a83320399ed9cb3ce16931c2d11e300674e7787c5c5c84c",
+      "w": 256,
+      "h": 256
+    },
+    {
+      "pilot": "yuri",
+      "key": "ship_yuri",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_yuri.png",
+      "sha256": "fecc12ef68c95278ee755f7c1401e705a7b7075161df576d12af32e593e7a4b6",
+      "w": 209,
+      "h": 229
+    },
+    {
+      "pilot": "yuri",
+      "key": "ship_yuri_so6",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_yuri_so6.png",
+      "sha256": "e7b7f97df6b4b0008778cd217f016d4ffcf241f727796adbdedf89dd3f60c8da",
+      "w": 209,
+      "h": 229
+    },
+    {
+      "pilot": "yuri",
+      "key": "ship_yuri_so2",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_yuri_so2.png",
+      "sha256": "fe4bfb1255d9967d998e9ee447ead309bdc04d2b586c365003aacaf1a2e0f2d0",
+      "w": 209,
+      "h": 229
+    },
+    {
+      "pilot": "yuri",
+      "key": "c22_yuri_front",
+      "file": "_ART_SOURCES/cast_performance_1102/references/c22_yuri_front.png",
+      "sha256": "97f4a39a73425b847a6c6e34b57935ddc72672760049745c24e719a617c547a3",
+      "w": 256,
+      "h": 256
+    },
+    {
+      "pilot": "lizzie",
+      "key": "ship_lizzie",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_lizzie.png",
+      "sha256": "a9b80dd2427532dd7b348ff0bd6be4ef9a7c93ca45f3eb336070224ef57d3bd0",
+      "w": 224,
+      "h": 243
+    },
+    {
+      "pilot": "lizzie",
+      "key": "ship_lizzie_so6",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_lizzie_so6.png",
+      "sha256": "bcf2e6348ec34e64519c662a4ee0436d1adb120540e665bf9d53d67a6e3d7d1f",
+      "w": 224,
+      "h": 243
+    },
+    {
+      "pilot": "lizzie",
+      "key": "ship_lizzie_so2",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_lizzie_so2.png",
+      "sha256": "b8ac3c0e45e481842107697705755b32006180b222108c7b408ab5167c321050",
+      "w": 224,
+      "h": 243
+    },
+    {
+      "pilot": "lizzie",
+      "key": "c22_lizzie_front",
+      "file": "_ART_SOURCES/cast_performance_1102/references/c22_lizzie_front.png",
+      "sha256": "0fee7a5a5bb14c94d3d046f225efb86cc6afb99fb725887fe1e728f7c09a3867",
+      "w": 256,
+      "h": 256
+    },
+    {
+      "pilot": "falva",
+      "key": "ship_falva",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_falva.png",
+      "sha256": "d9986877de136f8940e51743706d016dfb069ba8612a72efcccc1dd2f90c0f4e",
+      "w": 204,
+      "h": 238
+    },
+    {
+      "pilot": "falva",
+      "key": "ship_falva_so6",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_falva_so6.png",
+      "sha256": "876c4e9eb3f974f850bb6d9cf503848a84bb0993a2f0a8e758d0385c14201033",
+      "w": 204,
+      "h": 238
+    },
+    {
+      "pilot": "falva",
+      "key": "ship_falva_so2",
+      "file": "_ART_SOURCES/cast_performance_1102/references/ship_falva_so2.png",
+      "sha256": "8f86e0e1114648242c4101d1e15afa9de104104fcf963dc6beba5bc84515238a",
+      "w": 204,
+      "h": 238
+    },
+    {
+      "pilot": "falva",
+      "key": "c22_falva_front",
+      "file": "_ART_SOURCES/cast_performance_1102/references/c22_falva_front.png",
+      "sha256": "3c26b8cde4f0817e750fe39cde25bdbbce3c97517eec2e0093ac18a1f3e32058",
+      "w": 256,
+      "h": 256
+    }
+  ]
+}

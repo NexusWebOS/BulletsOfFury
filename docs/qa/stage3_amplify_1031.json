@@ -1,0 +1,1341 @@
+{
+  "date": "2026-10-31",
+  "passed": 84,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "sharddart current native identity",
+      "passed": true,
+      "data": {
+        "type": "sharddart",
+        "model": "shard",
+        "hp": 8,
+        "x": 340,
+        "y": -56.6
+      }
+    },
+    {
+      "name": "sharddart releases native attack",
+      "passed": true,
+      "data": [
+        {
+          "id": 1,
+          "type": "sharddart",
+          "event": "shot",
+          "t": 2.716666666666662,
+          "kind": "slug",
+          "x": 171.10122794643374,
+          "y": 246.65714285714333,
+          "a": 1.5707963267948966
+        },
+        {
+          "id": 1,
+          "type": "sharddart",
+          "event": "shot",
+          "t": 3.3666666666666596,
+          "kind": "slug",
+          "x": 157.06241513489348,
+          "y": 316.85714285714374,
+          "a": 1.5707963267948966
+        },
+        {
+          "id": 1,
+          "type": "sharddart",
+          "event": "shot",
+          "t": 3.3666666666666596,
+          "kind": "slug",
+          "x": 169.4909865634649,
+          "y": 316.85714285714374,
+          "a": 1.5707963267948966
+        },
+        {
+          "id": 1,
+          "type": "sharddart",
+          "event": "shot",
+          "t": 4.016666666666658,
+          "kind": "slug",
+          "x": 193.99620404541616,
+          "y": 387.0571428571442,
+          "a": 1.5707963267948966
+        },
+        {
+          "id": 1,
+          "type": "sharddart",
+          "event": "shot",
+          "t": 4.016666666666658,
+          "kind": "slug",
+          "x": 206.42477547398758,
+          "y": 387.0571428571442,
+          "a": 1.5707963267948966
+        }
+      ]
+    },
+    {
+      "name": "sharddart retains native HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Shard Dart never flips",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s3interceptor current native identity",
+      "passed": true,
+      "data": {
+        "type": "s3interceptor",
+        "model": "interceptor",
+        "hp": 11,
+        "x": 340,
+        "y": -61.800000000000004
+      }
+    },
+    {
+      "name": "s3interceptor releases native attack",
+      "passed": true,
+      "data": [
+        {
+          "id": 2,
+          "type": "s3interceptor",
+          "event": "shot",
+          "t": 14.133333333333615,
+          "kind": "slug",
+          "x": 351.1643466835837,
+          "y": 315.6454661539641,
+          "a": 3.141592653589793
+        },
+        {
+          "id": 2,
+          "type": "s3interceptor",
+          "event": "shot",
+          "t": 14.133333333333615,
+          "kind": "slug",
+          "x": 351.1643466835837,
+          "y": 344.44546615396405,
+          "a": 3.141592653589793
+        },
+        {
+          "id": 2,
+          "type": "s3interceptor",
+          "event": "shot",
+          "t": 14.666666666666975,
+          "kind": "slug",
+          "x": 302.2644488566732,
+          "y": 307.60242956314795,
+          "a": 3.9269908169872414
+        },
+        {
+          "id": 2,
+          "type": "s3interceptor",
+          "event": "shot",
+          "t": 14.666666666666975,
+          "kind": "slug",
+          "x": 281.89977355850067,
+          "y": 327.9671048613205,
+          "a": 3.9269908169872414
+        },
+        {
+          "id": 2,
+          "type": "s3interceptor",
+          "event": "exit",
+          "t": 14.733333333333645
+        }
+      ]
+    },
+    {
+      "name": "s3interceptor retains native HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s3interceptor uses actual turning poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "ac10icejet current native identity",
+      "passed": true,
+      "data": {
+        "type": "ac10icejet",
+        "model": "interceptor",
+        "hp": 11,
+        "x": 340,
+        "y": -61.800000000000004
+      }
+    },
+    {
+      "name": "ac10icejet releases native attack",
+      "passed": true,
+      "data": [
+        {
+          "id": 3,
+          "type": "ac10icejet",
+          "event": "shot",
+          "t": 25.43333333333317,
+          "kind": "slug",
+          "x": 352.3214895407266,
+          "y": 312.5597518682498,
+          "a": 3.141592653589793
+        },
+        {
+          "id": 3,
+          "type": "ac10icejet",
+          "event": "shot",
+          "t": 25.43333333333317,
+          "kind": "slug",
+          "x": 352.3214895407266,
+          "y": 347.53118043967834,
+          "a": 3.141592653589793
+        },
+        {
+          "id": 3,
+          "type": "ac10icejet",
+          "event": "shot",
+          "t": 25.966666666666473,
+          "kind": "slug",
+          "x": 305.26460191399326,
+          "y": 306.23872362800245,
+          "a": 3.9269908169872414
+        },
+        {
+          "id": 3,
+          "type": "ac10icejet",
+          "event": "shot",
+          "t": 25.966666666666473,
+          "kind": "slug",
+          "x": 280.53606762335517,
+          "y": 330.96725791864054,
+          "a": 3.9269908169872414
+        },
+        {
+          "id": 3,
+          "type": "ac10icejet",
+          "event": "exit",
+          "t": 26.033333333333136
+        }
+      ]
+    },
+    {
+      "name": "ac10icejet retains native HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "ac10icejet uses actual turning poses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "glaciercarrier current native identity",
+      "passed": true,
+      "data": {
+        "type": "glaciercarrier",
+        "model": "carrier",
+        "hp": 36,
+        "x": 340,
+        "y": -56.6
+      }
+    },
+    {
+      "name": "glaciercarrier releases native attack",
+      "passed": true,
+      "data": [
+        {
+          "id": 4,
+          "type": "glaciercarrier",
+          "event": "shot",
+          "t": 34.416666666665996,
+          "kind": "slug",
+          "x": 319.7567743098063,
+          "y": 360.5047619047609,
+          "a": 1.5707963267948966
+        },
+        {
+          "id": 4,
+          "type": "glaciercarrier",
+          "event": "shot",
+          "t": 34.8999999999993,
+          "kind": "slug",
+          "x": 276.7132891569022,
+          "y": 393.3714285714274,
+          "a": 1.5707963267948966
+        },
+        {
+          "id": 4,
+          "type": "glaciercarrier",
+          "event": "shot",
+          "t": 34.8999999999993,
+          "kind": "slug",
+          "x": 310.99900344261647,
+          "y": 393.3714285714274,
+          "a": 1.5707963267948966
+        },
+        {
+          "id": 4,
+          "type": "glaciercarrier",
+          "event": "shot",
+          "t": 35.38333333333261,
+          "kind": "slug",
+          "x": 273.573187935908,
+          "y": 426.2380952380938,
+          "a": 1.5707963267948966
+        },
+        {
+          "id": 4,
+          "type": "glaciercarrier",
+          "event": "shot",
+          "t": 35.38333333333261,
+          "kind": "slug",
+          "x": 307.85890222162226,
+          "y": 426.2380952380938,
+          "a": 1.5707963267948966
+        }
+      ]
+    },
+    {
+      "name": "glaciercarrier retains native HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cryoeye current native identity",
+      "passed": true,
+      "data": {
+        "type": "cryoeye",
+        "model": "eye",
+        "hp": 8,
+        "x": 340,
+        "y": 156
+      }
+    },
+    {
+      "name": "cryoeye releases native attack",
+      "passed": true,
+      "data": [
+        {
+          "id": 5,
+          "type": "cryoeye",
+          "event": "tell",
+          "t": 49.51666666666514
+        },
+        {
+          "id": 5,
+          "type": "cryoeye",
+          "event": "cross-lasers",
+          "t": 50.616666666665076,
+          "count": 4
+        },
+        {
+          "id": 5,
+          "type": "cryoeye",
+          "event": "fire",
+          "t": 50.616666666665076
+        },
+        {
+          "id": 5,
+          "type": "cryoeye",
+          "event": "recover",
+          "t": 51.46666666666503
+        },
+        {
+          "id": 5,
+          "type": "cryoeye",
+          "event": "exit",
+          "t": 53.383333333331585
+        }
+      ]
+    },
+    {
+      "name": "cryoeye retains native HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "s3mine current native identity",
+      "passed": true,
+      "data": {
+        "type": "s3mine",
+        "model": "mine",
+        "hp": 11,
+        "x": 340,
+        "y": -63.75
+      }
+    },
+    {
+      "name": "s3mine releases native attack",
+      "passed": true,
+      "data": [
+        {
+          "id": 6,
+          "type": "s3mine",
+          "event": "shot",
+          "t": 56.13333333333143,
+          "kind": "mine",
+          "x": 261.9942728354072,
+          "y": 264.6593587468041,
+          "a": 2.356194490192345
+        },
+        {
+          "id": 6,
+          "type": "s3mine",
+          "event": "shot",
+          "t": 56.733333333331394,
+          "kind": "mine",
+          "x": 227.93330623959713,
+          "y": 322.58768130631796,
+          "a": 2.356194490192345
+        },
+        {
+          "id": 6,
+          "type": "s3mine",
+          "event": "shot",
+          "t": 57.33333333333136,
+          "kind": "mine",
+          "x": 193.87233964378726,
+          "y": 380.5160038658318,
+          "a": 2.356194490192345
+        },
+        {
+          "id": 6,
+          "type": "s3mine",
+          "event": "shot",
+          "t": 57.933333333331326,
+          "kind": "mine",
+          "x": 159.81137304797767,
+          "y": 438.44432642534565,
+          "a": 2.356194490192345
+        },
+        {
+          "id": 6,
+          "type": "s3mine",
+          "event": "exit",
+          "t": 58.23333333333131
+        }
+      ]
+    },
+    {
+      "name": "s3mine retains native HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "modturret-laser current native identity",
+      "passed": true,
+      "data": {
+        "type": "modturret",
+        "model": null,
+        "hp": 11,
+        "x": 356,
+        "y": 156
+      }
+    },
+    {
+      "name": "modturret-laser releases native attack",
+      "passed": true,
+      "data": [
+        {
+          "id": null,
+          "type": "modturret",
+          "event": "island-fixture",
+          "t": 59.0166666666646,
+          "x": 356,
+          "y": 156
+        },
+        {
+          "id": null,
+          "type": "modturret",
+          "event": "shot",
+          "t": 60.56666666666451,
+          "kind": "laser",
+          "x": 353.90400147119266,
+          "y": 238.95436352851948,
+          "a": 1.6689710972195777
+        },
+        {
+          "id": null,
+          "type": "modturret",
+          "event": "shot",
+          "t": 63.0999999999977,
+          "kind": "laser",
+          "x": 353.90400147119266,
+          "y": 340.28769686189895,
+          "a": 1.6689710972195777
+        }
+      ]
+    },
+    {
+      "name": "modturret-laser retains native HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "modturret-laser remains on full island footprint",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "modturret-sonic current native identity",
+      "passed": true,
+      "data": {
+        "type": "modturret",
+        "model": null,
+        "hp": 11,
+        "x": 356,
+        "y": 156
+      }
+    },
+    {
+      "name": "modturret-sonic releases native attack",
+      "passed": true,
+      "data": [
+        {
+          "id": null,
+          "type": "modturret",
+          "event": "shot",
+          "t": 71.59999999999722,
+          "kind": "sonic",
+          "x": 353.90400147119266,
+          "y": 239.28103019518645,
+          "a": 1.6689710972195777
+        },
+        {
+          "id": null,
+          "type": "modturret",
+          "event": "shot",
+          "t": 71.59999999999722,
+          "kind": "sonic",
+          "x": 353.90400147119266,
+          "y": 239.28103019518645,
+          "a": 1.7989710972195776
+        },
+        {
+          "id": null,
+          "type": "modturret",
+          "event": "shot",
+          "t": 74.8666666666637,
+          "kind": "sonic",
+          "x": 353.90400147119266,
+          "y": 369.94769686191256,
+          "a": 1.5389710972195778
+        },
+        {
+          "id": null,
+          "type": "modturret",
+          "event": "shot",
+          "t": 74.8666666666637,
+          "kind": "sonic",
+          "x": 353.90400147119266,
+          "y": 369.94769686191256,
+          "a": 1.6689710972195777
+        },
+        {
+          "id": null,
+          "type": "modturret",
+          "event": "shot",
+          "t": 74.8666666666637,
+          "kind": "sonic",
+          "x": 353.90400147119266,
+          "y": 369.94769686191256,
+          "a": 1.7989710972195776
+        }
+      ]
+    },
+    {
+      "name": "modturret-sonic retains native HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "modturret-sonic remains on full island footprint",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "sharddart actual damaged pixels and expiry",
+      "passed": true,
+      "data": {
+        "clean": {
+          "white": 42,
+          "color": 746
+        },
+        "hit": {
+          "white": 848,
+          "color": 198
+        },
+        "expired": {
+          "white": 42,
+          "color": 746
+        }
+      }
+    },
+    {
+      "name": "s3interceptor actual damaged pixels and expiry",
+      "passed": true,
+      "data": {
+        "clean": {
+          "white": 81,
+          "color": 1862
+        },
+        "hit": {
+          "white": 2315,
+          "color": 210
+        },
+        "expired": {
+          "white": 85,
+          "color": 1986
+        }
+      }
+    },
+    {
+      "name": "ac10icejet actual damaged pixels and expiry",
+      "passed": true,
+      "data": {
+        "clean": {
+          "white": 129,
+          "color": 2681
+        },
+        "hit": {
+          "white": 3411,
+          "color": 201
+        },
+        "expired": {
+          "white": 123,
+          "color": 2798
+        }
+      }
+    },
+    {
+      "name": "glaciercarrier actual damaged pixels and expiry",
+      "passed": true,
+      "data": {
+        "clean": {
+          "white": 144,
+          "color": 4851
+        },
+        "hit": {
+          "white": 6053,
+          "color": 0
+        },
+        "expired": {
+          "white": 207,
+          "color": 4876
+        }
+      }
+    },
+    {
+      "name": "cryoeye actual damaged pixels and expiry",
+      "passed": true,
+      "data": {
+        "clean": {
+          "white": 93,
+          "color": 3247
+        },
+        "hit": {
+          "white": 5003,
+          "color": 0
+        },
+        "expired": {
+          "white": 85,
+          "color": 18464
+        }
+      }
+    },
+    {
+      "name": "s3mine actual damaged pixels and expiry",
+      "passed": true,
+      "data": {
+        "clean": {
+          "white": 164,
+          "color": 2903
+        },
+        "hit": {
+          "white": 3329,
+          "color": 212
+        },
+        "expired": {
+          "white": 164,
+          "color": 3021
+        }
+      }
+    },
+    {
+      "name": "modturret-laser actual damaged pixels and expiry",
+      "passed": true,
+      "data": {
+        "clean": {
+          "white": 122,
+          "color": 9420
+        },
+        "hit": {
+          "white": 2521,
+          "color": 8521
+        },
+        "expired": {
+          "white": 120,
+          "color": 8949
+        }
+      }
+    },
+    {
+      "name": "modturret-sonic actual damaged pixels and expiry",
+      "passed": true,
+      "data": {
+        "clean": {
+          "white": 120,
+          "color": 11635
+        },
+        "hit": {
+          "white": 2517,
+          "color": 10716
+        },
+        "expired": {
+          "white": 125,
+          "color": 10995
+        }
+      }
+    },
+    {
+      "name": "Cryoeye fires exactly four + beams",
+      "passed": true,
+      "data": {
+        "events": [
+          {
+            "id": 13,
+            "type": "cryoeye",
+            "event": "cross-lasers",
+            "t": 94.2166666666626,
+            "count": 4
+          }
+        ],
+        "lanes": [
+          {
+            "x": 348.30567609896514,
+            "y": 130.3238095238095,
+            "angle": -1.5707963267948966
+          },
+          {
+            "x": 395.4485332418223,
+            "y": 177.46666666666664,
+            "angle": 0
+          },
+          {
+            "x": 348.30567609896514,
+            "y": 224.60952380952378,
+            "angle": 1.5707963267948966
+          },
+          {
+            "x": 301.16281895610797,
+            "y": 177.46666666666664,
+            "angle": 3.141592653589793
+          }
+        ],
+        "beams": []
+      }
+    },
+    {
+      "name": "Two interceptor mounts, bullet immunity and shootable ice mines from birth",
+      "passed": true,
+      "data": {
+        "guns": 2,
+        "bullet": false,
+        "mine": true,
+        "element": "ice"
+      }
+    },
+    {
+      "name": "No native page/console errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "cryoeye lethal native damage clears active beams",
+      "passed": true,
+      "data": {
+        "hp": 0,
+        "beams": 0,
+        "shots": 1
+      }
+    },
+    {
+      "name": "cryoeye completes native death without new release",
+      "passed": true,
+      "data": {
+        "live": false,
+        "shots": 1
+      }
+    },
+    {
+      "name": "s3interceptor lethal native damage clears active beams",
+      "passed": true,
+      "data": {
+        "hp": 0,
+        "beams": 0,
+        "shots": 12
+      }
+    },
+    {
+      "name": "s3interceptor completes native death without new release",
+      "passed": true,
+      "data": {
+        "live": false,
+        "shots": 12
+      }
+    },
+    {
+      "name": "ac10icejet lethal native damage clears active beams",
+      "passed": true,
+      "data": {
+        "hp": 0,
+        "beams": 0,
+        "shots": 12
+      }
+    },
+    {
+      "name": "ac10icejet completes native death without new release",
+      "passed": true,
+      "data": {
+        "live": false,
+        "shots": 12
+      }
+    },
+    {
+      "name": "s3mine lethal native damage clears active beams",
+      "passed": true,
+      "data": {
+        "hp": 0,
+        "beams": 0,
+        "shots": 5
+      }
+    },
+    {
+      "name": "s3mine completes native death without new release",
+      "passed": true,
+      "data": {
+        "live": false,
+        "shots": 5
+      }
+    },
+    {
+      "name": "glaciercarrier lethal native damage clears active beams",
+      "passed": true,
+      "data": {
+        "hp": 0,
+        "beams": 0,
+        "shots": 10
+      }
+    },
+    {
+      "name": "glaciercarrier completes native death without new release",
+      "passed": true,
+      "data": {
+        "live": false,
+        "shots": 10
+      }
+    },
+    {
+      "name": "sharddart lethal native damage clears active beams",
+      "passed": true,
+      "data": {
+        "hp": 0,
+        "beams": 0,
+        "shots": 8
+      }
+    },
+    {
+      "name": "sharddart completes native death without new release",
+      "passed": true,
+      "data": {
+        "live": false,
+        "shots": 8
+      }
+    },
+    {
+      "name": "slug actual native projectile pixels are visible ice-blue",
+      "passed": true,
+      "data": {
+        "blue": 32,
+        "red": 0,
+        "proof": false,
+        "held": null
+      }
+    },
+    {
+      "name": "sonic actual native projectile pixels are visible ice-blue",
+      "passed": true,
+      "data": {
+        "blue": 556,
+        "red": 0,
+        "proof": false,
+        "held": null
+      }
+    },
+    {
+      "name": "mine actual native projectile pixels are visible ice-blue",
+      "passed": true,
+      "data": {
+        "blue": 57,
+        "red": 0,
+        "proof": true,
+        "held": null
+      }
+    },
+    {
+      "name": "laser actual native projectile pixels are visible ice-blue",
+      "passed": true,
+      "data": {
+        "blue": 338,
+        "red": 0,
+        "proof": false,
+        "held": null
+      }
+    },
+    {
+      "name": "All8 interceptor views render actual cells without canvas rotation",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Full island hull reservation at scroll 0.05",
+      "passed": true,
+      "data": {
+        "type": "modturret",
+        "model": null,
+        "hp": 11,
+        "x": 108,
+        "y": 140
+      }
+    },
+    {
+      "name": "Full island hull reservation at scroll 0.25",
+      "passed": true,
+      "data": {
+        "type": "modturret",
+        "model": null,
+        "hp": 11,
+        "x": 324,
+        "y": 148
+      }
+    },
+    {
+      "name": "Full island hull reservation at scroll 0.5",
+      "passed": true,
+      "data": {
+        "type": "modturret",
+        "model": null,
+        "hp": 11,
+        "x": 340,
+        "y": 156
+      }
+    },
+    {
+      "name": "Full island hull reservation at scroll 0.75",
+      "passed": true,
+      "data": {
+        "type": "modturret",
+        "model": null,
+        "hp": 11,
+        "x": 340,
+        "y": 156
+      }
+    },
+    {
+      "name": "Full island hull reservation at scroll 0.9",
+      "passed": true,
+      "data": {
+        "type": "modturret",
+        "model": null,
+        "hp": 11,
+        "x": 340,
+        "y": 156
+      }
+    },
+    {
+      "name": "Mine bomber leaves separated shootable mines",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Actual player round intercepts an ice mine",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native cleanup page/console errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "All32 bank files have registered even cells and valid sheet geometry",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Native interactive field guide launches actual Cryoeye owner",
+      "passed": true,
+      "data": {
+        "snapshot": {
+          "ready": true,
+          "entry": "bof-enemy-cryoeye",
+          "error": null,
+          "elapsed": 1.3580000000000003,
+          "frames": 146,
+          "paused": false,
+          "speed": 1,
+          "muted": true,
+          "healthControl": true,
+          "actor": {
+            "type": "cryoeye",
+            "hp": 8,
+            "maxhp": 8,
+            "dead": false,
+            "x": 348.1610153231202,
+            "y": 176.3333333333333,
+            "phase": "tell",
+            "pattern": null
+          },
+          "projectiles": [],
+          "liveProjectiles": 0,
+          "activeBeams": 0,
+          "stage": 3
+        },
+        "spawn": {
+          "id": 1,
+          "type": "cryoeye",
+          "event": "spawn",
+          "t": 0.3333333333333333,
+          "model": "eye",
+          "hp": 8
+        },
+        "title": "Cryoeye",
+        "native": {
+          "stage": 3,
+          "enemies": [
+            {
+              "type": "cryoeye",
+              "model": "eye"
+            }
+          ],
+          "I31events": [
+            {
+              "id": 1,
+              "type": "cryoeye",
+              "event": "spawn",
+              "t": 0.3333333333333333,
+              "model": "eye",
+              "hp": 8
+            },
+            {
+              "id": 1,
+              "type": "cryoeye",
+              "event": "wait",
+              "t": 0.55
+            },
+            {
+              "id": 1,
+              "type": "cryoeye",
+              "event": "tell",
+              "t": 1.5499999999999994
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Native catalogue displays all4 beams and current phase without legacy attack buttons",
+      "passed": true,
+      "data": {
+        "phase": "fire",
+        "beams": 4,
+        "legacy": []
+      }
+    },
+    {
+      "name": "No interactive catalogue page/console errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Enemy guide selects the current four-laser Cryoeye",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All current non-Stage3 guide films remain intact",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All13 Stage3 cards point to current ice movies",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Guide video seeks and decodes native sound",
+      "passed": true,
+      "data": {
+        "time": 5.605536,
+        "audio": 37972,
+        "paused": false,
+        "error": null
+      }
+    },
+    {
+      "name": "Focused page supplies all8 current films",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Ice Interceptor / turning flight and clear twin ice bullets plays/seeks with decoded sound",
+      "passed": true,
+      "data": {
+        "title": "Ice Interceptor / turning flight and clear twin ice bullets",
+        "time": 5.30758,
+        "audio": 75326,
+        "w": 1280,
+        "h": 800,
+        "error": null
+      }
+    },
+    {
+      "name": "Cryoeye / four cardinal level2 ice lasers plays/seeks with decoded sound",
+      "passed": true,
+      "data": {
+        "title": "Cryoeye / four cardinal level2 ice lasers",
+        "time": 5.304254,
+        "audio": 35170,
+        "w": 1280,
+        "h": 800,
+        "error": null
+      }
+    },
+    {
+      "name": "Glacier Carrier / paired ice bullets plays/seeks with decoded sound",
+      "passed": true,
+      "data": {
+        "title": "Glacier Carrier / paired ice bullets",
+        "time": 5.304691,
+        "audio": 70399,
+        "w": 1280,
+        "h": 800,
+        "error": null
+      }
+    },
+    {
+      "name": "Island Laser Turret / registered ice barrel plays/seeks with decoded sound",
+      "passed": true,
+      "data": {
+        "title": "Island Laser Turret / registered ice barrel",
+        "time": 5.311762,
+        "audio": 73354,
+        "w": 1280,
+        "h": 800,
+        "error": null
+      }
+    },
+    {
+      "name": "Island Sonic Turret / blue pressure waves plays/seeks with decoded sound",
+      "passed": true,
+      "data": {
+        "title": "Island Sonic Turret / blue pressure waves",
+        "time": 5.309245,
+        "audio": 55850,
+        "w": 1280,
+        "h": 800,
+        "error": null
+      }
+    },
+    {
+      "name": "Interceptor / actual turning and twin gun mouths plays/seeks with decoded sound",
+      "passed": true,
+      "data": {
+        "title": "Interceptor / actual turning and twin gun mouths",
+        "time": 5.313958,
+        "audio": 76368,
+        "w": 1280,
+        "h": 800,
+        "error": null
+      }
+    },
+    {
+      "name": "Ice Mine Bomber / mine deployment and boost escape plays/seeks with decoded sound",
+      "passed": true,
+      "data": {
+        "title": "Ice Mine Bomber / mine deployment and boost escape",
+        "time": 3.79581,
+        "audio": 57584,
+        "w": 1280,
+        "h": 800,
+        "error": null
+      }
+    },
+    {
+      "name": "Shard Dart / larger upright banking fighter plays/seeks with decoded sound",
+      "passed": true,
+      "data": {
+        "title": "Shard Dart / larger upright banking fighter",
+        "time": 4.140492,
+        "audio": 53479,
+        "w": 1280,
+        "h": 800,
+        "error": null
+      }
+    },
+    {
+      "name": "No preview page, console or asset errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Owning builder reproduces every runtime bank/manifest/registry byte",
+      "passed": true
+    }
+  ],
+  "media": [
+    {
+      "type": "ac10icejet",
+      "seconds": 12.83,
+      "fps": 59.5,
+      "decoded": true,
+      "audio": {
+        "enemyMachineGunHeavy": 17
+      },
+      "peak": 0.3448030948638916,
+      "sourceHashes": {
+        "assets/game.js": "9f5fada98df3edee90d5cf8f50e9275b8a573901752ed922ecad6be50d4ba1bf",
+        "assets/stage3_amplify_1031.js": "45cc4e39dc14e5d4654beaff65464190e0b7d66d0a0a4fb03c8bf81c6f13c99b",
+        "assets/stage2_amplify_art_1031.js": "ae0b4597a568340a014f05e6b24092934f5e2564f52acc5c7622115a3b13819b"
+      },
+      "sha256": "1a8735e931fd0a474136f0d35cac2d4c797147afdaf6657ebe1133ae0d0b47e7"
+    },
+    {
+      "type": "cryoeye",
+      "seconds": 16.06,
+      "fps": 59.6,
+      "decoded": true,
+      "audio": {
+        "bossWeaponCharge": 3,
+        "av3_target_acquire": 3,
+        "alertLockon": 3,
+        "enemyHeavyLaser": 3
+      },
+      "peak": 0.4599618911743164,
+      "sourceHashes": {
+        "assets/game.js": "9f5fada98df3edee90d5cf8f50e9275b8a573901752ed922ecad6be50d4ba1bf",
+        "assets/stage3_amplify_1031.js": "45cc4e39dc14e5d4654beaff65464190e0b7d66d0a0a4fb03c8bf81c6f13c99b",
+        "assets/stage2_amplify_art_1031.js": "ae0b4597a568340a014f05e6b24092934f5e2564f52acc5c7622115a3b13819b"
+      },
+      "sha256": "7693e3e82226dca98c41ac5c33acd5c3c9faa9e62a1262fb096551082282455f"
+    },
+    {
+      "type": "glaciercarrier",
+      "seconds": 11.37,
+      "fps": 59.6,
+      "decoded": true,
+      "audio": {
+        "enemyMachineGunHeavy": 13
+      },
+      "peak": 0.32385069131851196,
+      "sourceHashes": {
+        "assets/game.js": "9f5fada98df3edee90d5cf8f50e9275b8a573901752ed922ecad6be50d4ba1bf",
+        "assets/stage3_amplify_1031.js": "45cc4e39dc14e5d4654beaff65464190e0b7d66d0a0a4fb03c8bf81c6f13c99b",
+        "assets/stage2_amplify_art_1031.js": "ae0b4597a568340a014f05e6b24092934f5e2564f52acc5c7622115a3b13819b"
+      },
+      "sha256": "d7ab08ef799cd70d0afa80f3e9ee7a90bf4e90f6626d01082b81bfd797486991"
+    },
+    {
+      "type": "modturret-laser",
+      "seconds": 12.53,
+      "fps": 59.4,
+      "decoded": true,
+      "audio": {
+        "bossWeaponCharge": 4,
+        "av3_target_acquire": 4,
+        "alertLockon": 4,
+        "enemyHeavyLaser": 3
+      },
+      "peak": 0.4612578749656677,
+      "sourceHashes": {
+        "assets/game.js": "9f5fada98df3edee90d5cf8f50e9275b8a573901752ed922ecad6be50d4ba1bf",
+        "assets/stage3_amplify_1031.js": "45cc4e39dc14e5d4654beaff65464190e0b7d66d0a0a4fb03c8bf81c6f13c99b",
+        "assets/stage2_amplify_art_1031.js": "ae0b4597a568340a014f05e6b24092934f5e2564f52acc5c7622115a3b13819b"
+      },
+      "sha256": "ae021ae8bef4fc93a4496ec9f17addda61b79a632ea37c7c66f5e6b9f1fd7cc3"
+    },
+    {
+      "type": "modturret-sonic",
+      "seconds": 12.58,
+      "fps": 59.6,
+      "decoded": true,
+      "audio": {
+        "razorbackCharge": 3,
+        "av3_target_acquire": 3,
+        "alertLockon": 3,
+        "razorbackPressure": 3
+      },
+      "peak": 0.2531582713127136,
+      "sourceHashes": {
+        "assets/game.js": "9f5fada98df3edee90d5cf8f50e9275b8a573901752ed922ecad6be50d4ba1bf",
+        "assets/stage3_amplify_1031.js": "45cc4e39dc14e5d4654beaff65464190e0b7d66d0a0a4fb03c8bf81c6f13c99b",
+        "assets/stage2_amplify_art_1031.js": "ae0b4597a568340a014f05e6b24092934f5e2564f52acc5c7622115a3b13819b"
+      },
+      "sha256": "da884e3a616a77c7be7f1076a3ffc2f11104519c14008215649dd1f984cedbd1"
+    },
+    {
+      "type": "s3interceptor",
+      "seconds": 12.88,
+      "fps": 59.0,
+      "decoded": true,
+      "audio": {
+        "enemyMachineGunHeavy": 17
+      },
+      "peak": 0.34511059522628784,
+      "sourceHashes": {
+        "assets/game.js": "9f5fada98df3edee90d5cf8f50e9275b8a573901752ed922ecad6be50d4ba1bf",
+        "assets/stage3_amplify_1031.js": "45cc4e39dc14e5d4654beaff65464190e0b7d66d0a0a4fb03c8bf81c6f13c99b",
+        "assets/stage2_amplify_art_1031.js": "ae0b4597a568340a014f05e6b24092934f5e2564f52acc5c7622115a3b13819b"
+      },
+      "sha256": "1224373e3b00cdf857602f52d68df54758593dcb4f88f4405e235fc8cb43fa5e"
+    },
+    {
+      "type": "s3mine",
+      "seconds": 6.99,
+      "fps": 59.8,
+      "decoded": true,
+      "audio": {
+        "bombDrop": 6,
+        "jetDash": 1
+      },
+      "peak": 0.4166368246078491,
+      "sourceHashes": {
+        "assets/game.js": "9f5fada98df3edee90d5cf8f50e9275b8a573901752ed922ecad6be50d4ba1bf",
+        "assets/stage3_amplify_1031.js": "45cc4e39dc14e5d4654beaff65464190e0b7d66d0a0a4fb03c8bf81c6f13c99b",
+        "assets/stage2_amplify_art_1031.js": "ae0b4597a568340a014f05e6b24092934f5e2564f52acc5c7622115a3b13819b"
+      },
+      "sha256": "537d2925bc1dc5c946bfd0aa4a09e95da58519f65d028b414488c0b8be37cb13"
+    },
+    {
+      "type": "sharddart",
+      "seconds": 7.66,
+      "fps": 59.9,
+      "decoded": true,
+      "audio": {
+        "enemyMachineGunHeavy": 5
+      },
+      "peak": 0.281497061252594,
+      "sourceHashes": {
+        "assets/game.js": "9f5fada98df3edee90d5cf8f50e9275b8a573901752ed922ecad6be50d4ba1bf",
+        "assets/stage3_amplify_1031.js": "45cc4e39dc14e5d4654beaff65464190e0b7d66d0a0a4fb03c8bf81c6f13c99b",
+        "assets/stage2_amplify_art_1031.js": "ae0b4597a568340a014f05e6b24092934f5e2564f52acc5c7622115a3b13819b"
+      },
+      "sha256": "79a16f37afb2ba6c56e4a871e761127d9cd60ec5fa28d4024d2394b0768f324f"
+    }
+  ],
+  "suite": {
+    "exit": 1,
+    "reachedSummary": false,
+    "blocker": "UNUSED_ASSETS/retired_art_1022/manifest.json missing"
+  },
+  "committed": false,
+  "pushed": false
+}

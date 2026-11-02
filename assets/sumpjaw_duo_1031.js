@@ -19,7 +19,7 @@ target17Ready=function(b){return sj98Own(b)?false:SJ98.base.ready.apply(this,arg
 encounterDamageOverlay=function(b){if(sj98Own(b))return;return SJ98.base.damage.apply(this,arguments);};
 function sj98Sync(b){const G=b._sj98;b.hp=G.actors.reduce((s,a)=>s+Math.max(0,a.hp),0);b.maxhp=G.actors.reduce((s,a)=>s+a.maxhp,0);b._drawW=b.w=worldWidth();b._drawH=b.h=VH;b._drawY=b.y=VH/2;b.x=worldWidth()/2;}
 function sj98Init(b){
- const total=Math.ceil(1560*DIFF.eHp*1.10),mid=camLeftX()+viewW()/2;
+ const total=difficultyHealthBaseline15(2190,Math.ceil(1560*DIFF.eHp*1.10)),mid=camLeftX()+viewW()/2;
  for(const k of ['_ship','_s7mod','_mr27','_late27','_be','_deathFxStarted'])delete b[k];
  b.name='SUMPJAW PAIR';b.enter=false;b.dead=false;b.fireCd=999;b._noHit=false;b._s4MiniSafe=true;
  const actors=[0,1].map(i=>{const maxhp=Math.ceil(total/2),gill=Math.floor(maxhp*.25);return{i,x:mid+(i?1:-1)*124,y:145,home:{x:mid+(i?1:-1)*124,y:145},hp:maxhp,maxhp,clock:0,phase:'entry',t:0,frame:24,flash:0,dead:false,dying:0,flip:i===1,seq:0,

@@ -1,0 +1,40 @@
+{
+  "minelayer": {
+    "path": "_BUILD_SOURCE/stage5_amplify_1101/minelayer_source.png",
+    "sha256": "38f1f313165931ae31bfc2e90a4df319181ebd1f786dfbf0cf567132330c5221",
+    "tool": "built-in image_gen",
+    "requestedCell": [
+      192,
+      192
+    ]
+  },
+  "leech": {
+    "path": "_BUILD_SOURCE/stage5_amplify_1101/leech_source.png",
+    "sha256": "a22bab7aea3bf84e22a4951da8b9fbbf266d5bb92da224a45143859e2053f67c",
+    "tool": "built-in image_gen",
+    "requestedCell": [
+      192,
+      192
+    ]
+  },
+  "gravity": {
+    "path": "_BUILD_SOURCE/stage5_amplify_1101/gravity_orb_identity.png",
+    "sha256": "b5c12fc33bb375e6918f82c58fc0149beaca6cb54f6fcb9f77a78b6393c187e7",
+    "owner": "stage5_runtime_atlas, extracted without modification"
+  },
+  "satellite": {
+    "path": "_BUILD_SOURCE/stage5_amplify_1101/missile_satellite_identity.png",
+    "sha256": "74eca973ee35cbddd56a5cc6bfeca2f07c3b196a372474f3b21f65e600b1a025",
+    "owner": "stage5_runtime_atlas, extracted without modification"
+  },
+  "portalmine": {
+    "path": "_BUILD_SOURCE/stage5_amplify_1101/portal_mine_identity.png",
+    "sha256": "5ba056003d483b15e5d405094737e971cd98ff43b94f6e9daf2031023292d835",
+    "owner": "stage5_runtime_atlas, extracted without modification"
+  },
+  "station": {
+    "path": "_BUILD_SOURCE/stage5_amplify_1101/twin_station_identity.png",
+    "sha256": "65b142c71e7e922a661df25ea2d8312c49dca8c9ef783e8ec198efb81a774a2d",
+    "owner": "stage5_runtime_atlas, extracted without modification"
+  }
+}

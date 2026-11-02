@@ -1,0 +1,495 @@
+{
+  "native": [
+    {
+      "name": "Ground Retina and electric strip preload before attack",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "16 fixed even electric frames and pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "One ground Retina per committed pending lightning target",
+      "passed": true,
+      "data": {
+        "cells": [
+          {
+            "key": "hl51_arrival_retina",
+            "args": [
+              448,
+              0,
+              64,
+              32,
+              308,
+              383,
+              64,
+              32
+            ]
+          }
+        ],
+        "old": [
+          "wingL_far",
+          "wingR_far",
+          "core_far",
+          "gunL_far",
+          "gunR_far",
+          "head_far"
+        ],
+        "marks": [],
+        "fields": [],
+        "pending": [
+          {
+            "x": 340,
+            "y": 399.36,
+            "born": 7.366666666666646,
+            "at": 9.366666666666646,
+            "done": false,
+            "id": 0
+          }
+        ],
+        "live": []
+      }
+    },
+    {
+      "name": "No filled impact discs, asterisks or duplicate broad warnings",
+      "passed": true,
+      "data": {
+        "cells": [
+          {
+            "key": "hl51_arrival_retina",
+            "args": [
+              448,
+              0,
+              64,
+              32,
+              308,
+              383,
+              64,
+              32
+            ]
+          }
+        ],
+        "old": [
+          "wingL_far",
+          "wingR_far",
+          "core_far",
+          "gunL_far",
+          "gunR_far",
+          "head_far"
+        ],
+        "marks": [],
+        "fields": [],
+        "pending": [
+          {
+            "x": 340,
+            "y": 399.36,
+            "born": 7.366666666666646,
+            "at": 9.366666666666646,
+            "done": false,
+            "id": 0
+          }
+        ],
+        "live": []
+      }
+    },
+    {
+      "name": "Ground Retinas use exact authored64x32 cells",
+      "passed": true,
+      "data": [
+        {
+          "key": "hl51_arrival_retina",
+          "args": [
+            448,
+            0,
+            64,
+            32,
+            308,
+            383,
+            64,
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Committed Retinas stay fixed when player moves",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Retina keeps green/yellow/red reaction phases",
+      "passed": true,
+      "data": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Native strike displays all16 authored electric frames",
+      "passed": true,
+      "data": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "name": "Actual impact screenshot captured",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Electric impact and lightning decode through shared mixer",
+      "passed": true,
+      "data": {
+        "impact": [
+          {
+            "attached": true,
+            "ready": 4,
+            "duration": 0.158957,
+            "error": false
+          },
+          {
+            "attached": true,
+            "ready": 4,
+            "duration": 0.158957,
+            "error": false
+          },
+          {
+            "attached": true,
+            "ready": 4,
+            "duration": 0.158957,
+            "error": false
+          }
+        ],
+        "bolt": [
+          {
+            "attached": true,
+            "ready": 4,
+            "duration": 0.603333,
+            "error": false
+          },
+          {
+            "attached": true,
+            "ready": 4,
+            "duration": 0.603333,
+            "error": false
+          },
+          {
+            "attached": true,
+            "ready": 4,
+            "duration": 0.603333,
+            "error": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "Native red energy remains ordinary unshootable ordnance",
+      "passed": true,
+      "data": [
+        {
+          "proof": true
+        },
+        {
+          "proof": true
+        },
+        {
+          "proof": true
+        },
+        {
+          "proof": true
+        }
+      ]
+    },
+    {
+      "name": "All lightning impacts retain full two-second warning",
+      "passed": true,
+      "data": [
+        {
+          "event": "lightning-strike",
+          "time": 9.366666666666712,
+          "id": 0,
+          "x": 340,
+          "y": 399.36,
+          "delay": 2.0000000000000657
+        },
+        {
+          "event": "lightning-strike",
+          "time": 10.433333333333431,
+          "id": 1,
+          "x": 301,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 11.316666666666809,
+          "id": 2,
+          "x": 257,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 12.050000000000178,
+          "id": 3,
+          "x": 208,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 12.666666666666876,
+          "id": 4,
+          "x": 154,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 13.1666666666669,
+          "id": 5,
+          "x": 95,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 13.583333333333588,
+          "id": 6,
+          "x": 58.00000000000001,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 13.933333333333605,
+          "id": 7,
+          "x": 58.00000000000001,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 14.23333333333362,
+          "id": 8,
+          "x": 58.00000000000001,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 14.483333333333633,
+          "id": 9,
+          "x": 58.00000000000001,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 14.716666666666978,
+          "id": 10,
+          "x": 58.00000000000001,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 14.950000000000323,
+          "id": 11,
+          "x": 58.00000000000001,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 15.183333333333668,
+          "id": 12,
+          "x": 58.00000000000001,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 15.416666666667012,
+          "id": 13,
+          "x": 58.00000000000001,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        },
+        {
+          "event": "lightning-strike",
+          "time": 15.650000000000357,
+          "id": 14,
+          "x": 58.00000000000001,
+          "y": 399.36,
+          "delay": 2.0000000000000995
+        }
+      ]
+    },
+    {
+      "name": "Warning cadence accelerates without shortening reaction time",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native attack recovers and removes all impact visuals",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native damaged hull pixels and hit flash remain visible",
+      "passed": true,
+      "data": {
+        "white": 15411,
+        "hp": 461,
+        "before": 471,
+        "flash": 0.18
+      }
+    },
+    {
+      "name": "Native part hit flash expires",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "filmChecks": [
+    {
+      "name": "Complete native Furious defeat",
+      "passed": true
+    },
+    {
+      "name": "Full original4264HP",
+      "passed": true
+    },
+    {
+      "name": "Natural lightning cycle recorded",
+      "passed": true
+    },
+    {
+      "name": "All recorded lightning warnings keep two seconds",
+      "passed": true
+    },
+    {
+      "name": "Stable native frame rate above55fps",
+      "passed": true
+    },
+    {
+      "name": "Source hashes unchanged during filming",
+      "passed": true
+    },
+    {
+      "name": "No page/console/HTTP asset errors",
+      "passed": true
+    },
+    {
+      "name": "No unexpected failed requests",
+      "passed": true
+    },
+    {
+      "name": "No audio tap errors",
+      "passed": true
+    },
+    {
+      "name": "New electric hit and native lightning play in recording",
+      "passed": true
+    },
+    {
+      "name": "Decoded audio is audible and unclipped",
+      "passed": true
+    },
+    {
+      "name": "Movie fully decodes",
+      "passed": true
+    }
+  ],
+  "film": {
+    "path": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\herald_retina_1031\\video\\herald-electric-1031\\stage8-furious.mp4",
+    "sha256": "8ad77a38b3c3050aab264e0d2f55fa5dd2c6dc624a4c32ec1d6f17a0d559b4ba",
+    "seconds": 166.14,
+    "nativeFPS": 59.256333920651315,
+    "lightningStrikes": 15,
+    "chapter": [
+      79.501,
+      98.417
+    ],
+    "meanDb": -25.3,
+    "peakDb": -8.0,
+    "expectedAbortedMediaRequests": 20
+  },
+  "sourceAlphaPreserved": true,
+  "maxLuminanceByteError": 0.4832000000000036,
+  "syntax": "passed",
+  "fullSuite": {
+    "exit": 1,
+    "reachedFinalSummary": false,
+    "blocker": "Missing UNUSED_ASSETS/retired_art_1022/manifest.json"
+  },
+  "localPreview": "http://127.0.0.1:8805/?revision=herald-electric-1031#clip=stage8-herald-lightning",
+  "playerChecks": [
+    {
+      "name": "Main fight and lightning chapter point to current movie",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Previous full fight remains accessible",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Current MP4 supports byte-range seeking",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Live game loads new electric art",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Correct chapter loads with fresh166s1280x800 recording",
+      "passed": true,
+      "data": {
+        "duration": 166.138,
+        "width": 1280,
+        "height": 800,
+        "time": 79.501,
+        "src": "http://127.0.0.1:8805/current/herald-electric-1031.mp4",
+        "clip": "stage8-herald-lightning"
+      }
+    },
+    {
+      "name": "Native player advances with audio and video",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Player has no page/console/HTTP errors",
+      "passed": true,
+      "data": []
+    }
+  ]
+}

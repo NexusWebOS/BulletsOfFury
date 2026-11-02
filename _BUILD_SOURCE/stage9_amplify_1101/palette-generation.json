@@ -1,0 +1,10 @@
+{
+  "tool": "built-in image_gen",
+  "role": "material/palette guide; no generated geometry replaces live hulls",
+  "prompt": "Edit the attached three-ship palette reference ONLY: retain the EXACT three silhouettes, all mechanical detail, same positions, scale, 1152x384 transparent canvas and pixel-art treatment. This is a game PALETTE SWAP material guide, never redesign the aircraft. Left ship: black/gunmetal hull plates with saturated royal/cobalt BLUE luminous recesses, bright ice-blue core, retain small silver/white specular highlights and dark contours. Center ship: deep VIOLET/purple armor with hot PINK/magenta crystal, cannon cores and light strips, retain pale lavender/white specular highlights, sharply visible dark seams. Right ship: BLACK/charcoal main armor with vivid PINK/rose energy within the crystal and gun channels; subtle cool purple secondary seams, small bright silvery edge highlights so the black hull remains visible in a dark space game. Preserve exact transparency, no background, no text, no new FX or projectiles, no new components, no glow haze outside pixels. Deliver the three recolored ships in the original arrangement, one per column.",
+  "selectedOutput": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-a9563128-6414-4f9a-87d7-3245132f6d23.png",
+  "workspaceOutput": "_BUILD_SOURCE/stage9_amplify_1101/palette-guide-1101.png",
+  "recipes": "_BUILD_SOURCE/stage9_amplify_1101/palettes.json",
+  "owningBuilder": "_BUILD_SOURCE/build_stage9_amplify_1101.py",
+  "sha256": "561edc4c3a4acbe09dbfaf8bc72de0c66883104628dca9bc0c2e3d1418b01e56"
+}

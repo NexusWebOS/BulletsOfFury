@@ -7,6 +7,7 @@ from pathlib import Path
 from art_sources_1006 import ArtSourcePath, source, output_path
 import json
 import re
+import sys
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +16,12 @@ OUTDIR = GAME / "atlas" / "stage_runtime"
 MAP = output_path(GAME / "atlas" / "stage_runtime_atlases.js")
 MAX = 4096
 PAD = 4
+
+if '--retire-stage8-leech' in sys.argv:
+    sys.path.insert(0,str(ROOT/'_BUILD_SOURCE'))
+    from retire_stage8_leech_1101 import retire_runtime_cells
+    retire_runtime_cells()
+    raise SystemExit(0)
 
 
 def numbered(directory, prefix):
@@ -66,6 +73,8 @@ def stage_items(stage):
         out += [(f"s7spore_{i}", src) for i, src in enumerate(sorted((GAME / "stage7_spore_crown").glob("*.png")))]
     elif stage == 8:
         for unit in sorted((GAME / "stage8_mega_enemies").iterdir()):
+            if unit.name == 'armored_leech':
+                continue  # Mike deleted this enemy and its graphics, November1.
             if not unit.is_dir():
                 continue
             for mode, prefix in (("attack", "s8atk_"), ("roll", "s8roll_")):

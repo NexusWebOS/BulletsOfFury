@@ -42,18 +42,18 @@ warhiveInit=function(b){
  SC13.base.init(b);delete b._cargo13;
  const rank=target17Rank(),mul=coopActive()?1.5:1,parts=[];
  const add=(id,kind,dx,dy,hp,w,h)=>parts.push({id,kind,dx,dy,hp:Math.ceil(hp*mul),maxhp:Math.ceil(hp*mul),w,h,dead:false,flash:0,t:0,phase:'rest',cool:1.1+parts.length*.25,serial:0});
- add('L','fan',-169.5,-10,140+rank*22,66,66);add('R','fan',169.5,-10,140+rank*22,66,66);
+ add('L','fan',-169.5,-10,difficultyHealthBaseline15(162,140+rank*22),66,66);add('R','fan',169.5,-10,difficultyHealthBaseline15(162,140+rank*22),66,66);
  // Only the outer batteries sit beside the fan nacelles. The bay stays clear.
- for(const [i,x] of [[0,-104],[3,104]])add('laser'+i,'laser',x,65,105+rank*20,38,54);
+ for(const [i,x] of [[0,-104],[3,104]])add('laser'+i,'laser',x,65,difficultyHealthBaseline15(125,105+rank*20),38,54);
  // Four gun housings already exist on the whole authored hull. Split the
  // removed bay batteries' health between these actual, targetable sockets.
- const gunHP=105+rank*20;
+ const gunHP=difficultyHealthBaseline15(125,105+rank*20);
  for(const [i,x,y,muzzleY,rect] of [[0,177,103,116,[168,86,18,32]],[1,211,94,110,[200,76,22,36]],
   [2,301,94,110,[290,76,22,36]],[3,335,103,116,[326,86,18,32]]]){
   add('hullGun'+i,'gun',x-256,y-144,i%2?Math.floor(gunHP/2):Math.ceil(gunHP/2),20,30);
   Object.assign(parts.at(-1),{hullGun:i,sourceRect:rect,muzzleDY:muzzleY-y,muzzleAge:99});
  }
- add('rackL','missile',-108,-34,125+rank*20,35,60);add('rackR','missile',108,-34,125+rank*20,35,60);
+ add('rackL','missile',-108,-34,difficultyHealthBaseline15(145,125+rank*20),35,60);add('rackR','missile',108,-34,difficultyHealthBaseline15(145,125+rank*20),35,60);
  b._carrier17={parts,hullScale:1.45,age:0,phase:'arrive',t:0,scale:1.8,depth:true,cycles:0,flight:13,hit:null,shots:0};
  for(const id of ['L','R']){const p=parts.find(p=>p.id===id);b._whv.parts[id]=p;p.fl=0;p.max=p.maxhp;}
  b._whv.parts.door={hp:0,max:0,dead:false,fl:0};b._whv.mode='carrier';b._whv.st='hold';b._whv.jets=[];b._whv.beam=null;
@@ -98,7 +98,7 @@ warhiveRetinaTargets=function(b,out){if(!roster17Active(b))return ROSTER17.base.
 function roster17FlashTick(C,dt){for(const p of C.parts){p.flash=Math.max(0,(p.flash||0)-dt);p.fl=Math.max(0,(p.fl||0)-dt);}}
 function roster17Muzzle(b,p){const m=roster17Mount(b,p),k=roster17HullScale(b);
  m.y+=p.kind==='gun'?p.muzzleDY*WHV_S*k:p.h*k*.35;return m;}
-function roster17GunConfig(){const rank=target17Rank();return{warm:[1.2,1.1,1,.85][rank],rounds:[4,5,7,9][rank],gap:[.18,.16,.125,.10][rank],speed:3.6+rank*.3,rest:[2.4,2.1,1.8,1.6][rank]};}
+function roster17GunConfig(){const rank=target17Rank();return{warm:[1.2,1.1,1,.85][rank],rounds:[4,5,7,9][rank],gap:turretInterval15(.16,[.18,.16,.125,.10][rank]),speed:3.6+rank*.3,rest:turretInterval15(2.1,[2.4,2.1,1.8,1.6][rank])};}
 function roster17HullGun(b,p,dt){if(p.dead)return;
  const cfg=roster17GunConfig(),C=b._carrier17;p.t+=dt;p.cool-=dt;p.muzzleAge+=dt;
  if(p.phase==='rest'&&p.cool<=0){const m=roster17Muzzle(b,p),target=targetShip(m.x,m.y);
@@ -132,9 +132,9 @@ function roster17Weapon(b,p,dt){const C=b._carrier17,rank=target17Rank();
    if(p.shot<=0&&p.round<n){const a=p.angle+(p.round-(n-1)/2)*(p.kind==='missile'?.13:.08),missile=p.kind==='missile';
     const q=eShootT(m.x,m.y,a,missile?2.6+rank*.12:3.3+rank*.2,missile?'emissile':'s6tracer',{w:missile?11:7,h:missile?22:16,silent:true});
     Object.assign(q,{owner:b,_carrier17Shot:true,_shootable:missile,_weaponProof:!missile,homing:false,_noArsenal:true});
-    C.shots++;p.round++;p.shot=.16; (missile?Audio.SFX.missile:Audio.SFX.enemyMachineGunHeavy)?.();}
+    C.shots++;p.round++;p.shot=turretInterval15(.16); (missile?Audio.SFX.missile:Audio.SFX.enemyMachineGunHeavy)?.();}
   }
-  if(p.t>.72){p.phase='rest';p.t=0;p.cool=Math.max(.85,2.5-rank*.35)+(p.kind==='laser'?.4:0);}
+  if(p.t>.72){p.phase='rest';p.t=0;p.cool=turretInterval15(2.15+(p.kind==='laser'?.4:0),Math.max(.85,2.5-rank*.35)+(p.kind==='laser'?.4:0));}
  }
 }
 warhiveTick=function(b,dt){if(!roster17Active(b))return ROSTER17.base.tick.apply(this,arguments);
@@ -217,7 +217,7 @@ spawnSubBoss__inner=function(kind){
  ROSTER17.buildingMini=true;
  try{spawnBoss('warhive');b=boss;}finally{ROSTER17.buildingMini=false;boss=saved.boss;bossActive=saved.bossActive;bossWarned=saved.bossWarned;bossDefeated=saved.bossDefeated;}
  b.sub=true;b.kind='siegefortress17';b._cargo17Mini=true;b._s4MiniSafe=true;b.name='WARHIVE SIEGE FORTRESS';
- b.maxhp=b.hp=Math.round([1000,1350,1650,1950,2100][target17Rank()]*(coopActive()?1.5:1));
+ b.maxhp=b.hp=Math.round(difficultyHealthBaseline15(1350,[1000,1350,1650,1950,2100][target17Rank()])*(coopActive()?1.5:1));
  b._cargo13.budgetFinalized=false;sc13FinalizeBudget(b);subBoss=b;subBossActive=true;subBossDone=false;continueRewardMark(b);return b;
 };
 sc13Open=function(b){return b?._cargo17Mini?b._cargo13.guns.every(g=>g.dead):ROSTER17.base.open.apply(this,arguments);};

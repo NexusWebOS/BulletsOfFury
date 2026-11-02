@@ -2,19 +2,6 @@
   "version": 1,
   "owner": "_BUILD_SOURCE/install_animation_feedback_1023.py",
   "models": {
-    "s8leech": {
-      "key": "aq23_s8leech",
-      "white": "aq23_s8leech_hit",
-      "cell": 384,
-      "pivot": [
-        192,
-        192
-      ],
-      "frames": 8,
-      "unit": 1.6967441860465118,
-      "source": "assets/game/levels/stage_08/enemies/air_motion_1013/void_leech/headings.webp",
-      "nativeSpan": 145.92000000000002
-    },
     "s8hunter": {
       "key": "aq23_s8hunter",
       "white": "aq23_s8hunter_hit",
@@ -95,20 +82,6 @@
     }
   },
   "sheets": {
-    "aq23_s8leech": {
-      "key": "aq23_s8leech",
-      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8leech.webp",
-      "w": 1536,
-      "h": 768,
-      "sha256": "e9f76c329803807435457353d26bf4341daca7256766e4bac67e4e29a3a9cff3"
-    },
-    "aq23_s8leech_hit": {
-      "key": "aq23_s8leech_hit",
-      "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8leech_hit.webp",
-      "w": 1536,
-      "h": 768,
-      "sha256": "fc9513be2e597b0ed5ec4132404f257c928a64e741f9c215f55fe0d374d08b2c"
-    },
     "aq23_s8hunter": {
       "key": "aq23_s8hunter",
       "path": "assets/game/levels/stage_08/enemies/animation_feedback_1023/s8hunter.webp",

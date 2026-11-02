@@ -90,7 +90,11 @@ drawCombatFinalProjectile=function(p){if([6,7,8].includes(run.stage)&&!p.dead&&[
 eShootT=function(x,y,a,speed,kind,opt){const n=run.stage,ordinary=[6,7,8].includes(n)&&!bossActive&&!subBossActive&&['mg','s6tracer','s7laser'].includes(kind);
  if(ordinary){const owner=opt?.owner,cap=diffKey==='easy'?22:diffKey==='furious'||diffKey==='insanity'?44:32;
   if(eBullets.filter(q=>!q.dead&&['mg','s6tracer','s7laser'].includes(q.kind)).length>=cap)return{dead:true,x,y,vx:0,vy:0};
-  if(owner&&owner._on5ShotAt!=null&&efxClock-owner._on5ShotAt<.08)return{dead:true,x,y,vx:0,vy:0};if(owner)owner._on5ShotAt=efxClock;
+  /* 1101: a twin/quad gun releases its barrels on the SAME frame. Those rounds are one volley, so the second
+     barrel is no longer refused (every Stage-7 refit and the turrets fired single streams). Up to four
+     barrels per volley; the 0.08s spacing still applies between volleys. */
+  if(owner&&owner._on5ShotAt===efxClock&&(owner._on5Volley|0)<4){owner._on5Volley=(owner._on5Volley|0)+1;}
+  else{if(owner&&owner._on5ShotAt!=null&&efxClock-owner._on5ShotAt<.08)return{dead:true,x,y,vx:0,vy:0};if(owner){owner._on5ShotAt=efxClock;owner._on5Volley=1;}}
   speed*=.90;
  }return ON5C.shot.call(this,x,y,a,speed,kind,opt);};
 // Both musical variants can use the campaign Hammer's gun/spell combos as well

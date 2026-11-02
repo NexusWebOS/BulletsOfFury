@@ -34,7 +34,7 @@ function s7mBlit(name,i,x,y,w,h,rot,alpha,flash){
 function s7mFX(x,y,size,spew){combatAtlasFx(x,y,'s7m_'+(spew?'spew':'explosion'),4,4,0,16,{life:spew?1.1:.85,wpx:size,hpx:size});}
 function s7mSound(key){const f=Audio.SFX[key]||Audio.SFX.expBig;if(f)f();}
 function s7mInit(b){
-  if(b._s7mod)return b._s7mod;s7mWarm();const tank=b._ship==='dualscoopdredger',n=s7mRank(),hp=DIFF.eHp*(!tank&&n===2?1.12:1);
+  if(b._s7mod)return b._s7mod;s7mWarm();const tank=b._ship==='dualscoopdredger',n=s7mRank(),hp=DIFF.eHp*(DR15.keys.includes(diffKey)?1:(!tank&&n===2?1.12:1));
   const M=b._s7mod={tank,n,mode:tank?'entry':'portal',t:0,clock:0,seq:0,history:[],shot:0,shotCD:0,counter:0,stun:0,drop:0,height:0,lean:0,legCharge:0,mask:0,parts:[],shieldMax:Math.ceil(420*hp),shield:Math.ceil(420*hp),core:Math.ceil((tank?900:1200)*hp),coreMax:Math.ceil((tank?900:1200)*hp)};
   const add=(id,life)=>M.parts.push({id,hp:Math.ceil(life*hp),max:Math.ceil(life*hp),flash:0,stress:0});
   if(!tank){add('frontL',540);add('frontR',540);add('rearL',400);add('rearR',400);}

@@ -50,6 +50,7 @@
  }
  function drawBank(o){const c=o.canvas.getContext('2d'),b=o.bank;c.clearRect(0,0,o.canvas.width,o.canvas.height);c.imageSmoothingEnabled=false;if(o.key){api?.image(o.key,o.canvas);return;}
   if(b.kind==='strip'&&b.path){const im=imageFile(b.path);if(!im.complete||!im.naturalWidth)return;const cell=Array.isArray(b.cell)?b.cell:[b.cell,b.cell],f=Math.floor(motionTime*9)%b.frames,cols=Math.round(im.width/cell[0]),scale=Math.min(o.canvas.width/cell[0],o.canvas.height/cell[1]);c.drawImage(im,(f%cols)*cell[0],Math.floor(f/cols)*cell[1],cell[0],cell[1],(o.canvas.width-cell[0]*scale)/2,(o.canvas.height-cell[1]*scale)/2,cell[0]*scale,cell[1]*scale);
+  }else if(b.kind==='cells'&&b.path&&b.cells?.length){const im=imageFile(b.path);if(!im.complete||!im.naturalWidth)return;const r=b.cells[Math.floor(motionTime*9)%b.cells.length],scale=Math.min(o.canvas.width/r[2],o.canvas.height/r[3]);c.drawImage(im,...r,(o.canvas.width-r[2]*scale)/2,(o.canvas.height-r[3]*scale)/2,r[2]*scale,r[3]*scale);
   }else if(b.kind==='frames'){const refs=b.refs||b.keys||b.frames;if(Array.isArray(refs)){const ref=refs[Math.floor(motionTime*10)%refs.length];api?.image(typeof ref==='string'?ref:ref.key,o.canvas);}}
  }
  function tick(t){requestAnimationFrame(tick);if(document.hidden||loading)return;const dt=lastTick?Math.min(.1,(t-lastTick)/1000):0;lastTick=t;if(!paused)motionTime+=dt*(+$('#speed').value);

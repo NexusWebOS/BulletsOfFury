@@ -11,7 +11,7 @@
  ht27Locked=function(){if(!A.entry)return nativeHammerLocked.apply(this,arguments);const d=ht27Data();return d?d.mode==='intro'||d.locked||(!ht27CombatSequence(boss)&&ht27WantLock(d.clock)):false;};
  function syncMusic(){const d=ht27Data();if(!d?.musicStarted)return;const m=ht27Song();if(!m)return;if(clock.paused||A.muted){if(!m.paused)m.pause();return;}m.playbackRate=clock.speed;if(Number.isFinite(m.duration)&&Math.abs(m.currentTime-d.clock)>.2)m.currentTime=d.clock;if(m.paused)m.play()?.catch(()=>{});}
  function isolate(){
-  BOFCinematicDirector.cancel();story=null;debugFight=null;stagePlan=[];spawnClock=9999;waveIdx=9999;stageTimer=1;
+  BOFCinematicDirector.cancel();story=null;thaw=null;debugFight=null;stagePlan=[];spawnClock=9999;waveIdx=9999;stageTimer=1;
   warnT=0;subBossTriggered=true;subBossDone=true;stageEnding=false;bossDefeated=false;bossWarned=true;
   fb2Talk=null;s6Opening=null;if(typeof wfx!=='undefined'&&wfx)wfx.fseq=null;
   if(typeof VP12!=='undefined')VP12.next=99999;if(typeof CP12!=='undefined')CP12.next=99999;
@@ -65,8 +65,8 @@
   }catch(e){A.error=String(e.message||e);return {error:A.error};}finally{if(ticket===A.serial)A.loading=false;}
  }
  function snapshot(){const b=A.actor;return {ready:!!ASSETS.ready,entry:A.entry?.id,error:A.error,elapsed:A.elapsed||0,frames:clock.frames,paused:clock.paused,speed:clock.speed,muted:A.muted,healthControl:healthControl(),
-  actor:b?{type:b.type||b.kind,hp:b.hp,maxhp:b.maxhp,dead:!!b.dead,x:b.x,y:b.y,phase:b._ep13?.phase||b.phase,pattern:b._heart?.action?.type||b._ep13?.kind||b._cargo13?.mode||b._er26?.mode||b._s7mod?.mode||b._hammer?.state||b._mm1003?.phase||b._r30?.mode||b._sbPat||b._pat||b.pat}:null,
-  projectiles:[...A.seen.keys()],liveProjectiles:eBullets.length,activeBeams:b?._cargo13?.lasers?.filter(l=>l.t>=l.warm&&l.t<l.warm+l.fire).length||0,stage:run.stage};}
+  actor:b?{type:b.type||b.kind,hp:b.hp,maxhp:b.maxhp,dead:!!b.dead,x:b.x,y:b.y,phase:b._i31?.phase||b._i31Ground?.phase||b._v31?.phase||b._v31Ground?.phase||b._ep13?.phase||b.phase,pattern:b._heart?.action?.type||b._ep13?.kind||b._cargo13?.mode||b._er26?.mode||b._s7mod?.mode||b._hammer?.state||b._mm1003?.phase||b._r30?.mode||b._sbPat||b._pat||b.pat}:null,
+  projectiles:[...A.seen.keys()],liveProjectiles:eBullets.length,activeBeams:b?._i31?.beams?.filter(l=>l.t<l.life).length||b?._v31?.beams?.filter(l=>l.t<l.life).length||b?._cargo13?.lasers?.filter(l=>l.t>=l.warm&&l.t<l.warm+l.fire).length||0,stage:run.stage};}
  function after(){if(!A.entry||A.error||A.loading)return;
   A.elapsed=(A.elapsed||0)+Math.max(0,stateT-(A.lastT||stateT));A.lastT=stateT;
   if(A.entry.spawn.method!=='enemy'){if(!A.actor)A.actor=bossActive?boss:subBossActive?subBoss:null;finishRadio(A.actor);}
@@ -76,7 +76,7 @@
   if(A.autoReplay&&A.entry.spawn.method==='enemy'&&A.elapsed>4&&(!enemies.includes(A.actor)||A.actor.dead||A.actor.y>VH+100||A.actor.y< -150)){start(A.entry,A.difficulty,true);}
  }
  clock.after=after;
- function pattern(kind){if(!A.actor||!EP13.families[run.stage]?.[A.actor.type])return false;if(A.actor._ep13)ep13Cancel(A.actor,'guide selection');A.actor._ep13Cycles=0;A.actor.x=camLeftX()+viewW()*.5;A.actor.y=PLAY.y+PLAY.h*.24;ep13Start(A.actor,kind);return true;}
+ function pattern(kind){if(!A.actor||A.actor._v31||A.actor._i31||!EP13.families[run.stage]?.[A.actor.type])return false;if(A.actor._ep13)ep13Cancel(A.actor,'guide selection');A.actor._ep13Cycles=0;A.actor.x=camLeftX()+viewW()*.5;A.actor.y=PLAY.y+PLAY.h*.24;ep13Start(A.actor,kind);return true;}
  function image(key,target){if(!XART.rdy(key))return false;const im=XART.get(key),c=target.getContext('2d');c.clearRect(0,0,target.width,target.height);c.imageSmoothingEnabled=false;const z=Math.min(target.width/im.width,target.height/im.height);c.drawImage(im,(target.width-im.width*z)/2,(target.height-im.height*z)/2,im.width*z,im.height*z);return true;}
  const backup=document.createElement('canvas');
  function projectiles(tiles){if(!tiles?.length)return;const source=document.getElementById('screen');if(!source)return;
@@ -95,7 +95,10 @@
   pause(on){clock.paused=!!on;syncMusic();},speed(n){clock.speed=Math.max(.25,Math.min(2,+n||1));syncMusic();},step(){clock.paused=true;clock.steps++;syncMusic();},
   target(x,y){player.x=camLeftX()+clamp(x,0,1)*viewW();player.y=PLAY.y+clamp(y,0,1)*PLAY.h;},
   hp(ratio){const b=A.actor;if(healthControl())b.hp=Math.max(1,b.maxhp*clamp(ratio,.01,1));},
-  get patterns(){return A.actor?EP13.families[run.stage]?.[A.actor.type]||[]:[];},
-  get entry(){return A.entry;},get ready(){return !!ASSETS.ready;}
+  get patterns(){return A.actor&&!A.actor._v31&&!A.actor._i31?EP13.families[run.stage]?.[A.actor.type]||[]:[];},
+  // The adapter loads before later encounter/refit owners. Boot assets can be
+  // ready while those scripts are still arriving; spawning then creates an old
+  // actor that never acquired its current controller. Wait for the full runtime.
+  get entry(){return A.entry;},get ready(){return !!ASSETS.ready&&document.readyState==='complete';}
  };mute(true);
 })();

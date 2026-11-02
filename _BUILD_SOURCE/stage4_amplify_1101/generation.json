@@ -1,0 +1,26 @@
+{
+  "tool": "built-in image_gen",
+  "promptSet": {
+    "style": "Existing encounters_0930 tank metal/pixel style, dark outlines, olive/bronze machinery, fixed even cells, central pivots, transparent padding, no scenery/text/large baked muzzle effects.",
+    "command": "New black/burnt-orange camouflage jet with fixed twin machine guns, no modular turrets.32 authored heading/roll/attack/boost frames and8 forward somersault frames.",
+    "heavyjet": "Preserve actual heavyjet_identity.png, gray fuselage and fixed parallel missile rails.32 heading/roll/attack/boost frames and8 forward somersault frames.",
+    "missiletruck": "Six-wheel olive/bronze truck, two cream/silver missiles with orange bands and red warheads; loaded/empty/reload/rolling poses.",
+    "tanker": "Unarmed eight-wheel bronze/olive fuel truck, no weapons,8 wheel/engine animation poses.",
+    "tractor": "Tracked olive/bronze combat tractor, fixed forward twin guns at south front,8 tread/recoil poses.",
+    "sam": "Distinct mobile three-rail SAM, matching cream/silver/orange/red missiles, sequential emptying/reload and rolling poses.",
+    "missile": "Standalone matching cream/silver/orange/red rack missile in16 authored directions."
+  },
+  "originals": {
+    "command": "exec-a6c709c3-3fcf-41c6-bc49-52a7cc87aed9.png",
+    "heavyjet": "exec-9ac0246e-3fbb-489c-a967-eb06c8a22320.png",
+    "missiletruck": "exec-816950e6-8ad5-441c-a36b-1652d18fd8c7.png",
+    "tanker": "exec-f13bf7fb-6d72-4635-9b9f-5dcedb7c8b6c.png",
+    "tractor": "exec-08326454-7532-4d0b-ab1d-0621e236ed99.png",
+    "sam": "exec-2b161b56-8290-49db-b01c-c47fac1bc109.png",
+    "missile": "exec-40fe715b-70a2-4f35-819a-009560d8d7a5.png",
+    "command_somer": "exec-49115433-b6a1-4f50-88aa-a33e10c15155.png",
+    "heavyjet_somer": "exec-ca715a02-cd02-4f45-ae1e-513a22f5107e.png"
+  },
+  "reference": "assets/game/shared/combat/encounters_0930/tank_hull.png",
+  "identity": "_BUILD_SOURCE/stage4_amplify_1101/heavyjet_identity.png"
+}

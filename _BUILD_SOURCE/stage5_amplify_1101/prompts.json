@@ -1,0 +1,13 @@
+{
+  "tool": "built-in image_gen",
+  "minelayer": {
+    "original": "exec-f0a9f394-ad51-496a-8bb8-de6201ab6cd2.png",
+    "reference": "mine_layer_identity.png",
+    "prompt": "FRAME FORMAT: 192x192 pixels per frame, fixed even cell dimensions, common fuselage pivot and one proportional scale. Create one complete 8-column by 4-row transparent pixel-art sprite sheet, no text/labels/scenery. Reference is design/material style only: alien orbital gunmetal/violet dark outlines, silver segmented plates, ruby reactor. Redesign into a clearly flying SPACE MINELAYER, swept broad wings, TWO engines/twin violet exhaust nozzles at rear, visible rear mine doors and round mechanical mines in racks. Nose points SOUTH in frame0, top-down 2D shmup style, not sideways 3D. First 16 cells are clockwise heading directions in22.5-degree increments (south, southwest, west, northwest, north etc), same ship. Row3 eight cell animation: south-facing rear bay doors opening, mine released behind toward north, doors closing, no baked huge explosions or exhaust. Row4 eight cell animation: banking/drift/barrel-roll complete cycle returning to same south-facing ship. Sharp readable metallic pixel clusters, no caption. All32frames complete and fully visible, equal padding, consistent proportions."
+  },
+  "leech": {
+    "original": "exec-78ebe4d0-0125-4f7f-9335-736de2369ff7.png",
+    "reference": "shield_leech_identity.png",
+    "prompt": "FRAME FORMAT:192x192 per cell, 4 columns by 4 rows, identical scale and common central reactor pivot. Make one transparent 16frame production sprite animation sheet of THIS SAME mechanical alien leech in top-down view, nose/mandibles facing SOUTH in ALL frames. Keep whole original purple/gunmetal layered metal body, ruby central eye, six articulated claws and two forward grab mandibles. No text/caption anywhere (remove text from reference), no background/no scenery/no baked aura. Animate opening the claws wide to hug the player, then pouncing and clamping claws closed, then returning smoothly to the EXACT original pose. Frame1 closed neutral, frames2-6 slowly spread and extend claws from fixed hinges with clear bent joints, frames7-9 fully spread, frames10-13 close as a hug/grab, frames14-16 recover to frame1. Body centre/scale stays still, no flip/morph. Dark outlines metallic highlights, same readable pixel-art style as reference. Even transparent margins big enough for ALL claw extensions. This is a functional claw attack reel, no explosion or lasers. One uniform four-by-four grid."
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "interceptor": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/interceptor_source.png",
+    "sha256": "56691b1727ca69a11372a0a9019c07b948ff95a3e3ddf78af9b35c1485ad2471",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "hexpyre": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/hexpyre_source.png",
+    "sha256": "eb7270c605b847975333e650ffb6c32504c52cca9057681696b6a22af320d983",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "voidjet": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/voidjet_source.png",
+    "sha256": "116fb9664d1011f1b8b498ed790eaf136945e36c749a0719d551d7d3e9b9c738",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "hellwing": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/hellwing_source.png",
+    "sha256": "dbc9565c264b786ed06cc684cd72a543cffa3503d573993c8bdcbff2e1f82917",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "parasite": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/parasite_source.png",
+    "sha256": "21de8390c9481dd9a08841d5559840b9491aed2725929dd8998ce817a73e7fac",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "crescent": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/crescent_source.png",
+    "sha256": "6323e14d090ff12d910ce41acfd5797487eaedd6416fd8b241458926d112deae",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "skull": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/skull_source.png",
+    "sha256": "3867aed20efd478464a17d5f797d3afb5c72f39c3aa7591362b5c6d268bf629e",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "symbiote": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/symbiote_source.png",
+    "sha256": "150f9bfc5007a33505480763111fbe8927940ff7cb6000926f927587e3470f13",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "warp": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/warp_source.png",
+    "sha256": "ac9abc5bb128d8e769883ed59ca9172585f4cf3cd0b75c202b2e29ebe8884d8c",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "blue": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/blue_source.png",
+    "sha256": "c8d77d5a3099c5cec24246a9a627085096e46326225b7a6312ffff7f73042b62",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "carrier": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/carrier_source.png",
+    "sha256": "9497329bf4c1999a714f11fd90bba7d4f3bb0e35b0ddacd4027b050635c88d4f",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "deathorb": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/deathorb_source.png",
+    "sha256": "c38ddd6dbba0847d9dca064a67126d6d0b4ee0c527df9efedb2995ab020cc392",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "furnacemaw": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/furnacemaw_source.png",
+    "sha256": "4a3276ef10024aba770e70c50188e08c35d749082c35c3e7ce2b2815c161f6ce",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "bomber": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/bomber_source.png",
+    "sha256": "168f15087970d64edb64a2cffb0b0704dc6a4f67d8955291494f8416e09b8568",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "harrier": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/harrier_source.png",
+    "sha256": "4ec2c35372fd3c0387b1b19a45bc14334ab9d3c56279c5680454fdab3021a436",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "imp_spin": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/imp_spin_source.png",
+    "sha256": "8b754c4b8e9c3f8051393fb09ed3b3df94c9ee2b1d0c246f691f4e1cb9101c08",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "tentacle": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/tentacle_source.png",
+    "sha256": "9ae0072aa44a542ab50e2133d3b81420277ba8756e57a8db377da554dd917d70",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "hatch": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/hatch_source.png",
+    "sha256": "2244c95c133b95c3baf119e7395b9007c14d9ca872e1ec287a7fdd0bf4f6f549",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "bone": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/bone_source.png",
+    "sha256": "7b4a94ea15b180cc83a224ea369e78bb79e8dae7f6da49a0742584b56eab092c",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "bomb": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/bomb_source.png",
+    "sha256": "eec94263a95515671995aa6f7fcb899978b1eb2734fb380c89af84f11b30d2ca",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "darkorb": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/darkorb_source.png",
+    "sha256": "3a0f998df877de87d57dbbb9146b91bcc1605ca423f05f9a2e4f5747d2b7eafd",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  },
+  "flame": {
+    "path": "_BUILD_SOURCE/stage8_amplify_1101/flame_source.png",
+    "sha256": "ac0594bfcb5bb1bbac3e6cc20c9a7bef1249793be5ea52b0e8b0acacd452cd52",
+    "tool": "built-in image_gen",
+    "promptFile": "_BUILD_SOURCE/stage8_amplify_1101/prompts.md"
+  }
+}

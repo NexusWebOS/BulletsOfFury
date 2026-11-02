@@ -179,5 +179,9 @@ result['auditStatus']='Source-backed catalogue built; native previews remain aut
 result['coverage']['sourceDigests']={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in D['activeFiles'] if (ROOT/p).is_file()}
 result['coverage']['catalogueCounts']={'all':len(entries),'bof':sum(e['game']=='bof' for e in entries),'overdrive':sum(e['game']=='overdrive' for e in entries),'current':sum(e['status']=='current' for e in entries),'emptyCurrentAttackLists':sum(e['status']=='current' and not e['attacks'] for e in entries),'missingCurrentAttackDescriptions':sum(e['status']=='current' and not a.get('description') for e in entries for a in e['attacks'])}
 OUTPUT.parent.mkdir(parents=True,exist_ok=True)
+from apply_stage2_amplify_1031 import apply as apply_stage2_amplify
+result=apply_stage2_amplify(result,ROOT)
+from apply_stage3_amplify_1031 import apply as apply_stage3_amplify
+result=apply_stage3_amplify(result,ROOT)
 OUTPUT.write_text(json.dumps(result,indent=2,ensure_ascii=False),encoding='utf-8')
 print('Saved',len(entries),'entries;',dict(collections.Counter(e['game'] for e in entries)))

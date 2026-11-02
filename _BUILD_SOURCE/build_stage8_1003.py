@@ -3,7 +3,7 @@ Explicit measured boundaries are deliberate: generation is not a uniform atlas.
 """
 from pathlib import Path
 from PIL import Image
-import json, shutil, hashlib
+import json, shutil, hashlib,sys
 R=Path(__file__).resolve().parents[1]
 SRC=R/'_ART_SOURCES/stage8_1003'; DST=R/'assets/game/stage8_1003'
 GEN=Path.home()/'.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c'
@@ -11,6 +11,10 @@ FILES={'knight':'7c8be3fc-e777-494a-bfff-7579731249c2','wall':'0d5f2a49-602d-421
 SRC.mkdir(parents=True,exist_ok=True); DST.mkdir(parents=True,exist_ok=True)
 meta={}
 FILES.update({'impact':'1dc62267-4eaf-44a9-9339-5c8b71b148a9','shatter':'623152cd-259c-4b71-9e7a-4f7c8ba1759c'})
+FILES.pop('gravity',None)  # Stage8 Leech and its graphics deleted by Mike.
+if '--retire-leech' in sys.argv:
+ from retire_stage8_leech_1101 import retire_reels
+ retire_reels();raise SystemExit(0)
 for name,uid in FILES.items():
  source=SRC/(name+'.png')
  if not source.exists():shutil.copyfile(GEN/('exec-'+uid+'.png'),source)

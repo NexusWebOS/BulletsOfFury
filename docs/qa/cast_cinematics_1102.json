@@ -1,0 +1,1038 @@
+{
+  "passed": 79,
+  "total": 79,
+  "errors": [],
+  "failed_requests": [],
+  "checks": [
+    {
+      "name": "cole neutral paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "neutral",
+        "key": "c112_cole_neutral",
+        "n": 122443,
+        "bounds": [
+          105,
+          278,
+          407,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "cole speaking paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "speaking",
+        "key": "c112_cole_speaking",
+        "n": 116634,
+        "bounds": [
+          74,
+          278,
+          415,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "cole salute paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "salute",
+        "key": "c112_cole_salute",
+        "n": 120304,
+        "bounds": [
+          79,
+          275,
+          406,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "cole walk_left paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_left",
+        "key": "c112_cole_walk_left",
+        "n": 101407,
+        "bounds": [
+          32,
+          295,
+          414,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "cole look_back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "look_back",
+        "key": "c112_cole_look_back",
+        "n": 113297,
+        "bounds": [
+          119,
+          280,
+          431,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "cole back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "back",
+        "key": "c112_cole_back",
+        "n": 123635,
+        "bounds": [
+          100,
+          278,
+          409,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "axel neutral paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "neutral",
+        "key": "c112_axel_neutral",
+        "n": 131136,
+        "bounds": [
+          97,
+          294,
+          420,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "axel speaking paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "speaking",
+        "key": "c112_axel_speaking",
+        "n": 128148,
+        "bounds": [
+          32,
+          287,
+          386,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "axel salute paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "salute",
+        "key": "c112_axel_salute",
+        "n": 133744,
+        "bounds": [
+          37,
+          285,
+          409,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "axel walk_left paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_left",
+        "key": "c112_axel_walk_left",
+        "n": 105348,
+        "bounds": [
+          39,
+          310,
+          432,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "axel look_back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "look_back",
+        "key": "c112_axel_look_back",
+        "n": 119365,
+        "bounds": [
+          113,
+          292,
+          413,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "axel back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "back",
+        "key": "c112_axel_back",
+        "n": 125491,
+        "bounds": [
+          97,
+          301,
+          412,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "decker neutral paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "neutral",
+        "key": "c112_decker_neutral",
+        "n": 132078,
+        "bounds": [
+          80,
+          184,
+          414,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "decker speaking paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "speaking",
+        "key": "c112_decker_speaking",
+        "n": 140701,
+        "bounds": [
+          78,
+          188,
+          469,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "decker salute paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "salute",
+        "key": "c112_decker_salute",
+        "n": 144490,
+        "bounds": [
+          33,
+          182,
+          391,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "decker walk_left paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_left",
+        "key": "c112_decker_walk_left",
+        "n": 118627,
+        "bounds": [
+          32,
+          221,
+          439,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "decker look_back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "look_back",
+        "key": "c112_decker_look_back",
+        "n": 128222,
+        "bounds": [
+          118,
+          217,
+          441,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "decker back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "back",
+        "key": "c112_decker_back",
+        "n": 134667,
+        "bounds": [
+          95,
+          219,
+          412,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "maverick neutral paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "neutral",
+        "key": "c112_maverick_neutral",
+        "n": 147183,
+        "bounds": [
+          98,
+          217,
+          413,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "maverick speaking paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "speaking",
+        "key": "c112_maverick_speaking",
+        "n": 144451,
+        "bounds": [
+          32,
+          221,
+          426,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "maverick salute paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "salute",
+        "key": "c112_maverick_salute",
+        "n": 145487,
+        "bounds": [
+          50,
+          217,
+          414,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "maverick walk_left paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_left",
+        "key": "c112_maverick_walk_left",
+        "n": 120825,
+        "bounds": [
+          48,
+          239,
+          432,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "maverick look_back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "look_back",
+        "key": "c112_maverick_look_back",
+        "n": 138737,
+        "bounds": [
+          64,
+          214,
+          373,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "maverick back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "back",
+        "key": "c112_maverick_back",
+        "n": 145487,
+        "bounds": [
+          97,
+          221,
+          415,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "freezer neutral paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "neutral",
+        "key": "c112_freezer_neutral",
+        "n": 161635,
+        "bounds": [
+          85,
+          177,
+          434,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "freezer speaking paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "speaking",
+        "key": "c112_freezer_speaking",
+        "n": 159905,
+        "bounds": [
+          32,
+          186,
+          435,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "freezer salute paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "salute",
+        "key": "c112_freezer_salute",
+        "n": 163046,
+        "bounds": [
+          54,
+          186,
+          443,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "freezer walk_left paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_left",
+        "key": "c112_freezer_walk_left",
+        "n": 132387,
+        "bounds": [
+          62,
+          204,
+          468,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "freezer look_back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "look_back",
+        "key": "c112_freezer_look_back",
+        "n": 142179,
+        "bounds": [
+          104,
+          203,
+          410,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "freezer back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "back",
+        "key": "c112_freezer_back",
+        "n": 151290,
+        "bounds": [
+          88,
+          204,
+          424,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "juggernaut neutral paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "neutral",
+        "key": "c112_juggernaut_neutral",
+        "n": 175047,
+        "bounds": [
+          61,
+          244,
+          448,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "juggernaut speaking paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "speaking",
+        "key": "c112_juggernaut_speaking",
+        "n": 162380,
+        "bounds": [
+          45,
+          247,
+          444,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "juggernaut salute paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "salute",
+        "key": "c112_juggernaut_salute",
+        "n": 167152,
+        "bounds": [
+          38,
+          240,
+          438,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "juggernaut walk_left paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_left",
+        "key": "c112_juggernaut_walk_left",
+        "n": 140487,
+        "bounds": [
+          54,
+          257,
+          480,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "juggernaut look_back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "look_back",
+        "key": "c112_juggernaut_look_back",
+        "n": 157472,
+        "bounds": [
+          68,
+          244,
+          424,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "juggernaut back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "back",
+        "key": "c112_juggernaut_back",
+        "n": 169005,
+        "bounds": [
+          59,
+          255,
+          448,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "yuri neutral paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "neutral",
+        "key": "c112_yuri_neutral",
+        "n": 124572,
+        "bounds": [
+          105,
+          266,
+          401,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "yuri speaking paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "speaking",
+        "key": "c112_yuri_speaking",
+        "n": 120458,
+        "bounds": [
+          32,
+          264,
+          401,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "yuri salute paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "salute",
+        "key": "c112_yuri_salute",
+        "n": 124921,
+        "bounds": [
+          67,
+          263,
+          397,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "yuri walk_left paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_left",
+        "key": "c112_yuri_walk_left",
+        "n": 102018,
+        "bounds": [
+          92,
+          291,
+          454,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "yuri look_back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "look_back",
+        "key": "c112_yuri_look_back",
+        "n": 109936,
+        "bounds": [
+          100,
+          289,
+          390,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "yuri back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "back",
+        "key": "c112_yuri_back",
+        "n": 118253,
+        "bounds": [
+          112,
+          293,
+          399,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "lizzie neutral paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "neutral",
+        "key": "c112_lizzie_neutral",
+        "n": 165564,
+        "bounds": [
+          90,
+          105,
+          426,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "lizzie speaking paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "speaking",
+        "key": "c112_lizzie_speaking",
+        "n": 162087,
+        "bounds": [
+          57,
+          102,
+          443,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "lizzie salute paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "salute",
+        "key": "c112_lizzie_salute",
+        "n": 168413,
+        "bounds": [
+          56,
+          100,
+          453,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "lizzie walk_left paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_left",
+        "key": "c112_lizzie_walk_left",
+        "n": 151329,
+        "bounds": [
+          41,
+          139,
+          480,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "lizzie look_back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "look_back",
+        "key": "c112_lizzie_look_back",
+        "n": 154678,
+        "bounds": [
+          84,
+          123,
+          415,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "lizzie back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "back",
+        "key": "c112_lizzie_back",
+        "n": 163570,
+        "bounds": [
+          89,
+          127,
+          420,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "falva neutral paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "neutral",
+        "key": "c112_falva_neutral",
+        "n": 143620,
+        "bounds": [
+          97,
+          171,
+          408,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "falva speaking paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "speaking",
+        "key": "c112_falva_speaking",
+        "n": 147295,
+        "bounds": [
+          37,
+          165,
+          422,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "falva salute paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "salute",
+        "key": "c112_falva_salute",
+        "n": 148145,
+        "bounds": [
+          73,
+          157,
+          408,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "falva walk_left paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_left",
+        "key": "c112_falva_walk_left",
+        "n": 148596,
+        "bounds": [
+          32,
+          143,
+          464,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "falva look_back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "look_back",
+        "key": "c112_falva_look_back",
+        "n": 154549,
+        "bounds": [
+          133,
+          127,
+          443,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "falva back paints complete registered native pixels",
+      "passed": true,
+      "data": {
+        "pose": "back",
+        "key": "c112_falva_back",
+        "n": 156426,
+        "bounds": [
+          107,
+          135,
+          405,
+          976
+        ],
+        "redMatte": 0
+      }
+    },
+    {
+      "name": "c112_chronos_neutral paints blue visor and complete helm",
+      "passed": true,
+      "data": {
+        "key": "c112_chronos_neutral",
+        "blue": 10017,
+        "opaque": 262144
+      }
+    },
+    {
+      "name": "c112_chronos_turn_right paints blue visor and complete helm",
+      "passed": true,
+      "data": {
+        "key": "c112_chronos_turn_right",
+        "blue": 8535,
+        "opaque": 262144
+      }
+    },
+    {
+      "name": "c112_chronos_turn_left paints blue visor and complete helm",
+      "passed": true,
+      "data": {
+        "key": "c112_chronos_turn_left",
+        "blue": 9652,
+        "opaque": 262144
+      }
+    },
+    {
+      "name": "c112_chronos_stern paints blue visor and complete helm",
+      "passed": true,
+      "data": {
+        "key": "c112_chronos_stern",
+        "blue": 9957,
+        "opaque": 262144
+      }
+    },
+    {
+      "name": "fb1002_hammer_portrait resolves new avatar through actual pixels",
+      "passed": true,
+      "data": {
+        "key": "fb1002_hammer_portrait",
+        "differentBytes": 0
+      }
+    },
+    {
+      "name": "fb2_hammer_avatar resolves new avatar through actual pixels",
+      "passed": true,
+      "data": {
+        "key": "fb2_hammer_avatar",
+        "differentBytes": 0
+      }
+    },
+    {
+      "name": "h3_hammer_portrait resolves new avatar through actual pixels",
+      "passed": true,
+      "data": {
+        "key": "h3_hammer_portrait",
+        "differentBytes": 0
+      }
+    },
+    {
+      "name": "cin30_cronos resolves new avatar through actual pixels",
+      "passed": true,
+      "data": {
+        "key": "cin30_cronos",
+        "differentBytes": 0
+      }
+    },
+    {
+      "name": "Native ending portrait whitening still applies",
+      "passed": true,
+      "data": {
+        "before": [
+          76,
+          74,
+          74,
+          255
+        ],
+        "after": [
+          253,
+          253,
+          253,
+          255
+        ]
+      }
+    },
+    {
+      "name": "First contact uses new native Chronos portrait",
+      "passed": true,
+      "data": "cin30_cronos"
+    },
+    {
+      "name": "Native trap dialogue retains both authored Chronos lines",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Gameplay reset does not replace pilot portrait identities",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole gallery loads all six complete frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel gallery loads all six complete frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker gallery loads all six complete frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick gallery loads all six complete frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer gallery loads all six complete frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut gallery loads all six complete frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri gallery loads all six complete frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie gallery loads all six complete frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva gallery loads all six complete frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Mobile gallery has no horizontal overflow",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Standalone local gallery works without an HTTP server",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "No missing network assets",
+      "passed": true,
+      "data": []
+    }
+  ]
+}
