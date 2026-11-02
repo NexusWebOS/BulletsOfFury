@@ -1,0 +1,3565 @@
+{
+  "passed": 313,
+  "total": 313,
+  "errors": [],
+  "missing": [],
+  "checks": [
+    {
+      "name": "cole walk_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_0",
+        "drawn": true,
+        "count": 118387,
+        "bounds": [
+          176,
+          254,
+          603,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole walk_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_1",
+        "drawn": true,
+        "count": 103251,
+        "bounds": [
+          173,
+          256,
+          516,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole walk_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_2",
+        "drawn": true,
+        "count": 115515,
+        "bounds": [
+          183,
+          257,
+          651,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole walk_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_3",
+        "drawn": true,
+        "count": 104011,
+        "bounds": [
+          235,
+          254,
+          524,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole run_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_0",
+        "drawn": true,
+        "count": 124190,
+        "bounds": [
+          129,
+          297,
+          602,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole run_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_1",
+        "drawn": true,
+        "count": 116493,
+        "bounds": [
+          111,
+          255,
+          577,
+          928
+        ]
+      }
+    },
+    {
+      "name": "cole run_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_2",
+        "drawn": true,
+        "count": 121660,
+        "bounds": [
+          40,
+          297,
+          562,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole run_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_3",
+        "drawn": true,
+        "count": 113376,
+        "bounds": [
+          166,
+          255,
+          594,
+          928
+        ]
+      }
+    },
+    {
+      "name": "cole walk has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole run has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole sit_idle paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_idle",
+        "drawn": true,
+        "count": 201764,
+        "bounds": [
+          194,
+          177,
+          574,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole sit_speaking paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_speaking",
+        "drawn": true,
+        "count": 194358,
+        "bounds": [
+          156,
+          197,
+          612,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole dispatch_side paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_side",
+        "drawn": true,
+        "count": 254234,
+        "bounds": [
+          143,
+          216,
+          625,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole dispatch_typing paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_typing",
+        "drawn": true,
+        "count": 251444,
+        "bounds": [
+          153,
+          205,
+          615,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole dispatch_command paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_command",
+        "drawn": true,
+        "count": 249968,
+        "bounds": [
+          159,
+          80,
+          609,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole sit_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_laugh",
+        "drawn": true,
+        "count": 193019,
+        "bounds": [
+          179,
+          247,
+          589,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole sad paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sad",
+        "drawn": true,
+        "count": 146954,
+        "bounds": [
+          247,
+          175,
+          521,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole angry paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "angry",
+        "drawn": true,
+        "count": 154445,
+        "bounds": [
+          218,
+          164,
+          550,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole ecstatic paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "ecstatic",
+        "drawn": true,
+        "count": 151654,
+        "bounds": [
+          198,
+          169,
+          570,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole happy paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "happy",
+        "drawn": true,
+        "count": 148868,
+        "bounds": [
+          151,
+          160,
+          617,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole jump_cheer paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "jump_cheer",
+        "drawn": true,
+        "count": 122627,
+        "bounds": [
+          223,
+          191,
+          545,
+          860
+        ]
+      }
+    },
+    {
+      "name": "cole falling paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "falling",
+        "drawn": true,
+        "count": 127394,
+        "bounds": [
+          183,
+          316,
+          585,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "laugh",
+        "drawn": true,
+        "count": 128246,
+        "bounds": [
+          230,
+          314,
+          538,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole floor_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "floor_laugh",
+        "drawn": true,
+        "count": 133791,
+        "bounds": [
+          134,
+          455,
+          634,
+          960
+        ]
+      }
+    },
+    {
+      "name": "cole cheer is visibly airborne above the common ground",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole floor laughter retains a lower body silhouette",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel walk_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_0",
+        "drawn": true,
+        "count": 174871,
+        "bounds": [
+          161,
+          85,
+          554,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel walk_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_1",
+        "drawn": true,
+        "count": 155858,
+        "bounds": [
+          223,
+          80,
+          512,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel walk_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_2",
+        "drawn": true,
+        "count": 164418,
+        "bounds": [
+          182,
+          84,
+          617,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel walk_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_3",
+        "drawn": true,
+        "count": 161867,
+        "bounds": [
+          211,
+          84,
+          529,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel run_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_0",
+        "drawn": true,
+        "count": 149176,
+        "bounds": [
+          170,
+          150,
+          556,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel run_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_1",
+        "drawn": true,
+        "count": 142023,
+        "bounds": [
+          159,
+          132,
+          582,
+          928
+        ]
+      }
+    },
+    {
+      "name": "axel run_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_2",
+        "drawn": true,
+        "count": 134008,
+        "bounds": [
+          145,
+          166,
+          518,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel run_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_3",
+        "drawn": true,
+        "count": 146087,
+        "bounds": [
+          152,
+          134,
+          577,
+          928
+        ]
+      }
+    },
+    {
+      "name": "axel walk has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel run has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel sit_idle paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_idle",
+        "drawn": true,
+        "count": 242698,
+        "bounds": [
+          155,
+          167,
+          613,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel sit_speaking paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_speaking",
+        "drawn": true,
+        "count": 248967,
+        "bounds": [
+          104,
+          185,
+          664,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel dispatch_side paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_side",
+        "drawn": true,
+        "count": 318427,
+        "bounds": [
+          40,
+          260,
+          728,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel dispatch_typing paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_typing",
+        "drawn": true,
+        "count": 319660,
+        "bounds": [
+          45,
+          247,
+          723,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel dispatch_command paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_command",
+        "drawn": true,
+        "count": 328772,
+        "bounds": [
+          73,
+          105,
+          695,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel sit_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_laugh",
+        "drawn": true,
+        "count": 249623,
+        "bounds": [
+          139,
+          220,
+          629,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel sad paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sad",
+        "drawn": true,
+        "count": 161224,
+        "bounds": [
+          223,
+          204,
+          545,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel angry paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "angry",
+        "drawn": true,
+        "count": 171765,
+        "bounds": [
+          185,
+          192,
+          583,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel ecstatic paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "ecstatic",
+        "drawn": true,
+        "count": 185975,
+        "bounds": [
+          150,
+          160,
+          618,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel happy paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "happy",
+        "drawn": true,
+        "count": 159784,
+        "bounds": [
+          197,
+          197,
+          571,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel jump_cheer paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "jump_cheer",
+        "drawn": true,
+        "count": 153981,
+        "bounds": [
+          191,
+          172,
+          577,
+          860
+        ]
+      }
+    },
+    {
+      "name": "axel falling paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "falling",
+        "drawn": true,
+        "count": 143795,
+        "bounds": [
+          116,
+          339,
+          652,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "laugh",
+        "drawn": true,
+        "count": 136256,
+        "bounds": [
+          203,
+          336,
+          565,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel floor_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "floor_laugh",
+        "drawn": true,
+        "count": 170483,
+        "bounds": [
+          68,
+          482,
+          700,
+          960
+        ]
+      }
+    },
+    {
+      "name": "axel cheer is visibly airborne above the common ground",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel floor laughter retains a lower body silhouette",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker walk_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_0",
+        "drawn": true,
+        "count": 155411,
+        "bounds": [
+          125,
+          80,
+          565,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker walk_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_1",
+        "drawn": true,
+        "count": 138455,
+        "bounds": [
+          224,
+          88,
+          574,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker walk_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_2",
+        "drawn": true,
+        "count": 153511,
+        "bounds": [
+          124,
+          91,
+          605,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker walk_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_3",
+        "drawn": true,
+        "count": 132042,
+        "bounds": [
+          242,
+          83,
+          496,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker run_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_0",
+        "drawn": true,
+        "count": 127400,
+        "bounds": [
+          204,
+          167,
+          590,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker run_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_1",
+        "drawn": true,
+        "count": 140563,
+        "bounds": [
+          143,
+          145,
+          607,
+          928
+        ]
+      }
+    },
+    {
+      "name": "decker run_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_2",
+        "drawn": true,
+        "count": 130649,
+        "bounds": [
+          139,
+          175,
+          519,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker run_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_3",
+        "drawn": true,
+        "count": 133612,
+        "bounds": [
+          148,
+          140,
+          607,
+          928
+        ]
+      }
+    },
+    {
+      "name": "decker walk has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker run has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker sit_idle paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_idle",
+        "drawn": true,
+        "count": 207213,
+        "bounds": [
+          159,
+          184,
+          609,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker sit_speaking paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_speaking",
+        "drawn": true,
+        "count": 210369,
+        "bounds": [
+          129,
+          188,
+          639,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker dispatch_side paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_side",
+        "drawn": true,
+        "count": 314322,
+        "bounds": [
+          58,
+          245,
+          710,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker dispatch_typing paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_typing",
+        "drawn": true,
+        "count": 342654,
+        "bounds": [
+          47,
+          242,
+          721,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker dispatch_command paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_command",
+        "drawn": true,
+        "count": 307936,
+        "bounds": [
+          104,
+          80,
+          664,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker sit_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_laugh",
+        "drawn": true,
+        "count": 214270,
+        "bounds": [
+          123,
+          231,
+          645,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker sad paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sad",
+        "drawn": true,
+        "count": 147944,
+        "bounds": [
+          243,
+          181,
+          525,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker angry paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "angry",
+        "drawn": true,
+        "count": 160253,
+        "bounds": [
+          187,
+          179,
+          581,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker ecstatic paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "ecstatic",
+        "drawn": true,
+        "count": 160338,
+        "bounds": [
+          164,
+          160,
+          604,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker happy paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "happy",
+        "drawn": true,
+        "count": 137704,
+        "bounds": [
+          202,
+          196,
+          566,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker jump_cheer paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "jump_cheer",
+        "drawn": true,
+        "count": 133004,
+        "bounds": [
+          190,
+          186,
+          578,
+          860
+        ]
+      }
+    },
+    {
+      "name": "decker falling paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "falling",
+        "drawn": true,
+        "count": 135694,
+        "bounds": [
+          121,
+          316,
+          647,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "laugh",
+        "drawn": true,
+        "count": 130357,
+        "bounds": [
+          213,
+          309,
+          555,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker floor_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "floor_laugh",
+        "drawn": true,
+        "count": 144176,
+        "bounds": [
+          91,
+          457,
+          677,
+          960
+        ]
+      }
+    },
+    {
+      "name": "decker cheer is visibly airborne above the common ground",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker floor laughter retains a lower body silhouette",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick walk_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_0",
+        "drawn": true,
+        "count": 175603,
+        "bounds": [
+          134,
+          86,
+          619,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick walk_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_1",
+        "drawn": true,
+        "count": 137318,
+        "bounds": [
+          280,
+          80,
+          524,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick walk_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_2",
+        "drawn": true,
+        "count": 172143,
+        "bounds": [
+          191,
+          83,
+          691,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick walk_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_3",
+        "drawn": true,
+        "count": 146069,
+        "bounds": [
+          254,
+          85,
+          530,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick run_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_0",
+        "drawn": true,
+        "count": 154162,
+        "bounds": [
+          196,
+          163,
+          619,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick run_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_1",
+        "drawn": true,
+        "count": 149950,
+        "bounds": [
+          197,
+          123,
+          619,
+          928
+        ]
+      }
+    },
+    {
+      "name": "maverick run_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_2",
+        "drawn": true,
+        "count": 142760,
+        "bounds": [
+          168,
+          169,
+          529,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick run_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_3",
+        "drawn": true,
+        "count": 156576,
+        "bounds": [
+          170,
+          137,
+          631,
+          928
+        ]
+      }
+    },
+    {
+      "name": "maverick walk has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick run has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick sit_idle paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_idle",
+        "drawn": true,
+        "count": 236542,
+        "bounds": [
+          143,
+          157,
+          625,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick sit_speaking paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_speaking",
+        "drawn": true,
+        "count": 238341,
+        "bounds": [
+          129,
+          171,
+          639,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick dispatch_side paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_side",
+        "drawn": true,
+        "count": 296137,
+        "bounds": [
+          40,
+          224,
+          728,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick dispatch_typing paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_typing",
+        "drawn": true,
+        "count": 335490,
+        "bounds": [
+          43,
+          205,
+          725,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick dispatch_command paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_command",
+        "drawn": true,
+        "count": 329304,
+        "bounds": [
+          66,
+          99,
+          702,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick sit_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_laugh",
+        "drawn": true,
+        "count": 258098,
+        "bounds": [
+          123,
+          198,
+          645,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick sad paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sad",
+        "drawn": true,
+        "count": 163489,
+        "bounds": [
+          230,
+          190,
+          538,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick angry paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "angry",
+        "drawn": true,
+        "count": 177282,
+        "bounds": [
+          173,
+          187,
+          595,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick ecstatic paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "ecstatic",
+        "drawn": true,
+        "count": 180995,
+        "bounds": [
+          153,
+          160,
+          615,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick happy paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "happy",
+        "drawn": true,
+        "count": 157676,
+        "bounds": [
+          210,
+          179,
+          558,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick jump_cheer paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "jump_cheer",
+        "drawn": true,
+        "count": 169829,
+        "bounds": [
+          174,
+          76,
+          594,
+          860
+        ]
+      }
+    },
+    {
+      "name": "maverick falling paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "falling",
+        "drawn": true,
+        "count": 144928,
+        "bounds": [
+          105,
+          282,
+          663,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "laugh",
+        "drawn": true,
+        "count": 154514,
+        "bounds": [
+          196,
+          270,
+          572,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick floor_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "floor_laugh",
+        "drawn": true,
+        "count": 166234,
+        "bounds": [
+          80,
+          434,
+          688,
+          960
+        ]
+      }
+    },
+    {
+      "name": "maverick cheer is visibly airborne above the common ground",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick floor laughter retains a lower body silhouette",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer walk_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_0",
+        "drawn": true,
+        "count": 175184,
+        "bounds": [
+          175,
+          80,
+          614,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer walk_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_1",
+        "drawn": true,
+        "count": 157145,
+        "bounds": [
+          245,
+          80,
+          572,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer walk_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_2",
+        "drawn": true,
+        "count": 169083,
+        "bounds": [
+          183,
+          80,
+          638,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer walk_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_3",
+        "drawn": true,
+        "count": 159818,
+        "bounds": [
+          274,
+          80,
+          587,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer run_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_0",
+        "drawn": true,
+        "count": 162604,
+        "bounds": [
+          176,
+          131,
+          570,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer run_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_1",
+        "drawn": true,
+        "count": 154130,
+        "bounds": [
+          174,
+          106,
+          599,
+          928
+        ]
+      }
+    },
+    {
+      "name": "freezer run_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_2",
+        "drawn": true,
+        "count": 150808,
+        "bounds": [
+          188,
+          138,
+          581,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer run_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_3",
+        "drawn": true,
+        "count": 155422,
+        "bounds": [
+          85,
+          112,
+          574,
+          928
+        ]
+      }
+    },
+    {
+      "name": "freezer walk has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer run has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer sit_idle paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_idle",
+        "drawn": true,
+        "count": 250544,
+        "bounds": [
+          146,
+          120,
+          622,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer sit_speaking paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_speaking",
+        "drawn": true,
+        "count": 257056,
+        "bounds": [
+          112,
+          127,
+          656,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer dispatch_side paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_side",
+        "drawn": true,
+        "count": 339446,
+        "bounds": [
+          40,
+          203,
+          728,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer dispatch_typing paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_typing",
+        "drawn": true,
+        "count": 376989,
+        "bounds": [
+          43,
+          177,
+          725,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer dispatch_command paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_command",
+        "drawn": true,
+        "count": 332571,
+        "bounds": [
+          85,
+          91,
+          683,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer sit_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_laugh",
+        "drawn": true,
+        "count": 256788,
+        "bounds": [
+          113,
+          174,
+          655,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer sad paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sad",
+        "drawn": true,
+        "count": 154563,
+        "bounds": [
+          239,
+          172,
+          529,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer angry paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "angry",
+        "drawn": true,
+        "count": 172091,
+        "bounds": [
+          191,
+          177,
+          577,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer ecstatic paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "ecstatic",
+        "drawn": true,
+        "count": 178257,
+        "bounds": [
+          147,
+          160,
+          621,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer happy paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "happy",
+        "drawn": true,
+        "count": 154877,
+        "bounds": [
+          200,
+          189,
+          568,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer jump_cheer paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "jump_cheer",
+        "drawn": true,
+        "count": 143829,
+        "bounds": [
+          189,
+          163,
+          579,
+          860
+        ]
+      }
+    },
+    {
+      "name": "freezer falling paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "falling",
+        "drawn": true,
+        "count": 171374,
+        "bounds": [
+          78,
+          265,
+          690,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "laugh",
+        "drawn": true,
+        "count": 144921,
+        "bounds": [
+          171,
+          287,
+          597,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer floor_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "floor_laugh",
+        "drawn": true,
+        "count": 177996,
+        "bounds": [
+          56,
+          437,
+          712,
+          960
+        ]
+      }
+    },
+    {
+      "name": "freezer cheer is visibly airborne above the common ground",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer floor laughter retains a lower body silhouette",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut walk_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_0",
+        "drawn": true,
+        "count": 202870,
+        "bounds": [
+          124,
+          87,
+          585,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut walk_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_1",
+        "drawn": true,
+        "count": 168873,
+        "bounds": [
+          262,
+          82,
+          559,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut walk_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_2",
+        "drawn": true,
+        "count": 190426,
+        "bounds": [
+          138,
+          83,
+          620,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut walk_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_3",
+        "drawn": true,
+        "count": 159449,
+        "bounds": [
+          237,
+          80,
+          530,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut run_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_0",
+        "drawn": true,
+        "count": 176690,
+        "bounds": [
+          143,
+          159,
+          583,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut run_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_1",
+        "drawn": true,
+        "count": 181852,
+        "bounds": [
+          125,
+          141,
+          629,
+          928
+        ]
+      }
+    },
+    {
+      "name": "juggernaut run_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_2",
+        "drawn": true,
+        "count": 159700,
+        "bounds": [
+          118,
+          180,
+          540,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut run_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_3",
+        "drawn": true,
+        "count": 176577,
+        "bounds": [
+          115,
+          137,
+          625,
+          928
+        ]
+      }
+    },
+    {
+      "name": "juggernaut walk has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut run has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut sit_idle paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_idle",
+        "drawn": true,
+        "count": 241848,
+        "bounds": [
+          145,
+          203,
+          623,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut sit_speaking paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_speaking",
+        "drawn": true,
+        "count": 245835,
+        "bounds": [
+          99,
+          205,
+          669,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut dispatch_side paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_side",
+        "drawn": true,
+        "count": 305349,
+        "bounds": [
+          42,
+          270,
+          726,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut dispatch_typing paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_typing",
+        "drawn": true,
+        "count": 336428,
+        "bounds": [
+          40,
+          254,
+          728,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut dispatch_command paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_command",
+        "drawn": true,
+        "count": 326949,
+        "bounds": [
+          73,
+          141,
+          695,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut sit_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_laugh",
+        "drawn": true,
+        "count": 256903,
+        "bounds": [
+          101,
+          238,
+          667,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut sad paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sad",
+        "drawn": true,
+        "count": 193974,
+        "bounds": [
+          205,
+          206,
+          563,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut angry paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "angry",
+        "drawn": true,
+        "count": 206709,
+        "bounds": [
+          166,
+          188,
+          602,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut ecstatic paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "ecstatic",
+        "drawn": true,
+        "count": 205139,
+        "bounds": [
+          135,
+          163,
+          633,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut happy paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "happy",
+        "drawn": true,
+        "count": 171335,
+        "bounds": [
+          176,
+          217,
+          592,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut jump_cheer paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "jump_cheer",
+        "drawn": true,
+        "count": 157833,
+        "bounds": [
+          186,
+          189,
+          582,
+          860
+        ]
+      }
+    },
+    {
+      "name": "juggernaut falling paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "falling",
+        "drawn": true,
+        "count": 165397,
+        "bounds": [
+          62,
+          312,
+          706,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "laugh",
+        "drawn": true,
+        "count": 166915,
+        "bounds": [
+          192,
+          334,
+          576,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut floor_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "floor_laugh",
+        "drawn": true,
+        "count": 185297,
+        "bounds": [
+          40,
+          444,
+          728,
+          960
+        ]
+      }
+    },
+    {
+      "name": "juggernaut cheer is visibly airborne above the common ground",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut floor laughter retains a lower body silhouette",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri walk_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_0",
+        "drawn": true,
+        "count": 167586,
+        "bounds": [
+          133,
+          85,
+          581,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri walk_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_1",
+        "drawn": true,
+        "count": 142545,
+        "bounds": [
+          266,
+          80,
+          536,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri walk_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_2",
+        "drawn": true,
+        "count": 164512,
+        "bounds": [
+          157,
+          85,
+          617,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri walk_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_3",
+        "drawn": true,
+        "count": 146119,
+        "bounds": [
+          275,
+          83,
+          562,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri run_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_0",
+        "drawn": true,
+        "count": 151467,
+        "bounds": [
+          123,
+          173,
+          560,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri run_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_1",
+        "drawn": true,
+        "count": 136106,
+        "bounds": [
+          219,
+          193,
+          624,
+          928
+        ]
+      }
+    },
+    {
+      "name": "yuri run_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_2",
+        "drawn": true,
+        "count": 141403,
+        "bounds": [
+          213,
+          176,
+          580,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri run_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_3",
+        "drawn": true,
+        "count": 143327,
+        "bounds": [
+          173,
+          155,
+          591,
+          928
+        ]
+      }
+    },
+    {
+      "name": "yuri walk has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri run has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri sit_idle paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_idle",
+        "drawn": true,
+        "count": 230977,
+        "bounds": [
+          172,
+          129,
+          596,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri sit_speaking paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_speaking",
+        "drawn": true,
+        "count": 245393,
+        "bounds": [
+          120,
+          141,
+          648,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri dispatch_side paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_side",
+        "drawn": true,
+        "count": 315751,
+        "bounds": [
+          52,
+          206,
+          716,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri dispatch_typing paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_typing",
+        "drawn": true,
+        "count": 335843,
+        "bounds": [
+          66,
+          185,
+          702,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri dispatch_command paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_command",
+        "drawn": true,
+        "count": 334468,
+        "bounds": [
+          66,
+          80,
+          702,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri sit_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_laugh",
+        "drawn": true,
+        "count": 239141,
+        "bounds": [
+          108,
+          206,
+          660,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri sad paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sad",
+        "drawn": true,
+        "count": 154772,
+        "bounds": [
+          247,
+          168,
+          521,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri angry paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "angry",
+        "drawn": true,
+        "count": 175931,
+        "bounds": [
+          178,
+          167,
+          590,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri ecstatic paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "ecstatic",
+        "drawn": true,
+        "count": 179133,
+        "bounds": [
+          148,
+          160,
+          620,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri happy paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "happy",
+        "drawn": true,
+        "count": 150818,
+        "bounds": [
+          203,
+          184,
+          565,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri jump_cheer paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "jump_cheer",
+        "drawn": true,
+        "count": 143583,
+        "bounds": [
+          196,
+          172,
+          572,
+          860
+        ]
+      }
+    },
+    {
+      "name": "yuri falling paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "falling",
+        "drawn": true,
+        "count": 158207,
+        "bounds": [
+          72,
+          270,
+          696,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "laugh",
+        "drawn": true,
+        "count": 144026,
+        "bounds": [
+          201,
+          282,
+          567,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri floor_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "floor_laugh",
+        "drawn": true,
+        "count": 180154,
+        "bounds": [
+          69,
+          409,
+          699,
+          960
+        ]
+      }
+    },
+    {
+      "name": "yuri cheer is visibly airborne above the common ground",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri floor laughter retains a lower body silhouette",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie walk_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_0",
+        "drawn": true,
+        "count": 159519,
+        "bounds": [
+          118,
+          85,
+          569,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie walk_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_1",
+        "drawn": true,
+        "count": 150496,
+        "bounds": [
+          160,
+          82,
+          509,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie walk_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_2",
+        "drawn": true,
+        "count": 154872,
+        "bounds": [
+          177,
+          83,
+          580,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie walk_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_3",
+        "drawn": true,
+        "count": 152630,
+        "bounds": [
+          263,
+          80,
+          576,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie run_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_0",
+        "drawn": true,
+        "count": 159239,
+        "bounds": [
+          166,
+          148,
+          601,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie run_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_1",
+        "drawn": true,
+        "count": 145562,
+        "bounds": [
+          179,
+          147,
+          583,
+          928
+        ]
+      }
+    },
+    {
+      "name": "lizzie run_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_2",
+        "drawn": true,
+        "count": 143516,
+        "bounds": [
+          188,
+          145,
+          559,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie run_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_3",
+        "drawn": true,
+        "count": 145856,
+        "bounds": [
+          186,
+          116,
+          610,
+          928
+        ]
+      }
+    },
+    {
+      "name": "lizzie walk has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie run has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie sit_idle paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_idle",
+        "drawn": true,
+        "count": 227386,
+        "bounds": [
+          161,
+          137,
+          607,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie sit_speaking paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_speaking",
+        "drawn": true,
+        "count": 230572,
+        "bounds": [
+          115,
+          134,
+          653,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie dispatch_side paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_side",
+        "drawn": true,
+        "count": 319752,
+        "bounds": [
+          42,
+          165,
+          726,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie dispatch_typing paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_typing",
+        "drawn": true,
+        "count": 365721,
+        "bounds": [
+          44,
+          172,
+          724,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie dispatch_command paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_command",
+        "drawn": true,
+        "count": 309589,
+        "bounds": [
+          88,
+          80,
+          680,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie sit_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_laugh",
+        "drawn": true,
+        "count": 236175,
+        "bounds": [
+          125,
+          163,
+          643,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie sad paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sad",
+        "drawn": true,
+        "count": 142491,
+        "bounds": [
+          244,
+          179,
+          524,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie angry paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "angry",
+        "drawn": true,
+        "count": 162337,
+        "bounds": [
+          193,
+          174,
+          575,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie ecstatic paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "ecstatic",
+        "drawn": true,
+        "count": 165017,
+        "bounds": [
+          180,
+          160,
+          588,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie happy paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "happy",
+        "drawn": true,
+        "count": 142759,
+        "bounds": [
+          210,
+          175,
+          558,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie jump_cheer paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "jump_cheer",
+        "drawn": true,
+        "count": 147798,
+        "bounds": [
+          180,
+          194,
+          588,
+          860
+        ]
+      }
+    },
+    {
+      "name": "lizzie falling paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "falling",
+        "drawn": true,
+        "count": 154152,
+        "bounds": [
+          69,
+          280,
+          699,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "laugh",
+        "drawn": true,
+        "count": 145058,
+        "bounds": [
+          196,
+          247,
+          572,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie floor_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "floor_laugh",
+        "drawn": true,
+        "count": 168431,
+        "bounds": [
+          71,
+          463,
+          697,
+          960
+        ]
+      }
+    },
+    {
+      "name": "lizzie cheer is visibly airborne above the common ground",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie floor laughter retains a lower body silhouette",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva walk_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_0",
+        "drawn": true,
+        "count": 153182,
+        "bounds": [
+          191,
+          80,
+          648,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva walk_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_1",
+        "drawn": true,
+        "count": 132318,
+        "bounds": [
+          231,
+          82,
+          514,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva walk_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_2",
+        "drawn": true,
+        "count": 142077,
+        "bounds": [
+          199,
+          86,
+          569,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva walk_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "walk_3",
+        "drawn": true,
+        "count": 133798,
+        "bounds": [
+          225,
+          83,
+          513,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva run_0 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_0",
+        "drawn": true,
+        "count": 144328,
+        "bounds": [
+          211,
+          125,
+          576,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva run_1 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_1",
+        "drawn": true,
+        "count": 144029,
+        "bounds": [
+          149,
+          96,
+          595,
+          928
+        ]
+      }
+    },
+    {
+      "name": "falva run_2 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_2",
+        "drawn": true,
+        "count": 130639,
+        "bounds": [
+          161,
+          119,
+          488,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva run_3 paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "run_3",
+        "drawn": true,
+        "count": 147011,
+        "bounds": [
+          132,
+          98,
+          584,
+          928
+        ]
+      }
+    },
+    {
+      "name": "falva walk has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva run has four distinct authored stride keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva sit_idle paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_idle",
+        "drawn": true,
+        "count": 204116,
+        "bounds": [
+          206,
+          148,
+          562,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva sit_speaking paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_speaking",
+        "drawn": true,
+        "count": 214735,
+        "bounds": [
+          167,
+          145,
+          601,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva dispatch_side paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_side",
+        "drawn": true,
+        "count": 311363,
+        "bounds": [
+          59,
+          224,
+          709,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva dispatch_typing paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_typing",
+        "drawn": true,
+        "count": 340366,
+        "bounds": [
+          49,
+          213,
+          719,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva dispatch_command paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "dispatch_command",
+        "drawn": true,
+        "count": 283466,
+        "bounds": [
+          117,
+          80,
+          651,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva sit_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sit_laugh",
+        "drawn": true,
+        "count": 220250,
+        "bounds": [
+          160,
+          179,
+          608,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva sad paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "sad",
+        "drawn": true,
+        "count": 148377,
+        "bounds": [
+          251,
+          162,
+          517,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva angry paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "angry",
+        "drawn": true,
+        "count": 166031,
+        "bounds": [
+          196,
+          163,
+          572,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva ecstatic paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "ecstatic",
+        "drawn": true,
+        "count": 175967,
+        "bounds": [
+          170,
+          160,
+          598,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva happy paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "happy",
+        "drawn": true,
+        "count": 152849,
+        "bounds": [
+          185,
+          169,
+          583,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva jump_cheer paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "jump_cheer",
+        "drawn": true,
+        "count": 145194,
+        "bounds": [
+          198,
+          197,
+          570,
+          860
+        ]
+      }
+    },
+    {
+      "name": "falva falling paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "falling",
+        "drawn": true,
+        "count": 166258,
+        "bounds": [
+          78,
+          285,
+          690,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "laugh",
+        "drawn": true,
+        "count": 153712,
+        "bounds": [
+          193,
+          222,
+          575,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva floor_laugh paints complete native pixels",
+      "passed": true,
+      "data": {
+        "pose": "floor_laugh",
+        "drawn": true,
+        "count": 187231,
+        "bounds": [
+          56,
+          393,
+          712,
+          960
+        ]
+      }
+    },
+    {
+      "name": "falva cheer is visibly airborne above the common ground",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva floor laughter retains a lower body silhouette",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "fb1002_hammer_portrait uses the framed dialogue closeup",
+      "passed": true,
+      "data": {
+        "key": "fb1002_hammer_portrait",
+        "differentBytes": 0
+      }
+    },
+    {
+      "name": "fb2_hammer_avatar uses the framed dialogue closeup",
+      "passed": true,
+      "data": {
+        "key": "fb2_hammer_avatar",
+        "differentBytes": 0
+      }
+    },
+    {
+      "name": "h3_hammer_portrait uses the framed dialogue closeup",
+      "passed": true,
+      "data": {
+        "key": "h3_hammer_portrait",
+        "differentBytes": 0
+      }
+    },
+    {
+      "name": "cin30_cronos uses the framed dialogue closeup",
+      "passed": true,
+      "data": {
+        "key": "cin30_cronos",
+        "differentBytes": 0
+      }
+    },
+    {
+      "name": "cole complete illustrated hangar scene paints natively",
+      "passed": true,
+      "data": 1441564
+    },
+    {
+      "name": "axel complete illustrated hangar scene paints natively",
+      "passed": true,
+      "data": 1435068
+    },
+    {
+      "name": "decker complete illustrated hangar scene paints natively",
+      "passed": true,
+      "data": 1357401
+    },
+    {
+      "name": "maverick complete illustrated hangar scene paints natively",
+      "passed": true,
+      "data": 1398656
+    },
+    {
+      "name": "freezer complete illustrated hangar scene paints natively",
+      "passed": true,
+      "data": 1378348
+    },
+    {
+      "name": "juggernaut complete illustrated hangar scene paints natively",
+      "passed": true,
+      "data": 1376572
+    },
+    {
+      "name": "yuri complete illustrated hangar scene paints natively",
+      "passed": true,
+      "data": 1347798
+    },
+    {
+      "name": "lizzie complete illustrated hangar scene paints natively",
+      "passed": true,
+      "data": 1376880
+    },
+    {
+      "name": "falva complete illustrated hangar scene paints natively",
+      "passed": true,
+      "data": 1328111
+    },
+    {
+      "name": "cole seated standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole walk standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole run standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole emotion standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole ship standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole classic standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole gallery stride loop changes actual pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel seated standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel walk standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel run standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel emotion standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel ship standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel classic standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel gallery stride loop changes actual pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker seated standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker walk standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker run standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker emotion standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker ship standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker classic standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker gallery stride loop changes actual pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick seated standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick walk standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick run standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick emotion standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick ship standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick classic standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick gallery stride loop changes actual pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer seated standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer walk standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer run standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer emotion standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer ship standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer classic standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer gallery stride loop changes actual pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut seated standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut walk standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut run standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut emotion standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut ship standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut classic standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut gallery stride loop changes actual pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri seated standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri walk standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri run standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri emotion standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri ship standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri classic standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri gallery stride loop changes actual pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie seated standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie walk standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie run standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie emotion standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie ship standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie classic standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie gallery stride loop changes actual pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva seated standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva walk standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva run standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva emotion standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva ship standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva classic standalone gallery has every complete frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva gallery stride loop changes actual pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Expanded mobile gallery has no horizontal overflow",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "No missing network assets",
+      "passed": true,
+      "data": []
+    }
+  ]
+}

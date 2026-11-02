@@ -1,0 +1,50 @@
+{
+  "method": "Preserved native game-context composition guides used for image generation; selected illustrated stills live in the separate runtime ship_scenes directory.",
+  "scenes": [
+    {
+      "pilot": "axel",
+      "file": "_ART_SOURCES/cast_performance_1102/references/native_shots/axel.png",
+      "sha256": "e1c72bcb33cefc438cc5c4d7df433c87241301fa6047a1aa28e0ee74f9febb02"
+    },
+    {
+      "pilot": "cole",
+      "file": "_ART_SOURCES/cast_performance_1102/references/native_shots/cole.png",
+      "sha256": "70af869eb8123f54c5206564d7faad98569be375b6285a1f1dfdaf7db685c372"
+    },
+    {
+      "pilot": "decker",
+      "file": "_ART_SOURCES/cast_performance_1102/references/native_shots/decker.png",
+      "sha256": "5f68f1d538f1ab480cc00ff60ee0a6daa2d1bdb7ad5eb1de94e6e6279235bf28"
+    },
+    {
+      "pilot": "falva",
+      "file": "_ART_SOURCES/cast_performance_1102/references/native_shots/falva.png",
+      "sha256": "bb4957c8db207e898d082d427692dfb20efac51e433463b55af3d5718a5cf846"
+    },
+    {
+      "pilot": "freezer",
+      "file": "_ART_SOURCES/cast_performance_1102/references/native_shots/freezer.png",
+      "sha256": "48427b876534605f2e8ba650524b9668c0e7cb15a92d97ae51250cc8746ac265"
+    },
+    {
+      "pilot": "juggernaut",
+      "file": "_ART_SOURCES/cast_performance_1102/references/native_shots/juggernaut.png",
+      "sha256": "601381b400b773eaffca12cdf617de44bede10eefbc3d6c14ea48354e5cf0377"
+    },
+    {
+      "pilot": "lizzie",
+      "file": "_ART_SOURCES/cast_performance_1102/references/native_shots/lizzie.png",
+      "sha256": "1db7291e7bfd062cd2af4919b443e4b573e596f2567aed938f3a05c4fdac93c6"
+    },
+    {
+      "pilot": "maverick",
+      "file": "_ART_SOURCES/cast_performance_1102/references/native_shots/maverick.png",
+      "sha256": "71ad121d35b9b8b9dbb8ceb031b681176f44bc47cddbe023254562354a315e0b"
+    },
+    {
+      "pilot": "yuri",
+      "file": "_ART_SOURCES/cast_performance_1102/references/native_shots/yuri.png",
+      "sha256": "5f37e38d7960aecaf9efb42a6b0e935b8c4af398f2ee82a398eac0eea8840516"
+    }
+  ]
+}

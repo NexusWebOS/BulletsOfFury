@@ -2,6 +2,8 @@
 
 Mike asked for Chronos face avatars that resemble the actual character, followed by pseudo-3D full-body poses for every pilot.
 
+The approved cast is now expanded in [CAST_PERFORMANCE_1102.md](CAST_PERFORMANCE_1102.md): 198 additional body frames, nine illustrated pilot/ship scenes and a framed dialogue close-up. The same gallery combines both libraries. The four dialogue aliases now select that framed close-up; the original four unframed heads remain available. Run the combined gallery builder last after rebuilding either art library. The details below describe the original source bank and its verification.
+
 ## Delivered art and live routing
 
 Built-in `image_gen` produced four Chronos head-and-shoulder views and six complete full-body key poses for each of the nine Fury pilots: Cole, Axel, Decker, Maverick, Freezer, Juggernaut, Yuri, Lizzie and Falva. Body poses are neutral, speaking gesture, salute, walking turn, rear look-back and back neutral. These are six individual authored poses, not a smooth turntable or an interpolated walk/talk animation.

@@ -1,0 +1,113 @@
+{
+  "method": "Selected built-in image_gen illustrated stills, guided by exported native aircraft identity references. Native composition guides remain in the source references directory.",
+  "scenes": {
+    "cole": {
+      "key": "cp112_cole_ship_scene",
+      "file": "assets/game/shared/cinematics/cast_performance_1102/ship_scenes/cole.png",
+      "cell": [
+        1536,
+        1024
+      ],
+      "sha256": "2d90a84a63ad7b62d12d42e372917b0ddca89bfeba390321520fe7d6fd93c1ef",
+      "source": "_ART_SOURCES/cast_performance_1102/generated/cole-ship-scene.png",
+      "source_sha256": "60297cc23bc532d04826c8845843672a6f338baf221470f6c368e33a3c7d0698",
+      "reference": "_ART_SOURCES/cast_performance_1102/references/cole-ship-identity.png"
+    },
+    "axel": {
+      "key": "cp112_axel_ship_scene",
+      "file": "assets/game/shared/cinematics/cast_performance_1102/ship_scenes/axel.png",
+      "cell": [
+        1536,
+        1024
+      ],
+      "sha256": "d4895984f8a6d0efd07b1db036909a486bf3a82eccf96c6cc0d9cc22da03c9aa",
+      "source": "_ART_SOURCES/cast_performance_1102/generated/axel-ship-scene.png",
+      "source_sha256": "0261932d55abb613de0282d8caea8389ac9c7f81db63f9fb4fcec1a534eb1787",
+      "reference": "_ART_SOURCES/cast_performance_1102/references/axel-ship-identity.png"
+    },
+    "decker": {
+      "key": "cp112_decker_ship_scene",
+      "file": "assets/game/shared/cinematics/cast_performance_1102/ship_scenes/decker.png",
+      "cell": [
+        1536,
+        1024
+      ],
+      "sha256": "3032c1eb7a240faeb7208c23ffb5497935e3df346335806dd6e154b72f65796b",
+      "source": "_ART_SOURCES/cast_performance_1102/generated/decker-ship-scene.png",
+      "source_sha256": "911f8d80dae0f959b7978af89aad94d776e0b69e66150f3f5211e8be401fa887",
+      "reference": "_ART_SOURCES/cast_performance_1102/references/decker-ship-identity.png"
+    },
+    "maverick": {
+      "key": "cp112_maverick_ship_scene",
+      "file": "assets/game/shared/cinematics/cast_performance_1102/ship_scenes/maverick.png",
+      "cell": [
+        1536,
+        1024
+      ],
+      "sha256": "888d90f06d17d89db6675b1b3e59cff31ce9547048acfef0c0f2bbaf607428b4",
+      "source": "_ART_SOURCES/cast_performance_1102/generated/maverick-ship-scene.png",
+      "source_sha256": "a4bba91cf2310bd399a4b7256a613f663b28d9c925e60199dfba7347184f120d",
+      "reference": "_ART_SOURCES/cast_performance_1102/references/maverick-ship-identity.png"
+    },
+    "freezer": {
+      "key": "cp112_freezer_ship_scene",
+      "file": "assets/game/shared/cinematics/cast_performance_1102/ship_scenes/freezer.png",
+      "cell": [
+        1536,
+        1024
+      ],
+      "sha256": "db24fdf160263f63fd494bdfff045710190c706b196e7e8d2a49396d806cad31",
+      "source": "_ART_SOURCES/cast_performance_1102/generated/freezer-ship-scene.png",
+      "source_sha256": "9fc1af30977496a341acb18f69693167b026fb55e376693a0eac476c8733cca8",
+      "reference": "_ART_SOURCES/cast_performance_1102/references/freezer-ship-identity.png"
+    },
+    "juggernaut": {
+      "key": "cp112_juggernaut_ship_scene",
+      "file": "assets/game/shared/cinematics/cast_performance_1102/ship_scenes/juggernaut.png",
+      "cell": [
+        1536,
+        1024
+      ],
+      "sha256": "5057cdcac29715f9895996f89e08e9b80d5cd9ba8ff6a80955ee80f70684ae26",
+      "source": "_ART_SOURCES/cast_performance_1102/generated/juggernaut-ship-scene.png",
+      "source_sha256": "7ed3664c232b64cb15796ef2e585c34c8bc6c17f6fdd086dc2c3985615afdaef",
+      "reference": "_ART_SOURCES/cast_performance_1102/references/juggernaut-ship-identity.png"
+    },
+    "yuri": {
+      "key": "cp112_yuri_ship_scene",
+      "file": "assets/game/shared/cinematics/cast_performance_1102/ship_scenes/yuri.png",
+      "cell": [
+        1536,
+        1024
+      ],
+      "sha256": "afa5442dca2b3be0a60476c1dfb6484e2d1a9950fc6155d63e0fd610d384ecda",
+      "source": "_ART_SOURCES/cast_performance_1102/generated/yuri-ship-scene.png",
+      "source_sha256": "9b59dda1a4c117ce842982dbd8b57a4773e7ff7fbfbd87fa568410382d465e43",
+      "reference": "_ART_SOURCES/cast_performance_1102/references/yuri-ship-identity.png"
+    },
+    "lizzie": {
+      "key": "cp112_lizzie_ship_scene",
+      "file": "assets/game/shared/cinematics/cast_performance_1102/ship_scenes/lizzie.png",
+      "cell": [
+        1536,
+        1024
+      ],
+      "sha256": "d220a4d7e9c589e49c93ca5b2156ac35fc5bfb4dc0413a2bf53734bb07cffdb5",
+      "source": "_ART_SOURCES/cast_performance_1102/generated/lizzie-ship-scene.png",
+      "source_sha256": "30cfba20e615ba87e72f533b75411309791beaf5302619057afc2aadb81f1c83",
+      "reference": "_ART_SOURCES/cast_performance_1102/references/lizzie-ship-identity.png"
+    },
+    "falva": {
+      "key": "cp112_falva_ship_scene",
+      "file": "assets/game/shared/cinematics/cast_performance_1102/ship_scenes/falva.png",
+      "cell": [
+        1536,
+        1024
+      ],
+      "sha256": "0b6da9cb1946863ef449f2591bfca85485889067076350797905c023eaa0065e",
+      "source": "_ART_SOURCES/cast_performance_1102/generated/falva-ship-scene.png",
+      "source_sha256": "384c83964e61bcb968a412d94864294217f66220c84dda972fa47f01e781b4c8",
+      "reference": "_ART_SOURCES/cast_performance_1102/references/falva-ship-identity.png"
+    }
+  }
+}

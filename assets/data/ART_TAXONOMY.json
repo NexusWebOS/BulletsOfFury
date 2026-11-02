@@ -1401,5 +1401,11 @@
     "owner": "_BUILD_SOURCE/build_furious_encounters_1102.py",
     "manifest": "assets/game/levels/stage_06/boss/furious_1102/manifest.json",
     "note": "Furious left route only; native right-hand Rough Riders and Stage X retained. Whole true-depth roll plates; disjoint rotary guns and pressure projectors, solid charred wrecks, source-pixel emission, measured ports and muzzle recoil. Generated tornado/hurricane/electric burst banks. Stage2-5 concepts are uninstalled proposals."
+  },
+  "cp112_": {
+    "role": "approved_pilot_seated_dispatch_stride_emotion_and_ship_reference_scenes",
+    "owner": "_BUILD_SOURCE/build_cast_performance_1102.py",
+    "manifest": "assets/game/shared/cinematics/cast_performance_1102/manifest.json",
+    "note": "198 new full-body768x1024 frames (22per pilot), nine1536x1024 illustrated hangar stills referenced from current native aircraft, framed Chronos512x512 dialogue closeup. Current approved faces/outfits, common scale per bank, hip projection for stride registration, visible airborne cheer gap, actual authored poses/no mirroring or runtime rotation. Separate opt-in cutscene library; native Chronos dialogue/fade owners retained. Built-in image_gen sources/prompts and native ship exports retained under _ART_SOURCES/cast_performance_1102."
   }
 }

@@ -16,7 +16,7 @@ C112.draw=function(pilot,pose,x,ground,height=512){
 };
 XART._touch=function(key){
   if(['fb2_hammer_avatar','fb1002_hammer_portrait','h3_hammer_portrait','cin30_cronos'].includes(key))
-    return C112.baseTouch.call(this,C112.art.chronos.neutral);
+    return C112.baseTouch.call(this,C112.art.chronos.dialogue||C112.art.chronos.neutral);
   return C112.baseTouch.apply(this,arguments);
 };
 stageLoadBegin=function(stage,keys){

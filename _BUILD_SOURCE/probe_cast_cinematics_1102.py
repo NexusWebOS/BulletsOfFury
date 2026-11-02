@@ -57,7 +57,7 @@ try:
         p.wait_for_function('keys=>keys.map(k=>XART.rdy(k)).every(Boolean)',arg=aliases)
         alias_stats=p.evaluate('''keys=>{cv.width=cv.height=512;ctx.setTransform(1,0,0,1,0,0);
             const bytes=k=>{ctx.clearRect(0,0,512,512);ctx.drawImage(XART.get(k),0,0);return ctx.getImageData(0,0,512,512).data;};
-            const expected=bytes(C112.art.chronos.neutral);return keys.map(k=>{const a=bytes(k);let diff=0;for(let i=0;i<a.length;i++)if(a[i]!==expected[i])diff++;return {key:k,differentBytes:diff};});}''',aliases)
+            const expected=bytes(C112.art.chronos.dialogue||C112.art.chronos.neutral);return keys.map(k=>{const a=bytes(k);let diff=0;for(let i=0;i<a.length;i++)if(a[i]!==expected[i])diff++;return {key:k,differentBytes:diff};});}''',aliases)
         for s in alias_stats:ck(s['key']+' resolves new avatar through actual pixels',s['differentBytes']==0,s)
         # Preserve the native terminal portrait whitening owner through the new alias.
         fade=p.evaluate('''()=>{const original=H3.ending;try{H3.ending={sm10:{portrait:0}};
@@ -83,6 +83,7 @@ try:
         ck('Gameplay reset does not replace pilot portrait identities',p.evaluate('()=>PILOTS.every(p=>!/^c112/.test(pilotPortrait(p.key,"idle")))'))
         p.goto(f'http://127.0.0.1:{port}/docs/previews/cast_cinematics_1102/index.html')
         p.wait_for_function('window.castReady')
+        p.locator('[data-category="classic"]').click()
         for pilot in pilot_names:
             p.locator(f'button[data-pilot="{pilot}"]').click()
             p.wait_for_function('()=>Array.from(document.querySelectorAll("#poses img")).every(im=>im.complete&&im.naturalWidth===512&&im.naturalHeight===1024)')
@@ -98,8 +99,8 @@ try:
         p.wait_for_function('window.castReady')
         p.locator('button[data-pilot="freezer"]').click()
         p.locator('#poses').scroll_into_view_if_needed()
-        p.wait_for_function('()=>Array.from(document.querySelectorAll("#poses img")).every(im=>im.complete&&im.naturalWidth===512&&im.naturalHeight===1024)')
-        ck('Standalone local gallery works without an HTTP server',p.evaluate('()=>location.protocol==="file:"&&Array.from(document.querySelectorAll("#poses img")).every(im=>im.src.startsWith("data:image/png;base64,"))'))
+        p.wait_for_function('()=>Array.from(document.querySelectorAll("#poses img")).every(im=>im.complete&&im.naturalWidth===384&&im.naturalHeight===512)')
+        ck('Standalone local gallery works without an HTTP server',p.evaluate('()=>location.protocol==="file:"&&Array.from(document.querySelectorAll("#poses img")).every(im=>im.src.startsWith("data:image/webp;base64,"))'))
         ck('No page or console errors',not errors,errors)
         ck('No missing network assets',not failed_requests,failed_requests)
         b.close()
