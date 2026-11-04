@@ -1,0 +1,14 @@
+[
+  {
+    "name": "divider",
+    "source": "source-art/comic_scroll_1103/divider-master.png",
+    "sha256": "f38abcd1d9c1ed701ed7e531a1262f4fd841d77870934a087c745f19869ce34e",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "tiles",
+    "source": "source-art/comic_scroll_1103/tiles-master.png",
+    "sha256": "e839e319355e25f6216b5f8448eada3cc415cf94f5bb5b0a6bbfca146e165798",
+    "tool": "built-in image_gen"
+  }
+]

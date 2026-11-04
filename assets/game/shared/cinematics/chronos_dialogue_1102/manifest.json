@@ -1,0 +1,99 @@
+{
+  "poses": {
+    "neutral": {
+      "full": "c113_neutral_full",
+      "compact": {
+        "68": "c113_neutral_68",
+        "56": "c113_neutral_56",
+        "48": "c113_neutral_48",
+        "40": "c113_neutral_40",
+        "32": "c113_neutral_32",
+        "24": "c113_neutral_24"
+      },
+      "files": {
+        "c113_neutral_full": "assets/game/shared/cinematics/chronos_dialogue_1102/neutral-full.png",
+        "c113_neutral_68": "assets/game/shared/cinematics/chronos_dialogue_1102/neutral-68.png",
+        "c113_neutral_56": "assets/game/shared/cinematics/chronos_dialogue_1102/neutral-56.png",
+        "c113_neutral_48": "assets/game/shared/cinematics/chronos_dialogue_1102/neutral-48.png",
+        "c113_neutral_40": "assets/game/shared/cinematics/chronos_dialogue_1102/neutral-40.png",
+        "c113_neutral_32": "assets/game/shared/cinematics/chronos_dialogue_1102/neutral-32.png",
+        "c113_neutral_24": "assets/game/shared/cinematics/chronos_dialogue_1102/neutral-24.png"
+      }
+    },
+    "turn_right": {
+      "full": "c113_turn_right_full",
+      "compact": {
+        "68": "c113_turn_right_68",
+        "56": "c113_turn_right_56",
+        "48": "c113_turn_right_48",
+        "40": "c113_turn_right_40",
+        "32": "c113_turn_right_32",
+        "24": "c113_turn_right_24"
+      },
+      "files": {
+        "c113_turn_right_full": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_right-full.png",
+        "c113_turn_right_68": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_right-68.png",
+        "c113_turn_right_56": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_right-56.png",
+        "c113_turn_right_48": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_right-48.png",
+        "c113_turn_right_40": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_right-40.png",
+        "c113_turn_right_32": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_right-32.png",
+        "c113_turn_right_24": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_right-24.png"
+      }
+    },
+    "turn_left": {
+      "full": "c113_turn_left_full",
+      "compact": {
+        "68": "c113_turn_left_68",
+        "56": "c113_turn_left_56",
+        "48": "c113_turn_left_48",
+        "40": "c113_turn_left_40",
+        "32": "c113_turn_left_32",
+        "24": "c113_turn_left_24"
+      },
+      "files": {
+        "c113_turn_left_full": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_left-full.png",
+        "c113_turn_left_68": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_left-68.png",
+        "c113_turn_left_56": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_left-56.png",
+        "c113_turn_left_48": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_left-48.png",
+        "c113_turn_left_40": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_left-40.png",
+        "c113_turn_left_32": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_left-32.png",
+        "c113_turn_left_24": "assets/game/shared/cinematics/chronos_dialogue_1102/turn_left-24.png"
+      }
+    },
+    "stern": {
+      "full": "c113_stern_full",
+      "compact": {
+        "68": "c113_stern_68",
+        "56": "c113_stern_56",
+        "48": "c113_stern_48",
+        "40": "c113_stern_40",
+        "32": "c113_stern_32",
+        "24": "c113_stern_24"
+      },
+      "files": {
+        "c113_stern_full": "assets/game/shared/cinematics/chronos_dialogue_1102/stern-full.png",
+        "c113_stern_68": "assets/game/shared/cinematics/chronos_dialogue_1102/stern-68.png",
+        "c113_stern_56": "assets/game/shared/cinematics/chronos_dialogue_1102/stern-56.png",
+        "c113_stern_48": "assets/game/shared/cinematics/chronos_dialogue_1102/stern-48.png",
+        "c113_stern_40": "assets/game/shared/cinematics/chronos_dialogue_1102/stern-40.png",
+        "c113_stern_32": "assets/game/shared/cinematics/chronos_dialogue_1102/stern-32.png",
+        "c113_stern_24": "assets/game/shared/cinematics/chronos_dialogue_1102/stern-24.png"
+      }
+    }
+  },
+  "sizes": [
+    68,
+    56,
+    48,
+    40,
+    32,
+    24
+  ],
+  "sourceHashes": {
+    "assets\\game\\shared\\cinematics\\cast_performance_1102\\chronos-dialogue.png": "9b40a33912ac86d2433f8ddb7d0a6db2cd28bcba53e02668e271bed548ca1d3e",
+    "assets\\game\\shared\\cinematics\\cast_1102\\chronos\\turn_right.png": "5602dc5b739349ee8230dc9b97faf845d6b2f4ef2734b740073830fd164c3fa6",
+    "assets\\game\\shared\\cinematics\\cast_1102\\chronos\\turn_left.png": "cea758d8da6c3ef83178fd1dd0a750e7d4b7baf65e399b511879deccbb87271c",
+    "assets\\game\\shared\\cinematics\\cast_1102\\chronos\\stern.png": "69fbb14cf6e54f3883da03006b3f084cb7ff7bc27500b2000cad143633278e68"
+  },
+  "method": "Approved source views, shared head crop and original framed bezel; all fitting baked offline."
+}

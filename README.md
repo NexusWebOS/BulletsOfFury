@@ -6,6 +6,19 @@ integration, and real-browser verification on `main`.
 
 Branch: `main`
 
+## November 4 build
+
+- [Download the latest playable build](https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-build-2026-11-04)
+- [Build contents and verification limits](docs/GITHUB_PUBLICATION_1104.md)
+- [New weapons, effects and rotating pickup previews](docs/previews/build_1104/index.html)
+
+Adds Spread Lasers and Plasma Cannons I–V, generated hex icons, ColeForge effects,
+rotating Stage X pickups, layered scenery, pilot quality/flight improvements,
+Chronos dialogue and the recent campaign/wave follow-ups. Extract all three
+November 4 runtime ZIPs together. Older review films below retain their original
+capture dates. This is a development prerelease with the documented existing
+full-suite setup blocker.
+
 ## November2 build and review library
 
 - [Current review hub](https://nexuswebos.github.io/BulletsOfFury/)

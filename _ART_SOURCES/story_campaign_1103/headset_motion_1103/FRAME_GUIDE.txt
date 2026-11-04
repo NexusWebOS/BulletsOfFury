@@ -1,0 +1,6 @@
+Bullets of Fury headset frames: all nine pilots, 24 native 128 x 128 frames each.
+Each pilot folder contains master.png (original generated source), frames.png
+(4 columns x 6 rows), and the 24 named individual PNGs. Maximum 32 opaque
+colors per bank, binary alpha, chest pivot (64,124). Tagged editable Aseprite
+timelines are in aseprite/. manifest.json declares all clip sequences and timing.
+Cole wears olive green and has blue eyes. Maverick wears neon green and aviators. See generation-contract.txt and provenance.json.

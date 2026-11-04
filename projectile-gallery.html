@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projectile Gallery</title>
+<!-- Every projectile Bullets of Fury fires, filmed through the shipping drawBullets() by
+     _BUILD_SOURCE/capture_projectile_gallery_1103.py. "before" = the game without
+     assets/projectile_fx_1103.js, "after" = with it. Serve the repo over http (bof-static). -->
+<style>
+:root{--bg:#06080d;--panel:#0d121b;--line:#1d2838;--ink:#d9e4f0;--dim:#7d8ea3;--hot:#ffb347;--cool:#64e0ff;--bad:#ff5d6c;--ok:#6cf2a0;--warn:#ffd45c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 ui-monospace,Consolas,monospace}
+header{padding:22px 20px 6px;max-width:1500px;margin:auto}
+h1{margin:0;font-size:26px;letter-spacing:2px;color:var(--hot);text-shadow:0 0 0 #000,2px 2px 0 #4a1d00}
+h1 span{color:var(--cool)}
+header p{color:var(--dim);margin:6px 0 0;max-width:980px}
+.bar{position:sticky;top:0;z-index:5;background:rgba(6,8,13,.96);border-bottom:1px solid var(--line);padding:10px 20px}
+.bar .in{max-width:1500px;margin:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bar input,.bar select,.bar button{background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:7px 9px;font:inherit;border-radius:4px}
+.bar button.on{border-color:var(--hot);color:var(--hot)}
+.bar label{color:var(--dim);display:flex;gap:5px;align-items:center}
+#nav a{color:var(--cool);text-decoration:none;border:1px solid var(--line);padding:3px 8px;border-radius:3px;font-size:12px}
+#nav a:hover{border-color:var(--cool)}
+#nav a b{color:var(--dim);font-weight:400}
+#count{color:var(--dim);margin-left:auto}
+main{max-width:1500px;margin:auto;padding:14px 20px 60px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0 18px}
+.stat{background:var(--panel);border:1px solid var(--line);padding:10px 12px;border-radius:6px}
+.stat b{display:block;font-size:22px;color:var(--ink)}
+.stat small{color:var(--dim)}
+h2{font-size:15px;letter-spacing:1.5px;color:var(--cool);border-bottom:1px solid var(--line);padding-bottom:6px;margin:26px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--card,210px),1fr));gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;cursor:pointer}
+.card:hover{border-color:#36506c}
+.view{display:flex;background:#000;position:relative}
+.view canvas{width:100%;image-rendering:pixelated;display:block;mix-blend-mode:screen}
+.view .pane{flex:1;position:relative;background:var(--stage,#000)}
+.view .pane+.pane{border-left:1px solid #222}
+.view .tag{position:absolute;left:4px;top:3px;font-size:10px;color:#9ab;letter-spacing:1px;z-index:2;text-shadow:1px 1px 0 #000}
+.meta{padding:7px 9px 9px}
+.meta .k{color:var(--ink);font-weight:700;word-break:break-all}
+.meta .w{color:var(--dim);font-size:11.5px;word-break:break-all}
+.badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.bd{font-size:10.5px;padding:1px 6px;border-radius:3px;border:1px solid}
+.bd.ok{color:var(--ok);border-color:#1e5b3c}.bd.bad{color:var(--bad);border-color:#6a2430}.bd.warn{color:var(--warn);border-color:#6a5420}.bd.info{color:var(--cool);border-color:#1f4a5c}
+dialog{background:var(--panel);color:var(--ink);border:1px solid #36506c;border-radius:8px;max-width:min(1100px,96vw);width:100%;padding:0}
+dialog .hd{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line)}
+dialog .hd button{background:none;border:1px solid var(--line);color:var(--ink);padding:5px 10px;cursor:pointer}
+dialog .bodyz{padding:14px;display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+dialog .big{display:flex;gap:10px;flex-wrap:wrap}
+dialog .big .pane{flex:1;min-width:200px;max-width:420px;background:var(--stage,#000);position:relative}
+dialog .big canvas{width:100%;image-rendering:pixelated;mix-blend-mode:screen;display:block}
+dialog .strip{overflow-x:auto;background:#000}
+dialog .strip canvas{image-rendering:pixelated;height:96px;display:block}
+dialog pre{white-space:pre-wrap;color:var(--dim);margin:0;font-size:12px}
+.note{color:var(--dim);font-size:12.5px;max-width:980px}
+.empty{color:var(--dim);padding:30px;text-align:center}
+@media (max-width:600px){.grid{grid-template-columns:repeat(2,1fr)}h1{font-size:20px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>BULLETS OF FURY <span>// PROJECTILE GALLERY</span></h1>
+  <p>Every distinct projectile the game fires, filmed through the real renderer while the real <code>updatePlay()</code> moves, spins and ages it: all nine stages' regular waves, every miniboss and boss, the Stage 6 rebels, every pilot × weapon × level, charge shots, space weapons and missiles. 24 frames at 30 fps, centred on the round. Click any card for the frame strip and its draw diagnostics.</p>
+</header>
+<div class="bar"><div class="in">
+  <input id="q" placeholder="search kind / encounter / flag" size="26">
+  <select id="side"><option value="">all owners</option><option value="P">player weapons</option><option value="E">enemies & bosses</option></select>
+  <select id="stage"><option value="">all stages</option></select>
+  <select id="issue"><option value="">any state</option><option value="blur">soft blur glow</option><option value="still">still / barely animates</option><option value="prim">procedural shapes</option><option value="tiny">tiny on screen</option><option value="changed">changed by the pass</option><option value="registry">registry only</option><option value="natural">seen in live fights</option></select>
+  <label>view <select id="mode"><option value="split">before | after</option><option value="after">after</option><option value="before">before</option></select></label>
+  <label>zoom <select id="zoom"><option value="64">tight</option><option value="96" selected>normal</option><option value="128">wide</option></select></label>
+  <label>backdrop <select id="bgsel"><option value="#000">void</option><option value="#0b2a1a">jungle</option><option value="#3a1406">lava</option><option value="#0d2a4a">ocean</option><option value="#4c5866">cloud</option><option value="#140a26">space</option></select></label>
+  <label>speed <select id="spd"><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option></select></label>
+  <button id="pause">pause</button>
+  <label title="A projectile drawing the very same art in several fights or stages shows once, with its stage list"><input type="checkbox" id="dups"> show folded duplicates</label>
+  <span id="count"></span>
+</div><div class="in" id="nav" style="margin-top:8px;gap:6px"></div></div>
+<main>
+  <div class="stats" id="stats"></div>
+  <p class="note">Backdrops use <i>screen</i> blending, so additive light reads roughly as it does in game. "Soft blur glow" is a <code>shadowBlur</code> smear (the opposite of the 1015 pixel-glow rule, and the costliest per-draw canvas op). "Still" means fewer than 3 distinct frames out of 24. "Procedural" means the round is drawn only from fillRect/arc paths, with no authored art.</p>
+  <details class="note" style="margin:0 0 6px"><summary style="cursor:pointer;color:var(--hot)">What the "after" pass (assets/projectile_fx_1103.js) adds</summary>
+  <ul>
+    <li><b>Blur → pixel glow.</b> A requested <code>shadowBlur</code> never reaches the canvas while rounds draw. The round's own silhouette, tinted to the glow colour, is grown in whole pixels as 2–3 hard rings on the PXG brightness ladder and palette-stepped on the game clock.</li>
+    <li><b>Inner light.</b> Glowing rounds get their own brightest pixels added back on a travelling ladder step, so the core shimmers <i>inside</i> the art.</li>
+    <li><b>Snake trails.</b> Energy rounds (orbs, plasma, photon, void, lightning, fire, ice…) leave a tail that wriggles across the flight path with a braided counter-strand. Tracers get a two-step streak, and missiles shed flickering ember pixels. Trail colour is read from the round's own art.</li>
+    <li><b>Spawn pop.</b> Every enemy round is born with a 2-frame pixel ring, so a new shot reads in a dense pattern.</li>
+    <li><b>Threat rim.</b> Enemy rounds get a 1-px dark outline from their own silhouette, so they stay readable over lava, explosions and cloud.</li>
+    <li><b>Graze flash.</b> An enemy round passing within a hair of the pilot flashes white-hot and throws sparks. The filmed observer pilot weaves through fire, so some enemy clips show this.</li>
+  </ul>
+  Renderer only: positions, speeds, hitboxes, damage, clocks and RNG are untouched (verified frame-by-frame by <code>_BUILD_SOURCE/probe_projectile_fx_1103.py</code>). Switches: <code>PFX13.cfg.{glow,inner,trails,pop,rim,graze}</code>; <code>window.PFX13_OFF=1</code> before load disables it all.</details>
+  <div id="out"><div class="empty">loading catalogs…</div></div>
+</main>
+<dialog id="dlg"><div class="hd"><b id="dt"></b><button onclick="dlg.close()">close</button></div><div class="bodyz" id="db"></div></dialog>
+<script>
+const CROP=128,SS=2,FRAME=CROP*SS;
+const $=s=>document.querySelector(s);
+const STAGE_NAMES={1:'Stage 1 · Jungle',2:'Stage 2 · Lava',3:'Stage 3 · Ice',4:'Stage 4 · Storm',5:'Stage 5 · Space',6:'Stage 6 · Fortress',7:'Stage 7 · Toxic',8:'Stage 8 · Alien',9:'Stage 9 · Water'};
+let items=[],paused=false,speed=1,clock=0,views=[];
+async function load(tag){try{const r=await fetch('_shots/projectiles_1103/'+tag+'/catalog.json',{cache:'no-store'});if(!r.ok)return null;return await r.json();}catch(e){return null;}}
+function flags(it){
+  if(!it)return null;const s=it.stats||[],f={};
+  f.blur=Math.max(0,...s.map(x=>x.blur||0));
+  f.unique=it.unique;f.still=it.unique<3;
+  f.prim=s.length&&s.every(x=>!x.img&&x.prim>0);
+  const bw=s.map(x=>x.bounds?Math.max(x.bounds[2]-x.bounds[0],x.bounds[3]-x.bounds[1])/SS:0);f.size=Math.max(0,...bw);f.tiny=f.size>0&&f.size<7;
+  f.lighter=s.some(x=>x.lighter>0);return f;
+}
+function stageOf(it){const m=/-s(\d)-/.exec(it.enc||'');if(it.player){const sp=/space/.test(it.enc||'');return sp?5:0;}return m?+m[1]:0;}
+function pretty(sig){const p=sig.split('|').filter(t=>t[0]!=='@');const side=p.shift()==='P'?'':'';return {kind:p.shift(),rest:p.join(' · ')};}
+function badges(fb,fa){
+  const out=[];const f=fa||fb;
+  if(fb&&fb.blur>0)out.push(fa&&fa.blur===0?['ok','blur '+fb.blur+' → pixel rings']:['bad','soft blur '+fb.blur]);
+  const ub=fb?fb.unique:null,ua=fa?fa.unique:null;
+  if(fb&&fa&&fb.still&&!fa.still)out.push(['ok','still '+ub+' → animated '+ua+'/24']);
+  else if(fb&&fa&&ub!==ua)out.push(['info','frames '+ub+' → '+ua+'/24']);
+  else out.push(f.still?['warn','still '+f.unique+'/24']:['info','animated '+f.unique+'/24']);
+  if(f.prim)out.push(['warn','procedural']);
+  if(f.tiny)out.push(['warn','tiny '+f.size.toFixed(0)+'px']);
+  if(f.lighter)out.push(['info','additive']);
+  return out.map(([c,t])=>`<span class="bd ${c}">${t}</span>`).join('');
+}
+const pendingFirst=new Map();
+function strip(src){const im=new Image();im.onload=()=>{for(const v of pendingFirst.get(im)||[])drawFrame(v,clock*30);pendingFirst.delete(im);};im.src='_shots/projectiles_1103/'+src;return im;}
+function firstPaint(v){if(!v.img)return;if(v.img.complete)drawFrame(v,clock*30);else{const l=pendingFirst.get(v.img)||[];l.push(v);pendingFirst.set(v.img,l);}}
+function paneHTML(label){return `<div class="pane"><span class="tag">${label}</span><canvas width="${FRAME}" height="${FRAME}"></canvas></div>`;}
+function build(){
+  const q=$('#q').value.toLowerCase(),side=$('#side').value,st=$('#stage').value,iss=$('#issue').value,mode=$('#mode').value;
+  const showDups=$('#dups').checked;
+  const list=items.filter(it=>{
+    const a=it.after||it.before,b=it.before;
+    if(it.foldedInto&&!showDups)return false;
+    if(side&&a.sig[0]!==side)return false;
+    if(st!==''&&String(it.stage)!==st)return false;
+    if(q&&!(a.sig+' '+(a.enc||'')).toLowerCase().includes(q))return false;
+    const fb=it.fb||it.fa;
+    if(iss==='blur'&&!(fb.blur>0))return false;
+    if(iss==='still'&&!fb.still)return false;
+    if(iss==='prim'&&!fb.prim)return false;
+    if(iss==='tiny'&&!fb.tiny)return false;
+    if(iss==='changed'&&!(it.after&&it.before&&it.changed))return false;
+    if(iss==='registry'&&!/registry/.test(a.enc||''))return false;
+    if(iss==='natural'&&/registry/.test(a.enc||''))return false;
+    return true;});
+  $('#count').textContent=list.length+' shown · '+items.filter(i=>!i.foldedInto).length+' distinct';
+  const groups={};for(const it of list){const g=it.player?(it.stage===5?'Player · space weapons':'Player · weapons'):(STAGE_NAMES[it.stage]||'Other');(groups[g]=groups[g]||[]).push(it);}
+  const order=Object.keys(groups).sort((a,b)=>(a.startsWith('Player')?0:1)-(b.startsWith('Player')?0:1)||a.localeCompare(b));
+  $('#nav').innerHTML=order.map(g=>`<a href="#g-${g.replace(/\W+/g,'-')}">${g.replace('Stage ','S').replace('Player · ','')} <b>${groups[g].length}</b></a>`).join('');
+  views=[];const out=$('#out');out.innerHTML=order.length?'':'<div class="empty">nothing matches</div>';
+  for(const g of order){
+    const h=document.createElement('h2');h.textContent=g+'  ('+groups[g].length+')';h.id='g-'+g.replace(/\W+/g,'-');out.appendChild(h);
+    const grid=document.createElement('div');grid.className='grid';out.appendChild(grid);
+    for(const it of groups[g]){
+      const a=it.after||it.before,nm=pretty(a.sig),split=mode==='split'&&it.before&&it.after;
+      const c=document.createElement('div');c.className='card';
+      c.innerHTML=`<div class="view">${split?paneHTML('BEFORE')+paneHTML('AFTER'):paneHTML(mode==='before'||!it.after?'BEFORE':'AFTER')}</div>
+        <div class="meta"><div class="k">${nm.kind}</div><div class="w">${nm.rest||'&nbsp;'}</div><div class="w">${(a.enc||'').replace(/^[ep]\d+-/,'')}</div><div class="badges">${it.alsoOn&&it.alsoOn.length?`<span class="bd info" title="the same art fired on these stages too; tick 'show folded duplicates' to see each">same art on S${it.alsoOn.join(', S')}</span>`:''}${it.foldedInto?'<span class="bd info">duplicate art</span>':''}${/registry/.test(a.enc||'')?'<span class="bd warn" title="Fired alone from the projectile registry, without the enemy that owns it. Some owner-specific art (flags set by the firing enemy) falls back to generic art here.">registry · out of context</span>':''}${badges(it.fb,it.fa)}</div></div>`;
+      const cvs=c.querySelectorAll('canvas');
+      const srcs=split?[it.before,it.after]:[mode==='before'||!it.after?it.before:it.after];
+      srcs.forEach((s,i)=>{const v={cv:cvs[i],it:s,img:s&&(s._img||(s._img=strip(s.file)))};views.push(v);firstPaint(v);});
+      c.onclick=()=>open(it);grid.appendChild(c);
+    }
+  }
+  document.documentElement.style.setProperty('--card',mode==='split'?'260px':'190px');
+}
+function drawFrame(v,f){
+  const g=v.cv.getContext('2d'),z=+$('#zoom').value*SS,o=(FRAME-z)/2;g.imageSmoothingEnabled=false;
+  g.clearRect(0,0,FRAME,FRAME);if(!v.img||!v.img.complete||!v.it)return;
+  const n=v.it.frames,i=Math.floor(f)%n;g.drawImage(v.img,i*FRAME+o,o,z,z,0,0,FRAME,FRAME);
+}
+function tick(ts){
+  requestAnimationFrame(tick);
+  if(!paused)clock+=1/60*speed;
+  const f=clock*30;
+  for(const v of views){const r=v.cv.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)continue;drawFrame(v,f);}
+  for(const v of dlgViews)drawFrame(v,f);
+}
+let dlgViews=[];
+function open(it){
+  const a=it.after||it.before;$('#dt').textContent=a.sig;
+  const parts=[];
+  for(const [lab,s,f] of [['BEFORE',it.before,it.fb],['AFTER',it.after,it.fa]]){if(!s)continue;parts.push({lab,s,f});}
+  $('#db').innerHTML=`<div class="big">${parts.map(p=>paneHTML(p.lab)).join('')}</div>`+
+    parts.map(p=>`<div><b>${p.lab}</b> — every captured frame<div class="strip"><canvas></canvas></div></div>`).join('')+
+    `<pre>${parts.map(p=>p.lab+': '+describe(p.s,p.f)).join('\n')}</pre>`;
+  const bigs=$('#db').querySelectorAll('.big canvas');dlgViews=parts.map((p,i)=>({cv:bigs[i],it:p.s,img:p.s._img||(p.s._img=strip(p.s.file))}));dlgViews.forEach(firstPaint);
+  $('#db').querySelectorAll('.strip canvas').forEach((cv,i)=>{const p=parts[i],im=p.s._img;const go=()=>{cv.width=im.naturalWidth/2;cv.height=im.naturalHeight/2;cv.style.width=(cv.width*96/cv.height)+'px';const g=cv.getContext('2d');g.imageSmoothingEnabled=false;g.drawImage(im,0,0,cv.width,cv.height);};im.complete?go():im.onload=go;});
+  dlg.showModal();
+}
+dlg.addEventListener('close',()=>dlgViews=[]);
+function describe(s,f){const st=s.stats[0]||{};return `kind ${s.kind} · first seen in ${s.enc} · velocity ${(+s.vx||0).toFixed(2)},${(+s.vy||0).toFixed(2)} · hitbox ${s.w||'?'}x${s.h||'?'} · ${s.frames} frames, ${s.unique} distinct · per-frame draws: ${st.img} image / ${st.prim} path · blur ${f.blur} · drawn size ~${f.size.toFixed(0)} game px`;}
+function stats(){
+  const live=items.filter(i=>!i.foldedInto),n=live.length,P=live.filter(i=>i.player).length,fb=live.map(i=>i.fb||i.fa);
+  const blur=fb.filter(f=>f.blur>0).length,still=fb.filter(f=>f.still).length,prim=fb.filter(f=>f.prim).length;
+  const fixed=live.filter(i=>i.fb&&i.fa&&i.fb.blur>0&&i.fa.blur===0).length,changed=live.filter(i=>i.changed).length;
+  $('#stats').innerHTML=[[n,'distinct projectiles'],[P,'player rounds'],[n-P,'enemy & boss rounds'],[blur,'used soft blur glow'],[still,'still / near-still'],[prim,'procedural only'],[items.some(i=>i.after)?fixed:'—','blur → pixel glow'],[items.some(i=>i.after)?changed:'—','visibly upgraded']]
+    .map(([v,l])=>`<div class="stat"><b>${v}</b><small>${l}</small></div>`).join('');
+}
+(async()=>{
+  const [B,A]=await Promise.all([load('before'),load('after')]);
+  if(!B&&!A){$('#out').innerHTML='<div class="empty">no catalog yet — run python _BUILD_SOURCE/capture_projectile_gallery_1103.py</div>';return;}
+  const map=new Map();
+  for(const it of (B?B.items:[])){it.file='before/'+it.file;map.set(it.sig,{before:it});}
+  for(const it of (A?A.items:[])){it.file='after/'+it.file;const e=map.get(it.sig)||{};e.after=it;map.set(it.sig,e);}
+  items=[...map.values()].map(e=>{const a=e.after||e.before;e.player=a.player;e.stage=stageOf(a);e.fb=flags(e.before);e.fa=flags(e.after);
+    if(e.before&&e.after){const hb=e.before.stats.map(x=>x.hash).join(),ha=e.after.stats.map(x=>x.hash).join();e.changed=hb!==ha;}return e;});
+  /* fold: an enemy kind drawing the same art keys on several stages is one projectile; keep the
+     live-fight copy (else the lowest stage) and list the others */
+  const fold=new Map();
+  const rank=e=>(/registry/.test((e.after||e.before).enc)?100:0)+e.stage;
+  for(const e of [...items].sort((x,y)=>rank(x)-rank(y))){
+    if(e.player)continue;const a=e.after||e.before;if(!a.art)continue;
+    const key=a.kind+'|'+a.art.join(',')+'|'+String(a.sig).split('|').slice(2).filter(t=>!/^E\d/.test(t)&&t[0]!=='@').join('|');
+    const head=fold.get(key);
+    if(!head){fold.set(key,e);e.alsoOn=[];continue;}
+    e.foldedInto=head;if(!head.alsoOn.includes(e.stage)&&e.stage!==head.stage)head.alsoOn.push(e.stage);
+  }
+  for(const e of items)if(e.alsoOn)e.alsoOn.sort();
+  if(!A)$('#mode').value='before';
+  const stg=new Set(items.map(i=>i.stage));for(const s of [...stg].sort()){if(!s)continue;const o=document.createElement('option');o.value=s;o.textContent=STAGE_NAMES[s];$('#stage').appendChild(o);}
+  stats();build();requestAnimationFrame(tick);
+})();
+for(const id of ['#q','#side','#stage','#issue','#mode','#dups'])$(id).addEventListener('input',build);
+$('#bgsel').addEventListener('input',e=>document.documentElement.style.setProperty('--stage',e.target.value));
+$('#spd').addEventListener('input',e=>speed=+e.target.value);
+$('#pause').onclick=e=>{paused=!paused;e.target.classList.toggle('on',paused);e.target.textContent=paused?'play':'pause';};
+</script>
+</body>
+</html>

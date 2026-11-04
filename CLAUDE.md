@@ -1,3 +1,83 @@
+## November4 - Stage 5 ship forming upgrade (Claude Code)
+
+Mike: the space-ship forming was janky. Frame capture (`_BUILD_SOURCE/capture_ship_forming_1104.py`) showed charge looked like drift, scatter barely read, the snap popped (parts stop drawing at 78% while ~60% in, finished ship appears from nothing) and pixelglow just faded the screen white. New last-loaded layer `assets/ship_forming_1104.js` (SF14; `window.SF14_OFF=1`) wraps furyShipDrawPhase/furyIntroWhite: charge tethers + band pulses + pixel core, scatter shock rings, parts close fully onto a white energy silhouette and weld, ship glows from its own silhouette before a stepped whiteout. Clocks, sounds, kit size/orbit, veil and Cole's authored cells kept. Timing identical on/off, zero errors. Read docs/SHIP_FORMING_1104.md; review `_shots/ship_forming_1104/ship_forming_before_after.gif`. Trap: `_pilotKey()` reads `run.pilot` before `pilotIndex`. No commit/push.
+
+## November4 - Wave follow-ups: Stage 6 scene skip, Stage 5 rammer tell, below-screen cap (Claude Code)
+
+New last-loaded layer `assets/wave_followups_1104.js` (WF14; `window.WF14_OFF=1`, or `WF14_TALK_OFF` / `WF14_RAM_OFF` / `WF14_CAP_OFF`). Read docs/WAVE_FOLLOWUPS_1104.md.
+- **Stage 6 scene:** FIRE/confirm finishes a line, a second press advances (feedback_1003h had made it auto-only: 87 s for Cole). Line must be up 0.25 s. 24 s when pressing.
+- **Stage 5 rammer:** two white blinks + 10 px ease-back during the lane warning (all difficulties, returns to the warned start). Normal: 0.90 s warning, 360 px/s charge. Hard/Furious unchanged.
+- **Wave cap:** units fully below the playfield no longer count toward dispatch. One hook line in assets/game.js (after the naval exclusion) calls `wf14BelowScreen(e)`; LF preserved. Measured effect before: 0-2.5 s held per stage.
+- **Verification:** `probe_wave_followups_1104.py` 14/14. test_fl stops at the pre-existing `difficultyHealthBaseline15 is not defined` (combat_polish_0927b.js).
+No commit/push.
+
+## November4 - Stage 6 fighter rounds readable (Claude Code)
+
+Mike could barely see the new Stage 6 fighters' bullets. Their `_s611Ammo` slug bank had recoloured the amber `mgcf_1_2` source cyan and shrunk it to ~6x2 game px, matching the rain and sky. New last-loaded layer `assets/stage6_rounds_1104.js` (S6R14; `window.S6R14_OFF=1`) draws those rounds from a new bank built from the same source pixels in their own amber, unscaled (~6x14 px) with a 1 px dark seat outline (`_BUILD_SOURCE/build_s6_rounds_1104.py` -> `slug_amber_1104.webp` + `stage6_rounds_art_1104.js`). Draw only; hitbox, speed and routing untouched. Verified in game (`shots_s6_rounds_1104.py`, 341 rounds drawn, OFF restores the old look, no errors); compare `_shots/s6_rounds_1104/compare_crops.png`. Read docs/STAGE6_ROUNDS_1104.md. No commit/push.
+
+## November3 - Wave audit corrected; readability layer (Claude Code)
+
+The wave audit's first numbers came from the observer's **paced inspection mode** and are partly withdrawn. Read the Correction in docs/WAVE_AUDIT_1103.md. Report republished (same artifact): `docs/previews/wave_audit_1103/index.html`.
+- **Trap:** `wave_observe_1102.js` overrides `WO16.start`/`input` further down with a one-wave-at-a-time paced mode (`t=Infinity`, adaptive off). For natural pacing use the top-level `wo16Start`/`wo16Input`, and set the difficulty before the stage builds.
+- **Withdrawn:** 40-66% quiet, Stage 9 quiet, reversed scaling on Stages 4/9, Normal results for Stages 6-9.
+- **Natural:** fire, speed and wave count rise N -> H -> F everywhere. Novice deaths/min peak at Normal Stage 2 (4.46, firewalls/debris), Normal Stage 5 (1.7, s5rammer contact), Hard Stages 2/8 (~5.6), Furious 2-4 on most stages. Pacing is tight (<=9 s gaps). Stage 6's ~58 s gap is the unskippable team-argument cutscene (fb2Talk; feedback_1003h removed tap-to-advance), not the carrier hold (~10-13 s each, verified with `diag_s6_hold_1103.py`).
+- **DA13 natural on vs off:** Normal -33%, Hard -20% (Hard 4/6/7 slightly up, within noise).
+- **New layer** `assets/readability_1103.js` (RD13; `window.RD13_OFF=1`): threat pips on enemy rounds inside explosions (explosion size kept per Mike's +25% rule), and warning lanes beyond the two most imminent are dimmed to 35%. docs/READABILITY_1103.md; `probe_readability_1103.py` 4/4.
+- **Open:** Stage 6 cutscene has no skip, below-screen units counting toward the dispatch cap, the dead density dial, Stage 5 rammer tells.
+No commit/push.
+
+## November3 - Normal/Hard difficulty assist (Claude Code)
+
+Built from the wave audit. New last-loaded layer `assets/difficulty_assist_1103.js` (DA13; `window.DA13_OFF=1`). It is active only on Normal/Hard during regular waves: never with a boss or miniboss up, and never on Furious, Insanity or Easy. Read docs/DIFFICULTY_ASSIST_1103.md.
+- **Fire budget:** eShoot/eShootT are wrapped outermost with a per-frame gate. Over-budget rounds (N 25 live / 1.5 aimed per s; H 45 / 2.5) are spliced out in place and held as one frame group, then released whole within 0.6 s. Nothing is deleted, and callers keep their objects.
+- **Speed caps:** aimed 260/360 px/s, pattern 330/420, applied every frame. They scale spd, _maxspd and speed too.
+- **Stage 2 hazards:** the firewall falls in 1.7/1.45 s with a 0.24/0.30 catch box (refused via a wfxUpdate stack check). Debris: every 2nd/4th chunk dropped at launch, 65%/80% hit radius, and path dots. The firewall alarm stays off (0801ad).
+- **Stage 8 beams:** +0.3/0.15 s dodge time added when the lanes commit.
+- **Mercy:** Normal halves the budget for 8 s after a respawn.
+- **Measured** (novice lives/min, on vs off): Stage 2 Normal hazard-aware 3.31 -> 1.76; hazard-blind N 3.91 -> 2.98, H 5.22 -> 3.58; Stage 7 Normal 1.03 -> 0.50. Others are within noise.
+- **Verification:** `probe_difficulty_assist_1103.py` 15/15.
+- **Trap:** extending A.warm at tell start delays the s811 lane lock (A.warm*.5) and aims beams better. Add the time after A.committed.
+No commit/push.
+
+## November3 - Wave pressure audit, Normal/Hard/Furious (Claude Code)
+
+Analysis only, no game files changed. Report: `docs/previews/wave_audit_1103/index.html` (private artifact); method, results and traps in docs/WAVE_AUDIT_1103.md.
+- **Method:** `measure_waves_1103.py` + `wave_telemetry_1103.js` drive today's WO16 observer (difficulty substituted, reinforcements on, bosses suppressed) with novice and skilled dodge bots, counting every playerHit as a life.
+- **Findings:**
+  - Stage 2 is the hardest stage on Normal: 5.1 lives/min, all from firewalls and debris.
+  - Stage 7 fires 6-12 rounds/s.
+  - Difficulty dials miss stage-owned guns: Stage 6 rounds measure 276 px/s on every tier, and Stage 9 and Stage 4 fire less on the higher tier.
+  - 40-66% of seconds are quiet.
+  - Deaths come from speed, aim and hazards, not density.
+- **Recommendations:** an eShoot fire director with per-difficulty budgets; split aimed/pattern speed; Normal-specific hazard tuning; repair the stage curve; a mercy window; readability caps.
+- **Traps:**
+  - mapScroll only advances in drawWorld, so harnesses must draw.
+  - Wait for stageLoadReady before stepping.
+  - WO16 is const.
+No commit/push.
+
+## November3 - Projectile gallery and pixel-glow pass (Claude Code)
+
+Mike asked for a webpage of every projectile and how it animates, then a pass on the lacking or janky ones: pixel glow, snaking, effects he did not know he needed. Read docs/PROJECTILE_FX_1103.md.
+- **Gallery:** `projectile-gallery.html` (serve the repo, bof-static 8766). It shows 286 distinct projectiles (34 player, 252 enemy/boss; enemy signatures carry their stage, and registry duplicates fold by art key), filmed before/after through the shipping drawBullets chain by `_BUILD_SOURCE/capture_projectile_gallery_1103.py` with the PG3 harness. Coverage: all stage slices, minibosses and bosses, every pilot and weapon, space weapons, missiles, charge shots, plus a registry pass, whose clips are labelled out of context. Media: `_shots/projectiles_1103/{before,after}`.
+- **Audit before:** 21 rounds lit with soft shadowBlur, 37 still. Stage 5 waves issued 3418 blurred draws in 10 s, and round drawing cost 103 ms a frame.
+- **Pass:** new last-loaded layer `assets/projectile_fx_1103.js` (PFX13; `window.PFX13_OFF=1` disables; `PFX13.cfg.{glow,inner,trails,pop,rim,graze}`). It converts blur to hard pixel rings grown from each sprite's own silhouette, adds inner light from the art's own hot pixels, snake/streak/ember trails walked along the flight path, a spawn pop, a dark threat rim on enemy rounds and a graze flash. It also warms Yuri's Lightning Orb art. After: blur 21 -> 2 (both are the Stage 5 bomber's FOV warning lines drawn inside the bullet pass, not rounds), still 37 -> 1 (approved spaceLaser L5 pulse); Stage 5 103 -> 4.9 ms; other stages cost +0.25-0.8 ms.
+- **Trap:** drawBullets is a chain of about 15 wrappers. Some draw effects after the base, and some swap the arrays for filtered copies. Never call it per round, because that multiplies beams, shields and debris. PFX13 runs the chain once and, for its duration only, watches `Array.prototype[Symbol.iterator]` to learn which round is drawing.
+- **Trap:** the game's image queue advances inside loop(). With shoot.TRAP_RAF, lazily requested art never decodes while stepping by hand, so pump the trapped loop with wall time before filming.
+- **Trap:** fights are not deterministic run to run even with the module off. Prove renderer-only by drawing the same frame both ways, never by comparing two runs.
+- **Verification:** `probe_projectile_fx_1103.py` 14/14. The same frame drawn both ways leaves every round and the RNG identical; no blur reaches the canvas; cost stays within budget; zero errors.
+- **Suite:** test_fl exits 1 before its summary with `difficultyHealthBaseline15 is not defined` in combat_polish_0927b.js, another session's uncommitted edit. The failure is identical with PFX13 removed.
+- **Second review** (Mike: frames cut off or extra, s8/s9 needles turning blue, s6omega must hold size). New audits: `audit_projectile_frames_1103.py` (every filmed frame), `audit_projectile_reels_1103.py` (every source reel in-game) and `audit_projectile_clean_1103.py` (every cell the cleaner touches, before/after). Fixes, all in PFX13 with the art files untouched:
+  - cell hygiene clears baked or bleeding straight-edged slivers (the Stage 5 mine bar, the water-orb stub);
+  - premium `bpfx_proj_*` reels are warmed and drawn only when all 8 frames are ready, so rounds no longer flip art frame by frame;
+  - Herald dark claw needles keep their red art;
+  - the s6omega frame and the ice-missile crystal are held (that missile was looping the Cryo MUZZLE reel);
+  - s9lattice/s7spore bloom once, then hold the plateau;
+  - a pixel orb covers rounds whose owner draws nothing while art loads (the Herald chaos orbs);
+  - trails are subtler, and graze is sparks only.
+  Final films: 276 distinct, blur 21 -> 2 (bomber warning lines, not rounds), stills -> 0. **Traps:** a Playwright `route()` interceptor deadlocks once a long evaluate() issues requests (0% CPU stall), so the capture no longer uses one. Enemy gallery clips must be keyed per encounter, because fights are not deterministic.
+No commit/push.
+
 ## November2 — Normal/Hard/Furious boss films, storm encounters and audio quality
 
 Complete57-film library: all Stage1–9 minibosses/bosses plus both Stage6 routes,19 per difficulty. Native inputs, initial level5Cole, labelled invulnerability, no enemy HP/phase/attack-clock writes after fresh spawn. Normal6–9 remain review-only; campaign still ends5. Actual Dracodia rebirth, all4copies, protected final pool and native defeats are recorded on all3 difficulties. New local comparison page includes per-difficulty players, audible selection, seeking and transformation/copy chapters. Stage2–5 Furious concept boards are proposals only.

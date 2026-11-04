@@ -1,0 +1,270 @@
+{
+  "passed": 29,
+  "total": 29,
+  "errors": [],
+  "missing": [],
+  "checks": [
+    {
+      "name": "Current four-shot revision loaded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole comic portraits reach gray footer without floating chest edge",
+      "passed": true,
+      "data": {
+        "left": 283,
+        "right": 252,
+        "gray": 910,
+        "comic": true,
+        "actor": null
+      }
+    },
+    {
+      "name": "axel comic portraits reach gray footer without floating chest edge",
+      "passed": true,
+      "data": {
+        "left": 283,
+        "right": 313,
+        "gray": 910,
+        "comic": true,
+        "actor": null
+      }
+    },
+    {
+      "name": "decker comic portraits reach gray footer without floating chest edge",
+      "passed": true,
+      "data": {
+        "left": 254,
+        "right": 281,
+        "gray": 910,
+        "comic": true,
+        "actor": null
+      }
+    },
+    {
+      "name": "maverick comic portraits reach gray footer without floating chest edge",
+      "passed": true,
+      "data": {
+        "left": 283,
+        "right": 321,
+        "gray": 910,
+        "comic": true,
+        "actor": null
+      }
+    },
+    {
+      "name": "freezer comic portraits reach gray footer without floating chest edge",
+      "passed": true,
+      "data": {
+        "left": 283,
+        "right": 273,
+        "gray": 910,
+        "comic": true,
+        "actor": null
+      }
+    },
+    {
+      "name": "juggernaut comic portraits reach gray footer without floating chest edge",
+      "passed": true,
+      "data": {
+        "left": 283,
+        "right": 346,
+        "gray": 910,
+        "comic": true,
+        "actor": null
+      }
+    },
+    {
+      "name": "yuri comic portraits reach gray footer without floating chest edge",
+      "passed": true,
+      "data": {
+        "left": 283,
+        "right": 316,
+        "gray": 910,
+        "comic": true,
+        "actor": null
+      }
+    },
+    {
+      "name": "lizzie comic portraits reach gray footer without floating chest edge",
+      "passed": true,
+      "data": {
+        "left": 283,
+        "right": 304,
+        "gray": 910,
+        "comic": true,
+        "actor": null
+      }
+    },
+    {
+      "name": "falva comic portraits reach gray footer without floating chest edge",
+      "passed": true,
+      "data": {
+        "left": 283,
+        "right": 320,
+        "gray": 910,
+        "comic": true,
+        "actor": null
+      }
+    },
+    {
+      "name": "Decker typing occupies left workstation and leaves holo table untouched",
+      "passed": true,
+      "data": {
+        "holoChanges": 0,
+        "seatChanges": 26375
+      }
+    },
+    {
+      "name": "Decker ecstatic occupies left workstation and leaves holo table untouched",
+      "passed": true,
+      "data": {
+        "holoChanges": 0,
+        "seatChanges": 27125
+      }
+    },
+    {
+      "name": "Decker shock occupies left workstation and leaves holo table untouched",
+      "passed": true,
+      "data": {
+        "holoChanges": 0,
+        "seatChanges": 25558
+      }
+    },
+    {
+      "name": "Decker recover occupies left workstation and leaves holo table untouched",
+      "passed": true,
+      "data": {
+        "holoChanges": 0,
+        "seatChanges": 26240
+      }
+    },
+    {
+      "name": "Decker panic occupies left workstation and leaves holo table untouched",
+      "passed": true,
+      "data": {
+        "holoChanges": 0,
+        "seatChanges": 27192
+      }
+    },
+    {
+      "name": "Decker duck occupies left workstation and leaves holo table untouched",
+      "passed": true,
+      "data": {
+        "holoChanges": 0,
+        "seatChanges": 23874
+      }
+    },
+    {
+      "name": "Squad takeoff and alien descent are separate shots",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Drone descent has four distinct native frames and no allied overlay",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole actual landing pad remains visible through empty ship pixels",
+      "passed": true,
+      "data": {
+        "changed": 157,
+        "outside": 0,
+        "opaque": 157,
+        "cornerAlpha": 0
+      }
+    },
+    {
+      "name": "axel actual landing pad remains visible through empty ship pixels",
+      "passed": true,
+      "data": {
+        "changed": 106,
+        "outside": 0,
+        "opaque": 106,
+        "cornerAlpha": 0
+      }
+    },
+    {
+      "name": "decker actual landing pad remains visible through empty ship pixels",
+      "passed": true,
+      "data": {
+        "changed": 154,
+        "outside": 0,
+        "opaque": 155,
+        "cornerAlpha": 0
+      }
+    },
+    {
+      "name": "maverick actual landing pad remains visible through empty ship pixels",
+      "passed": true,
+      "data": {
+        "changed": 168,
+        "outside": 0,
+        "opaque": 168,
+        "cornerAlpha": 0
+      }
+    },
+    {
+      "name": "freezer actual landing pad remains visible through empty ship pixels",
+      "passed": true,
+      "data": {
+        "changed": 208,
+        "outside": 0,
+        "opaque": 208,
+        "cornerAlpha": 0
+      }
+    },
+    {
+      "name": "juggernaut actual landing pad remains visible through empty ship pixels",
+      "passed": true,
+      "data": {
+        "changed": 191,
+        "outside": 0,
+        "opaque": 191,
+        "cornerAlpha": 0
+      }
+    },
+    {
+      "name": "yuri actual landing pad remains visible through empty ship pixels",
+      "passed": true,
+      "data": {
+        "changed": 136,
+        "outside": 0,
+        "opaque": 136,
+        "cornerAlpha": 0
+      }
+    },
+    {
+      "name": "lizzie actual landing pad remains visible through empty ship pixels",
+      "passed": true,
+      "data": {
+        "changed": 146,
+        "outside": 0,
+        "opaque": 146,
+        "cornerAlpha": 0
+      }
+    },
+    {
+      "name": "falva actual landing pad remains visible through empty ship pixels",
+      "passed": true,
+      "data": {
+        "changed": 161,
+        "outside": 0,
+        "opaque": 161,
+        "cornerAlpha": 0
+      }
+    },
+    {
+      "name": "No page or render exceptions",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "No missing scene assets",
+      "passed": true,
+      "data": []
+    }
+  ]
+}

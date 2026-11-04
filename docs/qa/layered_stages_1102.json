@@ -1,0 +1,1450 @@
+{
+  "date": "2026-11-02T18:06:13.814028+00:00",
+  "owner": "LS112",
+  "nativeChecks": [
+    {
+      "name": "Live renderer registers the new layer owner",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 1 retains its native width and encounter scroll budget",
+      "passed": true,
+      "data": {
+        "stage": 1,
+        "clock": {},
+        "draws": {},
+        "source": 3700,
+        "groundDelta": 0,
+        "worldWidth": 680,
+        "mapScroll": 0,
+        "nativeRange": 3700
+      }
+    },
+    {
+      "name": "Stage 1 retains its own master",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 2 retains its native width and encounter scroll budget",
+      "passed": true,
+      "data": {
+        "stage": 2,
+        "clock": {
+          "bed": {
+            "name": "lava",
+            "time": 0,
+            "frame": 0,
+            "x": -188,
+            "y": -256
+          },
+          "terrain": {
+            "stage": 2,
+            "source": 4056,
+            "mapScroll": 0
+          }
+        },
+        "draws": {
+          "bed-lava": 2,
+          "stage-2": 1
+        },
+        "source": 4056,
+        "groundDelta": 0,
+        "worldWidth": 680,
+        "mapScroll": 0,
+        "nativeRange": 3568
+      }
+    },
+    {
+      "name": "Stage 2 uses its approved terrain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 2 advances through native updates without render errors",
+      "passed": true,
+      "data": {
+        "map": 3400.5866666666557,
+        "clock": 1.1666666666666674,
+        "bed": 1,
+        "layer": {
+          "stage": 2,
+          "clock": {
+            "bed": {
+              "name": "lava",
+              "time": 1.1666666666666674,
+              "frame": 1,
+              "x": -188,
+              "y": -242
+            },
+            "terrain": {
+              "stage": 2,
+              "source": 190.31067264575222,
+              "mapScroll": 3400.5866666666557
+            }
+          },
+          "draws": {
+            "bed-lava": 148,
+            "stage-2": 74
+          },
+          "source": 190.31067264575222,
+          "groundDelta": 0.7578475336322299,
+          "worldWidth": 680,
+          "mapScroll": 3400.5866666666557,
+          "nativeRange": 3568
+        },
+        "pools": 0
+      }
+    },
+    {
+      "name": "Stage 2 has an independently animated material layer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 3 retains its native width and encounter scroll budget",
+      "passed": true,
+      "data": {
+        "stage": 3,
+        "clock": {
+          "bed": {
+            "name": "water",
+            "time": 1.1666666666666674,
+            "frame": 9,
+            "x": -188,
+            "y": -242
+          },
+          "terrain": {
+            "stage": 3,
+            "source": 4056,
+            "mapScroll": 0
+          }
+        },
+        "draws": {
+          "bed-lava": 148,
+          "stage-2": 74,
+          "bed-water": 2,
+          "stage-3": 1
+        },
+        "source": 4056,
+        "groundDelta": 0,
+        "worldWidth": 680,
+        "mapScroll": 0,
+        "nativeRange": 3568
+      }
+    },
+    {
+      "name": "Stage 3 uses its approved terrain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 3 advances through native updates without render errors",
+      "passed": true,
+      "data": {
+        "map": 3400.5866666666557,
+        "clock": 2.33333333333333,
+        "bed": 2,
+        "layer": {
+          "stage": 3,
+          "clock": {
+            "bed": {
+              "name": "water",
+              "time": 2.33333333333333,
+              "frame": 2,
+              "x": -188,
+              "y": -229
+            },
+            "terrain": {
+              "stage": 3,
+              "source": 190.31067264575222,
+              "mapScroll": 3400.5866666666557
+            }
+          },
+          "draws": {
+            "bed-lava": 148,
+            "stage-2": 74,
+            "bed-water": 148,
+            "stage-3": 74
+          },
+          "source": 190.31067264575222,
+          "groundDelta": 0.7578475336322299,
+          "worldWidth": 680,
+          "mapScroll": 3400.5866666666557,
+          "nativeRange": 3568
+        },
+        "pools": 0
+      }
+    },
+    {
+      "name": "Stage 3 has an independently animated material layer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 4 retains its native width and encounter scroll budget",
+      "passed": true,
+      "data": {
+        "stage": 4,
+        "clock": {
+          "terrain": {
+            "stage": 4,
+            "source": 5480,
+            "travel": 0,
+            "chase": false
+          }
+        },
+        "draws": {
+          "bed-lava": 148,
+          "stage-2": 74,
+          "bed-water": 148,
+          "stage-3": 74,
+          "stage-4": 1
+        },
+        "source": 5480,
+        "groundDelta": 0,
+        "worldWidth": 680,
+        "mapScroll": 0,
+        "nativeRange": 3568
+      }
+    },
+    {
+      "name": "Stage 4 uses its approved terrain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 4 advances through native updates without render errors",
+      "passed": true,
+      "data": {
+        "map": 3400.5866666666557,
+        "clock": 3.4999999999999925,
+        "bed": null,
+        "layer": {
+          "stage": 4,
+          "clock": {
+            "terrain": {
+              "stage": 4,
+              "source": 257.1258594917954,
+              "travel": 5222.874140508205,
+              "chase": false
+            }
+          },
+          "draws": {
+            "bed-lava": 148,
+            "stage-2": 74,
+            "bed-water": 148,
+            "stage-3": 74,
+            "stage-4": 74
+          },
+          "source": 257.1258594917954,
+          "groundDelta": 1.0239162929746612,
+          "worldWidth": 680,
+          "mapScroll": 3400.5866666666557,
+          "nativeRange": 3568
+        },
+        "pools": 0
+      }
+    },
+    {
+      "name": "Stage 5 retains its native width and encounter scroll budget",
+      "passed": true,
+      "data": {
+        "stage": 5,
+        "clock": {
+          "bed": {
+            "name": "space",
+            "time": 3.4999999999999925,
+            "frame": 0,
+            "x": -444,
+            "y": -495
+          },
+          "terrain": {
+            "stage": 5,
+            "source": 2208,
+            "travel": 0
+          }
+        },
+        "draws": {
+          "bed-lava": 148,
+          "stage-2": 74,
+          "bed-water": 148,
+          "stage-3": 74,
+          "stage-4": 74,
+          "bed-space": 3,
+          "stage-5": 1
+        },
+        "source": 2208,
+        "groundDelta": 0,
+        "worldWidth": 680,
+        "mapScroll": 0,
+        "nativeRange": 2208
+      }
+    },
+    {
+      "name": "Stage 5 uses its approved terrain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 5 advances through native updates without render errors",
+      "passed": true,
+      "data": {
+        "map": 2122.186666666656,
+        "clock": 4.666666666666655,
+        "bed": 0,
+        "layer": {
+          "stage": 5,
+          "clock": {
+            "bed": {
+              "name": "space",
+              "time": 4.666666666666655,
+              "frame": 0,
+              "x": -444,
+              "y": -489
+            },
+            "terrain": {
+              "stage": 5,
+              "source": -10.320000000000164,
+              "travel": 2218.32
+            }
+          },
+          "draws": {
+            "bed-lava": 148,
+            "stage-2": 74,
+            "bed-water": 148,
+            "stage-3": 74,
+            "stage-4": 74,
+            "bed-space": 222,
+            "stage-5": 74
+          },
+          "source": 2709.68,
+          "groundDelta": 2.0399999999999636,
+          "worldWidth": 680,
+          "mapScroll": 2122.186666666656,
+          "nativeRange": 2208
+        },
+        "pools": 0
+      }
+    },
+    {
+      "name": "Stage 5 has an independently animated material layer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 6 retains its native width and encounter scroll budget",
+      "passed": true,
+      "data": {
+        "stage": 6,
+        "clock": {
+          "bed": {
+            "name": "night-water",
+            "time": 4.666666666666655,
+            "frame": 5,
+            "x": -188,
+            "y": -201
+          },
+          "terrain": {
+            "stage": 6,
+            "source": 4736,
+            "mapScroll": 0
+          }
+        },
+        "draws": {
+          "bed-lava": 148,
+          "stage-2": 74,
+          "bed-water": 148,
+          "stage-3": 74,
+          "stage-4": 74,
+          "bed-space": 222,
+          "stage-5": 74,
+          "bed-night-water": 2,
+          "city": 1,
+          "stage-6": 1
+        },
+        "source": 4736,
+        "groundDelta": 0,
+        "worldWidth": 680,
+        "mapScroll": 0,
+        "nativeRange": 4488
+      }
+    },
+    {
+      "name": "Stage 6 uses its approved terrain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 6 advances through native updates without render errors",
+      "passed": true,
+      "data": {
+        "map": 4265.386666666687,
+        "clock": 5.833333333333318,
+        "bed": 14,
+        "layer": {
+          "stage": 6,
+          "clock": {
+            "bed": {
+              "name": "night-water",
+              "time": 5.833333333333318,
+              "frame": 14,
+              "x": -188,
+              "y": -187
+            },
+            "terrain": {
+              "stage": 6,
+              "source": 4668.826666666688,
+              "mapScroll": 4265.386666666687
+            }
+          },
+          "draws": {
+            "bed-lava": 148,
+            "stage-2": 74,
+            "bed-water": 148,
+            "stage-3": 74,
+            "stage-4": 74,
+            "bed-space": 222,
+            "stage-5": 74,
+            "bed-night-water": 148,
+            "city": 74,
+            "stage-6": 74
+          },
+          "source": 4668.826666666688,
+          "groundDelta": 12.33333333333303,
+          "worldWidth": 680,
+          "mapScroll": 4265.386666666687,
+          "nativeRange": 4488
+        },
+        "pools": 1
+      }
+    },
+    {
+      "name": "Stage 6 has an independently animated material layer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 7 retains its native width and encounter scroll budget",
+      "passed": true,
+      "data": {
+        "stage": 7,
+        "clock": {
+          "bed": {
+            "name": "toxic",
+            "time": 5.833333333333318,
+            "frame": 14,
+            "x": -188,
+            "y": -187
+          },
+          "terrain": {
+            "stage": 7,
+            "source": 4608,
+            "mapScroll": 0
+          }
+        },
+        "draws": {
+          "bed-lava": 148,
+          "stage-2": 74,
+          "bed-water": 148,
+          "stage-3": 74,
+          "stage-4": 74,
+          "bed-space": 222,
+          "stage-5": 74,
+          "bed-night-water": 148,
+          "city": 74,
+          "stage-6": 74,
+          "bed-toxic": 2,
+          "stage-7": 1
+        },
+        "source": 4608,
+        "groundDelta": 0,
+        "worldWidth": 680,
+        "mapScroll": 0,
+        "nativeRange": 4204
+      }
+    },
+    {
+      "name": "Stage 7 uses its approved terrain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 7 advances through native updates without render errors",
+      "passed": true,
+      "data": {
+        "map": 3594,
+        "clock": 6.9999999999999805,
+        "bed": 7,
+        "layer": {
+          "stage": 7,
+          "clock": {
+            "bed": {
+              "name": "toxic",
+              "time": 6.9999999999999805,
+              "frame": 7,
+              "x": -188,
+              "y": -173
+            },
+            "terrain": {
+              "stage": 7,
+              "source": 668.620361560419,
+              "mapScroll": 3594
+            }
+          },
+          "draws": {
+            "bed-lava": 148,
+            "stage-2": 74,
+            "bed-water": 148,
+            "stage-3": 74,
+            "stage-4": 74,
+            "bed-space": 222,
+            "stage-5": 74,
+            "bed-night-water": 148,
+            "city": 74,
+            "stage-6": 74,
+            "bed-toxic": 148,
+            "stage-7": 74
+          },
+          "source": 668.620361560419,
+          "groundDelta": 0,
+          "worldWidth": 680,
+          "mapScroll": 3594,
+          "nativeRange": 4204
+        },
+        "pools": 0
+      }
+    },
+    {
+      "name": "Stage 7 has an independently animated material layer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 8 retains its native width and encounter scroll budget",
+      "passed": true,
+      "data": {
+        "stage": 8,
+        "clock": {
+          "bed": {
+            "name": "biofluid",
+            "time": 6.9999999999999805,
+            "frame": 7,
+            "x": -188,
+            "y": -173
+          },
+          "terrain": {
+            "stage": 8,
+            "source": 3440,
+            "travel": 0
+          }
+        },
+        "draws": {
+          "bed-lava": 148,
+          "stage-2": 74,
+          "bed-water": 148,
+          "stage-3": 74,
+          "stage-4": 74,
+          "bed-space": 222,
+          "stage-5": 74,
+          "bed-night-water": 148,
+          "city": 74,
+          "stage-6": 74,
+          "bed-toxic": 148,
+          "stage-7": 74,
+          "bed-biofluid": 1,
+          "stage-8": 1
+        },
+        "source": 3440,
+        "groundDelta": 0,
+        "worldWidth": 680,
+        "mapScroll": 0,
+        "nativeRange": 4096
+      }
+    },
+    {
+      "name": "Stage 8 uses its approved terrain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 8 advances through native updates without render errors",
+      "passed": true,
+      "data": {
+        "map": 3896.906666666656,
+        "clock": 8.166666666666652,
+        "bed": 1,
+        "layer": {
+          "stage": 8,
+          "clock": {
+            "bed": {
+              "name": "biofluid",
+              "time": 8.166666666666652,
+              "frame": 1,
+              "x": -188,
+              "y": -159
+            },
+            "terrain": {
+              "stage": 8,
+              "source": 3349,
+              "travel": 90.99999999999989
+            },
+            "realmTravel": 3233.6
+          },
+          "draws": {
+            "bed-lava": 148,
+            "stage-2": 74,
+            "bed-water": 148,
+            "stage-3": 74,
+            "stage-4": 74,
+            "bed-space": 222,
+            "stage-5": 74,
+            "bed-night-water": 148,
+            "city": 74,
+            "stage-6": 74,
+            "bed-toxic": 148,
+            "stage-7": 74,
+            "bed-biofluid": 74,
+            "stage-8": 74
+          },
+          "source": 3349,
+          "groundDelta": 1.2999999999999972,
+          "worldWidth": 680,
+          "mapScroll": 3896.906666666656,
+          "nativeRange": 4096
+        },
+        "pools": 0
+      }
+    },
+    {
+      "name": "Stage 8 has an independently animated material layer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 9 retains its native width and encounter scroll budget",
+      "passed": true,
+      "data": {
+        "stage": 9,
+        "clock": {
+          "bed": {
+            "name": "voidwater",
+            "time": 8.166666666666652,
+            "frame": 1,
+            "x": -188,
+            "y": -159
+          },
+          "terrain": {
+            "stage": 9,
+            "source": 2208,
+            "travel": 0
+          }
+        },
+        "draws": {
+          "bed-lava": 148,
+          "stage-2": 74,
+          "bed-water": 148,
+          "stage-3": 74,
+          "stage-4": 74,
+          "bed-space": 222,
+          "stage-5": 74,
+          "bed-night-water": 148,
+          "city": 74,
+          "stage-6": 74,
+          "bed-toxic": 148,
+          "stage-7": 74,
+          "bed-biofluid": 74,
+          "stage-8": 74,
+          "bed-voidwater": 3,
+          "stage-9": 1
+        },
+        "source": 2208,
+        "groundDelta": 0,
+        "worldWidth": 680,
+        "mapScroll": 0,
+        "nativeRange": 4096
+      }
+    },
+    {
+      "name": "Stage 9 uses its approved terrain",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 9 advances through native updates without render errors",
+      "passed": true,
+      "data": {
+        "map": 3896.906666666656,
+        "clock": 9.333333333333377,
+        "bed": 10,
+        "layer": {
+          "stage": 9,
+          "clock": {
+            "bed": {
+              "name": "voidwater",
+              "time": 9.333333333333377,
+              "frame": 10,
+              "x": -188,
+              "y": -144
+            },
+            "terrain": {
+              "stage": 9,
+              "source": -1.9200000000000728,
+              "travel": 2209.92
+            }
+          },
+          "draws": {
+            "bed-lava": 148,
+            "stage-2": 74,
+            "bed-water": 148,
+            "stage-3": 74,
+            "stage-4": 74,
+            "bed-space": 222,
+            "stage-5": 74,
+            "bed-night-water": 148,
+            "city": 74,
+            "stage-6": 74,
+            "bed-toxic": 148,
+            "stage-7": 74,
+            "bed-biofluid": 74,
+            "stage-8": 74,
+            "bed-voidwater": 222,
+            "stage-9": 74
+          },
+          "source": 2718.08,
+          "groundDelta": 1.9200000000000728,
+          "worldWidth": 680,
+          "mapScroll": 3896.906666666656,
+          "nativeRange": 4096
+        },
+        "pools": 0
+      }
+    },
+    {
+      "name": "Stage 9 has an independently animated material layer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All six Tesla sockets pulse through a live frame sequence",
+      "passed": true,
+      "data": [
+        {
+          "frame": 1,
+          "y": -14,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 49
+            },
+            {
+              "x": 530,
+              "y": 49
+            },
+            {
+              "x": 113,
+              "y": 164
+            },
+            {
+              "x": 563,
+              "y": 164
+            },
+            {
+              "x": 114,
+              "y": 306
+            },
+            {
+              "x": 563,
+              "y": 306
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "y": -8,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 55
+            },
+            {
+              "x": 530,
+              "y": 55
+            },
+            {
+              "x": 113,
+              "y": 170
+            },
+            {
+              "x": 563,
+              "y": 170
+            },
+            {
+              "x": 114,
+              "y": 312
+            },
+            {
+              "x": 563,
+              "y": 312
+            }
+          ]
+        },
+        {
+          "frame": 5,
+          "y": -2,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 61
+            },
+            {
+              "x": 530,
+              "y": 61
+            },
+            {
+              "x": 113,
+              "y": 176
+            },
+            {
+              "x": 563,
+              "y": 176
+            },
+            {
+              "x": 114,
+              "y": 318
+            },
+            {
+              "x": 563,
+              "y": 318
+            }
+          ]
+        },
+        {
+          "frame": 7,
+          "y": 5,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 68
+            },
+            {
+              "x": 530,
+              "y": 68
+            },
+            {
+              "x": 113,
+              "y": 183
+            },
+            {
+              "x": 563,
+              "y": 183
+            },
+            {
+              "x": 114,
+              "y": 325
+            },
+            {
+              "x": 563,
+              "y": 325
+            }
+          ]
+        },
+        {
+          "frame": 9,
+          "y": 11,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 74
+            },
+            {
+              "x": 530,
+              "y": 74
+            },
+            {
+              "x": 113,
+              "y": 189
+            },
+            {
+              "x": 563,
+              "y": 189
+            },
+            {
+              "x": 114,
+              "y": 331
+            },
+            {
+              "x": 563,
+              "y": 331
+            }
+          ]
+        },
+        {
+          "frame": 10,
+          "y": 17,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 80
+            },
+            {
+              "x": 530,
+              "y": 80
+            },
+            {
+              "x": 113,
+              "y": 195
+            },
+            {
+              "x": 563,
+              "y": 195
+            },
+            {
+              "x": 114,
+              "y": 337
+            },
+            {
+              "x": 563,
+              "y": 337
+            }
+          ]
+        },
+        {
+          "frame": 12,
+          "y": 23,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 86
+            },
+            {
+              "x": 530,
+              "y": 86
+            },
+            {
+              "x": 113,
+              "y": 201
+            },
+            {
+              "x": 563,
+              "y": 201
+            },
+            {
+              "x": 114,
+              "y": 343
+            },
+            {
+              "x": 563,
+              "y": 343
+            }
+          ]
+        },
+        {
+          "frame": 14,
+          "y": 29,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 92
+            },
+            {
+              "x": 530,
+              "y": 92
+            },
+            {
+              "x": 113,
+              "y": 207
+            },
+            {
+              "x": 563,
+              "y": 207
+            },
+            {
+              "x": 114,
+              "y": 349
+            },
+            {
+              "x": 563,
+              "y": 349
+            }
+          ]
+        },
+        {
+          "frame": 16,
+          "y": 35,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 98
+            },
+            {
+              "x": 530,
+              "y": 98
+            },
+            {
+              "x": 113,
+              "y": 213
+            },
+            {
+              "x": 563,
+              "y": 213
+            },
+            {
+              "x": 114,
+              "y": 355
+            },
+            {
+              "x": 563,
+              "y": 355
+            }
+          ]
+        },
+        {
+          "frame": 18,
+          "y": 41,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 104
+            },
+            {
+              "x": 530,
+              "y": 104
+            },
+            {
+              "x": 113,
+              "y": 219
+            },
+            {
+              "x": 563,
+              "y": 219
+            },
+            {
+              "x": 114,
+              "y": 361
+            },
+            {
+              "x": 563,
+              "y": 361
+            }
+          ]
+        },
+        {
+          "frame": 19,
+          "y": 48,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 111
+            },
+            {
+              "x": 530,
+              "y": 111
+            },
+            {
+              "x": 113,
+              "y": 226
+            },
+            {
+              "x": 563,
+              "y": 226
+            },
+            {
+              "x": 114,
+              "y": 368
+            },
+            {
+              "x": 563,
+              "y": 368
+            }
+          ]
+        },
+        {
+          "frame": 21,
+          "y": 54,
+          "sockets": [
+            {
+              "x": 145,
+              "y": 117
+            },
+            {
+              "x": 530,
+              "y": 117
+            },
+            {
+              "x": 113,
+              "y": 232
+            },
+            {
+              "x": 563,
+              "y": 232
+            },
+            {
+              "x": 114,
+              "y": 374
+            },
+            {
+              "x": 563,
+              "y": 374
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stage X renders its own forward city without advancing campaign waves",
+      "passed": true,
+      "data": {
+        "draws": 1,
+        "before": 0,
+        "after": 0,
+        "terrain": {
+          "stage": "X",
+          "source": 2759.4,
+          "travel": 0.6
+        }
+      }
+    },
+    {
+      "name": "No page, console, image or renderer errors",
+      "passed": true,
+      "data": {
+        "errors": [],
+        "http": []
+      }
+    },
+    {
+      "name": "Stage4 native roadside weapon director still launches its original cadence",
+      "passed": true,
+      "data": {
+        "map": 400.0000000000026,
+        "visual": 614.3497757847572,
+        "spawns": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 248,
+            "y": -36,
+            "scroll": 120.0000000000003,
+            "hp": 26
+          },
+          {
+            "event": "pad-spawn",
+            "id": 2,
+            "side": 1,
+            "x": 432,
+            "y": -36,
+            "scroll": 300.66666666666646,
+            "hp": 26
+          }
+        ],
+        "next": 480.66666666666646,
+        "drift": 0
+      }
+    },
+    {
+      "name": "Roadside weapons remain exactly anchored to the new terrain",
+      "passed": true,
+      "data": {
+        "map": 400.0000000000026,
+        "visual": 614.3497757847572,
+        "spawns": [
+          {
+            "event": "pad-spawn",
+            "id": 1,
+            "side": -1,
+            "x": 248,
+            "y": -36,
+            "scroll": 120.0000000000003,
+            "hp": 26
+          },
+          {
+            "event": "pad-spawn",
+            "id": 2,
+            "side": 1,
+            "x": 432,
+            "y": -36,
+            "scroll": 300.66666666666646,
+            "hp": 26
+          }
+        ],
+        "next": 480.66666666666646,
+        "drift": 0
+      }
+    },
+    {
+      "name": "Highway chase continues forward through repeated source boundaries",
+      "passed": true,
+      "data": {
+        "source": -3733.333333333354,
+        "monotonic": true,
+        "maxDelta": 9.333333333333485,
+        "drive": true,
+        "blocked": false
+      }
+    },
+    {
+      "name": "Chase road remains navigable without opening desert shoulders",
+      "passed": true,
+      "data": {
+        "source": -3733.333333333354,
+        "monotonic": true,
+        "maxDelta": 9.333333333333485,
+        "drive": true,
+        "blocked": false
+      }
+    },
+    {
+      "name": "Stage6 arrival uses the new city without advancing encounter distance",
+      "passed": true,
+      "data": {
+        "map": 0,
+        "after": 0,
+        "draws": 1
+      }
+    },
+    {
+      "name": "Actual alternate-route background dispatch reaches Stage X layers",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage8 portal arrival shows the same new biome and biofluid",
+      "passed": true,
+      "data": {
+        "draws": 1,
+        "material": "biofluid"
+      }
+    },
+    {
+      "name": "Stage5 scenery remains passive and untargetable",
+      "passed": true,
+      "data": {
+        "same": true,
+        "objects": true
+      }
+    },
+    {
+      "name": "Stage9 scenery remains passive and untargetable",
+      "passed": true,
+      "data": {
+        "same": true,
+        "objects": true
+      }
+    },
+    {
+      "name": "Pause holds the authored liquid animation phase",
+      "passed": true,
+      "data": {
+        "same": true,
+        "frame": 6,
+        "expected": 6
+      }
+    },
+    {
+      "name": "No native browser/render exceptions during handoffs",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Actual explosion, smoke and gated portal art preloads",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real Warden core defeat begins fast travel immediately",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Travel remains a fast400px/s instead of easing to a stop",
+      "passed": true,
+      "data": [
+        8110.311449413257,
+        7910.311449413248
+      ]
+    },
+    {
+      "name": "Blasts and smoke rings are active throughout the run",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No reward is granted during the escape",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pause freezes the route and collapse effects",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pilot can steer during the fast escape",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Original chamber is reached continuously without a map reversal",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Gate forms automatically while the floor is still moving",
+      "passed": true,
+      "data": {
+        "phase": "form",
+        "source": 396.9781160797786
+      }
+    },
+    {
+      "name": "Current native portal radio remains intact",
+      "passed": true,
+      "data": {
+        "who": "COLE",
+        "full": "A PORTAL... IT'S THE ONLY WAY OUT!",
+        "t": 0.19999999999999998,
+        "typed": 20,
+        "dur": 2.4
+      }
+    },
+    {
+      "name": "Portal stays registered in the original stone aperture",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Entry starts without waiting for an approach prompt",
+      "passed": true,
+      "data": {
+        "phase": "enter",
+        "source": 202.9781160797786
+      }
+    },
+    {
+      "name": "Actual green gate loop and shrinking jet frames are used",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pilot disappears just before the explosion front reaches the gate",
+      "passed": true,
+      "data": {
+        "margin": 22,
+        "portal": 143.0218839202214,
+        "source": 166.9781160797786
+      }
+    },
+    {
+      "name": "Terrain stops only after the aircraft is hidden inside the gate",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native Stage8 portal handoff completes",
+      "passed": true,
+      "data": {
+        "stage": 8,
+        "state": "warpentry"
+      }
+    },
+    {
+      "name": "Native Forge reward and score remain single owned grants",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Campaign progression retains the direct Stage8 entry flag",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Effects cannot leak into Stage8",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Explosion budget stays bounded",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No browser or rendering errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Core engine source remains unchanged",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "asepriteRoundtrip": [
+    {
+      "bank": "bed_lava",
+      "frames": 8,
+      "distinct": 8,
+      "exactRGBA": true
+    },
+    {
+      "bank": "bed_water",
+      "frames": 16,
+      "distinct": 16,
+      "exactRGBA": true
+    },
+    {
+      "bank": "bed_toxic",
+      "frames": 16,
+      "distinct": 16,
+      "exactRGBA": true
+    },
+    {
+      "bank": "bed_biofluid",
+      "frames": 16,
+      "distinct": 16,
+      "exactRGBA": true
+    },
+    {
+      "bank": "bed_voidwater",
+      "frames": 16,
+      "distinct": 16,
+      "exactRGBA": true
+    },
+    {
+      "bank": "bed_space",
+      "frames": 1,
+      "distinct": 1,
+      "exactRGBA": true
+    },
+    {
+      "bank": "bed_night_water",
+      "frames": 16,
+      "distinct": 16,
+      "exactRGBA": true
+    },
+    {
+      "bank": "tesla_power",
+      "frames": 24,
+      "distinct": 24,
+      "exactRGBA": true
+    }
+  ],
+  "coreSha256": "0b9f9b8701ebf891a7224da6e3c273e208777e45e154bf2a5be73ca7c0a3d0c1",
+  "existingLocalChangesPreserved": 143,
+  "frames": 113,
+  "routes": 9,
+  "fullSuite": {
+    "exit": 1,
+    "baselineFailure": "ReferenceError: difficultyHealthBaseline15 is not defined",
+    "afterFailure": "ReferenceError: difficultyHealthBaseline15 is not defined",
+    "location": "assets/combat_polish_0927b.js:151; inherited harness load order"
+  },
+  "limits": [
+    "Native graphics/state fixtures and existing Warden rescue checks; not a complete campaign survival or balance playtest.",
+    "Stage1 excluded as directed in the approved concept pack.",
+    "Stage X building destruction proposal and cinematic story plates are not activated by this scenery pass.",
+    "No commit or push."
+  ]
+}

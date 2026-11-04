@@ -1,0 +1,218 @@
+[
+  {
+    "key": "ship_cole",
+    "w": 193,
+    "h": 232,
+    "sha256": "6fe68147518a7fab7d4c872968e541bec72d5743a9d761546534b2a8343120c0"
+  },
+  {
+    "key": "ship_cole_so2",
+    "w": 193,
+    "h": 232,
+    "sha256": "1075fe9cd73032084661a900590eeadc11cc4c085b1e4ad955b5cc5d19eea391"
+  },
+  {
+    "key": "ship_cole_so6",
+    "w": 193,
+    "h": 232,
+    "sha256": "594d8a8ac45ff0c401f3d246760cde12cf6c348e08ba226d41b9b71beeea4efa"
+  },
+  {
+    "key": "c112_cole_neutral",
+    "w": 512,
+    "h": 1024,
+    "sha256": "70ebfb922d8bf09cffe3c13001d2f3f2483b634d0e276866665411bc137e31db"
+  },
+  {
+    "key": "ship_axel",
+    "w": 190,
+    "h": 224,
+    "sha256": "28ee91a68d346d06f55a834ac8f381f86de69648af92775aa8ef63ef139ea4e6"
+  },
+  {
+    "key": "ship_axel_so2",
+    "w": 190,
+    "h": 224,
+    "sha256": "aad31fb56ab946d27d069c17159b16cb8a035c6ae524c1894935792301e16dd4"
+  },
+  {
+    "key": "ship_axel_so6",
+    "w": 190,
+    "h": 224,
+    "sha256": "1259e7a18c0968bbd91778d783d095cc8d2aa82c44133b91ec2f955b08d45242"
+  },
+  {
+    "key": "c112_axel_neutral",
+    "w": 512,
+    "h": 1024,
+    "sha256": "42c3a6946fed720ed077e7b61f3deb6178995a5d2af0e1c47fc259911be310a7"
+  },
+  {
+    "key": "ship_decker",
+    "w": 200,
+    "h": 230,
+    "sha256": "787f45a03bd7a9d70e9346c4f90e137c6c8a9548718dbfd4da879e0c603db363"
+  },
+  {
+    "key": "ship_decker_so2",
+    "w": 200,
+    "h": 230,
+    "sha256": "fe6cedb7a37d64337e0e807299d20327b19d2951ad28f22454c1ac4976d54ccc"
+  },
+  {
+    "key": "ship_decker_so6",
+    "w": 200,
+    "h": 230,
+    "sha256": "f9fc86bd142e727b5c5f94628f4ce297bf8e9f1dad5bde7d2f06b02c57d68b80"
+  },
+  {
+    "key": "c112_decker_neutral",
+    "w": 512,
+    "h": 1024,
+    "sha256": "f33c354d5f9207a5b2a16f532d53e25554637a722b1db7df191fe050a85ea4d2"
+  },
+  {
+    "key": "ship_maverick",
+    "w": 200,
+    "h": 211,
+    "sha256": "f559a32143ac8614afa87b133de143c341af47812657c5b5a816de7ed83266e9"
+  },
+  {
+    "key": "ship_maverick_so2",
+    "w": 200,
+    "h": 211,
+    "sha256": "c0a636d0e0cac44fbfe4522adf2ee323b8ba3d48bc24e0b52092d1fb6dc4759c"
+  },
+  {
+    "key": "ship_maverick_so6",
+    "w": 200,
+    "h": 211,
+    "sha256": "e5b12045d1b4a5a3dcadc1df9d9090d6653974bdfa90a9aed610d56c6fc28979"
+  },
+  {
+    "key": "c112_maverick_neutral",
+    "w": 512,
+    "h": 1024,
+    "sha256": "836e49c6ef48509e3f90d0854d2a15a8e35aa4a9604269f61aa202a34bf6983a"
+  },
+  {
+    "key": "ship_freezer",
+    "w": 183,
+    "h": 194,
+    "sha256": "c4eab883e45b15323c3b9f46d84621c263be1606bd59ede2a3c7518c315f32e5"
+  },
+  {
+    "key": "ship_freezer_so2",
+    "w": 183,
+    "h": 194,
+    "sha256": "125fcad8831e275f3be86e999dff9de52eb4e4032bb2e9011a0b89df57afeb21"
+  },
+  {
+    "key": "ship_freezer_so6",
+    "w": 183,
+    "h": 194,
+    "sha256": "0f29ca30352c0c1e7f93b48ec942b8fb88e13ca2ec4246c04cac92b28c0c5895"
+  },
+  {
+    "key": "c112_freezer_neutral",
+    "w": 512,
+    "h": 1024,
+    "sha256": "a434ae281ce06cc0393acec590795a35aa39efb9fe11cb0ffe2b2ff38dc0d14e"
+  },
+  {
+    "key": "ship_juggernaut",
+    "w": 200,
+    "h": 205,
+    "sha256": "818fbc41307d3491ff9df2475a2e9ded51a7c36c2ee40223fc179e03c22a9a48"
+  },
+  {
+    "key": "ship_juggernaut_so2",
+    "w": 200,
+    "h": 205,
+    "sha256": "b7e95fd86dab5bd3e6a14aedaf989addf8d49ad980ca5e8bea5e34adb961696b"
+  },
+  {
+    "key": "ship_juggernaut_so6",
+    "w": 200,
+    "h": 205,
+    "sha256": "25f032efbe53abd9fae255fcbc4dde742d036336111044d5b181284197087d47"
+  },
+  {
+    "key": "c112_juggernaut_neutral",
+    "w": 512,
+    "h": 1024,
+    "sha256": "4646953f4604e4dd82437b04016d6f12b4d985e4dddf326e73142b8b14184f7b"
+  },
+  {
+    "key": "ship_yuri",
+    "w": 209,
+    "h": 229,
+    "sha256": "fecc12ef68c95278ee755f7c1401e705a7b7075161df576d12af32e593e7a4b6"
+  },
+  {
+    "key": "ship_yuri_so2",
+    "w": 209,
+    "h": 229,
+    "sha256": "fe4bfb1255d9967d998e9ee447ead309bdc04d2b586c365003aacaf1a2e0f2d0"
+  },
+  {
+    "key": "ship_yuri_so6",
+    "w": 209,
+    "h": 229,
+    "sha256": "e7b7f97df6b4b0008778cd217f016d4ffcf241f727796adbdedf89dd3f60c8da"
+  },
+  {
+    "key": "c112_yuri_neutral",
+    "w": 512,
+    "h": 1024,
+    "sha256": "2c327a1adbd9d9406ec5482ba513565d9fe4e9d76ba6c2ea7a782223c8994d17"
+  },
+  {
+    "key": "ship_lizzie",
+    "w": 224,
+    "h": 243,
+    "sha256": "a9b80dd2427532dd7b348ff0bd6be4ef9a7c93ca45f3eb336070224ef57d3bd0"
+  },
+  {
+    "key": "ship_lizzie_so2",
+    "w": 224,
+    "h": 243,
+    "sha256": "b8ac3c0e45e481842107697705755b32006180b222108c7b408ab5167c321050"
+  },
+  {
+    "key": "ship_lizzie_so6",
+    "w": 224,
+    "h": 243,
+    "sha256": "bcf2e6348ec34e64519c662a4ee0436d1adb120540e665bf9d53d67a6e3d7d1f"
+  },
+  {
+    "key": "c112_lizzie_neutral",
+    "w": 512,
+    "h": 1024,
+    "sha256": "a22d245ab59f53d47537fc832b9e27634a863ef18ec537acb7676b6eeacad682"
+  },
+  {
+    "key": "ship_falva",
+    "w": 204,
+    "h": 238,
+    "sha256": "d9986877de136f8940e51743706d016dfb069ba8612a72efcccc1dd2f90c0f4e"
+  },
+  {
+    "key": "ship_falva_so2",
+    "w": 204,
+    "h": 238,
+    "sha256": "8f86e0e1114648242c4101d1e15afa9de104104fcf963dc6beba5bc84515238a"
+  },
+  {
+    "key": "ship_falva_so6",
+    "w": 204,
+    "h": 238,
+    "sha256": "876c4e9eb3f974f850bb6d9cf503848a84bb0993a2f0a8e758d0385c14201033"
+  },
+  {
+    "key": "c112_falva_neutral",
+    "w": 512,
+    "h": 1024,
+    "sha256": "458084234b577338f954ce22d8a4ea5242b5697df362cb7e6ccb087d40fd4a0c"
+  }
+]

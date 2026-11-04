@@ -1,0 +1,802 @@
+{
+  "date": "2026-11-02T18:51:49.237812+00:00",
+  "checks": [
+    {
+      "name": "Fixture uses the real Stage5 Chronos actor",
+      "passed": true,
+      "data": {
+        "kind": "xenoregent",
+        "ship": null,
+        "hammer": true
+      }
+    },
+    {
+      "name": "All four avatar views and fixed portrait sizes preload before Stage5",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "neutral uses exact approved compact pixels at native size",
+      "passed": true,
+      "data": {
+        "pose": "neutral",
+        "key": "c113_neutral_68",
+        "difference": 0,
+        "w": 68,
+        "h": 68,
+        "x": 13,
+        "y": 10
+      }
+    },
+    {
+      "name": "turn_right uses exact approved compact pixels at native size",
+      "passed": true,
+      "data": {
+        "pose": "turn_right",
+        "key": "c113_turn_right_68",
+        "difference": 0,
+        "w": 68,
+        "h": 68,
+        "x": 13,
+        "y": 10
+      }
+    },
+    {
+      "name": "turn_left uses exact approved compact pixels at native size",
+      "passed": true,
+      "data": {
+        "pose": "turn_left",
+        "key": "c113_turn_left_68",
+        "difference": 0,
+        "w": 68,
+        "h": 68,
+        "x": 13,
+        "y": 10
+      }
+    },
+    {
+      "name": "stern uses exact approved compact pixels at native size",
+      "passed": true,
+      "data": {
+        "pose": "stern",
+        "key": "c113_stern_68",
+        "difference": 0,
+        "w": 68,
+        "h": 68,
+        "x": 13,
+        "y": 10
+      }
+    },
+    {
+      "name": "fb2_hammer_avatar resolves the new full portrait",
+      "passed": true,
+      "data": {
+        "key": "fb2_hammer_avatar",
+        "diff": 0
+      }
+    },
+    {
+      "name": "fb1002_hammer_portrait resolves the new full portrait",
+      "passed": true,
+      "data": {
+        "key": "fb1002_hammer_portrait",
+        "diff": 0
+      }
+    },
+    {
+      "name": "h3_hammer_portrait resolves the new full portrait",
+      "passed": true,
+      "data": {
+        "key": "h3_hammer_portrait",
+        "diff": 0
+      }
+    },
+    {
+      "name": "cin30_cronos resolves the new full portrait",
+      "passed": true,
+      "data": {
+        "key": "cin30_cronos",
+        "diff": 0
+      }
+    },
+    {
+      "name": "neutral is selected and fits inside the shared avatar bay",
+      "passed": true,
+      "data": {
+        "dialogue": {
+          "who": "CHRONOS",
+          "color": "#b98cff",
+          "portrait": "c113_neutral_68",
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "shown": 13,
+          "full": 13,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          },
+          "portraitDraw": {
+            "x": 30,
+            "y": 301,
+            "w": 68,
+            "h": 68,
+            "key": "c113_neutral_68",
+            "pose": "neutral"
+          },
+          "layout": {
+            "H": 11,
+            "lines": [
+              "I am Chronos."
+            ],
+            "step": 14,
+            "height": 11
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "I am Chronos."
+          }
+        },
+        "portrait": {
+          "x": 30,
+          "y": 301,
+          "w": 68,
+          "h": 68,
+          "key": "c113_neutral_68",
+          "pose": "neutral"
+        },
+        "panel": {
+          "cd27": true,
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "key": "cd27_chronos_460",
+          "bw": 100,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          }
+        }
+      }
+    },
+    {
+      "name": "turn_right is selected and fits inside the shared avatar bay",
+      "passed": true,
+      "data": {
+        "dialogue": {
+          "who": "CHRONOS",
+          "color": "#b98cff",
+          "portrait": "c113_turn_right_68",
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "shown": 33,
+          "full": 33,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          },
+          "portraitDraw": {
+            "x": 30,
+            "y": 301,
+            "w": 68,
+            "h": 68,
+            "key": "c113_turn_right_68",
+            "pose": "turn_right"
+          },
+          "layout": {
+            "H": 11,
+            "lines": [
+              "Coming up here was merely a trap."
+            ],
+            "step": 14,
+            "height": 11
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Coming up here was merely a trap."
+          }
+        },
+        "portrait": {
+          "x": 30,
+          "y": 301,
+          "w": 68,
+          "h": 68,
+          "key": "c113_turn_right_68",
+          "pose": "turn_right"
+        },
+        "panel": {
+          "cd27": true,
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "key": "cd27_chronos_460",
+          "bw": 100,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          }
+        }
+      }
+    },
+    {
+      "name": "turn_left is selected and fits inside the shared avatar bay",
+      "passed": true,
+      "data": {
+        "dialogue": {
+          "who": "CHRONOS",
+          "color": "#b98cff",
+          "portrait": "c113_turn_left_68",
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "shown": 11,
+          "full": 11,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          },
+          "portraitDraw": {
+            "x": 30,
+            "y": 301,
+            "w": 68,
+            "h": 68,
+            "key": "c113_turn_left_68",
+            "pose": "turn_left"
+          },
+          "layout": {
+            "H": 11,
+            "lines": [
+              "Dodge THIS!"
+            ],
+            "step": 14,
+            "height": 11
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Dodge THIS!"
+          }
+        },
+        "portrait": {
+          "x": 30,
+          "y": 301,
+          "w": 68,
+          "h": 68,
+          "key": "c113_turn_left_68",
+          "pose": "turn_left"
+        },
+        "panel": {
+          "cd27": true,
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "key": "cd27_chronos_460",
+          "bw": 100,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          }
+        }
+      }
+    },
+    {
+      "name": "stern is selected and fits inside the shared avatar bay",
+      "passed": true,
+      "data": {
+        "dialogue": {
+          "who": "CHRONOS",
+          "color": "#b98cff",
+          "portrait": "c113_stern_68",
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "shown": 26,
+          "full": 26,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          },
+          "portraitDraw": {
+            "x": 30,
+            "y": 301,
+            "w": 68,
+            "h": 68,
+            "key": "c113_stern_68",
+            "pose": "stern"
+          },
+          "layout": {
+            "H": 11,
+            "lines": [
+              "Chromium Armor, Activated!"
+            ],
+            "step": 14,
+            "height": 11
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Chromium Armor, Activated!"
+          }
+        },
+        "portrait": {
+          "x": 30,
+          "y": 301,
+          "w": 68,
+          "h": 68,
+          "key": "c113_stern_68",
+          "pose": "stern"
+        },
+        "panel": {
+          "cd27": true,
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "key": "cd27_chronos_460",
+          "bw": 100,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          }
+        }
+      }
+    },
+    {
+      "name": "Unknown first-contact Chronos uses the new framed avatar",
+      "passed": true,
+      "data": {
+        "who": "???",
+        "key": "c113_neutral_68"
+      }
+    },
+    {
+      "name": "Combat line Coming up here was merely a trap. draws a portrait dialogue window",
+      "passed": true,
+      "data": {
+        "radio": {
+          "text": "Coming up here was merely a trap.",
+          "who": "CHRONOS",
+          "shown": 0,
+          "pose": "turn_right",
+          "live": true
+        },
+        "portrait": {
+          "x": 30,
+          "y": 301,
+          "w": 68,
+          "h": 68,
+          "key": "c113_turn_right_68",
+          "pose": "turn_right"
+        },
+        "dialogue": {
+          "who": "CHRONOS",
+          "color": "#b98cff",
+          "portrait": "c113_turn_right_68",
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "shown": 0,
+          "full": 33,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          },
+          "portraitDraw": {
+            "x": 30,
+            "y": 301,
+            "w": 68,
+            "h": 68,
+            "key": "c113_turn_right_68",
+            "pose": "turn_right"
+          },
+          "layout": {
+            "H": 11,
+            "lines": [
+              "Coming up here was merely a trap."
+            ],
+            "step": 14,
+            "height": 11
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Coming up here was merely a trap."
+          }
+        },
+        "live": true
+      }
+    },
+    {
+      "name": "Combat line Dodge THIS! draws a portrait dialogue window",
+      "passed": true,
+      "data": {
+        "radio": {
+          "text": "Dodge THIS!",
+          "who": "CHRONOS",
+          "shown": 11,
+          "pose": "turn_left",
+          "live": true
+        },
+        "portrait": {
+          "x": 30,
+          "y": 301,
+          "w": 68,
+          "h": 68,
+          "key": "c113_turn_left_68",
+          "pose": "turn_left"
+        },
+        "dialogue": {
+          "who": "CHRONOS",
+          "color": "#b98cff",
+          "portrait": "c113_turn_left_68",
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "shown": 11,
+          "full": 11,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          },
+          "portraitDraw": {
+            "x": 30,
+            "y": 301,
+            "w": 68,
+            "h": 68,
+            "key": "c113_turn_left_68",
+            "pose": "turn_left"
+          },
+          "layout": {
+            "H": 11,
+            "lines": [
+              "Dodge THIS!"
+            ],
+            "step": 14,
+            "height": 11
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Dodge THIS!"
+          }
+        },
+        "live": true
+      }
+    },
+    {
+      "name": "Combat line Chromium Armor, Activated! draws a portrait dialogue window",
+      "passed": true,
+      "data": {
+        "radio": {
+          "text": "Chromium Armor, Activated!",
+          "who": "CHRONOS",
+          "shown": 22,
+          "pose": "stern",
+          "live": true
+        },
+        "portrait": {
+          "x": 30,
+          "y": 301,
+          "w": 68,
+          "h": 68,
+          "key": "c113_stern_68",
+          "pose": "stern"
+        },
+        "dialogue": {
+          "who": "CHRONOS",
+          "color": "#b98cff",
+          "portrait": "c113_stern_68",
+          "x": 12,
+          "y": 293,
+          "w": 460,
+          "h": 84,
+          "shown": 22,
+          "full": 26,
+          "name": {
+            "x": 118,
+            "y": 303,
+            "w": 68,
+            "h": 12
+          },
+          "text": {
+            "x": 116,
+            "y": 325,
+            "w": 338,
+            "h": 38
+          },
+          "portraitRect": {
+            "x": 27,
+            "y": 301,
+            "w": 74,
+            "h": 68
+          },
+          "portraitDraw": {
+            "x": 30,
+            "y": 301,
+            "w": 68,
+            "h": 68,
+            "key": "c113_stern_68",
+            "pose": "stern"
+          },
+          "layout": {
+            "H": 11,
+            "lines": [
+              "Chromium Armor, Activated!"
+            ],
+            "step": 14,
+            "height": 11
+          },
+          "page": {
+            "index": 0,
+            "count": 1,
+            "text": "Chromium Armor, Activated!"
+          }
+        },
+        "live": true
+      }
+    },
+    {
+      "name": "Combat and simulation continue while Chronos talks",
+      "passed": true,
+      "data": {
+        "play": true,
+        "stageMoved": true,
+        "fxMoved": true,
+        "live": true,
+        "portrait": {
+          "x": 30,
+          "y": 301,
+          "w": 68,
+          "h": 68,
+          "key": "c113_stern_68",
+          "pose": "stern"
+        },
+        "radio": {
+          "text": "Chromium Armor, Activated!",
+          "who": "CHRONOS",
+          "shown": 26,
+          "pose": "stern",
+          "live": true
+        }
+      }
+    },
+    {
+      "name": "Actual tactical announcement queue draws the stern avatar during live combat",
+      "passed": true,
+      "data": {
+        "id": "ht23-announcement-1",
+        "live": true,
+        "radio": {
+          "text": "Chromium Armor, Activated!",
+          "who": "CHRONOS",
+          "shown": 22,
+          "pose": "stern",
+          "live": true
+        },
+        "portrait": {
+          "x": 30,
+          "y": 301,
+          "w": 68,
+          "h": 68,
+          "key": "c113_stern_68",
+          "pose": "stern"
+        }
+      }
+    },
+    {
+      "name": "Decker still uses his own portrait and name color",
+      "passed": true,
+      "data": {
+        "who": "DECKER",
+        "key": "comm_decker_idle",
+        "color": "#ffd24a"
+      }
+    },
+    {
+      "name": "Final speech retains native terminal portrait whitening",
+      "passed": true,
+      "data": [
+        6738,
+        201572
+      ]
+    },
+    {
+      "name": "Cinematic Chronos speech uses the same new avatar system",
+      "passed": true,
+      "data": {
+        "who": "CHRONOS",
+        "key": "c113_neutral_68"
+      }
+    },
+    {
+      "name": "No browser, canvas, or missing-asset errors",
+      "passed": true,
+      "data": {
+        "errors": [],
+        "http": []
+      }
+    }
+  ],
+  "scope": "Native portrait pixels and existing dialogue owners; not a complete boss-balance playthrough.",
+  "asepriteRoundtrip": {
+    "size": [
+      272,
+      68
+    ],
+    "frames": 4,
+    "exactRGBA": true
+  },
+  "priorStatusPreserved": 378,
+  "coreSHA256": "0b9f9b8701ebf891a7224da6e3c273e208777e45e154bf2a5be73ca7c0a3d0c1",
+  "fullSuite": {
+    "exitCode": 1,
+    "reachesFinalSummary": false,
+    "baselineError": "ReferenceError: difficultyHealthBaseline15 is not defined",
+    "location": "assets/combat_polish_0927b.js:151",
+    "classification": "Existing VM harness load-order blocker; unchanged before/after this task."
+  },
+  "syntaxChecks": [
+    "assets/game.js",
+    "assets/chronos_dialogue_art_1102.js",
+    "assets/chronos_dialogue_1102.js",
+    "assets/chronos_voice_1025.js"
+  ],
+  "limitations": [
+    "Focused native dialogue/portrait verification, not a full boss-balance playthrough.",
+    "Pose changes select four approved still views; this task does not add new facial animation."
+  ],
+  "committed": false,
+  "pushed": false
+}

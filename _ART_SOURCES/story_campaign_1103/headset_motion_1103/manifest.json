@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "native": [
+    128,
+    128
+  ],
+  "panel": [
+    384,
+    384
+  ],
+  "pivot": [
+    64,
+    124
+  ],
+  "poses": [
+    "front-neutral",
+    "front-talk-small",
+    "front-talk-wide",
+    "front-talk-round",
+    "left-quarter",
+    "left-quarter-talk",
+    "left-profile",
+    "left-profile-talk",
+    "right-quarter",
+    "right-quarter-talk",
+    "right-profile",
+    "right-profile-talk",
+    "happy",
+    "happy-talk",
+    "sad",
+    "sad-talk",
+    "angry",
+    "angry-talk",
+    "scared",
+    "scared-talk",
+    "surprised",
+    "surprised-talk",
+    "determined",
+    "determined-talk"
+  ],
+  "clips": {
+    "front-talk": {
+      "frames": [
+        0,
+        1,
+        2,
+        1,
+        3,
+        1
+      ],
+      "ms": 100
+    },
+    "turn-left": {
+      "frames": [
+        10,
+        8,
+        0,
+        4,
+        6,
+        6,
+        4,
+        0,
+        8,
+        10
+      ],
+      "ms": 150
+    },
+    "turn-right": {
+      "frames": [
+        6,
+        4,
+        0,
+        8,
+        10,
+        10,
+        8,
+        0,
+        4,
+        6
+      ],
+      "ms": 150
+    },
+    "left-talk": {
+      "frames": [
+        4,
+        5,
+        4,
+        5
+      ],
+      "ms": 130
+    },
+    "right-talk": {
+      "frames": [
+        8,
+        9,
+        8,
+        9
+      ],
+      "ms": 130
+    },
+    "left-profile-talk": {
+      "frames": [
+        6,
+        7,
+        6,
+        7
+      ],
+      "ms": 130
+    },
+    "right-profile-talk": {
+      "frames": [
+        10,
+        11,
+        10,
+        11
+      ],
+      "ms": 130
+    },
+    "happy": {
+      "frames": [
+        12,
+        13,
+        12,
+        13
+      ],
+      "ms": 180
+    },
+    "sad": {
+      "frames": [
+        14,
+        15,
+        14,
+        15
+      ],
+      "ms": 180
+    },
+    "angry": {
+      "frames": [
+        16,
+        17,
+        16,
+        17
+      ],
+      "ms": 180
+    },
+    "scared": {
+      "frames": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "ms": 180
+    },
+    "surprised": {
+      "frames": [
+        20,
+        21,
+        20,
+        21
+      ],
+      "ms": 180
+    },
+    "determined": {
+      "frames": [
+        22,
+        23,
+        22,
+        23
+      ],
+      "ms": 180
+    }
+  },
+  "source_art": [
+    {
+      "pilot": "cole",
+      "source": "source-art/headset_motion_1103/cole/master.png",
+      "sha256": "45e2c6b32c038d90d9779ca658cd5fcb64e1dc4d3804d6eb159ef0251225a14b",
+      "tool": "built-in image_gen",
+      "normalization": "one proportional source-grid scale, binary alpha, shared 32-color palette; translation to chest baseline only"
+    },
+    {
+      "pilot": "axel",
+      "source": "source-art/headset_motion_1103/axel/master.png",
+      "sha256": "4bebefb5fbbd76ed132cf4fbd5a74b33b9e64f8ae45e9fd5bcc02696c36e78c6",
+      "tool": "built-in image_gen",
+      "normalization": "one proportional source-grid scale, binary alpha, shared 32-color palette; translation to chest baseline only"
+    },
+    {
+      "pilot": "decker",
+      "source": "source-art/headset_motion_1103/decker/master.png",
+      "sha256": "e706db41fcf1cdf28102ea13341ed154cb971d5241ea1fa3f786f996964cba5d",
+      "tool": "built-in image_gen",
+      "normalization": "one proportional source-grid scale, binary alpha, shared 32-color palette; translation to chest baseline only"
+    },
+    {
+      "pilot": "maverick",
+      "source": "source-art/headset_motion_1103/maverick/master.png",
+      "sha256": "7813ef303aec411741221571db05af73873a1848902a59382c6f3f79f25a5253",
+      "tool": "built-in image_gen",
+      "normalization": "one proportional source-grid scale, binary alpha, shared 32-color palette; translation to chest baseline only"
+    },
+    {
+      "pilot": "freezer",
+      "source": "source-art/headset_motion_1103/freezer/master.png",
+      "sha256": "0adc4a89e655821a8b2dc7fef9ed46d898adc22dfc46a03563739877536b3e2e",
+      "tool": "built-in image_gen",
+      "normalization": "one proportional source-grid scale, binary alpha, shared 32-color palette; translation to chest baseline only"
+    },
+    {
+      "pilot": "juggernaut",
+      "source": "source-art/headset_motion_1103/juggernaut/master.png",
+      "sha256": "a5102a32ecdda2759f8687046ff8bb0c262db257cf52b482a864af7ce4afa471",
+      "tool": "built-in image_gen",
+      "normalization": "one proportional source-grid scale, binary alpha, shared 32-color palette; translation to chest baseline only"
+    },
+    {
+      "pilot": "yuri",
+      "source": "source-art/headset_motion_1103/yuri/master.png",
+      "sha256": "e050cf642f93e727776fa099bfae277071b68e026ffb9af8cb03623f581709ba",
+      "tool": "built-in image_gen",
+      "normalization": "one proportional source-grid scale, binary alpha, shared 32-color palette; translation to chest baseline only"
+    },
+    {
+      "pilot": "lizzie",
+      "source": "source-art/headset_motion_1103/lizzie/master.png",
+      "sha256": "a795089eec729572a1dbde0aa46497aa9e7670b7975bef5102d1de56b77031b3",
+      "tool": "built-in image_gen",
+      "normalization": "one proportional source-grid scale, binary alpha, shared 32-color palette; translation to chest baseline only"
+    },
+    {
+      "pilot": "falva",
+      "source": "source-art/headset_motion_1103/falva/master.png",
+      "sha256": "b621f240c71e8a114b785eca5b3e6c773e9415f379011170f75d236d95aaff3b",
+      "tool": "built-in image_gen",
+      "normalization": "one proportional source-grid scale, binary alpha, shared 32-color palette; translation to chest baseline only"
+    }
+  ],
+  "identityOverrides": {
+    "revision": 7,
+    "pilots": {
+      "cole": {
+        "outfit": "olive green",
+        "eyes": "blue, uncovered in headset portraits",
+        "reference": [
+          "coleyoung.png",
+          "boxcole.png"
+        ]
+      },
+      "maverick": {
+        "outfit": "neon electric lime green",
+        "eyewear": "green aviator sunglasses"
+      }
+    },
+    "user_reference_sha256": {
+      "boxcole.png": "cc10cadf6756a0458590ca1dcf2976fee940c09d229a11c17a9c27d4c4e73d8c",
+      "coleyoung.png": "9869fa53e8d6d2f4ec58cfe3921fba430ab9c555cb146877fc93b1626c24f780"
+    },
+    "cole_palette": "30 shared body shades plus 2 reserved authored blue-iris shades"
+  }
+}

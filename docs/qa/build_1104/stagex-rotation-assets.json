@@ -1,0 +1,214 @@
+{
+  "checks": [
+    {
+      "name": "pose0 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose0 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose1 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose1 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose2 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose2 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose3 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose3 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose4 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose4 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose5 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose5 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose6 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose6 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose7 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose7 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose8 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose8 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose9 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose9 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose10 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose10 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose11 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose11 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose12 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose12 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose13 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose13 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose14 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose14 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "pose15 matching hit silhouette",
+      "ok": true
+    },
+    {
+      "name": "pose15 complete boundary",
+      "ok": true
+    },
+    {
+      "name": "16 distinct yaw silhouettes",
+      "ok": true
+    },
+    {
+      "name": "fixed64px32cell strip",
+      "ok": true
+    },
+    {
+      "name": "pivot alignment within one pixel",
+      "ok": true
+    },
+    {
+      "name": "speed pill artwork unchanged",
+      "ok": true
+    }
+  ],
+  "centres": [
+    [
+      32.5,
+      32.5
+    ],
+    [
+      32.5,
+      32.5
+    ],
+    [
+      32.0,
+      32.5
+    ],
+    [
+      32.5,
+      32.5
+    ],
+    [
+      32.5,
+      32.5
+    ],
+    [
+      32.5,
+      32.0
+    ],
+    [
+      32.5,
+      32.5
+    ],
+    [
+      32.0,
+      32.0
+    ],
+    [
+      32.0,
+      32.0
+    ],
+    [
+      32.0,
+      32.0
+    ],
+    [
+      32.5,
+      32.0
+    ],
+    [
+      32.5,
+      32.0
+    ],
+    [
+      32.5,
+      32.0
+    ],
+    [
+      32.0,
+      32.0
+    ],
+    [
+      32.5,
+      32.0
+    ],
+    [
+      32.0,
+      32.5
+    ]
+  ]
+}

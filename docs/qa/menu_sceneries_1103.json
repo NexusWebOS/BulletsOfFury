@@ -1,0 +1,618 @@
+{
+  "recordedAt": "2026-11-03T07:30:28.945141+00:00",
+  "visual": {
+    "backgroundPixelMotion": {
+      "differentPixels": 41728,
+      "totalPixels": 112000
+    },
+    "screens": [
+      {
+        "screen": "title",
+        "state": "title",
+        "last": {
+          "state": "title",
+          "scene": "orbit",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_orbit",
+          "front": "ms113_orbit_front",
+          "x": -199,
+          "nx": -396,
+          "sy": 0,
+          "time": 2.2544000000059605,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7
+        }
+      },
+      {
+        "screen": "modes",
+        "state": "modesel",
+        "last": {
+          "state": "modesel",
+          "scene": "command",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_command",
+          "front": "ms113_industrial_front",
+          "x": -160,
+          "nx": -346,
+          "sy": 0,
+          "time": 3.2239000000059606,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 6
+        }
+      },
+      {
+        "screen": "coop-choice",
+        "state": "modesel",
+        "last": {
+          "state": "modesel",
+          "scene": "command",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_command",
+          "front": "ms113_industrial_front",
+          "x": -163,
+          "nx": -353,
+          "sy": 0,
+          "time": 4.204900000005961,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 12
+        }
+      },
+      {
+        "screen": "roster",
+        "state": "cooproster",
+        "last": {
+          "state": "cooproster",
+          "scene": "hangar",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_hangar",
+          "front": "ms113_industrial_front",
+          "x": -550,
+          "nx": -768,
+          "sy": 0,
+          "time": 5.1685,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 12,
+          "hangar": 6
+        }
+      },
+      {
+        "screen": "difficulty",
+        "state": "diff",
+        "last": {
+          "state": "diff",
+          "scene": "command",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_command",
+          "front": "ms113_industrial_front",
+          "x": -171,
+          "nx": -369,
+          "sy": 0,
+          "time": 6.25709999999404,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 18,
+          "hangar": 6
+        }
+      },
+      {
+        "screen": "pilot",
+        "state": "pilot",
+        "last": {
+          "state": "pilot",
+          "scene": "hangar",
+          "W": 819,
+          "H": 512,
+          "key": "ms113_hangar",
+          "front": "ms113_industrial_front",
+          "x": -384,
+          "nx": -538,
+          "sy": 0,
+          "time": 8.86309999999404,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 1638,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 18,
+          "hangar": 1212
+        }
+      },
+      {
+        "screen": "pilot-portrait",
+        "state": "pilot",
+        "scene": "hangar",
+        "W": 480,
+        "H": 1039,
+        "key": "ms113_hangar_portrait",
+        "front": "ms113_industrial_front",
+        "x": -567,
+        "nx": -794,
+        "sy": 139,
+        "time": 9.129,
+        "portrait": true,
+        "canvas": [
+          960,
+          2078
+        ]
+      },
+      {
+        "screen": "campaign",
+        "state": "camphub",
+        "last": {
+          "state": "camphub",
+          "scene": "hq",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_hq",
+          "front": "ms113_coastal_front",
+          "x": -876,
+          "nx": -1014,
+          "sy": 0,
+          "time": 9.99890000000596,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 18,
+          "hangar": 1213,
+          "hq": 6
+        }
+      },
+      {
+        "screen": "forge",
+        "state": "forge",
+        "last": {
+          "state": "forge",
+          "scene": "forge",
+          "W": 918,
+          "H": 512,
+          "key": "ms113_forge",
+          "front": "ms113_industrial_front",
+          "x": -65,
+          "nx": -176,
+          "sy": 0,
+          "time": 11.06590000000596,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 1836,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 18,
+          "hangar": 1213,
+          "hq": 6,
+          "forge": 6
+        }
+      },
+      {
+        "screen": "armory",
+        "state": "armory",
+        "last": {
+          "state": "armory",
+          "scene": "forge",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_forge",
+          "front": "ms113_industrial_front",
+          "x": -113,
+          "nx": -308,
+          "sy": 0,
+          "time": 12.145699999988079,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 18,
+          "hangar": 1213,
+          "hq": 6,
+          "forge": 12
+        }
+      },
+      {
+        "screen": "options",
+        "state": "options",
+        "last": {
+          "state": "options",
+          "scene": "vault",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_vault",
+          "front": "ms113_industrial_front",
+          "x": -232,
+          "nx": -467,
+          "sy": 0,
+          "time": 13.140099999994039,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 18,
+          "hangar": 1213,
+          "hq": 6,
+          "forge": 12,
+          "vault": 6
+        }
+      },
+      {
+        "screen": "password",
+        "state": "password",
+        "last": {
+          "state": "password",
+          "scene": "vault",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_vault",
+          "front": "ms113_industrial_front",
+          "x": -235,
+          "nx": -474,
+          "sy": 0,
+          "time": 14.068299999982118,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 18,
+          "hangar": 1213,
+          "hq": 6,
+          "forge": 12,
+          "vault": 12
+        }
+      },
+      {
+        "screen": "achievements",
+        "state": "achievements",
+        "last": {
+          "state": "achievements",
+          "scene": "vault",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_vault",
+          "front": "ms113_industrial_front",
+          "x": -239,
+          "nx": -481,
+          "sy": 0,
+          "time": 14.99690000000596,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 18,
+          "hangar": 1213,
+          "hq": 6,
+          "forge": 12,
+          "vault": 18
+        }
+      },
+      {
+        "screen": "vault",
+        "state": "vault",
+        "last": {
+          "state": "vault",
+          "scene": "vault",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_vault",
+          "front": "ms113_industrial_front",
+          "x": -242,
+          "nx": -487,
+          "sy": 0,
+          "time": 15.885599999994039,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 18,
+          "hangar": 1213,
+          "hq": 6,
+          "forge": 12,
+          "vault": 24
+        }
+      },
+      {
+        "screen": "help",
+        "state": "help",
+        "last": {
+          "state": "help",
+          "scene": "vault",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_vault",
+          "front": "ms113_industrial_front",
+          "x": -245,
+          "nx": -494,
+          "sy": 0,
+          "time": 16.771599999994038,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 7,
+          "command": 18,
+          "hangar": 1213,
+          "hq": 6,
+          "forge": 12,
+          "vault": 30
+        }
+      },
+      {
+        "screen": "credits",
+        "state": "credits",
+        "last": {
+          "state": "credits",
+          "scene": "orbit",
+          "W": 480,
+          "H": 512,
+          "key": "ms113_orbit",
+          "front": "ms113_orbit_front",
+          "x": -281,
+          "nx": -567,
+          "sy": 0,
+          "time": 17.7745,
+          "portrait": false
+        },
+        "viewport": {
+          "w": 960,
+          "h": 1024,
+          "SS": 2
+        },
+        "font": true,
+        "draws": {
+          "orbit": 13,
+          "command": 18,
+          "hangar": 1213,
+          "hq": 6,
+          "forge": 12,
+          "vault": 30
+        }
+      }
+    ],
+    "parallax": {
+      "before": {
+        "state": "title",
+        "scene": "orbit",
+        "W": 480,
+        "H": 512,
+        "key": "ms113_orbit",
+        "front": "ms113_orbit_front",
+        "x": -282,
+        "nx": -569,
+        "sy": 0,
+        "time": 17.999699999988078,
+        "portrait": false
+      },
+      "after": {
+        "state": "title",
+        "scene": "orbit",
+        "W": 480,
+        "H": 512,
+        "key": "ms113_orbit",
+        "front": "ms113_orbit_front",
+        "x": -340,
+        "nx": -678,
+        "sy": 0,
+        "time": 28.03209999999404,
+        "portrait": false
+      }
+    },
+    "errors": [],
+    "httpErrors": []
+  },
+  "navigation": {
+    "nativeKeyboardNavigation": [
+      {
+        "action": "Enter",
+        "state": "modesel",
+        "choice": null,
+        "mode": "arcade",
+        "scene": "command"
+      },
+      {
+        "action": "Enter",
+        "state": "diff",
+        "choice": null,
+        "mode": "arcade",
+        "scene": "command"
+      },
+      {
+        "action": "Enter",
+        "state": "pilot",
+        "choice": null,
+        "mode": "arcade",
+        "scene": "hangar"
+      },
+      {
+        "action": "k",
+        "state": "pilot",
+        "choice": null,
+        "mode": "arcade",
+        "scene": "hangar"
+      },
+      {
+        "action": "p",
+        "state": "pilot",
+        "choice": null,
+        "mode": "arcade",
+        "scene": "hangar"
+      },
+      {
+        "action": "k",
+        "state": "pilot",
+        "choice": null,
+        "mode": "arcade",
+        "scene": "hangar"
+      },
+      {
+        "action": "Enter",
+        "state": "modesel",
+        "choice": "coop",
+        "mode": "arcade",
+        "scene": "command"
+      },
+      {
+        "action": "k",
+        "state": "modesel",
+        "choice": null,
+        "mode": "arcade",
+        "scene": "command"
+      }
+    ],
+    "gameplayGuard": {
+      "returned": false,
+      "unchanged": true
+    },
+    "modeBackLockPreserved": true,
+    "startMenuFreeze": {
+      "before": {
+        "state": "pilot",
+        "scene": "hangar",
+        "W": 819,
+        "H": 512,
+        "key": "ms113_hangar",
+        "front": "ms113_industrial_front",
+        "x": -372,
+        "nx": -519,
+        "sy": 0,
+        "time": 4.6857000000178815,
+        "portrait": false
+      },
+      "after": {
+        "state": "pilot",
+        "scene": "hangar",
+        "W": 819,
+        "H": 512,
+        "key": "ms113_hangar",
+        "front": "ms113_industrial_front",
+        "x": -374,
+        "nx": -523,
+        "sy": 0,
+        "time": 5.5015,
+        "portrait": false
+      }
+    },
+    "classicFallback": {
+      "enabled": false,
+      "draws": {}
+    },
+    "errors": [],
+    "physicalControllerTested": false
+  },
+  "suite": {
+    "baselineFailureLines": [],
+    "currentFailureLines": [],
+    "newFailureLines": [],
+    "baselineSetupError": true,
+    "currentSetupError": true
+  },
+  "syntaxCheck": true,
+  "fullSuite": {
+    "exitCode": 1,
+    "finalSummaryReached": false,
+    "error": "ReferenceError: difficultyHealthBaseline15 is not defined",
+    "location": "assets/combat_polish_0927b.js:151",
+    "predatesThisMenuChange": true
+  },
+  "sourceSHA256": {
+    "index.html": "57fb4fcc974c3ed8d6620a3934a4cbeae6c6be4dca6bc83f637142c143a97ff1",
+    "assets/game.js": "103bc8054a3edfbf28a37f3b62758b5eea2e11379d374b576e71252951144322",
+    "assets/combat_polish_0927b.js": "ad32ebaeb0ee278d3eb1e78b5f3cca6fa5923918c6b19f0b085802353caa99ac",
+    "assets/menu_sceneries_1103.js": "ff439332314808c18bc07c51f3f382b53de5b303107efe6814259c58d2442501"
+  }
+}

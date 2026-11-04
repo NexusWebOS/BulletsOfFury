@@ -1,0 +1,846 @@
+{
+  "passed": 88,
+  "total": 88,
+  "errors": [],
+  "externalServiceErrors": [],
+  "missing": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/arc_warp_gate_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/arc_warp_gate_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/arc_warp_gate_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/crackle.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/crackle.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/crackle.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/combat/combat_1003i/laser_charge.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/levels/stage_03/audio/sounds/stage3_atomic_siren.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/levels/stage_03/audio/sounds/stage3_atomic_siren.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/levels/stage_03/audio/sounds/stage3_atomic_siren.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/crackle.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/crackle.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/crackle.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/expBig.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/expBig.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/expBig.mp3",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:51012/assets/game/shared/audio/sounds/reviewed_flamethrower_loop.mp3",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Native game loads additive story owner",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All nine pilots have all five event-bound stories",
+      "passed": true,
+      "data": [
+        {
+          "p": "cole",
+          "n": 2,
+          "count": 12,
+          "valid": true
+        },
+        {
+          "p": "cole",
+          "n": 3,
+          "count": 11,
+          "valid": true
+        },
+        {
+          "p": "cole",
+          "n": 4,
+          "count": 15,
+          "valid": true
+        },
+        {
+          "p": "cole",
+          "n": 5,
+          "count": 19,
+          "valid": true
+        },
+        {
+          "p": "cole",
+          "n": 6,
+          "count": 10,
+          "valid": true
+        },
+        {
+          "p": "axel",
+          "n": 2,
+          "count": 12,
+          "valid": true
+        },
+        {
+          "p": "axel",
+          "n": 3,
+          "count": 11,
+          "valid": true
+        },
+        {
+          "p": "axel",
+          "n": 4,
+          "count": 15,
+          "valid": true
+        },
+        {
+          "p": "axel",
+          "n": 5,
+          "count": 20,
+          "valid": true
+        },
+        {
+          "p": "axel",
+          "n": 6,
+          "count": 10,
+          "valid": true
+        },
+        {
+          "p": "decker",
+          "n": 2,
+          "count": 12,
+          "valid": true
+        },
+        {
+          "p": "decker",
+          "n": 3,
+          "count": 11,
+          "valid": true
+        },
+        {
+          "p": "decker",
+          "n": 4,
+          "count": 15,
+          "valid": true
+        },
+        {
+          "p": "decker",
+          "n": 5,
+          "count": 20,
+          "valid": true
+        },
+        {
+          "p": "decker",
+          "n": 6,
+          "count": 10,
+          "valid": true
+        },
+        {
+          "p": "maverick",
+          "n": 2,
+          "count": 12,
+          "valid": true
+        },
+        {
+          "p": "maverick",
+          "n": 3,
+          "count": 11,
+          "valid": true
+        },
+        {
+          "p": "maverick",
+          "n": 4,
+          "count": 15,
+          "valid": true
+        },
+        {
+          "p": "maverick",
+          "n": 5,
+          "count": 20,
+          "valid": true
+        },
+        {
+          "p": "maverick",
+          "n": 6,
+          "count": 10,
+          "valid": true
+        },
+        {
+          "p": "freezer",
+          "n": 2,
+          "count": 12,
+          "valid": true
+        },
+        {
+          "p": "freezer",
+          "n": 3,
+          "count": 12,
+          "valid": true
+        },
+        {
+          "p": "freezer",
+          "n": 4,
+          "count": 15,
+          "valid": true
+        },
+        {
+          "p": "freezer",
+          "n": 5,
+          "count": 20,
+          "valid": true
+        },
+        {
+          "p": "freezer",
+          "n": 6,
+          "count": 10,
+          "valid": true
+        },
+        {
+          "p": "juggernaut",
+          "n": 2,
+          "count": 12,
+          "valid": true
+        },
+        {
+          "p": "juggernaut",
+          "n": 3,
+          "count": 11,
+          "valid": true
+        },
+        {
+          "p": "juggernaut",
+          "n": 4,
+          "count": 15,
+          "valid": true
+        },
+        {
+          "p": "juggernaut",
+          "n": 5,
+          "count": 20,
+          "valid": true
+        },
+        {
+          "p": "juggernaut",
+          "n": 6,
+          "count": 10,
+          "valid": true
+        },
+        {
+          "p": "yuri",
+          "n": 2,
+          "count": 12,
+          "valid": true
+        },
+        {
+          "p": "yuri",
+          "n": 3,
+          "count": 11,
+          "valid": true
+        },
+        {
+          "p": "yuri",
+          "n": 4,
+          "count": 16,
+          "valid": true
+        },
+        {
+          "p": "yuri",
+          "n": 5,
+          "count": 20,
+          "valid": true
+        },
+        {
+          "p": "yuri",
+          "n": 6,
+          "count": 10,
+          "valid": true
+        },
+        {
+          "p": "lizzie",
+          "n": 2,
+          "count": 12,
+          "valid": true
+        },
+        {
+          "p": "lizzie",
+          "n": 3,
+          "count": 11,
+          "valid": true
+        },
+        {
+          "p": "lizzie",
+          "n": 4,
+          "count": 15,
+          "valid": true
+        },
+        {
+          "p": "lizzie",
+          "n": 5,
+          "count": 20,
+          "valid": true
+        },
+        {
+          "p": "lizzie",
+          "n": 6,
+          "count": 10,
+          "valid": true
+        },
+        {
+          "p": "falva",
+          "n": 2,
+          "count": 12,
+          "valid": true
+        },
+        {
+          "p": "falva",
+          "n": 3,
+          "count": 11,
+          "valid": true
+        },
+        {
+          "p": "falva",
+          "n": 4,
+          "count": 15,
+          "valid": true
+        },
+        {
+          "p": "falva",
+          "n": 5,
+          "count": 20,
+          "valid": true
+        },
+        {
+          "p": "falva",
+          "n": 6,
+          "count": 10,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "Both route reports identify the surviving threat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All playable pilots stay out of the HQ guard assignment",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole cockpit-cole draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "cole cable-cole draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel cockpit-axel draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "axel cable-axel draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker cockpit-decker draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "decker cable-decker draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick cockpit-maverick draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "maverick cable-maverick draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer cockpit-freezer draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "freezer cable-freezer draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut cockpit-juggernaut draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "juggernaut cable-juggernaut draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri cockpit-yuri draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "yuri cable-yuri draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie cockpit-lizzie draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lizzie cable-lizzie draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva cockpit-falva draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "falva cable-falva draws native pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 0 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 1 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 2 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 3 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 4 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 5 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 6 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 7 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 8 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 9 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-3 beat 10 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 3 action beat advances on game time",
+      "passed": true,
+      "data": {
+        "before": 0,
+        "after": 1
+      }
+    },
+    {
+      "name": "post-4 beat 0 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 1 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 2 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 3 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 4 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 5 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 6 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 7 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 8 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 9 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 10 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 11 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 12 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 13 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-4 beat 14 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 4 action beat advances on game time",
+      "passed": true,
+      "data": {
+        "before": 0,
+        "after": 1
+      }
+    },
+    {
+      "name": "post-5 beat 0 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 1 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 2 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 3 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 4 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 5 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 6 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 7 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 8 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 9 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 10 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 11 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 12 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 13 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 14 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 15 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 16 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 17 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-5 beat 18 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 5 action beat advances on game time",
+      "passed": true,
+      "data": {
+        "before": 0,
+        "after": 1
+      }
+    },
+    {
+      "name": "post-6 beat 0 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-6 beat 1 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-6 beat 2 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-6 beat 3 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-6 beat 4 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-6 beat 5 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-6 beat 6 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-6 beat 7 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-6 beat 8 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "post-6 beat 9 renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 6 action beat advances on game time",
+      "passed": true,
+      "data": {
+        "before": 0,
+        "after": 1
+      }
+    },
+    {
+      "name": "x-harrier uses native route art",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "x-rebels uses native route art",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 2 lands and reaches native stats exactly once",
+      "passed": true,
+      "data": {
+        "state": "stageclear",
+        "stats": "stageclear",
+        "count": 1
+      }
+    },
+    {
+      "name": "Stage 4 lands and reaches native stats exactly once",
+      "passed": true,
+      "data": {
+        "state": "stageclear",
+        "stats": "stageclear",
+        "count": 1
+      }
+    },
+    {
+      "name": "No cutscene page, render or console errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Finish/skip callback runs once and does not award score",
+      "passed": true,
+      "data": {
+        "count": 1,
+        "scoreBefore": 0,
+        "scoreAfter": 0
+      }
+    },
+    {
+      "name": "No missing requested art",
+      "passed": true,
+      "data": []
+    }
+  ]
+}

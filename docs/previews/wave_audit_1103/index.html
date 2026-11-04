@@ -1,0 +1,257 @@
+<meta charset="utf-8">
+<title>BOF Wave Pressure Audit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column with full-width chart bands; findings first, then evidence, then the plan. */
+:root{
+  --bg:#f3f1ec; --panel:#fbfaf7; --ink:#1d2127; --dim:#5d6470; --rule:#d9d5cc;
+  --normal:#178a7e; --hard:#c77a12; --furious:#c0283a; --skill:#4a4fb8; --accent:#c0283a;
+  --good:#1f8a4c; --warn:#b8770b; --bad:#b4232f; --band:rgba(23,138,126,.12);
+  --display:"Chakra Petch","Segoe UI",system-ui,sans-serif; --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12151b; --panel:#191d25; --ink:#e7e9ee; --dim:#9aa2b1; --rule:#2c323d;
+  --normal:#3cc4b4; --hard:#f0a43a; --furious:#ff5a6a; --skill:#8f94ff; --accent:#ff5a6a;
+  --good:#4fc47e; --warn:#f0b13e; --bad:#ff6b75; --band:rgba(60,196,180,.13); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151b; --panel:#191d25; --ink:#e7e9ee; --dim:#9aa2b1; --rule:#2c323d;
+  --normal:#3cc4b4; --hard:#f0a43a; --furious:#ff5a6a; --skill:#8f94ff; --accent:#ff5a6a;
+  --good:#4fc47e; --warn:#f0b13e; --bad:#ff6b75; --band:rgba(60,196,180,.13); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+main{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,5vw,46px);letter-spacing:.5px}
+h2{font-size:26px;border-top:2px solid var(--ink);padding-top:14px}
+h3{font-size:18px}
+p{margin:0;max-width:70ch}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+.lede{font-size:18px;color:var(--ink)}
+.dim{color:var(--dim)}
+section{display:flex;flex-direction:column;gap:16px;min-width:0}
+.find{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.f{background:var(--panel);border:1px solid var(--rule);padding:16px 18px;display:flex;flex-direction:column;gap:8px;border-left:4px solid var(--sev,var(--rule))}
+.f b.n{font:700 28px/1 var(--display)}
+.f p{font-size:14.5px;color:var(--dim)}
+.f.bad{--sev:var(--bad)}.f.warn{--sev:var(--warn)}.f.info{--sev:var(--normal)}
+.chart{background:var(--panel);border:1px solid var(--rule);padding:14px 12px 10px;overflow-x:auto}
+.chart svg{display:block;min-width:640px;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font:13px var(--mono);color:var(--dim);padding:0 4px 8px}
+.legend i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+.tw{overflow-x:auto;background:var(--panel);border:1px solid var(--rule)}
+th,td{padding:8px 10px;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font:500 12px var(--mono);letter-spacing:.5px;text-transform:uppercase;color:var(--dim);background:var(--bg)}
+td.l{text-align:left;white-space:normal}
+.pill{display:inline-block;font:500 12px var(--mono);padding:2px 7px;border-radius:3px;border:1px solid currentColor}
+.p-bad{color:var(--bad)}.p-warn{color:var(--warn)}.p-good{color:var(--good)}
+.small{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.sm{background:var(--panel);border:1px solid var(--rule);padding:10px 12px 8px;min-width:0}
+.sm h3{font-size:15px;display:flex;justify-content:space-between;gap:8px}
+.sm h3 span{font:12px var(--mono);color:var(--dim)}
+.sm svg{width:100%;height:auto;display:block}
+ol.recs{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:18px}
+ol.recs li{padding-left:6px;max-width:75ch}
+ol.recs li h3{margin-bottom:4px}
+ol.recs li p+p{margin-top:6px}
+.pat{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--rule);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.card h3{font-size:16px}
+.card p{font-size:14.5px}
+.card .who{font:12px var(--mono);color:var(--dim);letter-spacing:.5px;text-transform:uppercase}
+code,.mono{font-family:var(--mono);font-size:.9em}
+.note{font-size:14px;color:var(--dim);max-width:75ch}
+ul.tight{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:75ch}
+</style>
+
+<main>
+<header style="display:flex;flex-direction:column;gap:14px">
+  <div class="eyebrow">Bullets of Fury · regular waves · Normal / Hard / Furious</div>
+  <h1>Wave Pressure Audit</h1>
+  <p class="lede">Every stage's regular waves were played through the real engine on Normal, Hard and Furious by two simulated pilots: a <b>novice</b> (250 ms reactions, notices rounds within 150 px) and a <b>skilled</b> player (85 ms, sees everything). Waves run on their natural schedule with the ambient and adaptive reinforcements on; bosses and minibosses are left out. Every time the pilot would have died is counted.</p>
+  <div class="f warn" style="max-width:none"><h3>Corrected edition</h3><p>The first edition of this page used a filming fixture that, further down its file, switches to a paced inspection mode: one wave at a time, the next held until the last is cleared, reinforcements off. That made stages look many minutes long and mostly empty, made Stage 9 look quiet, and produced a few apparent "reversed" difficulty steps. None of those hold under natural pacing, and they are withdrawn. Easy and Normal also end at Stage 5, so Normal is shown for Stages 1–5 only. Every number below comes from natural-pacing runs.</p></div>
+  <p class="dim" style="font-size:14px">The game is one-hit-death (shields absorb), so "lives per minute" is counted while the waves are running (up to 10 s after the last one fires). Single runs vary by roughly ±40%; small differences are not findings.</p>
+</header>
+
+<section>
+  <h2>What the numbers say</h2>
+  <div class="find" id="finds"></div>
+</section>
+
+<section>
+  <h2>Lives lost per minute, novice pilot</h2>
+  <p>Below roughly <b>0.6 per minute</b> a first-time player clears a stage with lives to spare (shaded band). On Normal, Stage 2 stands far above the rest and Stage 5 is the next step up. On Furious most stages sit between 2 and 4.</p>
+  <div class="chart"><div class="legend"><span><i style="background:var(--normal)"></i>Normal (Stages 1–5 only)</span><span><i style="background:var(--hard)"></i>Hard</span><span><i style="background:var(--furious)"></i>Furious</span><span><i style="background:var(--skill);border-radius:6px"></i>skilled pilot on Furious</span><span><i style="background:var(--band)"></i>Normal target band</span></div><svg id="cHits" viewBox="0 0 940 330"></svg></div>
+</section>
+
+<section>
+  <h2>Enemy rounds fired per second</h2>
+  <p>Log scale. Fire grows with difficulty on every stage where all three tiers exist: Stage 1 goes from 2.3 to 3.4 to 7.5 rounds a second, Stage 2 from 5.2 to 7.2 to 8.2. Wave counts grow too (Stage 1 fires 23, 30 and 36 waves). Stage 2, 8 and 9 are the busiest.</p>
+  <div class="chart"><div class="legend"><span><i style="background:var(--normal)"></i>Normal</span><span><i style="background:var(--hard)"></i>Hard</span><span><i style="background:var(--furious)"></i>Furious</span></div><svg id="cShots" viewBox="0 0 940 330"></svg></div>
+</section>
+
+<section>
+  <h2>What the difficulty setting changes</h2>
+  <p>Health and fire interval step 15% per tier (Nov 1 rules); bullet speed comes from the older table. The old <code>density</code> dial is read by <code>buildStagePlan</code> and never used (the dispatcher's own comment says so); the extra waves on higher tiers come from the stages' own per-difficulty books. Warnings and stage hazards are identical on all three, which is why the hazard deaths below do not soften on Normal.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Dial</th><th>Normal</th><th>Hard</th><th>Furious</th><th style="text-align:left">Reaches</th></tr></thead>
+    <tbody>
+      <tr><td>Enemy health</td><td>1.00</td><td>1.15</td><td>1.32</td><td class="l">regular enemies and bosses</td></tr>
+      <tr><td>Fire interval (÷)</td><td>1.00</td><td>1.15</td><td>1.32</td><td class="l">shared cadence and wrapped turret solvers</td></tr>
+      <tr><td>Bullet speed (×)</td><td>1.10</td><td>1.35</td><td>1.60</td><td class="l">rounds born through <code>eShoot</code>/<code>eShootT</code></td></tr>
+      <tr><td>Density</td><td>1.00</td><td>1.25</td><td>1.50</td><td class="l">unused</td></tr>
+      <tr><td>Lives / continues</td><td>4 / ∞</td><td>3 / 3</td><td>3 / 1</td><td class="l">run</td></tr>
+      <tr><td>Stages</td><td>1–5</td><td>1–9</td><td>1–9</td><td class="l">campaign and arcade</td></tr>
+    </tbody></table></div>
+  <div class="chart"><div class="legend"><span><i style="background:var(--normal)"></i>Normal median bullet speed</span><span><i style="background:var(--hard)"></i>Hard</span><span><i style="background:var(--furious)"></i>Furious</span><span class="dim">px per second · the playfield is 512 px tall</span></div><svg id="cSpeed" viewBox="0 0 940 260"></svg></div>
+  <p class="note">Normal medians sit between about 230 and 350 px/s; Furious reaches 340–640. In 95% of seconds at least 60–86% of the lower screen stays clear of any round's path, so density is rarely what kills: speed, aim, contact and hazards do.</p>
+</section>
+
+<section>
+  <h2>What actually kills the novice</h2>
+  <p>The hit logger names the round, hull or game function behind every death. The biggest groups:</p>
+  <div class="tw"><table><thead><tr><th>Stage</th><th style="text-align:left">Main causes (natural pacing)</th></tr></thead><tbody>
+    <tr><td>2 · Lava</td><td class="l"><b>Firewalls and fire debris</b> (all four Normal deaths), plus <code>s2needle</code> rounds on Hard. They are readable once learned, so they punish new players most.</td></tr>
+    <tr><td>5 · Space</td><td class="l"><b><code>s5rammer</code> kamikaze contact</b>: every Normal death.</td></tr>
+    <tr><td>4, 6 · Storm, Fortress</td><td class="l">The <b>lane dash attack</b> (<code>game.js:38310</code>) on Furious, Stage 6 tracers, carrier bay beams.</td></tr>
+    <tr><td>7 · Toxic</td><td class="l"><code>mg</code> streams and hull contact.</td></tr>
+    <tr><td>8 · Alien</td><td class="l"><code>s8needle</code> rounds and the alien laser/flamethrower beams (<code>stage8_amplify_1101.js</code>).</td></tr>
+    <tr><td>9 · Water</td><td class="l"><code>s9needle</code> rounds (all seven Furious deaths).</td></tr>
+  </tbody></table></div>
+  <p class="note">The bots dodge rounds and hulls but cannot see beams or lane dashes, so those rows read high for them. A human sees the warning lane.</p>
+</section>
+
+<section>
+  <h2>Pacing</h2>
+  <p>Rounds fired per 10 seconds up to each stage's last wave. Most stages are well paced: 1–28% of seconds are quiet and no gap lasts more than 9 seconds. <b>Stage 6 is the exception</b> (about 44% quiet with a 56–62 s gap on both routes). That gap is not combat at all: it is the Stage 6 team-argument cutscene ("Who stayed behind at base?!", Callisto and, for Cole, the weapon demo), which freezes combat by design. It runs about 58 s, 87 s for Cole. FIRE now finishes and skips its lines (built November 4, below). The carrier assaults themselves pause the stage clock only while a carrier is up, about 10–13 s each in these runs.</p>
+  <div class="legend"><span><i style="background:var(--normal)"></i>Normal (Hard where Normal does not exist)</span><span><i style="background:var(--furious)"></i>Furious</span></div>
+  <div class="small" id="sm"></div>
+</section>
+
+<section>
+  <h2>Built: Normal/Hard assist and readability</h2>
+  <p><b>Difficulty assist</b> (<code>assets/difficulty_assist_1103.js</code>, Normal and Hard, regular waves only; <code>window.DA13_OFF=1</code> disables). <b>Readability</b> (<code>assets/readability_1103.js</code>, every difficulty; <code>window.RD13_OFF=1</code>).</p>
+  <div class="tw"><table>
+    <thead><tr><th></th><th>Normal</th><th>Hard</th></tr></thead>
+    <tbody>
+      <tr><td>Fire budget: live rounds / aimed per second</td><td>25 / 1.5</td><td>45 / 2.5</td></tr>
+      <tr><td>Aimed / pattern speed cap</td><td>260 / 330 px/s</td><td>360 / 420 px/s</td></tr>
+      <tr><td>Stage 2 firewall: fall time / catch box</td><td>1.7 s / 0.24</td><td>1.45 s / 0.30</td></tr>
+      <tr><td>Stage 2 debris: dropped / hit radius</td><td>every 2nd / 65%</td><td>every 4th / 80%</td></tr>
+      <tr><td>Stage 8 beams: extra dodge time after the lane locks</td><td>+0.30 s</td><td>+0.15 s</td></tr>
+      <tr><td>Budget halved after a respawn</td><td>8 s</td><td>none</td></tr>
+      <tr><td>Threat pips on rounds inside explosions</td><td colspan="2" style="text-align:center">all difficulties</td></tr>
+      <tr><td>Warning lanes beyond the two most imminent dim to 35%</td><td colspan="2" style="text-align:center">all difficulties</td></tr>
+    </tbody></table></div>
+  <div class="chart"><div class="legend"><span><i style="background:var(--dim)"></i>assist off</span><span><i style="background:var(--normal)"></i>assist on</span><span class="dim">novice lives per minute, same natural pacing</span></div><svg id="cOnOff" viewBox="0 0 940 300"></svg></div>
+  <p class="note">Summed over stages, the assist cuts novice deaths by about a third on Normal (Stages 1–5) and a fifth on Hard. Stages 1, 2, 5, 8 and 9 improve clearly; Stages 4, 6 and 7 on Hard came out slightly higher with it on. Those are single runs of 1–7 hits, inside the noise, but they are shown as measured. Over-budget rounds are held at most 0.6 s and released whole; a 15-check probe confirms no lost rounds, no speed-cap violations, and Furious and boss fights untouched. Explosion size is unchanged: Mike's rule makes a death explosion 25% larger than the unit, so instead rounds inside an explosion get a small pip stamped on top.</p>
+</section>
+
+<section>
+  <h2>Built on November 4</h2>
+  <p>Layer <code>assets/wave_followups_1104.js</code> (<code>window.WF14_OFF=1</code> disables all three; each has its own switch).</p>
+  <div class="tw"><table>
+    <thead><tr><th style="text-align:left">Change</th><th style="text-align:left">Measured</th></tr></thead>
+    <tbody>
+      <tr><td class="l"><b>Stage 6 story scene can be skipped again.</b> FIRE finishes the line being typed, a second press moves on. Each line shows at least 0.25 s first, so mashing cannot blank-skip. Callisto and Cole's demo still play. <code>WF14_TALK_OFF</code></td><td class="l">Untouched, 87 s for Cole (about 58 s for other pilots). Pressing every half second, 24 s. The demo still fires.</td></tr>
+      <tr><td class="l"><b>Stage 5 rammers wind up.</b> Two white blinks and a 10 px ease-back during the warning, every difficulty; it returns to the warned start before charging. Normal only: 0.90 s warning (was 0.64) and a 360 px/s charge (was 440). <code>WF14_RAM_OFF</code></td><td class="l">The charge stays exactly on the warned lane. Hard warning and speed are identical with the change off.</td></tr>
+      <tr><td class="l"><b>Units below the screen no longer hold waves.</b> A unit whose top edge has passed the bottom of the playfield is left out of the dispatch count (one hook line in <code>game.js</code>). <code>WF14_CAP_OFF</code></td><td class="l">Before, they held a due wave up to 2.5 s per stage, never more than 1.1 s at once. A cap full of below-screen units now lets the wave go; on-screen units still hold it.</td></tr>
+    </tbody></table></div>
+  <p class="note">Probe <code>_BUILD_SOURCE/probe_wave_followups_1104.py</code> 14/14, zero page errors. Still open: the difficulty table's <code>density</code> number is never read by the game.</p>
+</section>
+
+<section>
+  <h2>Firing patterns and animation ideas</h2>
+  <p>Patterns that read clearly at speed and scale by count and speed rather than unfair aim.</p>
+  <div class="pat">
+    <div class="card"><div class="who">Popcorn jets</div><h3>Locked three-round burst</h3><p>Aim locks when the burst starts and does not track: three rounds 0.12 s apart, then a 1.2 s rest. A sidestep beats it. Normal fires two rounds, Furious four.</p></div>
+    <div class="card"><div class="who">Ground turrets</div><h3>Fan with a hole at the player</h3><p>Five to nine rounds in a fan with the centre lane left empty. Standing still is safe once, then the next fan re-centres. Telegraph: barrel glows for 0.35 s.</p></div>
+    <div class="card"><div class="who">Gunships, carriers</div><h3>Alternating curtains</h3><p>Left curtain, right curtain, with a guaranteed safe lane that moves each volley. Density scales with difficulty; the lane never closes.</p></div>
+    <div class="card"><div class="who">Snipers</div><h3>Laser-sight shot</h3><p>A thin line draws from muzzle to pilot for 0.5 s (0.3 s on Furious), then one fast round. Fair at any speed because the warning is exact.</p></div>
+    <div class="card"><div class="who">Rammers</div><h3>Wind-up, then commit</h3><p>A two-frame flash and a short backward lurch before the dash, with the dash line locked at that moment. Stage 5's rammers are the main Normal killer there.</p></div>
+    <div class="card"><div class="who">Heavies</div><h3>Bullet cancel on kill</h3><p>When a carrier or heavy dies, its live rounds burst into score sparks. It rewards aggression and prevents posthumous cheap hits.</p></div>
+    <div class="card"><div class="who">Stage 2 · Lava</div><h3>Lobbed magma</h3><p>Rounds arc upward and land on a marked ring that lingers as a short hot puddle, giving debris arcs a readable landing.</p></div>
+    <div class="card"><div class="who">Stage 9 · Water</div><h3>Sine needles</h3><p>Stage 9's needles cause every Furious death there. Sending some in a gentle wave (about 0.6 s period) keeps the threat but gives a rhythm to dodge by.</p></div>
+    <div class="card"><div class="who">Animation</div><h3>Fire tells everyone can read</h3><p>A 0.25 s muzzle charge glow before every aimed burst, a two-frame recoil kick, and turrets that visibly rotate toward the pilot before firing. On Normal, enemies blink once before they shoot.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>How this was measured</h2>
+  <ul class="tight note">
+    <li>Real game, real update loop and renderer, at 60 Hz: <code>_BUILD_SOURCE/measure_waves_1103.py</code> with <code>wave_telemetry_1103.js</code>, on the wave observer's original setup (<code>wo16Start</code>: native schedule, ambient and adaptive reinforcements on), with the difficulty applied before the stage is built. Bosses and minibosses suppressed.</li>
+    <li>Pilots fly level-3 weapons with auto-fire, invulnerable; every <code>playerHit</code> call 1.2 s apart counts as a life. Hits the assist refuses (firewall or debris grazes) are not counted.</li>
+    <li>"Quiet" seconds have no enemy and no round on screen, measured up to the stage's last wave.</li>
+    <li>Raw data <code>_shots/waves_1103/nat_off/</code> (assist off) and <code>nat_on/</code> (assist on); method notes in <code>docs/WAVE_AUDIT_1103.md</code>.</li>
+  </ul>
+</section>
+</main>
+
+<script>
+const D={"stages": ["1", "2", "3", "4", "5", "6", "6r", "7", "8", "9"], "names": {"1": "Jungle", "2": "Lava", "3": "Ice", "4": "Storm", "5": "Space", "6": "Fortress (left)", "6r": "Fortress (right)", "7": "Toxic", "8": "Alien", "9": "Water"}, "hitsPerMin": {"normal": [0.68, 4.46, 0.0, 0.69, 1.7, null, null, null, null, null], "hard": [1.76, 5.7, 0.0, 0.98, 0.81, 1.08, 1.31, 1.77, 5.6, 1.5], "furious": [2.35, 3.0, 0.0, 3.39, 1.79, 1.73, null, 3.74, 4.29, 4.11]}, "shotsPerSec": {"normal": [2.26, 5.24, 0.93, 1.74, 2.07, null, null, null, null, null], "hard": [3.38, 7.19, 2.39, 2.0, 4.69, 1.06, 1.14, 0.94, 5.62, 4.93], "furious": [7.46, 8.24, 3.15, 2.71, 4.39, 2.1, null, 1.52, 6.75, 7.27]}, "speedP50": {"normal": [348, 345, 328, 233, 306, null, null, null, null, null], "hard": [446, 424, 404, 314, 286, 276, 338, 477, 548, 542], "furious": [506, 503, 483, 400, 339, 430, null, 574, 611, 642]}, "seconds": {"normal": [102, 67, 69, 100, 84, null, null, null, null, null], "hard": [116, 77, 71, 75, 87, 235, 243, 1010, 164, 134], "furious": [116, 74, 71, 84, 80, 221, null, 1010, 83, 116]}, "aimed": {"normal": [0.48, 0.81, 0.11, 0.22, 0.06, null, null, null, null, null], "hard": [0.7, 0.66, 0.07, 0.31, 0.03, 0.36, 0.37, 0.22, 0.19, 0.16], "furious": [0.61, 0.67, 0.11, 0.5, 0.08, 0.22, null, 0.23, 0.21, 0.12]}, "safeP5": {"normal": [0.76, 0.68, 0.86, 0.82, 0.71, null, null, null, null, null], "hard": [0.8, 0.63, 0.77, 0.75, 0.7, 0.8, 0.79, 0.92, 0.6, 0.64], "furious": [0.68, 0.65, 0.76, 0.79, 0.63, 0.76, null, 0.86, 0.67, 0.68]}, "waves": {"normal": [23, 20, 15, 17, 14, null, null, null, null, null], "hard": [30, 22, 17, 19, 14, 50, 50, 17, 27, 38], "furious": [36, 25, 20, 22, 14, 53, null, 21, 30, 38]}, "skilledFurious": [0.0, 5.6, 0.0, 2.71, 0.97, 1.44, 1.91, 0.17, 4.16, 1.78], "pace": {"1": {"normal": {"pct": 10, "longest": 5, "end": 78, "curve": [12, 0, 26, 54, 36, 56, 6, 23]}, "hard": {"pct": 20, "longest": 9, "end": 92, "curve": [12, 10, 50, 99, 54, 60, 30, 38, 17, 0]}, "furious": {"pct": 15, "longest": 7, "end": 92, "curve": [12, 34, 119, 97, 92, 95, 158, 70, 0, 6]}}, "2": {"normal": {"pct": 9, "longest": 4, "end": 43, "curve": [20, 64, 48, 101, 60]}, "hard": {"pct": 7, "longest": 4, "end": 53, "curve": [32, 94, 106, 106, 94, 56]}, "furious": {"pct": 8, "longest": 4, "end": 50, "curve": [30, 100, 107, 80, 162, 20]}}, "3": {"normal": {"pct": 28, "longest": 6, "end": 45, "curve": [14, 18, 8, 16, 2]}, "hard": {"pct": 6, "longest": 3, "end": 47, "curve": [16, 32, 30, 33, 41]}, "furious": {"pct": 6, "longest": 3, "end": 47, "curve": [20, 22, 62, 50, 30]}}, "4": {"normal": {"pct": 8, "longest": 6, "end": 76, "curve": [1, 9, 10, 32, 14, 27, 14, 29]}, "hard": {"pct": 19, "longest": 6, "end": 51, "curve": [1, 66, 32, 33, 18, 0]}, "furious": {"pct": 10, "longest": 6, "end": 60, "curve": [1, 21, 57, 32, 22, 27, 0]}}, "5": {"normal": {"pct": 10, "longest": 4, "end": 60, "curve": [0, 7, 6, 22, 21, 40, 0]}, "hard": {"pct": 6, "longest": 4, "end": 63, "curve": [0, 44, 93, 54, 39, 42, 36]}, "furious": {"pct": 7, "longest": 4, "end": 56, "curve": [0, 31, 29, 49, 12, 53]}}, "6": {"normal": null, "hard": {"pct": 43, "longest": 62, "end": 211, "curve": [28, 46, 0, 21, 10, 38, 9, 29, 0, 0, 0, 0, 0, 0, 9, 0, 1, 0, 14, 15, 0, 0]}, "furious": {"pct": 44, "longest": 60, "end": 197, "curve": [62, 94, 18, 8, 18, 66, 79, 8, 0, 0, 0, 0, 0, 0, 0, 31, 17, 0, 54, 0]}}, "6r": {"normal": null, "hard": {"pct": 44, "longest": 56, "end": 219, "curve": [28, 42, 3, 12, 16, 22, 9, 0, 25, 0, 0, 0, 0, 0, 24, 18, 6, 4, 6, 8, 18, 16]}, "furious": null}, "7": {"normal": null, "hard": {"pct": 16, "longest": 8, "end": 91, "curve": [16, 188, 162, 115, 146, 106, 0, 42, 0, 0]}, "furious": {"pct": 13, "longest": 8, "end": 118, "curve": [22, 207, 517, 170, 102, 116, 55, 48, 54, 0, 24, 8]}}, "8": {"normal": null, "hard": {"pct": 4, "longest": 4, "end": 140, "curve": [0, 22, 59, 44, 112, 57, 87, 100, 79, 76, 99, 66, 27, 41, 0]}, "furious": {"pct": 10, "longest": 4, "end": 59, "curve": [0, 37, 76, 18, 37, 181]}}, "9": {"normal": null, "hard": {"pct": 1, "longest": 1, "end": 110, "curve": [40, 116, 52, 80, 109, 77, 48, 58, 0, 18, 0, 0]}, "furious": {"pct": 1, "longest": 1, "end": 92, "curve": [56, 123, 129, 188, 61, 45, 111, 10, 0, 0]}}}, "onoff": {"1|normal": {"nat_on": [0, 102], "nat_off": [1, 102]}, "1|hard": {"nat_on": [1, 116], "nat_off": [3, 116]}, "2|normal": {"nat_on": [3, 67], "nat_off": [4, 67]}, "2|hard": {"nat_on": [4, 67], "nat_off": [7, 77]}, "3|normal": {"nat_on": [0, 72], "nat_off": [0, 69]}, "3|hard": {"nat_on": [0, 69], "nat_off": [0, 71]}, "4|normal": {"nat_on": [1, 88], "nat_off": [1, 100]}, "4|hard": {"nat_on": [13, 512], "nat_off": [1, 75]}, "5|normal": {"nat_on": [2, 81], "nat_off": [3, 84]}, "5|hard": {"nat_on": [1, 77], "nat_off": [2, 87]}, "6|normal": {}, "6|hard": {"nat_on": [7, 236], "nat_off": [4, 235]}, "6r|normal": {}, "6r|hard": {"nat_on": [5, 226], "nat_off": [5, 243]}, "7|normal": {}, "7|hard": {"nat_on": [6, 1010], "nat_off": [3, 1010]}, "8|normal": {}, "8|hard": {"nat_on": [5, 108], "nat_off": [14, 164]}, "9|normal": {}, "9|hard": {"nat_on": [1, 80], "nat_off": [3, 134]}}, "onoffActive": {"1|normal": {"on": 0.0, "off": 0.68}, "1|hard": {"on": 0.59, "off": 1.76}, "2|normal": {"on": 3.35, "off": 4.46}, "2|hard": {"on": 4.47, "off": 5.7}, "3|normal": {"on": 0.0, "off": 0.0}, "3|hard": {"on": 0.0, "off": 0.0}, "4|normal": {"on": 0.81, "off": 0.69}, "4|hard": {"on": 1.56, "off": 0.98}, "5|normal": {"on": 0.89, "off": 1.7}, "5|hard": {"on": 0.0, "off": 0.81}, "6|normal": {"on": null, "off": null}, "6|hard": {"on": 1.89, "off": 1.08}, "6r|normal": {"on": null, "off": null}, "6r|hard": {"on": 1.41, "off": 1.31}, "7|normal": {"on": null, "off": null}, "7|hard": {"on": 2.45, "off": 1.77}, "8|normal": {"on": null, "off": null}, "8|hard": {"on": 3.16, "off": 5.6}, "9|normal": {"on": null, "off": null}, "9|hard": {"on": 0.9, "off": 1.5}}};
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const S=D.stages, L=s=>s==='6r'?'6R':s, NS='http://www.w3.org/2000/svg';
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+function txt(p,x,y,s,a){const t=el('text',Object.assign({x,y,'font-family':'IBM Plex Mono, monospace','font-size':12,fill:css('--dim')},a||{}),p);t.textContent=s;return t;}
+function bars(id,series,opts){
+  const svg=document.getElementById(id);svg.innerHTML='';const W=940,H=+svg.getAttribute('viewBox').split(' ')[3],l=56,r=12,t=14,b=46,cw=(W-l-r)/S.length;
+  const y=opts.scale;
+  for(const v of opts.ticks){const yy=y(v,H-b,t);el('line',{x1:l,x2:W-r,y1:yy,y2:yy,stroke:css('--rule'),'stroke-width':1},svg);txt(svg,l-8,yy+4,opts.fmt(v),{'text-anchor':'end'});}
+  if(opts.band){const y0=y(opts.band[0],H-b,t),y1=y(opts.band[1],H-b,t);el('rect',{x:l,y:y1,width:W-l-r,height:y0-y1,fill:css('--band')},svg);}
+  S.forEach((s,i)=>{
+    const x0=l+i*cw+cw*.14,bw=cw*.72/series.length;
+    series.forEach((se,j)=>{const v=se.v[i];if(v==null){txt(svg,x0+j*bw+bw/2,y(opts.base,H-b,t)-4,'–',{'text-anchor':'middle','font-size':11});return;}const yy=y(Math.max(v,opts.min||0),H-b,t),base=y(opts.base,H-b,t);
+      el('rect',{x:x0+j*bw+1,y:Math.min(yy,base),width:bw-2,height:Math.max(1,Math.abs(base-yy)),fill:css(se.c)},svg);
+      if(opts.label!=null&&v>=opts.label)txt(svg,x0+j*bw+bw/2,yy-5,opts.fmt(v),{'text-anchor':'middle','font-size':11,fill:css('--ink')});});
+    if(opts.dots)opts.dots.forEach(dt=>{const v=dt.v[i];if(v==null)return;const yy=y(Math.max(v,opts.min||0),H-b,t);el('circle',{cx:x0+cw*.72/2,cy:yy,r:5.5,fill:css(dt.c),stroke:css('--panel'),'stroke-width':2},svg);});
+    txt(svg,l+i*cw+cw/2,H-b+18,'S'+L(s),{'text-anchor':'middle',fill:css('--ink'),'font-size':13});
+    txt(svg,l+i*cw+cw/2,H-b+33,(D.names[s]||'').replace(' (left)','').replace(' (right)',' R'),{'text-anchor':'middle','font-size':10.5});
+  });
+}
+function draw(){
+  const lin=(mx)=>(v,bot,top)=>bot-(v/mx)*(bot-top);
+  bars('cHits',[{v:D.hitsPerMin.normal,c:'--normal'},{v:D.hitsPerMin.hard,c:'--hard'},{v:D.hitsPerMin.furious,c:'--furious'}],
+    {scale:lin(6.5),ticks:[0,1,2,3,4,5,6],fmt:v=>v.toFixed(v%1?1:0),base:0,band:[0,.6],label:3.5,dots:[{v:D.skilledFurious,c:'--skill'}]});
+  const lg=(v,bot,top)=>{const a=Math.log2(.5),b=Math.log2(16);return bot-(Math.log2(Math.max(v,.5))-a)/(b-a)*(bot-top);};
+  bars('cShots',[{v:D.shotsPerSec.normal,c:'--normal'},{v:D.shotsPerSec.hard,c:'--hard'},{v:D.shotsPerSec.furious,c:'--furious'}],
+    {scale:lg,ticks:[.5,1,2,4,8,16],fmt:v=>v===.5?'½':String(v),base:.5,min:.5,label:6});
+  bars('cSpeed',[{v:D.speedP50.normal,c:'--normal'},{v:D.speedP50.hard,c:'--hard'},{v:D.speedP50.furious,c:'--furious'}],{scale:lin(720),ticks:[0,200,400,600],fmt:v=>String(v),base:0,label:600});
+  // assist on/off: Normal 1-5 then Hard 1-9
+  const svg=document.getElementById('cOnOff');svg.innerHTML='';const keys=Object.keys(D.onoffActive).filter(k=>D.onoffActive[k].on!=null&&D.onoffActive[k].off!=null);
+  const W=940,H=300,l=56,r=12,t=14,b=46,cw=(W-l-r)/keys.length,mx=6,y=v=>H-b-(v/mx)*(H-b-t);
+  for(const v of [0,2,4,6]){el('line',{x1:l,x2:W-r,y1:y(v),y2:y(v),stroke:css('--rule')},svg);txt(svg,l-8,y(v)+4,String(v),{'text-anchor':'end'});}
+  keys.forEach((k,i)=>{const [st,d]=k.split('|'),o=D.onoffActive[k],x0=l+i*cw+cw*.15,bw=cw*.35;
+    el('rect',{x:x0,y:y(o.off),width:bw-1,height:Math.max(1,H-b-y(o.off)),fill:css('--dim'),'fill-opacity':.55},svg);
+    el('rect',{x:x0+bw,y:y(o.on),width:bw-1,height:Math.max(1,H-b-y(o.on)),fill:css(d==='normal'?'--normal':'--hard')},svg);
+    txt(svg,l+i*cw+cw/2,H-b+18,'S'+L(st),{'text-anchor':'middle',fill:css('--ink'),'font-size':12});
+    txt(svg,l+i*cw+cw/2,H-b+33,d==='normal'?'N':'H',{'text-anchor':'middle','font-size':10.5});});
+  // pacing small multiples
+  const box=document.getElementById('sm');box.innerHTML='';
+  S.forEach((s,i)=>{const P=D.pace[s],a=(P.normal||P.hard||{}).curve||[],bF=(P.furious||{}).curve||[],n=Math.max(a.length,bF.length);if(!n)return;
+    const ref=P.normal||P.hard,mx=Math.max(8,...a,...bF),W=300,H=96,pad=4;
+    const d=document.createElement('div');d.className='sm';
+    d.innerHTML=`<h3>S${L(s)} · ${D.names[s]}<span>${Math.round((ref?ref.end:0)/6)/10} min · quiet ${ref?ref.pct:'–'}% · longest gap ${ref?ref.longest:'–'} s</span></h3>`;
+    const g=el('svg',{viewBox:`0 0 ${W} ${H}`},d);
+    el('line',{x1:0,x2:W,y1:H-pad,y2:H-pad,stroke:css('--rule')},g);
+    const path=(arr,c,fa)=>{if(!arr.length)return;const pts=arr.map((v,k)=>[k/(n-1||1)*W,H-pad-(v/mx)*(H-2*pad)]);
+      el('path',{d:'M'+pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join('L')+`L${pts[pts.length-1][0]},${H-pad}L0,${H-pad}Z`,fill:css(c),'fill-opacity':fa,stroke:'none'},g);
+      el('path',{d:'M'+pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join('L'),fill:'none',stroke:css(c),'stroke-width':1.6},g);};
+    path(bF,'--furious',.12);path(a,'--normal',.18);
+    txt(g,W-2,12,'peak '+mx+' / 10 s',{'text-anchor':'end','font-size':10.5});
+    box.appendChild(d);});
+  const F=[
+    ['bad',D.hitsPerMin.normal[1].toFixed(1)+'/min','Stage 2 is the wall on Normal','Firewalls and fire debris cause the Normal deaths. They are fair for a watchful player and brutal for a new one.'],
+    ['warn',D.hitsPerMin.normal[4].toFixed(1)+'/min','Stage 5 rammers','Every Normal death on Stage 5 is kamikaze contact from s5rammer.'],
+    ['warn','2–4/min','Furious is a big step','Most stages cost a novice 2–4 lives a minute on Furious, against about 1–2 on most Hard stages (Stages 2 and 8 are the Hard spikes at about 5.6).'],
+    ['info','2.3 → 7.5','Difficulty scales cleanly','Fire, speed and wave count rise from Normal to Furious on every stage where all three exist.'],
+    ['info','≤ 9 s','Pacing is tight','No stage leaves combat empty for more than about 9 seconds before its last wave, apart from Stage 6's story scene.'],
+    ['info','~58 s','Stage 6 gap is the cutscene','The team-argument scene freezes combat by design; FIRE now skips it. The carrier assaults hold the clock only about 10–13 s each.']];
+  document.getElementById('finds').innerHTML=F.map(f=>`<div class="f ${f[0]}"><b class="n">${f[1]}</b><h3>${f[2]}</h3><p>${f[3]}</p></div>`).join('');
+}
+draw();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>

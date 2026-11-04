@@ -1,0 +1,216 @@
+[
+  {
+    "name": "volcanic-dish",
+    "source": "source-art/volcanic-dish.png",
+    "sha256": "b3ab5028bd9d329562a69d7b9c192296d1099c92d3bf6e30730ee159fda65ddf",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "launch-pad",
+    "source": "source-art/launch-pad.png",
+    "sha256": "ffb89acff1596dbbb8933ce3e7ff7c6288d55453de82d45544f5a5db735ab8a2",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "command-bay",
+    "source": "source-art/command-bay.png",
+    "sha256": "518d054ed5058aaf9ddad209aad88d357c94c0192b933a82163ab97aa3207290",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "freeze",
+    "source": "source-art/freeze.png",
+    "sha256": "de1ee0790831f45f77e9265300398527741ab9b7da59e7948c68fc81973a8504",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "alarm",
+    "source": "source-art/alarm.png",
+    "sha256": "c9eba4bcc5057c898037b3787425e16f2d977b687486b40de54867d185076e7a",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "symbiote-jump",
+    "source": "source-art/symbiote-jump.png",
+    "sha256": "b3e0aad61e3ca38fa0e81d38b30e0fccecdb9a01b490e319562f8465175a4485",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "decker-shock",
+    "source": "source-art/decker-shock.png",
+    "sha256": "df737bd6bdd58bae5c5899a863cb881bd7bb0e9473ad58c1faa14040a60eb80b",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "cable-cole",
+    "source": "source-art/cable-cole.png",
+    "sha256": "571f46fb3d2f02afd67904f765ed57934068c11ca108ddacf5c360a4a82473a9",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "cable-axel",
+    "source": "source-art/cable-axel.png",
+    "sha256": "f582722a89010997830ab4bf0df8a453cbf32b90a14b07429e075a708293b300",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "cable-decker",
+    "source": "source-art/cable-decker.png",
+    "sha256": "bb407bb1153906f3d004ee45fc6bc4981a5885d233432d0729bd090b93b7ef14",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "cable-maverick",
+    "source": "source-art/cable-maverick.png",
+    "sha256": "4f2ea0b02bf9c2d0a227b669e0ad8d145ec4e86b1a95ee7fd82f9c30fdcca959",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "cable-freezer",
+    "source": "source-art/cable-freezer.png",
+    "sha256": "3a06beafedf4c9a1a9ba6925024619c2f2a217a6b2e19d2ef5e4875e551c2454",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "cable-juggernaut",
+    "source": "source-art/cable-juggernaut.png",
+    "sha256": "0bc33bee6391927235411b8e4508fc069099b23af8ec951a55a53e2e74ad2f52",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "cable-yuri",
+    "source": "source-art/cable-yuri.png",
+    "sha256": "635b6a42d057e09a8c0b12072439a17aee8141007c33c01a261160df670278df",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "cable-lizzie",
+    "source": "source-art/cable-lizzie.png",
+    "sha256": "ee98f357065204da42fe803302def81b084bd9943414f1cbd404a37f2cf9bf2f",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "cable-falva",
+    "source": "source-art/cable-falva.png",
+    "sha256": "3f8e17694d46e8bb492ecf7313445ac203b94537feb24de2953ff49da5ba95dd",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "flight-0",
+    "source": "source-art/flight-0.png",
+    "sha256": "07be2ce7a8c770f21e10e1517f259ed7513b24701f1b2d578d488296e041d8de",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "flight-1",
+    "source": "source-art/flight-1.png",
+    "sha256": "7285806c174e7e1ce3d8ba811710af9daf3e87cfc6f77ecc1631f3eaef4e5a68",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "flight-2",
+    "source": "source-art/flight-2.png",
+    "sha256": "4e12d0d9535c2b64f0f8b3e037c51cd7d0b8ad82d8856fce37573b24a450c57e",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "dish-exit",
+    "source": "source-art/dish-exit.png",
+    "sha256": "71527519fb174996ea6eb5d36670cc6ce1ce905598a0e5278ec3e48f4fa95cc1",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "pad-exit",
+    "source": "source-art/pad-exit.png",
+    "sha256": "e5385000e4b9ebf02c01b69aab355174a5ed5235e09b86f8e71a0fdc1e1da3c6",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "lounge-empty",
+    "source": "source-art/lounge-empty.png",
+    "sha256": "1f8b07fb4f9452145395f33ee1ca8e41a8677ef76bb2f2af967fe5789da649ec",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "forge-empty",
+    "source": "source-art/forge-empty.png",
+    "sha256": "84c6752a51ea3fead04de461bf82a6e155fcf2345ded668898720e0a7c44887e",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "comic-divider",
+    "source": "source-art/comic-divider.png",
+    "sha256": "d8887d0c16de2fae02aa63a035833b4ebe40073e264f066ddbc6df85e5466772",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "clean-sky",
+    "source": "source-art/clean-sky.png",
+    "sha256": "4340cb3d2bc5be3153896216f8775f03d972f841deca0d245def52a93a1c1f94",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "alien-descent",
+    "source": "source-art/alien-descent.png",
+    "sha256": "71b12ae26fc4e9b0f0248e71c6c7829cde676d83123afd271e89809242b5f10d",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "headset16-cole",
+    "source": "source-art/headset16-cole.png",
+    "sha256": "e1f8cd72ea223ab0bd2036740909d8e77ab6c47044fec860e89025e57091e9d5",
+    "tool": "built-in image_gen",
+    "derivation": "headset_motion_1103/cole/08-right-quarter.png",
+    "identity_revision": 7
+  },
+  {
+    "name": "headset16-axel",
+    "source": "source-art/headset16-axel.png",
+    "sha256": "21b045233f18b910e7eda122841e6ca53ef23c869a53051358ab526e669c538e",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "headset16-decker",
+    "source": "source-art/headset16-decker.png",
+    "sha256": "839784e1eb805f45e1fe83bddb73f1814a2a353917208867707cd7266edd0e66",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "headset16-maverick",
+    "source": "source-art/headset16-maverick.png",
+    "sha256": "5aeddc798f3b7a199437a48c8263a6350ba4172ee8626137a10fac7b7fa2e784",
+    "tool": "built-in image_gen",
+    "derivation": "headset_motion_1103/maverick/08-right-quarter.png",
+    "identity_revision": 7
+  },
+  {
+    "name": "headset16-freezer",
+    "source": "source-art/headset16-freezer.png",
+    "sha256": "00efe30721b35420e5d41ae17a509f6583e51ed6149d2a3ed9c2a56ad193132a",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "headset16-juggernaut",
+    "source": "source-art/headset16-juggernaut.png",
+    "sha256": "31da96b8798a840a96ca226ba8c8e03a98b589f7d5280ae0a220e797c9004c50",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "headset16-yuri",
+    "source": "source-art/headset16-yuri.png",
+    "sha256": "395634985c99bec3ec00abe88b8a39eeacafc5f070970f3a4c29c569c27e8af1",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "headset16-lizzie",
+    "source": "source-art/headset16-lizzie.png",
+    "sha256": "f17b21e0826e84cc3c949e59a08795e8ad9c1828a26aa3f623edbb495c1ca808",
+    "tool": "built-in image_gen"
+  },
+  {
+    "name": "headset16-falva",
+    "source": "source-art/headset16-falva.png",
+    "sha256": "293e44896f532ffd224fbab4afc4f93f4bb6e88445f9fa9f4e875b3b56043c8f",
+    "tool": "built-in image_gen"
+  }
+]

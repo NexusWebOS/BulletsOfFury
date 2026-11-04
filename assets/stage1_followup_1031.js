@@ -147,7 +147,12 @@ buildStagePlan=function(n){const plan=S1B.base.plan.apply(this,arguments);if(n!=
   if(((_levelCfg(1)?.h||4212)-(mapScroll||0))>S1_COAST-60){if(waveIdx>0)waveIdx--;_waveGap=.25;return;}
   const y=viewTopY()-92,W=worldWidth(),prefer=(i%2?.72:.28)*W;let x=null;
   for(let d=0;d<230&&x==null;d+=14)for(const side of d?[-1,1]:[1]){const q=clamp(prefer+d*side,65,W-65);if(groundTrafficLegal({w:88,h:88,_drawW:93,_drawH:93},q,y)){x=q;break;}}
-  if(x==null){if(waveIdx>0)waveIdx--;_waveGap=.25;return;}
+  if(x==null){
+   // Optional reinforcements cannot enter once the dam has exhausted the
+   // terrain. Retrying that impossible entry forever blocks authored waves.
+   if(mapScroll>=levelScrollRange()-1){s1bLog('reinforcement-retired',{type:'s1tanklight'},{planned:t,reason:'no legal ground entry at map end'});return;}
+   if(waveIdx>0)waveIdx--;_waveGap=.25;return;
+  }
   spawnEnemy('s1tanklight',x,y,{_s1bReinforcement:true});
  };fn._s1Ground=true;fn._s1Pressure=1;fn._s1bCamo=true;plan.push({t,fn});});plan.sort((a,b)=>a.t-b.t);return plan;
 };

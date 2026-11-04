@@ -1,0 +1,808 @@
+{
+  "rows": [
+    {
+      "stage": 1,
+      "request": "s1jetdelta",
+      "type": "s1jetdelta",
+      "pattern": "s1jet",
+      "w": 95,
+      "h": 105,
+      "draw": [
+        null,
+        null
+      ],
+      "model": null,
+      "hp": 8,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 1,
+      "request": "s1jetdelta_b",
+      "type": "s1jetdelta_b",
+      "pattern": "s1jet",
+      "w": 95,
+      "h": 105,
+      "draw": [
+        null,
+        null
+      ],
+      "model": null,
+      "hp": 8,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 2,
+      "request": "skim",
+      "type": "skim",
+      "pattern": "volc",
+      "w": 88,
+      "h": 80,
+      "draw": [
+        88,
+        80
+      ],
+      "model": "skimmer",
+      "hp": 8,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 2,
+      "request": "cinderwasp",
+      "type": "cinderwasp",
+      "pattern": "volc",
+      "w": 66,
+      "h": 72,
+      "draw": [
+        66,
+        72
+      ],
+      "model": "wasp",
+      "hp": 5,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 2,
+      "request": "lance",
+      "type": "lance",
+      "pattern": "volc",
+      "w": 112,
+      "h": 110,
+      "draw": [
+        112,
+        110
+      ],
+      "model": "thunder",
+      "hp": 8,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 2,
+      "request": "ac10firejet",
+      "type": "ac10firejet",
+      "pattern": "volc",
+      "w": 122,
+      "h": 118,
+      "draw": [
+        122,
+        118
+      ],
+      "model": "interceptor",
+      "hp": 8,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 2,
+      "request": "basaltbomber",
+      "type": "basaltbomber",
+      "pattern": "volc",
+      "w": 94,
+      "h": 94,
+      "draw": [
+        94,
+        94
+      ],
+      "model": "basalt",
+      "hp": 5,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 2,
+      "request": "v31elite_balls",
+      "type": "v31elite_balls",
+      "pattern": "volc",
+      "w": 88,
+      "h": 88,
+      "draw": [
+        88,
+        88
+      ],
+      "model": "elite",
+      "hp": 10,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 3,
+      "request": "frost",
+      "type": "frost",
+      "pattern": "sine",
+      "w": 34,
+      "h": 36,
+      "draw": [
+        null,
+        null
+      ],
+      "model": null,
+      "hp": 5,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 3,
+      "request": "ac10icejet",
+      "type": "ac10icejet",
+      "pattern": "s3ice",
+      "w": 102,
+      "h": 90,
+      "draw": [
+        102,
+        90
+      ],
+      "model": "interceptor",
+      "hp": 12,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 4,
+      "request": "s4interceptor",
+      "type": "s4interceptor",
+      "pattern": "s4chase",
+      "w": 62,
+      "h": 70,
+      "draw": [
+        84,
+        84
+      ],
+      "model": "af_s4interceptor",
+      "hp": 13.440000000000001,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 4,
+      "request": "s4rocket",
+      "type": "s4rocket",
+      "pattern": "s4chase",
+      "w": 75,
+      "h": 60,
+      "draw": [
+        72,
+        72
+      ],
+      "model": "af_s4rocket",
+      "hp": 12,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 4,
+      "request": "s4command",
+      "type": "s4command",
+      "pattern": "s4chase",
+      "w": 86.724,
+      "h": 92.66400000000002,
+      "draw": [
+        96.36,
+        102.96000000000001
+      ],
+      "model": "command",
+      "hp": 13.440000000000001,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 4,
+      "request": "s4heavyjet",
+      "type": "s4heavyjet",
+      "pattern": "s4chase",
+      "w": 105.12,
+      "h": 112.32000000000001,
+      "draw": [
+        116.8,
+        124.80000000000001
+      ],
+      "model": "heavyjet",
+      "hp": 13.440000000000001,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 5,
+      "request": "s5interceptor",
+      "type": "s5interceptor",
+      "pattern": "s5space",
+      "w": 88,
+      "h": 91,
+      "draw": [
+        108,
+        108
+      ],
+      "model": "af_s5interceptor",
+      "hp": 43,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": null
+    },
+    {
+      "stage": 5,
+      "request": "s5skimmer",
+      "type": "s5skimmer",
+      "pattern": "s5space",
+      "w": 94,
+      "h": 81,
+      "draw": [
+        96,
+        96
+      ],
+      "model": "skimmer",
+      "hp": 40,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 16
+    },
+    {
+      "stage": 5,
+      "request": "s5frigate",
+      "type": "s5frigate",
+      "pattern": "s5space",
+      "w": 99,
+      "h": 91,
+      "draw": [
+        96,
+        96
+      ],
+      "model": "frigate",
+      "hp": 56,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 16
+    },
+    {
+      "stage": 6,
+      "request": "l6v_s0",
+      "type": "l6v_s0",
+      "pattern": "sine",
+      "w": 75.67999999999999,
+      "h": 75.67999999999999,
+      "draw": [
+        88,
+        88
+      ],
+      "model": "fighter_navy",
+      "hp": 16,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 6,
+      "request": "l6v_s1",
+      "type": "l6v_s1",
+      "pattern": "sine",
+      "w": 108.36,
+      "h": 108.36,
+      "draw": [
+        126,
+        126
+      ],
+      "model": "bomber_navy",
+      "hp": 16,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 6,
+      "request": "l6v_s2",
+      "type": "l6v_s2",
+      "pattern": "sine",
+      "w": 75.67999999999999,
+      "h": 75.67999999999999,
+      "draw": [
+        88,
+        88
+      ],
+      "model": "fighter_teal",
+      "hp": 16,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 6,
+      "request": "l6v_r0",
+      "type": "l6v_r0",
+      "pattern": "sine",
+      "w": 75.67999999999999,
+      "h": 75.67999999999999,
+      "draw": [
+        88,
+        88
+      ],
+      "model": "fighter_black",
+      "hp": 16,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 6,
+      "request": "l6v_r1",
+      "type": "l6v_r1",
+      "pattern": "sine",
+      "w": 108.36,
+      "h": 108.36,
+      "draw": [
+        126,
+        126
+      ],
+      "model": "bomber_black",
+      "hp": 16,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 6,
+      "request": "l6v_r2",
+      "type": "l6v_r2",
+      "pattern": "sine",
+      "w": 103.2,
+      "h": 103.2,
+      "draw": [
+        120,
+        120
+      ],
+      "model": "heavy_wind",
+      "hp": 16,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 6,
+      "request": "s6dart",
+      "type": "s6dart",
+      "pattern": "s6storm",
+      "w": 75,
+      "h": 70,
+      "draw": [
+        96,
+        96
+      ],
+      "model": "wind_zephyr",
+      "hp": 16,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 6,
+      "request": "s6skimmer",
+      "type": "s6skimmer",
+      "pattern": "s6storm",
+      "w": 83,
+      "h": 88,
+      "draw": [
+        96,
+        96
+      ],
+      "model": "wind_gale",
+      "hp": 16,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "request": "s6bomber",
+      "stage": 6,
+      "empty": true
+    },
+    {
+      "stage": 7,
+      "request": "cp22slime",
+      "type": "cp22slime",
+      "pattern": "s7toxic",
+      "w": 102.96000000000001,
+      "h": 113.52,
+      "draw": [
+        132,
+        132
+      ],
+      "model": "slime",
+      "hp": 20,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 7,
+      "request": "s7missilejet",
+      "type": "s7missilejet",
+      "pattern": "s7toxic",
+      "w": 112.32000000000001,
+      "h": 123.84,
+      "draw": [
+        144,
+        144
+      ],
+      "model": "missilejet",
+      "hp": 20,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 7,
+      "request": "s8crescent",
+      "type": "s8crescent",
+      "pattern": "s7toxic",
+      "w": 99.84,
+      "h": 110.08,
+      "draw": [
+        128,
+        128
+      ],
+      "model": "crescent",
+      "hp": 20,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 8,
+      "request": "s8interceptor",
+      "type": "s8interceptor",
+      "pattern": "s8mega",
+      "w": 124.2,
+      "h": 129.72,
+      "draw": [
+        138,
+        138
+      ],
+      "model": "interceptor",
+      "hp": 24,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 8,
+      "request": "s8needlejet",
+      "type": "s8needlejet",
+      "pattern": "s8mega",
+      "w": 142.20000000000002,
+      "h": 148.51999999999998,
+      "draw": [
+        158,
+        158
+      ],
+      "model": "imp",
+      "hp": 24,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 8,
+      "request": "s8voidjet",
+      "type": "s8voidjet",
+      "pattern": "s8mega",
+      "w": 230.4,
+      "h": 240.64,
+      "draw": [
+        256,
+        256
+      ],
+      "model": "voidjet",
+      "hp": 555,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 8,
+      "request": "s8hellwing",
+      "type": "s8hellwing",
+      "pattern": "s8mega",
+      "w": 140.4,
+      "h": 146.64,
+      "draw": [
+        156,
+        156
+      ],
+      "model": "hellwing",
+      "hp": 24,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 8,
+      "request": "s8laserharrier",
+      "type": "s8laserharrier",
+      "pattern": "s8mega",
+      "w": 183.6,
+      "h": 191.76,
+      "draw": [
+        204,
+        204
+      ],
+      "model": "harrier",
+      "hp": 24,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 9,
+      "request": "s9comet",
+      "type": "s9comet",
+      "pattern": "s9refit",
+      "w": 124.2,
+      "h": 129.72,
+      "draw": [
+        138,
+        138
+      ],
+      "model": "comet",
+      "hp": 37,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 9,
+      "request": "wskim",
+      "type": "wskim",
+      "pattern": "s9refit",
+      "w": 142.20000000000002,
+      "h": 148.51999999999998,
+      "draw": [
+        158,
+        158
+      ],
+      "model": "skimmer",
+      "hp": 28,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 9,
+      "request": "echof",
+      "type": "echof",
+      "pattern": "s9refit",
+      "w": 131.4,
+      "h": 137.23999999999998,
+      "draw": [
+        146,
+        146
+      ],
+      "model": "echo",
+      "hp": 33,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 9,
+      "request": "tsplit",
+      "type": "tsplit",
+      "pattern": "s9refit",
+      "w": 154.8,
+      "h": 161.67999999999998,
+      "draw": [
+        172,
+        172
+      ],
+      "model": "tidal",
+      "hp": 49,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    },
+    {
+      "stage": 9,
+      "request": "s9gunship",
+      "type": "s9gunship",
+      "pattern": "s9refit",
+      "w": 171,
+      "h": 178.6,
+      "draw": [
+        190,
+        190
+      ],
+      "model": "beamship",
+      "hp": 82,
+      "flags": {
+        "entry": false,
+        "flight": false,
+        "stealth": false,
+        "jet": false
+      },
+      "artDirs": 32
+    }
+  ],
+  "errors": []
+}

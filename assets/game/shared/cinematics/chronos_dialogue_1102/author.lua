@@ -1,0 +1,2 @@
+local D=app.params['out'];local s=Sprite(68,68,ColorMode.RGB);local im=Image{fromFile=D..'/poses.png'}
+for i=0,3 do if i>0 then s:newEmptyFrame()end;s:newCel(s.layers[1],i+1,Image(im,Rectangle(i*68,0,68,68)),Point(0,0));s.frames[i+1].duration=0.25 end;s:saveAs(D..'/chronos-dialogue.aseprite');s:close()

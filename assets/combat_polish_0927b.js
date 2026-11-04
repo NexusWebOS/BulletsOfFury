@@ -62,7 +62,7 @@ function polishArmoryDraw(dt){
   if(!A.collected){for(const w of FORGE_WEAPONS)if(run.wlevels?.[w]>0)polishRememberWeapon(w);for(const [w,forms]of Object.entries(run.forgeForms||{}))for(const e of Object.keys(forms))polishRememberForm(+w,e);A.collected=true;}
   const cells=polishCollection(),cols=1+Object.keys(INFUSIONS).length,rows=Math.ceil(cells.length/cols);
   A.cell=clamp(A.cell||0,0,cells.length-1);const side=Math.min((VW-54)/cols,(VH-173)/rows),x0=(VW-side*cols)/2+12,y0=62;
-  ctx.fillStyle='#060c16';ctx.fillRect(0,0,VW,VH);
+  if(!(typeof menuScenery113==='function'&&menuScenery113('forge',VW,VH))){ctx.fillStyle='#060c16';ctx.fillRect(0,0,VW,VH);}
   const label=(text,x,y,h,col='#dcecff')=>{if(art)stageText(art,text,x,y,Math.min(h,stageFitH(art,text,VW-25,h,5,.04)),col,.95,1,.04);};
   label('FURY ARMORY',VW/2,19,18,'#ffda72');label(cells.filter(c=>c.owned).length+' / '+cells.length+' COLLECTED',VW/2,39,9);
   const els=[null,...Object.keys(INFUSIONS)];els.forEach((e,i)=>{if(e)iconBlit(ctx,'inf_'+e,x0+(i+.5)*side,y0-10,13,true);else label('BASE',x0+side/2,y0-10,6);});

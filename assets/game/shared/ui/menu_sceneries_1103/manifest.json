@@ -1,0 +1,137 @@
+{
+  "generator": "built-in image_gen",
+  "exporter": "Aseprite v1.3.18.6-dev",
+  "rendering": "Native source clipping and integer translation of two authored layers; no runtime tint, opacity animation, gradients, scaling or procedural scenery",
+  "scenes": {
+    "orbit": [
+      "title",
+      "credits"
+    ],
+    "command": [
+      "modes",
+      "co-op setup",
+      "difficulty",
+      "training prompt"
+    ],
+    "hangar": [
+      "pilot select",
+      "co-op roster"
+    ],
+    "forge": [
+      "forge",
+      "loadout",
+      "re-spec",
+      "armory"
+    ],
+    "hq": [
+      "campaign hub",
+      "save/load prompts"
+    ],
+    "vault": [
+      "options",
+      "password",
+      "help",
+      "achievements",
+      "vault"
+    ]
+  },
+  "nativeSize": [
+    1536,
+    512
+  ],
+  "portraitSize": [
+    1536,
+    1280
+  ],
+  "assets": [
+    {
+      "file": "coastal_front.png",
+      "sha256": "35cdb6e40f6fa3928c4dbea9bd34f620c487b94e59bcdcb0c1ebeba452aff845"
+    },
+    {
+      "file": "command.png",
+      "sha256": "fc26ea8eece73828cae7dc0e7448c8a138fe4c54788143a225ce4a1399ff3bb9"
+    },
+    {
+      "file": "command_portrait.png",
+      "sha256": "0a014ac299b29b0d104dc0b69589f369a6ed501abe7415e0e8b1ddc6fdafe1c0"
+    },
+    {
+      "file": "forge.png",
+      "sha256": "2fda062664b329322ad32c0ab1c94b73ce4daf71326acb2c3227e2fefe36034c"
+    },
+    {
+      "file": "forge_portrait.png",
+      "sha256": "6d71a6d4d468961ed86a85a4945d1a8a7cf9f50242aa091f3512b4914c4a8d15"
+    },
+    {
+      "file": "hangar.png",
+      "sha256": "88343cebd4e241233cb9031472a4342976110393fbcc18aefa42f0c808a6556b"
+    },
+    {
+      "file": "hangar_portrait.png",
+      "sha256": "9084118e24083921dd024848c6fc6111fa82dbab81666b45ba0ecd15f1110bef"
+    },
+    {
+      "file": "hq.png",
+      "sha256": "957614f77efaa2b8e8257f2053c595e25ee014dfaa26563aefa92ddc46102cbc"
+    },
+    {
+      "file": "hq_portrait.png",
+      "sha256": "a537652a6cf5e97fc1a94a6fc3c4dcd1ce42549cbc86a186092d8856e9ca5f3c"
+    },
+    {
+      "file": "industrial_front.png",
+      "sha256": "73b06dea2cb818928c124ce5c630f19352eb1552a1117fcd027b959ea468d156"
+    },
+    {
+      "file": "orbit.png",
+      "sha256": "562ecd5395ee0c373ab7d26c54e32b6b49298fa63775ea78ce1cdf19e5b98d92"
+    },
+    {
+      "file": "orbit_front.png",
+      "sha256": "0b5e1fa6b3bd73a587b05348341607d1cb1446cda6cb1c1076eeda7bdb60de9d"
+    },
+    {
+      "file": "orbit_portrait.png",
+      "sha256": "45dbc14788288f8003acb2d6058bf06b77151729e00b1f3294ad6f17ee4017bc"
+    },
+    {
+      "file": "vault.png",
+      "sha256": "6cd631e440556f665f5165b7716e2cce9a9dfddc782fd1829ad066641da09d30"
+    },
+    {
+      "file": "vault_portrait.png",
+      "sha256": "11a09f5adb51b3f50b77021463cf03e57528b22fc8f1d958fadac5904eb39086"
+    }
+  ],
+  "sourceDirectory": "_BUILD_SOURCE/art_sources/menu_sceneries_1103",
+  "promptFile": "_BUILD_SOURCE/art_sources/menu_sceneries_1103/prompts.json",
+  "sourceHashes": {
+    "assets/game.js": {
+      "before": "cffaaae7ff5d32f3d8177d55c6d09eea8a555e1f221beedd14c8cbf26559a4a3",
+      "after": "103bc8054a3edfbf28a37f3b62758b5eea2e11379d374b576e71252951144322"
+    },
+    "assets/combat_polish_0927b.js": {
+      "before": "7e8c616d205539728f05073350ac5527630fedc5f0dca8715ac3cde1dcb0a166",
+      "after": "ad32ebaeb0ee278d3eb1e78b5f3cca6fa5923918c6b19f0b085802353caa99ac"
+    },
+    "index.html": {
+      "before": "02f9592439632cf0ef9fd25d03ff9899014ace76875ea7b3094b7c872f0fa77e",
+      "after": "57fb4fcc974c3ed8d6620a3934a4cbeae6c6be4dca6bc83f637142c143a97ff1"
+    }
+  },
+  "recordedAt": "2026-11-03T06:41:22.684799+00:00",
+  "runtimeModuleSHA256": "ff439332314808c18bc07c51f3f382b53de5b303107efe6814259c58d2442501",
+  "editorSources": [
+    "_BUILD_SOURCE/art_sources/menu_sceneries_1103/coastal_front.aseprite",
+    "_BUILD_SOURCE/art_sources/menu_sceneries_1103/command.aseprite",
+    "_BUILD_SOURCE/art_sources/menu_sceneries_1103/forge.aseprite",
+    "_BUILD_SOURCE/art_sources/menu_sceneries_1103/hangar.aseprite",
+    "_BUILD_SOURCE/art_sources/menu_sceneries_1103/hq.aseprite",
+    "_BUILD_SOURCE/art_sources/menu_sceneries_1103/industrial_front.aseprite",
+    "_BUILD_SOURCE/art_sources/menu_sceneries_1103/orbit.aseprite",
+    "_BUILD_SOURCE/art_sources/menu_sceneries_1103/orbit_front.aseprite",
+    "_BUILD_SOURCE/art_sources/menu_sceneries_1103/vault.aseprite"
+  ]
+}

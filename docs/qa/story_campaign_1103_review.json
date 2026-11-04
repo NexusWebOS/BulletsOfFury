@@ -1,0 +1,36 @@
+{
+  "passed": 6,
+  "total": 6,
+  "checks": [
+    {
+      "name": "Review lists all nine pilots",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review starts the selected pilot and scene",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review Next shot advances the native director",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review route selector keeps the correct surviving threat",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Mobile review has no horizontal overflow",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review has no page errors",
+      "passed": true,
+      "data": []
+    }
+  ]
+}

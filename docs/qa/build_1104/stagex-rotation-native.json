@@ -1,0 +1,248 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "Stage X route selects new pickup family",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame0 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame1 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame2 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame3 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame4 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame5 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame6 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame7 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame8 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame9 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame10 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame11 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame12 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame13 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame14 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power native frame15 selected without size change",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "power angle-matched white hit cell selected",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose0",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose1",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose2",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose3",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose4",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose5",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose6",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose7",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose8",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose9",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose10",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose11",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose12",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose13",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose14",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "hit silhouette follows yaw pose15",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "capsule new powered frame selected",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "loose speed uses fixed36 source-over frame",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "both Stage X routes covered",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "regular Stage6 keeps existing family",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "Stage1 never uses Stage X art",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "Stage5 never uses Stage X art",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "Stage7 never uses Stage X art",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "Stage8 never uses Stage X art",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "Stage9 never uses Stage X art",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "native speed upgrade0 to1",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "native speed cap5 retained",
+      "data": null
+    },
+    {
+      "ok": true,
+      "name": "real bullet damages and flashes native crate",
+      "data": {
+        "hp": 4,
+        "flash": 0.10333333333333333
+      }
+    },
+    {
+      "ok": true,
+      "name": "native break/reward preserved",
+      "data": null
+    },
+    {
+      "name": "all16 yaw frames visibly drawn in native engine recording",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "drawError": null
+}

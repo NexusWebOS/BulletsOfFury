@@ -1,0 +1,86 @@
+[
+  {
+    "name": "spread/1 canonical original hex frame and Roman plaque preserved",
+    "ok": true
+  },
+  {
+    "name": "spread/1 new weapon illustration",
+    "ok": true
+  },
+  {
+    "name": "spread/2 canonical original hex frame and Roman plaque preserved",
+    "ok": true
+  },
+  {
+    "name": "spread/2 new weapon illustration",
+    "ok": true
+  },
+  {
+    "name": "spread/3 canonical original hex frame and Roman plaque preserved",
+    "ok": true
+  },
+  {
+    "name": "spread/3 new weapon illustration",
+    "ok": true
+  },
+  {
+    "name": "spread/4 canonical original hex frame and Roman plaque preserved",
+    "ok": true
+  },
+  {
+    "name": "spread/4 new weapon illustration",
+    "ok": true
+  },
+  {
+    "name": "spread/5 canonical original hex frame and Roman plaque preserved",
+    "ok": true
+  },
+  {
+    "name": "spread/5 new weapon illustration",
+    "ok": true
+  },
+  {
+    "name": "plasma/1 canonical original hex frame and Roman plaque preserved",
+    "ok": true
+  },
+  {
+    "name": "plasma/1 new weapon illustration",
+    "ok": true
+  },
+  {
+    "name": "plasma/2 canonical original hex frame and Roman plaque preserved",
+    "ok": true
+  },
+  {
+    "name": "plasma/2 new weapon illustration",
+    "ok": true
+  },
+  {
+    "name": "plasma/3 canonical original hex frame and Roman plaque preserved",
+    "ok": true
+  },
+  {
+    "name": "plasma/3 new weapon illustration",
+    "ok": true
+  },
+  {
+    "name": "plasma/4 canonical original hex frame and Roman plaque preserved",
+    "ok": true
+  },
+  {
+    "name": "plasma/4 new weapon illustration",
+    "ok": true
+  },
+  {
+    "name": "plasma/5 canonical original hex frame and Roman plaque preserved",
+    "ok": true
+  },
+  {
+    "name": "plasma/5 new weapon illustration",
+    "ok": true
+  },
+  {
+    "name": "all80 projectile/effect banks unchanged",
+    "ok": true
+  }
+]

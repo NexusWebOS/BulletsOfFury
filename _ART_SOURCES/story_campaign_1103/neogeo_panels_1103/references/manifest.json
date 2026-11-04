@@ -1,0 +1,38 @@
+[
+  {
+    "key": "aintro_cole",
+    "w": 640,
+    "h": 480,
+    "source": "assets/game/pilots/cole/portraits/frames_0.png"
+  },
+  {
+    "key": "aintro_maverick",
+    "w": 640,
+    "h": 480,
+    "source": "assets/game/pilots/maverick/portraits/frames_0.png"
+  },
+  {
+    "key": "aintro_decker",
+    "w": 640,
+    "h": 480,
+    "source": "assets/game/pilots/decker/portraits/frames_0.png"
+  },
+  {
+    "key": "aintro_axel",
+    "w": 640,
+    "h": 480,
+    "source": "assets/game/pilots/axel/portraits/frames_0.png"
+  },
+  {
+    "key": "aintro_freezer",
+    "w": 640,
+    "h": 480,
+    "source": "assets/game/pilots/freezer/portraits/frames_0.png"
+  },
+  {
+    "key": "aintro_lizzie",
+    "w": 640,
+    "h": 480,
+    "source": "assets/game/pilots/lizzie/portraits/frames_0.png"
+  }
+]

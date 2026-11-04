@@ -1,0 +1,1190 @@
+{
+  "date": "2026-11-03",
+  "scope": "Nine pilots: aircraft and Furyship gameplay rendering",
+  "checks": 389,
+  "frames": 414,
+  "failed": 0,
+  "errors": [],
+  "policies": [
+    {
+      "query": "",
+      "expected": 2,
+      "SS": 2,
+      "width": 960,
+      "height": 1024,
+      "smooth": false
+    },
+    {
+      "query": "?quality=auto",
+      "expected": 2,
+      "SS": 2,
+      "width": 960,
+      "height": 1024,
+      "smooth": false
+    },
+    {
+      "query": "?quality=default",
+      "expected": 2,
+      "SS": 2,
+      "width": 960,
+      "height": 1024,
+      "smooth": false
+    },
+    {
+      "query": "?quality=high",
+      "expected": 2,
+      "SS": 2,
+      "width": 960,
+      "height": 1024,
+      "smooth": false
+    },
+    {
+      "query": "?quality=performance",
+      "expected": 1,
+      "SS": 1,
+      "width": 480,
+      "height": 512,
+      "smooth": false
+    },
+    {
+      "query": "?quality=low",
+      "expected": 1,
+      "SS": 1,
+      "width": 480,
+      "height": 512,
+      "smooth": false
+    }
+  ],
+  "gameSha256": "615b38fdb0a16947889610cfaeaad518c29d231f0ffa9a86abe0b8e4ef3bd9f6",
+  "performance": {
+    "scenes": [
+      {
+        "stage": 1,
+        "SS": 1,
+        "state": {
+          "clock": 10.333333333333426,
+          "stage": 1,
+          "state": "play",
+          "stageTimer": 11.300000000000141,
+          "waveIdx": 1,
+          "expected": 36,
+          "events": 1,
+          "dead": false,
+          "god": true,
+          "godBlocks": 0,
+          "done": false,
+          "allAt": null,
+          "map": 451.33333333333735,
+          "input": {
+            "phase": "CLEANUP",
+            "target": null,
+            "targets": 0,
+            "eligible": 0,
+            "visible": 2,
+            "bullets": 0,
+            "youngInCorridor": false,
+            "playerX": 232.31320000000028,
+            "targetX": null,
+            "targetHp": null,
+            "all": false,
+            "pending": false,
+            "mode": "CLEANUP",
+            "wave": 0,
+            "elapsed": 10.283333333333426
+          },
+          "firstFire": null,
+          "fireFrames": 0,
+          "peakEnemies": 2,
+          "peakBullets": 3,
+          "visibleUnits": 2,
+          "dialogs": {
+            "story": false,
+            "talk": false,
+            "intro": false,
+            "thaw": false,
+            "choice": false,
+            "route": null
+          },
+          "carriers": [],
+          "assault": null,
+          "mini": false,
+          "boss": false,
+          "live": [
+            {
+              "type": "s1boatpatrol",
+              "hp": 9,
+              "x": 138.4,
+              "y": 477.93333333333646,
+              "noHit": false
+            },
+            {
+              "type": "s1boatgun",
+              "hp": 9,
+              "x": 205.59999999999994,
+              "y": 477.3000000000032,
+              "noHit": false
+            }
+          ],
+          "perf": {
+            "frame": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "update": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "draw": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            }
+          }
+        },
+        "stats": {
+          "gap": {
+            "mean": 16.837654320987653,
+            "p95": 16.900000000001455,
+            "max": 111.5
+          },
+          "update": {
+            "mean": 1.5106995885026615,
+            "p95": 2.799999998882413,
+            "max": 5.899999998509884
+          },
+          "draw": {
+            "mean": 2.2323045267612356,
+            "p95": 3.900000000372529,
+            "max": 6.899999998509884
+          }
+        },
+        "fps": 59.39069545771163
+      },
+      {
+        "stage": 1,
+        "SS": 2,
+        "state": {
+          "clock": 11.683333333333493,
+          "stage": 1,
+          "state": "play",
+          "stageTimer": 12.650000000000208,
+          "waveIdx": 1,
+          "expected": 36,
+          "events": 1,
+          "dead": false,
+          "god": true,
+          "godBlocks": 0,
+          "done": false,
+          "allAt": null,
+          "map": 505.3333333333389,
+          "input": {
+            "phase": "CLEANUP",
+            "target": null,
+            "targets": 0,
+            "eligible": 0,
+            "visible": 0,
+            "bullets": 0,
+            "youngInCorridor": false,
+            "playerX": 414.5523999999998,
+            "targetX": null,
+            "targetHp": null,
+            "all": false,
+            "pending": false,
+            "mode": "CLEANUP",
+            "wave": 0,
+            "elapsed": 11.633333333333493
+          },
+          "firstFire": null,
+          "fireFrames": 0,
+          "peakEnemies": 2,
+          "peakBullets": 3,
+          "visibleUnits": 2,
+          "dialogs": {
+            "story": false,
+            "talk": false,
+            "intro": false,
+            "thaw": false,
+            "choice": false,
+            "route": null
+          },
+          "carriers": [],
+          "assault": null,
+          "mini": false,
+          "boss": false,
+          "live": [
+            {
+              "type": "s1boatpatrol",
+              "hp": 9,
+              "x": 138.4,
+              "y": 588.00000000001,
+              "noHit": false
+            },
+            {
+              "type": "s1boatgun",
+              "hp": 9,
+              "x": 205.59999999999994,
+              "y": 588.00000000001,
+              "noHit": false
+            }
+          ],
+          "perf": {
+            "frame": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "update": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "draw": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            }
+          }
+        },
+        "stats": {
+          "gap": {
+            "mean": 16.783187390542903,
+            "p95": 17,
+            "max": 66.79999999999563
+          },
+          "update": {
+            "mean": 1.3082311733865593,
+            "p95": 2.099999999627471,
+            "max": 7.5
+          },
+          "draw": {
+            "mean": 2.824343257458088,
+            "p95": 4.5,
+            "max": 6.599999999627471
+          }
+        },
+        "fps": 59.583437682611255
+      },
+      {
+        "stage": 7,
+        "SS": 1,
+        "state": {
+          "clock": 8.933333333333357,
+          "stage": 7,
+          "state": "play",
+          "stageTimer": 10.916666666666789,
+          "waveIdx": 1,
+          "expected": 22,
+          "events": 1,
+          "dead": false,
+          "god": true,
+          "godBlocks": 0,
+          "done": false,
+          "allAt": null,
+          "map": 437.3333333333355,
+          "input": {
+            "phase": "CLEANUP",
+            "target": "cp22drone",
+            "targets": 4,
+            "eligible": 4,
+            "visible": 4,
+            "bullets": 8,
+            "youngInCorridor": false,
+            "playerX": 418.6941999999998,
+            "targetX": 416.46911160330427,
+            "targetHp": 24,
+            "all": false,
+            "pending": false,
+            "mode": "CLEANUP",
+            "wave": 0,
+            "elapsed": 8.883333333333356
+          },
+          "firstFire": null,
+          "fireFrames": 0,
+          "peakEnemies": 4,
+          "peakBullets": 15,
+          "visibleUnits": 4,
+          "dialogs": {
+            "story": false,
+            "talk": false,
+            "intro": false,
+            "thaw": false,
+            "choice": false,
+            "route": null
+          },
+          "carriers": [],
+          "assault": null,
+          "mini": false,
+          "boss": false,
+          "live": [
+            {
+              "type": "cp22drone",
+              "hp": 24,
+              "x": 423.4591315164624,
+              "y": 197.93636005046616,
+              "noHit": false
+            },
+            {
+              "type": "cp22drone",
+              "hp": 24,
+              "x": 416.46911160330427,
+              "y": 254.22688704462198,
+              "noHit": false
+            },
+            {
+              "type": "cp22relay",
+              "hp": 24,
+              "x": 347.07614175133494,
+              "y": 297.9022780097457,
+              "noHit": false
+            },
+            {
+              "type": "cp22drone",
+              "hp": 24,
+              "x": 373.2001053924251,
+              "y": 141.18372405900308,
+              "noHit": false
+            },
+            {
+              "type": "cp22slime",
+              "hp": 24,
+              "x": -37.59382847204928,
+              "y": 172.51184433815587,
+              "noHit": false
+            },
+            {
+              "type": "s7tank",
+              "hp": 59,
+              "x": 340,
+              "y": -70.91655566127065,
+              "noHit": false
+            }
+          ],
+          "perf": {
+            "frame": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "update": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "draw": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            }
+          }
+        },
+        "stats": {
+          "gap": {
+            "mean": 27.840624999999985,
+            "p95": 133.29999999999563,
+            "max": 316.6000000000058
+          },
+          "update": {
+            "mean": 1.8059659091258338,
+            "p95": 4.599999999627471,
+            "max": 10.400000000372529
+          },
+          "draw": {
+            "mean": 8.91988636363319,
+            "p95": 60.600000001490116,
+            "max": 205.59999999962747
+          }
+        },
+        "fps": 35.91873386463129
+      },
+      {
+        "stage": 7,
+        "SS": 2,
+        "state": {
+          "clock": 8.950000000000024,
+          "stage": 7,
+          "state": "play",
+          "stageTimer": 10.933333333333456,
+          "waveIdx": 1,
+          "expected": 22,
+          "events": 1,
+          "dead": false,
+          "god": true,
+          "godBlocks": 0,
+          "done": false,
+          "allAt": null,
+          "map": 436.66666666666913,
+          "input": {
+            "phase": "CLEANUP",
+            "target": "cp22drone",
+            "targets": 4,
+            "eligible": 4,
+            "visible": 4,
+            "bullets": 9,
+            "youngInCorridor": true,
+            "playerX": 522.2391999999995,
+            "targetX": 517.9866510624145,
+            "targetHp": 24,
+            "all": false,
+            "pending": false,
+            "mode": "CLEANUP",
+            "wave": 0,
+            "elapsed": 8.900000000000023
+          },
+          "firstFire": null,
+          "fireFrames": 0,
+          "peakEnemies": 4,
+          "peakBullets": 14,
+          "visibleUnits": 4,
+          "dialogs": {
+            "story": false,
+            "talk": false,
+            "intro": false,
+            "thaw": false,
+            "choice": false,
+            "route": null
+          },
+          "carriers": [],
+          "assault": null,
+          "mini": false,
+          "boss": false,
+          "live": [
+            {
+              "type": "cp22drone",
+              "hp": 24,
+              "x": 483.34700110416355,
+              "y": 97.98733184481455,
+              "noHit": false
+            },
+            {
+              "type": "cp22drone",
+              "hp": 24,
+              "x": 515.8051122606046,
+              "y": 221.83733103960247,
+              "noHit": false
+            },
+            {
+              "type": "cp22relay",
+              "hp": 24,
+              "x": 345.8025057854871,
+              "y": 298.62956734228044,
+              "noHit": false
+            },
+            {
+              "type": "cp22drone",
+              "hp": 24,
+              "x": 512.4483925320801,
+              "y": 164.70392269208006,
+              "noHit": false
+            },
+            {
+              "type": "cp22slime",
+              "hp": 24,
+              "x": -35.16517910874248,
+              "y": 172.9432452126959,
+              "noHit": false
+            },
+            {
+              "type": "s7tank",
+              "hp": 59,
+              "x": 340,
+              "y": -72.07802093244209,
+              "noHit": false
+            }
+          ],
+          "perf": {
+            "frame": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "update": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "draw": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            }
+          }
+        },
+        "stats": {
+          "gap": {
+            "mean": 25.624064171122978,
+            "p95": 33.30000000000291,
+            "max": 366.6999999999971
+          },
+          "update": {
+            "mean": 1.3647058823439766,
+            "p95": 2.800000000745058,
+            "max": 9.099999999627471
+          },
+          "draw": {
+            "mean": 9.433422459911974,
+            "p95": 6,
+            "max": 244.90000000037253
+          }
+        },
+        "fps": 39.02581547258804
+      },
+      {
+        "stage": 5,
+        "SS": 1,
+        "state": {
+          "clock": 7.616666666666645,
+          "stage": 5,
+          "state": "play",
+          "stageTimer": 8.78333333333335,
+          "waveIdx": 1,
+          "expected": 14,
+          "events": 1,
+          "dead": false,
+          "god": true,
+          "godBlocks": 0,
+          "done": false,
+          "allAt": null,
+          "map": 350.6666666666682,
+          "input": {
+            "phase": "OBSERVE",
+            "target": null,
+            "targets": 2,
+            "eligible": 0,
+            "visible": 2,
+            "bullets": 0,
+            "youngInCorridor": false,
+            "playerX": 501.5301999999996,
+            "targetX": null,
+            "targetHp": null,
+            "all": false,
+            "pending": false,
+            "mode": "OBSERVE",
+            "wave": 0,
+            "elapsed": 7.566666666666645
+          },
+          "firstFire": null,
+          "fireFrames": 0,
+          "peakEnemies": 2,
+          "peakBullets": 6,
+          "visibleUnits": 3,
+          "dialogs": {
+            "story": false,
+            "talk": false,
+            "intro": false,
+            "thaw": false,
+            "choice": false,
+            "route": null
+          },
+          "carriers": [],
+          "assault": null,
+          "mini": false,
+          "boss": false,
+          "live": [
+            {
+              "type": "s5frigate",
+              "hp": 55,
+              "x": 204,
+              "y": 194.33308123021055,
+              "noHit": false
+            },
+            {
+              "type": "cometsm",
+              "hp": 17,
+              "x": 119.1201462597246,
+              "y": 384.325287406539,
+              "noHit": false
+            },
+            {
+              "type": "cometsm",
+              "hp": 17,
+              "x": 372.41399739642475,
+              "y": 60.08019963979115,
+              "noHit": false
+            }
+          ],
+          "perf": {
+            "frame": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "update": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "draw": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            }
+          }
+        },
+        "stats": {
+          "gap": {
+            "mean": 32.17177700348433,
+            "p95": 100.29999999998836,
+            "max": 467.1000000000058
+          },
+          "update": {
+            "mean": 1.522299651530302,
+            "p95": 3.200000001117587,
+            "max": 8.800000000745058
+          },
+          "draw": {
+            "mean": 16.387804877999457,
+            "p95": 7.599999999627471,
+            "max": 475.19999999925494
+          }
+        },
+        "fps": 31.08314470449351
+      },
+      {
+        "stage": 5,
+        "SS": 2,
+        "state": {
+          "clock": 5.899999999999984,
+          "stage": 5,
+          "state": "play",
+          "stageTimer": 7.066666666666647,
+          "waveIdx": 1,
+          "expected": 14,
+          "events": 1,
+          "dead": false,
+          "god": true,
+          "godBlocks": 0,
+          "done": false,
+          "allAt": null,
+          "map": 281.99999999999955,
+          "input": {
+            "phase": "OBSERVE",
+            "target": null,
+            "targets": 1,
+            "eligible": 0,
+            "visible": 1,
+            "bullets": 0,
+            "youngInCorridor": false,
+            "playerX": 497.3883999999996,
+            "targetX": null,
+            "targetHp": null,
+            "all": false,
+            "pending": false,
+            "mode": "OBSERVE",
+            "wave": 0,
+            "elapsed": 5.8499999999999845
+          },
+          "firstFire": null,
+          "fireFrames": 0,
+          "peakEnemies": 2,
+          "peakBullets": 6,
+          "visibleUnits": 2,
+          "dialogs": {
+            "story": false,
+            "talk": false,
+            "intro": false,
+            "thaw": false,
+            "choice": false,
+            "route": null
+          },
+          "carriers": [],
+          "assault": null,
+          "mini": false,
+          "boss": false,
+          "live": [
+            {
+              "type": "s5frigate",
+              "hp": 55,
+              "x": 204,
+              "y": 192.90547881244063,
+              "noHit": false
+            }
+          ],
+          "perf": {
+            "frame": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "update": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "draw": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            }
+          }
+        },
+        "stats": {
+          "gap": {
+            "mean": 54.60526315789474,
+            "p95": 333.3999999999942,
+            "max": 566.8000000000029
+          },
+          "update": {
+            "mean": 1.7434210526070704,
+            "p95": 4.099999999627471,
+            "max": 6.800000000745058
+          },
+          "draw": {
+            "mean": 35.32368421059494,
+            "p95": 336.30000000074506,
+            "max": 558.6999999992549
+          }
+        },
+        "fps": 18.313253012048193
+      },
+      {
+        "stage": 9,
+        "SS": 1,
+        "state": {
+          "clock": 11.933333333333506,
+          "stage": 9,
+          "state": "play",
+          "stageTimer": 12.36666666666686,
+          "waveIdx": 1,
+          "expected": 38,
+          "events": 1,
+          "dead": false,
+          "god": true,
+          "godBlocks": 0,
+          "done": false,
+          "allAt": null,
+          "map": 494.00000000000523,
+          "input": {
+            "phase": "CLEANUP",
+            "target": "s9interceptor",
+            "targets": 2,
+            "eligible": 2,
+            "visible": 2,
+            "bullets": 4,
+            "youngInCorridor": false,
+            "playerX": 211.60420000000033,
+            "targetX": 208.75607481142404,
+            "targetHp": 40,
+            "all": false,
+            "pending": false,
+            "mode": "CLEANUP",
+            "wave": 0,
+            "elapsed": 11.883333333333505
+          },
+          "firstFire": null,
+          "fireFrames": 0,
+          "peakEnemies": 2,
+          "peakBullets": 12,
+          "visibleUnits": 2,
+          "dialogs": {
+            "story": false,
+            "talk": false,
+            "intro": false,
+            "thaw": false,
+            "choice": false,
+            "route": null
+          },
+          "carriers": [],
+          "assault": null,
+          "mini": false,
+          "boss": false,
+          "live": [
+            {
+              "type": "s9interceptor",
+              "hp": 40,
+              "x": 208.75607481142404,
+              "y": 125.62707014121624,
+              "noHit": false
+            },
+            {
+              "type": "s9interceptor",
+              "hp": 40,
+              "x": 473.3390793560924,
+              "y": 186.61739761408222,
+              "noHit": false
+            }
+          ],
+          "perf": {
+            "frame": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "update": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "draw": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            }
+          }
+        },
+        "stats": {
+          "gap": {
+            "mean": 16.949149659863906,
+            "p95": 16.89999999999418,
+            "max": 116.89999999999418
+          },
+          "update": {
+            "mean": 0.9034013605461183,
+            "p95": 1.5,
+            "max": 5.799999998882413
+          },
+          "draw": {
+            "mean": 3.674489795930405,
+            "p95": 5,
+            "max": 130
+          }
+        },
+        "fps": 59.00001003401545
+      },
+      {
+        "stage": 9,
+        "SS": 2,
+        "state": {
+          "clock": 11.983333333333508,
+          "stage": 9,
+          "state": "play",
+          "stageTimer": 12.416666666666863,
+          "waveIdx": 1,
+          "expected": 38,
+          "events": 1,
+          "dead": false,
+          "god": true,
+          "godBlocks": 0,
+          "done": false,
+          "allAt": null,
+          "map": 496.0000000000054,
+          "input": {
+            "phase": "CLEANUP",
+            "target": "s9interceptor",
+            "targets": 2,
+            "eligible": 2,
+            "visible": 2,
+            "bullets": 6,
+            "youngInCorridor": false,
+            "playerX": 211.60420000000033,
+            "targetX": 208.75607481142404,
+            "targetHp": 40,
+            "all": false,
+            "pending": false,
+            "mode": "CLEANUP",
+            "wave": 0,
+            "elapsed": 11.933333333333508
+          },
+          "firstFire": null,
+          "fireFrames": 0,
+          "peakEnemies": 2,
+          "peakBullets": 12,
+          "visibleUnits": 2,
+          "dialogs": {
+            "story": false,
+            "talk": false,
+            "intro": false,
+            "thaw": false,
+            "choice": false,
+            "route": null
+          },
+          "carriers": [],
+          "assault": null,
+          "mini": false,
+          "boss": false,
+          "live": [
+            {
+              "type": "s9interceptor",
+              "hp": 40,
+              "x": 208.75607481142404,
+              "y": 125.62707014121624,
+              "noHit": false
+            },
+            {
+              "type": "s9interceptor",
+              "hp": 40,
+              "x": 474.89981248427495,
+              "y": 189.45583668287557,
+              "noHit": false
+            }
+          ],
+          "perf": {
+            "frame": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "update": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "draw": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            }
+          }
+        },
+        "stats": {
+          "gap": {
+            "mean": 16.750503355704726,
+            "p95": 16.89999999999418,
+            "max": 49.89999999999418
+          },
+          "update": {
+            "mean": 0.9255033556978225,
+            "p95": 1.599999999627471,
+            "max": 3.299999998882413
+          },
+          "draw": {
+            "mean": 4.003859060400809,
+            "p95": 5.800000000745058,
+            "max": 39.20000000111759
+          }
+        },
+        "fps": 59.699698496489034
+      }
+    ],
+    "errors": []
+  },
+  "freshSpacePerformance": {
+    "scenes": [
+      {
+        "stage": 5,
+        "SS": 1,
+        "state": {
+          "clock": 11.100000000000131,
+          "stage": 5,
+          "state": "play",
+          "stageTimer": 12.266666666666856,
+          "waveIdx": 1,
+          "expected": 14,
+          "events": 1,
+          "dead": false,
+          "god": true,
+          "godBlocks": 0,
+          "done": false,
+          "allAt": null,
+          "map": 490.00000000000506,
+          "input": {
+            "phase": "CLEANUP",
+            "target": "s5frigate",
+            "targets": 1,
+            "eligible": 1,
+            "visible": 1,
+            "bullets": 0,
+            "youngInCorridor": false,
+            "playerX": 207.46240000000034,
+            "targetX": 204,
+            "targetHp": 55,
+            "all": false,
+            "pending": false,
+            "mode": "CLEANUP",
+            "wave": 0,
+            "elapsed": 11.05000000000013
+          },
+          "firstFire": null,
+          "fireFrames": 0,
+          "peakEnemies": 2,
+          "peakBullets": 6,
+          "visibleUnits": 2,
+          "dialogs": {
+            "story": false,
+            "talk": false,
+            "intro": false,
+            "thaw": false,
+            "choice": false,
+            "route": null
+          },
+          "carriers": [],
+          "assault": null,
+          "mini": false,
+          "boss": false,
+          "live": [
+            {
+              "type": "s5frigate",
+              "hp": 55,
+              "x": 204,
+              "y": 195.2333396356655,
+              "noHit": false
+            }
+          ],
+          "perf": {
+            "frame": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "update": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "draw": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            }
+          }
+        },
+        "stats": {
+          "gap": {
+            "mean": 17.236053130929793,
+            "p95": 16.899999999997817,
+            "max": 150.09999999999854
+          },
+          "update": {
+            "mean": 0.9912713472068706,
+            "p95": 1.599999999627471,
+            "max": 8.400000000372529
+          },
+          "draw": {
+            "mean": 2.224667931717787,
+            "p95": 2.799999998882413,
+            "max": 162.7999999988824
+          }
+        },
+        "fps": 58.01792280423629
+      },
+      {
+        "stage": 5,
+        "SS": 2,
+        "state": {
+          "clock": 11.166666666666801,
+          "stage": 5,
+          "state": "play",
+          "stageTimer": 12.333333333333526,
+          "waveIdx": 1,
+          "expected": 14,
+          "events": 1,
+          "dead": false,
+          "god": true,
+          "godBlocks": 0,
+          "done": false,
+          "allAt": null,
+          "map": 492.6666666666718,
+          "input": {
+            "phase": "CLEANUP",
+            "target": "s5frigate",
+            "targets": 1,
+            "eligible": 1,
+            "visible": 1,
+            "bullets": 0,
+            "youngInCorridor": false,
+            "playerX": 207.46240000000034,
+            "targetX": 204,
+            "targetHp": 55,
+            "all": false,
+            "pending": false,
+            "mode": "CLEANUP",
+            "wave": 0,
+            "elapsed": 11.1166666666668
+          },
+          "firstFire": null,
+          "fireFrames": 0,
+          "peakEnemies": 2,
+          "peakBullets": 6,
+          "visibleUnits": 2,
+          "dialogs": {
+            "story": false,
+            "talk": false,
+            "intro": false,
+            "thaw": false,
+            "choice": false,
+            "route": null
+          },
+          "carriers": [],
+          "assault": null,
+          "mini": false,
+          "boss": false,
+          "live": [
+            {
+              "type": "s5frigate",
+              "hp": 55,
+              "x": 204,
+              "y": 193.31508563932914,
+              "noHit": false
+            }
+          ],
+          "perf": {
+            "frame": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "update": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            },
+            "draw": {
+              "mean": 0,
+              "p95": 0,
+              "p99": 0,
+              "max": 0
+            }
+          }
+        },
+        "stats": {
+          "gap": {
+            "mean": 17.103932584269664,
+            "p95": 17,
+            "max": 133.40000000000146
+          },
+          "update": {
+            "mean": 1.4331460674589829,
+            "p95": 2.5,
+            "max": 6.599999999627471
+          },
+          "draw": {
+            "mean": 5.902247190963798,
+            "p95": 8.900000000372529,
+            "max": 288.69999999925494
+          }
+        },
+        "fps": 58.46608638528494
+      }
+    ],
+    "errors": []
+  },
+  "suite": {
+    "exit": 1,
+    "finalSummaryReached": false,
+    "existingBlock": "ReferenceError difficultyHealthBaseline15 is not defined; assets/combat_polish_0927b.js:151"
+  },
+  "preservedStatusEntries": 963,
+  "removedPriorEntries": [],
+  "evidence": "_shots/pilot_quality_1103",
+  "reproduction": "_BUILD_SOURCE/pilot_quality_1103"
+}

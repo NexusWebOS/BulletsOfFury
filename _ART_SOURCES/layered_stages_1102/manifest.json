@@ -1,0 +1,1075 @@
+{
+  "title": "Bullets of Fury — layered level concepts",
+  "date": "2026-11-02",
+  "status": "Review concepts only; no game integration",
+  "excludedStage": "1",
+  "worldWidth": 680,
+  "scrollDirection": "north / toward decreasing Y",
+  "materials": [
+    {
+      "id": "lava",
+      "file": "liquids/lava/sheet.png",
+      "framePattern": "liquids/lava/frames/{frame:02d}.png",
+      "size": [
+        256,
+        256
+      ],
+      "frames": 8,
+      "columns": 4,
+      "fps": 8,
+      "edgePixelsMatch": true,
+      "sourceSheet": [
+        1774,
+        887
+      ]
+    },
+    {
+      "id": "water",
+      "file": "liquids/water.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1,
+      "edgePixelsMatch": true
+    },
+    {
+      "id": "toxic",
+      "file": "liquids/toxic.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1,
+      "edgePixelsMatch": true
+    },
+    {
+      "id": "biofluid",
+      "file": "liquids/biofluid.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1,
+      "edgePixelsMatch": true
+    },
+    {
+      "id": "voidwater",
+      "file": "liquids/voidwater.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1,
+      "edgePixelsMatch": true
+    },
+    {
+      "id": "space",
+      "file": "liquids/space.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1,
+      "edgePixelsMatch": true
+    },
+    {
+      "id": "night-water",
+      "file": "liquids/night-water.png",
+      "size": [
+        512,
+        512
+      ],
+      "frames": 1
+    }
+  ],
+  "levels": [
+    {
+      "id": "2",
+      "title": "Volcanic relay corridor",
+      "terrain": "routes/stage-2.png",
+      "material": "lava",
+      "size": [
+        680,
+        4568
+      ],
+      "nativeBaselineHeight": 4080,
+      "repeat": false,
+      "wrap": null,
+      "joins": [
+        {
+          "y": 1636,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            0,
+            35
+          ]
+        },
+        {
+          "y": 3612,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            7,
+            49
+          ]
+        },
+        {
+          "y": 4228,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            23,
+            63
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "file": "routes/stage-2-section-00.png",
+          "sourceY": 0,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-2-section-01.png",
+          "sourceY": 680,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-2-section-02.png",
+          "sourceY": 1360,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-2-section-03.png",
+          "sourceY": 2040,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-2-section-04.png",
+          "sourceY": 2720,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-2-section-05.png",
+          "sourceY": 3400,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-2-section-06.png",
+          "sourceY": 4080,
+          "validHeight": 488,
+          "canvas": [
+            680,
+            680
+          ]
+        }
+      ],
+      "passiveBackgroundObjects": false,
+      "collision": false,
+      "targetable": false,
+      "route": [
+        "Cooled lava plain",
+        "Geothermal works",
+        "Lava-gorge bridge",
+        "Relay caldera",
+        "Open lava boss region"
+      ],
+      "story": "Shutting down one relay weakens the interference, but the surviving link leads to the ice installation.",
+      "preserve": "Preserve the Furnace Tyrant's native whole-body/head exception, protection, warning and open-lava owners."
+    },
+    {
+      "id": "3",
+      "title": "Ice relay and lake crossing",
+      "terrain": "routes/stage-3.png",
+      "material": "water",
+      "size": [
+        680,
+        4568
+      ],
+      "nativeBaselineHeight": 4080,
+      "repeat": false,
+      "wrap": null,
+      "joins": [
+        {
+          "y": 1676,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            0,
+            58
+          ]
+        },
+        {
+          "y": 3652,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            2,
+            63
+          ]
+        },
+        {
+          "y": 4268,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            25,
+            63
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "file": "routes/stage-3-section-00.png",
+          "sourceY": 0,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-3-section-01.png",
+          "sourceY": 680,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-3-section-02.png",
+          "sourceY": 1360,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-3-section-03.png",
+          "sourceY": 2040,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-3-section-04.png",
+          "sourceY": 2720,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-3-section-05.png",
+          "sourceY": 3400,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-3-section-06.png",
+          "sourceY": 4080,
+          "validHeight": 488,
+          "canvas": [
+            680,
+            680
+          ]
+        }
+      ],
+      "passiveBackgroundObjects": false,
+      "collision": false,
+      "targetable": false,
+      "route": [
+        "Pack-ice coast",
+        "Frozen lake and causeway",
+        "Research harbor",
+        "Rail trestle and station",
+        "Relay and clear ice arena"
+      ],
+      "story": "A quiet disabled-relay shot pays off the return of squad communications and the regroup at HQ.",
+      "preserve": "Preserve native ice brightness, island turret footprints, FOVs, actual beam textures and boss ownership."
+    },
+    {
+      "id": "4",
+      "title": "Airbase, electric launchpad and highway chase",
+      "terrain": "routes/stage-4.png",
+      "material": null,
+      "size": [
+        680,
+        5992
+      ],
+      "nativeBaselineHeight": 4080,
+      "repeat": true,
+      "wrap": {
+        "file": "routes/stage-4-highway-loop.png",
+        "method": "Last row and first row are consecutive rows inside the same source connector",
+        "sourceSplit": 70,
+        "protectedRowsEachSide": 32
+      },
+      "joins": [
+        {
+          "y": 1976,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            0,
+            63
+          ]
+        },
+        {
+          "y": 3952,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            8,
+            63
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "file": "routes/stage-4-section-00.png",
+          "sourceY": 0,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-4-section-01.png",
+          "sourceY": 680,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-4-section-02.png",
+          "sourceY": 1360,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-4-section-03.png",
+          "sourceY": 2040,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-4-section-04.png",
+          "sourceY": 2720,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-4-section-05.png",
+          "sourceY": 3400,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-4-section-06.png",
+          "sourceY": 4080,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-4-section-07.png",
+          "sourceY": 4760,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-4-section-08.png",
+          "sourceY": 5440,
+          "validHeight": 552,
+          "canvas": [
+            680,
+            680
+          ]
+        }
+      ],
+      "passiveBackgroundObjects": false,
+      "collision": false,
+      "targetable": false,
+      "route": [
+        "Approved alternating airbases",
+        "Giant main base and charging pad",
+        "Canyon bridge",
+        "Interchange and battlefield",
+        "Open highway pursuit"
+      ],
+      "story": "Recover the cell, restore Fury HQ's generator, decode the orbital recorder, then launch into space.",
+      "preserve": "Preserve Storm Sovereign MK II, the physical shootable missiles, ground traffic clearance and native chase/audio/defeat owners. Fury HQ's generator is distinct from the enemy charging pad."
+    },
+    {
+      "id": "5",
+      "title": "Orbital backdrop",
+      "terrain": "routes/stage-5.png",
+      "material": "space",
+      "size": [
+        680,
+        2720
+      ],
+      "nativeBaselineHeight": 2720,
+      "repeat": true,
+      "wrap": {
+        "method": "Fully transparent beginning and end over independent material bed",
+        "transparentPaddingEachEnd": 340
+      },
+      "joins": [],
+      "sections": [
+        {
+          "file": "routes/stage-5-section-00.png",
+          "sourceY": 0,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-5-section-01.png",
+          "sourceY": 680,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-5-section-02.png",
+          "sourceY": 1360,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-5-section-03.png",
+          "sourceY": 2040,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        }
+      ],
+      "passiveBackgroundObjects": true,
+      "collision": false,
+      "targetable": false,
+      "route": [
+        "Distant Earth limb",
+        "Sparse debris belt",
+        "Solar relay field",
+        "Orbital drydock",
+        "Open Chronos staging region"
+      ],
+      "story": "The recovered orbital evidence becomes a destination. Chronos's salvage then matters before the invasion alarm.",
+      "preserve": "Keep the entire stage in space, the native Chronos arsenal/chaingun transition and optional Stage 9 gate. Do not change bonus access or campaign progression."
+    },
+    {
+      "id": "6",
+      "title": "Illuminated mainland city",
+      "terrain": "routes/stage-6.png",
+      "material": "night-water",
+      "size": [
+        680,
+        5248
+      ],
+      "nativeBaselineHeight": 5000,
+      "repeat": true,
+      "wrap": {
+        "method": "Cycle rotated inside original approved city source at row 120",
+        "sourceSplit": 120,
+        "protectedRowsEachSide": 32
+      },
+      "joins": [
+        {
+          "y": 1436,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            19,
+            50
+          ]
+        },
+        {
+          "y": 3412,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            1,
+            40
+          ]
+        },
+        {
+          "y": 4708,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            12,
+            48
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "file": "routes/stage-6-section-00.png",
+          "sourceY": 0,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-6-section-01.png",
+          "sourceY": 680,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-6-section-02.png",
+          "sourceY": 1360,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-6-section-03.png",
+          "sourceY": 2040,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-6-section-04.png",
+          "sourceY": 2720,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-6-section-05.png",
+          "sourceY": 3400,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-6-section-06.png",
+          "sourceY": 4080,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-6-section-07.png",
+          "sourceY": 4760,
+          "validHeight": 488,
+          "canvas": [
+            680,
+            680
+          ]
+        }
+      ],
+      "passiveBackgroundObjects": false,
+      "collision": false,
+      "targetable": false,
+      "route": [
+        "Outer neighborhoods",
+        "River and long bridge",
+        "Illuminated downtown",
+        "Rail and civic district",
+        "Visible route-fork landmark"
+      ],
+      "story": "Show this same city before the alarm and after the return. The place being defended should be recognizable.",
+      "preserve": "Preserve both routes, all four carrier-assault waves, actual allied overflight/shadows, Rough Riders, native weather and protected dialogue/entry owners."
+    },
+    {
+      "id": "7",
+      "title": "Toxic industrial underworks",
+      "terrain": "routes/stage-7.png",
+      "material": "toxic",
+      "size": [
+        680,
+        5248
+      ],
+      "nativeBaselineHeight": 4716,
+      "repeat": false,
+      "wrap": null,
+      "joins": [
+        {
+          "y": 1576,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            0,
+            47
+          ]
+        },
+        {
+          "y": 3552,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            0,
+            63
+          ]
+        },
+        {
+          "y": 4848,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            0,
+            63
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "file": "routes/stage-7-section-00.png",
+          "sourceY": 0,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-7-section-01.png",
+          "sourceY": 680,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-7-section-02.png",
+          "sourceY": 1360,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-7-section-03.png",
+          "sourceY": 2040,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-7-section-04.png",
+          "sourceY": 2720,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-7-section-05.png",
+          "sourceY": 3400,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-7-section-06.png",
+          "sourceY": 4080,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-7-section-07.png",
+          "sourceY": 4760,
+          "validHeight": 488,
+          "canvas": [
+            680,
+            680
+          ]
+        }
+      ],
+      "passiveBackgroundObjects": false,
+      "collision": false,
+      "targetable": false,
+      "route": [
+        "Iron-bridge river access",
+        "Retention basin",
+        "Pump hall",
+        "Asymmetric service junction",
+        "Warden chamber and portal"
+      ],
+      "story": "The river clue becomes a physical place. After the portal closes, an empty chamber and dead receiver communicate the loss of contact.",
+      "preserve": "Do not restore removed sluice-pipe outlet events, drawing or damage. Keep Warden gait, guns, floor-scroll rules and the native portal handoff."
+    },
+    {
+      "id": "8",
+      "title": "Living biomechanical realm",
+      "terrain": "routes/stage-8.png",
+      "material": "biofluid",
+      "size": [
+        680,
+        3952
+      ],
+      "nativeBaselineHeight": 1536,
+      "repeat": true,
+      "wrap": {
+        "method": "Last row and first row are consecutive rows inside the same source connector",
+        "sourceSplit": 1020,
+        "protectedRowsEachSide": 32
+      },
+      "joins": [
+        {
+          "y": 956,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            19,
+            46
+          ]
+        },
+        {
+          "y": 2932,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            15,
+            55
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "file": "routes/stage-8-section-00.png",
+          "sourceY": 0,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-8-section-01.png",
+          "sourceY": 680,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-8-section-02.png",
+          "sourceY": 1360,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-8-section-03.png",
+          "sourceY": 2040,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-8-section-04.png",
+          "sourceY": 2720,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-8-section-05.png",
+          "sourceY": 3400,
+          "validHeight": 552,
+          "canvas": [
+            680,
+            680
+          ]
+        }
+      ],
+      "passiveBackgroundObjects": false,
+      "collision": false,
+      "targetable": false,
+      "route": [
+        "Portal-root threshold",
+        "Living conduit district",
+        "Archive/nerve vaults",
+        "Cable-bridge chasm",
+        "Clear living arena"
+      ],
+      "story": "The same tendril/node pattern seen in the satellite recording now belongs to the surrounding world. Reveal the actual villain through his existing native entrance.",
+      "preserve": "Preserve retired ground-role removals, Herald and Dracodia owners, protected entrances, all native HP pools and the four separate copied-form arenas."
+    },
+    {
+      "id": "9",
+      "title": "Cosmic archipelago",
+      "terrain": "routes/stage-9.png",
+      "material": "voidwater",
+      "size": [
+        680,
+        2720
+      ],
+      "nativeBaselineHeight": 2720,
+      "repeat": true,
+      "wrap": {
+        "method": "Fully transparent beginning and end over independent material bed",
+        "transparentPaddingEachEnd": 340
+      },
+      "joins": [],
+      "sections": [
+        {
+          "file": "routes/stage-9-section-00.png",
+          "sourceY": 0,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-9-section-01.png",
+          "sourceY": 680,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-9-section-02.png",
+          "sourceY": 1360,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-9-section-03.png",
+          "sourceY": 2040,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        }
+      ],
+      "passiveBackgroundObjects": false,
+      "collision": false,
+      "targetable": false,
+      "route": [
+        "Portal wake",
+        "Floating mineral fragments",
+        "Liquid-void current",
+        "Broken ring pocket",
+        "Dark aqua boss region"
+      ],
+      "story": "Present it as a deliberate detour and recovered weapon opportunity, not the next mandatory level after Dracodia.",
+      "preserve": "Keep bonus access, return/reward owners, the native stage length, Event Horizon and the full Tidal Sovereign water budget/attacks."
+    },
+    {
+      "id": "X",
+      "title": "Coastal rival city",
+      "terrain": "routes/stage-X.png",
+      "material": "water",
+      "size": [
+        680,
+        3272
+      ],
+      "nativeBaselineHeight": 1536,
+      "repeat": true,
+      "wrap": {
+        "method": "Last row and first row are consecutive rows inside the same source connector",
+        "sourceSplit": 680,
+        "protectedRowsEachSide": 32
+      },
+      "joins": [
+        {
+          "y": 616,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            0,
+            59
+          ]
+        },
+        {
+          "y": 2592,
+          "overlap": 64,
+          "method": "Minimum-error source-pixel cut, no terrain blending",
+          "cutRange": [
+            0,
+            63
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "file": "routes/stage-X-section-00.png",
+          "sourceY": 0,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-X-section-01.png",
+          "sourceY": 680,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-X-section-02.png",
+          "sourceY": 1360,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-X-section-03.png",
+          "sourceY": 2040,
+          "validHeight": 680,
+          "canvas": [
+            680,
+            680
+          ]
+        },
+        {
+          "file": "routes/stage-X-section-04.png",
+          "sourceY": 2720,
+          "validHeight": 552,
+          "canvas": [
+            680,
+            680
+          ]
+        }
+      ],
+      "passiveBackgroundObjects": false,
+      "collision": false,
+      "targetable": false,
+      "route": [
+        "Harbor warehouses",
+        "Waterfront apartments",
+        "Inlet and city bridge",
+        "Downtown square",
+        "Core/civic approach"
+      ],
+      "story": "Use the coastal districts to ground the former squad's conflict in an actual shared home rather than an anonymous arena.",
+      "preserve": "Stage X remains the optional rival/core encounter; do not add ordinary enemy waves or let scenery damage consume native boss HP/rewards."
+    }
+  ],
+  "cutscenes": [
+    "cutscenes/01-orbital-intrusion.png",
+    "cutscenes/02-ice-relay-silence.png",
+    "cutscenes/03-power-cell-launch.png",
+    "cutscenes/04-city-under-threat.png",
+    "cutscenes/05-under-iron-bridge.png",
+    "cutscenes/06-last-signal.png",
+    "cutscenes/07-the-same-network.png",
+    "cutscenes/08-home-and-next-alarm.png",
+    "cutscenes/story-03-composite.png",
+    "cutscenes/story-05-composite.png"
+  ],
+  "notes": [
+    "Stage 1 jungle proposal rejected; existing game Stage 1 untouched.",
+    "Stage 5 structures are distant passive background art, never collision, target or combat fixtures.",
+    "All terrain alpha holes reveal independent material beds. Runtime terrain, encounters, timings and collision are unchanged.",
+    "Long finite routes exceed current master coverage. Repeating routes extend indefinitely. Material tiles have equal opposite edge pixels.",
+    "Internal generated/quilting joins remain concept candidates for approval; final terrain/collision authoring is a separate integration step.",
+    "Stage X damage sheet is a future visual study, not activated destructibility.",
+    "Cutscenes remain approved environmental concept plates; the two Cole composites use the actual exported aircraft."
+  ]
+}

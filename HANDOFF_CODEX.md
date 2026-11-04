@@ -1,3 +1,44 @@
+<!-- galaga-flight-1103 -->
+## November3â€“4 â€” Galaga-inspired regular aircraft
+
+Mike's Galaga reference is implemented for eligible regular small/medium/large aircraft across Stages1â€“9. GF113 owns staggered banked entrances, formation holds, peeling dives/rejoins and finite exits; existing 16/32-heading art, native weapon/HP/flash/Retina/death owners remain. Ground units, bosses/minis and special-flight/launch owners are excluded. Two core guard conditions avoid entry/edge pinning; index refreshes both core and helper caches. 84 native roster cases / 588 checks pass, plus 13 native invariants and four mixed-group observations. No page errors. Brief dive crossings and render hitches remain; not a human-dodgeability/full-campaign claim. Full suite still stops at its existing difficultyHealthBaseline15 VM setup error. Details/conditions: docs/GALAGA_FLIGHT_1103.md; receipt docs/qa/galaga_flight_1103.json. Real silent live previews: http://127.0.0.1:65042/review.html; films in _shots/galaga_flight_1103. Older wave films are explicitly labelled pre-pass. All prior local work preserved; no commit/push.
+
+<!-- pilot-quality-1103 -->
+## November3 - high-quality aircraft and space ships by default
+
+Mike requested all pilot ships in high quality. Core defaults to2x nearest backing for ordinary/high/auto/default launches; performance/low explicitly retain1x. Removed silent automatic degradation; retained loop-hook compatibility. Aircraft60/Furyship48 logical footprints, original art, palettes, pose and weapon owners unchanged. All9 aircraft/space variants:389 native checks,414 renderer samples; six launch policies and actual Stage5/9 frames verified. Fresh Stage1/5/9 remain about58-60FPS, but sequential-stage loading hitches remain (see honest measurements/limits in docs/PILOT_QUALITY_1103.md and docs/qa/pilot_quality_1103.json). Full suite still stops on existing difficultyHealthBaseline15 error before summary. Core script cache version refreshed; concurrent story/other work preserved. No commit/push.
+
+<!-- waves-followup-1103 -->
+## November3 — wave footage / source-preserving performance follow-up
+
+Stage1, both Stage6 routes and Stage7 have fresh Furious/GOD observe-then-clear films. The ten-film/313-chapter viewer now uses inspection=1103. Stage7 render rate improved from13.87 to50.52 in the recorded environment. Preserve Stage6 incoming/outgoing bomb-pass ownership, the finite Stage1 optional-reinforcement retry, and the lossless Stage7 pages/common cells. Original artwork is retained. Details, verification limits, source receipts and existing full-suite setup error: docs/WAVES_FOLLOWUP_1103.md and docs/qa/waves_followup_1103.json. No commit/push.
+
+<!-- menu-sceneries-1103 -->
+## November 3 — scrolling menu environments
+
+Six environments and three foreground layers are enabled through assets/menu_sceneries_1103.js, with native/portrait exports, editable sources and exact generation prompts. See docs/MENU_SCENERIES_1103.md and docs/qa/menu_sceneries_1103.json. Preserve mode Back lock, Start frozen snapshot, Forge frame/bays, bitmap fonts and input owners. Review: http://127.0.0.1:58090/review.html. 16 native views plus live keyboard/Start/parallax checks pass. Full suite retains the earlier difficultyHealthBaseline15 setup error before final summary.
+
+The wave review below is complete: 313 chapters /82m22s, corrected Stage6 observation hold, slow Stage7 footage retained. These menu changes follow those source-pinned captures.
+
+<!-- waves-inspection-1102 -->
+## November 2/3 — paced Furious wave inspections
+
+Mike selected demonstrate each wave, then clear and advance. New review: http://127.0.0.1:63094/review/current/all-waves-1101.html?inspection=1102 (313 chapters, both Stage 6 routes). Native GOD, eight/eighteen-second observation windows, explicit camera cuts; not campaign timing or human dodgeability proof. See docs/WAVES_INSPECTION_1102.md and docs/qa/waves_inspection_1102.json. Reproduction tools: _BUILD_SOURCE/wave_inspections_1102/.
+
+Production core: full-footprint ground-vehicle exit repair prevents departed tanks blocking pressure. Native browser A/B passed. Remaining: Stage 7 draw stalls, Stage 6 side entrant disappearing before view, native-timing late Stage 1 schedule stall; empty native releases are flagged. Full suite still stops on existing difficultyHealthBaseline15 VM error before final summary. Prior local work and films preserved; no commit/push.
+
+# November2 — Fresh wave films with current stage layers
+
+Ten native Furious films show LS112 terrain/materials and powered Stage4 Tesla coils, with both Stage6 routes,260 authored schedule entries and313 chapters. The input observer is labelled invulnerable; native enemy HP/AI/attack clocks and original callbacks remain authoritative. All film/audio decodes pass;30 actual browser seeks plus controls/mobile/error checks pass. Source/asset hashes, layer counters, material samples, native render FPS and movie hashes are retained. Original downloaded films and prior local work preserved; no production runtime edits, commit or push. Local page http://127.0.0.1:63094/review/current/all-waves-1101.html?layers=1102 . Reproduction/limits: docs/WAVES_LAYERED_1102.md and docs/qa/waves_layered_1102.json.
+
+# November2 — Chronos avatars in live dialogue
+
+C113 routes all Stage5 Chronos speech through the approved chrome/blue framed helmet views, including unknown first contact, combat taunts, actual HT23 armor announcements and cinematic dialogue. Combat taunts now use the existing84px compact panel with native68px portrait cells; floating body captions are retired. Native director typing/letter sounds/combat clocks and SM10 terminal portrait whitening remain owners. Four approved source views share one bezel, pre-baked compact sizes and editable Aseprite poses; no new generation/runtime FX.24 focused native checks and exact four-frame Aseprite round-trip pass; actual pixels/panels inspected. Full suite remains exit1 before summary on the existing difficultyHealthBaseline15 VM load-order error. Core/test unchanged; all prior local status entries preserved. Rebuild/probe/evidence: docs/CHRONOS_DIALOGUE_1102.md and docs/qa/chronos_dialogue_1102.json. No commit/push.
+
+# November 2 — Approved layered routes / powered Tesla pad
+
+LS112 wires Stage2–9/X terrain with independent authored material beds; Stage1 remains unchanged. Six exact Stage4 coils run24 source-pixel power frames with charged tips/bands and traveling arc pulses. Native stage/encounter budgets, roadside missile cadence/anchors, forward highway, Stage6 arrival/Rough Riders interlock, passive orbital scenery, real Stage7 stone aperture/fast green-gate rescue and special boss arenas retain their owners. Eight Aseprite banks/113 fixed frames export with exact RGBA equality.70 native checks pass; full suite still exits1 on the identical pre-existing difficultyHealthBaseline15 harness load-order error. Core game.js unchanged;143 local change entries preserved. Sources/rebuild/evidence: docs/LAYERED_STAGES_1102.md and docs/qa/layered_stages_1102.json. No commit/push.
+
 # November2 Current Breaker liquid arsenal
 
 Mike's expanded Stage9 Current arsenal is live in assets/current_breaker_1102.js after S9F/shared difficulty: internally lit fast orb spin, alternating generated palm casts, warned north/south side-wave passes, nine-way marble grenades, open-palm tidal shoves, background yaw/roller counters and foreground return. Physical missiles reflect Falva-derived water rollers for native owner damage; regular weapons make harmless splashes; intact contact kills. Ten even-cell source-derived banks preserve body pivots, measured palms, native HP/alpha/white flashes/audio/death owners. Casting settles at world centre to remain visible during camera movement. Queued/live Current holds native encounter entry and the miniboss threshold clock; later waves stay queued, then the miniboss resumes first.22 focused native checks plus the real-schedule campaign check pass;14 decoded desktop/mobile/guide checks pass. Fresh audible roughly48s native-input film has labelled invulnerable assistance and no enemy HP/phase/attack-clock writes. Only Current's film changes in the19-enemy Stage9 page/154-card guide. Full test_fl still exits1 before summary on the existing missing retired-art manifest. Review http://127.0.0.1:8805/current/current-breaker-1102.html ; sources/prompts/rebuilds/evidence docs/CURRENT_BREAKER_1102.md. Preserve concurrent S9F and cast/storyboard work. No commit/push.
@@ -5682,3 +5723,23 @@ FB112 owns Furious-only Razorwake (Stage6mini) and Thunderhead (left Stage6boss)
 
 Review http://127.0.0.1:8805/current/boss-comparison-1102.html . Sources/prompts/rebuilds/receipts: docs/FURIOUS_ENCOUNTERS_1102.md and docs/BOSS_COMPARISON_1102.md. Media archivedD with validated junctions, existing previews preserved. assets/game.js/test_fl.js untouched by this pass. Concurrent Current Breaker guard/cast/storyboard/S9F work retained. No commit/push.
 
+
+
+## November4 — space arsenal and supplied ColeForge effects
+
+Spread Lasers and forward twin Plasma Cannons now have5tiers, tagged boxes/HUD/Armory/saves; Volley remains passive slot2. New modules: coleforge_1104_art.js, space_arsenal_1104.js and coleforge_fx_1104.js. Supplied static projectile poses use offline1015 brightness only. Native deaths/HP/modular gates/audio remain owners; smoke/fire/rings/shields and Cole green-gray/Lizzie/strategic atomic visuals use supplied frames. Preserve old untagged reward mapping and articulated late-roster shields. Rebuild/editable sources: _BUILD_SOURCE/coleforge_1104.114 native checks+720 asset checks pass; required broad suite still exits1 at missing difficultyHealthBaseline15 before summary. Local live videos/evidence: _shots/space_arsenal_fx_1104; current preview http://127.0.0.1:65043/review.html. Full scope/contracts/limits: docs/SPACE_ARSENAL_FX_1104.md. No commit/push.
+
+
+## November4 — dedicated Stage X pickups
+
+New assets/stagex_pickups_1104.js follows stageXArenaActive() for both campaign routes and Rival24. Chrome/blue power box and S-chevron speed pill have8 fixed silhouette light frames plus white hit; native HP/drops/upgrades/audio unchanged. Sources/rebuild: _BUILD_SOURCE/stagex_pickups_1104.23 native checks+39 asset checks pass; existing broad-suite difficultyHealthBaseline15 blocker remains. Details: docs/STAGEX_PICKUPS_1104.md; native scene/frame package in _shots/stagex_pickups_1104. No commit/push.
+
+
+## November4 — generated hex weapon icon correction
+
+Mike requested genuinely new icon artwork in the original hexagonal frame style. Spread is now a generated three-emitter fan; Plasma is generated paired short ion projectors. All140 tier/size/hit variants rebuilt; original frame and I–V plaque pixels retained. Canonical raw/master images and updated builder: _BUILD_SOURCE/coleforge_1104/generated_icons.21 targeted checks+720 asset checks pass; fresh native clips contain all5tiers and no page/draw/audio errors.80 projectile/effect banks unchanged. See docs/GENERATED_HEX_ICONS_1104.md; proof/new films in _shots/hex_weapon_icons_1104. Local review65043 refreshed. No commit/push.
+
+
+## November4 — actual Stage X power-box turn
+
+Mike corrected the light-only box loop. stagex_pickups_1104.js now selects power_turn_64.png:16 distinct authored yaw views,16 corresponding white-hit cells,80ms/frame, fixed64cell/pivot32. Speed capsules unchanged. No runtime rotation/scaling and no core/HP/reward edits. Two rear-left view headings corrected offline for a continuous turn.48 native checks+36 asset checks pass; native6.5s recording observes every yaw frame without page/draw errors. Current source/build metadata: _BUILD_SOURCE/stagex_pickups_1104. See docs/STAGEX_BOX_ROTATION_1104.md; GIF/native clip/new ZIP in _shots/stagex_box_rotation_1104. No commit/push.

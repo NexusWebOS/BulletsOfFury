@@ -1,0 +1,22 @@
+{
+  "revision": 7,
+  "pilots": {
+    "cole": {
+      "outfit": "olive green",
+      "eyes": "blue, uncovered in headset portraits",
+      "reference": [
+        "coleyoung.png",
+        "boxcole.png"
+      ]
+    },
+    "maverick": {
+      "outfit": "neon electric lime green",
+      "eyewear": "green aviator sunglasses"
+    }
+  },
+  "user_reference_sha256": {
+    "boxcole.png": "cc10cadf6756a0458590ca1dcf2976fee940c09d229a11c17a9c27d4c4e73d8c",
+    "coleyoung.png": "9869fa53e8d6d2f4ec58cfe3921fba430ab9c555cb146877fc93b1626c24f780"
+  },
+  "cole_palette": "30 shared body shades plus 2 reserved authored blue-iris shades"
+}

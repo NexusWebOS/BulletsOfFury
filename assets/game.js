@@ -6870,29 +6870,21 @@ function drawHUDFramed(){
   for(let i=0;i<slots.length;i++){ if(slots[i]&&ASSETS.has(slots[i])) ASSETS.blit(slots[i],sx[i],460,30,30); }
 }
 
-/* Native 480x512 backing prioritizes laptop/browser performance and preserves authored pixel-art edges.
-   CSS still fills the same playfield. ?quality=high opts into the 2x backing; ?quality=performance
-   explicitly selects native. The governor also protects callers that later increase auto backing. */
-let _renderQuality='auto';
-try{_renderQuality=(new URLSearchParams(location.search).get('quality')||'auto').toLowerCase();}catch(_rq){}
-let _lowMemoryDevice=false;try{_lowMemoryDevice=(navigator.deviceMemory>0&&navigator.deviceMemory<=4)||(navigator.hardwareConcurrency>0&&navigator.hardwareConcurrency<=4);}catch(_hw){}
-/* Native pixel-art backing is the default across browsers. Supersampling is an explicit high-quality opt-in; gameplay and CSS sizing remain identical. */
-let SS = _renderQuality==='high'?2:1;
-let _renderSlowT=0,_renderScaleChanged=SS===1;
+/* Keep the approved aircraft/Furyship detail in ordinary gameplay (November3).
+   Two backing pixels per logical pixel retain four times the source samples before
+   display sizing, with nearest-neighbour edges. Logical ship sizes, sockets,
+   collision and animation timing are unchanged. Native backing remains an explicit
+   ?quality=performance (or low) choice; slow frames never silently degrade the art. */
+let _renderQuality='high';
+try{_renderQuality=(new URLSearchParams(location.search).get('quality')||'high').toLowerCase();}catch(_rq){}
+let SS = (_renderQuality==='performance'||_renderQuality==='low')?1:2;
 function setRenderScale(scale){
   scale=scale<=1?1:2;if(scale===SS)return;
   SS=scale;cv.width=VW*SS;cv.height=VH*SS;ctx.imageSmoothingEnabled=false;
 }
-function renderPerformanceTick(rawDt){
-  if(_renderQuality==='high'||_renderScaleChanged||SS<=1)return;
-  if(state!==GS.PLAY||stateT<1.25){_renderSlowT=Math.max(0,_renderSlowT-.05);return;}
-  const d=Math.max(0,Math.min(rawDt||0,.25));
-  _renderSlowT=d>.019?_renderSlowT+d:Math.max(0,_renderSlowT-d*.70);
-  if(_renderSlowT>1.20){
-    _renderScaleChanged=true;setRenderScale(1);
-    try{if(typeof floatText==='function')floatText(VW/2,PLAY.y+28,'PERFORMANCE MODE','#8fdfff');}catch(_pm){}
-  }
-}
+/* Retain the loop hook for older callers. Quality changes are deliberate choices,
+   never a response to a brief loading/capture hitch. */
+function renderPerformanceTick(rawDt){}
 cv.width = VW*SS; cv.height = VH*SS;
 /* ⚠ NEAREST-NEIGHBOUR IS THE DEFAULT, NOT AN OPT-IN (drop 0813b)
    Mike: "Its likke you've upscaled my levels in-game and they dont look as clear ... the stages
@@ -9141,7 +9133,7 @@ function achievementNormalize(v){
      An absent `owned` reads as {} and the save is upgraded the next time anything is bought. */
   if(v.owned&&typeof v.owned==='object')
     for(const id of Object.keys(v.owned)){
-      if(!FURIOUS_SHOP[id] && !FORGE_LEVEL_ID_RE.test(id) && !FORGE_COMBO_ID_RE.test(id) && !FORGE_ELEMENT_ID_RE.test(id) && !/^arsenal_(base_[0-8]|space_[0-2]|variant_[a-z]+)$/.test(id)) continue;
+      if(!FURIOUS_SHOP[id] && !FORGE_LEVEL_ID_RE.test(id) && !FORGE_COMBO_ID_RE.test(id) && !FORGE_ELEMENT_ID_RE.test(id) && !/^arsenal_(base_[0-8]|space_[0-4]|variant_[a-z]+)$/.test(id)) continue;
       const q=v.owned[id]||{};
       /* ⚠ A COMBINATION CARRIES NO `cost` AND MUST NOT GAIN ONE HERE. Defaulting it to 0 would be
          harmless; defaulting it to a shop price would charge the player for a boss drop. */
@@ -30414,7 +30406,7 @@ function applyPowerup(p){
         const _sw=spaceWeaponPickupIndex(p);
         if(typeof polishRememberItem==='function')polishRememberItem('space_'+_sw);
         if(!run.spaceLevels)run.spaceLevels=[1,1,1];
-        run.spaceLevels[_sw]=clamp((run.spaceLevels[_sw]||1)+1,1,5);
+        run.spaceLevels[_sw]=typeof spacePickupLevel==='function'?spacePickupLevel(_sw):clamp((run.spaceLevels[_sw]||1)+1,1,5);
         if(_sw===2){
           /* Missile crates improve the passive rack without taking Laser Cannon or Shadow Orb
              out of the player's hands. */
@@ -35179,6 +35171,10 @@ function updatePlay(dt){
          coastline and were skipped by their own sea gate. Three of the four naval waves
          never fired, and nothing reported it - the level just looked empty over the water. */
       if(_e.pattern==='naval') continue;
+      /* BELOW THE SCREEN IS NOT PRESSURE (drop 1104, WF14). A unit that has scrolled fully past the bottom
+         edge cannot threaten the player, but it held due waves until it was culled. The rule and its
+         switch live in wave_followups_1104.js. */
+      if(typeof wf14BelowScreen==='function' && wf14BelowScreen(_e)) continue;
       _liveN++;
     }
     const _nextStageWave=(waveIdx<stagePlan.length)?stagePlan[waveIdx]:null;
@@ -35805,7 +35801,7 @@ function updatePlay(dt){
     const _edgeM=Math.max(14, e.w*0.66);
     // AI-library craft that are SUPPOSED to cross and leave (sweeps, straight diagonals, peel-offs)
     // must not be pinned to the edge — otherwise a "straight across" run bends and rides the wall.
-    const _aiCrosser = !!e._s6Strike || !!e._s1aFlight || !!e._fb9Swoop || (e.pattern==='ai' && e._ai && (e._ai.kind==='sweep'||e._ai.kind==='diag'||e._ai.kind==='curve'));
+    const _aiCrosser = (!!e._gf113&&!e._gf113.released) || (e.pattern==='jetmaneuver' && e._jetManeuver?.mode==='bomb') || !!e._s6Strike || !!e._s1aFlight || !!e._fb9Swoop || (e.pattern==='ai' && e._ai && (e._ai.kind==='sweep'||e._ai.kind==='diag'||e._ai.kind==='curve'));
     const _racerDrifting=_aiCrosser || (e.pattern==='racer' && (e._phase==='cross'||e._phase==='curl'||e._phase==='dive'||e._phase==='flee')) || e.pattern==='topgun' || e.pattern==='sideswirl' || e.pattern==='jetflyby' || e.pattern==='loopcharge';
     const _wW=(typeof worldWidth==='function')?worldWidth():VW;   // wide stages: clamp to the WORLD, not the 480 camera
     /* ============================================================
@@ -36046,15 +36042,20 @@ function updatePlay(dt){
     if(e.hp<=0 && !e.dead){ killEnemy(e); }
     // off-screen cull — but racers legitimately spawn below the screen and fly UP, so don't cull
     // one while it's still entering (flyin) or has never yet come on-screen.
-    const _racerEntering = (e.pattern==='racer' && (e._phase==null || e._phase==='cross' || e._phase==='curl' || e._phase==='dive'))
+    const _racerEntering = (!!e._gf113&&!e._gf113.released&&e._gf113.phase!=='exit') || (e.pattern==='racer' && (e._phase==null || e._phase==='cross' || e._phase==='curl' || e._phase==='dive'))
       || (e.pattern==='sideswirl' && e._phase!=='dive')
       || (e.pattern==='jetflyby' && e._phase!=='exit')
       || (e._s8mega==='s8spread' && ((e._side>0&&e.x<0)||
-          (e._side<0&&e.x>((typeof worldWidth==='function')?worldWidth():VW))));
+          (e._side<0&&e.x>((typeof worldWidth==='function')?worldWidth():VW))))
+      || (e.pattern==='jetmaneuver' && e._jetManeuver?.mode==='bomb' &&
+          ((e._jetManeuver.dir>0&&e.x<camLeftX()) || (e._jetManeuver.dir<0&&e.x>camRightX())));
     // Side spawns clear the camera by half their hull plus ENTRY_CLEAR. A fixed
     // 80px cull removed larger authored arrivals on frame one, before entry.
     const _sideCullPad=Math.max(80,Math.max(e.w||0,e._drawW||0)*.5+ENTRY_CLEAR+16);
-    if(!_racerEntering && (e.y>VH+80 || e.x<-_sideCullPad || e.x>((typeof worldWidth==='function')?worldWidth():VW)+_sideCullPad)) e.dead=true;
+    // A departing ground hull must clear in full; queued northern entries stay live.
+    const _groundExit=typeof groundTrafficVehicle==='function'&&groundTrafficVehicle(e);
+    const _bottomCullPad=_groundExit?Math.max(80,groundTrafficFootprint(e).h*.5+16):80;
+    if(!_racerEntering && (e.y>VH+_bottomCullPad || e.x<-_sideCullPad || e.x>((typeof worldWidth==='function')?worldWidth():VW)+_sideCullPad)) e.dead=true;
     if(e.pattern==='racer' && e._phase==='flee' && e.y<-60) e.dead=true;   // culled after fleeing off the top
     } finally {if(typeof ai27End==='function')ai27End(e,_ai27Prev);}
   }
@@ -49088,7 +49089,10 @@ function tankMotionTick(e,dt,maxSpd){
   const vt=(typeof viewTopY==='function')?viewTopY():0;
   const minY=(e._tankQueueY!=null)?e._tankQueueY:
     (vt-Math.max(160,(e.h||0)+((typeof ENTRY_CLEAR!=='undefined')?ENTRY_CLEAR:64)));
-  e.y=clamp(e.y, minY, VH+80);
+  // Keep the native exit reachable. Clamping at VH+80 made the >VH+80
+  // offscreen cull impossible when a player watched a tank instead of killing it.
+  const exitPad=typeof groundTrafficVehicle==='function'&&groundTrafficVehicle(e)?Math.max(80,groundTrafficFootprint(e).h*.5+16)+1:80;
+  e.y=clamp(e.y, minY, VH+exitPad);
 }
 function tankCruiseTick(e,dt,maxSpd){
   if(e.dead) return;
@@ -52350,7 +52354,7 @@ function drawPowerups(){
          falling") and then no call site honoured it. `p.wvar` was baked at spawn for this. */
       const _pvOpt = {fixed:weaponPickupVariant(_w2,p.wvar)};
       ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=6;
-      const _pik=spaceWeaponsActive()?(_sw2===0?'space_laser_icon_'+_l2:_sw2===1?'space_fusion_icon_'+Math.max(1,_l2):spaceVolleyIconKey(_l2)):weaponIconKey(_w2,_l2,_pvOpt);
+      const _pik=spaceWeaponsActive()?(typeof spaceWeaponIconFor==='function'?spaceWeaponIconFor(_sw2,_l2):(_sw2===0?'space_laser_icon_'+_l2:_sw2===1?'space_fusion_icon_'+Math.max(1,_l2):spaceVolleyIconKey(_l2))):weaponIconKey(_w2,_l2,_pvOpt);
       const _drew=(typeof iconBlit==='function') && iconBlit(ctx, _pik, p.x, yb, 36, true);
       ctx.restore();
       if(_drew) continue;
@@ -58374,7 +58378,8 @@ function jetManeuverTick(e,dt){
       stage6Muzzle(e,0,.28,.85,.15);
       if(Audio.SFX&&Audio.SFX.groundBombLock)Audio.SFX.groundBombLock();
     }
-    if(e.x<camLeftX()-110||e.x>camRightX()+110)e.dead=true;
+    // Incoming side entries must cross the view before their departure cull.
+    if((J.dir<0&&e.x<camLeftX()-110)||(J.dir>0&&e.x>camRightX()+110))e.dead=true;
   }
 }
 function s6StormTick(e,dt){
@@ -65789,8 +65794,10 @@ function campText(str, cx, cy, h, col, alpha){
 }
 function drawCampaignHub(dt){
   if(typeof cmap2Warm==='function') cmap2Warm();   // 0912v: the map pieces start decoding a screen early
+  if(!(typeof menuScenery113==='function'&&menuScenery113('hq',VW,VH))){
   ctx.fillStyle='#080611'; ctx.fillRect(0,0,VW,VH);
   for(const s of starField){ s.y=(s.y+s.z*1.5*dt*60)%VH; ctx.fillStyle=s.z>1?'#cfe2ff':'#4455aa'; ctx.fillRect(s.x|0,s.y|0,2,2); }
+  }
   ctx.textAlign='center';
   campText('CAMPAIGN', VW/2, 62, 20, '#ffe682');
   if(campPick){ drawCampSlots(dt); ctx.textAlign='left'; return; }
@@ -67615,7 +67622,8 @@ function scrollCoverBG(key,dt,speed){
 let _menuScrollX=0;
 function drawTitle(dt){
   if(typeof uiFontWarm==='function') uiFontWarm();   // earliest menu: start the face here, not at stage 1
-  if(XART.rdy('bof_cover_b')){
+  if(typeof menuScenery113==='function'&&menuScenery113('orbit',VW,VH)){}
+  else if(XART.rdy('bof_cover_b')){
     const im=XART.get('bof_cover_b'),z=Math.max(VW/im.width,VH/im.height);ctx.drawImage(im,(VW-im.width*z)/2,(VH-im.height*z)/2,im.width*z,im.height*z);
     ctx.fillStyle='rgba(0,0,0,.38)';ctx.fillRect(0,0,VW,VH);
   }else if(ASSETS.rdy(ASSETS.starplanets)){
@@ -69225,7 +69233,7 @@ function drawCoopRoster(dt){
   /* P1's tint carries the backdrop and P2's is washed over the right half, so the screen reads
      as two halves without a hard divider cutting it in two. */
   if(typeof drawPilotBG==='function') drawPilotBG(P1.tint);
-  {
+  if(!(globalThis.BOF_MENU_SCENERIES_1103?.enabled&&globalThis.BOF_MENU_SCENERIES_1103.last?.state===GS.COOPROSTER)){
     const c=(typeof hx==='function')?hx(P2.tint):null;
     if(c){
       const g=ctx.createLinearGradient(VW*0.42,0,VW,0);
@@ -77648,7 +77656,7 @@ function forgePreviewSwap(P,VWp,VHp,fn){
     pImpacts=P.impacts;explosions=P.explosions;smokeTrails=P.smoke;pBullets=P.bullets;eBullets=[];particles=P.parts;zaps=P.zaps;efxBursts=P.bursts;geysers=P.geysers;voids=P.voids;s2Vents=[];fireDebris=[];zoneCols=[];efxClock=P.t;
     stageStats=Object.assign({},sv.stats);Audio.SFX=Object.fromEntries(Object.keys(sv.sfx).map(k=>[k,()=>{if(P.audition&&P.t>=(P.nextSound||0)){P.nextSound=P.t+.18;sv.sfx[k]?.();}}]));Snd.loopOn=(k)=>{if(P.audition&&P.t>=(P.nextLoopSound||0)){P.nextLoopSound=P.t+.40;sv.sfx[k]?.();}};Snd.loopOff=()=>{};
     if(P.pilot)run.pilot=P.pilot;
-    if(P.space!=null){run.stage=5;run.spaceMode=true;run.spaceWeapon=P.space===2?0:P.space;run.spaceLevels=[P.lv,P.lv,P.lv];}
+    if(P.space!=null){run.stage=5;run.spaceMode=true;run.spaceWeapon=P.space===2?0:P.space;run.spaceLevels=[P.lv,P.lv,P.lv,P.lv,P.lv];}
     if(P.w===8){run.pilot='yuri';yuriLightningOrbUnlocked=true;run._earnedUnlocks=Object.assign({},run._earnedUnlocks,{lightningOrb:true});}
     if(P.elem)run.forge[P.w]={elem:P.elem,lv:P.lv};
     if(P.w===5)run.wvars[5]=P.elem==='fire'?'fireorb':'iceorb';
@@ -77680,7 +77688,7 @@ function forgePreviewTick(P,VWp,VHp,dt){
     if(P.cd<=0){
       if(P.space!=null){
         if(P.space===2)spaceVolleyFire(1);else if(P.space===1)spaceShadowRelease(typeof FUSION30_FULL!=='undefined'?FUSION30_FULL:SPACE_SHADOW_FULL_CHARGE);else spaceLaserFire();
-        P.fired++;P.cd=P.space===1?1.5:P.space===2?.85:.24;
+        P.fired++;P.cd=P.space===1?1.5:P.space===2?.85:typeof spacePrimaryCadence==='function'?spacePrimaryCadence(P.space,P.lv):.24;
       } else if(P.w===1 && P.elem==='chrome'){
         // Cycle the same three held-release strengths used in live play.
         const rank=P.fired%3, charge=[.2,.8,1.6][rank];

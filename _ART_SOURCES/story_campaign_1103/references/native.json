@@ -1,0 +1,7404 @@
+{
+  "W": 480,
+  "H": 512,
+  "scale": 1,
+  "images": {
+    "air_invasion": {
+      "key": "c22_air_invasion",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/air_invasion.webp",
+      "w": 688,
+      "h": 384
+    },
+    "axel_front": {
+      "key": "c22_axel_front",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/axel_front.webp",
+      "w": 256,
+      "h": 256
+    },
+    "civilian_collapse": {
+      "key": "c22_civilian_collapse",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/civilian_collapse.webp",
+      "w": 688,
+      "h": 384
+    },
+    "coast_invasion": {
+      "key": "c22_coast_invasion",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/coast_invasion.webp",
+      "w": 688,
+      "h": 384
+    },
+    "cole_front": {
+      "key": "c22_cole_front",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/cole_front.webp",
+      "w": 256,
+      "h": 256
+    },
+    "decker_front": {
+      "key": "c22_decker_front",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/decker_front.webp",
+      "w": 256,
+      "h": 256
+    },
+    "desert_airbase": {
+      "key": "c22_desert_airbase",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/desert_airbase.webp",
+      "w": 688,
+      "h": 384
+    },
+    "earth_invasion": {
+      "key": "c22_earth_invasion",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/earth_invasion.webp",
+      "w": 688,
+      "h": 384
+    },
+    "falva_front": {
+      "key": "c22_falva_front",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/falva_front.webp",
+      "w": 256,
+      "h": 256
+    },
+    "forge_upgrade": {
+      "key": "c22_forge_upgrade",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/forge_upgrade.webp?v=ca1fbf33bee9",
+      "w": 688,
+      "h": 384
+    },
+    "freezer_front": {
+      "key": "c22_freezer_front",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/freezer_front.webp",
+      "w": 256,
+      "h": 256
+    },
+    "hq_alarm": {
+      "key": "c22_hq_alarm",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/hq_alarm.webp?v=74187730574c",
+      "w": 688,
+      "h": 384
+    },
+    "hq_hangar": {
+      "key": "c22_hq_hangar",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/hq_hangar.webp",
+      "w": 688,
+      "h": 384
+    },
+    "hq_regroup": {
+      "key": "c22_hq_regroup",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/hq_regroup.webp?v=b7dac9854afd",
+      "w": 688,
+      "h": 384
+    },
+    "hq_river": {
+      "key": "c22_hq_river",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/hq_river.webp?v=d4e592afb030",
+      "w": 688,
+      "h": 384
+    },
+    "hq_sprint": {
+      "key": "c22_hq_sprint",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/hq_sprint.webp",
+      "w": 688,
+      "h": 384
+    },
+    "ice_relay": {
+      "key": "c22_ice_relay",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/ice_relay.webp",
+      "w": 688,
+      "h": 384
+    },
+    "juggernaut_front": {
+      "key": "c22_juggernaut_front",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/juggernaut_front.webp",
+      "w": 256,
+      "h": 256
+    },
+    "launch_generator": {
+      "key": "c22_launch_generator",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/launch_generator.webp?v=e9fdbcd6a9d2",
+      "w": 688,
+      "h": 384
+    },
+    "lava_relay": {
+      "key": "c22_lava_relay",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/lava_relay.webp",
+      "w": 688,
+      "h": 384
+    },
+    "lizzie_front": {
+      "key": "c22_lizzie_front",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/lizzie_front.webp",
+      "w": 256,
+      "h": 256
+    },
+    "maverick_front": {
+      "key": "c22_maverick_front",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/maverick_front.webp",
+      "w": 256,
+      "h": 256
+    },
+    "maverick_horror_pose": {
+      "key": "c22_maverick_horror_pose",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/maverick_horror_pose.webp",
+      "w": 256,
+      "h": 384
+    },
+    "maverick_report_pose": {
+      "key": "c22_maverick_report_pose",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/maverick_report_pose.webp",
+      "w": 256,
+      "h": 384
+    },
+    "maverick_standing_pose": {
+      "key": "c22_maverick_standing_pose",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/maverick_standing_pose.webp",
+      "w": 256,
+      "h": 320
+    },
+    "naval_exchange": {
+      "key": "c22_naval_exchange",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/naval_exchange.webp",
+      "w": 688,
+      "h": 384
+    },
+    "orbital_return": {
+      "key": "c22_orbital_return",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/orbital_return.webp",
+      "w": 688,
+      "h": 384
+    },
+    "peace_city": {
+      "key": "c22_peace_city",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/peace_city.webp",
+      "w": 688,
+      "h": 384
+    },
+    "power_cell": {
+      "key": "c22_power_cell",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/power_cell.webp?v=2605c6c2c149",
+      "w": 688,
+      "h": 384
+    },
+    "river_sewer": {
+      "key": "c22_river_sewer",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/river_sewer.webp",
+      "w": 688,
+      "h": 384
+    },
+    "satellite_clean": {
+      "key": "c22_satellite_clean",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/satellite_clean.webp",
+      "w": 688,
+      "h": 384
+    },
+    "satellite_infected": {
+      "key": "c22_satellite_infected",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/satellite_infected.webp",
+      "w": 688,
+      "h": 384
+    },
+    "solar": {
+      "key": "c22_solar",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/solar.webp",
+      "w": 688,
+      "h": 384
+    },
+    "suburban_tanks": {
+      "key": "c22_suburban_tanks",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/suburban_tanks.webp",
+      "w": 688,
+      "h": 384
+    },
+    "yuri_front": {
+      "key": "c22_yuri_front",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/yuri_front.webp",
+      "w": 256,
+      "h": 256
+    }
+  },
+  "banks": {
+    "data_disintegrate": {
+      "key": "c22_bank_data_disintegrate",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/data_disintegrate.webp",
+      "w": 256,
+      "h": 256,
+      "frames": 9,
+      "columns": 4,
+      "fps": 10,
+      "pivot": [
+        128,
+        128
+      ]
+    },
+    "data_blast": {
+      "key": "c22_bank_data_blast",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/data_blast.webp",
+      "w": 256,
+      "h": 256,
+      "frames": 9,
+      "columns": 4,
+      "fps": 14,
+      "pivot": [
+        128,
+        128
+      ]
+    },
+    "blue_portal": {
+      "key": "c22_bank_blue_portal",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/blue_portal.webp",
+      "w": 256,
+      "h": 256,
+      "frames": 9,
+      "columns": 4,
+      "fps": 12,
+      "pivot": [
+        128,
+        128
+      ]
+    },
+    "void_portal": {
+      "key": "c22_bank_void_portal",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/void_portal.webp",
+      "w": 256,
+      "h": 256,
+      "frames": 9,
+      "columns": 4,
+      "fps": 12,
+      "pivot": [
+        128,
+        128
+      ]
+    },
+    "remnant": {
+      "key": "c22_bank_remnant",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/remnant.webp",
+      "w": 256,
+      "h": 256,
+      "frames": 9,
+      "columns": 4,
+      "fps": 10,
+      "pivot": [
+        128,
+        128
+      ]
+    },
+    "code_fragments": {
+      "key": "c22_bank_code_fragments",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/code_fragments.webp",
+      "w": 256,
+      "h": 256,
+      "frames": 9,
+      "columns": 4,
+      "fps": 12,
+      "pivot": [
+        128,
+        128
+      ]
+    },
+    "hq_motion": {
+      "key": "c22_bank_hq_motion",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/hq_motion.webp",
+      "w": 256,
+      "h": 256,
+      "frames": 9,
+      "columns": 4,
+      "fps": 8,
+      "pivot": [
+        128,
+        128
+      ],
+      "patch": {
+        "image": "hq_regroup",
+        "rect": [
+          432,
+          80,
+          256,
+          256
+        ]
+      }
+    },
+    "coast_motion": {
+      "key": "c22_bank_coast_motion",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/coast_motion.webp",
+      "w": 256,
+      "h": 144,
+      "frames": 15,
+      "columns": 4,
+      "fps": 12,
+      "pivot": [
+        128,
+        72
+      ],
+      "patch": {
+        "image": "coast_invasion",
+        "rect": [
+          218,
+          222,
+          256,
+          144
+        ]
+      }
+    },
+    "forge_motion": {
+      "key": "c22_bank_forge_motion",
+      "path": "assets/game/shared/cinematics/cinema_story_1021/forge_motion.webp",
+      "w": 256,
+      "h": 144,
+      "frames": 15,
+      "columns": 4,
+      "fps": 12,
+      "pivot": [
+        128,
+        72
+      ],
+      "patch": {
+        "image": "forge_upgrade",
+        "rect": [
+          220,
+          210,
+          256,
+          144
+        ]
+      }
+    }
+  },
+  "cast": {
+    "pilots": {
+      "cole": {
+        "neutral": "c112_cole_neutral",
+        "speaking": "c112_cole_speaking",
+        "salute": "c112_cole_salute",
+        "walk_left": "c112_cole_walk_left",
+        "look_back": "c112_cole_look_back",
+        "back": "c112_cole_back",
+        "walk_0": "cp112_cole_walk_0",
+        "walk_1": "cp112_cole_walk_1",
+        "walk_2": "cp112_cole_walk_2",
+        "walk_3": "cp112_cole_walk_3",
+        "run_0": "cp112_cole_run_0",
+        "run_1": "cp112_cole_run_1",
+        "run_2": "cp112_cole_run_2",
+        "run_3": "cp112_cole_run_3",
+        "sit_idle": "cp112_cole_sit_idle",
+        "sit_speaking": "cp112_cole_sit_speaking",
+        "dispatch_side": "cp112_cole_dispatch_side",
+        "dispatch_typing": "cp112_cole_dispatch_typing",
+        "dispatch_command": "cp112_cole_dispatch_command",
+        "sit_laugh": "cp112_cole_sit_laugh",
+        "sad": "cp112_cole_sad",
+        "angry": "cp112_cole_angry",
+        "ecstatic": "cp112_cole_ecstatic",
+        "happy": "cp112_cole_happy",
+        "jump_cheer": "cp112_cole_jump_cheer",
+        "falling": "cp112_cole_falling",
+        "laugh": "cp112_cole_laugh",
+        "floor_laugh": "cp112_cole_floor_laugh"
+      },
+      "axel": {
+        "neutral": "c112_axel_neutral",
+        "speaking": "c112_axel_speaking",
+        "salute": "c112_axel_salute",
+        "walk_left": "c112_axel_walk_left",
+        "look_back": "c112_axel_look_back",
+        "back": "c112_axel_back",
+        "walk_0": "cp112_axel_walk_0",
+        "walk_1": "cp112_axel_walk_1",
+        "walk_2": "cp112_axel_walk_2",
+        "walk_3": "cp112_axel_walk_3",
+        "run_0": "cp112_axel_run_0",
+        "run_1": "cp112_axel_run_1",
+        "run_2": "cp112_axel_run_2",
+        "run_3": "cp112_axel_run_3",
+        "sit_idle": "cp112_axel_sit_idle",
+        "sit_speaking": "cp112_axel_sit_speaking",
+        "dispatch_side": "cp112_axel_dispatch_side",
+        "dispatch_typing": "cp112_axel_dispatch_typing",
+        "dispatch_command": "cp112_axel_dispatch_command",
+        "sit_laugh": "cp112_axel_sit_laugh",
+        "sad": "cp112_axel_sad",
+        "angry": "cp112_axel_angry",
+        "ecstatic": "cp112_axel_ecstatic",
+        "happy": "cp112_axel_happy",
+        "jump_cheer": "cp112_axel_jump_cheer",
+        "falling": "cp112_axel_falling",
+        "laugh": "cp112_axel_laugh",
+        "floor_laugh": "cp112_axel_floor_laugh"
+      },
+      "decker": {
+        "neutral": "c112_decker_neutral",
+        "speaking": "c112_decker_speaking",
+        "salute": "c112_decker_salute",
+        "walk_left": "c112_decker_walk_left",
+        "look_back": "c112_decker_look_back",
+        "back": "c112_decker_back",
+        "walk_0": "cp112_decker_walk_0",
+        "walk_1": "cp112_decker_walk_1",
+        "walk_2": "cp112_decker_walk_2",
+        "walk_3": "cp112_decker_walk_3",
+        "run_0": "cp112_decker_run_0",
+        "run_1": "cp112_decker_run_1",
+        "run_2": "cp112_decker_run_2",
+        "run_3": "cp112_decker_run_3",
+        "sit_idle": "cp112_decker_sit_idle",
+        "sit_speaking": "cp112_decker_sit_speaking",
+        "dispatch_side": "cp112_decker_dispatch_side",
+        "dispatch_typing": "cp112_decker_dispatch_typing",
+        "dispatch_command": "cp112_decker_dispatch_command",
+        "sit_laugh": "cp112_decker_sit_laugh",
+        "sad": "cp112_decker_sad",
+        "angry": "cp112_decker_angry",
+        "ecstatic": "cp112_decker_ecstatic",
+        "happy": "cp112_decker_happy",
+        "jump_cheer": "cp112_decker_jump_cheer",
+        "falling": "cp112_decker_falling",
+        "laugh": "cp112_decker_laugh",
+        "floor_laugh": "cp112_decker_floor_laugh"
+      },
+      "maverick": {
+        "neutral": "c112_maverick_neutral",
+        "speaking": "c112_maverick_speaking",
+        "salute": "c112_maverick_salute",
+        "walk_left": "c112_maverick_walk_left",
+        "look_back": "c112_maverick_look_back",
+        "back": "c112_maverick_back",
+        "walk_0": "cp112_maverick_walk_0",
+        "walk_1": "cp112_maverick_walk_1",
+        "walk_2": "cp112_maverick_walk_2",
+        "walk_3": "cp112_maverick_walk_3",
+        "run_0": "cp112_maverick_run_0",
+        "run_1": "cp112_maverick_run_1",
+        "run_2": "cp112_maverick_run_2",
+        "run_3": "cp112_maverick_run_3",
+        "sit_idle": "cp112_maverick_sit_idle",
+        "sit_speaking": "cp112_maverick_sit_speaking",
+        "dispatch_side": "cp112_maverick_dispatch_side",
+        "dispatch_typing": "cp112_maverick_dispatch_typing",
+        "dispatch_command": "cp112_maverick_dispatch_command",
+        "sit_laugh": "cp112_maverick_sit_laugh",
+        "sad": "cp112_maverick_sad",
+        "angry": "cp112_maverick_angry",
+        "ecstatic": "cp112_maverick_ecstatic",
+        "happy": "cp112_maverick_happy",
+        "jump_cheer": "cp112_maverick_jump_cheer",
+        "falling": "cp112_maverick_falling",
+        "laugh": "cp112_maverick_laugh",
+        "floor_laugh": "cp112_maverick_floor_laugh"
+      },
+      "freezer": {
+        "neutral": "c112_freezer_neutral",
+        "speaking": "c112_freezer_speaking",
+        "salute": "c112_freezer_salute",
+        "walk_left": "c112_freezer_walk_left",
+        "look_back": "c112_freezer_look_back",
+        "back": "c112_freezer_back",
+        "walk_0": "cp112_freezer_walk_0",
+        "walk_1": "cp112_freezer_walk_1",
+        "walk_2": "cp112_freezer_walk_2",
+        "walk_3": "cp112_freezer_walk_3",
+        "run_0": "cp112_freezer_run_0",
+        "run_1": "cp112_freezer_run_1",
+        "run_2": "cp112_freezer_run_2",
+        "run_3": "cp112_freezer_run_3",
+        "sit_idle": "cp112_freezer_sit_idle",
+        "sit_speaking": "cp112_freezer_sit_speaking",
+        "dispatch_side": "cp112_freezer_dispatch_side",
+        "dispatch_typing": "cp112_freezer_dispatch_typing",
+        "dispatch_command": "cp112_freezer_dispatch_command",
+        "sit_laugh": "cp112_freezer_sit_laugh",
+        "sad": "cp112_freezer_sad",
+        "angry": "cp112_freezer_angry",
+        "ecstatic": "cp112_freezer_ecstatic",
+        "happy": "cp112_freezer_happy",
+        "jump_cheer": "cp112_freezer_jump_cheer",
+        "falling": "cp112_freezer_falling",
+        "laugh": "cp112_freezer_laugh",
+        "floor_laugh": "cp112_freezer_floor_laugh"
+      },
+      "juggernaut": {
+        "neutral": "c112_juggernaut_neutral",
+        "speaking": "c112_juggernaut_speaking",
+        "salute": "c112_juggernaut_salute",
+        "walk_left": "c112_juggernaut_walk_left",
+        "look_back": "c112_juggernaut_look_back",
+        "back": "c112_juggernaut_back",
+        "walk_0": "cp112_juggernaut_walk_0",
+        "walk_1": "cp112_juggernaut_walk_1",
+        "walk_2": "cp112_juggernaut_walk_2",
+        "walk_3": "cp112_juggernaut_walk_3",
+        "run_0": "cp112_juggernaut_run_0",
+        "run_1": "cp112_juggernaut_run_1",
+        "run_2": "cp112_juggernaut_run_2",
+        "run_3": "cp112_juggernaut_run_3",
+        "sit_idle": "cp112_juggernaut_sit_idle",
+        "sit_speaking": "cp112_juggernaut_sit_speaking",
+        "dispatch_side": "cp112_juggernaut_dispatch_side",
+        "dispatch_typing": "cp112_juggernaut_dispatch_typing",
+        "dispatch_command": "cp112_juggernaut_dispatch_command",
+        "sit_laugh": "cp112_juggernaut_sit_laugh",
+        "sad": "cp112_juggernaut_sad",
+        "angry": "cp112_juggernaut_angry",
+        "ecstatic": "cp112_juggernaut_ecstatic",
+        "happy": "cp112_juggernaut_happy",
+        "jump_cheer": "cp112_juggernaut_jump_cheer",
+        "falling": "cp112_juggernaut_falling",
+        "laugh": "cp112_juggernaut_laugh",
+        "floor_laugh": "cp112_juggernaut_floor_laugh"
+      },
+      "yuri": {
+        "neutral": "c112_yuri_neutral",
+        "speaking": "c112_yuri_speaking",
+        "salute": "c112_yuri_salute",
+        "walk_left": "c112_yuri_walk_left",
+        "look_back": "c112_yuri_look_back",
+        "back": "c112_yuri_back",
+        "walk_0": "cp112_yuri_walk_0",
+        "walk_1": "cp112_yuri_walk_1",
+        "walk_2": "cp112_yuri_walk_2",
+        "walk_3": "cp112_yuri_walk_3",
+        "run_0": "cp112_yuri_run_0",
+        "run_1": "cp112_yuri_run_1",
+        "run_2": "cp112_yuri_run_2",
+        "run_3": "cp112_yuri_run_3",
+        "sit_idle": "cp112_yuri_sit_idle",
+        "sit_speaking": "cp112_yuri_sit_speaking",
+        "dispatch_side": "cp112_yuri_dispatch_side",
+        "dispatch_typing": "cp112_yuri_dispatch_typing",
+        "dispatch_command": "cp112_yuri_dispatch_command",
+        "sit_laugh": "cp112_yuri_sit_laugh",
+        "sad": "cp112_yuri_sad",
+        "angry": "cp112_yuri_angry",
+        "ecstatic": "cp112_yuri_ecstatic",
+        "happy": "cp112_yuri_happy",
+        "jump_cheer": "cp112_yuri_jump_cheer",
+        "falling": "cp112_yuri_falling",
+        "laugh": "cp112_yuri_laugh",
+        "floor_laugh": "cp112_yuri_floor_laugh"
+      },
+      "lizzie": {
+        "neutral": "c112_lizzie_neutral",
+        "speaking": "c112_lizzie_speaking",
+        "salute": "c112_lizzie_salute",
+        "walk_left": "c112_lizzie_walk_left",
+        "look_back": "c112_lizzie_look_back",
+        "back": "c112_lizzie_back",
+        "walk_0": "cp112_lizzie_walk_0",
+        "walk_1": "cp112_lizzie_walk_1",
+        "walk_2": "cp112_lizzie_walk_2",
+        "walk_3": "cp112_lizzie_walk_3",
+        "run_0": "cp112_lizzie_run_0",
+        "run_1": "cp112_lizzie_run_1",
+        "run_2": "cp112_lizzie_run_2",
+        "run_3": "cp112_lizzie_run_3",
+        "sit_idle": "cp112_lizzie_sit_idle",
+        "sit_speaking": "cp112_lizzie_sit_speaking",
+        "dispatch_side": "cp112_lizzie_dispatch_side",
+        "dispatch_typing": "cp112_lizzie_dispatch_typing",
+        "dispatch_command": "cp112_lizzie_dispatch_command",
+        "sit_laugh": "cp112_lizzie_sit_laugh",
+        "sad": "cp112_lizzie_sad",
+        "angry": "cp112_lizzie_angry",
+        "ecstatic": "cp112_lizzie_ecstatic",
+        "happy": "cp112_lizzie_happy",
+        "jump_cheer": "cp112_lizzie_jump_cheer",
+        "falling": "cp112_lizzie_falling",
+        "laugh": "cp112_lizzie_laugh",
+        "floor_laugh": "cp112_lizzie_floor_laugh"
+      },
+      "falva": {
+        "neutral": "c112_falva_neutral",
+        "speaking": "c112_falva_speaking",
+        "salute": "c112_falva_salute",
+        "walk_left": "c112_falva_walk_left",
+        "look_back": "c112_falva_look_back",
+        "back": "c112_falva_back",
+        "walk_0": "cp112_falva_walk_0",
+        "walk_1": "cp112_falva_walk_1",
+        "walk_2": "cp112_falva_walk_2",
+        "walk_3": "cp112_falva_walk_3",
+        "run_0": "cp112_falva_run_0",
+        "run_1": "cp112_falva_run_1",
+        "run_2": "cp112_falva_run_2",
+        "run_3": "cp112_falva_run_3",
+        "sit_idle": "cp112_falva_sit_idle",
+        "sit_speaking": "cp112_falva_sit_speaking",
+        "dispatch_side": "cp112_falva_dispatch_side",
+        "dispatch_typing": "cp112_falva_dispatch_typing",
+        "dispatch_command": "cp112_falva_dispatch_command",
+        "sit_laugh": "cp112_falva_sit_laugh",
+        "sad": "cp112_falva_sad",
+        "angry": "cp112_falva_angry",
+        "ecstatic": "cp112_falva_ecstatic",
+        "happy": "cp112_falva_happy",
+        "jump_cheer": "cp112_falva_jump_cheer",
+        "falling": "cp112_falva_falling",
+        "laugh": "cp112_falva_laugh",
+        "floor_laugh": "cp112_falva_floor_laugh"
+      }
+    },
+    "chronos": {
+      "neutral": "c112_chronos_neutral",
+      "turn_right": "c112_chronos_turn_right",
+      "turn_left": "c112_chronos_turn_left",
+      "stern": "c112_chronos_stern",
+      "dialogue": "cp112_chronos_dialogue"
+    }
+  },
+  "performance": {
+    "pilots": {
+      "cole": {
+        "walk_0": "cp112_cole_walk_0",
+        "walk_1": "cp112_cole_walk_1",
+        "walk_2": "cp112_cole_walk_2",
+        "walk_3": "cp112_cole_walk_3",
+        "run_0": "cp112_cole_run_0",
+        "run_1": "cp112_cole_run_1",
+        "run_2": "cp112_cole_run_2",
+        "run_3": "cp112_cole_run_3",
+        "sit_idle": "cp112_cole_sit_idle",
+        "sit_speaking": "cp112_cole_sit_speaking",
+        "dispatch_side": "cp112_cole_dispatch_side",
+        "dispatch_typing": "cp112_cole_dispatch_typing",
+        "dispatch_command": "cp112_cole_dispatch_command",
+        "sit_laugh": "cp112_cole_sit_laugh",
+        "sad": "cp112_cole_sad",
+        "angry": "cp112_cole_angry",
+        "ecstatic": "cp112_cole_ecstatic",
+        "happy": "cp112_cole_happy",
+        "jump_cheer": "cp112_cole_jump_cheer",
+        "falling": "cp112_cole_falling",
+        "laugh": "cp112_cole_laugh",
+        "floor_laugh": "cp112_cole_floor_laugh"
+      },
+      "axel": {
+        "walk_0": "cp112_axel_walk_0",
+        "walk_1": "cp112_axel_walk_1",
+        "walk_2": "cp112_axel_walk_2",
+        "walk_3": "cp112_axel_walk_3",
+        "run_0": "cp112_axel_run_0",
+        "run_1": "cp112_axel_run_1",
+        "run_2": "cp112_axel_run_2",
+        "run_3": "cp112_axel_run_3",
+        "sit_idle": "cp112_axel_sit_idle",
+        "sit_speaking": "cp112_axel_sit_speaking",
+        "dispatch_side": "cp112_axel_dispatch_side",
+        "dispatch_typing": "cp112_axel_dispatch_typing",
+        "dispatch_command": "cp112_axel_dispatch_command",
+        "sit_laugh": "cp112_axel_sit_laugh",
+        "sad": "cp112_axel_sad",
+        "angry": "cp112_axel_angry",
+        "ecstatic": "cp112_axel_ecstatic",
+        "happy": "cp112_axel_happy",
+        "jump_cheer": "cp112_axel_jump_cheer",
+        "falling": "cp112_axel_falling",
+        "laugh": "cp112_axel_laugh",
+        "floor_laugh": "cp112_axel_floor_laugh"
+      },
+      "decker": {
+        "walk_0": "cp112_decker_walk_0",
+        "walk_1": "cp112_decker_walk_1",
+        "walk_2": "cp112_decker_walk_2",
+        "walk_3": "cp112_decker_walk_3",
+        "run_0": "cp112_decker_run_0",
+        "run_1": "cp112_decker_run_1",
+        "run_2": "cp112_decker_run_2",
+        "run_3": "cp112_decker_run_3",
+        "sit_idle": "cp112_decker_sit_idle",
+        "sit_speaking": "cp112_decker_sit_speaking",
+        "dispatch_side": "cp112_decker_dispatch_side",
+        "dispatch_typing": "cp112_decker_dispatch_typing",
+        "dispatch_command": "cp112_decker_dispatch_command",
+        "sit_laugh": "cp112_decker_sit_laugh",
+        "sad": "cp112_decker_sad",
+        "angry": "cp112_decker_angry",
+        "ecstatic": "cp112_decker_ecstatic",
+        "happy": "cp112_decker_happy",
+        "jump_cheer": "cp112_decker_jump_cheer",
+        "falling": "cp112_decker_falling",
+        "laugh": "cp112_decker_laugh",
+        "floor_laugh": "cp112_decker_floor_laugh"
+      },
+      "maverick": {
+        "walk_0": "cp112_maverick_walk_0",
+        "walk_1": "cp112_maverick_walk_1",
+        "walk_2": "cp112_maverick_walk_2",
+        "walk_3": "cp112_maverick_walk_3",
+        "run_0": "cp112_maverick_run_0",
+        "run_1": "cp112_maverick_run_1",
+        "run_2": "cp112_maverick_run_2",
+        "run_3": "cp112_maverick_run_3",
+        "sit_idle": "cp112_maverick_sit_idle",
+        "sit_speaking": "cp112_maverick_sit_speaking",
+        "dispatch_side": "cp112_maverick_dispatch_side",
+        "dispatch_typing": "cp112_maverick_dispatch_typing",
+        "dispatch_command": "cp112_maverick_dispatch_command",
+        "sit_laugh": "cp112_maverick_sit_laugh",
+        "sad": "cp112_maverick_sad",
+        "angry": "cp112_maverick_angry",
+        "ecstatic": "cp112_maverick_ecstatic",
+        "happy": "cp112_maverick_happy",
+        "jump_cheer": "cp112_maverick_jump_cheer",
+        "falling": "cp112_maverick_falling",
+        "laugh": "cp112_maverick_laugh",
+        "floor_laugh": "cp112_maverick_floor_laugh"
+      },
+      "freezer": {
+        "walk_0": "cp112_freezer_walk_0",
+        "walk_1": "cp112_freezer_walk_1",
+        "walk_2": "cp112_freezer_walk_2",
+        "walk_3": "cp112_freezer_walk_3",
+        "run_0": "cp112_freezer_run_0",
+        "run_1": "cp112_freezer_run_1",
+        "run_2": "cp112_freezer_run_2",
+        "run_3": "cp112_freezer_run_3",
+        "sit_idle": "cp112_freezer_sit_idle",
+        "sit_speaking": "cp112_freezer_sit_speaking",
+        "dispatch_side": "cp112_freezer_dispatch_side",
+        "dispatch_typing": "cp112_freezer_dispatch_typing",
+        "dispatch_command": "cp112_freezer_dispatch_command",
+        "sit_laugh": "cp112_freezer_sit_laugh",
+        "sad": "cp112_freezer_sad",
+        "angry": "cp112_freezer_angry",
+        "ecstatic": "cp112_freezer_ecstatic",
+        "happy": "cp112_freezer_happy",
+        "jump_cheer": "cp112_freezer_jump_cheer",
+        "falling": "cp112_freezer_falling",
+        "laugh": "cp112_freezer_laugh",
+        "floor_laugh": "cp112_freezer_floor_laugh"
+      },
+      "juggernaut": {
+        "walk_0": "cp112_juggernaut_walk_0",
+        "walk_1": "cp112_juggernaut_walk_1",
+        "walk_2": "cp112_juggernaut_walk_2",
+        "walk_3": "cp112_juggernaut_walk_3",
+        "run_0": "cp112_juggernaut_run_0",
+        "run_1": "cp112_juggernaut_run_1",
+        "run_2": "cp112_juggernaut_run_2",
+        "run_3": "cp112_juggernaut_run_3",
+        "sit_idle": "cp112_juggernaut_sit_idle",
+        "sit_speaking": "cp112_juggernaut_sit_speaking",
+        "dispatch_side": "cp112_juggernaut_dispatch_side",
+        "dispatch_typing": "cp112_juggernaut_dispatch_typing",
+        "dispatch_command": "cp112_juggernaut_dispatch_command",
+        "sit_laugh": "cp112_juggernaut_sit_laugh",
+        "sad": "cp112_juggernaut_sad",
+        "angry": "cp112_juggernaut_angry",
+        "ecstatic": "cp112_juggernaut_ecstatic",
+        "happy": "cp112_juggernaut_happy",
+        "jump_cheer": "cp112_juggernaut_jump_cheer",
+        "falling": "cp112_juggernaut_falling",
+        "laugh": "cp112_juggernaut_laugh",
+        "floor_laugh": "cp112_juggernaut_floor_laugh"
+      },
+      "yuri": {
+        "walk_0": "cp112_yuri_walk_0",
+        "walk_1": "cp112_yuri_walk_1",
+        "walk_2": "cp112_yuri_walk_2",
+        "walk_3": "cp112_yuri_walk_3",
+        "run_0": "cp112_yuri_run_0",
+        "run_1": "cp112_yuri_run_1",
+        "run_2": "cp112_yuri_run_2",
+        "run_3": "cp112_yuri_run_3",
+        "sit_idle": "cp112_yuri_sit_idle",
+        "sit_speaking": "cp112_yuri_sit_speaking",
+        "dispatch_side": "cp112_yuri_dispatch_side",
+        "dispatch_typing": "cp112_yuri_dispatch_typing",
+        "dispatch_command": "cp112_yuri_dispatch_command",
+        "sit_laugh": "cp112_yuri_sit_laugh",
+        "sad": "cp112_yuri_sad",
+        "angry": "cp112_yuri_angry",
+        "ecstatic": "cp112_yuri_ecstatic",
+        "happy": "cp112_yuri_happy",
+        "jump_cheer": "cp112_yuri_jump_cheer",
+        "falling": "cp112_yuri_falling",
+        "laugh": "cp112_yuri_laugh",
+        "floor_laugh": "cp112_yuri_floor_laugh"
+      },
+      "lizzie": {
+        "walk_0": "cp112_lizzie_walk_0",
+        "walk_1": "cp112_lizzie_walk_1",
+        "walk_2": "cp112_lizzie_walk_2",
+        "walk_3": "cp112_lizzie_walk_3",
+        "run_0": "cp112_lizzie_run_0",
+        "run_1": "cp112_lizzie_run_1",
+        "run_2": "cp112_lizzie_run_2",
+        "run_3": "cp112_lizzie_run_3",
+        "sit_idle": "cp112_lizzie_sit_idle",
+        "sit_speaking": "cp112_lizzie_sit_speaking",
+        "dispatch_side": "cp112_lizzie_dispatch_side",
+        "dispatch_typing": "cp112_lizzie_dispatch_typing",
+        "dispatch_command": "cp112_lizzie_dispatch_command",
+        "sit_laugh": "cp112_lizzie_sit_laugh",
+        "sad": "cp112_lizzie_sad",
+        "angry": "cp112_lizzie_angry",
+        "ecstatic": "cp112_lizzie_ecstatic",
+        "happy": "cp112_lizzie_happy",
+        "jump_cheer": "cp112_lizzie_jump_cheer",
+        "falling": "cp112_lizzie_falling",
+        "laugh": "cp112_lizzie_laugh",
+        "floor_laugh": "cp112_lizzie_floor_laugh"
+      },
+      "falva": {
+        "walk_0": "cp112_falva_walk_0",
+        "walk_1": "cp112_falva_walk_1",
+        "walk_2": "cp112_falva_walk_2",
+        "walk_3": "cp112_falva_walk_3",
+        "run_0": "cp112_falva_run_0",
+        "run_1": "cp112_falva_run_1",
+        "run_2": "cp112_falva_run_2",
+        "run_3": "cp112_falva_run_3",
+        "sit_idle": "cp112_falva_sit_idle",
+        "sit_speaking": "cp112_falva_sit_speaking",
+        "dispatch_side": "cp112_falva_dispatch_side",
+        "dispatch_typing": "cp112_falva_dispatch_typing",
+        "dispatch_command": "cp112_falva_dispatch_command",
+        "sit_laugh": "cp112_falva_sit_laugh",
+        "sad": "cp112_falva_sad",
+        "angry": "cp112_falva_angry",
+        "ecstatic": "cp112_falva_ecstatic",
+        "happy": "cp112_falva_happy",
+        "jump_cheer": "cp112_falva_jump_cheer",
+        "falling": "cp112_falva_falling",
+        "laugh": "cp112_falva_laugh",
+        "floor_laugh": "cp112_falva_floor_laugh"
+      }
+    },
+    "metadata": {
+      "cp112_cole_walk_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_walk_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_walk_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_walk_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_run_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_run_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_run_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_run_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_sit_idle": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_sit_speaking": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_dispatch_side": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_dispatch_typing": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_dispatch_command": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_sit_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_sad": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_angry": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_ecstatic": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_happy": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_jump_cheer": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_falling": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_cole_floor_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_walk_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_walk_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_walk_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_walk_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_run_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_run_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_run_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_run_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_sit_idle": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_sit_speaking": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_dispatch_side": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_dispatch_typing": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_dispatch_command": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_sit_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_sad": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_angry": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_ecstatic": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_happy": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_jump_cheer": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_falling": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_axel_floor_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_walk_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_walk_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_walk_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_walk_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_run_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_run_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_run_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_run_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_sit_idle": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_sit_speaking": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_dispatch_side": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_dispatch_typing": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_dispatch_command": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_sit_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_sad": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_angry": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_ecstatic": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_happy": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_jump_cheer": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_falling": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_decker_floor_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_walk_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_walk_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_walk_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_walk_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_run_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_run_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_run_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_run_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_sit_idle": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_sit_speaking": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_dispatch_side": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_dispatch_typing": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_dispatch_command": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_sit_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_sad": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_angry": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_ecstatic": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_happy": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_jump_cheer": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_falling": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_maverick_floor_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_walk_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_walk_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_walk_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_walk_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_run_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_run_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_run_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_run_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_sit_idle": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_sit_speaking": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_dispatch_side": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_dispatch_typing": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_dispatch_command": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_sit_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_sad": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_angry": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_ecstatic": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_happy": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_jump_cheer": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_falling": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_freezer_floor_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_walk_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_walk_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_walk_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_walk_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_run_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_run_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_run_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_run_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_sit_idle": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_sit_speaking": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_dispatch_side": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_dispatch_typing": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_dispatch_command": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_sit_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_sad": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_angry": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_ecstatic": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_happy": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_jump_cheer": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_falling": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_juggernaut_floor_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_walk_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_walk_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_walk_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_walk_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_run_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_run_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_run_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_run_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_sit_idle": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_sit_speaking": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_dispatch_side": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_dispatch_typing": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_dispatch_command": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_sit_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_sad": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_angry": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_ecstatic": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_happy": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_jump_cheer": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_falling": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_yuri_floor_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_walk_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_walk_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_walk_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_walk_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_run_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_run_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_run_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_run_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_sit_idle": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_sit_speaking": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_dispatch_side": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_dispatch_typing": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_dispatch_command": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_sit_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_sad": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_angry": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_ecstatic": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_happy": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_jump_cheer": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_falling": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_lizzie_floor_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_walk_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_walk_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_walk_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_walk_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_run_0": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_run_1": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_run_2": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_run_3": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_sit_idle": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_sit_speaking": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_dispatch_side": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_dispatch_typing": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_dispatch_command": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_sit_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_sad": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_angry": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_ecstatic": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_happy": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_jump_cheer": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_falling": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      },
+      "cp112_falva_floor_laugh": {
+        "cell": [
+          768,
+          1024
+        ],
+        "pivot": [
+          384,
+          960
+        ]
+      }
+    },
+    "chronos": {
+      "dialogue": "cp112_chronos_dialogue"
+    },
+    "shipScenes": {
+      "cole": "cp112_cole_ship_scene",
+      "axel": "cp112_axel_ship_scene",
+      "decker": "cp112_decker_ship_scene",
+      "maverick": "cp112_maverick_ship_scene",
+      "freezer": "cp112_freezer_ship_scene",
+      "juggernaut": "cp112_juggernaut_ship_scene",
+      "yuri": "cp112_yuri_ship_scene",
+      "lizzie": "cp112_lizzie_ship_scene",
+      "falva": "cp112_falva_ship_scene"
+    }
+  },
+  "ships": {
+    "ship_lizzie_so0": [
+      2,
+      583,
+      158,
+      202,
+      44,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_so1": [
+      228,
+      583,
+      171,
+      164,
+      38,
+      36,
+      224,
+      243
+    ],
+    "ship_lizzie_so2": [
+      454,
+      583,
+      177,
+      89,
+      34,
+      74,
+      224,
+      243
+    ],
+    "ship_lizzie_so3": [
+      680,
+      583,
+      169,
+      180,
+      38,
+      28,
+      224,
+      243
+    ],
+    "ship_lizzie_so4": [
+      2,
+      828,
+      156,
+      194,
+      45,
+      21,
+      224,
+      243
+    ],
+    "ship_lizzie_so5": [
+      228,
+      828,
+      164,
+      178,
+      41,
+      29,
+      224,
+      243
+    ],
+    "ship_lizzie_so6": [
+      454,
+      828,
+      177,
+      109,
+      34,
+      64,
+      224,
+      243
+    ],
+    "ship_lizzie_so7": [
+      680,
+      828,
+      171,
+      164,
+      38,
+      36,
+      224,
+      243
+    ],
+    "ship_lizzie_sp0": [
+      84,
+      2,
+      158,
+      202,
+      33,
+      20,
+      224,
+      243
+    ],
+    "ship_lizzie_pv3": [
+      2,
+      211,
+      151,
+      199,
+      20,
+      2,
+      224,
+      243
+    ],
+    "ship_lizzie_pv2": [
+      246,
+      2,
+      158,
+      202,
+      44,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_r": [
+      2,
+      211,
+      151,
+      199,
+      20,
+      2,
+      224,
+      243
+    ],
+    "ship_lizzie": [
+      246,
+      2,
+      158,
+      202,
+      44,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_pv1": [
+      157,
+      211,
+      149,
+      199,
+      47,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_br0": [
+      246,
+      2,
+      158,
+      202,
+      44,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_br2": [
+      44,
+      2,
+      36,
+      203,
+      93,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_br4": [
+      570,
+      2,
+      164,
+      200,
+      43,
+      0,
+      224,
+      243
+    ],
+    "ship_lizzie_br6": [
+      2,
+      2,
+      38,
+      205,
+      85,
+      0,
+      224,
+      243
+    ],
+    "ship_cole_so0": [
+      2,
+      2,
+      166,
+      210,
+      13,
+      22,
+      193,
+      232
+    ],
+    "ship_falva_br4": [
+      2,
+      212,
+      169,
+      205,
+      20,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_br5": [
+      448,
+      2,
+      114,
+      206,
+      50,
+      9,
+      204,
+      238
+    ],
+    "ship_lizzie_br1": [
+      157,
+      211,
+      149,
+      199,
+      47,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_br3": [
+      310,
+      211,
+      146,
+      196,
+      33,
+      19,
+      224,
+      243
+    ],
+    "ship_lizzie_br5": [
+      738,
+      2,
+      146,
+      200,
+      38,
+      0,
+      224,
+      243
+    ],
+    "ship_lizzie_br7": [
+      2,
+      211,
+      151,
+      199,
+      20,
+      2,
+      224,
+      243
+    ],
+    "ship_decker_sp0": [
+      573,
+      2,
+      157,
+      202,
+      21,
+      14,
+      200,
+      230
+    ],
+    "ship_falva_br3": [
+      331,
+      2,
+      113,
+      206,
+      35,
+      11,
+      204,
+      238
+    ],
+    "ship_yuri_sp0": [
+      2,
+      213,
+      145,
+      179,
+      32,
+      25,
+      209,
+      229
+    ],
+    "ship_cole_pv2": [
+      328,
+      2,
+      148,
+      204,
+      22,
+      8,
+      193,
+      232
+    ],
+    "ship_falva_pv2": [
+      2,
+      2,
+      169,
+      206,
+      20,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_pv3": [
+      216,
+      212,
+      121,
+      205,
+      32,
+      10,
+      204,
+      238
+    ],
+    "ship_yuri_so0": [
+      2,
+      2,
+      176,
+      207,
+      17,
+      22,
+      209,
+      229
+    ],
+    "ship_decker_sp4": [
+      734,
+      2,
+      157,
+      202,
+      21,
+      14,
+      200,
+      230
+    ],
+    "ship_falva": [
+      2,
+      2,
+      169,
+      206,
+      20,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_br0": [
+      2,
+      2,
+      169,
+      206,
+      20,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_br1": [
+      175,
+      2,
+      111,
+      206,
+      57,
+      11,
+      204,
+      238
+    ],
+    "ship_falva_br2": [
+      290,
+      2,
+      37,
+      206,
+      82,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_br6": [
+      175,
+      212,
+      37,
+      205,
+      78,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_br7": [
+      216,
+      212,
+      121,
+      205,
+      32,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_sp4": [
+      739,
+      2,
+      169,
+      206,
+      17,
+      16,
+      204,
+      238
+    ],
+    "ship_yuri_br6": [
+      407,
+      2,
+      39,
+      186,
+      75,
+      0,
+      209,
+      229
+    ],
+    "ship_cole_br6": [
+      836,
+      2,
+      51,
+      201,
+      68,
+      5,
+      193,
+      232
+    ],
+    "ship_cole_sp0": [
+      480,
+      2,
+      148,
+      204,
+      22,
+      14,
+      193,
+      232
+    ],
+    "ship_falva_so0": [
+      341,
+      212,
+      184,
+      205,
+      10,
+      26,
+      204,
+      238
+    ],
+    "ship_yuri": [
+      450,
+      2,
+      145,
+      179,
+      36,
+      21,
+      209,
+      229
+    ],
+    "ship_yuri_br0": [
+      450,
+      2,
+      145,
+      179,
+      36,
+      21,
+      209,
+      229
+    ],
+    "ship_yuri_br2": [
+      364,
+      2,
+      39,
+      187,
+      84,
+      14,
+      209,
+      229
+    ],
+    "ship_yuri_br4": [
+      599,
+      2,
+      151,
+      179,
+      30,
+      4,
+      209,
+      229
+    ],
+    "ship_cole": [
+      328,
+      2,
+      148,
+      204,
+      22,
+      8,
+      193,
+      232
+    ],
+    "ship_cole_br0": [
+      328,
+      2,
+      148,
+      204,
+      22,
+      8,
+      193,
+      232
+    ],
+    "ship_cole_br2": [
+      784,
+      2,
+      48,
+      201,
+      64,
+      7,
+      193,
+      232
+    ],
+    "ship_cole_br4": [
+      172,
+      216,
+      163,
+      200,
+      15,
+      5,
+      193,
+      232
+    ],
+    "ship_cole_sp4": [
+      632,
+      2,
+      148,
+      204,
+      22,
+      14,
+      193,
+      232
+    ],
+    "ship_decker_pv2": [
+      81,
+      2,
+      157,
+      202,
+      31,
+      20,
+      200,
+      230
+    ],
+    "ship_falva_pv4": [
+      175,
+      212,
+      37,
+      205,
+      78,
+      10,
+      204,
+      238
+    ],
+    "ship_yuri_pv2": [
+      450,
+      2,
+      145,
+      179,
+      36,
+      21,
+      209,
+      229
+    ],
+    "ship_falva_sp0": [
+      566,
+      2,
+      169,
+      206,
+      17,
+      16,
+      204,
+      238
+    ],
+    "ship_decker": [
+      81,
+      2,
+      157,
+      202,
+      31,
+      20,
+      200,
+      230
+    ],
+    "ship_decker_br0": [
+      81,
+      2,
+      157,
+      202,
+      31,
+      20,
+      200,
+      230
+    ],
+    "ship_decker_br2": [
+      2,
+      2,
+      35,
+      206,
+      73,
+      17,
+      200,
+      230
+    ],
+    "ship_decker_br4": [
+      242,
+      2,
+      157,
+      202,
+      31,
+      5,
+      200,
+      230
+    ],
+    "ship_decker_br6": [
+      41,
+      2,
+      36,
+      206,
+      71,
+      2,
+      200,
+      230
+    ],
+    "ship_decker_br7": [
+      283,
+      212,
+      118,
+      197,
+      29,
+      8,
+      200,
+      230
+    ],
+    "ship_decker_so0": [
+      403,
+      2,
+      166,
+      202,
+      17,
+      24,
+      200,
+      230
+    ],
+    "ship_cole_br3": [
+      480,
+      216,
+      112,
+      191,
+      41,
+      12,
+      193,
+      232
+    ],
+    "ship_cole_so4": [
+      2,
+      216,
+      166,
+      201,
+      16,
+      14,
+      193,
+      232
+    ],
+    "ship_falva_pv0": [
+      290,
+      2,
+      37,
+      206,
+      82,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_pv1": [
+      175,
+      2,
+      111,
+      206,
+      57,
+      11,
+      204,
+      238
+    ],
+    "ship_falva_r": [
+      216,
+      212,
+      121,
+      205,
+      32,
+      10,
+      204,
+      238
+    ],
+    "ship_lizzie_sp4": [
+      408,
+      2,
+      158,
+      202,
+      33,
+      20,
+      224,
+      243
+    ],
+    "ship_axel": [
+      215,
+      205,
+      136,
+      155,
+      28,
+      36,
+      190,
+      224
+    ],
+    "ship_axel_br0": [
+      215,
+      205,
+      136,
+      155,
+      28,
+      36,
+      190,
+      224
+    ],
+    "ship_axel_br2": [
+      178,
+      205,
+      33,
+      156,
+      73,
+      36,
+      190,
+      224
+    ],
+    "ship_axel_br4": [
+      635,
+      205,
+      137,
+      154,
+      28,
+      20,
+      190,
+      224
+    ],
+    "ship_axel_br6": [
+      776,
+      205,
+      34,
+      154,
+      68,
+      20,
+      190,
+      224
+    ],
+    "ship_axel_sp0": [
+      355,
+      205,
+      136,
+      155,
+      27,
+      34,
+      190,
+      224
+    ],
+    "ship_axel_sp4": [
+      495,
+      205,
+      136,
+      155,
+      27,
+      34,
+      190,
+      224
+    ],
+    "ship_cole_pv1": [
+      339,
+      216,
+      137,
+      196,
+      23,
+      9,
+      193,
+      232
+    ],
+    "ship_cole_pv3": [
+      172,
+      2,
+      152,
+      205,
+      19,
+      4,
+      193,
+      232
+    ],
+    "ship_cole_br5": [
+      596,
+      216,
+      120,
+      189,
+      25,
+      11,
+      193,
+      232
+    ],
+    "ship_decker_pv3": [
+      283,
+      212,
+      118,
+      197,
+      29,
+      8,
+      200,
+      230
+    ],
+    "ship_axel_so0": [
+      2,
+      2,
+      178,
+      199,
+      6,
+      24,
+      190,
+      224
+    ],
+    "ship_falva_l": [
+      175,
+      2,
+      111,
+      206,
+      57,
+      11,
+      204,
+      238
+    ],
+    "ship_axel_pv2": [
+      215,
+      205,
+      136,
+      155,
+      28,
+      36,
+      190,
+      224
+    ],
+    "ship_decker_so7": [
+      130,
+      212,
+      149,
+      198,
+      30,
+      28,
+      200,
+      230
+    ],
+    "ship_yuri_so4": [
+      182,
+      2,
+      178,
+      198,
+      17,
+      18,
+      209,
+      229
+    ],
+    "ship_decker_br3": [
+      2,
+      212,
+      124,
+      200,
+      20,
+      22,
+      200,
+      230
+    ],
+    "ship_decker_br5": [
+      405,
+      212,
+      113,
+      195,
+      46,
+      10,
+      200,
+      230
+    ],
+    "ship_falva_so4": [
+      529,
+      212,
+      178,
+      196,
+      15,
+      24,
+      204,
+      238
+    ],
+    "ship_axel_so4": [
+      184,
+      2,
+      178,
+      195,
+      8,
+      19,
+      190,
+      224
+    ],
+    "ship_decker_pv1": [
+      895,
+      2,
+      123,
+      200,
+      45,
+      22,
+      200,
+      230
+    ],
+    "ship_decker_r": [
+      895,
+      2,
+      123,
+      200,
+      45,
+      22,
+      200,
+      230
+    ],
+    "ship_decker_br1": [
+      895,
+      2,
+      123,
+      200,
+      45,
+      22,
+      200,
+      230
+    ],
+    "ship_juggernaut_pv2": [
+      2,
+      200,
+      164,
+      169,
+      29,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_br4": [
+      170,
+      200,
+      163,
+      169,
+      30,
+      5,
+      200,
+      205
+    ],
+    "ship_juggernaut_so0": [
+      2,
+      2,
+      186,
+      194,
+      7,
+      11,
+      200,
+      205
+    ],
+    "ship_juggernaut_so7": [
+      697,
+      373,
+      194,
+      162,
+      3,
+      23,
+      200,
+      205
+    ],
+    "ship_maverick_br2": [
+      208,
+      2,
+      39,
+      184,
+      77,
+      12,
+      200,
+      211
+    ],
+    "ship_decker_so4": [
+      522,
+      212,
+      170,
+      193,
+      19,
+      33,
+      200,
+      230
+    ],
+    "ship_juggernaut": [
+      2,
+      200,
+      164,
+      169,
+      29,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_br0": [
+      2,
+      200,
+      164,
+      169,
+      29,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_br3": [
+      871,
+      2,
+      146,
+      170,
+      3,
+      16,
+      200,
+      205
+    ],
+    "ship_juggernaut_br5": [
+      348,
+      373,
+      147,
+      163,
+      47,
+      10,
+      200,
+      205
+    ],
+    "ship_juggernaut_sp0": [
+      337,
+      200,
+      164,
+      169,
+      18,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_br1": [
+      813,
+      200,
+      138,
+      167,
+      43,
+      18,
+      200,
+      205
+    ],
+    "ship_lizzie_nf": [
+      246,
+      2,
+      158,
+      202,
+      44,
+      17,
+      224,
+      243
+    ],
+    "ship_decker_l": [
+      283,
+      212,
+      118,
+      197,
+      29,
+      8,
+      200,
+      230
+    ],
+    "ship_juggernaut_l": [
+      673,
+      200,
+      136,
+      168,
+      0,
+      7,
+      200,
+      205
+    ],
+    "ship_juggernaut_br7": [
+      673,
+      200,
+      136,
+      168,
+      0,
+      7,
+      200,
+      205
+    ],
+    "ship_cole_pv0": [
+      784,
+      2,
+      48,
+      201,
+      64,
+      7,
+      193,
+      232
+    ],
+    "ship_cole_pv4": [
+      836,
+      2,
+      51,
+      201,
+      68,
+      5,
+      193,
+      232
+    ],
+    "ship_cole_r": [
+      172,
+      2,
+      152,
+      205,
+      19,
+      4,
+      193,
+      232
+    ],
+    "ship_maverick_br6": [
+      2,
+      2,
+      39,
+      185,
+      76,
+      0,
+      200,
+      211
+    ],
+    "ship_cole_br1": [
+      339,
+      216,
+      137,
+      196,
+      23,
+      9,
+      193,
+      232
+    ],
+    "ship_yuri_br5": [
+      811,
+      396,
+      141,
+      159,
+      49,
+      15,
+      209,
+      229
+    ],
+    "ship_falva_nf": [
+      2,
+      2,
+      169,
+      206,
+      20,
+      10,
+      204,
+      238
+    ],
+    "ship_juggernaut_pv1": [
+      673,
+      200,
+      136,
+      168,
+      0,
+      7,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv3": [
+      813,
+      200,
+      138,
+      167,
+      43,
+      18,
+      200,
+      205
+    ],
+    "ship_yuri_br3": [
+      666,
+      396,
+      141,
+      160,
+      18,
+      28,
+      209,
+      229
+    ],
+    "ship_cole_l": [
+      339,
+      216,
+      137,
+      196,
+      23,
+      9,
+      193,
+      232
+    ],
+    "ship_cole_br7": [
+      172,
+      2,
+      152,
+      205,
+      19,
+      4,
+      193,
+      232
+    ],
+    "ship_decker_pv4": [
+      41,
+      2,
+      36,
+      206,
+      71,
+      2,
+      200,
+      230
+    ],
+    "ship_maverick": [
+      45,
+      2,
+      159,
+      184,
+      34,
+      14,
+      200,
+      211
+    ],
+    "ship_maverick_br0": [
+      45,
+      2,
+      159,
+      184,
+      34,
+      14,
+      200,
+      211
+    ],
+    "ship_maverick_br7": [
+      2,
+      191,
+      139,
+      180,
+      3,
+      2,
+      200,
+      211
+    ],
+    "ship_maverick_sp4": [
+      577,
+      2,
+      159,
+      184,
+      20,
+      13,
+      200,
+      211
+    ],
+    "ship_yuri_pv3": [
+      754,
+      2,
+      145,
+      179,
+      31,
+      6,
+      209,
+      229
+    ],
+    "ship_decker_pv0": [
+      2,
+      2,
+      35,
+      206,
+      73,
+      17,
+      200,
+      230
+    ],
+    "ship_juggernaut_pv4": [
+      382,
+      2,
+      43,
+      178,
+      70,
+      12,
+      200,
+      205
+    ],
+    "ship_juggernaut_r": [
+      813,
+      200,
+      138,
+      167,
+      43,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_so4": [
+      192,
+      2,
+      186,
+      186,
+      10,
+      3,
+      200,
+      205
+    ],
+    "ship_maverick_br4": [
+      251,
+      2,
+      159,
+      184,
+      34,
+      0,
+      200,
+      211
+    ],
+    "ship_yuri_pv1": [
+      480,
+      213,
+      113,
+      165,
+      64,
+      28,
+      209,
+      229
+    ],
+    "ship_yuri_sp5": [
+      334,
+      396,
+      162,
+      162,
+      23,
+      33,
+      209,
+      229
+    ],
+    "ship_yuri_sp3": [
+      168,
+      396,
+      162,
+      162,
+      23,
+      33,
+      209,
+      229
+    ],
+    "ship_axel_pv3": [
+      814,
+      205,
+      137,
+      154,
+      24,
+      20,
+      190,
+      224
+    ],
+    "ship_falva_sp6": [
+      580,
+      604,
+      204,
+      167,
+      0,
+      35,
+      204,
+      238
+    ],
+    "ship_juggernaut_pv0": [
+      429,
+      2,
+      43,
+      178,
+      68,
+      2,
+      200,
+      205
+    ],
+    "ship_axel_pv0": [
+      178,
+      205,
+      33,
+      156,
+      73,
+      36,
+      190,
+      224
+    ],
+    "ship_axel_pv4": [
+      776,
+      205,
+      34,
+      154,
+      68,
+      20,
+      190,
+      224
+    ],
+    "ship_axel_l": [
+      814,
+      205,
+      137,
+      154,
+      24,
+      20,
+      190,
+      224
+    ],
+    "ship_axel_r": [
+      2,
+      369,
+      128,
+      150,
+      44,
+      39,
+      190,
+      224
+    ],
+    "ship_cole_nf": [
+      328,
+      2,
+      148,
+      204,
+      22,
+      8,
+      193,
+      232
+    ],
+    "ship_freezer_sp4": [
+      849,
+      2,
+      144,
+      166,
+      19,
+      14,
+      183,
+      194
+    ],
+    "ship_axel_pv1": [
+      2,
+      369,
+      128,
+      150,
+      44,
+      39,
+      190,
+      224
+    ],
+    "ship_decker_nf": [
+      81,
+      2,
+      157,
+      202,
+      31,
+      20,
+      200,
+      230
+    ],
+    "ship_juggernaut_sp4": [
+      505,
+      200,
+      164,
+      169,
+      18,
+      18,
+      200,
+      205
+    ],
+    "ship_lizzie_pv0": [
+      44,
+      2,
+      36,
+      203,
+      93,
+      17,
+      224,
+      243
+    ],
+    "ship_maverick_sp0": [
+      414,
+      2,
+      159,
+      184,
+      20,
+      13,
+      200,
+      211
+    ],
+    "ship_falva_sp3": [
+      167,
+      421,
+      173,
+      174,
+      15,
+      32,
+      204,
+      238
+    ],
+    "ship_maverick_pv2": [
+      45,
+      2,
+      159,
+      184,
+      34,
+      14,
+      200,
+      211
+    ],
+    "ship_yuri_nf": [
+      450,
+      2,
+      145,
+      179,
+      36,
+      21,
+      209,
+      229
+    ],
+    "ship_yuri_pv0": [
+      364,
+      2,
+      39,
+      187,
+      84,
+      14,
+      209,
+      229
+    ],
+    "ship_yuri_l": [
+      480,
+      213,
+      113,
+      165,
+      64,
+      28,
+      209,
+      229
+    ],
+    "ship_yuri_pv4": [
+      407,
+      2,
+      39,
+      186,
+      75,
+      0,
+      209,
+      229
+    ],
+    "ship_yuri_r": [
+      754,
+      2,
+      145,
+      179,
+      31,
+      6,
+      209,
+      229
+    ],
+    "ship_falva_so3": [
+      711,
+      212,
+      163,
+      179,
+      19,
+      30,
+      204,
+      238
+    ],
+    "ship_falva_so5": [
+      2,
+      421,
+      161,
+      179,
+      27,
+      30,
+      204,
+      238
+    ],
+    "ship_falva_sp5": [
+      698,
+      421,
+      173,
+      173,
+      15,
+      32,
+      204,
+      238
+    ],
+    "ship_maverick_so7": [
+      381,
+      537,
+      189,
+      144,
+      11,
+      56,
+      200,
+      211
+    ],
+    "ship_axel_sp2": [
+      2,
+      523,
+      155,
+      136,
+      17,
+      44,
+      190,
+      224
+    ],
+    "ship_axel_sp6": [
+      161,
+      523,
+      155,
+      136,
+      17,
+      44,
+      190,
+      224
+    ],
+    "ship_lizzie_sp2": [
+      172,
+      414,
+      202,
+      158,
+      11,
+      42,
+      224,
+      243
+    ],
+    "ship_lizzie_sp6": [
+      378,
+      414,
+      202,
+      158,
+      11,
+      42,
+      224,
+      243
+    ],
+    "ship_maverick_so0": [
+      145,
+      191,
+      175,
+      178,
+      13,
+      31,
+      200,
+      211
+    ],
+    "ship_yuri_br7": [
+      754,
+      2,
+      145,
+      179,
+      31,
+      6,
+      209,
+      229
+    ],
+    "ship_axel_nf": [
+      215,
+      205,
+      136,
+      155,
+      28,
+      36,
+      190,
+      224
+    ],
+    "ship_lizzie_sp5": [
+      798,
+      211,
+      166,
+      165,
+      29,
+      39,
+      224,
+      243
+    ],
+    "ship_yuri_br1": [
+      480,
+      213,
+      113,
+      165,
+      64,
+      28,
+      209,
+      229
+    ],
+    "ship_cole_sp7": [
+      2,
+      593,
+      159,
+      159,
+      17,
+      36,
+      193,
+      232
+    ],
+    "ship_juggernaut_br6": [
+      429,
+      2,
+      43,
+      178,
+      68,
+      2,
+      200,
+      205
+    ],
+    "ship_juggernaut_so3": [
+      476,
+      2,
+      193,
+      175,
+      6,
+      3,
+      200,
+      205
+    ],
+    "ship_juggernaut_so5": [
+      673,
+      2,
+      194,
+      175,
+      6,
+      3,
+      200,
+      205
+    ],
+    "ship_lizzie_pv4": [
+      2,
+      2,
+      38,
+      205,
+      85,
+      0,
+      224,
+      243
+    ],
+    "ship_freezer_br2": [
+      205,
+      2,
+      43,
+      171,
+      64,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_br6": [
+      157,
+      2,
+      44,
+      172,
+      65,
+      11,
+      183,
+      194
+    ],
+    "ship_juggernaut_br2": [
+      382,
+      2,
+      43,
+      178,
+      70,
+      12,
+      200,
+      205
+    ],
+    "ship_lizzie_l": [
+      157,
+      211,
+      149,
+      199,
+      47,
+      17,
+      224,
+      243
+    ],
+    "ship_freezer_so0": [
+      2,
+      2,
+      151,
+      173,
+      16,
+      8,
+      183,
+      194
+    ],
+    "ship_freezer_sp0": [
+      701,
+      2,
+      144,
+      166,
+      19,
+      14,
+      183,
+      194
+    ],
+    "ship_maverick_pv3": [
+      2,
+      191,
+      139,
+      180,
+      3,
+      2,
+      200,
+      211
+    ],
+    "ship_yuri_sp7": [
+      500,
+      396,
+      162,
+      162,
+      23,
+      33,
+      209,
+      229
+    ],
+    "ship_falva_so1": [
+      2,
+      604,
+      181,
+      172,
+      19,
+      46,
+      204,
+      238
+    ],
+    "ship_falva_so7": [
+      187,
+      604,
+      181,
+      172,
+      10,
+      46,
+      204,
+      238
+    ],
+    "ship_freezer_br4": [
+      547,
+      2,
+      150,
+      166,
+      17,
+      12,
+      183,
+      194
+    ],
+    "ship_freezer_so7": [
+      2,
+      498,
+      148,
+      139,
+      19,
+      33,
+      183,
+      194
+    ],
+    "ship_maverick_br5": [
+      324,
+      191,
+      133,
+      176,
+      50,
+      4,
+      200,
+      211
+    ],
+    "ship_yuri_sp1": [
+      2,
+      396,
+      162,
+      162,
+      23,
+      33,
+      209,
+      229
+    ],
+    "ship_axel_br1": [
+      2,
+      369,
+      128,
+      150,
+      44,
+      39,
+      190,
+      224
+    ],
+    "ship_axel_br3": [
+      134,
+      369,
+      132,
+      150,
+      0,
+      39,
+      190,
+      224
+    ],
+    "ship_axel_br5": [
+      270,
+      369,
+      133,
+      149,
+      34,
+      22,
+      190,
+      224
+    ],
+    "ship_axel_br7": [
+      814,
+      205,
+      137,
+      154,
+      24,
+      20,
+      190,
+      224
+    ],
+    "ship_cole_so7": [
+      720,
+      216,
+      166,
+      171,
+      14,
+      42,
+      193,
+      232
+    ],
+    "ship_maverick_so4": [
+      461,
+      191,
+      173,
+      171,
+      0,
+      38,
+      200,
+      211
+    ],
+    "ship_lizzie_sp7": [
+      460,
+      211,
+      165,
+      166,
+      29,
+      38,
+      224,
+      243
+    ],
+    "ship_maverick_br3": [
+      867,
+      2,
+      121,
+      182,
+      23,
+      15,
+      200,
+      211
+    ],
+    "ship_maverick_sp3": [
+      355,
+      375,
+      158,
+      158,
+      21,
+      26,
+      200,
+      211
+    ],
+    "ship_decker_sp7": [
+      569,
+      416,
+      155,
+      155,
+      22,
+      37,
+      200,
+      230
+    ],
+    "ship_freezer_pv2": [
+      399,
+      2,
+      144,
+      166,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_so4": [
+      252,
+      2,
+      143,
+      169,
+      22,
+      25,
+      183,
+      194
+    ],
+    "ship_maverick_sp5": [
+      517,
+      375,
+      158,
+      158,
+      21,
+      26,
+      200,
+      211
+    ],
+    "ship_cole_so1": [
+      2,
+      421,
+      169,
+      168,
+      16,
+      46,
+      193,
+      232
+    ],
+    "ship_cole_sp1": [
+      520,
+      421,
+      159,
+      159,
+      17,
+      36,
+      193,
+      232
+    ],
+    "ship_cole_sp5": [
+      846,
+      421,
+      159,
+      159,
+      17,
+      36,
+      193,
+      232
+    ],
+    "ship_decker_sp1": [
+      728,
+      416,
+      156,
+      154,
+      22,
+      38,
+      200,
+      230
+    ],
+    "ship_freezer_pv1": [
+      386,
+      179,
+      131,
+      163,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_lizzie_sp1": [
+      2,
+      414,
+      166,
+      165,
+      29,
+      39,
+      224,
+      243
+    ],
+    "ship_maverick_r": [
+      2,
+      191,
+      139,
+      180,
+      3,
+      2,
+      200,
+      211
+    ],
+    "ship_axel_so7": [
+      366,
+      2,
+      171,
+      167,
+      4,
+      40,
+      190,
+      224
+    ],
+    "ship_cole_so3": [
+      175,
+      421,
+      168,
+      167,
+      14,
+      37,
+      193,
+      232
+    ],
+    "ship_decker_so1": [
+      696,
+      212,
+      161,
+      167,
+      18,
+      55,
+      200,
+      230
+    ],
+    "ship_decker_sp2": [
+      2,
+      416,
+      200,
+      155,
+      0,
+      37,
+      200,
+      230
+    ],
+    "ship_decker_sp3": [
+      206,
+      416,
+      155,
+      155,
+      22,
+      37,
+      200,
+      230
+    ],
+    "ship_freezer_pv3": [
+      2,
+      179,
+      123,
+      164,
+      38,
+      15,
+      183,
+      194
+    ],
+    "ship_maverick_nf": [
+      45,
+      2,
+      159,
+      184,
+      34,
+      14,
+      200,
+      211
+    ],
+    "ship_cole_sp2": [
+      165,
+      593,
+      193,
+      140,
+      0,
+      46,
+      193,
+      232
+    ],
+    "ship_decker_sp5": [
+      2,
+      575,
+      156,
+      154,
+      22,
+      38,
+      200,
+      230
+    ],
+    "ship_freezer": [
+      399,
+      2,
+      144,
+      166,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_br0": [
+      399,
+      2,
+      144,
+      166,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_juggernaut_sp7": [
+      491,
+      541,
+      159,
+      159,
+      20,
+      23,
+      200,
+      205
+    ],
+    "ship_yuri_so7": [
+      300,
+      213,
+      176,
+      166,
+      23,
+      44,
+      209,
+      229
+    ],
+    "ship_freezer_br5": [
+      256,
+      179,
+      126,
+      164,
+      25,
+      13,
+      183,
+      194
+    ],
+    "ship_juggernaut_sp1": [
+      2,
+      541,
+      159,
+      160,
+      20,
+      22,
+      200,
+      205
+    ],
+    "ship_maverick_pv1": [
+      740,
+      2,
+      123,
+      182,
+      45,
+      15,
+      200,
+      211
+    ],
+    "ship_yuri_sp4": [
+      151,
+      213,
+      145,
+      179,
+      32,
+      25,
+      209,
+      229
+    ],
+    "ship_axel_sp1": [
+      407,
+      369,
+      138,
+      137,
+      26,
+      43,
+      190,
+      224
+    ],
+    "ship_axel_sp7": [
+      832,
+      369,
+      137,
+      137,
+      26,
+      43,
+      190,
+      224
+    ],
+    "ship_cole_so5": [
+      347,
+      421,
+      169,
+      164,
+      16,
+      37,
+      193,
+      232
+    ],
+    "ship_falva_sp1": [
+      521,
+      421,
+      173,
+      173,
+      15,
+      32,
+      204,
+      238
+    ],
+    "ship_falva_sp7": [
+      344,
+      421,
+      173,
+      174,
+      15,
+      32,
+      204,
+      238
+    ],
+    "ship_freezer_br3": [
+      129,
+      179,
+      123,
+      164,
+      24,
+      15,
+      183,
+      194
+    ],
+    "ship_freezer_br7": [
+      386,
+      179,
+      131,
+      163,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_juggernaut_sp6": [
+      175,
+      373,
+      169,
+      164,
+      15,
+      20,
+      200,
+      205
+    ],
+    "ship_yuri_so1": [
+      597,
+      213,
+      182,
+      164,
+      10,
+      46,
+      209,
+      229
+    ],
+    "ship_yuri_so3": [
+      783,
+      213,
+      177,
+      164,
+      15,
+      39,
+      209,
+      229
+    ],
+    "ship_freezer_so3": [
+      521,
+      179,
+      134,
+      163,
+      26,
+      26,
+      183,
+      194
+    ],
+    "ship_freezer_so5": [
+      659,
+      179,
+      130,
+      163,
+      30,
+      26,
+      183,
+      194
+    ],
+    "ship_juggernaut_sp2": [
+      2,
+      373,
+      169,
+      164,
+      15,
+      20,
+      200,
+      205
+    ],
+    "ship_yuri_sp6": [
+      366,
+      562,
+      179,
+      145,
+      15,
+      42,
+      209,
+      229
+    ],
+    "ship_freezer_br1": [
+      2,
+      179,
+      123,
+      164,
+      38,
+      15,
+      183,
+      194
+    ],
+    "ship_juggernaut_nf": [
+      2,
+      200,
+      164,
+      169,
+      29,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_so1": [
+      499,
+      373,
+      194,
+      162,
+      3,
+      23,
+      200,
+      205
+    ],
+    "ship_yuri_sp2": [
+      183,
+      562,
+      179,
+      145,
+      15,
+      42,
+      209,
+      229
+    ],
+    "ship_axel_so3": [
+      541,
+      2,
+      159,
+      161,
+      0,
+      40,
+      190,
+      224
+    ],
+    "ship_axel_so5": [
+      704,
+      2,
+      159,
+      161,
+      31,
+      40,
+      190,
+      224
+    ],
+    "ship_axel_so1": [
+      2,
+      205,
+      172,
+      160,
+      18,
+      47,
+      190,
+      224
+    ],
+    "ship_lizzie_sp3": [
+      629,
+      211,
+      165,
+      166,
+      29,
+      38,
+      224,
+      243
+    ],
+    "ship_maverick_pv4": [
+      2,
+      2,
+      39,
+      185,
+      76,
+      0,
+      200,
+      211
+    ],
+    "ship_yuri_so5": [
+      2,
+      562,
+      177,
+      159,
+      23,
+      39,
+      209,
+      229
+    ],
+    "ship_decker_sp6": [
+      365,
+      416,
+      200,
+      155,
+      0,
+      37,
+      200,
+      230
+    ],
+    "ship_maverick_br1": [
+      740,
+      2,
+      123,
+      182,
+      45,
+      15,
+      200,
+      211
+    ],
+    "ship_maverick_so3": [
+      2,
+      375,
+      187,
+      158,
+      0,
+      51,
+      200,
+      211
+    ],
+    "ship_falva_sp2": [
+      372,
+      604,
+      204,
+      167,
+      0,
+      35,
+      204,
+      238
+    ],
+    "ship_freezer_pv4": [
+      205,
+      2,
+      43,
+      171,
+      64,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_r": [
+      386,
+      179,
+      131,
+      163,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_cole_sp3": [
+      683,
+      421,
+      159,
+      159,
+      17,
+      36,
+      193,
+      232
+    ],
+    "ship_freezer_pv0": [
+      157,
+      2,
+      44,
+      172,
+      65,
+      11,
+      183,
+      194
+    ],
+    "ship_freezer_l": [
+      2,
+      179,
+      123,
+      164,
+      38,
+      15,
+      183,
+      194
+    ],
+    "ship_maverick_pv0": [
+      208,
+      2,
+      39,
+      184,
+      77,
+      12,
+      200,
+      211
+    ],
+    "ship_maverick_l": [
+      740,
+      2,
+      123,
+      182,
+      45,
+      15,
+      200,
+      211
+    ],
+    "ship_maverick_so5": [
+      2,
+      537,
+      182,
+      156,
+      0,
+      53,
+      200,
+      211
+    ],
+    "ship_cole_sp6": [
+      362,
+      593,
+      193,
+      140,
+      0,
+      46,
+      193,
+      232
+    ],
+    "ship_axel_sp3": [
+      549,
+      369,
+      137,
+      137,
+      26,
+      43,
+      190,
+      224
+    ],
+    "ship_axel_sp5": [
+      690,
+      369,
+      138,
+      137,
+      26,
+      43,
+      190,
+      224
+    ],
+    "ship_freezer_nf": [
+      399,
+      2,
+      144,
+      166,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_maverick_sp1": [
+      193,
+      375,
+      158,
+      158,
+      21,
+      26,
+      200,
+      211
+    ],
+    "ship_maverick_sp7": [
+      679,
+      375,
+      158,
+      158,
+      21,
+      26,
+      200,
+      211
+    ],
+    "ship_freezer_sp7": [
+      303,
+      347,
+      147,
+      146,
+      18,
+      24,
+      183,
+      194
+    ],
+    "ship_freezer_sp1": [
+      793,
+      179,
+      146,
+      147,
+      18,
+      23,
+      183,
+      194
+    ],
+    "ship_maverick_so1": [
+      188,
+      537,
+      189,
+      144,
+      0,
+      56,
+      200,
+      211
+    ],
+    "ship_decker_so3": [
+      162,
+      575,
+      159,
+      140,
+      40,
+      64,
+      200,
+      230
+    ],
+    "ship_decker_so5": [
+      325,
+      575,
+      157,
+      140,
+      5,
+      64,
+      200,
+      230
+    ],
+    "ship_freezer_so1": [
+      794,
+      347,
+      148,
+      139,
+      16,
+      33,
+      183,
+      194
+    ],
+    "ship_juggernaut_sp3": [
+      328,
+      541,
+      159,
+      159,
+      20,
+      23,
+      200,
+      205
+    ],
+    "ship_juggernaut_sp5": [
+      165,
+      541,
+      159,
+      160,
+      20,
+      22,
+      200,
+      205
+    ],
+    "ship_freezer_sp3": [
+      152,
+      347,
+      147,
+      146,
+      18,
+      24,
+      183,
+      194
+    ],
+    "ship_freezer_sp5": [
+      2,
+      347,
+      146,
+      147,
+      18,
+      23,
+      183,
+      194
+    ],
+    "ship_freezer_so6": [
+      154,
+      498,
+      169,
+      129,
+      12,
+      37,
+      183,
+      194
+    ],
+    "ship_decker_so6": [
+      486,
+      575,
+      196,
+      124,
+      4,
+      69,
+      200,
+      230
+    ],
+    "ship_freezer_sp6": [
+      624,
+      347,
+      166,
+      144,
+      8,
+      25,
+      183,
+      194
+    ],
+    "ship_freezer_sp2": [
+      454,
+      347,
+      166,
+      144,
+      8,
+      25,
+      183,
+      194
+    ],
+    "ship_maverick_sp6": [
+      826,
+      191,
+      184,
+      159,
+      8,
+      26,
+      200,
+      211
+    ],
+    "ship_maverick_sp2": [
+      638,
+      191,
+      184,
+      159,
+      8,
+      26,
+      200,
+      211
+    ],
+    "ship_falva_so6": [
+      788,
+      604,
+      200,
+      112,
+      4,
+      65,
+      204,
+      238
+    ],
+    "ship_maverick_so6": [
+      574,
+      537,
+      196,
+      96,
+      0,
+      68,
+      200,
+      211
+    ],
+    "ship_yuri_so6": [
+      549,
+      562,
+      197,
+      94,
+      10,
+      72,
+      209,
+      229
+    ],
+    "ship_cole_so6": [
+      559,
+      593,
+      188,
+      93,
+      5,
+      63,
+      193,
+      232
+    ],
+    "ship_freezer_so2": [
+      327,
+      498,
+      179,
+      91,
+      2,
+      63,
+      183,
+      194
+    ],
+    "ship_juggernaut_so6": [
+      654,
+      541,
+      194,
+      89,
+      6,
+      51,
+      200,
+      205
+    ],
+    "ship_falva_so2": [
+      2,
+      780,
+      198,
+      88,
+      3,
+      65,
+      204,
+      238
+    ],
+    "ship_axel_so6": [
+      320,
+      523,
+      185,
+      86,
+      5,
+      75,
+      190,
+      224
+    ],
+    "ship_juggernaut_so2": [
+      2,
+      705,
+      196,
+      85,
+      3,
+      47,
+      200,
+      205
+    ],
+    "ship_axel_so2": [
+      509,
+      523,
+      186,
+      81,
+      2,
+      74,
+      190,
+      224
+    ],
+    "ship_yuri_so2": [
+      750,
+      562,
+      205,
+      80,
+      0,
+      73,
+      209,
+      229
+    ],
+    "ship_cole_so2": [
+      751,
+      593,
+      189,
+      78,
+      2,
+      72,
+      193,
+      232
+    ],
+    "ship_maverick_so2": [
+      774,
+      537,
+      196,
+      78,
+      0,
+      90,
+      200,
+      211
+    ],
+    "ship_decker_so2": [
+      686,
+      575,
+      196,
+      73,
+      3,
+      79,
+      200,
+      230
+    ],
+    "ship_axel_g1": [
+      2,
+      663,
+      136,
+      155,
+      28,
+      36,
+      190,
+      224
+    ],
+    "ship_axel_g2": [
+      140,
+      663,
+      136,
+      155,
+      28,
+      36,
+      190,
+      224
+    ],
+    "ship_axel_pv2_g1": [
+      2,
+      663,
+      136,
+      155,
+      28,
+      36,
+      190,
+      224
+    ],
+    "ship_axel_pv2_g2": [
+      140,
+      663,
+      136,
+      155,
+      28,
+      36,
+      190,
+      224
+    ],
+    "ship_axel_l_g1": [
+      278,
+      663,
+      137,
+      154,
+      24,
+      20,
+      190,
+      224
+    ],
+    "ship_axel_l_g2": [
+      417,
+      663,
+      137,
+      154,
+      24,
+      20,
+      190,
+      224
+    ],
+    "ship_axel_pv3_g1": [
+      278,
+      663,
+      137,
+      154,
+      24,
+      20,
+      190,
+      224
+    ],
+    "ship_axel_pv3_g2": [
+      417,
+      663,
+      137,
+      154,
+      24,
+      20,
+      190,
+      224
+    ],
+    "ship_axel_r_g1": [
+      556,
+      663,
+      128,
+      150,
+      44,
+      39,
+      190,
+      224
+    ],
+    "ship_axel_r_g2": [
+      686,
+      663,
+      128,
+      150,
+      44,
+      39,
+      190,
+      224
+    ],
+    "ship_axel_pv1_g1": [
+      556,
+      663,
+      128,
+      150,
+      44,
+      39,
+      190,
+      224
+    ],
+    "ship_axel_pv1_g2": [
+      686,
+      663,
+      128,
+      150,
+      44,
+      39,
+      190,
+      224
+    ],
+    "ship_axel_pv0_g1": [
+      816,
+      663,
+      33,
+      156,
+      73,
+      36,
+      190,
+      224
+    ],
+    "ship_axel_pv0_g2": [
+      851,
+      663,
+      33,
+      156,
+      73,
+      36,
+      190,
+      224
+    ],
+    "ship_axel_pv4_g1": [
+      886,
+      663,
+      34,
+      154,
+      68,
+      20,
+      190,
+      224
+    ],
+    "ship_axel_pv4_g2": [
+      922,
+      663,
+      34,
+      154,
+      68,
+      20,
+      190,
+      224
+    ],
+    "ship_cole_g1": [
+      2,
+      756,
+      148,
+      204,
+      22,
+      8,
+      193,
+      232
+    ],
+    "ship_cole_g2": [
+      152,
+      756,
+      148,
+      204,
+      22,
+      8,
+      193,
+      232
+    ],
+    "ship_cole_pv2_g1": [
+      2,
+      756,
+      148,
+      204,
+      22,
+      8,
+      193,
+      232
+    ],
+    "ship_cole_pv2_g2": [
+      152,
+      756,
+      148,
+      204,
+      22,
+      8,
+      193,
+      232
+    ],
+    "ship_cole_l_g1": [
+      302,
+      756,
+      137,
+      196,
+      23,
+      9,
+      193,
+      232
+    ],
+    "ship_cole_l_g2": [
+      441,
+      756,
+      137,
+      196,
+      23,
+      9,
+      193,
+      232
+    ],
+    "ship_cole_pv1_g1": [
+      302,
+      756,
+      137,
+      196,
+      23,
+      9,
+      193,
+      232
+    ],
+    "ship_cole_pv1_g2": [
+      441,
+      756,
+      137,
+      196,
+      23,
+      9,
+      193,
+      232
+    ],
+    "ship_cole_r_g1": [
+      580,
+      756,
+      152,
+      205,
+      19,
+      4,
+      193,
+      232
+    ],
+    "ship_cole_r_g2": [
+      734,
+      756,
+      152,
+      205,
+      19,
+      4,
+      193,
+      232
+    ],
+    "ship_cole_pv3_g1": [
+      580,
+      756,
+      152,
+      205,
+      19,
+      4,
+      193,
+      232
+    ],
+    "ship_cole_pv3_g2": [
+      734,
+      756,
+      152,
+      205,
+      19,
+      4,
+      193,
+      232
+    ],
+    "ship_cole_pv0_g1": [
+      888,
+      756,
+      48,
+      201,
+      64,
+      7,
+      193,
+      232
+    ],
+    "ship_cole_pv0_g2": [
+      938,
+      756,
+      48,
+      201,
+      64,
+      7,
+      193,
+      232
+    ],
+    "ship_cole_pv4_g1": [
+      988,
+      756,
+      51,
+      201,
+      68,
+      5,
+      193,
+      232
+    ],
+    "ship_cole_pv4_g2": [
+      1041,
+      756,
+      51,
+      201,
+      68,
+      5,
+      193,
+      232
+    ],
+    "ship_decker_g1": [
+      2,
+      733,
+      157,
+      202,
+      31,
+      20,
+      200,
+      230
+    ],
+    "ship_decker_g2": [
+      161,
+      733,
+      157,
+      202,
+      31,
+      20,
+      200,
+      230
+    ],
+    "ship_decker_pv2_g1": [
+      2,
+      733,
+      157,
+      202,
+      31,
+      20,
+      200,
+      230
+    ],
+    "ship_decker_pv2_g2": [
+      161,
+      733,
+      157,
+      202,
+      31,
+      20,
+      200,
+      230
+    ],
+    "ship_decker_l_g1": [
+      320,
+      733,
+      118,
+      197,
+      29,
+      8,
+      200,
+      230
+    ],
+    "ship_decker_l_g2": [
+      440,
+      733,
+      118,
+      197,
+      29,
+      8,
+      200,
+      230
+    ],
+    "ship_decker_pv3_g1": [
+      320,
+      733,
+      118,
+      197,
+      29,
+      8,
+      200,
+      230
+    ],
+    "ship_decker_pv3_g2": [
+      440,
+      733,
+      118,
+      197,
+      29,
+      8,
+      200,
+      230
+    ],
+    "ship_decker_r_g1": [
+      560,
+      733,
+      123,
+      200,
+      45,
+      22,
+      200,
+      230
+    ],
+    "ship_decker_r_g2": [
+      685,
+      733,
+      123,
+      200,
+      45,
+      22,
+      200,
+      230
+    ],
+    "ship_decker_pv1_g1": [
+      560,
+      733,
+      123,
+      200,
+      45,
+      22,
+      200,
+      230
+    ],
+    "ship_decker_pv1_g2": [
+      685,
+      733,
+      123,
+      200,
+      45,
+      22,
+      200,
+      230
+    ],
+    "ship_decker_pv0_g1": [
+      810,
+      733,
+      35,
+      206,
+      73,
+      17,
+      200,
+      230
+    ],
+    "ship_decker_pv0_g2": [
+      847,
+      733,
+      35,
+      206,
+      73,
+      17,
+      200,
+      230
+    ],
+    "ship_decker_pv4_g1": [
+      884,
+      733,
+      36,
+      206,
+      71,
+      2,
+      200,
+      230
+    ],
+    "ship_decker_pv4_g2": [
+      922,
+      733,
+      36,
+      206,
+      71,
+      2,
+      200,
+      230
+    ],
+    "ship_falva_g1": [
+      2,
+      872,
+      169,
+      206,
+      20,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_g2": [
+      173,
+      872,
+      169,
+      206,
+      20,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_pv2_g1": [
+      2,
+      872,
+      169,
+      206,
+      20,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_pv2_g2": [
+      173,
+      872,
+      169,
+      206,
+      20,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_l_g1": [
+      344,
+      872,
+      111,
+      206,
+      57,
+      11,
+      204,
+      238
+    ],
+    "ship_falva_l_g2": [
+      457,
+      872,
+      111,
+      206,
+      57,
+      11,
+      204,
+      238
+    ],
+    "ship_falva_pv1_g1": [
+      344,
+      872,
+      111,
+      206,
+      57,
+      11,
+      204,
+      238
+    ],
+    "ship_falva_pv1_g2": [
+      457,
+      872,
+      111,
+      206,
+      57,
+      11,
+      204,
+      238
+    ],
+    "ship_falva_r_g1": [
+      570,
+      872,
+      121,
+      205,
+      32,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_r_g2": [
+      693,
+      872,
+      121,
+      205,
+      32,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_pv3_g1": [
+      570,
+      872,
+      121,
+      205,
+      32,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_pv3_g2": [
+      693,
+      872,
+      121,
+      205,
+      32,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_pv0_g1": [
+      816,
+      872,
+      37,
+      206,
+      82,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_pv0_g2": [
+      855,
+      872,
+      37,
+      206,
+      82,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_pv4_g1": [
+      894,
+      872,
+      37,
+      205,
+      78,
+      10,
+      204,
+      238
+    ],
+    "ship_falva_pv4_g2": [
+      933,
+      872,
+      37,
+      205,
+      78,
+      10,
+      204,
+      238
+    ],
+    "ship_freezer_g1": [
+      2,
+      641,
+      144,
+      166,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_g2": [
+      148,
+      641,
+      144,
+      166,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_pv2_g1": [
+      2,
+      641,
+      144,
+      166,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_pv2_g2": [
+      148,
+      641,
+      144,
+      166,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_l_g1": [
+      294,
+      641,
+      123,
+      164,
+      38,
+      15,
+      183,
+      194
+    ],
+    "ship_freezer_l_g2": [
+      419,
+      641,
+      123,
+      164,
+      38,
+      15,
+      183,
+      194
+    ],
+    "ship_freezer_pv3_g1": [
+      294,
+      641,
+      123,
+      164,
+      38,
+      15,
+      183,
+      194
+    ],
+    "ship_freezer_pv3_g2": [
+      419,
+      641,
+      123,
+      164,
+      38,
+      15,
+      183,
+      194
+    ],
+    "ship_freezer_r_g1": [
+      544,
+      641,
+      131,
+      163,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_r_g2": [
+      677,
+      641,
+      131,
+      163,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_pv1_g1": [
+      544,
+      641,
+      131,
+      163,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_pv1_g2": [
+      677,
+      641,
+      131,
+      163,
+      21,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_pv0_g1": [
+      810,
+      641,
+      44,
+      172,
+      65,
+      11,
+      183,
+      194
+    ],
+    "ship_freezer_pv0_g2": [
+      856,
+      641,
+      44,
+      172,
+      65,
+      11,
+      183,
+      194
+    ],
+    "ship_freezer_pv4_g1": [
+      902,
+      641,
+      43,
+      171,
+      64,
+      14,
+      183,
+      194
+    ],
+    "ship_freezer_pv4_g2": [
+      947,
+      641,
+      43,
+      171,
+      64,
+      14,
+      183,
+      194
+    ],
+    "ship_juggernaut_g1": [
+      2,
+      794,
+      164,
+      169,
+      29,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_g2": [
+      168,
+      794,
+      164,
+      169,
+      29,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv2_g1": [
+      2,
+      794,
+      164,
+      169,
+      29,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv2_g2": [
+      168,
+      794,
+      164,
+      169,
+      29,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_l_g1": [
+      334,
+      794,
+      136,
+      168,
+      0,
+      7,
+      200,
+      205
+    ],
+    "ship_juggernaut_l_g2": [
+      472,
+      794,
+      136,
+      168,
+      0,
+      7,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv1_g1": [
+      334,
+      794,
+      136,
+      168,
+      0,
+      7,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv1_g2": [
+      472,
+      794,
+      136,
+      168,
+      0,
+      7,
+      200,
+      205
+    ],
+    "ship_juggernaut_r_g1": [
+      610,
+      794,
+      138,
+      167,
+      43,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_r_g2": [
+      750,
+      794,
+      138,
+      167,
+      43,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv3_g1": [
+      610,
+      794,
+      138,
+      167,
+      43,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv3_g2": [
+      750,
+      794,
+      138,
+      167,
+      43,
+      18,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv0_g1": [
+      890,
+      794,
+      43,
+      178,
+      68,
+      2,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv0_g2": [
+      935,
+      794,
+      43,
+      178,
+      68,
+      2,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv4_g1": [
+      980,
+      794,
+      43,
+      178,
+      70,
+      12,
+      200,
+      205
+    ],
+    "ship_juggernaut_pv4_g2": [
+      1025,
+      794,
+      43,
+      178,
+      70,
+      12,
+      200,
+      205
+    ],
+    "ship_lizzie_g1": [
+      2,
+      1075,
+      158,
+      202,
+      44,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_g2": [
+      162,
+      1075,
+      158,
+      202,
+      44,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_pv2_g1": [
+      2,
+      1075,
+      158,
+      202,
+      44,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_pv2_g2": [
+      162,
+      1075,
+      158,
+      202,
+      44,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_l_g1": [
+      322,
+      1075,
+      149,
+      199,
+      47,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_l_g2": [
+      473,
+      1075,
+      149,
+      199,
+      47,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_pv1_g1": [
+      322,
+      1075,
+      149,
+      199,
+      47,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_pv1_g2": [
+      473,
+      1075,
+      149,
+      199,
+      47,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_r_g1": [
+      624,
+      1075,
+      151,
+      199,
+      20,
+      2,
+      224,
+      243
+    ],
+    "ship_lizzie_r_g2": [
+      777,
+      1075,
+      151,
+      199,
+      20,
+      2,
+      224,
+      243
+    ],
+    "ship_lizzie_pv3_g1": [
+      624,
+      1075,
+      151,
+      199,
+      20,
+      2,
+      224,
+      243
+    ],
+    "ship_lizzie_pv3_g2": [
+      777,
+      1075,
+      151,
+      199,
+      20,
+      2,
+      224,
+      243
+    ],
+    "ship_lizzie_pv0_g1": [
+      930,
+      1075,
+      36,
+      203,
+      93,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_pv0_g2": [
+      968,
+      1075,
+      36,
+      203,
+      93,
+      17,
+      224,
+      243
+    ],
+    "ship_lizzie_pv4_g1": [
+      1006,
+      1075,
+      38,
+      205,
+      85,
+      0,
+      224,
+      243
+    ],
+    "ship_lizzie_pv4_g2": [
+      1046,
+      1075,
+      38,
+      205,
+      85,
+      0,
+      224,
+      243
+    ],
+    "ship_maverick_g1": [
+      2,
+      697,
+      159,
+      184,
+      34,
+      14,
+      200,
+      211
+    ],
+    "ship_maverick_g2": [
+      163,
+      697,
+      159,
+      184,
+      34,
+      14,
+      200,
+      211
+    ],
+    "ship_maverick_pv2_g1": [
+      2,
+      697,
+      159,
+      184,
+      34,
+      14,
+      200,
+      211
+    ],
+    "ship_maverick_pv2_g2": [
+      163,
+      697,
+      159,
+      184,
+      34,
+      14,
+      200,
+      211
+    ],
+    "ship_maverick_l_g1": [
+      324,
+      697,
+      123,
+      182,
+      45,
+      15,
+      200,
+      211
+    ],
+    "ship_maverick_l_g2": [
+      449,
+      697,
+      123,
+      182,
+      45,
+      15,
+      200,
+      211
+    ],
+    "ship_maverick_pv1_g1": [
+      324,
+      697,
+      123,
+      182,
+      45,
+      15,
+      200,
+      211
+    ],
+    "ship_maverick_pv1_g2": [
+      449,
+      697,
+      123,
+      182,
+      45,
+      15,
+      200,
+      211
+    ],
+    "ship_maverick_r_g1": [
+      574,
+      697,
+      139,
+      180,
+      3,
+      2,
+      200,
+      211
+    ],
+    "ship_maverick_r_g2": [
+      715,
+      697,
+      139,
+      180,
+      3,
+      2,
+      200,
+      211
+    ],
+    "ship_maverick_pv3_g1": [
+      574,
+      697,
+      139,
+      180,
+      3,
+      2,
+      200,
+      211
+    ],
+    "ship_maverick_pv3_g2": [
+      715,
+      697,
+      139,
+      180,
+      3,
+      2,
+      200,
+      211
+    ],
+    "ship_maverick_pv0_g1": [
+      856,
+      697,
+      39,
+      184,
+      77,
+      12,
+      200,
+      211
+    ],
+    "ship_maverick_pv0_g2": [
+      897,
+      697,
+      39,
+      184,
+      77,
+      12,
+      200,
+      211
+    ],
+    "ship_maverick_pv4_g1": [
+      938,
+      697,
+      39,
+      185,
+      76,
+      0,
+      200,
+      211
+    ],
+    "ship_maverick_pv4_g2": [
+      979,
+      697,
+      39,
+      185,
+      76,
+      0,
+      200,
+      211
+    ],
+    "ship_yuri_g1": [
+      2,
+      725,
+      145,
+      179,
+      36,
+      21,
+      209,
+      229
+    ],
+    "ship_yuri_g2": [
+      149,
+      725,
+      145,
+      179,
+      36,
+      21,
+      209,
+      229
+    ],
+    "ship_yuri_pv2_g1": [
+      2,
+      725,
+      145,
+      179,
+      36,
+      21,
+      209,
+      229
+    ],
+    "ship_yuri_pv2_g2": [
+      149,
+      725,
+      145,
+      179,
+      36,
+      21,
+      209,
+      229
+    ],
+    "ship_yuri_l_g1": [
+      296,
+      725,
+      113,
+      165,
+      64,
+      28,
+      209,
+      229
+    ],
+    "ship_yuri_l_g2": [
+      411,
+      725,
+      113,
+      165,
+      64,
+      28,
+      209,
+      229
+    ],
+    "ship_yuri_pv1_g1": [
+      296,
+      725,
+      113,
+      165,
+      64,
+      28,
+      209,
+      229
+    ],
+    "ship_yuri_pv1_g2": [
+      411,
+      725,
+      113,
+      165,
+      64,
+      28,
+      209,
+      229
+    ],
+    "ship_yuri_r_g1": [
+      526,
+      725,
+      145,
+      179,
+      31,
+      6,
+      209,
+      229
+    ],
+    "ship_yuri_r_g2": [
+      673,
+      725,
+      145,
+      179,
+      31,
+      6,
+      209,
+      229
+    ],
+    "ship_yuri_pv3_g1": [
+      526,
+      725,
+      145,
+      179,
+      31,
+      6,
+      209,
+      229
+    ],
+    "ship_yuri_pv3_g2": [
+      673,
+      725,
+      145,
+      179,
+      31,
+      6,
+      209,
+      229
+    ],
+    "ship_yuri_pv0_g1": [
+      820,
+      725,
+      39,
+      187,
+      84,
+      14,
+      209,
+      229
+    ],
+    "ship_yuri_pv0_g2": [
+      861,
+      725,
+      39,
+      187,
+      84,
+      14,
+      209,
+      229
+    ],
+    "ship_yuri_pv4_g1": [
+      902,
+      725,
+      39,
+      186,
+      75,
+      0,
+      209,
+      229
+    ],
+    "ship_yuri_pv4_g2": [
+      943,
+      725,
+      39,
+      186,
+      75,
+      0,
+      209,
+      229
+    ]
+  },
+  "src": {
+    "whv_ace_so2": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_so2.png",
+    "whv_ace_so6": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_so6.png",
+    "cin_pilot_axel_open": "assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/axel_open.png",
+    "cin_pilot_cole_open": "assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/cole_open.png",
+    "cin_pilot_decker_open": "assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/decker_open.png",
+    "cin_pilot_falva_open": "assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/falva_open.png",
+    "cin_pilot_freezer_open": "assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/freezer_open.png",
+    "cin_pilot_juggernaut_open": "assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/juggernaut_open.png",
+    "cin_pilot_lizzie_open": "assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/lizzie_open.png",
+    "cin_pilot_maverick_open": "assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/maverick_open.png",
+    "cin_pilot_yuri_open": "assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/yuri_open.png",
+    "rr_ship_voss_iron_vulture": "assets/game/levels/stage_06/boss/roaming_rebels_0922/ships/voss_iron_vulture.png",
+    "rr_ship_nyx_ghostknife": "assets/game/levels/stage_06/boss/roaming_rebels_0922/ships/nyx_ghostknife.png",
+    "rr_ship_rook_breachhammer": "assets/game/levels/stage_06/boss/roaming_rebels_0922/ships/rook_breachhammer.png",
+    "rr_ship_kaia_signal_wraith": "assets/game/levels/stage_06/boss/roaming_rebels_0922/ships/kaia_signal_wraith.png",
+    "rr_ship_jace_razorjack": "assets/game/levels/stage_06/boss/roaming_rebels_0922/ships/jace_razorjack.png",
+    "finale1003b_harrier": "assets/game/levels/stage_08/boss/finale_1003b/harrier.png",
+    "fmc_harrier": "assets/game/levels/stage_08/boss/finale_modular_1003c/harrier.png",
+    "gp4_ace_so2": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_so2.png",
+    "gp4_ace_so6": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_so6.png",
+    "eh7_harrier": "assets/game/levels/stage_06/ui/harrier_bars_1007c.png",
+    "pt11_harrier_cannon_0": "assets/game/shared/combat/playthrough_1011/harrier_cannon_00.png",
+    "pt11_harrier_cannon_1": "assets/game/shared/combat/playthrough_1011/harrier_cannon_01.png",
+    "pt11_harrier_cannon_2": "assets/game/shared/combat/playthrough_1011/harrier_cannon_02.png",
+    "pt11_harrier_cannon_3": "assets/game/shared/combat/playthrough_1011/harrier_cannon_03.png",
+    "pt11_harrier_cannon_4": "assets/game/shared/combat/playthrough_1011/harrier_cannon_04.png",
+    "pt11_harrier_cannon_5": "assets/game/shared/combat/playthrough_1011/harrier_cannon_05.png",
+    "pt11_harrier_cannon_6": "assets/game/shared/combat/playthrough_1011/harrier_cannon_06.png",
+    "pt11_harrier_cannon_7": "assets/game/shared/combat/playthrough_1011/harrier_cannon_07.png",
+    "pt11_harrier_cannon_8": "assets/game/shared/combat/playthrough_1011/harrier_cannon_08.png",
+    "pt11_harrier_cannon_9": "assets/game/shared/combat/playthrough_1011/harrier_cannon_09.png",
+    "pt11_harrier_cannon_10": "assets/game/shared/combat/playthrough_1011/harrier_cannon_10.png",
+    "pt11_harrier_cannon_11": "assets/game/shared/combat/playthrough_1011/harrier_cannon_11.png",
+    "pt11_harrier_cannon_12": "assets/game/shared/combat/playthrough_1011/harrier_cannon_12.png",
+    "pt11_harrier_cannon_13": "assets/game/shared/combat/playthrough_1011/harrier_cannon_13.png",
+    "pt11_harrier_cannon_14": "assets/game/shared/combat/playthrough_1011/harrier_cannon_14.png",
+    "pt11_harrier_cannon_15": "assets/game/shared/combat/playthrough_1011/harrier_cannon_15.png",
+    "v18_harrier_core_00": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_00.png",
+    "v18_harrier_left_00": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_00.png",
+    "v18_harrier_right_00": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_00.png",
+    "v18_harrier_core_01": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_01.png",
+    "v18_harrier_left_01": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_01.png",
+    "v18_harrier_right_01": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_01.png",
+    "v18_harrier_core_02": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_02.png",
+    "v18_harrier_left_02": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_02.png",
+    "v18_harrier_right_02": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_02.png",
+    "v18_harrier_core_03": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_03.png",
+    "v18_harrier_left_03": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_03.png",
+    "v18_harrier_right_03": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_03.png",
+    "v18_harrier_core_04": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_04.png",
+    "v18_harrier_left_04": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_04.png",
+    "v18_harrier_right_04": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_04.png",
+    "v18_harrier_core_05": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_05.png",
+    "v18_harrier_left_05": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_05.png",
+    "v18_harrier_right_05": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_05.png",
+    "v18_harrier_core_06": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_06.png",
+    "v18_harrier_left_06": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_06.png",
+    "v18_harrier_right_06": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_06.png",
+    "v18_harrier_core_07": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_07.png",
+    "v18_harrier_left_07": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_07.png",
+    "v18_harrier_right_07": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_07.png",
+    "v18_harrier_core_08": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_08.png",
+    "v18_harrier_left_08": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_08.png",
+    "v18_harrier_right_08": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_08.png",
+    "v18_harrier_core_09": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_09.png",
+    "v18_harrier_left_09": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_09.png",
+    "v18_harrier_right_09": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_09.png",
+    "v18_harrier_core_10": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_10.png",
+    "v18_harrier_left_10": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_10.png",
+    "v18_harrier_right_10": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_10.png",
+    "v18_harrier_core_11": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_11.png",
+    "v18_harrier_left_11": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_11.png",
+    "v18_harrier_right_11": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_11.png",
+    "v18_harrier_core_12": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_12.png",
+    "v18_harrier_left_12": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_12.png",
+    "v18_harrier_right_12": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_12.png",
+    "v18_harrier_core_13": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_13.png",
+    "v18_harrier_left_13": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_13.png",
+    "v18_harrier_right_13": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_13.png",
+    "v18_harrier_core_14": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_14.png",
+    "v18_harrier_left_14": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_14.png",
+    "v18_harrier_right_14": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_14.png",
+    "v18_harrier_core_15": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_core_15.png",
+    "v18_harrier_left_15": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_left_15.png",
+    "v18_harrier_right_15": "assets/game/levels/stage_08/boss/pixellab_1018/v18_harrier_right_15.png",
+    "v18_morph_harrier_00": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_00.png",
+    "v18_morph_harrier_01": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_01.png",
+    "v18_morph_harrier_02": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_02.png",
+    "v18_morph_harrier_03": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_03.png",
+    "v18_morph_harrier_04": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_04.png",
+    "v18_morph_harrier_05": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_05.png",
+    "v18_morph_harrier_06": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_06.png",
+    "v18_morph_harrier_07": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_07.png",
+    "v18_morph_harrier_08": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_08.png",
+    "v18_morph_harrier_09": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_09.png",
+    "v18_morph_harrier_10": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_10.png",
+    "v18_morph_harrier_11": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_11.png",
+    "v18_morph_harrier_12": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_12.png",
+    "v18_morph_harrier_13": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_13.png",
+    "v18_morph_harrier_14": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_14.png",
+    "v18_morph_harrier_15": "assets/game/levels/stage_08/boss/pixellab_1018/v18_morph_harrier_15.png",
+    "dr22_wire_harrier": "assets/game/levels/stage_08/boss/dracodia_download_1019/harrier.png",
+    "s811_harrier_turret0": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_turret0.webp",
+    "s811_harrier_turret0_glow": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_turret0_glow.webp",
+    "s811_harrier_turret0_shield": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_turret0_shield.webp",
+    "s811_harrier_turret1": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_turret1.webp",
+    "s811_harrier_turret1_glow": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_turret1_glow.webp",
+    "s811_harrier_turret1_shield": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_turret1_shield.webp",
+    "s811_harrier_turret2": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_turret2.webp",
+    "s811_harrier_turret2_glow": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_turret2_glow.webp",
+    "s811_harrier_turret2_shield": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_turret2_shield.webp",
+    "s811_harrier_body": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_body.webp",
+    "s811_harrier_full": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_full.webp",
+    "s811_harrier_glow": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_glow.webp",
+    "s811_harrier_shield": "assets/game/levels/stage_08/enemies/amplify_1101/harrier_shield.webp",
+    "s911_harrier_body": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_body.webp",
+    "s911_harrier_glow": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_glow.webp",
+    "s911_harrier_shield": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_shield.webp",
+    "s911_harrier_pod0": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod0.webp",
+    "s911_harrier_pod0_glow": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod0_glow.webp",
+    "s911_harrier_pod0_shield": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod0_shield.webp",
+    "s911_harrier_pod1": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod1.webp",
+    "s911_harrier_pod1_glow": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod1_glow.webp",
+    "s911_harrier_pod1_shield": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod1_shield.webp",
+    "s911_harrier_pod2": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod2.webp",
+    "s911_harrier_pod2_glow": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod2_glow.webp",
+    "s911_harrier_pod2_shield": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod2_shield.webp",
+    "s911_harrier_pod3": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod3.webp",
+    "s911_harrier_pod3_glow": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod3_glow.webp",
+    "s911_harrier_pod3_shield": "assets/game/levels/stage_09/enemies/amplify_1101/harrier_pod3_shield.webp"
+  }
+}

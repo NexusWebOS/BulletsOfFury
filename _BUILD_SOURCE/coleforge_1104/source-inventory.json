@@ -1,0 +1,5868 @@
+[
+  {
+    "asset": {
+      "id": "vol2_ion_bloom_orb_loop_north",
+      "source_pack": "SpaceWeapons2",
+      "type": "animation",
+      "frame_count": 4,
+      "loop": true,
+      "timings_ms": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "cell_2x": [
+        128,
+        128
+      ],
+      "pivot_2x": [
+        64,
+        90
+      ],
+      "atlas_1x": "Sprites/1x/SpaceWeapons2/vol2_ion_bloom_orb_loop_north/atlas.png",
+      "atlas_2x": "Sprites/2x/SpaceWeapons2/vol2_ion_bloom_orb_loop_north/atlas.png",
+      "metadata": "Sprites/2x/SpaceWeapons2/vol2_ion_bloom_orb_loop_north/animation.json",
+      "aseprite": "Source/Aseprite/SpaceWeapons2/vol2_ion_bloom_orb_loop_north.aseprite"
+    },
+    "meta": {
+      "id": "vol2_ion_bloom_orb_loop_north",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "SpaceWeapons2",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        64,
+        64
+      ],
+      "pivot": [
+        32,
+        45
+      ],
+      "direction": "north",
+      "frame_count": 4,
+      "loop": true,
+      "timings_ms": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "events": {},
+      "atlas": "atlas.png",
+      "atlas_columns": 4,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 80,
+          "atlas_rect": [
+            0,
+            0,
+            64,
+            64
+          ],
+          "bounds": [
+            20,
+            20,
+            25,
+            24
+          ],
+          "blank": false,
+          "sha256_pixels": "8b56bf08206590f9b20416f607b770e554506c6643549cb88a0439abc7f7691c"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 80,
+          "atlas_rect": [
+            64,
+            0,
+            64,
+            64
+          ],
+          "bounds": [
+            20,
+            20,
+            25,
+            24
+          ],
+          "blank": false,
+          "sha256_pixels": "6d609dab546dc57910c312e662f483a5a47368f2e5f17e4109fbc823be076b99"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 80,
+          "atlas_rect": [
+            128,
+            0,
+            64,
+            64
+          ],
+          "bounds": [
+            20,
+            20,
+            24,
+            24
+          ],
+          "blank": false,
+          "sha256_pixels": "e9a1023d9ac581a931c506f064f237829d2235207fdad3a46ecc12bee75c6161"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 80,
+          "atlas_rect": [
+            192,
+            0,
+            64,
+            64
+          ],
+          "bounds": [
+            20,
+            20,
+            24,
+            24
+          ],
+          "blank": false,
+          "sha256_pixels": "c3478ae3bad33dfc23cc201fba1664e35cf7068133eb3fb494989964f8ee5970"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "SpaceWeapons2\\SpaceWeapons2\\Animations\\vol2_ion_bloom_orb_loop_north\\animation.json"
+    },
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons2\\vol2_ion_bloom_orb_loop_north\\frames\\frame_01.png",
+        "size": [
+          64,
+          64
+        ],
+        "bbox": [
+          20,
+          20,
+          45,
+          44
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons2\\vol2_ion_bloom_orb_loop_north\\frames\\frame_03.png",
+        "size": [
+          64,
+          64
+        ],
+        "bbox": [
+          20,
+          20,
+          44,
+          44
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons2\\vol2_ion_bloom_orb_loop_north\\frames\\frame_04.png",
+        "size": [
+          64,
+          64
+        ],
+        "bbox": [
+          20,
+          20,
+          44,
+          44
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons2\\vol2_ion_bloom_orb_loop_north\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons2\\vol2_ion_bloom_orb_loop_north\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons2\\vol2_ion_bloom_orb_loop_north\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons2\\vol2_ion_bloom_orb_loop_north\\frames\\frame_04.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "spreadfire_cannon_horizontal_fan",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "frame_count": 4,
+      "loop": true,
+      "timings_ms": [
+        70,
+        70,
+        70,
+        70
+      ],
+      "cell_2x": [
+        256,
+        192
+      ],
+      "pivot_2x": [
+        132,
+        156
+      ],
+      "atlas_1x": "Sprites/1x/SpaceWeapons3/spreadfire_cannon_horizontal_fan/atlas.png",
+      "atlas_2x": "Sprites/2x/SpaceWeapons3/spreadfire_cannon_horizontal_fan/atlas.png",
+      "metadata": "Sprites/2x/SpaceWeapons3/spreadfire_cannon_horizontal_fan/animation.json",
+      "aseprite": "Source/Aseprite/SpaceWeapons3/spreadfire_cannon_horizontal_fan.aseprite"
+    },
+    "meta": {
+      "id": "spreadfire_cannon_horizontal_fan",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        128,
+        96
+      ],
+      "pivot": [
+        66,
+        78
+      ],
+      "direction": "north",
+      "frame_count": 4,
+      "loop": true,
+      "timings_ms": [
+        70,
+        70,
+        70,
+        70
+      ],
+      "events": {},
+      "atlas": "atlas.png",
+      "atlas_columns": 4,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 70,
+          "atlas_rect": [
+            0,
+            0,
+            128,
+            96
+          ],
+          "bounds": [
+            30,
+            20,
+            68,
+            51
+          ],
+          "blank": false,
+          "sha256_pixels": "ee1b6956ad4028a5ef456660c15c0760d41c18007513b8f1fd3501fa22c161d4"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 70,
+          "atlas_rect": [
+            128,
+            0,
+            128,
+            96
+          ],
+          "bounds": [
+            30,
+            21,
+            68,
+            51
+          ],
+          "blank": false,
+          "sha256_pixels": "3771de72883accd0180719e31ff71149a155c53b222e478bafeaad501e84a25f"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 70,
+          "atlas_rect": [
+            256,
+            0,
+            128,
+            96
+          ],
+          "bounds": [
+            30,
+            22,
+            68,
+            51
+          ],
+          "blank": false,
+          "sha256_pixels": "8dc511ade7ed25248e6a4a889d7b80550abfd5e66435e9e844bbda36bd324a72"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 70,
+          "atlas_rect": [
+            384,
+            0,
+            128,
+            96
+          ],
+          "bounds": [
+            30,
+            23,
+            68,
+            51
+          ],
+          "blank": false,
+          "sha256_pixels": "87ea3e992a61eed7c1e4400e8773cf7c09109d80649c8e9e5ce5ccbcc7835b67"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "SpaceWeapons3\\SpaceWeapons3\\Animations\\spreadfire_cannon_horizontal_fan\\animation.json"
+    },
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_horizontal_fan\\frames\\frame_01.png",
+        "size": [
+          128,
+          96
+        ],
+        "bbox": [
+          30,
+          20,
+          98,
+          71
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_horizontal_fan\\frames\\frame_03.png",
+        "size": [
+          128,
+          96
+        ],
+        "bbox": [
+          30,
+          22,
+          98,
+          73
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_horizontal_fan\\frames\\frame_04.png",
+        "size": [
+          128,
+          96
+        ],
+        "bbox": [
+          30,
+          23,
+          98,
+          74
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_horizontal_fan\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_horizontal_fan\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_horizontal_fan\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_horizontal_fan\\frames\\frame_04.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "spreadfire_cannon_single_projectile",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "frame_count": 4,
+      "loop": true,
+      "timings_ms": [
+        60,
+        60,
+        60,
+        60
+      ],
+      "cell_2x": [
+        128,
+        192
+      ],
+      "pivot_2x": [
+        64,
+        154
+      ],
+      "atlas_1x": "Sprites/1x/SpaceWeapons3/spreadfire_cannon_single_projectile/atlas.png",
+      "atlas_2x": "Sprites/2x/SpaceWeapons3/spreadfire_cannon_single_projectile/atlas.png",
+      "metadata": "Sprites/2x/SpaceWeapons3/spreadfire_cannon_single_projectile/animation.json",
+      "aseprite": "Source/Aseprite/SpaceWeapons3/spreadfire_cannon_single_projectile.aseprite"
+    },
+    "meta": {
+      "id": "spreadfire_cannon_single_projectile",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        64,
+        96
+      ],
+      "pivot": [
+        32,
+        77
+      ],
+      "direction": "north",
+      "frame_count": 4,
+      "loop": true,
+      "timings_ms": [
+        60,
+        60,
+        60,
+        60
+      ],
+      "events": {},
+      "atlas": "atlas.png",
+      "atlas_columns": 4,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 60,
+          "atlas_rect": [
+            0,
+            0,
+            64,
+            96
+          ],
+          "bounds": [
+            22,
+            25,
+            19,
+            52
+          ],
+          "blank": false,
+          "sha256_pixels": "67ff2b2ea20c808beaf5305618ff2b4a3099104d726c7a52776eaa5875cd6cc6"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 60,
+          "atlas_rect": [
+            64,
+            0,
+            64,
+            96
+          ],
+          "bounds": [
+            21,
+            19,
+            21,
+            57
+          ],
+          "blank": false,
+          "sha256_pixels": "998e79e81962af321c9d3c20e640c75afc4cbc6a53dbdfada83e8e8b7ce715b0"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 60,
+          "atlas_rect": [
+            128,
+            0,
+            64,
+            96
+          ],
+          "bounds": [
+            22,
+            22,
+            20,
+            55
+          ],
+          "blank": false,
+          "sha256_pixels": "6346d8ca13e8a891785fae4759754b34f7cfd31de69b071b78f57bcfe094e003"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 60,
+          "atlas_rect": [
+            192,
+            0,
+            64,
+            96
+          ],
+          "bounds": [
+            21,
+            19,
+            21,
+            57
+          ],
+          "blank": false,
+          "sha256_pixels": "998e79e81962af321c9d3c20e640c75afc4cbc6a53dbdfada83e8e8b7ce715b0"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "SpaceWeapons3\\SpaceWeapons3\\Animations\\spreadfire_cannon_single_projectile\\animation.json"
+    },
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_single_projectile\\frames\\frame_01.png",
+        "size": [
+          64,
+          96
+        ],
+        "bbox": [
+          22,
+          25,
+          41,
+          77
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_single_projectile\\frames\\frame_03.png",
+        "size": [
+          64,
+          96
+        ],
+        "bbox": [
+          22,
+          22,
+          42,
+          77
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_single_projectile\\frames\\frame_04.png",
+        "size": [
+          64,
+          96
+        ],
+        "bbox": [
+          21,
+          19,
+          42,
+          76
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_single_projectile\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_single_projectile\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_single_projectile\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_single_projectile\\frames\\frame_04.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "blue_hex_shield_growth",
+      "source_pack": "WeaponFX",
+      "type": "animation",
+      "frame_count": 5,
+      "loop": true,
+      "timings_ms": [
+        67,
+        67,
+        67,
+        67,
+        67
+      ],
+      "cell_2x": [
+        224,
+        224
+      ],
+      "pivot_2x": [
+        112,
+        112
+      ],
+      "atlas_1x": "Sprites/1x/WeaponFX/blue_hex_shield_growth/atlas.png",
+      "atlas_2x": "Sprites/2x/WeaponFX/blue_hex_shield_growth/atlas.png",
+      "metadata": "Sprites/2x/WeaponFX/blue_hex_shield_growth/animation.json",
+      "aseprite": "Source/Aseprite/WeaponFX/blue_hex_shield_growth.aseprite"
+    },
+    "meta": {
+      "id": "blue_hex_shield_growth",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "WeaponFX",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        112,
+        112
+      ],
+      "pivot": [
+        56,
+        56
+      ],
+      "direction": "neutral",
+      "frame_count": 5,
+      "loop": true,
+      "timings_ms": [
+        67,
+        67,
+        67,
+        67,
+        67
+      ],
+      "events": {},
+      "atlas": "atlas.png",
+      "atlas_columns": 5,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 67,
+          "atlas_rect": [
+            0,
+            0,
+            112,
+            112
+          ],
+          "bounds": [
+            28,
+            27,
+            56,
+            58
+          ],
+          "blank": false,
+          "sha256_pixels": "18cd2af259ffe44a21f827b096fe44c9a16b87b7c72d8effe5c78efa5aeea432"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 67,
+          "atlas_rect": [
+            112,
+            0,
+            112,
+            112
+          ],
+          "bounds": [
+            25,
+            25,
+            61,
+            62
+          ],
+          "blank": false,
+          "sha256_pixels": "afb0de64ca9be9e894631d34776be61d4a7e608ba3f57cd0ee60279fb31d2257"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 67,
+          "atlas_rect": [
+            224,
+            0,
+            112,
+            112
+          ],
+          "bounds": [
+            22,
+            22,
+            66,
+            68
+          ],
+          "blank": false,
+          "sha256_pixels": "1bb13651e040bcd69971affb1909bdd082c571a5efffa1b590460d3f7de0709f"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 67,
+          "atlas_rect": [
+            336,
+            0,
+            112,
+            112
+          ],
+          "bounds": [
+            21,
+            21,
+            69,
+            70
+          ],
+          "blank": false,
+          "sha256_pixels": "3cce4d7ce9add29a62f1760db341847922f28b5c1a242eba6cb543aabe5fa8bf"
+        },
+        {
+          "file": "frames/frame_05.png",
+          "index": 4,
+          "duration_ms": 67,
+          "atlas_rect": [
+            448,
+            0,
+            112,
+            112
+          ],
+          "bounds": [
+            21,
+            21,
+            69,
+            70
+          ],
+          "blank": false,
+          "sha256_pixels": "cf3a39592f1889eddb86a6f21377e01991ba29bc40e039ba076860404c97fc47"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "WeaponFX\\WeaponFX\\Animations\\blue_hex_shield_growth\\animation.json"
+    },
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\blue_hex_shield_growth\\frames\\frame_01.png",
+        "size": [
+          112,
+          112
+        ],
+        "bbox": [
+          28,
+          27,
+          84,
+          85
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\blue_hex_shield_growth\\frames\\frame_03.png",
+        "size": [
+          112,
+          112
+        ],
+        "bbox": [
+          22,
+          22,
+          88,
+          90
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\blue_hex_shield_growth\\frames\\frame_05.png",
+        "size": [
+          112,
+          112
+        ],
+        "bbox": [
+          21,
+          21,
+          90,
+          91
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\blue_hex_shield_growth\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\blue_hex_shield_growth\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\blue_hex_shield_growth\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\blue_hex_shield_growth\\frames\\frame_04.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\blue_hex_shield_growth\\frames\\frame_05.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "green_energy_shield_charge",
+      "source_pack": "WeaponFX",
+      "type": "animation",
+      "frame_count": 5,
+      "loop": true,
+      "timings_ms": [
+        67,
+        67,
+        67,
+        67,
+        67
+      ],
+      "cell_2x": [
+        224,
+        288
+      ],
+      "pivot_2x": [
+        112,
+        144
+      ],
+      "atlas_1x": "Sprites/1x/WeaponFX/green_energy_shield_charge/atlas.png",
+      "atlas_2x": "Sprites/2x/WeaponFX/green_energy_shield_charge/atlas.png",
+      "metadata": "Sprites/2x/WeaponFX/green_energy_shield_charge/animation.json",
+      "aseprite": "Source/Aseprite/WeaponFX/green_energy_shield_charge.aseprite"
+    },
+    "meta": {
+      "id": "green_energy_shield_charge",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "WeaponFX",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        112,
+        144
+      ],
+      "pivot": [
+        56,
+        72
+      ],
+      "direction": "neutral",
+      "frame_count": 5,
+      "loop": true,
+      "timings_ms": [
+        67,
+        67,
+        67,
+        67,
+        67
+      ],
+      "events": {},
+      "atlas": "atlas.png",
+      "atlas_columns": 5,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 67,
+          "atlas_rect": [
+            0,
+            0,
+            112,
+            144
+          ],
+          "bounds": [
+            27,
+            42,
+            58,
+            58
+          ],
+          "blank": false,
+          "sha256_pixels": "901ead8199e2257e757aa93d62a356e827e9c7a828d624a24c870605c8695c7a"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 67,
+          "atlas_rect": [
+            112,
+            0,
+            112,
+            144
+          ],
+          "bounds": [
+            22,
+            38,
+            67,
+            67
+          ],
+          "blank": false,
+          "sha256_pixels": "f264213babcf1d4c1758b73395e04abf271d9088610d40352dc8914fe371826d"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 67,
+          "atlas_rect": [
+            224,
+            0,
+            112,
+            144
+          ],
+          "bounds": [
+            22,
+            37,
+            68,
+            69
+          ],
+          "blank": false,
+          "sha256_pixels": "135731cde9fc99c16d6acc482b61d164f8edf3313d49c5b998014b731a19c312"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 67,
+          "atlas_rect": [
+            336,
+            0,
+            112,
+            144
+          ],
+          "bounds": [
+            21,
+            37,
+            69,
+            70
+          ],
+          "blank": false,
+          "sha256_pixels": "57e5aa9c52e0fbbaba278217ac7570622c73c5059b532113e8adf03f9f64110e"
+        },
+        {
+          "file": "frames/frame_05.png",
+          "index": 4,
+          "duration_ms": 67,
+          "atlas_rect": [
+            448,
+            0,
+            112,
+            144
+          ],
+          "bounds": [
+            20,
+            36,
+            71,
+            72
+          ],
+          "blank": false,
+          "sha256_pixels": "a6fc637635db46530c022d1aae69ef43d4454c9e02609eb3e815179572e78696"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "WeaponFX\\WeaponFX\\Animations\\green_energy_shield_charge\\animation.json"
+    },
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\green_energy_shield_charge\\frames\\frame_01.png",
+        "size": [
+          112,
+          144
+        ],
+        "bbox": [
+          27,
+          42,
+          85,
+          100
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\green_energy_shield_charge\\frames\\frame_03.png",
+        "size": [
+          112,
+          144
+        ],
+        "bbox": [
+          22,
+          37,
+          90,
+          106
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\green_energy_shield_charge\\frames\\frame_05.png",
+        "size": [
+          112,
+          144
+        ],
+        "bbox": [
+          20,
+          36,
+          91,
+          108
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\green_energy_shield_charge\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\green_energy_shield_charge\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\green_energy_shield_charge\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\green_energy_shield_charge\\frames\\frame_04.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\WeaponFX\\green_energy_shield_charge\\frames\\frame_05.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "Explosion_Shockwave_Ring",
+      "source_pack": "Bullets_of_Fury_Pure_Combat_FX_Vol1",
+      "type": "animation",
+      "frame_count": 16,
+      "loop": false,
+      "timings_ms": [
+        35,
+        35,
+        40,
+        45,
+        50,
+        55,
+        65,
+        75,
+        85,
+        100,
+        120,
+        145,
+        175,
+        215,
+        270,
+        360
+      ],
+      "cell_2x": [
+        512,
+        512
+      ],
+      "pivot_2x": [
+        256,
+        256
+      ],
+      "atlas_1x": "Sprites/1x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Explosion_Shockwave_Ring/atlas.png",
+      "atlas_2x": "Sprites/2x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Explosion_Shockwave_Ring/atlas.png",
+      "metadata": "Sprites/2x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Explosion_Shockwave_Ring/animation.json",
+      "aseprite": "Source/Aseprite/Bullets_of_Fury_Pure_Combat_FX_Vol1/Explosion_Shockwave_Ring.aseprite"
+    },
+    "meta": {
+      "id": "Explosion_Shockwave_Ring",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "Bullets_of_Fury_Pure_Combat_FX_Vol1",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "direction": "Neutral",
+      "frame_count": 16,
+      "loop": false,
+      "timings_ms": [
+        35,
+        35,
+        40,
+        45,
+        50,
+        55,
+        65,
+        75,
+        85,
+        100,
+        120,
+        145,
+        175,
+        215,
+        270,
+        360
+      ],
+      "events": {
+        "pulse": 1,
+        "widest": 7,
+        "dissipate": 16
+      },
+      "atlas": "atlas.png",
+      "atlas_columns": 8,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 35,
+          "atlas_rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            117,
+            119,
+            22,
+            20
+          ],
+          "blank": false,
+          "sha256_pixels": "6cab51ffba02406793fbcef02c697bbf8ee152191030a9d30f1d94ac48d27be4"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 35,
+          "atlas_rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            98,
+            100,
+            60,
+            58
+          ],
+          "blank": false,
+          "sha256_pixels": "68abeb8939be210c878cd0c92dd7803048d7bf601227b09e70b725ca6b3dfc5c"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 40,
+          "atlas_rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            69,
+            70,
+            118,
+            116
+          ],
+          "blank": false,
+          "sha256_pixels": "4fc2ea0c43af5992e407449b70af8336e312b9a3ddb5ed33886d9a9a1ac422f9"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 45,
+          "atlas_rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            42,
+            43,
+            173,
+            172
+          ],
+          "blank": false,
+          "sha256_pixels": "3a9393e8ca60211c179f72e6c451253e0466467dd86f907a5b8f115d265dc09b"
+        },
+        {
+          "file": "frames/frame_05.png",
+          "index": 4,
+          "duration_ms": 50,
+          "atlas_rect": [
+            1024,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            38,
+            38,
+            181,
+            180
+          ],
+          "blank": false,
+          "sha256_pixels": "d0d322ff62e2a153d99baabf838b788e52244f6f120c0060c6fdfeaeac685c59"
+        },
+        {
+          "file": "frames/frame_06.png",
+          "index": 5,
+          "duration_ms": 55,
+          "atlas_rect": [
+            1280,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            33,
+            35,
+            190,
+            186
+          ],
+          "blank": false,
+          "sha256_pixels": "fa0e6a7c53d623bd9b06c59ce4d992ab18c7e87da0918ae3e0e051cbb871ce4c"
+        },
+        {
+          "file": "frames/frame_07.png",
+          "index": 6,
+          "duration_ms": 65,
+          "atlas_rect": [
+            1536,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            33,
+            36,
+            191,
+            185
+          ],
+          "blank": false,
+          "sha256_pixels": "76659088abf33e1d3f4e7e57dd2d3676f7cee600782745f0b887ea4fe687f2dd"
+        },
+        {
+          "file": "frames/frame_08.png",
+          "index": 7,
+          "duration_ms": 75,
+          "atlas_rect": [
+            1792,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            32,
+            36,
+            193,
+            184
+          ],
+          "blank": false,
+          "sha256_pixels": "b49ad6337ee1cdd1e0caa63484d364db56b563956a5d42fe9d4609933fd1da04"
+        },
+        {
+          "file": "frames/frame_09.png",
+          "index": 8,
+          "duration_ms": 85,
+          "atlas_rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            33,
+            38,
+            190,
+            182
+          ],
+          "blank": false,
+          "sha256_pixels": "5a4503e042bcc8ac4511e9ceeed90d8f0a9cdaa904d4af57df29b86ee0c8cc8f"
+        },
+        {
+          "file": "frames/frame_10.png",
+          "index": 9,
+          "duration_ms": 100,
+          "atlas_rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            35,
+            43,
+            186,
+            171
+          ],
+          "blank": false,
+          "sha256_pixels": "08125f26eb48909672b4b309930a866ad3f05451c8edabaa5f21730cfa6e3fcf"
+        },
+        {
+          "file": "frames/frame_11.png",
+          "index": 10,
+          "duration_ms": 120,
+          "atlas_rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            36,
+            40,
+            185,
+            177
+          ],
+          "blank": false,
+          "sha256_pixels": "951369af715db87e3db51b1114c4aec86e381afd81d000865e9025b736cf2381"
+        },
+        {
+          "file": "frames/frame_12.png",
+          "index": 11,
+          "duration_ms": 145,
+          "atlas_rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            37,
+            41,
+            183,
+            174
+          ],
+          "blank": false,
+          "sha256_pixels": "4ca49afa10cf45c531d8fa3c37a362d3ac6b2f9aa2c283d1618f60da70eded63"
+        },
+        {
+          "file": "frames/frame_13.png",
+          "index": 12,
+          "duration_ms": 175,
+          "atlas_rect": [
+            1024,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            36,
+            39,
+            183,
+            179
+          ],
+          "blank": false,
+          "sha256_pixels": "f2d518f84dc95d57aacda1e601334ff4ffe8b78afd29c1fbc25bdfbfcfc23f70"
+        },
+        {
+          "file": "frames/frame_14.png",
+          "index": 13,
+          "duration_ms": 215,
+          "atlas_rect": [
+            1280,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            42,
+            45,
+            172,
+            165
+          ],
+          "blank": false,
+          "sha256_pixels": "b6263010a06963818aef46d0b328962dbb58d3bf770bf2301d04a4860302039b"
+        },
+        {
+          "file": "frames/frame_15.png",
+          "index": 14,
+          "duration_ms": 270,
+          "atlas_rect": [
+            1536,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            44,
+            48,
+            170,
+            160
+          ],
+          "blank": false,
+          "sha256_pixels": "5bbd45393413b11482190ea6cd776c13e68f81f29a30cdf0ae9ba33bf1b2c69a"
+        },
+        {
+          "file": "frames/frame_16.png",
+          "index": 15,
+          "duration_ms": 360,
+          "atlas_rect": [
+            1792,
+            256,
+            256,
+            256
+          ],
+          "bounds": null,
+          "blank": true,
+          "sha256_pixels": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "Bullets_of_Fury_Pure_Combat_FX_Vol1\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosions\\14_Explosion_Shockwave_Ring\\animation.json"
+    },
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          117,
+          119,
+          139,
+          139
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_09.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          33,
+          38,
+          223,
+          220
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_16.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": null,
+        "alpha": [
+          0,
+          0
+        ]
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_04.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_05.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_06.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_07.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_08.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_09.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_10.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_11.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_12.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_13.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_14.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_15.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Shockwave_Ring\\frames\\frame_16.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "Fire_Ignition",
+      "source_pack": "Bullets_of_Fury_Pure_Combat_FX_Vol1",
+      "type": "animation",
+      "frame_count": 16,
+      "loop": false,
+      "timings_ms": [
+        45,
+        45,
+        50,
+        55,
+        60,
+        65,
+        75,
+        85,
+        95,
+        110,
+        125,
+        145,
+        175,
+        210,
+        260,
+        340
+      ],
+      "cell_2x": [
+        256,
+        256
+      ],
+      "pivot_2x": [
+        128,
+        232
+      ],
+      "atlas_1x": "Sprites/1x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Fire_Ignition/atlas.png",
+      "atlas_2x": "Sprites/2x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Fire_Ignition/atlas.png",
+      "metadata": "Sprites/2x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Fire_Ignition/animation.json",
+      "aseprite": "Source/Aseprite/Bullets_of_Fury_Pure_Combat_FX_Vol1/Fire_Ignition.aseprite"
+    },
+    "meta": {
+      "id": "Fire_Ignition",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "Bullets_of_Fury_Pure_Combat_FX_Vol1",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        116
+      ],
+      "direction": "Neutral",
+      "frame_count": 16,
+      "loop": false,
+      "timings_ms": [
+        45,
+        45,
+        50,
+        55,
+        60,
+        65,
+        75,
+        85,
+        95,
+        110,
+        125,
+        145,
+        175,
+        210,
+        260,
+        340
+      ],
+      "events": {
+        "ignition": 1,
+        "peak": 8,
+        "dissipate": 16
+      },
+      "atlas": "atlas.png",
+      "atlas_columns": 8,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 45,
+          "atlas_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            62,
+            111,
+            8,
+            9
+          ],
+          "blank": false,
+          "sha256_pixels": "ded44bfccf4d618b07bf22c4b8219652b62ed37ea3e04ffa8f9223828e430a5a"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 45,
+          "atlas_rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            60,
+            87,
+            14,
+            31
+          ],
+          "blank": false,
+          "sha256_pixels": "484a18a009554869440941563067fecd300c16f5f509bae0d7c716930f624e11"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 50,
+          "atlas_rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            55,
+            74,
+            23,
+            43
+          ],
+          "blank": false,
+          "sha256_pixels": "3527b87b4a02e18b36f31cc5f56f9a6c001ec8de244a2cd730c10ad93f762062"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 55,
+          "atlas_rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            50,
+            60,
+            32,
+            55
+          ],
+          "blank": false,
+          "sha256_pixels": "e11dc0cfe28c0d76e98622786b90d9723a21b8148607e059da3d7c0782d728f3"
+        },
+        {
+          "file": "frames/frame_05.png",
+          "index": 4,
+          "duration_ms": 60,
+          "atlas_rect": [
+            512,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            51,
+            40,
+            34,
+            74
+          ],
+          "blank": false,
+          "sha256_pixels": "47ea48d520fa6154c14ab43281007afaeaf8a3469c0ea2027b880c45aaeb7ced"
+        },
+        {
+          "file": "frames/frame_06.png",
+          "index": 5,
+          "duration_ms": 65,
+          "atlas_rect": [
+            640,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            42,
+            38,
+            51,
+            73
+          ],
+          "blank": false,
+          "sha256_pixels": "215509a350b50836f17068b4e752a9051a1bf6c55f8ded3f8ca5fc23cb768b55"
+        },
+        {
+          "file": "frames/frame_07.png",
+          "index": 6,
+          "duration_ms": 75,
+          "atlas_rect": [
+            768,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            48,
+            45,
+            38,
+            67
+          ],
+          "blank": false,
+          "sha256_pixels": "99606fa5a8a89bd3c7a367dbbb430429b5ed8263f93e242a1b989b4bf5379836"
+        },
+        {
+          "file": "frames/frame_08.png",
+          "index": 7,
+          "duration_ms": 85,
+          "atlas_rect": [
+            896,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            51,
+            50,
+            29,
+            60
+          ],
+          "blank": false,
+          "sha256_pixels": "19068bc6a08f2dad30c9df13f36071063de0c8205086b109905b13223a9f8792"
+        },
+        {
+          "file": "frames/frame_09.png",
+          "index": 8,
+          "duration_ms": 95,
+          "atlas_rect": [
+            0,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            48,
+            49,
+            39,
+            60
+          ],
+          "blank": false,
+          "sha256_pixels": "d792f0c7d9b2676869e750f6a363b994fdb5f7ceedcd5c33ea503d7f0512e76e"
+        },
+        {
+          "file": "frames/frame_10.png",
+          "index": 9,
+          "duration_ms": 110,
+          "atlas_rect": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            56,
+            51,
+            27,
+            51
+          ],
+          "blank": false,
+          "sha256_pixels": "31f13572c252c13e4a0832d35d19d7d694a5efd5908018eb02acc066a6ee951f"
+        },
+        {
+          "file": "frames/frame_11.png",
+          "index": 10,
+          "duration_ms": 125,
+          "atlas_rect": [
+            256,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            52,
+            50,
+            31,
+            61
+          ],
+          "blank": false,
+          "sha256_pixels": "b37a5da237e1ea6f11e7163ce53934b8bfa92fd2db1d28c5330b67f9065bb7ad"
+        },
+        {
+          "file": "frames/frame_12.png",
+          "index": 11,
+          "duration_ms": 145,
+          "atlas_rect": [
+            384,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            50,
+            64,
+            30,
+            49
+          ],
+          "blank": false,
+          "sha256_pixels": "98da7bc8ec0ae849ff99ed5d4a51cc5dff051638d3c86889840256fadb045b6a"
+        },
+        {
+          "file": "frames/frame_13.png",
+          "index": 12,
+          "duration_ms": 175,
+          "atlas_rect": [
+            512,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            57,
+            48,
+            24,
+            57
+          ],
+          "blank": false,
+          "sha256_pixels": "9c46513622a9030bf9e58fe4130b3649bdbc97c22456c9c93b38313b46b88418"
+        },
+        {
+          "file": "frames/frame_14.png",
+          "index": 13,
+          "duration_ms": 210,
+          "atlas_rect": [
+            640,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            57,
+            65,
+            21,
+            45
+          ],
+          "blank": false,
+          "sha256_pixels": "81481acbe8005a7ea0727ed80897f64cdb6d238a9a7de553c2b931cf4339c041"
+        },
+        {
+          "file": "frames/frame_15.png",
+          "index": 14,
+          "duration_ms": 260,
+          "atlas_rect": [
+            768,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            56,
+            77,
+            14,
+            33
+          ],
+          "blank": false,
+          "sha256_pixels": "72a4a99f578ade84df73a47067ad97597bc07b9b4ac322257839626299703c4e"
+        },
+        {
+          "file": "frames/frame_16.png",
+          "index": 15,
+          "duration_ms": 340,
+          "atlas_rect": [
+            896,
+            128,
+            128,
+            128
+          ],
+          "bounds": null,
+          "blank": true,
+          "sha256_pixels": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "Bullets_of_Fury_Pure_Combat_FX_Vol1\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire\\09_Fire_Ignition\\animation.json"
+    },
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_01.png",
+        "size": [
+          128,
+          128
+        ],
+        "bbox": [
+          62,
+          111,
+          70,
+          120
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_09.png",
+        "size": [
+          128,
+          128
+        ],
+        "bbox": [
+          48,
+          49,
+          87,
+          109
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_16.png",
+        "size": [
+          128,
+          128
+        ],
+        "bbox": null,
+        "alpha": [
+          0,
+          0
+        ]
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_04.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_05.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_06.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_07.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_08.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_09.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_10.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_11.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_12.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_13.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_14.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_15.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Fire_Ignition\\frames\\frame_16.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "Smoke_Boss_Column",
+      "source_pack": "Bullets_of_Fury_Pure_Combat_FX_Vol1",
+      "type": "animation",
+      "frame_count": 16,
+      "loop": true,
+      "timings_ms": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "cell_2x": [
+        512,
+        512
+      ],
+      "pivot_2x": [
+        256,
+        476
+      ],
+      "atlas_1x": "Sprites/1x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Smoke_Boss_Column/atlas.png",
+      "atlas_2x": "Sprites/2x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Smoke_Boss_Column/atlas.png",
+      "metadata": "Sprites/2x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Smoke_Boss_Column/animation.json",
+      "aseprite": "Source/Aseprite/Bullets_of_Fury_Pure_Combat_FX_Vol1/Smoke_Boss_Column.aseprite"
+    },
+    "meta": {
+      "id": "Smoke_Boss_Column",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "Bullets_of_Fury_Pure_Combat_FX_Vol1",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        238
+      ],
+      "direction": "Neutral",
+      "frame_count": 16,
+      "loop": true,
+      "timings_ms": [
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80,
+        80
+      ],
+      "events": {
+        "socket_active": 1
+      },
+      "atlas": "atlas.png",
+      "atlas_columns": 8,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 80,
+          "atlas_rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            57,
+            6,
+            156,
+            233
+          ],
+          "blank": false,
+          "sha256_pixels": "4fbe8fa38487ba4f9dae48139b966107530f2bea6a05e47a5a24936973e98f85"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 80,
+          "atlas_rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            48,
+            10,
+            163,
+            229
+          ],
+          "blank": false,
+          "sha256_pixels": "33338c4a8c86389feba735e92cd94435b8ab18ca81bf49b4cff3f70a91eb9f0f"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 80,
+          "atlas_rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            43,
+            15,
+            164,
+            224
+          ],
+          "blank": false,
+          "sha256_pixels": "c3c950901547215667402476c3c91d4a8d24e5d74e63729b4679bda550330a98"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 80,
+          "atlas_rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            54,
+            23,
+            157,
+            212
+          ],
+          "blank": false,
+          "sha256_pixels": "846bd2637ea9c207e725fdc06baef6d43585fc8ef29b4820428106d645768656"
+        },
+        {
+          "file": "frames/frame_05.png",
+          "index": 4,
+          "duration_ms": 80,
+          "atlas_rect": [
+            1024,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            50,
+            19,
+            167,
+            214
+          ],
+          "blank": false,
+          "sha256_pixels": "60a6ad8b46d742412627b744cc976e5bd103253423875fb7cfb489ddd7ca2b77"
+        },
+        {
+          "file": "frames/frame_06.png",
+          "index": 5,
+          "duration_ms": 80,
+          "atlas_rect": [
+            1280,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            48,
+            18,
+            160,
+            216
+          ],
+          "blank": false,
+          "sha256_pixels": "c7212fe4e48f5e9b9933a0407b6027e565823e191b698916954cd20acb864f5b"
+        },
+        {
+          "file": "frames/frame_07.png",
+          "index": 6,
+          "duration_ms": 80,
+          "atlas_rect": [
+            1536,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            48,
+            24,
+            168,
+            207
+          ],
+          "blank": false,
+          "sha256_pixels": "2afc80f4f3fb9a0be7bf9b5f64dfc3c1c1600823a4adfa737d25aa2e772d6606"
+        },
+        {
+          "file": "frames/frame_08.png",
+          "index": 7,
+          "duration_ms": 80,
+          "atlas_rect": [
+            1792,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            55,
+            19,
+            156,
+            214
+          ],
+          "blank": false,
+          "sha256_pixels": "5e32ba6e75575e30b3b8f7fb137210094275293b70cabfb72686e8a275eb64ec"
+        },
+        {
+          "file": "frames/frame_09.png",
+          "index": 8,
+          "duration_ms": 80,
+          "atlas_rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            53,
+            25,
+            160,
+            213
+          ],
+          "blank": false,
+          "sha256_pixels": "bb73ab50a0c8fa5a8f815ee1ada8fcce85433d4b8fceea13eed8f5c8494206af"
+        },
+        {
+          "file": "frames/frame_10.png",
+          "index": 9,
+          "duration_ms": 80,
+          "atlas_rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            51,
+            20,
+            160,
+            216
+          ],
+          "blank": false,
+          "sha256_pixels": "8f420feefd2b72db1540c3c470f81d36d21e1a9f4874883938693c7becd4abf7"
+        },
+        {
+          "file": "frames/frame_11.png",
+          "index": 10,
+          "duration_ms": 80,
+          "atlas_rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            49,
+            27,
+            165,
+            204
+          ],
+          "blank": false,
+          "sha256_pixels": "a7f7fec83c618a7d7e980e77a4ece7eef4cc8f8d7571449dc150b830227d093d"
+        },
+        {
+          "file": "frames/frame_12.png",
+          "index": 11,
+          "duration_ms": 80,
+          "atlas_rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            53,
+            29,
+            153,
+            204
+          ],
+          "blank": false,
+          "sha256_pixels": "774c856b89157292989578cb27f6a8ce1e583360cf4c10b393db1996358997c4"
+        },
+        {
+          "file": "frames/frame_13.png",
+          "index": 12,
+          "duration_ms": 80,
+          "atlas_rect": [
+            1024,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            58,
+            38,
+            147,
+            188
+          ],
+          "blank": false,
+          "sha256_pixels": "e7216e071878f4bbb90fe215e1dd936444b7aada401a1f57d30ef45215a70e8d"
+        },
+        {
+          "file": "frames/frame_14.png",
+          "index": 13,
+          "duration_ms": 80,
+          "atlas_rect": [
+            1280,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            60,
+            26,
+            146,
+            212
+          ],
+          "blank": false,
+          "sha256_pixels": "d1456e20ad31115c88e55c867562f47432c47c50c6f245d20e29b1ab8250efdf"
+        },
+        {
+          "file": "frames/frame_15.png",
+          "index": 14,
+          "duration_ms": 80,
+          "atlas_rect": [
+            1536,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            57,
+            33,
+            155,
+            198
+          ],
+          "blank": false,
+          "sha256_pixels": "9e40c4bdba9a2d2c9b34d71688cd350422383ba1cc01c0ceb44bc41b6f3392af"
+        },
+        {
+          "file": "frames/frame_16.png",
+          "index": 15,
+          "duration_ms": 80,
+          "atlas_rect": [
+            1792,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            58,
+            32,
+            151,
+            201
+          ],
+          "blank": false,
+          "sha256_pixels": "e18f07b883515b71454377c37196d62e421b8dbc1c528d61d327f1244c00b9da"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "Bullets_of_Fury_Pure_Combat_FX_Vol1\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke\\03_Smoke_Boss_Column\\animation.json"
+    },
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          57,
+          6,
+          213,
+          239
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_09.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          53,
+          25,
+          213,
+          238
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_16.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          58,
+          32,
+          209,
+          233
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_04.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_05.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_06.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_07.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_08.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_09.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_10.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_11.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_12.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_13.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_14.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_15.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Boss_Column\\frames\\frame_16.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "Smoke_Radial_Impact",
+      "source_pack": "Bullets_of_Fury_Pure_Combat_FX_Vol1",
+      "type": "animation",
+      "frame_count": 16,
+      "loop": false,
+      "timings_ms": [
+        55,
+        55,
+        60,
+        65,
+        70,
+        80,
+        90,
+        100,
+        115,
+        130,
+        150,
+        175,
+        205,
+        240,
+        290,
+        360
+      ],
+      "cell_2x": [
+        512,
+        512
+      ],
+      "pivot_2x": [
+        256,
+        256
+      ],
+      "atlas_1x": "Sprites/1x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Smoke_Radial_Impact/atlas.png",
+      "atlas_2x": "Sprites/2x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Smoke_Radial_Impact/atlas.png",
+      "metadata": "Sprites/2x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Smoke_Radial_Impact/animation.json",
+      "aseprite": "Source/Aseprite/Bullets_of_Fury_Pure_Combat_FX_Vol1/Smoke_Radial_Impact.aseprite"
+    },
+    "meta": {
+      "id": "Smoke_Radial_Impact",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "Bullets_of_Fury_Pure_Combat_FX_Vol1",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "direction": "Neutral",
+      "frame_count": 16,
+      "loop": false,
+      "timings_ms": [
+        55,
+        55,
+        60,
+        65,
+        70,
+        80,
+        90,
+        100,
+        115,
+        130,
+        150,
+        175,
+        205,
+        240,
+        290,
+        360
+      ],
+      "events": {
+        "impact": 1,
+        "peak": 7,
+        "dissipate": 16
+      },
+      "atlas": "atlas.png",
+      "atlas_columns": 8,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 55,
+          "atlas_rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            112,
+            111,
+            34,
+            34
+          ],
+          "blank": false,
+          "sha256_pixels": "ee0208432eda458c2a2612f9d1b7b86e9e27fe49ec2cfeca9f0c505c5c266afa"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 55,
+          "atlas_rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            101,
+            101,
+            56,
+            54
+          ],
+          "blank": false,
+          "sha256_pixels": "f7b69778df205dbcd892f918020f1fe9788c89c47a25bbf894bc9b0d228b9f6b"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 60,
+          "atlas_rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            74,
+            77,
+            110,
+            103
+          ],
+          "blank": false,
+          "sha256_pixels": "0be51a246f22a6c9464462940a3739c7ae7be42c495c3bc9a9dc15502ce6712b"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 65,
+          "atlas_rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            51,
+            57,
+            155,
+            142
+          ],
+          "blank": false,
+          "sha256_pixels": "b0db7c7b4e9b32df458c852e604d4c105c8966cb031a80cbe317ee732cfe2a3a"
+        },
+        {
+          "file": "frames/frame_05.png",
+          "index": 4,
+          "duration_ms": 70,
+          "atlas_rect": [
+            1024,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            62,
+            65,
+            133,
+            127
+          ],
+          "blank": false,
+          "sha256_pixels": "e952a76b77332ca5beff717397d056433cedb355d996457a7afeeb588fffface"
+        },
+        {
+          "file": "frames/frame_06.png",
+          "index": 5,
+          "duration_ms": 80,
+          "atlas_rect": [
+            1280,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            52,
+            58,
+            154,
+            140
+          ],
+          "blank": false,
+          "sha256_pixels": "ca47502a6abba8da0627cd3fcba9e6324fef5ca89335260eb6866a592ca1bcfd"
+        },
+        {
+          "file": "frames/frame_07.png",
+          "index": 6,
+          "duration_ms": 90,
+          "atlas_rect": [
+            1536,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            43,
+            48,
+            170,
+            161
+          ],
+          "blank": false,
+          "sha256_pixels": "a50a010191a243e9f349d36d3e53669556b283ada8f57ff612170c9f2e145caf"
+        },
+        {
+          "file": "frames/frame_08.png",
+          "index": 7,
+          "duration_ms": 100,
+          "atlas_rect": [
+            1792,
+            0,
+            256,
+            256
+          ],
+          "bounds": [
+            33,
+            39,
+            191,
+            179
+          ],
+          "blank": false,
+          "sha256_pixels": "c686606b29f9eaa8ee7522e276b4646cb95f37bbc43f58b642d62e90334afc0f"
+        },
+        {
+          "file": "frames/frame_09.png",
+          "index": 8,
+          "duration_ms": 115,
+          "atlas_rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            45,
+            53,
+            167,
+            150
+          ],
+          "blank": false,
+          "sha256_pixels": "d97e89d0f9ba4bc47f5754bffb0570b7a669dddff0fdfa3ab0bd8f7cf6b03b1b"
+        },
+        {
+          "file": "frames/frame_10.png",
+          "index": 9,
+          "duration_ms": 130,
+          "atlas_rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            48,
+            51,
+            161,
+            154
+          ],
+          "blank": false,
+          "sha256_pixels": "3d313bf946e3c03b7a382a10fed4c38014af4b1204c8a7f06870989c71f1bf33"
+        },
+        {
+          "file": "frames/frame_11.png",
+          "index": 10,
+          "duration_ms": 150,
+          "atlas_rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            49,
+            55,
+            158,
+            147
+          ],
+          "blank": false,
+          "sha256_pixels": "3db24285d45825365c3bd2fac52d61f6e9b7607bf45b5c681e3623aad2983591"
+        },
+        {
+          "file": "frames/frame_12.png",
+          "index": 11,
+          "duration_ms": 175,
+          "atlas_rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            49,
+            55,
+            158,
+            148
+          ],
+          "blank": false,
+          "sha256_pixels": "7392eeaae433cfe61e1d4886d6cc6cbb0def27a05412f9e2c93f940a7389f90e"
+        },
+        {
+          "file": "frames/frame_13.png",
+          "index": 12,
+          "duration_ms": 205,
+          "atlas_rect": [
+            1024,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            53,
+            52,
+            151,
+            153
+          ],
+          "blank": false,
+          "sha256_pixels": "da42a4a2a3afe4d7492508c1cf3be18ff6b320e764bc17565488bbe30a141e59"
+        },
+        {
+          "file": "frames/frame_14.png",
+          "index": 13,
+          "duration_ms": 240,
+          "atlas_rect": [
+            1280,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            56,
+            59,
+            144,
+            139
+          ],
+          "blank": false,
+          "sha256_pixels": "9eafc3abe235ee66d9bf6f8110dad34d6289d103e4dedfab0691ab8d369432b1"
+        },
+        {
+          "file": "frames/frame_15.png",
+          "index": 14,
+          "duration_ms": 290,
+          "atlas_rect": [
+            1536,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            58,
+            61,
+            141,
+            135
+          ],
+          "blank": false,
+          "sha256_pixels": "83fb1e8bae8462d17fdfd8df2ab69167e96dae1025a60b1cb0f0ab7b877fc002"
+        },
+        {
+          "file": "frames/frame_16.png",
+          "index": 15,
+          "duration_ms": 360,
+          "atlas_rect": [
+            1792,
+            256,
+            256,
+            256
+          ],
+          "bounds": [
+            60,
+            62,
+            137,
+            133
+          ],
+          "blank": false,
+          "sha256_pixels": "7e1a8ce339369ef6500428887c9531a9825e8733078a29f31e0b691971f92533"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "Bullets_of_Fury_Pure_Combat_FX_Vol1\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke\\04_Smoke_Radial_Impact\\animation.json"
+    },
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          112,
+          111,
+          146,
+          145
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_09.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          45,
+          53,
+          212,
+          203
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      },
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_16.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          60,
+          62,
+          197,
+          195
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_04.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_05.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_06.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_07.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_08.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_09.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_10.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_11.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_12.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_13.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_14.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_15.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Smoke_Radial_Impact\\frames\\frame_16.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "nuclear_atomic_01_compact_tactical",
+      "name": "Nuclear Atomic 01 Compact Tactical",
+      "category": "nuclear_atomic",
+      "frame_count": 32,
+      "cell": 128,
+      "loop": false,
+      "duration_ms": 1600,
+      "folder": "Animations/nuclear_atomic_01_compact_tactical",
+      "unique_frames": 32,
+      "blank_frames": 1,
+      "colors": 63,
+      "native_fit_margin": 8,
+      "sha256": "9aa90de4d97f12fc1fea2d6035aa4fee5e2bc105ae14b8dbb1d356ccf241b5eb",
+      "needs_review": false,
+      "exporter_version": 2,
+      "aliases": [],
+      "thumbnail": "frames/frame_19.png"
+    },
+    "meta": [
+      {
+        "id": "nuclear_atomic_01_compact_tactical",
+        "name": "Nuclear Atomic 01 Compact Tactical",
+        "category": "nuclear_atomic",
+        "loop": false,
+        "frame_count": 32,
+        "cell": {
+          "width": 128,
+          "height": 128
+        },
+        "pivot": {
+          "x": 64,
+          "y": 108
+        },
+        "alpha": "binary",
+        "blend": "normal",
+        "filter": "nearest",
+        "columns": 4,
+        "rows": 8,
+        "frame_order": "left_to_right_then_top_to_bottom",
+        "atlas": "atlas.png",
+        "strip": "strip.png",
+        "source": "source.aseprite",
+        "timing_ms": [
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50
+        ],
+        "timing_ticks_60hz": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "duration_ms": 1600,
+        "frames": [
+          {
+            "index": 0,
+            "file": "frames/frame_01.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              53,
+              97,
+              75,
+              102
+            ],
+            "blank": false,
+            "sha256": "1f81018ebd6ac413d06365ab96591a1f5e1556b8f64cbaeb096f4762d1a2c716"
+          },
+          {
+            "index": 1,
+            "file": "frames/frame_02.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              43,
+              90,
+              85,
+              102
+            ],
+            "blank": false,
+            "sha256": "5a79591506629495cffd4631f330baece8d97a58c6c19e112bd8f3d7e52a511e"
+          },
+          {
+            "index": 2,
+            "file": "frames/frame_03.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              33,
+              81,
+              93,
+              103
+            ],
+            "blank": false,
+            "sha256": "1ebfc3c80ca66ce3e325c7641ba6d878d77a14f1eb5aa587ede2e86cd30992cc"
+          },
+          {
+            "index": 3,
+            "file": "frames/frame_04.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              31,
+              72,
+              95,
+              105
+            ],
+            "blank": false,
+            "sha256": "f0c42b78fd1a2a03f8bb9185dbaedbc80ccaec24eea3910eebd236ac4cdd49f5"
+          },
+          {
+            "index": 4,
+            "file": "frames/frame_05.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              33,
+              67,
+              97,
+              105
+            ],
+            "blank": false,
+            "sha256": "26a7b5d5b50d776e378af8ac4015fe0218bade3fe3ef75f410013022a2740d22"
+          },
+          {
+            "index": 5,
+            "file": "frames/frame_06.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              35,
+              58,
+              97,
+              105
+            ],
+            "blank": false,
+            "sha256": "c134ff412f49a3350d2ae7aa6984efb9c97d7801b9863f72327093809e688a45"
+          },
+          {
+            "index": 6,
+            "file": "frames/frame_07.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              32,
+              48,
+              96,
+              106
+            ],
+            "blank": false,
+            "sha256": "42f92226fc7758a24a1fe377e13f622db749defdc14dfba41957d885c4a3c9b2"
+          },
+          {
+            "index": 7,
+            "file": "frames/frame_08.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              28,
+              40,
+              98,
+              106
+            ],
+            "blank": false,
+            "sha256": "295a3dcad9b998954adc4eb158af97f473780d0f0eb72fc6e09079a141151bf9"
+          },
+          {
+            "index": 8,
+            "file": "frames/frame_09.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              25,
+              38,
+              103,
+              107
+            ],
+            "blank": false,
+            "sha256": "49c5e616777df9b65782a0365e51f2269b513c3dea707500f13dc6c3c210d059"
+          },
+          {
+            "index": 9,
+            "file": "frames/frame_10.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              19,
+              33,
+              107,
+              107
+            ],
+            "blank": false,
+            "sha256": "08f96e1e85bcde08e74e7f2ff16f87f8cba3988a55f1d7bc0e7b46928f093904"
+          },
+          {
+            "index": 10,
+            "file": "frames/frame_11.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              17,
+              28,
+              109,
+              107
+            ],
+            "blank": false,
+            "sha256": "ef9d3658765f05f7640826f9b21fce62a24cf84dc72094b40485bba4ece267cf"
+          },
+          {
+            "index": 11,
+            "file": "frames/frame_12.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              14,
+              23,
+              111,
+              107
+            ],
+            "blank": false,
+            "sha256": "32ed4bee62adc042cbb065b5ed540e38d14d517406053f749c0fa8068c57af3e"
+          },
+          {
+            "index": 12,
+            "file": "frames/frame_13.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              14,
+              19,
+              114,
+              108
+            ],
+            "blank": false,
+            "sha256": "8b73060756d04dd57bab98d640d2458fb040a2af1caf0e6c031af2485b109feb"
+          },
+          {
+            "index": 13,
+            "file": "frames/frame_14.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              15,
+              18,
+              114,
+              108
+            ],
+            "blank": false,
+            "sha256": "a37d1d2467f434dacf73a93bc0ae892bcb49a322012ac36f1b3491c4ee1c4710"
+          },
+          {
+            "index": 14,
+            "file": "frames/frame_15.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              15,
+              16,
+              114,
+              108
+            ],
+            "blank": false,
+            "sha256": "29049122c1b9c20b7c671c99535dbfd376fcd210c003a3d4eb928e0d49781742"
+          },
+          {
+            "index": 15,
+            "file": "frames/frame_16.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              15,
+              16,
+              114,
+              108
+            ],
+            "blank": false,
+            "sha256": "3a5e397521c0ae0dca8a805f5c327ed7b9babc721808aceefa32898360a5e215"
+          },
+          {
+            "index": 16,
+            "file": "frames/frame_17.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              512,
+              128,
+              128
+            ],
+            "bounds": [
+              16,
+              16,
+              114,
+              108
+            ],
+            "blank": false,
+            "sha256": "013161d8003773e2e08a741aeed6469f0ab46cb820baacd9e94da1e47693c1c6"
+          },
+          {
+            "index": 17,
+            "file": "frames/frame_18.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              512,
+              128,
+              128
+            ],
+            "bounds": [
+              16,
+              15,
+              114,
+              108
+            ],
+            "blank": false,
+            "sha256": "56639d05cbafdfa49580f3d22fddd989324674ab2c63b85c96f6b17eeb0e9d5d"
+          },
+          {
+            "index": 18,
+            "file": "frames/frame_19.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              512,
+              128,
+              128
+            ],
+            "bounds": [
+              16,
+              13,
+              113,
+              110
+            ],
+            "blank": false,
+            "sha256": "b1db36595332d17b60f6adbb4c0ab6231d9bca174df529a804397b25e303724d"
+          },
+          {
+            "index": 19,
+            "file": "frames/frame_20.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              512,
+              128,
+              128
+            ],
+            "bounds": [
+              16,
+              13,
+              114,
+              110
+            ],
+            "blank": false,
+            "sha256": "b2ea097a2561e8d00c6dfcef765203a0c92dcc0e1f0d32fd3a0355305ea692b2"
+          },
+          {
+            "index": 20,
+            "file": "frames/frame_21.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              640,
+              128,
+              128
+            ],
+            "bounds": [
+              16,
+              14,
+              113,
+              109
+            ],
+            "blank": false,
+            "sha256": "d7df825e123a84869af90eb0e5b57bdc3feb49c32d95408057a9ee361958194c"
+          },
+          {
+            "index": 21,
+            "file": "frames/frame_22.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              640,
+              128,
+              128
+            ],
+            "bounds": [
+              18,
+              12,
+              112,
+              109
+            ],
+            "blank": false,
+            "sha256": "e3d25bccd4ab59de9a60214a9e2f825cca26b6fe949f3ec6105f04efe12a2ea9"
+          },
+          {
+            "index": 22,
+            "file": "frames/frame_23.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              640,
+              128,
+              128
+            ],
+            "bounds": [
+              18,
+              14,
+              110,
+              109
+            ],
+            "blank": false,
+            "sha256": "1140fc796827bdb701f92ae7731a7bc2d2eb97dd7161f0159b3de0bd626f17fe"
+          },
+          {
+            "index": 23,
+            "file": "frames/frame_24.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              640,
+              128,
+              128
+            ],
+            "bounds": [
+              20,
+              18,
+              110,
+              109
+            ],
+            "blank": false,
+            "sha256": "6d31b4c5ffb8d873d091c9dfcfa4310c3ac9d625ee277a761948a2211c2d4689"
+          },
+          {
+            "index": 24,
+            "file": "frames/frame_25.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              768,
+              128,
+              128
+            ],
+            "bounds": [
+              21,
+              21,
+              110,
+              108
+            ],
+            "blank": false,
+            "sha256": "db11c9e17bb652a7a3608fe6644d4c9b199882305a4ab9a3aca7db3c50a5c492"
+          },
+          {
+            "index": 25,
+            "file": "frames/frame_26.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              768,
+              128,
+              128
+            ],
+            "bounds": [
+              25,
+              25,
+              106,
+              108
+            ],
+            "blank": false,
+            "sha256": "53d7dd392c2b1720665db7e10522f0c8dd97311ea23f927668a4df54bdfcb2b7"
+          },
+          {
+            "index": 26,
+            "file": "frames/frame_27.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              768,
+              128,
+              128
+            ],
+            "bounds": [
+              24,
+              33,
+              94,
+              108
+            ],
+            "blank": false,
+            "sha256": "a8310a8cb6c2f90a89dd9534422165d765ffca9ce993732bfb046dea4eaed5de"
+          },
+          {
+            "index": 27,
+            "file": "frames/frame_28.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              768,
+              128,
+              128
+            ],
+            "bounds": [
+              26,
+              41,
+              94,
+              92
+            ],
+            "blank": false,
+            "sha256": "273d8e834a65013925299156d535db8af20054f2cde14b1349b77c1e7c4d5455"
+          },
+          {
+            "index": 28,
+            "file": "frames/frame_29.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              896,
+              128,
+              128
+            ],
+            "bounds": [
+              29,
+              47,
+              88,
+              90
+            ],
+            "blank": false,
+            "sha256": "aa8bbccb5e5b9376c05ac00b81e91a47f2279ba3176816ac30fc9b13d892ec52"
+          },
+          {
+            "index": 29,
+            "file": "frames/frame_30.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              896,
+              128,
+              128
+            ],
+            "bounds": [
+              49,
+              55,
+              61,
+              70
+            ],
+            "blank": false,
+            "sha256": "0725badc552f4ddc2add268e299af6239e742862c5df298d1cb8e6329c0f1abe"
+          },
+          {
+            "index": 30,
+            "file": "frames/frame_31.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              896,
+              128,
+              128
+            ],
+            "bounds": [
+              53,
+              67,
+              54,
+              68
+            ],
+            "blank": false,
+            "sha256": "cc6e390a584806519575d5154d4bb54ae4cc5198e77022419782ce28f3060a24"
+          },
+          {
+            "index": 31,
+            "file": "frames/frame_32.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              896,
+              128,
+              128
+            ],
+            "bounds": null,
+            "blank": true,
+            "sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+          }
+        ]
+      },
+      {
+        "id": "nuclear_atomic_01_compact_tactical",
+        "name": "Nuclear Atomic 01 Compact Tactical",
+        "category": "nuclear_atomic",
+        "frame_count": 32,
+        "cell": 128,
+        "loop": false,
+        "duration_ms": 1600,
+        "folder": "Animations/nuclear_atomic_01_compact_tactical",
+        "unique_frames": 32,
+        "blank_frames": 1,
+        "colors": 63,
+        "native_fit_margin": 8,
+        "sha256": "9aa90de4d97f12fc1fea2d6035aa4fee5e2bc105ae14b8dbb1d356ccf241b5eb",
+        "needs_review": false,
+        "exporter_version": 2
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_04.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_05.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_06.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_07.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_08.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_09.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_10.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_11.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_12.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_13.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_14.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_15.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_16.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_17.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_18.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_19.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_20.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_21.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_22.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_23.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_24.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_25.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_26.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_27.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_28.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_29.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_30.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_31.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_32.png"
+    ],
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_01_compact_tactical\\frames\\frame_17.png",
+        "size": [
+          128,
+          128
+        ],
+        "bbox": [
+          16,
+          16,
+          114,
+          108
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    ]
+  },
+  {
+    "asset": {
+      "id": "nuclear_atomic_05_rolling_mushroom",
+      "name": "Nuclear Atomic 05 Rolling Mushroom",
+      "category": "nuclear_atomic",
+      "frame_count": 32,
+      "cell": 128,
+      "loop": false,
+      "duration_ms": 1600,
+      "folder": "Animations/nuclear_atomic_05_rolling_mushroom",
+      "unique_frames": 32,
+      "blank_frames": 1,
+      "colors": 63,
+      "native_fit_margin": 8,
+      "sha256": "564fabb2e60eb257f38d6e31e8737ad22529dc1e5187a66c8048939b3c4461ad",
+      "needs_review": false,
+      "exporter_version": 2,
+      "aliases": [
+        "fxpack1_r05"
+      ],
+      "thumbnail": "frames/frame_17.png"
+    },
+    "meta": [
+      {
+        "id": "nuclear_atomic_05_rolling_mushroom",
+        "name": "Nuclear Atomic 05 Rolling Mushroom",
+        "category": "nuclear_atomic",
+        "loop": false,
+        "frame_count": 32,
+        "cell": {
+          "width": 128,
+          "height": 128
+        },
+        "pivot": {
+          "x": 64,
+          "y": 105
+        },
+        "alpha": "binary",
+        "blend": "normal",
+        "filter": "nearest",
+        "columns": 4,
+        "rows": 8,
+        "frame_order": "left_to_right_then_top_to_bottom",
+        "atlas": "atlas.png",
+        "strip": "strip.png",
+        "source": "source.aseprite",
+        "timing_ms": [
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50,
+          50
+        ],
+        "timing_ticks_60hz": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "duration_ms": 1600,
+        "frames": [
+          {
+            "index": 0,
+            "file": "frames/frame_01.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              48,
+              97,
+              80,
+              105
+            ],
+            "blank": false,
+            "sha256": "7d24d97e7eef1d5e72679aaa765c1de9700b2b1e0baf46aea4272351ceef4044"
+          },
+          {
+            "index": 1,
+            "file": "frames/frame_02.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              41,
+              86,
+              86,
+              105
+            ],
+            "blank": false,
+            "sha256": "ab142f4c83f4c226a97b1461f3dc795b70468f3fd31a958b009b6a53bfed747c"
+          },
+          {
+            "index": 2,
+            "file": "frames/frame_03.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              33,
+              76,
+              94,
+              105
+            ],
+            "blank": false,
+            "sha256": "1faee2bcc5e38e60963505d50f1e057d80e43ca03ba8e8e4790e2a46c09c6920"
+          },
+          {
+            "index": 3,
+            "file": "frames/frame_04.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              30,
+              69,
+              96,
+              105
+            ],
+            "blank": false,
+            "sha256": "a2b801fe3aabdf99e19fceafd25b5304329ef038bcdbb55ec1ee859cde663c5c"
+          },
+          {
+            "index": 4,
+            "file": "frames/frame_05.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              29,
+              62,
+              99,
+              105
+            ],
+            "blank": false,
+            "sha256": "48b1709ae6e3c2429d58883e91276cb7146293bd89deb0fc5647c2e124e46192"
+          },
+          {
+            "index": 5,
+            "file": "frames/frame_06.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              26,
+              53,
+              100,
+              105
+            ],
+            "blank": false,
+            "sha256": "db4ef499d253c922cacd9a08e5671a6aa4ddb8a7fbf74d7037033071e86ce034"
+          },
+          {
+            "index": 6,
+            "file": "frames/frame_07.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              22,
+              46,
+              104,
+              105
+            ],
+            "blank": false,
+            "sha256": "5e8c461b373f10f4f8d1281c1e21da5fb476ba5144f11ae4f5669165fd4d5bcc"
+          },
+          {
+            "index": 7,
+            "file": "frames/frame_08.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              20,
+              39,
+              107,
+              105
+            ],
+            "blank": false,
+            "sha256": "6525354e3b595e414ca3fdfc15244f2f5085fd9bdacb55625c2b1881eaf5e2e8"
+          },
+          {
+            "index": 8,
+            "file": "frames/frame_09.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              19,
+              36,
+              109,
+              105
+            ],
+            "blank": false,
+            "sha256": "2c078b037fae8e9c7fc9c1eaddc81dcca22234ed268d2ede1bdc9f6e63de45e7"
+          },
+          {
+            "index": 9,
+            "file": "frames/frame_10.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              17,
+              31,
+              111,
+              105
+            ],
+            "blank": false,
+            "sha256": "5553940fdceac4af6b8a0f73574220ce94679fc96386754ff52fd63ee44d9b3c"
+          },
+          {
+            "index": 10,
+            "file": "frames/frame_11.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              15,
+              26,
+              111,
+              105
+            ],
+            "blank": false,
+            "sha256": "7f722b48db2485e62f9714ce9166b019080afb185ee0cf2edf57a97655c4d94b"
+          },
+          {
+            "index": 11,
+            "file": "frames/frame_12.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              15,
+              21,
+              113,
+              105
+            ],
+            "blank": false,
+            "sha256": "0e4ed1a99fdcf5f1a32094232c2c935e4f78511a7ad3530ea8832ce5556e65e7"
+          },
+          {
+            "index": 12,
+            "file": "frames/frame_13.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              14,
+              19,
+              115,
+              106
+            ],
+            "blank": false,
+            "sha256": "b3c416dd282dc9df37479b27cc9213da54e87963631d02f5237bce563642f457"
+          },
+          {
+            "index": 13,
+            "file": "frames/frame_14.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              13,
+              16,
+              115,
+              106
+            ],
+            "blank": false,
+            "sha256": "fa09feed3e168467a33304c66526b2de75f06415afb01423b8e5db2fe0e87d21"
+          },
+          {
+            "index": 14,
+            "file": "frames/frame_15.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              12,
+              15,
+              115,
+              106
+            ],
+            "blank": false,
+            "sha256": "568448f2b3e03f285ead71fd0e3feb176eef7d66ef22a80ba6b26da642b9f39f"
+          },
+          {
+            "index": 15,
+            "file": "frames/frame_16.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              13,
+              13,
+              116,
+              106
+            ],
+            "blank": false,
+            "sha256": "22ac750406e694b9c543f050f634fc80678dc03cb10c459d4d46b23ae27b7ef3"
+          },
+          {
+            "index": 16,
+            "file": "frames/frame_17.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              512,
+              128,
+              128
+            ],
+            "bounds": [
+              13,
+              13,
+              115,
+              107
+            ],
+            "blank": false,
+            "sha256": "4defc94af6da6fee768d68ab332cce7a076385a469d6421d1b9366fbbf33e969"
+          },
+          {
+            "index": 17,
+            "file": "frames/frame_18.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              512,
+              128,
+              128
+            ],
+            "bounds": [
+              13,
+              13,
+              115,
+              107
+            ],
+            "blank": false,
+            "sha256": "5be13dabcf832ef851d0b5defb345848ecd85891d74b556b67bc6558ab6dab9b"
+          },
+          {
+            "index": 18,
+            "file": "frames/frame_19.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              512,
+              128,
+              128
+            ],
+            "bounds": [
+              13,
+              13,
+              114,
+              107
+            ],
+            "blank": false,
+            "sha256": "2bbeabf7c32cc173503d24b1dca389e938ed7ad96eb7831b9692f5b02f44f40d"
+          },
+          {
+            "index": 19,
+            "file": "frames/frame_20.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              512,
+              128,
+              128
+            ],
+            "bounds": [
+              14,
+              13,
+              115,
+              107
+            ],
+            "blank": false,
+            "sha256": "04328d2462eee4020dad71dafab92d00dd0e0daaf4cd5429ebd130a1e0ed7bdf"
+          },
+          {
+            "index": 20,
+            "file": "frames/frame_21.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              640,
+              128,
+              128
+            ],
+            "bounds": [
+              15,
+              14,
+              113,
+              107
+            ],
+            "blank": false,
+            "sha256": "d4e85562e0367f47df15ffbab4feed5e76529a4ef2453608f48f68de02829e43"
+          },
+          {
+            "index": 21,
+            "file": "frames/frame_22.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              640,
+              128,
+              128
+            ],
+            "bounds": [
+              15,
+              16,
+              111,
+              107
+            ],
+            "blank": false,
+            "sha256": "9fac35cc5f118995a705490299641b61c4c3e843b02b54186fd7733d68315fb1"
+          },
+          {
+            "index": 22,
+            "file": "frames/frame_23.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              640,
+              128,
+              128
+            ],
+            "bounds": [
+              16,
+              17,
+              111,
+              107
+            ],
+            "blank": false,
+            "sha256": "6ffe5e5e32265f91692a2a586a2be9dece91146b6e9417ec5d2c7cd667200f4e"
+          },
+          {
+            "index": 23,
+            "file": "frames/frame_24.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              640,
+              128,
+              128
+            ],
+            "bounds": [
+              17,
+              17,
+              111,
+              107
+            ],
+            "blank": false,
+            "sha256": "942572fe624c7f6e04280ab727b491c81a40995e5b1c24474e5ae8eb24183cd2"
+          },
+          {
+            "index": 24,
+            "file": "frames/frame_25.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              768,
+              128,
+              128
+            ],
+            "bounds": [
+              17,
+              20,
+              109,
+              107
+            ],
+            "blank": false,
+            "sha256": "69301d9e72c6b8e14f94172426752755187b6ddea9cf770f1b83b26d24e1d047"
+          },
+          {
+            "index": 25,
+            "file": "frames/frame_26.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              768,
+              128,
+              128
+            ],
+            "bounds": [
+              23,
+              25,
+              106,
+              105
+            ],
+            "blank": false,
+            "sha256": "7e88a109aab46ed6a227637462d779f12d1c0b4889b7d3bbeed45b875a4af0e4"
+          },
+          {
+            "index": 26,
+            "file": "frames/frame_27.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              768,
+              128,
+              128
+            ],
+            "bounds": [
+              31,
+              32,
+              102,
+              103
+            ],
+            "blank": false,
+            "sha256": "27743ac2031355c65cb7b481ed55b111de195cf7774b4929739d6218bf5cc83d"
+          },
+          {
+            "index": 27,
+            "file": "frames/frame_28.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              768,
+              128,
+              128
+            ],
+            "bounds": [
+              33,
+              33,
+              98,
+              103
+            ],
+            "blank": false,
+            "sha256": "83ef75d280afee9e42c111e643db5ff6e03ffc3df8a69fd73ed50ab7b19071cb"
+          },
+          {
+            "index": 28,
+            "file": "frames/frame_29.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              0,
+              896,
+              128,
+              128
+            ],
+            "bounds": [
+              37,
+              37,
+              97,
+              103
+            ],
+            "blank": false,
+            "sha256": "b4628f87f59654fcfac0b2226895cf6ac211c35319735cca7ab801a2b915eceb"
+          },
+          {
+            "index": 29,
+            "file": "frames/frame_30.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              128,
+              896,
+              128,
+              128
+            ],
+            "bounds": [
+              40,
+              53,
+              89,
+              95
+            ],
+            "blank": false,
+            "sha256": "92f90a64cef3d2751ea12e37ea23a09f80e6d987396d034c10d6f955b8d41d33"
+          },
+          {
+            "index": 30,
+            "file": "frames/frame_31.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              256,
+              896,
+              128,
+              128
+            ],
+            "bounds": [
+              46,
+              68,
+              74,
+              95
+            ],
+            "blank": false,
+            "sha256": "2a105830bcbc977ee6a1fa0f06658443c9effb20898e6818669034d24f899aa6"
+          },
+          {
+            "index": 31,
+            "file": "frames/frame_32.png",
+            "duration_ms": 50,
+            "atlas_rect": [
+              384,
+              896,
+              128,
+              128
+            ],
+            "bounds": null,
+            "blank": true,
+            "sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+          }
+        ]
+      },
+      {
+        "id": "nuclear_atomic_05_rolling_mushroom",
+        "name": "Nuclear Atomic 05 Rolling Mushroom",
+        "category": "nuclear_atomic",
+        "frame_count": 32,
+        "cell": 128,
+        "loop": false,
+        "duration_ms": 1600,
+        "folder": "Animations/nuclear_atomic_05_rolling_mushroom",
+        "unique_frames": 32,
+        "blank_frames": 1,
+        "colors": 63,
+        "native_fit_margin": 8,
+        "sha256": "564fabb2e60eb257f38d6e31e8737ad22529dc1e5187a66c8048939b3c4461ad",
+        "needs_review": false,
+        "exporter_version": 2
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_04.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_05.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_06.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_07.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_08.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_09.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_10.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_11.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_12.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_13.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_14.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_15.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_16.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_17.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_18.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_19.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_20.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_21.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_22.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_23.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_24.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_25.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_26.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_27.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_28.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_29.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_30.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_31.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_32.png"
+    ],
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\nuclear_atomic_05_rolling_mushroom\\frames\\frame_17.png",
+        "size": [
+          128,
+          128
+        ],
+        "bbox": [
+          13,
+          13,
+          115,
+          107
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    ]
+  },
+  {
+    "asset": {
+      "id": "smoke_05_sand_cloud",
+      "name": "Smoke 05 Sand Cloud",
+      "category": "smoke",
+      "frame_count": 16,
+      "cell": 128,
+      "loop": false,
+      "duration_ms": 1067,
+      "folder": "Animations/smoke_05_sand_cloud",
+      "unique_frames": 16,
+      "blank_frames": 1,
+      "colors": 63,
+      "native_fit_margin": 8,
+      "sha256": "1d56c718c89293cbfca2abb1d57b7eb28f116a81def4e3f47939e5170db05427",
+      "needs_review": false,
+      "exporter_version": 2,
+      "aliases": [
+        "fxpack1_r04"
+      ],
+      "thumbnail": "frames/frame_07.png"
+    },
+    "meta": [
+      {
+        "id": "smoke_05_sand_cloud",
+        "name": "Smoke 05 Sand Cloud",
+        "category": "smoke",
+        "loop": false,
+        "frame_count": 16,
+        "cell": {
+          "width": 128,
+          "height": 128
+        },
+        "pivot": {
+          "x": 64,
+          "y": 64
+        },
+        "alpha": "binary",
+        "blend": "normal",
+        "filter": "nearest",
+        "columns": 4,
+        "rows": 4,
+        "frame_order": "left_to_right_then_top_to_bottom",
+        "atlas": "atlas.png",
+        "strip": "strip.png",
+        "source": "source.aseprite",
+        "timing_ms": [
+          67,
+          66,
+          67,
+          67,
+          66,
+          67,
+          67,
+          66,
+          67,
+          67,
+          66,
+          67,
+          67,
+          66,
+          67,
+          67
+        ],
+        "timing_ticks_60hz": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "duration_ms": 1067,
+        "frames": [
+          {
+            "index": 0,
+            "file": "frames/frame_01.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              0,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              46,
+              81,
+              86,
+              102
+            ],
+            "blank": false,
+            "sha256": "063baa643e2be8adddbbe5fb20238ec96722925a9f288b3f1c66cbed628adc3f"
+          },
+          {
+            "index": 1,
+            "file": "frames/frame_02.png",
+            "duration_ms": 66,
+            "atlas_rect": [
+              128,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              37,
+              73,
+              92,
+              102
+            ],
+            "blank": false,
+            "sha256": "5ed0bfb366774a30af5bdc7cb93af68c20bc4abe56eeb3b3944e20dd5b09c47d"
+          },
+          {
+            "index": 2,
+            "file": "frames/frame_03.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              256,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              29,
+              61,
+              97,
+              102
+            ],
+            "blank": false,
+            "sha256": "74e7d27c4135f195ceeebd1d390459e2b966b14a013b024d69481397459085a6"
+          },
+          {
+            "index": 3,
+            "file": "frames/frame_04.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              384,
+              0,
+              128,
+              128
+            ],
+            "bounds": [
+              20,
+              50,
+              100,
+              102
+            ],
+            "blank": false,
+            "sha256": "82103cc3a9a154b467a0f8ed8e65f8bb7095c4270d0b6c52fc2cca31fd3a6794"
+          },
+          {
+            "index": 4,
+            "file": "frames/frame_05.png",
+            "duration_ms": 66,
+            "atlas_rect": [
+              0,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              18,
+              33,
+              110,
+              103
+            ],
+            "blank": false,
+            "sha256": "6dd40e2844516a238a2df1b3c55467bda50c65b8e1995fa1058338c961b8ed3c"
+          },
+          {
+            "index": 5,
+            "file": "frames/frame_06.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              128,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              18,
+              28,
+              110,
+              102
+            ],
+            "blank": false,
+            "sha256": "eb22241a0e13b3acf8f257babf8083d5bd599eab9abe46788c7ad154a4c8114c"
+          },
+          {
+            "index": 6,
+            "file": "frames/frame_07.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              256,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              14,
+              24,
+              111,
+              102
+            ],
+            "blank": false,
+            "sha256": "d56a2703db50a9f85f067cb91349e3a0ea315a24b3df18cace787d0df39af675"
+          },
+          {
+            "index": 7,
+            "file": "frames/frame_08.png",
+            "duration_ms": 66,
+            "atlas_rect": [
+              384,
+              128,
+              128,
+              128
+            ],
+            "bounds": [
+              17,
+              24,
+              108,
+              103
+            ],
+            "blank": false,
+            "sha256": "a4bee008712edabbef9c03996b13f1312c6c5ecc4ab33c5b09e72eb44002533d"
+          },
+          {
+            "index": 8,
+            "file": "frames/frame_09.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              0,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              20,
+              21,
+              108,
+              103
+            ],
+            "blank": false,
+            "sha256": "230ca481db16e8c77c16f15ac4c55f480931abf6fe83fa37a20ad81bc0209384"
+          },
+          {
+            "index": 9,
+            "file": "frames/frame_10.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              128,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              23,
+              19,
+              106,
+              103
+            ],
+            "blank": false,
+            "sha256": "c65f1f5ab91744f3c26319ebee946c1c90bbd927b4badb9b88ef5717a1980647"
+          },
+          {
+            "index": 10,
+            "file": "frames/frame_11.png",
+            "duration_ms": 66,
+            "atlas_rect": [
+              256,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              26,
+              25,
+              105,
+              99
+            ],
+            "blank": false,
+            "sha256": "cc657b1218c7d276fd864a25d7450b38e96e15123fd2ed3fb4e6175c12d8005c"
+          },
+          {
+            "index": 11,
+            "file": "frames/frame_12.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              384,
+              256,
+              128,
+              128
+            ],
+            "bounds": [
+              23,
+              28,
+              99,
+              98
+            ],
+            "blank": false,
+            "sha256": "db7c06a5b55b026ef8c4f3f6beedefaab3457fee45bcc272c692a96412a7338f"
+          },
+          {
+            "index": 12,
+            "file": "frames/frame_13.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              0,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              28,
+              33,
+              96,
+              98
+            ],
+            "blank": false,
+            "sha256": "e47f1a9a518884344be7471f06887b7e062839be22fb08e05497e7509efe662b"
+          },
+          {
+            "index": 13,
+            "file": "frames/frame_14.png",
+            "duration_ms": 66,
+            "atlas_rect": [
+              128,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              31,
+              38,
+              88,
+              89
+            ],
+            "blank": false,
+            "sha256": "c0e72802d0bd00de24c0c5f2de8f8c628e69b855a653ba3a34c08ac42da97f7f"
+          },
+          {
+            "index": 14,
+            "file": "frames/frame_15.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              256,
+              384,
+              128,
+              128
+            ],
+            "bounds": [
+              39,
+              49,
+              79,
+              74
+            ],
+            "blank": false,
+            "sha256": "b4fbc3e0a9b6f0728cf5cc75ce1c65eafbd3e8302cc1a2600e3cabee71d535e3"
+          },
+          {
+            "index": 15,
+            "file": "frames/frame_16.png",
+            "duration_ms": 67,
+            "atlas_rect": [
+              384,
+              384,
+              128,
+              128
+            ],
+            "bounds": null,
+            "blank": true,
+            "sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+          }
+        ]
+      },
+      {
+        "id": "smoke_05_sand_cloud",
+        "name": "Smoke 05 Sand Cloud",
+        "category": "smoke",
+        "frame_count": 16,
+        "cell": 128,
+        "loop": false,
+        "duration_ms": 1067,
+        "folder": "Animations/smoke_05_sand_cloud",
+        "unique_frames": 16,
+        "blank_frames": 1,
+        "colors": 63,
+        "native_fit_margin": 8,
+        "sha256": "1d56c718c89293cbfca2abb1d57b7eb28f116a81def4e3f47939e5170db05427",
+        "needs_review": false,
+        "exporter_version": 2
+      }
+    ],
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_04.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_05.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_06.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_07.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_08.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_09.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_10.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_11.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_12.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_13.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_14.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_15.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_16.png"
+    ],
+    "samples": [
+      {
+        "file": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\take-my-explosions-re-generate-to\\outputs\\ULTIMATE_ColeForge_Pack_1\\Animations\\smoke_05_sand_cloud\\frames\\frame_09.png",
+        "size": [
+          128,
+          128
+        ],
+        "bbox": [
+          20,
+          21,
+          108,
+          103
+        ],
+        "alpha": [
+          0,
+          255
+        ]
+      }
+    ]
+  },
+  {
+    "asset": {
+      "id": "plasma_cannon_muzzle",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "frame_count": 4,
+      "loop": false,
+      "timings_ms": [
+        50,
+        50,
+        50,
+        50
+      ],
+      "cell_2x": [
+        128,
+        128
+      ],
+      "pivot_2x": [
+        64,
+        92
+      ],
+      "atlas_1x": "Sprites/1x/SpaceWeapons3/plasma_cannon_muzzle/atlas.png",
+      "atlas_2x": "Sprites/2x/SpaceWeapons3/plasma_cannon_muzzle/atlas.png",
+      "metadata": "Sprites/2x/SpaceWeapons3/plasma_cannon_muzzle/animation.json",
+      "aseprite": "Source/Aseprite/SpaceWeapons3/plasma_cannon_muzzle.aseprite"
+    },
+    "meta": {
+      "id": "plasma_cannon_muzzle",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        64,
+        64
+      ],
+      "pivot": [
+        32,
+        46
+      ],
+      "direction": "north",
+      "frame_count": 4,
+      "loop": false,
+      "timings_ms": [
+        50,
+        50,
+        50,
+        50
+      ],
+      "events": {},
+      "atlas": "atlas.png",
+      "atlas_columns": 4,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 50,
+          "atlas_rect": [
+            0,
+            0,
+            64,
+            64
+          ],
+          "bounds": [
+            23,
+            26,
+            19,
+            20
+          ],
+          "blank": false,
+          "sha256_pixels": "54b13436598bbb862d2353929f21a260f3a91afc2d7a0621b7fc8b1ebb7986a1"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 50,
+          "atlas_rect": [
+            64,
+            0,
+            64,
+            64
+          ],
+          "bounds": [
+            19,
+            18,
+            27,
+            28
+          ],
+          "blank": false,
+          "sha256_pixels": "4c952bcb89025286173a7a8c8aa5c56ee704b32c6b5f37584c40223bd53ec0b6"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 50,
+          "atlas_rect": [
+            128,
+            0,
+            64,
+            64
+          ],
+          "bounds": [
+            21,
+            23,
+            22,
+            22
+          ],
+          "blank": false,
+          "sha256_pixels": "42d6a506b3ad40f7b5c1a63293a3272531b92b2bda735d0217fb6c7cc04734ba"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 50,
+          "atlas_rect": [
+            192,
+            0,
+            64,
+            64
+          ],
+          "bounds": [
+            25,
+            31,
+            15,
+            15
+          ],
+          "blank": false,
+          "sha256_pixels": "dd1cfb847fbbe3d99f6d25192098043b3686f73a15fa7e8854f159240c2bc470"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "SpaceWeapons3\\SpaceWeapons3\\Animations\\plasma_cannon_muzzle\\animation.json"
+    },
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\plasma_cannon_muzzle\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\plasma_cannon_muzzle\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\plasma_cannon_muzzle\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\plasma_cannon_muzzle\\frames\\frame_04.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "spreadfire_cannon_muzzle",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "frame_count": 4,
+      "loop": false,
+      "timings_ms": [
+        45,
+        45,
+        45,
+        45
+      ],
+      "cell_2x": [
+        128,
+        160
+      ],
+      "pivot_2x": [
+        64,
+        120
+      ],
+      "atlas_1x": "Sprites/1x/SpaceWeapons3/spreadfire_cannon_muzzle/atlas.png",
+      "atlas_2x": "Sprites/2x/SpaceWeapons3/spreadfire_cannon_muzzle/atlas.png",
+      "metadata": "Sprites/2x/SpaceWeapons3/spreadfire_cannon_muzzle/animation.json",
+      "aseprite": "Source/Aseprite/SpaceWeapons3/spreadfire_cannon_muzzle.aseprite"
+    },
+    "meta": {
+      "id": "spreadfire_cannon_muzzle",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        64,
+        80
+      ],
+      "pivot": [
+        32,
+        60
+      ],
+      "direction": "north",
+      "frame_count": 4,
+      "loop": false,
+      "timings_ms": [
+        45,
+        45,
+        45,
+        45
+      ],
+      "events": {},
+      "atlas": "atlas.png",
+      "atlas_columns": 4,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 45,
+          "atlas_rect": [
+            0,
+            0,
+            64,
+            80
+          ],
+          "bounds": [
+            23,
+            38,
+            19,
+            19
+          ],
+          "blank": false,
+          "sha256_pixels": "a92f0234845d12efc1b33a6ec7fa69cb71af72807adf8d0e4dcffda469b15040"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 45,
+          "atlas_rect": [
+            64,
+            0,
+            64,
+            80
+          ],
+          "bounds": [
+            16,
+            24,
+            31,
+            32
+          ],
+          "blank": false,
+          "sha256_pixels": "43aa727e97cf22f6f18403711ee6b7b5afad6cb80b005b126c9064b3d0cdc3f9"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 45,
+          "atlas_rect": [
+            128,
+            0,
+            64,
+            80
+          ],
+          "bounds": [
+            19,
+            31,
+            26,
+            24
+          ],
+          "blank": false,
+          "sha256_pixels": "12f5ae9098e9f83f67ba15df7079fc1156a6b06824f8d0b8eafe53556e2f3b78"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 45,
+          "atlas_rect": [
+            192,
+            0,
+            64,
+            80
+          ],
+          "bounds": [
+            24,
+            42,
+            16,
+            15
+          ],
+          "blank": false,
+          "sha256_pixels": "e1d9cbb7aa49e1094198d017da8d5d7ecc84db54fb96a6df378ab3f4a29f69bc"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "SpaceWeapons3\\SpaceWeapons3\\Animations\\spreadfire_cannon_muzzle\\animation.json"
+    },
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_muzzle\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_muzzle\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_muzzle\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_muzzle\\frames\\frame_04.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "Explosion_Small",
+      "source_pack": "Bullets_of_Fury_Pure_Combat_FX_Vol1",
+      "type": "animation",
+      "frame_count": 16,
+      "loop": false,
+      "timings_ms": [
+        35,
+        35,
+        40,
+        45,
+        50,
+        55,
+        65,
+        75,
+        85,
+        100,
+        120,
+        145,
+        175,
+        215,
+        270,
+        360
+      ],
+      "cell_2x": [
+        256,
+        256
+      ],
+      "pivot_2x": [
+        128,
+        128
+      ],
+      "atlas_1x": "Sprites/1x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Explosion_Small/atlas.png",
+      "atlas_2x": "Sprites/2x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Explosion_Small/atlas.png",
+      "metadata": "Sprites/2x/Bullets_of_Fury_Pure_Combat_FX_Vol1/Explosion_Small/animation.json",
+      "aseprite": "Source/Aseprite/Bullets_of_Fury_Pure_Combat_FX_Vol1/Explosion_Small.aseprite"
+    },
+    "meta": {
+      "id": "Explosion_Small",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "Bullets_of_Fury_Pure_Combat_FX_Vol1",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        128,
+        128
+      ],
+      "pivot": [
+        64,
+        64
+      ],
+      "direction": "Neutral",
+      "frame_count": 16,
+      "loop": false,
+      "timings_ms": [
+        35,
+        35,
+        40,
+        45,
+        50,
+        55,
+        65,
+        75,
+        85,
+        100,
+        120,
+        145,
+        175,
+        215,
+        270,
+        360
+      ],
+      "events": {
+        "ignition": 1,
+        "peak": 8,
+        "dissipate": 16
+      },
+      "atlas": "atlas.png",
+      "atlas_columns": 8,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 35,
+          "atlas_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            63,
+            63,
+            3,
+            3
+          ],
+          "blank": false,
+          "sha256_pixels": "b13a46d66911fb4ef20a2e9d75d5444c5c9e3b3482d86f4ff8a1fc4af0d4941c"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 35,
+          "atlas_rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            57,
+            57,
+            14,
+            14
+          ],
+          "blank": false,
+          "sha256_pixels": "3765ab9753b17c9c93d9eb27734ffb28f08cf0f291c01c2045a7eee2a5cc180f"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 40,
+          "atlas_rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            49,
+            49,
+            31,
+            30
+          ],
+          "blank": false,
+          "sha256_pixels": "eb8b3aa3c7a848064f8045d608110f3f9222a81b3afb6cfc606615aa69c192e7"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 45,
+          "atlas_rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            33,
+            35,
+            58,
+            59
+          ],
+          "blank": false,
+          "sha256_pixels": "489e4cb21f31e8bbcf6bd8073b9feb3c540bf23bd860c73bae04fe72aa869140"
+        },
+        {
+          "file": "frames/frame_05.png",
+          "index": 4,
+          "duration_ms": 50,
+          "atlas_rect": [
+            512,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            31,
+            31,
+            66,
+            67
+          ],
+          "blank": false,
+          "sha256_pixels": "54b4aaf86fd9db72f085c3fc7f84eeafcb3d90d2154c6a63455144824ab62a42"
+        },
+        {
+          "file": "frames/frame_06.png",
+          "index": 5,
+          "duration_ms": 55,
+          "atlas_rect": [
+            640,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            35,
+            36,
+            59,
+            59
+          ],
+          "blank": false,
+          "sha256_pixels": "af4becc339f75b3aff15a9eef036a7e003bbe09a29eb79e10463180e01ba73a0"
+        },
+        {
+          "file": "frames/frame_07.png",
+          "index": 6,
+          "duration_ms": 65,
+          "atlas_rect": [
+            768,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            40,
+            40,
+            49,
+            49
+          ],
+          "blank": false,
+          "sha256_pixels": "b3f21d23e81bc3d0944119545ef3905bb414b4b90d1c7be6d913b4ad1d3d9df6"
+        },
+        {
+          "file": "frames/frame_08.png",
+          "index": 7,
+          "duration_ms": 75,
+          "atlas_rect": [
+            896,
+            0,
+            128,
+            128
+          ],
+          "bounds": [
+            35,
+            36,
+            58,
+            58
+          ],
+          "blank": false,
+          "sha256_pixels": "10efb0a7d629178fdc8a5a6e0e4a527766cf7561cd4115d5561a63f4f4acd473"
+        },
+        {
+          "file": "frames/frame_09.png",
+          "index": 8,
+          "duration_ms": 85,
+          "atlas_rect": [
+            0,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            34,
+            35,
+            61,
+            58
+          ],
+          "blank": false,
+          "sha256_pixels": "d061eb82ce185a03a9351a08f008991e6c804d903ca5c65fa38331d8b45ca5b1"
+        },
+        {
+          "file": "frames/frame_10.png",
+          "index": 9,
+          "duration_ms": 100,
+          "atlas_rect": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            28,
+            33,
+            72,
+            64
+          ],
+          "blank": false,
+          "sha256_pixels": "03fa5a55ebc7b35c3e26b5c9554c9775345339315e9c3450b6e5ef7dc324007c"
+        },
+        {
+          "file": "frames/frame_11.png",
+          "index": 10,
+          "duration_ms": 120,
+          "atlas_rect": [
+            256,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            30,
+            27,
+            74,
+            72
+          ],
+          "blank": false,
+          "sha256_pixels": "507245d253368e067498b4c062b6003e84382604a6201b0dcb9ea0b22ff7ae6b"
+        },
+        {
+          "file": "frames/frame_12.png",
+          "index": 11,
+          "duration_ms": 145,
+          "atlas_rect": [
+            384,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            29,
+            30,
+            71,
+            67
+          ],
+          "blank": false,
+          "sha256_pixels": "d7b41af3e46a6d6e042e9745c3df0bfbc76c00b5ddcaea60d51b2f4304ea8dfa"
+        },
+        {
+          "file": "frames/frame_13.png",
+          "index": 12,
+          "duration_ms": 175,
+          "atlas_rect": [
+            512,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            27,
+            28,
+            76,
+            71
+          ],
+          "blank": false,
+          "sha256_pixels": "4e80206b67a399999ae2cea9c51b9d7aecbddb4dcb86c5454e4b76230dda4dc0"
+        },
+        {
+          "file": "frames/frame_14.png",
+          "index": 13,
+          "duration_ms": 215,
+          "atlas_rect": [
+            640,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            34,
+            32,
+            62,
+            64
+          ],
+          "blank": false,
+          "sha256_pixels": "3d48a431f892ee0c70960995b1963bd72e87ccf74f83a66da73d98c70e84235e"
+        },
+        {
+          "file": "frames/frame_15.png",
+          "index": 14,
+          "duration_ms": 270,
+          "atlas_rect": [
+            768,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            38,
+            39,
+            51,
+            50
+          ],
+          "blank": false,
+          "sha256_pixels": "61236b9520e97920dc7e9906fbd7874413f47dfdcf30ff156831a23891960f70"
+        },
+        {
+          "file": "frames/frame_16.png",
+          "index": 15,
+          "duration_ms": 360,
+          "atlas_rect": [
+            896,
+            128,
+            128,
+            128
+          ],
+          "bounds": [
+            64,
+            63,
+            1,
+            2
+          ],
+          "blank": false,
+          "sha256_pixels": "4f36461390cc1e1f7ecaea53a80db1ef099efac88d280449363b07c251de0cdf"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "Bullets_of_Fury_Pure_Combat_FX_Vol1\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosions\\10_Explosion_Small\\animation.json"
+    },
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_04.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_05.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_06.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_07.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_08.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_09.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_10.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_11.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_12.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_13.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_14.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_15.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\Bullets_of_Fury_Pure_Combat_FX_Vol1\\Explosion_Small\\frames\\frame_16.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "spreadfire_cannon_impact",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "frame_count": 4,
+      "loop": false,
+      "timings_ms": [
+        55,
+        55,
+        55,
+        55
+      ],
+      "cell_2x": [
+        192,
+        224
+      ],
+      "pivot_2x": [
+        96,
+        112
+      ],
+      "atlas_1x": "Sprites/1x/SpaceWeapons3/spreadfire_cannon_impact/atlas.png",
+      "atlas_2x": "Sprites/2x/SpaceWeapons3/spreadfire_cannon_impact/atlas.png",
+      "metadata": "Sprites/2x/SpaceWeapons3/spreadfire_cannon_impact/animation.json",
+      "aseprite": "Source/Aseprite/SpaceWeapons3/spreadfire_cannon_impact.aseprite"
+    },
+    "meta": {
+      "id": "spreadfire_cannon_impact",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        96,
+        112
+      ],
+      "pivot": [
+        48,
+        56
+      ],
+      "direction": "neutral",
+      "frame_count": 4,
+      "loop": false,
+      "timings_ms": [
+        55,
+        55,
+        55,
+        55
+      ],
+      "events": {},
+      "atlas": "atlas.png",
+      "atlas_columns": 4,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 55,
+          "atlas_rect": [
+            0,
+            0,
+            96,
+            112
+          ],
+          "bounds": [
+            36,
+            44,
+            25,
+            24
+          ],
+          "blank": false,
+          "sha256_pixels": "c24cb553440bba6025d4a5bdfaf2bcd1f51ed63f2e8ba871548755e6ca1ed0aa"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 55,
+          "atlas_rect": [
+            96,
+            0,
+            96,
+            112
+          ],
+          "bounds": [
+            27,
+            36,
+            42,
+            40
+          ],
+          "blank": false,
+          "sha256_pixels": "2ff59e698db4efb262349951c25bf6a1a76992c114b23ab83dd186884b2fb611"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 55,
+          "atlas_rect": [
+            192,
+            0,
+            96,
+            112
+          ],
+          "bounds": [
+            20,
+            30,
+            56,
+            52
+          ],
+          "blank": false,
+          "sha256_pixels": "966f7781949a0cc14ed04ebae008791097c95bc305d3f15faa2cb1486f33e28e"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 55,
+          "atlas_rect": [
+            288,
+            0,
+            96,
+            112
+          ],
+          "bounds": [
+            29,
+            37,
+            38,
+            37
+          ],
+          "blank": false,
+          "sha256_pixels": "c8b8247d0b1b1249b4a306a340844e50d03b2556158ed6d4b0873b3d19f5142a"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "SpaceWeapons3\\SpaceWeapons3\\Animations\\spreadfire_cannon_impact\\animation.json"
+    },
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_impact\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_impact\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_impact\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\spreadfire_cannon_impact\\frames\\frame_04.png"
+    ]
+  },
+  {
+    "asset": {
+      "id": "plasma_cannon_impact_small",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "frame_count": 4,
+      "loop": false,
+      "timings_ms": [
+        55,
+        55,
+        55,
+        55
+      ],
+      "cell_2x": [
+        160,
+        192
+      ],
+      "pivot_2x": [
+        80,
+        96
+      ],
+      "atlas_1x": "Sprites/1x/SpaceWeapons3/plasma_cannon_impact_small/atlas.png",
+      "atlas_2x": "Sprites/2x/SpaceWeapons3/plasma_cannon_impact_small/atlas.png",
+      "metadata": "Sprites/2x/SpaceWeapons3/plasma_cannon_impact_small/animation.json",
+      "aseprite": "Source/Aseprite/SpaceWeapons3/plasma_cannon_impact_small.aseprite"
+    },
+    "meta": {
+      "id": "plasma_cannon_impact_small",
+      "pack": "Ultimate Space Weapons Pack #1",
+      "source_pack": "SpaceWeapons3",
+      "type": "animation",
+      "scale": 1,
+      "cell": [
+        80,
+        96
+      ],
+      "pivot": [
+        40,
+        48
+      ],
+      "direction": "neutral",
+      "frame_count": 4,
+      "loop": false,
+      "timings_ms": [
+        55,
+        55,
+        55,
+        55
+      ],
+      "events": {},
+      "atlas": "atlas.png",
+      "atlas_columns": 4,
+      "frames": [
+        {
+          "file": "frames/frame_01.png",
+          "index": 0,
+          "duration_ms": 55,
+          "atlas_rect": [
+            0,
+            0,
+            80,
+            96
+          ],
+          "bounds": [
+            29,
+            36,
+            22,
+            24
+          ],
+          "blank": false,
+          "sha256_pixels": "0f49a58cf75a3b05f1bbbdb358932665e664afebd9fc9765e6757cbced566d6f"
+        },
+        {
+          "file": "frames/frame_02.png",
+          "index": 1,
+          "duration_ms": 55,
+          "atlas_rect": [
+            80,
+            0,
+            80,
+            96
+          ],
+          "bounds": [
+            24,
+            32,
+            34,
+            34
+          ],
+          "blank": false,
+          "sha256_pixels": "0ef16a027a04a48434edf2898b38920d8eead2d731066581bc917e4dfa450371"
+        },
+        {
+          "file": "frames/frame_03.png",
+          "index": 2,
+          "duration_ms": 55,
+          "atlas_rect": [
+            160,
+            0,
+            80,
+            96
+          ],
+          "bounds": [
+            18,
+            26,
+            45,
+            44
+          ],
+          "blank": false,
+          "sha256_pixels": "bea0f109eb444130e342a64a60b5277c29a718a194d71e3fd7f5b9e8ea47bbf8"
+        },
+        {
+          "file": "frames/frame_04.png",
+          "index": 3,
+          "duration_ms": 55,
+          "atlas_rect": [
+            240,
+            0,
+            80,
+            96
+          ],
+          "bounds": [
+            25,
+            32,
+            31,
+            32
+          ],
+          "blank": false,
+          "sha256_pixels": "e1e03b049df1c0074f1a683e0313333e1b706eb850bb19182fa58734aeded764"
+        }
+      ],
+      "blend_mode": "normal_alpha",
+      "alpha": "binary",
+      "collision": null,
+      "collision_note": "Decorative bounds only. Author gameplay collision separately.",
+      "source_metadata": "SpaceWeapons3\\SpaceWeapons3\\Animations\\plasma_cannon_impact_small\\animation.json"
+    },
+    "frameFiles": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\plasma_cannon_impact_small\\frames\\frame_01.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\plasma_cannon_impact_small\\frames\\frame_02.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\plasma_cannon_impact_small\\frames\\frame_03.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-03\\tt\\outputs\\Ultimate Space Weapons Pack #1\\Sprites\\1x\\SpaceWeapons3\\plasma_cannon_impact_small\\frames\\frame_04.png"
+    ]
+  }
+]
