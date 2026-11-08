@@ -32,3 +32,19 @@ Framework4.6.2 target, app longPathAware and explicit validated Win32 namespace
 on extraction writes support deep staging folders without changing Windows
 registry settings. Payload.Open accepts either a raw ZIP or a trailer-sealed EXE.
 Reference: https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.6.x
+
+NOVEMBER6 REVISION F / PUBLISHED NOVEMBER8
+The current complete Windows release is2026.11.06f. With the existing verified
+installer and ready-game folder, use refresh_release_1106f.py, then
+zip_release_1106f.py. These preserve original compressed assets and verify every
+payload file. Earlier B/D/E refreshers are retained as historical tools.
+Revision F includes the original Stage5 sky/starfield and64px assembly cells;
+D's audio/loading/map/flame repairs and C's locked-pilot/launcher presentation
+are retained. The graphical host itself remains the verified native binary.
+
+Install-BulletsOfFury.cmd/.ps1 are the public two-part release installer helper.
+It verifies individual SHA256 hashes and the reconstructed EXE before opening
+setup, or validates already-downloaded parts using -VerifyOnly. It downloads
+only from the fixed NexusWebOS/BulletsOfFury release and embeds no credential.
+The small fixture helper tests and complete-game source checks are documented
+in docs/GITHUB_WINDOWS_PUBLICATION_1108.md and the linked QA reports.
