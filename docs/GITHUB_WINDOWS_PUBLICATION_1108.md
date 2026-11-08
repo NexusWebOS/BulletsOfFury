@@ -23,3 +23,12 @@ TESTER_FEEDBACK_REPAIRS_1106.md and WINDOWS_LAUNCHER_REVISION_B_1106.md.
 The original pending Rough Riders tutorial MP4 copies are preserved locally;
 their existing review-library releases are unchanged. The new launcher and
 Stage5 assembly previews accompany this release. Prior releases are retained.
+
+## Publication completed
+
+GitHub main and the existing production branch were fast-forwarded without
+rewriting history. The release tag points to225b64b7f240e7bdeb2972bd89ab5771e93be208.
+All8 remote asset SHA256 digests match their local bytes. Anonymous download
+checks verified the helper ZIP and sample bytes from both installer parts;
+GitHub's public latest-release endpoint resolves to this release.
+Full receipt:qa/github_windows_publication_1108.json.

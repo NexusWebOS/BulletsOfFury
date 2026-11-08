@@ -1,0 +1,104 @@
+{
+  "repository": "NexusWebOS/BulletsOfFury",
+  "release": "https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-windows-2026-11-06-revf",
+  "tag": "bof-windows-2026-11-06-revf",
+  "sourceCommit": "225b64b7f240e7bdeb2972bd89ab5771e93be208",
+  "mainAtPublication": "225b64b7f240e7bdeb2972bd89ab5771e93be208",
+  "publishedAt": "2026-11-08T18:52:21Z",
+  "latestReleaseVerified": true,
+  "assets": [
+    {
+      "name": "BulletsOfFury-Setup-2026-11-06-RevF.exe.part1",
+      "bytes": 1950000000,
+      "sha256": "a5be8400546b3c0b0c235e809c42972a9717dc804fba36fe034ff9a57ebacdd2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-06-revf/BulletsOfFury-Setup-2026-11-06-RevF.exe.part1",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-06-RevF.exe.part2",
+      "bytes": 1935709224,
+      "sha256": "544abbe3a240f121ef73719760c025ead566e0f403771a3169b82dfa922c3b27",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-06-revf/BulletsOfFury-Setup-2026-11-06-RevF.exe.part2",
+      "verified": true
+    },
+    {
+      "name": "BOF-Install-Helper-RevF.zip",
+      "bytes": 3341,
+      "sha256": "ef26d87e37fb38c1c831f41e16814a0bc20c1f36a6de5f4f16bd26bc02cc5494",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-06-revf/BOF-Install-Helper-RevF.zip",
+      "verified": true
+    },
+    {
+      "name": "READ-ME.txt",
+      "bytes": 1712,
+      "sha256": "71542199effdf598f4406f9815c08d52e7c6fd33af120a748c7b07215e7d618e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-06-revf/READ-ME.txt",
+      "verified": true
+    },
+    {
+      "name": "BOF-Fury-HQ-Launcher-Preview.mp4",
+      "bytes": 6794462,
+      "sha256": "c4a11ad8041e4ca3b7c265a2e9554e5aa212b778145b39f98ef38de9a7cf00a6",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-06-revf/BOF-Fury-HQ-Launcher-Preview.mp4",
+      "verified": true
+    },
+    {
+      "name": "BOF-Stage5-Smaller-Assembly-RevF.mp4",
+      "bytes": 27407965,
+      "sha256": "2267fb264757c02136fc6ad510d9e7b2ee7269f73558fefac38a1c30e60017a4",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-06-revf/BOF-Stage5-Smaller-Assembly-RevF.mp4",
+      "verified": true
+    },
+    {
+      "name": "BOF-Release-Manifest-RevF.json",
+      "bytes": 2225,
+      "sha256": "1a220a8349a991941544b9043cc7bae2e17db835e477468fcd8896ed1d54f967",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-06-revf/BOF-Release-Manifest-RevF.json",
+      "verified": true
+    },
+    {
+      "name": "BOF-SHA256SUMS-RevF.txt",
+      "bytes": 723,
+      "sha256": "e3b71caa12dcf0eb62392e53202b4923a0921b48d10af93f5d12d5b48d113f7e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-06-revf/BOF-SHA256SUMS-RevF.txt",
+      "verified": true
+    }
+  ],
+  "allRemoteSHA256Verified": true,
+  "installer": {
+    "name": "BulletsOfFury-Setup-2026-11-06-RevF.exe",
+    "bytes": 3885709224,
+    "sha256": "ab019939bc940a79ff41e3333787b08ac532347e71a6e0a6019fe4fff9266d37"
+  },
+  "helperPublicDownloadVerified": true,
+  "partPublicRangeDownloadsVerified": true,
+  "sourceValidation": {
+    "staged": 2346,
+    "preservedLocalVideoCopies": [
+      "docs/previews/rough_riders_guide_1028/entrance.mp4",
+      "docs/previews/rough_riders_guide_1028/videos/evasion/preview.mp4",
+      "docs/previews/rough_riders_guide_1028/videos/formations/preview.mp4",
+      "docs/previews/rough_riders_guide_1028/videos/jace/preview.mp4",
+      "docs/previews/rough_riders_guide_1028/videos/kaia/preview.mp4",
+      "docs/previews/rough_riders_guide_1028/videos/nyx/preview.mp4",
+      "docs/previews/rough_riders_guide_1028/videos/rook/preview.mp4",
+      "docs/previews/rough_riders_guide_1028/videos/voss/preview.mp4"
+    ],
+    "gameFiles": 18944,
+    "matchingJavaScriptFiles": 680,
+    "helperChecks": [
+      "syntax",
+      "per-part checksum",
+      "ordered join",
+      "whole checksum",
+      "corruption rejected"
+    ],
+    "gitBranch": "codex/build-2026-10-26"
+  },
+  "verificationLimits": {
+    "fullSourceSuiteExitCode": 1,
+    "fullSourceSuiteCompleted": false,
+    "reason": "Pre-existing missing difficultyHealthBaseline15 helper in combat_polish_0927b.js:151",
+    "newGameplayEditsDuringPublication": false
+  }
+}

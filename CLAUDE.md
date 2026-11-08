@@ -1,3 +1,14 @@
+## November8,2026 — Windows Rev F published to GitHub
+
+Main and codex/build-2026-10-26 were fast-forwarded. Release:
+https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-windows-2026-11-06-revf
+Complete native installer in2 verified parts; helper ZIP downloads/joins/checks
+the original EXE and opens setup. Includes launcher and smaller Stage5 assembly
+previews. All8 remote SHA256 hashes and anonymous download samples verified.
+Current runtime remains2026.11.06f; all680 shipped JS hashes match source.
+Known full-suite missing health-helper failure remains documented. Receipt:
+docs/qa/github_windows_publication_1108.json;docs/GITHUB_WINDOWS_PUBLICATION_1108.md.
+
 ## November6,2026 — Smaller Stage5 assembly pieces,revision F
 
 Mike requested smaller incoming ship parts. Shared kit cells194.7→64px(about67%
