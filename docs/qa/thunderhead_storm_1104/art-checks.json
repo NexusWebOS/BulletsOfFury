@@ -1,0 +1,150 @@
+{
+  "checks": [
+    {
+      "name": "tornado",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 20,
+      "size": [
+        112,
+        192
+      ]
+    },
+    {
+      "name": "cyclone",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 16,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "tempest",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 24,
+      "size": [
+        304,
+        304
+      ]
+    },
+    {
+      "name": "muzzle",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 4,
+      "size": [
+        144,
+        144
+      ]
+    },
+    {
+      "name": "impact",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 14,
+      "size": [
+        144,
+        144
+      ]
+    },
+    {
+      "name": "retina",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 24,
+      "size": [
+        88,
+        44
+      ]
+    },
+    {
+      "name": "core",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 32,
+      "size": [
+        140,
+        186
+      ]
+    },
+    {
+      "name": "bolt",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 8,
+      "size": [
+        96,
+        512
+      ]
+    },
+    {
+      "name": "orb",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 16,
+      "size": [
+        48,
+        48
+      ]
+    },
+    {
+      "name": "cloud_far",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 6,
+      "size": [
+        288,
+        216
+      ]
+    },
+    {
+      "name": "cloud_near",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 6,
+      "size": [
+        384,
+        288
+      ]
+    },
+    {
+      "name": "grade",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 7,
+      "size": [
+        340,
+        256
+      ]
+    },
+    {
+      "name": "rain",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 16,
+      "size": [
+        340,
+        256
+      ]
+    }
+  ],
+  "frames": 193,
+  "passed": true,
+  "sources": "Real Aseprite batch re-export; exact visibleRGBA and alpha compared with runtime frame inputs."
+}

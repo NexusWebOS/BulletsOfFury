@@ -14156,8 +14156,9 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
 
   /* ---- the binds Mike asked for, including the two side mouse buttons ---- */
   var _kb=vm.runInContext('KEYBIND_DEFAULT', ctxv);
-  ok(_kb.retina.indexOf(' ')>=0, 'SPACE is the C / retina button (it already was - pinned so it cannot quietly go away)');
-  ok(_kb.retina.indexOf('mouse3')>=0, 'side mouse button 4 is C / retina (e.button 3 -> mouse3)');
+  ok(_kb.bomb.indexOf(' ')>=0 && _kb.retina.indexOf(' ')<0, 'SPACE launches missiles without cycling Retina');
+  ok(_kb.retina.indexOf('mouse2')>=0 && _kb.bomb.indexOf('mouse2')<0, 'right-click selects Retina without launching missiles');
+  ok(_kb.multilock.indexOf('mouse3')>=0 && _kb.retina.indexOf('mouse3')<0, 'physical mouse button 4 holds Multi-Retina (browser button 3)');
   ok(_kb.charge && _kb.charge.indexOf('h')>=0 && _kb.charge.indexOf('mouse4')>=0,
      'CHARGE is H plus side mouse button 5 (e.button 4 -> mouse4)');
   ok(vm.runInContext('KEYBIND2_DEFAULT.charge && KEYBIND2_DEFAULT.charge.length>0', ctxv),

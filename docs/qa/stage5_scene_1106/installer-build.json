@@ -1,0 +1,13 @@
+{
+  "path": "C:\\Users\\Mike\\Documents\\New project\\Releases\\BulletsOfFury-Setup-2026-11-06.exe",
+  "version": "2026.11.06e",
+  "bytes": 3885709053,
+  "sha256": "66814692ee7ce61d940dc2ab3e02cf1bba12b199cc06da35a1ff3b516a359fb7",
+  "entries": 18953,
+  "unpackedBytes": 3900655508,
+  "gameJsSha256": "451447b1c4457a813ddbbe7af21e24407c2b72246ad0d51d251612ff3926cd1b",
+  "hostSha256": "88639db15130794ea44d366d6c25366a90595cd37e0f9902a606d4234c40e9b8",
+  "payloadSha256": "16e838a9ff6e62a125c7e683cae53318b71a8d4977292b45be5a47d520b8e5d2",
+  "allFilesVerified": true,
+  "seconds": 24.19
+}

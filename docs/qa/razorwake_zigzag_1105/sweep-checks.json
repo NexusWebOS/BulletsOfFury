@@ -1,0 +1,28 @@
+{
+  "checks": [
+    {
+      "name": "Swept contact catches a crossed pilot when both sampled hull positions are offscreen",
+      "passed": true,
+      "data": {
+        "hit": 1,
+        "afterMiss": 1,
+        "protected": true,
+        "hp": 1785
+      }
+    },
+    {
+      "name": "A pilot outside the actual swept lane is safe",
+      "passed": true
+    },
+    {
+      "name": "Fast-pass contact retains native GOD protection and boss health",
+      "passed": true
+    },
+    {
+      "name": "No browser errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

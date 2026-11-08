@@ -1,0 +1,353 @@
+{
+  "checks": [
+    {
+      "name": "Sixteen true diagonal passes",
+      "passed": true
+    },
+    {
+      "name": "Actual speed increases on every pass",
+      "passed": true
+    },
+    {
+      "name": "Final pass is at least 2.4 times faster",
+      "passed": true
+    },
+    {
+      "name": "Both lateral and vertical directions are used",
+      "passed": true
+    },
+    {
+      "name": "Heading matches the committed flight vector",
+      "passed": true
+    },
+    {
+      "name": "Every pass enters and exits beyond the complete view",
+      "passed": true
+    }
+  ],
+  "firstSpeed": 1439.5746971386984,
+  "lastSpeed": 3598.936742846747,
+  "ratio": 2.500000000000001,
+  "passes": [
+    {
+      "event": "throttle-pass",
+      "t": 21.250000000000075,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 0,
+      "x": 790,
+      "from": {
+        "x": -110,
+        "y": 722
+      },
+      "to": {
+        "x": 790,
+        "y": -210
+      },
+      "heading": -0.802863636183805,
+      "direction": "north",
+      "duration": 0.9,
+      "speed": 1439.5746971386984
+    },
+    {
+      "event": "throttle-pass",
+      "t": 23.21666666666663,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 1,
+      "x": 832,
+      "from": {
+        "x": -110,
+        "y": -210
+      },
+      "to": {
+        "x": 832,
+        "y": 722
+      },
+      "heading": 0.7800620347498549,
+      "direction": "south",
+      "duration": 0.864,
+      "speed": 1533.7233495973571
+    },
+    {
+      "event": "throttle-pass",
+      "t": 25.133333333333187,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 2,
+      "x": -138,
+      "from": {
+        "x": 790,
+        "y": 722
+      },
+      "to": {
+        "x": -138,
+        "y": -210
+      },
+      "heading": -2.3540439558732045,
+      "direction": "north",
+      "duration": 0.8280000000000001,
+      "speed": 1588.4319496653998
+    },
+    {
+      "event": "throttle-pass",
+      "t": 26.999999999999748,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 3,
+      "x": -152,
+      "from": {
+        "x": 790,
+        "y": -210
+      },
+      "to": {
+        "x": -152,
+        "y": 722
+      },
+      "heading": 2.3615306188399385,
+      "direction": "south",
+      "duration": 0.792,
+      "speed": 1673.1527450152987
+    },
+    {
+      "event": "throttle-pass",
+      "t": 28.833333333332977,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 4,
+      "x": 818,
+      "from": {
+        "x": -110,
+        "y": 722
+      },
+      "to": {
+        "x": 818,
+        "y": -210
+      },
+      "heading": -0.7875486977165886,
+      "direction": "north",
+      "duration": 0.756,
+      "speed": 1739.7111829668665
+    },
+    {
+      "event": "throttle-pass",
+      "t": 30.599999999999543,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 5,
+      "x": 790,
+      "from": {
+        "x": -110,
+        "y": -210
+      },
+      "to": {
+        "x": 790,
+        "y": 722
+      },
+      "heading": 0.802863636183805,
+      "direction": "south",
+      "duration": 0.72,
+      "speed": 1799.4683714233731
+    },
+    {
+      "event": "throttle-pass",
+      "t": 32.33333333333278,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 6,
+      "x": -68,
+      "from": {
+        "x": 790,
+        "y": 722
+      },
+      "to": {
+        "x": -68,
+        "y": -210
+      },
+      "heading": -2.3148772352445697,
+      "direction": "north",
+      "duration": 0.6839999999999999,
+      "speed": 1852.0501073726032
+    },
+    {
+      "event": "throttle-pass",
+      "t": 34.01666666666602,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 7,
+      "x": -138,
+      "from": {
+        "x": 790,
+        "y": -210
+      },
+      "to": {
+        "x": -138,
+        "y": 722
+      },
+      "heading": 2.3540439558732045,
+      "direction": "south",
+      "duration": 0.648,
+      "speed": 2029.6630467946775
+    },
+    {
+      "event": "throttle-pass",
+      "t": 35.633333333332594,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 8,
+      "x": -138,
+      "from": {
+        "x": 790,
+        "y": 722
+      },
+      "to": {
+        "x": -138,
+        "y": -210
+      },
+      "heading": -2.3540439558732045,
+      "direction": "north",
+      "duration": 0.612,
+      "speed": 2149.0549907237764
+    },
+    {
+      "event": "throttle-pass",
+      "t": 37.21666666666584,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 9,
+      "x": -68,
+      "from": {
+        "x": 790,
+        "y": -210
+      },
+      "to": {
+        "x": -68,
+        "y": 722
+      },
+      "heading": 2.3148772352445697,
+      "direction": "south",
+      "duration": 0.5760000000000001,
+      "speed": 2199.309502504966
+    },
+    {
+      "event": "throttle-pass",
+      "t": 38.73333333333242,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 10,
+      "x": 790,
+      "from": {
+        "x": -110,
+        "y": 722
+      },
+      "to": {
+        "x": 790,
+        "y": -210
+      },
+      "heading": -0.802863636183805,
+      "direction": "north",
+      "duration": 0.54,
+      "speed": 2399.2911618978305
+    },
+    {
+      "event": "throttle-pass",
+      "t": 40.21666666666567,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 11,
+      "x": 818,
+      "from": {
+        "x": -110,
+        "y": -210
+      },
+      "to": {
+        "x": 818,
+        "y": 722
+      },
+      "heading": 0.7875486977165886,
+      "direction": "south",
+      "duration": 0.504,
+      "speed": 2609.5667744503
+    },
+    {
+      "event": "throttle-pass",
+      "t": 41.64999999999892,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 12,
+      "x": -152,
+      "from": {
+        "x": 790,
+        "y": 722
+      },
+      "to": {
+        "x": -152,
+        "y": -210
+      },
+      "heading": -2.3615306188399385,
+      "direction": "north",
+      "duration": 0.46799999999999997,
+      "speed": 2831.489260795121
+    },
+    {
+      "event": "throttle-pass",
+      "t": 43.03333333333217,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 13,
+      "x": -138,
+      "from": {
+        "x": 790,
+        "y": -210
+      },
+      "to": {
+        "x": -138,
+        "y": 722
+      },
+      "heading": 2.3540439558732045,
+      "direction": "south",
+      "duration": 0.432,
+      "speed": 3044.4945701920165
+    },
+    {
+      "event": "throttle-pass",
+      "t": 44.36666666666543,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 14,
+      "x": 832,
+      "from": {
+        "x": -110,
+        "y": 722
+      },
+      "to": {
+        "x": 832,
+        "y": -210
+      },
+      "heading": -0.7800620347498549,
+      "direction": "north",
+      "duration": 0.396,
+      "speed": 3346.3054900305974
+    },
+    {
+      "event": "throttle-pass",
+      "t": 45.633333333332025,
+      "attack": "throttle",
+      "state": "throttle-run",
+      "pass": 15,
+      "x": 790,
+      "from": {
+        "x": -110,
+        "y": -210
+      },
+      "to": {
+        "x": 790,
+        "y": 722
+      },
+      "heading": 0.802863636183805,
+      "direction": "south",
+      "duration": 0.3599999999999999,
+      "speed": 3598.936742846747
+    }
+  ]
+}

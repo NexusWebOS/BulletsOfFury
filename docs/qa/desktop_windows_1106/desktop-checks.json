@@ -1,0 +1,125 @@
+{
+  "checks": [
+    {
+      "name": "Installed EXE launches the real local game in its own WebView2 window",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Game starts fullscreen and occupies the screen",
+      "passed": true,
+      "data": {
+        "success": true,
+        "status": "Unknown",
+        "fullscreen": true,
+        "bounds": "{X=0,Y=0,Width=1920,Height=1200}",
+        "screen": "{X=0,Y=0,Width=1920,Height=1200}"
+      }
+    },
+    {
+      "name": "Normal startup has no recording bot or GOD mode",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "F11 changes the actual native window to windowed mode",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Alt+Enter restores the native fullscreen window",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Desktop build preserves the requested default mouse controls",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cold native fullscreen combat loop is measured at original SS2 quality",
+      "passed": true,
+      "data": {
+        "fps": 47.6
+      }
+    },
+    {
+      "name": "Warmed native fullscreen combat is measured at original SS2 quality",
+      "passed": true,
+      "data": {
+        "fps": 47.42,
+        "comparison": "see paired-performance.json; not a 60 FPS claim"
+      }
+    },
+    {
+      "name": "Native app right click Retina locks without firing missiles",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native app Space launches the real missile",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native app Mouse4 scans multiple real targets",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native app Space releases the marked-target missile volley",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native app double right tap and hold enters Multi-Retina",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native app releases the hold cleanly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Installed native Stage 2 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Installed native Stage 5 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Installed native Stage 6 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Installed native Stage 7 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Installed native Stage 8 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Installed native Stage 9 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No missing installed local assets or page errors",
+      "passed": true,
+      "data": {
+        "missing": [],
+        "errors": []
+      }
+    }
+  ],
+  "errors": [],
+  "missing": []
+}

@@ -1,0 +1,1343 @@
+keybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start
+keybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start
+
+=== 1. manifest / asset keys ===
+  ok  all 54 new BOFX keys registered
+  ok  all key paths exist on disk
+  ok  their ship frames are cells in the sheet
+
+=== 2. roster ===
+  ok  PILOTS length 9 (was 7), got 9
+  ok  lizzie + falva present: axel,decker,maverick,freezer,juggernaut,yuri,lizzie,falva,cole
+  ok  cole still last (locked slot)
+  ok  SPECIAL_INFO entries exist
+  ok  pilot missile art mapped
+
+=== 3. FALVA: side laser-balls ===
+  ok  _pilotKey() resolves to falva
+  ok  falva special active
+  ok  exactly one laser ball now (got 1)
+  ok  the ball spawns on its 46px orbit, not at a fixed side offset
+  ok  normal weapon still fires during falva special
+  ok  the ball HOLDS the orbit radius while updating (positioned, not eased toward a moving point)
+  ok  the ball fires laser bolts (flaser)
+  ok  the helper fires the flaser bolt, never the separate flspread kind
+  ok  a volley is five bolts, not one (got 15)
+  ok  the volley is a genuine spread - bolts leave to the left, right AND straight up
+  ok  laser bolts travel upward (out from the balls)
+  ok  falva laser-ball orb art present (florb_0..7)
+  ok  falva straight+spread laser art present
+  ok  balls despawn when the special ends
+
+=== 8. LIZZIE: atom bomb ===
+  ok  _pilotKey() resolves to lizzie
+  ok  lizzie special active
+  ok  bombs armed: strikes=3
+  ok  lizzieFire() consumes the missile key
+  ok  strike spent (2 left)
+  ok  atom bomb bullet spawned
+  ok  bomb travels up the screen (vy=-3.4)
+  ok  mushroom cloud queued
+  ok  atom blast obliterated nearby enemy (hp 110, dead=false)
+  ok  shockwave cleared enemy bullets
+  ok  shake 26
+  ok  atomBlast leaves flashScreen at 0 (no full-screen orange wash)
+  ok  atomBlast does NOT touch whiteBlast (boss-death owned)
+  ok  atomFlash armed above 1.0 (blinding hold) = 1.34
+  ok  22 secondary explosions scheduled
+  ok  secondaries are time-sorted (they go off one by one)
+  ok  staggered over 1.01s, not simultaneous
+  ok  every secondary sits inside the PLAY area
+  ok  base band spread 375px wide
+  ok  7 late pops sit BELOW the base line
+  ok  cloud lived ~1.9s (115 frames @60fps)
+  ok  cook-offs walk outward: 2 by 0.30s, 20 by 1.00s, 22 total
+  ok  secondaries push real engine explosions
+  ok  screen held FULLY white for 11 frames (~0.18s) before fading
+  ok  atomFlash fully restores after 41 frames (~0.68s)
+  ok  whiteBlast still untouched after full cycle
+
+=== 9. LIZZIE: no bombs left ===
+  ok  no atom spawned at 0 strikes
+
+=== 10. endSpecial cleanup ===
+  ok  _pilotKey() resolves to falva
+  ok  falva laser ball active during special
+  ok  special cleared on expiry
+  ok  laser balls despawn on expiry
+  ok  _pilotKey() resolves to lizzie
+  ok  strikes inherit existing missile count
+  ok  bombs restored on expiry (7)
+
+=== 11. draw pipeline (no throw) ===
+  ok  _pilotKey() resolves to falva
+  ok  draw fns executed without throwing
+  ok  draw calls issued (34 drawImage)
+  ok  drawBullets() renders the atom bomb
+
+=== 12. clearPilotFX / stage teardown ===
+  ok  clearPilotFX() wipes all three pools
+
+=== 13. live gameplay frames (updatePlay + drawWorld) ===
+  ok  falva: 420 live frames of updatePlay+drawWorld, no throw
+  ok  falva: one orbiting laser ball active during the special (peak 1)
+  ok  falva: laser bolts emitted from the balls (peak 10)
+  ok  falva survived the run
+     end state: {"rollers":1,"shards":3,"booms":0,"atoms":0,"spec":"falva","dead":false}  peaks: {"rollers":1,"shards":10,"booms":0,"atoms":0,"balls":1,"flaser":10}
+  ok  lizzie: 420 live frames of updatePlay+drawWorld, no throw
+  ok  lizzie: A-bombs flew (peak 1) and detonated (peak 2 clouds)
+  ok  lizzie survived the run with special still up
+     end state: {"rollers":0,"shards":0,"booms":0,"atoms":0,"spec":"lizzie","dead":false}  peaks: {"rollers":0,"shards":4,"booms":2,"atoms":1,"balls":1,"flaser":0}
+
+=== 14. baked-glow cache (the framerate fix) ===
+  ok  bakeGlow returns a cached canvas on repeat calls
+  ok  glowBlob returns a cached canvas on repeat calls
+  ok  baked sprite is padded for its blur (58x82 for a 20x44 sprite)
+  ok  additive bake is cached separately from the source-over bake
+  ok  drawMfx leaves ctx.shadowBlur at 0 (no leak into later draws)
+  ok  cache stays well under its cap after a 2s maxed burst (30 baked, cap 768)
+  ok  burst added only 0 new bakes (steady state, not per-frame)
+
+=== 15. barrel roll ===
+  ok  yuri has barrel-roll art loaded
+  ok  no roll without a double-tap
+  ok  startRoll(1) begins a rightward roll
+  ok  roll grants i-frames (32 frames)
+  ok  roll dashed right 190px
+  ok  roll lasted 28 frames (~0.47s)
+  ok  roll cycled through 8 distinct animation frames
+  ok  all roll frames are ship_yuri_br*
+  ok  roll leaves a brief cooldown
+  ok  cannot re-roll during cooldown
+  ok  leftward roll dashes left
+  ok  roll still triggers for a pilot without br art (dash works)
+
+=== 15b. the somersault is wired for every pilot who has the reel (0908c) ===
+  ok  lizzie has a somersault reel at last — all nine pilots can flip (Mike, 0912)
+  ok  every pilot with a somersault carries a full 8-frame reel
+  ok  and every one of them can actually reach it
+  ok  and it cycles all 8 of that pilot own frames (8 distinct)
+
+=== 16. pivot: angled turns animate into the twist ===
+  ok  level flight shows pv2
+  ok  level hitbox full width ~9
+  ok  right turn animates pv2 -> pv3 -> pv4 -> br6 (twist): pv2 -> pv3 -> pv4 -> br6
+  ok  the angled hard-bank (pv4) comes BEFORE the twist (br6)
+  ok  the turn ends on the twist frame br6
+  ok  twist reached in 0.25s of holding (quick)
+  ok  twist hitbox ~4.5 (half width) — got 4.5
+  ok  angled soft-bank keeps a near-full hitbox (9.0), only the twist shrinks it
+  ok  left turn animates pv2 -> pv1 -> pv0 -> br2 (twist): pv2 -> pv1 -> pv0 -> br2
+  ok  releasing returns to level (pv2)
+  ok  a grazing bullet at x+7.3 MISSES the twisted ship
+
+=== 17. level environment pack (6 masters + liquid) ===
+  ok  the campaign is 8 stages
+  ok  and the table holds 9 - the bonus stage lives in it too
+  ok  exactly one entry is flagged bonus
+  ok  stage 8 is FURIOUS DEATH (the finale)
+  ok  stage 6 is HEAVY TURBULENCE (new)
+  ok  stage 7 is NOT ANOTHER SEWER LEVEL (new)
+  ok  stage 6 boss = WARHIVE CARRIER (0918)
+  ok  the DOOMSDAY CARRIER MK II is kept and still spawns by kind
+  ok  the carrier plate is registered in the manifest, so it can decode
+  ok  leviathan spec has 9 modules
+  ok  leviathan has a door module
+  ok  stage 1 master bg_stage01_intact is loaded
+  ok  stage 2 master nst2_master is loaded
+  ok  stage 3 master nst3_master is loaded
+  ok  stage 4 master bg_stage04_master is loaded
+  ok  stage 5 master bg_stage05_loop_0923 is loaded
+  ok  stage 6 master stage6_blue_master is loaded
+  ok  water: 8 liquid frames
+  ok  lava: 8 liquid frames
+  ok  icewater: 8 liquid frames
+  ok  lava liquid frames are all the same size (no tiling jitter)
+  ok  L1 uses a wide master: bg_stage01_intact (wide=true)
+  ok  jungle800 master art present
+  ok  stage 1 world width equals its declared plate width (680)
+  ok  drawLevelMaster draws stage 6
+  ok  password DETH unlocks stage 8 (finale)
+  ok  password ORBT still unlocks stage 5
+  ok  stage-6 password is TURB in the 8-code array
+  ok  stage-1 liquid tiles at 0.5 (drop 0801fs: native 800x256 read as huge smears on a 480 camera)
+  ok  stage-2 liquid tiles at 0.5 (drop 0801fs)
+
+=== 18. weapon/shield FX art (levels 1-5) ===
+  ok  machine-gun muzzle art present for all 5 levels x 5 growth frames
+  ok  spread-fire uses Mike's art (spr_<lv>_0) for all 5 levels
+  ok  laser beam art present for all 5 levels
+  ok  floating shield art present (fallback) for all 5 levels
+  ok  iceorb art present for the swirling shield orbs
+  ok  drawShield runs for orb rendering
+  ok  HUD shield icon art present for all 5 levels
+  ok  MG fire spawns level-tagged bullets
+  ok  spread fire spawns level-tagged bullets
+  ok  normal laser fire spawns one level-tagged held beam
+
+=== 19. vault vehicle arsenal (tanks/aircraft/bosses) ===
+  ok  tank art present (6 tanks x 4 dirs x 3 states)
+  ok  aircraft art present (15 craft x 5 banks + damage states)
+  ok  7 boss planes present (airbase/furious/ice/vulture/jungle/lava/space) x 3 states
+  ok  HP>66% -> intact
+  ok  HP 33-66% -> damaged
+  ok  HP<33% -> critical
+  ok  stationary tank faces south (toward player)
+  ok  tank moving left still shows the south-facing hull and fixed barrel
+  ok  drawVaultVehicle renders a tank
+  ok  drawVaultVehicle renders an aircraft
+
+=== 20. jungle roster + behaviors + shadows ===
+  ok  _pilotKey() resolves to axel
+  ok  RETIRED: racer keeps its pattern (spawn override bug fixed)
+  ok  racer uses aircraft art
+  ok  the heavy tank is a roster row
+  ok  and it resolves its own art
+  ok  RETIRED: racer runs cross(angled entry) -> curl(loop) -> dive
+  ok  RETIRED: the pair enters from opposite bottom corners (left +
+  ok  RETIRED: each jet curls a loop on the FAR side (diagonals mus
+  ok  NO-OVERLAP: the pair never comes closer than 60px (min 1000000000px — collision smash impossible)
+  ok  the two flight PATHS cross (the X from the sketch): path-to-path min 1000000000.0px
+  ok  motion is smooth: max per-frame position step 0.0px (<12, no teleports)
+  ok  nose rotates through EVERY degree: max facing step 0.0 deg/frame (hard-capped, no snap)
+  ok  nose is locked to the curl tangent (lag 0.0 deg mid-curl)
+  ok  the racer fires NO lock-on missiles - guns only, per Mike
+  ok  hit flash is WHITE-only at every decay value (pink smear impossible)
+  ok  jungletank scrolls DOWN with the ground (planted, not floating): y 100->138
+  ok  tank fires ONE strong front-turret blast (not a spread): 1
+  ok  the blast is a strong big shell (w=18)
+  ok  blast fires from the END OF THE BARREL (along the aim line toward the player)
+  ok  tank homing missile launches from the end of the barrel
+  ok  real smoke-trail system present (sprites, not particle puffs)
+  ok  smoke-trail art loaded (grey jet smoke + white missile exhaust)
+  ok  addTrail spawns real smoke sprites (jet + missile kinds)
+  ok  level 1 spawns NONE of the removed types (minidrone/ebomb/etc): saw s1boatpatrol,s1boatgun,s1corvette,s1tanklight,s1tankapc,s1tankheavy,s1jetdelta,s1jetbomber,s1jetdelta_b,s1truckmissile
+  ok  level 1 authors every live new-roster jet family; the smoke run saw s1boatpatrol,s1boatgun,s1corvette,s1tanklight,s1tankapc,s1tankheavy,s1jetdelta,s1jetbomber,s1jetdelta_b,s1truckmissile
+  ok  and the post-miniboss black bomber wave remains authored even when this smoke run clears the gate early
+  ok  and NOT the two he moved to other levels (drone -> L5, stationship -> L7)
+  ok  level 1 keeps the approved land-gated heavy/APC tank waves; the sea opening remains naval
+  ok  jungle WAVE enemy count stays inside the approved 9-unit cap (peak 0)
+  ok  jungle emplacements stay within EMPLACE_CAP (peak 0)
+  ok  drawUnitShadow (directional shadows) present
+  ok  ground-to-air + homing missile fns present
+
+=== 21. combat: twin guns, lock-on reticle, missiles ===
+  ok  _pilotKey() resolves to axel
+  ok  twin guns fire 2 parallel rounds (2, kinds s1bullet,s1bullet)
+  ok  the two rounds are side by side (twin cannons)
+  ok  enemyLockOn places a targeting reticle on the player
+  ok  reticle is ARMING (missile not yet fired) - the 0912 retina lock
+  ok  missile launches after the lock completes
+  ok  drawPlayerLocks renders the reticle without error
+  ok  lock-on alert sound present
+=== 21. motion variants + tank map boundaries ===
+  ok  RETIRED: the racer swirl - the pattern was deleted at Mike's request
+  ok  topgun strafes with TWIN machine guns (0 tracers in the air)
+  ok  topgun fires NO lock-on — fodder homing is CUT (Mike, 0819)
+  ok  topgun exits off the bottom (culled)
+  ok  sideswirl runs enter(side) -> swirl -> dive-at-player
+  ok  sideswirl swirls ONCE (2.00PI)
+  ok  jetflyby ripples 4 locks 1-by-1 quickly (gaps 10,10,10 frames)
+  ok  the ripple queues 4 launches on ONE retina (peak 1) - one telegraph, not a siren
+  ok  jetflyby banks out the side and leaves the screen (culled)
+  ok  with failOpen it still degrades gracefully (spawn placement never strands a unit)
+  ok  but MOVEMENT fails CLOSED — an unproven spot is never driven onto, which is what sent tanks into the water
+  ok  a tank dropped on the void edge SNAPS into the drivable band (x=244 type=roadtank lvlY=2220)
+  ok  crawling tank NEVER leaves the drivable band over 10s (0 violations)
+=== 22. mega + mini bosses wired ===
+  ok  all 7 mega bosses (bz0-6) wired: named + attack + enrage + HP damage-state art + draw (7/7)
+  ok  DEAD_SUBBOSS is REACHABLE at global scope — it lived below the unclosed if in spawnEnemy and was function-scoped
+  ok  a retired sub-boss refuses to spawn
+  ok  and clears the gate, so the stage runs on to its real boss instead of stalling
+  ok  while a live sub-boss still spawns — the guard is not a blanket refusal
+  ok  and the retired unit ART stays registered, so putting it back is deleting one word
+  ok  the 5 profile minibosses wired: named + attacks + draw (5/5)
+  ok  Mauler fires GREEN white-cored lasers (peak 6 in air)
+  ok  Mauler homing missiles create reticles on the player (peak 4 locks)
+  ok  Mauler does BARREL-ROLL dodges when threatened (204 roll frames)
+  ok  Mauler does TILT-bank dodges (24 tilt frames)
+  ok  Mauler missile loop is R:1,2 L:1,2 R:1-4 L:1-4 (got RRLLRRRRLLLL)
+  ok  mega boss death: bossDie() fires (bossDefeated set) and the death animation advances (0.0->2.0s)
+=== 23. level 1 boss + miniboss ===
+  ok  the QUAD-LASER GUNSHIP still builds (kept, unassigned)
+  ok  level 1 fields the RAZORBACK (Mike, 0912 - it replaced the Jungle Cruiser, which moved to stage 3 in ice)
+  ok  quad-laser has its four destructible cannons (from the pack map)
+  ok  level 1 boss is JUNGLE OVERLORD-X (chopper art)
+  ok  level 1 boss uses NO curved fireballs (blast is fire-only)
+  ok  the FIRE boss (Magma Tyrant / inferno) DOES use curved fireballs (on-theme)
+=== 24. kamikaze drones + L2 miniboss ===
+  ok  kamikaze drones spawn in horizontal pairs (2 pairs = 4 drones)
+  ok  kamikaze drones CRISS-CROSS the screen
+  ok  kamikaze drones then BODY-DIVE at the player like homing missiles
+  ok  the pair splits apart and crosses (separation range 0..247px)
+  ok  level 2 miniboss is the MAGMA WARD
+  ok  and it is a real miniboss entry, not an unknown kind falling through to the generic sub-boss
+  ok  and it is a real miniboss entry, not an unknown kind falling back to the generic sub-boss
+  ok  drawing nvl_maw — the 223x220 six-frame caldera whose art 0801ip deliberately KEPT when the enemy spawn was deleted
+  ok  sized UNDER its authored 223px, so the vent is scaled down and never upscaled
+  ok  level 3 miniboss is the FROST CRUISER; the RIME WALL is ALTBOSS3
+  ok  and stage 3 is not left with an empty miniboss slot
+=== 25. camera reset + robo drones ===
+  ok  beginStage snaps camX onto the new stage and WORLD_W tracks its master
+  ok  stage-2 drones use the classic ROBO drone art (no recon-jet e1 mapping)
+  ok  kamikaze drones are ROBO drones on stage 2
+  ok  stage-1 jungle roster still uses recon jets for its drone swarms
+=== 26. stage-2 camera + robo drones (live sim) ===
+  ok  stage 1 camera pans right, to its own limit (camX 200 of 200)
+  ok  beginStage(2) re-aims camX at the new stage — stage-1 camera must not leak into the level display
+  ok  stage-2 kamikaze drones use the classic ROBO drone art (no recon-jet e1 mapping)
+  ok  stage-1 jungle drones still use the recon jet roster art
+=== 27. password input ===
+  ok  all 8 stage passwords are mapped (FURY..DETH)
+  ok  every stage password submits (none rejected)
+  ok  an invalid code is rejected and stays on the password screen
+=== 28. overlord rotor ===
+  ok  Overlord-X body damage states loaded (intact/critical)
+  ok  all 72 rotor frames (5-degree steps) loaded
+  ok  rotor frame index advances over time (smooth spin)
+=== 29. Overlord-X boss AI ===
+  ok  Overlord-X fires twin machine-gun bursts (peak 34 pellets)
+  ok  rockets are on screen during the rocket phase (peak 4)
+  ok  rockets travel across the screen (not stuck at the launch point)
+  ok  Overlord-X pivots/banks between attacks (599 frames)
+  ok  at 50% HP the boss charges off-screen toward the player
+  ok  the boss re-enters continuously from a side and begins its corner swirl
+  ok  the boss places a reticle on the player during re-entry
+  ok  rotor-hub smoke builds below 50% HP (52 particles)
+  ok  smoke intensifies as the boss fails (75 puffs at 45% HP -> 135 at 20%)
+=== 30. art assignments ===
+  ok  boss MG pellet art loaded (mfx_mg_2_0/2_2 — Mike pick)
+  ok  pellet firetype uses the approved orange MG frames
+  ok  venom special fires ONE heavy helix lance (not the rapid pair)
+  ok  lance does massive damage and pierces
+  ok  one lance pierces and wounds every full-health drone without one-shotting it
+  ok  a second lance may destroy the wounded 3-drone column
+  ok  the tappable helix never hands off to the old two-child graphical duplicate
+  ok  maverick L1 fires ONE lance
+  ok  maverick L3 remains ONE graphical helix
+  ok  maverick L5 remains ONE graphical helix
+  ok  weapons start at basic (MG level 0)
+  ok  first MG pickup -> level 1 (rapid)
+  ok  first SPREAD pickup -> level 1 (not 2)
+  ok  spread L1 cadence follows the balance table
+  ok  the default MG fires at the SAME cadence as L1 — speed is no longer the upgrade
+  ok  all 25 spread frames load (L2 white-box fixed)
+=== 31. FABLE-5 weapons ===
+  ok  MG muzzle flashes loaded (5 colors from machinefx master)
+  ok  laser growth frames loaded (5 levels x 7, recolored real master)
+  ok  real icicle shard art loaded
+  ok  MG fire triggers the level-colored muzzle flash
+  ok  beam draw wired to the recolored laser frames
+  ok  shard draw wired to the real icicle art
+  ok  holding fire keeps exactly ONE flame jet, not a stream of projectiles
+  ok  the old firewall projectile is gone — one spawner, no second path
+  ok  the jet scales with level again - draw and hitbox both (Mike 0906, reversing 0903z)
+  ok  and it stays SHORT — it never reaches the top of the screen
+  ok  the level goes into damage and heat instead
+  ok  the jet flares into a cone — the tip is more than twice the nozzle
+  ok  one jet burns a whole rank at once (5 of 7) — this is the crowd control
+  ok  sustained damage is massive (147 per second at L5, vs ~10 for the old firewall)
+  ok  releasing fire lets the jet go — it does not latch on
+  ok  the merged-pair builder is wired: bases overlapped into one mass, rotated 90 (Mike: merge the fires together to form a solid fire wave, and rotate it 90 degrees)
+  ok  the jet draws as ONE scaled quad, not a stack of segments — the rotated art is 188x364 and covers the whole reach
+  ok  the weapon reads FLAMETHROWER
+=== 32. playtest fixes ===
+  ok  falva + lizzie bank/roll frames all load
+  ok  the retina masters + falva pink laser art are registered
+  ok  and falva's retina still resolves through the tint path
+  ok  the palette matches the brief — falva pink, cole neon green, maverick forest green
+  ok  default MG cadence follows the balance table
+  ok  L2 fires three tightly grouped projectiles centered on the nose
+  ok  no red tk0 hulls on stage 1
+  ok  red tk0 hulls appear on stage 4
+  ok  password routes to CHARACTER SELECT with the stage pending
+  ok  pilot confirm launches the password stage
+  ok  crate bag deals all 6 weapons in 6 crates
+  ok  stage 3 deals the orb TWICE (fireball guaranteed)
+=== 33. stage cards + character polish ===
+  ok  all 8 new stage cards registered + loading
+  ok  stage intro wired to the new cards
+  ok  RIGHT roll rotates toward the right-hand quarter THIS pilot was authored with (br1/br2 before br6)
+  ok  cole has his own bank/roll frames (no more yuri fallback)
+  ok  refusing _t whatever a caller asks for
+=== 34. corrected L1 map ===
+  ok  intact + destroyed maps registered (dims verified in render: 800x3616)
+  ok  dam-break swaps intact->destroyed map
+  ok  tank-mask master unified to the corrected map
+  ok  stage-1 map pans with the camera
+  ok  scroll speed derived from stage length (dam arrives at boss time)
+  ok  map draws a camera-offset window from the 800-wide sheet
+=== 35. right-fire + water ===
+  ok  bullets survive when firing anywhere across the 800-wide world (not just left half)
+=== 36. real pilot rolls ===
+  ok  cole has all 8 real barrel-roll frames
+  ok  falva has all 8 real barrel-roll frames
+  ok  lizzie has all 8 real barrel-roll frames
+  ok  freezer has all 8 real barrel-roll frames
+  ok  all 7 affected pilots have left(br2)+right(br6) edge-on twist frames
+  ok  roll animates rightward for right-rolls (dir mapping intact)
+  ok  bullet cull uses world width, not camera width
+  ok  the legacy water callers resolve a real bed
+  ok  water frames = Mikes actual texture tiled flat + seamless (verified in render: 0 dead columns, seams invisible)
+  ok  water drawn at native 1:1 (no stretch, seamless tile carries edges)
+  ok  the copter torpedo no longer needs 72 baked frames — it rotates the real art at runtime
+  ok  jet/plane rocket growth art present (waf_rocket 0/2/4)
+=== 37. level 7 sewer ===
+  ok  stage-7 master + boss arena registered
+  ok  sludge surface 6f registered (256px)
+  ok  sludge FALL 6f registered
+  ok  stage 7 reports WORLD width 680 — the width of its own plate, wider than the 480 camera
+  ok  and stage 7 is still a WIDE stage: the plate exceeds the camera, so the level pans
+  ok  stage-7 level cfg: a wide nst7 overlay plate
+  ok  and NO boss arena - the L7 fight does not teleport to another map
+  ok  stage-7 declares its true plate height (4716, not the 4800 fallback)
+  ok  and it is NOT the silent 4800 fallback — the failure this pins is a mismap, not a throw
+  ok  stage 1 plateW (680) matches bg_stage01_intact.png (680)
+  ok  stage 1 cfg.h (4212) matches bg_stage01_intact.png (4212)
+  ok  stage 1 worldWidth() resolves to its plate width 680
+  ok  stage 2 plateW (680) matches nst2_master_v2.png (680)
+  ok  stage 2 cfg.h (4080) matches nst2_master_v2.png (4080)
+  ok  stage 2 worldWidth() resolves to its plate width 680
+  ok  stage 3 plateW (680) matches nst3_master_v2.png (680)
+  ok  stage 3 cfg.h (4080) matches nst3_master_v2.png (4080)
+  ok  stage 3 worldWidth() resolves to its plate width 680
+  ok  stage 4 plateW (680) matches bg_stage04_master.png (680)
+  ok  stage 4 worldWidth() resolves to its plate width 680
+  ok  stage 6 cfg.h (5000) matches stage6_blue_master.png (5000)
+  ok  stage 6 fixed/looped sky uses its declared playfield width 680, independent of source-art width
+  ok  stage 7 plateW (680) matches nst7_master_v3.png (680)
+  ok  stage 7 cfg.h (4716) matches nst7_master_v3.png (4716)
+  ok  stage 7 worldWidth() resolves to its plate width 680
+  ok  stage 8 plateW (680) matches nst8_sky_master.png (680)
+  ok  stage 8 cfg.h (4716) matches nst8_sky_master.png (4716)
+  ok  stage 8 worldWidth() resolves to its plate width 680
+  ok  stage 1 declares plateW explicitly (680) - it does not inherit MASTER_W
+  ok  stage 2 declares plateW explicitly (680) - it does not inherit MASTER_W
+  ok  stage 3 declares plateW explicitly (680) - it does not inherit MASTER_W
+  ok  stage 4 declares plateW explicitly (680) - it does not inherit MASTER_W
+  ok  stage 5 declares plateW explicitly (680) - it does not inherit MASTER_W
+  ok  stage 6 declares plateW explicitly (680) - it does not inherit MASTER_W
+  ok  stage 7 declares plateW explicitly (680) - it does not inherit MASTER_W
+  ok  stage 8 declares plateW explicitly (680) - it does not inherit MASTER_W
+  ok  stage 9 declares plateW explicitly (680) - it does not inherit MASTER_W
+  ok  and the sludge bed it shows through the plate
+  ok  all 8 portal frames are registered, or the dissolve lands on the wrong beat
+  ok  and the sewer reel is warmed with stages 7 and 8, not fetched mid-cutscene
+  ok  the flyover has a stage-7 portal branch
+  ok  the cinematic craft is pulled into the portal without mutating every stage exit
+  ok  the ship disappears inside the aperture before frames 5-7 close it
+  ok  Campaign Stage 7 results return through the unlocked Stage 8 campaign-map route
+  ok  Arcade Stage 7 results still go straight to the Stage 8 card with the portal-entry latch
+  ok  the Stage 8 card hands to the portal exit instead of the traditional launch
+  ok  the portal exit lands on the live play pose and immediately enables action
+  ok  the portal owns the ship sprite without triggering the SHIP DESTROYED death overlay
+  ok  and it KEEPS its sludge — the RC2 plate is magenta-punched to alpha and the sludge is what shows through
+  ok  stage-7 liquid bed = sludge
+  ok  sub-boss drift centres on WORLD width, not VW
+  ok  all 6 sewer enemies have their plate + roster defs
+  ok  all 6 spawn, tick 30 frames, and stay finite inside the 800px world
+  ok  submerged BUBBLE MAW takes no damage (_noHit honoured in _hitEnemyCore)
+  ok  surfaced BUBBLE MAW takes damage again
+  ok  Dual Scoop Dredger plate registered
+  ok  stage-7 sub-boss slot uses the supplied toxic-fleet mini
+  ok  sub-boss builds as DUAL SCOOP DREDGER on its own reels
+  ok  Dredger uses its complete supplied hull instead of borrowing modular art
+  ok  stage 7 boss = SLUDGE EMPEROR (0813q)
+  ok  the stage 5 + 7 plates resolve (manifest or code-registered)
+  ok  stage 5 boss = XENO REGENT (0813q)
+  ok  all 16 doomsday carrier launch frames are registered
+  ok  the Mk II is a registered ship boss
+  ok  and the Mk I is still there, so the swap is one word to undo
+  ok  all 18 Mk II bay frames are registered
+  ok  and all 14 cannon frames, or the beam stutters mid-fire
+  ok  the Mk II hull plate is registered, so it can decode
+  ok  the Mk II is in spawnBoss's switch
+  ok  and in the carrierTick gate
+  ok  the cannon only hurts while the beam is drawn (frames 6-11, measured)
+  ok  and the 640x480 reel grows the drawn box to 1.5x the hull, so the beam is not squashed
+  ok  shipBossDraw honours that taller frame
+  ok  a ship boss is drawn w x h, never w x w
+  ok  a wall-sized boss is held on the field
+  ok  the warhead carries the art its carrier declares
+  ok  and both Mk II warhead plates are registered
+  ok  the Mk II bay handoff draws the full animated hostile/reflected bomb and ignition reel
+  ok  the detached bomb carries its warning and shield with the live projectile
+  ok  the warhead visibly detaches as a giant, shootable enemy projectile on the release frame
+  ok  the detached projectile reaches its dedicated renderer instead of the 20px generic missile path
+  ok  shooting the giant projectile switches it to the reflected reel and sends it back upward
+  ok  the hostile/reflected animation swap and eight-frame deflection burst are wired
+  ok  a reflected giant projectile damages its originating bay and plays the ten-frame impact
+  ok  CESSPOOL LEVIATHAN art is culled (mba_cl_ quarantined at Mike's instruction)
+  ok  _bossArtOK stops it building — no invisible boss with a health bar
+  ok  the art guard exists and gates buildModularBoss
+  ok  stage-7 authored roster wired into the spawn planner
+=== 38. level 7 soak run ===
+  ok  stage-7 plan builds 17 spawn events
+  ok  enemies actually spawned during the run (peak concurrent = 6)
+  ok  every surviving enemy is finite and inside the 800px world after the soak
+  ok  no NaN enemy bullets produced by the sewer fire cadences
+  ok  sewer units actually opened fire during the run (14 enemy bullets peaked on screen)
+  ok  the boss ran with its part set intact (saw 0)
+=== 39. vile existence anim + chroma ===
+  ok  all current symbiote plates, arm modules, rolling frames and attack sheets exist
+  ok  the live modular forms, shield shedding and attack release controller are present
+  ok  game.js delegates the live Stage 8 fight to the browser-loaded finale controller
+  ok  chroma report present
+  ok  chroma sweep covered the whole manifest (5721 files)
+  ok  ZERO unfilled magenta sockets across every registered file (was 6089px in form-1 + morph1>2)
+  ok  the chroma report now measures semi-alpha halos too
+  ok  no file carries a magenta HALO (worst is fchg_1 at 271px, under the 500px rim threshold)
+=== 40. weather fx ===
+  ok  all 74 weather frames registered (68 checked)
+  ok  the old stage-6 nwx_ storm sheets are gone (0 keys registered)
+  ok  and the old stage-6 weather + cloud draws are gone with them
+  ok  stage 6 draws the unified animated rain and lightning weather instead
+  ok  the weather pack owns nwf_ alone — 68 keys after the splash cull, with no liquid falls mixed in
+  ok  every nwx_ key lives inside the three-bucket tree
+  ok  stage 3 -> snow
+  ok  stage 2 -> firewave
+  ok  stage 6 -> storm (rain + lightning)
+  ok  stage 1 has NO weather (never-touch rule)
+  ok  stage 7 has no weather
+  ok  no snow before the stage-3 miniboss is beaten
+  ok  after the miniboss it ramps to a full storm (74 particles)
+  ok  every snow particle stays finite and inside the world
+  ok  snow alpha stays capped even at full storm
+  ok  firewave sweep spawns when its timer elapses
+  ok  firewave runs 10s without throwing
+  ok  lightning strikes on its own timer, using real bolt art
+  ok  and strikes at a random position on screen
+  ok  bolt retires inside its 0.42s life once the flash decays
+  ok  flash decayed below the strike threshold, so no bolt re-armed
+  ok  binary-alpha art is softened in the draw layer, not left as hard cutouts
+=== 41. level 2 volcanic cast ===
+  ok  all 12 volcanic units have shipped state art plus 8-frame action reels (168 keys)
+  ok  VOLC roster defines exactly 12 unique hulls
+  ok  'maw' stays the sewer unit; the volcanic vent is 'cruc'
+  ok  spawning 'maw' still yields the sewer BUBBLE MAW
+  ok  all 12 volcanic units spawn on the volc pattern and tick 4s without going non-finite
+  ok  volcanic pattern survives the post-switch randomiser (_selfPat)
+  ok  vent charge state settable
+  ok  the roster keeps eight distinct airframes
+  ok  and all four distinct vent/ground units spawn on their own art
+  ok  draw picks the frame from live STATE (damage/charge/fire), never a loop counter
+  ok  EMBER CARRIER releases ashwing interceptors
+  ok  stage-2 plan includes the new cinder-wasp and basalt fire jets
+  ok  stage-2 plan builds 17 spawn events
+  ok  volcanic units opened fire (7 enemy bullets peaked)
+  ok  no non-finite enemies after the stage-2 soak
+  ok  no NaN bullets from the volcanic fire cadences
+=== 42. level 8 elites ===
+  ok  all 4 elites have flightspin 8f + destruction 6f registered (56 keys)
+  ok  ELITE8 roster defines 4 units
+  ok  all 4 elites spawn on the elite8 pattern, tick 5s, stay finite and in-world
+  ok  elite pattern survives the post-switch randomiser (_selfPat)
+  ok  el8Roll starts the roll timer
+  ok  roll plays the authored sequence twist-L > spin-edge > twist-R > recovery (saw 3,4,5,6)
+  ok  roll does NOT grant i-frames — pack README says keep collision active
+  ok  rolling elite is still hittable
+  ok  the roll displaces the unit laterally
+  ok  elites carry _dieDur so the 6f destruction reel is not truncated
+  ok  draw plays the destruction reel while dying
+  ok  Herald / Reaver flight reel registered (11 frames)
+  ok  HERALD OF DEATH flagged for flight animation
+  ok  stationary herald uses the level-flight frames
+  ok  lateral movement selects the leaning frames
+  ok  barrel roll takes the hard-banked frames, overriding both
+  ok  herald reel feeds the modular boss animated base
+  ok  stage-8 roster includes every native mega hull and its expanded fleet
+=== 43. stage 8 soak ===
+  ok  stage-8 plan builds 25 spawn events
+  ok  the smart-roll sampler remained valid during the full run (0 sampled roll frames)
+  ok  stage 8 fields no miniboss by Mike's call - nothing spawned in the slot
+  ok  no non-finite enemies after the stage-8 soak
+  ok  no NaN bullets in the finale
+=== 44. liquids + level 4 ===
+  ok  all 8 liquid families registered at 6 frames (48 keys: 4 surfaces + 4 falls)
+  ok  liquid stages tile at 0.5 — not native, which read as smears (drop 0801fs)
+  ok  the tiler still honours an explicit tile scale
+  ok  tile width and height use the same scale, so a square source stays square
+  ok  stage 2 -> a lava bed (the key may be upgraded; the RULE is that stage 2 floats on lava)
+  ok  stage 3 -> upgraded arctic water
+  ok  stage 4 has NO liquid bed — it is a desert highway
+  ok  the car crash pileup is GONE from stage 4 (0813j)
+  ok  and stage 4 carries an empty prop list, not a missing one
+  ok  the roadside signs are gated off for stage 4 too - the BOFRS data stays, only the draw stops
+  ok  and NOT at 2124 — that was measured on the retired 4800px plate
+  ok  and every prop sits inside the levels actual travel range
+  ok  stage 1 now runs the seam-healed water (swapped on explicit go-ahead)
+  ok  stage-1 flies a wide master plate
+  ok  stage-1 master resolves to a real PNG on disk (assets/game/levels/stage_01/stage/bg_stage01_intact.png)
+  ok  stage-1 declared height matches the plate (4212 vs 4212)
+  ok  stage-1 declared plateW matches the plate (680 vs 680)
+  ok  and the DAM-BREACHED variant exists at last (missing since 0801cr)
+  ok  water still paints through the plate own alpha
+  ok  stage-1 replacement water is registered and ready to switch
+  ok  lava bed takes the WIDE flat (nwl_lava, 4 frames)
+  ok  ice bed takes the WIDE flat too (nwl_ice, 4 frames)
+  ok  the reel is complete on the FIRST call — no partial set can be cached
+  ok  level-4 800x3616 master + 800x1000 arena registered
+  ok  stage 4 runs the 0819e airbase scroll master, wide
+  ok  stage 4 reports WORLD width 680 — the new plate width
+  ok  stage-4 roster spans the 800px world, not the 480 camera
+  ok  no VW* left anywhere in the stage-4 roster
+  ok  tank drivability report present for the new stage-4 master
+  ok  report measured the NEW airbase master
+  ok  new airbase concrete is drivable: 38.51% of cells (engine rejects below 2%)
+  ok  stage-4 concrete acceptance rule still present in the mask builder
+  ok  stage-4 plan builds 17 spawn events
+  ok  stage-4 spawns actually reach past the 480 camera into the 800 world (max x 742)
+  ok  tanks still spawn on stage 4 after the wide swap
+  ok  stage-4 enemies stay finite and inside the 800px world
+=== 45. level 4 remix route ===
+  ok  remix composition report present
+  ok  the remix master is gone, and nothing registers it
+  ok  route uses 6 plates and ends on sec4 (its tail leads nowhere)
+  ok  all four section plates are used — not one plate walked repeatedly
+  ok  no plate immediately repeats itself
+  ok  remix route is 5360px — 48% longer than the stock 3616 scroll
+  ok  weakest road join 90.5% (a naive shuffle drops to 54.2%)
+  ok  remix joins are as clean as the shipped master (21.42x vs 21.42x)
+  ok  plates are genuinely not shuffle-safe — worst possible join is 54.3%
+  ok  stage 4 runs the 0819e airbase scroll master
+  ok  the new master is registered and neither deleted plate is
+  ok  the crash route keeps the wide world, with no water on the road
+=== 46. level 4 flip + road patrol ===
+  ok  flip report present
+  ok  stock route now FINISHES on the dense base section (50.5% road at the end vs 23.3% at the start)
+  ok  remix route also finishes on the base section
+  ok  art was flip-safe: vertical luminance-step bias 0.999 (no baked drop-shadow direction)
+  ok  spawn path available
+  ok  roadtank spawns on the tankpatrol pattern
+  ok  road patrol survives the post-switch randomiser (_selfPat)
+  ok  road tank rolls a real distance along its path (395px)
+  ok  road tank changes among the eight drive headings instead of sliding on one axis (0,2,4)
+  ok  road tank stays finite
+  ok  stage-4 Blacksite plan authors s4airfield
+  ok  stage-4 Blacksite plan authors s4tractor
+  ok  stage-4 Blacksite plan authors s4interceptor
+  ok  stage-4 Blacksite plan authors s4command
+  ok  stage-4 Blacksite plan authors s4barrel
+  ok  stage-4 Blacksite plan authors s4tanker
+  ok  stage-4 Blacksite plan authors s4bomber
+  ok  stage-4 Blacksite plan authors s4heavyjet
+  ok  stage-4 Blacksite plan authors s4missile
+  ok  stage-4 Blacksite plan authors s4rocket
+  ok  stage-4 Blacksite plan authors s4minitank
+  ok  stage-4 Blacksite plan authors s4sam
+  ok  stage-4 plan no longer borrows road patrol, drone, ship or Stage-1 aircraft aliases
+  ok  no stage-4 jet is left on a loose ad-hoc pattern (0 remaining)
+=== 47. stage sequence kit ===
+  ok  sequence-art inventory report present
+  ok  SEQ config covers all 8 stages
+  ok  stage 4 no longer flies a runway (Mike: stage 1 only)
+  ok  stage 7 no longer flies a runway (Mike: stage 1 only)
+  ok  the runway ART is still registered — retired from use, not deleted
+  ok  stage 1 flies one runway plate, main part only
+  ok  both the new plate and the legacy strip stay registered, so the fallback is real
+  ok  stages with no runway art at all still return null — nothing invented
+  ok  all 4 authored connectors resolve
+  ok  unwritten connectors return null — those stages open on their own bed instead
+  ok  launch beds use the upgraded seam-healed liquids
+  ok  bed frames resolve to the wide 4-frame set
+  ok  stage 6 is the ONLY sky launch — Mike’s stated exception
+  ok  nothing ever sets the reverse phase any more
+  ok  no code path adds NEGATIVE distance — the player is never shoved backwards before GO
+  ok  replaced by a settle phase that simply comes to rest
+  ok  the negative-travel term is removed entirely
+  ok  3-2-1 GO countdown retained
+  ok  launch still hands over to play at the GO marker
+  ok  every stage begins on the stage card (the screen face stays)
+  ok  launch state exists in the flow after the card
+  ok  the launch flies the stage its own entry connector
+  ok  and no longer reveals the level through a widening clip window
+=== 48. rival race + ally ===
+  ok  race art report present
+  ok  rival encounters are disabled
+  ok  so no stage triggers one
+  ok  and the encounter roll always declines
+  ok  no encounter on any other stage
+  ok  a full 40s race runs without throwing
+  ok  the race resolves to a winner
+  ok  checkpoint gates were laid (6)
+  ok  every course object stays finite and inside the world
+  ok  one hit damages an obstacle
+  ok  a second hit breaks it — you must commit to clearing a lane
+  ok  a gate is a PAIR of beacons, per the pack note about duplicating both sides
+  ok  gates are not shootable
+  ok  the rival either clears the obstacle or eats it — it is not immune
+  ok  ally system present
+  ok  ally helps for 30 seconds, as asked
+  ok  sparing a rival banks them as a callable ally
+  ok  the ally can be called and arrives
+  ok  they arrive WITH a line of dialogue
+  ok  after arriving they fight alongside you
+  ok  the ally actually puts fire downrange (6 shots in 1s)
+  ok  after ~30s they sign off and leave
+  ok  they leave with a parting line
+  ok  and then they are gone
+  ok  one call per spared rival per run
+=== 49. outbound + runway sequence ===
+  ok  outbound cinematic present
+  ok  GS.OUTBOUND state exists (added via assemble.py, not a direct edit)
+  ok  clearing a stage no longer loads a connector plate — they are rejected art
+  ok  the outbound carries a terrain route array (empty while DBG.transitions is off, which is how it ships right now)
+  ok  the cinematic hands off to the next stage (4)
+  ok  outbound releases the screen when it hands off
+  ok  1>2 has no connector art
+  ok  with no connector it skips the follow beat instead of showing a missing plate
+  ok  and still hands off correctly
+  ok  the climb draws the level master they just cleared, not a liquid bed
+  ok  no liquid anywhere in the outbound
+  ok  Arcade stage clear offers optional supplies before awarding score and advancing to Stage 2
+  ok  the launch pulls no runway plate for any stage
+  ok  and no landing pad — the runway cinematic belongs to stage 1, in the opening
+  ok  stage 1 still flies its runway intro
+  ok  no OTHER stage flies a runway
+  ok  nst4b_tr_in consolidated onto ncon_3_4 (they were the same bytes)
+  ok  nst4b_tr_out consolidated onto ncon_4_5
+  ok  level-4 section plates still registered (they feed the remix route)
+=== 50. water + l6 jet animation ===
+  ok  stage 1 runs the seam-healed water
+  ok  and tiles it at 0.5 (drop 0801fs: native 800x256 read as huge smears on a 480 camera)
+  ok  stage-1 declares a MASTER plate
+  ok  stage 1 world still matches its plate width
+  ok  all 6 water frames present
+  ok  all 6 level-6 jets have their full state sets (idle/bank-L/bank-R/dmg/die/hom)
+  ok  frame counter resolves each state set
+  ok  level-6 jets spawn with the _h6 flag
+  ok  the draw dispatch routes _h6 jets into the animated path
+  ok  jet art follows live state: death / launch / damaged / banking
+  ok  the 8-frame death reel plays off the dying clock, not a loop
+=== 51. stage 8 authored roster ===
+  ok  stage 8 no longer re-spawns jetflyby (belonged to another stage)
+  ok  stage 8 no longer re-spawns racer (belonged to another stage)
+  ok  stage 8 no longer re-spawns bomber (belonged to another stage)
+  ok  stage 8 no longer re-spawns topgun (belonged to another stage)
+  ok  stage 8 no longer re-spawns sideswirl (belonged to another stage)
+  ok  stage 8 no longer re-spawns mech (belonged to another stage)
+  ok  stage 8 no longer re-spawns turdrone (belonged to another stage)
+  ok  stage 8 no longer re-spawns minicarrier (belonged to another stage)
+  ok  stage 8 no longer re-spawns minidrone (belonged to another stage)
+  ok  stage 8 no longer re-spawns shieldd (belonged to another stage)
+  ok  stage 8 no longer re-spawns gunship (belonged to another stage)
+  ok  stage 8 no longer re-spawns mdrone (belonged to another stage)
+  ok  stage 8 does not recycle needle
+  ok  stage 8 does not recycle crescent
+  ok  stage 8 does not recycle hauler
+  ok  stage 8 does not recycle oracle
+  ok  stage 8 does not recycle talon
+  ok  stage 8 does not recycle cdisc
+  ok  stage 8 does not recycle hell
+  ok  stage 8 does not recycle spiral
+  ok  native mega unit s8leech appears in the finale
+  ok  native mega unit s8interceptor appears in the finale
+  ok  native mega unit s8manta appears in the finale
+  ok  native mega unit s8hunter appears in the finale
+  ok  native mega unit s8deathorb appears in the finale
+  ok  native mega unit s8parasite appears in the finale
+  ok  native mega unit s8razor appears in the finale
+  ok  native mega unit s8skull appears in the finale
+  ok  native mega unit s8carrier appears in the finale
+  ok  native mega unit s8symbiote appears in the finale
+  ok  native mega unit s8tentacle appears in the finale
+  ok  native mega unit s8bomber appears in the finale
+  ok  culled el_hd never spawns as an invisible carrier
+  ok  native Spawn Carriers anchor the heavyweight movements
+  ok  stage-8 spawns span the WORLD, not the camera width
+  ok  no VW* left in the stage-8 roster
+  ok  roster is authored as three escalating movements
+  ok  stage-8 plan builds 25 spawn events across three movements
+  ok  no non-finite enemies after the stage-8 soak
+  ok  no NaN bullets in the finale
+=== 53. miniboss hittable + no ship jerk ===
+  ok  the ~11Hz body-frame alternation is gone
+  ok  level flight holds ONE airframe pose
+  ok  siege crawler spawns in its entry state
+  ok  and ARRIVES — entry completes instead of hanging forever
+  ok  the gunship holds in the upper half after arriving (y=123)
+  ok  the miniboss now TAKES DAMAGE (959 -> 919)
+  ok  and it FIRES BACK — the stuck flag had muted its guns too (15 shots)
+  ok  entry completes on a hard timeout even if it can never reach its target row
+  ok  EVERY sub-boss arrives and becomes hittable (all 8 stages)
+=== 54. campaign map ===
+  ok  stage select present
+  ok  the palette swap now guards getImageData
+  ok  and each flag draws inside its own guard
+  ok  campaign map opens
+  ok  the map survives a tainted canvas for 10s (this used to die on the first GRAY flag)
+  ok  ALL 8 flags get placed, including the gray locked ones (9)
+  ok  the boot sequence completes and hands control to the player
+  ok  FIRE starts the white selection flash (Phoenix engine rule)
+  ok  the flash hands into the deploy ZOOM on the chosen flag
+  ok  and the zoom hands over to the stage (got 1)
+  ok  and it still runs clean on an untainted canvas
+  ok  non-boot entry shows every flag immediately and is live
+=== 55. menu cursor consistency ===
+  ok  shared selection marker exists
+  ok  MODE SELECT now draws the cursor
+  ok  MODE SELECT now flashes the selected item white
+  ok  OPTIONS now draws the cursor
+  ok  OPTIONS now flashes the selected item white
+  ok  OPTIONS no longer uses the flat text caret
+  ok  marker uses the animated cursor reel when available
+  ok  and falls back to the arrow glyphs, then to text
+  ok  the selected item pulses all the way to white
+  ok  and back off it again — it is a pulse, not a static colour
+  ok  MODE SELECT renders at every index without throwing
+  ok  OPTIONS renders at every index without throwing
+=== 56. helix overdrive ===
+  ok  helix laser art registered
+  ok  the three-beat sequence exists
+  ok  it charges around the halfway line with a real tell (0.34s)
+  ok  a full-charge lance is in flight
+  ok  the lance reaches the line and enters its GLOW tell instead of flying off
+  ok  the glow resolves into a BURST that spawns the laser flurry
+  ok  the first charged-ball wave is five directions x seven independent lances (35)
+  ok  the flurry races — every generated volley is fast
+  ok  and the independent Level-5 lances are grouped into five different directions
+  ok  and every volley starts inside the world
+  ok  ordinary enemies in its path are decimated
+  ok  the flurry DOES hurt a boss (3420 damage)
+  ok  but does NOT delete it — a charge attack must not trivialise a boss fight
+  ok  boss damage is explicitly capped (90 per bolt vs 9999 vs enemies)
+=== 57. charge orbs + fullscreen ===
+  ok  the counter-rotating laser strands are removed
+  ok  the orb resolver returns real nchg_ energy art
+  ok  and the core resolver returns the sphere art
+  ok  both charge passes draw through it
+  ok  no beam/laser art left in the charge visual
+  ok  orb + sphere charge art is registered (8 frames each)
+  ok  orbs spawn while charging (4)
+  ok  more orbs gather as the charge builds (4 -> 7)
+  ok  and they draw INWARD toward the nose (mean radius 39.2 -> 28.2)
+  ok  fitCanvas fits aspect-locked instead of stretching to the container
+  ok  fitCanvas no longer sets margins — CSS owns the centring now
+  ok  the old stretch-to-clientWidth path is gone
+  ok  it still measures the cabinet screen-area when present
+  ok  fitCanvas runs at every window shape without throwing
+  ok  and always produces a real size
+  ok  the rendered canvas keeps the game aspect ratio (0.938 vs 0.938)
+=== 58. weather v2 ===
+  ok  the firewave opens with ALERTS, not a wave
+  ok  three lanes are chosen up front
+  ok  the alerts build 1 -> 2 -> 3, one at a time (saw 1,2,3)
+  ok  and it starts with a single alert, not all three
+  ok  and nothing has fallen yet
+  ok  after the build, the waves start falling
+  ok  wave 1 drops first, alone
+  ok  and it falls down a lane an alert actually marked
+  ok  it travels VERTICALLY — x never changes while it falls
+  ok  and it descends down the screen
+  ok  and it SCALES UP as it comes
+  ok  standing in a falling wave registers as caught
+  ok  a different lane is safe — the alerts tell you where to stand
+  ok  the storm waits for the miniboss
+  ok  then it builds to a full storm
+  ok  and the level dims behind it (21%)
+  ok  the darkening is tied to the storm ramp, not a hard cut
+  ok  and it is NOT in the over-units pass any more — it dims terrain, not enemies
+  ok  dim reduced to 21% so enemies stay readable in the storm
+  ok  every snow particle stays finite
+  ok  rain starts the moment the stage does
+  ok  and fades up to full as you reach the skies
+  ok  lightning strikes repeatedly over 40s (8 strikes)
+  ok  and at DIFFERENT positions each time — not a fixed spot
+  ok  every strike lands on screen
+  ok  stage 1 still has no weather
+  ok  stage 7 still has no weather
+=== 59. death fx + turrets ===
+  ok  explosions draw at ~unit size, not 1.9x (1.62)
+  ok  the 1.9x multiplier is replaced by the named constant
+  ok  every class names its own explosion family (turret/jet/tank/mini/boss)
+  ok  and all five are DIFFERENT — one uniform look per class
+  ok  tanks get the heavy smoke burst (swapped from boat)
+  ok  bosses get the largest set (hollow-ring collapse)
+  ok  secondaries use a DIFFERENT family from the primary, so a death is not one sprite repeated
+  ok  bigger units throw more secondaries
+  ok  the atomic families are NOT used for unit deaths
+  ok  a turret classifies as TURRET (its own small class)
+  ok  and a real tank still classifies as tank
+  ok  a jet classifies as jet
+  ok  a modular unit classifies as boss
+  ok  a 120px unit gets a much larger blast than a 20px one (20 vs 120)
+  ok  and a 20px turret gets a ~20px blast, not a giant one (20)
+  ok  secondaries are scattered across the hull (2 for this unit size)
+  ok  and a big unit gets many more (17) — the count scales with size
+  ok  and every one RISES — the fire climbs out of the wreck
+  ok  pending secondaries actually drift upward before they go off
+  ok  authored smoke frames exist
+  ok  boss damage smoke uses the smoke FRAMES
+  ok  and damage plumes rise instead of only drifting with the map
+  ok  a shared terrain-scroll figure exists
+  ok  emplacements ride the shared ground step, not a hardcoded vy
+  ok  and it FAILS OPEN — an emplacement never freezes mid-air if the scroll cannot be measured
+  ok  and it always returns a finite figure (0.340)
+  ok  every emplacement asking in the same frame gets the IDENTICAL ground step (0.34)
+  ok  two emplacements never disagree about how far the ground moved
+=== 59. death fx + emplacements ===
+  ok  the enemy death path calls unitDeathFX — it was written but never wired
+  ok  the class-based death system exists
+  ok  four uniform death types: jet / tank / mini / boss
+  ok  bigger units get more secondaries (jet 3 -> boss 10)
+  ok  and hit harder
+  ok  the small ground unit no longer dies in the turret class (turrets are gone)
+  ok  a road tank dies as a tank
+  ok  a jet dies as a jet
+  ok  explosion draw scale is 1.62 — sized from the unit and drawn LARGER than it
+  ok  the primary blast is sized from the actual drawn unit frame
+  ok  a small turret produces a small blast (18px for an 18px unit), not a screen-filler
+  ok  and throws ascendant secondaries (1)
+  ok  every secondary RISES out of the wreck — a real fire explosion, not a flat pop
+  ok  the atomic set is not referenced by any death class
+  ok  and unit deaths never call atomBlast
+  ok  two emplacements always get the identical step, whatever their own vy
+  ok  and it still fails open rather than freezing mid-air
+  ok  explosion smoke uses the authored smoke frames
+  ok  boss damage smoke uses them too
+=== 60. music ===
+  ok  Neon Velocity registered
+  ok  Deathtrap registered
+  ok  the campaign map plays Neon Velocity
+  ok  and no longer starts Iron Cage
+  ok  level 6's stage theme is Deathtrap
+  ok  and that is genuinely stage 6, not an off-by-one
+  ok  stage 8 keeps its own theme — only level 6 changed
+  ok  stage 4 now plays its OWN track (it was silently left on the generic fallback)
+  ok  and stages 4 and 6 no longer share a theme
+  ok  every music key a stage or screen asks for exists
+  ok  music boost report present
+  ok  all music raised by 2.3 dB (~30% amplitude)
+  ok  applied across the whole soundtrack (27 tracks)
+  ok  including the two new ones
+=== 61. mg + helix + cursor ===
+  ok  default MG fires ONE pellet (1)
+  ok  the L1 upgrade fires TWO (2)
+  ok  each L1 pellet does the SAME damage as the default one
+  ok  and is the same colour tier — the pair reads as the default gun doubled
+  ok  so L1 lands double the per-volley damage of the default
+  ok  L2 adds a third projectile and moves up a colour tier (lv 2)
+  ok  the L1 pair leaves the centre gun only 4px apart
+  ok  every charged-ball volley pierces all the way through
+  ok  the merge-ball exists
+  ok  the burst spawns ONE merged ball, not scattered shards
+  ok  and five seven-lance Level-5 volleys fan out behind it as individual rounds
+  ok  the ball is drawn from the laser art, not a plain circle
+  ok  and flashes blue -> purple -> green
+  ok  the map cursor is RED, not gold
+  ok  the cursor is positioned at the CENTRE of the flag box, not floating above it
+=== 62. level 2 fixes ===
+  ok  the level-2 boss now HAS an attack profile
+  ok  every one of its four beats actually fires ({"0":9,"1":14,"2":3,"3":7})
+  ok  and the beats are genuinely different, not one pattern repeated
+  ok  and it fires faster once it is past half HP (1.15s -> 0.85s)
+  ok  stage 2 spawns no shootable scenery obstacles
+  ok  the entry connector tiles its flat at NATIVE size
+  ok  and repeats it across the width rather than stretching
+=== 61. cursor + fullscreen ===
+  ok  the map cursor is TINTED red, not just given a red glow
+  ok  tinted via source-atop — no getImageData, so it cannot re-break on file://
+  ok  and the tinted frames are cached, not rebuilt every frame
+  ok  cursor sits at the flag box centre
+  ok  the campaign map still renders with a tainted canvas
+=== 63. L2 boss presence ===
+  ok  the L2 boss has a presence pass
+  ok  magma colossus spawns with its profile
+  ok  it drifts laterally instead of hovering in one spot (74 distinct positions)
+  ok  and stays fully on screen while it drifts
+  ok  embers rise off it even at full HP (35)
+  ok  a healthy boss does not smoke
+  ok  a damaged one does (63 authored puffs)
+  ok  and it uses the authored smoke frames, not tinted circles
+  ok  at critical HP it cracks and spits explosions (7)
+  ok  attacking lights the shoulder muzzles
+=== 64. manifest integrity ===
+  ok  dangling-key sweep report present
+  ok  swept 164 keys that were registered but had no file
+  ok  and the manifest is still fully populated (11715 keys)
+=== 65. explosion fade ===
+  ok  explosions hold full brightness through their animation
+  ok  then begin fading past 65% of their life
+  ok  and reach ZERO alpha exactly as they expire — no pop
+  ok  explosion reels stay opaque through their final authored frame
+  ok  and drawEffects guards it so a bad particle cannot cost the frame
+  ok  and the old truncated curves that left it 30-35% opaque are gone
+  ok  explode() still creates an explosion
+  ok  and it is cleaned up when its life ends
+=== 66. modular boss fire ===
+  ok  the retired Colossus still spawns a magma-profile hull without its quarantined rig (0903)
+  ok  it FIRES through the real update path (112 bullets) — this is what "he just flies around" was
+  ok  the modular branch drives the fire cadence instead of returning past it
+  ok  every modular boss fires from the real update path
+=== 67. helix burst sequence ===
+  ok  the burst makes ONE energy ball
+  ok  and NO beam-spray bloom — that was the split
+  ok  helixDetonate no longer calls the bloom at all
+  ok  five directions x seven independent lances launch from the ball (35)
+  ok  they leave essentially together (0px spread at launch), not pre-split
+  ok  and fan out as they travel (0px -> 234px)
+  ok  the ball is still drawn
+=== 68. campaign map ship ===
+  ok  the map ship exists
+  ok  it does not appear until the flags have landed
+  ok  then it flies in
+  ok  starting OFF the left edge of the map (x=-45)
+  ok  and settles on stage 1 with the cursor
+  ok  switching to its idle hold
+  ok  it travels to the newly selected stage
+  ok  and eases as it arrives (32.25px/frame early vs 0.000 late)
+  ok  it banks into the turn without over-rotating
+  ok  reopening the map flies it in fresh
+=== 69. explosion pack ===
+  ok  all 8 USED explosion sets registered at 8 frames (64 keys)
+  ok  every family DEATH_CLASS references still resolves
+  ok  explode() takes an explicit family
+  ok  and uses it, with the right frame count
+  ok  the small ground unit still produces its death blast
+  ok  and its secondaries use a different set
+  ok  a boss dies with the largest set
+  ok  and its blast is sized to the boss (120px)
+  ok  explosion drop file lists all 80 frames
+=== 70. all death families ===
+  ok  all 9 destructible families defined (crate/drone/boat/mini-boat/turret/jet/tank/mini/boss)
+  ok  every class pairs a primary with a DIFFERENT secondary
+  ok  destructible objects classify as crate
+  ok  drones classify as drone
+  ok  a big boat classifies as boat
+  ok  a small one classifies as mini-boat
+  ok  blast size scales with the unit (22 / 44 / 150px)
+  ok  a boss death queues a long stack of overlapping blasts (17)
+  ok  across several different families (7) so it keeps building
+  ok  and they are SEQUENCED over time (0.10s -> 1.39s), not simultaneous
+  ok  a turret stays small (1 secondaries)
+=== 71. top-down explosion shapes ===
+  ok  no unit death uses a side-view directional set
+  ok  and the boss stack is round sets only
+  ok  classes still have distinct primaries after the swap
+  ok  and every secondary still differs from its primary
+=== 72. explosion frame anchoring ===
+  ok  explosion anchor report present
+  ok  all 80 frames measured
+  ok  none sits off-centre in its own canvas any more
+  ok  and none touches a canvas edge, so nothing clips
+  ok  the worst offender needed a 91px correction
+=== 73. boss death sequence ===
+  ok  the boss dies
+  ok  explosions run continuously through the first SIX seconds
+  ok  and the screen stays normal the whole time
+  ok  then the screen goes FULL white (peak 1.00)
+  ok  which happens at the ~6 second mark, not before
+  ok  the white then fades back toward normal
+  ok  and the boss keeps exploding through the fade and after it
+  ok  still coming apart into the 9th second
+  ok  the boss hull stays fully opaque while the destruction sequence covers it
+  ok  then it is removed in one hard cut — there is no translucent boss interval
+  ok  stage-end timing is explicit
+=== 74. sound pack ===
+  ok  all 18 previously SILENT keys now have a file
+  ok  sfx bank is 361 entries
+  ok  sfx registered: helixCharge
+  ok  sfx registered: helixBurst
+  ok  sfx registered: helixVolley
+  ok  sfx registered: falvaCharge
+  ok  sfx registered: falvaBurst
+  ok  sfx registered: bossPhase
+  ok  sfx registered: bossWhiteout
+  ok  sfx registered: allyArrive
+  ok  sfx registered: allyLeave
+  ok  sfx registered: raceStart
+  ok  sfx registered: raceObstacle
+  ok  sfx registered: raceWin
+  ok  sfx registered: raceLose
+  ok  sfx registered: mapMove
+  ok  sfx registered: mapDeploy
+  ok  sfx registered: flagPlant
+  ok  sfx registered: dangerAlert
+  ok  sfx registered: insertCoin
+  ok  sfx registered: enemyApproach
+  ok  sfx registered: impactImminent
+  ok  all 8 stage ambience beds registered
+  ok  every stage maps to an ambience bed
+  ok  ambience start/stop exists
+  ok  and a bed starts with the stage
+  ok  every one of the 361 registered sounds resolves to a real file
+=== 75. playtest fixes ===
+  ok  explode() defaults to the reference pack
+  ok  an UNNAMED explosion picks a reference-pack set by size (16->nxp_clus, 36->nxp_barrage, 60->nxp_white, 100->nxp_dense, 200->nxp_ring)
+  ok  across every size, nothing falls through to the legacy families
+  ok  starting past stage 1 forces ARCADE mode
+  ok  a password run switches out of campaign mode
+  ok  and jumps straight to the unlocked stage, not the campaign map
+  ok  arcade mode goes straight to the stage, not the campaign map
+  ok  HUD visibility control exists
+  ok  HUD shows during gameplay
+  ok  and is hidden on boot, title, campaign map and menus
+  ok  every state change updates it
+  ok  modular bosses tint on hit like every other enemy
+  ok  and no longer use the inconsistent canvas filter
+=== 76. rival off, snow, miniboss bar ===
+  ok  rival encounters disabled behind one flag
+  ok  but the race and ally systems are still present, not deleted
+  ok  stage-3 snow draws a full-screen tiled sheet
+  ok  at two parallax speeds
+  ok  and still ramps to a full storm after the miniboss
+  ok  sub-bosses have a health bar
+  ok  and it is drawn with them
+  ok  it stays hidden while the unit is still flying in
+  ok  styled amber so it is not confused with the boss bar
+=== 77. boss scroll lock + thruster ===
+  ok  boss fights hold the terrain
+  ok  the fast boss-run scroll is gone
+  ok  and it eases to a stop rather than snapping
+  ok  the scroll still moves the instant a boss appears (0.973 of normal) — the arrival reads as arriving
+  ok  then decelerates smoothly
+  ok  and reaches a full standstill within a second — you fight it where it stands
+  ok  and the hold resets once the boss dies, so the level resumes
+  ok  on an airframe that has none of its own, so nothing stacks
+=== 78. explosion scale rule ===
+  ok  disintegrate() routes through the class death system
+  ok  and no longer inflates the blast past the unit
+  ok  fang blast is 1.25x its unit (44px unit, 55px blast)
+  ok  drone blast is 1.25x its unit (29px unit, 36px blast)
+  ok  roadtank blast is 1.25x its unit (52px unit, 65px blast)
+  ok  checked across unit types: fang 44px->55px, drone 29px->36px, roadtank 52px->65px
+=== 79. selection flash + map deploy ===
+  ok  the white-flash selection rule exists as a shared helper
+  ok  confirming starts the flash and DEFERS the action
+  ok  and the action fires when the flash completes
+  ok  MODE SELECT uses it — it used to jump straight to the next state
+  ok  the campaign map uses it too
+  ok  mode select palette-swaps the shared cursor to RED
+  ok  tinted via source-atop, not getImageData
+  ok  and the tinted frames are cached
+  ok  the map ship aims along its velocity
+  ok  it holds a heading while flying in (90 deg)
+  ok  flying in from the LEFT it faces RIGHT, not up-screen
+  ok  the deploy zoom exists
+  ok  and plays the GOOD LUCK clip
+  ok  at a MEDIUM rate (1.25s), not a snap
+  ok  the zoom advances over time
+  ok  then hands over to the stage card
+=== 80. purple + respawn ===
+  ok  purple purge report present
+  ok  stage-3 master: the flat violet residue is gone (was 4575px of ONE colour)
+  ok  stage-2 master: no VISIBLE raw key left (was 933px; the transparent backdrop is correctly untouched)
+  ok  and stage-2 art is intact (std 76.6, pristine 76.6)
+  ok  what remains is anti-aliased ART — 2019 tiny blobs across 2346 colours, not flat residue
+  ok  reset() can hold position
+  ok  the player respawns
+  ok  AT THE POSITION THEY DIED (88,140), not teleported to centre
+  ok  with invulnerability, so holding position is not a death trap
+  ok  but a fresh stage start still centres the ship
+=== 81. bullets + L3 drones ===
+  ok  eShoot fires
+  ok  every eShoot bullet carries a phase (77 call sites use it)
+  ok  and a timer
+  ok  eShootT bullets too
+  ok  every phase of every bullet family resolves to real art
+  ok  the fix is in eShoot itself, not patched at each call site
+  ok  stage 3 fields NO drone — drones are off the ice (Mike, 0819)
+  ok  stage 3 fields NO mdrone — drones are off the ice (Mike, 0819)
+  ok  stage 3 fields NO minidrone — drones are off the ice (Mike, 0819)
+  ok  stage 3 fields NO turdrone — drones are off the ice (Mike, 0819)
+  ok  Stage 3 schedules its ice jets, support craft and new shard-mine drone
+  ok  the shard-mine alias, generic ice shooters and borrowed loopcharge route are retired
+  ok  the stage-3 plan still builds (12 events)
+=== 82. fullscreen centring ===
+  ok  the game centres horizontally at every resolution tested (worst offset 0.5px) — 1920x1080:0.5px 2560x1080:0.5px 1366x768:0.0px 3840x2160:0.0px 1280x1024:0.0px 800x600:0.0px
+  ok  and holds the 480x512 aspect at all of them
+  ok  fitCanvas still fits aspect-locked inside its host
+  ok  and does not fight the CSS centring with margins of its own
+=== 83. sprite specks ===
+  ok  speck-removal report present
+  ok  cleaned 10 ship sprites — it was NOT only Yuri
+  ok  Yuri had the worst of it (149px sitting below the hull)
+  ok  every cleaned sprite still loads
+=== 84. boss detail parts ===
+  ok  boss-parts report present
+  ok  the magma chain overlays left with the quarantined Colossus rig (0903)
+  ok  both cryo cannon masters registered
+  ok  the right cannon is a BYTE-EXACT mirror of the left, as the pack requires
+  ok  every chain phase is genuinely different art (min diff 2.439)
+  ok  a healthy idle boss hangs its chains SLACK
+  ok  damage tightens them to TENSION
+  ok  winding up an attack walks them UP the phases (2 -> 4)
+  ok  and firing puts them at CHARGED
+  ok  driven off the SAME state the attack profile uses, so they cannot disagree
+  ok  cannons are drawn from the immutable masters
+  ok  never recoloured or redrawn — pose is offset and rotation ONLY
+  ok  five cannon phases, matching the pack concept
+  ok  the cryo behemoth carries the cannon flag
+  ok  the cannons deploy as it takes damage: detached -> rising -> aligned -> docked
+  ok  and reach FIRING when it shoots
+=== 85. boss signatures ===
+  ok  stages 6, 7 and 8 have their own signature NAMES in their live controllers
+  ok  and their own frame-driven signature PAYLOADS
+  ok  all three signatures are reached by the controllers those bosses actually use
+  ok  EVERY stage boss fires through the real update path (bullets: {"1":180,"2":13,"3":17,"4":36,"5":16,"6":6,"7":31,"8":143})
+  ok  THUNDERHEAD walks lightning lanes with readable gaps
+  ok  FLOOD SURGE is a descending wall with a single moving gap — the gap IS the answer
+  ok  ANNIHILATION converges a cross then bursts radially behind it
+  ok  THUNDERHEAD fires four 8-lane waves while preserving a two-lane door (48 authored rounds)
+  ok  FLOOD SURGE fires four 9-lane double fronts while preserving one moving lane (64 authored rounds)
+  ok  ANNIHILATION fires its converging cross and a 15-round radial burst with a three-sector escape
+=== 86. boss entrance + vehicles ===
+  ok  the assembly entrance system exists
+  ok  a JET boss does NOT assemble — it just flies in
+  ok  the Magma Colossus rig art is quarantined (0903) and the kind is fielded by no stage — mech assertions skipped, not failed
+  ok  finale assembly present
+  ok  no genesis haul without the quarantined Colossus rig — the generic hull spawns clean (0903)
+  ok  and HP is per-COMPONENT, six-plus separate targets, not one pool per haul group
+  ok  and those component shares sum to exactly 100% of the boss
+  ok  the haul never writes a health pool of its own — choreography does not decide what dies together
+  ok  ground minibosses reposition instead of drifting on a sine
+  ok  and do not bob vertically
+  ok  the gunship drifts but stays on screen (span 192px)
+  ok  and rarely reverses (2 reversals in 8s), unlike a sine drift
+=== 87. fullscreen centring v2 ===
+  ok  the containing-block trap is documented
+  ok  the frame centres on BOTH axes and always fits (1920x1080 H:510/510 V:1/0  2560x1080 H:830/830 V:1/0  1366x768 H:364/363 V:0/0  3840x2160 H:1018/1018 V:0/0  1280x1024 H:214/213 V:1/0  1600x900 H:425/425 V:0/0)
+=== 88. sound handles ===
+  ok  the whitelist is gone
+  ok  the hardcoded 33-name list no longer exists
+  ok  handles are built from BOFA.sfx itself
+  ok  all 361 sounds registered
+  ok  every SFX call in the source resolves to a registered sound (71 distinct calls)
+  ok  all 38 delivered pack sounds are registered
+  ok  and 30/31 live pack sounds are wired to an event — pending: impactImminent
+  ok  ambience reads Snd.pools — it was looking for a Snd.sfx map that does not exist
+=== 89. draw dispatch integrity ===
+  ok  drawScene has no unreachable switch
+  ok  the dispatch is ONE switch, not split in two
+  ok  all 21 states are dispatched
+  ok  and every dispatched state calls a real draw function
+  ok  the selection flash is NOT inside the dispatch any more
+  ok  it is painted in the frame loop, after the scene
+=== 90. playtest batch ===
+  ok  a unit has exactly ONE death visual — the class explosion
+  ok  no lingering wreck fading out from under it
+  ok  and no legacy turret explosion stacked on top
+  ok  turret death sprite no longer draws at 2.3x the unit
+  ok  boss death blasts scale with the hull instead of a fixed range
+  ok  and so do sub-boss death blasts
+  ok  the zap flash is an additive wash, not an HTML filter
+  ok  sub-bosses tint on hit like every other unit
+  ok  and no longer use a canvas filter
+  ok  chain lightning plays a FIRE sound on release
+  ok  and can target enemy missiles
+  ok  a missile in range is swatted out of the air
+  ok  and the bolt is drawn to it
+  ok  alerts no longer draw numbers
+  ok  and the orange translucent lane wash is gone
+  ok  each alert BUMPS with the white unit-glow trick
+  ok  and vanishes as its own wave launches, so the row shows only what is still coming
+  ok  side variants carry a direction arrow
+  ok  a direction is assigned per lane
+=== 91. shadows, powerups, bars ===
+  ok  the shadow remains editor opt-in only
+  ok  the editor opt-in still draws the tunable ellipse
+  ok  and draws nothing when called
+  ok  powerups are no longer gated off during boss fights
+  ok  the !bossActive gate is removed
+  ok  containers still spawn while a boss is alive
+  ok  the miniboss bar escapes the complete world transform
+  ok  so neither camera motion nor view zoom can drag it into the playfield
+  ok  and it remains centred on the viewport
+  ok  the Storm Sovereign is flipped to face the player
+=== 92. stage 5 balance ===
+  ok  the oversized rock scale is gone
+  ok  the biggest rock scale is now 0.69 (was up to 1.55) — and this IS the big tier
+  ok  so the widest rock renders at 139px, not 313px
+  ok  and a big rock breaks in a burst (25hp, was up to 138)
+  ok  orbital cast de-beefed (needle 13, crescent 24, hauler 37, oracle 30)
+  ok  scores unchanged — the stage is no less rewarding
+  ok  Level 5 has no non-colliding scenery asteroid duplicates
+  ok  satellites and miscellaneous orbital hardware are absent
+  ok  the retired random planet/comet overlay is not stacked over the supplied master
+  ok  the supplied space master remains visible through the Stage 5 boss fight
+=== 93. cryo phase body ===
+  ok  the mbg3 rig is quarantined and no stage fields the Cryo Behemoth (0903)
+  ok  the phase body draws
+  ok  the retired Behemoth spawns as a plain hull without its quarantined rig (0903)
+  ok  the phase body still flashes when hit
+  ok  phase extraction report present
+  ok  sliced clean: 0 magenta, 0 semi-alpha
+=== 94. space series sounds ===
+  ok  all 32 space-series sounds registered
+  ok  sfx bank grew to 361
+  ok  12 engine sounds re-pointed at the new pack
+  ok  the two reviewed 0829 overrides replace the old generic laser and charge mappings
+  ok  both the nsp_ key and the engine key resolve, so any mapping is reversible
+  ok  boss parts CLUNK as they lock into place
+  ok  asteroids shatter with their own sound
+  ok  losing a shield is audible
+  ok  the retina lock plays its ORIGINAL cue, not the space-pack sweep
+  ok  and both original files are registered again
+  ok  all 361 sounds resolve to a real file
+=== 95. frame-loop resilience ===
+  ok  the frame loop guards the draw
+  ok  a throwing frame is caught
+  ok  the draw catch sits BEFORE the reschedule, so the next frame is always queued
+  ok  the UPDATE is guarded too — it carries more logic than the draw
+  ok  and it also precedes the reschedule
+  ok  menuSelMark measures images AND canvases
+  ok  the tinted-canvas trap is documented
+  ok  the tinted cursor draws without throwing
+  ok  MODE SELECT survives every index
+=== 96. falva charge ===
+  ok  Falva's charge is now TICKED
+  ok  alongside Maverick's, which always was
+  ok  and drawFalvaCharge is now actually CALLED, not just defined
+  ok  holding fire charges her
+  ok  the charge accumulates (0.67)
+  ok  so her charge level reads back positive — the draws no longer bail
+  ok  and the roller balls have a spin phase
+  ok  her aura and orb art were registered the whole time (4 + 12 frames)
+  ok  every charge pilot is dispatched in the special tick
+=== 97. blast size + halo sweep ===
+  ok  the primary blast scales from the unit and draws larger than it
+  ok  tank death cloud is 1.88x its unit — bigger than the hull, as it should be (43px unit, 81px cloud)
+  ok  racer death cloud is 1.89x its unit — bigger than the hull, as it should be (44px unit, 83px cloud)
+  ok  fang death cloud is 1.89x its unit — bigger than the hull, as it should be (44px unit, 83px cloud)
+  ok  measured across unit types: tank 43->81, racer 44->83, fang 44->83
+  ok  halo sweep report present
+  ok  swept 558 assets carrying a magenta EDGE halo
+  ok  removed 215349 halo px (251272 -> 35923)
+  ok  Falva's pink art still loads
+  ok  her pink was NOT stripped — the sweep required the magenta to sit on the transparent edge
+=== 98. stage end blasts ===
+  ok  the stage end routes every surviving enemy through the class death
+  ok  the fixed 38px sweep is gone
+  ok  every surviving enemy still explodes (3 of 3)
+  ok  and NOT all at the same size — units [29,43,44] give blasts [36,54,55]
+  ok  each blast is 1.25x its own unit (engine rule, drop 0801cw) — ratios 1.24, 1.26, 1.25
+  ok  bossDie has no fixed-size unit blast left
+  ok  modularHit has no fixed-size unit blast left
+  ok  levDoorHit has no fixed-size unit blast left
+=== 99. L2/L3 bosses ===
+  ok  the phase body replaces the part body
+  ok  the retired Behemoth still spawns a hull with its rig quarantined (0903)
+  ok  and it is decided BEFORE the parts loop
+  ok  returning early so nothing can paint over it
+  ok  magma brightness report present
+  ok  magma colossus lifted to 132/255 (was 51) — readable against the lava now
+  ok  and the damage progression is preserved (132 > 111 > 92)
+  ok  no pixel gained or lost alpha — only luminance moved
+=== miniboss wall ===
+assets/combat_polish_0927b.js:151
+  const hp=difficultyHealthBaseline15(1050,diffKey==='easy'?600:[1050,1250,1450][n]);b._bomber={n,mode:'entry',t:0,dur:2.1,seq:0,cd:0,clock:0,bombs:[],history:['entry'],core:hp,coreMax:hp,parts:[]};
+           ^
+
+ReferenceError: difficultyHealthBaseline15 is not defined
+    at siegeBomberInit (assets/combat_polish_0927b.js:151:12)
+    at spawnSubBoss__inner (assets/game.js:25139:45)
+    at spawnSubBoss (assets/game.js:25129:110)
+    at evalmachine.<anonymous>:1:1
+    at Script.runInContext (node:vm:149:12)
+    at Object.runInContext (node:vm:301:6)
+    at C:\Users\Mike\Desktop\Github Coding\BulletsOfFury\_BUILD_SOURCE\test_fl.js:4537:10
+    at Object.<anonymous> (C:\Users\Mike\Desktop\Github Coding\BulletsOfFury\_BUILD_SOURCE\test_fl.js:4564:5)
+    at Module._compile (node:internal/modules/cjs/loader:1830:14)
+    at Object..js (node:internal/modules/cjs/loader:1961:10)
+
+Node.js v24.15.0

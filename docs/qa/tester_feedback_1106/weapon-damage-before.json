@@ -1,0 +1,74 @@
+[
+  {
+    "lv": 1,
+    "weapon": 0,
+    "target": "assault",
+    "damage": 160,
+    "seconds": 4,
+    "dps": 40,
+    "hp": 99764,
+    "remainingShots": 2,
+    "finite": true,
+    "burn": 0
+  },
+  {
+    "lv": 1,
+    "weapon": 4,
+    "target": "assault",
+    "damage": 184.8000000002794,
+    "seconds": 4,
+    "dps": 46.20000000006985,
+    "hp": 99722.79999999958,
+    "remainingShots": 1,
+    "finite": true,
+    "burn": 2.5333333333333337
+  },
+  {
+    "lv": 3,
+    "weapon": 0,
+    "target": "assault",
+    "damage": 480,
+    "seconds": 4,
+    "dps": 120,
+    "hp": 99292,
+    "remainingShots": 4,
+    "finite": true,
+    "burn": 0
+  },
+  {
+    "lv": 3,
+    "weapon": 4,
+    "target": "assault",
+    "damage": 348,
+    "seconds": 4,
+    "dps": 87,
+    "hp": 99478,
+    "remainingShots": 1,
+    "finite": true,
+    "burn": 2.6833333333333336
+  },
+  {
+    "lv": 5,
+    "weapon": 0,
+    "target": "assault",
+    "damage": 1152,
+    "seconds": 4,
+    "dps": 288,
+    "hp": 98296,
+    "remainingShots": 6,
+    "finite": true,
+    "burn": 0
+  },
+  {
+    "lv": 5,
+    "weapon": 4,
+    "target": "assault",
+    "damage": 540,
+    "seconds": 4,
+    "dps": 135,
+    "hp": 99190,
+    "remainingShots": 1,
+    "finite": true,
+    "burn": 3.7833333333333337
+  }
+]

@@ -1,0 +1,129 @@
+{
+  "checks": [
+    {
+      "name": "Fresh build defaults map right-click, Space and physical mouse4 correctly",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Normal startup does not enable GOD or the recording bot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "In-game Help shows right Retina, Mouse4 Multi-Retina and Space missiles",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Space confirms menus without being stolen by the missile/Back action",
+      "passed": true,
+      "data": {
+        "back": false,
+        "confirm": true
+      }
+    },
+    {
+      "name": "Native fight exposes multiple real targets",
+      "passed": true,
+      "data": 3
+    },
+    {
+      "name": "Right-click acquires a native Retina lock without spending missiles",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Right-click browser context menu is suppressed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Space launches a real missile and spends one round",
+      "passed": true,
+      "data": {
+        "ammo": 39,
+        "launches": 1
+      }
+    },
+    {
+      "name": "Left-click still fires the native primary weapon",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Physical mouse button4 holds the native Multi-Retina scanner",
+      "passed": true,
+      "data": 3
+    },
+    {
+      "name": "Space launches the native marked-target missile volley",
+      "passed": true,
+      "data": {
+        "before": 40,
+        "after": 37
+      }
+    },
+    {
+      "name": "Mouse4 releases cleanly without browser Back navigation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Double right-click and hold scans multiple native targets",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Mouse gesture does not activate Player2 scanning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Releasing the second right-click ends scan acquisition",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Separated right-clicks remain single Retina presses",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "A long first hold is not mistaken for a double tap",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pause clears the held gesture and mouse combat buttons",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Resuming does not restore a stale Multi-Retina gesture",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Focus loss clears the gesture and all held inputs",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Old saved layout migrates while preserving other custom keys",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Later custom rebindings survive reload after the one-time migration",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native browser errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

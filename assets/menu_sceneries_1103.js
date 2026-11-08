@@ -2,7 +2,7 @@
 // MS113: authored menu environments. Only source clipping and native translation.
 const MS113={enabled:new URLSearchParams(location.search).get('menubg')!=='classic',epoch:performance.now(),draws:{},last:null,
  scenes:{orbit:{front:'orbit_front',rate:.012,near:.021,phase:-.7},command:{front:'industrial_front',rate:.009,near:.015,phase:-.8},hangar:{front:'industrial_front',rate:.008,near:.014,phase:0},forge:{front:'industrial_front',rate:.008,near:.014,phase:-1},hq:{front:'coastal_front',rate:.007,near:.012,phase:.65},vault:{front:'industrial_front',rate:.008,near:.014,phase:-.7}},
- states:{title:'orbit',modesel:'command',diff:'command',pilot:'hangar',cooproster:'hangar',password:'vault',credits:'orbit',options:'vault',help:'vault',achievements:'vault',vault:'vault',armory:'forge',forge:'forge',forging:'forge',forged:'forge',loadout:'forge',supplies:'forge',powers:'forge',camphub:'hq'},
+ states:{title:'orbit',modesel:'command',diff:'command',password:'vault',credits:'orbit',options:'vault',help:'vault',achievements:'vault',vault:'vault',armory:'forge',forge:'forge',forging:'forge',forged:'forge',loadout:'forge',supplies:'forge',powers:'forge',camphub:'hq'},
  base:{canon:drawCanonBackdrop,boot:drawBootBackdrop,title:drawTitleBackdrop,pilot:drawPilotBG,space:scrollSpaceBG,arsenal:arsenalBackdrop,pauseOpen:sm22Open,pauseClose:sm22Close}};
 for(const key of [...Object.keys(MS113.scenes),'industrial_front','orbit_front','coastal_front'])XART._src['ms113_'+key]='assets/game/shared/ui/menu_sceneries_1103/'+key+'.png';
 for(const key of Object.keys(MS113.scenes))XART._src['ms113_'+key+'_portrait']='assets/game/shared/ui/menu_sceneries_1103/'+key+'_portrait.png';
@@ -25,7 +25,7 @@ drawCanonBackdrop=function(){if(menuScenery113())return true;return MS113.base.c
 drawBootBackdrop=function(){if(menuScenery113())return true;return MS113.base.boot.apply(this,arguments);};
 scrollSpaceBG=function(){if(menuScenery113())return true;return MS113.base.space.apply(this,arguments);};
 drawTitleBackdrop=function(){if(!menuScenery113('orbit'))return MS113.base.title.apply(this,arguments);drawLogo(VW/2,60,.34);};
-drawPilotBG=function(){const v={w:Math.round(cv.width/SS),h:Math.round(cv.height/SS)};if(menuScenery113('hangar',v.w,v.h))return true;return MS113.base.pilot.apply(this,arguments);};
+drawPilotBG=function(){return MS113.base.pilot.apply(this,arguments);};
 arsenalBackdrop=function(W,H,bays){
  if(!MS113.enabled||!MS113.states[state])return MS113.base.arsenal.apply(this,arguments);ms113Warm('forge');if(!XART.rdy('ms113_forge')||!XART.rdy('ms113_industrial_front'))return MS113.base.arsenal.apply(this,arguments);
  const result=MS113.base.arsenal.call(this,W,H,false);if(!result)return result;

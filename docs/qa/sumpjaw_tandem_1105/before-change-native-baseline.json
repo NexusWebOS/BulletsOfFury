@@ -1,0 +1,35 @@
+{
+  "hard": {
+    "kind": "sludgeemperor",
+    "hp": 12466,
+    "maxhp": 12466,
+    "structure": null,
+    "keys": [
+      "_s7warden",
+      "_s7FinalNoBar"
+    ],
+    "attackSpeed": 0.1739130434782609
+  },
+  "furious": {
+    "hp": 2896,
+    "actors": [
+      {
+        "maxhp": 1448,
+        "pools": [
+          362,
+          362,
+          724
+        ]
+      },
+      {
+        "maxhp": 1448,
+        "pools": [
+          362,
+          362,
+          724
+        ]
+      }
+    ],
+    "attackSpeed": 0.1512287334593573
+  }
+}

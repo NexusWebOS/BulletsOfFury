@@ -1,0 +1,132 @@
+{
+  "checks": [
+    {
+      "name": "All ZIP entries extract with valid CRC and all payload SHA256 hashes match",
+      "passed": true,
+      "data": {
+        "verified": 18771,
+        "entries": 18772
+      }
+    },
+    {
+      "name": "Package includes all current game assets and extensions",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Latest boss owners and the exact requested core controls are packaged",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Extracted Windows launcher runs without Python or Node on PATH",
+      "passed": true,
+      "data": {
+        "url": "http://127.0.0.1:54375/index.html",
+        "path": "C:\\WINDOWS\\System32;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
+      }
+    },
+    {
+      "name": "Standalone server supports real audio byte ranges",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Clean extracted game boots offline with normal player vulnerability",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Space remains a working menu Confirm control",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Extracted Stage 1 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Extracted Stage 2 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Extracted Stage 3 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Extracted Stage 4 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Extracted Stage 5 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Extracted Stage 6 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Extracted Stage 7 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Extracted Stage 8 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Extracted Stage 9 loads and renders",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Current Sumpjaw pair and mouth/core atlas decode from the ZIP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Current Razorwake and Thunderhead assets/masks decode from the ZIP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Packaged shared mixer plays decoded combat sound",
+      "passed": true,
+      "data": {
+        "peak": 0.6032695174217224,
+        "errors": []
+      }
+    },
+    {
+      "name": "Same-origin launcher restart preserves saves and control preferences",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No missing packaged resources or JavaScript errors",
+      "passed": true,
+      "data": {
+        "missing": [],
+        "errors": []
+      }
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "blockedExternalRequests": [
+    "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
+    "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
+    "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
+    "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
+    "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ],
+  "extractedRoot": "C:\\Users\\Mike\\Documents\\New project\\BOF-Official-Build-1105\\Clean Extracted Tester Copy\\BulletsOfFury-Official-2026-11-05",
+  "archive": "C:\\Users\\Mike\\Documents\\New project\\Releases\\BulletsOfFury-Official-2026-11-05-Tester.zip"
+}

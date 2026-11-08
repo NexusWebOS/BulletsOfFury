@@ -1,0 +1,31 @@
+BULLETS OF FURY - COMPLETE WINDOWS GAME + FURY HQ LAUNCHER / REV F
+
+EASIEST INSTALL
+1. Download BOF-Install-Helper-RevF.zip and extract it to a normal folder.
+2. Double-click Install-BulletsOfFury.cmd.
+3. The helper downloads both large release parts, checks their SHA256 hashes,
+   joins and verifies the original complete installer, then opens Fury HQ setup.
+
+You may also download both .part files manually into that extracted helper
+folder. The helper will verify and reuse them. Keep the .cmd and .ps1 together.
+The two .part files cannot run independently. About12GB free disk space is
+needed for the downloaded parts, assembled installer and installed game.
+
+After installation:
+- Bullets of Fury.exe starts the game automatically in fullscreen.
+- BOF Launcher.exe opens the animated Fury HQ launcher.
+- All game graphics, music, sounds and the offline WebView2 runtime are included.
+- Windows10/11 x64; no Python, Node or separate browser is required to play.
+
+Retina:right-click. Missiles:Space. Multi-Retina:Mouse4 or double-right-hold.
+The helper keeps your downloaded files and does not touch your saved games.
+Normal saves remain in LocalAppData/ColeForge/BulletsOfFury.
+
+Includes the Stage5 original sky/starfield restoration and smaller assembly
+pieces, performance/audio/deployment repairs, locked Cole silhouettes and
+neutral fills, revised launcher credits/font/window controls, and current
+modular Furious encounters/art.
+
+Validation:focused browser/fullscreen EXE checks passed; all installer files
+verified by checksum. The broader source test suite still stops at the existing
+missing difficultyHealthBaseline15 helper; this is not a full-campaign test pass.

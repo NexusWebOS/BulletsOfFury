@@ -1,0 +1,12 @@
+{
+  "path": "C:\\Users\\Mike\\Documents\\New project\\Releases\\BulletsOfFury-Setup-2026-11-06.exe",
+  "bytes": 3835068966,
+  "sha256": "c2378bbc6f3b5191ecf05f0a15151f16d7e795a35013e81ce3428b5560535195",
+  "payload": "C:\\Users\\Mike\\Documents\\New project\\BOF-Arcade-Installer-1105\\bof-deploy.zip",
+  "payloadSha256": "da0b5e5cc76f646b8b465896651aaf002a36b29dd343ed20df15200453821f7a",
+  "entries": 18775,
+  "unpackedBytes": 3843175520,
+  "gameJsSha256": "0903eec65a966a55980baef7a2eddf59ab4a3f18a8e77868ccb52fa90d231c91",
+  "hostSha256": "bdea011ead60360f2b149eafce678780e2086ccf93347ebab33ab03bdcc85a98",
+  "seconds": 9.16
+}

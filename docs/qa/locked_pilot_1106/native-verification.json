@@ -1,0 +1,55 @@
+{
+  "directory": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_shots\\locked_pilot_1106\\native",
+  "checks": [
+    {
+      "name": "Updated game EXE still starts fullscreen at high quality",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Packaged assets render both gray/black silhouettes, neutral backgrounds and padlocks",
+      "passed": true,
+      "data": [
+        {
+          "phase": 0,
+          "bg": "#000000",
+          "panel": "#181818",
+          "body": true,
+          "ship": true,
+          "lock": true
+        },
+        {
+          "phase": 1,
+          "bg": "#484848",
+          "panel": "#686868",
+          "body": true,
+          "ship": true,
+          "lock": true
+        }
+      ]
+    },
+    {
+      "name": "Packaged locked Cole cannot deploy",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Packaged real unlock restores color and stops the silhouette cycle",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Packaged game keeps the bullet/sonic interception contract",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native game runtime errors or missing assets",
+      "passed": true,
+      "data": {
+        "errors": [],
+        "missing": []
+      }
+    }
+  ]
+}

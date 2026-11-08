@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "name": "updated native game opens in fullscreen/high quality",
+      "passed": true
+    },
+    {
+      "name": "both packaged scene sources match the repaired source",
+      "passed": true
+    },
+    {
+      "name": "native Stage5 uses original backdrop; other layered stages remain active",
+      "passed": true
+    },
+    {
+      "name": "native kit uses the new 64px assembly cells",
+      "passed": true
+    },
+    {
+      "name": "native ascent selects dedicated sky route",
+      "passed": true
+    },
+    {
+      "name": "native transformation completes into original starfield",
+      "passed": true
+    },
+    {
+      "name": "original scenery parallax and optimized pages/audio remain active",
+      "passed": true
+    },
+    {
+      "name": "Stage4 outbound uses the same original sky pixels",
+      "passed": true
+    },
+    {
+      "name": "no native page exceptions or console errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "consoleErrors": []
+}

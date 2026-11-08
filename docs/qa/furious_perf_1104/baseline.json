@@ -1,0 +1,150 @@
+{
+  "label": "baseline",
+  "fps": 30.726926161648354,
+  "p95": 17.100000000002183,
+  "p99": 533.5,
+  "details": {
+    "t": 44314.09999999404,
+    "frames": 1633,
+    "SS": 2,
+    "cellBytes": 45563904,
+    "cache": 101,
+    "shadows": 15,
+    "rounds": 0
+  },
+  "top": [
+    {
+      "name": "(idle)",
+      "file": "",
+      "line": 0,
+      "ms": 6799.91
+    },
+    {
+      "name": "fillRect",
+      "file": "",
+      "line": 0,
+      "ms": 4895.43
+    },
+    {
+      "name": "getImageData",
+      "file": "",
+      "line": 0,
+      "ms": 2081.42
+    },
+    {
+      "name": "(program)",
+      "file": "",
+      "line": 0,
+      "ms": 1532.01
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 1381.97
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 375.55
+    },
+    {
+      "name": "(garbage collector)",
+      "file": "",
+      "line": 0,
+      "ms": 90.11
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 58.87
+    },
+    {
+      "name": "drawWorld",
+      "file": "furious_review_0927.js",
+      "line": 489,
+      "ms": 56.51
+    },
+    {
+      "name": "drawWorld",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 74228,
+      "ms": 52.91
+    },
+    {
+      "name": "restore",
+      "file": "",
+      "line": 0,
+      "ms": 52.87
+    },
+    {
+      "name": "updatePlay",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 34795,
+      "ms": 43.01
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 42.64
+    },
+    {
+      "name": "pm27Draw",
+      "file": "pixelmap_ui_1027.js?v=solid-r-square-hud-1027d",
+      "line": 27,
+      "ms": 41.4
+    },
+    {
+      "name": "pxgCarry",
+      "file": "pixel_glow_1015.js?v=hammer-charge-1016",
+      "line": 45,
+      "ms": 33.42
+    },
+    {
+      "name": "updatePlay",
+      "file": "hammer_time_0927.js?v=beta-priorities-1024",
+      "line": 253,
+      "ms": 29.67
+    },
+    {
+      "name": "bg6RainDraw",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 74153,
+      "ms": 28.64
+    },
+    {
+      "name": "pm27Draw",
+      "file": "pixelmap_ui_1027.js?v=solid-r-square-hud-1027d",
+      "line": 27,
+      "ms": 27.16
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 27.15
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 26.16
+    },
+    {
+      "name": "pxgCarry",
+      "file": "pixel_glow_1015.js?v=hammer-charge-1016",
+      "line": 45,
+      "ms": 23.72
+    },
+    {
+      "name": "fillRect",
+      "file": "",
+      "line": 0,
+      "ms": 21.29
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,25 @@
+--- before/assets/game.js
++++ after/assets/game.js
+@@ -42523,6 +42523,9 @@
+    mirroring, opacity ramp or substitute side. Each piece has its own entrance. */
+ const FURY_PART_START=3.1,FURY_PART_GAP=.54,FURY_PART_RISE=1.1;
+ const FURY_ORBIT_HULL=118;   // the cinematic hull the kit's orbit was laid out around (0914)
++// November6: orbiting hardware uses a 64px cell, separate from its travel radius.
++// The old 118*1.65 cell made individual parts larger than the completed ship.
++const FURY_PART_ORBIT_CELL=64;
+ function furyPartsTick(G){
+  if(!G||G.phase==='active')return;
+  if(G.partStartAge==null&&G.age>=FURY_PART_START&&furyShipReady())G.partStartAge=G.age;
+@@ -42558,10 +42561,10 @@
+  // The full cell starts below the playfield. All entrances run upward into
+  // their moving orbit; no part is born at a final orbit position.
+  const entry=_ease(clamp(elapsed/FURY_PART_RISE,0,1));
+- const osize=Math.max(size,FURY_ORBIT_HULL);   // the kit flies at its approved 0914 size and closes onto the play-sized craft in the snap
++ const osize=Math.max(size,FURY_ORBIT_HULL);   // full entrance clearance stays below the screen
+  px=lerp(x+((i%3)-1)*52,px,entry);py=lerp(VH+osize*1.8,py,entry);
+  const e=snap*snap;px=lerp(px,x+q.x*scale,e);py=lerp(py,y+q.y*scale,e);
+- return {key:q.key+'_top',x:px,y:py,rotation:(base+sign*elapsed*.9)*(1-e),size:(q.partScale||1)*lerp(osize*1.65,size,snap),entry};
++ return {key:q.key+'_top',x:px,y:py,rotation:(base+sign*elapsed*.9)*(1-e),size:(q.partScale||1)*lerp(FURY_PART_ORBIT_CELL,size,snap),entry};
+ }
+ function furyShipDrawPhase(G,x,y,size,planeH,pilot){
+  const phase=G.phase,t=G.age||0;

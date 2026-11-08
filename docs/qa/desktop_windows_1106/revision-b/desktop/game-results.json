@@ -1,0 +1,425 @@
+{
+  "colors": [
+    {
+      "pilot": "axel",
+      "expected": "#102850",
+      "unique": 1,
+      "rgb": "16,40,80,255"
+    },
+    {
+      "pilot": "decker",
+      "expected": "#483810",
+      "unique": 1,
+      "rgb": "72,56,16,255"
+    },
+    {
+      "pilot": "maverick",
+      "expected": "#104838",
+      "unique": 1,
+      "rgb": "16,72,56,255"
+    },
+    {
+      "pilot": "freezer",
+      "expected": "#382048",
+      "unique": 1,
+      "rgb": "56,32,72,255"
+    },
+    {
+      "pilot": "juggernaut",
+      "expected": "#483020",
+      "unique": 1,
+      "rgb": "72,48,32,255"
+    },
+    {
+      "pilot": "yuri",
+      "expected": "#501820",
+      "unique": 1,
+      "rgb": "80,24,32,255"
+    },
+    {
+      "pilot": "lizzie",
+      "expected": "#504018",
+      "unique": 1,
+      "rgb": "80,64,24,255"
+    },
+    {
+      "pilot": "falva",
+      "expected": "#501038",
+      "unique": 1,
+      "rgb": "80,16,56,255"
+    },
+    {
+      "pilot": "cole",
+      "expected": "#284018",
+      "unique": 1,
+      "rgb": "40,64,24,255"
+    }
+  ],
+  "collision": [
+    {
+      "kind": "s1bullet",
+      "weapon": "mg",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "s1bullet",
+      "weapon": "beam",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "s1bullet",
+      "weapon": "sonic",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "s1bullet",
+      "weapon": "missile",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "s1bullet",
+      "weapon": "helix",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "mg",
+      "weapon": "mg",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "mg",
+      "weapon": "beam",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "mg",
+      "weapon": "sonic",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "mg",
+      "weapon": "missile",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "mg",
+      "weapon": "helix",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "rzbSonic",
+      "weapon": "mg",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "rzbSonic",
+      "weapon": "beam",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "rzbSonic",
+      "weapon": "sonic",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "rzbSonic",
+      "weapon": "missile",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "rzbSonic",
+      "weapon": "helix",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "ovSonic",
+      "weapon": "mg",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "ovSonic",
+      "weapon": "beam",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "ovSonic",
+      "weapon": "sonic",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "ovSonic",
+      "weapon": "missile",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "ovSonic",
+      "weapon": "helix",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "sg10pressure",
+      "weapon": "mg",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "sg10pressure",
+      "weapon": "beam",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "sg10pressure",
+      "weapon": "sonic",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "sg10pressure",
+      "weapon": "missile",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "sg10pressure",
+      "weapon": "helix",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "s1cannon",
+      "weapon": "mg",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "s1cannon",
+      "weapon": "beam",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "s1cannon",
+      "weapon": "sonic",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "s1cannon",
+      "weapon": "missile",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    },
+    {
+      "kind": "s1cannon",
+      "weapon": "helix",
+      "atBirth": {
+        "proof": true,
+        "can": false
+      },
+      "can": false,
+      "element": null,
+      "alive": true,
+      "playerRoundSurvived": true
+    }
+  ],
+  "missile": {
+    "can": true,
+    "intercepted": true
+  },
+  "errors": []
+}

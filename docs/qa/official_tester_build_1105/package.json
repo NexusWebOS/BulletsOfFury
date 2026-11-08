@@ -1,0 +1,26 @@
+{
+  "path": "C:\\Users\\Mike\\Documents\\New project\\Releases\\BulletsOfFury-Official-2026-11-05-Tester.zip",
+  "checksumPath": "C:\\Users\\Mike\\Documents\\New project\\Releases\\BulletsOfFury-Official-2026-11-05-Tester.zip.sha256",
+  "sha256": "a5aa7e81dd8ee76b8a43dcc96a8dfcfccb18db85c42f1878f15873490823dcd0",
+  "bytes": 3561130693,
+  "files": 18772,
+  "unpackedBytes": 3619157078,
+  "prefix": "BulletsOfFury-Official-2026-11-05/",
+  "build": {
+    "title": "Bullets of Fury",
+    "date": "2026-11-05",
+    "buildId": "BOF-Official-2026-11-05-MK-0903eec65a",
+    "edition": "Official mouse and keyboard tester snapshot",
+    "controls": {
+      "fire": "Left click / J",
+      "retina": "Right click / C",
+      "missiles": "Space / K",
+      "multiRetina": "Hold mouse button 4 / Y, or double-tap right-click and hold the second press"
+    },
+    "launcher": "START-BOF.cmd",
+    "requirements": "Windows 10/11, Windows PowerShell and a desktop browser; no Python or Node install",
+    "source": "Current local production build, including uncommitted game updates",
+    "gameJsSha256": "0903eec65a966a55980baef7a2eddf59ab4a3f18a8e77868ccb52fa90d231c91"
+  },
+  "seconds": 95.99
+}

@@ -1,0 +1,17 @@
+{
+  "path": "C:\\Users\\Mike\\Documents\\New project\\Releases\\BulletsOfFury-Launcher-and-Game-2026-11-06-RevE.zip",
+  "bytes": 3876756417,
+  "sha256": "4829f8cb726c693ed335854b982d0edcc68c0948a6f27f26ade7500023ee3e7d",
+  "version": "2026.11.06e",
+  "files": 18957,
+  "verifiedGameFiles": 18956,
+  "contains": [
+    "BOF Launcher.exe",
+    "Bullets of Fury.exe",
+    "game/ (all assets)",
+    "runtime/ (offline Windows runtime)",
+    "all host DLLs and notices",
+    "OPEN-ME.txt"
+  ],
+  "seconds": 30.18
+}

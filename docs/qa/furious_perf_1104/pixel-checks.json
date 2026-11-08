@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Exact native opaque mask queries across every original pose",
+    "passed": true,
+    "data": {
+      "tested": 15525,
+      "failed": []
+    }
+  },
+  {
+    "name": "Authored shadows retain silhouette and displayed source colours",
+    "passed": true,
+    "data": [
+      {
+        "name": "razor_body",
+        "f": 0,
+        "d": 0,
+        "maxAlpha": 0,
+        "maxPremult": 1
+      },
+      {
+        "name": "razor_body",
+        "f": 2,
+        "d": 4,
+        "maxAlpha": 0,
+        "maxPremult": 1
+      },
+      {
+        "name": "razor_body",
+        "f": 0,
+        "d": 16,
+        "maxAlpha": 0,
+        "maxPremult": 1
+      },
+      {
+        "name": "razor_roll",
+        "f": 0,
+        "d": 0,
+        "maxAlpha": 0,
+        "maxPremult": 1
+      },
+      {
+        "name": "razor_roll",
+        "f": 4,
+        "d": 3,
+        "maxAlpha": 0,
+        "maxPremult": 1
+      },
+      {
+        "name": "razor_roll",
+        "f": 9,
+        "d": 8,
+        "maxAlpha": 0,
+        "maxPremult": 1
+      },
+      {
+        "name": "razor_roll",
+        "f": 17,
+        "d": 11,
+        "maxAlpha": 0,
+        "maxPremult": 1
+      },
+      {
+        "name": "razor_roll",
+        "f": 30,
+        "d": 15,
+        "maxAlpha": 0,
+        "maxPremult": 1
+      }
+    ]
+  },
+  {
+    "name": "No browser errors",
+    "passed": true,
+    "data": []
+  }
+]

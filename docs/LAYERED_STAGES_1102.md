@@ -1,3 +1,5 @@
+> November6: Stage5 orbital/Earth scenery is retired from the live route by Mike’s request. The original starfield/space parallax and dedicated ascent sky are restored. Other stages keep this layer pack. See `STAGE5_SCENE_RESTORATION_1106.md`.
+
 # Layered stage integration / Tesla power — November 2
 
 LS112 activates the approved Stage 2–9 and X scenery routes. Stage 1 keeps its existing artwork. Runtime owner: assets/layered_stages_1102.js, metadata: assets/layered_stages_art_1102.js. Rebuild: python _BUILD_SOURCE/build_layered_stages_1102.py. The complete approved source pack, prompts and original provenance remain in _ART_SOURCES/layered_stages_1102.

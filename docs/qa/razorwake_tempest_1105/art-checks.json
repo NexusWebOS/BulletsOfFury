@@ -1,0 +1,350 @@
+{
+  "checks": [
+    {
+      "bank": "roll",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "roll_hit",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "roll_shadow",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_roll",
+      "frames": 192,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_roll_hit",
+      "frames": 192,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_roll_wreck",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise",
+      "frames": 192,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle",
+      "frames": 192,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "body",
+      "frames": 56,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "body_hit",
+      "frames": 56,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "body_shadow",
+      "frames": 56,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "body_charge",
+      "frames": 144,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "aura",
+      "frames": 144,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cockpit",
+      "frames": 6,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "charge_0",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "charge_1",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "charge_2",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "charge_3",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "charge_4",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "charge_5",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "charge_6",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "charge_7",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_1",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_2",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_3",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_4",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_5",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_6",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_7",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_8",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_9",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_10",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_11",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "medium",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb_break",
+      "frames": 10,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "lightning",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "storm_grade",
+      "frames": 9,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    }
+  ],
+  "frames": 1601,
+  "masks": 24,
+  "maskExact": true,
+  "passed": true
+}

@@ -1,0 +1,188 @@
+{
+  "label": "modular-wind",
+  "fps": 40.898926934079526,
+  "p95": 25.400000000001455,
+  "p99": 48.900000000001455,
+  "top": [
+    {
+      "name": "(idle)",
+      "file": "",
+      "line": 0,
+      "ms": 24583.27
+    },
+    {
+      "name": "(program)",
+      "file": "",
+      "line": 0,
+      "ms": 3411.3
+    },
+    {
+      "name": "restore",
+      "file": "",
+      "line": 0,
+      "ms": 645.48
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 250.99
+    },
+    {
+      "name": "(garbage collector)",
+      "file": "",
+      "line": 0,
+      "ms": 221.18
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 218.45
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 209.11
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 204.28
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 185.9
+    },
+    {
+      "name": "X.rdy",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 3119,
+      "ms": 177.23
+    },
+    {
+      "name": "X._touch",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 3070,
+      "ms": 150.78
+    },
+    {
+      "name": "X.rdy",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 3119,
+      "ms": 149.66
+    },
+    {
+      "name": "X.rdy",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 3119,
+      "ms": 147.83
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 142.47
+    },
+    {
+      "name": "fillRect",
+      "file": "",
+      "line": 0,
+      "ms": 138.7
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 131.26
+    },
+    {
+      "name": "X._touch",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 3070,
+      "ms": 128.41
+    },
+    {
+      "name": "pxgCarry",
+      "file": "pixel_glow_1015.js?v=hammer-charge-1016",
+      "line": 45,
+      "ms": 125.0
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 118.51
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 117.35
+    },
+    {
+      "name": "pxgCarry",
+      "file": "pixel_glow_1015.js?v=hammer-charge-1016",
+      "line": 45,
+      "ms": 99.28
+    },
+    {
+      "name": "restore",
+      "file": "",
+      "line": 0,
+      "ms": 97.71
+    }
+  ],
+  "errors": [],
+  "functions": {
+    "rw117Blit": {
+      "calls": 18482,
+      "ms": 784.1000000536442,
+      "max": 45.70000001788139
+    },
+    "rw117Wings": {
+      "calls": 3124,
+      "ms": 332.2999998033047,
+      "max": 4.300000011920929
+    },
+    "rw117Mask": {
+      "calls": 0,
+      "ms": 0,
+      "max": 0
+    },
+    "rw117Fields": {
+      "calls": 2374,
+      "ms": 12.899999976158142,
+      "max": 1
+    },
+    "rw117Weather": {
+      "calls": 1639,
+      "ms": 548.5000007152557,
+      "max": 1.0999999940395355
+    },
+    "fb112Draw": {
+      "calls": 1639,
+      "ms": 1816.0999997258186,
+      "max": 72.5
+    },
+    "fb112Tick": {
+      "calls": 2374,
+      "ms": 4329.7999993264675,
+      "max": 8.400000005960464
+    },
+    "updatePlay": {
+      "calls": 2374,
+      "ms": 5586.999999940395,
+      "max": 11.900000005960464
+    },
+    "drawWorld": {
+      "calls": 1639,
+      "ms": 6013.099999815226,
+      "max": 207.90000000596046
+    }
+  }
+}

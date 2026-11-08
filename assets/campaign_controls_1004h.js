@@ -45,8 +45,14 @@ cmap2StartPressed=function(){
 campaignMenuInputTick=function(){
  if(state!==GS.STAGESEL||run.mode!=='campaign'||!cmap2On())return MAP4H.base.campaign();
  if(campPause)return false;
- // Consume Start once, before Stage X or deployment gets a chance to read it.
- if(Input.menuStart()){if(map4hLive()&&!_selFlash)cmap2StartPressed();return true;}
+ // Enter/Start confirms the currently focused map or toolbar. Never send a
+ // deployment confirmation into SAVE (the toolbar's first item).
+ if(Input.menuStart()||Input.tap(' ')){
+  if(map4hLive()&&!_selFlash){
+   if(cmap2.focus==='bar'){cmap2StartPressed();return true;}
+   Input.injectTap('enter');return false;
+  }return true;
+ }
  if(Input.menuBack()){
   if(map4hLive()&&!_selFlash){
    if(cmap2.focus==='bar')cmap2.focus='map';
@@ -59,9 +65,21 @@ campaignMenuInputTick=function(){
 cmap2BarInput=function(lo,hi){
  if(campPause)return true;if(_selFlash)return cmap2.focus==='bar';
  const m=Input.mouse||{},R=cmap2._btnRects||cmap2BtnRects();let hov=-1;
+ const click=Input.tap('mouse0')||!!m.down&&!MAP4H.mapMouse;MAP4H.mapMouse=!!m.down;
+ const island=cmap2IslandAt(m.x,m.y,lo,hi);
+ if(click&&island>0&&stateT>.4){
+  cmap2.focus='map';_drawStageSelectInner._md=!!m.down;
+  if(island===sselCursor){Input.injectTap('enter');return false;}
+  sselCursor=island;Audio.SFX.blip();return true;
+ }
+ // Return pointer focus to the map when leaving the toolbar for a mission.
+ // The native island handler still owns selection and the second-click deploy.
+ if(cmap2.focus==='bar'&&cmap2IslandAt(m.x,m.y,lo,hi)>0&&(m.moved||m.down)){
+  cmap2.focus='map';Input.consumeMouseMoved();return false;
+ }
  for(let i=0;i<R.length;i++){const r=R[i];if(m.x>=r.x&&m.x<=r.x+r.w&&m.y>=r.y&&m.y<=r.y+r.h){hov=i;break;}}
  if(hov>=0&&Input.consumeMouseMoved()){cmap2.focus='bar';cmap2.bar=hov;}
- if(hov>=0&&m.down&&!cmap2._mdPrev){cmap2.focus='bar';cmap2.bar=hov;cmap2BarActivate(hov);return true;}
+ if(hov>=0&&click){cmap2.focus='bar';cmap2.bar=hov;cmap2BarActivate(hov);return true;}
  if(cmap2.focus==='bar'){
   if(Input.menuDown()){cmap2.focus='map';Input.mouse.moved=false;Audio.SFX.blip();return true;}
   Input.menuUp();const n=CAMP_PAUSE_BTN.length;
@@ -96,7 +114,9 @@ Rival24.mapInput=function(){
 Rival24.mapBack=function(){return campPause||cmap2.focus==='bar'?false:MAP4H.base.rivalBack();};
 campApply=function(s){const ok=MAP4H.base.apply(s);if(ok)MAP4H.resumeX=!!s.mapStageX;return ok;};
 openStageSelect=function(){const r=MAP4H.base.open.apply(this,arguments);
- MAP4H.xMouse=false;MAP4H.modalMouse=false;
+ MAP4H.xMouse=false;MAP4H.modalMouse=false;MAP4H.mapMouse=!!Input.mouse.down;campPause=null;
+ Input.clearTaps?.();Input.mouse.moved=false;
+ cmap2._mdPrev=!!Input.mouse.down;_drawStageSelectInner._md=!!Input.mouse.down;
  if(MAP4H.resumeX){MAP4H.resumeX=false;CF4.focus=!!cf4Pending();MAP4E.xPreview=!cf4Pending();}
  return r;
 };
@@ -133,7 +153,7 @@ function map4hSlotCommit(P,index,bar){
  else{P.msg='THAT SAVE IS FROM AN OLDER BUILD';P.msgT=2;if(!bar){campHubMsg=P.msg;campHubMsgT=P.msgT;}}
 }
 function map4hSlotInput(P,rows,count,bar){
- if(_selFlash)return;const m=Input.mouse||{},edge=!!m.down&&!MAP4H.modalMouse;MAP4H.modalMouse=!!m.down;
+ if(_selFlash)return;const m=Input.mouse||{},edge=Input.tap('mouse0')||!!m.down&&!MAP4H.modalMouse;MAP4H.modalMouse=!!m.down;
  for(const r of rows)if(m.x>=r.x&&m.x<=r.x+r.w&&m.y>=r.y&&m.y<=r.y+r.h){
   if(Input.consumeMouseMoved())P.sel=r.index;
   if(edge&&P.t>.2){P.sel=r.index;selFlash(()=>map4hSlotCommit(P,r.index,bar),.18,{...r,key:'map4h_slot_flash'});return;}

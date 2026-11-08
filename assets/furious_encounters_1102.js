@@ -5,11 +5,16 @@ const FB112={base:{spawn:spawnBoss,sub:spawnSubBoss__inner,tick:updateBoss,subti
  draw:drawBoss,subdraw:drawSubBoss,hit:hitBoss,subhit:hitSubBoss,at:bossHitTest,
  subat:subBossHitPart,solid:subBossSolidAt,beam:subBossBeamImpact,targets:retinaBossTargets,
  projectile:drawCombatFinalProjectile,intercept:enemyOrdnanceCanIntercept,load:stageLoadBegin,
- ready:target17Ready,overlay:encounterDamageOverlay,list:debugFightList},events:[],masks:new Map(),shadows:new Map(),cells:new Map(),cellBytes:0};
+ ready:target17Ready,overlay:encounterDamageOverlay,list:debugFightList},events:[],masks:new Map(),shadows:new Map(),cells:new Map(),cellBytes:0,opaqueBits:null,opaqueLoad:null,opaqueError:null};
 for(const B of Object.values(FB112_ART.banks))XART._src[B.key]=B.path;
+for(const [key,page]of Object.entries(FB114_ART.pages))XART._src[key]=page.path;
+function fb112OpaqueWarm(){
+ if(!FB112.opaqueLoad)FB112.opaqueLoad=fetch(FB114_ART.maskPath).then(r=>{if(!r.ok)throw Error('Storm collision data '+r.status);return r.arrayBuffer();}).then(data=>{if(data.byteLength!==FB114_ART.maskBytes)throw Error('Storm collision data size');FB112.opaqueBits=new Uint8Array(data);}).catch(error=>{FB112.opaqueError=String(error);console.error(error);});
+}
+
 function fb112Rank(){return diffKey==='furious'&&!run._gp4StageX;}
 function fb112Own(b){return !!b?._fb112;}
-function fb112Keys(){return Object.values(FB112_ART.banks).map(b=>b.key);}
+function fb112Keys(){fb112OpaqueWarm();return FB112.readyKeys||(FB112.readyKeys=[...Object.values(FB112_ART.banks).filter(b=>!FB114_ART.render[b.key]).map(b=>b.key),...Object.keys(FB114_ART.pages)]);}
 function fb112Log(b,event,data={}){FB112.events.push({id:b._fb112.id,event,t:b.t,...data});if(FB112.events.length>1600)FB112.events.shift();}
 function fb112Dir(a,dirs=32){return v31Dir(a,dirs);}
 function fb112Angle(a){return Math.PI/2+TAU*fb112Dir(a)/32;}
@@ -17,19 +22,19 @@ function fb112Cell(B,n){
  const key=B.key+':'+n;let c=FB112.cells.get(key);
  if(c){FB112.cells.delete(key);FB112.cells.set(key,c);return c;}
  c=document.createElement('canvas');c.width=c.height=B.cell;
- c.getContext('2d',{willReadFrequently:true}).drawImage(XART.get(B.key),n%B.cols*B.cell,Math.floor(n/B.cols)*B.cell,B.cell,B.cell,0,0,B.cell,B.cell);
+ const g=c.getContext('2d',{willReadFrequently:true}),page=FB114_ART.render[B.key];if(page){const r=page.cells[n];if(r)g.drawImage(XART.get(r[0]),r[1],r[2],r[3],r[4],r[5],r[6],r[3],r[4]);}else g.drawImage(XART.get(B.key),n%B.cols*B.cell,Math.floor(n/B.cols)*B.cell,B.cell,B.cell,0,0,B.cell,B.cell);
  const bytes=B.cell*B.cell*4;while(FB112.cellBytes+bytes>64*1024*1024&&FB112.cells.size){const old=FB112.cells.keys().next().value,drop=FB112.cells.get(old);FB112.cellBytes-=drop.width*drop.height*4;FB112.cells.delete(old);}
  FB112.cells.set(key,c);FB112.cellBytes+=bytes;return c;
 }
 function fb112Blit(name,f,x,y,k=1,a=Math.PI/2,flash=false,alpha=1){
- const B=FB112_ART.banks[name];if(!B||!XART.rdy(B.key))return false;
+ const B=FB112_ART.banks[name];if(!B||(!FB114_ART.render[B.key]&&!XART.rdy(B.key)))return false;
  const n=(clamp(f|0,0,B.frames-1)*B.dirs+(B.dirs>1?fb112Dir(a,B.dirs):0)),s=B.cell*k;
  ctx.save();ctx.globalAlpha*=alpha;ctx.drawImage(fb112Cell(B,n),x-s/2,y-s/2,s,s);ctx.restore();return true;
 }
 function fb112Point(b,p){const q=b._fb112,k=q.scale,a=q.heading-Math.PI/2,x=(p[0]-q.M.cell/2)*k,y=(p[1]-q.M.cell/2)*k;return{x:b.x+x*Math.cos(a)-y*Math.sin(a),y:b.y+x*Math.sin(a)+y*Math.cos(a)};}
 function fb112PartPoint(b,p){const at=fb112Point(b,p.mount);p.x=at.x;p.y=at.y;p._retinaOwner=b;return at;}
 function fb112Bore(b,p){const at=fb112PartPoint(b,p),a=(p.angle??b._fb112.heading)-Math.PI/2,k=b._fb112.scale,x=p.bore[0]*k,y=(p.bore[1]+(p.recoil>.035?(p.recoilOffset||0):0))*k;return{x:at.x+x*Math.cos(a)-y*Math.sin(a),y:at.y+x*Math.sin(a)+y*Math.cos(a)};}
-function fb112Ready(){return fb112Keys().every(k=>XART.rdy(k));}
+function fb112Ready(){const keys=fb112Keys();return !!FB112.opaqueBits&&keys.every(k=>XART.rdy(k));}
 stageLoadBegin=function(n,keys){if(n!==6){FB112.cells.clear();FB112.cellBytes=0;FB112.masks.clear();FB112.shadows.clear();}if(n===6&&fb112Rank())Snd.prepare(['enemyMachineGunHeavy','combatEnergy0927','bossWeaponCharge','combatModule0927','jetDash','enemyHeavyLaser','expBig','combatBeam0927','overlordWind','c33_thunder']);return FB112.base.load.call(this,n,n===6&&fb112Rank()?[...(keys||[]),...fb112Keys()]:keys);};
 function fb112Create(model,sub){
  const M=FB112_ART.models[model],total=Math.round(difficultyHealth15(model==='razor'?1250:4800)*(coopActive()?COOP_BOSS_MUL:1)),b={kind:model==='razor'?'razorwake':'thunderhead',name:model==='razor'?'RAZORWAKE':'THUNDERHEAD',sub,mini:sub,x:worldWidth()/2,y:-M.world*.7,ty:model==='razor'?165:175,w:M.world,h:M.world*.8,hp:total,maxhp:total,t:0,enter:true,dead:false,dying:0,flash:0,fireCd:999,rotor:0,_threat:combatThreat(run.stage)};
@@ -50,9 +55,12 @@ function fb112Rolling(b){return b?._fb112?.model==='razor'&&b._fb112.phase==='at
 function fb112RollFrame(b){const q=b._fb112,i=Math.max(0,q.M.clips.roll.indexOf(q.pose)),state=(q.parts[0].hp<=0?1:0)|(q.parts[1].hp<=0?2:0);return state*8+i;}
 function fb112Visible(b){return b&&!b.dead&&!b.enter&&!fb112Rolling(b)&&b.x>camLeftX()-25&&b.x<camRightX()+25&&b.y>viewTopY()+35&&b.y<VH-35;}
 function fb112LiveParts(b){const q=b._fb112;return q.open?[q.core]:q.parts.filter(p=>p.hp>0);}
-function fb112Opaque(name,f,a,k,cx,cy,x,y){const B=FB112_ART.banks[name];if(!B||!XART.rdy(B.key))return false;const n=(clamp(f|0,0,B.frames-1)*B.dirs+(B.dirs>1?fb112Dir(a,B.dirs):0)),key=B.key+':'+n;let mask=FB112.masks.get(key);
- if(!mask){const c=document.createElement('canvas');c.width=c.height=B.cell;const g=c.getContext('2d',{willReadFrequently:true});g.drawImage(XART.get(B.key),n%B.cols*B.cell,Math.floor(n/B.cols)*B.cell,B.cell,B.cell,0,0,B.cell,B.cell);mask=g.getImageData(0,0,B.cell,B.cell).data;FB112.masks.set(key,mask);}
- const px=Math.floor((x-cx)/k+B.cell/2),py=Math.floor((y-cy)/k+B.cell/2);return px>=0&&px<B.cell&&py>=0&&py<B.cell&&mask[(py*B.cell+px)*4+3]>24;
+function fb112Opaque(name,f,a,k,cx,cy,x,y){
+ const B=FB112_ART.banks[name],M=FB114_ART.masks[name];if(!B||!M||!FB112.opaqueBits)return false;
+ const n=clamp(f|0,0,B.frames-1)*B.dirs+(B.dirs>1?fb112Dir(a,B.dirs):0),m=M.cells[n];if(!m)return false;
+ const px=Math.floor((x-cx)/k+B.cell/2)-m[0],py=Math.floor((y-cy)/k+B.cell/2)-m[1];
+ if(px<0||py<0||px>=m[2]||py>=m[3])return false;
+ const bit=py*m[2]+px;return !!(FB112.opaqueBits[m[4]+(bit>>3)]&(1<<(bit&7)));
 }
 function fb112At(b,x,y,pad=0){if(!fb112Visible(b))return null;const q=b._fb112;let best=null,value=Infinity;
  for(const p of fb112LiveParts(b)){const at=fb112PartPoint(b,p),rx=p.type==='core'?q.M.coreBox[0]*q.scale*.5:p.type==='pressure'?37:22,ry=p.type==='core'?q.M.coreBox[1]*q.scale*.5:p.type==='pressure'?70:43,v=((x-at.x)/(rx+pad))**2+((y-at.y)/(ry+pad))**2,name=q.model+'_'+(p.type==='core'?'body':p.id),f=p.type==='core'?q.pose:p.type==='pressure'?0:p.recoil>.035?1:0,centre=p.type==='core'?b:at;if(v<=1&&v<value&&fb112Opaque(name,f,p.type==='core'?q.heading:p.angle,q.scale,centre.x,centre.y,x,y)){best=p;value=v;}}return best;}
@@ -124,7 +132,13 @@ function fb112Tick(b,dt){if(!b.dead&&!fb112Ready()){stageLoadTick();return;}cons
 }
 updateBoss=function(dt){return fb112Own(boss)?fb112Tick(boss,dt):FB112.base.tick.apply(this,arguments);};
 updateSubBoss=function(dt){return fb112Own(subBoss)?fb112Tick(subBoss,dt):FB112.base.subtick.apply(this,arguments);};
-function fb112Shadow(name,f,x,y,k,a){const B=FB112_ART.banks[name],n=f*B.dirs+(B.dirs>1?fb112Dir(a,B.dirs):0),key=B.key+':'+n;let c=FB112.shadows.get(key);if(!c){c=document.createElement('canvas');c.width=c.height=B.cell;const g=c.getContext('2d');g.drawImage(XART.get(B.key),n%B.cols*B.cell,Math.floor(n/B.cols)*B.cell,B.cell,B.cell,0,0,B.cell,B.cell);g.globalCompositeOperation='source-in';g.fillStyle='rgba(0,4,9,.45)';g.fillRect(0,0,B.cell,B.cell);FB112.shadows.set(key,c);}const s=B.cell*k;ctx.drawImage(c,x-s/2,y-s/2,s,s);}
+function fb112Shadow(name,f,x,y,k,a){
+ const B=FB112_ART.banks[name],n=f*B.dirs+(B.dirs>1?fb112Dir(a,B.dirs):0),key=B.key+':'+n;
+ const r=FB114_ART.shadows[name]?.cells[n];if(!r||!XART.rdy(r[0]))return;
+ let c=FB112.shadows.get(key);
+ if(!c){c=document.createElement('canvas');c.width=c.height=B.cell;c.getContext('2d').drawImage(XART.get(r[0]),r[1],r[2],r[3],r[4],r[5],r[6],r[3],r[4]);FB112.shadows.set(key,c);}
+ const size=B.cell*k;ctx.drawImage(c,x-size/2,y-size/2,size,size);
+}
 function fb112Draw(b){const q=b._fb112,k=q.scale;if(!fb112Ready())return;
  const alive=q.death<3.0;
  if(alive){const shakeX=b.dead?Math.sin(q.death*91)*4:Math.sin(b.t*37)*.7;
@@ -134,8 +148,8 @@ function fb112Draw(b){const q=b._fb112,k=q.scale;if(!fb112Ready())return;
   if(q.model==='razor')fb112Shadow('razor_body',q.pose,b.x,b.y+30,k*.9,q.heading);
   fb112Blit(q.model+'_body',q.pose,b.x+shakeX,b.y,k,q.heading);
   if(q.open&&q.core.flash>0)fb112Blit(q.model+'_hit',q.pose,b.x,b.y,k,q.heading);
-  if(!b.dead&&q.core.flash<=0){ctx.save();ctx.globalCompositeOperation='lighter';fb112Blit(q.model+'_flow',Math.floor(b.t*16)%4,b.x,b.y,k,q.heading,false,.4+.3*Math.sin(b.t*7)**2);ctx.restore();}
-  for(const p of q.parts){const at=fb112PartPoint(b,p),name=q.model+'_'+p.id,frame=p.type==='pressure'?q.phase==='warn'?Math.min(4,Math.floor(q.t/q.dur*5)):q.phase==='attack'&&q.attack==='gates'?4:0:p.recoil>.035?1:0;
+  if(!b.dead&&q.core.flash<=0&&q.model!=='thunder'){ctx.save();ctx.globalCompositeOperation='lighter';fb112Blit(q.model+'_flow',Math.floor(b.t*16)%4,b.x,b.y,k,q.heading,false,.4+.3*Math.sin(b.t*7)**2);ctx.restore();}
+  for(const p of q.parts){const at=fb112PartPoint(b,p),name=q.model+'_'+p.id,frame=p.type==='pressure'?q.phase==='warn'?Math.min(4,Math.floor(q.t/q.dur*5)):q.phase==='attack'&&['gates','storm-tornado'].includes(q.attack)?4:0:p.recoil>.035?1:0;
    fb112Blit(name+(p.hp<=0?'_wreck':''),frame,at.x+shakeX,at.y,k,p.angle);if(p.flash>0)fb112Blit(name+'_hit',frame,at.x,at.y,k,p.angle);
    if(p.type==='gun'&&p.recoil>0&&p.hp>0){const m=fb112Bore(b,p),dir=fb112Dir(p.angle),f=dir*8+Math.floor(b.t*55)%8;fb112Blit('wind_muzzle',f,m.x,m.y,.62);}
   }

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Native host and bounded payload self-tests",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Complete installer extracts and verifies every game file",
+    "passed": true,
+    "data": [
+      {
+        "time": "2026-11-06T15:08:07.4052287Z",
+        "name": "install-complete",
+        "data": {
+          "target": "C:\\Users\\Mike\\Documents\\New project\\BOF-Arcade-Installer-1105\\qa\\setup-v2-1793977618\\Installed BOF",
+          "shortcuts": false,
+          "files": 18779
+        }
+      }
+    ]
+  },
+  {
+    "name": "Test install leaves desktop shortcuts and system registration untouched",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Installed Bullets of Fury.exe matches the tested revision",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Installed BOF Launcher.exe matches the tested revision",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Installed game/assets/game.js matches the tested revision",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Installed game/index.html matches the tested revision",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Installed game/assets/projectile_contract_1106.js matches the tested revision",
+    "passed": true,
+    "data": null
+  },
+  {
+    "name": "Uninstaller removes the complete test-owned install",
+    "passed": true,
+    "data": null
+  }
+]

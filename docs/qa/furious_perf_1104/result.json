@@ -1,0 +1,29 @@
+{
+  "before": {
+    "razorwake": 26.7137653163,
+    "thunderhead": 47.9650483622
+  },
+  "after": {
+    "razorwake": 57.7,
+    "thunderhead": 57.2,
+    "sumpjaw": 54.7
+  },
+  "films": {
+    "razorwake": {
+      "seconds": 67.245,
+      "sha256": "a73631a97d2868b3904fc543447cc4142ad3c1663c8dcea06ad61ceae51d4bfc"
+    },
+    "thunderhead": {
+      "seconds": 82.541,
+      "sha256": "239040c3007e7c3e30be44c3e4c8dcb9a31aaa218a275943f7ecacdd5e87a9ba"
+    },
+    "sumpjaw": {
+      "seconds": 115.996,
+      "sha256": "7f885e8058cb00a5fceba513c39cd75f44dacae25ff6585c54eb4391dc41b52d"
+    }
+  },
+  "nativeOwnershipChecks": "29/29",
+  "nativeMaskQueries": 15525,
+  "exactMaskCells": 1035,
+  "exactRenderCells": 1152
+}

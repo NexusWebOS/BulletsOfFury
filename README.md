@@ -2,9 +2,22 @@
 
 This is the current **Bullets of Fury** production build. The active work combines gameplay
 corrections, boss and miniboss redesigns, campaign systems, interface upgrades, authored asset
-integration, and real-browser verification on `main`.
+integration, and real-browser verification.
 
-Branch: `main`
+Release source branch: `codex/build-2026-10-26`
+
+## Windows launcher and complete game — Rev F
+
+[Download the current Windows release](https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-windows-2026-11-06-revf).
+Published November8,2026. Download **BOF-Install-Helper-RevF.zip**, extract it and
+run **Install-BulletsOfFury.cmd**. The helper retrieves/verifies the two large
+parts and opens the complete graphical installer. The native game starts in
+fullscreen; the animated Fury HQ launcher and all art/audio/runtime dependencies
+are included. No Python or separate browser is required for this Windows build.
+
+Includes restored Stage5 sky/starfield and smaller ship pieces, performance and
+sound fixes, improved tutorial deployment, locked Cole and updated launcher UI,
+plus the current modular Furious encounters. [Contents and verification limits](docs/GITHUB_WINDOWS_PUBLICATION_1108.md).
 
 ## November 4 build
 

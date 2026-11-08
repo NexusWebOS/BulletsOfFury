@@ -11,7 +11,8 @@ const LS112={base:{cfg:_levelCfg,master:drawLevelMaster,begin:beginStage,load:st
 for(const a of Object.values(LS112_ART.levels))XART._src[a.key]=a.path;
 for(const a of Object.values(LS112_ART.banks))XART._src[a.key]=a.path;
 for(const a of [LS112_ART.highway,LS112_ART.sewerExit])XART._src[a.key]=a.path;
-function ls112Live(n=run.stage){return !globalThis.LS112_OFF&&!(typeof tutLive==='function'&&tutLive())&&!!LS112_ART.levels[String(n)];}
+// November6: Stage5 keeps its original starfield/space parallax, including launch and boss.
+function ls112Live(n=run.stage){return Number(n)!==5&&!globalThis.LS112_OFF&&!(typeof tutLive==='function'&&tutLive())&&!!LS112_ART.levels[String(n)];}
 function ls112Count(k){LS112.draws[k]=(LS112.draws[k]||0)+1;}
 function ls112Keys(n){const a=LS112_ART.levels[String(n)];if(!a)return[];const bed=LS112_ART.materials[a.material];return[a.key,...(bed?[bed.key]:[]),...(n===4?[LS112_ART.tesla.key,LS112_ART.highway.key]:[]),...(n===7?[LS112_ART.sewerExit.key]:[])];}
 function ls112Warm(n){for(const k of ls112Keys(n))XART.rdy(k);}

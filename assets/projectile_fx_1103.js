@@ -141,6 +141,9 @@ function rings(src,dx,dy,dw,dh,r,t){
 }
 ctx.drawImage=function(im,...a){
   if(S.on&&S.b&&VIS)VIS.set(S.b,(VIS.get(S.b)||0)+1);
+  // Thunderhead storm sprites already contain authored glow/fringes. Preserve their
+  // pixels and avoid re-reading/recolouring every new animation cell at runtime.
+  if(S.on&&(S.b?._th114Owner||S.b?._ss116||S.b?._rw117Owner))return rawDraw.call(this,im,...a);
   if(!S.on||!im||a.some(v=>!Number.isFinite(v)))return rawDraw.call(this,im,...a);
   const iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height;if(!iw||!ih)return rawDraw.call(this,im,...a);
   let [sx,sy,sw,sh,dx,dy,dw,dh]=norm(im,a);const big=Math.abs(dw*dh)>16,t=clockNow();
@@ -280,7 +283,7 @@ const original=drawBullets,ITER=Array.prototype[Symbol.iterator];
 if(typeof XART!=='undefined'&&XART._touch)for(let i=1;i<=5;i++){try{XART._touch('ylo_orb_'+i);XART._touch('ylo_bolt_'+i);}catch(e){}}
 let cur=null,depth=0,PS=null,ES=null,DONE=null,VIS=null;
 function begin(b,enemy){
-  const t=clockNow(),h=b&&!b.dead?hist(b):null,first=!DONE.has(b);DONE.add(b);
+  const t=clockNow(),h=b&&!b.dead&&!b._th114Owner&&!b._ss116&&!b._rw117Owner?hist(b):null,first=!DONE.has(b);DONE.add(b);
   S.on=true;S.b=b;S.enemy=enemy;S.glow=0;S.col=null;S.hueArea=0;S.bodyDone=0;S.hue=null;S.phase=h?h.phase*2:0;S.graze=false;
   if(enemy&&cfg.graze&&h&&typeof player!=='undefined'&&player&&!player.dead){const d=Math.hypot(b.x-player.x,b.y-player.y);S.graze=d<26&&d>6;}
   if(h&&first&&cfg.trails){const fam=family(b);if(fam)trail(b,h,fam,t);}

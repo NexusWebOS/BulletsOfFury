@@ -1,0 +1,12 @@
+{
+  "nativeChecks": 33,
+  "compatibilityChecks": 6,
+  "artFrames": 1601,
+  "masks": 24,
+  "previewChecks": 14,
+  "nativeFps": 57.09729710681186,
+  "vortexFps": 58.17269483099843,
+  "url": "http://127.0.0.1:65121/?razorwake=tempest-final-1105#razorwake",
+  "runtimeSha256": "57536e68acfacaa474f58d4541c379994dd2ae5db8034add1a57d5173d0e36c8",
+  "movie": "_shots\\boss_comparison_1102\\razorwake-tempest-final-ready-1105\\stage6-mini\\stage6-furious.mp4"
+}

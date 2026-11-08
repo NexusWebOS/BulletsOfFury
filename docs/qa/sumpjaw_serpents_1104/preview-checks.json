@@ -1,0 +1,79 @@
+{
+  "checks": [
+    {
+      "name": "Razorwake loads with actual video frames",
+      "passed": true,
+      "data": {
+        "duration": 67.2,
+        "width": 1280,
+        "height": 800
+      }
+    },
+    {
+      "name": "Razorwake chapter seeking, playback and audio",
+      "passed": true,
+      "data": {
+        "peak": 0.6500556468963623,
+        "advanced": 0.7990190000000004,
+        "time": 6.238
+      }
+    },
+    {
+      "name": "Razorwake byte-range serving",
+      "passed": true
+    },
+    {
+      "name": "Thunderhead loads with actual video frames",
+      "passed": true,
+      "data": {
+        "duration": 103.626063,
+        "width": 960,
+        "height": 1024
+      }
+    },
+    {
+      "name": "Thunderhead chapter seeking, playback and audio",
+      "passed": true,
+      "data": {
+        "peak": 0.728484034538269,
+        "advanced": 0.6826670000000004,
+        "time": 7.072667
+      }
+    },
+    {
+      "name": "Thunderhead byte-range serving",
+      "passed": true
+    },
+    {
+      "name": "Sumpjaw pair loads with actual video frames",
+      "passed": true,
+      "data": {
+        "duration": 134.764063,
+        "width": 960,
+        "height": 1024
+      }
+    },
+    {
+      "name": "Sumpjaw pair chapter seeking, playback and audio",
+      "passed": true,
+      "data": {
+        "peak": 0.6743779182434082,
+        "advanced": 0.746667,
+        "time": 2.812
+      }
+    },
+    {
+      "name": "Sumpjaw pair byte-range serving",
+      "passed": true
+    },
+    {
+      "name": "Mobile page fits the viewport",
+      "passed": true
+    },
+    {
+      "name": "No browser or media errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

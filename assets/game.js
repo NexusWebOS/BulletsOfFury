@@ -967,34 +967,13 @@ function s45Tile(key, scroll, rate, alpha){
   ctx.restore();
   return true;
 }
-/* ============================================================
-   THE STAGE-6 BLUE SKY, DRAWN BY THE FUNCTION THAT ALREADY EXISTS FOR IT (drop 0903v)
-
-   Mike: "that is not the sky from stage 6."
-
-   He was right twice over. Stage 6's master is `stage6_blue_master` (680x5000, registered in
-   game.js via X._src, not through the manifest) - a flat royal-blue field with pixel clouds,
-   uniform end to end. What 0903s/0903u used was `bg_stage06_master`, a DIFFERENT plate that
-   runs a whole day cycle, and 0903u then went hunting inside it for a blue region and
-   mirror-tiled a gradient band out of it. All of that was solving a problem that did not exist.
-
-   `STAGE6_TRANSITION_SKY` and `stage6TransitionBackgroundDraw(scroll)` were already in this file
-   for exactly this purpose - the stage-6 launch/transition sky - and its own note explains why
-   it exists: an earlier version multiplied scroll by .35 and wrapped against a different range,
-   so GO jumped to another piece of the same image. It uses `bg6LoopDraw`, the GAMEPLAY sampler,
-   so the transition and the live level cannot disagree about where in the plate they are.
-
-   Wrapped in an alpha so the sky can rise OVER the stage-4 plate rather than replacing it: the
-   function opens with an opaque #062a8e fill, which at full alpha would hide the highway the
-   climb is still meant to be leaving.
-
-   The neon-city overlay inside bg6LoopDraw is keyed off `_levelCfg().city`, and during the
-   outbound that cfg is stage 4's, which has no city - so it stays off without a special case.
-   ============================================================ */
+/* Stage4's outbound climb and Stage5's assembly share the original authored
+   ascent sky. Stage6 owns its separate city arrival; do not route this climb
+   through its replaceable transition renderer (November6 scene repair). */
 function s45Sky(scroll, rate, alpha){
-  if(alpha<=0.004 || typeof stage6TransitionBackgroundDraw!=='function') return false;
+  if(alpha<=0.004 || typeof stage5AscentBackgroundDraw!=='function') return false;
   ctx.save(); ctx.globalAlpha=clamp(alpha,0,1);
-  stage6TransitionBackgroundDraw(scroll*rate);
+  stage5AscentBackgroundDraw(scroll*rate);
   ctx.restore();
   return true;
 }
@@ -7386,36 +7365,19 @@ const Audio = (()=>{
 /* ============================================================
    INPUT
    ============================================================ */
-/* ⚠ THE MOUSE DEFAULTS ARE ADDED, NOT SUBSTITUTED (drop 0812a). Mike's tester: "A better control
-   for me would be Left click (Fire). Right Click (Missiles), Retina Lock (Space bar)." Those are
-   his three, and they work out of the box now — but J/K/C stay bound alongside them, because
-   keybindValidate only refills an action that is MISSING or EMPTY, so anyone who has already
-   played keeps whatever is in their localStorage and would never see a replacement anyway. Adding
-   costs nothing and taking away would strand the existing layout. */
+/* November 5 tester layout: right-click Retina, Space missiles, physical mouse
+   button 4 (browser button 3) Multi-Retina. Double-tap right-click and hold the
+   second press also scans multiple targets. Keyboard and controller alternatives
+   remain available and future custom rebindings remain authoritative. */
 /* ⚠ START IS THE PAUSE BUTTON (Mike, 0909: "Pause - in game it should be toggled via Start
    button aka enter or whatever is binded, not P"). It was a bare Input.tap('p'), the only
    gameplay input in the file that was not bindable and the only one a pad could not reach.
    pad_b9 is Start on an XInput layout. `p` is kept as a second default so nobody's muscle memory
    breaks, and because keybindValidate only refills an action that is MISSING or EMPTY, anyone
    with saved binds picks this up without losing what they already set. */
-/* ⚠ THE TWO SIDE MOUSE BUTTONS, AND CHARGE AS A FIFTH ACTION (Mike, 0912): "make space
-   operate like the L/C button, and additionally map the C button to my side mouse button 4 and
-   the Charge button to mouse button 5, aka the two side buttons on the left."
-
-   ⚠ SPACE WAS ALREADY ON RETINA and has been since 0812a - checked, not assumed. The C button IS
-   retina on this layout (fire=J, missile=K, retina=L/C), so `' '` already sitting in `retina` is
-   exactly what he is asking for. Nothing to add; it is asserted in the suite now so it cannot
-   quietly go away.
-
-   ⚠ HIS "BUTTON 4 / BUTTON 5" ARE e.button 3 AND 4, which MOUSE_KEY already pushes into `keys` as
-   mouse3/mouse4 (0812a: "mouse buttons become mouse0/1/2 in exactly that map, so every consumer
-   that already understands a bind understands a click"). A physical side button is 1-indexed to
-   the human and 0-indexed to the browser - binding 'mouse4' to the C role would have put it on
-   the FORWARD thumb button, one off from the one he means.
-
-   ⚠ CHARGE IS A BIND, NOT A LITERAL 'h'. He named the key, but a hardcoded letter is an action
-   the rebind screen cannot reach and the second seat cannot have. See CTRL_ACTS, which it joins. */
-const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k','mouse2','pad_b1','pad_b6'],retina:['c',' ','mouse3','pad_b5'],multilock:['y','pad_b3'],charge:['h','mouse4','pad_b2'],start:['enter','p','pad_b9']};
+/* Physical mouse button 5 remains Charge (browser button 4 / mouse4).
+   Existing profiles migrate these three physical controls once, below. */
+const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k',' ','pad_b1','pad_b6'],retina:['c','mouse2','pad_b5'],multilock:['y','mouse3','pad_b3'],charge:['h','mouse4','pad_b2'],start:['enter','p','pad_b9']};
 /* KEYBINDS MUST BE VALIDATED, NOT JUST FILLED IN (drop 0724dl).
 
    Mike's readout said it all: `state title, kd40 ku41, last shift, menu 0`. Forty keypresses
@@ -7496,6 +7458,17 @@ function _loadBinds(key, defaults){
 let keybind=_loadBinds('bof_keys', KEYBIND_DEFAULT);
 let keybind2=_loadBinds('bof_keys2', KEYBIND2_DEFAULT);
 for(const [kb,pad] of [[keybind,'pad_b3'],[keybind2,'pad2_b3']]){kb.retina=kb.retina.filter(k=>k!==pad);if(!kb.retina.length)kb.retina=[pad==='pad_b3'?'c':'n'];}
+function upgradeMouseControls1105(){
+  try{if(localStorage.getItem('bof_mouse_controls_1105')==='1')return;}catch(_){}
+  const reserved=[' ','mouse2','mouse3'];
+  for(const action of Object.keys(KEYBIND_DEFAULT)){
+    const old=keybind[action]||[];keybind[action]=old.filter(k=>!reserved.includes(k));
+    if(!keybind[action].length)keybind[action]=KEYBIND_DEFAULT[action].filter(k=>!reserved.includes(k));
+  }
+  for(const [action,key]of [['bomb',' '],['retina','mouse2'],['multilock','mouse3']])keybind[action].push(key);
+  try{localStorage.setItem('bof_keys',JSON.stringify(keybind));localStorage.setItem('bof_mouse_controls_1105','1');}catch(_){}
+}
+upgradeMouseControls1105();
 function saveKeybind(){
   try{ localStorage.setItem('bof_keys',JSON.stringify(keybind)); }catch(e){}
   try{ localStorage.setItem('bof_keys2',JSON.stringify(keybind2)); }catch(e){}
@@ -7514,6 +7487,12 @@ function pauseTapped(){
 }
 const Input = (()=>{
   const keys={}, pressed={};
+  const mouseRetina={lastUp:-1e9,downAt:0,multi:false};
+  function cancelMouseRetina(){
+    mouseRetina.lastUp=-1e9;mouseRetina.downAt=0;mouseRetina.multi=false;
+    for(const k of ['mouse2','mouse3']){keys[k]=false;pressed[k]=false;}
+  }
+
   const mouse={x:VW/2,y:VH*0.75,down:false,inside:false,active:false,moved:false,_lx:-1,_ly:-1};
   /* key() MUST NOT THROW ON A MALFORMED EVENT (drop 0724do).
      This was `e.key.toLowerCase()` with no guard. If e.key is undefined — and it is on synthetic
@@ -7577,7 +7556,7 @@ const Input = (()=>{
      another tap — that key is dead for the rest of the session. Alt-tabbing, losing focus or a
      dropped event is enough. Releasing everything when the window loses focus or is hidden costs
      nothing and removes the failure. */
-  function releaseAll(){ try{ for(const k in keys) keys[k]=false; clearTaps(); mouse.down=false; }catch(_){} }
+  function releaseAll(){ try{ for(const k in keys) keys[k]=false; clearTaps(); mouse.down=false; cancelMouseRetina(); }catch(_){} }
   window.addEventListener('blur', releaseAll);
   document.addEventListener('visibilitychange', function(){ if(document.hidden) releaseAll(); });
   function mpos(e){
@@ -7594,8 +7573,8 @@ const Input = (()=>{
   /* ============================================================
      MOUSE BUTTONS ARE BINDABLE INPUTS (drop 0812a)
 
-     Mike's tester: "Add mouse buttons as programmable inputs. A better control for me would be
-     Left click (Fire). Right Click (Missiles), Retina Lock (Space bar)."
+     Current mouse profile: left-click fires, right-click Retina, button 4
+     Multi-Retina and button 5 Charge. Space launches missiles.
 
      ⚠ NO NEW INPUT PLUMBING — the gamepad already showed the way. Pad buttons are pushed into the
      same `keys` map as `pad_b0..15` and are therefore bindable, tappable and holdable through
@@ -7613,13 +7592,29 @@ const Input = (()=>{
   const mkey=(name,held)=>{ if(held && !keys[name]) pressed[name]=true; keys[name]=held; };
   cv.addEventListener('mousedown',e=>{ window.__inp.mdown++;
     if((e.button|0)===0) mouse.down=true;
-    const mk=MOUSE_KEY[e.button|0]; if(mk) mkey(mk,true);
+    const button=e.button|0,mk=MOUSE_KEY[button],fresh=mk&&!keys[mk];
+    if(mk)mkey(mk,true);
+    if(button>=2&&button<=4)e.preventDefault();
+    if(button===2&&fresh){
+      const now=performance.now(),allowed=state===GS.PLAY&&(keybind.retina||[]).includes('mouse2');
+      mouseRetina.multi=allowed&&now-mouseRetina.lastUp<=300;
+      mouseRetina.downAt=now;mouseRetina.lastUp=-1e9;
+      // The second press belongs to the native scan, not single-target cycleLock.
+      if(mouseRetina.multi)pressed.mouse2=false;
+    }
     mpos(e); window.__inp.lastXY=Math.round(mouse.x)+','+Math.round(mouse.y); try{ Audio.resume(); }catch(_){} });
   window.addEventListener('mouseup',e=>{
     if(!e || (e.button|0)===0) mouse.down=false;
-    const mk=e?MOUSE_KEY[e.button|0]:null;
-    if(mk) mkey(mk,false); else for(const k of MOUSE_KEY) mkey(k,false); });
-  /* ⚠ RIGHT-CLICK MUST NOT OPEN THE BROWSER MENU. Binding missiles to button 2 is useless if the
+    const button=e?e.button|0:-1,mk=e?MOUSE_KEY[button]:null;
+    if(mk&&keys[mk]&&button>=2&&button<=4)e.preventDefault();
+    if(button===2){
+      const now=performance.now();
+      mouseRetina.lastUp=keys.mouse2&&!mouseRetina.multi&&state===GS.PLAY&&now-mouseRetina.downAt<=250?now:-1e9;
+      mouseRetina.multi=false;
+    }
+    if(mk)mkey(mk,false);else{for(const k of MOUSE_KEY)mkey(k,false);cancelMouseRetina();} });
+  cv.addEventListener('auxclick',e=>{if(e.button===3||e.button===4)e.preventDefault();});
+  /* ⚠ RIGHT-CLICK MUST NOT OPEN THE BROWSER MENU. Binding Retina to button 2 is useless if the
      context menu covers the playfield on every shot. Suppressed on the canvas only, so the rest
      of the page behaves normally. */
   cv.addEventListener('contextmenu',e=>{ e.preventDefault(); return false; });
@@ -7710,9 +7705,8 @@ const Input = (()=>{
      charge/retina their own job (the Forge) read their own binds and never call this. */
   const MENU_FACE_PADS=['pad_b0','pad_b2','pad_b3','pad_b4','pad_b5','pad_b7'];
   function menuFaceTap(){ const back=(keybind.bomb||[]); let hit=false; for(const k of MENU_FACE_PADS){ if(back.indexOf(k)<0 && tap(k)) hit=true; } return hit; }
-  /* START IS ITS OWN CAMPAIGN-MAP COMMAND (0826). It deliberately excludes FIRE/A so the
-     selected stage can still be deployed with the assigned fire button while Enter or the
-     controller Start button opens the save/load/exit menu. */
+  /* Read the assigned Start/Confirm action once. Each screen owns its meaning;
+     the campaign map confirms deployment, with Back owning the menu. */
   function menuStart(){ return tapAny((keybind.start||['enter']).filter(k=>!/^mouse\d/.test(k)))||tap('pad_b9'); }
   /* B is the cabinet's missile/back action. Respect its remapped keyboard/controller
      bindings, but leave mouse clicks to each screen's own hit testing. Backspace edits text. */
@@ -7720,7 +7714,7 @@ const Input = (()=>{
      that sat in both lists - the hardcoded pad_b1, or a pad button the player remapped onto FIRE while it was
      still on BOMB - was consumed as BACK and the confirm never saw it: A "does not press". FIRE wins. */
   function menuBack(){ const fire=keybind.fire||[], ok=k=>fire.indexOf(k)<0;
-    return tapAny((keybind.bomb||[]).filter(k=>!/^mouse\d/.test(k)&&k!=='backspace'&&ok(k)))||(ok('pad_b1')&&tap('pad_b1'))||(ok('escape')&&tap('escape')); }
+    return tapAny((keybind.bomb||[]).filter(k=>!/^mouse\d/.test(k)&&k!=='backspace'&&k!==' '&&ok(k)))||(ok('pad_b1')&&tap('pad_b1'))||(ok('escape')&&tap('escape')); }
   function consumeMouseMoved(){ const m=mouse.moved; mouse.moved=false; return m; }
   /* ⚠ A CLICK SYNTHESISES THE CONFIRM THE KEYBOARD PATH ALREADY HANDLES (drop 0812b).
      Five menu screens were pointer-dead, and each one's activation is a different block —
@@ -7730,7 +7724,9 @@ const Input = (()=>{
      instead means the pointer runs the SAME line the keyboard runs, so there is only ever one
      activation path per screen to get right. */
   function injectTap(name){ pressed[name]=true; }
-  return {keys,mouse,down,tap,clearTaps,pollGamepad,tapAny,menuUp,menuDown,menuLeft,menuRight,menuConfirm,menuFaceTap,menuStart,menuBack,consumeMouseMoved,injectTap,
+  return {keys,mouse,down,tap,clearTaps,cancelMouseRetina,
+    get mouseMultiRetina(){return mouseRetina.multi&&state===GS.PLAY&&!!keys.mouse2&&(keybind.retina||[]).includes('mouse2');},
+    pollGamepad,tapAny,menuUp,menuDown,menuLeft,menuRight,menuConfirm,menuFaceTap,menuStart,menuBack,consumeMouseMoved,injectTap,
     get gamepadConnected(){return gpConnected;},
     get up(){return keybind.up.some(k=>down(k));},
     get dn(){return keybind.down.some(k=>down(k));},
@@ -27766,14 +27762,17 @@ const FLAME_SEG  = 30;      // px between drawn segments up the jet
 const FLAME_FIXED_LV = 3;                                        // the 0903z pinned size; unused while SCALES is on
 const FLAME_SCALES_WITH_LV = true;                               // Mike 0906 - set false to restore the 0903z pin
 function _flv(lv){ return FLAME_SCALES_WITH_LV ? clamp(lv,1,5) : FLAME_FIXED_LV; }
-function flameReach(lv){ return (118 + _flv(lv)*30)*(run&&run.weapon===4&&forgeActiveTier(4)>=3?1.16:1); }             // 148 (lv1) .. 268 (lv5)
+function flameReach(lv){ return (154 + _flv(lv)*30)*(run&&run.weapon===4&&forgeActiveTier(4)>=3?1.16:1); }             // 184 (lv1) .. 304 (lv5); +27 visible pixels at the authored .75 plume scale
 function flameBase(lv){ return 15 + _flv(lv)*4; }                // 19 .. 35 half-width at the nozzle
 function flameFlare(lv){ return 2.0 + _flv(lv)*0.15; }           // 2.15 .. 2.75 tip multiple
-/* per-tick damage. FLAME_TICK is 0.08s, so lv5 is ~137 dps against lv1's ~45 - the upgrade the
-   size used to be. Indexed 1..5; the 0 slot is unused and mirrors lv1 so a stray 0 cannot read
-   undefined and silently deal NaN. */
-const FLAME_DMG=[3.6, 3.6, 5.2, 7.0, 8.9, 11.0];
-function flameDmg(lv){ return FLAME_DMG[clamp(lv,1,5)]; }
+/* 1106: native sustained-fire comparison (Axel, neutral assault target):
+   L1 flame46 vs MG40 DPS, L3 flame87 vs MG120, L5 flame135 vs MG288.
+   Fire now keeps pace with MG upgrades while retaining short reach and its
+   crowd-control burn. Ice Breath keeps its existing damage plus freeze role.
+   Slot0 mirrors L1; the game-time tick and per-target ledgers remain unchanged. */
+const FLAME_DMG=[3.6,3.6,7.2,10.5,19.5,24.0];
+const ICE_BREATH_DMG=[3.6,3.6,5.2,7.0,8.9,11.0];
+function flameDmg(lv){ return (flameIsIce()?ICE_BREATH_DMG:FLAME_DMG)[clamp(lv,1,5)]; }
 /* 0..1, how hard the additive passes burn. Level 1 still breathes; level 5 is white-hot. */
 function flameHeat(lv){ return (clamp(lv,1,5)-1)/4; }
 /* how long a target stays alight after the fire leaves it */
@@ -29744,7 +29743,16 @@ function pShoot(){
 const MG_CONE = 0.62;
 function eAimDown(ang){ return clamp(ang, Math.PI/2-MG_CONE, Math.PI/2+MG_CONE); }
 
-function eMG(x,y,ang,spd,col){ ang=eAimDown(ang); if(typeof wm26EnemyShot==='function')wm26EnemyShot(x,y,ang,'mg'); const _tp=enemyBulletPressure(); eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed*_tp, vy:Math.sin(ang)*spd*DIFF.ebSpeed*_tp, w:4,h:14, kind:'mg', _ph:(Math.random()*4)|0, col:col||'#bfe8ff',_threatBullet:_tp}); (Audio.SFX.enemyMachineGunLight||Audio.SFX.enemyShoot)(); }
+// Physical hostile bullets and sonic pressure fronts are hazards, never targets.
+// Keep the original ammunition identity when a later palette/art pass recolors it.
+function enemyProjectileIsBulletOrSonic(q){
+  if(!q)return false;
+  if(q._ordinaryHostile)return true;
+  if(q._physicalMissile||/missile|rocket|warhead/i.test(q.kind||''))return false;
+  return !!(q.mg||q._s1aSlug||q._ovSonicWave||q._fb9RzbProof||
+    /bullet|slug|pellet|tracer|sonic|^sg10pressure$|^(?:mg|minigunT|chaingunT|s1cannon)$/i.test(q.kind||''));
+}
+function eMG(x,y,ang,spd,col){ ang=eAimDown(ang); if(typeof wm26EnemyShot==='function')wm26EnemyShot(x,y,ang,'mg'); const _tp=enemyBulletPressure(); eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed*_tp, vy:Math.sin(ang)*spd*DIFF.ebSpeed*_tp, w:4,h:14, kind:'mg', _ordinaryHostile:true, _weaponProof:true, _shootable:false, _ph:(Math.random()*4)|0, col:col||'#bfe8ff',_threatBullet:_tp}); (Audio.SFX.enemyMachineGunLight||Audio.SFX.enemyShoot)(); }
 function enemyShotSfx(kind){
   const S=Audio&&Audio.SFX; if(!S) return;
   const k=String(kind||'').toLowerCase();
@@ -29789,7 +29797,7 @@ function eShoot(x,y,ang,spd,kind='mg'){
      fallback: the bullet visibly switched between its sprite and a plain dot as it travelled.
      t is set here too, for the same reason. */
   const _tp=enemyBulletPressure();
-  eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed*_tp, vy:Math.sin(ang)*spd*DIFF.ebSpeed*_tp, w:6,h:6, kind,
+  eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed*_tp, vy:Math.sin(ang)*spd*DIFF.ebSpeed*_tp, w:6,h:6, kind, _ordinaryHostile:enemyProjectileIsBulletOrSonic({kind}), _weaponProof:enemyProjectileIsBulletOrSonic({kind}),
     t:0, _ph:(Math.random()*8)|0,_threatBullet:_tp});
   enemyShotSfx(kind);
   if(typeof wm26EnemyShot==='function')wm26EnemyShot(x,y,ang,kind);
@@ -31940,7 +31948,7 @@ function _lockTargets(){
    five-second firing window. Manual missile queues never spend passive ammo. */
 const RETINA_SCAN_CAP=128,RETINA_SCAN_LIFE=5,RETINA_SCAN_GAP=.05;
 function retinaScanEnabled(){return true;} // Multi-lock is now a dedicated standard action.
-function retinaScanHeld(){const K=keybindFor(_seat);return (K.multilock||[]).some(k=>Input.down(k));}
+function retinaScanHeld(){const K=keybindFor(_seat);return (K.multilock||[]).some(k=>Input.down(k))||(_seat===1&&Input.mouseMultiRetina);}
 function retinaScanState(){
   if(!player._retinaScan)player._retinaScan={marks:[],queue:null,fireCd:0};
   return player._retinaScan;
@@ -33381,9 +33389,10 @@ function stageLoadBegin(n,keys){
   return roots.length;
 }
 function stageLoadTick(){
+  if(typeof furyShipLoadTick==='function')furyShipLoadTick();
   if(typeof run==='undefined'||!run)return;
   const L=_stageLoads[run.stage];if(!L||L.done||typeof XART==='undefined')return;
-  const now=_stageLoadNow();
+  const now=_stageLoadNow(),tickStarted=now;
   for(let i=L.inflight.length-1;i>=0;i--){
     const q=L.inflight[i],im=q.im;
     if(im&&!im._bofStageDecodeStarted)_stageLoadDecode(im);
@@ -33392,7 +33401,7 @@ function stageLoadTick(){
     const bad=!!(!im||(im.complete&&im.naturalWidth===0)||im._bofStageDecodeDone===-1||(now-q.at)>STAGE_LOAD_ITEM_TIMEOUT);
     if(ok||bad){L.inflight.splice(i,1);if(ok)L.loaded++;else L.failed++;}
   }
-  while(L.inflight.length<STAGE_LOAD_CONCURRENCY&&L.cursor<L.keys.length){
+  while(L.inflight.length<STAGE_LOAD_CONCURRENCY&&L.cursor<L.keys.length&&_stageLoadNow()-tickStarted<.004){
     const key=L.keys[L.cursor++],im=XART.raw(key);
     if(!im){L.failed++;continue;}
     _stageLoadDecode(im);
@@ -33518,7 +33527,13 @@ function warmStage(n){
   _warmed[n]=1;
   const want=[], seen={};
   const add=k=>{ if(k && !seen[k] && XART._src[k]){ seen[k]=1; want.push(k); } };
-  const addPrefix=pre=>{ for(const k in XART._src) if(k.indexOf(pre)===0) add(k); };
+  /* Index once per stage instead of scanning 24,000+ entries for every family.
+     Prefix membership is unchanged; the loader retains its native priorities. */
+  const sourceKeys=Object.keys(XART._src).sort();
+  const addPrefix=pre=>{let lo=0,hi=sourceKeys.length;
+    while(lo<hi){const mid=(lo+hi)>>>1;if(sourceKeys[mid]<pre)lo=mid+1;else hi=mid;}
+    for(let i=lo;i<sourceKeys.length&&sourceKeys[i].startsWith(pre);i++)add(sourceKeys[i]);
+  };
   if(n===7){add('s7sluice_vent');add('s7sluice_warning');}
   // The Furious Stage-3 replacements and four current VILE forms live outside
   // the older ship-boss art namespaces. Decode them during stage entry.
@@ -34451,6 +34466,7 @@ function setState(s){
        (state===GS.STAGESEL||state===GS.PLAY||state===GS.STAGECLEAR||state===GS.FLYOVER)) campSuspend();
   }catch(_){}
   const _prevState=state;
+  if(s!==state)Input.cancelMouseRetina();
   if(_prevState===GS.CONTINUE && s!==GS.CONTINUE && typeof _stopContinueVO==='function') _stopContinueVO();
   if(_prevState==='paused'&&playPause&&(playPause.mode==='options'||playPause.mode==='help')&&s===GS.TITLE){playPauseSubmenuReturn();return;}
   if(s==='paused'&&_prevState!=='paused')playPauseBegin();
@@ -42419,17 +42435,41 @@ for(const f of ['roll','somersault','assembly','veil','speed','thrusters'])
  for(let i=0;i<(f==='somersault'?12:8);i++)FURY_KEYS.push(f+'_'+String(i).padStart(2,'0'));
 const _furyCache=Object.create(null);
 function furyTintedKey(k){return k==='base'||/^(nose|hull|wing_|engine_|roll_|somersault_)/.test(k);}
-function furyShipWarm(){
- if(typeof XART==='undefined')return;
- for(const k of FURY_KEYS){
-  const stem=k==='base'?'runtime_base':k;
-  XART._src['fury_'+k]='assets/game/shared/ships/furyship_0914/'+stem+'.png';XART._touch('fury_'+k);
-  if(furyTintedKey(k)){XART._src['fury_'+k+'_blue']='assets/game/shared/ships/furyship_0914/'+stem+'_blue.png';XART._touch('fury_'+k+'_blue');}
+/* Space kits used to start every image/blue-mask request in one render frame.
+   Decode three at a time alongside the stage loader; the intro's native ready
+   gate still waits for the complete high-quality kit. No resolution change. */
+const FURY_STREAM={started:false,keys:[],cursor:0,inflight:[],done:false,failed:0};
+function furyShipLoadTick(){
+ const Q=FURY_STREAM;if(!Q.started||Q.done||typeof XART==='undefined')return;
+ const now=_stageLoadNow();
+ for(let i=Q.inflight.length-1;i>=0;i--){const q=Q.inflight[i],im=q.im;
+  if(im&&!im._bofStageDecodeStarted)_stageLoadDecode(im);
+  if(im?._bofStageDecodeDone===1){Q.inflight.splice(i,1);}
+  else if(!im||im._bofStageDecodeDone===-1||now-q.at>18){Q.inflight.splice(i,1);Q.failed++;}
  }
+ while(Q.inflight.length<3&&Q.cursor<Q.keys.length&&_stageLoadNow()-now<.003){
+  const key=Q.keys[Q.cursor++],im=XART.raw(key);
+  // The boot asset gate temporarily refuses non-UI requests while scripts
+  // are still registering. That is a deferred request, never a failed frame.
+  if(!im){Q.cursor--;break;}
+  _stageLoadDecode(im);
+  if(im?._bofStageDecodeDone===1)continue;
+  Q.inflight.push({key,im,at:now});
+ }
+ if(Q.cursor===Q.keys.length&&!Q.inflight.length)Q.done=true;
+}
+function furyShipWarm(){
+ if(typeof XART==='undefined'||FURY_STREAM.started)return;
+ const Q=FURY_STREAM;
+ for(const k of FURY_KEYS){const stem=k==='base'?'runtime_base':k;
+  XART._src['fury_'+k]='assets/game/shared/ships/furyship_0914/'+stem+'.png';Q.keys.push('fury_'+k);
+  if(furyTintedKey(k)){XART._src['fury_'+k+'_blue']='assets/game/shared/ships/furyship_0914/'+stem+'_blue.png';Q.keys.push('fury_'+k+'_blue');}
+ }
+ Q.started=true;furyShipLoadTick();
 }
 function furyShipReady(){
  if(furyLegacyShip||typeof XART==='undefined')return false;
- return FURY_KEYS.every(k=>XART.rdy('fury_'+k)&&(!furyTintedKey(k)||XART.rdy('fury_'+k+'_blue')));
+ furyShipWarm();return FURY_STREAM.done&&FURY_STREAM.failed===0;
 }
 function furyShipCanvas(k,pilot){
  const ck=k+'|'+(pilot||'axel');if(_furyCache[ck])return _furyCache[ck];
@@ -42483,6 +42523,9 @@ function furyShipDrawFlight(x,y,size,pilot,pose,t){
    mirroring, opacity ramp or substitute side. Each piece has its own entrance. */
 const FURY_PART_START=3.1,FURY_PART_GAP=.54,FURY_PART_RISE=1.1;
 const FURY_ORBIT_HULL=118;   // the cinematic hull the kit's orbit was laid out around (0914)
+// November6: orbiting hardware uses a 64px cell, separate from its travel radius.
+// The old 118*1.65 cell made individual parts larger than the completed ship.
+const FURY_PART_ORBIT_CELL=64;
 function furyPartsTick(G){
  if(!G||G.phase==='active')return;
  if(G.partStartAge==null&&G.age>=FURY_PART_START&&furyShipReady())G.partStartAge=G.age;
@@ -42518,10 +42561,10 @@ function furyPartPose(G,i,x,y,size){
  // The full cell starts below the playfield. All entrances run upward into
  // their moving orbit; no part is born at a final orbit position.
  const entry=_ease(clamp(elapsed/FURY_PART_RISE,0,1));
- const osize=Math.max(size,FURY_ORBIT_HULL);   // the kit flies at its approved 0914 size and closes onto the play-sized craft in the snap
+ const osize=Math.max(size,FURY_ORBIT_HULL);   // full entrance clearance stays below the screen
  px=lerp(x+((i%3)-1)*52,px,entry);py=lerp(VH+osize*1.8,py,entry);
  const e=snap*snap;px=lerp(px,x+q.x*scale,e);py=lerp(py,y+q.y*scale,e);
- return {key:q.key+'_top',x:px,y:py,rotation:(base+sign*elapsed*.9)*(1-e),size:(q.partScale||1)*lerp(osize*1.65,size,snap),entry};
+ return {key:q.key+'_top',x:px,y:py,rotation:(base+sign*elapsed*.9)*(1-e),size:(q.partScale||1)*lerp(FURY_PART_ORBIT_CELL,size,snap),entry};
 }
 function furyShipDrawPhase(G,x,y,size,planeH,pilot){
  const phase=G.phase,t=G.age||0;
@@ -49361,6 +49404,7 @@ function eShootT(x,y,ang,spd,kind,opts){
     w:opts.w||7,h:opts.h||7, kind:kind||'bolt',
     t:0, _ph:(Math.random()*8)|0, pal:opts.pal, tint:opts.tint, szMul:opts.szMul,
     hp:_shootable?1:undefined,_shootable,
+    _ordinaryHostile:enemyProjectileIsBulletOrSonic({kind}),_weaponProof:enemyProjectileIsBulletOrSonic({kind}),
     _curve:opts.curve||0, _s1Impact:opts.impact||null,_threatBullet:_tp};
   eBullets.push(shot);
   if(!opts.noMuzzle&&typeof wm26EnemyShot==='function')wm26EnemyShot(x,y,ang,kind,opts.owner);
@@ -67441,7 +67485,7 @@ function _drawStageSelectInner(dt){
      Anchoring to VH-18 puts it where the title screen's identical hint already lives, so the two
      agree and it never collides with the map content. */
   if(typeof Rival24!=='undefined')Rival24.mapDraw(dt);
-  if(sselBoot===0) drawHintBar([['pad_dpad',_c2&&cmap2.focus==='bar'?'MENU':'STAGE'],['pad_a',_c2&&cmap2.focus==='bar'?'SELECT':'DEPLOY'],['pad_start','MENU']]);
+  if(sselBoot===0) drawHintBar([['pad_dpad',_c2&&cmap2.focus==='bar'?'MENU':'STAGE'],['pad_a',_c2&&cmap2.focus==='bar'?'SELECT':'DEPLOY'],['pad_b',_c2&&cmap2.focus==='bar'?'MAP':'MENU']]);
   /* LOCK ONCE COMMITTED (drop 0801fe). Mike: "when we select a level to go to
      being our j/a button, do not allow me to keep moving or pressing stuff. lock
      that ability until we enter the level so it doesnt bug out."
@@ -68513,17 +68557,16 @@ function pickDiff(){ const L=diffList(); if(diffLocked(L[clamp(menuIndex,0,L.len
   // reset all transient pilot-select state so a stale comm/slide from a prior visit never stacks on the card
   pilotComm=null; pilotCommT=0; pilotPending=null; pilotSlide=0; pilotRot=0; pilotFlash=0; }
 /* PILOT SELECT — "Choose your Pilot!" left cards in a row */
+const PILOT_SOLID_PALETTES_1106={
+  axel:'#102850',decker:'#483810',maverick:'#104838',freezer:'#382048',
+  juggernaut:'#483020',yuri:'#501820',lizzie:'#504018',falva:'#501038',cole:'#284018'
+};
 function drawPilotBG(tint){
-  const {w:VW,h:VH}=pilotViewSize();
-  const c=hx(tint);
-  ctx.fillStyle='#08080e'; ctx.fillRect(0,0,VW,VH);
-  const g=ctx.createLinearGradient(0,0,0,VH);
-  g.addColorStop(0,rgba(c,0.10)); g.addColorStop(0.42,rgba(c,0.42)); g.addColorStop(0.60,rgba(c,0.34)); g.addColorStop(1,rgba(c,0.07));
-  ctx.fillStyle=g; ctx.fillRect(0,0,VW,VH);
-  const rg=ctx.createRadialGradient(VW/2,VH*0.45,24,VW/2,VH*0.45,VW*0.85);
-  rg.addColorStop(0,rgba(c,0.26)); rg.addColorStop(1,'rgba(0,0,0,0)');
-  ctx.fillStyle=rg; ctx.fillRect(0,0,VW,VH);
+  const v=pilotViewSize(),p=PILOTS.find(p=>p.tint===tint)||PILOTS[pilotIndex]||PILOTS[0];
+  // Mike explicitly requested a flat 16-bit color field with no scenery/gradient.
+  ctx.fillStyle=p.key==='cole'&&isPilotLocked(p)&&typeof lp116Background==='function'?lp116Background():PILOT_SOLID_PALETTES_1106[p.key];ctx.fillRect(0,0,v.w,v.h);
 }
+
 /* Passwords and stage-labelled UI use the authored stage-card alphabet. Stages without a
    dedicated card use stage 1's authored face; prose and cinematics use the dialogue sheet. */
 function pilotFont(idx){
@@ -68887,14 +68930,15 @@ function psBlitFit(key,cx,cy,maxW,maxH,alpha){
   ctx.restore(); return true;
 }
 function psPanelBox(x,y,w,h,tint,glow){
+  const lockedScreen=typeof lp116LockedScreen==='function'&&lp116LockedScreen();
   ctx.save();
-  ctx.fillStyle='rgba(8,11,18,0.78)'; ctx.fillRect(x,y,w,h);
-  ctx.strokeStyle=glow?tint:'rgba(120,140,170,0.45)'; ctx.lineWidth=glow?2:1;
-  if(glow){ ctx.shadowColor=tint; ctx.shadowBlur=10; }
+  ctx.fillStyle=lockedScreen?lp116Panel():'rgba(8,11,18,0.78)'; ctx.fillRect(x,y,w,h);
+  ctx.strokeStyle=lockedScreen?'#b8b8b8':glow?tint:'rgba(120,140,170,0.45)'; ctx.lineWidth=glow?2:1;
+  if(glow&&!lockedScreen){ ctx.shadowColor=tint; ctx.shadowBlur=10; }
   ctx.strokeRect(x+0.5,y+0.5,w-1,h-1);
   ctx.restore();
 }
-/* the nine-across roster: a square face over its ship, the locked slot a '?'. Returns the hit
+/* the nine-across roster: a square face over its ship, authored silhouettes for locked Cole. Returns the hit
    rects so the mouse can pick a pilot directly instead of only scrolling to one. */
 function psDrawLineup(sel, y0, spin){
   const {w}=pilotViewSize(), PS_CELL=Math.min(64,Math.floor((w-24)/9)-6), PS_PITCH=PS_CELL+6;
@@ -68906,12 +68950,7 @@ function psDrawLineup(sel, y0, spin){
     rects.push([x,y0,PS_CELL,PS_CELL*2+6]);
     psPanelBox(x, y0, PS_CELL, PS_CELL, Q.tint, on);
     if(lk){
-      /* ⚠ THE LOCKED SLOT IS A '?', WHICH IS WHAT HE ASKED FOR - not a dimmed portrait. A
-         greyed face still tells you who it is, and Cole is a password secret (0801k). */
-      const f=(typeof uiFontArt==='function')?uiFontArt():null;
-      if(f && typeof stageText==='function') stageText(f,'?',x+PS_CELL/2,y0+PS_CELL*0.70,26,'#7f8aa0',0.9,1,0.10);
-      else { ctx.save(); ctx.textAlign='center'; ctx.fillStyle='#7f8aa0';
-             ctx.font='bold 26px "BOFmil", monospace'; ctx.fillText('?',x+PS_CELL/2,y0+PS_CELL*0.72); ctx.restore(); }
+      if(typeof lockedPilotMini116==='function')lockedPilotMini116('pilot',x,y0,PS_CELL);
     } else {
       /* the bordered avatar already carries its own frame, so it is drawn to the FULL cell and
          unclipped; the bare portrait still needs the clip and the slight overscan. */
@@ -68926,7 +68965,7 @@ function psDrawLineup(sel, y0, spin){
     const sy=y0+PS_CELL+6;
     psPanelBox(x, sy, PS_CELL, PS_CELL, Q.tint, on);
     if(lk){
-      ctx.save(); ctx.globalAlpha=0.30; psBlitFit(psShipKey(Q.key,null), x+PS_CELL/2, sy+PS_CELL/2, PS_CELL-8, PS_CELL-8, 0.3); ctx.restore();
+      if(typeof lockedPilotMini116==='function')lockedPilotMini116('ship',x,sy,PS_CELL);
     } else {
       /* the SELECTED ship spins; the rest hold their level frame so the row does not shimmer */
       psBlitFit(psShipKey(Q.key, on?spin:null), x+PS_CELL/2, sy+PS_CELL/2, PS_CELL-6, PS_CELL-6, on?1:0.66);
@@ -68983,7 +69022,7 @@ function drawPilot(dt){
     ctx.translate(PX+PW/2+slideX, PY+PH/2); ctx.scale(sx,1); ctx.translate(-(PX+PW/2), -(PY+PH/2));
 
     pt11PilotCard(P,PX,PY,PW,PH,spin,locked);
-    if(locked && pilotFlash>0){
+    if(locked && pilotFlash>0 && typeof lockedPilotCard116!=='function'){
       ctx.save(); ctx.globalAlpha=Math.min(1,pilotFlash)*0.42; ctx.fillStyle='#ffffff';
       ctx.fillRect(PX,PY,PW,PH); ctx.restore();
     }
@@ -68998,7 +69037,7 @@ function drawPilot(dt){
   if(locked){ pilotFlash=Math.max(0,pilotFlash-dt*2.2); } else { pilotFlash=0; }
   // nav arrows
   ctx.textAlign='center'; ctx.font='bold 30px "BOFmil", monospace';
-  ctx.fillStyle=rgba(hx(P.tint),0.85); ctx.fillText('\u25C0',20,VH*0.46+10); ctx.fillText('\u25B6',VW-20,VH*0.46+10);
+  ctx.fillStyle=rgba(hx(locked?'#b8b8b8':P.tint),0.85); ctx.fillText('\u25C0',20,VH*0.46+10); ctx.fillText('\u25B6',VW-20,VH*0.46+10);
   controlHintRow((run&&run.mode==='campaign')?[['pad_dpad','PILOT'],['pad_start','LAUNCH']]:[['pad_dpad','PILOT'],['pad_start','LAUNCH'],['pad_b','BACK']],VH-20,VW/2,VW-24);
   // (pip/dot indicator removed per Mike — the player discovers the roster by scrolling)
   // hover check (locked card) -> glow pulse + flashing unlock prompt
@@ -71512,13 +71551,14 @@ function helpPageControls(){
   /* MOUSE. The wheel prompt describes a live control now - it cycles the retina lock. */
   const my=VH*0.80;
   helpLabel('MOUSE', VW*0.145, my, 12, '#ffd36b');
-  const mouse=[['input_mouse_left_0915','FIRE','#ff796d'],
-               ['input_mouse_right_0915','MISSILE','#ff796d'],
+  const boundName=k=>{const pair=[['fire','FIRE'],['bomb','MISSILE'],['retina','RETINA'],['multilock','MULTI-RETINA'],['charge','CHARGE']].find(([a])=>(keybind[a]||[]).includes(k));return pair?pair[1]:'-';};
+  const mouse=[['input_mouse_left_0915',boundName('mouse0'),'#ff796d'],
+               ['input_mouse_right_0915',boundName('mouse2'),'#ff796d'],
                ['input_mouse_wheel_0915','LOCK ON','#9fd6ff']];
   mouse.forEach(function(q,i){ const x=VW*(0.42+i*0.20); helpGlyph(q[0],x,my,34); helpLabel(q[1],x,my+30,11,q[2]); });
 
-  helpLabel('MOUSE 4: RETINA   MOUSE 5: CHARGE',VW/2,VH*.905,11,'#9fd6ff');
-  helpLabel('HOLD '+helpBind('multilock',2)+' TO SCAN MULTIPLE TARGETS',VW/2,VH*.937,11,'#ffd36b');
+  helpLabel('MOUSE 4: '+boundName('mouse3')+'   MOUSE 5: '+boundName('mouse4'),VW/2,VH*.905,11,'#9fd6ff');
+  helpLabel('SPACE: '+boundName(' ')+'   '+((keybind.retina||[]).includes('mouse2')?'DOUBLE RIGHT-CLICK + HOLD: MULTI':'HOLD '+helpBind('multilock',2)+' TO SCAN'),VW/2,VH*.937,11,'#ffd36b');
 }
 
 function helpPageMoves(){
@@ -71578,6 +71618,7 @@ function helpPageHud(){
   }
   helpLabel('THE WEAPON YOU HOLD, AND ITS LEVEL', VW*0.62, ey-8, 11, '#9fb4c8');
   helpLabel('RED CRATE IS YOUR SPECIAL', VW*0.62, ey+8, 11, '#9fb4c8');
+  helpLabel('FLAME: HOLD FIRE UP CLOSE TO SWEEP AND BURN', VW/2, VH*.76, 10, '#ffd36b');
   helpLabel('THE BOSS GAUGE RUNS ACROSS THE TOP', VW/2, VH*0.84, 11, '#7f93a8');
 }
 
@@ -73291,6 +73332,23 @@ const LAUNCH_PLAY_SCROLL=40;       // drawLevelMaster's own rate (mapScroll + dt
 const LAUNCH_LAND=SEG_B3+1400;     // the dist at which the level joins the connector (launchConnDy)
 const LAUNCH_BRAKE_DIST=2400;      // ~2.7 s of braking from 1750 to 40
 const STAGE6_TRANSITION_SKY='stage6_blue_master';
+
+/* Stage5 owns its ascent sky. Stage6's current transition draws the mainland city;
+   sharing that renderer put buildings behind the Furyship assembly. Sample the
+   original authored blue sky directly, with the finite cloud deck owned by
+   furyIntroClouds. No city overlay or Stage6 weather grade belongs in this climb. */
+function stage5AscentBackgroundDraw(scroll){
+  ctx.fillStyle='#062a8e';ctx.fillRect(0,0,VW,VH);
+  if(typeof XART==='undefined'||!XART.rdy(STAGE6_TRANSITION_SKY))return true;
+  const im=XART.get(STAGE6_TRANSITION_SKY),H=im.naturalHeight||im.height;
+  const travel=Number.isFinite(scroll)?scroll:0;
+  let sy=((H-((travel%H+H)%H)-VH)%H+H)%H;
+  const h1=Math.min(VH,H-sy);
+  ctx.drawImage(im,0,sy,VW,h1,0,0,VW,h1);
+  if(h1<VH)ctx.drawImage(im,0,0,VW,VH-h1,0,h1,VW,VH-h1);
+  return true;
+}
+
 /* Launch and gameplay now read the SAME 680x5000 master. The launch samples upward from its
    bottom edge, matching the first live level frame; the countdown only changes scroll speed. */
 function stage6TransitionBackgroundDraw(scroll){
@@ -73339,7 +73397,7 @@ function stage5SweepFrac(){
 }
 function stage5SkyToSpaceDraw(progress,scroll){
   const p=clamp(progress,0,1);
-  stage6TransitionBackgroundDraw(scroll||0);
+  stage5AscentBackgroundDraw(scroll||0);
   /* ⚠ SPACE ATTACHES, IT DOES NOT FADE UP (drop 0903x). Mike: "theres no fading anymore with the
      stage 5 transition." This was globalAlpha=p*p*(3-2p) over a black fill and the space plate -
      a cross-fade, which is exactly what he ruled out, and it is the LAUNCH-side twin of the
@@ -73502,7 +73560,7 @@ function furyIntroDraw(dt){
  const x=lerp(VW/2,pose.x,k),y=lerp(S.build?VH*.59:pose.y,pose.y,k),size=SPACE_SHIP_SIZE;   // play size throughout (1001c): no 118 px fighter shrunk to 48 at the countdown
  S.ship={x,y,size};
  if(S.space){_stage5SpaceScroll=S.scroll;entryConnectorDraw(5,0);}
- else stage6TransitionBackgroundDraw(S.scroll);
+ else stage5AscentBackgroundDraw(S.scroll);
  if(S.build&&S.phase==='sky'&&gravityMode.partStartAge==null){drawShipSprite(x,y,SHIP_DRAW_H,'');}
  else if(furyShipReady())furyShipDrawPhase(G,x,y,size,SHIP_DRAW_H,_pilotKey());
  else drawShipSprite(x,y,SHIP_DRAW_H,'');
@@ -79572,7 +79630,7 @@ const Snd=(function(){
       if(!slots[i])slots[i]={el:new window.Audio(),uri:uris[i%uris.length],attached:false,used:0};
       return A._touchVoice(slots[i]);
     }});
-    A.pools[name]={list,slots,i:0};
+    A.pools[name]={list,slots,uris,i:0};
   }
   /* Music remains independent of the bounded effects pool. Set preload before
      the source so even the first resource selection stays lazy. */
@@ -80031,6 +80089,7 @@ const Snd=(function(){
       if(A._last[name]!=null && t-A._last[name] < cfg.min) return false;
       A._last[name]=t;
     }
+    if(A.bufferPlay){const buffered=A.bufferPlay(name,vol,cfg);if(buffered!==null)return buffered;}
     /* Warm only this cue's overlap/variation voices on its first use. A cold
        clone must start loading even when a ready voice covers the current shot. */
     if(!p._prepared){p._prepared=true;A.prepare(name);}

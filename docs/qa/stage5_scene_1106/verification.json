@@ -1,0 +1,173 @@
+{
+  "checks": [
+    {
+      "name": "Stage5 restores original space master without orbital structure overlay",
+      "passed": true
+    },
+    {
+      "name": "Stage6 city and Stage9 water arena retain current layered scenes",
+      "passed": true
+    },
+    {
+      "name": "ascent never draws city or orbital structures",
+      "passed": true
+    },
+    {
+      "name": "original blue sky and starfield both render live",
+      "passed": true
+    },
+    {
+      "name": "sky-to-space switch remains covered by full white reveal",
+      "passed": true
+    },
+    {
+      "name": "complete original transformation still runs",
+      "passed": true
+    },
+    {
+      "name": "space launch ends in native high-quality play with full kit",
+      "passed": true
+    },
+    {
+      "name": "countdown-to-play scroll is continuous",
+      "passed": true
+    },
+    {
+      "name": "retained ship uses original space backdrop immediately",
+      "passed": true
+    },
+    {
+      "name": "sky wrap keeps source bounds and native proportions",
+      "passed": true
+    },
+    {
+      "name": "performance/audio fixes remain installed",
+      "passed": true
+    },
+    {
+      "name": "no browser exceptions during ascent, fusion, combat or retained entry",
+      "passed": true
+    }
+  ],
+  "samples": [
+    {
+      "state": "launch",
+      "stateT": 5.266400000000013,
+      "t": 5.266400000000013,
+      "phase": "drift",
+      "scroll": 0
+    },
+    {
+      "state": "launch",
+      "stateT": 12.316300000000052,
+      "t": 12.316300000000052,
+      "phase": "charge",
+      "scroll": 0
+    },
+    {
+      "state": "launch",
+      "stateT": 19.61640000000002,
+      "t": 19.61640000000002,
+      "phase": "reveal",
+      "scroll": 19616.400000000005
+    },
+    {
+      "state": "play",
+      "stateT": 0.3325,
+      "t": 32.66589999999978,
+      "phase": "active",
+      "scroll": 32785.600000000006
+    }
+  ],
+  "flow": {
+    "frames": [
+      {
+        "t": 0.016600000000000364,
+        "phase": "sky",
+        "gravity": "drift",
+        "space": false,
+        "white": 0,
+        "scroll": 16.600000000000364
+      },
+      {
+        "t": 12.016400000000047,
+        "phase": "assembly",
+        "gravity": "charge",
+        "space": false,
+        "white": 0,
+        "scroll": 12016.4
+      },
+      {
+        "t": 16.13310000000006,
+        "phase": "assembly",
+        "gravity": "scatter",
+        "space": false,
+        "white": 0,
+        "scroll": 16133.100000000004
+      },
+      {
+        "t": 16.966200000000054,
+        "phase": "assembly",
+        "gravity": "snap",
+        "space": false,
+        "white": 0,
+        "scroll": 16966.200000000004
+      },
+      {
+        "t": 17.61630000000004,
+        "phase": "assembly",
+        "gravity": "pixelglow",
+        "space": false,
+        "white": 0,
+        "scroll": 17616.300000000003
+      },
+      {
+        "t": 18.54930000000003,
+        "phase": "assembly",
+        "gravity": "whiteout",
+        "space": false,
+        "white": 1,
+        "scroll": 18549.300000000003
+      },
+      {
+        "t": 19.04940000000002,
+        "phase": "assembly",
+        "gravity": "reveal",
+        "space": true,
+        "white": 1,
+        "scroll": 19049.400000000005
+      },
+      {
+        "t": 19.916200000000014,
+        "phase": "load",
+        "gravity": "active",
+        "space": true,
+        "white": 0,
+        "scroll": 19916.200000000004
+      },
+      {
+        "t": 28.799299999999832,
+        "phase": "countdown",
+        "gravity": "active",
+        "space": true,
+        "white": 0,
+        "scroll": 28799.300000000007
+      }
+    ],
+    "calls": {
+      "sky": 1202,
+      "stars": 979
+    },
+    "ready": false
+  },
+  "handoff": {
+    "launch": 32665.900000000005,
+    "live": 32797.73200000001,
+    "master": "bg_stage05_loop_0923",
+    "kit": {
+      "done": true,
+      "failed": 0
+    }
+  },
+  "errors": []
+}

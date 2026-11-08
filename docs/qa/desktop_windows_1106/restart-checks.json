@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "name": "Native desktop save and controls survive restarting the EXE",
+      "passed": true
+    },
+    {
+      "name": "The real game Exit action returns to the graphical launcher",
+      "passed": true
+    },
+    {
+      "name": "Direct fullscreen EXE restart also preserves the same save origin",
+      "passed": true
+    },
+    {
+      "name": "Closing the standalone game exits its process cleanly",
+      "passed": true
+    }
+  ]
+}

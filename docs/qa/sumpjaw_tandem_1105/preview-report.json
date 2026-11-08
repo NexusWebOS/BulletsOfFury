@@ -1,0 +1,65 @@
+{
+  "baseSourceCommit": "7dff42bca92856552d357db3fcab89d64941d27f",
+  "localRevision": "sumpjaw-tandem-final-1105",
+  "method": "Fresh real-RAF Furious encounters; native GOD and input-only Cole bot; native health, modules, attack clocks, audio and defeat. Thunderhead uses 70 seconds player hold-fire, direct high-quality native-canvas H264 capture and the connected beam throats, coordinated batteries, animated chamber and background cyclone launch. Sumpjaw uses 60 seconds and Razorwake 60 seconds of player hold-fire. Razorwake demonstrates rolling forward gun runs, three burst lanes, accelerating throttle passes, a lightning charge and the wind Helix orb; its native solo guard keeps NPC allies out. Other native ally owners remain active. No enemy HP/phase/timer writes after spawn.",
+  "films": [
+    {
+      "id": "razorwake",
+      "name": "Razorwake",
+      "seconds": 114.164,
+      "checks": {
+        "complete": true,
+        "decoded": true,
+        "audible": true,
+        "sourceStable": true,
+        "nativeHealth": true,
+        "noErrors": true
+      },
+      "nativeFps": 57.09729710681186,
+      "peakDb": -1.7,
+      "sourceStable": true,
+      "god": true,
+      "deaths": 0,
+      "sha256": "41694896108284d1e2fdc44e380d11e539a7df20e5fc0141989b2e6d6a477acc"
+    },
+    {
+      "id": "thunderhead",
+      "name": "Thunderhead",
+      "seconds": 140.885,
+      "checks": {
+        "complete": true,
+        "decoded": true,
+        "audible": true,
+        "sourceStable": true,
+        "nativeHealth": true,
+        "noErrors": true
+      },
+      "nativeFps": 56.75162147489929,
+      "peakDb": -1.8,
+      "sourceStable": true,
+      "god": true,
+      "deaths": 0,
+      "sha256": "87398fa2de6f03e0d2efaca57d6a487521afb02eb3cb631d18a04eb5e5e33374"
+    },
+    {
+      "id": "sumpjaw",
+      "name": "Sumpjaw pair",
+      "seconds": 298.703,
+      "checks": {
+        "complete": true,
+        "decoded": true,
+        "audible": true,
+        "sourceStable": true,
+        "nativeHealth": true,
+        "noErrors": true
+      },
+      "nativeFps": 57.341413056250325,
+      "peakDb": -2.1,
+      "sourceStable": true,
+      "god": true,
+      "deaths": 0,
+      "sha256": "92aaee9940c35f3160b011ee45ad820019ece93051aeb0bf6d73fa33770ac941"
+    }
+  ],
+  "limits": "Capture performance is included in reported engine FPS. These are isolated encounter recordings, not a human-dodgeability or complete campaign test."
+}

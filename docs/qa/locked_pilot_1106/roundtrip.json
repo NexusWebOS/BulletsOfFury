@@ -1,0 +1,20 @@
+[
+  {
+    "bank": "pilot_large",
+    "frames": 2,
+    "durationMs": 450,
+    "pixelsIdentical": true
+  },
+  {
+    "bank": "ship_large",
+    "frames": 2,
+    "durationMs": 450,
+    "pixelsIdentical": true
+  },
+  {
+    "bank": "lock_12",
+    "frames": 2,
+    "durationMs": 450,
+    "pixelsIdentical": true
+  }
+]

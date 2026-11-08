@@ -1,0 +1,33 @@
+{
+  "difficulty": "furious",
+  "method": "Stages1-9 native miniboss/boss comparison on Normal,Hard,Furious.\nNormal6-9 are review-only encounters: the campaign still ends at5. Uses actual\nnative entrances/health/parts/attack books/transformations/defeats and input-only\nlevel5 Cole aiming, with labelled invulnerability. No enemy HP/phase/timer writes\nafter encounter spawn. The unrelated Stage6 opening radio is excluded.\n",
+  "jobs": {
+    "stage7-mini": {
+      "id": "stage7-mini",
+      "stage": 7,
+      "role": "mini",
+      "kind": "dualscoopdredger",
+      "name": "Stage 7 miniboss",
+      "demonstrate": 60,
+      "limit": 720,
+      "view": "playfield",
+      "path": "_shots\\boss_comparison_1102\\sumpjaw-tandem-final-1105\\stage7-mini\\stage7-furious.mp4",
+      "folder": "_shots\\boss_comparison_1102\\sumpjaw-tandem-final-1105\\stage7-mini",
+      "seconds": 298.703,
+      "nativeFps": 57.341413056250325,
+      "peakDb": -2.1,
+      "checks": {
+        "complete": true,
+        "decoded": true,
+        "audible": true,
+        "sourceStable": true,
+        "nativeHealth": true,
+        "noErrors": true
+      },
+      "passed": true,
+      "reviewOnlyNormal": false,
+      "actualKind": "dualscoopdredger"
+    }
+  },
+  "active": null
+}

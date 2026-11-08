@@ -1,0 +1,233 @@
+{
+  "checks": [
+    {
+      "bank": "hull",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_hit",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_charge",
+      "frames": 6,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_shadow",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "left",
+      "frames": 56,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "left_hit",
+      "frames": 56,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "left_charge",
+      "frames": 144,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "left_shadow",
+      "frames": 56,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "right",
+      "frames": 56,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "right_hit",
+      "frames": 56,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "right_charge",
+      "frames": 144,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "right_shadow",
+      "frames": 56,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun",
+      "frames": 512,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_hit",
+      "frames": 512,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_charge",
+      "frames": 6,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_wreck",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise",
+      "frames": 192,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle",
+      "frames": 192,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "slug",
+      "frames": 192,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "muzzle",
+      "frames": 192,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "tornado",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "swirl",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "tornado_grow",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "tornado_tail",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    }
+  ],
+  "frames": 2620,
+  "masks": 656,
+  "maskExact": true,
+  "passed": true
+}

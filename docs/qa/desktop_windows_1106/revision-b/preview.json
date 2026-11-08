@@ -1,0 +1,40 @@
+{
+  "video": "C:\\Users\\Mike\\Documents\\New project\\Releases\\BOF-Fury-HQ-Launcher-Preview.mp4",
+  "captureDirectory": "C:\\Users\\Mike\\Documents\\New project\\BOF-Arcade-Installer-1105\\qa\\preview-1793976888",
+  "events": [
+    {
+      "cue": "boot",
+      "seconds": 0.034307
+    },
+    {
+      "cue": "doors",
+      "seconds": 2.606709
+    },
+    {
+      "cue": "doors",
+      "seconds": 3.509363
+    },
+    {
+      "cue": "doors",
+      "seconds": 5.343365
+    },
+    {
+      "cue": "doors",
+      "seconds": 6.259791
+    },
+    {
+      "cue": "doors",
+      "seconds": 8.08262
+    },
+    {
+      "cue": "doors",
+      "seconds": 9.011215
+    }
+  ],
+  "performance": {
+    "paintCount": 332,
+    "meanFrameMs": 26.278792771084337,
+    "maxFrameMs": 160.42290000000003
+  },
+  "provenance": "Live native launcher-window capture; original PCM cue timing reconstructed from actual app event log, not microphone/system audio capture."
+}

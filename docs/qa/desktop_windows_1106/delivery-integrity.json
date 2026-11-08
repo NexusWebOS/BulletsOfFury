@@ -1,0 +1,31 @@
+{
+  "footerValid": true,
+  "bytes": 3835068966,
+  "sounds": [
+    {
+      "cue": "boot",
+      "rms": 0.07570774530178405,
+      "nonSilent": true
+    },
+    {
+      "cue": "select",
+      "rms": 0.12536342424263472,
+      "nonSilent": true
+    },
+    {
+      "cue": "confirm",
+      "rms": 0.07226031506813209,
+      "nonSilent": true
+    },
+    {
+      "cue": "doors",
+      "rms": 0.1952942249016265,
+      "nonSilent": true
+    },
+    {
+      "cue": "launch",
+      "rms": 0.2103027779549168,
+      "nonSilent": true
+    }
+  ]
+}

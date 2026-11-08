@@ -1,0 +1,192 @@
+[
+  {
+    "id": "razorwake",
+    "name": "Razorwake",
+    "slot": "Stage 6 \u00b7 Furious miniboss",
+    "description": "Intact modular wings, detachable rotary guns and tapered twin thrusters. Two rolling forward gun runs, center/right/left straight burst lanes and sixteen accelerating north/south passes. Teal aura, wing flaps, lightning and a growing wind Helix orb. Shoot it into nine wind balls, or risk its exclusive vortex crash. About 15% more HP than the native Hard miniboss.",
+    "url": "/media/razorwake.mp4",
+    "poster": "/posters/razorwake.png",
+    "duration": 114.164,
+    "nativeFps": 57.1,
+    "width": 960,
+    "height": 1024,
+    "peakDb": -1.7,
+    "chapters": [
+      {
+        "label": "Entrance",
+        "time": 0
+      },
+      {
+        "label": "Rolling forward gun runs",
+        "time": 3.5340000000000003
+      },
+      {
+        "label": "Center / right / left burst lanes",
+        "time": 12.267999999999999
+      },
+      {
+        "label": "Charged south dive",
+        "time": 19.266000000000002
+      },
+      {
+        "label": "Accelerating up/down throttle runs",
+        "time": 22.197000000000003
+      },
+      {
+        "label": "Storm Helix charge and lightning",
+        "time": 53.534
+      },
+      {
+        "label": "Break orb into nine wind balls",
+        "time": 59.836
+      },
+      {
+        "label": "Expanding storm orb",
+        "time": 59.936
+      },
+      {
+        "label": "Complete gun detaches; wing remains intact",
+        "time": 77.069
+      },
+      {
+        "label": "Core exposed",
+        "time": 93.305
+      },
+      {
+        "label": "Defeat & aftermath",
+        "time": 103.64
+      }
+    ],
+    "sha256": "41694896108284d1e2fdc44e380d11e539a7df20e5fc0141989b2e6d6a477acc",
+    "bytes": 130056524,
+    "death": {
+      "url": "/media/razorwake-vortex-death.mp4",
+      "seconds": 13.804,
+      "sha256": "8984751a00e174ddcd7694647f0a1b8e3bf8e187c59cc3556e377a993abce9ab",
+      "bytes": 11657699,
+      "method": "Natural first orb; GOD switched off on release; native capture, airborne throw, burning fall and crash."
+    }
+  },
+  {
+    "id": "thunderhead",
+    "name": "Thunderhead",
+    "slot": "Stage 6 \u00b7 Furious boss",
+    "description": "Connected cyclone cannon beams with animated throat flashes. Four rotating gun batteries target three distinct allies, reserving one for the player in 75% of cycles. Wind rises and rotates inside the chamber. Thunderhead flies into the background, charges, recoils and launches a growing cyclone, then returns. Destroyed modules explode, break away and shatter; all six weapons still gate the core.",
+    "url": "/media/thunderhead.mp4",
+    "poster": "/posters/thunderhead.png",
+    "duration": 140.885,
+    "nativeFps": 56.8,
+    "width": 960,
+    "height": 1024,
+    "peakDb": -1.8,
+    "chapters": [
+      {
+        "label": "Entrance",
+        "time": 0
+      },
+      {
+        "label": "Coordinated ally / player targeting",
+        "time": 4.317
+      },
+      {
+        "label": "Reactor and full-body charge",
+        "time": 4.788
+      },
+      {
+        "label": "Giant wind cannon beams",
+        "time": 6.678
+      },
+      {
+        "label": "Core cyclone salvo",
+        "time": 8.91
+      },
+      {
+        "label": "Twin tornadoes",
+        "time": 18.923
+      },
+      {
+        "label": "Targeted thunderstorm",
+        "time": 29.744
+      },
+      {
+        "label": "Turn north and leave the foreground",
+        "time": 37.155
+      },
+      {
+        "label": "Distant chamber charge and lightning",
+        "time": 40.436
+      },
+      {
+        "label": "Cyclone launch and kickback",
+        "time": 44.792
+      },
+      {
+        "label": "Return to the foreground",
+        "time": 47.147
+      },
+      {
+        "label": "Complete module breaks away and explodes",
+        "time": 73.565
+      },
+      {
+        "label": "Core exposed",
+        "time": 107.544
+      },
+      {
+        "label": "Defeat & aftermath",
+        "time": 129.549
+      }
+    ],
+    "sha256": "87398fa2de6f03e0d2efaca57d6a487521afb02eb3cb631d18a04eb5e5e33374",
+    "bytes": 133946824
+  },
+  {
+    "id": "sumpjaw",
+    "name": "Sumpjaw pair",
+    "slot": "Stage 7 \u00b7 Furious miniboss",
+    "description": "Two articulated toxic serpents with 32-heading head turns, trailing armor bodies and airborne pounces over the player. Faster six-burst acid volleys, giant toxic orbs and circling attacks. Each keeps its own health bar; break both gills to expose its intake heart.",
+    "url": "/media/sumpjaw.mp4",
+    "poster": "/posters/sumpjaw.png",
+    "duration": 134.744,
+    "nativeFps": 56.4,
+    "width": 960,
+    "height": 1024,
+    "peakDb": -1.4,
+    "chapters": [
+      {
+        "label": "Entrance",
+        "time": 0
+      },
+      {
+        "label": "Airborne pounce over the pilot",
+        "time": 1.2120000000000002
+      },
+      {
+        "label": "Rapid acid spit volley",
+        "time": 2.612
+      },
+      {
+        "label": "Giant toxic orb volley",
+        "time": 4.01
+      },
+      {
+        "label": "Coiling serpent attack",
+        "time": 6.035
+      },
+      {
+        "label": "Gill rupture",
+        "time": 57.432
+      },
+      {
+        "label": "First Sumpjaw defeated",
+        "time": 108.628
+      },
+      {
+        "label": "Defeat & aftermath",
+        "time": 124.363
+      }
+    ],
+    "sha256": "a883aec62bed11923423fc496d56a25f1dea4c0c60be19c14f6d49283f60d253",
+    "bytes": 88151800
+  }
+]

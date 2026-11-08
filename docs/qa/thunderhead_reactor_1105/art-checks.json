@@ -1,0 +1,1430 @@
+{
+  "checks": [
+    {
+      "bank": "hull_d0_0",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d0_1",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d0_0",
+      "frames": 96,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d0_1",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d0_0",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d0_1",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d0_0",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d0_1",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_turn_d0",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_turn_d0",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_turn_d0",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_turn_d0",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d1_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d1_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d1_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d1_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d2_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d2_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d2_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d2_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d3_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d3_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d3_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d3_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d4_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d4_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d4_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d4_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d5_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d5_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d5_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d5_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d6_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d6_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d6_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d6_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d7_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d7_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d7_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d7_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d8_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d8_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d8_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d8_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d9_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d9_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d9_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d9_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d10_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d10_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d10_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d10_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d11_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d11_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d11_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d11_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d12_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d12_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d12_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d12_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d13_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d13_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d13_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d13_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d14_0",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d14_0",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d14_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d14_0",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d15_0",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_d15_1",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d15_0",
+      "frames": 96,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_d15_1",
+      "frames": 24,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d15_0",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_d15_1",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d15_0",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_d15_1",
+      "frames": 8,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hull_turn_d15",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "core_turn_d15",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_turn_d15",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_turn_d15",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun",
+      "frames": 1024,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_mask",
+      "frames": 64,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_hit",
+      "frames": 64,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d1",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d2",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d3",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d4",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d5",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d6",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d7",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d8",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d9",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d10",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d11",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d12",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d13",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d14",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_d15",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d0",
+      "frames": 64,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d0",
+      "frames": 64,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d1",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d1",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d2",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d2",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d3",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d3",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d4",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d4",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d5",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d5",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d6",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d6",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d7",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d7",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d8",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d8",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d9",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d9",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d10",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d10",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d11",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d11",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d12",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d12",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d13",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d13",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d14",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d14",
+      "frames": 4,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_cruise_d15",
+      "frames": 64,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "thrust_throttle_d15",
+      "frames": 64,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "beam_coupling",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "beam_coupling_tail",
+      "frames": 6,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_lip",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_lip",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_detach",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "gun_shard",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_detach",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod0_shard",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_detach",
+      "frames": 32,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "pod1_shard",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "socket",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_0",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_1",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_2",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_3",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_4",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_5",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_6",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_7",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_8",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_9",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_10",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_11",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_12",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_13",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_14",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "cyclone_15",
+      "frames": 12,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "shade",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    }
+  ],
+  "frames": 3127,
+  "masks": 64,
+  "maskExact": true,
+  "passed": true
+}

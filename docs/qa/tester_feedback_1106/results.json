@@ -1,0 +1,101 @@
+{
+  "checks": [
+    {
+      "name": "tutorial completion retains campaign and map focus",
+      "value": true
+    },
+    {
+      "name": "Enter deploys without opening Save",
+      "value": true
+    },
+    {
+      "name": "pointer leaving toolbar restores map focus",
+      "value": true
+    },
+    {
+      "name": "mission click deploys without Save",
+      "value": true
+    },
+    {
+      "name": "explicit Save remains available",
+      "value": true
+    },
+    {
+      "name": "save menu backs out safely",
+      "value": true
+    },
+    {
+      "name": "real WebAudio output reaches shared mixer",
+      "value": true
+    },
+    {
+      "name": "predecoded sound schedules within 10ms",
+      "value": true
+    },
+    {
+      "name": "decoded sound cache stays bounded",
+      "value": true
+    },
+    {
+      "name": "master mute reaches already active buffer voices",
+      "value": true
+    },
+    {
+      "name": "stopCue stops actual buffer voice",
+      "value": true
+    },
+    {
+      "name": "full space formation reaches live play",
+      "value": true
+    },
+    {
+      "name": "flame reaches 138px and respects its far edge",
+      "value": true
+    },
+    {
+      "name": "flame DPS and ice variant distinction retained",
+      "value": true
+    },
+    {
+      "name": "no game exceptions",
+      "value": true
+    }
+  ],
+  "audio": {
+    "peak": 89,
+    "event": {
+      "name": "machineGun",
+      "delay": 0,
+      "at": 19161.899999976158,
+      "contextTime": 16.69333333333333,
+      "baseLatency": 0.010666666666666666,
+      "outputLatency": 0.04
+    },
+    "stats": {
+      "decoded": 50,
+      "starts": 33,
+      "expired": 5,
+      "cancelled": 0,
+      "stolen": 0,
+      "echoes": 0
+    },
+    "voices": 4,
+    "bytes": 14782992,
+    "errors": []
+  },
+  "deploy": {
+    "state": "intro",
+    "stage": 1,
+    "pause": null,
+    "zoom": false,
+    "committed": false
+  },
+  "flame": {
+    "reach": 138,
+    "near": true,
+    "far": false,
+    "dps": 45,
+    "ice": false
+  },
+  "errors": []
+}

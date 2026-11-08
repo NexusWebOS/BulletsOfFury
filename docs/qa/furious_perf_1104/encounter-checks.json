@@ -1,0 +1,6027 @@
+{
+  "checks": [
+    {
+      "name": "mini selects its Furious-only identity",
+      "passed": true,
+      "data": {
+        "kind": "razorwake",
+        "hp": 1653,
+        "max": 1653
+      }
+    },
+    {
+      "name": "mini native book runs every initial attack at untouched HP",
+      "passed": true,
+      "data": [
+        "guns",
+        "pass",
+        "shear",
+        "vortex"
+      ]
+    },
+    {
+      "name": "mini emits native unshootable wind rounds",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mini preserves complete displayed composite budget",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mini actual muzzle sockets agree with source modules",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mini live target centres overlap actual native source alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mini core is protected until the actual weapons are gone",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mini native damaged module pixels flash and expire",
+      "passed": true,
+      "data": {
+        "clean": 486,
+        "hit": 1271,
+        "after": 504,
+        "flash": 0
+      }
+    },
+    {
+      "name": "mini broken weapon cancels its rounds and target",
+      "passed": true,
+      "data": {
+        "broken": true,
+        "rounds": 0,
+        "targets": 0
+      }
+    },
+    {
+      "name": "mini exhausting every weapon exposes only the live core",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "mini native defeat completes once with clean owned ordnance",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "boss selects its Furious-only identity",
+      "passed": true,
+      "data": {
+        "kind": "thunderhead",
+        "hp": 6348,
+        "max": 6348
+      }
+    },
+    {
+      "name": "boss native book runs every initial attack at untouched HP",
+      "passed": true,
+      "data": [
+        "gates",
+        "guns",
+        "rail",
+        "vortex"
+      ]
+    },
+    {
+      "name": "boss emits native unshootable wind rounds",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "boss preserves complete displayed composite budget",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "boss actual muzzle sockets agree with source modules",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "boss live target centres overlap actual native source alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "boss core is protected until the actual weapons are gone",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "boss native damaged module pixels flash and expire",
+      "passed": true,
+      "data": {
+        "clean": 2633,
+        "hit": 7629,
+        "after": 2764,
+        "flash": 0
+      }
+    },
+    {
+      "name": "boss broken weapon cancels its rounds and target",
+      "passed": true,
+      "data": {
+        "broken": true,
+        "rounds": 0,
+        "targets": 0
+      }
+    },
+    {
+      "name": "boss exhausting every weapon exposes only the live core",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Thunderhead exposed reactor runs the hurricane eye",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "boss native defeat completes once with clean owned ordnance",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal keeps native Stage6 encounters",
+      "passed": true,
+      "data": {
+        "mini": false,
+        "boss": false
+      }
+    },
+    {
+      "name": "hard keeps native Stage6 encounters",
+      "passed": true,
+      "data": {
+        "mini": false,
+        "boss": false
+      }
+    },
+    {
+      "name": "Stage X retains its own native Harrier",
+      "passed": true,
+      "data": {
+        "storm": false,
+        "carrier": true
+      }
+    },
+    {
+      "name": "Furious keeps the separate right-hand Rough Riders route",
+      "passed": true,
+      "data": {
+        "storm": false,
+        "riders": true
+      }
+    },
+    {
+      "name": "Furious Stage7 retains the generated mechanical Sumpjaw pair",
+      "passed": true,
+      "data": {
+        "pair": true,
+        "count": 2
+      }
+    },
+    {
+      "name": "No page, console or native renderer errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "rows": [
+    {
+      "t": 0.24999999999999997,
+      "phase": "entry",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 0.49999999999999994,
+      "phase": "entry",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 0.7500000000000007,
+      "phase": "entry",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 1.0000000000000013,
+      "phase": "entry",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 1.2500000000000004,
+      "phase": "entry",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 1.4999999999999996,
+      "phase": "entry",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 1.7499999999999987,
+      "phase": "entry",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 1.9999999999999978,
+      "phase": "entry",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 2.249999999999997,
+      "phase": "entry",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 2.499999999999996,
+      "phase": "entry",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 2.749999999999995,
+      "phase": "recover",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 2.9999999999999942,
+      "phase": "recover",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 3.2499999999999933,
+      "phase": "recover",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 3.4999999999999925,
+      "phase": "recover",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 3.7499999999999916,
+      "phase": "recover",
+      "attack": null,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 3.9999999999999907,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 4.24999999999999,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 4.499999999999989,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 4.7499999999999885,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 4.999999999999988,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 5.249999999999987,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 5.499999999999986,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 5.749999999999985,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 5.999999999999984,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 6.249999999999983,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 6.499999999999982,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 6.749999999999981,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 6.9999999999999805,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 7.24999999999998,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 7.499999999999979,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 7.749999999999978,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 7.999999999999977,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 8.24999999999999,
+      "phase": "depart",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 8.500000000000002,
+      "phase": "depart",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 8.750000000000014,
+      "phase": "depart",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 9.000000000000027,
+      "phase": "depart",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 9.250000000000039,
+      "phase": "depart",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 9.500000000000052,
+      "phase": "depart",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 9.750000000000064,
+      "phase": "warn",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 10.000000000000076,
+      "phase": "warn",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 10.250000000000089,
+      "phase": "warn",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 10.500000000000101,
+      "phase": "warn",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 10.750000000000114,
+      "phase": "attack",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 11.000000000000126,
+      "phase": "attack",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 11.250000000000139,
+      "phase": "attack",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 11.500000000000151,
+      "phase": "attack",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 11.750000000000163,
+      "phase": "recover",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 12.000000000000176,
+      "phase": "recover",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 12.250000000000188,
+      "phase": "recover",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 12.5000000000002,
+      "phase": "recover",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 12.750000000000213,
+      "phase": "recover",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 13.000000000000226,
+      "phase": "recover",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 13.250000000000238,
+      "phase": "recover",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 13.50000000000025,
+      "phase": "recover",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 13.750000000000263,
+      "phase": "recover",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 14.000000000000275,
+      "phase": "recover",
+      "attack": "pass",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 14.250000000000288,
+      "phase": "warn",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 14.5000000000003,
+      "phase": "warn",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 14.750000000000313,
+      "phase": "warn",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 15.000000000000325,
+      "phase": "warn",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 15.250000000000338,
+      "phase": "warn",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 15.50000000000035,
+      "phase": "attack",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 15.750000000000362,
+      "phase": "attack",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 16.000000000000373,
+      "phase": "attack",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 16.25000000000036,
+      "phase": "attack",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 16.500000000000345,
+      "phase": "attack",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 16.75000000000033,
+      "phase": "attack",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 17.000000000000316,
+      "phase": "attack",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 17.250000000000302,
+      "phase": "attack",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 17.500000000000288,
+      "phase": "recover",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 17.750000000000274,
+      "phase": "recover",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 18.00000000000026,
+      "phase": "recover",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 18.250000000000245,
+      "phase": "recover",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 18.50000000000023,
+      "phase": "recover",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 18.750000000000217,
+      "phase": "recover",
+      "attack": "shear",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 19.000000000000203,
+      "phase": "warn",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 19.25000000000019,
+      "phase": "warn",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 19.500000000000174,
+      "phase": "warn",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 19.75000000000016,
+      "phase": "warn",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 20.000000000000146,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 20.25000000000013,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 20.500000000000117,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 20.750000000000103,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 21.00000000000009,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 21.250000000000075,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 21.50000000000006,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 21.750000000000046,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 22.000000000000032,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 22.250000000000018,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 22.500000000000004,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 22.74999999999999,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 22.999999999999975,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 23.24999999999996,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 23.499999999999947,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 23.749999999999932,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 23.99999999999992,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 24.249999999999904,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 24.49999999999989,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 24.749999999999876,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 24.99999999999986,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 25.249999999999847,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 25.499999999999833,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 25.74999999999982,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 25.999999999999805,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 26.24999999999979,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 26.499999999999776,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 26.749999999999762,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 26.999999999999748,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 27.249999999999734,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 27.49999999999972,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 27.749999999999705,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 27.99999999999969,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 0.24999999999999997,
+      "phase": "entry",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 0.49999999999999994,
+      "phase": "entry",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 0.7500000000000007,
+      "phase": "entry",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 1.0000000000000013,
+      "phase": "entry",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 1.2500000000000004,
+      "phase": "entry",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 1.4999999999999996,
+      "phase": "entry",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 1.7499999999999987,
+      "phase": "entry",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 1.9999999999999978,
+      "phase": "entry",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 2.249999999999997,
+      "phase": "entry",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 2.499999999999996,
+      "phase": "entry",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 2.749999999999995,
+      "phase": "recover",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 2.9999999999999942,
+      "phase": "recover",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 3.2499999999999933,
+      "phase": "recover",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 3.4999999999999925,
+      "phase": "recover",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 3.7499999999999916,
+      "phase": "recover",
+      "attack": null,
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 3.9999999999999907,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 4.24999999999999,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 4.499999999999989,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 4.7499999999999885,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 4.999999999999988,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 5.249999999999987,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 5.499999999999986,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 5.749999999999985,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 5.999999999999984,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 6.249999999999983,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 6.499999999999982,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 6.749999999999981,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 6.9999999999999805,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 7.24999999999998,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 7.499999999999979,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 7.749999999999978,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 7.999999999999977,
+      "phase": "recover",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 8.24999999999999,
+      "phase": "warn",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 8.500000000000002,
+      "phase": "warn",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 8.750000000000014,
+      "phase": "warn",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 9.000000000000027,
+      "phase": "warn",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 9.250000000000039,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 9.500000000000052,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 9.750000000000064,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 10.000000000000076,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 10.250000000000089,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 10.500000000000101,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 10.750000000000114,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 11.000000000000126,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 11.250000000000139,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 11.500000000000151,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 11.750000000000163,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 2,
+      "dead": false
+    },
+    {
+      "t": 12.000000000000176,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 12.250000000000188,
+      "phase": "attack",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 12.5000000000002,
+      "phase": "recover",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 12.750000000000213,
+      "phase": "recover",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 13.000000000000226,
+      "phase": "recover",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 13.250000000000238,
+      "phase": "recover",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 13.50000000000025,
+      "phase": "recover",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 13.750000000000263,
+      "phase": "recover",
+      "attack": "gates",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 14.000000000000275,
+      "phase": "warn",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 14.250000000000288,
+      "phase": "warn",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 14.5000000000003,
+      "phase": "warn",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 14.750000000000313,
+      "phase": "warn",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 15.000000000000325,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 15.250000000000338,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 15.50000000000035,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 15.750000000000362,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 16.000000000000373,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 16.25000000000036,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 16.500000000000345,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 16.75000000000033,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 17.000000000000316,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 17.250000000000302,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 17.500000000000288,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 3,
+      "dead": false
+    },
+    {
+      "t": 17.750000000000274,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 18.00000000000026,
+      "phase": "attack",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 18.250000000000245,
+      "phase": "recover",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 18.50000000000023,
+      "phase": "recover",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 18.750000000000217,
+      "phase": "recover",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 19.000000000000203,
+      "phase": "recover",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 19.25000000000019,
+      "phase": "recover",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 19.500000000000174,
+      "phase": "recover",
+      "attack": "rail",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 19.75000000000016,
+      "phase": "warn",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 20.000000000000146,
+      "phase": "warn",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 20.25000000000013,
+      "phase": "warn",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 20.500000000000117,
+      "phase": "warn",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 20.750000000000103,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 21.00000000000009,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 21.250000000000075,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 21.50000000000006,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 21.750000000000046,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 22.000000000000032,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 22.250000000000018,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 22.500000000000004,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 22.74999999999999,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 22.999999999999975,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 23.24999999999996,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 1,
+      "dead": false
+    },
+    {
+      "t": 23.499999999999947,
+      "phase": "attack",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 23.749999999999932,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 23.99999999999992,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 24.249999999999904,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 24.49999999999989,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 24.749999999999876,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 24.99999999999986,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 25.249999999999847,
+      "phase": "recover",
+      "attack": "vortex",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 25.499999999999833,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 25.74999999999982,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 25.999999999999805,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 26.24999999999979,
+      "phase": "warn",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 26.499999999999776,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 26.749999999999762,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 26.999999999999748,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 27.249999999999734,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 27.49999999999972,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 27.749999999999705,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    },
+    {
+      "t": 27.99999999999969,
+      "phase": "attack",
+      "attack": "guns",
+      "hp": 6348,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 762
+        },
+        {
+          "id": "gun1",
+          "hp": 762
+        },
+        {
+          "id": "gun2",
+          "hp": 762
+        },
+        {
+          "id": "gun3",
+          "hp": 762
+        },
+        {
+          "id": "pressure0",
+          "hp": 889
+        },
+        {
+          "id": "pressure1",
+          "hp": 889
+        }
+      ],
+      "hazards": 0,
+      "dead": false
+    }
+  ]
+}

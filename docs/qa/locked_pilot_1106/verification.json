@@ -1,0 +1,191 @@
+{
+  "directory": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_shots\\locked_pilot_1106",
+  "checks": [
+    {
+      "name": "lock_12 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lock_48 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "lock_64 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "pilot_large has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "pilot_mini_32 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "pilot_mini_40 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "pilot_mini_44 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "pilot_mini_48 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "pilot_mini_56 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "pilot_mini_64 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "ship_large has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "ship_mini_32 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "ship_mini_40 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "ship_mini_44 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "ship_mini_48 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "ship_mini_56 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "ship_mini_64 has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "ship_small has exact black/gray opaque pixels and identical fixed alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Locked Cole background and card use contrasting black/gray phases",
+      "passed": true,
+      "data": [
+        {
+          "t": 0.1,
+          "background": "#000000",
+          "panel": "#181818",
+          "samples": [
+            [
+              0,
+              0,
+              0,
+              255
+            ],
+            [
+              24,
+              24,
+              24,
+              255
+            ]
+          ]
+        },
+        {
+          "t": 0.55,
+          "background": "#484848",
+          "panel": "#686868",
+          "samples": [
+            [
+              72,
+              72,
+              72,
+              255
+            ],
+            [
+              104,
+              104,
+              104,
+              255
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Native card and roster switch gray-black-gray together",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Main card draws both Cole and actual jet plus a lock",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All large silhouettes remain inside the wide card",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Locked Cole still refuses deployment",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native 480 layout uses the small jet without clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Portrait layout retains both silhouettes and lock",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real COLE4U password restores full-color artwork and stops silhouette rendering",
+      "passed": true,
+      "data": {
+        "unlocked": true,
+        "session": true,
+        "shadowDraws": 0
+      }
+    },
+    {
+      "name": "Other selected pilots keep their original card",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No runtime errors or missing game assets",
+      "passed": true,
+      "data": {
+        "errors": [],
+        "missing": []
+      }
+    }
+  ]
+}

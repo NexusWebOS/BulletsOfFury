@@ -1,4 +1,4 @@
-param([switch]$NoBrowser, [int]$DurationSeconds=0)
+param([switch]$NoBrowser, [int]$DurationSeconds=0, [int]$Port=8790)
 $ErrorActionPreference='Stop'
 $gameRoot=Split-Path -Parent $MyInvocation.MyCommand.Path
 Add-Type -TypeDefinition @'
@@ -10,9 +10,9 @@ using System.Text;
 using System.Threading;
 public static class FuryLocalServer {
  static string root; static TcpListener listener;
- public static int Start(string folder) {
+ public static int Start(string folder,int port) {
   root=Path.GetFullPath(folder)+Path.DirectorySeparatorChar;
-  listener=new TcpListener(IPAddress.Loopback,0);listener.Start();
+  listener=new TcpListener(IPAddress.Loopback,port);listener.Start();
   ThreadPool.QueueUserWorkItem(delegate { while(true) { try {
    TcpClient c=listener.AcceptTcpClient();ThreadPool.QueueUserWorkItem(delegate { Serve(c); });
   } catch { break; } } });
@@ -42,8 +42,8 @@ public static class FuryLocalServer {
    string mime;switch(Path.GetExtension(file).ToLowerInvariant()) {
     case ".html":mime="text/html; charset=utf-8";break;case ".js":mime="application/javascript; charset=utf-8";break;
     case ".css":mime="text/css";break;case ".json":mime="application/json";break;case ".webp":mime="image/webp";break;
-    case ".png":mime="image/png";break;case ".jpg":case ".jpeg":mime="image/jpeg";break;case ".mp3":mime="audio/mpeg";break;
-    case ".wav":mime="audio/wav";break;case ".ogg":mime="audio/ogg";break;case ".woff2":mime="font/woff2";break;default:mime="application/octet-stream";break;
+    case ".gif":mime="image/gif";break;case ".avif":mime="image/avif";break;case ".svg":mime="image/svg+xml";break;case ".png":mime="image/png";break;case ".jpg":case ".jpeg":mime="image/jpeg";break;case ".mp3":mime="audio/mpeg";break;
+    case ".wav":mime="audio/wav";break;case ".ogg":mime="audio/ogg";break;case ".woff2":mime="font/woff2";break;case ".woff":mime="font/woff";break;case ".ttf":mime="font/ttf";break;case ".mp4":mime="video/mp4";break;case ".webm":mime="video/webm";break;case ".m4a":mime="audio/mp4";break;case ".wasm":mime="application/wasm";break;default:mime="application/octet-stream";break;
    }
    long remaining=Math.Max(0,end-start+1);Headers(s,partial?"206 Partial Content":"200 OK",mime,remaining,partial?"Content-Range: bytes "+start+"-"+end+"/"+f.Length+"\r\n":"");
    if(req[0]=="HEAD")return;f.Position=start;byte[] buffer=new byte[65536];
@@ -53,7 +53,27 @@ public static class FuryLocalServer {
  public static void Stop(){if(listener!=null)listener.Stop();}
 }
 '@
-$localPort=[FuryLocalServer]::Start($gameRoot)
+# A stable default origin keeps the tester's saves across restarts.
+# Port 0 is reserved for isolated verification.
+$buildInfo=Join-Path $gameRoot 'BUILD-INFO.json'
+$buildId=if(Test-Path -LiteralPath $buildInfo){(Get-Content -LiteralPath $buildInfo -Raw | ConvertFrom-Json).buildId}else{'local'}
+$localPort=$null
+$candidates=if($Port -eq 0){@(0)}else{@($Port..($Port+9))}
+foreach($candidate in $candidates){
+ if($candidate -gt 0){
+  try{
+   $running=Invoke-RestMethod -Uri "http://127.0.0.1:$candidate/BUILD-INFO.json" -TimeoutSec 1
+   if($running.buildId -eq $buildId -and $buildId -ne 'local'){
+    $gameUrl="http://127.0.0.1:$candidate/index.html"
+    Write-Output "BULLETS OF FURY READY: $gameUrl"
+    if(!$NoBrowser){Start-Process $gameUrl}
+    return
+   }
+  }catch{}
+ }
+ try{$localPort=[FuryLocalServer]::Start($gameRoot,[int]$candidate);break}catch{if($candidate -eq 0){throw}}
+}
+if($null -eq $localPort){throw 'The local game ports are busy. Close an older game server window and try again.'}
 $gameUrl="http://127.0.0.1:$localPort/index.html"
 Write-Output "BULLETS OF FURY READY: $gameUrl"
 if(!$NoBrowser){Start-Process $gameUrl}

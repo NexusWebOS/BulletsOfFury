@@ -1,0 +1,3 @@
+local D=app.params['out'];local f=io.open(D..'/manifest.json','r');local M=json.decode(f:read('*a'));f:close()
+for n,a in pairs(M.banks)do local im=Image{fromFile=D..'/strips/'..n..'.png'};local s=Sprite(a.w,a.h,ColorMode.RGB)
+for i=0,a.frames-1 do if i>0 then s:newEmptyFrame()end;local c=Image(im,Rectangle(i%8*a.w,math.floor(i/8)*a.h,a.w,a.h));s:newCel(s.layers[1],i+1,c,Point(0,0));s.frames[i+1].duration=1/24 end;s:saveAs(D..'/'..n..'.aseprite');s:close()end

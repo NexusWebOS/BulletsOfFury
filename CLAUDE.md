@@ -1,3 +1,196 @@
+## November6,2026 — Smaller Stage5 assembly pieces,revision F
+
+Mike requested smaller incoming ship parts. Shared kit cells194.7→64px(about67%
+smaller); travel/orbit radius,arrival clocks,central jet and48px completed fighter
+retained. Final docking sizes unchanged; SF14 follows the same shared poses.
+14 browser checks and9 packaged fullscreen checks pass. Full suite retains old
+missing health-helper failure. Owner:docs/SHIP_PIECE_SIZE_1106.md.
+
+## November6,2026 — Stage5 scene restored,revision E
+
+Mike chose original Stage5 starfield/space parallax. Stage5 opts out of LS112's
+orbital/Earth override; other layered stages stay active. Dedicated native blue
+sky sampler fixes Stage6 city leaking into Stage4 outbound/Stage5 cloud assembly.
+Preserve twelve kit pieces,1000px/s travel,white-masked swap,48px craft and shared
+countdown/PLAY scroll. D performance/audio/map/flame work retained. Twelve real
+Chromium scene checks pass; full suite still stops at old missing health helper.
+Owner/evidence:docs/STAGE5_SCENE_RESTORATION_1106.md.
+
+## November6,2026 — Tester feedback repairs,revision D
+
+Tutorial-to-map Enter/Space/Start deployment and quick-click/stale-hover ownership fixed.
+Short SFX use a64MiB decoded cache through native gates/mixer;32 voices,priority,
+stale/pending cancellation,volume controls and buffered portal echoes. Music/loops retained.
+Stage lookup indexed; loading budgeted;134-image kit gate handles deferred boot requests.
+6748 Stage5 cells paged losslessly with authored flash/shadow states; original masters retained.
+Matched Furious opening36.2→53.7FPS,p95frame83.4→16.8ms,>50ms55→11. Not constant60FPS.
+Flame reach+27px; native L5DPS135→291 versus MG288; Ice Breath damage retained.
+Pixel/source,live flow/audio/formation/weapon checks and focused source probes recorded.
+Full-suite old missing-helper blocker remains; no whole-campaign claim or Git publication.
+Owner/report:docs/TESTER_FEEDBACK_REPAIRS_1106.md;_BUILD_SOURCE/tester_feedback_1106/.
+
+## November 6, 2026 - Locked Cole silhouettes and launcher credits (revision C)
+
+Cole main card/roster pilot, actual jet and padlocks use18 authored Aseprite
+gray/black banks,450ms per state. Locked-only backgrounds/cards/frame accents
+are neutral black/gray. Native password/unlock/deploy gate retained; unlocked
+Cole restores original colors and olive backdrop. No live tint/alpha/scale.
+Launcher copyright:2026 © COLEFORGE PRODUCTIONS. Footer:THANK YOU FOR DEDICATED
+SUPPORT AND APPRECIATION! Exact Pixelmap glyphs including new copyright169.
+28 asset/Chromium checks,3 Aseprite roundtrips,6 packaged-EXE checks,
+5 launcher checks/48 text fits passed. All18798 installer files verified.
+Full-suite baseline missing-helper error persists. No commit/push.
+Owner/source/evidence: docs/LOCKED_COLE_LAUNCHER_1106.md and
+_BUILD_SOURCE/locked_pilot_1106/. Release2026.11.06c.
+
+## November 6, 2026 - Launcher controls, direct fullscreen, pilot fills, bullet contract
+
+Revision B supersedes the earlier desktop startup description: Bullets of Fury.exe
+now starts fullscreen directly; BOF Launcher.exe opens Fury HQ. Proper minimize,
+maximize/restore/X and regenerated titlebar with baked Fury Strike lettering.
+Nine flat pilot fills replace scrolling selection scenery. Bullet/sonic identity
+is protected at birth and before elemental-art classification, plus the final
+projectile_contract_1106.js interception invariant. Physical missiles retained.
+Native desktop checks +30 collision cases +complete installer/uninstall passed;
+all18777 files verified. Long staging paths fixed without system changes.
+Core SHA 3c7f044382ba645d43f96dd08b5089f29f1fb250e5ed190c733ba40f5d9beb98.
+Report: docs/WINDOWS_LAUNCHER_REVISION_B_1106.md. Full-suite baseline missing-helper
+failure persists; no full-suite/whole-campaign/constant60FPS claim. No commit/push.
+
+## November 6, 2026 - Fury HQ Windows EXE, installer and centered Pixelmap UI
+
+Dedicated x64 Windows game host starts fullscreen; F11/Alt+Enter toggle,
+game Exit returns to the generated Fury HQ launcher. Native right Retina,
+Space missiles and Mouse4/double-right-hold Multi-Retina retained; SS2 art
+and game core unchanged (0903eec65a966a55980baef7a2eddf59ab4a3f18a8e77868ccb52fa90d231c91).
+New hangar/doors/briefing/emblem artwork and original BOF cues,96 eased door
+position keys, cached bitmap blits. Mike's follow-up uses actual Fury Strike
+Pixelmap glyphs throughout, centered and fitted using native font banks.
+Final installer verifies 18775 files; 4760 install text-fit observations pass.
+25 native functional/control/stage/restart checks,15 safety/cancel checks,
+4 uninstall checks and final ready-EXE smoke are documented. No full campaign,
+full-suite or constant60FPS claim; old missing-helper regression blocker persists.
+Per-user install/uninstall, save retention, optional shortcuts and Apps entry;
+QA skipped real desktop registration. Includes Microsoft-signed offline runtime.
+Single installer: BulletsOfFury-Setup-2026-11-06.exe (3.84GB).
+Ready folder: Releases/BulletsOfFury-Windows-2026-11-06/ in Mike's workspace.
+Report: docs/WINDOWS_LAUNCHER_1106.md. Sources/evidence own desktop_windows_1106 dirs.
+No game.js edit, commit or push for this desktop pass. New WebView2 save origin
+is separate from prior browser-port profiles; existing saves are not imported.
+
+## November 5, 2026 - official mouse and keyboard tester ZIP
+
+Right click now Retina; Space missiles; physical Mouse4 (browser button3)
+holds native Multi-Retina. Short right tap then second right hold within300ms
+also scans; Space fires the native marked-target volley. Menu Space still
+confirms. One-time profile migration preserves unrelated and later remaps.
+Help updated; context/Back navigation blocked on canvas; focus/pause/scene
+changes release the gesture. Core game.js intentionally changed for this task,
+LF preserved; test_fl.js expectations updated with CRLF preserved.
+23/23 native browser checks and21/21 clean-extracted package checks pass,
+all18771 payload hashes/18772 entries verified; all Stage1-9 load/render,
+combat sound and restart saves checked. Existing full-suite missing-helper
+setup failure persists; no full campaign or physical hardware claim.
+START-BOF.cmd + PLAY_LOCAL.ps1 run on Windows without Python/Node installs.
+ZIP: BulletsOfFury-Official-2026-11-05-Tester.zip (3.56GB).
+Core SHA256: 0903eec65a966a55980baef7a2eddf59ab4a3f18a8e77868ccb52fa90d231c91.
+Report: docs/OFFICIAL_TESTER_BUILD_1105.md. Source/evidence own1105 folders.
+No commit/push requested; current local production snapshot with all assets.
+
+## November 5, 2026 - Razorwake accelerating offscreen zigzags (RW118 revision)
+
+Mike's Razorwake follow-up is installed: sixteen actual diagonal zigzags go
+on/offscreen, accelerate from0.90s to0.36s (2.5x speed), reverse route order
+after eight and turn beyond view with existing32-heading hull/gun/exhaust art.
+Committed0.80-0.70s warning lanes and native protections remain. Swept contact
+prevents tunneling at the higher speed. Native1785HP/gates/attacks/death intact.
+33native +6trajectory +4collision checks pass;14preview checks pass.
+Uncaptured59.20FPS; final VP8-captured native full fight51.11FPS,
+158.523s,60s hold-fire, input-only Cole GOD bot. Earlier H264 capture stalls
+are documented; no gameplay timing was changed for capture. Existing old-suite
+missing-helper failure remains. Coregame.js/art unchanged; no commit/push.
+Owner: assets/razorwake_tempest_1105.js; source: _BUILD_SOURCE/razorwake_zigzag_1105/.
+Report: docs/RAZORWAKE_ZIGZAG_1105.md. Review: http://127.0.0.1:65123/?razorwake=accelerating-zigzag-1105#razorwake
+
+## November 5, 2026 - Sumpjaw coordinated tandem and shared health (SJ120)
+
+Mike's latest Sumpjaw pass is installed: no little spread pellets or whole-body
+green charge rim; animate only the inside toxic mouth cores and local muzzle.
+Six left/right airborne jumps over the pilot, downward large mouth orbs,
+aligned dual firing row with joint strafing, split-hop/north exit and real
+over/under crossing return. Faster solo survivor retains its native gates.
+One top-screen bar with fixed 50/50 shares. Base Furious 14000 HP total,
+7000 each; actual Hard Stage7 boss baseline12466. Native NG+17500 total.
+Visible airborne heads remain hittable at their actual sockets; shadows do not
+block weapons. Native gill gates, white hit expiry and single defeat preserved.
+26 native + 6 compatibility +2066 art-frame checks pass;
+exact inner-mouth masks and14 preview checks pass. Full native GOD/input-bot
+film: 57.34 average engine FPS over 298.703s, 60s hold-fire.
+Known older test_fl.js missing-helper failure remains; game.js unchanged.
+Owner: assets/sumpjaw_tandem_1105.js. Rebuild: _BUILD_SOURCE/sumpjaw_tandem_1105/.
+Evidence/limits: docs/SUMPJAW_TANDEM_1105.md. No commit/push requested.
+Review: http://127.0.0.1:65123/?sumpjaw=tandem-final-1105#sumpjaw
+
+## November 5, 2026 - Thunderhead reactor and background cyclone (TC119)
+
+Mike's Thunderhead pass is installed: animated cannon/beam coupling and metal lip;
+four independent guns reserve three real allies and one player target in 75% of cycles;
+rotating gun/recoil/muzzle poses, upward swirling reactor glass, fading storm shade,
+native warning and loud matching lightning. The giant cyclone now uses a turn north,
+distant south entry, 4.4s charge, recoil launch, distant recovery and foreground return.
+Sixteen authored depth sizes keep all mounts and exhaust together. Modules leave their
+original empty hull wells, explode under native unitDeathFX rules and shatter after
+physical breakaway. No extra receiver/full dark weapon-shaped wreck is drawn.
+Native 6,348 HP and all six gates retained. 31 native, 6 compatibility,
+3,127 art-frame/64 mask and 14 preview checks pass. Full native film: 56.75 FPS
+over 140.885s, Cole GOD/input bot, 70s player hold-fire, live native allies/audio.
+Existing test_fl.js dependency failure remains documented; game.js unchanged.
+Owner: assets/thunderhead_reactor_1105.js; sources: _BUILD_SOURCE/thunderhead_reactor_1105/.
+Evidence/limits: docs/THUNDERHEAD_REACTOR_1105.md. No commit/push requested.
+Review: http://127.0.0.1:65122/?thunderhead=reactor-final-1105#thunderhead
+
+## November 5, 2026 - Razorwake aggressive storm Helix (RW118)
+
+Mike's revised Furious Stage 6 miniboss is installed. New rolling forward gun runs,
+three fixed south burst lanes, accelerating/reversed throttle passes, teal source-pixel
+charge and a breakable growing wind Helix orb replace the old wind ribbons/tornado book.
+Native fatal capture carries the burning wreck above view and crashes it at lower-middle;
+the orb exits with the throw and the death banner waits for impact. Native protections,
+module hit feedback, intact wings, core gate, damage and once-only defeat remain active.
+1,785HP versus the actual Hard fortress's 1,552. Offline hull/wing composition removed
+the drawing bottleneck without reducing art quality. Final native fight: 57.10 FPS
+through 114.164 s, with no synthetic phases; sixty seconds hold-fire, input-only GOD bot.
+33 encounter checks, 6 route checks, 1,601 Aseprite/frame checks, 24 masks and 14 preview checks pass.
+Required test_fl.js still fails at the pre-existing difficultyHealthBaseline15 dependency.
+Core game.js unchanged. No commit/push requested; preserve other pending changes.
+Owner/source/evidence: docs/RAZORWAKE_TEMPEST_1105.md and _BUILD_SOURCE/razorwake_tempest_1105/.
+Live review with full fight and separate natural fatal-orb clip: http://127.0.0.1:65121/?razorwake=tempest-final-1105#razorwake
+
+<!-- razorwake-modular-wind-1104 -->
+## November5 — Razorwake modular chainguns, hinged wings and wind arsenal
+
+RW117 replaces live Furious Razorwake art/attack book with regenerated intact fuselage/wings and two detachable rotary guns. Actual spinning/recoiling gun mouths fire straight wind-slug streams; strong one-source exhaust uses authored pixel-light grades. Core cyclone1015 charge and accelerating24-pose wing flaps darken the layered city, show the real metal warning and launch a generated sweeping tornado. Preserve native1653HP, two496HP guns/661HP core gate, source-pixel hits, finite wind hazards and once-only native defeat.2620authored/Aseprite-verified frames/656exact masks;35native checks and11preview checks pass. Source-stable native full fight54.83engineFPS, audible and complete. Readiness caching removes repeated scans; separate instrumented profile remains40.93FPS and is documented honestly. Required broad suite retains the pre-existing missing health-helper setup error. See docs/RAZORWAKE_MODULAR_WIND_1104.md; current review http://127.0.0.1:65120/?razorwake=modular-wind-1104#razorwake . Core game.js unchanged; no commit/push.
+
+<!-- sumpjaw-serpents-1104 -->
+## November4 — faster articulated Sumpjaw pair
+
+SS116 replaces live SJ98 coiled-plate motion with32-heading heads and ten trailing armor sections, continuous snake curves, circling and96px pounces over the pilot. Alternate direct/overflight strikes use exact open-jaw landing Retinas; fast giant toxic orbs and six-burst acid volleys leave the real mouth with native warnings/audio. Preserve two1448HP native pools, gill/heart gates, individual bars, actual white hits, finite ordnance and once-only native defeat.1040authored/Aseprite-verified frames;28native checks pass. Uncaptured profile59.69FPS; final source-stable native full fight56.41FPS, audible and complete. Full suite retains its pre-existing missing health-helper setup error. See docs/SUMPJAW_SERPENTS_1104.md; local review http://127.0.0.1:65119/?sumpjaw=serpents-1104#sumpjaw . No commit/push.
+
+<!-- thunderhead-modular-1104 -->
+## November4 — regenerated Thunderhead, full-body aura and wind cannons
+
+TM115 supersedes live FB112 Thunderhead art/model with a generated empty hull, separate reactor, four actual turret instances and two cyclone-cannon pods.313 authored frames /19 banks, editable Aseprite and exact prompts are retained. Both cannon mouths emit giant animated wind beams during a longer core charge; whole armor and silhouette1015 pulses accelerate continuously. Preserve native6348HP, six-module/core gate, per-piece hit flash, storm book/weather, exact-mask collision and once-only native defeat.37 native checks,313 frame/runtime comparisons,190 masks and11 review checks pass. Final high-quality native MP4 fight 55.74FPS with actual audible cues; allied live profile56.83FPS. Broad suite retains its pre-existing health-helper setup error. See docs/THUNDERHEAD_MODULAR_1104.md and docs/qa/thunderhead_modular_1104. Local review http://127.0.0.1:65118/?thunderhead=modular-1104#thunderhead . No commit/push.
+
+<!-- thunderhead-storm-1104 -->
+## November4 — Thunderhead weather reactor
+
+Furious Stage6 Thunderhead now1015 charges its real core, launches cyclone salvo/twin tornado/targeted thunderstorm/giant core-tempest turns, and controls authored parallax clouds/rain/storm lighting over the city. Preserve native6348HP, six-module/core gate, source sockets, recoveries, rewards and the earlier performance correction. New effects use193 fixed authored frames with editable Aseprite sources; scoped PFX13 bypass preserves their pixels.22 native checks,193 Aseprite frame comparisons and11 preview checks pass. Live profile59.93FPS; final native-canvas full fight53.66FPS with audible storm cues and native defeat. Broad suite retains the existing difficultyHealthBaseline15 setup failure. See docs/THUNDERHEAD_STORM_1104.md and docs/qa/thunderhead_storm_1104. Local review http://127.0.0.1:65118/?storm=1104#thunderhead . No commit/push.
+
+<!-- furious-performance-1104 -->
+## November4 — Furious boss performance correction
+
+Razorwake first-use shadow compositing, alpha readbacks and giant-sheet uploads are replaced by source-derived prepared shadow pages, exact compact collision bits and lossless small render pages. Same high-quality native profile30.7→58.0FPS; fresh full-fight recording26.7→57.7FPS. Original cells/pivots/HP/attack clocks/warnings/audio and2x ship quality stay. 1,035 masks/1,152 render cells,15,525 native queries and29/29 encounter checks pass. Core game.js is unchanged. Builder, probes, remaining occasional cold-frame limits and full-suite result: docs/FURIOUS_PERFORMANCE_1104.md. No commit/push.
+
 ## November4 - Stage 5 ship forming upgrade (Claude Code)
 
 Mike: the space-ship forming was janky. Frame capture (`_BUILD_SOURCE/capture_ship_forming_1104.py`) showed charge looked like drift, scatter barely read, the snap popped (parts stop drawing at 78% while ~60% in, finished ship appears from nothing) and pixelglow just faded the screen white. New last-loaded layer `assets/ship_forming_1104.js` (SF14; `window.SF14_OFF=1`) wraps furyShipDrawPhase/furyIntroWhite: charge tethers + band pulses + pixel core, scatter shock rings, parts close fully onto a white energy silhouette and weld, ship glows from its own silhouette before a stepped whiteout. Clocks, sounds, kit size/orbit, veil and Cole's authored cells kept. Timing identical on/off, zero errors. Read docs/SHIP_FORMING_1104.md; review `_shots/ship_forming_1104/ship_forming_before_after.gif`. Trap: `_pilotKey()` reads `run.pilot` before `pilotIndex`. No commit/push.

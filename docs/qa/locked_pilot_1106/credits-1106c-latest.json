@@ -1,0 +1,67 @@
+{
+  "directory": "C:\\Users\\Mike\\Documents\\New project\\BOF-Arcade-Installer-1105\\qa\\credits-1106c-1793980446",
+  "checks": [
+    "Exact copyright with authored copyright glyph",
+    "Exact thank-you footer",
+    "Old captions removed",
+    "All native text fits",
+    "Real copyright glyph in all 12 banks"
+  ],
+  "textFits": 48,
+  "labels": [
+    {
+      "text": "2026 \u00a9 COLEFORGE PRODUCTIONS.",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 433,
+      "available": 512,
+      "box": "{X=70,Y=369,Width=520,Height=38}",
+      "fits": true
+    },
+    {
+      "text": "THANK YOU FOR DEDICATED SUPPORT AND APPRECIATION!",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 820,
+      "available": 904,
+      "box": "{X=56,Y=479,Width=912,Height=58}",
+      "fits": true
+    },
+    {
+      "text": "2026 \u00a9 COLEFORGE PRODUCTIONS.",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 433,
+      "available": 512,
+      "box": "{X=70,Y=369,Width=520,Height=38}",
+      "fits": true
+    },
+    {
+      "text": "THANK YOU FOR DEDICATED SUPPORT AND APPRECIATION!",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 820,
+      "available": 904,
+      "box": "{X=56,Y=479,Width=912,Height=58}",
+      "fits": true
+    },
+    {
+      "text": "2026 \u00a9 COLEFORGE PRODUCTIONS.",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 433,
+      "available": 512,
+      "box": "{X=70,Y=369,Width=520,Height=38}",
+      "fits": true
+    },
+    {
+      "text": "THANK YOU FOR DEDICATED SUPPORT AND APPRECIATION!",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 820,
+      "available": 904,
+      "box": "{X=56,Y=479,Width=912,Height=58}",
+      "fits": true
+    }
+  ]
+}

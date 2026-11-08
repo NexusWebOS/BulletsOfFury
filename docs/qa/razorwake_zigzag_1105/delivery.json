@@ -1,0 +1,11 @@
+{
+  "nativeChecks": 33,
+  "trajectoryChecks": 6,
+  "sweepChecks": 4,
+  "previewChecks": 14,
+  "liveFps": 59.20331742098395,
+  "captureFps": 51.11186134060348,
+  "seconds": 158.523,
+  "movie": "_shots\\boss_comparison_1102\\razorwake-zigzag-vp8-final-1105\\stage6-mini\\stage6-furious.mp4",
+  "url": "http://127.0.0.1:65123/?razorwake=accelerating-zigzag-1105#razorwake"
+}

@@ -1,0 +1,528 @@
+{
+  "allPassed": true,
+  "runs": 58,
+  "rows": [
+    {
+      "text": "FURY HQ // DEPLOYMENT TERMINAL",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 446,
+      "available": 512,
+      "box": "{X=70,Y=359,Width=520,Height=34}",
+      "fits": true
+    },
+    {
+      "text": "THE 90'S CALLED. THEY WANT MORE FIREPOWER.",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 12,
+      "width": 464,
+      "available": 512,
+      "box": "{X=70,Y=394,Width=520,Height=25}",
+      "fits": true
+    },
+    {
+      "text": "READY TO LAUNCH",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 20,
+      "width": 278,
+      "available": 292,
+      "box": "{X=666,Y=89,Width=300,Height=41}",
+      "fits": true
+    },
+    {
+      "text": "COLEFORGE / BULLETS OF FURY",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 10,
+      "width": 271,
+      "available": 292,
+      "box": "{X=666,Y=129,Width=300,Height=25}",
+      "fits": true
+    },
+    {
+      "text": "LAUNCH GAME",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 187,
+      "available": 258,
+      "box": "{X=683,Y=156,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "FLIGHT CONTROLS",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 230,
+      "available": 258,
+      "box": "{X=683,Y=212,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "LAUNCHER OPTIONS",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 246,
+      "available": 258,
+      "box": "{X=683,Y=268,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "EXIT TO DESKTOP",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 250,
+      "available": 258,
+      "box": "{X=683,Y=324,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "ARROWS / W S: CHOOSE     ENTER / CLICK: CONFIRM     ESC: BACK",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 12,
+      "width": 623,
+      "available": 904,
+      "box": "{X=56,Y=476,Width=912,Height=29}",
+      "fits": true
+    },
+    {
+      "text": "RIGHT CLICK: RETINA     SPACE: MISSILES     MOUSE 4: MULTI-RETINA",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 12,
+      "width": 689,
+      "available": 904,
+      "box": "{X=56,Y=508,Width=912,Height=29}",
+      "fits": true
+    },
+    {
+      "text": "X",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 13,
+      "available": 24,
+      "box": "{X=975,Y=3,Width=32,Height=30}",
+      "fits": true
+    },
+    {
+      "text": "FLIGHT CONTROLS",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 28,
+      "width": 402,
+      "available": 856,
+      "box": "{X=80,Y=79,Width=864,Height=50}",
+      "fits": true
+    },
+    {
+      "text": "MOVE",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 55,
+      "available": 306,
+      "box": "{X=82,Y=136,Width=314,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "W A S D / ARROW KEYS",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 237,
+      "available": 510,
+      "box": "{X=410,Y=136,Width=518,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "PRIMARY FIRE",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 160,
+      "available": 306,
+      "box": "{X=82,Y=164,Width=314,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "LEFT CLICK / J",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 174,
+      "available": 510,
+      "box": "{X=410,Y=164,Width=518,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "RETINA TARGET",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 174,
+      "available": 306,
+      "box": "{X=82,Y=192,Width=314,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "RIGHT CLICK / C",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 188,
+      "available": 510,
+      "box": "{X=410,Y=192,Width=518,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "FIRE MISSILES",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 174,
+      "available": 306,
+      "box": "{X=82,Y=220,Width=314,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "SPACE / K",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 111,
+      "available": 510,
+      "box": "{X=410,Y=220,Width=518,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "MULTI-RETINA",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 167,
+      "available": 306,
+      "box": "{X=82,Y=248,Width=314,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "HOLD MOUSE BUTTON 4 / Y",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 286,
+      "available": 510,
+      "box": "{X=410,Y=248,Width=518,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "ALT MULTI-RETINA",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 216,
+      "available": 306,
+      "box": "{X=82,Y=276,Width=314,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "RIGHT TAP, THEN RIGHT + HOLD",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 356,
+      "available": 510,
+      "box": "{X=410,Y=276,Width=518,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "BARREL ROLL",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 146,
+      "available": 306,
+      "box": "{X=82,Y=304,Width=314,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "DOUBLE-TAP LEFT / RIGHT",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 300,
+      "available": 510,
+      "box": "{X=410,Y=304,Width=518,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "SOMERSAULT",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 139,
+      "available": 306,
+      "box": "{X=82,Y=332,Width=314,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "DOUBLE-TAP UP",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 174,
+      "available": 510,
+      "box": "{X=410,Y=332,Width=518,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "FULLSCREEN / WINDOW",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 251,
+      "available": 306,
+      "box": "{X=82,Y=360,Width=314,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "F11 / ALT + ENTER",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 209,
+      "available": 510,
+      "box": "{X=410,Y=360,Width=518,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "PAUSE",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 69,
+      "available": 306,
+      "box": "{X=82,Y=388,Width=314,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "ENTER / P",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 111,
+      "available": 510,
+      "box": "{X=410,Y=388,Width=518,Height=28}",
+      "fits": true
+    },
+    {
+      "text": "PRESS SPACE WHILE SCANNING TO LAUNCH THE MARKED VOLLEY.",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 12,
+      "width": 608,
+      "available": 850,
+      "box": "{X=82,Y=418,Width=858,Height=23}",
+      "fits": true
+    },
+    {
+      "text": "BACK TO HQ",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 22,
+      "width": 195,
+      "available": 852,
+      "box": "{X=82,Y=479,Width=860,Height=46}",
+      "fits": true
+    },
+    {
+      "text": "X",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 13,
+      "available": 24,
+      "box": "{X=975,Y=3,Width=32,Height=30}",
+      "fits": true
+    },
+    {
+      "text": "FURY HQ // DEPLOYMENT TERMINAL",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 446,
+      "available": 512,
+      "box": "{X=70,Y=359,Width=520,Height=34}",
+      "fits": true
+    },
+    {
+      "text": "THE 90'S CALLED. THEY WANT MORE FIREPOWER.",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 12,
+      "width": 464,
+      "available": 512,
+      "box": "{X=70,Y=394,Width=520,Height=25}",
+      "fits": true
+    },
+    {
+      "text": "SYSTEM OPTIONS",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 20,
+      "width": 268,
+      "available": 292,
+      "box": "{X=666,Y=89,Width=300,Height=41}",
+      "fits": true
+    },
+    {
+      "text": "COLEFORGE / BULLETS OF FURY",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 10,
+      "width": 271,
+      "available": 292,
+      "box": "{X=666,Y=129,Width=300,Height=25}",
+      "fits": true
+    },
+    {
+      "text": "FULLSCREEN: ON",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 241,
+      "available": 258,
+      "box": "{X=683,Y=156,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "SOUND: ON",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 151,
+      "available": 258,
+      "box": "{X=683,Y=212,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "DOORS: CINEMATIC",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 246,
+      "available": 258,
+      "box": "{X=683,Y=268,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "UNINSTALL GAME",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 241,
+      "available": 258,
+      "box": "{X=683,Y=324,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "BACK TO HQ",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 160,
+      "available": 258,
+      "box": "{X=683,Y=380,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "ARROWS / W S: CHOOSE     ENTER / CLICK: CONFIRM     ESC: BACK",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 12,
+      "width": 623,
+      "available": 904,
+      "box": "{X=56,Y=476,Width=912,Height=29}",
+      "fits": true
+    },
+    {
+      "text": "F11 OR ALT+ENTER TO SWITCH DISPLAY MODES DURING PLAY.",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 12,
+      "width": 584,
+      "available": 904,
+      "box": "{X=56,Y=508,Width=912,Height=29}",
+      "fits": true
+    },
+    {
+      "text": "X",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 13,
+      "available": 24,
+      "box": "{X=975,Y=3,Width=32,Height=30}",
+      "fits": true
+    },
+    {
+      "text": "FURY HQ // DEPLOYMENT TERMINAL",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 446,
+      "available": 512,
+      "box": "{X=70,Y=359,Width=520,Height=34}",
+      "fits": true
+    },
+    {
+      "text": "THE 90'S CALLED. THEY WANT MORE FIREPOWER.",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 12,
+      "width": 464,
+      "available": 512,
+      "box": "{X=70,Y=394,Width=520,Height=25}",
+      "fits": true
+    },
+    {
+      "text": "READY TO LAUNCH",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 20,
+      "width": 278,
+      "available": 292,
+      "box": "{X=666,Y=89,Width=300,Height=41}",
+      "fits": true
+    },
+    {
+      "text": "COLEFORGE / BULLETS OF FURY",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 10,
+      "width": 271,
+      "available": 292,
+      "box": "{X=666,Y=129,Width=300,Height=25}",
+      "fits": true
+    },
+    {
+      "text": "LAUNCH GAME",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 187,
+      "available": 258,
+      "box": "{X=683,Y=156,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "FLIGHT CONTROLS",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 230,
+      "available": 258,
+      "box": "{X=683,Y=212,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "LAUNCHER OPTIONS",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 16,
+      "width": 246,
+      "available": 258,
+      "box": "{X=683,Y=268,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "EXIT TO DESKTOP",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 18,
+      "width": 250,
+      "available": 258,
+      "box": "{X=683,Y=324,Width=266,Height=44}",
+      "fits": true
+    },
+    {
+      "text": "ARROWS / W S: CHOOSE     ENTER / CLICK: CONFIRM     ESC: BACK",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 12,
+      "width": 623,
+      "available": 904,
+      "box": "{X=56,Y=476,Width=912,Height=29}",
+      "fits": true
+    },
+    {
+      "text": "RIGHT CLICK: RETINA     SPACE: MISSILES     MOUSE 4: MULTI-RETINA",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 12,
+      "width": 689,
+      "available": 904,
+      "box": "{X=56,Y=508,Width=912,Height=29}",
+      "fits": true
+    },
+    {
+      "text": "X",
+      "font": "BOF Pixelmap Fury Strike",
+      "height": 14,
+      "width": 13,
+      "available": 24,
+      "box": "{X=975,Y=3,Width=32,Height=30}",
+      "fits": true
+    }
+  ]
+}

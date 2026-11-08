@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "result": {
+    "origin": "https://bof.coleforge.local",
+    "god": false,
+    "retina": true,
+    "missile": true,
+    "multi": true,
+    "quality": 2
+  }
+}

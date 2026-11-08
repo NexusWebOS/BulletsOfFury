@@ -1,35 +1,62 @@
-BULLETS OF FURY
-ColeForge
+BULLETS OF FURY - OFFICIAL TESTER BUILD - NOVEMBER 5, 2026
 
+START THE GAME (WINDOWS 10 / 11)
+1. Extract the ENTIRE ZIP into a normal folder. Do not run inside the ZIP.
+2. Open that folder and double-click START-BOF.cmd.
+3. Your browser opens the game. Click inside it once to enable sound.
+4. Keep the server window open while playing. Press Enter there to stop it.
 
-TO PLAY
--------
-1. Unzip the whole folder somewhere, keeping it together.
-2. Double-click  index.html
+Everything the game needs is included: code, images, animation banks, music,
+sound effects, fonts and data. Windows PowerShell and your existing desktop
+browser run the build; Python, Node, a separate installer and internet access
+are not required for the game. Edge or Chrome is recommended for this test.
+Opening index.html directly from disk will not load all game resources.
+The launcher normally uses the same local address so saves survive restarts.
+Keep using the same browser/profile and avoid private browsing for saves.
 
-It opens in your browser and runs straight from the file - no installer, no server
-to start, nothing to sign up for. Chrome, Edge and Firefox are all fine.
+MOUSE AND KEYBOARD
+Move: W A S D or arrow keys.
+Fire primary: hold LEFT mouse button, or J.
+Retina targeting: RIGHT mouse button, or C. Click to acquire/cycle a target.
+Missiles: SPACE, or K. With a Retina lock, missiles home onto that target.
+Multi-Retina: hold MOUSE BUTTON 4 (the first/Back thumb button), or hold Y.
+Three-button mouse: tap RIGHT click, release, then quickly RIGHT click again
+and HOLD the second press to enter Multi-Retina. Keep holding while it scans.
+Press SPACE to launch the marked-target missile volley.
+Charge: H or mouse button 5 (the second/Forward thumb button).
+Barrel roll: double-tap left or right. Somersault: double-tap up.
+Pause: Enter or P. Menus: arrows/WASD, Enter to confirm, Esc/K to go back.
+Backspace edits text; it is not menu Back.
 
-Keep the "assets" folder next to index.html. Move index.html on its own and you
-get a black screen, because everything it draws lives in that folder.
+Single right-click does not fire missiles. Releasing the Multi-Retina hold
+stops acquiring new targets; existing marks retain the game's normal timer.
+The right-click menu and thumb-button browser navigation are blocked on the
+playfield. Options can remap controls. Older saved mouse/Space controls are
+migrated once; unrelated keyboard and controller choices are preserved.
 
+TEST BUILD NOTES
+This snapshot includes the latest Razorwake zigzags, Thunderhead reactor,
+Sumpjaw tandem changes and all current runtime assets. Normal's campaign ends
+after Stage 5; Hard and Furious continue. It starts with normal player damage,
+not the invulnerable bot used in review videos.
 
-CONTROLS
---------
-  W A S D  or  arrow keys     fly
-  J                           fire   (hold it down)
-  K                           bomb / special
-  C                           retina lock-on
+The older full regression harness has a known missing-helper setup error;
+this is not a claim that every test or full campaign has passed. Focused
+mouse/keyboard and clean-extracted-package checks accompany this build.
+Please report stage, pilot, difficulty, weapon and what happened for any bug.
 
-  Enter, Space or J           confirm
-  Esc, Backspace or K         back
+NOVEMBER 6 TESTER REPAIRS
+After training, Enter/Start or the Fire/Confirm button deploys the highlighted
+campaign mission. Back/Esc opens the map menu; Save and Load remain separate
+choices. Mouse presses are buffered so quick clicks survive a slow frame.
 
-A gamepad works too if one is plugged in. The keys can be rebound in Options.
+Flamethrower: hold primary fire and close the distance. Sweep its plume across
+nearby enemies to damage several together and leave them burning. It has a
+shorter reach than the machine gun/laser. Levels 1-5 increase reach, width,
+damage and burn time. This build adds 27 pixels of visible reach at every level;
+fire damage now keeps pace with machine-gun upgrades. Sweep formations to
+make the most of it. Fire-resistant enemies still call for another weapon.
 
-
-IF SOMETHING LOOKS OFF
-----------------------
-The first load takes a few seconds while the art decodes. After that it is quick.
-
-
-A work-in-progress build. Nine stages, nine pilots, the art all hand-drawn.
+Short sound effects now use a bounded decoded cache and the shared mixer.
+Music and held weapon loops retain their streaming playback. Space ship art
+loads/decodes in a bounded queue; all high-quality frames are retained.

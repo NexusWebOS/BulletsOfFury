@@ -1,0 +1,33 @@
+{
+  "difficulty": "furious",
+  "method": "Stages1-9 native miniboss/boss comparison on Normal,Hard,Furious.\nNormal6-9 are review-only encounters: the campaign still ends at5. Uses actual\nnative entrances/health/parts/attack books/transformations/defeats and input-only\nlevel5 Cole aiming, with labelled invulnerability. No enemy HP/phase/timer writes\nafter encounter spawn. The unrelated Stage6 opening radio is excluded.\n",
+  "jobs": {
+    "stage6-mini": {
+      "id": "stage6-mini",
+      "stage": 6,
+      "role": "mini",
+      "kind": "siegefortress17",
+      "name": "Stage 6 miniboss",
+      "demonstrate": 60,
+      "limit": 720,
+      "view": "playfield",
+      "path": "_shots\\boss_comparison_1102\\razorwake-zigzag-vp8-final-1105\\stage6-mini\\stage6-furious.mp4",
+      "folder": "_shots\\boss_comparison_1102\\razorwake-zigzag-vp8-final-1105\\stage6-mini",
+      "seconds": 158.523,
+      "nativeFps": 51.11186134060348,
+      "peakDb": -1.9,
+      "checks": {
+        "complete": true,
+        "decoded": true,
+        "audible": true,
+        "sourceStable": true,
+        "nativeHealth": true,
+        "noErrors": true
+      },
+      "passed": true,
+      "reviewOnlyNormal": false,
+      "actualKind": "razorwake"
+    }
+  },
+  "active": null
+}

@@ -1,0 +1,221 @@
+{
+  "checks": [
+    {
+      "name": "hull",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 16,
+      "size": [
+        576,
+        576
+      ]
+    },
+    {
+      "name": "hull_aura",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 16,
+      "size": [
+        576,
+        576
+      ]
+    },
+    {
+      "name": "core",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 32,
+      "size": [
+        192,
+        224
+      ]
+    },
+    {
+      "name": "core_hit",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 1,
+      "size": [
+        192,
+        224
+      ]
+    },
+    {
+      "name": "core_aura",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 16,
+      "size": [
+        192,
+        224
+      ]
+    },
+    {
+      "name": "core_wreck",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 1,
+      "size": [
+        192,
+        224
+      ]
+    },
+    {
+      "name": "gun",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 78,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "gun_hit",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 6,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "gun_wreck",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 3,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "gun_aura",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 16,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "pod0",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 32,
+      "size": [
+        192,
+        288
+      ]
+    },
+    {
+      "name": "pod0_hit",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 1,
+      "size": [
+        192,
+        288
+      ]
+    },
+    {
+      "name": "pod0_wreck",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 1,
+      "size": [
+        192,
+        288
+      ]
+    },
+    {
+      "name": "pod0_aura",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 16,
+      "size": [
+        192,
+        288
+      ]
+    },
+    {
+      "name": "pod1",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 32,
+      "size": [
+        192,
+        288
+      ]
+    },
+    {
+      "name": "pod1_hit",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 1,
+      "size": [
+        192,
+        288
+      ]
+    },
+    {
+      "name": "pod1_wreck",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 1,
+      "size": [
+        192,
+        288
+      ]
+    },
+    {
+      "name": "pod1_aura",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 16,
+      "size": [
+        192,
+        288
+      ]
+    },
+    {
+      "name": "wind_beam",
+      "roundtrip": true,
+      "unclipped": true,
+      "edgeFrames": [],
+      "frames": 28,
+      "size": [
+        288,
+        512
+      ]
+    }
+  ],
+  "frames": 313,
+  "runtimePacking": true,
+  "collisionMasks": {
+    "passed": true,
+    "count": 190
+  },
+  "passed": true,
+  "sources": "Real Aseprite batch re-export; exact visibleRGBA/alpha compared with runtime atlas cells and source-derived collision masks."
+}

@@ -43,7 +43,7 @@ XART._touch=function(k){const im=PXG.base.touch.apply(this,arguments);
 function pxgWH(im){return [im.naturalWidth||im.width||0,im.naturalHeight||im.height||0];}
 /* an offscreen copy: carry the tag across (only for plain copies - no rotation, no mirror) */
 function pxgCarry(g,im,a){
- const t=PXG.tags.get(im);if(!t)return;const c=g.canvas;if(!c||c===(typeof canvas!=='undefined'?canvas:null))return;
+ const t=PXG.tags.get(im);if(!t)return;const c=g.canvas;if(!c||g===ctx||c===(typeof cv!=='undefined'?cv:null))return;
  const op=g.globalCompositeOperation;if(op!=='source-over'&&op!=='copy'&&op!=='destination-in'&&op!=='source-in'&&op!=='source-atop')return;
  const m=g.getTransform();if(m.b||m.c||m.a<=0||m.d<=0)return;
  const n=a.length,[iw,ih]=pxgWH(im);

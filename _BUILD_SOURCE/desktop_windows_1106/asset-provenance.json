@@ -1,0 +1,33 @@
+{
+  "generatedTool": "built-in imagegen",
+  "graphics": [
+    "hangar-generated.png",
+    "doors-generated.png",
+    "briefing-generated.png",
+    "emblem-generated.png"
+  ],
+  "existingLogo": "assets/game/shared/ui/ui/logo_0916/bof_logo.png",
+  "existingFonts": "pixelmap_ui_1027/command_*",
+  "sounds": [
+    "boot",
+    "select",
+    "selectpilot",
+    "furnace_servo_whirr",
+    "nsp_booster_ignite",
+    "nsp_engine_loop"
+  ],
+  "revision1106b": {
+    "tool": "built-in image_gen",
+    "identityReference": "art/hangar.png (approved existing BOF hangar layout)",
+    "generatedSource": "art/hangar-generated-v2.png",
+    "finalPlate": "art/hangar.png",
+    "staticTypography": "Exact BOF Pixelmap Fury Strike glyphs stamped offline in titlebar.png",
+    "windowButtons": [
+      "minimize",
+      "maximize",
+      "restore",
+      "close"
+    ],
+    "sourceGenerationFile": "C:/Users/Mike/.codex/generated_images/01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f/exec-6ea9d817-e0f9-439b-84b6-932b81f731af.png"
+  }
+}

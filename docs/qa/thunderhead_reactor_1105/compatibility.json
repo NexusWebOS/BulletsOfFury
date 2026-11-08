@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "name": "Normal cannot select the Furious Stage 6 alternate",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard keeps native fortress miniboss",
+      "passed": true,
+      "data": {
+        "kind": "siegefortress17",
+        "alternate": false,
+        "cargo": true,
+        "hp": 1552
+      }
+    },
+    {
+      "name": "Stage X is excluded from the Furious alternate selector",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Furious Thunderhead retains six modules, storm controller and reachable assets",
+      "passed": true,
+      "data": {
+        "modular": true,
+        "razor": false,
+        "parts": 6,
+        "core": 1522,
+        "events": 16
+      }
+    },
+    {
+      "name": "Obsolete Razorwake pages are excluded while current boss pages stay ready",
+      "passed": true,
+      "data": {
+        "old": [],
+        "thunder": true,
+        "new": true
+      }
+    },
+    {
+      "name": "No compatibility browser/render errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

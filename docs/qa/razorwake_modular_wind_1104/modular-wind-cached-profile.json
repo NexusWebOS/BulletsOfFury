@@ -1,0 +1,188 @@
+{
+  "label": "modular-wind-cached",
+  "fps": 40.93219449538841,
+  "p95": 25.400000000001455,
+  "p99": 48.099999999998545,
+  "top": [
+    {
+      "name": "(idle)",
+      "file": "",
+      "line": 0,
+      "ms": 27767.15
+    },
+    {
+      "name": "(program)",
+      "file": "",
+      "line": 0,
+      "ms": 4016.97
+    },
+    {
+      "name": "restore",
+      "file": "",
+      "line": 0,
+      "ms": 626.55
+    },
+    {
+      "name": "(garbage collector)",
+      "file": "",
+      "line": 0,
+      "ms": 343.77
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 275.11
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 269.56
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 220.01
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 195.93
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 173.54
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 163.21
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 162.95
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 155.4
+    },
+    {
+      "name": "pxgCarry",
+      "file": "pixel_glow_1015.js?v=hammer-charge-1016",
+      "line": 45,
+      "ms": 147.72
+    },
+    {
+      "name": "fillRect",
+      "file": "",
+      "line": 0,
+      "ms": 129.56
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 125.63
+    },
+    {
+      "name": "restore",
+      "file": "",
+      "line": 0,
+      "ms": 118.78
+    },
+    {
+      "name": "pxgCarry",
+      "file": "pixel_glow_1015.js?v=hammer-charge-1016",
+      "line": 45,
+      "ms": 108.25
+    },
+    {
+      "name": "drawWorld",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 74228,
+      "ms": 99.36
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 95.66
+    },
+    {
+      "name": "pm27Draw",
+      "file": "pixelmap_ui_1027.js?v=solid-r-square-hud-1027d",
+      "line": 27,
+      "ms": 88.9
+    },
+    {
+      "name": "ls112Frame",
+      "file": "layered_stages_1102.js?v=stage-layers-1",
+      "line": 25,
+      "ms": 83.14
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 78.27
+    }
+  ],
+  "errors": [],
+  "functions": {
+    "rw117Blit": {
+      "calls": 18493,
+      "ms": 720.3999998867512,
+      "max": 52.30000001192093
+    },
+    "rw117Wings": {
+      "calls": 3126,
+      "ms": 347.60000094771385,
+      "max": 5.800000011920929
+    },
+    "rw117Mask": {
+      "calls": 0,
+      "ms": 0,
+      "max": 0
+    },
+    "rw117Fields": {
+      "calls": 2377,
+      "ms": 10.39999994635582,
+      "max": 0.5
+    },
+    "rw117Weather": {
+      "calls": 1642,
+      "ms": 589.2999992370605,
+      "max": 2
+    },
+    "fb112Draw": {
+      "calls": 1642,
+      "ms": 1702.1000003516674,
+      "max": 79.60000002384186
+    },
+    "fb112Tick": {
+      "calls": 2377,
+      "ms": 191.59999990463257,
+      "max": 8.200000017881393
+    },
+    "updatePlay": {
+      "calls": 2377,
+      "ms": 1407.2999994754791,
+      "max": 11.799999982118607
+    },
+    "drawWorld": {
+      "calls": 1642,
+      "ms": 6436.399999648333,
+      "max": 201.80000001192093
+    }
+  }
+}

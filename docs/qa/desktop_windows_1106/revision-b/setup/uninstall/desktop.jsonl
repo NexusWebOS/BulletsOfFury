@@ -1,0 +1,14 @@
+{"time":"2026-11-06T15:08:08.9279035Z","name":"cue","data":"boot"}
+{"time":"2026-11-06T15:08:08.9446968Z","name":"terminal-open","data":{"setup":false,"uninstall":true,"bounds":"{X=448,Y=282,Width=1024,Height=576}"}}
+{"time":"2026-11-06T15:08:08.9592243Z","name":"text-fit","data":{"text":"FURY HQ // DEPLOYMENT TERMINAL","font":"BOF Pixelmap Fury Strike","height":16,"width":446,"available":512,"box":"{X=70,Y=359,Width=520,Height=34}","fits":true}}
+{"time":"2026-11-06T15:08:08.9602668Z","name":"text-fit","data":{"text":"THE 90\u0027S CALLED. THEY WANT MORE FIREPOWER.","font":"BOF Pixelmap Fury Strike","height":12,"width":464,"available":512,"box":"{X=70,Y=394,Width=520,Height=25}","fits":true}}
+{"time":"2026-11-06T15:08:08.9612876Z","name":"text-fit","data":{"text":"DECOMMISSION","font":"BOF Pixelmap Fury Strike","height":22,"width":261,"available":292,"box":"{X=666,Y=105,Width=300,Height=38}","fits":true}}
+{"time":"2026-11-06T15:08:08.9616590Z","name":"text-fit","data":{"text":"COLEFORGE / BULLETS OF FURY","font":"BOF Pixelmap Fury Strike","height":10,"width":271,"available":292,"box":"{X=666,Y=144,Width=300,Height=25}","fits":true}}
+{"time":"2026-11-06T15:08:08.9616590Z","name":"text-fit","data":{"text":"REMOVE GAME","font":"BOF Pixelmap Fury Strike","height":18,"width":187,"available":258,"box":"{X=683,Y=174,Width=266,Height=44}","fits":true}}
+{"time":"2026-11-06T15:08:08.9616590Z","name":"text-fit","data":{"text":"CANCEL","font":"BOF Pixelmap Fury Strike","height":18,"width":106,"available":258,"box":"{X=683,Y=226,Width=266,Height=44}","fits":true}}
+{"time":"2026-11-06T15:08:08.9646860Z","name":"text-fit","data":{"text":"REMOVE GAME FILES AND SHORTCUTS. YOUR SAVES AND","font":"BOF Pixelmap Fury Strike","height":12,"width":521,"available":532,"box":"{X=78,Y=422,Width=540,Height=18}","fits":true}}
+{"time":"2026-11-06T15:08:08.9646860Z","name":"text-fit","data":{"text":"SETTINGS WILL BE KEPT.","font":"BOF Pixelmap Fury Strike","height":12,"width":242,"available":532,"box":"{X=78,Y=439,Width=540,Height=18}","fits":true}}
+{"time":"2026-11-06T15:08:10.8749924Z","name":"doors-open","data":{"seconds":1.6,"authoredFrames":96}}
+{"time":"2026-11-06T15:08:11.2897094Z","name":"screenshot","data":"uninstall-confirmation"}
+{"time":"2026-11-06T15:08:11.5397430Z","name":"terminal-close","data":{"paintCount":76,"meanFrameMs":25.122515789473681,"maxFrameMs":35.3878}}
+{"time":"2026-11-06T15:08:31.1863076Z","name":"uninstall-complete","data":{"target":"C:\\Users\\Mike\\Documents\\New project\\BOF-Arcade-Installer-1105\\qa\\setup-v2-1793977618\\Installed BOF","saveFolderPreserved":"C:\\Users\\Mike\\AppData\\Local\\ColeForge\\BulletsOfFury"}}

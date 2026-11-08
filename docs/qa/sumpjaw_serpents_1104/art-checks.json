@@ -1,0 +1,206 @@
+{
+  "checks": [
+    {
+      "bank": "body0",
+      "frames": 64,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hot0",
+      "frames": 64,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "body1",
+      "frames": 64,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hot1",
+      "frames": 64,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "body2",
+      "frames": 64,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hot2",
+      "frames": 64,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "body3",
+      "frames": 64,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hot3",
+      "frames": 64,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "hit",
+      "frames": 64,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "head_shadow",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment0_body",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment0_hot",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment0_hit",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment0_shadow",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment1_body",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment1_hot",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment1_hit",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment1_shadow",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment2_body",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment2_hot",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment2_hit",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "segment2_shadow",
+      "frames": 32,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "orb",
+      "frames": 16,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "acid",
+      "frames": 16,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "muzzle",
+      "frames": 16,
+      "roundtrip": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    }
+  ],
+  "frames": 1040,
+  "passed": true
+}

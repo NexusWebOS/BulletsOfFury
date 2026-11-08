@@ -1,0 +1,52 @@
+{
+  "rows": [
+    {
+      "kind": "native-fullscreen",
+      "samplesFps": [
+        31.299840510528092,
+        30.508474576186202,
+        30.103668261543437
+      ],
+      "medianFps": 30.508474576186202,
+      "viewport": {
+        "SS": 2,
+        "VW": 480,
+        "VH": 512,
+        "dpr": 1.25,
+        "width": 1536,
+        "height": 960,
+        "canvas": [
+          960,
+          1024
+        ],
+        "focus": true
+      }
+    },
+    {
+      "kind": "edge-browser-same-game",
+      "samplesFps": [
+        28.82130789114336,
+        26.321036889258682,
+        25.8
+      ],
+      "medianFps": 26.321036889258682,
+      "viewport": {
+        "SS": 2,
+        "VW": 480,
+        "VH": 512,
+        "dpr": 1.25,
+        "width": 1536,
+        "height": 960,
+        "canvas": [
+          960,
+          1024
+        ],
+        "focus": true
+      }
+    }
+  ],
+  "nativeToBrowserRatio": 1.1590909090909092,
+  "comparableCanvas": true,
+  "noMaterialHostRegression": true,
+  "limitations": "One available Windows machine, uncaptured seeded Razorback case; not every stage or an FPS guarantee."
+}

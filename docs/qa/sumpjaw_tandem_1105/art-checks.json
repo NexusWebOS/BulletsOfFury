@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "bank": "mouth",
+      "frames": 2048,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "mouth_flash",
+      "frames": 16,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "health_frame",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    },
+    {
+      "bank": "health_half",
+      "frames": 1,
+      "roundtrip": true,
+      "runtime": true,
+      "even": true,
+      "unclipped": true,
+      "edgeFrames": []
+    }
+  ],
+  "frames": 2066,
+  "masks": 0,
+  "maskExact": true,
+  "passed": true
+}

@@ -1,0 +1,100 @@
+{
+  "checks": [
+    {
+      "name": "Razorwake loads with actual video frames",
+      "passed": true,
+      "data": {
+        "duration": 114.123271,
+        "width": 960,
+        "height": 1024
+      }
+    },
+    {
+      "name": "Razorwake chapter seeking, playback and audio",
+      "passed": true,
+      "data": {
+        "peak": 0.5813596248626709,
+        "advanced": 0.7947690000000005,
+        "time": 4.91
+      }
+    },
+    {
+      "name": "Razorwake exact byte-range serving",
+      "passed": true
+    },
+    {
+      "name": "Thunderhead loads with actual video frames",
+      "passed": true,
+      "data": {
+        "duration": 140.821896,
+        "width": 960,
+        "height": 1024
+      }
+    },
+    {
+      "name": "Thunderhead chapter seeking, playback and audio",
+      "passed": true,
+      "data": {
+        "peak": 0.6975431442260742,
+        "advanced": 0.6941029999999992,
+        "time": 5.661
+      }
+    },
+    {
+      "name": "Thunderhead exact byte-range serving",
+      "passed": true
+    },
+    {
+      "name": "Sumpjaw pair loads with actual video frames",
+      "passed": true,
+      "data": {
+        "duration": 298.694333,
+        "width": 960,
+        "height": 1024
+      }
+    },
+    {
+      "name": "Sumpjaw pair chapter seeking, playback and audio",
+      "passed": true,
+      "data": {
+        "peak": 0.5925993919372559,
+        "advanced": 0.6933340000000001,
+        "time": 4.588667
+      }
+    },
+    {
+      "name": "Sumpjaw pair exact byte-range serving",
+      "passed": true
+    },
+    {
+      "name": "Separate vortex movie metadata and visibility",
+      "passed": true,
+      "data": {
+        "visible": true,
+        "duration": 13.804,
+        "width": 960
+      }
+    },
+    {
+      "name": "Vortex movie playback and real game audio",
+      "passed": true,
+      "data": {
+        "peak": 0.6034500598907471,
+        "advanced": 0.9493330000000002
+      }
+    },
+    {
+      "name": "Vortex exact range serving",
+      "passed": true
+    },
+    {
+      "name": "Mobile page fits the viewport",
+      "passed": true
+    },
+    {
+      "name": "No browser or media errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

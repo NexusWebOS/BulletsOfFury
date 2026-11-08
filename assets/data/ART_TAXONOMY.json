@@ -1,4 +1,10 @@
 {
+  "lp116_": {
+    "role": "locked_cole_pilot_and_actual_jet_silhouettes_with_gray_black_padlock_states",
+    "owner": "_BUILD_SOURCE/locked_pilot_1106/build_locked.lua",
+    "manifest": "assets/game/shared/ui/locked_pilot_1106/manifest.json",
+    "note": "18 fixed even two-frame Aseprite banks. Actual cole_body_0922 and ship_cole_pv2 alpha; exact #606060/#000000 states held450ms, fixed blits only. Native Cole password/save/unlock gate retained."
+  },
   "s911_": {
     "role": "stage9_distinct_water_enemies_modular_cannons_and_front_facing_current_breaker",
     "owner": "_BUILD_SOURCE/build_stage9_amplify_1101.py",
@@ -1407,5 +1413,47 @@
     "owner": "_BUILD_SOURCE/build_cast_performance_1102.py",
     "manifest": "assets/game/shared/cinematics/cast_performance_1102/manifest.json",
     "note": "198 new full-body768x1024 frames (22per pilot), nine1536x1024 illustrated hangar stills referenced from current native aircraft, framed Chronos512x512 dialogue closeup. Current approved faces/outfits, common scale per bank, hip projection for stride registration, visible airborne cheer gap, actual authored poses/no mirroring or runtime rotation. Separate opt-in cutscene library; native Chronos dialogue/fade owners retained. Built-in image_gen sources/prompts and native ship exports retained under _ART_SOURCES/cast_performance_1102."
+  },
+  "tm115_": {
+    "role": "furious_stage6_thunderhead_regenerated_disjoint_hull_core_rotary_turrets_cyclone_cannons_and_wind_beams",
+    "owner": "_BUILD_SOURCE/thunderhead_modular_1104/build_modular.py",
+    "manifest": "assets/game/levels/stage_06/boss/thunderhead_modular_1104/manifest.json",
+    "note": "Built-in image_gen modular kit and16frame beam source; source prompts and editable Aseprite retained. Native1:1 pieces, source-derived collision bits, authored whole-body charge/aura. Supersedes live FB112 Thunderhead art only; Razorwake, Rough Riders and Stage X unchanged."
+  },
+  "ss116_": {
+    "role": "furious_stage7_articulated_sumpjaw_serpents_directional_heads_body_segments_jaw_anchored_toxic_attacks",
+    "owner": "_BUILD_SOURCE/sumpjaw_serpents_1104/build_serpents.py",
+    "manifest": "assets/game/levels/stage_07/miniboss/sumpjaw_serpents_1104/manifest.json",
+    "note": "Approved SJ98 source pixels;32 baked headings, source-preserving separate head/body/tail and floor shadows, four gill states, native white hit and toxic shot/muzzle banks. Existing native pair health/gills/hearts/reward retained. No fresh generation charge."
+  },
+  "rw117_": {
+    "role": "furious_stage6_razorwake_disjoint_hinged_wings_rotary_chainguns_static_source_thrusters_and_charged_wind_arsenal",
+    "owner": "_BUILD_SOURCE/razorwake_modular_1104/build_razor.py",
+    "manifest": "assets/game/levels/stage_06/miniboss/razorwake_modular_1104/manifest.json",
+    "note": "Two built-in image_gen sources with exact prompts and editable Aseprite retained.2620 authored even-cell frames/25banks/34pages,32headings and24hinge poses. Separate complete gun pods detach without erasing wings; native1653HP/2gun-core gate/hit flashes/rewards preserved. Supersedes live Furious Razorwake only. One static source exhaust uses baked glow/throttle banks. No PixelLab generation claimed. See docs/RAZORWAKE_MODULAR_WIND_1104.md."
+  },
+  "rw118_": {
+    "role": "furious_stage6_razorwake_rolling_gun_runs_committed_bursts_accelerating_throttle_storm_helix_and_native_vortex_crash",
+    "owner": "_BUILD_SOURCE/razorwake_tempest_1105/build_art.py",
+    "manifest": "assets/game/levels/stage_06/miniboss/razorwake_tempest_1105/manifest.json",
+    "note": "Built-in imagegen wind Helix loop referenced from actual Maverick ball, one tapered static exhaust source; originals/prompts retained. 1,601 fixed even-cell frames in 38 banks/88 compact pages, source-pixel teal charge/aura, precomposed pixel-identical hull/wing layers, independent rotary gun rolls, branching lightning, orb growth and nine-fragment rupture. Supersedes live RW117 attack book and selected presentation; existing native gun/core masks and gates retained. No PixelLab job claimed. Native shield/GOD/life handling and exclusive throw/fall/crash; 33 encounter and 6 compatibility checks; final live film 57.10 FPS. See docs/RAZORWAKE_TEMPEST_1105.md."
+  },
+  "tc119_": {
+    "role": "furious_stage6_thunderhead_socketed_wind_beams_coordinated_batteries_rising_reactor_and_background_perspective_cyclone",
+    "owner": "_BUILD_SOURCE/thunderhead_reactor_1105/build_art.py",
+    "manifest": "assets/game/levels/stage_06/boss/thunderhead_reactor_1105/manifest.json",
+    "note": "Re-authored approved TM115/THS114/RW118 source pixels, no generation charge. 3127 fixed even-cell frames in 158 banks, 16 ship depth sizes, 32 directional gun poses/recoil/emission, animated beam coupling and metal lip, chamber swirl moving north, actual native warning, 16 perspective cyclone sizes, coloured module breakaway and finite shards. Destroyed modules expose original empty hull wells; no extra receiver or full wreck silhouette. Native 6348 HP, six-part gate, hit feedback and rewards preserved. Sources/Aseprite/QA retained; see docs/THUNDERHEAD_REACTOR_1105.md."
+  },
+  "sj120_": {
+    "role": "furious_stage7_sumpjaw_coordinated_leaping_tandem_large_orb_fire_inner_mouth_animation_one_fixed_half_health_gauge",
+    "owner": "_BUILD_SOURCE/sumpjaw_tandem_1105/build_art.py",
+    "manifest": "assets/game/levels/stage_07/miniboss/sumpjaw_tandem_1105/manifest.json",
+    "note": "Re-authored approved SJ98/SS116 pixels without generation charge. 2066 fixed even-cell frames in four banks, six compact pages. Exact inner-mouth mask emission, mouth-local flash and one authored 50/50 gauge. No green outer hot frames or small acid spread. Six jumps, paired strafing large-orb bursts, split/north/over-under return, faster solo. 14000 total base Furious HP (7000 each), native two-gill heart gates, hit feedback and rewards. Source/Aseprite/QA: docs/SUMPJAW_TANDEM_1105.md."
+  },
+  "sp116_": {
+    "role": "lossless_stage5_rotational_enemy_and_ordnance_pages_with_authored_hit_shadow_colours",
+    "owner": "_BUILD_SOURCE/tester_feedback_1106/build_space_pages.py",
+    "manifest": "assets/game/shared/combat/space_pages_1106/manifest.json",
+    "note": "6748 cells verified against original visible pixels and alpha; 26992 authored colour checks. Native pivots, full transparent cells and emitter coordinates retained. Live browser raster comparison: exact alpha, at most2/255 RGB rounding tolerance."
   }
 }

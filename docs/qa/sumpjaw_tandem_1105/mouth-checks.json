@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "frames": 2048,
+  "headingAndJawVariants": 64,
+  "timelineCellsPerVariant": 32,
+  "distinctImagesPerVariant": 16,
+  "checks": 2112,
+  "note": "All nonzero-alpha emission pixels exactly match the rotated original inner toxic core mask; no outer body/tail rim pixels. Source hold frames retained."
+}

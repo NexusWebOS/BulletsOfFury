@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "name": "packaged game starts fullscreen with high-quality rendering",
+      "pass": true
+    },
+    {
+      "name": "packaged source matches the repaired game",
+      "pass": true
+    },
+    {
+      "name": "new audio and page modules are loaded",
+      "pass": true
+    },
+    {
+      "name": "packaged SFX reaches the actual mixer output",
+      "pass": true
+    },
+    {
+      "name": "packaged campaign Enter deploys",
+      "pass": true
+    },
+    {
+      "name": "packaged space combat uses the new pages without misses",
+      "pass": true
+    },
+    {
+      "name": "packaged flame revision is present",
+      "pass": true
+    },
+    {
+      "name": "native game raises no page exceptions",
+      "pass": true
+    }
+  ],
+  "audio": {
+    "peak": 12,
+    "event": {
+      "name": "machineGun",
+      "delay": 0.5,
+      "at": 2714.5,
+      "contextTime": 0.6826666666666666,
+      "baseLatency": 0.010666666666666666,
+      "outputLatency": 0.048
+    },
+    "errors": []
+  },
+  "errors": []
+}

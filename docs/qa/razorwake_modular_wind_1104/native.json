@@ -1,0 +1,7949 @@
+{
+  "checks": [
+    {
+      "name": "Razorwake keeps the native1653HP and2-gun/core budget",
+      "passed": true,
+      "data": {
+        "hp": 1653,
+        "parts": [
+          496,
+          496
+        ],
+        "core": 661,
+        "model": true
+      }
+    },
+    {
+      "name": "Healthy native fight cycles through rotary guns, roll, charged cyclones and wing tornado",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Each real Gatling fires a straight committed stream, never a spread fan",
+      "passed": true,
+      "data": {
+        "shots": 150,
+        "anglesPerBurst": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "Rotary fire actually comes from both independent gun mouths",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Cyclones are a separate charged core attack rather than machine-gun ammunition",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Wing flaps accelerate from slow windup to fast summoning",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Screen weather darkens during the charge while the city remains layered",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Summoned tornado sweeps and rebounds across the actual arena",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Tornadoes finish an authored recovery instead of persisting forever",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "One tornado and bounded gun pressure at a time",
+      "passed": true,
+      "data": {
+        "maxRounds": 10
+      }
+    },
+    {
+      "name": "Both new static-source thruster sizes and separate wing banks draw in the native renderer",
+      "passed": true,
+      "data": {
+        "hull_shadow": 294,
+        "left_shadow": 294,
+        "right_shadow": 294,
+        "hull": 206,
+        "left": 206,
+        "right": 206,
+        "gun": 412,
+        "thrust_cruise": 554,
+        "muzzle": 46,
+        "slug": 196,
+        "thrust_throttle": 60,
+        "swirl": 176,
+        "hull_charge": 88,
+        "left_charge": 88,
+        "right_charge": 88,
+        "gun_charge": 176,
+        "warning": 55,
+        "cyclone": 78,
+        "tornado_grow": 8,
+        "tornado": 42,
+        "tornado_tail": 3
+      }
+    },
+    {
+      "name": "All ordinary wind ammunition stays unshootable from birth",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The actual metal warning sign draws above the hull",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Charge darkens actual background pixels, not only a state variable",
+      "passed": true,
+      "data": {
+        "bright": 13839746.795600558,
+        "dark": 11782533.446399113,
+        "ratio": 0.8513546974822256
+      }
+    },
+    {
+      "name": "Observation leaves every native health pool untouched",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both gun targets sit on their actual source alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The central core does not absorb bullets before both guns break",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Barrel spin changes actual pixels around a fixed receiver",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "A broken turret leaves the native outer wing pixels intact",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "The real complete gun detaches while its receiver becomes a stump",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Surviving gun uses native white hit pixels and expiry",
+      "passed": true,
+      "data": {
+        "before": 749,
+        "hit": 1418,
+        "after": 681,
+        "flash": 0
+      }
+    },
+    {
+      "name": "Destroyed gun cannot emit any more rounds",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Pause/render-only frames do not advance barrels, wing hinges or weather",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Both module pools must break before only the native core becomes targetable",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Detached gun scraps fall off instead of lingering or fading the hull",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exhausting the native core defeats the encounter once",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Dying during a charge cancels the actual sign and body glow",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Death clears wind hazards and returns progression exactly once",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "normal retains its original Stage6 miniboss",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "hard retains its original Stage6 miniboss",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Thunderhead, StageX and Rough Riders keep separate owners",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Retry resets both guns, clean wings and all attack owners",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage loading invalidates decoded-page and readiness caches",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Reload repopulates every exact decoded page and redraws native hull pieces",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native browser/renderer errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "rows": [
+    {
+      "t": 0.24999999999999997,
+      "hp": 1653,
+      "phase": "entry",
+      "attack": null,
+      "qt": 0.24999999999999997,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 0.49999999999999994,
+      "hp": 1653,
+      "phase": "entry",
+      "attack": null,
+      "qt": 0.49999999999999994,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 0.7500000000000007,
+      "hp": 1653,
+      "phase": "entry",
+      "attack": null,
+      "qt": 0.7500000000000007,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 1.0000000000000013,
+      "hp": 1653,
+      "phase": "entry",
+      "attack": null,
+      "qt": 1.0000000000000013,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 1.2500000000000004,
+      "hp": 1653,
+      "phase": "entry",
+      "attack": null,
+      "qt": 1.2500000000000004,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 1.4999999999999996,
+      "hp": 1653,
+      "phase": "entry",
+      "attack": null,
+      "qt": 1.4999999999999996,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 1.7499999999999987,
+      "hp": 1653,
+      "phase": "entry",
+      "attack": null,
+      "qt": 1.7499999999999987,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 1.9999999999999978,
+      "hp": 1653,
+      "phase": "entry",
+      "attack": null,
+      "qt": 1.9999999999999978,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 2.249999999999997,
+      "hp": 1653,
+      "phase": "entry",
+      "attack": null,
+      "qt": 2.249999999999997,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 2.499999999999996,
+      "hp": 1653,
+      "phase": "entry",
+      "attack": null,
+      "qt": 2.499999999999996,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 2.749999999999995,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": null,
+      "qt": 0.2333333333333333,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 2.9999999999999942,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": null,
+      "qt": 0.4833333333333333,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 3.2499999999999933,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": null,
+      "qt": 0.733333333333334,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 3.4999999999999925,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": null,
+      "qt": 0.9833333333333347,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 3.7499999999999916,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": null,
+      "qt": 1.2333333333333338,
+      "seq": 0,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 0,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 3.9999999999999907,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.2333333333333333,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 4.022222222222222,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 4.24999999999999,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.4833333333333333,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 12.260317460317458,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 4.499999999999989,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.733333333333334,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 24.06984126984127,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 4.7499999999999885,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.9833333333333347,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 39.45079365079366,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 4.999999999999988,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.18333333333333332,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 59.82857142857145,
+      "rounds": 6,
+      "tornadoes": [],
+      "muzzles": [
+        0.03666666666666668,
+        0.03666666666666668
+      ]
+    },
+    {
+      "t": 5.249999999999987,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.4333333333333333,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 82.32857142857145,
+      "rounds": 10,
+      "tornadoes": [],
+      "muzzles": [
+        0.07,
+        0.07
+      ]
+    },
+    {
+      "t": 5.499999999999986,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.6833333333333338,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 104.82857142857145,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.03666666666666668,
+        0.03666666666666668
+      ]
+    },
+    {
+      "t": 5.749999999999985,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.9333333333333346,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 127.32857142857145,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.003333333333333348,
+        0.003333333333333348
+      ]
+    },
+    {
+      "t": 5.999999999999984,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.183333333333334,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 149.82857142857145,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.03666666666666668,
+        0.03666666666666668
+      ]
+    },
+    {
+      "t": 6.249999999999983,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.4333333333333331,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 172.32857142857145,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.003333333333333348,
+        0.003333333333333348
+      ]
+    },
+    {
+      "t": 6.499999999999982,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.6833333333333322,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 194.82857142857145,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.053333333333333344,
+        0.053333333333333344
+      ]
+    },
+    {
+      "t": 6.749999999999981,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.9333333333333313,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 217.32857142857145,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 6.9999999999999805,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.06666666666666667,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 239.4119047619048,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 7.24999999999998,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.31666666666666665,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 254.4119047619048,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 7.499999999999979,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.5666666666666668,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0369047619048,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 7.749999999999978,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.8166666666666675,
+      "seq": 1,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 7.999999999999977,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.06666666666666667,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 8.24999999999999,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.31666666666666665,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 8.500000000000002,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.5666666666666668,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 8.750000000000014,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.8166666666666675,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 9.000000000000027,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 1.0666666666666678,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 9.250000000000039,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 1.3166666666666669,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 9.500000000000052,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.16666666666666666,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 9.750000000000064,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.41666666666666663,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 10.000000000000076,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.6666666666666671,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 10.250000000000089,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.9166666666666679,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 10.500000000000101,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.11666666666666665,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 10.750000000000114,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.36666666666666664,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 11.000000000000126,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.6166666666666669,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 11.250000000000139,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.8666666666666677,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 11.500000000000151,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.06666666666666667,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 11.750000000000163,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.31666666666666665,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 12.000000000000176,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.5666666666666668,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 12.250000000000188,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.8166666666666675,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 12.5000000000002,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.0666666666666678,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 12.750000000000213,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.3166666666666669,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 13.000000000000226,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.566666666666666,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 13.250000000000238,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.816666666666665,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 13.50000000000025,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 2.066666666666664,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 13.750000000000263,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 2.3166666666666633,
+      "seq": 2,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 14.000000000000275,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.15,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.4175000000000002,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 14.250000000000288,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.39999999999999997,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.5800000000000006,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 14.5000000000003,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.6500000000000004,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.742500000000001,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 14.750000000000313,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.9000000000000011,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.9050000000000015,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 15.000000000000325,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.1500000000000008,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 15.250000000000338,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.4,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 15.50000000000035,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.649999999999999,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 15.750000000000362,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.8999999999999981,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 16.000000000000373,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.2333333333333333,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 16.25000000000036,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.4833333333333333,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 16.500000000000345,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.733333333333334,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 16.75000000000033,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.9833333333333347,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 17.000000000000316,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.2333333333333338,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 17.250000000000302,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.483333333333333,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.8375000000000007,
+      "spin": 260.0785714285715,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 17.500000000000288,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.733333333333332,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.7250000000000014,
+      "spin": 260.0785714285715,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 17.750000000000274,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.9833333333333312,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.6125000000000022,
+      "spin": 260.0785714285715,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 18.00000000000026,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.2333333333333303,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.5000000000000029,
+      "spin": 260.0785714285715,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 18.250000000000245,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.4833333333333294,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.3875000000000028,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 18.50000000000023,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.7333333333333285,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 18.750000000000217,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.9833333333333276,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 19.000000000000203,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.016666666666666666,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 19.25000000000019,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.26666666666666666,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 19.500000000000174,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.5166666666666666,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 19.75000000000016,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.7666666666666674,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 20.000000000000146,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 1.016666666666668,
+      "seq": 3,
+      "wing": 0,
+      "weather": 0.32,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 20.25000000000013,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.16666666666666666,
+      "seq": 4,
+      "wing": 2.0709876543209877,
+      "weather": 0.42833333333333357,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 20.500000000000117,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.41666666666666663,
+      "seq": 4,
+      "wing": 5.737654320987654,
+      "weather": 0.590833333333334,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 20.750000000000103,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.6666666666666671,
+      "seq": 4,
+      "wing": 10.376543209876546,
+      "weather": 0.7533333333333344,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 21.00000000000009,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.9166666666666679,
+      "seq": 4,
+      "wing": 15.98765432098766,
+      "weather": 0.9158333333333348,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 21.250000000000075,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.1666666666666674,
+      "seq": 4,
+      "wing": 22.57098765432101,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 21.50000000000006,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.4166666666666665,
+      "seq": 4,
+      "wing": 30.126543209876555,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 21.750000000000046,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.6666666666666656,
+      "seq": 4,
+      "wing": 38.65432098765432,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 22.000000000000032,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.9166666666666647,
+      "seq": 4,
+      "wing": 48.154320987654316,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 22.250000000000018,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 2.166666666666664,
+      "seq": 4,
+      "wing": 58.62654320987653,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 22.500000000000004,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 2.416666666666663,
+      "seq": 4,
+      "wing": 70.07098765432096,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 22.74999999999999,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 2.666666666666662,
+      "seq": 4,
+      "wing": 82.48765432098762,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 22.999999999999975,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 2.916666666666661,
+      "seq": 4,
+      "wing": 95.87654320987647,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 23.24999999999996,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 3.1666666666666603,
+      "seq": 4,
+      "wing": 110.23765432098757,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 23.499999999999947,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 3.4166666666666594,
+      "seq": 4,
+      "wing": 125.57098765432087,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 23.749999999999932,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 0.05,
+      "seq": 4,
+      "wing": 139.4333333333332,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 0.05,
+          "bounces": 0,
+          "x": 329.25000000000006,
+          "y": 250.4
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 23.99999999999992,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 0.3,
+      "seq": 4,
+      "wing": 146.9333333333332,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 0.3,
+          "bounces": 0,
+          "x": 275.50000000000034,
+          "y": 287.3999999999997
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 24.249999999999904,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 0.55,
+      "seq": 4,
+      "wing": 154.4333333333332,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 0.55,
+          "bounces": 0,
+          "x": 221.75000000000034,
+          "y": 324.3999999999993
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 24.49999999999989,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 0.8000000000000008,
+      "seq": 4,
+      "wing": 161.9333333333332,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 0.8000000000000008,
+          "bounces": 1,
+          "x": 170,
+          "y": 361.3999999999989
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 24.749999999999876,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 1.0500000000000012,
+      "seq": 4,
+      "wing": 169.4333333333332,
+      "weather": 0.95,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 1.0500000000000012,
+          "bounces": 1,
+          "x": 223.75000000000014,
+          "y": 398.3999999999985
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 24.99999999999986,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 1.3000000000000003,
+      "seq": 4,
+      "wing": 176.9333333333332,
+      "weather": 0.9200000000000002,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 1.3000000000000003,
+          "bounces": 1,
+          "x": 277.5000000000001,
+          "y": 435.3999999999981
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 25.249999999999847,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 1.5499999999999994,
+      "seq": 4,
+      "wing": 184.4333333333332,
+      "weather": 0.8075000000000009,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 1.5499999999999994,
+          "bounces": 2,
+          "x": 331.24999999999983,
+          "y": 412.4000000000003
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 25.499999999999833,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 1.7999999999999985,
+      "seq": 4,
+      "wing": 191.9333333333332,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 1.7999999999999985,
+          "bounces": 2,
+          "x": 384.99999999999955,
+          "y": 375.4000000000007
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 25.74999999999982,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 2.0499999999999976,
+      "seq": 4,
+      "wing": 199.4333333333332,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 2.0499999999999976,
+          "bounces": 2,
+          "x": 438.74999999999926,
+          "y": 338.4000000000011
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 25.999999999999805,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 2.2999999999999967,
+      "seq": 4,
+      "wing": 206.9333333333332,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 2.2999999999999967,
+          "bounces": 2,
+          "x": 492.499999999999,
+          "y": 301.4000000000015
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 26.24999999999979,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 2.549999999999996,
+      "seq": 4,
+      "wing": 214.4333333333332,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 2.549999999999996,
+          "bounces": 3,
+          "x": 474.16666666666686,
+          "y": 264.4000000000019
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 26.499999999999776,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 2.799999999999995,
+      "seq": 4,
+      "wing": 221.9333333333332,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 2.799999999999995,
+          "bounces": 3,
+          "x": 420.41666666666714,
+          "y": 227.40000000000197
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 26.749999999999762,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 3.049999999999994,
+      "seq": 4,
+      "wing": 229.4333333333332,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 3.049999999999994,
+          "bounces": 3,
+          "x": 366.6666666666674,
+          "y": 190.40000000000194
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 26.999999999999748,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 3.299999999999993,
+      "seq": 4,
+      "wing": 236.9333333333332,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 3.299999999999993,
+          "bounces": 3,
+          "x": 312.9166666666677,
+          "y": 153.4000000000019
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 27.249999999999734,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 3.5499999999999923,
+      "seq": 4,
+      "wing": 244.4333333333332,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 3.5499999999999923,
+          "bounces": 3,
+          "x": 259.166666666668,
+          "y": 116.40000000000188
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 27.49999999999972,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 3.7999999999999914,
+      "seq": 4,
+      "wing": 251.9333333333332,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 3.7999999999999914,
+          "bounces": 4,
+          "x": 205.41666666666785,
+          "y": 109.80000000000001
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 27.749999999999705,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 4.049999999999991,
+      "seq": 4,
+      "wing": 259.43333333333317,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 4.049999999999991,
+          "bounces": 5,
+          "x": 187.9166666666667,
+          "y": 146.80000000000004
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 27.99999999999969,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 4.29999999999999,
+      "seq": 4,
+      "wing": 266.93333333333317,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 4.29999999999999,
+          "bounces": 5,
+          "x": 241.66666666666686,
+          "y": 183.80000000000007
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 28.249999999999677,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 4.549999999999989,
+      "seq": 4,
+      "wing": 274.43333333333317,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 4.549999999999989,
+          "bounces": 5,
+          "x": 295.4166666666667,
+          "y": 220.8000000000001
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 28.499999999999662,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 4.799999999999988,
+      "seq": 4,
+      "wing": 281.93333333333317,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 4.799999999999988,
+          "bounces": 5,
+          "x": 349.1666666666664,
+          "y": 257.8000000000001
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 28.74999999999965,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 5.049999999999987,
+      "seq": 4,
+      "wing": 289.43333333333317,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 5.049999999999987,
+          "bounces": 5,
+          "x": 402.9166666666661,
+          "y": 294.7999999999997
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 28.999999999999634,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 5.2999999999999865,
+      "seq": 4,
+      "wing": 296.93333333333317,
+      "weather": 0.8,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 5.2999999999999865,
+          "bounces": 5,
+          "x": 402.9166666666661,
+          "y": 294.7999999999997
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 29.24999999999962,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wing-storm",
+      "qt": 0.03333333333333333,
+      "seq": 4,
+      "wing": 305.8105833333332,
+      "weather": 0.7850000000000001,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 29.499999999999606,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wing-storm",
+      "qt": 0.2833333333333333,
+      "seq": 4,
+      "wing": 311.45932834039104,
+      "weather": 0.6725000000000009,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 29.74999999999959,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wing-storm",
+      "qt": 0.5333333333333333,
+      "seq": 4,
+      "wing": 311.9527700493847,
+      "weather": 0.5600000000000016,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 29.999999999999577,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wing-storm",
+      "qt": 0.7833333333333341,
+      "seq": 4,
+      "wing": 311.9958742645458,
+      "weather": 0.44750000000000195,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 30.249999999999563,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wing-storm",
+      "qt": 1.0333333333333345,
+      "seq": 4,
+      "wing": 311.9996395996012,
+      "weather": 0.33500000000000185,
+      "spin": 260.0785714285715,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 30.49999999999955,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.08333333333333333,
+      "seq": 5,
+      "wing": 311.9999685175046,
+      "weather": 0.32,
+      "spin": 260.8952380952382,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 30.749999999999535,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.3333333333333333,
+      "seq": 5,
+      "wing": 311.99999724987117,
+      "weather": 0.32,
+      "spin": 266.9674603174604,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 30.99999999999952,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.5833333333333335,
+      "seq": 5,
+      "wing": 311.99999975976465,
+      "weather": 0.32,
+      "spin": 276.6341269841271,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 31.249999999999506,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.8333333333333343,
+      "seq": 5,
+      "wing": 311.9999999790145,
+      "weather": 0.32,
+      "spin": 289.8722222222223,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 31.499999999999492,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.03333333333333333,
+      "seq": 5,
+      "wing": 311.9999999981668,
+      "weather": 0.32,
+      "spin": 306.81984126984145,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0.03666666666666668,
+        0.03666666666666668
+      ]
+    },
+    {
+      "t": 31.749999999999478,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.2833333333333333,
+      "seq": 5,
+      "wing": 311.9999999998398,
+      "weather": 0.32,
+      "spin": 328.90714285714307,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.003333333333333348,
+        0.003333333333333348
+      ]
+    },
+    {
+      "t": 31.999999999999464,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.5333333333333333,
+      "seq": 5,
+      "wing": 311.999999999986,
+      "weather": 0.32,
+      "spin": 351.40714285714307,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.053333333333333344,
+        0.053333333333333344
+      ]
+    },
+    {
+      "t": 32.24999999999945,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.7833333333333341,
+      "seq": 5,
+      "wing": 311.99999999999875,
+      "weather": 0.32,
+      "spin": 373.90714285714307,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.020000000000000014,
+        0.020000000000000014
+      ]
+    },
+    {
+      "t": 32.49999999999944,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.0333333333333345,
+      "seq": 5,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 396.40714285714307,
+      "rounds": 10,
+      "tornadoes": [],
+      "muzzles": [
+        0.053333333333333344,
+        0.053333333333333344
+      ]
+    },
+    {
+      "t": 32.749999999999424,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.2833333333333337,
+      "seq": 5,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 418.90714285714307,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.020000000000000014,
+        0.020000000000000014
+      ]
+    },
+    {
+      "t": 32.99999999999941,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.5333333333333328,
+      "seq": 5,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 441.40714285714307,
+      "rounds": 10,
+      "tornadoes": [],
+      "muzzles": [
+        0.053333333333333344,
+        0.053333333333333344
+      ]
+    },
+    {
+      "t": 33.249999999999396,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.7833333333333319,
+      "seq": 5,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 463.90714285714307,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.020000000000000014,
+        0.020000000000000014
+      ]
+    },
+    {
+      "t": 33.49999999999938,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 2.033333333333331,
+      "seq": 5,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 486.40714285714307,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 33.74999999999937,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.16666666666666666,
+      "seq": 5,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 506.6154761904764,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 33.99999999999935,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.41666666666666663,
+      "seq": 5,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 517.8654761904764,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 34.24999999999934,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.6666666666666671,
+      "seq": 5,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 34.499999999999325,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.9166666666666679,
+      "seq": 5,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 34.74999999999931,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.16666666666666666,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 34.9999999999993,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.41666666666666663,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 35.24999999999928,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.6666666666666671,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 35.49999999999927,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.9166666666666679,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 35.749999999999254,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 1.1666666666666674,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 35.99999999999924,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.016666666666666666,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 36.249999999999226,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.26666666666666666,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 36.49999999999921,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.5166666666666666,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 36.7499999999992,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.7666666666666674,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 36.99999999999918,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 1.016666666666668,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 37.24999999999917,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.21666666666666665,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 37.499999999999154,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.4666666666666666,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 37.74999999999914,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.7166666666666672,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 37.999999999999126,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.966666666666668,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 38.24999999999911,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.16666666666666666,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 38.4999999999991,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.41666666666666663,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 38.74999999999908,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.6666666666666671,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 38.99999999999907,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.9166666666666679,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 39.249999999999055,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.1666666666666674,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 39.49999999999904,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.4166666666666665,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 39.74999999999903,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.6666666666666656,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 39.99999999999901,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.9166666666666647,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 40.249999999999,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 2.166666666666664,
+      "seq": 6,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 40.499999999998984,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 40.74999999999897,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.24999999999999997,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.4825000000000004,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 40.999999999998956,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.49999999999999994,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.6450000000000008,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 41.24999999999894,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.7500000000000007,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.8075000000000012,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 41.49999999999893,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.0000000000000013,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 41.74999999999891,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.2500000000000004,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 41.9999999999989,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.4999999999999996,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 42.249999999998884,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.7499999999999987,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 42.49999999999887,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.08333333333333333,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 42.749999999998856,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.3333333333333333,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 42.99999999999884,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.5833333333333335,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 43.24999999999883,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.8333333333333343,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 43.49999999999881,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.0833333333333344,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 43.7499999999988,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.3333333333333335,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.9050000000000002,
+      "spin": 520.1571428571431,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 43.999999999998785,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.5833333333333326,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.792500000000001,
+      "spin": 520.1571428571431,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 44.24999999999877,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.8333333333333317,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.6800000000000017,
+      "spin": 520.1571428571431,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 44.49999999999876,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.083333333333331,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.5675000000000024,
+      "spin": 520.1571428571431,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 44.74999999999874,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.33333333333333,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.45500000000000285,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 44.99999999999873,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.583333333333329,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.34250000000000275,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 45.249999999998714,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.833333333333328,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 45.4999999999987,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 3.0833333333333273,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 45.749999999998685,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.11666666666666665,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 45.99999999999867,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.36666666666666664,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 46.24999999999866,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.6166666666666669,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 46.49999999999864,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.8666666666666677,
+      "seq": 7,
+      "wing": 311.99999999999983,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 46.74999999999863,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.016666666666666666,
+      "seq": 8,
+      "wing": 312.3376543209875,
+      "weather": 0.3308333333333333,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 46.999999999998614,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.26666666666666666,
+      "seq": 8,
+      "wing": 315.42098765432087,
+      "weather": 0.49333333333333373,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 47.2499999999986,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.5166666666666666,
+      "seq": 8,
+      "wing": 319.4765432098764,
+      "weather": 0.6558333333333342,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 47.499999999998586,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.7666666666666674,
+      "seq": 8,
+      "wing": 324.5043209876542,
+      "weather": 0.8183333333333346,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 47.74999999999857,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.016666666666668,
+      "seq": 8,
+      "wing": 330.5043209876542,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 47.99999999999856,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.266666666666667,
+      "seq": 8,
+      "wing": 337.4765432098764,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 48.24999999999854,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.5166666666666662,
+      "seq": 8,
+      "wing": 345.42098765432087,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 48.49999999999853,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.7666666666666653,
+      "seq": 8,
+      "wing": 354.3376543209875,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 48.749999999998515,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 2.0166666666666644,
+      "seq": 8,
+      "wing": 364.2265432098764,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 48.9999999999985,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 2.2666666666666635,
+      "seq": 8,
+      "wing": 375.0876543209875,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 49.24999999999849,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 2.5166666666666626,
+      "seq": 8,
+      "wing": 386.9209876543208,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 49.49999999999847,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 2.7666666666666617,
+      "seq": 8,
+      "wing": 399.72654320987635,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 49.74999999999846,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 3.016666666666661,
+      "seq": 8,
+      "wing": 413.50432098765407,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 49.999999999998444,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 3.26666666666666,
+      "seq": 8,
+      "wing": 428.25432098765407,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 50.24999999999843,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 3.516666666666659,
+      "seq": 8,
+      "wing": 443.97654320987624,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 50.499999999998415,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 0.15,
+      "seq": 8,
+      "wing": 454.43333333333305,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 0.15,
+          "bounces": 0,
+          "x": 307.75000000000017,
+          "y": 265.19999999999993
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 50.7499999999984,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 0.39999999999999997,
+      "seq": 8,
+      "wing": 461.93333333333305,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 0.39999999999999997,
+          "bounces": 0,
+          "x": 254.00000000000043,
+          "y": 302.19999999999953
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 50.99999999999839,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 0.6500000000000004,
+      "seq": 8,
+      "wing": 469.43333333333305,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 0.6500000000000004,
+          "bounces": 0,
+          "x": 200.25000000000028,
+          "y": 339.19999999999914
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 51.24999999999837,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 0.9000000000000011,
+      "seq": 8,
+      "wing": 476.93333333333305,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 0.9000000000000011,
+          "bounces": 1,
+          "x": 191.50000000000006,
+          "y": 376.19999999999874
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 51.49999999999836,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 1.1500000000000008,
+      "seq": 8,
+      "wing": 484.43333333333305,
+      "weather": 0.95,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 1.1500000000000008,
+          "bounces": 1,
+          "x": 245.2500000000002,
+          "y": 413.19999999999834
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 51.749999999998344,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 1.4,
+      "seq": 8,
+      "wing": 491.93333333333305,
+      "weather": 0.8750000000000004,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 1.4,
+          "bounces": 2,
+          "x": 299,
+          "y": 434.6000000000001
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 51.99999999999833,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 1.649999999999999,
+      "seq": 8,
+      "wing": 499.43333333333305,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 1.649999999999999,
+          "bounces": 2,
+          "x": 352.7499999999997,
+          "y": 397.6000000000005
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 52.249999999998316,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 1.8999999999999981,
+      "seq": 8,
+      "wing": 506.93333333333305,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 1.8999999999999981,
+          "bounces": 2,
+          "x": 406.49999999999943,
+          "y": 360.6000000000009
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 52.4999999999983,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 2.1499999999999972,
+      "seq": 8,
+      "wing": 514.433333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 2.1499999999999972,
+          "bounces": 2,
+          "x": 460.24999999999915,
+          "y": 323.6000000000013
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 52.74999999999829,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 2.3999999999999964,
+      "seq": 8,
+      "wing": 521.933333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 2.3999999999999964,
+          "bounces": 3,
+          "x": 506.4166666666667,
+          "y": 286.60000000000167
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 52.99999999999827,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 2.6499999999999955,
+      "seq": 8,
+      "wing": 529.433333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 2.6499999999999955,
+          "bounces": 3,
+          "x": 452.66666666666697,
+          "y": 249.60000000000198
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 53.24999999999826,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 2.8999999999999946,
+      "seq": 8,
+      "wing": 536.933333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 2.8999999999999946,
+          "bounces": 3,
+          "x": 398.91666666666725,
+          "y": 212.60000000000196
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 53.499999999998245,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 3.1499999999999937,
+      "seq": 8,
+      "wing": 544.433333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 3.1499999999999937,
+          "bounces": 3,
+          "x": 345.16666666666754,
+          "y": 175.60000000000193
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 53.74999999999823,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 3.399999999999993,
+      "seq": 8,
+      "wing": 551.933333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 3.399999999999993,
+          "bounces": 3,
+          "x": 291.4166666666678,
+          "y": 138.6000000000019
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 53.99999999999822,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 3.649999999999992,
+      "seq": 8,
+      "wing": 559.433333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 3.649999999999992,
+          "bounces": 3,
+          "x": 237.66666666666794,
+          "y": 101.60000000000187
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 54.2499999999982,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 3.899999999999991,
+      "seq": 8,
+      "wing": 566.933333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 3.899999999999991,
+          "bounces": 4,
+          "x": 183.9166666666678,
+          "y": 124.60000000000002
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 54.49999999999819,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 4.149999999999991,
+      "seq": 8,
+      "wing": 574.433333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 4.149999999999991,
+          "bounces": 5,
+          "x": 209.41666666666677,
+          "y": 161.60000000000005
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 54.749999999998174,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 4.39999999999999,
+      "seq": 8,
+      "wing": 581.933333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 4.39999999999999,
+          "bounces": 5,
+          "x": 263.16666666666686,
+          "y": 198.60000000000008
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 54.99999999999816,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 4.649999999999989,
+      "seq": 8,
+      "wing": 589.433333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 4.649999999999989,
+          "bounces": 5,
+          "x": 316.9166666666666,
+          "y": 235.6000000000001
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 55.249999999998145,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 4.899999999999988,
+      "seq": 8,
+      "wing": 596.933333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 4.899999999999988,
+          "bounces": 5,
+          "x": 370.6666666666663,
+          "y": 272.59999999999997
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 55.49999999999813,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 5.149999999999987,
+      "seq": 8,
+      "wing": 604.433333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 5.149999999999987,
+          "bounces": 5,
+          "x": 402.9166666666661,
+          "y": 294.7999999999997
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 55.74999999999812,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wing-storm",
+      "qt": 5.399999999999986,
+      "seq": 8,
+      "wing": 611.933333333333,
+      "weather": 0.8,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [
+        {
+          "t": 5.399999999999986,
+          "bounces": 5,
+          "x": 402.9166666666661,
+          "y": 294.7999999999997
+        }
+      ],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 55.9999999999981,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wing-storm",
+      "qt": 0.13333333333333333,
+      "seq": 8,
+      "wing": 621.6656645021653,
+      "weather": 0.7400000000000004,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 56.24999999999809,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wing-storm",
+      "qt": 0.3833333333333333,
+      "seq": 8,
+      "wing": 623.7960859454664,
+      "weather": 0.6275000000000012,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 56.499999999998074,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wing-storm",
+      "qt": 0.6333333333333336,
+      "seq": 8,
+      "wing": 623.9821872470025,
+      "weather": 0.5150000000000019,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 56.74999999999806,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wing-storm",
+      "qt": 0.8833333333333344,
+      "seq": 8,
+      "wing": 623.9984439808719,
+      "weather": 0.4025000000000019,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 56.999999999998046,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wing-storm",
+      "qt": 1.1333333333333342,
+      "seq": 8,
+      "wing": 623.9998640751642,
+      "weather": 0.32,
+      "spin": 520.1571428571431,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 57.24999999999803,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.18333333333333332,
+      "seq": 9,
+      "wing": 623.999988126392,
+      "weather": 0.32,
+      "spin": 522.9603174603178,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 57.49999999999802,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.4333333333333333,
+      "seq": 9,
+      "wing": 623.9999989627902,
+      "weather": 0.32,
+      "spin": 530.484126984127,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 57.749999999998,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.6833333333333338,
+      "seq": 9,
+      "wing": 623.9999999093953,
+      "weather": 0.32,
+      "spin": 541.5793650793654,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 57.99999999999799,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "rotary",
+      "qt": 0.9333333333333346,
+      "seq": 9,
+      "wing": 623.9999999920853,
+      "weather": 0.32,
+      "spin": 556.2460317460318,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 58.249999999997975,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.13333333333333333,
+      "seq": 9,
+      "wing": 623.9999999993087,
+      "weather": 0.32,
+      "spin": 575.4857142857143,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0.020000000000000014,
+        0.020000000000000014
+      ]
+    },
+    {
+      "t": 58.49999999999796,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.3833333333333333,
+      "seq": 9,
+      "wing": 623.9999999999396,
+      "weather": 0.32,
+      "spin": 597.9857142857143,
+      "rounds": 10,
+      "tornadoes": [],
+      "muzzles": [
+        0.053333333333333344,
+        0.053333333333333344
+      ]
+    },
+    {
+      "t": 58.74999999999795,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.6333333333333336,
+      "seq": 9,
+      "wing": 623.9999999999948,
+      "weather": 0.32,
+      "spin": 620.4857142857143,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.020000000000000014,
+        0.020000000000000014
+      ]
+    },
+    {
+      "t": 58.99999999999793,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 0.8833333333333344,
+      "seq": 9,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 642.9857142857143,
+      "rounds": 10,
+      "tornadoes": [],
+      "muzzles": [
+        0.053333333333333344,
+        0.053333333333333344
+      ]
+    },
+    {
+      "t": 59.24999999999792,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.1333333333333342,
+      "seq": 9,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 665.4857142857143,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.020000000000000014,
+        0.020000000000000014
+      ]
+    },
+    {
+      "t": 59.499999999997904,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.3833333333333333,
+      "seq": 9,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 687.9857142857143,
+      "rounds": 10,
+      "tornadoes": [],
+      "muzzles": [
+        0.053333333333333344,
+        0.053333333333333344
+      ]
+    },
+    {
+      "t": 59.74999999999789,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.6333333333333324,
+      "seq": 9,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 710.4857142857143,
+      "rounds": 8,
+      "tornadoes": [],
+      "muzzles": [
+        0.020000000000000014,
+        0.020000000000000014
+      ]
+    },
+    {
+      "t": 59.999999999997875,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "rotary",
+      "qt": 1.8833333333333315,
+      "seq": 9,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 732.9857142857143,
+      "rounds": 6,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 60.24999999999786,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.016666666666666666,
+      "seq": 9,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 755.4440476190476,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 60.49999999999785,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.26666666666666666,
+      "seq": 9,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 772.3190476190476,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 60.74999999999783,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.5166666666666666,
+      "seq": 9,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 779.8190476190476,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 60.99999999999782,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "rotary",
+      "qt": 0.7666666666666674,
+      "seq": 9,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 61.249999999997804,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.016666666666666666,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 61.49999999999779,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.26666666666666666,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 61.749999999997776,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.5166666666666666,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 61.99999999999776,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 0.7666666666666674,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 62.24999999999775,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 1.016666666666668,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 62.49999999999773,
+      "hp": 1653,
+      "phase": "depart",
+      "attack": "pass",
+      "qt": 1.266666666666667,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 62.74999999999772,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.11666666666666665,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 62.999999999997705,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.36666666666666664,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 63.24999999999769,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.6166666666666669,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 63.49999999999768,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "pass",
+      "qt": 0.8666666666666677,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 63.74999999999766,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.06666666666666667,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 63.99999999999765,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.31666666666666665,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 64.24999999999764,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.5666666666666668,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 64.49999999999763,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "pass",
+      "qt": 0.8166666666666675,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 64.74999999999761,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.016666666666666666,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 64.9999999999976,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.26666666666666666,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 65.24999999999758,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.5166666666666666,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 65.49999999999757,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 0.7666666666666674,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 65.74999999999756,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.016666666666668,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 65.99999999999754,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.266666666666667,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 66.24999999999753,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.5166666666666662,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 66.49999999999751,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 1.7666666666666653,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 66.7499999999975,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 2.0166666666666644,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 66.99999999999748,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "pass",
+      "qt": 2.2666666666666635,
+      "seq": 10,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 67.24999999999747,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.09999999999999999,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.3850000000000001,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 67.49999999999746,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.35,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.5475000000000005,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 67.74999999999744,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.6000000000000002,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.710000000000001,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 67.99999999999743,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 0.850000000000001,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.8725000000000014,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 68.24999999999741,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.100000000000001,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 68.4999999999974,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.35,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 68.74999999999739,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.5999999999999992,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 68.99999999999737,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wind-cyclone",
+      "qt": 1.8499999999999983,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 69.24999999999736,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.18333333333333332,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 69.49999999999734,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.4333333333333333,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 69.74999999999733,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.6833333333333338,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 69.99999999999731,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 0.9333333333333346,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 70.2499999999973,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.183333333333334,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 70.49999999999729,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.4333333333333331,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.8600000000000005,
+      "spin": 780.2357142857143,
+      "rounds": 4,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 70.74999999999727,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.6833333333333322,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.7475000000000013,
+      "spin": 780.2357142857143,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 70.99999999999726,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 1.9333333333333313,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.635000000000002,
+      "spin": 780.2357142857143,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 71.24999999999724,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.1833333333333305,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.5225000000000027,
+      "spin": 780.2357142857143,
+      "rounds": 2,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 71.49999999999723,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.4333333333333296,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.4100000000000028,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 71.74999999999721,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.6833333333333287,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 71.9999999999972,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 2.933333333333328,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 72.24999999999719,
+      "hp": 1653,
+      "phase": "attack",
+      "attack": "wind-cyclone",
+      "qt": 3.183333333333327,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 72.49999999999717,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.21666666666666665,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 72.74999999999716,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.4666666666666666,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 72.99999999999714,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.7166666666666672,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 73.24999999999713,
+      "hp": 1653,
+      "phase": "recover",
+      "attack": "wind-cyclone",
+      "qt": 0.966666666666668,
+      "seq": 11,
+      "wing": 623.9999999999997,
+      "weather": 0.32,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 73.49999999999712,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.11666666666666665,
+      "seq": 12,
+      "wing": 625.454320987654,
+      "weather": 0.3958333333333335,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 73.7499999999971,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.36666666666666664,
+      "seq": 12,
+      "wing": 628.9265432098763,
+      "weather": 0.5583333333333339,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 73.99999999999709,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.6166666666666669,
+      "seq": 12,
+      "wing": 633.3709876543206,
+      "weather": 0.7208333333333343,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 74.24999999999707,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 0.8666666666666677,
+      "seq": 12,
+      "wing": 638.7876543209874,
+      "weather": 0.8833333333333347,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 74.49999999999706,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.1166666666666676,
+      "seq": 12,
+      "wing": 645.1765432098763,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 74.74999999999704,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.3666666666666667,
+      "seq": 12,
+      "wing": 652.5376543209873,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    },
+    {
+      "t": 74.99999999999703,
+      "hp": 1653,
+      "phase": "warn",
+      "attack": "wing-storm",
+      "qt": 1.6166666666666658,
+      "seq": 12,
+      "wing": 660.8709876543206,
+      "weather": 0.95,
+      "spin": 780.2357142857143,
+      "rounds": 0,
+      "tornadoes": [],
+      "muzzles": [
+        0,
+        0
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event": "assembly",
+      "t": 0,
+      "id": "razor-1793855518532",
+      "attack": null,
+      "seq": 0,
+      "hp": 1653,
+      "parts": [
+        {
+          "id": "gun0",
+          "hp": 496
+        },
+        {
+          "id": "gun1",
+          "hp": 496
+        }
+      ]
+    },
+    {
+      "event": "charge",
+      "t": 3.766666666666658,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "duration": 1.05,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 4.816666666666655,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1
+    },
+    {
+      "event": "round",
+      "t": 4.816666666666655,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 4.816666666666655,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 4.899999999999988,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 4.899999999999988,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 4.966666666666654,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 4.966666666666654,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.033333333333321,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.033333333333321,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.116666666666654,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.116666666666654,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.18333333333332,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.18333333333332,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.249999999999987,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.249999999999987,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.33333333333332,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.33333333333332,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.399999999999986,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.399999999999986,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.466666666666653,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.466666666666653,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.549999999999986,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.549999999999986,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.616666666666652,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.616666666666652,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.6833333333333185,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.6833333333333185,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.7666666666666515,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.7666666666666515,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.833333333333318,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.833333333333318,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.899999999999984,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.899999999999984,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 5.966666666666651,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 5.966666666666651,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 6.049999999999984,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 6.049999999999984,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 6.11666666666665,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 6.11666666666665,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 6.183333333333317,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 6.183333333333317,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 6.26666666666665,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 6.26666666666665,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 6.333333333333316,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 6.333333333333316,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 6.399999999999983,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 6.399999999999983,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 6.483333333333316,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 6.483333333333316,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 6.549999999999982,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 6.549999999999982,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 1,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "charge",
+      "t": 7.9333333333333105,
+      "id": "razor-1793855518532",
+      "attack": "pass",
+      "seq": 2,
+      "duration": 1.05,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 10.383333333333429,
+      "id": "razor-1793855518532",
+      "attack": "pass",
+      "seq": 2
+    },
+    {
+      "event": "charge",
+      "t": 13.850000000000268,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 3,
+      "duration": 1.9,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 15.76666666666703,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 3
+    },
+    {
+      "event": "round",
+      "t": 15.76666666666703,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 3,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 15.76666666666703,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 3,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 16.36666666666702,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 3,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 16.36666666666702,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 3,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 16.966666666666985,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 3,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 16.966666666666985,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 3,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "charge",
+      "t": 20.083333333333474,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 4,
+      "duration": 3.6,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 23.699999999999935,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 4
+    },
+    {
+      "event": "tornado-launch",
+      "t": 23.699999999999935,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 4,
+      "x": 340,
+      "y": 243
+    },
+    {
+      "event": "tornado-contact",
+      "t": 25.133333333333187,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 4,
+      "seat": 1
+    },
+    {
+      "event": "tornado-expired",
+      "t": 29.116666666666294,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 4,
+      "bounces": 5
+    },
+    {
+      "event": "charge",
+      "t": 30.41666666666622,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "duration": 1.05,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 31.46666666666616,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5
+    },
+    {
+      "event": "round",
+      "t": 31.46666666666616,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 31.46666666666616,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 31.54999999999949,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 31.54999999999949,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 31.616666666666152,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 31.616666666666152,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 31.683333333332815,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 31.683333333332815,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 31.766666666666143,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 31.766666666666143,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 31.833333333332806,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 31.833333333332806,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 31.89999999999947,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 31.89999999999947,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 31.983333333332798,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 31.983333333332798,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.049999999999464,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.049999999999464,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.11666666666613,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.11666666666613,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.199999999999456,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.199999999999456,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.26666666666612,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.26666666666612,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.33333333333278,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.33333333333278,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.41666666666611,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.41666666666611,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.48333333333277,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.48333333333277,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.549999999999436,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.549999999999436,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.6166666666661,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.6166666666661,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.69999999999943,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.69999999999943,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.76666666666609,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.76666666666609,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.83333333333275,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.83333333333275,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.91666666666608,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.91666666666608,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 32.983333333332745,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 32.983333333332745,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 33.04999999999941,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 33.04999999999941,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 33.133333333332736,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 33.133333333332736,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 33.1999999999994,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 33.1999999999994,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 5,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "charge",
+      "t": 34.583333333332654,
+      "id": "razor-1793855518532",
+      "attack": "pass",
+      "seq": 6,
+      "duration": 1.05,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 37.033333333332514,
+      "id": "razor-1793855518532",
+      "attack": "pass",
+      "seq": 6
+    },
+    {
+      "event": "charge",
+      "t": 40.499999999998984,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 7,
+      "duration": 1.9,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 42.41666666666554,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 7
+    },
+    {
+      "event": "round",
+      "t": 42.41666666666554,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 7,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 42.41666666666554,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 7,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 43.01666666666551,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 7,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 43.01666666666551,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 7,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 43.61666666666547,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 7,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 43.61666666666547,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 7,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "charge",
+      "t": 46.73333333333196,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 8,
+      "duration": 3.6,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 50.349999999998424,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 8
+    },
+    {
+      "event": "tornado-launch",
+      "t": 50.349999999998424,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 8,
+      "x": 340,
+      "y": 243
+    },
+    {
+      "event": "tornado-contact",
+      "t": 51.783333333331676,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 8,
+      "seat": 1
+    },
+    {
+      "event": "tornado-expired",
+      "t": 55.76666666666478,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 8,
+      "bounces": 5
+    },
+    {
+      "event": "charge",
+      "t": 57.06666666666471,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "duration": 1.05,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 58.11666666666465,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9
+    },
+    {
+      "event": "round",
+      "t": 58.11666666666465,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.11666666666465,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.19999999999798,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.19999999999798,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.26666666666464,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.26666666666464,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.3333333333313,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.3333333333313,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.41666666666463,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.41666666666463,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.483333333331295,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.483333333331295,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.54999999999796,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.54999999999796,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.63333333333129,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.63333333333129,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.69999999999795,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.69999999999795,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.76666666666461,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.76666666666461,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.84999999999794,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.84999999999794,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.916666666664604,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.916666666664604,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 58.98333333333127,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 58.98333333333127,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.066666666664595,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.066666666664595,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.13333333333126,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.13333333333126,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.19999999999792,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.19999999999792,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.266666666664584,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.266666666664584,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.34999999999791,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.34999999999791,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.416666666664575,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.416666666664575,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.48333333333124,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.48333333333124,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.56666666666457,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.56666666666457,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.63333333333123,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.63333333333123,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.69999999999789,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.69999999999789,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.78333333333122,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.78333333333122,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 59.849999999997884,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun0",
+      "kind": "slug",
+      "x": 306.8036128806452,
+      "y": 201.2314112161292,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 59.849999999997884,
+      "id": "razor-1793855518532",
+      "attack": "rotary",
+      "seq": 9,
+      "part": "gun1",
+      "kind": "slug",
+      "x": 373.1963871193549,
+      "y": 201.23141121612923,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "charge",
+      "t": 61.23333333333114,
+      "id": "razor-1793855518532",
+      "attack": "pass",
+      "seq": 10,
+      "duration": 1.05,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 63.683333333331,
+      "id": "razor-1793855518532",
+      "attack": "pass",
+      "seq": 10
+    },
+    {
+      "event": "charge",
+      "t": 67.14999999999748,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 11,
+      "duration": 1.9,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    },
+    {
+      "event": "release",
+      "t": 69.06666666666403,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 11
+    },
+    {
+      "event": "round",
+      "t": 69.06666666666403,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 11,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 69.06666666666403,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 11,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 69.666666666664,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 11,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 69.666666666664,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 11,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "round",
+      "t": 70.26666666666397,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 11,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 7.6576320931251205
+    },
+    {
+      "event": "round",
+      "t": 70.26666666666397,
+      "id": "razor-1793855518532",
+      "attack": "wind-cyclone",
+      "seq": 11,
+      "part": null,
+      "kind": "cyclone",
+      "x": 340,
+      "y": 183,
+      "angle": 1.7671458676442586
+    },
+    {
+      "event": "charge",
+      "t": 73.38333333333046,
+      "id": "razor-1793855518532",
+      "attack": "wing-storm",
+      "seq": 12,
+      "duration": 3.6,
+      "target": {
+        "x": 340,
+        "y": 409.6
+      }
+    }
+  ],
+  "errors": [],
+  "gameSHA256": "4424749aa097782c033ecebad5246aff4f91f9f0c877e1720c1a416cb68e0e86"
+}

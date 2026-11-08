@@ -1,0 +1,12 @@
+{
+  "checks": 31,
+  "compatibility": 6,
+  "frames": 3127,
+  "masks": 64,
+  "preview": 14,
+  "fps": 56.75162147489929,
+  "seconds": 140.885,
+  "url": "http://127.0.0.1:65122/?thunderhead=reactor-final-1105#thunderhead",
+  "runtimeSha256": "9c744893e642ab7bcb8a93baea81111289e6dd4ac1ffb25a27fd137e1cd431c1",
+  "movie": "_shots\\boss_comparison_1102\\thunderhead-reactor-final-1105\\stage6-boss\\stage6-furious.mp4"
+}

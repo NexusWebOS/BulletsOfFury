@@ -1,0 +1,39 @@
+{
+  "sources": {
+    "stage6_blue_master": "assets/game/levels/stage_06/stage/stage6_blue_master.png",
+    "bg_stage05_loop_0923": "assets/game/levels/stage_05/stage/space_loops_0923/stage5_loop.png",
+    "ls112_stage_5": "assets/game/shared/scenery/layered_1102/stage-5.png",
+    "ls112_stage_6": "assets/game/shared/scenery/layered_1102/stage-6.png",
+    "ls112_bed_space": "assets/game/shared/scenery/layered_1102/bed_space.png"
+  },
+  "cfg": {
+    "master": "ls112_stage_5",
+    "plateW": 680,
+    "liquid": "ls112:space",
+    "fill": "#05060a",
+    "tile": 1,
+    "wide": true,
+    "loopMaster": true,
+    "continuousBoss": true,
+    "h": 2720,
+    "scrollLen": 2208,
+    "fps": 8,
+    "props": [],
+    "par": null,
+    "skipRows": null,
+    "staticMaster": false,
+    "lostAirbase1007": false,
+    "layered112": true
+  },
+  "base": {
+    "master": "bg_stage05_loop_0923",
+    "plateW": 680,
+    "liquid": null,
+    "fill": "#05060a",
+    "tile": 1,
+    "wide": true,
+    "loopMaster": true,
+    "continuousBoss": true
+  },
+  "ss": 2
+}

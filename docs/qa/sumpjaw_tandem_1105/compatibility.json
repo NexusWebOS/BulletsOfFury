@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "name": "Hard Stage 7 boss keeps its 12,466 HP and original owner",
+      "passed": true,
+      "data": {
+        "hp": 12466,
+        "tandem": false,
+        "warden": true
+      }
+    },
+    {
+      "name": "Hard Stage 7 retains its original Dredger miniboss",
+      "passed": true,
+      "data": {
+        "kind": "dualscoopdredger",
+        "tandem": false,
+        "old": true
+      }
+    },
+    {
+      "name": "Furious Stage 6 still selects Razorwake",
+      "passed": true,
+      "data": {
+        "razor": true,
+        "sump": false
+      }
+    },
+    {
+      "name": "Furious Stage 6 still selects the Thunderhead reactor",
+      "passed": true,
+      "data": {
+        "reactor": true,
+        "sump": false
+      }
+    },
+    {
+      "name": "NG+ keeps the native 25 percent health increase and equal pool shares",
+      "passed": true,
+      "data": {
+        "hp": 17500,
+        "actors": [
+          {
+            "hp": 8750,
+            "pools": 8750
+          },
+          {
+            "hp": 8750,
+            "pools": 8750
+          }
+        ]
+      }
+    },
+    {
+      "name": "No compatibility browser errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

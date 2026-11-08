@@ -1,0 +1,60 @@
+from pathlib import Path
+import sys,json,hashlib
+from playwright.sync_api import sync_playwright
+W=Path(__file__).resolve().parent;R=Path(r'C:/Users/Mike/Desktop/Github Coding/BulletsOfFury');O=W/'probe';O.mkdir(exist_ok=True)
+sys.path.insert(0,str(R/'_BUILD_SOURCE'));from shoot import serve,TRAP_RAF
+errors=[];checks=[];rows=[]
+def ck(name,ok,data=None):
+ checks.append(dict(name=name,passed=bool(ok),data=data));print('PASS'if ok else'FAIL',name,str(data)[:450]if data is not None else'',flush=True)
+port,stop=serve(str(R))
+try:
+ with sync_playwright()as pw:
+  browser=pw.chromium.launch(channel='msedge',headless=True,args=['--autoplay-policy=no-user-gesture-required']);p=browser.new_page(viewport={'width':1280,'height':800});p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text[:600])if m.type=='error'or'draw error'in m.text else None)
+  p.goto(f'http://127.0.0.1:{port}/index.html?quality=high',wait_until='load',timeout=180000);p.wait_for_function('window.__bofFrames>5');p.mouse.click(4,4);p.evaluate(TRAP_RAF);p.add_script_tag(path=str(R/'_BUILD_SOURCE/enemy_behaviour_lab_1011.js'))
+  p.evaluate('''()=>{allyUpdate=()=>{};window.setupSump=()=>{EA11.setup(7,'furious');ally=null;stagePlan=[];waveIdx=0;CP12.next=VP12.next=CP22.nextWave=CP22.nextFlyby=99999;_adaptiveSpawnT=99999;debugUnlocked=true;DBGT.god=true;player.invuln=0;run.bombs=40;spawnSubBoss('dualscoopdredger');window.B=subBoss;window.G=B._sj98;return{hp:B.hp,actors:G.actors.map(a=>a.maxhp)};};}''')
+  before=p.evaluate('setupSump');p.wait_for_function('()=>{stageLoadTick();return sj98Ready()&&stageLoadReady(7)}',timeout=180000)
+  def step(n=1):p.evaluate('(n)=>{for(let i=0;i<n;i++)updatePlay(1/60);ctx.setTransform(SS,0,0,SS,0,0);__bofFrames++;drawWorld(1/60);}',n)
+  def snap(n):p.screenshot(path=str(O/(n+'.png')))
+  ck('Two independent native full-health budgets remain',before['actors'][0]==before['actors'][1]and before['hp']==sum(before['actors']),before)
+  saved=set()
+  for i in range(240):
+   step(15)
+   q=p.evaluate('''()=>({t:G.clock,hp:B.hp,actors:G.actors.map(a=>({x:a.x,y:a.y,gy:a.gy,h:a.height,phase:a.phase,attack:a.attack,heading:a.heading,seq:a.seq,tail:ss116Point(a,180)})),rounds:eBullets.filter(q=>q._ss116&&!q.dead).length,fx:G.fx.length,errors:window.__bofErr||null})''');rows.append(q)
+   for a in q['actors']:
+    k=a['phase']
+    if k not in saved and(k!='leap'or a['h']>60):saved.add(k);snap('native-'+k)
+   if errors:raise RuntimeError(errors)
+  events=p.evaluate('SS116.events')
+  ck('Both snakes cycle through leap, giant orb, acid volley and coil',all(all(any(e['event']=='release'and e['kind']==k and e['actor']==a for e in events)for k in['leap','orb','acid','coil'])for a in[0,1]))
+  ck('Every leap has a committed landing warning of at least .82seconds',any(e['event']=='landing'for e in events)and all(e['warning']>=.82 for e in events if e['event']=='landing'))
+  ck('Actual airborne trajectories clear the floor by96px',max(a['h']for r in rows for a in r['actors'])>90)
+  ck('Snakes traverse lower, upper and side regions',min(a['gy']for r in rows for a in r['actors']if a['phase']!='entry')<100 and max(a['gy']for r in rows for a in r['actors'])>400,{'minY':min(a['gy']for r in rows for a in r['actors']),'maxY':max(a['gy']for r in rows for a in r['actors'])})
+  ck('Articulated tail bends independently behind the head',any(abs(a['tail']['x']-a['x'])>80 for r in rows for a in r['actors']))
+  ck('Continuous movement turns through at least20 authored heading cells',len({round(a['heading']/6.283*32)%32 for r in rows for a in r['actors']})>=20)
+  ck('Fast six-burst acid volleys and giant orb shots actually release',sum(e['event']=='acid-spit'for e in events)>=36 and sum(e['event']=='giant-orb'for e in events)>=12)
+  ck('Toxic pressure has a finite native round cap and finite muzzle effects',max(r['rounds']for r in rows)<=60 and max(r['fx']for r in rows)<=24,{'rounds':max(r['rounds']for r in rows),'fx':max(r['fx']for r in rows)})
+  ck('Native renderer uses new articulated head, segment, shadow and orb banks',p.evaluate("()=>['body0','segment0_body','segment0_shadow','head_shadow','orb','acid','muzzle'].every(k=>(SS116.draws[k]||0)>0)"),p.evaluate('SS116.draws'))
+  ck('All new toxic rounds are unshootable from birth',p.evaluate("()=>eBullets.filter(q=>q._ss116).every(q=>!enemyOrdnanceCanIntercept(q))"))
+  ck('Full untouched health lasts throughout observation',all(r['hp']==before['hp']for r in rows))
+  p.evaluate('setupSump');step(150)
+  p.evaluate('()=>{G.rest=999;G.owner=null;for(const a of G.actors){a.phase="idle";a.t=0;a.height=0;}}')
+  ck('All4 gill centers remain reachable on rotated head frames',p.evaluate("()=>G.actors.every(a=>a.pools.slice(0,2).every(z=>{const q=sj98Socket(a,z.id);return sj98At(B,q.x,q.y)?.p===z;}))"))
+  ck('Both hearts stay gated until their own2 gills break',p.evaluate("()=>G.actors.every(a=>{const q=sj98Socket(a,'heart');return !sj98At(B,q.x,q.y);})"))
+  ck('Actual white hit pixels change and expire',p.evaluate('''()=>{const a=G.actors[0],z=a.pools[0],q=sj98Socket(a,z.id);const pixels=()=>{ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,cv.width,cv.height);sj98Draw(B);const d=ctx.getImageData(0,0,cv.width,cv.height).data;ctx.restore();let n=0;for(let i=0;i<d.length;i+=4)if(d[i]>245&&d[i+1]>245&&d[i+2]>245&&d[i+3]>128)n++;return n;};const before=pixels();sj98Damage(B,10,q.x,q.y,{a,p:z});const hit=pixels();for(let i=0;i<10;i++)sj98Tick(B,1/60);const after=pixels();window.flashCheck={before,hit,after,flash:a.flash};return hit>before+50&&after<hit&&a.flash===0;}'''),p.evaluate('window.flashCheck'))
+  snap('native-hit-check')
+  ck('Pause/render-only work freezes motion and attack clocks',p.evaluate('()=>{const before=JSON.stringify(G.actors.map(a=>[a.x,a.y,a.t,a.heading]));for(let i=0;i<20;i++)sj98Draw(B);return before===JSON.stringify(G.actors.map(a=>[a.x,a.y,a.t,a.heading]));}'))
+  ck('New acid shots leave actual rotated mouth socket',p.evaluate("()=>{const a=G.actors[0];a.target=ss116Aim(a);a.emitted=0;const q=sj98Socket(a,'heart');ss116Spit(B,a,false);return SS116.events.slice(-3).every(e=>Math.hypot(e.from.x-q.x,e.from.y-q.y)<.001);}"))
+  ck('Airborne peaks are not falsely targetable through their ground shadow',p.evaluate("()=>{const a=G.actors[0];a.height=80;a.phase='leap';const yes=!sj98Foreground(a)&&!retinaBossTargets(B).some(t=>t._retinaId.startsWith('sump0-'));a.height=0;a.phase='idle';return yes;}"))
+  p.evaluate('setupSump');step(150)
+  ck('Direct pounces commit to the actual player position rather than always missing',p.evaluate("()=>{const a=G.actors[0];a.seq=0;a.leapNo=0;a.phase='idle';sj98Start(B,a);return !a.overflight&&Math.hypot(a.impact.x-player.x,a.impact.y-player.y)<1;}"))
+  ck('Landing Retina is registered to the actual biting jaw',p.evaluate("()=>{const a=G.actors[0];a.x=a.land.x;a.gy=a.land.y;a.height=0;a.y=a.gy;a.heading=a.landHeading;a.jaw=1;const m=sj98Socket(a,'heart');return Math.hypot(m.x-a.impact.x,m.y-a.impact.y)<.05;}"))
+  ck('Stationary player at the landing receives native contact',p.evaluate("()=>{const a=G.actors[0];a.phase='land';a.hits=new Set();player.x=a.impact.x;player.y=a.impact.y;player.invuln=0;const n=SS116.events.length;ss116Contact(a);return SS116.events.length===n+1&&SS116.events.at(-1).event==='contact';}"))
+  ck('Interrupted airborne strikes settle back to the floor instead of floating forever',p.evaluate("()=>{const a=G.actors[0];a.phase='stun';a.t=0;a.height=24;for(let i=0;i<12;i++)sj98Tick(B,1/60);return a.height===0&&a.y===a.gy;}"))
+  p.evaluate("()=>{for(const a of G.actors){for(const z of a.pools){a.phase='idle';a.height=0;for(let i=0;i<3&&z.hp>0;i++){const q=sj98Socket(a,z.id);sj98Damage(B,z.hp+10,q.x,q.y,{a,p:z});}}}}")
+  ck('All native pools exhaust before exactly1 pair defeat',p.evaluate("()=>B.dead&&B.hp===0&&SJ98.events.filter(e=>e.event==='pair-defeat').length===1&&retinaBossTargets(B).length===0"));step(160)
+  ck('Native defeat clears rounds and awards progression once',p.evaluate("()=>subBoss===null&&!subBossActive&&subBossDone&&SJ98.events.filter(e=>e.event==='progression').length===1&&eBullets.every(q=>!q._ss116||q.dead)"))
+  for rank in['normal','hard']:ck(rank+' retains Caustic Dredger',p.evaluate("rank=>{diffKey=rank;DIFF=difficultyForRun(run.mode,rank);spawnSubBoss('dualscoopdredger');return !subBoss._sj98;}",rank))
+  p.evaluate('setupSump');ck('Retry restores intact pair and clears attacks',p.evaluate('()=>G.actors.every(a=>!a.dead&&a.hp===a.maxhp)&&!G.flights.length&&!G.fx.length'))
+  ck('No page/renderer errors',not errors,errors);browser.close()
+finally:stop()
+(O/'report.json').write_text(json.dumps(dict(checks=checks,rows=rows,events=events,errors=errors,gameHash=hashlib.sha256((R/'assets/game.js').read_bytes()).hexdigest()),indent=2));print('SUMMARY',sum(c['passed']for c in checks),'/',len(checks),flush=True);sys.exit(0 if all(c['passed']for c in checks)else 1)

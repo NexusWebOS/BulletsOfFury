@@ -1,0 +1,131 @@
+{
+  "directory": "C:\\Users\\Mike\\Documents\\New project\\BOF-Arcade-Installer-1105\\qa\\desktop-v2-1793977743",
+  "checks": [
+    {
+      "name": "Separate launcher EXE opens the graphical HQ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Minimize button minimizes the actual native window",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Maximize button maximizes the actual native window",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Restore button returns the original launcher size",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "X button closes the actual launcher process",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Double-click game EXE starts fullscreen without --game, even with saved fullscreen OFF",
+      "passed": true,
+      "data": {
+        "success": true,
+        "status": "Unknown",
+        "fullscreen": true,
+        "bounds": "{X=0,Y=0,Width=1920,Height=1200}",
+        "screen": "{X=0,Y=0,Width=1920,Height=1200}"
+      }
+    },
+    {
+      "name": "Direct startup uses original high-quality game assets with no GOD mode",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All nine pilot backgrounds are genuinely flat and have distinct 16-bit palette colors",
+      "passed": true,
+      "data": [
+        {
+          "pilot": "axel",
+          "expected": "#102850",
+          "unique": 1,
+          "rgb": "16,40,80,255"
+        },
+        {
+          "pilot": "decker",
+          "expected": "#483810",
+          "unique": 1,
+          "rgb": "72,56,16,255"
+        },
+        {
+          "pilot": "maverick",
+          "expected": "#104838",
+          "unique": 1,
+          "rgb": "16,72,56,255"
+        },
+        {
+          "pilot": "freezer",
+          "expected": "#382048",
+          "unique": 1,
+          "rgb": "56,32,72,255"
+        },
+        {
+          "pilot": "juggernaut",
+          "expected": "#483020",
+          "unique": 1,
+          "rgb": "72,48,32,255"
+        },
+        {
+          "pilot": "yuri",
+          "expected": "#501820",
+          "unique": 1,
+          "rgb": "80,24,32,255"
+        },
+        {
+          "pilot": "lizzie",
+          "expected": "#504018",
+          "unique": 1,
+          "rgb": "80,64,24,255"
+        },
+        {
+          "pilot": "falva",
+          "expected": "#501038",
+          "unique": 1,
+          "rgb": "80,16,56,255"
+        },
+        {
+          "pilot": "cole",
+          "expected": "#284018",
+          "unique": 1,
+          "rgb": "40,64,24,255"
+        }
+      ]
+    },
+    {
+      "name": "MG bullets and sonic waves survive gun/laser/sonic/missile/helix overlaps even with elemental art and stale shootable flags",
+      "passed": true,
+      "data": {
+        "cases": 30
+      }
+    },
+    {
+      "name": "Actual physical missile interception remains functional",
+      "passed": true,
+      "data": {
+        "can": true,
+        "intercepted": true
+      }
+    },
+    {
+      "name": "Requested mouse bindings survive the desktop update",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No browser runtime errors during the focused checks",
+      "passed": true,
+      "data": []
+    }
+  ]
+}

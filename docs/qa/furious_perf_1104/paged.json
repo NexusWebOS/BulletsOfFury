@@ -1,0 +1,150 @@
+{
+  "label": "paged",
+  "fps": 58.035020750542685,
+  "p95": 16.80000000000291,
+  "p99": 33.400000000001455,
+  "details": {
+    "t": 40821.30000001192,
+    "frames": 2082,
+    "SS": 2,
+    "cellBytes": 49709056,
+    "cache": 144,
+    "shadows": 18,
+    "rounds": 0
+  },
+  "top": [
+    {
+      "name": "(idle)",
+      "file": "",
+      "line": 0,
+      "ms": 10816.75
+    },
+    {
+      "name": "(program)",
+      "file": "",
+      "line": 0,
+      "ms": 1865.86
+    },
+    {
+      "name": "restore",
+      "file": "",
+      "line": 0,
+      "ms": 404.77
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 396.9
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 152.48
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 134.45
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 117.79
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 101.27
+    },
+    {
+      "name": "X.rdy",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 3119,
+      "ms": 97.4
+    },
+    {
+      "name": "(garbage collector)",
+      "file": "",
+      "line": 0,
+      "ms": 87.01
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 73.62
+    },
+    {
+      "name": "X._touch",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 3070,
+      "ms": 70.69
+    },
+    {
+      "name": "drawWorld",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 74228,
+      "ms": 67.56
+    },
+    {
+      "name": "drawWorld",
+      "file": "furious_review_0927.js",
+      "line": 489,
+      "ms": 64.5
+    },
+    {
+      "name": "updatePlay",
+      "file": "hammer_time_0927.js?v=beta-priorities-1024",
+      "line": 253,
+      "ms": 55.35
+    },
+    {
+      "name": "updatePlay",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 34795,
+      "ms": 52.3
+    },
+    {
+      "name": "bg6RainDraw",
+      "file": "game.js?v=space-arsenal-fx-1104",
+      "line": 74153,
+      "ms": 51.69
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 51.44
+    },
+    {
+      "name": "pm27Draw",
+      "file": "pixelmap_ui_1027.js?v=solid-r-square-hud-1027d",
+      "line": 27,
+      "ms": 43.55
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 42.72
+    },
+    {
+      "name": "fillRect",
+      "file": "",
+      "line": 0,
+      "ms": 39.69
+    },
+    {
+      "name": "drawImage",
+      "file": "",
+      "line": 0,
+      "ms": 39.39
+    }
+  ],
+  "errors": []
+}

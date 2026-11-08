@@ -10,7 +10,7 @@ function pt11PilotCard(P,PX,PY,PW,PH,spin,locked){
  const infoW=PX+PW-pad-infoX,infoH=PY+PH-pad-infoY;
  psPanelBox(PX,PY,PW,PH,P.tint,true);
  const launching=pilotPending!=null;
- if(locked){pcFontLeft('LOCKED',bx+8,by+bh*.42,16,'#dce2ea',1);pcFontLeft('PASSWORD REQUIRED',infoX,infoY+32,10,'#ffe98a',1);return;}
+ if(locked){if(typeof lockedPilotCard116==='function'){lockedPilotCard116(P,PX,PY,PW,PH);return;}pcFontLeft('LOCKED',bx+8,by+bh*.42,16,'#dce2ea',1);pcFontLeft('PASSWORD REQUIRED',infoX,infoY+32,10,'#ffe98a',1);return;}
  const body=psBodyKey(P.key);psBlitFit(body||'port_'+P.key+'_idle',bx+bodyW/2,by+bh/2,bodyW-8,bh,1);
  // The broad actual gameplay ship is easiest to identify; no generated substitute.
  const ship=psShipKey(P.key,null);psBlitFit(ship,sx+shipW/2,shipY,shipW-12,shipH-8,1);

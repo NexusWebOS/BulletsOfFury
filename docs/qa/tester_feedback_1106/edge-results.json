@@ -1,0 +1,38 @@
+[
+  {
+    "name": "audio unlocks with an actual user gesture",
+    "pass": true
+  },
+  {
+    "name": "map entry clears a stale tutorial hover",
+    "pass": true
+  },
+  {
+    "name": "Space confirms on the map",
+    "pass": true
+  },
+  {
+    "name": "controller Start confirms on the map",
+    "pass": true
+  },
+  {
+    "name": "portal reflection uses the shared decoded sample",
+    "pass": true
+  },
+  {
+    "name": "leaving the portal cancels its reflection",
+    "pass": true
+  },
+  {
+    "name": "stopped pending cues never arrive late",
+    "pass": true
+  },
+  {
+    "name": "Ice Breath keeps its native damage",
+    "pass": true
+  },
+  {
+    "name": "Fire uses the revised damage curve",
+    "pass": true
+  }
+]

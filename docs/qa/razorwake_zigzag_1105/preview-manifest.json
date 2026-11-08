@@ -1,0 +1,212 @@
+[
+  {
+    "id": "razorwake",
+    "name": "Razorwake",
+    "slot": "Stage 6 \u00b7 Furious miniboss",
+    "description": "Intact modular wings, detachable rotary guns and tapered twin thrusters. Two rolling forward gun runs, center/right/left straight burst lanes and sixteen accelerating diagonal on/offscreen zigzags. Teal aura, wing flaps, lightning and a growing wind Helix orb. Shoot it into nine wind balls, or risk its exclusive vortex crash. About 15% more HP than the native Hard miniboss.",
+    "url": "/media/razorwake.mp4",
+    "poster": "/posters/razorwake.png",
+    "duration": 158.523,
+    "nativeFps": 51.1,
+    "width": 960,
+    "height": 1024,
+    "peakDb": -1.9,
+    "chapters": [
+      {
+        "label": "Entrance",
+        "time": 0
+      },
+      {
+        "label": "Rolling forward gun runs",
+        "time": 5.425
+      },
+      {
+        "label": "Center / right / left burst lanes",
+        "time": 14.664
+      },
+      {
+        "label": "Charged south dive",
+        "time": 21.449
+      },
+      {
+        "label": "Accelerating offscreen zigzags",
+        "time": 24.464000000000002
+      },
+      {
+        "label": "Fastest diagonal zigzags",
+        "time": 45.512
+      },
+      {
+        "label": "Storm Helix charge and lightning",
+        "time": 52.074
+      },
+      {
+        "label": "Expanding storm orb",
+        "time": 58.209
+      },
+      {
+        "label": "Break orb into nine wind balls",
+        "time": 60.252
+      },
+      {
+        "label": "Complete gun detaches; wing remains intact",
+        "time": 79.292
+      },
+      {
+        "label": "Core exposed",
+        "time": 111.9
+      },
+      {
+        "label": "Defeat & aftermath",
+        "time": 148.198
+      }
+    ],
+    "sha256": "204f71f1954fdb76fed51fdcdf1ca1f50a1ac9b1fdb8c8b9f169ecf001185f65",
+    "bytes": 199448879,
+    "death": {
+      "url": "/media/razorwake-vortex-death.mp4",
+      "seconds": 13.804,
+      "sha256": "8984751a00e174ddcd7694647f0a1b8e3bf8e187c59cc3556e377a993abce9ab",
+      "bytes": 11657699,
+      "method": "Natural first orb; GOD switched off on release; native capture, airborne throw, burning fall and crash."
+    }
+  },
+  {
+    "id": "thunderhead",
+    "name": "Thunderhead",
+    "slot": "Stage 6 \u00b7 Furious boss",
+    "description": "Connected cyclone cannon beams with animated throat flashes. Four rotating gun batteries target three distinct allies, reserving one for the player in 75% of cycles. Wind rises and rotates inside the chamber. Thunderhead flies into the background, charges, recoils and launches a growing cyclone, then returns. Destroyed modules explode, break away and shatter; all six weapons still gate the core.",
+    "url": "/media/thunderhead.mp4",
+    "poster": "/posters/thunderhead.png",
+    "duration": 140.885,
+    "nativeFps": 56.8,
+    "width": 960,
+    "height": 1024,
+    "peakDb": -1.8,
+    "chapters": [
+      {
+        "label": "Entrance",
+        "time": 0
+      },
+      {
+        "label": "Coordinated ally / player targeting",
+        "time": 4.317
+      },
+      {
+        "label": "Reactor and full-body charge",
+        "time": 4.788
+      },
+      {
+        "label": "Giant wind cannon beams",
+        "time": 6.678
+      },
+      {
+        "label": "Core cyclone salvo",
+        "time": 8.91
+      },
+      {
+        "label": "Twin tornadoes",
+        "time": 18.923
+      },
+      {
+        "label": "Targeted thunderstorm",
+        "time": 29.744
+      },
+      {
+        "label": "Turn north and leave the foreground",
+        "time": 37.155
+      },
+      {
+        "label": "Distant chamber charge and lightning",
+        "time": 40.436
+      },
+      {
+        "label": "Cyclone launch and kickback",
+        "time": 44.792
+      },
+      {
+        "label": "Return to the foreground",
+        "time": 47.147
+      },
+      {
+        "label": "Complete module breaks away and explodes",
+        "time": 73.565
+      },
+      {
+        "label": "Core exposed",
+        "time": 107.544
+      },
+      {
+        "label": "Defeat & aftermath",
+        "time": 129.549
+      }
+    ],
+    "sha256": "87398fa2de6f03e0d2efaca57d6a487521afb02eb3cb631d18a04eb5e5e33374",
+    "bytes": 133946824
+  },
+  {
+    "id": "sumpjaw",
+    "name": "Sumpjaw pair",
+    "slot": "Stage 7 \u00b7 Furious miniboss",
+    "description": "Coordinated serpents repeatedly leap left/right over the pilot while firing large toxic orbs downward. They form a separated firing row, strafe together with rapid dual-mouth bursts, split, jump north and cross over/under each other before returning. The mouths charge internally without a green body aura. One shared bar: 7,000 HP per snake, 14,000 total; break each pair of gills to expose its heart. No small spread pellets.",
+    "url": "/media/sumpjaw.mp4",
+    "poster": "/posters/sumpjaw.png",
+    "duration": 298.703,
+    "nativeFps": 57.3,
+    "width": 960,
+    "height": 1024,
+    "peakDb": -2.1,
+    "chapters": [
+      {
+        "label": "Entrance",
+        "time": 0
+      },
+      {
+        "label": "Repeated airborne left/right jumps",
+        "time": 3.17
+      },
+      {
+        "label": "Pair into a firing row",
+        "time": 12.93
+      },
+      {
+        "label": "Inner-mouth toxic charge",
+        "time": 13.871
+      },
+      {
+        "label": "Strafing dual large-orb bursts",
+        "time": 14.806
+      },
+      {
+        "label": "Split apart and hop north",
+        "time": 20.538
+      },
+      {
+        "label": "Over / under crossing return",
+        "time": 22.512
+      },
+      {
+        "label": "Return to the fight",
+        "time": 23.903
+      },
+      {
+        "label": "Gill rupture",
+        "time": 115.576
+      },
+      {
+        "label": "First Sumpjaw defeated",
+        "time": 256.403
+      },
+      {
+        "label": "One snake / half of the shared bar remains",
+        "time": 257.903
+      },
+      {
+        "label": "Defeat & aftermath",
+        "time": 288.416
+      }
+    ],
+    "sha256": "92aaee9940c35f3160b011ee45ad820019ece93051aeb0bf6d73fa33770ac941",
+    "bytes": 196510891
+  }
+]

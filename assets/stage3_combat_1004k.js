@@ -15,14 +15,14 @@ wm26Draw=function(g,family,x,y,angle,progress,size,color){
 };
 function s3kOwns(b){return !!b&&run.stage===3&&['frostcruiser','cryospear'].includes(b._ship);}
 function enemyOrdnanceElement(q){
-  if(!q||/bullet/i.test(q.kind||'')||q._coldTracer1002||q.mg||/shard|lance|beam|laser|pellet|slug/i.test(q.kind||'')&&!q._s3LaserBall)return null;
+  if(!q||enemyProjectileIsBulletOrSonic(q)||/bullet/i.test(q.kind||'')||q._coldTracer1002||q.mg||/shard|lance|beam|laser|pellet|slug/i.test(q.kind||'')&&!q._s3LaserBall)return null;
   if(q._er26Art==='fire'||q._er26Art==='ice')return q._er26Art;
   if(q._tb28&&['magma','ice','fire'].includes(q._tb28.art))return q._tb28.art==='ice'?'ice':'fire';
   if(q._s3LaserBall)return q._s3ThermoArt==='fire'?'fire':'ice';
   if(/^(magma|fireorb|fireball|iceball|s3mortar)$/.test(q.kind||''))return /ice|s3/.test(q.kind)?'ice':'fire';
   return null;
 }
-function enemyOrdnanceCanIntercept(q){return !!q&&(!!enemyOrdnanceElement(q)||/missile|rocket|warhead/i.test(q.kind||''));}
+function enemyOrdnanceCanIntercept(q){return !!q&&!enemyProjectileIsBulletOrSonic(q)&&(!!enemyOrdnanceElement(q)||/missile|rocket|warhead/i.test(q.kind||''));}
 function enemyDefensiveProof(q){return !!(q&&(q._s3kOriginalProof==null?q._weaponProof:q._s3kOriginalProof));}
 function s3kOrdnanceRules(q){
   if(!q||q.dead)return;

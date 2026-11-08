@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "name": "Uninstaller removes its owned executable and game assets",
+      "passed": true
+    },
+    {
+      "name": "Uninstaller preserves files the tester added",
+      "passed": true
+    },
+    {
+      "name": "Uninstaller preserves the separate save profile",
+      "passed": true
+    },
+    {
+      "name": "Uninstaller finishes its native worker without an error",
+      "passed": true
+    }
+  ]
+}

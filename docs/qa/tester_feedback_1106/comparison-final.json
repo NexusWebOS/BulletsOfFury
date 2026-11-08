@@ -1,0 +1,2237 @@
+[
+  {
+    "label": "baseline",
+    "setupMs": 496.69999998807907,
+    "entry": {
+      "frames": 1632,
+      "p50": 16.699999999999818,
+      "p95": 16.80000000000291,
+      "p99": 17.299999999999272,
+      "worst": 599.9000000000001,
+      "over50": 6,
+      "averageFps": 57.465193416855044
+    },
+    "entryInfo": {
+      "long": [
+        74,
+        130,
+        92,
+        52,
+        205
+      ],
+      "elapsed": 28434.80000001192,
+      "load": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 1883,
+        "failed": 2,
+        "total": 1885
+      },
+      "ss": 2
+    },
+    "combat": {
+      "frames": 805,
+      "p50": 16.69999999999709,
+      "p95": 83.40000000000146,
+      "p99": 200.09999999999854,
+      "worst": 1516.7999999999993,
+      "over50": 55,
+      "averageFps": 36.15296521680552
+    },
+    "combatInfo": {
+      "long": [
+        617,
+        633,
+        114,
+        540,
+        444,
+        199,
+        274,
+        210,
+        101,
+        186,
+        95,
+        115,
+        82,
+        118,
+        233,
+        167,
+        115,
+        157,
+        51,
+        88,
+        194,
+        160,
+        202,
+        52,
+        73,
+        173,
+        79,
+        60,
+        150,
+        120,
+        376,
+        188,
+        168,
+        124,
+        161,
+        205,
+        78,
+        123,
+        106,
+        164,
+        65,
+        101,
+        117,
+        119,
+        94,
+        104,
+        76,
+        133,
+        183,
+        80
+      ],
+      "time": 15.266666666667005,
+      "enemies": 2,
+      "enemyShots": 0,
+      "playerShots": 27,
+      "heap": 137629974,
+      "voices": 64,
+      "paging": null,
+      "sound": null,
+      "ss": 2
+    },
+    "errors": []
+  },
+  {
+    "label": "repaired",
+    "setupMs": 307.5,
+    "entry": {
+      "frames": 1631,
+      "p50": 16.69999999999891,
+      "p95": 16.80000000000291,
+      "p99": 17.200000000000728,
+      "worst": 433.0999999999999,
+      "over50": 8,
+      "averageFps": 57.769277087096654
+    },
+    "entryInfo": {
+      "long": [
+        87,
+        153,
+        74,
+        156
+      ],
+      "elapsed": 28260.900000035763,
+      "load": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 2014,
+        "failed": 2,
+        "total": 2016
+      },
+      "ss": 2
+    },
+    "combat": {
+      "frames": 1206,
+      "p50": 16.69999999999709,
+      "p95": 16.80000000000291,
+      "p99": 50,
+      "worst": 1299.9000000000015,
+      "over50": 11,
+      "averageFps": 53.680401312187584
+    },
+    "combatInfo": {
+      "long": [
+        488,
+        362,
+        64,
+        213,
+        64,
+        146,
+        59,
+        121,
+        52,
+        118,
+        98,
+        71,
+        126
+      ],
+      "time": 20.633333333333443,
+      "enemies": 6,
+      "enemyShots": 2,
+      "playerShots": 27,
+      "heap": 158368191,
+      "voices": 5,
+      "paging": {
+        "draws": 7851,
+        "misses": 0,
+        "fallbacks": 0,
+        "bytes": 9400320
+      },
+      "sound": {
+        "events": [
+          {
+            "name": "spaceLaserHit",
+            "delay": 0.10000002384185791,
+            "at": 37806.80000001192,
+            "contextTime": 35.328,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 37837.60000002384,
+            "contextTime": 35.36,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.30000001192092896,
+            "at": 37916.80000001192,
+            "contextTime": 35.434666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.10000002384185791,
+            "at": 37917.19999998808,
+            "contextTime": 35.434666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "av3_laser_charge",
+            "delay": 0.10000002384185791,
+            "at": 38005,
+            "contextTime": 35.52,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "alertLockon",
+            "delay": 15.100000023841858,
+            "at": 38008.5,
+            "contextTime": 35.541333333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "av3_target_acquire",
+            "delay": 16.900000035762787,
+            "at": 38007.5,
+            "contextTime": 35.541333333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 38049.5,
+            "contextTime": 35.562666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.09999996423721313,
+            "at": 38050.40000003576,
+            "contextTime": 35.562666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0.09999996423721313,
+            "at": 38050.90000003576,
+            "contextTime": 35.562666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.19999998807907104,
+            "at": 38166.60000002384,
+            "contextTime": 35.68,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0,
+            "at": 38167,
+            "contextTime": 35.68,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.10000002384185791,
+            "at": 38170,
+            "contextTime": 35.690666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.3999999761581421,
+            "at": 38294.10000002384,
+            "contextTime": 35.808,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 38374.10000002384,
+            "contextTime": 35.89333333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.10000002384185791,
+            "at": 38375.19999998808,
+            "contextTime": 35.89333333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.19999998807907104,
+            "at": 38416.30000001192,
+            "contextTime": 35.936,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.30000001192092896,
+            "at": 38434.10000002384,
+            "contextTime": 35.946666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.20000004768371582,
+            "at": 38499.69999998808,
+            "contextTime": 36.02133333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 38500.90000003576,
+            "contextTime": 36.02133333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 38599.40000003576,
+            "contextTime": 36.117333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.10000002384185791,
+            "at": 38649.30000001192,
+            "contextTime": 36.17066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.09999996423721313,
+            "at": 38766.10000002384,
+            "contextTime": 36.288,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 38833.19999998808,
+            "contextTime": 36.352,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0,
+            "at": 38835.10000002384,
+            "contextTime": 36.352,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.10000002384185791,
+            "at": 38849.69999998808,
+            "contextTime": 36.36266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.09999996423721313,
+            "at": 38849.90000003576,
+            "contextTime": 36.36266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 38883.10000002384,
+            "contextTime": 36.394666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 38954.30000001192,
+            "contextTime": 36.46933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "enemyHeavyLaser",
+            "delay": 73.30000001192093,
+            "at": 38901.30000001192,
+            "contextTime": 36.49066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.20000004768371582,
+            "at": 38999.69999998808,
+            "contextTime": 36.512,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 39050.10000002384,
+            "contextTime": 36.565333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 39050.69999998808,
+            "contextTime": 36.565333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.20000004768371582,
+            "at": 39100.19999998808,
+            "contextTime": 36.61866666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 39166.30000001192,
+            "contextTime": 36.68266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 39233.10000002384,
+            "contextTime": 36.74666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.30000001192092896,
+            "at": 39299.30000001192,
+            "contextTime": 36.821333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.20000004768371582,
+            "at": 39300.19999998808,
+            "contextTime": 36.821333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.19999998807907104,
+            "at": 39332.90000003576,
+            "contextTime": 36.85333333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 39350,
+            "contextTime": 36.864,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.10000002384185791,
+            "at": 39533,
+            "contextTime": 37.04533333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 39766.30000001192,
+            "contextTime": 37.28,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.10000002384185791,
+            "at": 39767.30000001192,
+            "contextTime": 37.28,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0,
+            "at": 39767.80000001192,
+            "contextTime": 37.28,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.19999998807907104,
+            "at": 39769.10000002384,
+            "contextTime": 37.29066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.10000002384185791,
+            "at": 39899.19999998808,
+            "contextTime": 37.41866666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.20000004768371582,
+            "at": 39933.69999998808,
+            "contextTime": 37.45066666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.10000002384185791,
+            "at": 39983,
+            "contextTime": 37.504,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.10000002384185791,
+            "at": 39983.19999998808,
+            "contextTime": 37.504,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 39999.69999998808,
+            "contextTime": 37.51466666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expBig",
+            "delay": 0.30000001192092896,
+            "at": 40032.5,
+            "contextTime": 37.54666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expBig",
+            "delay": 0.19999998807907104,
+            "at": 40166.10000002384,
+            "contextTime": 37.68533333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 40232.90000003576,
+            "contextTime": 37.74933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.10000002384185791,
+            "at": 40233.19999998808,
+            "contextTime": 37.74933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "av3_laser_charge",
+            "delay": 0.20000004768371582,
+            "at": 40233.69999998808,
+            "contextTime": 37.74933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "av3_target_acquire",
+            "delay": 0.10000002384185791,
+            "at": 40267,
+            "contextTime": 37.781333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "alertLockon",
+            "delay": 0.19999998807907104,
+            "at": 40267.30000001192,
+            "contextTime": 37.781333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.19999998807907104,
+            "at": 40282.60000002384,
+            "contextTime": 37.80266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 40349.90000003576,
+            "contextTime": 37.86666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.30000001192092896,
+            "at": 40449.69999998808,
+            "contextTime": 37.962666666666664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.10000002384185791,
+            "at": 40466,
+            "contextTime": 37.984,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "jetDash",
+            "delay": 0.30000001192092896,
+            "at": 40533.19999998808,
+            "contextTime": 38.048,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.20000004768371582,
+            "at": 40549.69999998808,
+            "contextTime": 38.06933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.10000002384185791,
+            "at": 40600.19999998808,
+            "contextTime": 38.112,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.19999998807907104,
+            "at": 40600.40000003576,
+            "contextTime": 38.112,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0.19999998807907104,
+            "at": 40616.60000002384,
+            "contextTime": 38.13333333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 40616.90000003576,
+            "contextTime": 38.13333333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 40666.5,
+            "contextTime": 38.18666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.30000001192092896,
+            "at": 40699.30000001192,
+            "contextTime": 38.218666666666664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "hit",
+            "delay": 0.19999998807907104,
+            "at": 40733,
+            "contextTime": 38.25066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0,
+            "at": 40733.30000001192,
+            "contextTime": 38.25066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0,
+            "at": 40733.90000003576,
+            "contextTime": 38.25066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 40734.60000002384,
+            "contextTime": 38.25066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 40901.90000003576,
+            "contextTime": 38.42133333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.2999999523162842,
+            "at": 40949.40000003576,
+            "contextTime": 38.464,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 40983.40000003576,
+            "contextTime": 38.496,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.30000001192092896,
+            "at": 41016.5,
+            "contextTime": 38.528,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.19999998807907104,
+            "at": 41082.60000002384,
+            "contextTime": 38.602666666666664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.19999998807907104,
+            "at": 41216.10000002384,
+            "contextTime": 38.730666666666664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.09999996423721313,
+            "at": 41216.60000002384,
+            "contextTime": 38.730666666666664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0,
+            "at": 41217,
+            "contextTime": 38.730666666666664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.30000001192092896,
+            "at": 41250.80000001192,
+            "contextTime": 38.76266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.19999998807907104,
+            "at": 41333,
+            "contextTime": 38.848,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 41433.30000001192,
+            "contextTime": 38.95466666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 41482.80000001192,
+            "contextTime": 38.99733333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 41516.80000001192,
+            "contextTime": 39.029333333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 41600.19999998808,
+            "contextTime": 39.114666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 41650,
+            "contextTime": 39.168,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 41716.30000001192,
+            "contextTime": 39.232,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.20000004768371582,
+            "at": 41733.69999998808,
+            "contextTime": 39.25333333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 41783.90000003576,
+            "contextTime": 39.296,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 41833.40000003576,
+            "contextTime": 39.349333333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 41883.30000001192,
+            "contextTime": 39.40266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 41949.5,
+            "contextTime": 39.46666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 41950.30000001192,
+            "contextTime": 39.46666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.09999996423721313,
+            "at": 42016.40000003576,
+            "contextTime": 39.53066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.09999996423721313,
+            "at": 42016.60000002384,
+            "contextTime": 39.53066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.19999998807907104,
+            "at": 42033.30000001192,
+            "contextTime": 39.552,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.10000002384185791,
+            "at": 42116.19999998808,
+            "contextTime": 39.63733333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 42182.90000003576,
+            "contextTime": 39.70133333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 42416.10000002384,
+            "contextTime": 39.936,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "powerup",
+            "delay": 0.19999998807907104,
+            "at": 42584,
+            "contextTime": 40.096,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 42649.40000003576,
+            "contextTime": 40.17066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.09999996423721313,
+            "at": 42782.90000003576,
+            "contextTime": 40.29866666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.10000002384185791,
+            "at": 42783,
+            "contextTime": 40.29866666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 42882.69999998808,
+            "contextTime": 40.394666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0,
+            "at": 43015.80000001192,
+            "contextTime": 40.53333333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 43116.19999998808,
+            "contextTime": 40.629333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "enemyLaser",
+            "delay": 0.30000001192092896,
+            "at": 43251.5,
+            "contextTime": 40.768,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 43349,
+            "contextTime": 40.864,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.10000002384185791,
+            "at": 43433.19999998808,
+            "contextTime": 40.949333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0,
+            "at": 43433.40000003576,
+            "contextTime": 40.949333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "enemyLaser",
+            "delay": 0.09999996423721313,
+            "at": 43566.90000003576,
+            "contextTime": 41.088,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 43582.60000002384,
+            "contextTime": 41.09866666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.10000002384185791,
+            "at": 43815.69999998808,
+            "contextTime": 41.333333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.19999998807907104,
+            "at": 43916.40000003576,
+            "contextTime": 41.42933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.10000002384185791,
+            "at": 44033.19999998808,
+            "contextTime": 41.54666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0.10000002384185791,
+            "at": 44033.5,
+            "contextTime": 41.54666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 44049.30000001192,
+            "contextTime": 41.568,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.30000001192092896,
+            "at": 44199.60000002384,
+            "contextTime": 41.717333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0.09999996423721313,
+            "at": 44199.90000003576,
+            "contextTime": 41.717333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expBig",
+            "delay": 0.10000002384185791,
+            "at": 44200.30000001192,
+            "contextTime": 41.717333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 44216.80000001192,
+            "contextTime": 41.73866666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 44266.40000003576,
+            "contextTime": 41.781333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 44282.5,
+            "contextTime": 41.80266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.09999996423721313,
+            "at": 44332.60000002384,
+            "contextTime": 41.845333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 44433,
+            "contextTime": 41.952,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expBig",
+            "delay": 0.10000002384185791,
+            "at": 44466,
+            "contextTime": 41.984,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "hit",
+            "delay": 0.20000004768371582,
+            "at": 44466.69999998808,
+            "contextTime": 41.984,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0.10000002384185791,
+            "at": 44467,
+            "contextTime": 41.984,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 44516,
+            "contextTime": 42.037333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.30000001192092896,
+            "at": 44599.19999998808,
+            "contextTime": 42.112,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.09999996423721313,
+            "at": 44716.10000002384,
+            "contextTime": 42.22933333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.30000001192092896,
+            "at": 44749.19999998808,
+            "contextTime": 42.26133333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 44783,
+            "contextTime": 42.304,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.10000002384185791,
+            "at": 44815.69999998808,
+            "contextTime": 42.336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 44949.90000003576,
+            "contextTime": 42.464,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.09999996423721313,
+            "at": 44966.40000003576,
+            "contextTime": 42.48533333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0,
+            "at": 44966.69999998808,
+            "contextTime": 42.48533333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0,
+            "at": 44966.69999998808,
+            "contextTime": 42.48533333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 45065,
+            "contextTime": 42.58133333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 45066.30000001192,
+            "contextTime": 42.58133333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.30000001192092896,
+            "at": 45171.5,
+            "contextTime": 42.688,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 45216.5,
+            "contextTime": 42.730666666666664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 45360.30000001192,
+            "contextTime": 42.88,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.10000002384185791,
+            "at": 45361,
+            "contextTime": 42.88,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.30000001192092896,
+            "at": 45403.19999998808,
+            "contextTime": 42.922666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 45582.69999998808,
+            "contextTime": 43.104,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 45815.90000003576,
+            "contextTime": 43.328,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.19999998807907104,
+            "at": 45849.30000001192,
+            "contextTime": 43.370666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "shieldHitLight",
+            "delay": 0.19999998807907104,
+            "at": 46033.60000002384,
+            "contextTime": 43.552,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0,
+            "at": 46033.80000001192,
+            "contextTime": 43.552,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "shieldBreak",
+            "delay": 0,
+            "at": 46033.90000003576,
+            "contextTime": 43.552,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0.10000002384185791,
+            "at": 46034.19999998808,
+            "contextTime": 43.552,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "hit",
+            "delay": 0,
+            "at": 46034.40000003576,
+            "contextTime": 43.552,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 46049.5,
+            "contextTime": 43.562666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 46282.60000002384,
+            "contextTime": 43.797333333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.10000002384185791,
+            "at": 46516,
+            "contextTime": 44.032,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.09999996423721313,
+            "at": 46716.10000002384,
+            "contextTime": 44.23466666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0,
+            "at": 46716.30000001192,
+            "contextTime": 44.23466666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 46749.19999998808,
+            "contextTime": 44.266666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.09999996423721313,
+            "at": 46749.40000003576,
+            "contextTime": 44.266666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "scoreBullet100",
+            "delay": 9.600000023841858,
+            "at": 46918.30000001192,
+            "contextTime": 44.448,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 46982.60000002384,
+            "contextTime": 44.501333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.19999998807907104,
+            "at": 47132.90000003576,
+            "contextTime": 44.650666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0,
+            "at": 47133.10000002384,
+            "contextTime": 44.650666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0,
+            "at": 47133.69999998808,
+            "contextTime": 44.650666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 47215.80000001192,
+            "contextTime": 44.736,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.19999998807907104,
+            "at": 47265.80000001192,
+            "contextTime": 44.778666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.09999996423721313,
+            "at": 47366.40000003576,
+            "contextTime": 44.885333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.10000002384185791,
+            "at": 47449.19999998808,
+            "contextTime": 44.970666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expBig",
+            "delay": 0.10000002384185791,
+            "at": 47449.80000001192,
+            "contextTime": 44.970666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "hit",
+            "delay": 0.19999998807907104,
+            "at": 47516.10000002384,
+            "contextTime": 45.034666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.09999996423721313,
+            "at": 47516.60000002384,
+            "contextTime": 45.034666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.19999998807907104,
+            "at": 47532.5,
+            "contextTime": 45.04533333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.09999996423721313,
+            "at": 47649.10000002384,
+            "contextTime": 45.16266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0,
+            "at": 47649.5,
+            "contextTime": 45.16266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 47682.5,
+            "contextTime": 45.19466666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.30000001192092896,
+            "at": 47716.69999998808,
+            "contextTime": 45.23733333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 47783.30000001192,
+            "contextTime": 45.30133333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 47866.5,
+            "contextTime": 45.38666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 47915.90000003576,
+            "contextTime": 45.42933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 47983,
+            "contextTime": 45.504,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 48033.19999998808,
+            "contextTime": 45.54666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 48083,
+            "contextTime": 45.6,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.10000002384185791,
+            "at": 48149.30000001192,
+            "contextTime": 45.664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 48149.80000001192,
+            "contextTime": 45.664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 48232.90000003576,
+            "contextTime": 45.74933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 48382.69999998808,
+            "contextTime": 45.898666666666664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.19999998807907104,
+            "at": 48549.60000002384,
+            "contextTime": 46.06933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.10000002384185791,
+            "at": 48615.80000001192,
+            "contextTime": 46.13333333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 48849,
+            "contextTime": 46.368,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 49082.40000003576,
+            "contextTime": 46.602666666666664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.10000002384185791,
+            "at": 49233,
+            "contextTime": 46.752,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0,
+            "at": 49233.19999998808,
+            "contextTime": 46.752,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 49315.90000003576,
+            "contextTime": 46.83733333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.19999998807907104,
+            "at": 49449.10000002384,
+            "contextTime": 46.965333333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 49549.19999998808,
+            "contextTime": 47.06133333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "bombDrop",
+            "delay": 20.899999976158142,
+            "at": 49651.40000003576,
+            "contextTime": 47.18933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 49782.40000003576,
+            "contextTime": 47.296,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.19999998807907104,
+            "at": 49816.10000002384,
+            "contextTime": 47.328,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.10000002384185791,
+            "at": 49816.30000001192,
+            "contextTime": 47.328,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 50015.80000001192,
+            "contextTime": 47.53066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "bombDrop",
+            "delay": 0.19999998807907104,
+            "at": 50132.90000003576,
+            "contextTime": 47.648,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0,
+            "at": 50233.40000003576,
+            "contextTime": 47.754666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0,
+            "at": 50233.60000002384,
+            "contextTime": 47.754666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 50249.30000001192,
+            "contextTime": 47.76533333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "shieldHitLight",
+            "delay": 0.10000002384185791,
+            "at": 50333.19999998808,
+            "contextTime": 47.85066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.10000002384185791,
+            "at": 50333.30000001192,
+            "contextTime": 47.85066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.30000001192092896,
+            "at": 50349.30000001192,
+            "contextTime": 47.861333333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.19999998807907104,
+            "at": 50350.10000002384,
+            "contextTime": 47.86666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserHit",
+            "delay": 0.10000002384185791,
+            "at": 50350.30000001192,
+            "contextTime": 47.872,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.10000002384185791,
+            "at": 50367.19999998808,
+            "contextTime": 47.882666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 50482.69999998808,
+            "contextTime": 48,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 50483.40000003576,
+            "contextTime": 48,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expBig",
+            "delay": 0.30000001192092896,
+            "at": 50499.10000002384,
+            "contextTime": 48.010666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expBig",
+            "delay": 0.09999996423721313,
+            "at": 50632.60000002384,
+            "contextTime": 48.14933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.10000002384185791,
+            "at": 50715.69999998808,
+            "contextTime": 48.23466666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.19999998807907104,
+            "at": 50765.80000001192,
+            "contextTime": 48.27733333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expBig",
+            "delay": 0.09999996423721313,
+            "at": 50882.90000003576,
+            "contextTime": 48.394666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.09999996423721313,
+            "at": 50916.60000002384,
+            "contextTime": 48.437333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "shieldHitLight",
+            "delay": 0.20000004768371582,
+            "at": 50933.19999998808,
+            "contextTime": 48.448,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "shieldBreak",
+            "delay": 0.09999996423721313,
+            "at": 50933.40000003576,
+            "contextTime": 48.448,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.10000002384185791,
+            "at": 50933.80000001192,
+            "contextTime": 48.448,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 50949.30000001192,
+            "contextTime": 48.46933333333333,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 50983,
+            "contextTime": 48.501333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 51066.40000003576,
+            "contextTime": 48.586666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.10000002384185791,
+            "at": 51116.5,
+            "contextTime": 48.629333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.10000002384185791,
+            "at": 51182.80000001192,
+            "contextTime": 48.704,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0,
+            "at": 51183.5,
+            "contextTime": 48.704,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.19999998807907104,
+            "at": 51233.10000002384,
+            "contextTime": 48.74666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.04
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.20000004768371582,
+            "at": 51249.19999998808,
+            "contextTime": 48.768,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.20000004768371582,
+            "at": 51283.69999998808,
+            "contextTime": 48.8,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.30000001192092896,
+            "at": 51416,
+            "contextTime": 48.928,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "expSmall",
+            "delay": 0.20000004768371582,
+            "at": 51433.19999998808,
+            "contextTime": 48.949333333333335,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 51649.30000001192,
+            "contextTime": 49.16266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0,
+            "at": 51866.19999998808,
+            "contextTime": 49.38666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0,
+            "at": 51866.40000003576,
+            "contextTime": 49.38666666666666,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.19999998807907104,
+            "at": 51882.40000003576,
+            "contextTime": 49.397333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 52115.69999998808,
+            "contextTime": 49.632,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.10000002384185791,
+            "at": 52149,
+            "contextTime": 49.664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 52349.10000002384,
+            "contextTime": 49.86666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 52582.40000003576,
+            "contextTime": 50.101333333333336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.19999998807907104,
+            "at": 52666,
+            "contextTime": 50.18666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0.10000002384185791,
+            "at": 52666.19999998808,
+            "contextTime": 50.18666666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "hit",
+            "delay": 0.20000004768371582,
+            "at": 52782.69999998808,
+            "contextTime": 50.304,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyHit",
+            "delay": 0,
+            "at": 52782.90000003576,
+            "contextTime": 50.304,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.20000004768371582,
+            "at": 52815.69999998808,
+            "contextTime": 50.336,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "retinaLockBeep",
+            "delay": 0.19999998807907104,
+            "at": 52882.40000003576,
+            "contextTime": 50.4,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "retinaCharge",
+            "delay": 21.099999964237213,
+            "at": 52868.10000002384,
+            "contextTime": 50.40266666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 53049.40000003576,
+            "contextTime": 50.57066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "delay": 0.09999996423721313,
+            "at": 53049.60000002384,
+            "contextTime": 50.57066666666667,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "retinaLockBeep",
+            "delay": 0.30000001192092896,
+            "at": 53199.10000002384,
+            "contextTime": 50.72,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 53282.40000003576,
+            "contextTime": 50.794666666666664,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "retinaLockBeep",
+            "delay": 0.19999998807907104,
+            "at": 53465.80000001192,
+            "contextTime": 50.986666666666665,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          },
+          {
+            "name": "spaceLaserCannon",
+            "delay": 0.09999996423721313,
+            "at": 53515.90000003576,
+            "contextTime": 51.029333333333334,
+            "baseLatency": 0.010666666666666666,
+            "outputLatency": 0.048
+          }
+        ],
+        "stats": {
+          "decoded": 96,
+          "starts": 320,
+          "expired": 3,
+          "cancelled": 0,
+          "stolen": 8
+        },
+        "errors": [],
+        "bytes": 40858000
+      },
+      "ss": 2
+    },
+    "errors": []
+  }
+]

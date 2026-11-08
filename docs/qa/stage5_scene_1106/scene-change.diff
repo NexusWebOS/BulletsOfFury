@@ -1,0 +1,96 @@
+--- before/assets/game.js
++++ after/assets/game.js
+@@ -967,34 +967,13 @@
+   ctx.restore();
+   return true;
+ }
+-/* ============================================================
+-   THE STAGE-6 BLUE SKY, DRAWN BY THE FUNCTION THAT ALREADY EXISTS FOR IT (drop 0903v)
+-
+-   Mike: "that is not the sky from stage 6."
+-
+-   He was right twice over. Stage 6's master is `stage6_blue_master` (680x5000, registered in
+-   game.js via X._src, not through the manifest) - a flat royal-blue field with pixel clouds,
+-   uniform end to end. What 0903s/0903u used was `bg_stage06_master`, a DIFFERENT plate that
+-   runs a whole day cycle, and 0903u then went hunting inside it for a blue region and
+-   mirror-tiled a gradient band out of it. All of that was solving a problem that did not exist.
+-
+-   `STAGE6_TRANSITION_SKY` and `stage6TransitionBackgroundDraw(scroll)` were already in this file
+-   for exactly this purpose - the stage-6 launch/transition sky - and its own note explains why
+-   it exists: an earlier version multiplied scroll by .35 and wrapped against a different range,
+-   so GO jumped to another piece of the same image. It uses `bg6LoopDraw`, the GAMEPLAY sampler,
+-   so the transition and the live level cannot disagree about where in the plate they are.
+-
+-   Wrapped in an alpha so the sky can rise OVER the stage-4 plate rather than replacing it: the
+-   function opens with an opaque #062a8e fill, which at full alpha would hide the highway the
+-   climb is still meant to be leaving.
+-
+-   The neon-city overlay inside bg6LoopDraw is keyed off `_levelCfg().city`, and during the
+-   outbound that cfg is stage 4's, which has no city - so it stays off without a special case.
+-   ============================================================ */
++/* Stage4's outbound climb and Stage5's assembly share the original authored
++   ascent sky. Stage6 owns its separate city arrival; do not route this climb
++   through its replaceable transition renderer (November6 scene repair). */
+ function s45Sky(scroll, rate, alpha){
+-  if(alpha<=0.004 || typeof stage6TransitionBackgroundDraw!=='function') return false;
++  if(alpha<=0.004 || typeof stage5AscentBackgroundDraw!=='function') return false;
+   ctx.save(); ctx.globalAlpha=clamp(alpha,0,1);
+-  stage6TransitionBackgroundDraw(scroll*rate);
++  stage5AscentBackgroundDraw(scroll*rate);
+   ctx.restore();
+   return true;
+ }
+@@ -73350,6 +73329,23 @@
+ const LAUNCH_LAND=SEG_B3+1400;     // the dist at which the level joins the connector (launchConnDy)
+ const LAUNCH_BRAKE_DIST=2400;      // ~2.7 s of braking from 1750 to 40
+ const STAGE6_TRANSITION_SKY='stage6_blue_master';
++
++/* Stage5 owns its ascent sky. Stage6's current transition draws the mainland city;
++   sharing that renderer put buildings behind the Furyship assembly. Sample the
++   original authored blue sky directly, with the finite cloud deck owned by
++   furyIntroClouds. No city overlay or Stage6 weather grade belongs in this climb. */
++function stage5AscentBackgroundDraw(scroll){
++  ctx.fillStyle='#062a8e';ctx.fillRect(0,0,VW,VH);
++  if(typeof XART==='undefined'||!XART.rdy(STAGE6_TRANSITION_SKY))return true;
++  const im=XART.get(STAGE6_TRANSITION_SKY),H=im.naturalHeight||im.height;
++  const travel=Number.isFinite(scroll)?scroll:0;
++  let sy=((H-((travel%H+H)%H)-VH)%H+H)%H;
++  const h1=Math.min(VH,H-sy);
++  ctx.drawImage(im,0,sy,VW,h1,0,0,VW,h1);
++  if(h1<VH)ctx.drawImage(im,0,0,VW,VH-h1,0,h1,VW,VH-h1);
++  return true;
++}
++
+ /* Launch and gameplay now read the SAME 680x5000 master. The launch samples upward from its
+    bottom edge, matching the first live level frame; the countdown only changes scroll speed. */
+ function stage6TransitionBackgroundDraw(scroll){
+@@ -73398,7 +73394,7 @@
+ }
+ function stage5SkyToSpaceDraw(progress,scroll){
+   const p=clamp(progress,0,1);
+-  stage6TransitionBackgroundDraw(scroll||0);
++  stage5AscentBackgroundDraw(scroll||0);
+   /* ⚠ SPACE ATTACHES, IT DOES NOT FADE UP (drop 0903x). Mike: "theres no fading anymore with the
+      stage 5 transition." This was globalAlpha=p*p*(3-2p) over a black fill and the space plate -
+      a cross-fade, which is exactly what he ruled out, and it is the LAUNCH-side twin of the
+@@ -73561,7 +73557,7 @@
+  const x=lerp(VW/2,pose.x,k),y=lerp(S.build?VH*.59:pose.y,pose.y,k),size=SPACE_SHIP_SIZE;   // play size throughout (1001c): no 118 px fighter shrunk to 48 at the countdown
+  S.ship={x,y,size};
+  if(S.space){_stage5SpaceScroll=S.scroll;entryConnectorDraw(5,0);}
+- else stage6TransitionBackgroundDraw(S.scroll);
++ else stage5AscentBackgroundDraw(S.scroll);
+  if(S.build&&S.phase==='sky'&&gravityMode.partStartAge==null){drawShipSprite(x,y,SHIP_DRAW_H,'');}
+  else if(furyShipReady())furyShipDrawPhase(G,x,y,size,SHIP_DRAW_H,_pilotKey());
+  else drawShipSprite(x,y,SHIP_DRAW_H,'');
+--- before/assets/layered_stages_1102.js
++++ after/assets/layered_stages_1102.js
+@@ -11,7 +11,8 @@
+ for(const a of Object.values(LS112_ART.levels))XART._src[a.key]=a.path;
+ for(const a of Object.values(LS112_ART.banks))XART._src[a.key]=a.path;
+ for(const a of [LS112_ART.highway,LS112_ART.sewerExit])XART._src[a.key]=a.path;
+-function ls112Live(n=run.stage){return !globalThis.LS112_OFF&&!(typeof tutLive==='function'&&tutLive())&&!!LS112_ART.levels[String(n)];}
++// November6: Stage5 keeps its original starfield/space parallax, including launch and boss.
++function ls112Live(n=run.stage){return Number(n)!==5&&!globalThis.LS112_OFF&&!(typeof tutLive==='function'&&tutLive())&&!!LS112_ART.levels[String(n)];}
+ function ls112Count(k){LS112.draws[k]=(LS112.draws[k]||0)+1;}
+ function ls112Keys(n){const a=LS112_ART.levels[String(n)];if(!a)return[];const bed=LS112_ART.materials[a.material];return[a.key,...(bed?[bed.key]:[]),...(n===4?[LS112_ART.tesla.key,LS112_ART.highway.key]:[]),...(n===7?[LS112_ART.sewerExit.key]:[])];}
+ function ls112Warm(n){for(const k of ls112Keys(n))XART.rdy(k);}
