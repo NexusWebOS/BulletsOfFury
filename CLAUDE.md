@@ -1,3 +1,15 @@
+## November9,2026 — Quick water mechanics tutorial
+
+Mike removed the tutorial boss and BOB. TS109 replaces the active itinerary with
+nine short native-control objectives over authored darkened animated water only.
+No academy, escort/exam, element lab, dossier or long debrief. Compact portrait
+instructions, actual south-facing twin muzzle/FOV sockets, white hits and native
+pickups remain. Preserve protected practice, decline/pause skip, co-op/mode/save
+handoffs. 22/22 Chromium checks pass; screenshots inspected. Full suite still
+exits1 before assertions: missing retired_art_1022/manifest.json (same baseline).
+Source build only; Rev F installer unchanged. No commit/push.
+Owner/evidence: docs/TUTORIAL_SHOWCASE_1109.md;docs/qa/tutorial_showcase_1109.json.
+
 ## November8,2026 — Windows Rev F published to GitHub
 
 Main and codex/build-2026-10-26 were fast-forwarded. Release:

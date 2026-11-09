@@ -1,0 +1,238 @@
+{
+  "date": "2026-11-09",
+  "head": "6bf6a4b57d316574e617af87f8b28f8e0e1a30db",
+  "result": {
+    "passed": 22,
+    "total": 22,
+    "errors": []
+  },
+  "checks": [
+    {
+      "name": "cole completes all nine mechanics through native inputs",
+      "passed": true
+    },
+    {
+      "name": "cole tutorial is a short showcase without combat exams",
+      "passed": true
+    },
+    {
+      "name": "cole has no BOB, boss or unrelated waves",
+      "passed": true
+    },
+    {
+      "name": "cole draws animated water without academy or BOB art",
+      "passed": true
+    },
+    {
+      "name": "cole warning rounds remain unshootable",
+      "passed": true
+    },
+    {
+      "name": "cole warning fire leaves actual south-facing twin gun mouths",
+      "passed": true
+    },
+    {
+      "name": "cole restores requested mode and native pause/completion owners",
+      "passed": true
+    },
+    {
+      "name": "cole protected practice never loses a life",
+      "passed": true
+    },
+    {
+      "name": "juggernaut completes all nine mechanics through native inputs",
+      "passed": true
+    },
+    {
+      "name": "juggernaut tutorial is a short showcase without combat exams",
+      "passed": true
+    },
+    {
+      "name": "juggernaut has no BOB, boss or unrelated waves",
+      "passed": true
+    },
+    {
+      "name": "juggernaut draws animated water without academy or BOB art",
+      "passed": true
+    },
+    {
+      "name": "juggernaut warning rounds remain unshootable",
+      "passed": true
+    },
+    {
+      "name": "juggernaut warning fire leaves actual south-facing twin gun mouths",
+      "passed": true
+    },
+    {
+      "name": "juggernaut restores requested mode and native pause/completion owners",
+      "passed": true
+    },
+    {
+      "name": "juggernaut protected practice never loses a life",
+      "passed": true
+    },
+    {
+      "name": "arcade can decline the tutorial",
+      "passed": true
+    },
+    {
+      "name": "campaign can decline the tutorial",
+      "passed": true
+    },
+    {
+      "name": "Pause skip restores co-op and starts the requested run",
+      "passed": true
+    },
+    {
+      "name": "Actual target pixels flash white on damage and expire",
+      "passed": true
+    },
+    {
+      "name": "Mobile tutorial retains a compact 84px dialogue panel",
+      "passed": true
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true
+    }
+  ],
+  "runs": [
+    {
+      "pilot": "cole",
+      "requestedMode": "arcade",
+      "difficulty": "normal",
+      "seen": [
+        "move",
+        "fire",
+        "roll",
+        "somer",
+        "retina",
+        "multi",
+        "warn",
+        "crate",
+        "special"
+      ],
+      "state": "intro",
+      "mode": "arcade",
+      "coop": false,
+      "lives": 5,
+      "dead": false,
+      "steps": [
+        {
+          "id": "move",
+          "seconds": 1.4166666666666665
+        },
+        {
+          "id": "fire",
+          "seconds": 2.1333333333333306
+        },
+        {
+          "id": "roll",
+          "seconds": 1.4499999999999997
+        },
+        {
+          "id": "somer",
+          "seconds": 1.6166666666666658
+        },
+        {
+          "id": "retina",
+          "seconds": 1.4
+        },
+        {
+          "id": "multi",
+          "seconds": 1.1666666666666674
+        },
+        {
+          "id": "warn",
+          "seconds": 6.633333333333315
+        },
+        {
+          "id": "crate",
+          "seconds": 1.0000000000000013
+        },
+        {
+          "id": "special",
+          "seconds": 3.21666666666666
+        }
+      ],
+      "pause": "RESTART LEVEL"
+    },
+    {
+      "pilot": "juggernaut",
+      "requestedMode": "campaign",
+      "difficulty": "furious",
+      "seen": [
+        "move",
+        "fire",
+        "roll",
+        "somer",
+        "retina",
+        "multi",
+        "warn",
+        "crate",
+        "special"
+      ],
+      "state": "campaignintro",
+      "mode": "campaign",
+      "coop": false,
+      "lives": 3,
+      "dead": false,
+      "steps": [
+        {
+          "id": "move",
+          "seconds": 1.483333333333333
+        },
+        {
+          "id": "fire",
+          "seconds": 2.1333333333333306
+        },
+        {
+          "id": "roll",
+          "seconds": 1.4499999999999997
+        },
+        {
+          "id": "somer",
+          "seconds": 1.6166666666666658
+        },
+        {
+          "id": "retina",
+          "seconds": 1.4
+        },
+        {
+          "id": "multi",
+          "seconds": 1.1666666666666674
+        },
+        {
+          "id": "warn",
+          "seconds": 6.633333333333315
+        },
+        {
+          "id": "crate",
+          "seconds": 1.0000000000000013
+        },
+        {
+          "id": "special",
+          "seconds": 3.2499999999999933
+        }
+      ],
+      "pause": "RESTART LEVEL"
+    }
+  ],
+  "sources": {
+    "assets/tutorial_showcase_1109.js": "1e95c122e3c8379c889bcf929d1943f2c25da1ad68338648bffbecdd12419ce1",
+    "assets/menu_windows_1021.js": "b35955db8476162b2d17dc9bb11198e002f32a10a4f73f3c589c336422cb359a",
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "_BUILD_SOURCE/probe_tutorial_showcase_1109.py": "f4e7449515bf28cd751b9b84fefbf70e7885119d0c0cbd4ac847c74fa808502a"
+  },
+  "full_suite": {
+    "exit_code": 1,
+    "reached_summary": false,
+    "unchanged_baseline_blocker": "ENOENT UNUSED_ASSETS/retired_art_1022/manifest.json"
+  },
+  "screenshots": [
+    "ask.png",
+    "cole-warn.png",
+    "mobile.png"
+  ],
+  "packaging": "Source update; downloaded Windows Rev F installer unchanged."
+}

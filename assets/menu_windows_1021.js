@@ -24,15 +24,15 @@ tutAskDraw=function(dt){const A=tutAsk;if(!A){setState(GS.TITLE);return;}A.t+=dt
  ui20Text(ctx,'TRAINING FLIGHT',VW/2,48,24,VW-30,'center','#f2f7ff');
  const w=VW-24,h=286,x=12,y=91,r=mw21Window('l',x,y,w,h);
  if(r){mw21Text('BEFORE YOU DEPLOY',r.header,13,'#ffd47d');
-  MW21.prompt=mw21Text('Bullets of Fury mixes Arcade shooter action with Dodge rolls, Lock-On Missile targeting systems, Warning Systems, Special Abilities per Pilot & More. It is STRONGLY recommended you try the tutorial in the exclusive level: Stormglass.',{x:x+38,y:y+65,w:w-76,h:91},13);
+  MW21.prompt=mw21Text('A quick hands-on flight over open water: movement, firing, dodges, lock-on missiles, pickups and warning colors. Practice safely before you deploy.',{x:x+38,y:y+65,w:w-76,h:91},13);
   ui20Text(ctx,A.seen?'REFRESH YOUR FLIGHT SKILLS':'RECOMMENDED FOR NEW PILOTS',VW/2,y+169,12,w-64,'center','#ffd47d');
-  const rows=['YES - FLY STORMGLASS ACADEMY',run.mode==='campaign'?'NO - START THE CAMPAIGN':'NO - STRAIGHT TO STAGE 1'];
+  const rows=['YES - QUICK MECHANICS FLIGHT',run.mode==='campaign'?'NO - START THE CAMPAIGN':'NO - STRAIGHT TO STAGE 1'];
   const moved=Input.consumeMouseMoved(),click=Input.mouse.down&&!A.md;A.md=!!Input.mouse.down;
   for(let i=0;i<2;i++){const cy=y+202+i*36,over=Input.mouse.inside&&Math.abs(Input.mouse.x-VW/2)<w*.42&&Math.abs(Input.mouse.y-cy)<17;
    if(moved&&over)A.sel=i;ui20Text(ctx,rows[i],VW/2+6,cy,A.sel===i?14:12,w-90,'center',A.sel===i?'#ffffff':'#9eacbd');
    if(A.sel===i)drawSelArrow(x+32,cy-4,18,false,'g');if(click&&over&&A.t>.35){tutAskChoose(i);return;}}
  }
- ui20Text(ctx,'ABOUT FOUR MINUTES - SKIP FROM THE PAUSE MENU',VW/2,407,11,VW-36,'center','#a2b4c8');
+ ui20Text(ctx,'SHORT HANDS-ON SHOWCASE - PAUSE TO SKIP',VW/2,407,11,VW-36,'center','#a2b4c8');
  controlHintRow([['pad_dpad','CHOOSE'],['pad_a','CONFIRM'],['pad_b','BACK']]);
  if(A.t<.35)return;if(Input.menuUp()||Input.menuDown()){A.sel=1-A.sel;Audio.SFX.blip();}
  if(Input.menuConfirm()){tutAskChoose(A.sel);return;}if(Input.menuBack()){tutAsk=null;if(A.prev===GS.PILOT){drawPilot._entered=false;drawPilot._pcFor=null;pilotPending=null;pilotSlide=0;}setState(A.prev||GS.PILOT);}
