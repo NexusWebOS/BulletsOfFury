@@ -1,0 +1,12 @@
+{
+  "commit": "5eb79c862c16cbde66b29b810948d7baf6abbb5a",
+  "files": 5308,
+  "branches": [
+    "main",
+    "codex/build-2026-10-26"
+  ],
+  "remoteVerified": true,
+  "fullAssertions": 8969,
+  "initialCommit": "636ee1165cf697c7cdbfef6e8e1947dd93c49026",
+  "portableFullAssertions": 8969
+}

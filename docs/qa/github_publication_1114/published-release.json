@@ -1,0 +1,271 @@
+{
+  "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-windows-2026-11-14-revg",
+  "tag": "bof-windows-2026-11-14-revg",
+  "id": 445553622,
+  "publishedAt": "2026-11-14T20:50:23Z",
+  "sourceCommit": "5eb79c862c16cbde66b29b810948d7baf6abbb5a",
+  "assets": [
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part1",
+      "bytes": 268435456,
+      "sha256": "bb3103883bb2707acb529ace11653f4e54a163b825dffe5dd90506100689f298",
+      "id": 748614844,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part1",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748614844",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part2",
+      "bytes": 268435456,
+      "sha256": "6a12bd16b6c5f09e64d53ca4c550af7804ed18f5f9d218e91921599121d70cdd",
+      "id": 748620678,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part2",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748620678",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part3",
+      "bytes": 268435456,
+      "sha256": "be65479ca7efbaf116e2a5d0c3e9b5cd34bedf2de5d0f65757b37e5b333f2393",
+      "id": 748626645,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part3",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748626645",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part4",
+      "bytes": 268435456,
+      "sha256": "a8114ac736af99e3974cbb79f01923f3897191aee0c5c0695b20d132bdd21da8",
+      "id": 748632819,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part4",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748632819",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part5",
+      "bytes": 268435456,
+      "sha256": "edac3876d6dcfbe13a13dfeaac4c46881cebc6b3c2ec1bfb1ccda4a0ade96a96",
+      "id": 748637812,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part5",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748637812",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part6",
+      "bytes": 268435456,
+      "sha256": "8a1e41a057847582bd7423c7fc7f12476b83a22d2ce61b01b1d87c5f7aeb05be",
+      "id": 748642763,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part6",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748642763",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part7",
+      "bytes": 268435456,
+      "sha256": "21a7d6f28db78ebb4ad4add225665ebfb59e26e1e93f5b1d014bb1fd164c8021",
+      "id": 748647727,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part7",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748647727",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part8",
+      "bytes": 268435456,
+      "sha256": "70b83d34e7d3bdf4506d52fe61d2c3ccabf0f3496b3f1f08314dbef085f777de",
+      "id": 748652767,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part8",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748652767",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part9",
+      "bytes": 268435456,
+      "sha256": "a57adebd73d802dfec86101d8b5f1cb6e03e4df34ff74532adb61e2df621ea89",
+      "id": 748658694,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part9",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748658694",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part10",
+      "bytes": 268435456,
+      "sha256": "0f050f53978a1f9e2aabad10bca9633e8b2277eaf9767cf42507f4912d00b521",
+      "id": 748664371,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part10",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748664371",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part11",
+      "bytes": 268435456,
+      "sha256": "88ad16b81d6b337e7c5c09185b192cc9c30f94afa48cf9ccedb5a7950c92c020",
+      "id": 748669895,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part11",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748669895",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part12",
+      "bytes": 268435456,
+      "sha256": "a7a65ae40c853f5145a0865b81cee26282945c2b9dab4d15cc0162e7d7390341",
+      "id": 748675452,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part12",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748675452",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part13",
+      "bytes": 268435456,
+      "sha256": "3da61b3fee9b72ed420a9c12b3639040f8fcd73a21d1a492a1e92ef5faeddac1",
+      "id": 748680916,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part13",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748680916",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part14",
+      "bytes": 268435456,
+      "sha256": "4c9771c5588c9da7e97caf8bbf90ffe2995fbc42ff48e78f026aef7097db36ae",
+      "id": 748685447,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part14",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748685447",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part15",
+      "bytes": 268435456,
+      "sha256": "d8946ec5357cf61023242a7fceae166022654781d6cf92a2041756f7eeaaf0ff",
+      "id": 748690717,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part15",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748690717",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part16",
+      "bytes": 268435456,
+      "sha256": "96d4f9fa61d52bba9f837828815b4bdbccac3bcdcd84b0be1c1f4c01e9f376de",
+      "id": 748697334,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part16",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748697334",
+      "verified": true
+    },
+    {
+      "name": "BulletsOfFury-Setup-2026-11-14-RevG.exe.part17",
+      "bytes": 117691379,
+      "sha256": "466ecf67775704028a51caa404962afd8a8fd569d83815b4c53a43b780fd6ac8",
+      "id": 748702533,
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BulletsOfFury-Setup-2026-11-14-RevG.exe.part17",
+      "apiUrl": "https://api.github.com/repos/NexusWebOS/BulletsOfFury/releases/assets/748702533",
+      "verified": true
+    },
+    {
+      "name": "BOF-Install-Helper-RevG.zip",
+      "bytes": 3935,
+      "sha256": "8c2677463c1bf604bf253957e5853828e621679ce4ba9259d9b44f9690efc29d",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BOF-Install-Helper-RevG.zip",
+      "id": 748736435,
+      "verified": true
+    },
+    {
+      "name": "READ-ME.txt",
+      "bytes": 1199,
+      "sha256": "5ac05d50308dc5499f63088dae0515c1485044252639be72881fd98e5805146f",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/READ-ME.txt",
+      "id": 748736475,
+      "verified": true
+    },
+    {
+      "name": "BOF-Stage5-Targeting-RevG.mp4",
+      "bytes": 3348536,
+      "sha256": "d89afdafee7ff4d8c6c3ad3e608852b373ac0a8523d3084adca25dbf249602c2",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BOF-Stage5-Targeting-RevG.mp4",
+      "id": 748736522,
+      "verified": true
+    },
+    {
+      "name": "BOF-Stage5-Bomber-RevG.mp4",
+      "bytes": 13494297,
+      "sha256": "f707c7bdede7f199b85ddbce235580f58ff4816547d9f27dbe5d0848da02a5ec",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BOF-Stage5-Bomber-RevG.mp4",
+      "id": 748736666,
+      "verified": true
+    },
+    {
+      "name": "BOF-Draconus-Rage-RevG.mp4",
+      "bytes": 15922135,
+      "sha256": "e04778f849e9a86e1c986db5ae075fce300eee49d0cf9236b6cfd5fe68a2afe3",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BOF-Draconus-Rage-RevG.mp4",
+      "id": 748736845,
+      "verified": true
+    },
+    {
+      "name": "BOF-validation-RevG.json",
+      "bytes": 1140,
+      "sha256": "551427da7a07cb99b36db171333c28c60216f8750dcecf62bbfd43a9c879406e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BOF-validation-RevG.json",
+      "id": 748737080,
+      "verified": true
+    },
+    {
+      "name": "BOF-Release-Manifest-RevG.json",
+      "bytes": 12170,
+      "sha256": "63d9cd54f6bc0cef798e35f1eb4f01ca170929ca58645a01bfe6535d3fef25e8",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BOF-Release-Manifest-RevG.json",
+      "id": 748737101,
+      "verified": true
+    },
+    {
+      "name": "BOF-SHA256SUMS-RevG.txt",
+      "bytes": 2578,
+      "sha256": "fb0d551f579b93ab3a71fcf4d931efd06c63b789c8f1b5b31f5f765a583fe75e",
+      "url": "https://github.com/NexusWebOS/BulletsOfFury/releases/download/bof-windows-2026-11-14-revg/BOF-SHA256SUMS-RevG.txt",
+      "id": 748737117,
+      "verified": true
+    }
+  ],
+  "allRemoteDigestsVerified": true,
+  "anonymousHelperVerified": true,
+  "anonymousInstallerRangesVerified": true,
+  "validation": {
+    "fullSuite": {
+      "passed": 8969,
+      "failures": 0,
+      "exit": 0,
+      "portableReferenceFiles": 135
+    },
+    "nativeHostChecks": 14,
+    "cleanPackageChecks": [
+      {
+        "name": "Fresh packaged title, normal controls, shared helpers and new optic metadata",
+        "passed": true,
+        "data": {
+          "native": true,
+          "god": false,
+          "shared": true,
+          "retina": 256
+        }
+      },
+      {
+        "name": "Packaged Stage5 loads, updates and renders",
+        "passed": true
+      },
+      {
+        "name": "Packaged Stage6 loads, updates and renders",
+        "passed": true
+      },
+      {
+        "name": "Packaged Stage7 loads, updates and renders",
+        "passed": true
+      },
+      {
+        "name": "Packaged Stage8 loads, updates and renders",
+        "passed": true
+      }
+    ],
+    "allPayloadEntrySizesVerified": 21040,
+    "remoteReadBackFiles": 733,
+    "remotePartDigests": 17,
+    "sourceCommit": "5eb79c862c16cbde66b29b810948d7baf6abbb5a",
+    "limits": "Current development prerelease. Review clips use invulnerable native checkpoints. Full unassisted experience/balance playtest pending."
+  }
+}

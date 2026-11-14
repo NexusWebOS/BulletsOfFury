@@ -1,3 +1,17 @@
+## November14,2026 — Current source and complete Windows RevG on GitHub
+
+Mike authorized all changes and the current build uploaded. Full source/art
+snapshot636ee1165 and portable-check follow-up5eb79c862 are on main
+and codex/build-2026-10-26; no history rewrite. The new development prerelease
+bof-windows-2026-11-14-revg contains the complete Windows installer in17 verified parts,
+download/join helper, original Fury HQ host/offline runtime and current previews.
+Full suite8,969 passed/0 failed with tracked fallback reference fixtures. Native
+host14 checks and clean packaged title/Stages5–8 pass; all release digests and
+anonymous helper/installer sample downloads verified. Home unassisted experience
+playtest remains pending; earlier releases remain. This supersedes earlier
+source-only/no-publication notes. Docs: docs/GITHUB_WINDOWS_PUBLICATION_1114.md.
+Release: https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-windows-2026-11-14-revg
+
 ## November14,2026 — Full suite green; continuous bomber lock warnings
 
 Mike requested the missing health-helper error fixed and all full checks passing.

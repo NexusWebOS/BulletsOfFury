@@ -1,0 +1,9 @@
+{
+  "exit": 0,
+  "passed": 8969,
+  "summary": true,
+  "referenceFiles": 135,
+  "referenceBytes": 18286606,
+  "seconds": 146.23399999999674,
+  "failures": []
+}

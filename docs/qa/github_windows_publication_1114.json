@@ -1,0 +1,49 @@
+{
+  "repository": "NexusWebOS/BulletsOfFury",
+  "release": "https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-windows-2026-11-14-revg",
+  "tag": "bof-windows-2026-11-14-revg",
+  "runtimeSourceCommit": "5eb79c862c16cbde66b29b810948d7baf6abbb5a",
+  "initialSourceCommit": "636ee1165cf697c7cdbfef6e8e1947dd93c49026",
+  "installerBytes": 4412658675,
+  "installerSha256": "8dabf873fc7484158eebf56cb7bce8698ee189d2b43d61ba9551b7fd7e1bea7a",
+  "payloadFiles": 21040,
+  "parts": 17,
+  "assets": 25,
+  "allRemoteSHA256": true,
+  "anonymousHelper": true,
+  "anonymousInstallerRanges": true,
+  "fullAssertions": 8969,
+  "fullFailures": 0,
+  "nativeHostChecks": 14,
+  "cleanPackageChecks": [
+    {
+      "name": "Fresh packaged title, normal controls, shared helpers and new optic metadata",
+      "passed": true,
+      "data": {
+        "native": true,
+        "god": false,
+        "shared": true,
+        "retina": 256
+      }
+    },
+    {
+      "name": "Packaged Stage5 loads, updates and renders",
+      "passed": true
+    },
+    {
+      "name": "Packaged Stage6 loads, updates and renders",
+      "passed": true
+    },
+    {
+      "name": "Packaged Stage7 loads, updates and renders",
+      "passed": true
+    },
+    {
+      "name": "Packaged Stage8 loads, updates and renders",
+      "passed": true
+    }
+  ],
+  "readBackCriticalFiles": 733,
+  "prerelease": true,
+  "unassistedPlaytestPending": true
+}

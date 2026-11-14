@@ -6,7 +6,16 @@ integration, and real-browser verification.
 
 Release source branch: `codex/build-2026-10-26`
 
-## Windows launcher and complete game — Rev F
+## Current Windows build — November14,2026 / Rev G
+
+[Download the current Windows build](https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-windows-2026-11-14-revg). Extract **BOF-Install-Helper-RevG.zip** and run **Install-BulletsOfFury.cmd**. The helper retrieves/verifies all installer parts and opens the complete Fury HQ setup. All current game art, audio and the offline Windows runtime are included. Allow16GB free during download/setup.
+
+Includes the current boss/hammer/rage/ship/gun work, Stage5 bomber pursuit and active beeping target optics, pilot/playtest improvements and shared health-helper repairs. The full suite now finishes with **8,969 passed, zero failures**, including the fresh-download reference path. Native launcher and clean packaged Stages5–8 checks pass. This is the current development prerelease for home playtesting; the older stable release remains below.
+
+[Build contents, checks and limits](docs/GITHUB_WINDOWS_PUBLICATION_1114.md).
+
+
+## Previous Windows release — Rev F
 
 [Download the current Windows release](https://github.com/NexusWebOS/BulletsOfFury/releases/tag/bof-windows-2026-11-06-revf).
 Published November8,2026. Download **BOF-Install-Helper-RevF.zip**, extract it and
