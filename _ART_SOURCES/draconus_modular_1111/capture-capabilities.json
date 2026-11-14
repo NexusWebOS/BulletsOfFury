@@ -1,0 +1,15 @@
+{
+  "types": {
+    "video/mp4;codecs=avc1.42E01E,mp4a.40.2": true,
+    "video/mp4": true,
+    "video/webm;codecs=vp9,opus": true,
+    "video/webm;codecs=vp8,opus": true
+  },
+  "audio": [
+    "warpMix",
+    "_sfxMix",
+    "_ctx",
+    "_audioCtx",
+    "setWarpMix"
+  ]
+}

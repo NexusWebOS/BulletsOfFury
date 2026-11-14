@@ -39,9 +39,9 @@ module.exports=function(vm,ctxv,ok){
  reset(5);spawnBoss(curStage.boss);const b=boss;b._hammer.state='unfold';b._hammer.t=1.95;fb2IntroStart(b);
  o['one live Hammer dialogue owns the intro']=fb2IntroActive()&&b._hammer.intro1002&&!BOFCinematicDirector.live;
  o['campaign live dialogue preserves the trap taunt']=fb2Intro.lines.some(l=>l.text.includes('Legion has already'));
- fb2IntroEnd();o['dialogue ends with the opening jump warning']=b._hammer.state==='warn'&&!b._noHit;
+ fb2IntroEnd();o['dialogue yields directly to native armor preparation']=b._hammer.state==='hammer'&&!b._noHit&&!b._hammer.openingJump1003;
  const opening=[];for(let i=0;i<540;i++){hammerBossTick(b,1/60);if(opening.at(-1)!==b._hammer.state)opening.push(b._hammer.state);}
- o['opening jump lands and returns before chromium activation']=['warn','leap','recover','back','fr_activation','hammer'].every((s,i,a)=>opening.includes(s)&&(i===0||opening.indexOf(s)>opening.indexOf(a[i-1])));
+ const armorAt=opening.indexOf('fr_activation');o['chromium activates before the first combat attack']=armorAt>=0&&opening.indexOf('hammer',armorAt+1)>armorAt&&!opening.slice(0,armorAt).some(s=>['warn','leap','recover','back'].includes(s));
  o['opening jump releases its armor deferral']=!b._hammer.openingJump1003&&!!fr27Armor(b)?.activated;
  return o;})())`,ctxv));
  for(const [name,pass]of Object.entries(checks))ok(pass,name);

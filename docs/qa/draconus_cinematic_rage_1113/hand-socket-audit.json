@@ -1,0 +1,47 @@
+[
+  {
+    "frame": 3,
+    "ball": [
+      174,
+      286
+    ],
+    "insideActualTransparentCup": true,
+    "pixelsToFingers": 11.40175425099138
+  },
+  {
+    "frame": 4,
+    "ball": [
+      181,
+      284
+    ],
+    "insideActualTransparentCup": true,
+    "pixelsToFingers": 13.152946437965905
+  },
+  {
+    "frame": 5,
+    "ball": [
+      180,
+      285
+    ],
+    "insideActualTransparentCup": true,
+    "pixelsToFingers": 14.0
+  },
+  {
+    "frame": 6,
+    "ball": [
+      188,
+      282
+    ],
+    "insideActualTransparentCup": true,
+    "pixelsToFingers": 16.97056274847714
+  },
+  {
+    "frame": 7,
+    "ball": [
+      192,
+      283
+    ],
+    "insideActualTransparentCup": true,
+    "pixelsToFingers": 15.0
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "name": "guided-blue-o3-rejected",
+  "prompt": "Retarget all EIGHT wholebody recovery poses from reference1 into BLUE CHRONOS as in reference2, SAME4x2 ordered cells. Eight distinct frames24-31: compressed ground strike rebounds, knees/hips gradually stand, shoulders lift head slightly, then a coherent two-hand REGRIP sweeps hammer across FRONT of waist from right to left, ending head LOW SCREEN LEFT and shaft across waist to SCREEN RIGHT, ready to lift again. IMPORTANT lower-row FIRST pose28 has a malformed shaft: correct its WHOLE pose so both fists are on the SAME side of cylinder, on one single straight rigid handle. Head may remain screen-right for that drawing with both fists to its LEFT, then next drawing29 head is screen-left with both fists to itsRIGHT. Cylinder NEVER between the two fists; no handles emerging from both sides. Reference3 hammer dictates SINGLE side-center handle perpendicular to cylinder, capped cyan butt. Reference4 exact Chronos helmet. Keep canonical dark swept finned helmet/narrow cyan visor, charcoal/chrome muscular armor, cyan core/inserts, blue lightning T-hammer flat black/silver endcaps NO spikes/horns/purple/red or face. Fullfigure+hammer together, every pose complete and anatomically coherent, no body assembly or pasted heads. Same relative body unit in all8cells and generous margins. Wide2:1 4columns2rows2048x1024, crisp metallic16bit sprite art, REAL RGBA transparency, no text/labels/background/shadows/effects/checkerboard. Final pose31 must match Chronos waist ready in reference2 firstcell so recovery loops naturally.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-edd68a47-712c-4c7a-b9d7-39319a7c6246.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "reason": "Recovery head wrong side from preceding contact; all eight wrongly head-left.",
+  "selectedCells": [
+    5,
+    6,
+    7
+  ]
+}

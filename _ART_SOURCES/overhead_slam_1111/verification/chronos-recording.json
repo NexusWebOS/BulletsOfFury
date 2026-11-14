@@ -1,0 +1,37 @@
+{
+  "records": [
+    {
+      "unit": "chronos",
+      "video": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\outputs\\chronos-hammer.mp4",
+      "seconds": 32.08,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 9.5
+        },
+        {
+          "name": "released throw",
+          "at": 18.031
+        }
+      ],
+      "audio": {
+        "peak": 0.7122014760971069,
+        "frames": 1170,
+        "starts": 2,
+        "sfxStarts": 40,
+        "errors": [],
+        "events": [],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [],
+        "phase": null
+      }
+    }
+  ],
+  "errors": []
+}

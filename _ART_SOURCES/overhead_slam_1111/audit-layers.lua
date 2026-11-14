@@ -1,0 +1,3 @@
+local W=app.params['out'];local f=io.open(W..'/jobs.json','r');local jobs=json.decode(f:read('*a'));f:close();local rows={}
+for _,j in ipairs(jobs)do local s=app.open(W..'/exports/'..j.name..'.aseprite');assert(s.width==640 and s.height==640 and #s.frames==16 and #s.layers==1,j.name);local out=Image(2560,2560,ColorMode.RGB);out:clear();for i=1,16 do local cel=s.layers[1]:cel(i);assert(cel,j.name..i);out:drawImage(cel.image,Point((i-1)%4*640+cel.position.x,math.floor((i-1)/4)*640+cel.position.y));end;out:saveAs(W..'/exports/'..j.name..'_roundtrip.png');rows[#rows+1]={bank=j.name,layers=#s.layers,frames=#s.frames,layer=s.layers[1].name};s:close();end
+local f=io.open(W..'/layer-audit.json','w');f:write(json.encode(rows));f:close()

@@ -1,0 +1,1267 @@
+[
+  {
+    "source": "chronus-transform-a",
+    "frame": 0,
+    "bounds": [
+      48,
+      80,
+      399,
+      340
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-a",
+    "frame": 1,
+    "bounds": [
+      31,
+      72,
+      413,
+      352
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-a",
+    "frame": 2,
+    "bounds": [
+      29,
+      67,
+      419,
+      356
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-a",
+    "frame": 3,
+    "bounds": [
+      23,
+      55,
+      425,
+      353
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-a",
+    "frame": 4,
+    "bounds": [
+      31,
+      54,
+      414,
+      357
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-a",
+    "frame": 5,
+    "bounds": [
+      59,
+      45,
+      387,
+      362
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-a",
+    "frame": 6,
+    "bounds": [
+      62,
+      39,
+      379,
+      397
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-a",
+    "frame": 7,
+    "bounds": [
+      56,
+      29,
+      393,
+      397
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-b",
+    "frame": 0,
+    "bounds": [
+      45,
+      71,
+      400,
+      344
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-b",
+    "frame": 1,
+    "bounds": [
+      33,
+      69,
+      409,
+      344
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-b",
+    "frame": 2,
+    "bounds": [
+      47,
+      54,
+      395,
+      376
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-b",
+    "frame": 3,
+    "bounds": [
+      68,
+      32,
+      376,
+      384
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-b",
+    "frame": 4,
+    "bounds": [
+      68,
+      31,
+      374,
+      400
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-b",
+    "frame": 5,
+    "bounds": [
+      79,
+      26,
+      364,
+      401
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-b",
+    "frame": 6,
+    "bounds": [
+      85,
+      26,
+      360,
+      402
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-b",
+    "frame": 7,
+    "bounds": [
+      88,
+      22,
+      356,
+      403
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-c",
+    "frame": 0,
+    "bounds": [
+      21,
+      39,
+      422,
+      408
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-c",
+    "frame": 1,
+    "bounds": [
+      49,
+      38,
+      395,
+      408
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-c",
+    "frame": 2,
+    "bounds": [
+      74,
+      38,
+      371,
+      408
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-c",
+    "frame": 3,
+    "bounds": [
+      90,
+      30,
+      357,
+      408
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-c",
+    "frame": 4,
+    "bounds": [
+      33,
+      31,
+      358,
+      409
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-c",
+    "frame": 5,
+    "bounds": [
+      20,
+      30,
+      349,
+      409
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-c",
+    "frame": 6,
+    "bounds": [
+      41,
+      30,
+      381,
+      409
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-c",
+    "frame": 7,
+    "bounds": [
+      39,
+      30,
+      381,
+      409
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-d",
+    "frame": 0,
+    "bounds": [
+      55,
+      44,
+      385,
+      421
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-d",
+    "frame": 1,
+    "bounds": [
+      56,
+      46,
+      377,
+      419
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-d",
+    "frame": 2,
+    "bounds": [
+      53,
+      48,
+      356,
+      419
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-d",
+    "frame": 3,
+    "bounds": [
+      49,
+      50,
+      350,
+      419
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-d",
+    "frame": 4,
+    "bounds": [
+      48,
+      51,
+      359,
+      419
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-d",
+    "frame": 5,
+    "bounds": [
+      48,
+      53,
+      366,
+      419
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-d",
+    "frame": 6,
+    "bounds": [
+      48,
+      53,
+      373,
+      419
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-transform-d",
+    "frame": 7,
+    "bounds": [
+      49,
+      54,
+      378,
+      419
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "chronus-ship",
+    "frame": 0,
+    "bounds": [
+      35,
+      189,
+      1220,
+      1044
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-a",
+    "frame": 0,
+    "bounds": [
+      27,
+      36,
+      417,
+      371
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-a",
+    "frame": 1,
+    "bounds": [
+      24,
+      35,
+      418,
+      366
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-a",
+    "frame": 2,
+    "bounds": [
+      18,
+      35,
+      425,
+      361
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-a",
+    "frame": 3,
+    "bounds": [
+      18,
+      35,
+      427,
+      359
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-a",
+    "frame": 4,
+    "bounds": [
+      17,
+      33,
+      427,
+      354
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-a",
+    "frame": 5,
+    "bounds": [
+      33,
+      34,
+      411,
+      378
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-a",
+    "frame": 6,
+    "bounds": [
+      29,
+      33,
+      415,
+      398
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-a",
+    "frame": 7,
+    "bounds": [
+      36,
+      30,
+      406,
+      406
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-b",
+    "frame": 0,
+    "bounds": [
+      27,
+      34,
+      416,
+      364
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-b",
+    "frame": 1,
+    "bounds": [
+      31,
+      32,
+      412,
+      350
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-b",
+    "frame": 2,
+    "bounds": [
+      34,
+      21,
+      408,
+      395
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-b",
+    "frame": 3,
+    "bounds": [
+      41,
+      19,
+      401,
+      415
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-b",
+    "frame": 4,
+    "bounds": [
+      46,
+      15,
+      398,
+      413
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-b",
+    "frame": 5,
+    "bounds": [
+      58,
+      14,
+      384,
+      413
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-b",
+    "frame": 6,
+    "bounds": [
+      68,
+      13,
+      375,
+      414
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-b",
+    "frame": 7,
+    "bounds": [
+      69,
+      10,
+      379,
+      414
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-c",
+    "frame": 0,
+    "bounds": [
+      33,
+      32,
+      418,
+      413
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-c",
+    "frame": 1,
+    "bounds": [
+      57,
+      32,
+      397,
+      413
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-c",
+    "frame": 2,
+    "bounds": [
+      87,
+      32,
+      361,
+      413
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-c",
+    "frame": 3,
+    "bounds": [
+      99,
+      32,
+      353,
+      413
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-c",
+    "frame": 4,
+    "bounds": [
+      64,
+      31,
+      352,
+      412
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-c",
+    "frame": 5,
+    "bounds": [
+      20,
+      31,
+      351,
+      412
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-c",
+    "frame": 6,
+    "bounds": [
+      40,
+      31,
+      372,
+      412
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-c",
+    "frame": 7,
+    "bounds": [
+      42,
+      31,
+      375,
+      412
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-d",
+    "frame": 0,
+    "bounds": [
+      51,
+      25,
+      395,
+      409
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-d",
+    "frame": 1,
+    "bounds": [
+      55,
+      30,
+      387,
+      412
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-d",
+    "frame": 2,
+    "bounds": [
+      34,
+      40,
+      366,
+      418
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-d",
+    "frame": 3,
+    "bounds": [
+      31,
+      42,
+      377,
+      418
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-d",
+    "frame": 4,
+    "bounds": [
+      33,
+      42,
+      388,
+      418
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-d",
+    "frame": 5,
+    "bounds": [
+      33,
+      44,
+      390,
+      418
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-d",
+    "frame": 6,
+    "bounds": [
+      31,
+      45,
+      390,
+      418
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-transform-d",
+    "frame": 7,
+    "bounds": [
+      30,
+      45,
+      388,
+      418
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-ship",
+    "frame": 0,
+    "bounds": [
+      82,
+      143,
+      1172,
+      1060
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-spin",
+    "frame": 0,
+    "bounds": [
+      57,
+      13,
+      387,
+      409
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-spin",
+    "frame": 1,
+    "bounds": [
+      57,
+      13,
+      387,
+      409
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-spin",
+    "frame": 2,
+    "bounds": [
+      58,
+      13,
+      387,
+      409
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-spin",
+    "frame": 3,
+    "bounds": [
+      58,
+      13,
+      388,
+      409
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-spin",
+    "frame": 4,
+    "bounds": [
+      57,
+      14,
+      387,
+      410
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-spin",
+    "frame": 5,
+    "bounds": [
+      57,
+      14,
+      387,
+      410
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-spin",
+    "frame": 6,
+    "bounds": [
+      58,
+      14,
+      387,
+      410
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-spin",
+    "frame": 7,
+    "bounds": [
+      58,
+      14,
+      388,
+      410
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-fire",
+    "frame": 0,
+    "bounds": [
+      55,
+      12,
+      389,
+      408
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-fire",
+    "frame": 1,
+    "bounds": [
+      55,
+      12,
+      389,
+      406
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-fire",
+    "frame": 2,
+    "bounds": [
+      56,
+      12,
+      389,
+      406
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-fire",
+    "frame": 3,
+    "bounds": [
+      56,
+      13,
+      390,
+      406
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-fire",
+    "frame": 4,
+    "bounds": [
+      56,
+      13,
+      389,
+      406
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-fire",
+    "frame": 5,
+    "bounds": [
+      55,
+      13,
+      389,
+      405
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-fire",
+    "frame": 6,
+    "bounds": [
+      56,
+      13,
+      389,
+      406
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-fire",
+    "frame": 7,
+    "bounds": [
+      56,
+      13,
+      390,
+      405
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-pre",
+    "frame": 0,
+    "bounds": [
+      71,
+      2,
+      375,
+      421
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-pre",
+    "frame": 1,
+    "bounds": [
+      71,
+      34,
+      374,
+      421
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-pre",
+    "frame": 2,
+    "bounds": [
+      71,
+      47,
+      375,
+      421
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-pre",
+    "frame": 3,
+    "bounds": [
+      72,
+      47,
+      375,
+      421
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-pre",
+    "frame": 4,
+    "bounds": [
+      71,
+      47,
+      375,
+      421
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-pre",
+    "frame": 5,
+    "bounds": [
+      70,
+      47,
+      374,
+      421
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-pre",
+    "frame": 6,
+    "bounds": [
+      71,
+      47,
+      374,
+      421
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-pre",
+    "frame": 7,
+    "bounds": [
+      72,
+      47,
+      376,
+      421
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-take",
+    "frame": 0,
+    "bounds": [
+      66,
+      16,
+      379,
+      426
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-take",
+    "frame": 1,
+    "bounds": [
+      66,
+      16,
+      378,
+      426
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-take",
+    "frame": 2,
+    "bounds": [
+      66,
+      17,
+      379,
+      426
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-take",
+    "frame": 3,
+    "bounds": [
+      67,
+      32,
+      379,
+      426
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-take",
+    "frame": 4,
+    "bounds": [
+      66,
+      40,
+      379,
+      435
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-take",
+    "frame": 5,
+    "bounds": [
+      66,
+      29,
+      378,
+      427
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-take",
+    "frame": 6,
+    "bounds": [
+      66,
+      19,
+      379,
+      426
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-catch-take",
+    "frame": 7,
+    "bounds": [
+      67,
+      16,
+      379,
+      427
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-stow",
+    "frame": 0,
+    "bounds": [
+      63,
+      16,
+      384,
+      417
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-stow",
+    "frame": 1,
+    "bounds": [
+      62,
+      24,
+      383,
+      417
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-stow",
+    "frame": 2,
+    "bounds": [
+      63,
+      36,
+      384,
+      420
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-stow",
+    "frame": 3,
+    "bounds": [
+      63,
+      46,
+      384,
+      418
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-stow",
+    "frame": 4,
+    "bounds": [
+      63,
+      44,
+      384,
+      417
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-stow",
+    "frame": 5,
+    "bounds": [
+      62,
+      34,
+      383,
+      417
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-stow",
+    "frame": 6,
+    "bounds": [
+      63,
+      32,
+      384,
+      417
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-stow",
+    "frame": 7,
+    "bounds": [
+      64,
+      28,
+      384,
+      417
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-break",
+    "frame": 0,
+    "bounds": [
+      55,
+      12,
+      390,
+      405
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-break",
+    "frame": 1,
+    "bounds": [
+      55,
+      12,
+      389,
+      405
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-break",
+    "frame": 2,
+    "bounds": [
+      56,
+      12,
+      390,
+      412
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-break",
+    "frame": 3,
+    "bounds": [
+      56,
+      12,
+      391,
+      423
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-break",
+    "frame": 4,
+    "bounds": [
+      55,
+      12,
+      389,
+      437
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-break",
+    "frame": 5,
+    "bounds": [
+      55,
+      12,
+      389,
+      432
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-break",
+    "frame": 6,
+    "bounds": [
+      56,
+      12,
+      389,
+      404
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-break",
+    "frame": 7,
+    "bounds": [
+      56,
+      12,
+      391,
+      404
+    ],
+    "sourceClips": false
+  },
+  {
+    "source": "draconus-gun-prop",
+    "frame": 0,
+    "bounds": [
+      184,
+      129,
+      840,
+      1356
+    ],
+    "sourceClips": false
+  }
+]

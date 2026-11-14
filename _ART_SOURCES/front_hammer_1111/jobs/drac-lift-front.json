@@ -1,0 +1,17 @@
+{
+  "name": "drac-lift-front",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-3f0301b2-79f3-42b1-9e2c-7d400ce872ef.png",
+  "prompt": "EIGHT complete Dracodia windup/lift poses8-15 between reference1 WAISTREADY and reference2 FIRSTPEAKPOSE. Follow continuousbodymechanics: readyheadlowSCREENLEFT, twohandsgriphilttoitsRIGHT; hips/shoulderscoilRIGHTwhileface/pelvisstayFRONT, kneeload; liftheavyheadpastleftchest; drawbothhandsCLOSERTOGETHERontheSAMESINGLEhilt; continueoverforehead; finalposeEXACTLYreference2firstcell withCLOSESTACKEDfistsatrightofcrownonthesamehilt andheavyheadabovecrowncenter. Samebody/armor/head/limb/hammerunit all8, progressivecloselyspacedactualdrawings, bodyarchesbackslightlyatload, bothbootsplanted. Preserveoriginalhornedgrayclosedface/redeyes/redcore/purplesilverarmor, noheadredesign. CorrectSINGLEshaftfromcylinderSIDE-MIDPOINTthroughBOTHfists tobutt; neverfistsoppositesidesofcylinder/crossbar/doublehaft/handlethroughcap. Cylinder6spikes3ateachcap/chromebands/purplelightning/circularsidesocket/spearbutt. Entireactor+heldweaponredrawntogethercoherently,noheadstamps/parts. BothEYESforwardinALL8, bodytwistsinstead ofturningprofile. Wide2048x10244cols2rows, fixed512cells/commonbootbaseline, clear30pxmargins ALLhorns/spikes/boots fullyinside, crisp16bitmetallicsprites,TRUERGBAtransparency,noFX/text/floor/background.",
+  "accepted": true,
+  "status": "candidate",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

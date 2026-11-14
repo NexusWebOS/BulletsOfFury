@@ -1,0 +1,1904 @@
+{
+  "date": "2026-11-09",
+  "checks": [
+    {
+      "name": "Stage5 normal/regular: correct planted follow-up count",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Stage5 normal/regular: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 normal/regular: new poses used",
+      "passed": true,
+      "data": 15
+    },
+    {
+      "name": "Stage5 normal/chrome: correct planted follow-up count",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Stage5 normal/chrome: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 normal/chrome: new poses used",
+      "passed": true,
+      "data": 15
+    },
+    {
+      "name": "Stage5 hard/regular: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "hard",
+          "origin": {
+            "x": 351,
+            "y": 260
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 351,
+            "y": 260
+          },
+          "at": {
+            "x": 333,
+            "y": 399
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 hard/regular: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 hard/regular: new poses used",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "Stage5 hard/chrome: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "hard",
+          "origin": {
+            "x": 351,
+            "y": 260
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 351,
+            "y": 260
+          },
+          "at": {
+            "x": 333,
+            "y": 399
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 hard/chrome: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 hard/chrome: new poses used",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "Stage5 furious/regular: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "furious",
+          "origin": {
+            "x": 351,
+            "y": 260
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 351,
+            "y": 260
+          },
+          "at": {
+            "x": 340,
+            "y": 402
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 3,
+          "root": {
+            "x": 351,
+            "y": 260
+          },
+          "at": {
+            "x": 220,
+            "y": 229
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 4,
+          "root": {
+            "x": 351,
+            "y": 260
+          },
+          "at": {
+            "x": 481,
+            "y": 229
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 furious/regular: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 furious/regular: new poses used",
+      "passed": true,
+      "data": 48
+    },
+    {
+      "name": "Stage5 furious/chrome: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "furious",
+          "origin": {
+            "x": 351,
+            "y": 260
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 351,
+            "y": 260
+          },
+          "at": {
+            "x": 340,
+            "y": 402
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 3,
+          "root": {
+            "x": 351,
+            "y": 260
+          },
+          "at": {
+            "x": 220,
+            "y": 229
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 4,
+          "root": {
+            "x": 351,
+            "y": 260
+          },
+          "at": {
+            "x": 481,
+            "y": 229
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 furious/chrome: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 furious/chrome: new poses used",
+      "passed": true,
+      "data": 48
+    },
+    {
+      "name": "White hit flash changes native damaged pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage8 normal/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 187,
+            "y": 249
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 484,
+            "y": 299
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 187,
+            "y": 249
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 484,
+            "y": 299
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 369,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 187,
+            "y": 249
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0.016666666666666666,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 361,
+            "y": 280
+          },
+          "at": {
+            "x": 484,
+            "y": 299
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "No browser or renderer exceptions",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Drone left rendered new whole-arm poses",
+      "passed": true,
+      "data": {
+        "drift": 0,
+        "hit": {
+          "x": 369.0378073290062,
+          "y": 243.2679856748913
+        },
+        "f": 32,
+        "draws": 111
+      }
+    },
+    {
+      "name": "Drone left Retina and contact use same-frame claw pixels",
+      "passed": true,
+      "data": {
+        "drift": 0,
+        "hit": {
+          "x": 369.0378073290062,
+          "y": 243.2679856748913
+        },
+        "f": 32,
+        "draws": 111
+      }
+    },
+    {
+      "name": "Drone right rendered new whole-arm poses",
+      "passed": true,
+      "data": {
+        "drift": 5.684341886080802e-14,
+        "hit": {
+          "x": 307.55167936917167,
+          "y": 242.47211968368134
+        },
+        "f": 32,
+        "draws": 111
+      }
+    },
+    {
+      "name": "Drone right Retina and contact use same-frame claw pixels",
+      "passed": true,
+      "data": {
+        "drift": 5.684341886080802e-14,
+        "hit": {
+          "x": 307.55167936917167,
+          "y": 242.47211968368134
+        },
+        "f": 32,
+        "draws": 111
+      }
+    },
+    {
+      "name": "New drone arm retains native nonfatal catch",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "New held frames curl and lift the captive",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native throw releases the invulnerable observer safely",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Final form uses the new articulated claw module",
+      "passed": true,
+      "data": {
+        "stage": "side-tell",
+        "key": "nca_ba119_final-arm-right_regular",
+        "tip": [
+          484.1875,
+          410.6875
+        ],
+        "target": [
+          100.1875,
+          90.6875
+        ],
+        "shoulder": [
+          453.1875,
+          286.6875
+        ],
+        "rect": [
+          0,
+          0,
+          576,
+          576
+        ],
+        "rows": 576,
+        "registered": true,
+        "px": [
+          384,
+          320
+        ]
+      }
+    },
+    {
+      "name": "Final module Retina target equals its authored claw contact",
+      "passed": true,
+      "data": {
+        "stage": "side-tell",
+        "key": "nca_ba119_final-arm-right_regular",
+        "tip": [
+          484.1875,
+          410.6875
+        ],
+        "target": [
+          100.1875,
+          90.6875
+        ],
+        "shoulder": [
+          453.1875,
+          286.6875
+        ],
+        "rect": [
+          0,
+          0,
+          576,
+          576
+        ],
+        "rows": 576,
+        "registered": true,
+        "px": [
+          384,
+          320
+        ]
+      }
+    },
+    {
+      "name": "Final module keeps exact native alpha masks and hit artwork",
+      "passed": true,
+      "data": {
+        "stage": "side-tell",
+        "key": "nca_ba119_final-arm-right_regular",
+        "tip": [
+          484.1875,
+          410.6875
+        ],
+        "target": [
+          100.1875,
+          90.6875
+        ],
+        "shoulder": [
+          453.1875,
+          286.6875
+        ],
+        "rect": [
+          0,
+          0,
+          576,
+          576
+        ],
+        "rows": 576,
+        "registered": true,
+        "px": [
+          384,
+          320
+        ]
+      }
+    },
+    {
+      "name": "No browser/renderer errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Stage5 giant uses planted second-down + left + right",
+      "passed": true,
+      "data": {
+        "mode": "giant",
+        "origin": {
+          "x": 353.75,
+          "y": 192.5
+        },
+        "drift": 0,
+        "count": 214,
+        "done": true,
+        "poses": 48,
+        "contacts": [
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 2,
+            "root": {
+              "x": 353.75,
+              "y": 192.5
+            },
+            "at": {
+              "x": 340,
+              "y": 370
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 3,
+            "root": {
+              "x": 353.75,
+              "y": 192.5
+            },
+            "at": {
+              "x": 190,
+              "y": 153.75
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 4,
+            "root": {
+              "x": 353.75,
+              "y": 192.5
+            },
+            "at": {
+              "x": 516.25,
+              "y": 153.75
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stage5 giant never hops or retargets between contacts",
+      "passed": true,
+      "data": {
+        "mode": "giant",
+        "origin": {
+          "x": 353.75,
+          "y": 192.5
+        },
+        "drift": 0,
+        "count": 214,
+        "done": true,
+        "poses": 48,
+        "contacts": [
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 2,
+            "root": {
+              "x": 353.75,
+              "y": 192.5
+            },
+            "at": {
+              "x": 340,
+              "y": 370
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 3,
+            "root": {
+              "x": 353.75,
+              "y": 192.5
+            },
+            "at": {
+              "x": 190,
+              "y": 153.75
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 4,
+            "root": {
+              "x": 353.75,
+              "y": 192.5
+            },
+            "at": {
+              "x": 516.25,
+              "y": 153.75
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stage5 giant completes and returns to native recovery",
+      "passed": true,
+      "data": {
+        "mode": "giant",
+        "origin": {
+          "x": 353.75,
+          "y": 192.5
+        },
+        "drift": 0,
+        "count": 214,
+        "done": true,
+        "poses": 48,
+        "contacts": [
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 2,
+            "root": {
+              "x": 353.75,
+              "y": 192.5
+            },
+            "at": {
+              "x": 340,
+              "y": 370
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 3,
+            "root": {
+              "x": 353.75,
+              "y": 192.5
+            },
+            "at": {
+              "x": 190,
+              "y": 153.75
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 4,
+            "root": {
+              "x": 353.75,
+              "y": 192.5
+            },
+            "at": {
+              "x": 516.25,
+              "y": 153.75
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stage5 storm uses planted second-down + left + right",
+      "passed": true,
+      "data": {
+        "mode": "storm",
+        "origin": {
+          "x": 351,
+          "y": 346
+        },
+        "drift": 0,
+        "count": 213,
+        "done": true,
+        "poses": 48,
+        "contacts": [
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 2,
+            "root": {
+              "x": 351,
+              "y": 346
+            },
+            "at": {
+              "x": 340,
+              "y": 488
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 3,
+            "root": {
+              "x": 351,
+              "y": 346
+            },
+            "at": {
+              "x": 220,
+              "y": 315
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 4,
+            "root": {
+              "x": 351,
+              "y": 346
+            },
+            "at": {
+              "x": 481,
+              "y": 315
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stage5 storm never hops or retargets between contacts",
+      "passed": true,
+      "data": {
+        "mode": "storm",
+        "origin": {
+          "x": 351,
+          "y": 346
+        },
+        "drift": 0,
+        "count": 213,
+        "done": true,
+        "poses": 48,
+        "contacts": [
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 2,
+            "root": {
+              "x": 351,
+              "y": 346
+            },
+            "at": {
+              "x": 340,
+              "y": 488
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 3,
+            "root": {
+              "x": 351,
+              "y": 346
+            },
+            "at": {
+              "x": 220,
+              "y": 315
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 4,
+            "root": {
+              "x": 351,
+              "y": 346
+            },
+            "at": {
+              "x": 481,
+              "y": 315
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stage5 storm completes and returns to native recovery",
+      "passed": true,
+      "data": {
+        "mode": "storm",
+        "origin": {
+          "x": 351,
+          "y": 346
+        },
+        "drift": 0,
+        "count": 213,
+        "done": true,
+        "poses": 48,
+        "contacts": [
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 2,
+            "root": {
+              "x": 351,
+              "y": 346
+            },
+            "at": {
+              "x": 340,
+              "y": 488
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 3,
+            "root": {
+              "x": 351,
+              "y": 346
+            },
+            "at": {
+              "x": 220,
+              "y": 315
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 0.016666666666666666,
+            "stage": 5,
+            "stroke": 4,
+            "root": {
+              "x": 351,
+              "y": 346
+            },
+            "at": {
+              "x": 481,
+              "y": 315
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Pause freezes planted animation and position",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage5 actual foreground projectile contact damages and flashes new body",
+      "passed": true,
+      "data": {
+        "hit": true,
+        "damage": 3,
+        "flash": 0.065,
+        "pt": {
+          "x": 340,
+          "y": 152
+        }
+      }
+    },
+    {
+      "name": "All new red-material hammer poses keep native red energy artwork",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Normal space hover resumes outside the planted window",
+      "passed": true,
+      "data": {
+        "state": "hammer",
+        "offset": -2.2271114807518795,
+        "planted": false
+      }
+    },
+    {
+      "name": "No browser/renderer errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "frameAudit": {
+    "passed": true,
+    "banks": 11,
+    "poses": 176,
+    "materialAndHitCells": 880,
+    "banksAudit": [
+      {
+        "bank": "blue-overhead",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 108
+      },
+      {
+        "bank": "blue-sides",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 86
+      },
+      {
+        "bank": "blue-right",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 86
+      },
+      {
+        "bank": "corrupt-overhead",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 80
+      },
+      {
+        "bank": "corrupt-sides",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 31
+      },
+      {
+        "bank": "blue-fold",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 138
+      },
+      {
+        "bank": "blue-roll",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 230
+      },
+      {
+        "bank": "drone-arm",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 122
+      },
+      {
+        "bank": "drone-arm-right",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 122
+      },
+      {
+        "bank": "final-arm",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 122
+      },
+      {
+        "bank": "final-arm-right",
+        "frames": 16,
+        "evenCanvas": true,
+        "fullAlphaPreserved": true,
+        "landmarksOnPixels": true,
+        "edgeClearance": 122
+      }
+    ],
+    "gameHash": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "orientation": "Drone whole-bank forward orientation is baked offline; no runtime rotation"
+  },
+  "recordings": {
+    "route": "Focused, explicitly triggered attack checkpoints; native live game simulation, renderer and mixer; invulnerable observer; not a continuous full fight.",
+    "recordings": [
+      {
+        "stage": 5,
+        "video": "chronos-planted-combo.mp4",
+        "chapters": [
+          {
+            "label": "Stage 5 / Normal / regular / native attack checkpoint",
+            "seconds": 0.0
+          },
+          {
+            "label": "Stage 5 / Hard / regular / native attack checkpoint",
+            "seconds": 3.64
+          },
+          {
+            "label": "Stage 5 / Furious / regular / native attack checkpoint",
+            "seconds": 7.38
+          },
+          {
+            "label": "Stage 5 / Furious / chrome / native attack checkpoint",
+            "seconds": 11.86
+          },
+          {
+            "label": "Ball transformation",
+            "seconds": 16.38
+          }
+        ],
+        "segments": [
+          {
+            "label": "Stage 5 / Normal / regular / native attack checkpoint",
+            "landedRootSamples": 10,
+            "maxDrift": 0.0,
+            "contacts": []
+          },
+          {
+            "label": "Stage 5 / Hard / regular / native attack checkpoint",
+            "landedRootSamples": 22,
+            "maxDrift": 0.0,
+            "contacts": [
+              {
+                "type": "planted-contact",
+                "clock": 5.3833333333333195,
+                "stage": 5,
+                "stroke": 2,
+                "root": {
+                  "x": 351,
+                  "y": 260
+                },
+                "at": {
+                  "x": 333,
+                  "y": 399
+                }
+              }
+            ]
+          },
+          {
+            "label": "Stage 5 / Furious / regular / native attack checkpoint",
+            "landedRootSamples": 43,
+            "maxDrift": 0.0,
+            "contacts": [
+              {
+                "type": "planted-contact",
+                "clock": 7.98333333333331,
+                "stage": 5,
+                "stroke": 2,
+                "root": {
+                  "x": 351,
+                  "y": 260
+                },
+                "at": {
+                  "x": 340,
+                  "y": 402
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 8.633333333333342,
+                "stage": 5,
+                "stroke": 3,
+                "root": {
+                  "x": 351,
+                  "y": 260
+                },
+                "at": {
+                  "x": 220,
+                  "y": 229
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 9.700000000000061,
+                "stage": 5,
+                "stroke": 4,
+                "root": {
+                  "x": 351,
+                  "y": 260
+                },
+                "at": {
+                  "x": 481,
+                  "y": 229
+                }
+              }
+            ]
+          },
+          {
+            "label": "Stage 5 / Furious / chrome / native attack checkpoint",
+            "landedRootSamples": 45,
+            "maxDrift": 0.0,
+            "contacts": [
+              {
+                "type": "planted-contact",
+                "clock": 12.466666666666866,
+                "stage": 5,
+                "stroke": 2,
+                "root": {
+                  "x": 351,
+                  "y": 260
+                },
+                "at": {
+                  "x": 340,
+                  "y": 402
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 13.116666666666898,
+                "stage": 5,
+                "stroke": 3,
+                "root": {
+                  "x": 351,
+                  "y": 260
+                },
+                "at": {
+                  "x": 220,
+                  "y": 229
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 14.183333333333618,
+                "stage": 5,
+                "stroke": 4,
+                "root": {
+                  "x": 351,
+                  "y": 260
+                },
+                "at": {
+                  "x": 481,
+                  "y": 229
+                }
+              }
+            ]
+          }
+        ],
+        "audio": {
+          "peak": 0.6996669769287109,
+          "frames": 1218,
+          "starts": 0,
+          "sfxStarts": 42,
+          "events": [],
+          "errors": []
+        }
+      },
+      {
+        "stage": 8,
+        "video": "dracodia-hammer-combo.mp4",
+        "chapters": [
+          {
+            "label": "Stage 8 / Normal / regular / native attack checkpoint",
+            "seconds": 0.44
+          },
+          {
+            "label": "Stage 8 / Hard / regular / native attack checkpoint",
+            "seconds": 3.95
+          },
+          {
+            "label": "Stage 8 / Furious / regular / native attack checkpoint",
+            "seconds": 8.33
+          },
+          {
+            "label": "Stage 8 / Furious / chrome / native attack checkpoint",
+            "seconds": 14.16
+          },
+          {
+            "label": "Stage 8 / Furious / red / native attack checkpoint",
+            "seconds": 20.08
+          }
+        ],
+        "segments": [
+          {
+            "label": "Stage 8 / Normal / regular / native attack checkpoint",
+            "landedRootSamples": 16,
+            "maxDrift": 0.0,
+            "contacts": [
+              {
+                "type": "planted-contact",
+                "clock": 2.1833333333333305,
+                "stage": 8,
+                "stroke": 1,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 369,
+                  "y": 422
+                }
+              }
+            ]
+          },
+          {
+            "label": "Stage 8 / Hard / regular / native attack checkpoint",
+            "landedRootSamples": 31,
+            "maxDrift": 0.0,
+            "contacts": [
+              {
+                "type": "planted-contact",
+                "clock": 5.266666666666653,
+                "stage": 8,
+                "stroke": 1,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 369,
+                  "y": 422
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 6.566666666666649,
+                "stage": 8,
+                "stroke": 2,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 369,
+                  "y": 422
+                }
+              }
+            ]
+          },
+          {
+            "label": "Stage 8 / Furious / regular / native attack checkpoint",
+            "landedRootSamples": 50,
+            "maxDrift": 0.0,
+            "contacts": [
+              {
+                "type": "planted-contact",
+                "clock": 9.650000000000059,
+                "stage": 8,
+                "stroke": 1,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 369,
+                  "y": 422
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 10.950000000000124,
+                "stage": 8,
+                "stroke": 2,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 369,
+                  "y": 422
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 11.866666666666836,
+                "stage": 8,
+                "stroke": 3,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 187,
+                  "y": 249
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 12.483333333333533,
+                "stage": 8,
+                "stroke": 4,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 484,
+                  "y": 299
+                }
+              }
+            ]
+          },
+          {
+            "label": "Stage 8 / Furious / chrome / native attack checkpoint",
+            "landedRootSamples": 49,
+            "maxDrift": 0.0,
+            "contacts": [
+              {
+                "type": "planted-contact",
+                "clock": 15.450000000000347,
+                "stage": 8,
+                "stroke": 1,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 369,
+                  "y": 422
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 16.75000000000033,
+                "stage": 8,
+                "stroke": 2,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 369,
+                  "y": 422
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 17.666666666666945,
+                "stage": 8,
+                "stroke": 3,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 187,
+                  "y": 249
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 18.283333333333577,
+                "stage": 8,
+                "stroke": 4,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 484,
+                  "y": 299
+                }
+              }
+            ]
+          },
+          {
+            "label": "Stage 8 / Furious / red / native attack checkpoint",
+            "landedRootSamples": 44,
+            "maxDrift": 0.0,
+            "contacts": [
+              {
+                "type": "planted-contact",
+                "clock": 21.23333333333341,
+                "stage": 8,
+                "stroke": 1,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 369,
+                  "y": 422
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 22.533333333333335,
+                "stage": 8,
+                "stroke": 2,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 369,
+                  "y": 422
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 23.44999999999995,
+                "stage": 8,
+                "stroke": 3,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 187,
+                  "y": 249
+                }
+              },
+              {
+                "type": "planted-contact",
+                "clock": 24.06666666666658,
+                "stage": 8,
+                "stroke": 4,
+                "root": {
+                  "x": 361,
+                  "y": 280
+                },
+                "at": {
+                  "x": 484,
+                  "y": 299
+                }
+              }
+            ]
+          }
+        ],
+        "audio": {
+          "peak": 0.6906042098999023,
+          "frames": 1463,
+          "starts": 0,
+          "sfxStarts": 54,
+          "events": [
+            {
+              "type": "planted-contact",
+              "clock": 21.23333333333341,
+              "stage": 8,
+              "stroke": 1,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 22.533333333333335,
+              "stage": 8,
+              "stroke": 2,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 23.44999999999995,
+              "stage": 8,
+              "stroke": 3,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 187,
+                "y": 249
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 24.06666666666658,
+              "stage": 8,
+              "stroke": 4,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 484,
+                "y": 299
+              }
+            }
+          ],
+          "errors": []
+        }
+      },
+      {
+        "stage": 8,
+        "video": "dracodia-claws.mp4",
+        "chapters": [
+          {
+            "label": "Drac-drone / left whole-arm swipe / native checkpoint",
+            "seconds": 0.45
+          },
+          {
+            "label": "Drac-drone / right whole-arm swipe / native checkpoint",
+            "seconds": 3.36
+          },
+          {
+            "label": "Drac-drone / connected arm catch, lift and release / invulnerable observer",
+            "seconds": 6.27
+          },
+          {
+            "label": "Dracodia / articulated side rakes and depth-jump twin claws",
+            "seconds": 11.48
+          }
+        ],
+        "segments": [],
+        "audio": {
+          "peak": 0.6906729936599731,
+          "frames": 1426,
+          "starts": 0,
+          "sfxStarts": 45,
+          "events": [],
+          "errors": []
+        }
+      }
+    ],
+    "errors": []
+  },
+  "regressionSuite": {
+    "exitCode": 1,
+    "completed": false,
+    "preexisting": true,
+    "error": "ReferenceError: difficultyHealthBaseline15 is not defined",
+    "file": "assets/combat_polish_0927b.js:151",
+    "caller": "_BUILD_SOURCE/test_fl.js:4537"
+  },
+  "syntaxChecks": [
+    "assets/game.js",
+    "assets/boss_animation_1109.js",
+    "assets/boss_animation_art_1109.js"
+  ],
+  "mediaAudit": {
+    "videos": [
+      {
+        "video": "chronos-planted-combo.mp4",
+        "seconds": 22.43,
+        "peak": 0.886796236038208,
+        "rms": 0.24927593767642975,
+        "decodes": true,
+        "chapters": 5,
+        "maxDrift": 0.0
+      },
+      {
+        "video": "dracodia-claws.mp4",
+        "seconds": 25.0,
+        "peak": 0.897571861743927,
+        "rms": 0.2461443841457367,
+        "decodes": true,
+        "chapters": 4,
+        "maxDrift": 0
+      },
+      {
+        "video": "dracodia-hammer-combo.mp4",
+        "seconds": 26.02,
+        "peak": 0.8429367542266846,
+        "rms": 0.25224563479423523,
+        "decodes": true,
+        "chapters": 5,
+        "maxDrift": 0.0
+      }
+    ],
+    "browserErrors": [],
+    "passed": true
+  },
+  "reviewPage": {
+    "checks": [
+      "Three native videos load their full metadata",
+      "All final chapter buttons seek and play",
+      "Fixed-cell material inspector and frame stepping work",
+      "Mobile review has no horizontal overflow",
+      "Video server supports byte-range seeking"
+    ],
+    "errors": [],
+    "passed": true
+  }
+}

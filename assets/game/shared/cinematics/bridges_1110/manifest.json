@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "banks": {
+    "bridge-airbase-recon": {
+      "key": "br1110_bridge-airbase-recon",
+      "path": "assets/game/shared/cinematics/bridges_1110/bridge-airbase-recon.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        350,
+        350,
+        350,
+        350,
+        400,
+        1600
+      ],
+      "sha256": "104080b41cab23a1d29efc6fb604169e0343b54e0637d368f0c460e9bca65f49"
+    },
+    "bridge-launch-correlation": {
+      "key": "br1110_bridge-launch-correlation",
+      "path": "assets/game/shared/cinematics/bridges_1110/bridge-launch-correlation.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        500,
+        700,
+        800,
+        800,
+        900,
+        1800
+      ],
+      "sha256": "f817b12a6782deb94a1edecb7a120b8e319f4e00d74f9ccebea5e3b20078524d"
+    },
+    "bridge-relay-recorder": {
+      "key": "br1110_bridge-relay-recorder",
+      "path": "assets/game/shared/cinematics/bridges_1110/bridge-relay-recorder.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        500,
+        600,
+        650,
+        800,
+        2000
+      ],
+      "sha256": "4a54d4dbb9560d359f8d93bb43effd2e33ac11184e0ff9265f1fc6260dcf0b4a"
+    },
+    "bridge-river-recon": {
+      "key": "br1110_bridge-river-recon",
+      "path": "assets/game/shared/cinematics/bridges_1110/bridge-river-recon.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        350,
+        350,
+        350,
+        350,
+        350,
+        1500
+      ],
+      "sha256": "5cf67f9c1e9aae21fe95bd12f29ac371a074e2b50b83659d5bded9698d84875d"
+    },
+    "bridge-subsurface-analysis": {
+      "key": "br1110_bridge-subsurface-analysis",
+      "path": "assets/game/shared/cinematics/bridges_1110/bridge-subsurface-analysis.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        550,
+        650,
+        650,
+        700,
+        1800
+      ],
+      "sha256": "80229d0169cac157d756d04d01364e203171c5bf4c44e9434a9d668a19d4c5b9"
+    },
+    "bridge-subsurface-scan": {
+      "key": "br1110_bridge-subsurface-scan",
+      "path": "assets/game/shared/cinematics/bridges_1110/bridge-subsurface-scan.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        700,
+        700,
+        800,
+        900,
+        950,
+        2000
+      ],
+      "sha256": "ca63bbd6360c910b7d53d4e10412151bd944d140e70546b9d8985aa1acc0dec6"
+    }
+  },
+  "newFrames": 36,
+  "logicalCanvas": [
+    912,
+    512
+  ]
+}

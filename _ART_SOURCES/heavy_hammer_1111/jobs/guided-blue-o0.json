@@ -1,0 +1,17 @@
+{
+  "name": "guided-blue-o0",
+  "prompt": "Retarget ALL EIGHT complete poses in reference1 into the BLUE CHRONOS character in references2-4. Reference1 is pose and motion ONLY, not identity: preserve exact whole-body stance, hand positions, spacing, body unit, 4x2 cells and rigid hammer geometry for frames0-7 of a heavy overhead hammer cycle. Replace all purple armor/horns/red face/core with canonical Chronos charcoal/chrome muscular armor, slender cyan visor in the dark helmet with long black swept fins, cyan circular chest core and cyan armor inserts. Absolutely no human face, horns, red parts or purple left. Reference3 is the exact approved helmet. Reference4 is the exact blue lightning cylinder T-hammer, BLACK/SILVER flat endcaps with cyan cap center, black straight segmented shaft and cyan rounded butt, NO SPIKES. Both fists visibly wrap around the hilt/shaft on the SAME side of the cylinder, handle rigid and straight entering the SIDE-MIDPOINT of the cylinder, perpendicular to its long axis; never through a cap. Eight distinct progressive complete figure drawings, retain full feet, helmet fins, end caps and butt inside generous margins. Match same metallic 16bit sprite rendering and scale in ALL cells. Large wide sheet2048x1024,4cols2rows, true transparent background, no text, labels, parts, shadows or effects. Every frame is a redrawn complete Chronos holding his hammer. Do not paste or stamp a head.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-2dd26a04-f007-4596-98e3-9fdb765b896d.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

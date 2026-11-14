@@ -1,0 +1,1061 @@
+{
+  "passed": true,
+  "cells": [
+    {
+      "bank": "blue-overhead",
+      "frame": 0,
+      "source": "blue-load",
+      "cell": 0,
+      "phase": "load",
+      "mirror": false,
+      "bounds": [
+        180,
+        223,
+        420,
+        476
+      ],
+      "tip": [
+        211.01227574021084,
+        432.643789556962
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 1,
+      "source": "blue-load",
+      "cell": 1,
+      "phase": "load",
+      "mirror": false,
+      "bounds": [
+        218,
+        239,
+        428,
+        476
+      ],
+      "tip": [
+        392.4603061840952,
+        300.23033494181095
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 2,
+      "source": "blue-load",
+      "cell": 2,
+      "phase": "load",
+      "mirror": false,
+      "bounds": [
+        222,
+        170,
+        419,
+        475
+      ],
+      "tip": [
+        391.4269955919265,
+        229.10317848410762
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 3,
+      "source": "blue-cock",
+      "cell": 0,
+      "phase": "load",
+      "mirror": false,
+      "bounds": [
+        219,
+        130,
+        430,
+        476
+      ],
+      "tip": [
+        381.8788185706316,
+        191.61267123287672
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 4,
+      "source": "blue-cock",
+      "cell": 1,
+      "phase": "behind-head",
+      "mirror": false,
+      "bounds": [
+        219,
+        184,
+        432,
+        476
+      ],
+      "tip": [
+        395.24314152146195,
+        243.71840883977902
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 5,
+      "source": "blue-cock",
+      "cell": 2,
+      "phase": "behind-head",
+      "mirror": false,
+      "bounds": [
+        215,
+        197,
+        432,
+        474
+      ],
+      "tip": [
+        390.60289417743,
+        253.3486899563319
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 6,
+      "source": "blue-cock",
+      "cell": 2,
+      "phase": "behind-head",
+      "mirror": false,
+      "bounds": [
+        215,
+        197,
+        432,
+        474
+      ],
+      "tip": [
+        390.60289417743,
+        253.3486899563319
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 7,
+      "source": "blue-cock",
+      "cell": 3,
+      "phase": "downstroke",
+      "mirror": false,
+      "bounds": [
+        217,
+        122,
+        435,
+        474
+      ],
+      "tip": [
+        388.371230901442,
+        184.49515283842794
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 8,
+      "source": "blue-descent",
+      "cell": 0,
+      "phase": "downstroke",
+      "mirror": false,
+      "bounds": [
+        218,
+        135,
+        428,
+        475
+      ],
+      "tip": [
+        320.9745961731911,
+        178.83810969637608
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 9,
+      "source": "blue-descent",
+      "cell": 1,
+      "phase": "downstroke",
+      "mirror": false,
+      "bounds": [
+        186,
+        212,
+        428,
+        475
+      ],
+      "tip": [
+        226.2517792461689,
+        268.01083815028903
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 10,
+      "source": "blue-descent",
+      "cell": 2,
+      "phase": "downstroke",
+      "mirror": false,
+      "bounds": [
+        200,
+        216,
+        441,
+        475
+      ],
+      "tip": [
+        249.28255330598995,
+        415.36988863206557
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 11,
+      "source": "blue-drive",
+      "cell": 2,
+      "phase": "contact",
+      "mirror": false,
+      "bounds": [
+        197,
+        214,
+        452,
+        502
+      ],
+      "tip": [
+        292.940404040404,
+        488.49
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 12,
+      "source": "blue-drive",
+      "cell": 3,
+      "phase": "recovery",
+      "mirror": false,
+      "bounds": [
+        190,
+        206,
+        453,
+        496
+      ],
+      "tip": [
+        288.00141935483873,
+        479.04
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 13,
+      "source": "blue-descent",
+      "cell": 3,
+      "phase": "recovery",
+      "mirror": false,
+      "bounds": [
+        199,
+        215,
+        445,
+        475
+      ],
+      "tip": [
+        243.53706937862418,
+        412.72010920436816
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 14,
+      "source": "blue-load",
+      "cell": 3,
+      "phase": "recovery",
+      "mirror": false,
+      "bounds": [
+        189,
+        220,
+        426,
+        476
+      ],
+      "tip": [
+        225.42115877539763,
+        437.01553288590605
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 15,
+      "source": "blue-load",
+      "cell": 0,
+      "phase": "recovery",
+      "mirror": false,
+      "bounds": [
+        180,
+        223,
+        420,
+        476
+      ],
+      "tip": [
+        211.01227574021084,
+        432.643789556962
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 0,
+      "source": "drac-load",
+      "cell": 0,
+      "phase": "load",
+      "mirror": false,
+      "bounds": [
+        165,
+        188,
+        434,
+        475
+      ],
+      "tip": [
+        208.9795779254942,
+        449.9528215767635
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 1,
+      "source": "drac-load",
+      "cell": 1,
+      "phase": "load",
+      "mirror": false,
+      "bounds": [
+        162,
+        193,
+        436,
+        475
+      ],
+      "tip": [
+        201.54739128263552,
+        392.6771223021583
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 2,
+      "source": "drac-load",
+      "cell": 2,
+      "phase": "load",
+      "mirror": false,
+      "bounds": [
+        218,
+        121,
+        461,
+        475
+      ],
+      "tip": [
+        418.82845177664973,
+        217.58999999999997
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 3,
+      "source": "drac-cock",
+      "cell": 0,
+      "phase": "load",
+      "mirror": false,
+      "bounds": [
+        218,
+        129,
+        443,
+        475
+      ],
+      "tip": [
+        411.00123690003034,
+        222.3621975582686
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 4,
+      "source": "drac-cock",
+      "cell": 1,
+      "phase": "behind-head",
+      "mirror": false,
+      "bounds": [
+        219,
+        156,
+        446,
+        475
+      ],
+      "tip": [
+        408.1025173210162,
+        252.24
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 5,
+      "source": "drac-cock",
+      "cell": 2,
+      "phase": "behind-head",
+      "mirror": false,
+      "bounds": [
+        219,
+        162,
+        449,
+        475
+      ],
+      "tip": [
+        414.9650010622477,
+        254.73309751434036
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 6,
+      "source": "drac-cock",
+      "cell": 2,
+      "phase": "behind-head",
+      "mirror": false,
+      "bounds": [
+        219,
+        162,
+        449,
+        475
+      ],
+      "tip": [
+        414.9650010622477,
+        254.73309751434036
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 7,
+      "source": "drac-cock",
+      "cell": 3,
+      "phase": "downstroke",
+      "mirror": false,
+      "bounds": [
+        217,
+        108,
+        459,
+        475
+      ],
+      "tip": [
+        417.78622515877896,
+        202.63572833435768
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 8,
+      "source": "drac-descent",
+      "cell": 0,
+      "phase": "downstroke",
+      "mirror": false,
+      "bounds": [
+        218,
+        128,
+        446,
+        475
+      ],
+      "tip": [
+        410.6817340455352,
+        222.1186404833837
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 9,
+      "source": "drac-descent",
+      "cell": 1,
+      "phase": "downstroke",
+      "mirror": true,
+      "bounds": [
+        170,
+        197,
+        421,
+        475
+      ],
+      "tip": [
+        216.0998845767815,
+        341.7533606557377
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 10,
+      "source": "drac-descent",
+      "cell": 2,
+      "phase": "downstroke",
+      "mirror": true,
+      "bounds": [
+        176,
+        190,
+        423,
+        475
+      ],
+      "tip": [
+        228.35030434060855,
+        399.96182509505707
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 11,
+      "source": "drac-drive",
+      "cell": 2,
+      "phase": "contact",
+      "mirror": false,
+      "bounds": [
+        186,
+        216,
+        452,
+        508
+      ],
+      "tip": [
+        299.6882481751825,
+        495.42
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 12,
+      "source": "drac-drive",
+      "cell": 3,
+      "phase": "recovery",
+      "mirror": false,
+      "bounds": [
+        186,
+        205,
+        457,
+        500
+      ],
+      "tip": [
+        279.5143181818182,
+        486.6
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 13,
+      "source": "drac-descent",
+      "cell": 3,
+      "phase": "recovery",
+      "mirror": true,
+      "bounds": [
+        170,
+        190,
+        422,
+        475
+      ],
+      "tip": [
+        222.97846597142689,
+        411.61530670926516
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 14,
+      "source": "drac-load",
+      "cell": 3,
+      "phase": "recovery",
+      "mirror": false,
+      "bounds": [
+        157,
+        183,
+        439,
+        475
+      ],
+      "tip": [
+        197.53960377799416,
+        425.52772638753646
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 15,
+      "source": "drac-load",
+      "cell": 0,
+      "phase": "recovery",
+      "mirror": false,
+      "bounds": [
+        165,
+        188,
+        434,
+        475
+      ],
+      "tip": [
+        208.9795779254942,
+        449.9528215767635
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "blue-load",
+      "cell": 0,
+      "root": [
+        325.3046683046683,
+        534.0
+      ],
+      "tip": [
+        152.3082805907173,
+        468.3552215189873
+      ],
+      "headCenter": [
+        152.3082805907173,
+        433.3552215189873
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-load",
+      "cell": 1,
+      "root": [
+        295.79402985074626,
+        534.0
+      ],
+      "tip": [
+        410.81038887311956,
+        258.1751348282713
+      ],
+      "headCenter": [
+        410.81038887311956,
+        223.17513482827135
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-load",
+      "cell": 2,
+      "root": [
+        325.2067714631197,
+        556.0
+      ],
+      "tip": [
+        438.58295494236813,
+        167.27488648271049
+      ],
+      "headCenter": [
+        438.58295494236813,
+        132.27488648271049
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-cock",
+      "cell": 0,
+      "root": [
+        313.0565610859729,
+        559.0
+      ],
+      "tip": [
+        411.2769080234834,
+        110.76614481409003
+      ],
+      "headCenter": [
+        411.2769080234834,
+        75.76614481409003
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-cock",
+      "cell": 1,
+      "root": [
+        266.3406593406594,
+        559.0
+      ],
+      "tip": [
+        385.7742173112339,
+        193.47366482504603
+      ],
+      "headCenter": [
+        385.7742173112339,
+        158.47366482504603
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-cock",
+      "cell": 2,
+      "root": [
+        315.76451953537486,
+        577.0
+      ],
+      "tip": [
+        427.8326055312955,
+        226.75982532751095
+      ],
+      "headCenter": [
+        427.8326055312955,
+        191.75982532751095
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-cock",
+      "cell": 3,
+      "root": [
+        266.3020594965675,
+        577.0
+      ],
+      "tip": [
+        374.82782283218967,
+        117.46849656893323
+      ],
+      "headCenter": [
+        374.82782283218967,
+        82.46849656893323
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-descent",
+      "cell": 0,
+      "root": [
+        321.0243572395129,
+        563.0
+      ],
+      "tip": [
+        322.5713352921972,
+        94.48906301012079
+      ],
+      "headCenter": [
+        322.5713352921972,
+        59.489063010120795
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-descent",
+      "cell": 1,
+      "root": [
+        274.39147802929426,
+        563.0
+      ],
+      "tip": [
+        125.58477842003856,
+        236.0330764290302
+      ],
+      "headCenter": [
+        125.58477842003856,
+        201.0330764290302
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-descent",
+      "cell": 2,
+      "root": [
+        321.7290076335878,
+        503.0
+      ],
+      "tip": [
+        209.47909224627023,
+        409.93633116200886
+      ],
+      "headCenter": [
+        209.47909224627023,
+        374.93633116200886
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-drive",
+      "cell": 2,
+      "root": [
+        317.9517396184063,
+        516.0
+      ],
+      "tip": [
+        275.0,
+        539.0
+      ],
+      "headCenter": [
+        241.7967255334805,
+        482.26766004415003
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-drive",
+      "cell": 3,
+      "root": [
+        273.7913978494623,
+        516.0
+      ],
+      "tip": [
+        223.0,
+        524.0
+      ],
+      "headCenter": [
+        183.3224846568719,
+        471.89548075134826
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-descent",
+      "cell": 3,
+      "root": [
+        276.982389937107,
+        504.0
+      ],
+      "tip": [
+        155.612658792066,
+        406.7303320704257
+      ],
+      "headCenter": [
+        155.612658792066,
+        371.7303320704257
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-load",
+      "cell": 3,
+      "root": [
+        300.082191780822,
+        556.0
+      ],
+      "tip": [
+        149.95704697986582,
+        497.29449664429535
+      ],
+      "headCenter": [
+        149.95704697986582,
+        462.29449664429535
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-load",
+      "cell": 0,
+      "root": [
+        313.71113561190737,
+        544.0
+      ],
+      "tip": [
+        137.48824343015215,
+        505.8298755186722
+      ],
+      "headCenter": [
+        137.48824343015215,
+        441.8298755186722
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-load",
+      "cell": 1,
+      "root": [
+        289.0694143167028,
+        544.0
+      ],
+      "tip": [
+        101.04940047961634,
+        414.91606714628296
+      ],
+      "headCenter": [
+        101.04940047961634,
+        350.91606714628296
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-load",
+      "cell": 2,
+      "root": [
+        314.1294416243655,
+        600.0
+      ],
+      "tip": [
+        471.0,
+        193.0
+      ],
+      "headCenter": [
+        470.09419930589985,
+        131.2959841348537
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-cock",
+      "cell": 0,
+      "root": [
+        305.7977653631285,
+        561.0
+      ],
+      "tip": [
+        450.2441731409545,
+        161.5749167591565
+      ],
+      "headCenter": [
+        450.2441731409545,
+        97.5749167591565
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-cock",
+      "cell": 1,
+      "root": [
+        264.1547344110854,
+        561.0
+      ],
+      "tip": [
+        404.0,
+        209.0
+      ],
+      "headCenter": [
+        403.56018054162496,
+        145.55366098294886
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-cock",
+      "cell": 2,
+      "root": [
+        304.1975308641975,
+        598.0
+      ],
+      "tip": [
+        454.93562778840027,
+        249.9572976418101
+      ],
+      "headCenter": [
+        454.93562778840027,
+        185.9572976418101
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-cock",
+      "cell": 3,
+      "root": [
+        266.558201058201,
+        598.0
+      ],
+      "tip": [
+        421.7744314689612,
+        167.2630608481868
+      ],
+      "headCenter": [
+        421.7744314689612,
+        103.2630608481868
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-descent",
+      "cell": 0,
+      "root": [
+        306.4484536082474,
+        561.0
+      ],
+      "tip": [
+        450.3877139979859,
+        161.18831822759316
+      ],
+      "headCenter": [
+        450.3877139979859,
+        97.18831822759316
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-descent",
+      "cell": 1,
+      "root": [
+        261.9970845481049,
+        561.0
+      ],
+      "tip": [
+        425.33060109289613,
+        351.08469945355193
+      ],
+      "headCenter": [
+        425.33060109289613,
+        287.08469945355193
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-descent",
+      "cell": 2,
+      "root": [
+        308.0488565488566,
+        533.0
+      ],
+      "tip": [
+        451.93726235741445,
+        415.4790874524715
+      ],
+      "headCenter": [
+        451.93726235741445,
+        351.4790874524715
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-drive",
+      "cell": 2,
+      "root": [
+        312.24087591240874,
+        518.0
+      ],
+      "tip": [
+        280.0,
+        552.0
+      ],
+      "headCenter": [
+        214.62760712931362,
+        470.41524459613197
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-drive",
+      "cell": 3,
+      "root": [
+        267.26298701298697,
+        517.0
+      ],
+      "tip": [
+        203.0,
+        537.0
+      ],
+      "headCenter": [
+        146.49681528662416,
+        455.34633757961774
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-descent",
+      "cell": 3,
+      "root": [
+        265.57592093441156,
+        533.0
+      ],
+      "tip": [
+        417.9910543130991,
+        433.97667731629394
+      ],
+      "headCenter": [
+        417.9910543130991,
+        369.97667731629394
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-load",
+      "cell": 3,
+      "root": [
+        287.79200000000003,
+        599.0
+      ],
+      "tip": [
+        93.41041869522883,
+        522.0598831548198
+      ],
+      "headCenter": [
+        93.41041869522883,
+        458.0598831548198
+      ],
+      "sourceEdgeIssue": false
+    }
+  ],
+  "uniqueDrawings": 28,
+  "normalization": "whole figure registration at torso symmetry/right-boot sole; one .63 scale; complete-pose flips only"
+}

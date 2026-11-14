@@ -1,0 +1,95 @@
+{
+  "records": [
+    {
+      "unit": "chronos",
+      "video": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_shots\\whole_hammer_1110\\chronos-hammer.mp4",
+      "seconds": 31.6,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 9.062
+        },
+        {
+          "name": "released throw",
+          "at": 17.594
+        }
+      ],
+      "audio": {
+        "peak": 0.7179049849510193,
+        "frames": 1487,
+        "starts": 4,
+        "sfxStarts": 45,
+        "errors": [],
+        "events": [],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [],
+        "phase": null
+      }
+    },
+    {
+      "unit": "dracodia",
+      "video": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_shots\\whole_hammer_1110\\dracodia-hammer.mp4",
+      "seconds": 31.3,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 8.735
+        },
+        {
+          "name": "released throw",
+          "at": 17.25
+        }
+      ],
+      "audio": {
+        "peak": 0.7045464515686035,
+        "frames": 1817,
+        "starts": 3,
+        "sfxStarts": 86,
+        "errors": [],
+        "events": [],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [
+          {
+            "event": "sound",
+            "clock": 0,
+            "key": "hammerThrow"
+          },
+          {
+            "event": "sound",
+            "clock": 6.566666666666649,
+            "key": "bossWeaponCharge"
+          },
+          {
+            "event": "sound",
+            "clock": 17.616666666666948,
+            "key": "hammerThrow"
+          },
+          {
+            "event": "sound",
+            "clock": 23.83333333333326,
+            "key": "bossWeaponCharge"
+          },
+          {
+            "event": "sound",
+            "clock": 29.766666666666257,
+            "key": "hammerThrow"
+          }
+        ],
+        "phase": null
+      }
+    }
+  ],
+  "errors": []
+}

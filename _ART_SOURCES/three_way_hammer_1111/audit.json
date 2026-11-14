@@ -1,0 +1,1329 @@
+{
+  "imports": [
+    {
+      "source": "blue-down",
+      "sourceCell": 1,
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        229.0,
+        429.0
+      ],
+      "tip": [
+        240,
+        164
+      ],
+      "headCenter": [
+        249,
+        93
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        160,
+        53,
+        352,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "behind-head"
+    },
+    {
+      "source": "blue-down",
+      "sourceCell": 2,
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        230.0,
+        429.0
+      ],
+      "tip": [
+        236,
+        223
+      ],
+      "headCenter": [
+        246,
+        152
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        160,
+        98,
+        352,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "behind-head"
+    },
+    {
+      "source": "blue-down",
+      "sourceCell": 3,
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        228.0,
+        429.0
+      ],
+      "tip": [
+        222,
+        329
+      ],
+      "headCenter": [
+        231,
+        258
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        156,
+        154,
+        357,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "downstroke"
+    },
+    {
+      "source": "blue-down",
+      "sourceCell": 4,
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        231.5,
+        394.0
+      ],
+      "tip": [
+        242,
+        417
+      ],
+      "headCenter": [
+        250,
+        368
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        139,
+        161,
+        374,
+        418
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "downstroke"
+    },
+    {
+      "source": "blue-down",
+      "sourceCell": 5,
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        230.0,
+        394.0
+      ],
+      "tip": [
+        238,
+        431
+      ],
+      "headCenter": [
+        245,
+        380
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        139,
+        170,
+        374,
+        432
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "downstroke"
+    },
+    {
+      "source": "blue-down",
+      "sourceCell": 6,
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        228.5,
+        394.0
+      ],
+      "tip": [
+        241,
+        436
+      ],
+      "headCenter": [
+        247,
+        385
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        136,
+        183,
+        375,
+        437
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "contact"
+    },
+    {
+      "source": "blue-down",
+      "sourceCell": 7,
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        228.0,
+        394.0
+      ],
+      "tip": [
+        249,
+        436
+      ],
+      "headCenter": [
+        259,
+        385
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        134,
+        190,
+        379,
+        437
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "contact"
+    },
+    {
+      "source": "blue-recovery",
+      "sourceCell": 0,
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        223.0,
+        403.0
+      ],
+      "tip": [
+        239,
+        435
+      ],
+      "headCenter": [
+        249,
+        391
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        133,
+        179,
+        380,
+        436
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "blue-recovery",
+      "sourceCell": 1,
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        222.0,
+        402.0
+      ],
+      "tip": [
+        243,
+        430
+      ],
+      "headCenter": [
+        250,
+        384
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        133,
+        154,
+        380,
+        431
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "blue-recovery",
+      "sourceCell": 2,
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        223.0,
+        402.0
+      ],
+      "tip": [
+        240,
+        410
+      ],
+      "headCenter": [
+        250,
+        368
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        133,
+        135,
+        380,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "blue-recovery",
+      "sourceCell": 3,
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        223.0,
+        402.0
+      ],
+      "tip": [
+        237,
+        393
+      ],
+      "headCenter": [
+        247,
+        349
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        133,
+        117,
+        380,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "blue-recovery",
+      "sourceCell": 4,
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        223.0,
+        402.0
+      ],
+      "tip": [
+        241,
+        368
+      ],
+      "headCenter": [
+        250,
+        324
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        133,
+        104,
+        380,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "blue-recovery",
+      "sourceCell": 5,
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        222.0,
+        402.0
+      ],
+      "tip": [
+        175,
+        366
+      ],
+      "headCenter": [
+        185,
+        295
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        133,
+        98,
+        380,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "blue-recovery",
+      "sourceCell": 6,
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        222.5,
+        402.0
+      ],
+      "tip": [
+        158,
+        350
+      ],
+      "headCenter": [
+        162,
+        280
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        128,
+        93,
+        381,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "blue-recovery",
+      "sourceCell": 7,
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        223.0,
+        402.0
+      ],
+      "tip": [
+        160,
+        348
+      ],
+      "headCenter": [
+        162,
+        277
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        116,
+        91,
+        380,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "drac-down",
+      "sourceCell": 1,
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        224.5,
+        428.0
+      ],
+      "tip": [
+        244,
+        154
+      ],
+      "headCenter": [
+        254,
+        83
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        159,
+        62,
+        354,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "behind-head"
+    },
+    {
+      "source": "drac-down",
+      "sourceCell": 2,
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        225.0,
+        428.0
+      ],
+      "tip": [
+        241,
+        193
+      ],
+      "headCenter": [
+        251,
+        122
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        158,
+        98,
+        354,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "behind-head"
+    },
+    {
+      "source": "drac-down",
+      "sourceCell": 3,
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        226.0,
+        428.0
+      ],
+      "tip": [
+        192,
+        285
+      ],
+      "headCenter": [
+        201,
+        215
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        159,
+        156,
+        355,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "downstroke"
+    },
+    {
+      "source": "drac-down",
+      "sourceCell": 4,
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        230.0,
+        394.0
+      ],
+      "tip": [
+        252,
+        436
+      ],
+      "headCenter": [
+        253,
+        375
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        138,
+        154,
+        375,
+        437
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "downstroke"
+    },
+    {
+      "source": "drac-down",
+      "sourceCell": 5,
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        229.5,
+        394.0
+      ],
+      "tip": [
+        254,
+        441
+      ],
+      "headCenter": [
+        254,
+        382
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        137,
+        163,
+        376,
+        442
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "downstroke"
+    },
+    {
+      "source": "drac-down",
+      "sourceCell": 6,
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        233.0,
+        394.0
+      ],
+      "tip": [
+        252,
+        441
+      ],
+      "headCenter": [
+        253,
+        382
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        135,
+        175,
+        379,
+        442
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "contact"
+    },
+    {
+      "source": "drac-down",
+      "sourceCell": 7,
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        233.0,
+        394.0
+      ],
+      "tip": [
+        252,
+        441
+      ],
+      "headCenter": [
+        252,
+        382
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        135,
+        183,
+        379,
+        442
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "contact"
+    },
+    {
+      "source": "drac-recovery",
+      "sourceCell": 0,
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        222.0,
+        404.0
+      ],
+      "tip": [
+        249,
+        440
+      ],
+      "headCenter": [
+        249,
+        386
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        130,
+        174,
+        382,
+        441
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "drac-recovery",
+      "sourceCell": 1,
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        221.5,
+        404.0
+      ],
+      "tip": [
+        250,
+        428
+      ],
+      "headCenter": [
+        249,
+        373
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        131,
+        146,
+        382,
+        429
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "drac-recovery",
+      "sourceCell": 2,
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        222.5,
+        404.0
+      ],
+      "tip": [
+        249,
+        416
+      ],
+      "headCenter": [
+        248,
+        361
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        130,
+        129,
+        383,
+        417
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "drac-recovery",
+      "sourceCell": 3,
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.86,
+      "root": [
+        223.5,
+        404.0
+      ],
+      "tip": [
+        248,
+        398
+      ],
+      "headCenter": [
+        248,
+        342
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        130,
+        113,
+        383,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "drac-recovery",
+      "sourceCell": 4,
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        222.5,
+        404.0
+      ],
+      "tip": [
+        249,
+        387
+      ],
+      "headCenter": [
+        248,
+        332
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        130,
+        106,
+        383,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "drac-recovery",
+      "sourceCell": 5,
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        222.0,
+        404.0
+      ],
+      "tip": [
+        172,
+        365
+      ],
+      "headCenter": [
+        182,
+        294
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        130,
+        98,
+        382,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "drac-recovery",
+      "sourceCell": 6,
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        222.5,
+        404.0
+      ],
+      "tip": [
+        157,
+        352
+      ],
+      "headCenter": [
+        157,
+        281
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        123,
+        94,
+        383,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    },
+    {
+      "source": "drac-recovery",
+      "sourceCell": 7,
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.86,
+      "root": [
+        223.5,
+        404.0
+      ],
+      "tip": [
+        148,
+        330
+      ],
+      "headCenter": [
+        148,
+        275
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        115,
+        90,
+        383,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "rigidMetal": true,
+      "capAxis": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "direction": "center",
+      "phase": "recovery"
+    }
+  ],
+  "newWholeDrawings": 30,
+  "retainedPeakDrawings": 2,
+  "overheadTimelineFrames": 192,
+  "mirroredFrames": 64,
+  "scale": 0.86
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "name": "draconus-gun-spin",
+    "cell": 0,
+    "size": [
+      444,
+      444
+    ],
+    "bounds": [
+      57,
+      13,
+      387,
+      409
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-spin",
+    "cell": 1,
+    "size": [
+      443,
+      444
+    ],
+    "bounds": [
+      57,
+      13,
+      387,
+      409
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-spin",
+    "cell": 2,
+    "size": [
+      443,
+      444
+    ],
+    "bounds": [
+      58,
+      13,
+      387,
+      409
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-spin",
+    "cell": 3,
+    "size": [
+      444,
+      444
+    ],
+    "bounds": [
+      58,
+      13,
+      388,
+      409
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-spin",
+    "cell": 4,
+    "size": [
+      444,
+      443
+    ],
+    "bounds": [
+      57,
+      14,
+      387,
+      410
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-spin",
+    "cell": 5,
+    "size": [
+      443,
+      443
+    ],
+    "bounds": [
+      57,
+      14,
+      387,
+      410
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-spin",
+    "cell": 6,
+    "size": [
+      443,
+      443
+    ],
+    "bounds": [
+      58,
+      14,
+      387,
+      410
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-spin",
+    "cell": 7,
+    "size": [
+      444,
+      443
+    ],
+    "bounds": [
+      58,
+      14,
+      388,
+      410
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-fire",
+    "cell": 0,
+    "size": [
+      444,
+      444
+    ],
+    "bounds": [
+      55,
+      12,
+      389,
+      408
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-fire",
+    "cell": 1,
+    "size": [
+      443,
+      444
+    ],
+    "bounds": [
+      55,
+      12,
+      389,
+      406
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-fire",
+    "cell": 2,
+    "size": [
+      443,
+      444
+    ],
+    "bounds": [
+      56,
+      12,
+      389,
+      406
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-fire",
+    "cell": 3,
+    "size": [
+      444,
+      444
+    ],
+    "bounds": [
+      56,
+      13,
+      390,
+      406
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-fire",
+    "cell": 4,
+    "size": [
+      444,
+      443
+    ],
+    "bounds": [
+      56,
+      13,
+      389,
+      406
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-fire",
+    "cell": 5,
+    "size": [
+      443,
+      443
+    ],
+    "bounds": [
+      55,
+      13,
+      389,
+      405
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-fire",
+    "cell": 6,
+    "size": [
+      443,
+      443
+    ],
+    "bounds": [
+      56,
+      13,
+      389,
+      406
+    ],
+    "clips": false
+  },
+  {
+    "name": "draconus-gun-fire",
+    "cell": 7,
+    "size": [
+      444,
+      443
+    ],
+    "bounds": [
+      56,
+      13,
+      390,
+      405
+    ],
+    "clips": false
+  }
+]

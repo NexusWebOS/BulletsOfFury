@@ -1,0 +1,65 @@
+{
+  "seeks": [
+    {
+      "id": "full",
+      "seconds": 3.463537,
+      "duration": 111.003958,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "id": "full",
+      "seconds": 38.968373,
+      "duration": 111.003958,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "id": "full",
+      "seconds": 75.609292,
+      "duration": 111.003958,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "id": "full",
+      "seconds": 101.137073,
+      "duration": 111.003958,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "id": "full",
+      "seconds": 108.337582,
+      "duration": 111.003958,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "id": "rage",
+      "seconds": 6.109391,
+      "duration": 39.892,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "id": "rage",
+      "seconds": 28.062168,
+      "duration": 39.892,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "id": "rage",
+      "seconds": 37.217522,
+      "duration": 39.892,
+      "width": 1280,
+      "height": 844
+    }
+  ],
+  "chapterButton": {
+    "at": 71.694633,
+    "paused": false
+  },
+  "errors": []
+}

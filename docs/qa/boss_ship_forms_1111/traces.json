@@ -1,0 +1,548 @@
+[
+  {
+    "hpSame": true,
+    "gunSame": true,
+    "type": "gun",
+    "seen": [
+      "ba119_corrupt-overhead_regular",
+      "draconus-catch-pre",
+      "draconus-catch-take",
+      "draconus-gun-spin"
+    ],
+    "early": 0,
+    "events": [
+      {
+        "event": "icon-box-approach",
+        "clock": 0,
+        "hp": 4126,
+        "gunHP": 900
+      },
+      {
+        "event": "icon-box-hit",
+        "clock": 0,
+        "x": 336,
+        "y": 409
+      },
+      {
+        "event": "hammer-release",
+        "clock": 0,
+        "x": 322,
+        "y": 3
+      },
+      {
+        "event": "gun-eject",
+        "clock": 0,
+        "x": 336,
+        "y": 409
+      },
+      {
+        "event": "gun-catch",
+        "clock": 0,
+        "hp": 4126,
+        "gunHP": 900
+      },
+      {
+        "event": "gun-rev",
+        "clock": 0,
+        "equipping": false,
+        "gunHP": 900
+      }
+    ],
+    "notes": [
+      {
+        "t": 0.016666666666666666,
+        "bank": "ba119_corrupt-overhead_regular",
+        "f": 0,
+        "gunTarget": false
+      },
+      {
+        "t": 0.26666666666666666,
+        "bank": "ba119_corrupt-overhead_regular",
+        "f": 0,
+        "gunTarget": false
+      },
+      {
+        "t": 0.5166666666666666,
+        "bank": "ba119_corrupt-overhead_regular",
+        "f": 0,
+        "gunTarget": false
+      },
+      {
+        "t": 0.7666666666666674,
+        "bank": "ba119_corrupt-overhead_regular",
+        "f": 0,
+        "gunTarget": false
+      },
+      {
+        "t": 1.016666666666668,
+        "bank": "ba119_corrupt-overhead_regular",
+        "f": 4,
+        "gunTarget": false
+      },
+      {
+        "t": 1.266666666666667,
+        "bank": "ba119_corrupt-overhead_regular",
+        "f": 10,
+        "gunTarget": false
+      },
+      {
+        "t": 1.5166666666666662,
+        "bank": "ba119_corrupt-overhead_regular",
+        "f": 16,
+        "gunTarget": false
+      },
+      {
+        "t": 1.7666666666666653,
+        "bank": "ba119_corrupt-overhead_regular",
+        "f": 21,
+        "gunTarget": false
+      },
+      {
+        "t": 2.0166666666666644,
+        "bank": "ba119_corrupt-overhead_regular",
+        "f": 24,
+        "gunTarget": false
+      },
+      {
+        "t": 2.2666666666666635,
+        "bank": "ba119_corrupt-overhead_regular",
+        "f": 30,
+        "gunTarget": false
+      },
+      {
+        "t": 2.5166666666666626,
+        "bank": "draconus-catch-pre",
+        "f": 0,
+        "gunTarget": false
+      },
+      {
+        "t": 2.7666666666666617,
+        "bank": "draconus-catch-pre",
+        "f": 1,
+        "gunTarget": false
+      },
+      {
+        "t": 3.016666666666661,
+        "bank": "draconus-catch-pre",
+        "f": 3,
+        "gunTarget": false
+      },
+      {
+        "t": 3.26666666666666,
+        "bank": "draconus-catch-pre",
+        "f": 5,
+        "gunTarget": false
+      },
+      {
+        "t": 3.516666666666659,
+        "bank": "draconus-catch-pre",
+        "f": 6,
+        "gunTarget": false
+      },
+      {
+        "t": 3.766666666666658,
+        "bank": "draconus-catch-take",
+        "f": 1,
+        "gunTarget": true
+      },
+      {
+        "t": 4.016666666666658,
+        "bank": "draconus-catch-take",
+        "f": 3,
+        "gunTarget": true
+      },
+      {
+        "t": 4.266666666666657,
+        "bank": "draconus-catch-take",
+        "f": 4,
+        "gunTarget": true
+      },
+      {
+        "t": 4.516666666666656,
+        "bank": "draconus-catch-take",
+        "f": 6,
+        "gunTarget": true
+      }
+    ]
+  },
+  {
+    "counts": [
+      {
+        "t": 1.2000000000000006,
+        "shots": 5
+      },
+      {
+        "t": 1.3666666666666667,
+        "shots": 2
+      },
+      {
+        "t": 1.5333333333333328,
+        "shots": 5
+      },
+      {
+        "t": 1.6999999999999988,
+        "shots": 2
+      },
+      {
+        "t": 1.866666666666665,
+        "shots": 5
+      },
+      {
+        "t": 2.033333333333331,
+        "shots": 2
+      },
+      {
+        "t": 2.199999999999997,
+        "shots": 5
+      },
+      {
+        "t": 2.366666666666663,
+        "shots": 2
+      },
+      {
+        "t": 2.533333333333329,
+        "shots": 5
+      },
+      {
+        "t": 2.6999999999999953,
+        "shots": 2
+      },
+      {
+        "t": 2.8666666666666614,
+        "shots": 5
+      },
+      {
+        "t": 3.0333333333333274,
+        "shots": 2
+      },
+      {
+        "t": 3.1999999999999935,
+        "shots": 5
+      },
+      {
+        "t": 3.3666666666666596,
+        "shots": 2
+      },
+      {
+        "t": 3.5333333333333257,
+        "shots": 5
+      },
+      {
+        "t": 3.6999999999999917,
+        "shots": 2
+      },
+      {
+        "t": 3.866666666666658,
+        "shots": 5
+      },
+      {
+        "t": 4.033333333333324,
+        "shots": 2
+      },
+      {
+        "t": 4.19999999999999,
+        "shots": 5
+      },
+      {
+        "t": 4.3666666666666565,
+        "shots": 2
+      },
+      {
+        "t": 4.533333333333323,
+        "shots": 5
+      },
+      {
+        "t": 4.699999999999989,
+        "shots": 2
+      },
+      {
+        "t": 4.866666666666655,
+        "shots": 5
+      }
+    ],
+    "mismatch": 0,
+    "seen": [
+      "draconus-gun-spin",
+      "draconus-gun-fire",
+      "draconus-gun-stow",
+      "draconus-catch-pre"
+    ],
+    "hpSame": true,
+    "after": "recall",
+    "held": false,
+    "gunHP": 900
+  },
+  {
+    "hpSame": true,
+    "gunSame": true,
+    "type": "gun",
+    "seen": [
+      "ba119_corrupt-overhead_chrome",
+      "draconus-catch-pre",
+      "draconus-catch-take",
+      "draconus-gun-spin"
+    ],
+    "early": 0,
+    "events": [
+      {
+        "event": "icon-box-approach",
+        "clock": 0,
+        "hp": 4126,
+        "gunHP": 900
+      },
+      {
+        "event": "icon-box-hit",
+        "clock": 0,
+        "x": 336,
+        "y": 409
+      },
+      {
+        "event": "hammer-release",
+        "clock": 0,
+        "x": 322,
+        "y": 3
+      },
+      {
+        "event": "gun-eject",
+        "clock": 0,
+        "x": 336,
+        "y": 409
+      },
+      {
+        "event": "gun-catch",
+        "clock": 0,
+        "hp": 4126,
+        "gunHP": 900
+      },
+      {
+        "event": "gun-rev",
+        "clock": 0,
+        "equipping": false,
+        "gunHP": 900
+      }
+    ],
+    "notes": [
+      {
+        "t": 0.016666666666666666,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "f": 0,
+        "gunTarget": false
+      },
+      {
+        "t": 0.26666666666666666,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "f": 0,
+        "gunTarget": false
+      },
+      {
+        "t": 0.5166666666666666,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "f": 0,
+        "gunTarget": false
+      },
+      {
+        "t": 0.7666666666666674,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "f": 0,
+        "gunTarget": false
+      },
+      {
+        "t": 1.016666666666668,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "f": 4,
+        "gunTarget": false
+      },
+      {
+        "t": 1.266666666666667,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "f": 10,
+        "gunTarget": false
+      },
+      {
+        "t": 1.5166666666666662,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "f": 16,
+        "gunTarget": false
+      },
+      {
+        "t": 1.7666666666666653,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "f": 21,
+        "gunTarget": false
+      },
+      {
+        "t": 2.0166666666666644,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "f": 24,
+        "gunTarget": false
+      },
+      {
+        "t": 2.2666666666666635,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "f": 30,
+        "gunTarget": false
+      },
+      {
+        "t": 2.5166666666666626,
+        "bank": "draconus-catch-pre",
+        "f": 0,
+        "gunTarget": false
+      },
+      {
+        "t": 2.7666666666666617,
+        "bank": "draconus-catch-pre",
+        "f": 1,
+        "gunTarget": false
+      },
+      {
+        "t": 3.016666666666661,
+        "bank": "draconus-catch-pre",
+        "f": 3,
+        "gunTarget": false
+      },
+      {
+        "t": 3.26666666666666,
+        "bank": "draconus-catch-pre",
+        "f": 5,
+        "gunTarget": false
+      },
+      {
+        "t": 3.516666666666659,
+        "bank": "draconus-catch-pre",
+        "f": 6,
+        "gunTarget": false
+      },
+      {
+        "t": 3.766666666666658,
+        "bank": "draconus-catch-take",
+        "f": 1,
+        "gunTarget": true
+      },
+      {
+        "t": 4.016666666666658,
+        "bank": "draconus-catch-take",
+        "f": 3,
+        "gunTarget": true
+      },
+      {
+        "t": 4.266666666666657,
+        "bank": "draconus-catch-take",
+        "f": 4,
+        "gunTarget": true
+      },
+      {
+        "t": 4.516666666666656,
+        "bank": "draconus-catch-take",
+        "f": 6,
+        "gunTarget": true
+      }
+    ]
+  },
+  {
+    "counts": [
+      {
+        "t": 1.2000000000000006,
+        "shots": 5
+      },
+      {
+        "t": 1.3666666666666667,
+        "shots": 2
+      },
+      {
+        "t": 1.5333333333333328,
+        "shots": 5
+      },
+      {
+        "t": 1.6999999999999988,
+        "shots": 2
+      },
+      {
+        "t": 1.866666666666665,
+        "shots": 5
+      },
+      {
+        "t": 2.033333333333331,
+        "shots": 2
+      },
+      {
+        "t": 2.199999999999997,
+        "shots": 5
+      },
+      {
+        "t": 2.366666666666663,
+        "shots": 2
+      },
+      {
+        "t": 2.533333333333329,
+        "shots": 5
+      },
+      {
+        "t": 2.6999999999999953,
+        "shots": 2
+      },
+      {
+        "t": 2.8666666666666614,
+        "shots": 5
+      },
+      {
+        "t": 3.0333333333333274,
+        "shots": 2
+      },
+      {
+        "t": 3.1999999999999935,
+        "shots": 5
+      },
+      {
+        "t": 3.3666666666666596,
+        "shots": 2
+      },
+      {
+        "t": 3.5333333333333257,
+        "shots": 5
+      },
+      {
+        "t": 3.6999999999999917,
+        "shots": 2
+      },
+      {
+        "t": 3.866666666666658,
+        "shots": 5
+      },
+      {
+        "t": 4.033333333333324,
+        "shots": 2
+      },
+      {
+        "t": 4.19999999999999,
+        "shots": 5
+      },
+      {
+        "t": 4.3666666666666565,
+        "shots": 2
+      },
+      {
+        "t": 4.533333333333323,
+        "shots": 5
+      },
+      {
+        "t": 4.699999999999989,
+        "shots": 2
+      },
+      {
+        "t": 4.866666666666655,
+        "shots": 5
+      }
+    ],
+    "mismatch": 0,
+    "seen": [
+      "draconus-gun-spin",
+      "draconus-gun-fire",
+      "draconus-gun-stow",
+      "draconus-catch-pre"
+    ],
+    "hpSame": true,
+    "after": "recall",
+    "held": false,
+    "gunHP": 900
+  }
+]

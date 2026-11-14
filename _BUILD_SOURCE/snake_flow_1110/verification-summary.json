@@ -1,0 +1,50 @@
+{
+  "native_movement_checks": 16,
+  "compatibility_checks": 28,
+  "cannon_native_checks": 10,
+  "pair": {
+    "headHold": 0,
+    "bodyHold": 0.016666666666666666,
+    "airHold": 0.016666666666666666,
+    "lands": [
+      15,
+      15
+    ],
+    "groundedRow": [
+      32,
+      32
+    ],
+    "modes": [
+      "entry",
+      "hop-warn",
+      "hop",
+      "row-form",
+      "row-charge",
+      "row-fire",
+      "split",
+      "north",
+      "cross",
+      "return"
+    ],
+    "maxStep": 16.07101125092018,
+    "samples": 2892
+  },
+  "solo": {
+    "headHold": 0,
+    "bodyHold": 0.016666666666666666,
+    "airHold": 0.016666666666666666,
+    "lands": 15,
+    "groundedRow": 23,
+    "alive": 1,
+    "hp": 7000
+  },
+  "errors": [],
+  "source_sha256": "d0090a06f32425bbffd25374c6f47bf525fdb716210366f86eef6e5f731f3c6d",
+  "syntax": "assets/game.js, thunderhead_reactor_1105.js and sumpjaw_tandem_1105.js passed",
+  "full_suite": {
+    "exit_code": 1,
+    "existing_blocker": "ReferenceError: difficultyHealthBaseline15 is not defined",
+    "location": "assets/combat_polish_0927b.js:151; _BUILD_SOURCE/test_fl.js:4537",
+    "log": "full-suite.log"
+  }
+}

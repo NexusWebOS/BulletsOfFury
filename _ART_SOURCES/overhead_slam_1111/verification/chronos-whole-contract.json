@@ -1,0 +1,17 @@
+{
+  "checks": [
+    {
+      "unit": "chronos",
+      "whole": true,
+      "heldTarget": false,
+      "heldIntercept": false,
+      "headUsesActorMask": true,
+      "releaseError": 0,
+      "detachedTarget": true,
+      "detachedIntercept": true,
+      "catchError": 0,
+      "catchWhole": true
+    }
+  ],
+  "errors": []
+}

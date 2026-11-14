@@ -1,0 +1,34 @@
+[
+  {
+    "name": "game-syntax",
+    "exit": 0,
+    "seconds": 0.125,
+    "passedLines": 0,
+    "failures": [],
+    "tail": ""
+  },
+  {
+    "name": "health-helper-syntax",
+    "exit": 0,
+    "seconds": 0.0470000000204891,
+    "passedLines": 0,
+    "failures": [],
+    "tail": ""
+  },
+  {
+    "name": "difficulty-rules-syntax",
+    "exit": 0,
+    "seconds": 0.046999999991385266,
+    "passedLines": 0,
+    "failures": [],
+    "tail": ""
+  },
+  {
+    "name": "full-suite",
+    "exit": 0,
+    "seconds": 146.28099999998813,
+    "passedLines": 8969,
+    "failures": [],
+    "tail": "ven canvases\n  ok  corrupt_fists keeps one anchor and transparent clipping margins\n  ok  corrupt_fists contains changing authored frames\n  ok  corrupt_fire real PNGs match their fixed even canvases\n  ok  corrupt_fire keeps one anchor and transparent clipping margins\n  ok  corrupt_fire contains changing authored frames\n  ok  corrupt_spin real PNGs match their fixed even canvases\n  ok  corrupt_spin keeps one anchor and transparent clipping margins\n  ok  corrupt_spin contains changing authored frames\n  ok  corrupt_dance real PNGs match their fixed even canvases\n  ok  corrupt_dance keeps one anchor and transparent clipping margins\n  ok  corrupt_dance contains changing authored frames\n  ok  blue_throw real PNGs match their fixed even canvases\n  ok  blue_throw keeps one anchor and transparent clipping margins\n  ok  blue_throw contains changing authored frames\n  ok  corrupt_charge real PNGs match their fixed even canvases\n  ok  corrupt_charge keeps one anchor and transparent clipping margins\n  ok  corrupt_charge contains changing authored frames\n  ok  corrupt_gun real PNGs match their fixed even canvases\n  ok  corrupt_gun keeps one anchor and transparent clipping margins\n  ok  corrupt_gun contains changing authored frames\n  ok  corrupt_gun_left real PNGs match their fixed even canvases\n  ok  corrupt_gun_left keeps one anchor and transparent clipping margins\n  ok  corrupt_gun_left contains changing authored frames\n  ok  blue_idle real PNGs match their fixed even canvases\n  ok  blue_idle keeps one anchor and transparent clipping margins\n  ok  corrupt_idle real PNGs match their fixed even canvases\n  ok  corrupt_idle keeps one anchor and transparent clipping margins\n  ok  corrupt_tool real PNGs match their fixed even canvases\n  ok  corrupt_tool keeps one anchor and transparent clipping margins\n  ok  corrupt_ball real PNGs match their fixed even canvases\n  ok  corrupt_ball keeps one anchor and transparent clipping margins\n  ok  corrupt_ball contains changing authored frames\n  ok  counter_right real PNGs match their fixed even canvases\n  ok  counter_right keeps one anchor and transparent clipping margins\n  ok  counter_right contains changing authored frames\n  ok  counter_left real PNGs match their fixed even canvases\n  ok  counter_left keeps one anchor and transparent clipping margins\n  ok  counter_left contains changing authored frames\n  ok  Phoenix exports whole anatomical pieces rather than rotating wing slivers\n  ok  each exported anatomical module is a connected authored component\n  ok  added detachable cannon and scoped corner warning have independent authored art\n  ok  boss_shared_1020 is installed before phoenix_swoon_1020\n  ok  phoenix_swoon_art_1020 is installed before phoenix_swoon_1020\n  ok  hammer_redesign_art_1020 is installed before hammer_redesign_1020\n  ok  helicopter_assault_1020 is installed before hammer_redesign_1020\n=== 388. Debug toolkit: GOD, a real speed scale, freeze/step, INSANITY in debug ===\n  ok  the toolkit loads and hangs its surface on BOSSMODE.tools\n  ok  GOD refuses a real playerHit\n  ok  GOD leaves the invuln timer alone, so the ship never blinks (0)\n  ok  the fixed clock runs speed x 60 ticks a second (1x 60, 0.5x 30, 2x 120)\n  ok  frozen runs 0 ticks, and a step runs exactly one (0, 1)\n  ok  outside debug the speed scale does nothing - a normal game is untouched (60)\n  ok  the editor SPEED slider sets the scale and no longer fights updatePlay for timeScale\n  ok  the debug menu cycles every difficulty in DIFF_KEYS, INSANITY included\n=== 389. Scene phases hand over on HP: a looping track yields to a later hp/phase trigger ===\n  ok  the opening phase loops while HP is full (teach)\n  ok  HP 60%: the looping phase hands over to the 66% phase (mid)\n  ok  HP 30%: and on to the 33% phase (late)\n  ok  a trigger already true at the start does not cut the running phase short (one)\n  ok  a later START phase never interrupts a looping one (one)\n\n=== Shared early difficulty helpers (November14) ===\n  ok  easy: real core/module health follows the shared compound15% rule or Easy's legacy value\n  ok  easy: tracking and firing rate share the same difficulty step\n  ok  normal: real core/module health follows the shared compound15% rule or Easy's legacy value\n  ok  normal: tracking and firing rate share the same difficulty step\n  ok  hard: real core/module health follows the shared compound15% rule or Easy's legacy value\n  ok  hard: tracking and firing rate share the same difficulty step\n  ok  furious: real core/module health follows the shared compound15% rule or Easy's legacy value\n  ok  furious: tracking and firing rate share the same difficulty step\n  ok  explicit difficulty arguments and minimum health work before live tuning loads\n\n============================================\n==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\n"
+  }
+]

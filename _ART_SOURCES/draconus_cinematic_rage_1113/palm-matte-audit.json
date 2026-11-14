@@ -1,0 +1,12 @@
+[
+  {
+    "depth": "fore",
+    "removedPinkMatte": 95424,
+    "preservedNonMatteRGB": true
+  },
+  {
+    "depth": "back",
+    "removedPinkMatte": 36453,
+    "preservedNonMatteRGB": true
+  }
+]

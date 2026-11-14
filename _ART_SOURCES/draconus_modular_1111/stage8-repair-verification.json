@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "name": "Native host exposes real cached arm descriptors",
+      "passed": true,
+      "data": {
+        "targets": 2,
+        "cached": 2,
+        "arm": true
+      }
+    },
+    {
+      "name": "Reproduced obsolete-host socket getter after actual Archon transition",
+      "passed": true,
+      "data": {
+        "throws": true,
+        "kept": true,
+        "form": 6
+      }
+    },
+    {
+      "name": "Flash polling excludes target descriptors and keeps unique physical pools",
+      "passed": true,
+      "data": {
+        "proxies": 0,
+        "physical": true,
+        "unique": true,
+        "hp": 3782
+      }
+    },
+    {
+      "name": "Repeated snapshots neither change HP nor fabricate hits",
+      "passed": true,
+      "data": {
+        "same": true,
+        "noPhantom": true
+      }
+    },
+    {
+      "name": "Genuine part damage still flashes independently without changing damage",
+      "passed": true,
+      "data": {
+        "shown": true,
+        "hpSame": true
+      }
+    },
+    {
+      "name": "Real boss updates and feedback survive copied-form changes",
+      "passed": true,
+      "data": [
+        {
+          "form": 0,
+          "hp": 4470,
+          "finite": true
+        },
+        {
+          "form": 8,
+          "hp": 4126,
+          "finite": true
+        },
+        {
+          "form": 1,
+          "hp": 3095,
+          "finite": true
+        },
+        {
+          "form": 6,
+          "hp": 3782,
+          "finite": true
+        },
+        {
+          "form": 2,
+          "hp": 3438,
+          "finite": true
+        }
+      ]
+    },
+    {
+      "name": "No native browser/update/draw exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "repairHash": "d0c8063d39d89d09435469631ea2ac5bc0ced3f95bfabb5736bb2a29baf1f569"
+}

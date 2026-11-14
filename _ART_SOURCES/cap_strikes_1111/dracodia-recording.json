@@ -1,0 +1,58 @@
+{
+  "records": [
+    {
+      "unit": "dracodia",
+      "video": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\outputs\\End-cap-strikes\\dracodia-hammer.mp4",
+      "seconds": 31.3,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 8.734
+        },
+        {
+          "name": "released throw",
+          "at": 17.266
+        }
+      ],
+      "audio": {
+        "peak": 0.6958955526351929,
+        "frames": 1342,
+        "starts": 11,
+        "sfxStarts": 55,
+        "errors": [],
+        "events": [],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [
+          {
+            "event": "sound",
+            "clock": 0,
+            "key": "hammerThrow"
+          },
+          {
+            "event": "sound",
+            "clock": 14.733333333333645,
+            "key": "hammerThrow"
+          },
+          {
+            "event": "sound",
+            "clock": 20.95000000000009,
+            "key": "bossWeaponCharge"
+          },
+          {
+            "event": "sound",
+            "clock": 26.883333333333088,
+            "key": "hammerThrow"
+          }
+        ],
+        "phase": null
+      }
+    }
+  ],
+  "errors": []
+}

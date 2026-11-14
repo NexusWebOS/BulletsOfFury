@@ -1,0 +1,236 @@
+{
+  "hole": {
+    "path": "assets/game/shared/combat/snake_assault_1110/hole.png",
+    "cell": [
+      192,
+      128
+    ],
+    "pivot": [
+      96,
+      64
+    ],
+    "cols": 8,
+    "frames": 8
+  },
+  "hole-front": {
+    "path": "assets/game/shared/combat/snake_assault_1110/hole-front.png",
+    "cell": [
+      192,
+      128
+    ],
+    "pivot": [
+      96,
+      64
+    ],
+    "cols": 8,
+    "frames": 8
+  },
+  "arrows": {
+    "path": "assets/game/shared/combat/snake_assault_1110/arrows.png",
+    "cell": [
+      64,
+      64
+    ],
+    "pivot": [
+      32,
+      32
+    ],
+    "cols": 16,
+    "frames": 192
+  },
+  "dive-body0": {
+    "path": "assets/game/shared/combat/snake_assault_1110/dive-body0.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "dive-body1": {
+    "path": "assets/game/shared/combat/snake_assault_1110/dive-body1.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "dive-body2": {
+    "path": "assets/game/shared/combat/snake_assault_1110/dive-body2.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "dive-body3": {
+    "path": "assets/game/shared/combat/snake_assault_1110/dive-body3.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "dive-hit": {
+    "path": "assets/game/shared/combat/snake_assault_1110/dive-hit.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "riseL-body0": {
+    "path": "assets/game/shared/combat/snake_assault_1110/riseL-body0.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "riseL-body1": {
+    "path": "assets/game/shared/combat/snake_assault_1110/riseL-body1.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "riseL-body2": {
+    "path": "assets/game/shared/combat/snake_assault_1110/riseL-body2.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "riseL-body3": {
+    "path": "assets/game/shared/combat/snake_assault_1110/riseL-body3.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "riseL-hit": {
+    "path": "assets/game/shared/combat/snake_assault_1110/riseL-hit.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "riseR-body0": {
+    "path": "assets/game/shared/combat/snake_assault_1110/riseR-body0.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "riseR-body1": {
+    "path": "assets/game/shared/combat/snake_assault_1110/riseR-body1.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "riseR-body2": {
+    "path": "assets/game/shared/combat/snake_assault_1110/riseR-body2.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "riseR-body3": {
+    "path": "assets/game/shared/combat/snake_assault_1110/riseR-body3.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  },
+  "riseR-hit": {
+    "path": "assets/game/shared/combat/snake_assault_1110/riseR-hit.png",
+    "cell": [
+      176,
+      176
+    ],
+    "pivot": [
+      88,
+      88
+    ],
+    "cols": 8,
+    "frames": 16
+  }
+}

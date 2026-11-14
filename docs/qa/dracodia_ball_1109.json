@@ -1,0 +1,1062 @@
+{
+  "checks": {
+    "checks": [
+      {
+        "name": "normal/regular: full curl/roll/unfold and native recovery",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "normal/regular: one physical ball, bounded ricochet, no ghost hammer or shots",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "normal/chrome: full curl/roll/unfold and native recovery",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "normal/chrome: one physical ball, bounded ricochet, no ghost hammer or shots",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "normal/red: full curl/roll/unfold and native recovery",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "normal/red: one physical ball, bounded ricochet, no ghost hammer or shots",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "hard/regular: full curl/roll/unfold and native recovery",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "hard/regular: one physical ball, bounded ricochet, no ghost hammer or shots",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "hard/chrome: full curl/roll/unfold and native recovery",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "hard/chrome: one physical ball, bounded ricochet, no ghost hammer or shots",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "hard/red: full curl/roll/unfold and native recovery",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "hard/red: one physical ball, bounded ricochet, no ghost hammer or shots",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 4,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "furious/regular: full curl/roll/unfold and native recovery",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 6,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "furious/regular: one physical ball, bounded ricochet, no ghost hammer or shots",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 6,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "furious/chrome: full curl/roll/unfold and native recovery",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 6,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "furious/chrome: one physical ball, bounded ricochet, no ghost hammer or shots",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 6,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "furious/red: full curl/roll/unfold and native recovery",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 6,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "furious/red: one physical ball, bounded ricochet, no ghost hammer or shots",
+        "passed": true,
+        "data": {
+          "phases": [
+            "curl",
+            "roll",
+            "settle",
+            "unfold"
+          ],
+          "roll": 16,
+          "fold": 16,
+          "pieces": true,
+          "bounds": true,
+          "ended": true,
+          "bounces": 6,
+          "bullets": 0
+        }
+      },
+      {
+        "name": "Native attack book selects the restored ball",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "mg: native collision and correct hit/deflection",
+        "passed": true,
+        "data": {
+          "at": true,
+          "hit": "projectile",
+          "flashed": true,
+          "deflect": false,
+          "vx": 150,
+          "vy": 165,
+          "same": true
+        }
+      },
+      {
+        "name": "laser: native collision and correct hit/deflection",
+        "passed": true,
+        "data": {
+          "at": true,
+          "hit": "projectile",
+          "flashed": true,
+          "deflect": false,
+          "vx": 150,
+          "vy": 165,
+          "same": true
+        }
+      },
+      {
+        "name": "plasma: native collision and correct hit/deflection",
+        "passed": true,
+        "data": {
+          "at": true,
+          "hit": "projectile",
+          "flashed": true,
+          "deflect": false,
+          "vx": 150,
+          "vy": 165,
+          "same": true
+        }
+      },
+      {
+        "name": "gmiss: native collision and correct hit/deflection",
+        "passed": true,
+        "data": {
+          "at": true,
+          "hit": "rocket",
+          "flashed": true,
+          "deflect": true,
+          "vx": 0,
+          "vy": -240,
+          "same": false
+        }
+      },
+      {
+        "name": "missile: native collision and correct hit/deflection",
+        "passed": true,
+        "data": {
+          "at": true,
+          "hit": "rocket",
+          "flashed": true,
+          "deflect": true,
+          "vx": 0,
+          "vy": -240,
+          "same": false
+        }
+      },
+      {
+        "name": "retinaMissile: native collision and correct hit/deflection",
+        "passed": true,
+        "data": {
+          "at": true,
+          "hit": "rocket",
+          "flashed": true,
+          "deflect": true,
+          "vx": 0,
+          "vy": -240,
+          "same": false
+        }
+      },
+      {
+        "name": "nukem: native collision and correct hit/deflection",
+        "passed": true,
+        "data": {
+          "at": true,
+          "hit": "rocket",
+          "flashed": true,
+          "deflect": true,
+          "vx": 0,
+          "vy": -240,
+          "same": false
+        }
+      },
+      {
+        "name": "Native damaged pixels are red for gunfire",
+        "passed": true,
+        "data": [
+          {
+            "red": 475,
+            "white": 585
+          },
+          {
+            "red": 45404,
+            "white": 39
+          }
+        ]
+      },
+      {
+        "name": "Native damaged pixels are white for rockets",
+        "passed": true,
+        "data": [
+          {
+            "red": 475,
+            "white": 585
+          },
+          {
+            "red": 0,
+            "white": 21778
+          }
+        ]
+      },
+      {
+        "name": "Rocket counter does not bounce back at the player and recovers",
+        "passed": true,
+        "data": {
+          "bouncedBack": false,
+          "ended": true,
+          "events": [
+            {
+              "event": "curl-start",
+              "clock": 19
+            },
+            {
+              "event": "rocket-deflect",
+              "clock": 19,
+              "vx": 0,
+              "vy": -240
+            },
+            {
+              "event": "roll-start",
+              "clock": 19
+            },
+            {
+              "event": "roll-end",
+              "clock": 19,
+              "deflected": true,
+              "bounces": 0
+            },
+            {
+              "event": "unfold-complete",
+              "clock": 19
+            }
+          ]
+        }
+      },
+      {
+        "name": "Real Retina rocket route reaches ball counter",
+        "passed": true,
+        "data": {
+          "target": true,
+          "ok": true,
+          "deflected": true,
+          "hit": "rocket"
+        }
+      },
+      {
+        "name": "Hit feedback expires in the live engine",
+        "passed": true,
+        "data": {
+          "body": 0,
+          "part": 0
+        }
+      },
+      {
+        "name": "No browser/render exceptions",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "recording": {
+    "route": "Live native-engine Furious attack checkpoints, god mode observer; explicitly triggered gun impact; real inventory Retina rocket launch and travel.",
+    "chapters": [
+      {
+        "material": "regular",
+        "seconds": 0.02,
+        "end": 7.0,
+        "events": [
+          {
+            "event": "curl-start",
+            "clock": 23.416666666666586
+          },
+          {
+            "event": "roll-start",
+            "clock": 25.03333333333316
+          },
+          {
+            "event": "ricochet",
+            "clock": 25.716666666666455
+          },
+          {
+            "event": "ricochet",
+            "clock": 25.766666666666453
+          },
+          {
+            "event": "ricochet",
+            "clock": 26.933333333333053
+          },
+          {
+            "event": "ricochet",
+            "clock": 27.09999999999971
+          },
+          {
+            "event": "ricochet",
+            "clock": 28.099999999999653
+          },
+          {
+            "event": "ricochet",
+            "clock": 28.483333333332965
+          },
+          {
+            "event": "roll-end",
+            "clock": 28.883333333332942,
+            "deflected": false,
+            "bounces": 6
+          },
+          {
+            "event": "unfold-complete",
+            "clock": 30.266666666666197
+          }
+        ]
+      },
+      {
+        "material": "chrome",
+        "seconds": 7.02,
+        "rocketLaunched": true,
+        "realRocketDeflected": true,
+        "end": 12.77,
+        "events": [
+          {
+            "event": "curl-start",
+            "clock": 31.283333333332862
+          },
+          {
+            "event": "roll-start",
+            "clock": 32.89999999999944
+          },
+          {
+            "event": "projectile-hit",
+            "clock": 33.04999999999943
+          },
+          {
+            "event": "ricochet",
+            "clock": 33.58333333333273
+          },
+          {
+            "event": "ricochet",
+            "clock": 33.63333333333273
+          },
+          {
+            "event": "rocket-deflect",
+            "clock": 34.116666666666035,
+            "vx": 45.5698341703042,
+            "vy": -235.6340175222817
+          },
+          {
+            "event": "roll-end",
+            "clock": 34.59999999999934,
+            "deflected": true,
+            "bounces": 2
+          },
+          {
+            "event": "unfold-complete",
+            "clock": 35.983333333332595
+          }
+        ]
+      },
+      {
+        "material": "red",
+        "seconds": 12.78,
+        "end": 19.83,
+        "events": [
+          {
+            "event": "curl-start",
+            "clock": 36.99999999999926
+          },
+          {
+            "event": "roll-start",
+            "clock": 38.616666666665836
+          },
+          {
+            "event": "ricochet",
+            "clock": 39.29999999999913
+          },
+          {
+            "event": "ricochet",
+            "clock": 39.34999999999913
+          },
+          {
+            "event": "ricochet",
+            "clock": 40.51666666666573
+          },
+          {
+            "event": "ricochet",
+            "clock": 40.683333333332385
+          },
+          {
+            "event": "ricochet",
+            "clock": 41.68333333333233
+          },
+          {
+            "event": "ricochet",
+            "clock": 42.06666666666564
+          },
+          {
+            "event": "roll-end",
+            "clock": 42.46666666666562,
+            "deflected": false,
+            "bounces": 6
+          },
+          {
+            "event": "unfold-complete",
+            "clock": 43.84999999999887
+          }
+        ]
+      }
+    ],
+    "audio": {
+      "peak": 0.6764393448829651,
+      "frames": 1052,
+      "starts": 9,
+      "sfxStarts": 26,
+      "errors": []
+    },
+    "errors": [],
+    "video": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_shots\\dracodia_ball_1109\\dracodia-ball.mp4"
+  },
+  "gifs": {
+    "gifs": [
+      {
+        "name": "regular",
+        "frames": 168,
+        "size": [
+          480,
+          512
+        ],
+        "bytes": 9989614
+      },
+      {
+        "name": "chrome",
+        "frames": 138,
+        "size": [
+          480,
+          512
+        ],
+        "bytes": 6908622
+      }
+    ],
+    "peakPixels": {
+      "red": [
+        17895,
+        44
+      ],
+      "white": [
+        10690,
+        93
+      ]
+    },
+    "realRocketDeflect": true,
+    "noPostCounterRicochet": true
+  },
+  "art": {
+    "passed": true,
+    "cells": [
+      {
+        "bank": "corrupt-fold",
+        "frame": 0,
+        "bounds": [
+          60,
+          10,
+          326,
+          347
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 1,
+        "bounds": [
+          68,
+          38,
+          317,
+          347
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 2,
+        "bounds": [
+          70,
+          68,
+          314,
+          344
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 3,
+        "bounds": [
+          77,
+          99,
+          308,
+          341
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 4,
+        "bounds": [
+          79,
+          109,
+          306,
+          336
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 5,
+        "bounds": [
+          81,
+          116,
+          304,
+          331
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 6,
+        "bounds": [
+          85,
+          124,
+          300,
+          325
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 7,
+        "bounds": [
+          90,
+          128,
+          295,
+          320
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 8,
+        "bounds": [
+          96,
+          124,
+          291,
+          315
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 9,
+        "bounds": [
+          100,
+          125,
+          285,
+          310
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 10,
+        "bounds": [
+          105,
+          125,
+          279,
+          303
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 11,
+        "bounds": [
+          107,
+          122,
+          279,
+          297
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 12,
+        "bounds": [
+          105,
+          125,
+          281,
+          289
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 13,
+        "bounds": [
+          106,
+          122,
+          278,
+          282
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 14,
+        "bounds": [
+          106,
+          117,
+          279,
+          277
+        ]
+      },
+      {
+        "bank": "corrupt-fold",
+        "frame": 15,
+        "bounds": [
+          107,
+          113,
+          279,
+          273
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 0,
+        "bounds": [
+          41,
+          40,
+          216,
+          217
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 1,
+        "bounds": [
+          42,
+          39,
+          214,
+          218
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 2,
+        "bounds": [
+          43,
+          38,
+          214,
+          219
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 3,
+        "bounds": [
+          44,
+          43,
+          213,
+          214
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 4,
+        "bounds": [
+          42,
+          45,
+          215,
+          213
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 5,
+        "bounds": [
+          41,
+          46,
+          215,
+          211
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 6,
+        "bounds": [
+          41,
+          47,
+          215,
+          211
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 7,
+        "bounds": [
+          41,
+          43,
+          217,
+          215
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 8,
+        "bounds": [
+          42,
+          40,
+          214,
+          217
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 9,
+        "bounds": [
+          47,
+          42,
+          210,
+          215
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 10,
+        "bounds": [
+          44,
+          41,
+          212,
+          215
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 11,
+        "bounds": [
+          43,
+          40,
+          213,
+          217
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 12,
+        "bounds": [
+          41,
+          42,
+          217,
+          216
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 13,
+        "bounds": [
+          40,
+          45,
+          216,
+          213
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 14,
+        "bounds": [
+          42,
+          47,
+          215,
+          211
+        ]
+      },
+      {
+        "bank": "corrupt-roll",
+        "frame": 15,
+        "bounds": [
+          40,
+          41,
+          216,
+          216
+        ]
+      }
+    ],
+    "scales": {
+      "corrupt-fold": 1.25,
+      "corrupt-roll": 0.7803223070398643
+    },
+    "diameter": 172.5
+  },
+  "decodedSheetMiB": 65,
+  "coreSha256": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+  "syntaxPassed": [
+    "assets/game.js",
+    "assets/dracodia_ball_1109.js",
+    "assets/dracodia_ball_art_1109.js"
+  ],
+  "fullRegression": {
+    "passed": false,
+    "reason": "Existing difficultyHealthBaseline15 ReferenceError at combat_polish_0927b.js:151; test_fl.js:4537. Suite did not reach final summary."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "blue-sides-front",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-2e5f7772-8d9e-4683-8fd2-aa48c18786d2.png",
+  "prompt": "Retarget ALL16whole-characterfront-facing sidehammerstrikeposes inref1 into BLUE CHRONOS. PreserveEXACTposes,feet,torsoTWISTandarmextensionprogression and4x4order. ALLhelmets/eyesandpelvisFACEVIEWERwhilehips/shouldersloadRIGHT,liftthehammer, driveLEFT,followthroughandrecover. BothEYESSYMMETRIC front, nocameraprofile/threequarterhead. Reference1 motionONLY;ref2Chronoscharcoalchromeheavyarmor/cyanroundcore/inserts,ref3exactoriginaldarkSWEPTFINNEDclosedhelmetandnarrowcyanvisor,ref4blueLIGHTNINGcylindricalT-hammerflatblack/silvercaps,blackstraightshaftandroundedcyanbutt. NOpurple/red/horns/spikes/face. KeepLITERALuprightT EVERYframe: BLUECYLINDERHORIZONTALleft--right,flatcapsfacingLEFT/RIGHT,ONEshaftVERTICALLYDOWNfromSIDE-MIDPOINT,BOTHclosefistsstackedBELOWheadononehilt,cyanbuttbelowfists. Leftendcapleadsleftblow. Neverhaftthroughcap/crossbar/headbetweenfists. WHOLEactorandheldweapondrawntogethercoherently,noheadstamps/bodyassembly. Samebody/head/limb/hammerunitacrossALL16; fixedbootbaseline. Clear30pxmarginEVERYfin/hammer/bootinsideeachcell,nodrawingcrossescellborders. Large2048x2048square4x4sheet, crispmetallic16bit sprites,realRGBAtransparency,nofloor/shadows/FX/trails/text/background.",
+  "accepted": true,
+  "status": "candidate",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

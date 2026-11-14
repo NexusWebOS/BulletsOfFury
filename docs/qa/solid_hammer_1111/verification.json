@@ -1,0 +1,52 @@
+{
+  "nativeChecks": 85,
+  "failed": [],
+  "browserErrors": [],
+  "sourceFrames": 64,
+  "newWholeDrawings": 48,
+  "retainedReadyDrawings": 16,
+  "forms": [
+    "Chronos normal",
+    "Chronos Chromium",
+    "Dracodia normal",
+    "Dracodia Chromium"
+  ],
+  "straightShaftRigidHeadVisualReview": true,
+  "export": {
+    "banks": [
+      {
+        "bank": "blue-overhead",
+        "pixelExactFrames": 32,
+        "uniqueDrawings": 32,
+        "matchingMaterialMasks": true,
+        "evenCells": [
+          512,
+          512
+        ]
+      },
+      {
+        "bank": "corrupt-overhead",
+        "pixelExactFrames": 32,
+        "uniqueDrawings": 32,
+        "matchingMaterialMasks": true,
+        "evenCells": [
+          512,
+          512
+        ]
+      }
+    ],
+    "newWholeDrawings": 48,
+    "retainedReady": 16,
+    "retainedSideAndWhirlMetadata": true,
+    "visualReview": "All selected complete poses inspected against the original rigid T hammer and user GIF studies. The prior curved parallel-shaft socket is replaced; held art is whole-drawn. Near cap spikes repaired on copied form. This visual review is distinct from runtime checks."
+  },
+  "protectedGameplayHashes": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/whole_hammer_1110.js": "41975f15d16775a9b858d4291385c68e4703bb9086ef76c0a6265b770dd903d0",
+    "assets/boss_animation_1109.js": "6a8181ddeaa74ce861305eb94df87133b4902f928bb005fb1658e43b83a282fc"
+  },
+  "fullSuite": {
+    "exit": 1,
+    "lastError": "keybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nassets/combat_polish_0927b.js:151\n  const hp=difficultyHealthBaseline15(1050,diffKey==='easy'?600:[1050,1250,1450][n]);b._bomber={n,mode:'entry',t:0,dur:2.1,seq:0,cd:0,clock:0,bombs:[],history:['entry'],core:hp,coreMax:hp,parts:[]};\n           ^\n\nReferenceError: difficultyHealthBaseline15 is not defined\n    at siegeBomberInit (assets/combat_polish_0927b.js:151:12)\n    at spawnSubBoss__inner (assets/game.js:25118:45)\n    at spawnSubBoss (assets/game.js:25108:110)\n    at evalmachine.<anonymous>:1:1\n    at Script.runInContext (node:vm:149:12)\n    at Object.runInContext (node:vm:301:6)\n    at C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_BUILD_SOURCE\\test_fl.js:4537:10\n    at Object.<anonymous> (C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_BUILD_SOURCE\\test_fl.js:4564:5)\n    at Module._compile (node:internal/modules/cjs/loader:1830:14)\n    at Object..js (node:internal/modules/cjs/loader:1961:10)\n\nNode.js v24.15.0\n"
+  }
+}

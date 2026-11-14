@@ -1,0 +1,61 @@
+{
+  "records": [
+    {
+      "unit": "chronos",
+      "video": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_shots\\rigid_hammer_1110\\chronos-hammer.mp4",
+      "seconds": 43040.44,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 9.704
+        }
+      ],
+      "audio": {
+        "peak": 0.7141239643096924,
+        "frames": 429,
+        "starts": 0,
+        "sfxStarts": 19,
+        "errors": [],
+        "events": [],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [],
+        "phase": null
+      }
+    },
+    {
+      "unit": "dracodia",
+      "video": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_shots\\rigid_hammer_1110\\dracodia-hammer.mp4",
+      "seconds": 43136.36,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 9.703
+        }
+      ],
+      "audio": {
+        "peak": 0.6811695098876953,
+        "frames": 663,
+        "starts": 0,
+        "sfxStarts": 23,
+        "errors": [],
+        "events": [],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [],
+        "phase": null
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,1688 @@
+{
+  "passed": true,
+  "cells": [
+    {
+      "bank": "blue-overhead",
+      "frame": 0,
+      "bounds": [
+        118,
+        183,
+        405,
+        459
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        136.89116293576592,
+        389.89028813184854
+      ],
+      "headCenter": [
+        155.47503947353982,
+        416.4308143668119
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 1,
+      "bounds": [
+        95,
+        182,
+        385,
+        444
+      ],
+      "headToGrip": 100.00000000000001,
+      "jointAngle": 90,
+      "contactFace": [
+        115.68526449960493,
+        355.4041915515306
+      ],
+      "headCenter": [
+        131.88526449960492,
+        383.4634146341464
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 2,
+      "bounds": [
+        80,
+        182,
+        399,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        106.89814754043546,
+        256.24374410537376
+      ],
+      "headCenter": [
+        109.72199360545959,
+        288.5204523235463
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 3,
+      "bounds": [
+        119,
+        168,
+        422,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        143.99729006586907,
+        207.31761505555946
+      ],
+      "headCenter": [
+        152.38302712719073,
+        238.61361182732526
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 4,
+      "bounds": [
+        140,
+        93,
+        403,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        190.33034565966048,
+        103.3006307942353
+      ],
+      "headCenter": [
+        176.63751397926183,
+        132.66500309422275
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 5,
+      "bounds": [
+        163,
+        64,
+        404,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        230.96337040473674,
+        82.96433366747331
+      ],
+      "headCenter": [
+        204.4228441697734,
+        101.5482102052472
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 6,
+      "bounds": [
+        171,
+        54,
+        402,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        265.97506787126986,
+        78.48509494391787
+      ],
+      "headCenter": [
+        234.67907109950403,
+        86.87083200523955
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 7,
+      "bounds": [
+        173,
+        52,
+        404,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        290.5219512195122,
+        79.8048780487805
+      ],
+      "headCenter": [
+        258.1219512195122,
+        79.8048780487805
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 8,
+      "bounds": [
+        174,
+        66,
+        405,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        317.4069166392798,
+        98.86291284121542
+      ],
+      "headCenter": [
+        285.1302084211073,
+        96.03906677619129
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 9,
+      "bounds": [
+        144,
+        192,
+        405,
+        444
+      ],
+      "headToGrip": 100.00000000000001,
+      "jointAngle": 90,
+      "contactFace": [
+        318.35759213403435,
+        313.51668874449854
+      ],
+      "headCenter": [
+        297.5312735801905,
+        288.6968487874436
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 10,
+      "bounds": [
+        162,
+        209,
+        405,
+        444
+      ],
+      "headToGrip": 100.00000000000001,
+      "jointAngle": 90,
+      "contactFace": [
+        358.9569773659056,
+        376.6739328892214
+      ],
+      "headCenter": [
+        349.4841341328889,
+        345.68965879601905
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 11,
+      "bounds": [
+        155,
+        220,
+        404,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        351.2649483462901,
+        414.79275214955885
+      ],
+      "headCenter": [
+        350.1342046531291,
+        382.4124893541401
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 12,
+      "bounds": [
+        171,
+        209,
+        404,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        365.4390243902439,
+        415.86341463414635
+      ],
+      "headCenter": [
+        365.4390243902439,
+        383.4634146341464
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 13,
+      "bounds": [
+        137,
+        192,
+        405,
+        444
+      ],
+      "headToGrip": 100.00000000000001,
+      "jointAngle": 90,
+      "contactFace": [
+        324.3391257442975,
+        328.5958084484694
+      ],
+      "headCenter": [
+        308.13912574429753,
+        300.5365853658536
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 14,
+      "bounds": [
+        148,
+        184,
+        405,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        220.21963633699414,
+        247.9248950337551
+      ],
+      "headCenter": [
+        189.7735954235307,
+        259.00634767750677
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 15,
+      "bounds": [
+        116,
+        184,
+        404,
+        469
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        135.061894643083,
+        399.64638569282414
+      ],
+      "headCenter": [
+        153.6457711808569,
+        426.1869119277875
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 0,
+      "bounds": [
+        116,
+        152,
+        419,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        135.43480333084756,
+        366.2055471522073
+      ],
+      "headCenter": [
+        154.01867986862146,
+        392.74607338717067
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 1,
+      "bounds": [
+        162,
+        150,
+        472,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        447.59616926779705,
+        306.8390679032106
+      ],
+      "headCenter": [
+        436.5147166240454,
+        276.39302698974717
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 2,
+      "bounds": [
+        163,
+        149,
+        503,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        474.77685950413223,
+        313.2429752066115
+      ],
+      "headCenter": [
+        474.77685950413223,
+        280.8429752066115
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 3,
+      "bounds": [
+        153,
+        145,
+        482,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        430.6404263621093,
+        309.0807439286028
+      ],
+      "headCenter": [
+        444.33325804250796,
+        279.7163716286154
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 4,
+      "bounds": [
+        152,
+        147,
+        426,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        309.32094220664044,
+        339.01741641150164
+      ],
+      "headCenter": [
+        337.38016528925624,
+        322.81741641150165
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 5,
+      "bounds": [
+        154,
+        147,
+        424,
+        445
+      ],
+      "headToGrip": 100.00000000000003,
+      "jointAngle": 90,
+      "contactFace": [
+        252.50082644628097,
+        346.1322314049587
+      ],
+      "headCenter": [
+        284.900826446281,
+        346.1322314049587
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 6,
+      "bounds": [
+        153,
+        148,
+        424,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        236.3684736795895,
+        332.73904910426063
+      ],
+      "headCenter": [
+        266.81451459305293,
+        343.8205017480123
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 7,
+      "bounds": [
+        137,
+        142,
+        426,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        154.6188239111178,
+        283.11181357358254
+      ],
+      "headCenter": [
+        175.4451424649617,
+        307.9316535306374
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 8,
+      "bounds": [
+        52,
+        151,
+        428,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        80.1487603305785,
+        221.1702479338843
+      ],
+      "headCenter": [
+        80.14876033057851,
+        253.5702479338843
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 9,
+      "bounds": [
+        96,
+        150,
+        426,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        121.9095526679905,
+        265.06035235422144
+      ],
+      "headCenter": [
+        127.53575362439904,
+        296.968123551817
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 10,
+      "bounds": [
+        142,
+        148,
+        427,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        163.84167887213468,
+        322.2528257749089
+      ],
+      "headCenter": [
+        177.53451055253333,
+        351.61719807489635
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 11,
+      "bounds": [
+        148,
+        147,
+        431,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        184.4017454796079,
+        363.72620830923216
+      ],
+      "headCenter": [
+        202.98562201738181,
+        390.2667345441955
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 12,
+      "bounds": [
+        128,
+        146,
+        428,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        147.21166283497982,
+        376.1229025241082
+      ],
+      "headCenter": [
+        165.79553937275372,
+        402.66342875907156
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 13,
+      "bounds": [
+        143,
+        146,
+        429,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        162.08769589283108,
+        376.1229025241082
+      ],
+      "headCenter": [
+        180.67157243060498,
+        402.66342875907156
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 14,
+      "bounds": [
+        148,
+        146,
+        429,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        167.66620828952526,
+        376.1229025241082
+      ],
+      "headCenter": [
+        186.25008482729916,
+        402.66342875907156
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 15,
+      "bounds": [
+        148,
+        146,
+        431,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        176.96372895068228,
+        376.1229025241082
+      ],
+      "headCenter": [
+        195.54760548845618,
+        402.66342875907156
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 0,
+      "bounds": [
+        157,
+        152,
+        460,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        439.56519666915244,
+        366.2055471522073
+      ],
+      "headCenter": [
+        420.98132013137854,
+        392.74607338717067
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 1,
+      "bounds": [
+        104,
+        150,
+        414,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        127.40383073220295,
+        306.8390679032106
+      ],
+      "headCenter": [
+        138.48528337595462,
+        276.39302698974717
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 2,
+      "bounds": [
+        73,
+        149,
+        413,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        100.22314049586777,
+        313.2429752066115
+      ],
+      "headCenter": [
+        100.22314049586777,
+        280.8429752066115
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 3,
+      "bounds": [
+        94,
+        145,
+        423,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        144.35957363789072,
+        309.0807439286028
+      ],
+      "headCenter": [
+        130.66674195749204,
+        279.7163716286154
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 4,
+      "bounds": [
+        150,
+        147,
+        424,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        265.67905779335956,
+        339.01741641150164
+      ],
+      "headCenter": [
+        237.61983471074376,
+        322.81741641150165
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 5,
+      "bounds": [
+        152,
+        147,
+        422,
+        445
+      ],
+      "headToGrip": 100.00000000000003,
+      "jointAngle": 90,
+      "contactFace": [
+        322.49917355371906,
+        346.1322314049587
+      ],
+      "headCenter": [
+        290.099173553719,
+        346.1322314049587
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 6,
+      "bounds": [
+        152,
+        148,
+        423,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        338.6315263204105,
+        332.73904910426063
+      ],
+      "headCenter": [
+        308.18548540694707,
+        343.8205017480123
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 7,
+      "bounds": [
+        150,
+        142,
+        439,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        420.38117608888217,
+        283.11181357358254
+      ],
+      "headCenter": [
+        399.5548575350383,
+        307.9316535306374
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 8,
+      "bounds": [
+        148,
+        151,
+        524,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90,
+      "contactFace": [
+        494.8512396694215,
+        221.1702479338843
+      ],
+      "headCenter": [
+        494.8512396694215,
+        253.5702479338843
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 9,
+      "bounds": [
+        150,
+        150,
+        480,
+        445
+      ],
+      "headToGrip": 99.99999999999997,
+      "jointAngle": 90,
+      "contactFace": [
+        453.0904473320095,
+        265.06035235422144
+      ],
+      "headCenter": [
+        447.46424637560096,
+        296.968123551817
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 10,
+      "bounds": [
+        149,
+        148,
+        434,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        411.1583211278653,
+        322.2528257749089
+      ],
+      "headCenter": [
+        397.46548944746667,
+        351.61719807489635
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 11,
+      "bounds": [
+        145,
+        147,
+        428,
+        444
+      ],
+      "headToGrip": 99.99999999999997,
+      "jointAngle": 90,
+      "contactFace": [
+        390.59825452039206,
+        363.72620830923216
+      ],
+      "headCenter": [
+        372.01437798261816,
+        390.2667345441955
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 12,
+      "bounds": [
+        148,
+        146,
+        448,
+        445
+      ],
+      "headToGrip": 99.99999999999997,
+      "jointAngle": 90,
+      "contactFace": [
+        427.78833716502015,
+        376.1229025241082
+      ],
+      "headCenter": [
+        409.20446062724625,
+        402.66342875907156
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 13,
+      "bounds": [
+        147,
+        146,
+        433,
+        445
+      ],
+      "headToGrip": 99.99999999999997,
+      "jointAngle": 90,
+      "contactFace": [
+        412.9123041071689,
+        376.1229025241082
+      ],
+      "headCenter": [
+        394.328427569395,
+        402.66342875907156
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 14,
+      "bounds": [
+        147,
+        146,
+        428,
+        445
+      ],
+      "headToGrip": 100.00000000000003,
+      "jointAngle": 90,
+      "contactFace": [
+        407.33379171047477,
+        376.1229025241082
+      ],
+      "headCenter": [
+        388.74991517270087,
+        402.66342875907156
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "blue-right",
+      "frame": 15,
+      "bounds": [
+        145,
+        146,
+        428,
+        445
+      ],
+      "headToGrip": 100.00000000000003,
+      "jointAngle": 90,
+      "contactFace": [
+        398.03627104931775,
+        376.1229025241082
+      ],
+      "headCenter": [
+        379.45239451154384,
+        402.66342875907156
+      ],
+      "faceOffset": -32.4
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 0,
+      "bounds": [
+        93,
+        156,
+        411,
+        460
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        104.73347635674472,
+        380.62092358534693
+      ],
+      "headCenter": [
+        129.48903534965586,
+        415.97552581685983
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 1,
+      "bounds": [
+        79,
+        157,
+        414,
+        446
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        92.98733260263394,
+        329.6223435726636
+      ],
+      "headCenter": [
+        114.56733260263394,
+        367.0
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 2,
+      "bounds": [
+        56,
+        158,
+        414,
+        446
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        79.01291484337779,
+        248.15558981886437
+      ],
+      "headCenter": [
+        82.77455670036672,
+        291.15135298850413
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 3,
+      "bounds": [
+        77,
+        139,
+        414,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        96.65715825302303,
+        221.23664107312845
+      ],
+      "headCenter": [
+        107.82778823964783,
+        262.92599973576466
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 4,
+      "bounds": [
+        144,
+        74,
+        415,
+        444
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        196.07788653788035,
+        79.75883842872474
+      ],
+      "headCenter": [
+        177.83768236115176,
+        118.87508251722656
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 5,
+      "bounds": [
+        164,
+        41,
+        414,
+        444
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        243.75407641465307,
+        52.48347635674472
+      ],
+      "headCenter": [
+        208.39947418314017,
+        77.23903534965586
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 6,
+      "bounds": [
+        164,
+        32,
+        414,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        274.38835892687155,
+        51.907158253023034
+      ],
+      "headCenter": [
+        232.69900026423534,
+        63.07778823964783
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 7,
+      "bounds": [
+        164,
+        30,
+        414,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        298.035,
+        54.5
+      ],
+      "headCenter": [
+        254.875,
+        54.5
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 8,
+      "bounds": [
+        165,
+        39,
+        414,
+        445
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        326.3971161581439,
+        69.91119855735565
+      ],
+      "headCenter": [
+        283.40135298850413,
+        66.14955670036672
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 9,
+      "bounds": [
+        164,
+        166,
+        414,
+        445
+      ],
+      "headToGrip": 105.00000000000001,
+      "jointAngle": 90,
+      "contactFace": [
+        338.05237976156377,
+        297.56977914792844
+      ],
+      "headCenter": [
+        310.3096665274927,
+        264.50730098291336
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 10,
+      "bounds": [
+        163,
+        181,
+        413,
+        445
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        369.78076215195205,
+        362.5750842714773
+      ],
+      "headCenter": [
+        357.16199937611873,
+        321.3009710041127
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 11,
+      "bounds": [
+        164,
+        194,
+        414,
+        444
+      ],
+      "headToGrip": 105.00000000000003,
+      "jointAngle": 90,
+      "contactFace": [
+        361.317299114685,
+        402.71926094038156
+      ],
+      "headCenter": [
+        359.8110368370051,
+        359.58555284623736
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 12,
+      "bounds": [
+        163,
+        187,
+        414,
+        445
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        373.625,
+        396.41
+      ],
+      "headCenter": [
+        373.625,
+        353.25
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 13,
+      "bounds": [
+        158,
+        173,
+        414,
+        445
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        336.13766739736604,
+        316.8776564273364
+      ],
+      "headCenter": [
+        314.55766739736606,
+        279.5
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 14,
+      "bounds": [
+        141,
+        172,
+        414,
+        445
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        227.0200184639246,
+        227.32068543154375
+      ],
+      "headCenter": [
+        186.46288495080478,
+        242.08227481747963
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 15,
+      "bounds": [
+        118,
+        169,
+        414,
+        457
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        129.10847635674472,
+        376.87092358534693
+      ],
+      "headCenter": [
+        153.86403534965586,
+        412.22552581685983
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 0,
+      "bounds": [
+        123,
+        135,
+        427,
+        443
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        134.3215989621087,
+        349.1697741600596
+      ],
+      "headCenter": [
+        159.07715795501986,
+        384.5243763915725
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 1,
+      "bounds": [
+        152,
+        136,
+        461,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        441.8890846833988,
+        306.8749035213959
+      ],
+      "headCenter": [
+        427.12749529746293,
+        266.31777000827606
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 2,
+      "bounds": [
+        150,
+        134,
+        485,
+        443
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        459.8199233716475,
+        318.41670498084295
+      ],
+      "headCenter": [
+        459.8199233716475,
+        275.2567049808429
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 3,
+      "bounds": [
+        148,
+        132,
+        463,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        409.0600444966024,
+        324.41836463640936
+      ],
+      "headCenter": [
+        427.300248673331,
+        285.3021205479075
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 4,
+      "bounds": [
+        147,
+        133,
+        431,
+        444
+      ],
+      "headToGrip": 105.00000000000003,
+      "jointAngle": 90,
+      "contactFace": [
+        295.1529949136598,
+        349.76170954296
+      ],
+      "headCenter": [
+        332.5306513409962,
+        328.18170954295994
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 5,
+      "bounds": [
+        150,
+        130,
+        429,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        239.32275862068965,
+        342.2490421455939
+      ],
+      "headCenter": [
+        282.48275862068965,
+        342.2490421455939
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 6,
+      "bounds": [
+        148,
+        130,
+        429,
+        444
+      ],
+      "headToGrip": 105.00000000000001,
+      "jointAngle": 90,
+      "contactFace": [
+        217.0479928169953,
+        329.73755342110564
+      ],
+      "headCenter": [
+        257.6051263301151,
+        344.4991428070415
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 7,
+      "bounds": [
+        117,
+        128,
+        433,
+        445
+      ],
+      "headToGrip": 104.99999999999997,
+      "jointAngle": 90,
+      "contactFace": [
+        127.71534054494971,
+        275.35742391720567
+      ],
+      "headCenter": [
+        155.45805377902076,
+        308.41990208222074
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 8,
+      "bounds": [
+        46,
+        126,
+        433,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        70.20306513409962,
+        202.67141762452113
+      ],
+      "headCenter": [
+        70.20306513409963,
+        245.83141762452112
+      ],
+      "faceOffset": -43.160000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 9,
+      "bounds": [
+        100,
+        129,
+        434,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        157.5396506102968,
+        363.0200040359618
+      ],
+      "headCenter": [
+        135.7646506102968,
+        325.3045977011495
+      ],
+      "faceOffset": 43.550000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 10,
+      "bounds": [
+        146,
+        129,
+        432,
+        444
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        240.76655337476103,
+        410.76799623121
+      ],
+      "headCenter": [
+        205.09248184597544,
+        385.78874242812196
+      ],
+      "faceOffset": 43.550000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 11,
+      "bounds": [
+        144,
+        129,
+        436,
+        454
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        288.79045314088677,
+        433.3144708297394
+      ],
+      "headCenter": [
+        246.72438340599783,
+        422.0429014155246
+      ],
+      "faceOffset": 43.550000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 12,
+      "bounds": [
+        145,
+        122,
+        432,
+        461
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        302.73773946360154,
+        435.42911877394636
+      ],
+      "headCenter": [
+        259.18773946360153,
+        435.42911877394636
+      ],
+      "faceOffset": 43.550000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 13,
+      "bounds": [
+        147,
+        122,
+        434,
+        463
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        343.37978998710355,
+        414.20186671463387
+      ],
+      "headCenter": [
+        302.4561763518772,
+        429.0968439564667
+      ],
+      "faceOffset": 43.550000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 14,
+      "bounds": [
+        144,
+        122,
+        436,
+        443
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90,
+      "contactFace": [
+        380.59941385573103,
+        354.9805730620206
+      ],
+      "headCenter": [
+        355.620160052643,
+        390.6546445908062
+      ],
+      "faceOffset": 43.550000000000004
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 15,
+      "bounds": [
+        141,
+        122,
+        435,
+        443
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90,
+      "contactFace": [
+        375.22222222222223,
+        286.87911877394635
+      ],
+      "headCenter": [
+        375.22222222222223,
+        330.42911877394636
+      ],
+      "faceOffset": 43.550000000000004
+    }
+  ],
+  "poses": 80,
+  "flightFrames": 32,
+  "method": "Preserved clean body layers and immutable blue/HC23 purple masters. End-cap-leading swing arcs; all rotations and materials baked offline in Aseprite."
+}

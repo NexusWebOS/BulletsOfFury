@@ -1,0 +1,60 @@
+{
+  "nativeChecks": 85,
+  "failed": [],
+  "browserErrors": [],
+  "sourceRoundtrips": [
+    {
+      "bank": "corrupt-overhead",
+      "frames": 32,
+      "layers": 1,
+      "pixelExact": true
+    },
+    {
+      "bank": "corrupt-sides",
+      "frames": 16,
+      "layers": 1,
+      "pixelExact": true
+    },
+    {
+      "bank": "corrupt-right",
+      "frames": 16,
+      "layers": 1,
+      "pixelExact": true
+    },
+    {
+      "bank": "blue-overhead",
+      "frames": 32,
+      "layers": 1,
+      "pixelExact": true
+    },
+    {
+      "bank": "blue-sides",
+      "frames": 16,
+      "layers": 1,
+      "pixelExact": true
+    },
+    {
+      "bank": "blue-right",
+      "frames": 16,
+      "layers": 1,
+      "pixelExact": true
+    }
+  ],
+  "updatedSourceFrames": 128,
+  "newWholeDrawings": 78,
+  "retainedReadyDrawings": 16,
+  "retainedWhirlFrames": 32,
+  "forms": [
+    "Chronos normal",
+    "Chronos Chromium",
+    "Dracodia copied Chronos normal",
+    "Dracodia copied Chronos Chromium"
+  ],
+  "redMaterialRouting": true,
+  "nativeArmorActivationsVerified": true,
+  "coreGameUnchanged": true,
+  "fullSuiteExit": 1,
+  "fullSuiteError": "Existing difficultyHealthBaseline15 is not defined",
+  "passwordHandoffVerified": true,
+  "separateBallRegistryVerified": true
+}

@@ -1,0 +1,26 @@
+{
+  "nativeChecks": 57,
+  "failed": [],
+  "sourceRoundtrips": [
+    {
+      "bank": "blue-overhead",
+      "frames": 16,
+      "layer": "GPT complete figure + held hammer",
+      "layers": 1,
+      "pixelExact": true
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frames": 16,
+      "layer": "GPT complete figure + held hammer",
+      "layers": 1,
+      "pixelExact": true
+    }
+  ],
+  "fixedCell": [
+    640,
+    640
+  ],
+  "sourceScale": 0.63,
+  "fullSuite": "Previous run exited 1 before final summary: existing missing difficultyHealthBaseline15 helper."
+}

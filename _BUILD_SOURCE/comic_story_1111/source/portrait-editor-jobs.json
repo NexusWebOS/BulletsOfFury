@@ -1,0 +1,1326 @@
+[
+  {
+    "pilot": "cole",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\closed.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\a.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\e.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\o.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\u.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\f.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\l.png"
+    ],
+    "mouth": [
+      76,
+      85,
+      19,
+      18
+    ],
+    "demo": [
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-00.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-01.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-02.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-03.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-04.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-05.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-06.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-07.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-08.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-09.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-10.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-11.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-12.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-13.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-14.png",
+        "ms": 180
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-15.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-16.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-17.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-18.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-19.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-20.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-21.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-22.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-23.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-24.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-25.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-26.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-27.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-28.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-29.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-30.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-31.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\cole\\demo-32.png",
+        "ms": 440
+      }
+    ],
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\cole",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\cole-talking.gif",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\cole.aseprite"
+  },
+  {
+    "pilot": "decker",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\closed.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\a.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\e.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\o.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\u.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\f.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\l.png"
+    ],
+    "mouth": [
+      76,
+      83,
+      18,
+      16
+    ],
+    "demo": [
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-00.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-01.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-02.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-03.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-04.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-05.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-06.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-07.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-08.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-09.png",
+        "ms": 270
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-10.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-11.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-12.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-13.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-14.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-15.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-16.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-17.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-18.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-19.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-20.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-21.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-22.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-23.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-24.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-25.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-26.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-27.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-28.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\decker\\demo-29.png",
+        "ms": 440
+      }
+    ],
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\decker",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\decker-talking.gif",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\decker.aseprite"
+  },
+  {
+    "pilot": "axel",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\closed.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\a.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\e.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\o.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\u.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\f.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\l.png"
+    ],
+    "mouth": [
+      74,
+      88,
+      21,
+      19
+    ],
+    "demo": [
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-00.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-01.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-02.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-03.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-04.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-05.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-06.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-07.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-08.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-09.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-10.png",
+        "ms": 180
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-11.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-12.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-13.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-14.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-15.png",
+        "ms": 180
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-16.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-17.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-18.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-19.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-20.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-21.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-22.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-23.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-24.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-25.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-26.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-27.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-28.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\axel\\demo-29.png",
+        "ms": 440
+      }
+    ],
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\axel",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\axel-talking.gif",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\axel.aseprite"
+  },
+  {
+    "pilot": "freezer",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\closed.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\a.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\e.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\o.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\u.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\f.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\l.png"
+    ],
+    "mouth": [
+      65,
+      98,
+      21,
+      20
+    ],
+    "demo": [
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-00.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-01.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-02.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-03.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-04.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-05.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-06.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-07.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-08.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-09.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-10.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-11.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-12.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-13.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-14.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-15.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-16.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-17.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-18.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-19.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-20.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-21.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-22.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-23.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-24.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-25.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-26.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-27.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-28.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-29.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\freezer\\demo-30.png",
+        "ms": 440
+      }
+    ],
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\freezer",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\freezer-talking.gif",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\freezer.aseprite"
+  },
+  {
+    "pilot": "yuri",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\closed.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\a.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\e.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\o.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\u.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\f.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\l.png"
+    ],
+    "mouth": [
+      74,
+      91,
+      20,
+      19
+    ],
+    "demo": [
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-00.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-01.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-02.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-03.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-04.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-05.png",
+        "ms": 180
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-06.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-07.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-08.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-09.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-10.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-11.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-12.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-13.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-14.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-15.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-16.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-17.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-18.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-19.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-20.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-21.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-22.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-23.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-24.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-25.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-26.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-27.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-28.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-29.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-30.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-31.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-32.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-33.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-34.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\yuri\\demo-35.png",
+        "ms": 440
+      }
+    ],
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\yuri",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\yuri-talking.gif",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\yuri.aseprite"
+  },
+  {
+    "pilot": "falva",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\closed.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\a.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\e.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\o.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\u.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\f.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\l.png"
+    ],
+    "mouth": [
+      77,
+      88,
+      19,
+      17
+    ],
+    "demo": [
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-00.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-01.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-02.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-03.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-04.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-05.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-06.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-07.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-08.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-09.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-10.png",
+        "ms": 180
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-11.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-12.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-13.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-14.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-15.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-16.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-17.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-18.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-19.png",
+        "ms": 180
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-20.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-21.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-22.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-23.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-24.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-25.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-26.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-27.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-28.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-29.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-30.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-31.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-32.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-33.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-34.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\falva\\demo-35.png",
+        "ms": 440
+      }
+    ],
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\falva",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\falva-talking.gif",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\falva.aseprite"
+  },
+  {
+    "pilot": "lizzie",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\closed.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\a.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\e.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\o.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\u.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\f.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\l.png"
+    ],
+    "mouth": [
+      74,
+      88,
+      20,
+      18
+    ],
+    "demo": [
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-00.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-01.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-02.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-03.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-04.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-05.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-06.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-07.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-08.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-09.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-10.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-11.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-12.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-13.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-14.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-15.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-16.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-17.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-18.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-19.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-20.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-21.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-22.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-23.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-24.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-25.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\lizzie\\demo-26.png",
+        "ms": 440
+      }
+    ],
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\lizzie",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\lizzie-talking.gif",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\lizzie.aseprite"
+  },
+  {
+    "pilot": "maverick",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\closed.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\a.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\e.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\o.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\u.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\f.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\l.png"
+    ],
+    "mouth": [
+      77,
+      87,
+      20,
+      19
+    ],
+    "demo": [
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-00.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-01.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-02.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-03.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-04.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-05.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-06.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-07.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-08.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-09.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-10.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-11.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-12.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-13.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-14.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-15.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-16.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-17.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-18.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-19.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-20.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-21.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-22.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-23.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-24.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-25.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-26.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-27.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-28.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-29.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-30.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-31.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-32.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\maverick\\demo-33.png",
+        "ms": 440
+      }
+    ],
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\maverick",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\maverick-talking.gif",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\maverick.aseprite"
+  },
+  {
+    "pilot": "juggernaut",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\closed.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\a.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\e.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\o.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\u.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\f.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\l.png"
+    ],
+    "mouth": [
+      74,
+      84,
+      22,
+      20
+    ],
+    "demo": [
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-00.png",
+        "ms": 540
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-01.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-02.png",
+        "ms": 270
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-03.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-04.png",
+        "ms": 180
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-05.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-06.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-07.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-08.png",
+        "ms": 180
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-09.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-10.png",
+        "ms": 180
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-11.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-12.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-13.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-14.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-15.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-16.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-17.png",
+        "ms": 180
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-18.png",
+        "ms": 90
+      },
+      {
+        "path": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\juggernaut\\demo-19.png",
+        "ms": 530
+      }
+    ],
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\juggernaut",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\juggernaut-talking.gif",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\portraits\\juggernaut.aseprite"
+  }
+]

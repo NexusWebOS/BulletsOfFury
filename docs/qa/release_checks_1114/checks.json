@@ -1,0 +1,432 @@
+{
+  "checks": [
+    {
+      "name": "easy: complete burst/cool/burst, retreat/turn/bomb charge/overflight/return/catch-up loops",
+      "passed": true,
+      "data": [
+        "lock",
+        "burst",
+        "cool",
+        "spool",
+        "boost",
+        "turn-in",
+        "charge",
+        "pass",
+        "turnback",
+        "return",
+        "catch",
+        "stalk"
+      ]
+    },
+    {
+      "name": "easy: original full module/core health stays unchanged through two flight cycles",
+      "passed": true,
+      "data": {
+        "hp": 1066,
+        "max": 1066,
+        "pool": 1066,
+        "parts": [
+          [
+            "engineL",
+            130
+          ],
+          [
+            "engineR",
+            130
+          ],
+          [
+            "laserL",
+            130
+          ],
+          [
+            "laserR",
+            130
+          ]
+        ]
+      }
+    },
+    {
+      "name": "easy: real cannon bursts and repeated cooling alternate with a dense warned bombing run",
+      "passed": true,
+      "data": {
+        "lasers": 48,
+        "raidBombs": 10,
+        "cooldowns": 4
+      }
+    },
+    {
+      "name": "easy: bounded projectile and bomb populations",
+      "passed": true,
+      "data": {
+        "rounds": 6,
+        "bombs": 5
+      }
+    },
+    {
+      "name": "normal: complete burst/cool/burst, retreat/turn/bomb charge/overflight/return/catch-up loops",
+      "passed": true,
+      "data": [
+        "lock",
+        "burst",
+        "cool",
+        "spool",
+        "boost",
+        "turn-in",
+        "charge",
+        "pass",
+        "turnback",
+        "return",
+        "catch",
+        "stalk"
+      ]
+    },
+    {
+      "name": "normal: original full module/core health stays unchanged through two flight cycles",
+      "passed": true,
+      "data": {
+        "hp": 2050,
+        "max": 2050,
+        "pool": 2050,
+        "parts": [
+          [
+            "engineL",
+            250
+          ],
+          [
+            "engineR",
+            250
+          ],
+          [
+            "laserL",
+            250
+          ],
+          [
+            "laserR",
+            250
+          ]
+        ]
+      }
+    },
+    {
+      "name": "normal: real cannon bursts and repeated cooling alternate with a dense warned bombing run",
+      "passed": true,
+      "data": {
+        "lasers": 64,
+        "raidBombs": 28,
+        "cooldowns": 4
+      }
+    },
+    {
+      "name": "normal: bounded projectile and bomb populations",
+      "passed": true,
+      "data": {
+        "rounds": 8,
+        "bombs": 14
+      }
+    },
+    {
+      "name": "hard: complete burst/cool/burst, retreat/turn/bomb charge/overflight/return/catch-up loops",
+      "passed": true,
+      "data": [
+        "lock",
+        "burst",
+        "cool",
+        "spool",
+        "boost",
+        "turn-in",
+        "charge",
+        "pass",
+        "turnback",
+        "return",
+        "catch",
+        "stalk"
+      ]
+    },
+    {
+      "name": "hard: original full module/core health stays unchanged through two flight cycles",
+      "passed": true,
+      "data": {
+        "hp": 2360,
+        "max": 2360,
+        "pool": 2360,
+        "parts": [
+          [
+            "engineL",
+            288
+          ],
+          [
+            "engineR",
+            288
+          ],
+          [
+            "laserL",
+            288
+          ],
+          [
+            "laserR",
+            288
+          ]
+        ]
+      }
+    },
+    {
+      "name": "hard: real cannon bursts and repeated cooling alternate with a dense warned bombing run",
+      "passed": true,
+      "data": {
+        "lasers": 80,
+        "raidBombs": 32,
+        "cooldowns": 4
+      }
+    },
+    {
+      "name": "hard: bounded projectile and bomb populations",
+      "passed": true,
+      "data": {
+        "rounds": 9,
+        "bombs": 16
+      }
+    },
+    {
+      "name": "furious: complete burst/cool/burst, retreat/turn/bomb charge/overflight/return/catch-up loops",
+      "passed": true,
+      "data": [
+        "lock",
+        "burst",
+        "cool",
+        "spool",
+        "boost",
+        "turn-in",
+        "charge",
+        "pass",
+        "turnback",
+        "return",
+        "catch",
+        "stalk"
+      ]
+    },
+    {
+      "name": "furious: original full module/core health stays unchanged through two flight cycles",
+      "passed": true,
+      "data": {
+        "hp": 2713,
+        "max": 2713,
+        "pool": 2713,
+        "parts": [
+          [
+            "engineL",
+            331
+          ],
+          [
+            "engineR",
+            331
+          ],
+          [
+            "laserL",
+            331
+          ],
+          [
+            "laserR",
+            331
+          ]
+        ]
+      }
+    },
+    {
+      "name": "furious: real cannon bursts and repeated cooling alternate with a dense warned bombing run",
+      "passed": true,
+      "data": {
+        "lasers": 96,
+        "raidBombs": 40,
+        "cooldowns": 4
+      }
+    },
+    {
+      "name": "furious: bounded projectile and bomb populations",
+      "passed": true,
+      "data": {
+        "rounds": 11,
+        "bombs": 20
+      }
+    },
+    {
+      "name": "Committed optics freeze the aim and firing hull instead of snapping after the player",
+      "passed": true,
+      "data": {
+        "before": {
+          "locked": true,
+          "target": {
+            "x": 340,
+            "y": 447
+          },
+          "origin": {
+            "x": 385.0931084290928,
+            "y": 142.65761999380854
+          }
+        },
+        "after": {
+          "target": {
+            "x": 340,
+            "y": 447
+          },
+          "root": {
+            "x": 385.0931084290928,
+            "y": 142.65761999380854
+          },
+          "x": 385.0931084290928,
+          "y": 142.65761999380854
+        }
+      }
+    },
+    {
+      "name": "Laser rounds originate at the actual live cannon bore and are ordinary unshootable ordnance",
+      "passed": true,
+      "data": {
+        "shot": true,
+        "intercept": false,
+        "element": null,
+        "hp": null,
+        "shootable": false,
+        "sourceError": 0
+      }
+    },
+    {
+      "name": "Breaking a cannon cancels its queued and released fire and prevents new optics/fire",
+      "passed": true,
+      "data": {
+        "left": 0,
+        "queued": false,
+        "released": false,
+        "newLeft": 0
+      }
+    },
+    {
+      "name": "Actual native module damage produces changed white sprite pixels",
+      "passed": true,
+      "data": {
+        "old": 250,
+        "hp": 233,
+        "flash": 0.2,
+        "changedWhitePixels": 2262
+      }
+    },
+    {
+      "name": "Native module hit flash expires normally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All four original modules still gate the intact core",
+      "passed": true,
+      "data": {
+        "closed": true,
+        "before": 1050,
+        "after": 1050,
+        "ids": [
+          "bomber-engineL",
+          "bomber-laserL",
+          "bomber-engineR",
+          "bomber-laserR"
+        ]
+      }
+    },
+    {
+      "name": "Upper-plane overflight cannot collide, absorb shots or remain a shootable Retina target",
+      "passed": true,
+      "data": {
+        "same": true,
+        "at": null,
+        "beam": null,
+        "targets": 0
+      }
+    },
+    {
+      "name": "Catch-up responds to forward flight and always returns to the damage plane finitely",
+      "passed": true,
+      "data": [
+        {
+          "n": 203,
+          "hp": 2050,
+          "after": 2050,
+          "phase": "stalk",
+          "depth": 1
+        },
+        {
+          "n": 52,
+          "hp": 2050,
+          "after": 2050,
+          "phase": "stalk",
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "name": "Destroying an engine slows the retreat without healing or recreating it",
+      "passed": true,
+      "data": {
+        "slower": true,
+        "next": "turn-in",
+        "engines": 1,
+        "broken": 0,
+        "hp": 1800,
+        "after": 1800
+      }
+    },
+    {
+      "name": "Native player collision ignores the overhead hull but still contacts a same-plane hull",
+      "passed": true,
+      "data": {
+        "safe": true,
+        "controlContact": true
+      }
+    },
+    {
+      "name": "No new targeting or attacks continue after the last live pilot dies",
+      "passed": true,
+      "data": {
+        "frozen": true,
+        "newFire": false,
+        "plan": 0
+      }
+    },
+    {
+      "name": "Pause preserves flight/optics clocks",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Full native module/core exhaustion cleans attacks and completes defeat/reward once",
+      "passed": true,
+      "data": {
+        "hp": 0,
+        "dead": true,
+        "done": true,
+        "score": 9000,
+        "first": 9000,
+        "prior": 0,
+        "shots": 0,
+        "bombs": 0
+      }
+    },
+    {
+      "name": "Stage6 and its original bomber owner remain outside this rewrite",
+      "passed": true,
+      "data": {
+        "own": false,
+        "state": false,
+        "stage": 6
+      }
+    },
+    {
+      "name": "No native page, update or draw errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Stage5 boss, Draconus work, other stages and native source owners stay byte-identical",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "errors": [],
+  "runtimeHash": "f462856735703eb10bb7d8583bf570cce5427d28dfefee2cfb4aac7c12f7cb4d"
+}

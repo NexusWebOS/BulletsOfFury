@@ -1,0 +1,12 @@
+{
+  "name": "guided-drac-o3-grip",
+  "prompt": "Precise correction to ONE complete pose only in this eight-frame Dracodia sheet: BOTTOM ROW, SECOND COLUMN (frame29). Preserve the other seven drawings and their exact positions, unit and appearance.\n\nThat target pose incorrectly has the hammerhead between the hands with shaft coming out both sides. Fix its rigid T geometry by putting the purple CYLINDER just to SCREEN-LEFT OF BOTH HANDS, with ONE straight purple shaft extending from the cylinder's RIGHT SIDE-CENTER socket toward SCREEN RIGHT, through BOTH gripping fists and then to the spear butt. Both fists are on the SAME single shaft on the RIGHT side of the cylinder. No handle or fist to the left of the cylinder, no double-ended shaft, no shaft through the head. Adjust the complete forearms/shoulders coherently for that valid mid-recovery regrip, torso unwinding toward frontal ready stance. Cylinder a little higher/closer to center than the following third-column pose, so the sequence progresses smoothly into that lower-left carry.\n\nPreserve original horned head/closed face/red eyes, purple/silver armor, body proportions, chest core,6 hammer spikes and chrome bands. Keep all eight complete sprites in same4x2 wide sheet with real transparency, no text/background/effects/parts or head stamping.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-defa75b8-a2bc-4dcd-85df-497f6a51d07f.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "selectedCells": [
+    5,
+    6,
+    7
+  ]
+}

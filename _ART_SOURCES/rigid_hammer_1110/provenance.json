@@ -1,0 +1,12 @@
+{
+  "generator": "Built-in GPT imagegen for body/gesture art; immutable existing BOF weapon pixels, prepared offline in Aseprite.",
+  "masters": {
+    "blue-overhead.png": "547e120ab62f1f151d5b1a07594492c5442cdd641a7a29c5b679f5037d33eb9a",
+    "blue-sides.png": "22bfed7abb98d4af30a8aaa93e672acbf4e0438655fa63e25acc395f909c4820",
+    "corrupt-overhead.png": "66d92b54113d43d07f32b1869d9a770d3c08bcdff20085f3d930606a29e32ca0",
+    "corrupt-sides.png": "01cc45b72d049e2dd60181ac844128a82819c20ad705289bb980f880370f642f"
+  },
+  "source": "_ART_SOURCES\\rigid_hammer_1110",
+  "date": "2026-11-10",
+  "coreGameSHA256": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215"
+}

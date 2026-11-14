@@ -1,0 +1,73 @@
+{
+  "version": "H125",
+  "date": "2026-11-11",
+  "banks": 7,
+  "frames": 2096,
+  "pages": 5,
+  "checks": {
+    "verification": 29,
+    "art-verification": 26
+  },
+  "unchanged_sources": {
+    "game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "dracodia_helicopter_1030.js": "50f75a8d75f18570caaa521355b73e023b03a4d803c699fda9c119e9d67c3159",
+    "dracodia_helicopter_art_1030.js": "b5fa71d87b5b407882085f5aa7d88facdedb8775c218c30f6b124d6bbf5a4d63",
+    "dracodia_energy_1110.js": "bc2f24ea9224708af94358948b96e2a7150e71f8603e0c99ea88686b2360bcbc",
+    "dracodia_energy_art_1110.js": "9d947c0a14ecfcfb25c29e1ab94786bf2e47d61f00c93e7f107edc5eaeb469f4",
+    "index.html": "6f038de1d6583214f85c8a0ab22fd04bb16e5cc911aa1ce82db1d16e3b8f1dda"
+  },
+  "new_sources": {
+    "muzzle": {
+      "sha256": "eacb202f8a6c9da219caafd792f42f70fa25bbbbc72975eea15c909304e9212a",
+      "size": [
+        1774,
+        887
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    },
+    "tracer": {
+      "sha256": "a8800c7eff27466649721433ce1d0df3b15b467b06a6f909a08aa6280f8eddfe",
+      "size": [
+        916,
+        1717
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    },
+    "missile": {
+      "sha256": "79b9cd6758b888ce6a335bfe7d8c24789e9611af65c153c295af78e71caac6d4",
+      "size": [
+        1774,
+        887
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    },
+    "explosion": {
+      "sha256": "c9500ee743f2b3e004e7fad4f548ce5577b979f4bc59e7308430c85c443f57d7",
+      "size": [
+        1261,
+        1247
+      ],
+      "grid": [
+        4,
+        4
+      ]
+    }
+  },
+  "runtime": [
+    "assets/helicopter_effects_art_1111.js",
+    "assets/helicopter_effects_1111.js"
+  ],
+  "full_suite": {
+    "exit": 1,
+    "blocker": "Existing ReferenceError: difficultyHealthBaseline15 is not defined at assets/combat_polish_0927b.js:151; test_fl.js:4537. Final summary not reached."
+  }
+}

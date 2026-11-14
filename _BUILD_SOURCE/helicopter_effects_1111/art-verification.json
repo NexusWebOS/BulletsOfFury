@@ -1,0 +1,32 @@
+{
+  "checks": {
+    "burst112-1": true,
+    "burst112-8": true,
+    "burst112-16": true,
+    "burst160-1": true,
+    "burst160-8": true,
+    "burst160-16": true,
+    "burst72-1": true,
+    "burst72-8": true,
+    "burst72-16": true,
+    "launch-1": true,
+    "launch-256": true,
+    "launch-512": true,
+    "missile-1": true,
+    "missile-256": true,
+    "missile-512": true,
+    "muzzle-1": true,
+    "muzzle-256": true,
+    "muzzle-512": true,
+    "tracer-1": true,
+    "tracer-256": true,
+    "tracer-512": true,
+    "all_cells_rectangles_even": true,
+    "uniform_bank_canvas_and_pivot": true,
+    "binary_alpha": true,
+    "complete_direction_coverage": true,
+    "finite_explosion_empty_end_frames": true
+  },
+  "frames": 2096,
+  "pages": 5
+}

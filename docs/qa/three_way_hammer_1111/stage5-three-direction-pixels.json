@@ -1,0 +1,134 @@
+[
+  {
+    "stage": 5,
+    "material": "regular",
+    "direction": "center",
+    "simulation": {
+      "selected": "center",
+      "seen": [
+        "center"
+      ],
+      "drift": 0,
+      "minClear": 72,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "blue-overhead",
+      "direction": "center",
+      "headOffset": -9,
+      "tipOffset": -15,
+      "warningError": 0,
+      "key": "ba119_blue-overhead_regular_22"
+    }
+  },
+  {
+    "stage": 5,
+    "material": "regular",
+    "direction": "right",
+    "simulation": {
+      "selected": "right",
+      "seen": [
+        "right"
+      ],
+      "drift": 0,
+      "minClear": 21,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "blue-overhead-right",
+      "direction": "right",
+      "headOffset": 133,
+      "tipOffset": 143,
+      "warningError": 0,
+      "key": "ba119_blue-overhead-right_regular_22"
+    }
+  },
+  {
+    "stage": 5,
+    "material": "regular",
+    "direction": "left",
+    "simulation": {
+      "selected": "left",
+      "seen": [
+        "left"
+      ],
+      "drift": 0,
+      "minClear": 22,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "blue-overhead-left",
+      "direction": "left",
+      "headOffset": -133,
+      "tipOffset": -143,
+      "warningError": 0,
+      "key": "ba119_blue-overhead-left_regular_22"
+    }
+  },
+  {
+    "stage": 5,
+    "material": "chrome",
+    "direction": "center",
+    "simulation": {
+      "selected": "center",
+      "seen": [
+        "center"
+      ],
+      "drift": 0,
+      "minClear": 72,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "blue-overhead",
+      "direction": "center",
+      "headOffset": -9,
+      "tipOffset": -15,
+      "warningError": 0,
+      "key": "ba119_blue-overhead_chrome_22"
+    }
+  },
+  {
+    "stage": 5,
+    "material": "chrome",
+    "direction": "right",
+    "simulation": {
+      "selected": "right",
+      "seen": [
+        "right"
+      ],
+      "drift": 0,
+      "minClear": 21,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "blue-overhead-right",
+      "direction": "right",
+      "headOffset": 133,
+      "tipOffset": 143,
+      "warningError": 0,
+      "key": "ba119_blue-overhead-right_chrome_22"
+    }
+  },
+  {
+    "stage": 5,
+    "material": "chrome",
+    "direction": "left",
+    "simulation": {
+      "selected": "left",
+      "seen": [
+        "left"
+      ],
+      "drift": 0,
+      "minClear": 22,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "blue-overhead-left",
+      "direction": "left",
+      "headOffset": -133,
+      "tipOffset": -143,
+      "warningError": 0,
+      "key": "ba119_blue-overhead-left_chrome_22"
+    }
+  }
+]

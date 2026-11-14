@@ -1,0 +1,122 @@
+[
+  {
+    "bank": "blue-sides",
+    "material": "regular",
+    "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-sides_regular.webp",
+    "sha256": "334fada6a7bbf5a4d40e88bdf21c6562a6c69ec68f65afb75e1b8ab5febe8a6b"
+  },
+  {
+    "bank": "blue-sides",
+    "material": "chrome",
+    "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-sides_chrome.webp",
+    "sha256": "485c441161f566ea68a0fd6fca6cba1279110a7962a984b089d7a4f757478482"
+  },
+  {
+    "bank": "blue-sides",
+    "material": "red",
+    "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-sides_red.webp",
+    "sha256": "b39000e2d1a59b0e4075d14d5832e299f36411558d1ce393fde01025d58ccd71"
+  },
+  {
+    "bank": "blue-sides",
+    "material": "hit",
+    "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-sides_hit.webp",
+    "sha256": "9150da8e36474455648a19d547b4ee64fe4bea9957a534c8ac952cbcfb213149"
+  },
+  {
+    "bank": "blue-sides",
+    "material": "red_hit",
+    "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-sides_red_hit.webp",
+    "sha256": "1e64648a7577335f0a5e49d0f1a808441e94bc74ee5b7e6dec8d17143db3bf51"
+  },
+  {
+    "bank": "blue-right",
+    "material": "regular",
+    "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-right_regular.webp",
+    "sha256": "25ac11f5dd70d95801f60c63edc2266b5972ca41e616d5b413859c3a12c8d653"
+  },
+  {
+    "bank": "blue-right",
+    "material": "chrome",
+    "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-right_chrome.webp",
+    "sha256": "17f0d45621b985c47d1107fd74e0579a8e0e597284f18e673c8869bd2815efef"
+  },
+  {
+    "bank": "blue-right",
+    "material": "red",
+    "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-right_red.webp",
+    "sha256": "00cbc176cfade43d8a8944cd0ed83928add8aeafb0a382dd144a6a335fbdde54"
+  },
+  {
+    "bank": "blue-right",
+    "material": "hit",
+    "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-right_hit.webp",
+    "sha256": "fd1ba66b8c78c116173e7e0bda535ef56c7fd25392632556e7d704d40317bab2"
+  },
+  {
+    "bank": "blue-right",
+    "material": "red_hit",
+    "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-right_red_hit.webp",
+    "sha256": "210ff83607ac5e3099083d82e57c6483fb0dc60f36819e934a80407875565a3b"
+  },
+  {
+    "bank": "corrupt-sides",
+    "material": "regular",
+    "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-sides_regular.webp",
+    "sha256": "64d0892c62207540be7c4aff32a985202a680240179bd9ef2ec9fc5734b2aef4"
+  },
+  {
+    "bank": "corrupt-sides",
+    "material": "chrome",
+    "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-sides_chrome.webp",
+    "sha256": "1928253fbb028566e69ff5e450c2569807ced9ebe94f7adb9a4f1f3d2d56621c"
+  },
+  {
+    "bank": "corrupt-sides",
+    "material": "red",
+    "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-sides_red.webp",
+    "sha256": "1610d5337343e02e360671a9e6ac2f1e97b03b8bfa44e3e3b6cd9c66bd56a4a6"
+  },
+  {
+    "bank": "corrupt-sides",
+    "material": "hit",
+    "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-sides_hit.webp",
+    "sha256": "e74eb53b7aaeb3aa07c181b216986ed330cb00a346946cd6be0be1875cfc2548"
+  },
+  {
+    "bank": "corrupt-sides",
+    "material": "red_hit",
+    "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-sides_red_hit.webp",
+    "sha256": "0a9cd27ec551fcc1f3af6303018c70fbba465861c5cd25e49b4edf153f89efc7"
+  },
+  {
+    "bank": "corrupt-right",
+    "material": "regular",
+    "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-right_regular.webp",
+    "sha256": "34cc9284a990d35b43626f5f09849eefa151fe124f42b2e6c7a391cf7f15d674"
+  },
+  {
+    "bank": "corrupt-right",
+    "material": "chrome",
+    "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-right_chrome.webp",
+    "sha256": "d35314aabf9beb058f2c0740ff187f2b3139b6cb80057f1a6706a0c1066a1c0f"
+  },
+  {
+    "bank": "corrupt-right",
+    "material": "red",
+    "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-right_red.webp",
+    "sha256": "bf4ac777989c6785d9ef5f1c8d1f8a5a044d0e7e8a19f63558872a2432c64537"
+  },
+  {
+    "bank": "corrupt-right",
+    "material": "hit",
+    "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-right_hit.webp",
+    "sha256": "f7b3a546ac33f5e13d1af2459d531ae9630a5d988c18d6b36a4e98c47ca943d8"
+  },
+  {
+    "bank": "corrupt-right",
+    "material": "red_hit",
+    "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-right_red_hit.webp",
+    "sha256": "5788e90ffbce5837976ec7c7a34721f94c0ae04ab9eb7af49b4779a8d099ffd1"
+  }
+]

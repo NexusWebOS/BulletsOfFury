@@ -1,0 +1,373 @@
+{
+  "errors": [],
+  "checks": [
+    {
+      "name": "Normal cannon faces are suppressed for the entire firing loop",
+      "pass": true,
+      "detail": {
+        "before": [
+          226,
+          226
+        ],
+        "after": [
+          226,
+          226
+        ]
+      }
+    },
+    {
+      "name": "Both cannon effects are drawn",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No original cannon face is drawn during wind-down",
+      "pass": true,
+      "detail": [
+        {
+          "beams": 2,
+          "frames": [
+            22,
+            22
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            22,
+            22
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            23,
+            23
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            23,
+            23
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            24,
+            24
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            24,
+            24
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            24,
+            24
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            25,
+            25
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            25,
+            25
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            26,
+            26
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            26,
+            26
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            26,
+            26
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            27,
+            27
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            27,
+            27
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        },
+        {
+          "beams": 2,
+          "frames": [
+            27,
+            27
+          ],
+          "pods": [
+            226,
+            226
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Recovery reaches its final authored pose",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Cannon faces return only after the beam expires",
+      "pass": true,
+      "detail": {
+        "beams": 0,
+        "frames": [
+          27,
+          27
+        ],
+        "pods": [
+          227,
+          227
+        ]
+      }
+    },
+    {
+      "name": "Active cannons retain native hit-flash selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Hit flashes expire while the beam keeps animating",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Cancellation removes the energy and restores both cannon faces",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The new complete-coverage artwork is loaded",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Visual change retains native health",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "state": {
+    "draws": 314,
+    "paths": [
+      "assets/game/shared/combat/cannon_cover_1110/cannon0-body.png",
+      "assets/game/shared/combat/cannon_cover_1110/cannon0-hit.png",
+      "assets/game/shared/combat/cannon_cover_1110/cannon1-body.png",
+      "assets/game/shared/combat/cannon_cover_1110/cannon1-hit.png"
+    ],
+    "sockets": [
+      {
+        "part": "pressure0",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 4
+      },
+      {
+        "part": "pressure1",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 4
+      },
+      {
+        "part": "pressure0",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 5
+      },
+      {
+        "part": "pressure1",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 5
+      },
+      {
+        "part": "pressure0",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 5
+      },
+      {
+        "part": "pressure1",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 5
+      },
+      {
+        "part": "pressure0",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 5
+      },
+      {
+        "part": "pressure1",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 5
+      },
+      {
+        "part": "pressure0",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 6
+      },
+      {
+        "part": "pressure1",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 6
+      },
+      {
+        "part": "pressure0",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 6
+      },
+      {
+        "part": "pressure1",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 6
+      },
+      {
+        "part": "pressure0",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 7
+      },
+      {
+        "part": "pressure1",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 7
+      },
+      {
+        "part": "pressure0",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 7
+      },
+      {
+        "part": "pressure1",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 7
+      },
+      {
+        "part": "pressure0",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 7
+      },
+      {
+        "part": "pressure1",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 7
+      },
+      {
+        "part": "pressure0",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 8
+      },
+      {
+        "part": "pressure1",
+        "dx": 0,
+        "dy": 93.28,
+        "frame": 8
+      }
+    ],
+    "hp": 6348
+  },
+  "frames": 82
+}

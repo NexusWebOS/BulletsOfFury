@@ -1,3 +1,54 @@
+## November11,2026 — Helicopter crashes into the dam under a white fade
+
+Mike corrected Stage1's death exit: the spinning helicopter now hits the actual
+central dam gate. H127 brings the dam into view smoothly, holds its framing and
+swaps to the destroyed plate at full authored white, then fades back to normal.
+Both palettes/difficulties use the route. Native8.6s raid/rewards remain. H126's
+default copied-helicopter path is unchanged; only its optional route/swap hooks
+were added. 37 scoped checks pass; five Aseprite white states match exactly.
+Full suite retains the existing missing difficultyHealthBaseline15 failure.
+Docs/sources: docs/DAM_IMPACT_TRANSITION_1111.md;_BUILD_SOURCE/dam_impact_1111/.
+This supersedes only H126's Stage1 edge-exit description. No push or installer.
+
+## November11,2026 — Helicopter runaway death spirals
+
+H126 gives every Stage1 helicopter difficulty and Dracodia form1 accelerating
+authored yaw, moving cook-off trails, an edge blast and real-airframe shatter.
+Six actual hull variants /1776 frames /35 stage-scoped pages; eleven editable
+Aseprite documents. Native rewards/Forge drops/HP pools/remaining copies persist.
+Stage1 dam6.7s and raid8.6s remain; copy death delegates home/final reform at5.4s.
+78 scoped checks pass, including last-copy terminal defeat;33 source exports
+match. Full suite retains the existing missing difficultyHealthBaseline15 abort.
+Prior owners and game.js unchanged. Docs: docs/HELICOPTER_DEATH_SPIRALS_1111.md;
+sources/evidence: _BUILD_SOURCE/helicopter_death_1111/. No push or installer.
+
+## November11,2026 — Animated helicopter gunfire, missiles and blasts
+
+H125 upgrades Dracodia's copied helicopter with four new generated effect masters:
+gold muzzle/tracer pulses, red/chromium missiles with animated engine/smoke, and
+fuel/metal explosions for native missile interceptions and staggered pod breaks.
+2096 frames across seven tagged Aseprite banks /five PNG pages;64 authored headings.
+HC79 body, rotor, pod HP, recoil sockets, aiming, warning/counter lanes, native
+locks/shootable missiles, sonic/charge/return/death owners remain. D124 unchanged.
+55 scoped checks pass;21 source exports are pixel-exact. Successful native
+capture has no browser errors. Full suite retains missing difficultyHealthBaseline15.
+Sources/evidence: docs/DRACODIA_HELICOPTER_EFFECTS_1111.md and
+_BUILD_SOURCE/helicopter_effects_1111/. No commit, push or installer.
+
+## November11,2026 — Dracodia circular optics and purple storm volleys
+
+Mike requested full circular Phoenix/eye laser apertures, stronger Phoenix wind,
+an aggressive laser brain, large purple lightning volleys and an animated shield.
+D124 now owns those effects/attacks through two appended late scripts. Source-fit
+housing collars cover beam corners; generated fire vortex and purple shield use
+fixed authored banks. Brain uses2/3-pulse lasers and2/3 committed lightning waves
+with adjacent moving safe lanes. Native HP, parts, shield budgets, flashes, pause,
+clear, form return and copy defeat remain. 58 scoped checks pass, no browser
+errors;18 editable-source roundtrips match. Full suite retains the old missing
+difficultyHealthBaseline15 abort. Game.js and prior form owners are unchanged.
+Sources/evidence: docs/DRACODIA_ENERGY_1110.md and _BUILD_SOURCE/dracodia_energy_1110/.
+No commit, push or installer. Preserve the latest whole-hammer banks below.
+
 ## November9,2026 — Quick water mechanics tutorial
 
 Mike removed the tutorial boss and BOB. TS109 replaces the active itinerary with

@@ -1,0 +1,18 @@
+from pathlib import Path
+W=Path(__file__).resolve().parent;old=W.parent/'draconus_front_rage_1113'
+s=(old/'record.py').read_text().replace('outputs/Draconus-frontal-and-rage','outputs/Draconus-new-rage').replace('draconus-frontal-strikes-full-rage.mp4','draconus-new-rage-kamehameha-and-center-smash.mp4')
+s=s.replace("W.parent/'draconus_rotor_stages_1111/record-audio-init.js'","W.parent/'draconus_rotor_stages_1111/record-audio-init.js'")
+s=s.replace("queue=[(mat,d)for mat in ['regular','chrome']for d in ['center','left','right','side']]","queue=[('regular','center'),('chrome','center')]")
+s=s.replace("if idx==4:","if idx==1:").replace("Normal: front-facing center, left and right strikes","Normal: new straight-down center smash").replace("Chromium: front-facing center, left and right strikes","Chromium: new straight-down center smash")
+s=s.replace("'assets/game.js','assets/draconus_front_rage_1113.js'","'assets/game.js','assets/draconus_cinematic_rage_1113.js','assets/draconus_cinematic_rage_art_1113.js','assets/draconus_front_rage_1113.js'")
+s=s.replace("if q.get('phase')=='beam':label='rage-repeat-wave-native'", "if q.get('phase')=='beam':label='rage-repeat-wave-native'\n     if q.get('phase')=='kame_charge'and q.get('actionTime',0)>0:label='rage-two-hand-ball-gather-native'\n     if q.get('phase')=='kame_thrust':label='rage-two-hand-thrust-native'\n     if q.get('phase')=='kame_fire':label='rage-two-hand-opening-wave-native'")
+s=s.replace("'bank':", "'bank':")
+s=s.replace('phase:R?.phase,cycle:R?.cycle','phase:R?.phase,phaseTime:R?.t,cycle:R?.cycle')
+s=s.replace("q.get('actionTime',0)>0", "q.get('phaseTime',0)>1.65")
+s=s.replace("if q.get('phase')=='kame_thrust':", "if q.get('phase')=='kame_thrust'and q.get('phaseTime',0)>.26:")
+s=s.replace("if q.get('phase')=='kame_fire':", "if q.get('phase')=='kame_fire'and q.get('phaseTime',0)>.25:")
+s=s.replace('...reviewStats,events:DFR13.events','...reviewStats,newArtEvents:DCR13.events,cast:DCR13.lastCast,actorDraws:DCR13.draws.slice(-50),events:DFR13.events')
+s=s.replace("'nativeSourcesUnchanged=unchanged'", "'nativeSourcesUnchanged=unchanged'")
+s=s.replace('nativeSourcesUnchanged=unchanged,sha256', 'nativeSourcesUnchanged=unchanged,sourceHashes=hashes,sha256')
+(W/'record.py').write_text(s)
+print('Prepared shorter continuous native preview: both center smash materials, full new rage formation and entire attack book.')

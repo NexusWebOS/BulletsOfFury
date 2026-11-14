@@ -1,0 +1,14 @@
+{
+  "prompt": "Precisely edit this Draconus sprite. Remove ONLY the chaingun, including its receiver, handles, barrel cluster and muzzle, from between his hands and legs. Reconstruct the hidden lower abdomen, belt and inner-leg armor coherently. Keep the EXACT full-body pose, straight-on face, curved purple horns, silver/purple armor, red chest core and abdomen lights, planted boots, body proportions and pixel-art rendering. Both gauntleted hands must STAY in the same current grip positions at the waist, fingers curled around two imaginary horizontal side handles; these will physically wrap a separately animated modular gun in the game. Do not move his shoulders/elbows/wrists to hide the removal. Keep entire figure with the SAME transparent margins and canvas framing. No weapon at all, no gun/hammer, no muzzleflash, no text/shadow/grid. Genuine transparent RGBA; crisp pixel edges. This is the background full-body layer of an approved modular-gun rig.",
+  "references": [
+    "../ship_forms_1111/exports/draconus-gun-spin/00.png"
+  ],
+  "result": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-b58acbab-3e25-4c67-852f-18f9904941cf.png",
+  "tool": "built-in image generation",
+  "permission": "Mike explicitly requested a modular rotating gun for Draconus.",
+  "nativeBodyHeight": 276,
+  "cell": [
+    512,
+    512
+  ]
+}

@@ -1,0 +1,2529 @@
+{
+  "passed": true,
+  "cells": [
+    {
+      "bank": "blue-overhead",
+      "frame": 0,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 1,
+      "source": "blue-aux",
+      "sourceCell": 1,
+      "phase": "load",
+      "bounds": [
+        227,
+        137,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.0486522213815,
+        225.78
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 2,
+      "source": "blue-cap",
+      "sourceCell": 0,
+      "phase": "behind-head",
+      "bounds": [
+        211,
+        139,
+        432,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.3127164015438,
+        218.85
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 3,
+      "source": "blue-cap",
+      "sourceCell": 0,
+      "phase": "behind-head",
+      "bounds": [
+        211,
+        139,
+        432,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.3127164015438,
+        218.85
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 4,
+      "source": "blue-cap",
+      "sourceCell": 0,
+      "phase": "behind-head",
+      "bounds": [
+        211,
+        139,
+        432,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.3127164015438,
+        218.85
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 5,
+      "source": "blue-cap",
+      "sourceCell": 0,
+      "phase": "behind-head",
+      "bounds": [
+        211,
+        139,
+        432,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.3127164015438,
+        218.85
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 6,
+      "source": "blue-cap",
+      "sourceCell": 0,
+      "phase": "behind-head",
+      "bounds": [
+        211,
+        139,
+        432,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.3127164015438,
+        218.85
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 7,
+      "source": "blue-aux",
+      "sourceCell": 2,
+      "phase": "downstroke",
+      "bounds": [
+        226,
+        199,
+        415,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.92955576607255,
+        334.77
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 8,
+      "source": "blue-aux",
+      "sourceCell": 2,
+      "phase": "downstroke",
+      "bounds": [
+        226,
+        199,
+        415,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.92955576607255,
+        334.77
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 9,
+      "source": "blue-cap",
+      "sourceCell": 1,
+      "phase": "downstroke",
+      "bounds": [
+        208,
+        188,
+        431,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        317.80827075013025,
+        368.15999999999997
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 10,
+      "source": "blue-aux",
+      "sourceCell": 3,
+      "phase": "downstroke",
+      "bounds": [
+        227,
+        222,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.4660235814297,
+        455.1
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 11,
+      "source": "blue-cap",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        203,
+        209,
+        439,
+        479
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.0624595515686,
+        477.78
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 12,
+      "source": "blue-cap",
+      "sourceCell": 3,
+      "phase": "contact",
+      "bounds": [
+        198,
+        229,
+        437,
+        479
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        316.4674060892404,
+        477.78
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 13,
+      "source": "blue-aux",
+      "sourceCell": 3,
+      "phase": "recovery",
+      "bounds": [
+        227,
+        222,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        320.4660235814297,
+        455.1
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 14,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 15,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 0,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 1,
+      "source": "blue-side",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        205,
+        156,
+        433,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        331.7286567164179,
+        179.83275675675674
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 2,
+      "source": "blue-side",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        205,
+        156,
+        433,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        331.7286567164179,
+        179.83275675675674
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 3,
+      "source": "blue-side",
+      "sourceCell": 1,
+      "phase": "load",
+      "bounds": [
+        194,
+        190,
+        432,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        193.79947743467932,
+        212.7201716649431
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 4,
+      "source": "blue-side",
+      "sourceCell": 1,
+      "phase": "load",
+      "bounds": [
+        194,
+        190,
+        432,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        193.79947743467932,
+        212.7201716649431
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 5,
+      "source": "blue-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        169,
+        196,
+        438,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        169.4552561247216,
+        221.5110030272452
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 6,
+      "source": "blue-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        169,
+        196,
+        438,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        169.4552561247216,
+        221.5110030272452
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 7,
+      "source": "blue-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        169,
+        196,
+        438,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        169.4552561247216,
+        221.5110030272452
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 8,
+      "source": "blue-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        169,
+        196,
+        438,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        169.4552561247216,
+        221.5110030272452
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 9,
+      "source": "blue-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        169,
+        198,
+        439,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        168.82702662721894,
+        226.0536247723133
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 10,
+      "source": "blue-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        169,
+        198,
+        439,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        168.82702662721894,
+        226.0536247723133
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 11,
+      "source": "blue-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        169,
+        198,
+        439,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        168.82702662721894,
+        226.0536247723133
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 12,
+      "source": "blue-side",
+      "sourceCell": 3,
+      "phase": "recovery",
+      "bounds": [
+        169,
+        198,
+        439,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        168.82702662721894,
+        226.0536247723133
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 13,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 14,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 15,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 0,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 1,
+      "source": "blue-side",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        207,
+        156,
+        435,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        307.2713432835821,
+        179.83275675675674
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 2,
+      "source": "blue-side",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        207,
+        156,
+        435,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        307.2713432835821,
+        179.83275675675674
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 3,
+      "source": "blue-side",
+      "sourceCell": 1,
+      "phase": "load",
+      "bounds": [
+        208,
+        190,
+        446,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        445.2005225653207,
+        212.7201716649431
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 4,
+      "source": "blue-side",
+      "sourceCell": 1,
+      "phase": "load",
+      "bounds": [
+        208,
+        190,
+        446,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        445.2005225653207,
+        212.7201716649431
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 5,
+      "source": "blue-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        202,
+        196,
+        471,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        469.5447438752784,
+        221.5110030272452
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 6,
+      "source": "blue-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        202,
+        196,
+        471,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        469.5447438752784,
+        221.5110030272452
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 7,
+      "source": "blue-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        202,
+        196,
+        471,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        469.5447438752784,
+        221.5110030272452
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 8,
+      "source": "blue-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        202,
+        196,
+        471,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        469.5447438752784,
+        221.5110030272452
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 9,
+      "source": "blue-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        201,
+        198,
+        471,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        470.17297337278103,
+        226.0536247723133
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 10,
+      "source": "blue-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        201,
+        198,
+        471,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        470.17297337278103,
+        226.0536247723133
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 11,
+      "source": "blue-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        201,
+        198,
+        471,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        470.17297337278103,
+        226.0536247723133
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 12,
+      "source": "blue-side",
+      "sourceCell": 3,
+      "phase": "recovery",
+      "bounds": [
+        201,
+        198,
+        471,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        470.17297337278103,
+        226.0536247723133
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 13,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 14,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 15,
+      "source": "blue-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        227,
+        219,
+        416,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.36782921152593,
+        444.39
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 0,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 1,
+      "source": "drac-aux",
+      "sourceCell": 1,
+      "phase": "load",
+      "bounds": [
+        214,
+        105,
+        431,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.9710339960853,
+        193.64999999999998
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 2,
+      "source": "drac-cap",
+      "sourceCell": 0,
+      "phase": "behind-head",
+      "bounds": [
+        215,
+        110,
+        428,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        319.45608764705884,
+        194.27999999999997
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 3,
+      "source": "drac-cap",
+      "sourceCell": 0,
+      "phase": "behind-head",
+      "bounds": [
+        215,
+        110,
+        428,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        319.45608764705884,
+        194.27999999999997
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 4,
+      "source": "drac-cap",
+      "sourceCell": 0,
+      "phase": "behind-head",
+      "bounds": [
+        215,
+        110,
+        428,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        319.45608764705884,
+        194.27999999999997
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 5,
+      "source": "drac-cap",
+      "sourceCell": 0,
+      "phase": "behind-head",
+      "bounds": [
+        215,
+        110,
+        428,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        319.45608764705884,
+        194.27999999999997
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 6,
+      "source": "drac-cap",
+      "sourceCell": 0,
+      "phase": "behind-head",
+      "bounds": [
+        215,
+        110,
+        428,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        319.45608764705884,
+        194.27999999999997
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 7,
+      "source": "drac-aux",
+      "sourceCell": 2,
+      "phase": "downstroke",
+      "bounds": [
+        203,
+        165,
+        442,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.35953411792093,
+        388.32
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 8,
+      "source": "drac-aux",
+      "sourceCell": 2,
+      "phase": "downstroke",
+      "bounds": [
+        203,
+        165,
+        442,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.35953411792093,
+        388.32
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 9,
+      "source": "drac-cap",
+      "sourceCell": 1,
+      "phase": "downstroke",
+      "bounds": [
+        207,
+        160,
+        438,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.3036842105263,
+        422.34
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 10,
+      "source": "drac-aux",
+      "sourceCell": 3,
+      "phase": "downstroke",
+      "bounds": [
+        187,
+        186,
+        456,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322,
+        462
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 11,
+      "source": "drac-cap",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        190,
+        181,
+        453,
+        477
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.9547147611439,
+        475.26
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 12,
+      "source": "drac-cap",
+      "sourceCell": 3,
+      "phase": "contact",
+      "bounds": [
+        190,
+        202,
+        456,
+        480
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        321.6386782537814,
+        478.41
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 13,
+      "source": "drac-aux",
+      "sourceCell": 3,
+      "phase": "recovery",
+      "bounds": [
+        187,
+        186,
+        456,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322,
+        462
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 14,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 15,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 0,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 1,
+      "source": "drac-side",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        206,
+        139,
+        467,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        307,
+        165
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 2,
+      "source": "drac-side",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        206,
+        139,
+        467,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        307,
+        165
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 3,
+      "source": "drac-side",
+      "sourceCell": 1,
+      "phase": "load",
+      "bounds": [
+        144,
+        187,
+        430,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        144.70863636363637,
+        215.07
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 4,
+      "source": "drac-side",
+      "sourceCell": 1,
+      "phase": "load",
+      "bounds": [
+        144,
+        187,
+        430,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        144.70863636363637,
+        215.07
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 5,
+      "source": "drac-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        138,
+        171,
+        442,
+        476
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        138,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 6,
+      "source": "drac-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        138,
+        171,
+        442,
+        476
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        138,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 7,
+      "source": "drac-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        138,
+        171,
+        442,
+        476
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        138,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 8,
+      "source": "drac-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        138,
+        171,
+        442,
+        476
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        138,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 9,
+      "source": "drac-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        134,
+        172,
+        445,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        135,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 10,
+      "source": "drac-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        134,
+        172,
+        445,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        135,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 11,
+      "source": "drac-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        134,
+        172,
+        445,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        135,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 12,
+      "source": "drac-side",
+      "sourceCell": 3,
+      "phase": "recovery",
+      "bounds": [
+        134,
+        172,
+        445,
+        475
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "tip": [
+        135,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 13,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 14,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 15,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 0,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 1,
+      "source": "drac-side",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        173,
+        139,
+        434,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        332,
+        165
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 2,
+      "source": "drac-side",
+      "sourceCell": 0,
+      "phase": "load",
+      "bounds": [
+        173,
+        139,
+        434,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        332,
+        165
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 3,
+      "source": "drac-side",
+      "sourceCell": 1,
+      "phase": "load",
+      "bounds": [
+        210,
+        187,
+        496,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        494.2913636363636,
+        215.07
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 4,
+      "source": "drac-side",
+      "sourceCell": 1,
+      "phase": "load",
+      "bounds": [
+        210,
+        187,
+        496,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        494.2913636363636,
+        215.07
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 5,
+      "source": "drac-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        198,
+        171,
+        502,
+        476
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        501,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 6,
+      "source": "drac-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        198,
+        171,
+        502,
+        476
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        501,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 7,
+      "source": "drac-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        198,
+        171,
+        502,
+        476
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        501,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 8,
+      "source": "drac-side",
+      "sourceCell": 2,
+      "phase": "contact",
+      "bounds": [
+        198,
+        171,
+        502,
+        476
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        501,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 9,
+      "source": "drac-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        195,
+        172,
+        506,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        504,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 10,
+      "source": "drac-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        195,
+        172,
+        506,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        504,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 11,
+      "source": "drac-side",
+      "sourceCell": 3,
+      "phase": "load",
+      "bounds": [
+        195,
+        172,
+        506,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        504,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 12,
+      "source": "drac-side",
+      "sourceCell": 3,
+      "phase": "recovery",
+      "bounds": [
+        195,
+        172,
+        506,
+        475
+      ],
+      "capAxis": [
+        1,
+        0
+      ],
+      "tip": [
+        504,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 13,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 14,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 15,
+      "source": "drac-aux",
+      "sourceCell": 0,
+      "phase": "recovery",
+      "bounds": [
+        205,
+        166,
+        441,
+        475
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "tip": [
+        322.6074426229508,
+        439.35
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source": "blue-aux",
+      "cell": 0,
+      "root": [
+        313.47634854771786,
+        562.0
+      ],
+      "head": [
+        315.6475060263304,
+        446.6217318746523
+      ],
+      "tip": [
+        315.6475060263304,
+        515.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-aux",
+      "cell": 1,
+      "root": [
+        312.4174685418209,
+        562.0
+      ],
+      "head": [
+        939.4946942900455,
+        90.85320869125822
+      ],
+      "tip": [
+        939.4946942900455,
+        168.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-cap",
+      "cell": 0,
+      "root": [
+        317.22160664819944,
+        562.0
+      ],
+      "head": [
+        317.71798188874516,
+        71.127425614489
+      ],
+      "tip": [
+        317.71798188874516,
+        157.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-aux",
+      "cell": 2,
+      "root": [
+        314.2230215827338,
+        562.0
+      ],
+      "head": [
+        315.69850692570606,
+        900.0881453498831
+      ],
+      "tip": [
+        315.69850692570606,
+        968.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-cap",
+      "cell": 1,
+      "root": [
+        302.13995485327314,
+        562.0
+      ],
+      "head": [
+        929.6610195360196,
+        314.3536324786325
+      ],
+      "tip": [
+        929.6610195360196,
+        394.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-aux",
+      "cell": 3,
+      "root": [
+        313.3173913043478,
+        562.0
+      ],
+      "head": [
+        941.0571112748711,
+        1090.6591746499632
+      ],
+      "tip": [
+        941.0571112748711,
+        1159.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-cap",
+      "cell": 2,
+      "root": [
+        318.75201612903226,
+        537.0
+      ],
+      "head": [
+        318.85115827437926,
+        1087.32126508531
+      ],
+      "tip": [
+        318.85115827437926,
+        1166.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-cap",
+      "cell": 3,
+      "root": [
+        303.0451055662188,
+        539.0
+      ],
+      "head": [
+        928.4378136443781,
+        1086.950901939509
+      ],
+      "tip": [
+        928.4378136443781,
+        1168.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-side",
+      "cell": 0,
+      "root": [
+        337.3830845771144,
+        543.0
+      ],
+      "head": [
+        434.34654654654656,
+        76.06786786786786
+      ],
+      "tip": [
+        356.0,
+        76.06786786786786
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-side",
+      "cell": 1,
+      "root": [
+        313.3182897862233,
+        543.0
+      ],
+      "head": [
+        818.0504653567735,
+        128.27011375387798
+      ],
+      "tip": [
+        740.0,
+        128.27011375387798
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-side",
+      "cell": 2,
+      "root": [
+        321.95991091314033,
+        558.0
+      ],
+      "head": [
+        161.69424823410696,
+        784.2238143289607
+      ],
+      "tip": [
+        83.0,
+        784.2238143289607
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "blue-side",
+      "cell": 3,
+      "root": [
+        322.95710059171597,
+        558.0
+      ],
+      "head": [
+        789.97328476017,
+        791.4343250354179
+      ],
+      "tip": [
+        710.0,
+        791.4343250354179
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-aux",
+      "cell": 0,
+      "root": [
+        315.86120218579237,
+        598.0
+      ],
+      "head": [
+        322.168815943728,
+        414.47620164126613
+      ],
+      "tip": [
+        320.0,
+        543.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-aux",
+      "cell": 1,
+      "root": [
+        304.3588235294118,
+        598.0
+      ],
+      "head": [
+        934.4874489200233,
+        93.47752481027437
+      ],
+      "tip": [
+        934.4874489200233,
+        153.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-cap",
+      "cell": 0,
+      "root": [
+        319.656,
+        597.0
+      ],
+      "head": [
+        318.79264705882355,
+        92.38823529411765
+      ],
+      "tip": [
+        318.79264705882355,
+        153.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-aux",
+      "cell": 2,
+      "root": [
+        317.28767123287673,
+        567.0
+      ],
+      "head": [
+        319.4456618962433,
+        935.7788461538462
+      ],
+      "tip": [
+        319.4456618962433,
+        1058.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-cap",
+      "cell": 1,
+      "root": [
+        288.34335839599,
+        599.0
+      ],
+      "head": [
+        920.6666666666666,
+        393.843792633015
+      ],
+      "tip": [
+        919.0,
+        517.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-aux",
+      "cell": 3,
+      "root": [
+        305.92821782178214,
+        567.0
+      ],
+      "head": [
+        936.7060972824846,
+        1044.1073304407398
+      ],
+      "tip": [
+        937.0,
+        1175.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-cap",
+      "cell": 2,
+      "root": [
+        316.7228260869565,
+        548.0
+      ],
+      "head": [
+        319.8255479300421,
+        1047.899048040735
+      ],
+      "tip": [
+        319.8255479300421,
+        1177.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-cap",
+      "cell": 3,
+      "root": [
+        290.83149171270713,
+        548.0
+      ],
+      "head": [
+        920.4325683060109,
+        1050.5326775956285
+      ],
+      "tip": [
+        920.4325683060109,
+        1182.0
+      ],
+      "capAxis": [
+        0,
+        1
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-side",
+      "cell": 0,
+      "root": [
+        324.84854771784234,
+        560.0
+      ],
+      "head": [
+        428.3839128907622,
+        69.19704952581665
+      ],
+      "tip": [
+        302.0,
+        70.0
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-side",
+      "cell": 1,
+      "root": [
+        331.2402597402597,
+        560.0
+      ],
+      "head": [
+        809.2672955974842,
+        148.15688329839273
+      ],
+      "tip": [
+        680.0,
+        149.0
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-side",
+      "cell": 2,
+      "root": [
+        330.74869109947645,
+        561.0
+      ],
+      "head": [
+        175.6350180505415,
+        780.4187725631768
+      ],
+      "tip": [
+        40.0,
+        782.0
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "sourceEdgeIssue": false
+    },
+    {
+      "source": "drac-side",
+      "cell": 3,
+      "root": [
+        328.8004338394794,
+        562.0
+      ],
+      "head": [
+        791.2759828727131,
+        782.024133904243
+      ],
+      "tip": [
+        662.0,
+        783.0
+      ],
+      "capAxis": [
+        -1,
+        0
+      ],
+      "sourceEdgeIssue": false
+    }
+  ],
+  "uniqueDrawings": 24,
+  "normalization": "complete poses only; direct original source .63 export; common boot baseline; no body/held-weapon assembly"
+}

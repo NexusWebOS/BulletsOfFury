@@ -1,0 +1,2172 @@
+{
+  "version": 1,
+  "revision": 2,
+  "material": "rectangular-bolted-steel",
+  "banks": {
+    "frame-command": {
+      "key": "cx4_frame-command",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-command.png",
+      "sha256": "0f612d3e64aab22dc33d33ad10e801ee983e795c5eac640b524c6fef18ea0adf",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-command-compact": {
+      "key": "cx4_frame-command-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-command-compact.png",
+      "sha256": "89c4def131167d17382475a1a77017562ad4b633bbdb5bb9947c7495ddd80a4d",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "frame-hostile": {
+      "key": "cx4_frame-hostile",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-hostile.png",
+      "sha256": "579adebcb5327197381920e1f8ada908d162ee67f8254cf80ec4fcd94b269be3",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-hostile-compact": {
+      "key": "cx4_frame-hostile-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-hostile-compact.png",
+      "sha256": "0d65cc5077e0d4852fd0d59427b3a3f6eb44a1c7bfc694e2a2abead4d6ac8e2e",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "frame-narration": {
+      "key": "cx4_frame-narration",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-narration.png",
+      "sha256": "17f42e0b01811deb7aec5949403b13e700ccc154b6c278805ea858d86b880bf5",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-narration-compact": {
+      "key": "cx4_frame-narration-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-narration-compact.png",
+      "sha256": "a7f757481fd5fbc127add36e794667a1aecc1d124e7fe424565a9f84ef187b99",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "frame-crew-cole": {
+      "key": "cx4_frame-crew-cole",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-cole.png",
+      "sha256": "9d26419671935ea4af78ee58a5c11ccdd4b8d6bc03d53bbc857147f9921971f8",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-crew-cole-compact": {
+      "key": "cx4_frame-crew-cole-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-cole-compact.png",
+      "sha256": "e569964db75a28a0f93edea59a25634daa4a0b7e5cc3e7699e3d713f5ff741a5",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "face-cole-48": {
+      "key": "cx4_face-cole-48",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-cole-48.png",
+      "sha256": "41647c88b8c550dd7192265706a191227f3c9ce0acc8c2c6a5fc35f98243ed08",
+      "pilot": "cole",
+      "size": 48,
+      "frames": 7,
+      "baselines": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    "face-cole-64": {
+      "key": "cx4_face-cole-64",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-cole-64.png",
+      "sha256": "de9d0685485bc22b23b9ac8b35484e7051ec74e0a9cf48602c9e12f31980f323",
+      "pilot": "cole",
+      "size": 64,
+      "frames": 7,
+      "baselines": [
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62
+      ]
+    },
+    "face-cole-84": {
+      "key": "cx4_face-cole-84",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-cole-84.png",
+      "sha256": "a592656e4e902edfcd3ee6b8c9cbd8f38e0b3d98d9789e0208bc91f967d1f3ff",
+      "pilot": "cole",
+      "size": 84,
+      "frames": 7,
+      "baselines": [
+        82,
+        82,
+        82,
+        82,
+        82,
+        82,
+        82
+      ]
+    },
+    "face-cole-96": {
+      "key": "cx4_face-cole-96",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-cole-96.png",
+      "sha256": "4f5a5ab30937a739bab4dc6386c01a905eb325e7e202f70f08c8bcada44902db",
+      "pilot": "cole",
+      "size": 96,
+      "frames": 7,
+      "baselines": [
+        94,
+        94,
+        94,
+        94,
+        94,
+        94,
+        94
+      ]
+    },
+    "frame-crew-axel": {
+      "key": "cx4_frame-crew-axel",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-axel.png",
+      "sha256": "a10794c4d022813b38fba8a9a98dd673ba44df5af29296262a3c4111894dc4ef",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-crew-axel-compact": {
+      "key": "cx4_frame-crew-axel-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-axel-compact.png",
+      "sha256": "278bd0b2f877932fa466d03a8f8499f3843220978ef13e7352d94bbe3dab3f1a",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "face-axel-48": {
+      "key": "cx4_face-axel-48",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-axel-48.png",
+      "sha256": "ac8d249386242bb07f1441d55ed7a7d38666f3db08d53021c2e4b982e44c2f57",
+      "pilot": "axel",
+      "size": 48,
+      "frames": 7,
+      "baselines": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    "face-axel-64": {
+      "key": "cx4_face-axel-64",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-axel-64.png",
+      "sha256": "d49b216912936f81ca0ae9c351230e0e15918fa97362df6470509ec6a9d37636",
+      "pilot": "axel",
+      "size": 64,
+      "frames": 7,
+      "baselines": [
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62
+      ]
+    },
+    "face-axel-84": {
+      "key": "cx4_face-axel-84",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-axel-84.png",
+      "sha256": "1907c6c169182f1c2023c7d0bb942a5a557f803d7319481f5c49ae7fcbedbdaa",
+      "pilot": "axel",
+      "size": 84,
+      "frames": 7,
+      "baselines": [
+        82,
+        82,
+        82,
+        82,
+        82,
+        82,
+        82
+      ]
+    },
+    "face-axel-96": {
+      "key": "cx4_face-axel-96",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-axel-96.png",
+      "sha256": "58cc83db3bacbfc784b976ca9947d70154e561b75d0ebc94f144192dc16f2ab1",
+      "pilot": "axel",
+      "size": 96,
+      "frames": 7,
+      "baselines": [
+        94,
+        94,
+        94,
+        94,
+        94,
+        94,
+        94
+      ]
+    },
+    "frame-crew-freezer": {
+      "key": "cx4_frame-crew-freezer",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-freezer.png",
+      "sha256": "15cd426c2df12752bb934548b0092b86dd95e15e402fa6013681b71992842370",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-crew-freezer-compact": {
+      "key": "cx4_frame-crew-freezer-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-freezer-compact.png",
+      "sha256": "4af7147141f4113e482e9270caace687071479f15787f97d34df231e84d32522",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "face-freezer-48": {
+      "key": "cx4_face-freezer-48",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-freezer-48.png",
+      "sha256": "53a04d6b274779ff0cfb9fd21500d9c410bb2bd42c87d4ea5f8fbf508046fc5c",
+      "pilot": "freezer",
+      "size": 48,
+      "frames": 7,
+      "baselines": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    "face-freezer-64": {
+      "key": "cx4_face-freezer-64",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-freezer-64.png",
+      "sha256": "06c93a7679f0ebbbf05c6e7ce2405748254842e4e953b2ed2c7d689ae20ff037",
+      "pilot": "freezer",
+      "size": 64,
+      "frames": 7,
+      "baselines": [
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62
+      ]
+    },
+    "face-freezer-84": {
+      "key": "cx4_face-freezer-84",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-freezer-84.png",
+      "sha256": "b753e1b208abdae239011ae3c596c0e91e06b518c0b80fee3513df7c4f5a6d67",
+      "pilot": "freezer",
+      "size": 84,
+      "frames": 7,
+      "baselines": [
+        82,
+        82,
+        82,
+        82,
+        82,
+        82,
+        82
+      ]
+    },
+    "face-freezer-96": {
+      "key": "cx4_face-freezer-96",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-freezer-96.png",
+      "sha256": "0b6a55052259125479c5c0c306cedb29833417015113e7b9a5a5a92abf6f645c",
+      "pilot": "freezer",
+      "size": 96,
+      "frames": 7,
+      "baselines": [
+        94,
+        94,
+        94,
+        94,
+        94,
+        94,
+        94
+      ]
+    },
+    "frame-crew-yuri": {
+      "key": "cx4_frame-crew-yuri",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-yuri.png",
+      "sha256": "4c1396bab0df581e48575ad25daf3f7845ad59c0f5beb50f666d157d20062cca",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-crew-yuri-compact": {
+      "key": "cx4_frame-crew-yuri-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-yuri-compact.png",
+      "sha256": "339a94799df4fc1835569684908bfde630a2255bd2197165c73b9e5708d6bbe6",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "face-yuri-48": {
+      "key": "cx4_face-yuri-48",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-yuri-48.png",
+      "sha256": "28c25f2679398d07cf2d7806639e05855353783aa924cc2ee437fd3670317bcc",
+      "pilot": "yuri",
+      "size": 48,
+      "frames": 7,
+      "baselines": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    "face-yuri-64": {
+      "key": "cx4_face-yuri-64",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-yuri-64.png",
+      "sha256": "575c023ddd8894659dcd98fc9d22ccd7a8ed50b855d31c11041823e9c35b46bb",
+      "pilot": "yuri",
+      "size": 64,
+      "frames": 7,
+      "baselines": [
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62
+      ]
+    },
+    "face-yuri-84": {
+      "key": "cx4_face-yuri-84",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-yuri-84.png",
+      "sha256": "a6e19cc9a3ac8231a5564780d3d9fe797ad90095e8da1573442d6d2bbb21a083",
+      "pilot": "yuri",
+      "size": 84,
+      "frames": 7,
+      "baselines": [
+        82,
+        82,
+        82,
+        82,
+        82,
+        82,
+        82
+      ]
+    },
+    "face-yuri-96": {
+      "key": "cx4_face-yuri-96",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-yuri-96.png",
+      "sha256": "6c5574c8836656c002bc6e6d35e01873fe458874c1c1ce284df8f4a80d3bc21f",
+      "pilot": "yuri",
+      "size": 96,
+      "frames": 7,
+      "baselines": [
+        94,
+        94,
+        94,
+        94,
+        94,
+        94,
+        94
+      ]
+    },
+    "frame-crew-maverick": {
+      "key": "cx4_frame-crew-maverick",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-maverick.png",
+      "sha256": "275f7632a5775ecc33ec9dfbec82aa7fba491e6a84b39ce3a7b3e9234f5cf3da",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-crew-maverick-compact": {
+      "key": "cx4_frame-crew-maverick-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-maverick-compact.png",
+      "sha256": "d1f083af607dddfaaf2a52c9faf38affb4febfa2925900ec6b40abf84e43cc0f",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "face-maverick-48": {
+      "key": "cx4_face-maverick-48",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-maverick-48.png",
+      "sha256": "8b89ddeb723c0ff20d5c0e274aa7ae1822b9060699cfbf7c8305fa6f3329736d",
+      "pilot": "maverick",
+      "size": 48,
+      "frames": 7,
+      "baselines": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    "face-maverick-64": {
+      "key": "cx4_face-maverick-64",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-maverick-64.png",
+      "sha256": "f63a218654de630882e9a316a6a8e1eafe77817754fb8aa34c11595f0d36edf6",
+      "pilot": "maverick",
+      "size": 64,
+      "frames": 7,
+      "baselines": [
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62
+      ]
+    },
+    "face-maverick-84": {
+      "key": "cx4_face-maverick-84",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-maverick-84.png",
+      "sha256": "e393b8bb2d0632cb167e04fa3fe112d0061b39f78ee63738695a144d479542d5",
+      "pilot": "maverick",
+      "size": 84,
+      "frames": 7,
+      "baselines": [
+        82,
+        82,
+        82,
+        82,
+        82,
+        82,
+        82
+      ]
+    },
+    "face-maverick-96": {
+      "key": "cx4_face-maverick-96",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-maverick-96.png",
+      "sha256": "2c0a70fed5fb0fcec2c18a500ce2a400b1a6e0f4cc8adc1521eeaa2f55b122ca",
+      "pilot": "maverick",
+      "size": 96,
+      "frames": 7,
+      "baselines": [
+        94,
+        94,
+        94,
+        94,
+        94,
+        94,
+        94
+      ]
+    },
+    "frame-crew-falva": {
+      "key": "cx4_frame-crew-falva",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-falva.png",
+      "sha256": "769d02dd1d62a0863a572b28077875bd8affa818959d58aded696ac8e8bb52ba",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-crew-falva-compact": {
+      "key": "cx4_frame-crew-falva-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-falva-compact.png",
+      "sha256": "b5c7455a72590a3face5faec0ae16a6823eab5c43a4d6d8f82777bcd5b095ee8",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "face-falva-48": {
+      "key": "cx4_face-falva-48",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-falva-48.png",
+      "sha256": "4509895c741d075e35fd23c4a8b475e28dd4d4cbe533261c086c8bd452358c18",
+      "pilot": "falva",
+      "size": 48,
+      "frames": 7,
+      "baselines": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    "face-falva-64": {
+      "key": "cx4_face-falva-64",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-falva-64.png",
+      "sha256": "82ccdb78beda7b6d2bf4bfa5178f542de18d3fa95faee9a01788f2ab2e365a4f",
+      "pilot": "falva",
+      "size": 64,
+      "frames": 7,
+      "baselines": [
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62
+      ]
+    },
+    "face-falva-84": {
+      "key": "cx4_face-falva-84",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-falva-84.png",
+      "sha256": "db4e4519a9006ac0b6e89c3a8b470378cdb8ae7628a4f092f63023ee3201b288",
+      "pilot": "falva",
+      "size": 84,
+      "frames": 7,
+      "baselines": [
+        82,
+        82,
+        82,
+        82,
+        82,
+        82,
+        82
+      ]
+    },
+    "face-falva-96": {
+      "key": "cx4_face-falva-96",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-falva-96.png",
+      "sha256": "1f3c1a02632e839c4098cd8fdb9eeedb4a58b6ea6502f24476808092493654f0",
+      "pilot": "falva",
+      "size": 96,
+      "frames": 7,
+      "baselines": [
+        94,
+        94,
+        94,
+        94,
+        94,
+        94,
+        94
+      ]
+    },
+    "frame-crew-lizzie": {
+      "key": "cx4_frame-crew-lizzie",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-lizzie.png",
+      "sha256": "21c15d1ad01cf71983586991c7de0fd526100591f3c4beb6260000536a2bd371",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-crew-lizzie-compact": {
+      "key": "cx4_frame-crew-lizzie-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-lizzie-compact.png",
+      "sha256": "54d8ca616751f2db9ba1470fae565ac0e74b0b3513c2d775307816b61ac6f40f",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "face-lizzie-48": {
+      "key": "cx4_face-lizzie-48",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-lizzie-48.png",
+      "sha256": "cbc6981bef9eed956b3c46291d629c0b0dd15e16e8d195b93962dc11c1d5053e",
+      "pilot": "lizzie",
+      "size": 48,
+      "frames": 7,
+      "baselines": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    "face-lizzie-64": {
+      "key": "cx4_face-lizzie-64",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-lizzie-64.png",
+      "sha256": "ba8f18b7fd6668d6e0c3c6dd4429256074824790528e03d319a06b953adaaf16",
+      "pilot": "lizzie",
+      "size": 64,
+      "frames": 7,
+      "baselines": [
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62
+      ]
+    },
+    "face-lizzie-84": {
+      "key": "cx4_face-lizzie-84",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-lizzie-84.png",
+      "sha256": "a89bf857cbadad2b84b8ed9cb39b5e136396a95d76ff9d76c7849153e26abe25",
+      "pilot": "lizzie",
+      "size": 84,
+      "frames": 7,
+      "baselines": [
+        82,
+        82,
+        82,
+        82,
+        82,
+        82,
+        82
+      ]
+    },
+    "face-lizzie-96": {
+      "key": "cx4_face-lizzie-96",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-lizzie-96.png",
+      "sha256": "f09f753675600baebd43d4bc75861b1d86a56c67bbdd152c2a9ae1aa9c7493a4",
+      "pilot": "lizzie",
+      "size": 96,
+      "frames": 7,
+      "baselines": [
+        94,
+        94,
+        94,
+        94,
+        94,
+        94,
+        94
+      ]
+    },
+    "frame-crew-decker": {
+      "key": "cx4_frame-crew-decker",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-decker.png",
+      "sha256": "a0c37d5143e5ace8361c33c2d7e1b0327bef7cd97ea4661c64e56ba2acf97ee5",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-crew-decker-compact": {
+      "key": "cx4_frame-crew-decker-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-decker-compact.png",
+      "sha256": "ead6bd1b0bcbaf396532c6a364573dc974848962f0d41570177253e91903f366",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "face-decker-48": {
+      "key": "cx4_face-decker-48",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-decker-48.png",
+      "sha256": "4c297babe8541e9740d1bb65c00e51d7b726a9011d36ac007cf20201781f20cc",
+      "pilot": "decker",
+      "size": 48,
+      "frames": 7,
+      "baselines": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    "face-decker-64": {
+      "key": "cx4_face-decker-64",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-decker-64.png",
+      "sha256": "4bbf5f3947fd3422a7daa23e3d201eb783b5a0859b58ebb838969303807c42ed",
+      "pilot": "decker",
+      "size": 64,
+      "frames": 7,
+      "baselines": [
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62
+      ]
+    },
+    "face-decker-84": {
+      "key": "cx4_face-decker-84",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-decker-84.png",
+      "sha256": "8704a19fc73860c7d60bcde6df6a142489267dba4305f8f498d1fd48caafe732",
+      "pilot": "decker",
+      "size": 84,
+      "frames": 7,
+      "baselines": [
+        82,
+        82,
+        82,
+        82,
+        82,
+        82,
+        82
+      ]
+    },
+    "face-decker-96": {
+      "key": "cx4_face-decker-96",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-decker-96.png",
+      "sha256": "57c4c1920977299682d77c6ef8d01195f807abcf5199a940c6fea1b639b06244",
+      "pilot": "decker",
+      "size": 96,
+      "frames": 7,
+      "baselines": [
+        94,
+        94,
+        94,
+        94,
+        94,
+        94,
+        94
+      ]
+    },
+    "frame-crew-juggernaut": {
+      "key": "cx4_frame-crew-juggernaut",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-juggernaut.png",
+      "sha256": "eae62c8f9d0b1782f1cc591f05327f6d26596706299514c9818b9d407fff4c98",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          360,
+          64
+        ],
+        "tc": [
+          360,
+          0,
+          32,
+          64
+        ],
+        "tr": [
+          392,
+          0,
+          288,
+          64
+        ],
+        "l": [
+          0,
+          64,
+          24,
+          32
+        ],
+        "c": [
+          24,
+          64,
+          32,
+          32
+        ],
+        "r": [
+          56,
+          64,
+          24,
+          32
+        ],
+        "bl": [
+          0,
+          96,
+          64,
+          20
+        ],
+        "bc": [
+          64,
+          96,
+          32,
+          20
+        ],
+        "br": [
+          96,
+          96,
+          64,
+          20
+        ]
+      },
+      "header": 64,
+      "bottom": 20,
+      "minWidth": 648
+    },
+    "frame-crew-juggernaut-compact": {
+      "key": "cx4_frame-crew-juggernaut-compact",
+      "path": "assets/game/shared/cinematics/dialogue_1111/frame-crew-juggernaut-compact.png",
+      "sha256": "462a64cf39fc7e66e177ab9a747dd0a14ae18819cb1af9022a302baf0e108d7d",
+      "parts": {
+        "tl": [
+          0,
+          0,
+          180,
+          32
+        ],
+        "tc": [
+          180,
+          0,
+          16,
+          32
+        ],
+        "tr": [
+          196,
+          0,
+          144,
+          32
+        ],
+        "l": [
+          0,
+          32,
+          12,
+          16
+        ],
+        "c": [
+          12,
+          32,
+          16,
+          16
+        ],
+        "r": [
+          28,
+          32,
+          12,
+          16
+        ],
+        "bl": [
+          0,
+          48,
+          32,
+          10
+        ],
+        "bc": [
+          32,
+          48,
+          16,
+          10
+        ],
+        "br": [
+          48,
+          48,
+          32,
+          10
+        ]
+      },
+      "header": 32,
+      "bottom": 10,
+      "minWidth": 324
+    },
+    "face-juggernaut-48": {
+      "key": "cx4_face-juggernaut-48",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-juggernaut-48.png",
+      "sha256": "6ab6467480aab217d0a9ac807b27424334043bc21ec7da5db3252ea834a164dd",
+      "pilot": "juggernaut",
+      "size": 48,
+      "frames": 7,
+      "baselines": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ]
+    },
+    "face-juggernaut-64": {
+      "key": "cx4_face-juggernaut-64",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-juggernaut-64.png",
+      "sha256": "0a0653caab418ebd13ffce62e483eea79750e8eabaedc5869136546b6e8013d8",
+      "pilot": "juggernaut",
+      "size": 64,
+      "frames": 7,
+      "baselines": [
+        62,
+        62,
+        62,
+        62,
+        62,
+        62,
+        62
+      ]
+    },
+    "face-juggernaut-84": {
+      "key": "cx4_face-juggernaut-84",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-juggernaut-84.png",
+      "sha256": "828866847c8250a12d3526599d193ebe90125cca5c7f6498ba730161f2aa55dc",
+      "pilot": "juggernaut",
+      "size": 84,
+      "frames": 7,
+      "baselines": [
+        82,
+        82,
+        82,
+        82,
+        82,
+        82,
+        82
+      ]
+    },
+    "face-juggernaut-96": {
+      "key": "cx4_face-juggernaut-96",
+      "path": "assets/game/shared/cinematics/dialogue_1111/face-juggernaut-96.png",
+      "sha256": "90fb054bfd3b3f16a749839fecd352e2b126a92c1136c5bac9808f7ab8891591",
+      "pilot": "juggernaut",
+      "size": 96,
+      "frames": 7,
+      "baselines": [
+        94,
+        94,
+        94,
+        94,
+        94,
+        94,
+        94
+      ]
+    }
+  },
+  "pilots": [
+    "cole",
+    "axel",
+    "freezer",
+    "yuri",
+    "maverick",
+    "falva",
+    "lizzie",
+    "decker",
+    "juggernaut"
+  ],
+  "styles": [
+    "crew",
+    "command",
+    "hostile",
+    "narration"
+  ]
+}

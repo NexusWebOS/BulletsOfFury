@@ -1,0 +1,12 @@
+{
+  "generator": "Built-in GPT imagegen for body/gesture art; immutable existing BOF weapon pixels, prepared offline in Aseprite.",
+  "masters": {
+    "chronos-charge.png": "d459ea4339ad902a16e477c107129c6a741f56c053cc5050b463bc32fe4b094a",
+    "chronos-palms.png": "a120e7475cda51c9c544dfe3c839e7e30934ecd0710f9d611fdbad57c4405c8f",
+    "drac-charge.png": "7fd967398bf40e7df182319d4bdf15fb39c5f201709f7778ef3792e34292687d",
+    "drac-palms.png": "9bb07fd60b9151b6bffca640cd528e48f07796b529a794aab1c19166780a74a5"
+  },
+  "source": "_ART_SOURCES\\rage_palm_1110",
+  "date": "2026-11-10",
+  "coreGameSHA256": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215"
+}

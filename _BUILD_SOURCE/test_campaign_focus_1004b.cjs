@@ -10,7 +10,7 @@ module.exports=function(vm,ctxv,ok){
   for(const pilot of PILOTS){run.pilot=pilot.key;setup(6);s6WingInit();s6WingLaunch(8,true);Object.assign(s6Wing,{all:true,fakeDone:true,beats:3,choice:true,choiceT:1});s6WingTick(.02);
    wing=wing&&s6Wing.route==='right'&&s6Wing.ships.filter(q=>q.phase!=='leave').length===4&&!s6Wing.ships.some(q=>q.key===pilot.key);}
   Input.tapSeat=tap;out['route selection retains four allies for all nine pilots']=wing;
-  for(const route of ['left','right']){setup(6);s6WingInit();s6Wing.route=route;scLeaveStage({bonus:0,rank:'B'});const saved=Rival24.save();campaign.stageX1004=null;Rival24.load(saved);
+  for(const route of ['left','right']){campaign.stageX1004=null;delete run._gp4StageX;delete run._cf4Return;setup(6);s6WingInit();s6Wing.route=route;scLeaveStage({bonus:0,rank:'B'});const saved=Rival24.save();campaign.stageX1004=null;Rival24.load(saved);
    out['unchosen '+route+' route persists as the opposite Stage X fight']=cf4Pending()&&campaign.stageX1004.route===(route==='left'?'right':'left');
    cf4LaunchX();out['Stage X '+route+' branch launches a full encounter']=run.stage===6&&run._gp4StageX===(route==='left'?'right':'left')&&s6Wing.ships.length===4;
    scLeaveStage({bonus:0,rank:'A'});out['Stage X '+route+' victory returns to map and clears only that pending fight']=state===GS.STAGESEL&&campaign.stageX1004.done;

@@ -1,0 +1,209 @@
+{
+  "crate": [
+    {
+      "key": "ht23_crate_0",
+      "sheet": "ht23_crate",
+      "cell": [
+        0,
+        0,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_1",
+      "sheet": "ht23_crate",
+      "cell": [
+        80,
+        0,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_2",
+      "sheet": "ht23_crate",
+      "cell": [
+        160,
+        0,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_3",
+      "sheet": "ht23_crate",
+      "cell": [
+        240,
+        0,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_4",
+      "sheet": "ht23_crate",
+      "cell": [
+        0,
+        80,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_5",
+      "sheet": "ht23_crate",
+      "cell": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_6",
+      "sheet": "ht23_crate",
+      "cell": [
+        160,
+        80,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_7",
+      "sheet": "ht23_crate",
+      "cell": [
+        240,
+        80,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    },
+    {
+      "key": "ht23_crate_8",
+      "sheet": "ht23_crate",
+      "cell": [
+        0,
+        160,
+        80,
+        80
+      ],
+      "w": 80,
+      "h": 80,
+      "pivot": [
+        40,
+        40
+      ],
+      "bounds": [
+        4,
+        6,
+        76,
+        74
+      ]
+    }
+  ],
+  "sheet": {
+    "key": "nca_ht23_crate",
+    "path": "assets/game/shared/combat/chronos_aura_gun_1025/ht23_crate.webp",
+    "w": 320,
+    "h": 240,
+    "sha256": "f15ab8f0b4158905f1b13b416e9290386ab83d7cd866cce5677f0355e9c9b17d"
+  }
+}

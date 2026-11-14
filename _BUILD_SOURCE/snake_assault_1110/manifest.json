@@ -1,0 +1,249 @@
+{
+  "expected_source_hash": "6d16e890d9af375872a6b6f99a0e70fdff97a948538071a1252d163e587775ab",
+  "art": {
+    "hole": {
+      "path": "assets/game/shared/combat/snake_assault_1110/hole.png",
+      "cell": [
+        192,
+        128
+      ],
+      "pivot": [
+        96,
+        64
+      ],
+      "cols": 8,
+      "frames": 8
+    },
+    "hole-front": {
+      "path": "assets/game/shared/combat/snake_assault_1110/hole-front.png",
+      "cell": [
+        192,
+        128
+      ],
+      "pivot": [
+        96,
+        64
+      ],
+      "cols": 8,
+      "frames": 8
+    },
+    "arrows": {
+      "path": "assets/game/shared/combat/snake_assault_1110/arrows.png",
+      "cell": [
+        64,
+        64
+      ],
+      "pivot": [
+        32,
+        32
+      ],
+      "cols": 16,
+      "frames": 192
+    },
+    "dive-body0": {
+      "path": "assets/game/shared/combat/snake_assault_1110/dive-body0.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "dive-body1": {
+      "path": "assets/game/shared/combat/snake_assault_1110/dive-body1.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "dive-body2": {
+      "path": "assets/game/shared/combat/snake_assault_1110/dive-body2.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "dive-body3": {
+      "path": "assets/game/shared/combat/snake_assault_1110/dive-body3.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "dive-hit": {
+      "path": "assets/game/shared/combat/snake_assault_1110/dive-hit.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "riseL-body0": {
+      "path": "assets/game/shared/combat/snake_assault_1110/riseL-body0.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "riseL-body1": {
+      "path": "assets/game/shared/combat/snake_assault_1110/riseL-body1.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "riseL-body2": {
+      "path": "assets/game/shared/combat/snake_assault_1110/riseL-body2.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "riseL-body3": {
+      "path": "assets/game/shared/combat/snake_assault_1110/riseL-body3.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "riseL-hit": {
+      "path": "assets/game/shared/combat/snake_assault_1110/riseL-hit.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "riseR-body0": {
+      "path": "assets/game/shared/combat/snake_assault_1110/riseR-body0.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "riseR-body1": {
+      "path": "assets/game/shared/combat/snake_assault_1110/riseR-body1.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "riseR-body2": {
+      "path": "assets/game/shared/combat/snake_assault_1110/riseR-body2.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "riseR-body3": {
+      "path": "assets/game/shared/combat/snake_assault_1110/riseR-body3.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    },
+    "riseR-hit": {
+      "path": "assets/game/shared/combat/snake_assault_1110/riseR-hit.png",
+      "cell": [
+        176,
+        176
+      ],
+      "pivot": [
+        88,
+        88
+      ],
+      "cols": 8,
+      "frames": 16
+    }
+  },
+  "source": "existing Sumpjaw identity/direction/hit art; new generated sewer-burrow sheet; existing native arrow silhouette",
+  "changes": [
+    "Four warned alternating side runs at430/560/700/880px per second",
+    "Head follows actual travel heading and fires rapid forward toxic orbs",
+    "Complete source-pixel burrow with sequential body entry",
+    "Two committed emergence points and staggered arches over the player",
+    "Existing native HP/gills/solo/death and earlier jumps retained"
+  ],
+  "sprite_frames": 448,
+  "notes": "Explicit user request supersedes older no-arrow warning preference for these side runs only."
+}

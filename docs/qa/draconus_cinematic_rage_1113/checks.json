@@ -1,0 +1,688 @@
+{
+  "checks": [
+    {
+      "name": "regular/center: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_regular",
+          "ba119_corrupt-overhead-left_regular",
+          "ba119_corrupt-overhead-right_regular"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "regular/left: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_regular",
+          "ba119_corrupt-overhead-left_regular",
+          "ba119_corrupt-overhead-right_regular"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "regular/right: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_regular",
+          "ba119_corrupt-overhead-right_regular",
+          "ba119_corrupt-overhead-left_regular"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "regular: both diagonal strikes face forward through windup/hit/recovery",
+      "passed": true,
+      "data": {
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead-left_regular",
+          "ba119_corrupt-overhead-right_regular"
+        ],
+        "hits": [
+          true,
+          true
+        ],
+        "hp": 4126
+      }
+    },
+    {
+      "name": "regular/left: actual forward hammer cap matches native impact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-left_regular",
+        "frame": 22,
+        "front": true,
+        "error": 0
+      }
+    },
+    {
+      "name": "regular/right: actual forward hammer cap matches native impact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-right_regular",
+        "frame": 22,
+        "front": true,
+        "error": 0
+      }
+    },
+    {
+      "name": "regular: native body damage visibly flashes the frontal source pixels",
+      "passed": true,
+      "data": {
+        "damaged": true,
+        "flash": 0.12,
+        "hp": 4103,
+        "changedWhitePixels": 104456
+      }
+    },
+    {
+      "name": "regular: white hit feedback expires normally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "chrome/center: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_chrome",
+          "ba119_corrupt-overhead-left_chrome",
+          "ba119_corrupt-overhead-right_chrome"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "chrome/left: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_chrome",
+          "ba119_corrupt-overhead-left_chrome",
+          "ba119_corrupt-overhead-right_chrome"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "chrome/right: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_chrome",
+          "ba119_corrupt-overhead-right_chrome",
+          "ba119_corrupt-overhead-left_chrome"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "chrome: both diagonal strikes face forward through windup/hit/recovery",
+      "passed": true,
+      "data": {
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead-left_chrome",
+          "ba119_corrupt-overhead-right_chrome"
+        ],
+        "hits": [
+          true,
+          true
+        ],
+        "hp": 4126
+      }
+    },
+    {
+      "name": "chrome/left: actual forward hammer cap matches native impact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-left_chrome",
+        "frame": 22,
+        "front": true,
+        "error": 0
+      }
+    },
+    {
+      "name": "chrome/right: actual forward hammer cap matches native impact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-right_chrome",
+        "frame": 22,
+        "front": true,
+        "error": 0
+      }
+    },
+    {
+      "name": "chrome: native body damage visibly flashes the frontal source pixels",
+      "passed": true,
+      "data": {
+        "damaged": true,
+        "flash": 0.12,
+        "hp": 4103,
+        "changedWhitePixels": 93197
+      }
+    },
+    {
+      "name": "chrome: white hit feedback expires normally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real low-HP damage commits rage before the overdue copied-form return",
+      "passed": true,
+      "data": {
+        "hp": 1155.2800000000002,
+        "hpAfter": 1155.2800000000002,
+        "max": 4126,
+        "action": "rage",
+        "mode": "fight",
+        "form": 8,
+        "age": 52.00666666666667,
+        "commits": 1
+      }
+    },
+    {
+      "name": "Rage visibly transforms and completes opener, foreground palms, background palms and repeat wave",
+      "passed": true,
+      "data": {
+        "complete": true,
+        "phases": [
+          "rage",
+          "kame_up",
+          "kame_strafe",
+          "kame_charge",
+          "kame_thrust",
+          "kame_fire",
+          "kame_recover",
+          "kame_return",
+          "volley_move",
+          "volley_warn",
+          "volley_fire",
+          "volley_recover",
+          "retreat",
+          "gather",
+          "thrust",
+          "beam",
+          "recover",
+          "done"
+        ]
+      }
+    },
+    {
+      "name": "Both full three-group rage palm volleys actually emit native shots",
+      "passed": true,
+      "data": {
+        "foreground": 24,
+        "background": 24
+      }
+    },
+    {
+      "name": "Overdue rage remains finite after a full book without healing body or weapons",
+      "passed": true,
+      "data": {
+        "hp": 1155.2800000000002,
+        "pool": 1155.2800000000002,
+        "done": [
+          {
+            "type": "rage-book-complete",
+            "time": 100,
+            "cycles": 3,
+            "hp": 1155.2800000000002,
+            "donorAge": 89.0399999999979
+          }
+        ]
+      }
+    },
+    {
+      "name": "Approved modular gun still owns its pose and remaining HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page/update/draw errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Actual armor activation leads to a centered rigid cap strike below both hands",
+      "passed": true,
+      "data": {
+        "chrome": true,
+        "rows": [
+          {
+            "u": 0.55,
+            "source": 8,
+            "frame": 16,
+            "tip": [
+              257,
+              197
+            ],
+            "head": [
+              257,
+              160
+            ],
+            "grip": [
+              256,
+              315
+            ],
+            "bank": "ba119_corrupt-overhead_chrome"
+          },
+          {
+            "u": 0.65,
+            "source": 8,
+            "frame": 17,
+            "tip": [
+              257,
+              197
+            ],
+            "head": [
+              257,
+              160
+            ],
+            "grip": [
+              256,
+              315
+            ],
+            "bank": "ba119_corrupt-overhead_chrome"
+          },
+          {
+            "u": 0.75,
+            "source": 9,
+            "frame": 18,
+            "tip": [
+              257,
+              253
+            ],
+            "head": [
+              257,
+              216
+            ],
+            "grip": [
+              256,
+              315
+            ],
+            "bank": "ba119_corrupt-overhead_chrome"
+          },
+          {
+            "u": 0.85,
+            "source": 10,
+            "frame": 20,
+            "tip": [
+              257,
+              399
+            ],
+            "head": [
+              257,
+              362
+            ],
+            "grip": [
+              256,
+              315
+            ],
+            "bank": "ba119_corrupt-overhead_chrome"
+          },
+          {
+            "u": 0.95,
+            "source": 10,
+            "frame": 21,
+            "tip": [
+              257,
+              399
+            ],
+            "head": [
+              257,
+              362
+            ],
+            "grip": [
+              256,
+              315
+            ],
+            "bank": "ba119_corrupt-overhead_chrome"
+          },
+          {
+            "u": 1,
+            "source": 11,
+            "frame": 22,
+            "tip": [
+              257,
+              416
+            ],
+            "head": [
+              257,
+              385
+            ],
+            "grip": [
+              256,
+              315
+            ],
+            "bank": "ba119_corrupt-overhead_chrome"
+          },
+          {
+            "u": 1.1,
+            "source": 12,
+            "frame": 24,
+            "tip": [
+              257,
+              415
+            ],
+            "head": [
+              257,
+              388
+            ],
+            "grip": [
+              256,
+              315
+            ],
+            "bank": "ba119_corrupt-overhead_chrome"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Chromium hammer visibly descends on the centerline over a broad vertical arc",
+      "passed": true,
+      "data": [
+        {
+          "u": 0.55,
+          "source": 8,
+          "frame": 16,
+          "tip": [
+            257,
+            197
+          ],
+          "head": [
+            257,
+            160
+          ],
+          "grip": [
+            256,
+            315
+          ],
+          "bank": "ba119_corrupt-overhead_chrome"
+        },
+        {
+          "u": 0.65,
+          "source": 8,
+          "frame": 17,
+          "tip": [
+            257,
+            197
+          ],
+          "head": [
+            257,
+            160
+          ],
+          "grip": [
+            256,
+            315
+          ],
+          "bank": "ba119_corrupt-overhead_chrome"
+        },
+        {
+          "u": 0.75,
+          "source": 9,
+          "frame": 18,
+          "tip": [
+            257,
+            253
+          ],
+          "head": [
+            257,
+            216
+          ],
+          "grip": [
+            256,
+            315
+          ],
+          "bank": "ba119_corrupt-overhead_chrome"
+        },
+        {
+          "u": 0.85,
+          "source": 10,
+          "frame": 20,
+          "tip": [
+            257,
+            399
+          ],
+          "head": [
+            257,
+            362
+          ],
+          "grip": [
+            256,
+            315
+          ],
+          "bank": "ba119_corrupt-overhead_chrome"
+        },
+        {
+          "u": 0.95,
+          "source": 10,
+          "frame": 21,
+          "tip": [
+            257,
+            399
+          ],
+          "head": [
+            257,
+            362
+          ],
+          "grip": [
+            256,
+            315
+          ],
+          "bank": "ba119_corrupt-overhead_chrome"
+        },
+        {
+          "u": 1,
+          "source": 11,
+          "frame": 22,
+          "tip": [
+            257,
+            416
+          ],
+          "head": [
+            257,
+            385
+          ],
+          "grip": [
+            256,
+            315
+          ],
+          "bank": "ba119_corrupt-overhead_chrome"
+        }
+      ]
+    },
+    {
+      "name": "Both depth variants gather, thrust both hands, sustain and recover with registered ball sockets",
+      "passed": true,
+      "data": [
+        {
+          "phase": "kame_charge",
+          "scale": 1,
+          "frame": 6,
+          "bank": "cast_fore",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 197
+          }
+        },
+        {
+          "phase": "kame_thrust",
+          "scale": 1,
+          "frame": 10,
+          "bank": "cast_fore",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 197
+          }
+        },
+        {
+          "phase": "kame_fire",
+          "scale": 1,
+          "frame": 12,
+          "bank": "cast_fore",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 197
+          }
+        },
+        {
+          "phase": "kame_recover",
+          "scale": 1,
+          "frame": 15,
+          "bank": "cast_fore",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 197
+          }
+        },
+        {
+          "phase": "gather",
+          "scale": 1,
+          "frame": 2,
+          "bank": "cast_fore",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 197
+          }
+        },
+        {
+          "phase": "thrust",
+          "scale": 1,
+          "frame": 10,
+          "bank": "cast_fore",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 197
+          }
+        },
+        {
+          "phase": "beam",
+          "scale": 1,
+          "frame": 12,
+          "bank": "cast_fore",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 197
+          }
+        },
+        {
+          "phase": "kame_charge",
+          "scale": 0.42,
+          "frame": 6,
+          "bank": "cast_back",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 199
+          }
+        },
+        {
+          "phase": "kame_thrust",
+          "scale": 0.42,
+          "frame": 10,
+          "bank": "cast_back",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 199
+          }
+        },
+        {
+          "phase": "kame_fire",
+          "scale": 0.42,
+          "frame": 12,
+          "bank": "cast_back",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 199
+          }
+        },
+        {
+          "phase": "kame_recover",
+          "scale": 0.42,
+          "frame": 15,
+          "bank": "cast_back",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 199
+          }
+        },
+        {
+          "phase": "gather",
+          "scale": 0.42,
+          "frame": 2,
+          "bank": "cast_back",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 199
+          }
+        },
+        {
+          "phase": "thrust",
+          "scale": 0.42,
+          "frame": 10,
+          "bank": "cast_back",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 199
+          }
+        },
+        {
+          "phase": "beam",
+          "scale": 0.42,
+          "frame": 12,
+          "bank": "cast_back",
+          "socketError": 0,
+          "release": {
+            "x": 340,
+            "y": 199
+          }
+        }
+      ]
+    },
+    {
+      "name": "New actor draw routes have no native renderer errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Chronus original rage/wave, ships, guns and prior owners remain byte-identical",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "errors": [],
+  "runtimeHash": "7f233420e861f01107e8cbf7d97d3c7de51f7af5c1ed1f28db33e53917995740",
+  "rageHash": "3516cfa2448922d2c98dc06b96501846109b97d0a4b889f0121c8b6d6b6343b8"
+}

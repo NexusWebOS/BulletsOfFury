@@ -1,0 +1,39 @@
+{
+  "cell": {
+    "key": "c31_rotor_0",
+    "sheet": "c30_rotor",
+    "cell": [
+      0,
+      0,
+      104,
+      208
+    ],
+    "w": 104,
+    "h": 208,
+    "pivot": [
+      54,
+      46
+    ],
+    "bounds": [
+      11,
+      11,
+      96,
+      187
+    ],
+    "_hf22": true,
+    "_c26": true,
+    "_c30": true,
+    "frame": 0,
+    "bank": "rotor",
+    "white": "c31_rotor_hit_0"
+  },
+  "gunSocket": [
+    0,
+    48
+  ],
+  "muzzle": [
+    54,
+    172
+  ],
+  "mechanicalPhases": 36
+}

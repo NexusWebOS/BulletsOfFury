@@ -1,0 +1,20 @@
+{
+  "frames": 256,
+  "canvas": [
+    80,
+    80
+  ],
+  "pivot": [
+    40,
+    40
+  ],
+  "headings": 16,
+  "trackingPoses": 8,
+  "brightnessStates": 2,
+  "emptyCenters": true,
+  "alphaValues": [
+    0,
+    255
+  ],
+  "runtimeTransforms": false
+}

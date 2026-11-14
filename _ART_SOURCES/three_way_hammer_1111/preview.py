@@ -1,0 +1,23 @@
+from pathlib import Path
+import json,base64
+from PIL import Image,ImageDraw
+W=Path(__file__).resolve().parent;E=W/'exports';O=W.parents[1]/'outputs/Three-way-hammer';O.mkdir(exist_ok=True,parents=True);C=512;M=json.loads((W/'manifest.json').read_text());D=[30]*8+[55]*8+[60,55,45,40,35,30,100,65]+[50]*8
+for direction in ['center','right','left']:
+ names=[p+'-overhead'+(''if direction=='center'else'-'+direction)for p in ['blue','corrupt']];cache={(n,m):Image.open(E/(n+'_'+m+'.webp')).convert('RGBA')for n in names for m in ['regular','chrome']};fs=[]
+ for i in range(32):
+  out=Image.new('RGBA',(1024,1056),'#101820');d=ImageDraw.Draw(out)
+  for col,n in enumerate(names):
+   for row,mat in enumerate(['regular','chrome']):
+    f=cache[n,mat].crop((i%4*C,i//4*C,(i%4+1)*C,(i//4+1)*C));out.alpha_composite(f,(col*C,32+row*C));d.text((col*C+12,row*C+12),('CHRONOS'if col==0 else'DRACODIA')+' / '+('NORMAL'if row==0 else'CHROMIUM')+' / '+direction.upper(),fill='white')
+  fs.append(out.convert('RGB'))
+ fs[0].save(O/('all-four-'+direction+'.gif'),save_all=True,append_images=fs[1:],duration=D,loop=0,disposal=2);fs[22].save(O/('all-four-'+direction+'.png'));print('Preview',direction,flush=True)
+ # Contact comparison in one image, at a smaller review-only size.
+ if direction=='center':board=Image.new('RGB',(1536,1056),'#101820')
+ contact=fs[22].resize((512,528),Image.Resampling.NEAREST);board.paste(contact,(['center','right','left'].index(direction)*512,0))
+board.crop((0,0,1536,528)).save(O/'three-directions.png')
+data={}
+for direction in ['center','right','left']:
+ for p in ['blue','corrupt']:
+  n=p+'-overhead'+(''if direction=='center'else'-'+direction);data[n]={m:'data:image/webp;base64,'+base64.b64encode((E/(n+'_'+m+'.webp')).read_bytes()).decode()for m in ['regular','chrome']}
+html='''<!doctype html><meta charset="utf-8"><title>Three hammer smash directions</title><style>body{margin:0;background:#101820;color:#ebf5ff;font:17px system-ui}main{max-width:1080px;margin:auto;padding:20px}h1{font-size:24px}button,select,input{font:inherit;padding:8px;margin:6px}.grid{display:grid;grid-template-columns:1fr 1fr}figure{margin:0;text-align:center}canvas{width:100%;image-rendering:pixelated}</style><main><h1>Hammer smashes — all four forms</h1><select id="direction"><option value="center">Directly in front</option><option value="right">Right smash</option><option value="left">Left smash</option></select><button id="play">Pause</button><select id="speed"><option value="1">Normal speed</option><option value=".5">Half speed</option><option value=".25">Quarter speed</option></select><input id="scrub" type="range" min="0" max="31"><span id="counter"></span><div class="grid"><figure>CHRONOS — NORMAL<canvas id="b0" width="512" height="512"></canvas></figure><figure>DRACODIA — NORMAL<canvas id="d0" width="512" height="512"></canvas></figure><figure>CHRONOS — CHROMIUM<canvas id="b1" width="512" height="512"></canvas></figure><figure>DRACODIA — CHROMIUM<canvas id="d1" width="512" height="512"></canvas></figure></div><p>Each complete32-frame cycle includes ready, lift, downstroke and recovery. The right smash mirrors the entire approved left pose.</p></main><script>const data=DATA,images={},durations=DURATIONS;let f=0,playing=true,last=0;const direction=document.querySelector('#direction'),slider=document.querySelector('#scrub'),speed=document.querySelector('#speed'),play=document.querySelector('#play');for(const[n,materials]of Object.entries(data)){images[n]={};for(const[m,src]of Object.entries(materials)){const im=new Image();images[n][m]=im;im.onload=render;im.src=src;}}function render(){const suffix=direction.value==='center'?'':'-'+direction.value;for(const[id,p,m]of[['b0','blue','regular'],['d0','corrupt','regular'],['b1','blue','chrome'],['d1','corrupt','chrome']]){const c=document.getElementById(id),g=c.getContext('2d'),im=images[p+'-overhead'+suffix]?.[m];g.imageSmoothingEnabled=false;g.clearRect(0,0,512,512);if(im?.complete&&im.naturalWidth)g.drawImage(im,f%4*512,Math.floor(f/4)*512,512,512,0,0,512,512);}slider.value=f;document.querySelector('#counter').textContent=(f+1)+' /32';}direction.onchange=()=>{f=0;render()};slider.oninput=()=>{f=+slider.value;render()};play.onclick=()=>{playing=!playing;play.textContent=playing?'Pause':'Play'};function tick(t){if(playing&&t-last>durations[f]/+speed.value){f=(f+1)%32;last=t;render()}requestAnimationFrame(tick)}requestAnimationFrame(tick);</script>'''.replace('DATA',json.dumps(data,separators=(',',':'))).replace('DURATIONS',json.dumps(D))
+(O/'playback.html').write_text(html,encoding='utf8');print('Saved all directions and four-form frame player.',flush=True)

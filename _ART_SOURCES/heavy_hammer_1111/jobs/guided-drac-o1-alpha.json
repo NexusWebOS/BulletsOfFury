@@ -1,0 +1,17 @@
+{
+  "name": "guided-drac-o1-alpha",
+  "prompt": "Background extraction only: remove the exterior pale backdrop and floor shadows from this eight-frame sprite sheet, leaving real RGBA transparency. Keep all eight full Dracodia sprites, every armor/highlight/face/hand/straight shaft/spike pixel, their exact poses, scale, placement and4-column2-row layout. Do not redraw, change anatomy or alter any pose. Preserve enclosed silver/white highlights inside the subjects. Only exterior background/shadow goes transparent. Same2:1 canvas, no added background, labels, checkerboard or divider lines.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-288674c0-a787-4c71-9aa2-a5d629f938a2.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

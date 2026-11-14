@@ -1,0 +1,598 @@
+{
+  "checks": [
+    {
+      "name": "36 genuinely distinct canonical rotor phases",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Fixed receiver and collars do not rotate or change length",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "body material variants preserve alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gun material variants preserve alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "grip material variants preserve alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "pickup material variants preserve alpha",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Canonical gun box/catch then modular rev False",
+      "passed": true,
+      "data": {
+        "type": "gun",
+        "whole": true,
+        "early": 0,
+        "hpSame": true,
+        "gunHP": 900,
+        "events": [
+          {
+            "event": "icon-box-approach",
+            "clock": 0,
+            "hp": 4126,
+            "gunHP": 900
+          },
+          {
+            "event": "icon-box-hit",
+            "clock": 0,
+            "x": 336,
+            "y": 409
+          },
+          {
+            "event": "hammer-release",
+            "clock": 0,
+            "x": 322,
+            "y": 3
+          },
+          {
+            "event": "gun-eject",
+            "clock": 0,
+            "x": 336,
+            "y": 409
+          },
+          {
+            "event": "gun-catch",
+            "clock": 0,
+            "hp": 4126,
+            "gunHP": 900
+          },
+          {
+            "event": "gun-rev",
+            "clock": 0,
+            "equipping": false,
+            "gunHP": 900
+          }
+        ]
+      }
+    },
+    {
+      "name": "Independent barrel visits all36 phases False",
+      "passed": true,
+      "data": {
+        "phases": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          0,
+          1,
+          2
+        ],
+        "volley": 21,
+        "errors": 0,
+        "modular": true,
+        "speed": 4.7
+      }
+    },
+    {
+      "name": "Native volleys and warning use actual modular muzzle False",
+      "passed": true,
+      "data": {
+        "phases": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          0,
+          1,
+          2
+        ],
+        "volley": 21,
+        "errors": 0,
+        "modular": true,
+        "speed": 4.7
+      }
+    },
+    {
+      "name": "Rotor coasts before authored stow False",
+      "passed": true,
+      "data": {
+        "speed": 0,
+        "was": 4.7,
+        "bank": "draconus-gun-stow"
+      }
+    },
+    {
+      "name": "Canonical gun box/catch then modular rev True",
+      "passed": true,
+      "data": {
+        "type": "gun",
+        "whole": true,
+        "early": 0,
+        "hpSame": true,
+        "gunHP": 900,
+        "events": [
+          {
+            "event": "icon-box-approach",
+            "clock": 0,
+            "hp": 4126,
+            "gunHP": 900
+          },
+          {
+            "event": "icon-box-hit",
+            "clock": 0,
+            "x": 336,
+            "y": 409
+          },
+          {
+            "event": "hammer-release",
+            "clock": 0,
+            "x": 322,
+            "y": 3
+          },
+          {
+            "event": "gun-eject",
+            "clock": 0,
+            "x": 336,
+            "y": 409
+          },
+          {
+            "event": "gun-catch",
+            "clock": 0,
+            "hp": 4126,
+            "gunHP": 900
+          },
+          {
+            "event": "gun-rev",
+            "clock": 0,
+            "equipping": false,
+            "gunHP": 900
+          }
+        ]
+      }
+    },
+    {
+      "name": "Independent barrel visits all36 phases True",
+      "passed": true,
+      "data": {
+        "phases": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          0,
+          1,
+          2
+        ],
+        "volley": 21,
+        "errors": 0,
+        "modular": true,
+        "speed": 4.7
+      }
+    },
+    {
+      "name": "Native volleys and warning use actual modular muzzle True",
+      "passed": true,
+      "data": {
+        "phases": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          0,
+          1,
+          2
+        ],
+        "volley": 21,
+        "errors": 0,
+        "modular": true,
+        "speed": 4.7
+      }
+    },
+    {
+      "name": "Rotor coasts before authored stow True",
+      "passed": true,
+      "data": {
+        "speed": 0,
+        "was": 4.7,
+        "bank": "draconus-gun-stow"
+      }
+    },
+    {
+      "name": "Actual visible gun mask has an independent native pool",
+      "passed": true,
+      "data": {
+        "hit": true,
+        "hpSame": true,
+        "gunHP": 881,
+        "keys": [
+          "dgm1111_body_chrome",
+          "dgm1111_gun_hit",
+          "dgm1111_grip_chrome"
+        ],
+        "parts": [
+          "core",
+          "chaingun"
+        ]
+      }
+    },
+    {
+      "name": "Gun-only hit uses white gun with intact colored body/grip",
+      "passed": true,
+      "data": {
+        "hit": true,
+        "hpSame": true,
+        "gunHP": 881,
+        "keys": [
+          "dgm1111_body_chrome",
+          "dgm1111_gun_hit",
+          "dgm1111_grip_chrome"
+        ],
+        "parts": [
+          "core",
+          "chaingun"
+        ]
+      }
+    },
+    {
+      "name": "Independent gun flash expires",
+      "passed": true,
+      "data": {
+        "expired": true,
+        "held": true
+      }
+    },
+    {
+      "name": "Broken modular gun cannot fire/target/respawn; hammer recovers",
+      "passed": true,
+      "data": {
+        "broke": "sf1111_break",
+        "after": "recall",
+        "again": "side",
+        "hpSame": true,
+        "newRounds": 0,
+        "target": false
+      }
+    },
+    {
+      "name": "Held module survives full Chromium activation and idle handoff",
+      "passed": true,
+      "data": {
+        "gunHP": 321,
+        "chrome": true,
+        "held": true,
+        "type": "gun",
+        "mats": [
+          "arm0",
+          "arm1",
+          "arm2",
+          "arm3",
+          "arm4",
+          "arm5",
+          "arm6",
+          "arm7",
+          "chrome"
+        ]
+      }
+    },
+    {
+      "name": "Stage8 regular/center: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "center",
+        "seen": [
+          "center"
+        ],
+        "drift": 0,
+        "minClear": 68,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 regular/center: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead_regular",
+        "direction": "center",
+        "headOffset": -3,
+        "tipOffset": -4,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead_regular"
+      }
+    },
+    {
+      "name": "Stage8 regular/right: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "right",
+        "seen": [
+          "right"
+        ],
+        "drift": 0,
+        "minClear": 29,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 regular/right: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-right_regular",
+        "direction": "right",
+        "headOffset": 149,
+        "tipOffset": 148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-right_regular"
+      }
+    },
+    {
+      "name": "Stage8 regular/left: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "left",
+        "seen": [
+          "left"
+        ],
+        "drift": 0,
+        "minClear": 30,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 regular/left: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-left_regular",
+        "direction": "left",
+        "headOffset": -149,
+        "tipOffset": -148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-left_regular"
+      }
+    },
+    {
+      "name": "Stage8 chrome/center: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "center",
+        "seen": [
+          "center"
+        ],
+        "drift": 0,
+        "minClear": 68,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 chrome/center: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead_chrome",
+        "direction": "center",
+        "headOffset": -3,
+        "tipOffset": -4,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead_chrome"
+      }
+    },
+    {
+      "name": "Stage8 chrome/right: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "right",
+        "seen": [
+          "right"
+        ],
+        "drift": 0,
+        "minClear": 29,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 chrome/right: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-right_chrome",
+        "direction": "right",
+        "headOffset": 149,
+        "tipOffset": 148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-right_chrome"
+      }
+    },
+    {
+      "name": "Stage8 chrome/left: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "left",
+        "seen": [
+          "left"
+        ],
+        "drift": 0,
+        "minClear": 30,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 chrome/left: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-left_chrome",
+        "direction": "left",
+        "headOffset": -149,
+        "tipOffset": -148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-left_chrome"
+      }
+    },
+    {
+      "name": "Stage8: native attacks select center then mirrored right then left",
+      "passed": true,
+      "data": [
+        "center",
+        "right",
+        "left"
+      ]
+    },
+    {
+      "name": "Stage8: keep previous grip through lift before changing strike direction",
+      "passed": true,
+      "data": {
+        "before": "ba119_corrupt-overhead-left_chrome",
+        "after": "ba119_corrupt-overhead-right_chrome"
+      }
+    },
+    {
+      "name": "Exit retires rotor state through native cleanup",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native renderer exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "runtimeHash": "4ea117a08bc57ea1f1e4e5e3d063c2cf207acf601c577377124974114764ed29"
+}

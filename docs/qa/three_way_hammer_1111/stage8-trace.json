@@ -1,0 +1,395 @@
+[
+  {
+    "diff": "normal",
+    "mat": "regular",
+    "drift": 0,
+    "clipped": 0,
+    "unique": 31,
+    "behindFirst": 59,
+    "behindSecond": 0,
+    "events": [
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 1,
+        "root": {
+          "x": 344,
+          "y": 237
+        },
+        "at": {
+          "x": 340,
+          "y": 422
+        }
+      }
+    ]
+  },
+  {
+    "diff": "normal",
+    "mat": "chrome",
+    "drift": 0,
+    "clipped": 0,
+    "unique": 31,
+    "behindFirst": 59,
+    "behindSecond": 0,
+    "events": [
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 1,
+        "root": {
+          "x": 297,
+          "y": 244
+        },
+        "at": {
+          "x": 445,
+          "y": 422
+        }
+      }
+    ]
+  },
+  {
+    "diff": "normal",
+    "mat": "red",
+    "drift": 0,
+    "clipped": 0,
+    "unique": 31,
+    "behindFirst": 59,
+    "behindSecond": 0,
+    "events": [
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 1,
+        "root": {
+          "x": 382,
+          "y": 244
+        },
+        "at": {
+          "x": 234,
+          "y": 422
+        }
+      }
+    ]
+  },
+  {
+    "diff": "hard",
+    "mat": "regular",
+    "drift": 0,
+    "clipped": 0,
+    "unique": 48,
+    "behindFirst": 59,
+    "behindSecond": 20,
+    "events": [
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 1,
+        "root": {
+          "x": 344,
+          "y": 237
+        },
+        "at": {
+          "x": 340,
+          "y": 422
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 2,
+        "root": {
+          "x": 344,
+          "y": 237
+        },
+        "at": {
+          "x": 340,
+          "y": 422
+        }
+      }
+    ]
+  },
+  {
+    "diff": "hard",
+    "mat": "chrome",
+    "drift": 0,
+    "clipped": 0,
+    "unique": 48,
+    "behindFirst": 59,
+    "behindSecond": 20,
+    "events": [
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 1,
+        "root": {
+          "x": 297,
+          "y": 244
+        },
+        "at": {
+          "x": 445,
+          "y": 422
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 2,
+        "root": {
+          "x": 297,
+          "y": 244
+        },
+        "at": {
+          "x": 445,
+          "y": 422
+        }
+      }
+    ]
+  },
+  {
+    "diff": "hard",
+    "mat": "red",
+    "drift": 0,
+    "clipped": 0,
+    "unique": 48,
+    "behindFirst": 59,
+    "behindSecond": 20,
+    "events": [
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 1,
+        "root": {
+          "x": 382,
+          "y": 244
+        },
+        "at": {
+          "x": 234,
+          "y": 422
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 2,
+        "root": {
+          "x": 382,
+          "y": 244
+        },
+        "at": {
+          "x": 234,
+          "y": 422
+        }
+      }
+    ]
+  },
+  {
+    "diff": "furious",
+    "mat": "regular",
+    "drift": 0,
+    "clipped": 0,
+    "unique": 78,
+    "behindFirst": 59,
+    "behindSecond": 20,
+    "events": [
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 1,
+        "root": {
+          "x": 344,
+          "y": 237
+        },
+        "at": {
+          "x": 340,
+          "y": 422
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 2,
+        "root": {
+          "x": 344,
+          "y": 237
+        },
+        "at": {
+          "x": 340,
+          "y": 422
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 3,
+        "root": {
+          "x": 344,
+          "y": 237
+        },
+        "at": {
+          "x": 218,
+          "y": 171
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 4,
+        "root": {
+          "x": 344,
+          "y": 237
+        },
+        "at": {
+          "x": 469,
+          "y": 171
+        }
+      }
+    ]
+  },
+  {
+    "diff": "furious",
+    "mat": "chrome",
+    "drift": 0,
+    "clipped": 0,
+    "unique": 78,
+    "behindFirst": 59,
+    "behindSecond": 20,
+    "events": [
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 1,
+        "root": {
+          "x": 297,
+          "y": 244
+        },
+        "at": {
+          "x": 445,
+          "y": 422
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 2,
+        "root": {
+          "x": 297,
+          "y": 244
+        },
+        "at": {
+          "x": 445,
+          "y": 422
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 3,
+        "root": {
+          "x": 297,
+          "y": 244
+        },
+        "at": {
+          "x": 171,
+          "y": 178
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 4,
+        "root": {
+          "x": 297,
+          "y": 244
+        },
+        "at": {
+          "x": 422,
+          "y": 178
+        }
+      }
+    ]
+  },
+  {
+    "diff": "furious",
+    "mat": "red",
+    "drift": 0,
+    "clipped": 0,
+    "unique": 78,
+    "behindFirst": 59,
+    "behindSecond": 20,
+    "events": [
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 1,
+        "root": {
+          "x": 382,
+          "y": 244
+        },
+        "at": {
+          "x": 234,
+          "y": 422
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 2,
+        "root": {
+          "x": 382,
+          "y": 244
+        },
+        "at": {
+          "x": 234,
+          "y": 422
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 3,
+        "root": {
+          "x": 382,
+          "y": 244
+        },
+        "at": {
+          "x": 256,
+          "y": 178
+        }
+      },
+      {
+        "type": "planted-contact",
+        "clock": 0,
+        "stage": 8,
+        "stroke": 4,
+        "root": {
+          "x": 382,
+          "y": 244
+        },
+        "at": {
+          "x": 507,
+          "y": 178
+        }
+      }
+    ]
+  }
+]

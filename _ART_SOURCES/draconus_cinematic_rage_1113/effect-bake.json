@@ -1,0 +1,32 @@
+{
+  "errors": [],
+  "owners": [
+    "c45Aura",
+    "cgSwirl",
+    "cgBolt",
+    "c46Ball source head",
+    "c41Sheet red wave"
+  ],
+  "runtimeRasterTransformsAdded": false,
+  "banks": {
+    "swirl_back": 32,
+    "swirl_front": 32,
+    "aura_formation": 32,
+    "aura_cast_fore": 16,
+    "aura_cast_back": 16,
+    "bolt_0": 8,
+    "bolt_7": 8,
+    "bolt_14": 8,
+    "bolt_21": 8,
+    "bolt_28": 8,
+    "bolt_35": 8,
+    "bolt_42": 8,
+    "bolt_49": 8,
+    "bolt_56": 8,
+    "bolt_63": 8,
+    "bolt_70": 8,
+    "ball": 16,
+    "wave": 28,
+    "ball_back": 16
+  }
+}

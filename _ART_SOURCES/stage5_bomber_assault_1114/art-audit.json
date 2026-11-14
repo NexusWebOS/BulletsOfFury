@@ -1,0 +1,73 @@
+{
+  "headingCount": 16,
+  "flightDepths": 32,
+  "retinas": [
+    {
+      "frame": 0,
+      "emptyCenter": true
+    },
+    {
+      "frame": 1,
+      "emptyCenter": true
+    },
+    {
+      "frame": 2,
+      "emptyCenter": true
+    },
+    {
+      "frame": 3,
+      "emptyCenter": true
+    },
+    {
+      "frame": 4,
+      "emptyCenter": true
+    },
+    {
+      "frame": 5,
+      "emptyCenter": true
+    },
+    {
+      "frame": 6,
+      "emptyCenter": true
+    },
+    {
+      "frame": 7,
+      "emptyCenter": true
+    },
+    {
+      "frame": 8,
+      "emptyCenter": true
+    },
+    {
+      "frame": 9,
+      "emptyCenter": true
+    },
+    {
+      "frame": 10,
+      "emptyCenter": true
+    },
+    {
+      "frame": 11,
+      "emptyCenter": true
+    },
+    {
+      "frame": 12,
+      "emptyCenter": true
+    },
+    {
+      "frame": 13,
+      "emptyCenter": true
+    },
+    {
+      "frame": 14,
+      "emptyCenter": true
+    },
+    {
+      "frame": 15,
+      "emptyCenter": true
+    }
+  ],
+  "originalHullPreserved": true,
+  "generatedGraphics": "exclusive enemy retina",
+  "runtimeRasterTransforms": false
+}

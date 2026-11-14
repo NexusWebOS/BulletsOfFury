@@ -1,0 +1,1798 @@
+{
+  "passed": true,
+  "cells": [
+    {
+      "bank": "blue-overhead",
+      "frame": 0,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        194,
+        168,
+        472,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 1,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        195,
+        175,
+        465,
+        476
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 2,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        190,
+        167,
+        471,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 3,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        190,
+        154,
+        460,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 4,
+      "wholeGenerated": true,
+      "source": "blue-wind",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        199,
+        163,
+        455,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 5,
+      "wholeGenerated": true,
+      "source": "blue-wind",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        199,
+        176,
+        458,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 6,
+      "wholeGenerated": true,
+      "source": "blue-wind",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        199,
+        174,
+        460,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 7,
+      "wholeGenerated": true,
+      "source": "blue-wind",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        197,
+        148,
+        468,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 8,
+      "wholeGenerated": true,
+      "source": "blue-wind",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        197,
+        148,
+        468,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 9,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        190,
+        154,
+        460,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 10,
+      "wholeGenerated": true,
+      "source": "impact_blue",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        177,
+        171,
+        498,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 11,
+      "wholeGenerated": true,
+      "source": "impact_blue",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        168,
+        191,
+        481,
+        475
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 12,
+      "wholeGenerated": true,
+      "source": "impact_blue",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        166,
+        227,
+        480,
+        476
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 13,
+      "wholeGenerated": true,
+      "source": "impact_blue",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        186,
+        185,
+        498,
+        476
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 14,
+      "wholeGenerated": true,
+      "source": "blue-drive-reset",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        188,
+        200,
+        477,
+        476
+      ]
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 15,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        194,
+        168,
+        472,
+        475
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 0,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        194,
+        168,
+        472,
+        475
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 1,
+      "wholeGenerated": true,
+      "source": "blue-sidewind",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        195,
+        187,
+        452,
+        475
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 2,
+      "wholeGenerated": true,
+      "source": "blue-sidewind",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        183,
+        176,
+        483,
+        476
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 3,
+      "wholeGenerated": true,
+      "source": "blue-sidewind",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        178,
+        148,
+        483,
+        475
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 4,
+      "wholeGenerated": true,
+      "source": "blue-sidecontact2",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        195,
+        169,
+        472,
+        475
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 5,
+      "wholeGenerated": true,
+      "source": "blue-sidecontact2",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        176,
+        179,
+        458,
+        475
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 6,
+      "wholeGenerated": true,
+      "source": "blue-sidecontact2",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        164,
+        152,
+        465,
+        475
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 7,
+      "wholeGenerated": true,
+      "source": "blue-sidecontact2",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        132,
+        155,
+        467,
+        475
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 8,
+      "wholeGenerated": true,
+      "source": "blue-sidecontact2",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        132,
+        155,
+        467,
+        475
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 9,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        130,
+        187,
+        451,
+        474
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 10,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        172,
+        189,
+        453,
+        474
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 11,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        172,
+        189,
+        453,
+        474
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 12,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        172,
+        189,
+        453,
+        474
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 13,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        172,
+        189,
+        453,
+        474
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 14,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        172,
+        189,
+        453,
+        474
+      ]
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 15,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        172,
+        189,
+        453,
+        474
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 0,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 0,
+      "mirror": true,
+      "bounds": [
+        168,
+        168,
+        446,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 1,
+      "wholeGenerated": true,
+      "source": "blue-sidewind",
+      "cell": 1,
+      "mirror": true,
+      "bounds": [
+        188,
+        187,
+        445,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 2,
+      "wholeGenerated": true,
+      "source": "blue-sidewind",
+      "cell": 2,
+      "mirror": true,
+      "bounds": [
+        157,
+        176,
+        457,
+        476
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 3,
+      "wholeGenerated": true,
+      "source": "blue-sidewind",
+      "cell": 3,
+      "mirror": true,
+      "bounds": [
+        157,
+        148,
+        462,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 4,
+      "wholeGenerated": true,
+      "source": "blue-sidecontact2",
+      "cell": 0,
+      "mirror": true,
+      "bounds": [
+        168,
+        169,
+        445,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 5,
+      "wholeGenerated": true,
+      "source": "blue-sidecontact2",
+      "cell": 1,
+      "mirror": true,
+      "bounds": [
+        182,
+        179,
+        464,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 6,
+      "wholeGenerated": true,
+      "source": "blue-sidecontact2",
+      "cell": 2,
+      "mirror": true,
+      "bounds": [
+        175,
+        152,
+        476,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 7,
+      "wholeGenerated": true,
+      "source": "blue-sidecontact2",
+      "cell": 3,
+      "mirror": true,
+      "bounds": [
+        173,
+        155,
+        508,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 8,
+      "wholeGenerated": true,
+      "source": "blue-sidecontact2",
+      "cell": 3,
+      "mirror": true,
+      "bounds": [
+        173,
+        155,
+        508,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 9,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 0,
+      "mirror": true,
+      "bounds": [
+        189,
+        187,
+        510,
+        474
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 10,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 1,
+      "mirror": true,
+      "bounds": [
+        187,
+        189,
+        468,
+        474
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 11,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        187,
+        171,
+        478,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 12,
+      "wholeGenerated": true,
+      "source": "blue-siderecover",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        188,
+        171,
+        463,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 13,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        194,
+        168,
+        472,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 14,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        194,
+        168,
+        472,
+        475
+      ]
+    },
+    {
+      "bank": "blue-right",
+      "frame": 15,
+      "wholeGenerated": true,
+      "source": "blue-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        194,
+        168,
+        472,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 0,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        167,
+        143,
+        498,
+        474
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 1,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        183,
+        148,
+        508,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 2,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        181,
+        137,
+        499,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 3,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        181,
+        107,
+        516,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 4,
+      "wholeGenerated": true,
+      "source": "drac-wind",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        196,
+        134,
+        474,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 5,
+      "wholeGenerated": true,
+      "source": "drac-wind",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        196,
+        124,
+        482,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 6,
+      "wholeGenerated": true,
+      "source": "drac-wind",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        196,
+        101,
+        475,
+        474
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 7,
+      "wholeGenerated": true,
+      "source": "drac-wind",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        196,
+        90,
+        482,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 8,
+      "wholeGenerated": true,
+      "source": "drac-wind",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        196,
+        90,
+        482,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 9,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        181,
+        107,
+        516,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 10,
+      "wholeGenerated": true,
+      "source": "impact_drac",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        163,
+        159,
+        496,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 11,
+      "wholeGenerated": true,
+      "source": "impact_drac",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        154,
+        174,
+        490,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 12,
+      "wholeGenerated": true,
+      "source": "impact_drac",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        155,
+        211,
+        488,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 13,
+      "wholeGenerated": true,
+      "source": "impact_drac",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        182,
+        156,
+        520,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 14,
+      "wholeGenerated": true,
+      "source": "drac-drive-reset",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        162,
+        179,
+        496,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 15,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        167,
+        143,
+        498,
+        474
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 0,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        167,
+        143,
+        498,
+        474
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 1,
+      "wholeGenerated": true,
+      "source": "drac-sidewind",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        178,
+        160,
+        485,
+        476
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 2,
+      "wholeGenerated": true,
+      "source": "drac-sidewind",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        179,
+        145,
+        497,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 3,
+      "wholeGenerated": true,
+      "source": "drac-sidewind",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        176,
+        127,
+        521,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 4,
+      "wholeGenerated": true,
+      "source": "drac-sidecontact",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        179,
+        113,
+        499,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 5,
+      "wholeGenerated": true,
+      "source": "drac-sidecontact",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        154,
+        154,
+        466,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 6,
+      "wholeGenerated": true,
+      "source": "drac-sidecontact",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        127,
+        142,
+        472,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 7,
+      "wholeGenerated": true,
+      "source": "drac-sidecontact",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        117,
+        142,
+        475,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 8,
+      "wholeGenerated": true,
+      "source": "drac-sidecontact",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        117,
+        142,
+        475,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 9,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        164,
+        156,
+        457,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 10,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        150,
+        162,
+        463,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 11,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        150,
+        162,
+        463,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 12,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        150,
+        162,
+        463,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 13,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        150,
+        162,
+        463,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 14,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        150,
+        162,
+        463,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 15,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        150,
+        162,
+        463,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 0,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 0,
+      "mirror": true,
+      "bounds": [
+        142,
+        143,
+        473,
+        474
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 1,
+      "wholeGenerated": true,
+      "source": "drac-sidewind",
+      "cell": 1,
+      "mirror": true,
+      "bounds": [
+        155,
+        160,
+        462,
+        476
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 2,
+      "wholeGenerated": true,
+      "source": "drac-sidewind",
+      "cell": 2,
+      "mirror": true,
+      "bounds": [
+        143,
+        145,
+        461,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 3,
+      "wholeGenerated": true,
+      "source": "drac-sidewind",
+      "cell": 3,
+      "mirror": true,
+      "bounds": [
+        119,
+        127,
+        464,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 4,
+      "wholeGenerated": true,
+      "source": "drac-sidecontact",
+      "cell": 0,
+      "mirror": true,
+      "bounds": [
+        141,
+        113,
+        461,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 5,
+      "wholeGenerated": true,
+      "source": "drac-sidecontact",
+      "cell": 1,
+      "mirror": true,
+      "bounds": [
+        174,
+        154,
+        486,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 6,
+      "wholeGenerated": true,
+      "source": "drac-sidecontact",
+      "cell": 2,
+      "mirror": true,
+      "bounds": [
+        168,
+        142,
+        513,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 7,
+      "wholeGenerated": true,
+      "source": "drac-sidecontact",
+      "cell": 3,
+      "mirror": true,
+      "bounds": [
+        165,
+        142,
+        523,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 8,
+      "wholeGenerated": true,
+      "source": "drac-sidecontact",
+      "cell": 3,
+      "mirror": true,
+      "bounds": [
+        165,
+        142,
+        523,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 9,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 0,
+      "mirror": true,
+      "bounds": [
+        183,
+        156,
+        476,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 10,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 1,
+      "mirror": true,
+      "bounds": [
+        177,
+        162,
+        490,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 11,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        178,
+        145,
+        491,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 12,
+      "wholeGenerated": true,
+      "source": "drac-siderecover",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        179,
+        145,
+        497,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 13,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        167,
+        143,
+        498,
+        474
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 14,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        167,
+        143,
+        498,
+        474
+      ]
+    },
+    {
+      "bank": "corrupt-right",
+      "frame": 15,
+      "wholeGenerated": true,
+      "source": "drac-ready",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        167,
+        143,
+        498,
+        474
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 0,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        198,
+        121,
+        444,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 1,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        198,
+        121,
+        444,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 2,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        198,
+        121,
+        444,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 3,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        198,
+        121,
+        444,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 4,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        195,
+        168,
+        451,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 5,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        195,
+        168,
+        451,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 6,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        195,
+        168,
+        451,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 7,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        195,
+        168,
+        451,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 8,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        191,
+        152,
+        451,
+        476
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 9,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        191,
+        152,
+        451,
+        476
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 10,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        191,
+        152,
+        451,
+        476
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 11,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        191,
+        152,
+        451,
+        476
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 12,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        189,
+        152,
+        459,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 13,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        189,
+        152,
+        459,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 14,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        189,
+        152,
+        459,
+        475
+      ]
+    },
+    {
+      "bank": "blue-empty",
+      "frame": 15,
+      "wholeGenerated": true,
+      "source": "blue-empty",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        189,
+        152,
+        459,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 0,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        186,
+        97,
+        457,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 1,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        186,
+        97,
+        457,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 2,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        186,
+        97,
+        457,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 3,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 0,
+      "mirror": false,
+      "bounds": [
+        186,
+        97,
+        457,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 4,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        180,
+        144,
+        465,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 5,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        180,
+        144,
+        465,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 6,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        180,
+        144,
+        465,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 7,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 1,
+      "mirror": false,
+      "bounds": [
+        180,
+        144,
+        465,
+        475
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 8,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        176,
+        138,
+        468,
+        476
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 9,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        176,
+        138,
+        468,
+        476
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 10,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        176,
+        138,
+        468,
+        476
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 11,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 2,
+      "mirror": false,
+      "bounds": [
+        176,
+        138,
+        468,
+        476
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 12,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        182,
+        138,
+        487,
+        476
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 13,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        182,
+        138,
+        487,
+        476
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 14,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        182,
+        138,
+        487,
+        476
+      ]
+    },
+    {
+      "bank": "corrupt-empty",
+      "frame": 15,
+      "wholeGenerated": true,
+      "source": "drac-empty",
+      "cell": 3,
+      "mirror": false,
+      "bounds": [
+        182,
+        138,
+        487,
+        476
+      ]
+    }
+  ],
+  "method": "Complete GPT figure/held-weapon drawings only; whole-frame registration, offline whole-frame palettes/flips. No separate body/head/hammer assembly."
+}

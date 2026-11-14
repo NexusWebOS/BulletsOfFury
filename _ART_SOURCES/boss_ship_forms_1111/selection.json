@@ -1,0 +1,28 @@
+{
+  "transforms": {
+    "timeline": [
+      "ship master",
+      "a:1–5",
+      "b:2–7",
+      "c:3–7",
+      "d:2–7",
+      "exact approved ready"
+    ],
+    "reason": "Exclude repeated unfolding starts that refold extended limbs."
+  },
+  "gun": {
+    "spin": "original complete eight-frame sheet",
+    "fire": "0–5,7; frame6 malformed bore arrangement excluded",
+    "catch_pre": "1,1,2–7; cropped-hand source0 excluded",
+    "catch_take": "0–7",
+    "stow": "0–7",
+    "break": "0–4,6–7; incomplete weapon exit5 excluded",
+    "prop": "five outer bores around filled axle from corrected isolated prop"
+  },
+  "rejected": [
+    "draconus-gun-rotor-fixed: clipped horn tips and inconsistent bore count",
+    "draconus-gun-spin-final: did not improve mechanical phase consistency",
+    "original isolated prop: sixth central bore corrected"
+  ],
+  "palette": "Regular/Chromium/red/hit palettes preserve original alpha; gun activation adds eight offline material steps."
+}

@@ -1,0 +1,474 @@
+{
+  "expected_source_hash": "26073fac3f2a56abef4a6130982a3dc2a09602baaa27e72f2566624e72a38277",
+  "banks": {
+    "body": {
+      "cell": [
+        296,
+        296
+      ],
+      "pivot": [
+        148,
+        148
+      ],
+      "levels": 6,
+      "white_states": 2,
+      "source_alpha_unchanged": true
+    },
+    "aura": {
+      "cell": [
+        320,
+        320
+      ],
+      "count": 16,
+      "areas": [
+        667,
+        1272,
+        2221,
+        3804,
+        4418,
+        6012,
+        7566,
+        8879,
+        8502,
+        8284,
+        8858,
+        9017,
+        7886,
+        7932,
+        8108,
+        8413
+      ],
+      "palette": [
+        "#2e41f7",
+        "#e5f8fc",
+        "#77c1fb",
+        "#1315cd",
+        "#6383f4",
+        "#a2e8fb",
+        "#f8fdfd",
+        "#82aaf6",
+        "#c4f6fc",
+        "#191ff1",
+        "#7296f3",
+        "#5270f3",
+        "#c1d3f5",
+        "#455bf2",
+        "#b0bdef",
+        "#d5e6f8",
+        "#8ad4fb",
+        "#3c3dd2",
+        "#00009e",
+        "#6767c3",
+        "#acacc6",
+        "#8888c4"
+      ]
+    },
+    "shatter": {
+      "pieces": 18,
+      "rotations": 16,
+      "cell": [
+        160,
+        160
+      ],
+      "source_pieces": "unchanged original HF17 source-pixel cuts; no invented replacement armor"
+    }
+  },
+  "fragments": [
+    {
+      "key": "hf17_fragments_00",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_00.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "71b940434317a5c02ede58ed4a8a5b7c495788779c6a8e4f5783dc273f183554",
+      "origin": [
+        128,
+        88
+      ],
+      "sourcePixelCut": [
+        99,
+        49,
+        157,
+        128
+      ]
+    },
+    {
+      "key": "hf17_fragments_01",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_01.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "71f2735c8033650b4bb1d6261a1bf0a16763d702c2a2b473c7a9af3f1a6fa730",
+      "origin": [
+        78,
+        100
+      ],
+      "sourcePixelCut": [
+        41,
+        58,
+        115,
+        142
+      ]
+    },
+    {
+      "key": "hf17_fragments_02",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_02.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "edfcf9a50004a0cba8f02b82b20e7a32c40dc2d46081216ca1acd2f54acf0782",
+      "origin": [
+        166,
+        97
+      ],
+      "sourcePixelCut": [
+        137,
+        54,
+        194,
+        140
+      ]
+    },
+    {
+      "key": "hf17_fragments_03",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_03.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "5016d2028913ce23b1227420e83f78d7e73728e31679d4e2cd2777845f14fbe1",
+      "origin": [
+        87,
+        147
+      ],
+      "sourcePixelCut": [
+        74,
+        129,
+        100,
+        165
+      ]
+    },
+    {
+      "key": "hf17_fragments_04",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_04.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "364477eb5a591e92085c0851882b52173acb3b90376baa26c5dab9da3a97bdea",
+      "origin": [
+        60,
+        180
+      ],
+      "sourcePixelCut": [
+        27,
+        164,
+        93,
+        195
+      ]
+    },
+    {
+      "key": "hf17_fragments_05",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_05.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "8dad3c7ae2a18388a980dccf2b35e0af387349a0d01c3a32a23d6acb946ec946",
+      "origin": [
+        75,
+        208
+      ],
+      "sourcePixelCut": [
+        60,
+        194,
+        90,
+        221
+      ]
+    },
+    {
+      "key": "hf17_fragments_06",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_06.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "634e7d350bf5670364f864fccba4f60c77f7b63c1a01dc527f8e6800c218031c",
+      "origin": [
+        122,
+        144
+      ],
+      "sourcePixelCut": [
+        100,
+        126,
+        144,
+        162
+      ]
+    },
+    {
+      "key": "hf17_fragments_07",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_07.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "fe83605d61bd9d0560e3304d96c0d97e724fdfc16c9f5b1859160e6472909ad7",
+      "origin": [
+        139,
+        156
+      ],
+      "sourcePixelCut": [
+        122,
+        136,
+        156,
+        175
+      ]
+    },
+    {
+      "key": "hf17_fragments_08",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_08.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "e1ae3d42ef334b76458f3d272ffed702e73704ee9c3f4bdb47c0df3cdabab382",
+      "origin": [
+        107,
+        162
+      ],
+      "sourcePixelCut": [
+        90,
+        146,
+        124,
+        179
+      ]
+    },
+    {
+      "key": "hf17_fragments_09",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_09.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "57c5f24110c8e344d1027e2a60c7cab9fe04f5e07c2385de6f280d1da6fe1620",
+      "origin": [
+        96,
+        189
+      ],
+      "sourcePixelCut": [
+        82,
+        174,
+        111,
+        204
+      ]
+    },
+    {
+      "key": "hf17_fragments_10",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_10.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "5543864c82d54fb70b08815c80adfb67d7bfb768e75a72aab98d360bfe9aa26a",
+      "origin": [
+        124,
+        187
+      ],
+      "sourcePixelCut": [
+        109,
+        169,
+        138,
+        205
+      ]
+    },
+    {
+      "key": "hf17_fragments_11",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_11.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "33c2c5f869bb650d949d97899a5f964502b70adf5c6393ce7c5fd6eb555c6d00",
+      "origin": [
+        107,
+        208
+      ],
+      "sourcePixelCut": [
+        89,
+        197,
+        125,
+        219
+      ]
+    },
+    {
+      "key": "hf17_fragments_12",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_12.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "60605ca2e4fa2edc080f23977adcdd8c7114d38d241fac829170d59e7b0e8893",
+      "origin": [
+        150,
+        174
+      ],
+      "sourcePixelCut": [
+        134,
+        160,
+        166,
+        187
+      ]
+    },
+    {
+      "key": "hf17_fragments_13",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_13.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "438757f93e4b7ba1518e9d030896a22d8c88f978d4622db3a647b94338a83b9e",
+      "origin": [
+        153,
+        198
+      ],
+      "sourcePixelCut": [
+        134,
+        183,
+        172,
+        212
+      ]
+    },
+    {
+      "key": "hf17_fragments_14",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_14.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "a1f1c3ebf93802542fc084a256ab91a65f6befde4becfe843687c46313748a04",
+      "origin": [
+        160,
+        210
+      ],
+      "sourcePixelCut": [
+        139,
+        201,
+        180,
+        219
+      ]
+    },
+    {
+      "key": "hf17_fragments_15",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_15.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "b14f7381f85c0670bb1c35b4f583231dd758ff1f991068862b2d1fd00b248b68",
+      "origin": [
+        188,
+        143
+      ],
+      "sourcePixelCut": [
+        152,
+        118,
+        225,
+        168
+      ]
+    },
+    {
+      "key": "hf17_fragments_16",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_16.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "b8adbbd6c7b6b72244068209fc1a26a22f7dedd55fa506c8f5af385f5f643314",
+      "origin": [
+        199,
+        168
+      ],
+      "sourcePixelCut": [
+        166,
+        147,
+        232,
+        190
+      ]
+    },
+    {
+      "key": "hf17_fragments_17",
+      "path": "assets/game/levels/stage_05/boss/hammer_finale_1017/hf17_fragments_17.png",
+      "w": 96,
+      "h": 96,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "839b4ace38b70b684237daf4b2400eee123816bb3413447877f3d2621eed6122",
+      "origin": [
+        200,
+        194
+      ],
+      "sourcePixelCut": [
+        171,
+        180,
+        229,
+        208
+      ]
+    }
+  ],
+  "source_rules": "1015: source emissive clusters and three hard pixel spill steps; source-over baked frames",
+  "effects": [
+    {
+      "family": "boss-heavy",
+      "frames": 14,
+      "cell": 176
+    },
+    {
+      "family": "dracodia-surge",
+      "frames": 14,
+      "cell": 176
+    },
+    {
+      "family": "stage5-core",
+      "frames": 14,
+      "cell": 176
+    }
+  ]
+}

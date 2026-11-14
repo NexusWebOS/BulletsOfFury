@@ -1,0 +1,1437 @@
+[
+  {
+    "pilot": "cole",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole\\raw-0.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole\\raw-1.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole\\raw-2.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole\\raw-3.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole\\raw-4.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole\\raw-5.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole\\raw-6.png"
+    ],
+    "offset": [
+      64,
+      0
+    ],
+    "mouth": [
+      160,
+      125,
+      28,
+      17
+    ],
+    "minY": 115,
+    "maxY": 142,
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole.aseprite",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\cole-front-talking.gif",
+    "line": "Everybody gets home. That's the deal.",
+    "plan": [
+      {
+        "pose": 0,
+        "ms": 250
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 5,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 650
+      }
+    ]
+  },
+  {
+    "pilot": "axel",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel\\raw-0.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel\\raw-1.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel\\raw-2.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel\\raw-3.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel\\raw-4.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel\\raw-5.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel\\raw-6.png"
+    ],
+    "offset": [
+      64,
+      0
+    ],
+    "mouth": [
+      160,
+      116,
+      28,
+      17
+    ],
+    "minY": 106,
+    "maxY": 133,
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel.aseprite",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\axel-front-talking.gif",
+    "line": "I'll take point.",
+    "plan": [
+      {
+        "pose": 0,
+        "ms": 250
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 650
+      }
+    ]
+  },
+  {
+    "pilot": "freezer",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer\\raw-0.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer\\raw-1.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer\\raw-2.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer\\raw-3.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer\\raw-4.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer\\raw-5.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer\\raw-6.png"
+    ],
+    "offset": [
+      64,
+      0
+    ],
+    "mouth": [
+      160,
+      121,
+      28,
+      17
+    ],
+    "minY": 111,
+    "maxY": 138,
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer.aseprite",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\freezer-front-talking.gif",
+    "line": "Then I'll watch your tail.",
+    "plan": [
+      {
+        "pose": 0,
+        "ms": 250
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 4,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 650
+      }
+    ]
+  },
+  {
+    "pilot": "yuri",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri\\raw-0.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri\\raw-1.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri\\raw-2.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri\\raw-3.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri\\raw-4.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri\\raw-5.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri\\raw-6.png"
+    ],
+    "offset": [
+      64,
+      0
+    ],
+    "mouth": [
+      160,
+      124,
+      28,
+      17
+    ],
+    "minY": 114,
+    "maxY": 141,
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri.aseprite",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\yuri-front-talking.gif",
+    "line": "I should call my parents.",
+    "plan": [
+      {
+        "pose": 0,
+        "ms": 250
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 4,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 650
+      }
+    ]
+  },
+  {
+    "pilot": "maverick",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick\\raw-0.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick\\raw-1.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick\\raw-2.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick\\raw-3.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick\\raw-4.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick\\raw-5.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick\\raw-6.png"
+    ],
+    "offset": [
+      64,
+      0
+    ],
+    "mouth": [
+      160,
+      123,
+      28,
+      17
+    ],
+    "minY": 113,
+    "maxY": 140,
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick.aseprite",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\maverick-front-talking.gif",
+    "line": "Try to leave something for the rest of us.",
+    "plan": [
+      {
+        "pose": 0,
+        "ms": 250
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 5,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 5,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 5,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 4,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 650
+      }
+    ]
+  },
+  {
+    "pilot": "falva",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva\\raw-0.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva\\raw-1.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva\\raw-2.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva\\raw-3.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva\\raw-4.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva\\raw-5.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva\\raw-6.png"
+    ],
+    "offset": [
+      64,
+      0
+    ],
+    "mouth": [
+      160,
+      126,
+      24,
+      17
+    ],
+    "minY": 116,
+    "maxY": 143,
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva.aseprite",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\falva-front-talking.gif",
+    "line": "We got Granddad's bomber flying.",
+    "plan": [
+      {
+        "pose": 0,
+        "ms": 250
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 5,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 650
+      }
+    ]
+  },
+  {
+    "pilot": "lizzie",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie\\raw-0.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie\\raw-1.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie\\raw-2.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie\\raw-3.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie\\raw-4.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie\\raw-5.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie\\raw-6.png"
+    ],
+    "offset": [
+      64,
+      0
+    ],
+    "mouth": [
+      160,
+      126,
+      24,
+      17
+    ],
+    "minY": 116,
+    "maxY": 143,
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie.aseprite",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\lizzie-front-talking.gif",
+    "line": "Granddad's bomber had air outside it.",
+    "plan": [
+      {
+        "pose": 0,
+        "ms": 250
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 4,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 650
+      }
+    ]
+  },
+  {
+    "pilot": "decker",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker\\raw-0.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker\\raw-1.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker\\raw-2.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker\\raw-3.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker\\raw-4.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker\\raw-5.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker\\raw-6.png"
+    ],
+    "offset": [
+      64,
+      0
+    ],
+    "mouth": [
+      160,
+      124,
+      28,
+      17
+    ],
+    "minY": 114,
+    "maxY": 141,
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker.aseprite",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\decker-front-talking.gif",
+    "line": "Ours. You wound half the coils.",
+    "plan": [
+      {
+        "pose": 0,
+        "ms": 250
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 4,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 4,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 4,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 5,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 6,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 650
+      }
+    ]
+  },
+  {
+    "pilot": "juggernaut",
+    "native": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut\\native.png",
+    "poses": [
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut\\raw-0.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut\\raw-1.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut\\raw-2.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut\\raw-3.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut\\raw-4.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut\\raw-5.png",
+      "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut\\raw-6.png"
+    ],
+    "offset": [
+      64,
+      0
+    ],
+    "mouth": [
+      160,
+      111,
+      28,
+      17
+    ],
+    "minY": 101,
+    "maxY": 128,
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut",
+    "aseprite": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut.aseprite",
+    "gif": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\portraits\\juggernaut-front-talking.gif",
+    "line": "I've got a song for this.",
+    "plan": [
+      {
+        "pose": 0,
+        "ms": 250
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 5,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 5,
+        "ms": 80
+      },
+      {
+        "pose": 3,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 100
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 2,
+        "ms": 80
+      },
+      {
+        "pose": 1,
+        "ms": 80
+      },
+      {
+        "pose": 0,
+        "ms": 150
+      },
+      {
+        "pose": 0,
+        "ms": 650
+      }
+    ]
+  }
+]

@@ -1,0 +1,397 @@
+{
+  "version": 1,
+  "banks": {
+    "warp-drive": {
+      "key": "wp1110_warp-drive",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-drive.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        500,
+        650,
+        750,
+        700,
+        800,
+        1600
+      ],
+      "sha256": "33490c091decd9bd43bf97b31fd6d1769c37ec822a12eabcaf378db79c0e0cb7"
+    },
+    "warp-arrival": {
+      "key": "wp1110_warp-arrival",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-arrival.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        180,
+        200,
+        250,
+        300,
+        350,
+        1600
+      ],
+      "sha256": "d72aaa96d32d792c810ef54a32cc29d2d963cedb48efd93e68e949d32df4e5b2"
+    },
+    "space-cole-warp": {
+      "key": "wp1110_space-cole-warp",
+      "path": "assets/game/shared/cinematics/warp_1110/space-cole-warp.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        700,
+        900,
+        950,
+        1050,
+        900
+      ],
+      "sha256": "40e9688c09c34acb00f8e8844af86058a7f0d041333eef908436d9d80bf3293a"
+    },
+    "space-axel-warp": {
+      "key": "wp1110_space-axel-warp",
+      "path": "assets/game/shared/cinematics/warp_1110/space-axel-warp.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        700,
+        900,
+        950,
+        1050,
+        900
+      ],
+      "sha256": "af75a937f9ec67a2c00e881c1d3eb1f7ad68a85f1d2ba4399fa745b9b8954b8a"
+    },
+    "space-freezer-warp": {
+      "key": "wp1110_space-freezer-warp",
+      "path": "assets/game/shared/cinematics/warp_1110/space-freezer-warp.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        700,
+        900,
+        950,
+        1050,
+        900
+      ],
+      "sha256": "f70caa78132e99c48fdfc56692c4020e193b4af2ca5618c59676b951e5c3a06a"
+    },
+    "space-yuri-warp": {
+      "key": "wp1110_space-yuri-warp",
+      "path": "assets/game/shared/cinematics/warp_1110/space-yuri-warp.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        700,
+        900,
+        950,
+        1050,
+        900
+      ],
+      "sha256": "4acd18faec77541fb1ac7f9a4f30cce053450524927087566ccdd9e336f7149e"
+    },
+    "space-maverick-warp": {
+      "key": "wp1110_space-maverick-warp",
+      "path": "assets/game/shared/cinematics/warp_1110/space-maverick-warp.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        700,
+        900,
+        950,
+        1050,
+        900
+      ],
+      "sha256": "8d392f86eb968d75db64b6bec299f3719498d7a8fd1718ef0192dfd51b56f30a"
+    },
+    "space-falva-warp": {
+      "key": "wp1110_space-falva-warp",
+      "path": "assets/game/shared/cinematics/warp_1110/space-falva-warp.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        700,
+        900,
+        950,
+        1050,
+        900
+      ],
+      "sha256": "fe0a710bb50e03773405e4a48fc3e3e48a6ee5c7f24a43a2965c2e7f8b906a0e"
+    },
+    "space-lizzie-warp": {
+      "key": "wp1110_space-lizzie-warp",
+      "path": "assets/game/shared/cinematics/warp_1110/space-lizzie-warp.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        700,
+        900,
+        950,
+        1050,
+        900
+      ],
+      "sha256": "b91ce53c3cc52964239146b866502962b305db5c9deac549c56172c546738949"
+    },
+    "space-decker-warp": {
+      "key": "wp1110_space-decker-warp",
+      "path": "assets/game/shared/cinematics/warp_1110/space-decker-warp.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        700,
+        900,
+        950,
+        1050,
+        900
+      ],
+      "sha256": "01b316a90f708b25e36a1f8f225e859816094e2a6d0d5340e0ed5a5f928dd6d5"
+    },
+    "space-juggernaut-warp": {
+      "key": "wp1110_space-juggernaut-warp",
+      "path": "assets/game/shared/cinematics/warp_1110/space-juggernaut-warp.webp",
+      "w": 512,
+      "h": 512,
+      "cols": 3,
+      "frames": 6,
+      "pivot": [
+        256,
+        256
+      ],
+      "durations": [
+        600,
+        700,
+        900,
+        950,
+        1050,
+        900
+      ],
+      "sha256": "35df558b7222e55a1ceeeca33b3d9f313ca6db4e1675529170b1912e90f140a5"
+    },
+    "warp-native-cole": {
+      "key": "wp1110_warp-native-cole",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-native-cole.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "durations": [
+        1000
+      ],
+      "sha256": "9dcee1acd153aea8d52f120bdd1aa83e283a28f464cdf61bcc92d340b6b3d210"
+    },
+    "warp-native-axel": {
+      "key": "wp1110_warp-native-axel",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-native-axel.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "durations": [
+        1000
+      ],
+      "sha256": "ddafca594a3b7e6d1d6ce2db672cab478809d770c49b6c767829b7d53e85abb3"
+    },
+    "warp-native-freezer": {
+      "key": "wp1110_warp-native-freezer",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-native-freezer.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "durations": [
+        1000
+      ],
+      "sha256": "44f60060182d67e0d7c6f05a6ba092833066327a5ddaef070fd880c34b33d764"
+    },
+    "warp-native-yuri": {
+      "key": "wp1110_warp-native-yuri",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-native-yuri.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "durations": [
+        1000
+      ],
+      "sha256": "1d460d7f65cc0ce549356f9a89ecd250c8101603d95be36294a274de20be6140"
+    },
+    "warp-native-maverick": {
+      "key": "wp1110_warp-native-maverick",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-native-maverick.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "durations": [
+        1000
+      ],
+      "sha256": "a4c66b5be18ae155dbbf88dd09ef11232b1b6701b9533bc181b5bc41f9d8feca"
+    },
+    "warp-native-falva": {
+      "key": "wp1110_warp-native-falva",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-native-falva.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "durations": [
+        1000
+      ],
+      "sha256": "ac38220bb54b37ba8330698d4eb3784edf0e497c5018c3d06f0656e15d342da2"
+    },
+    "warp-native-lizzie": {
+      "key": "wp1110_warp-native-lizzie",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-native-lizzie.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "durations": [
+        1000
+      ],
+      "sha256": "9ccea487adf99471be0cb7debdb27db4c53b2dd0e06db56647ae635751d30136"
+    },
+    "warp-native-decker": {
+      "key": "wp1110_warp-native-decker",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-native-decker.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "durations": [
+        1000
+      ],
+      "sha256": "8b9fa32329d94575147bcc2c529aebd3278f7e1fcfe5d840d92febf5fe5f4c87"
+    },
+    "warp-native-juggernaut": {
+      "key": "wp1110_warp-native-juggernaut",
+      "path": "assets/game/shared/cinematics/warp_1110/warp-native-juggernaut.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "durations": [
+        1000
+      ],
+      "sha256": "8289e846d137d2c1f57ab55d5f652f9b7f939dfd07423aafaed39c403d8acb10"
+    }
+  },
+  "pilots": [
+    "cole",
+    "axel",
+    "freezer",
+    "yuri",
+    "maverick",
+    "falva",
+    "lizzie",
+    "decker",
+    "juggernaut"
+  ],
+  "newGeneratedFrames": 66,
+  "nativeExportFrames": 9,
+  "logicalCanvas": [
+    912,
+    512
+  ]
+}

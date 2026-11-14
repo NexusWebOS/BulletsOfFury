@@ -1,0 +1,28 @@
+{
+  "banks": [
+    {
+      "bank": "blue-overhead",
+      "pixelExactFrames": 32,
+      "uniqueDrawings": 32,
+      "matchingMaterialMasks": true,
+      "evenCells": [
+        512,
+        512
+      ]
+    },
+    {
+      "bank": "corrupt-overhead",
+      "pixelExactFrames": 32,
+      "uniqueDrawings": 32,
+      "matchingMaterialMasks": true,
+      "evenCells": [
+        512,
+        512
+      ]
+    }
+  ],
+  "newWholeDrawings": 48,
+  "retainedReady": 16,
+  "retainedSideAndWhirlMetadata": true,
+  "visualReview": "All selected complete poses inspected against the original rigid T hammer and user GIF studies. The prior curved parallel-shaft socket is replaced; held art is whole-drawn. Near cap spikes repaired on copied form. This visual review is distinct from runtime checks."
+}

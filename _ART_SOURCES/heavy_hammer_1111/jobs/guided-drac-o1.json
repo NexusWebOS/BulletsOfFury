@@ -1,0 +1,17 @@
+{
+  "name": "guided-drac-o1",
+  "prompt": "Continue Dracodia's motion from reference2 with EIGHT NEW full-body frames8–15. Reference1 is the USER'S exact hammer motion guide for these8 frames: copy its hand spacing, regrip, torso/hip/shoulder positions and gradual lift, in the same4-column2-row order. Reference2 is the immediately preceding Dracodia sheet: match its exact original face/horns/armor/palette, proportions, native body unit and rendering. Reference3 fixes the original purple T-hammer with SIDE-CENTER socket, straight wrapped shaft,3 spikes each endcap and spear butt. Guide appearance/background must NOT be copied.\n\nMove exactly through the guide: waist-level two-handed shaft lift -> chest-level forward lift -> rotate hilt upward -> bring the gripped handle over and behind the crown, ending in a powerful loaded overhead pose. Both fists visibly wrap around the actual shaft, with natural sliding/regripping as in the reference. The shaft remains ONE perfectly straight rigid rod THROUGH the grips, never a bend, missing segment or handle into an endcap. Hands never grip the helmet. Feet use the guide's braced stance/heel pivot; hips and shoulders actually coil. Dracodia's head stays recognizable and face oriented toward viewer.\n\nWIDE2:1 landscape sheet,4 columns by2 rows, eight even512x512 intended cells, target2048x1024. REAL RGBA TRANSPARENCY ONLY: no white paper/grid/checkerboard/floor/shadows/labels/text. Same scale in all eight, with generous empty padding. Draw the figure SMALL ENOUGH that the ENTIRE raised hammer/spikes, spear butt, horns and boots have at least40px clearance inside EVERY cell, including final overhead pose. Do not clip at top or cell edges. Do not enlarge crouched poses or shrink only raised ones; one common proportional unit across the sheet.\n\nEight distinct CLOSE progressive drawings, not duplicated poses. Crisp16bit metallic sprite clusters, detailed readable fingers/haft. Complete character+held hammer together, no cutout parts/head stamping, no trails/glow clouds/impact art.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-db6a1e6f-16f5-451a-954a-fa0a593def4c.png",
+  "accepted": false,
+  "status": "candidate",
+  "guideFrames": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44
+  ]
+}

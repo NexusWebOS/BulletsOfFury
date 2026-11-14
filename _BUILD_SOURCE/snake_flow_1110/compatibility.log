@@ -1,0 +1,29 @@
+PASS The body has a traveling lateral wave even at a stationary firing head 
+PASS Both generated gauge halves use each snake own own current health 
+PASS Pair budget is above the actual Hard Stage 7 boss and split exactly in half {'hard': {'hp': 12466, 'maxhp': 12466}, 'pair': {'hp': 14000, 'actors': [7000, 7000], 'pools': [[1750, 1750, 3500], [1750, 1750, 3500]]}}
+PASS Observation preserves native health and all four gill gates 
+PASS All coordinated movement families occur 
+PASS Both snakes repeatedly cross from left to right and right to left 
+PASS The lower jump actually crosses the pilot ground row while clearing it in the air 
+PASS The two heads keep their paired firing row and separation 
+PASS Crossovers have a real over/under height difference 
+PASS Every emitted round is a large straight-south orb, never a small spread pellet 302
+PASS Rapid tandem bursts occur from both actual mouth sockets 
+PASS Airborne visible heads remain reachable at their actual displayed positions 
+PASS Native body and tail never use the discarded outer green hot frames 
+PASS The new mouth-only bank is actually drawn during charge and firing 
+PASS The pair uses the restored generated Stage7 frame 
+PASS Ordinary large orbs cannot be intercepted and stay bounded 8
+PASS Drawing paused frames cannot advance the shared director or actors 
+PASS All four real gills are reachable and both hearts remain protected 
+PASS Native damage actually draws white actor pixels 
+PASS The native actor damage flash is retained 
+PASS Hit feedback expires back to the original material 
+PASS Killing one snake empties exactly its half of the single health bar 
+PASS The surviving snake continues aggressive solo hops and firing 
+PASS Dead snakes cannot fire or retain active owned ordnance 
+PASS Retry restores two equal pools and clears the old director and ordnance 
+PASS All six actor pools are exhausted before the native pair defeat 
+PASS Native reward/progression resolves once 
+PASS No native browser/render errors []
+SUMMARY 28 / 28

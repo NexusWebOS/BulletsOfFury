@@ -1,0 +1,19 @@
+{
+  "expected_source_hash": "0161618e0e09913dc09f8d2182e11c5c43dd94deebb6a37178a413adbbeaf96f",
+  "owner": "sumpjaw_tandem_1105.js",
+  "changes": [
+    "Separate time-based vertical history for every body section",
+    "20 closely spaced tapered source-rib sections",
+    "Continuous traveling lateral wave and subtle authored head turns",
+    "Ballistic main leaps and repeated row jumps with grounded landings",
+    "Native attack clocks, warning points, health pools, sockets, projectiles and rewards retained"
+  ],
+  "body_delay_seconds": 0.3052,
+  "row_jump": {
+    "period": 1.12,
+    "flight": 0.72,
+    "ground": 0.4,
+    "height": 64
+  },
+  "render": "existing authored direction frames at native scale; positions and frame selection only"
+}

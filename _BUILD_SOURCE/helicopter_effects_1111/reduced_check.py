@@ -1,0 +1,7 @@
+from native import *
+errors=[];port,stop=serve(str(R))
+try:
+ with sync_playwright()as pw:
+  br=pw.chromium.launch(channel='msedge',headless=True,args=['--mute-audio']);p=br.new_page(viewport={'width':1100,'height':1000});p.set_default_timeout(180000);p.on('pageerror',lambda e:errors.append(str(e)));p.on('console',lambda m:errors.append(m.text[:400])if m.type=='error'or'draw error'in m.text else None);p.goto(f'http://127.0.0.1:{port}/index.html',wait_until='load');p.wait_for_function('window.__bofFrames>5&&typeof H125!=="undefined"');p.evaluate(TRAP_RAF);p.evaluate(BOOT);p.wait_for_function('()=>{stageLoadTick();return stageLoadReady(8)&&v18Warm()}');p.evaluate(SETUP);p.evaluate("()=>{checkpoint('missiles');H125.reduced=true;}");step(p,130);q=p.evaluate("({launches:HC79.events.filter(e=>e.event==='missile-launch').length,hp:B.hp,draws:H125.draws,fx:H125.fx.length})");shot(p).save(O/'reduced-motion-missiles.png');p.evaluate('H125.reduced=false');br.close()
+finally:stop()
+r=json.loads((O/'verification.json').read_text());r['checks']['reduced_flashing_keeps_native_eight_launches']=q['launches']==8;r['details']['reduced_recheck']={'observed':q,'errors':errors,'correction':'Original check ended at95 ticks, before the last queued pair. Corrected checkpoint waits130 ticks. Runtime unchanged.'};r['checks']['reduced_recheck_no_browser_errors']=not errors;(O/'verification.json').write_text(json.dumps(r,indent=2));print(json.dumps({'observed':q,'errors':errors}));assert all(r['checks'].values()),[k for k,v in r['checks'].items()if not v]

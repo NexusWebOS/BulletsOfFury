@@ -1,0 +1,1776 @@
+{
+  "revision": 1,
+  "purpose": "Human crew conversations; clear evidence-to-destination links; authored16-bit comic pages.",
+  "scenes": {
+    "opening": [
+      {
+        "who": "CAPTION",
+        "text": "For years, Earth had been at peace.",
+        "kind": "wide",
+        "art": "city",
+        "id": "OPENING-01",
+        "duration": 2.61,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "CAPTION",
+        "text": "Fury Division trained in secret. The best pilots from around the world, waiting for a call they hoped would never come.",
+        "kind": "wide",
+        "bank": "hq-conference",
+        "hold": 0,
+        "id": "OPENING-02",
+        "duration": 6.73,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "Last check, Deck. Then you eat.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "id": "OPENING-03",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "DECKER",
+        "text": "Hold on. I'm getting orders I didn't send.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "id": "OPENING-04",
+        "duration": 2.9,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "DECKER",
+        "text": "It's everywhere. Roads, power stations, defense.",
+        "kind": "insert",
+        "bank": "city-takeover",
+        "cue": "stage3AtomicSiren",
+        "cueAt": 0.1,
+        "id": "OPENING-05",
+        "duration": 2.6,
+        "style": 0,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "FALVA",
+        "text": "Hangar door nearly took Lizzie's head off.",
+        "people": [
+          "falva",
+          "lizzie"
+        ],
+        "id": "OPENING-06",
+        "duration": 2.61,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "LIZZIE",
+        "text": "I'm fine. Worry about the planes.",
+        "people": [
+          "falva",
+          "lizzie"
+        ],
+        "id": "OPENING-07",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "COLE",
+        "text": "Cut the uplinks. We fly by hand.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "id": "OPENING-08",
+        "duration": 2.61,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "DECKER",
+        "text": "Already cut. Our jets are clear.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "id": "OPENING-09",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "AXEL",
+        "text": "Freezer. On me.",
+        "people": [
+          "axel",
+          "freezer"
+        ],
+        "id": "OPENING-10",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "FREEZER",
+        "text": "Right behind you.",
+        "people": [
+          "axel",
+          "freezer"
+        ],
+        "id": "OPENING-11",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "YURI",
+        "text": "Those people down there don't have wings.",
+        "people": [
+          "yuri",
+          "cole"
+        ],
+        "id": "OPENING-12",
+        "duration": 2.61,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "COLE",
+        "text": "That's why we're going.",
+        "people": [
+          "yuri",
+          "cole"
+        ],
+        "id": "OPENING-13",
+        "duration": 1.77,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "MAVERICK",
+        "text": "And here I was getting bored.",
+        "people": [
+          "maverick",
+          "juggernaut"
+        ],
+        "id": "OPENING-14",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "I'll get the doors. Get everybody out.",
+        "kind": "insert",
+        "bank": "juggernaut-help",
+        "people": [
+          "juggernaut",
+          "maverick"
+        ],
+        "id": "OPENING-15",
+        "duration": 2.61,
+        "style": 0
+      },
+      {
+        "who": "COLE",
+        "text": "Fury flight. Talk to me.",
+        "kind": "travel",
+        "art": "sky",
+        "cue": "jetDash",
+        "cueAt": 0.1,
+        "id": "OPENING-16",
+        "duration": 2.02,
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Lost the squad. Still flying. Where do you need me?",
+        "people": [
+          "$pilot",
+          "$tech"
+        ],
+        "cue": "crackle",
+        "cueAt": 0.1,
+        "id": "OPENING-17",
+        "duration": 3.49,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "TECH",
+        "text": "Keep those things away from the towns. We'll find you.",
+        "people": [
+          "$pilot",
+          "$tech"
+        ],
+        "id": "OPENING-18",
+        "duration": 3.49,
+        "kind": "dialogue",
+        "style": 1
+      }
+    ],
+    "post-1": [
+      {
+        "who": "PILOT",
+        "text": "That's one down. Tell me somebody heard that.",
+        "id": "B101",
+        "duration": 2.9,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "I heard you. And something else is answering.",
+        "kind": "insert",
+        "bank": "radar-acquisition",
+        "cue": "blip",
+        "id": "POST1-02",
+        "duration": 2.9,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Where?",
+        "id": "POST1-03",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "The volcanic belt. Same orders, over and over.",
+        "id": "POST1-04",
+        "duration": 2.9,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Then we've got somewhere to start.",
+        "kind": "travel",
+        "art": "sky",
+        "id": "POST1-05",
+        "duration": 2.31,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "post-2": [
+      {
+        "who": "PILOT",
+        "text": "Come on, $techName. Pick up.",
+        "id": "B201",
+        "duration": 2.02,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "There you are! I thought we'd lost you.",
+        "cue": "crackle",
+        "id": "POST2-02",
+        "duration": 2.9,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "You can yell at me when I'm home. What is this thing?",
+        "kind": "insert",
+        "bank": "service-connector",
+        "id": "POST2-03",
+        "duration": 4.08,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "A service port. Plug in the recorder. Keep it off the network.",
+        "id": "POST2-04",
+        "duration": 4.08,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "Got it. The next relay's in the ice field.",
+        "id": "POST2-05",
+        "duration": 3.2,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "I've got a fire rig ready. Those ice tanks won't like it.",
+        "upgrade": 2,
+        "id": "POST2-06",
+        "duration": 4.08,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Good. I could use something on my side.",
+        "id": "POST2-07",
+        "duration": 2.9,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "Get out of there. The ground is moving.",
+        "kind": "travel",
+        "art": "sky",
+        "cue": "crackle",
+        "id": "POST2-08",
+        "duration": 2.9,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "post-3": [
+      {
+        "who": "COLE",
+        "text": "All right. We're home. What did we bring back?",
+        "id": "B301",
+        "kind": "wide",
+        "bank": "hq-conference",
+        "hold": 0,
+        "tag": "briefing",
+        "duration": 3.2,
+        "style": 0,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "DECKER",
+        "text": "The relay's recorder. Every machine heard the same voice.",
+        "tag": "briefing",
+        "id": "POST3-02",
+        "duration": 3.2,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "Whose?",
+        "tag": "briefing",
+        "id": "POST3-03",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "DECKER",
+        "text": "I don't know yet. There's a launch record in here. Same signal. It came from the airfield east of us.",
+        "kind": "insert",
+        "bank": "launch-correlation",
+        "tag": "briefing",
+        "id": "POST3-04",
+        "duration": 6.43,
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "LIZZIE",
+        "text": "So we go to the airfield.",
+        "people": [
+          "lizzie",
+          "falva"
+        ],
+        "tag": "briefing",
+        "id": "POST3-05",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "DECKER",
+        "text": "I also need its backup power cell. Without it, we don't get above the atmosphere.",
+        "tag": "briefing",
+        "id": "POST3-06",
+        "duration": 4.96,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "AXEL",
+        "text": "I'll take point.",
+        "people": [
+          "axel",
+          "freezer"
+        ],
+        "tag": "briefing",
+        "id": "POST3-07",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "FREEZER",
+        "text": "Then I'll watch your tail.",
+        "people": [
+          "axel",
+          "freezer"
+        ],
+        "tag": "briefing",
+        "id": "POST3-08",
+        "duration": 2.02,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Try to leave something for the rest of us.",
+        "people": [
+          "maverick",
+          "juggernaut"
+        ],
+        "tag": "briefing",
+        "id": "POST3-09",
+        "duration": 3.2,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Everybody gets home. That's the deal.",
+        "people": [
+          "maverick",
+          "juggernaut"
+        ],
+        "tag": "briefing",
+        "id": "POST3-10",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "COLE",
+        "text": "That's the deal.",
+        "kind": "wide",
+        "bank": "hq-conference",
+        "hold": 3,
+        "tag": "briefing",
+        "id": "POST3-11",
+        "duration": 1.65,
+        "style": 0,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "DECKER",
+        "text": "The ice core's safe. I'll see what we can use before you leave.",
+        "upgrade": 3,
+        "id": "POST3-12",
+        "duration": 4.37,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "CAPTION",
+        "text": "A few minutes later. Decker's workshop.",
+        "kind": "insert",
+        "bank": "hq-laser-reveal",
+        "hold": 0,
+        "tag": "prototypes",
+        "id": "POST3-13",
+        "duration": 2.31,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "You moved the coil.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "tag": "prototypes",
+        "id": "POST3-14",
+        "duration": 1.73,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "DECKER",
+        "text": "Thought you'd spot that. Watch this.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "tag": "prototypes",
+        "id": "POST3-15",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "SYSTEM",
+        "text": "",
+        "kind": "insert",
+        "bank": "hq-laser-demo",
+        "duration": 2.1,
+        "action": "laser-test",
+        "tag": "prototypes",
+        "id": "POST3-16",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "That's your Photon Cannon?",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "tag": "prototypes",
+        "id": "POST3-17",
+        "duration": 1.87,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "DECKER",
+        "text": "Ours. You wound half the coils.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "tag": "prototypes",
+        "id": "POST3-18",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "COLE",
+        "text": "Come here, you lunatic.",
+        "kind": "insert",
+        "bank": "hq-cole-decker-hug",
+        "tag": "prototypes",
+        "id": "POST3-19",
+        "duration": 1.77,
+        "style": 0,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "DECKER",
+        "text": "Easy! Still need those ribs.",
+        "kind": "insert",
+        "bank": "hq-cole-decker-hug",
+        "hold": 5,
+        "tag": "prototypes",
+        "id": "POST3-20",
+        "duration": 2.02,
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "When can I fly it?",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "tag": "prototypes",
+        "id": "POST3-21",
+        "duration": 2.02,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "DECKER",
+        "text": "When it stops melting the stand. Bring me that power cell.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "tag": "prototypes",
+        "id": "POST3-22",
+        "duration": 3.79,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "COLE",
+        "text": "You've got it.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "tag": "prototypes",
+        "id": "POST3-23",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0
+      }
+    ],
+    "arrival-4": [
+      {
+        "who": "TECH",
+        "text": "There's the airfield. The launch pad's still lit.",
+        "kind": "insert",
+        "bank": "airbase-arrival",
+        "id": "A401",
+        "duration": 2.9,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Get the records. Get the cell. Get home.",
+        "kind": "travel",
+        "art": "sky",
+        "id": "ARRIVAL4-02",
+        "duration": 2.9,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "post-4": [
+      {
+        "who": "PILOT",
+        "text": "Got your power cell. And the launch camera's recorder.",
+        "id": "B401",
+        "duration": 3.2,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "All right. Show me what happened.",
+        "kind": "insert",
+        "bank": "decker-reaction",
+        "hold": 0,
+        "id": "POST4-02",
+        "duration": 2.31,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "SYSTEM",
+        "text": "",
+        "id": "B403",
+        "kind": "wide",
+        "bank": "satellite-takeover",
+        "duration": 3.3,
+        "action": "satellite",
+        "cue": "crackle",
+        "cueAt": 0.4,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "It got inside the satellite.",
+        "id": "POST4-04",
+        "duration": 2.02,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "Symbiote code. It used the downlink to reach everything down here.",
+        "id": "POST4-05",
+        "duration": 3.79,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "So we cut it off.",
+        "id": "POST4-06",
+        "duration": 2.02,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "Your space kits are ready. Just don't make me come get you.",
+        "upgrade": 4,
+        "id": "POST4-07",
+        "duration": 4.08,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "FALVA",
+        "text": "We got Granddad's bomber flying. We can handle this.",
+        "people": [
+          "falva",
+          "lizzie"
+        ],
+        "id": "POST4-08",
+        "duration": 3.2,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "LIZZIE",
+        "text": "Granddad's bomber had air outside it.",
+        "people": [
+          "falva",
+          "lizzie"
+        ],
+        "id": "POST4-09",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "PILOT",
+        "text": "One last check. Then we're going up.",
+        "kind": "travel",
+        "art": "earth",
+        "id": "POST4-10",
+        "duration": 2.61,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "warp-5-9": [
+      {
+        "who": "TECH",
+        "text": "That gate isn't on our charts.",
+        "kind": "insert",
+        "bank": "warp-drive-lock",
+        "id": "W5901",
+        "cue": "blip",
+        "duration": 2.31,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Can we clear it?",
+        "id": "WARP59-02",
+        "duration": 1.73,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "We're already through the last marker. Keep her straight!",
+        "id": "WARP59-03",
+        "duration": 3.2,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Everybody hang on.",
+        "kind": "warp",
+        "art": "space",
+        "id": "W5903",
+        "duration": 2.4,
+        "cue": "warp",
+        "cueAt": 0.25,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "arrival-9": [
+      {
+        "who": "PILOT",
+        "text": "Everybody still in one piece?",
+        "id": "A901",
+        "kind": "travel",
+        "art": "space",
+        "duration": 2.02,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "Ask me again when my hands stop shaking.",
+        "id": "ARRIVAL9-02",
+        "duration": 2.9,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Let's find a way back.",
+        "id": "ARRIVAL9-03",
+        "duration": 2.02,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "post-9": [
+      {
+        "who": "TECH",
+        "text": "There's our way home. Take it while it's still open.",
+        "id": "Q01",
+        "kind": "insert",
+        "bank": "warp-drive-lock",
+        "hold": 5,
+        "duration": 3.49,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Gladly.",
+        "id": "POST9-02",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "The recorder caught something useful. I'll see what I can make of it.",
+        "upgrade": 9,
+        "id": "POST9-03",
+        "duration": 4.37,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "First, get us back.",
+        "kind": "travel",
+        "art": "space",
+        "id": "POST9-04",
+        "duration": 1.73,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "post-5": [
+      {
+        "who": "PILOT",
+        "text": "HQ, open the doors. We're coming home.",
+        "id": "B501",
+        "kind": "travel",
+        "hold": 0,
+        "art": "sky",
+        "duration": 2.61,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Hey. We all made it, right?",
+        "people": [
+          "juggernaut",
+          "$pilot"
+        ],
+        "tag": "workshop",
+        "id": "POST5-02",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "COLE",
+        "text": "We did. Give me a hand with this thing.",
+        "people": [
+          "cole",
+          "juggernaut"
+        ],
+        "tag": "workshop",
+        "id": "POST5-03",
+        "duration": 3.2,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "DECKER",
+        "text": "You actually brought the gun back.",
+        "id": "B503",
+        "kind": "insert",
+        "bank": "hq-chaingun-inspection",
+        "tag": "workshop",
+        "duration": 2.31,
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "Nearly killed us. Figured it owed us something.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "tag": "workshop",
+        "id": "POST5-05",
+        "duration": 2.9,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Can I have it?",
+        "people": [
+          "juggernaut",
+          "decker"
+        ],
+        "tag": "workshop",
+        "id": "POST5-06",
+        "duration": 1.73,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "DECKER",
+        "text": "No.",
+        "people": [
+          "juggernaut",
+          "decker"
+        ],
+        "tag": "workshop",
+        "id": "POST5-07",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Had to ask.",
+        "people": [
+          "juggernaut",
+          "decker"
+        ],
+        "tag": "workshop",
+        "id": "POST5-08",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "CAPTION",
+        "text": "Later that night.",
+        "kind": "insert",
+        "bank": "hq-salvage-diagnostics",
+        "duration": 2.2,
+        "tag": "workshop",
+        "id": "POST5-09",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "DECKER",
+        "text": "It works. I can fit the squad with these.",
+        "upgrade": 5,
+        "tag": "workshop",
+        "id": "POST5-10",
+        "duration": 3.2,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "Keep my rig as it is. Get everybody else ready.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "tag": "workshop",
+        "id": "POST5-11",
+        "duration": 3.49,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Now that's heavy metal.",
+        "kind": "insert",
+        "bank": "hq-heavy-metal",
+        "tag": "workshop",
+        "id": "POST5-12",
+        "duration": 1.77,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "DECKER",
+        "text": "Cole. Come look at this.",
+        "id": "B505",
+        "kind": "insert",
+        "bank": "radar-acquisition",
+        "action": "alarm",
+        "cue": "stage3AtomicSiren",
+        "cueAt": 1.0,
+        "duration": 2.02,
+        "style": 0,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "How many?",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "id": "POST5-14",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "DECKER",
+        "text": "Too many. They're coming down on the city.",
+        "kind": "insert",
+        "bank": "radar-acquisition",
+        "hold": 5,
+        "id": "POST5-15",
+        "duration": 2.9,
+        "style": 0,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "[Guard names], hold the base. Everyone else, with me.",
+        "id": "POST5-16",
+        "duration": 3.2,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "On your wing.",
+        "id": "B507",
+        "kind": "travel",
+        "art": "sky",
+        "cue": "jetDash",
+        "duration": 1.65,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "post-6": [
+      {
+        "who": "TECH",
+        "text": "$routeReport",
+        "id": "B601",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "Everybody answer me. Need to hear your voices.",
+        "id": "POST6-02",
+        "duration": 2.9,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "FREEZER",
+        "text": "Still here.",
+        "people": [
+          "axel",
+          "freezer"
+        ],
+        "id": "POST6-03",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "TECH",
+        "text": "But the orders haven't stopped.",
+        "id": "POST6-04",
+        "duration": 2.03,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "We took out the carrier.",
+        "id": "POST6-05",
+        "duration": 2.02,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "It was passing them along. Something below the city is still talking.",
+        "kind": "insert",
+        "bank": "subsurface-search",
+        "id": "POST6-06",
+        "duration": 4.08,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "YURI",
+        "text": "Under that bridge?",
+        "people": [
+          "yuri",
+          "$tech"
+        ],
+        "id": "POST6-07",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "TECH",
+        "text": "In the drains. Look.",
+        "kind": "insert",
+        "bank": "river-arrival",
+        "hold": 3,
+        "id": "POST6-08",
+        "duration": 1.73,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Mark the other contacts. We'll deal with them if we have to.",
+        "id": "POST6-09",
+        "duration": 4.08,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "Check your gear before you go under. I don't like how narrow that looks.",
+        "upgrade": 6,
+        "id": "POST6-10",
+        "duration": 4.67,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Keep talking to me. All the way in.",
+        "kind": "travel",
+        "art": "river-arrival",
+        "id": "POST6-11",
+        "duration": 2.9,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "arrival-7": [
+      {
+        "who": "TECH",
+        "text": "Low under the bridge. There's your entrance.",
+        "id": "A701",
+        "kind": "wide",
+        "bank": "river-arrival",
+        "hold": 5,
+        "duration": 2.61,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "I see it. Going in.",
+        "id": "ARRIVAL7-02",
+        "duration": 2.02,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "post-7": [
+      {
+        "who": "PILOT",
+        "text": "It's opening something.",
+        "id": "B701",
+        "kind": "portal",
+        "art": "sewer",
+        "duration": 1.77,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "Back out. I can't see what's on the other side.",
+        "id": "POST7-02",
+        "duration": 3.49,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "That's where the orders are coming from.",
+        "id": "POST7-03",
+        "duration": 2.61,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "Then take me with you. Keep this line open.",
+        "id": "POST7-04",
+        "duration": 3.2,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Don't go quiet on me.",
+        "kind": "portal",
+        "art": "sewer",
+        "id": "POST7-05",
+        "duration": 2.02,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "ending": [
+      {
+        "who": "PILOT",
+        "text": "$techName? Anybody?",
+        "id": "E01",
+        "kind": "wide",
+        "bank": "city-takeover",
+        "hold": 0,
+        "duration": 1.65,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "I'm here.",
+        "id": "ENDING-02",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Is it over?",
+        "id": "ENDING-03",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "TECH",
+        "text": "The machines have stopped. All of them.",
+        "id": "ENDING-04",
+        "duration": 2.61,
+        "kind": "dialogue",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "PILOT",
+        "text": "Then let's go home.",
+        "kind": "travel",
+        "art": "earth",
+        "id": "ENDING-05",
+        "duration": 1.73,
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "COLE",
+        "text": "Fury flight. Talk to me.",
+        "kind": "wide",
+        "bank": "hq-conference",
+        "hold": 3,
+        "id": "ENDING-06",
+        "duration": 2.02,
+        "style": 1,
+        "people": [
+          "cole",
+          "decker"
+        ]
+      },
+      {
+        "who": "AXEL",
+        "text": "Axel. Home.",
+        "people": [
+          "axel",
+          "freezer"
+        ],
+        "id": "ENDING-07",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "FREEZER",
+        "text": "Freezer. Still on his wing.",
+        "people": [
+          "axel",
+          "freezer"
+        ],
+        "id": "ENDING-08",
+        "duration": 2.02,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "YURI",
+        "text": "Yuri. I should call my parents.",
+        "people": [
+          "yuri",
+          "cole"
+        ],
+        "id": "ENDING-09",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "COLE",
+        "text": "Tell them you did good.",
+        "people": [
+          "yuri",
+          "cole"
+        ],
+        "id": "ENDING-10",
+        "duration": 2.02,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "FALVA",
+        "text": "Mom is going to have questions.",
+        "people": [
+          "falva",
+          "lizzie"
+        ],
+        "id": "ENDING-11",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "LIZZIE",
+        "text": "You answer them. I'm going to sleep.",
+        "people": [
+          "falva",
+          "lizzie"
+        ],
+        "id": "ENDING-12",
+        "duration": 2.61,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "MAVERICK",
+        "text": "Maverick. You can stop worrying now.",
+        "people": [
+          "maverick",
+          "cole"
+        ],
+        "id": "ENDING-13",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "DECKER",
+        "text": "Decker. Before you ask, the coffee's gone cold.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "id": "ENDING-14",
+        "duration": 2.9,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "COLE",
+        "text": "I'll live.",
+        "people": [
+          "cole",
+          "decker"
+        ],
+        "id": "ENDING-15",
+        "duration": 1.65,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Juggernaut. I've got a song for this.",
+        "kind": "wide",
+        "bank": "juggernaut-guitar",
+        "id": "ENDING-16",
+        "duration": 2.61,
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "FREEZER",
+        "text": "Does it have a volume knob?",
+        "people": [
+          "freezer",
+          "juggernaut"
+        ],
+        "id": "ENDING-17",
+        "duration": 2.31,
+        "kind": "dialogue",
+        "style": 0
+      },
+      {
+        "who": "JUGGERNAUT",
+        "text": "Not one I use.",
+        "people": [
+          "freezer",
+          "juggernaut"
+        ],
+        "id": "ENDING-18",
+        "duration": 1.73,
+        "kind": "dialogue",
+        "style": 1
+      },
+      {
+        "who": "CAPTION",
+        "text": "Everybody home.",
+        "kind": "wide",
+        "bank": "hq-conference",
+        "hold": 3,
+        "duration": 2.5,
+        "id": "ENDING-19",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ],
+    "sting": [
+      {
+        "who": "CAPTION",
+        "text": "Far from Earth, a receiver wakes.",
+        "kind": "wide",
+        "art": "space",
+        "duration": 2.8,
+        "id": "STING-01",
+        "style": 0,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      },
+      {
+        "who": "SYSTEM",
+        "text": "",
+        "kind": "insert",
+        "bank": "radar-acquisition",
+        "hold": 2,
+        "duration": 2.2,
+        "cue": "blip",
+        "cueAt": 1.2,
+        "id": "STING-02",
+        "style": 1,
+        "people": [
+          "$pilot",
+          "$tech"
+        ]
+      }
+    ]
+  },
+  "voices": {
+    "cole": "Calm, direct, observant. Checks on people before equipment. Knows Decker's work well enough to spot a moved coil.",
+    "decker": "Clever and practical, with dry humor. Explains what a discovery means; never narrates menus or speaks in diagnostic labels.",
+    "yuri": "Russian-American, raised in America after his parents fled with him at four during Cold War tensions. No fake accent. Notices the civilians beneath the fight.",
+    "axel": "The experienced air-force commander. Short, dependable calls. Trusts Freezer without needing to say so.",
+    "freezer": "Axel's former wingman and close friend. Relaxed, dry, loyal. A joke relieves pressure rather than erasing danger.",
+    "falva": "American sister in pink, glasses, practical confidence. She and Lizzie learned together while repairing their late WWII-pilot grandfather's bomber, encouraged by their mother.",
+    "lizzie": "American sister in yellow, hoop earrings, no glasses. Warm and blunt. Her answers ground Falva's confidence in what is actually happening.",
+    "maverick": "Teal, green aviators, hired gun who chose Cole's team. Arrogant enough to joke, loyal enough to stay; never cruel to the crew.",
+    "juggernaut": "Huge tattooed pilot in an open dark vest. A protective teddy bear with a thrash/progressive-metal habit. Strength and warmth first, jokes second."
+  },
+  "continuity": [
+    "Earth begins at peace; Fury Division is a secret elite international pilot program.",
+    "The networked machinery turns hostile. Decker cuts the jets' receivers; manual/local control explains why Fury can still fly.",
+    "The first repeating orders lead to the volcanic belt, then the ice relay. A recovered recorder points to the launch airfield.",
+    "The airfield's launch camera shows symbiote code taking over a satellite. Its backup power cell makes the orbital refit possible.",
+    "The Photon Cannon is a bench prototype. Its demonstration grants no weapon tier. Earned equipment and every pilot's actual progression remain native.",
+    "Maverick's homing lasers stay fixed. Do not promise him elemental or chaingun conversions.",
+    "The eight-gate warp is optional and keeps its real return to Stage5. The two Stage6 outcomes retain their separate surviving contacts and optional pursuit.",
+    "The city battle exposes a source in the drains, the Warden's breach leads to Dracodia, and defeating him stops the orders.",
+    "Pilot/co-op selections retain their actual names, aircraft, colors, guard assignments and continuation. A crew conversation never changes a save, reward or combat rule."
+  ]
+}

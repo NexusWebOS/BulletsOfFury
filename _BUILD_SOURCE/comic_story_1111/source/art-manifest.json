@@ -1,0 +1,2875 @@
+{
+  "version": 1,
+  "revision": 2,
+  "portraitMount": "visible-body-bottom-with-two-pixel-border-overlap",
+  "canvas": [
+    912,
+    512
+  ],
+  "pages": [
+    {
+      "id": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\page-0.png",
+      "mask": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\page-0-mask.png",
+      "w": 838,
+      "h": 470,
+      "panels": [
+        [
+          39,
+          45,
+          356,
+          268
+        ],
+        [
+          444,
+          45,
+          353,
+          268
+        ]
+      ],
+      "body": [
+        35,
+        365,
+        770,
+        70
+      ],
+      "name": [
+        32,
+        330,
+        206,
+        24
+      ]
+    },
+    {
+      "id": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\page-1.png",
+      "mask": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\page-1-mask.png",
+      "w": 838,
+      "h": 470,
+      "panels": [
+        [
+          41,
+          45,
+          365,
+          268
+        ],
+        [
+          425,
+          45,
+          375,
+          268
+        ]
+      ],
+      "body": [
+        35,
+        365,
+        770,
+        70
+      ],
+      "name": [
+        34,
+        330,
+        206,
+        24
+      ]
+    },
+    {
+      "id": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\page-2.png",
+      "mask": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\page-2-mask.png",
+      "w": 838,
+      "h": 470,
+      "panels": [
+        [
+          45,
+          43,
+          754,
+          270
+        ]
+      ],
+      "body": [
+        35,
+        365,
+        770,
+        70
+      ],
+      "name": [
+        30,
+        332,
+        207,
+        25
+      ]
+    },
+    {
+      "id": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\page-3.png",
+      "mask": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Comic-Story-1111\\source\\editor-input\\page-3-mask.png",
+      "w": 838,
+      "h": 470,
+      "panels": [
+        [
+          44,
+          42,
+          487,
+          271
+        ],
+        [
+          551,
+          52,
+          249,
+          261
+        ]
+      ],
+      "body": [
+        35,
+        365,
+        770,
+        70
+      ],
+      "name": [
+        32,
+        332,
+        207,
+        25
+      ]
+    }
+  ],
+  "pilots": [
+    "cole",
+    "axel",
+    "freezer",
+    "yuri",
+    "maverick",
+    "falva",
+    "lizzie",
+    "decker",
+    "juggernaut"
+  ],
+  "banks": {
+    "talk-cole": {
+      "key": "c16_talk-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-cole.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        128,
+        128
+      ],
+      "source": "portraits/cole.aseprite",
+      "sha256": "1363d2f095a8f2ef01716f1379701c53203ebee56e8284a8641d0f51a1e993e4",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 2,
+      "visibleBounds": [
+        2,
+        4,
+        254,
+        250
+      ],
+      "baselineY": 250,
+      "panelBleed": 2
+    },
+    "backdrop-cole": {
+      "key": "c16_backdrop-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/backdrop-cole.webp",
+      "w": 512,
+      "h": 340,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        256,
+        170
+      ],
+      "source": "masters/pilot-backgrounds/cole.aseprite",
+      "sha256": "100ded6729acb71250da3b8ca3697b0a806e501b1c74b2cc8876d0de7bad3166"
+    },
+    "talk-small-cole": {
+      "key": "c16_talk-small-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-small-cole.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/cole.aseprite",
+      "sha256": "d35a9e8695788f450f636770a87e5b5a304be7eb17fbc485b43f6fa5b52333d8",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625,
+      "baselineY": 176,
+      "panelBleed": 2
+    },
+    "talk-mini-cole": {
+      "key": "c16_talk-mini-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-mini-cole.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/cole.aseprite",
+      "sha256": "aac58b57395c9b528d00b805751d088352662055fed34737ffbbd6188025e31d",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75,
+      "baselineY": 94,
+      "panelBleed": 2
+    },
+    "icon-cole": {
+      "key": "c16_icon-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/icon-cole.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/cole.aseprite",
+      "sha256": "1582f3b72efdcc2bfbf825235a2dc8c83210ccc3ab2e88b1fc7f9d960148be4c",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75
+    },
+    "card-cole": {
+      "key": "c16_card-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/card-cole.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/cole.aseprite",
+      "sha256": "d1e77397a3d2f724697ae3d96395b1399b39c45c5f86bf507a529c71a97b569f",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625
+    },
+    "credit-cole": {
+      "key": "c16_credit-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/credit-cole.webp",
+      "w": 90,
+      "h": 90,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        45,
+        45
+      ],
+      "source": "portraits/cole.aseprite",
+      "sha256": "c0c9f6927ef0ca766df77ddca0d9eaaf260fb4a771d76dbeab6b4518d99faf87",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.703125
+    },
+    "ship-earth-cole": {
+      "key": "c16_ship-earth-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-earth-cole.webp",
+      "w": 194,
+      "h": 232,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        97,
+        116
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-cole-top.webp",
+      "sha256": "601c23da89c2aa7cd4e75834876bb8041eb3a852a5a266ee8bc4f8a0c9fea67a"
+    },
+    "ship-space-cole": {
+      "key": "c16_ship-space-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-space-cole.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/comic_1110/actual-space-cole-base.webp",
+      "sha256": "9f2f28d3503cd36ffee3bdc77b6537b2ec92000103c3b4103abc09cf4dd29995"
+    },
+    "marker-cole": {
+      "key": "c16_marker-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/marker-cole.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-cole-top.webp",
+      "sha256": "34861482f84bee956d3aa2b4337891e7320b7336eb1e59c87d7bb7fb6261b5ce"
+    },
+    "talk-axel": {
+      "key": "c16_talk-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-axel.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        128,
+        128
+      ],
+      "source": "portraits/axel.aseprite",
+      "sha256": "77346fdd1c00ceeb02b41bc27d0409d0ef9fb1ddb904d7bbc124cde3a6fcfc21",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 2,
+      "visibleBounds": [
+        4,
+        6,
+        254,
+        250
+      ],
+      "baselineY": 250,
+      "panelBleed": 2
+    },
+    "backdrop-axel": {
+      "key": "c16_backdrop-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/backdrop-axel.webp",
+      "w": 512,
+      "h": 340,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        256,
+        170
+      ],
+      "source": "masters/pilot-backgrounds/axel.aseprite",
+      "sha256": "3145baa3c00deefb66a6a8b67d4e8918f2ae6f34bffcd6f584fc8cf251511b4f"
+    },
+    "talk-small-axel": {
+      "key": "c16_talk-small-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-small-axel.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/axel.aseprite",
+      "sha256": "0e80124225fca1fc1a5cf17e1d04b69a982c01ecd457abff3e90da8d46a93729",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625,
+      "baselineY": 176,
+      "panelBleed": 2
+    },
+    "talk-mini-axel": {
+      "key": "c16_talk-mini-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-mini-axel.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/axel.aseprite",
+      "sha256": "8c1de4ca1df33b268571cac615278dd9fe919e2f5cc962cd4a372eb9fabf0741",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75,
+      "baselineY": 94,
+      "panelBleed": 2
+    },
+    "icon-axel": {
+      "key": "c16_icon-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/icon-axel.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/axel.aseprite",
+      "sha256": "8e574e1368d1d7902a2b6d21716a2237f6043f5aed56ffaed1fe73dd3ff0007d",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75
+    },
+    "card-axel": {
+      "key": "c16_card-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/card-axel.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/axel.aseprite",
+      "sha256": "acae12cc1aacd98e347e5aa61a7544cc09c762956cb71eaec536647f10951926",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625
+    },
+    "credit-axel": {
+      "key": "c16_credit-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/credit-axel.webp",
+      "w": 90,
+      "h": 90,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        45,
+        45
+      ],
+      "source": "portraits/axel.aseprite",
+      "sha256": "2382b6189a63eb6755c37b108035dd4a8f8559f847c40a56e5717c4fb75b5cd6",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.703125
+    },
+    "ship-earth-axel": {
+      "key": "c16_ship-earth-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-earth-axel.webp",
+      "w": 190,
+      "h": 224,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        95,
+        112
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-axel-top.webp",
+      "sha256": "5883adeb2ad7334d4ab93d4c230e067986e8807b30acc4f7bb7190fd1819c01b"
+    },
+    "ship-space-axel": {
+      "key": "c16_ship-space-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-space-axel.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/comic_1110/actual-space-axel-base.webp",
+      "sha256": "fac9779fa6871bd1248d49622e062281baad353085fb0833d89dd2011839d493"
+    },
+    "marker-axel": {
+      "key": "c16_marker-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/marker-axel.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-axel-top.webp",
+      "sha256": "a8f56c40ac2e7df16b513b995ee590f4272e7ae39581cacd1b914cefd13719c5"
+    },
+    "talk-freezer": {
+      "key": "c16_talk-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-freezer.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        128,
+        128
+      ],
+      "source": "portraits/freezer.aseprite",
+      "sha256": "d293a8e040246d70b6658bebf37b42617ee4dc7b13ae42e2473d90ff5801a98c",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 2,
+      "visibleBounds": [
+        2,
+        4,
+        252,
+        250
+      ],
+      "baselineY": 250,
+      "panelBleed": 2
+    },
+    "backdrop-freezer": {
+      "key": "c16_backdrop-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/backdrop-freezer.webp",
+      "w": 512,
+      "h": 340,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        256,
+        170
+      ],
+      "source": "masters/pilot-backgrounds/freezer.aseprite",
+      "sha256": "9103d5dbbdbf84839c09e4bd0674ed3e633a95de8a88224e519c7136bd0a1f18"
+    },
+    "talk-small-freezer": {
+      "key": "c16_talk-small-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-small-freezer.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/freezer.aseprite",
+      "sha256": "89e1ee3ff6e6b714b53f1708a640aed90063bfa67ffc171fe5bdc8ffe283336d",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625,
+      "baselineY": 176,
+      "panelBleed": 2
+    },
+    "talk-mini-freezer": {
+      "key": "c16_talk-mini-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-mini-freezer.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/freezer.aseprite",
+      "sha256": "769f6e5e206d139fa7b3c1e2b3db259fb9124a2bc8d027e66807d96878fd76cb",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75,
+      "baselineY": 94,
+      "panelBleed": 2
+    },
+    "icon-freezer": {
+      "key": "c16_icon-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/icon-freezer.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/freezer.aseprite",
+      "sha256": "67cf11d0cb1d67b9b2887ab94907924b542e761d6a140dc2860483055baea551",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75
+    },
+    "card-freezer": {
+      "key": "c16_card-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/card-freezer.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/freezer.aseprite",
+      "sha256": "51159d0008f8fcd833a67542094b29bb06df76c550cadb46eb74b5639c8f170a",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625
+    },
+    "credit-freezer": {
+      "key": "c16_credit-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/credit-freezer.webp",
+      "w": 90,
+      "h": 90,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        45,
+        45
+      ],
+      "source": "portraits/freezer.aseprite",
+      "sha256": "b20054d9bca42f5c227271a7f1dc175d44a04a23f36c2289ac257da81e4578eb",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.703125
+    },
+    "ship-earth-freezer": {
+      "key": "c16_ship-earth-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-earth-freezer.webp",
+      "w": 184,
+      "h": 194,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        92,
+        97
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-freezer-top.webp",
+      "sha256": "b6b229c0e310d66b9aec6706f402dcf2cd1bf90506339b3c11d7ce9ce366d8b0"
+    },
+    "ship-space-freezer": {
+      "key": "c16_ship-space-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-space-freezer.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/comic_1110/actual-space-freezer-base.webp",
+      "sha256": "c6231a11500bfcbf79500ac524772aee5c6d30e558977f78896bc29cd3c4a910"
+    },
+    "marker-freezer": {
+      "key": "c16_marker-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/marker-freezer.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-freezer-top.webp",
+      "sha256": "45207a4b304a4be00392a7174b29465fe37d2fe95493868ddc98c1787e9b44e9"
+    },
+    "talk-yuri": {
+      "key": "c16_talk-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-yuri.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        128,
+        128
+      ],
+      "source": "portraits/yuri.aseprite",
+      "sha256": "0066056aa890d0b247194d9857ff0d041e55dfc3cd013919c2e6c69bb4930789",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 2,
+      "visibleBounds": [
+        4,
+        6,
+        252,
+        250
+      ],
+      "baselineY": 250,
+      "panelBleed": 2
+    },
+    "backdrop-yuri": {
+      "key": "c16_backdrop-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/backdrop-yuri.webp",
+      "w": 512,
+      "h": 340,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        256,
+        170
+      ],
+      "source": "masters/pilot-backgrounds/yuri.aseprite",
+      "sha256": "019d330aef7e7a044d14466f733f0a945afe061a5d8b634bbf7ea1fe2b8865fb"
+    },
+    "talk-small-yuri": {
+      "key": "c16_talk-small-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-small-yuri.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/yuri.aseprite",
+      "sha256": "c5008744954ba800322ac6969100263fc0bfa6bfcc9c4d0274695c31a5bc699c",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625,
+      "baselineY": 176,
+      "panelBleed": 2
+    },
+    "talk-mini-yuri": {
+      "key": "c16_talk-mini-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-mini-yuri.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/yuri.aseprite",
+      "sha256": "52dece67da456eaab0e7eb751e1d1446dc255b13686a79bc2c68aca1a4920d7a",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75,
+      "baselineY": 94,
+      "panelBleed": 2
+    },
+    "icon-yuri": {
+      "key": "c16_icon-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/icon-yuri.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/yuri.aseprite",
+      "sha256": "174382aaea753e40d529cb3d30072ac1b440c8f6dfb61892b75f6d5d435b69c9",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75
+    },
+    "card-yuri": {
+      "key": "c16_card-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/card-yuri.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/yuri.aseprite",
+      "sha256": "528b133f750684bd3508dea7791d026df49a75a4c2d45516964eebf30ebec3b8",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625
+    },
+    "credit-yuri": {
+      "key": "c16_credit-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/credit-yuri.webp",
+      "w": 90,
+      "h": 90,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        45,
+        45
+      ],
+      "source": "portraits/yuri.aseprite",
+      "sha256": "90c52fd395389060434ef872fc0c4e46370073aadb769bd722ec72c66270ee74",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.703125
+    },
+    "ship-earth-yuri": {
+      "key": "c16_ship-earth-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-earth-yuri.webp",
+      "w": 210,
+      "h": 230,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        105,
+        115
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-yuri-top.webp",
+      "sha256": "f7c131ccc2a283cda80bb8af43b183e596dd5438f15ab6a20a85f71380b5ea4c"
+    },
+    "ship-space-yuri": {
+      "key": "c16_ship-space-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-space-yuri.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/comic_1110/actual-space-yuri-base.webp",
+      "sha256": "0568f8d96ed30707f767ccf13af565891c76fa1d396b04a5e763546cac19fd4c"
+    },
+    "marker-yuri": {
+      "key": "c16_marker-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/marker-yuri.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-yuri-top.webp",
+      "sha256": "c8f755b06b7e40b867d20ea4a2b2f4f853c0dbe76050e79a6e4610f0876bc4d8"
+    },
+    "talk-maverick": {
+      "key": "c16_talk-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-maverick.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        128,
+        128
+      ],
+      "source": "portraits/maverick.aseprite",
+      "sha256": "b964856f1da3b730c39b270cb96a4e98d69e86f1443bf3c7c8e29c6d2afc071d",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 2,
+      "visibleBounds": [
+        2,
+        4,
+        254,
+        250
+      ],
+      "baselineY": 250,
+      "panelBleed": 2
+    },
+    "backdrop-maverick": {
+      "key": "c16_backdrop-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/backdrop-maverick.webp",
+      "w": 512,
+      "h": 340,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        256,
+        170
+      ],
+      "source": "masters/pilot-backgrounds/maverick.aseprite",
+      "sha256": "da97f7ebb14972b4beab22e27ea54701dcf22f68bdca2b75cc5e2bc814dc28ea"
+    },
+    "talk-small-maverick": {
+      "key": "c16_talk-small-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-small-maverick.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/maverick.aseprite",
+      "sha256": "91e0f51ec061cc04d2bda6273ba660dab0915fa1117d49dc03c179a42c65d78b",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625,
+      "baselineY": 176,
+      "panelBleed": 2
+    },
+    "talk-mini-maverick": {
+      "key": "c16_talk-mini-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-mini-maverick.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/maverick.aseprite",
+      "sha256": "24f692f2ffd5823659e262351ae367479cb4be89407c88c6dcfcd7446d8894f7",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75,
+      "baselineY": 94,
+      "panelBleed": 2
+    },
+    "icon-maverick": {
+      "key": "c16_icon-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/icon-maverick.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/maverick.aseprite",
+      "sha256": "0f98935c0dcf0ce9e099188d10ab70ba8d40198dd3e9dfa5d3492b96de84b3d5",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75
+    },
+    "card-maverick": {
+      "key": "c16_card-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/card-maverick.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/maverick.aseprite",
+      "sha256": "cf4bb9c3f7ee02e19ad6c2d0d2c30a3038037214319acda5d42d34b210357ea9",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625
+    },
+    "credit-maverick": {
+      "key": "c16_credit-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/credit-maverick.webp",
+      "w": 90,
+      "h": 90,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        45,
+        45
+      ],
+      "source": "portraits/maverick.aseprite",
+      "sha256": "cef28b976eee244708578688a2560bc9f6bf4e4be34f24b8f708b4e8ee0f8739",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.703125
+    },
+    "ship-earth-maverick": {
+      "key": "c16_ship-earth-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-earth-maverick.webp",
+      "w": 200,
+      "h": 212,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        100,
+        106
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-maverick-top.webp",
+      "sha256": "247b88bcbd72fa6ae10e8edb7ed7eab6326f00bf41bcf27673b3dd0d9417d1ac"
+    },
+    "ship-space-maverick": {
+      "key": "c16_ship-space-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-space-maverick.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/comic_1110/actual-space-maverick-base.webp",
+      "sha256": "3ca85ee51951ba87fdd0c53712f1f1b5d9022902c57ceda4c8f3c16b547010b0"
+    },
+    "marker-maverick": {
+      "key": "c16_marker-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/marker-maverick.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-maverick-top.webp",
+      "sha256": "e7c863db4deecf0e2ecbc162e68b493d194fce562f8b585b6e8c5ee2c520db2b"
+    },
+    "talk-falva": {
+      "key": "c16_talk-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-falva.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        128,
+        128
+      ],
+      "source": "portraits/falva.aseprite",
+      "sha256": "90502a83ed34044e787670274f3e50289225e65cb0027af45f273937a6cbe667",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 2,
+      "visibleBounds": [
+        4,
+        4,
+        252,
+        250
+      ],
+      "baselineY": 250,
+      "panelBleed": 2
+    },
+    "backdrop-falva": {
+      "key": "c16_backdrop-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/backdrop-falva.webp",
+      "w": 512,
+      "h": 340,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        256,
+        170
+      ],
+      "source": "masters/pilot-backgrounds/falva.aseprite",
+      "sha256": "e5c3fd33eae00eb3ac4e075b8982ee025393b3c9b0e7fe041acdc938a9510875"
+    },
+    "talk-small-falva": {
+      "key": "c16_talk-small-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-small-falva.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/falva.aseprite",
+      "sha256": "05a70b9bde36ccec8e8780c8a2e39b9c9ad7de61e56f592d38f18b97a784b122",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625,
+      "baselineY": 176,
+      "panelBleed": 2
+    },
+    "talk-mini-falva": {
+      "key": "c16_talk-mini-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-mini-falva.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/falva.aseprite",
+      "sha256": "3996869d68383b160f05b35f1f8316702c7656b0c94baadc7428a1d74710cbb4",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75,
+      "baselineY": 94,
+      "panelBleed": 2
+    },
+    "icon-falva": {
+      "key": "c16_icon-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/icon-falva.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/falva.aseprite",
+      "sha256": "a9a588552bb7d0a981a9512d2acecb6b2b7f9a9178d89513120cca04d04a8659",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75
+    },
+    "card-falva": {
+      "key": "c16_card-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/card-falva.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/falva.aseprite",
+      "sha256": "7d8221bcdf10fb0b06dffc714cc64141dc3b6050c182cf025427ccdda8c2ca85",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625
+    },
+    "credit-falva": {
+      "key": "c16_credit-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/credit-falva.webp",
+      "w": 90,
+      "h": 90,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        45,
+        45
+      ],
+      "source": "portraits/falva.aseprite",
+      "sha256": "0e44cd84c4c3cd4fb1b79cb4412448dd1c225e7ff82029d0b45a36d301148771",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.703125
+    },
+    "ship-earth-falva": {
+      "key": "c16_ship-earth-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-earth-falva.webp",
+      "w": 204,
+      "h": 238,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        102,
+        119
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-falva-top.webp",
+      "sha256": "01b063f57452bf88cde2e8016bb15176d4bffb549d0540803c2a04ef5ab957b9"
+    },
+    "ship-space-falva": {
+      "key": "c16_ship-space-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-space-falva.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/comic_1110/actual-space-falva-base.webp",
+      "sha256": "7fa38795e0289e3cbf069cc0aefc938cfa38f96e9fa60e5a9634cf088d488a45"
+    },
+    "marker-falva": {
+      "key": "c16_marker-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/marker-falva.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-falva-top.webp",
+      "sha256": "f6a4c55af69ccd5fc5cf76fbcd96d01680fb722ad467214c6612a252eb4fb55b"
+    },
+    "talk-lizzie": {
+      "key": "c16_talk-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-lizzie.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        128,
+        128
+      ],
+      "source": "portraits/lizzie.aseprite",
+      "sha256": "cd05cb0938991d20dd695f11b932e98953fa5fd36f528b39ca6eace0e04b0023",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 2,
+      "visibleBounds": [
+        4,
+        4,
+        252,
+        250
+      ],
+      "baselineY": 250,
+      "panelBleed": 2
+    },
+    "backdrop-lizzie": {
+      "key": "c16_backdrop-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/backdrop-lizzie.webp",
+      "w": 512,
+      "h": 340,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        256,
+        170
+      ],
+      "source": "masters/pilot-backgrounds/lizzie.aseprite",
+      "sha256": "9b25e81f4d3899f510e3e0fec6c9b265746067164e96c3827e880b9358fe416e"
+    },
+    "talk-small-lizzie": {
+      "key": "c16_talk-small-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-small-lizzie.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/lizzie.aseprite",
+      "sha256": "ad21a9e9a56804822f1fefadaa741a23d5fb3dfc1e6e3501a740f295fe6f796a",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625,
+      "baselineY": 176,
+      "panelBleed": 2
+    },
+    "talk-mini-lizzie": {
+      "key": "c16_talk-mini-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-mini-lizzie.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/lizzie.aseprite",
+      "sha256": "6abb5bfa803bd72704697b236657599428108c56f6f103865d6ab0d84c556f9d",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75,
+      "baselineY": 94,
+      "panelBleed": 2
+    },
+    "icon-lizzie": {
+      "key": "c16_icon-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/icon-lizzie.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/lizzie.aseprite",
+      "sha256": "e1a03a5e95b09cd52da901d0a0943e4b1b82172e89639aa9e18bfdec478182ee",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75
+    },
+    "card-lizzie": {
+      "key": "c16_card-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/card-lizzie.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/lizzie.aseprite",
+      "sha256": "ccce93af561180b7a9b15294acf6a82e77b4a5182837602d289ca88d515345fa",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625
+    },
+    "credit-lizzie": {
+      "key": "c16_credit-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/credit-lizzie.webp",
+      "w": 90,
+      "h": 90,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        45,
+        45
+      ],
+      "source": "portraits/lizzie.aseprite",
+      "sha256": "06dc602ec5d5004d7d358f9f15e97cb1291d8506398ac84ebd98c4a011b6bbb4",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.703125
+    },
+    "ship-earth-lizzie": {
+      "key": "c16_ship-earth-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-earth-lizzie.webp",
+      "w": 224,
+      "h": 244,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        112,
+        122
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-lizzie-top.webp",
+      "sha256": "e3211b8617c3b7c45e88b0acca0a0725de8ccecc35ac8b980d700c829a403cf2"
+    },
+    "ship-space-lizzie": {
+      "key": "c16_ship-space-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-space-lizzie.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/comic_1110/actual-space-lizzie-base.webp",
+      "sha256": "068d3f93a9f6730779057d94a853b8b20444fd1944a388ecd4c1442aee69725c"
+    },
+    "marker-lizzie": {
+      "key": "c16_marker-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/marker-lizzie.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-lizzie-top.webp",
+      "sha256": "ca6185329f5da3f0227bf4d19b82d28afa7811a376998eae7b254802e248f5b6"
+    },
+    "talk-decker": {
+      "key": "c16_talk-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-decker.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        128,
+        128
+      ],
+      "source": "portraits/decker.aseprite",
+      "sha256": "ec788fdaf4c3fba3c52b6046a58a918acdff1e1a65c3373a8065ee80eafe9972",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 2,
+      "visibleBounds": [
+        8,
+        8,
+        252,
+        250
+      ],
+      "baselineY": 250,
+      "panelBleed": 2
+    },
+    "backdrop-decker": {
+      "key": "c16_backdrop-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/backdrop-decker.webp",
+      "w": 512,
+      "h": 340,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        256,
+        170
+      ],
+      "source": "masters/pilot-backgrounds/decker.aseprite",
+      "sha256": "3a441881c79c509fa947fd7aa40b882ba6081b2b75e38f9f75fbc6da59ebc49b"
+    },
+    "talk-small-decker": {
+      "key": "c16_talk-small-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-small-decker.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/decker.aseprite",
+      "sha256": "493e334f1d9766f9c5b20cd0130672e0aca625dda068702aee5a752ead4bf335",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625,
+      "baselineY": 176,
+      "panelBleed": 2
+    },
+    "talk-mini-decker": {
+      "key": "c16_talk-mini-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-mini-decker.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/decker.aseprite",
+      "sha256": "e20dbb54aed9e08395dbc78b2f100b2839893e823477ebc9c69173995c28b71c",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75,
+      "baselineY": 94,
+      "panelBleed": 2
+    },
+    "icon-decker": {
+      "key": "c16_icon-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/icon-decker.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/decker.aseprite",
+      "sha256": "44b12fe96e95730cbafc2b27cd98f6d8ead9721fccbba9c37d7169e2e657eed2",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75
+    },
+    "card-decker": {
+      "key": "c16_card-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/card-decker.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/decker.aseprite",
+      "sha256": "a7a371b94e6a61194829f5a259ed36540cda40e459bda4eaafba7367ac6e5640",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625
+    },
+    "credit-decker": {
+      "key": "c16_credit-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/credit-decker.webp",
+      "w": 90,
+      "h": 90,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        45,
+        45
+      ],
+      "source": "portraits/decker.aseprite",
+      "sha256": "58d58332ee8d8d5f9dafc6e8f1c36baf1bcc3937d2ba30cdb4cb65516695756f",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.703125
+    },
+    "ship-earth-decker": {
+      "key": "c16_ship-earth-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-earth-decker.webp",
+      "w": 200,
+      "h": 230,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        100,
+        115
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-decker-top.webp",
+      "sha256": "58b3f6241a4cb2a0ff77e121a83ab9ae4de576790f3253fef40416236c82bb79"
+    },
+    "ship-space-decker": {
+      "key": "c16_ship-space-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-space-decker.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/comic_1110/actual-space-decker-base.webp",
+      "sha256": "998d9328350af55bf52c09bbb67e231048470155b0c8db8efe16323ba081c43f"
+    },
+    "marker-decker": {
+      "key": "c16_marker-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/marker-decker.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-decker-top.webp",
+      "sha256": "6ec92a950b035f46dca5e1dfb4ff1e736b23d9c9eff3d8c22cf261b3c0c6c00d"
+    },
+    "talk-juggernaut": {
+      "key": "c16_talk-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-juggernaut.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        128,
+        128
+      ],
+      "source": "portraits/juggernaut.aseprite",
+      "sha256": "92387fdb4a8c09bb7adcd11e33002c3986121ec5a61f1db895f33ac50ec97b43",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 2,
+      "visibleBounds": [
+        0,
+        6,
+        256,
+        250
+      ],
+      "baselineY": 250,
+      "panelBleed": 2
+    },
+    "backdrop-juggernaut": {
+      "key": "c16_backdrop-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/backdrop-juggernaut.webp",
+      "w": 512,
+      "h": 340,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        256,
+        170
+      ],
+      "source": "masters/pilot-backgrounds/juggernaut.aseprite",
+      "sha256": "b7f220f47587da97a650ab5db54c09a3be0ab7ee09ebe1e1c42d8ac74b52f72a"
+    },
+    "talk-small-juggernaut": {
+      "key": "c16_talk-small-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-small-juggernaut.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/juggernaut.aseprite",
+      "sha256": "719044723a411cb123f993e834a32a29e26678f9e10f2d01b7c5f91408f3b60c",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625,
+      "baselineY": 176,
+      "panelBleed": 2
+    },
+    "talk-mini-juggernaut": {
+      "key": "c16_talk-mini-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/talk-mini-juggernaut.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 4,
+      "frames": 7,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/juggernaut.aseprite",
+      "sha256": "b667d5ab4e562bc2a80be8b9bdfd1a245a4d97f7ddcca74dfdc4f61ecc775d2a",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75,
+      "baselineY": 94,
+      "panelBleed": 2
+    },
+    "icon-juggernaut": {
+      "key": "c16_icon-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/icon-juggernaut.webp",
+      "w": 96,
+      "h": 96,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        48,
+        48
+      ],
+      "source": "portraits/juggernaut.aseprite",
+      "sha256": "25d13d498d3af3ef5a7fe3b24990f5efa4cdbe8664a04fb73efead9b9a3e1d64",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.75
+    },
+    "card-juggernaut": {
+      "key": "c16_card-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/card-juggernaut.webp",
+      "w": 180,
+      "h": 180,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        90,
+        90
+      ],
+      "source": "portraits/juggernaut.aseprite",
+      "sha256": "a0c358436cad90255b4c9f97ca461ac8f04aeafa6b8f1601ba926b36470baa05",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 1.40625
+    },
+    "credit-juggernaut": {
+      "key": "c16_credit-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/credit-juggernaut.webp",
+      "w": 90,
+      "h": 90,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        45,
+        45
+      ],
+      "source": "portraits/juggernaut.aseprite",
+      "sha256": "dd47ea7cca664100a71b1acd9ba5654a54356cdad8e989e6edbcfe788086c76e",
+      "native": [
+        128,
+        128
+      ],
+      "offlineScale": 0.703125
+    },
+    "ship-earth-juggernaut": {
+      "key": "c16_ship-earth-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-earth-juggernaut.webp",
+      "w": 200,
+      "h": 206,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        100,
+        103
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-juggernaut-top.webp",
+      "sha256": "6ac9540e3d2dd67302dbe8628a42e28769002663bb896fa0b9be8e98a8c9dbf8"
+    },
+    "ship-space-juggernaut": {
+      "key": "c16_ship-space-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/ship-space-juggernaut.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/comic_1110/actual-space-juggernaut-base.webp",
+      "sha256": "3e5e55338dcc17867ec25dbd9bd89b3ccfb977f074c6beecfab72636bfb2b3fe"
+    },
+    "marker-juggernaut": {
+      "key": "c16_marker-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/marker-juggernaut.webp",
+      "w": 128,
+      "h": 128,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        64,
+        64
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/native-juggernaut-top.webp",
+      "sha256": "e4b660f7af53a3cd9325274c227e1103354dbb1c1effa79d9c9c44a0c9be8d91"
+    },
+    "page-0-bg": {
+      "key": "c16_page-0-bg",
+      "path": "assets/game/shared/cinematics/comic_story_1111/page-0-bg.webp",
+      "w": 838,
+      "h": 470,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        419,
+        235
+      ],
+      "source": "masters/pages/page-0.0-bg.aseprite",
+      "sha256": "169984c747834cc1c7fd66d47e4717cf3e999e6790cdb237fc6a3b3f48bf5825"
+    },
+    "page-0-fg": {
+      "key": "c16_page-0-fg",
+      "path": "assets/game/shared/cinematics/comic_story_1111/page-0-fg.webp",
+      "w": 838,
+      "h": 470,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        419,
+        235
+      ],
+      "source": "masters/pages/page-0.0-fg.aseprite",
+      "sha256": "4e1666a16644fe1658d208645fc79581bfc142ad2932e265a521c27dac704663"
+    },
+    "name-0-cole": {
+      "key": "c16_name-0-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-0-cole.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "23d8319bf483c1f30fd56eb895831b39689ec204411ab51670fb15b70fe595f6"
+    },
+    "name-0-axel": {
+      "key": "c16_name-0-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-0-axel.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "1324130a570ac3f9102e78c7874b0a48826eca872d48da66962bff977ebb079c"
+    },
+    "name-0-freezer": {
+      "key": "c16_name-0-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-0-freezer.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "058664e543887e329398ad87af4090a2299684ad267c51a52566e4182838eb84"
+    },
+    "name-0-yuri": {
+      "key": "c16_name-0-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-0-yuri.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "16a48fa4e9241a90280ac21a45d8b8ae9e01a046f172b0e049e5b555002fec3a"
+    },
+    "name-0-maverick": {
+      "key": "c16_name-0-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-0-maverick.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "9f08fc6a3d6e5dc1f99e243abcbc65352968de1ef7d3d68d5670ef0cbe79c48e"
+    },
+    "name-0-falva": {
+      "key": "c16_name-0-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-0-falva.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "5b5bc0e6d1d7c9590c286be29975115e70ac07b4413c0d0d16747f6abf747339"
+    },
+    "name-0-lizzie": {
+      "key": "c16_name-0-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-0-lizzie.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "9a770867020d2263b5a324a38640dbc65226ba1fe83fafac2909662e1970b533"
+    },
+    "name-0-decker": {
+      "key": "c16_name-0-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-0-decker.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "b3e496e8dd9189081d9d7cc97767591052240ccc4151de2af084a5253bfe9e58"
+    },
+    "name-0-juggernaut": {
+      "key": "c16_name-0-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-0-juggernaut.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "e55590b7be8c51b7c7f1c2de3d688d4262326c5ddbc7e42fd63c7b6ec6e494d7"
+    },
+    "page-1-bg": {
+      "key": "c16_page-1-bg",
+      "path": "assets/game/shared/cinematics/comic_story_1111/page-1-bg.webp",
+      "w": 838,
+      "h": 470,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        419,
+        235
+      ],
+      "source": "masters/pages/page-1.0-bg.aseprite",
+      "sha256": "179b842024ab69346dff8c88ab51b77e84e118a3eaa0aebca00fcecb0eed6cbb"
+    },
+    "page-1-fg": {
+      "key": "c16_page-1-fg",
+      "path": "assets/game/shared/cinematics/comic_story_1111/page-1-fg.webp",
+      "w": 838,
+      "h": 470,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        419,
+        235
+      ],
+      "source": "masters/pages/page-1.0-fg.aseprite",
+      "sha256": "ffa42ed0624ed037bf42ed8a79fb25289de9b5df132131ee6b4fea9b70b88b8b"
+    },
+    "name-1-cole": {
+      "key": "c16_name-1-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-1-cole.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "76d1288265225ef817c025b3d6b74d20892ab87ecb30f89c18f525a6c356d3f4"
+    },
+    "name-1-axel": {
+      "key": "c16_name-1-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-1-axel.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "5a2bcea0547623f13b1f70f72d04db86f5f318e2fe81ba19b66b1bf5fb83f00a"
+    },
+    "name-1-freezer": {
+      "key": "c16_name-1-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-1-freezer.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "84036fbe6f61c72abc3cbc9ca45a3dc24c0c2ae45b41392061bb04607c852388"
+    },
+    "name-1-yuri": {
+      "key": "c16_name-1-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-1-yuri.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "16ed42d74fe9394958bbd306ee93c053abd3454d9e70b3307d253b9166ed9c5a"
+    },
+    "name-1-maverick": {
+      "key": "c16_name-1-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-1-maverick.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "3b2894c88f94caafc3dbb8919399dbf6877af253670535ca535a6b9bbf2c4034"
+    },
+    "name-1-falva": {
+      "key": "c16_name-1-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-1-falva.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "0a8f24a0369a6a25fa2894329051b8c6ab4cd855e93d4b3911ec165519239689"
+    },
+    "name-1-lizzie": {
+      "key": "c16_name-1-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-1-lizzie.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "4c9899d1f3420e297b08ce24d0914143de8b1b07c54c0b0bc3298ce5c6beece0"
+    },
+    "name-1-decker": {
+      "key": "c16_name-1-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-1-decker.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "1f8bc0719edc5a0588b6ed91efb7f02c564726f035eea819d385ee7335c1a934"
+    },
+    "name-1-juggernaut": {
+      "key": "c16_name-1-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-1-juggernaut.webp",
+      "w": 206,
+      "h": 24,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        103,
+        12
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "8c09c3b419c8f315f96992a5b0ce1b9231f98ed8e3a48f58cd66a32f5a93bc1a"
+    },
+    "page-2-bg": {
+      "key": "c16_page-2-bg",
+      "path": "assets/game/shared/cinematics/comic_story_1111/page-2-bg.webp",
+      "w": 838,
+      "h": 470,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        419,
+        235
+      ],
+      "source": "masters/pages/page-2.0-bg.aseprite",
+      "sha256": "c08e461de9c70a27eb909aefd5691cb4004e6178350e6a0659fce4656e86fd78"
+    },
+    "page-2-fg": {
+      "key": "c16_page-2-fg",
+      "path": "assets/game/shared/cinematics/comic_story_1111/page-2-fg.webp",
+      "w": 838,
+      "h": 470,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        419,
+        235
+      ],
+      "source": "masters/pages/page-2.0-fg.aseprite",
+      "sha256": "a4977082e13529309e1638e0b0b859593e5017fee4ea8faecba1223c222e8170"
+    },
+    "name-2-cole": {
+      "key": "c16_name-2-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-2-cole.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "d94ec34fc4a8c983ab9c515507f161beb90d55061a1ed8deb7439bbe0b2f1bad"
+    },
+    "name-2-axel": {
+      "key": "c16_name-2-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-2-axel.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "da20f9cfd2bd605a2576228cffe73d386c97cd94f7bf62903781130fec5cecdb"
+    },
+    "name-2-freezer": {
+      "key": "c16_name-2-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-2-freezer.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "0f737c554a56b7cb78b11437a928432a58828ee3b670bc726801e4b676e6b5d8"
+    },
+    "name-2-yuri": {
+      "key": "c16_name-2-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-2-yuri.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "67fe350452c63f184acd6e7a3e6a6eb529590ff38c60945719eb3f3e6d6df8f4"
+    },
+    "name-2-maverick": {
+      "key": "c16_name-2-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-2-maverick.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "f731965e46345f79831d5dc8269efb2a74de5fbd26882f49dba2603d3d8c3a21"
+    },
+    "name-2-falva": {
+      "key": "c16_name-2-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-2-falva.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "a9ef9ee8d760046ef0d94cb2eae9ad9c80e2129fe0a28d1b11b0f4c33cfc5205"
+    },
+    "name-2-lizzie": {
+      "key": "c16_name-2-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-2-lizzie.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "cba796cf3734efb1fbd5610ec74a6452a457a4df2324e2c02f25971fe316e780"
+    },
+    "name-2-decker": {
+      "key": "c16_name-2-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-2-decker.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "9abb828d680e314af5fbeba383d7cad62ba0d45e3c1f2a61166f806851ae8f80"
+    },
+    "name-2-juggernaut": {
+      "key": "c16_name-2-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-2-juggernaut.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "7e439715e5ea7eadb28bb1ba651b5c8f76c05973b1672915546f727ed62c5415"
+    },
+    "page-3-bg": {
+      "key": "c16_page-3-bg",
+      "path": "assets/game/shared/cinematics/comic_story_1111/page-3-bg.webp",
+      "w": 838,
+      "h": 470,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        419,
+        235
+      ],
+      "source": "masters/pages/page-3.0-bg.aseprite",
+      "sha256": "8435e00ba75c0eae9b6c24b24dd5c9f40905927e27bc0395370fd687d5200368"
+    },
+    "page-3-fg": {
+      "key": "c16_page-3-fg",
+      "path": "assets/game/shared/cinematics/comic_story_1111/page-3-fg.webp",
+      "w": 838,
+      "h": 470,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        419,
+        235
+      ],
+      "source": "masters/pages/page-3.0-fg.aseprite",
+      "sha256": "1964c7e17c44490f93e80c68bbc8accd69819ab7aab828a2acc67902dfbe26f5"
+    },
+    "name-3-cole": {
+      "key": "c16_name-3-cole",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-3-cole.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "d57bccabfa0659fbb0acae4510794af88958743f5c1d8fe3a20b4440dcabc57b"
+    },
+    "name-3-axel": {
+      "key": "c16_name-3-axel",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-3-axel.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "0192c570c32985c247ae72db0d61bebf757d8e1ed6e98746e7fe2001e5dcdb14"
+    },
+    "name-3-freezer": {
+      "key": "c16_name-3-freezer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-3-freezer.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "fb3ace53e49183ceb4273fa98ae396492f2f7c77cfdeee7b26e28b22e1d8ddfb"
+    },
+    "name-3-yuri": {
+      "key": "c16_name-3-yuri",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-3-yuri.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "fd178b34a39c692c10a39776829f6c767a7592b6f3e0fbdfff42356065089271"
+    },
+    "name-3-maverick": {
+      "key": "c16_name-3-maverick",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-3-maverick.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "c601caa124491a47ea0ab58303541a643f0c60b48acb4759b5c53ee011a3d14d"
+    },
+    "name-3-falva": {
+      "key": "c16_name-3-falva",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-3-falva.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "fe1e0edce837216a4a964f08d9d7f23123155f2da4a1cc0f531bcb68fdc3fe17"
+    },
+    "name-3-lizzie": {
+      "key": "c16_name-3-lizzie",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-3-lizzie.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "e8694900b3fbad2c403238e7b326af223fea66fb0b7d70259325bd31c182e3a5"
+    },
+    "name-3-decker": {
+      "key": "c16_name-3-decker",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-3-decker.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "32a45d167a620277a560978dba0d1455e83d3d51efd8f2b309c7e3aff61beb32"
+    },
+    "name-3-juggernaut": {
+      "key": "c16_name-3-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_story_1111/name-3-juggernaut.webp",
+      "w": 208,
+      "h": 26,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        104,
+        13
+      ],
+      "source": "source/author_nameplates.lua",
+      "sha256": "c1b79ae5867c186adba48bbe892fc3d51cf8b511f12d667f243fe966bc6a6fb1"
+    },
+    "art-bridge-airbase-recon": {
+      "key": "c16_art-bridge-airbase-recon",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-bridge-airbase-recon.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/bridges_1110/bridge-airbase-recon.webp",
+      "sha256": "51a01b0aec708e7ea51bcd2965e125a913fa99683c6f7393ef24f4a847da898b",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-bridge-launch-correlation": {
+      "key": "c16_art-bridge-launch-correlation",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-bridge-launch-correlation.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/bridges_1110/bridge-launch-correlation.webp",
+      "sha256": "9a0630816ae7c793a4a6f9394e3d757dc506ffc03713b07c53a11603377bca5c",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-bridge-river-recon": {
+      "key": "c16_art-bridge-river-recon",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-bridge-river-recon.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/bridges_1110/bridge-river-recon.webp",
+      "sha256": "f65a01e8569ed4fab7de94e195e91a3c9819da2775476054b75d005a7cf31db7",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-bridge-subsurface-scan": {
+      "key": "c16_art-bridge-subsurface-scan",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-bridge-subsurface-scan.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/bridges_1110/bridge-subsurface-scan.webp",
+      "sha256": "959c06c8e5c1ae96fabe47cd106915ee72271276880d73f869a7d5673a4db2d6",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-city-takeover": {
+      "key": "c16_art-city-takeover",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-city-takeover.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/city-takeover.webp",
+      "sha256": "ced2852da78d56ad01cc0e904d7f0248dd35b63e1511b77399f7c0038a4923b6",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-decker-reaction": {
+      "key": "c16_art-decker-reaction",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-decker-reaction.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/decker-reaction.webp",
+      "sha256": "b92833c182fbe96e5bc38fe310f03947608cf97abc11057160d1b495d83b0eb0",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-hq-chaingun-inspection": {
+      "key": "c16_art-hq-chaingun-inspection",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-hq-chaingun-inspection.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/hq_1110/hq-chaingun-inspection.webp",
+      "sha256": "16ec8856c69c8def31f3b9550be670c68a31cf8d8c6aa66c3b048765a57f3304",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-hq-cole-decker-hug": {
+      "key": "c16_art-hq-cole-decker-hug",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-hq-cole-decker-hug.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/hq_1110/hq-cole-decker-hug.webp",
+      "sha256": "e353b34c4c49ef0aeb1f11037c9f95fc8a12dfb5a7fa1c1dc2a2ddb004c23133",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-hq-conference": {
+      "key": "c16_art-hq-conference",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-hq-conference.webp",
+      "w": 754,
+      "h": 270,
+      "cols": 4,
+      "frames": 4,
+      "pivot": [
+        377,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/hq_1110/hq-conference.webp",
+      "sha256": "5c1435300d09640f0003fbda7f068db5081370d848ffcb513b852260d47fb25e",
+      "sharedCrop": true,
+      "offlineCanvas": [
+        754,
+        270
+      ]
+    },
+    "art-hq-heavy-metal": {
+      "key": "c16_art-hq-heavy-metal",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-hq-heavy-metal.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/hq_1110/hq-heavy-metal.webp",
+      "sha256": "6e78411b05f734fc0700a78b3340eb1094b1146691509d6e734e2249d0ba03a7",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-hq-laser-demo": {
+      "key": "c16_art-hq-laser-demo",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-hq-laser-demo.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/hq_1110/hq-laser-demo.webp",
+      "sha256": "8907368034bd19f192ff43ca09ea547f4fec67fa0dd5b4f5779bbd6103e18f79",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-hq-laser-reveal": {
+      "key": "c16_art-hq-laser-reveal",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-hq-laser-reveal.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/hq_1110/hq-laser-reveal.webp",
+      "sha256": "93f236244f3e8ab29042d77ee2e93ae130f1f9b960b7cc37d591cf856a9e84f9",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-hq-salvage-diagnostics": {
+      "key": "c16_art-hq-salvage-diagnostics",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-hq-salvage-diagnostics.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/hq_1110/hq-salvage-diagnostics.webp",
+      "sha256": "abd332f46c22dd7259b4a99d2b48af6489b51ed3f383723721599ce44933f969",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-juggernaut-guitar": {
+      "key": "c16_art-juggernaut-guitar",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-juggernaut-guitar.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/juggernaut-guitar.webp",
+      "sha256": "d0778a7d81942724f89dc109c793cc200a0143d61d2643540d822c40b0f0c2f8",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-juggernaut-help": {
+      "key": "c16_art-juggernaut-help",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-juggernaut-help.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/juggernaut-help.webp",
+      "sha256": "a1f135e8a3a4f7e01f0fb02ecefe6cf7d411b951a9f0af2421977443cbb4aacd",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-radar-acquisition": {
+      "key": "c16_art-radar-acquisition",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-radar-acquisition.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/radar-acquisition.webp",
+      "sha256": "93807884f964132e786351007d76f986eca7dcecec2c45b6af6adaadfd93debd",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-satellite-takeover": {
+      "key": "c16_art-satellite-takeover",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-satellite-takeover.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/satellite-takeover.webp?v=symbiote-code-2",
+      "sha256": "a80551f42ce9873df88c050ff3d3da2f60bb7504e8b1e714cfd1cf85b08e27c9",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-service-connector": {
+      "key": "c16_art-service-connector",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-service-connector.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/direction_1110/service-connector.webp",
+      "sha256": "330ff9ed4d6f827dc6f219fcb738906f0c9e73a3ca6846e8227d400cfa8de90d",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-warp-arrival": {
+      "key": "c16_art-warp-arrival",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-warp-arrival.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/warp_1110/warp-arrival.webp",
+      "sha256": "bcfb92a189a30ab800ac7cb9837a9cd66974c60a21e68d71620e940caa067157",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "art-warp-drive": {
+      "key": "c16_art-warp-drive",
+      "path": "assets/game/shared/cinematics/comic_story_1111/art-warp-drive.webp",
+      "w": 270,
+      "h": 270,
+      "cols": 4,
+      "frames": 6,
+      "pivot": [
+        135,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/warp_1110/warp-drive.webp",
+      "sha256": "ae4c83ea2fbf52419b2d7a484532e269068b258146c276532a63786c01042e27",
+      "sharedCrop": false,
+      "offlineCanvas": [
+        270,
+        270
+      ]
+    },
+    "portal": {
+      "key": "c16_portal",
+      "path": "assets/game/shared/cinematics/comic_story_1111/portal.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 9,
+      "pivot": [
+        128,
+        128
+      ],
+      "source": "assets/game/shared/cinematics/cinema_story_1021/blue_portal.webp",
+      "sha256": "dd5d1b895b24583fbb21b6b2e9bed29e24fd3426546cb5f81efaf17339cbbb66"
+    },
+    "location-city": {
+      "key": "c16_location-city",
+      "path": "assets/game/shared/cinematics/comic_story_1111/location-city.webp",
+      "w": 754,
+      "h": 270,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        377,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/cinema_story_1021/peace_city.webp",
+      "sha256": "8059c9c8e2812e1e178cea218c258f3a219b91d2dd867429d4355ffd39b3aa64"
+    },
+    "location-sky": {
+      "key": "c16_location-sky",
+      "path": "assets/game/shared/cinematics/comic_story_1111/location-sky.webp",
+      "w": 754,
+      "h": 270,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        377,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/story_1103/sky.webp",
+      "sha256": "2e905460f15c8e9363be9cf9e61aa1d841caad13ee0f75d7012b354a8a901b1f"
+    },
+    "location-space": {
+      "key": "c16_location-space",
+      "path": "assets/game/shared/cinematics/comic_story_1111/location-space.webp",
+      "w": 754,
+      "h": 270,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        377,
+        135
+      ],
+      "source": "assets/game/levels/stage_09/stage/expansion_v1/space/nst9_starfield.png",
+      "sha256": "5f4a85cc4f721b5ed15cc35382b4f7050e1623fe6ed0a6b5a6ba3154b6e67df2"
+    },
+    "location-earth": {
+      "key": "c16_location-earth",
+      "path": "assets/game/shared/cinematics/comic_story_1111/location-earth.webp",
+      "w": 754,
+      "h": 270,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        377,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/comic_1110/earth-approach.webp",
+      "sha256": "76f0d9c14f0e4372c082302439d4364a6039f0a6d491586cbb2e6778ade24ed4"
+    },
+    "location-sewer": {
+      "key": "c16_location-sewer",
+      "path": "assets/game/shared/cinematics/comic_story_1111/location-sewer.webp",
+      "w": 754,
+      "h": 270,
+      "cols": 1,
+      "frames": 1,
+      "pivot": [
+        377,
+        135
+      ],
+      "source": "assets/game/shared/cinematics/story_1103/sewer.webp",
+      "sha256": "6366010dfd7f712ffb6f224f9370df3c5e15c1f63d313cd332e77bd74d696692"
+    }
+  },
+  "aliases": {
+    "launch-correlation": "bridge-launch-correlation",
+    "airbase-arrival": "bridge-airbase-recon",
+    "subsurface-search": "bridge-subsurface-scan",
+    "river-arrival": "bridge-river-recon",
+    "warp-drive-lock": "warp-drive"
+  }
+}

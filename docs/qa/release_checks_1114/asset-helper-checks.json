@@ -1,0 +1,115 @@
+{
+  "helpers": true,
+  "nativeCells": [
+    {
+      "k": "s8atk_armored_leech_0",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8atk_armored_leech_1",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8atk_armored_leech_2",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8atk_armored_leech_3",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8atk_armored_leech_4",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8atk_armored_leech_5",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8atk_armored_leech_6",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8atk_armored_leech_7",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8roll_armored_leech_0",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8roll_armored_leech_1",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8roll_armored_leech_2",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8roll_armored_leech_3",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8roll_armored_leech_4",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8roll_armored_leech_5",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8roll_armored_leech_6",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "k": "s8roll_armored_leech_7",
+      "root": "nca_stage8_leech_recovery_1114",
+      "width": 256,
+      "height": 256
+    }
+  ],
+  "errors": [],
+  "syntax": [
+    "assets/difficulty_helpers_1114.js",
+    "assets/difficulty_rules_1101.js",
+    "assets/stage8_leech_recovery_1114.js",
+    "assets/stage5_bomber_assault_1114.js",
+    "assets/stage5_bomber_assault_art_1114.js",
+    "_BUILD_SOURCE/test_fl.js",
+    "_BUILD_SOURCE/test_difficulty_helpers_1114.cjs",
+    "_BUILD_SOURCE/test_mutator_1003.cjs",
+    "_BUILD_SOURCE/test_stage8_1003.cjs",
+    "_BUILD_SOURCE/test_campaign_focus_1004b.cjs",
+    "_BUILD_SOURCE/test_campaign_controls_1004h.cjs"
+  ]
+}

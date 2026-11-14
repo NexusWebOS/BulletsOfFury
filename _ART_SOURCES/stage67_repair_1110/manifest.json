@@ -1,0 +1,201 @@
+{
+  "hashes": {
+    "thunderhead_reactor_1105.js": "e766ffa6050c59c826ff220050cb18442be8681f911f81b38d47f8d4cc5183e9",
+    "sumpjaw_tandem_1105.js": "a99602c2c799e3f0fc798609eb5e124c19094fbc6cba3895ee0981a90e761842",
+    "playtest_repairs_1108.js": "63d75d8daad705fcbce5f8cfdfcc687ea78dcc98528e54de57f323c830d9eb52"
+  },
+  "art": {
+    "thunder-frame": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/thunder-frame.png",
+      "cell": [
+        420,
+        36
+      ]
+    },
+    "thunder-fill": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/thunder-fill.png",
+      "cell": [
+        332,
+        10
+      ]
+    },
+    "snake-frame": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/snake-frame.png",
+      "cell": [
+        420,
+        58
+      ]
+    },
+    "snake-fill": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/snake-fill.png",
+      "cell": [
+        264,
+        14
+      ]
+    },
+    "beam": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/beam.png",
+      "cell": [
+        288,
+        544
+      ]
+    },
+    "rib0-body": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib0-body.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib0-hit": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib0-hit.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib0-shadow": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib0-shadow.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib1-body": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib1-body.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib1-hit": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib1-hit.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib1-shadow": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib1-shadow.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib2-body": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib2-body.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib2-hit": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib2-hit.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib2-shadow": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib2-shadow.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib3-body": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib3-body.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib3-hit": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib3-hit.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib3-shadow": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib3-shadow.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib4-body": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib4-body.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib4-hit": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib4-hit.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib4-shadow": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib4-shadow.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib5-body": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib5-body.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib5-hit": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib5-hit.png",
+      "cell": [
+        64,
+        64
+      ]
+    },
+    "rib5-shadow": {
+      "path": "assets/game/shared/combat/stage67_repair_1110/rib5-shadow.png",
+      "cell": [
+        64,
+        64
+      ]
+    }
+  },
+  "bars": {
+    "thunder": {
+      "w": 420,
+      "h": 36,
+      "well": [
+        44,
+        16,
+        332,
+        10
+      ],
+      "source": "assets/game/levels/stage_06/ui/enemy_bars_1007c.png"
+    },
+    "snake": {
+      "w": 420,
+      "h": 58,
+      "well": [
+        79,
+        26,
+        264,
+        14
+      ],
+      "source": "assets/game/levels/stage_07/ui/enemy_bars_1007c.png"
+    }
+  },
+  "snake_sections": 16,
+  "source": "approved Sumpjaw rib source plus original generated Stage6/7 HUDs and authored Thunderhead wind beam",
+  "beam_pivot": [
+    144,
+    0
+  ],
+  "behavior": "native attack book, health pools, hit sockets and firing timing retained"
+}

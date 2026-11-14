@@ -1,0 +1,61 @@
+{
+  "version": "H126",
+  "date": "2026-11-11",
+  "frames": 1776,
+  "banks": 176,
+  "pages": 35,
+  "source_hashes": {
+    "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\assets\\game\\levels\\stage_08\\boss\\helicopter_1030\\hc79_page_6.webp": "45ef50e7f6f37d0f75cae0aef511b0cad07693d415b32ff887f73702c3a7c95f",
+    "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\assets\\game\\levels\\stage_08\\boss\\helicopter_1030\\hc79_page_14.webp": "0242538df52efa52a0f8f497483274011c7f7ff5eb9fdd5b26fdc40f6735fb69",
+    "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\assets\\game\\levels\\stage_08\\boss\\helicopter_1030\\hc79_page_15.webp": "07b2c598b109efe27bd5df14f95b07cc26e32ddc9c042d8d9de61464601c9bfc",
+    "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\assets\\game\\levels\\stage_08\\boss\\helicopter_1030\\hc79_page_7.webp": "1798404b23ca5b528b35ed10ef42a32d2ac7a43bb8766d58b032bdf51837124b",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovbody_critical.png": "0839311723c73bb34e90538fcf5c16bc33bcefcce90ff8e5e097a886e5d83d1b",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_00.png": "f42301b456111ac4042eea689a34d3cdae3aa6a0f6ac7031a9afa410053a5f92",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_22.png": "f3f4e0e7f97cfa8c8e40f01d94864339d32a2db16783a5d6538a7e22d8555ff3",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_45.png": "9ac8e6a88460241b42ed4ee85875851ca9db1e23433d068b48455e6dcd1eeacc",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_67.png": "dcdc17cf6021fa7879b28f92f56c9ee3d420fcf5bcc3df407353d31e3d424317",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_18.png": "64185396fba7b09e04891335d55dd80ee9da7967c28ae4eeb2b8d40529911db2",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_40.png": "1d0a15044454ddf2e6456b243c9150844ae866368a6f7eb199ae5bfdf9e65462",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_63.png": "f7249fef5f2c7fdb1aa7d8027ff0659d09a4845e295553d249822f474c1dd6ea",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_13.png": "50860553a75a3fc996da5f453db5eb963355d31bca836da06f3ac6ca255d5789",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_36.png": "0c76b41ad3a62ee87aae5a532cd9aadc228f213c0c68165acdfc09960387dea6",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_58.png": "a48f8d6524f276f9dc61ebc32150a579688bd78e0a70cb0848b7c10888b0b46c",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_09.png": "9bd96786c6f6fee7f79b4f8317dd657dd4f4541802c9c94a16f8ea6021ca307a",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_31.png": "32b9f3d89d137ad83b0ffb8db02766a54234a3e4862abe6ad7e7bdb377794c07",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_54.png": "63a62b90bff5652d04fe1dbec7d2243e30d74e8774bee54e74a9cb5f23b79cff",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_04.png": "173bc9936280405f22e20fa7433e94d9b045f0d4f2753f8e55fe354d28c4fdf6",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_27.png": "1449c0579ceb21b5a2a4bfcc3f5dd84e9b953c344f1ccce5673b663c09ab9420",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovrotor_49.png": "e9defc9a66772ba36114d4643b72ae4836ce3b0674aaab61a78d3cb75ec92a1c",
+    "C:\\Users\\Mike\\Documents\\Codex\\2026-11-09\\https-packaged-media-redd-it-ritf2ehdok0i1\\work\\helicopter-death\\sources\\ovbody_critical-furious.png": "b229c6de07739b8269faf78eedf0e62f8e0fb7f928a8d0db6bfe55592aa04353",
+    "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_BUILD_SOURCE\\helicopter_effects_1111\\explosion-master.png": "c9500ee743f2b3e004e7fad4f548ce5577b979f4bc59e7308430c85c443f57d7"
+  },
+  "unchanged_owners": {
+    "game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "stage1_repair_1021.js": "5fa256b29d60f9236d50ca696f3c2dcd7109d12a6e23cc4d8fb5873cb1fd07f2",
+    "dracodia_helicopter_1030.js": "50f75a8d75f18570caaa521355b73e023b03a4d803c699fda9c119e9d67c3159",
+    "helicopter_effects_1111.js": "0fe2d4fd7c784f6d2c00672c85371d5fea2b0e5c525ce9996b57ddb87718f257",
+    "dracodia_energy_1110.js": "bc2f24ea9224708af94358948b96e2a7150e71f8603e0c99ea88686b2360bcbc",
+    "stage8_identity_1018.js": "febeda3f30625bbff3a01ddbc439d7220ff876496d36ef218bb04aaf6ef77faf",
+    "dracodia_return_1030.js": "7002dbbf803fb2937d4e1b710dc8458191efd9e911385cfa1b320ee2b51b6154",
+    "index.html": "65985c2e97f59f8f3e5fb44ca6ac6e5e57114c5d6d4842f041a069a592e6426c"
+  },
+  "checks": {
+    "verification": 40,
+    "art-verification": 38
+  },
+  "timing": {
+    "stage1": {
+      "shatter": 6.65,
+      "dam_reveal": 6.7,
+      "raid_gate": 8.6
+    },
+    "dracodia": {
+      "shatter": 3.85,
+      "native_return": 5.4
+    }
+  },
+  "full_suite": {
+    "exit": 1,
+    "blocker": "Existing ReferenceError: difficultyHealthBaseline15 is not defined at combat_polish_0927b.js:151 / test_fl.js:4537; final summary not reached."
+  }
+}

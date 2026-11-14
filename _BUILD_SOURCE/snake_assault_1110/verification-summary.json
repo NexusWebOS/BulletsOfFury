@@ -1,0 +1,36 @@
+{
+  "native_checks": 15,
+  "compatibility_checks": 28,
+  "actual_side_speeds": [
+    430.00000000000097,
+    559.999999999971,
+    699.9999999999646,
+    879.9999999999557
+  ],
+  "arches_over_player": [
+    {
+      "actor": 0,
+      "ground_distance_from_committed_player": 5.371228735533888,
+      "height": 187.74211248285323
+    },
+    {
+      "actor": 1,
+      "ground_distance_from_committed_player": 1.0740809415220416,
+      "height": 219.98792866941017
+    }
+  ],
+  "new_authored_banks": 18,
+  "new_frames": 448,
+  "gif_frames": 309,
+  "gif_game_size": [
+    480,
+    512
+  ],
+  "gif_duration_seconds": 20.6,
+  "errors": [],
+  "full_suite": {
+    "exit_code": 1,
+    "existing_blocker": "difficultyHealthBaseline15 is not defined at assets/combat_polish_0927b.js:151"
+  },
+  "runtime_sha256": "54dd01f6eeca4f8f51bd68f5b6297a1c3fa5b21a124b31ec29c7b0c35b37ffd3"
+}

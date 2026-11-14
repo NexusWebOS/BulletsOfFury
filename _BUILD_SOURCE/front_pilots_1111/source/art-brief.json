@@ -1,0 +1,39 @@
+{
+  "nativePortrait": [
+    320,
+    320
+  ],
+  "mouthSourceCrop": [
+    64,
+    0,
+    192,
+    192
+  ],
+  "largestView": 307,
+  "bodyBaseline": 316,
+  "poses": [
+    "closed",
+    "A",
+    "E",
+    "O",
+    "U",
+    "F",
+    "L"
+  ],
+  "style": "16-bit comic inks with 1990s action-anime cel shading",
+  "identity": "Actual nine approved pilots; headset-free frontal family; Maverick teal",
+  "scope": "Headset-free frontal portraits throughout cinematic conversations; conference/workshop/hangar/lounge and native sky/orbit/tunnel cockpit environments; existing gameplay HUD identities retained",
+  "background": [
+    512,
+    340
+  ],
+  "zoomScales": [
+    1,
+    1.03,
+    1.065,
+    1.1,
+    1.135,
+    1.17,
+    1.2
+  ]
+}

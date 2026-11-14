@@ -1,0 +1,112 @@
+{
+  "expected_source_hash": "f1b237be9cda538b1bb0374347f93b6bdc5b53c79bbe962beab837f0dce493ca",
+  "body": {
+    "source": "_ART_SOURCES/hammer_finale_1017/references/stunned.png",
+    "cell": [
+      296,
+      296
+    ],
+    "pivot": [
+      148,
+      148
+    ],
+    "emissive_pixels": 2057,
+    "steps": [
+      0,
+      0.16,
+      0.32,
+      0.52,
+      0.74,
+      0.95
+    ],
+    "local_spill_pixels": 3,
+    "alpha_preserved": true
+  },
+  "aura": {
+    "source": "_ART_SOURCES/hammer_finale_1017/returned/drain/frame_001.png through frame_032.png",
+    "pixellab_job": "66542724-a05b-4f41-aa33-21f0a8748020",
+    "frames": 32,
+    "cell": [
+      320,
+      320
+    ],
+    "pivot": [
+      160,
+      160
+    ],
+    "energy_pixels": [
+      28,
+      55,
+      595,
+      499,
+      424,
+      438,
+      693,
+      313,
+      127,
+      493,
+      268,
+      733,
+      580,
+      176,
+      106,
+      660,
+      563,
+      442,
+      452,
+      690,
+      224,
+      128,
+      313,
+      690,
+      274,
+      196,
+      119,
+      664,
+      411,
+      538,
+      212,
+      79
+    ],
+    "source_sha256": [
+      "d84f15b3bb6d9bdc683235e885276c5fe22b0fec1d3ae3e17b0951f7488d2784",
+      "e0adf9c861c43acd461f262bb9858b802938724a222a9590c1826dad5e4ea52b",
+      "63003415cef411365af8508b6897b654c106d5a1585a21a6e7fc5e1fc93c4c9a",
+      "e61e6787fd84f8457dd1b7da394e05bc08a771c025d61d7ddb64a4d41736a690",
+      "d0311f1b2bf26891eaf33348371b9a28f8d170f474ca691f6bce627077e2e284",
+      "a0d73006585a26343adb298fc1c53a4c11b066fe8d557d7a3c3c0595aef80492",
+      "d4f4b315bc1758eb19c688dbdac54f8e855041affc6e10d06780bbf370c9d3ad",
+      "ff378c30aa99d29e3fbfb8e88c641a9b5db68aa20abf943267c8b9a2793f389d",
+      "085ed9c32c99b20a94691a8cda8d3ad921e85a75f1b2ec2d9110fa05d915b4d4",
+      "be66ee4197f863ede7ff16f3ae9fb79efe343bcc630d231cbe89ba1b855e0c94",
+      "e85cc6cc8c49b26d5989c8cbdaf40289ebfdc15b5179826ea386869416818219",
+      "5e97d4190d6de5e3335a66af68d770e80bcdc05e7b9edbeb6b41c8d05e5ed245",
+      "a0fc779649e64cf35c218a6f730ef3ded07e177da6bb36d7ad6ad22b8d71b55e",
+      "7fc2264e4d44d2ff26e76b366a08f745f4f8c299bb814e2b1ec442ca1bfe9160",
+      "74ae4eebd683d21fd9a6a40b80eeac0da7be684a83c0ef68fa7c664e05e4682f",
+      "3addac2f0e3c48d00cb824f51eb39fdc9dfcad5eea8147ee8c7120a0648fb3c6",
+      "232e01ae55c9aa7cdfd491ffacabdaf6bbee95132ba75b692b745a559eb220ab",
+      "5e9bcbca59cc65874c5fd5662565f4ece1ebd3577d6ebd715e603f472967f3d6",
+      "8a9e0722d9e2fabfea6f42842f269ed2c924a72e57fb8740a616727651435faa",
+      "e490f4b451a04dcdaa74ed41f7eafe5e63ffc0e5dc5b76881b28566d02b311e2",
+      "27bba0f91798700d99168267c034592507c85e5726687c3dd99c66b1b243b583",
+      "85fbe5d1af4a0ceaab776774106ff15c219e50923cd6de9d418301d1acdc7cf3",
+      "d36cbb623597546f047d3a17db4c7e273e3d564820b4a197ee53030718e3b880",
+      "c59cc16802d67e5cdb5e2791fc2975fc1d35aea91ca63cc44fef57b123f6d06c",
+      "c96601f35e18e8278163d06646e7ed06aa67b1b3a37228948e16d582015f3a4d",
+      "d5ea40e3741b41e3c60548ca0ec9626fb5eeaeacabc719fc2133c11eb64a785c",
+      "3b837705f0aae68a31109bf05baf4dc61cc0e74d0534e52aa85f79727fe068b3",
+      "a1528568e9554b92a19590046b14ddaa2db0681661d918831522a7eaa5353881",
+      "5c8ea6e95bed8c094e5d4e14dc03232b02d8ca89f7f63d5c6bd02e770c353aac",
+      "45536463db62b91402701c6e5031d3c8e6f0f9581e3aa47ade5fbc9291e588a5",
+      "05ed7699d0418448385d85789db68b56f13a6bd09f1fdd0dcd837c6e86ba50e1",
+      "ee7ad1c3d4480217efb46091da7f602d9fa5c2f14a002fe83347a4039805fcf6"
+    ],
+    "frame_clock": "8*t+1.6*t*t for t<=10; then40fps",
+    "fps": [
+      8,
+      40
+    ]
+  },
+  "explosions_and_shatter": "previously selected three families and original armor trajectories retained"
+}

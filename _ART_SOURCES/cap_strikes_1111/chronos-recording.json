@@ -1,0 +1,37 @@
+{
+  "records": [
+    {
+      "unit": "chronos",
+      "video": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\outputs\\End-cap-strikes\\chronos-hammer.mp4",
+      "seconds": 31.06,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 8.531
+        },
+        {
+          "name": "released throw",
+          "at": 17.047
+        }
+      ],
+      "audio": {
+        "peak": 0.7203590869903564,
+        "frames": 1175,
+        "starts": 20,
+        "sfxStarts": 40,
+        "errors": [],
+        "events": [],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [],
+        "phase": null
+      }
+    }
+  ],
+  "errors": []
+}

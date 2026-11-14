@@ -1,0 +1,274 @@
+{
+  "checks": [
+    {
+      "name": "regular/center: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_regular",
+          "ba119_corrupt-overhead-left_regular",
+          "ba119_corrupt-overhead-right_regular"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "regular/left: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_regular",
+          "ba119_corrupt-overhead-left_regular",
+          "ba119_corrupt-overhead-right_regular"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "regular/right: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_regular",
+          "ba119_corrupt-overhead-right_regular",
+          "ba119_corrupt-overhead-left_regular"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "regular: both diagonal strikes face forward through windup/hit/recovery",
+      "passed": true,
+      "data": {
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead-left_regular",
+          "ba119_corrupt-overhead-right_regular"
+        ],
+        "hits": [
+          true,
+          true
+        ],
+        "hp": 4126
+      }
+    },
+    {
+      "name": "regular/left: actual forward hammer cap matches native impact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-left_regular",
+        "frame": 22,
+        "front": true,
+        "error": 0
+      }
+    },
+    {
+      "name": "regular/right: actual forward hammer cap matches native impact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-right_regular",
+        "frame": 22,
+        "front": true,
+        "error": 0
+      }
+    },
+    {
+      "name": "regular: native body damage visibly flashes the frontal source pixels",
+      "passed": true,
+      "data": {
+        "damaged": true,
+        "flash": 0.12,
+        "hp": 4103,
+        "changedWhitePixels": 104475
+      }
+    },
+    {
+      "name": "regular: white hit feedback expires normally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "chrome/center: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_chrome",
+          "ba119_corrupt-overhead-left_chrome",
+          "ba119_corrupt-overhead-right_chrome"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "chrome/left: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_chrome",
+          "ba119_corrupt-overhead-left_chrome",
+          "ba119_corrupt-overhead-right_chrome"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "chrome/right: entire four-contact attack stays on authored frontal poses",
+      "passed": true,
+      "data": {
+        "frames": 345,
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead_chrome",
+          "ba119_corrupt-overhead-right_chrome",
+          "ba119_corrupt-overhead-left_chrome"
+        ],
+        "contacts": 4
+      }
+    },
+    {
+      "name": "chrome: both diagonal strikes face forward through windup/hit/recovery",
+      "passed": true,
+      "data": {
+        "bad": [],
+        "banks": [
+          "ba119_corrupt-overhead-left_chrome",
+          "ba119_corrupt-overhead-right_chrome"
+        ],
+        "hits": [
+          true,
+          true
+        ],
+        "hp": 4126
+      }
+    },
+    {
+      "name": "chrome/left: actual forward hammer cap matches native impact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-left_chrome",
+        "frame": 22,
+        "front": true,
+        "error": 0
+      }
+    },
+    {
+      "name": "chrome/right: actual forward hammer cap matches native impact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-right_chrome",
+        "frame": 22,
+        "front": true,
+        "error": 0
+      }
+    },
+    {
+      "name": "chrome: native body damage visibly flashes the frontal source pixels",
+      "passed": true,
+      "data": {
+        "damaged": true,
+        "flash": 0.12,
+        "hp": 4103,
+        "changedWhitePixels": 93230
+      }
+    },
+    {
+      "name": "chrome: white hit feedback expires normally",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real low-HP damage commits rage before the overdue copied-form return",
+      "passed": true,
+      "data": {
+        "hp": 1155.2800000000002,
+        "hpAfter": 1155.2800000000002,
+        "max": 4126,
+        "action": "rage",
+        "mode": "fight",
+        "form": 8,
+        "age": 52.00666666666667,
+        "commits": 1
+      }
+    },
+    {
+      "name": "Rage visibly transforms and completes opener, foreground palms, background palms and repeat wave",
+      "passed": true,
+      "data": {
+        "complete": true,
+        "phases": [
+          "rage",
+          "kame_up",
+          "kame_strafe",
+          "kame_charge",
+          "kame_thrust",
+          "kame_fire",
+          "kame_recover",
+          "kame_return",
+          "volley_move",
+          "volley_warn",
+          "volley_fire",
+          "volley_recover",
+          "retreat",
+          "gather",
+          "thrust",
+          "beam",
+          "recover",
+          "done"
+        ]
+      }
+    },
+    {
+      "name": "Both full three-group rage palm volleys actually emit native shots",
+      "passed": true,
+      "data": {
+        "foreground": 24,
+        "background": 24
+      }
+    },
+    {
+      "name": "Overdue rage remains finite after a full book without healing body or weapons",
+      "passed": true,
+      "data": {
+        "hp": 1155.2800000000002,
+        "pool": 1155.2800000000002,
+        "done": [
+          {
+            "type": "rage-book-complete",
+            "time": 100,
+            "cycles": 3,
+            "hp": 1155.2800000000002,
+            "donorAge": 89.0399999999979
+          }
+        ]
+      }
+    },
+    {
+      "name": "Approved modular gun still owns its pose and remaining HP",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No native page/update/draw errors",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Chronus original rage/wave, ships, guns and prior owners remain byte-identical",
+      "passed": true,
+      "data": null
+    }
+  ],
+  "errors": [],
+  "runtimeHash": "5e38b03c2bc51cd61bd1a417b6e3bc7fd29807be2fbb3f8f847d243ada43ddf3",
+  "rageHash": "3516cfa2448922d2c98dc06b96501846109b97d0a4b889f0121c8b6d6b6343b8"
+}

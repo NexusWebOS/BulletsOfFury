@@ -1,0 +1,5220 @@
+{
+  "imports": [
+    {
+      "source": "guided-drac-o0",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o0.png",
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        237.5,
+        401
+      ],
+      "tip": [
+        139,
+        354
+      ],
+      "headCenter": [
+        134,
+        309
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        102,
+        134,
+        377,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o0",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o0.png",
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        237.5,
+        401
+      ],
+      "tip": [
+        140,
+        352
+      ],
+      "headCenter": [
+        145,
+        324
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        103,
+        134,
+        370,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o0",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o0.png",
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        238.5,
+        401
+      ],
+      "tip": [
+        155,
+        393
+      ],
+      "headCenter": [
+        150,
+        325
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        108,
+        134,
+        363,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o0",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o0.png",
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        239.5,
+        401
+      ],
+      "tip": [
+        155,
+        392
+      ],
+      "headCenter": [
+        154,
+        324
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        111,
+        134,
+        362,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o0",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o0.png",
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        237.5,
+        401
+      ],
+      "tip": [
+        159,
+        389
+      ],
+      "headCenter": [
+        155,
+        321
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        117,
+        134,
+        362,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o0",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o0.png",
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        237.5,
+        401
+      ],
+      "tip": [
+        144,
+        350
+      ],
+      "headCenter": [
+        145,
+        305
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        119,
+        134,
+        363,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o0",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o0.png",
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        239.0,
+        401
+      ],
+      "tip": [
+        157,
+        346
+      ],
+      "headCenter": [
+        156,
+        290
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        118,
+        134,
+        362,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o0",
+      "sourceCell": 7,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o0.png",
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        240.0,
+        401
+      ],
+      "tip": [
+        152,
+        342
+      ],
+      "headCenter": [
+        150,
+        312
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        117,
+        134,
+        362,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o1-alpha",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o1-alpha.png",
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        231.5,
+        384
+      ],
+      "tip": [
+        151,
+        355
+      ],
+      "headCenter": [
+        146,
+        296
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        109,
+        129,
+        360,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o1-alpha",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o1-alpha.png",
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        231.0,
+        384
+      ],
+      "tip": [
+        136,
+        340
+      ],
+      "headCenter": [
+        143,
+        311
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        107,
+        129,
+        361,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o1-alpha",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o1-alpha.png",
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        232.0,
+        384
+      ],
+      "tip": [
+        146,
+        315
+      ],
+      "headCenter": [
+        141,
+        284
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        103,
+        129,
+        361,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o1-alpha",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o1-alpha.png",
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        232.5,
+        384
+      ],
+      "tip": [
+        138,
+        289
+      ],
+      "headCenter": [
+        135,
+        230
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        97,
+        128,
+        360,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o1-alpha",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o1-alpha.png",
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        231.5,
+        383
+      ],
+      "tip": [
+        139,
+        266
+      ],
+      "headCenter": [
+        146,
+        212
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        97,
+        127,
+        360,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o1-alpha",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o1-alpha.png",
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        231.0,
+        383
+      ],
+      "tip": [
+        143,
+        228
+      ],
+      "headCenter": [
+        150,
+        176
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        101,
+        126,
+        361,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o1-alpha",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o1-alpha.png",
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        228.0,
+        383
+      ],
+      "tip": [
+        159,
+        190
+      ],
+      "headCenter": [
+        166,
+        144
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        116,
+        111,
+        365,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o1-alpha",
+      "sourceCell": 7,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o1-alpha.png",
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        227.0,
+        383
+      ],
+      "tip": [
+        178,
+        196
+      ],
+      "headCenter": [
+        177,
+        115
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        131,
+        88,
+        365,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o2",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o2.png",
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        218.5,
+        412
+      ],
+      "tip": [
+        180,
+        144
+      ],
+      "headCenter": [
+        175,
+        90
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        140,
+        61,
+        370,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o2",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o2.png",
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        199.5,
+        411
+      ],
+      "tip": [
+        160,
+        140
+      ],
+      "headCenter": [
+        157,
+        86
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        137,
+        56,
+        375,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o2",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o2.png",
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        189.0,
+        414
+      ],
+      "tip": [
+        199,
+        124
+      ],
+      "headCenter": [
+        206,
+        95
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        135,
+        43,
+        378,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o2",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o2.png",
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        179.0,
+        414
+      ],
+      "tip": [
+        230,
+        118
+      ],
+      "headCenter": [
+        233,
+        79
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        135,
+        40,
+        391,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o2",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o2.png",
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        184.0,
+        411
+      ],
+      "tip": [
+        323,
+        165
+      ],
+      "headCenter": [
+        330,
+        84
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        130,
+        43,
+        407,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o2",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o2.png",
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        178.5,
+        410
+      ],
+      "tip": [
+        358,
+        222
+      ],
+      "headCenter": [
+        364,
+        140
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        129,
+        82,
+        414,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o2",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o2.png",
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        168.5,
+        411
+      ],
+      "tip": [
+        390,
+        399
+      ],
+      "headCenter": [
+        397,
+        328
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        136,
+        152,
+        442,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o3",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o3.png",
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        176.0,
+        414
+      ],
+      "tip": [
+        384,
+        417
+      ],
+      "headCenter": [
+        391,
+        384
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        154,
+        201,
+        430,
+        419
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o3",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o3.png",
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        175.5,
+        410
+      ],
+      "tip": [
+        389,
+        405
+      ],
+      "headCenter": [
+        384,
+        342
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        154,
+        186,
+        423,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o3",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o3.png",
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        175.5,
+        410
+      ],
+      "tip": [
+        392,
+        383
+      ],
+      "headCenter": [
+        389,
+        349
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        154,
+        162,
+        414,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o3",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o3.png",
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        176.0,
+        409
+      ],
+      "tip": [
+        384,
+        353
+      ],
+      "headCenter": [
+        382,
+        292
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        154,
+        153,
+        402,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o3",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o3.png",
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        176.0,
+        411
+      ],
+      "tip": [
+        361,
+        308
+      ],
+      "headCenter": [
+        364,
+        273
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        154,
+        138,
+        404,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o3-grip",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o3-grip.png",
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        192.5,
+        411
+      ],
+      "tip": [
+        195,
+        324
+      ],
+      "headCenter": [
+        190,
+        257
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        144,
+        132,
+        369,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o3-grip",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o3-grip.png",
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        191.5,
+        411
+      ],
+      "tip": [
+        176,
+        358
+      ],
+      "headCenter": [
+        182,
+        290
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        140,
+        130,
+        369,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-drac-o3-grip",
+      "sourceCell": 7,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o3-grip.png",
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        192.0,
+        411
+      ],
+      "tip": [
+        151,
+        394
+      ],
+      "headCenter": [
+        156,
+        326
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        137,
+        122,
+        371,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        195.0,
+        292
+      ],
+      "tip": [
+        123,
+        191
+      ],
+      "headCenter": [
+        171,
+        187
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        123,
+        150,
+        356,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        193.5,
+        291
+      ],
+      "tip": [
+        154,
+        180
+      ],
+      "headCenter": [
+        230,
+        188
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        135,
+        150,
+        358,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        193.5,
+        291
+      ],
+      "tip": [
+        158,
+        190
+      ],
+      "headCenter": [
+        209,
+        185
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        154,
+        148,
+        360,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        195.5,
+        291
+      ],
+      "tip": [
+        192,
+        163
+      ],
+      "headCenter": [
+        245,
+        163
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        156,
+        141,
+        358,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        196.5,
+        291
+      ],
+      "tip": [
+        199,
+        162
+      ],
+      "headCenter": [
+        275,
+        170
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        155,
+        143,
+        361,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        191.5,
+        291
+      ],
+      "tip": [
+        141,
+        170
+      ],
+      "headCenter": [
+        217,
+        178
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        129,
+        146,
+        363,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        187.5,
+        291
+      ],
+      "tip": [
+        89,
+        179
+      ],
+      "headCenter": [
+        166,
+        187
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        76,
+        144,
+        368,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 7,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        920,
+        314,
+        1254,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        206.0,
+        291
+      ],
+      "tip": [
+        74,
+        183
+      ],
+      "headCenter": [
+        150,
+        191
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        59,
+        147,
+        376,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 9,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        294,
+        627,
+        647,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        206.5,
+        291
+      ],
+      "tip": [
+        76,
+        191
+      ],
+      "headCenter": [
+        151,
+        199
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        64,
+        148,
+        375,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 10,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        186.0,
+        291
+      ],
+      "tip": [
+        89,
+        191
+      ],
+      "headCenter": [
+        166,
+        198
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        81,
+        148,
+        373,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 11,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        185.0,
+        290
+      ],
+      "tip": [
+        92,
+        199
+      ],
+      "headCenter": [
+        141,
+        195
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        92,
+        146,
+        370,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 12,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        185.5,
+        292
+      ],
+      "tip": [
+        122,
+        185
+      ],
+      "headCenter": [
+        198,
+        193
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        109,
+        144,
+        370,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 13,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        189.0,
+        292
+      ],
+      "tip": [
+        126,
+        187
+      ],
+      "headCenter": [
+        202,
+        195
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        119,
+        144,
+        367,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 14,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        189.5,
+        292
+      ],
+      "tip": [
+        138,
+        187
+      ],
+      "headCenter": [
+        214,
+        195
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        127,
+        144,
+        364,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-side-T",
+      "sourceCell": 15,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "crop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        192.0,
+        293
+      ],
+      "tip": [
+        128,
+        199
+      ],
+      "headCenter": [
+        175,
+        195
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        128,
+        143,
+        362,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        165.0,
+        280
+      ],
+      "tip": [
+        162,
+        408
+      ],
+      "headCenter": [
+        155,
+        329
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        113,
+        152,
+        360,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        167.5,
+        283
+      ],
+      "tip": [
+        163,
+        406
+      ],
+      "headCenter": [
+        157,
+        328
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        136,
+        149,
+        359,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        164.5,
+        283
+      ],
+      "tip": [
+        196,
+        388
+      ],
+      "headCenter": [
+        204,
+        297
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        164,
+        149,
+        353,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        159.0,
+        282
+      ],
+      "tip": [
+        229,
+        388
+      ],
+      "headCenter": [
+        236,
+        297
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        169,
+        150,
+        350,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        149.0,
+        283
+      ],
+      "tip": [
+        298,
+        386
+      ],
+      "headCenter": [
+        305,
+        295
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        180,
+        145,
+        352,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        148.0,
+        283
+      ],
+      "tip": [
+        356,
+        347
+      ],
+      "headCenter": [
+        349,
+        287
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        194,
+        146,
+        368,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        150.5,
+        282
+      ],
+      "tip": [
+        355,
+        341
+      ],
+      "headCenter": [
+        347,
+        283
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        194,
+        147,
+        382,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 7,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        150.5,
+        283
+      ],
+      "tip": [
+        354,
+        320
+      ],
+      "headCenter": [
+        349,
+        266
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        176,
+        147,
+        366,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 8,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        149.5,
+        278
+      ],
+      "tip": [
+        342,
+        387
+      ],
+      "headCenter": [
+        349,
+        296
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        158,
+        151,
+        367,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 9,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        149.0,
+        278
+      ],
+      "tip": [
+        319,
+        361
+      ],
+      "headCenter": [
+        326,
+        269
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        159,
+        152,
+        350,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 10,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        157.0,
+        280
+      ],
+      "tip": [
+        160,
+        333
+      ],
+      "headCenter": [
+        159,
+        306
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        135,
+        150,
+        340,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 11,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        169.0,
+        282
+      ],
+      "tip": [
+        135,
+        332
+      ],
+      "headCenter": [
+        136,
+        278
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        108,
+        148,
+        325,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 12,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        174.0,
+        284
+      ],
+      "tip": [
+        138,
+        339
+      ],
+      "headCenter": [
+        146,
+        310
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        110,
+        148,
+        312,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 13,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        157.5,
+        284
+      ],
+      "tip": [
+        148,
+        339
+      ],
+      "headCenter": [
+        156,
+        282
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        121,
+        148,
+        326,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 14,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        158.5,
+        284
+      ],
+      "tip": [
+        123,
+        346
+      ],
+      "headCenter": [
+        129,
+        317
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        111,
+        149,
+        343,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "drac-whirl",
+      "sourceCell": 15,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "crop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        157.5,
+        284
+      ],
+      "tip": [
+        143,
+        353
+      ],
+      "headCenter": [
+        150,
+        295
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        114,
+        150,
+        353,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o0",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o0.png",
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        237.5,
+        403
+      ],
+      "tip": [
+        146,
+        360
+      ],
+      "headCenter": [
+        151,
+        318
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        99,
+        137,
+        378,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o0",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o0.png",
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        237.5,
+        403
+      ],
+      "tip": [
+        125,
+        356
+      ],
+      "headCenter": [
+        119,
+        317
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        100,
+        137,
+        367,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o0",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o0.png",
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        239.5,
+        404
+      ],
+      "tip": [
+        120,
+        352
+      ],
+      "headCenter": [
+        120,
+        315
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        101,
+        136,
+        363,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o0",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o0.png",
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        241.0,
+        404
+      ],
+      "tip": [
+        146,
+        346
+      ],
+      "headCenter": [
+        152,
+        308
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        104,
+        136,
+        362,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o0",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o0.png",
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        238.0,
+        403
+      ],
+      "tip": [
+        145,
+        354
+      ],
+      "headCenter": [
+        151,
+        315
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        103,
+        136,
+        361,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o0",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o0.png",
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        238.5,
+        403
+      ],
+      "tip": [
+        143,
+        356
+      ],
+      "headCenter": [
+        149,
+        317
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        103,
+        137,
+        363,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o0",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o0.png",
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        240.5,
+        403
+      ],
+      "tip": [
+        142,
+        358
+      ],
+      "headCenter": [
+        148,
+        320
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        102,
+        139,
+        363,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o0",
+      "sourceCell": 7,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o0.png",
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        241.5,
+        403
+      ],
+      "tip": [
+        138,
+        350
+      ],
+      "headCenter": [
+        144,
+        313
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        101,
+        140,
+        362,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o1",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o1.png",
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        233.0,
+        387
+      ],
+      "tip": [
+        139,
+        354
+      ],
+      "headCenter": [
+        145,
+        316
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        100,
+        122,
+        360,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o1",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o1.png",
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        233.0,
+        387
+      ],
+      "tip": [
+        137,
+        339
+      ],
+      "headCenter": [
+        144,
+        302
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        98,
+        122,
+        361,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o1",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o1.png",
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        235.0,
+        387
+      ],
+      "tip": [
+        115,
+        311
+      ],
+      "headCenter": [
+        112,
+        273
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        94,
+        123,
+        362,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o1",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o1.png",
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        236.0,
+        387
+      ],
+      "tip": [
+        131,
+        287
+      ],
+      "headCenter": [
+        138,
+        250
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        92,
+        122,
+        362,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o1",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o1.png",
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        235.0,
+        387
+      ],
+      "tip": [
+        113,
+        269
+      ],
+      "headCenter": [
+        111,
+        231
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        91,
+        122,
+        362,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o1",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o1.png",
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        233.0,
+        387
+      ],
+      "tip": [
+        139,
+        235
+      ],
+      "headCenter": [
+        146,
+        198
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        99,
+        123,
+        362,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o1",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o1.png",
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        234.0,
+        387
+      ],
+      "tip": [
+        139,
+        193
+      ],
+      "headCenter": [
+        133,
+        151
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        110,
+        110,
+        364,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o1",
+      "sourceCell": 7,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o1.png",
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        234.0,
+        387
+      ],
+      "tip": [
+        147,
+        168
+      ],
+      "headCenter": [
+        142,
+        127
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        121,
+        89,
+        363,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o2",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o2.png",
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        216.5,
+        398
+      ],
+      "tip": [
+        165,
+        164
+      ],
+      "headCenter": [
+        166,
+        134
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        151,
+        93,
+        357,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o2",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o2.png",
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        215.5,
+        398
+      ],
+      "tip": [
+        168,
+        168
+      ],
+      "headCenter": [
+        163,
+        137
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        146,
+        96,
+        359,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o2",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o2.png",
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        201.0,
+        397
+      ],
+      "tip": [
+        191,
+        160
+      ],
+      "headCenter": [
+        185,
+        125
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        149,
+        88,
+        364,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o2",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o2.png",
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.91,
+      "root": [
+        201.5,
+        397
+      ],
+      "tip": [
+        212,
+        159
+      ],
+      "headCenter": [
+        206,
+        121
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        147,
+        86,
+        367,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o2",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o2.png",
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        193.5,
+        378
+      ],
+      "tip": [
+        279,
+        223
+      ],
+      "headCenter": [
+        286,
+        142
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        144,
+        97,
+        377,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o2",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o2.png",
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        190.0,
+        378
+      ],
+      "tip": [
+        314,
+        262
+      ],
+      "headCenter": [
+        321,
+        181
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        144,
+        136,
+        370,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o2",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o2.png",
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.91,
+      "root": [
+        184.5,
+        378
+      ],
+      "tip": [
+        374,
+        409
+      ],
+      "headCenter": [
+        381,
+        361
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        142,
+        192,
+        399,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o3-right",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o3-right.png",
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        175.0,
+        412
+      ],
+      "tip": [
+        402,
+        415
+      ],
+      "headCenter": [
+        408,
+        379
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        154,
+        211,
+        424,
+        417
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o3-right",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o3-right.png",
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        175.0,
+        412
+      ],
+      "tip": [
+        396,
+        397
+      ],
+      "headCenter": [
+        402,
+        361
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        153,
+        187,
+        419,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o3-right",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o3-right.png",
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        175.5,
+        412
+      ],
+      "tip": [
+        385,
+        375
+      ],
+      "headCenter": [
+        391,
+        340
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        154,
+        165,
+        408,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o3-right",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o3-right.png",
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.76,
+      "root": [
+        176.5,
+        412
+      ],
+      "tip": [
+        379,
+        352
+      ],
+      "headCenter": [
+        385,
+        315
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        155,
+        149,
+        402,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o3-right",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o3-right.png",
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        175.5,
+        412
+      ],
+      "tip": [
+        383,
+        315
+      ],
+      "headCenter": [
+        389,
+        280
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        154,
+        136,
+        405,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o3-rejected",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o3-rejected.png",
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        207.0,
+        414
+      ],
+      "tip": [
+        152,
+        329
+      ],
+      "headCenter": [
+        147,
+        294
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        132,
+        134,
+        377,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o3-rejected",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o3-rejected.png",
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        204.0,
+        414
+      ],
+      "tip": [
+        141,
+        381
+      ],
+      "headCenter": [
+        144,
+        313
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        128,
+        130,
+        377,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "guided-blue-o3-rejected",
+      "sourceCell": 7,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o3-rejected.png",
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.76,
+      "root": [
+        210.0,
+        414
+      ],
+      "tip": [
+        138,
+        382
+      ],
+      "headCenter": [
+        140,
+        313
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        124,
+        124,
+        379,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        186.0,
+        291
+      ],
+      "tip": [
+        135,
+        176
+      ],
+      "headCenter": [
+        191,
+        184
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        135,
+        144,
+        357,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        185.5,
+        291
+      ],
+      "tip": [
+        138,
+        176
+      ],
+      "headCenter": [
+        188,
+        181
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        138,
+        144,
+        361,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        178.5,
+        291
+      ],
+      "tip": [
+        159,
+        172
+      ],
+      "headCenter": [
+        214,
+        180
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        148,
+        146,
+        364,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        173.5,
+        291
+      ],
+      "tip": [
+        200,
+        168
+      ],
+      "headCenter": [
+        259,
+        165
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        152,
+        137,
+        362,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        171.5,
+        291
+      ],
+      "tip": [
+        187,
+        158
+      ],
+      "headCenter": [
+        242,
+        163
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        151,
+        136,
+        361,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        169.5,
+        291
+      ],
+      "tip": [
+        133,
+        175
+      ],
+      "headCenter": [
+        189,
+        177
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        133,
+        143,
+        368,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        177.0,
+        291
+      ],
+      "tip": [
+        89,
+        181
+      ],
+      "headCenter": [
+        142,
+        188
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        89,
+        146,
+        373,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 7,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        920,
+        314,
+        1254,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        198.0,
+        289
+      ],
+      "tip": [
+        70,
+        187
+      ],
+      "headCenter": [
+        126,
+        195
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        70,
+        148,
+        381,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 9,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        294,
+        627,
+        647,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        200.0,
+        290
+      ],
+      "tip": [
+        91,
+        189
+      ],
+      "headCenter": [
+        145,
+        197
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        91,
+        148,
+        380,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 10,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        178.0,
+        290
+      ],
+      "tip": [
+        97,
+        188
+      ],
+      "headCenter": [
+        152,
+        196
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        97,
+        146,
+        378,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 11,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        175.5,
+        290
+      ],
+      "tip": [
+        99,
+        188
+      ],
+      "headCenter": [
+        155,
+        194
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        99,
+        144,
+        377,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 12,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        178.5,
+        292
+      ],
+      "tip": [
+        121,
+        182
+      ],
+      "headCenter": [
+        176,
+        190
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        121,
+        144,
+        374,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 13,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        178.0,
+        292
+      ],
+      "tip": [
+        119,
+        186
+      ],
+      "headCenter": [
+        174,
+        190
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        119,
+        142,
+        370,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 14,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        173.5,
+        292
+      ],
+      "tip": [
+        125,
+        180
+      ],
+      "headCenter": [
+        181,
+        188
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        125,
+        143,
+        367,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-side-T",
+      "sourceCell": 15,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "crop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        179.0,
+        292
+      ],
+      "tip": [
+        128,
+        184
+      ],
+      "headCenter": [
+        183,
+        191
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        128,
+        145,
+        365,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": true,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        -1,
+        0
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 0,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        172.5,
+        285
+      ],
+      "tip": [
+        133,
+        357
+      ],
+      "headCenter": [
+        128,
+        319
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        112,
+        151,
+        359,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 1,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        172.0,
+        286
+      ],
+      "tip": [
+        155,
+        403
+      ],
+      "headCenter": [
+        148,
+        319
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        130,
+        150,
+        367,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 2,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        161.5,
+        287
+      ],
+      "tip": [
+        180,
+        408
+      ],
+      "headCenter": [
+        173,
+        319
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        156,
+        149,
+        360,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 3,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "scale": 1.02,
+      "root": [
+        161.5,
+        288
+      ],
+      "tip": [
+        200,
+        409
+      ],
+      "headCenter": [
+        208,
+        317
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        160,
+        149,
+        353,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 4,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        152.0,
+        286
+      ],
+      "tip": [
+        278,
+        399
+      ],
+      "headCenter": [
+        278,
+        317
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        178,
+        150,
+        354,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 5,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        147.5,
+        286
+      ],
+      "tip": [
+        337,
+        341
+      ],
+      "headCenter": [
+        332,
+        304
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        192,
+        149,
+        378,
+        411
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 6,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        149.0,
+        283
+      ],
+      "tip": [
+        366,
+        336
+      ],
+      "headCenter": [
+        374,
+        302
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        195,
+        152,
+        389,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 7,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "scale": 1.02,
+      "root": [
+        154.5,
+        284
+      ],
+      "tip": [
+        343,
+        320
+      ],
+      "headCenter": [
+        350,
+        285
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        172,
+        152,
+        366,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 8,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        151.0,
+        280
+      ],
+      "tip": [
+        343,
+        377
+      ],
+      "headCenter": [
+        350,
+        286
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        152,
+        158,
+        365,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 9,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        150.5,
+        280
+      ],
+      "tip": [
+        330,
+        376
+      ],
+      "headCenter": [
+        338,
+        285
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        158,
+        157,
+        354,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 10,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        161.0,
+        282
+      ],
+      "tip": [
+        156,
+        329
+      ],
+      "headCenter": [
+        152,
+        294
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        136,
+        156,
+        346,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 11,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "scale": 1.02,
+      "root": [
+        170.5,
+        283
+      ],
+      "tip": [
+        124,
+        327
+      ],
+      "headCenter": [
+        121,
+        293
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        105,
+        155,
+        329,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 12,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        172.0,
+        282
+      ],
+      "tip": [
+        130,
+        336
+      ],
+      "headCenter": [
+        125,
+        300
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        109,
+        155,
+        315,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 13,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        157.5,
+        284
+      ],
+      "tip": [
+        139,
+        338
+      ],
+      "headCenter": [
+        135,
+        302
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        119,
+        154,
+        331,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 14,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        158.0,
+        283
+      ],
+      "tip": [
+        169,
+        397
+      ],
+      "headCenter": [
+        161,
+        312
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        118,
+        156,
+        349,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "blue-whirl",
+      "sourceCell": 15,
+      "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "crop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "scale": 1.02,
+      "root": [
+        162.0,
+        284
+      ],
+      "tip": [
+        169,
+        403
+      ],
+      "headCenter": [
+        165,
+        317
+      ],
+      "grip": [
+        256,
+        265
+      ],
+      "bounds": [
+        122,
+        154,
+        356,
+        410
+      ],
+      "wholeGenerated": true,
+      "faceForward": false,
+      "endCapLeads": true,
+      "depth": 1,
+      "capAxis": [
+        0,
+        1
+      ]
+    }
+  ],
+  "uniqueCompleteSources": 124,
+  "cell": 512,
+  "pivot": [
+    256,
+    256
+  ],
+  "foot": 410,
+  "normalization": "Direct original-master nearest import, one uniform model-unit calibration per source sheet, whole-pose boot registration; no per-frame fitting or body assembly."
+}

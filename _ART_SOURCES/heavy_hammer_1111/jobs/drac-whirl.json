@@ -1,0 +1,25 @@
+{
+  "name": "drac-whirl",
+  "prompt": "Production wholebody sprite animation: DRACODIA performs ONE COMPLETE360degree WHIRLWIND hammer revolution in SIXTEEN consecutive drawings. Reference1 exact purple/silver armor, hornedgrayclosedface/red eyes/red core; reference2 readyheldhammer pose/rendering; reference3 sixspikedpurplecylinderThammer. Preserveallidentity/proportions. Square4columns4rows2048x2048, SAME modelunit in every512cell and fixedbootbaseline/pivot. The BODY actually TURNS THROUGH ALLVIEWS with realfootpivots and hip/shoulderrotation, not frontalposes/staticbody. Camera fixed. Arms extended slightly in front of hiswaist with BOTHhands always gripping SINGLE straightshaft onSAMEside ofhead; vertical purplecylinder perpendicular to shaft entersSIDEcenter, keep rigidThammer. Cylindertravels in wide HORIZONTALcircle aroundbody, endcaps/spikes remainUP/DOWN, bodyproperly occludes hammerwhenitpassesBEHINDback, nohandpassingthroughhead. 16 evenlyspaced orientations progressingfrom FRONT tocharacterRIGHT then BACK then LEFT andfront: row1 0FRONT/headscreenleft,1turn22.5right,2right45threequarter,3right67.5. row2 4RIGHTPROFILE90,5rightrear112.5,6REARthreequarter135,7nearBACK157.5. row3 8BACK180(showbackarmor/backofhelmet, NOface/corevisible),9backleft202.5,10rearleft225,11leftrear247.5. row4 12LEFTPROFILE270,13leftfront292.5,14frontleft315,15nearlyfront337.5, nextframe0completesrotationseamlessly. Characterturnprogresssmooth, legs step/pivotunderhips forheavyrotationalmomentum, headturnsnaturallywithbody. FULLBODYANDHELDHAMMER drawn together in everycell, no detachedparts or headstamps, no glowingtrails. Keep ALLhammer/spikes/butt/boots/horns inside40pixelclearcellmargins, bodyunitdoesnotchange, nozoom. Crispsharp16bitmetallicsprite art on REALRGBAtransparency. No text/numbers/labels/grid/floor/shadows/effects/background/checkerboard.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-0e0d490e-5931-4cfc-8958-847858c65854.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

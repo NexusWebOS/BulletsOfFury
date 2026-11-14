@@ -1,0 +1,330 @@
+{
+  "passed": true,
+  "cells": [
+    {
+      "bank": "corrupt-fold",
+      "frame": 0,
+      "bounds": [
+        60,
+        10,
+        326,
+        347
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 1,
+      "bounds": [
+        68,
+        38,
+        317,
+        347
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 2,
+      "bounds": [
+        70,
+        68,
+        314,
+        344
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 3,
+      "bounds": [
+        77,
+        99,
+        308,
+        341
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 4,
+      "bounds": [
+        79,
+        109,
+        306,
+        336
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 5,
+      "bounds": [
+        81,
+        116,
+        304,
+        331
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 6,
+      "bounds": [
+        85,
+        124,
+        300,
+        325
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 7,
+      "bounds": [
+        90,
+        128,
+        295,
+        320
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 8,
+      "bounds": [
+        96,
+        124,
+        291,
+        315
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 9,
+      "bounds": [
+        100,
+        125,
+        285,
+        310
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 10,
+      "bounds": [
+        105,
+        125,
+        279,
+        303
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 11,
+      "bounds": [
+        107,
+        122,
+        279,
+        297
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 12,
+      "bounds": [
+        105,
+        125,
+        281,
+        289
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 13,
+      "bounds": [
+        106,
+        122,
+        278,
+        282
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 14,
+      "bounds": [
+        106,
+        117,
+        279,
+        277
+      ]
+    },
+    {
+      "bank": "corrupt-fold",
+      "frame": 15,
+      "bounds": [
+        107,
+        113,
+        279,
+        273
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 0,
+      "bounds": [
+        41,
+        40,
+        216,
+        217
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 1,
+      "bounds": [
+        42,
+        39,
+        214,
+        218
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 2,
+      "bounds": [
+        43,
+        38,
+        214,
+        219
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 3,
+      "bounds": [
+        44,
+        43,
+        213,
+        214
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 4,
+      "bounds": [
+        42,
+        45,
+        215,
+        213
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 5,
+      "bounds": [
+        41,
+        46,
+        215,
+        211
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 6,
+      "bounds": [
+        41,
+        47,
+        215,
+        211
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 7,
+      "bounds": [
+        41,
+        43,
+        217,
+        215
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 8,
+      "bounds": [
+        42,
+        40,
+        214,
+        217
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 9,
+      "bounds": [
+        47,
+        42,
+        210,
+        215
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 10,
+      "bounds": [
+        44,
+        41,
+        212,
+        215
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 11,
+      "bounds": [
+        43,
+        40,
+        213,
+        217
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 12,
+      "bounds": [
+        41,
+        42,
+        217,
+        216
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 13,
+      "bounds": [
+        40,
+        45,
+        216,
+        213
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 14,
+      "bounds": [
+        42,
+        47,
+        215,
+        211
+      ]
+    },
+    {
+      "bank": "corrupt-roll",
+      "frame": 15,
+      "bounds": [
+        40,
+        41,
+        216,
+        216
+      ]
+    }
+  ],
+  "scales": {
+    "corrupt-fold": 1.25,
+    "corrupt-roll": 0.7803223070398643
+  },
+  "diameter": 172.5
+}

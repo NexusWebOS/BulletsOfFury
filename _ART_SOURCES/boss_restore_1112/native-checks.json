@@ -1,0 +1,1424 @@
+{
+  "checks": [
+    {
+      "name": "blue-sides: all16 recovered weapon contacts lie on real opaque pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue-right: all16 recovered weapon contacts lie on real opaque pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "corrupt-sides: all16 recovered weapon contacts lie on real opaque pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "corrupt-right: all16 recovered weapon contacts lie on real opaque pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exact original whole-frame Draconus directional sequences / regular",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exact original whole-frame Draconus directional sequences / chrome",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exact original whole-frame Draconus directional sequences / red",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exact original whole-frame Draconus directional sequences / hit",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Exact original whole-frame Draconus directional sequences / red_hit",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage5 regular/left: actual extended strike source pose at native contact",
+      "passed": true,
+      "data": {
+        "bank": "blue-sides",
+        "key": "ba119_blue-sides_regular_8",
+        "frame": 8,
+        "sourceFrame": null,
+        "cell": [
+          576,
+          576
+        ],
+        "tip": {
+          "x": 218,
+          "y": 189
+        },
+        "keys": [
+          "bg_stage05_loop_0923",
+          "ba119_blue-sides_regular_8",
+          "fury_thrusters_04",
+          "fury_thrusters_04",
+          "eh7_stage_05"
+        ],
+        "root": {
+          "x": 340,
+          "y": 210
+        },
+        "hp": 11220
+      }
+    },
+    {
+      "name": "Stage5 regular/right: actual extended strike source pose at native contact",
+      "passed": true,
+      "data": {
+        "bank": "blue-right",
+        "key": "ba119_blue-right_regular_8",
+        "frame": 8,
+        "sourceFrame": null,
+        "cell": [
+          576,
+          576
+        ],
+        "tip": {
+          "x": 461,
+          "y": 189
+        },
+        "keys": [
+          "bg_stage05_loop_0923",
+          "ba119_blue-right_regular_8",
+          "fury_thrusters_04",
+          "fury_thrusters_04",
+          "eh7_stage_05"
+        ],
+        "root": {
+          "x": 340,
+          "y": 210
+        },
+        "hp": 11220
+      }
+    },
+    {
+      "name": "Stage5 regular: authored directional cycle and broad physical head travel",
+      "passed": true,
+      "data": {
+        "frames": 16,
+        "source": 16,
+        "travel": 286
+      }
+    },
+    {
+      "name": "Stage5 chrome/left: actual extended strike source pose at native contact",
+      "passed": true,
+      "data": {
+        "bank": "blue-sides",
+        "key": "ba119_blue-sides_chrome_8",
+        "frame": 8,
+        "sourceFrame": null,
+        "cell": [
+          576,
+          576
+        ],
+        "tip": {
+          "x": 218,
+          "y": 189
+        },
+        "keys": [
+          "bg_stage05_loop_0923",
+          "ba119_blue-sides_chrome_8",
+          "fury_thrusters_04",
+          "fury_thrusters_04",
+          "eh7_stage_05",
+          "bmbar_fill_grey",
+          "bmbar_fill_grey"
+        ],
+        "root": {
+          "x": 340,
+          "y": 210
+        },
+        "hp": 11220
+      }
+    },
+    {
+      "name": "Stage5 chrome/right: actual extended strike source pose at native contact",
+      "passed": true,
+      "data": {
+        "bank": "blue-right",
+        "key": "ba119_blue-right_chrome_8",
+        "frame": 8,
+        "sourceFrame": null,
+        "cell": [
+          576,
+          576
+        ],
+        "tip": {
+          "x": 461,
+          "y": 189
+        },
+        "keys": [
+          "bg_stage05_loop_0923",
+          "ba119_blue-right_chrome_8",
+          "fury_thrusters_04",
+          "fury_thrusters_04",
+          "eh7_stage_05",
+          "bmbar_fill_grey",
+          "bmbar_fill_grey"
+        ],
+        "root": {
+          "x": 340,
+          "y": 210
+        },
+        "hp": 11220
+      }
+    },
+    {
+      "name": "Stage5 chrome: authored directional cycle and broad physical head travel",
+      "passed": true,
+      "data": {
+        "frames": 16,
+        "source": 16,
+        "travel": 286
+      }
+    },
+    {
+      "name": "Stage5 regular/center: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "center",
+        "seen": [
+          "center"
+        ],
+        "drift": 0,
+        "minClear": 40,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 regular/center: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead",
+        "direction": "center",
+        "headOffset": -9,
+        "tipOffset": -15,
+        "warningError": 0,
+        "key": "ba119_blue-overhead_regular_22"
+      }
+    },
+    {
+      "name": "Stage5 regular/right: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "right",
+        "seen": [
+          "right"
+        ],
+        "drift": 0,
+        "minClear": 4,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 regular/right: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead-right",
+        "direction": "right",
+        "headOffset": 133,
+        "tipOffset": 143,
+        "warningError": 0,
+        "key": "ba119_blue-overhead-right_regular_22"
+      }
+    },
+    {
+      "name": "Stage5 regular/left: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "left",
+        "seen": [
+          "left"
+        ],
+        "drift": 0,
+        "minClear": 4,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 regular/left: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead-left",
+        "direction": "left",
+        "headOffset": -133,
+        "tipOffset": -143,
+        "warningError": 0,
+        "key": "ba119_blue-overhead-left_regular_22"
+      }
+    },
+    {
+      "name": "Stage5 chrome/center: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "center",
+        "seen": [
+          "center"
+        ],
+        "drift": 0,
+        "minClear": 40,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 chrome/center: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead",
+        "direction": "center",
+        "headOffset": -9,
+        "tipOffset": -15,
+        "warningError": 0,
+        "key": "ba119_blue-overhead_chrome_22"
+      }
+    },
+    {
+      "name": "Stage5 chrome/right: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "right",
+        "seen": [
+          "right"
+        ],
+        "drift": 0,
+        "minClear": 4,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 chrome/right: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead-right",
+        "direction": "right",
+        "headOffset": 133,
+        "tipOffset": 143,
+        "warningError": 0,
+        "key": "ba119_blue-overhead-right_chrome_22"
+      }
+    },
+    {
+      "name": "Stage5 chrome/left: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "left",
+        "seen": [
+          "left"
+        ],
+        "drift": 0,
+        "minClear": 4,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 chrome/left: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead-left",
+        "direction": "left",
+        "headOffset": -133,
+        "tipOffset": -143,
+        "warningError": 0,
+        "key": "ba119_blue-overhead-left_chrome_22"
+      }
+    },
+    {
+      "name": "Stage5: native attacks select center then mirrored right then left",
+      "passed": true,
+      "data": [
+        "center",
+        "right",
+        "left"
+      ]
+    },
+    {
+      "name": "Stage5: keep previous grip through lift before changing strike direction",
+      "passed": true,
+      "data": {
+        "before": "blue-overhead-left",
+        "after": "blue-overhead-right"
+      }
+    },
+    {
+      "name": "Restored formation retains native damage protection",
+      "passed": true,
+      "data": {
+        "charge": true,
+        "hpSame": true,
+        "protected": true,
+        "hit": false
+      }
+    },
+    {
+      "name": "Original throw/recoup/charge/arms-out release executes once with26 native strikes",
+      "passed": true,
+      "data": {
+        "phases": [
+          "charge",
+          "kame_up",
+          "kame_strafe",
+          "kame_charge",
+          "kame_thrust",
+          "kame_fire",
+          "kame_recover",
+          "kame_return",
+          "volley_move",
+          "volley_warn",
+          "volley_fire"
+        ],
+        "keys": [
+          "c29_rage_regular_0",
+          "c29_rage_regular_1",
+          "c29_rage_regular_2",
+          "c29_rage_red_2",
+          "c29_rage_regular_3",
+          "c29_rage_red_3",
+          "c29_rage_regular_4",
+          "c29_rage_red_4",
+          "c29_rage_regular_5",
+          "c29_rage_red_5",
+          "c29_rage_regular_6",
+          "c29_rage_red_6",
+          "c29_rage_red_7",
+          "c29_rage_red_8",
+          "c29_rage_red_9",
+          "c30_cast_0",
+          "c30_cast_1",
+          "c30_cast_2",
+          "c30_cast_3",
+          "c30_thrust_0",
+          "c30_thrust_1",
+          "c30_thrust_2",
+          "c30_thrust_3",
+          "c30_thrust_4",
+          "c30_thrust_5",
+          "c30_thrust_6",
+          "c30_thrust_7",
+          "c30_cast_5",
+          "c30_cast_7",
+          "c32_palms_4",
+          "c32_palms_2"
+        ],
+        "strikes": 26,
+        "final": 1,
+        "opener": 1,
+        "done": true,
+        "rf": 0,
+        "cues": [
+          "rage_charge",
+          "rage_release",
+          "wave_charge",
+          "wave_full"
+        ]
+      }
+    },
+    {
+      "name": "Actual rage-body draws use original source frames instead of replacement artwork",
+      "passed": true,
+      "data": [
+        "c29_rage_regular_0",
+        "c29_rage_regular_1",
+        "c29_rage_regular_2",
+        "c29_rage_red_2",
+        "c29_rage_regular_3",
+        "c29_rage_red_3",
+        "c29_rage_regular_4",
+        "c29_rage_red_4",
+        "c29_rage_regular_5",
+        "c29_rage_red_5",
+        "c29_rage_regular_6",
+        "c29_rage_red_6",
+        "c29_rage_red_7",
+        "c29_rage_red_8",
+        "c29_rage_red_9",
+        "c30_cast_0",
+        "c30_cast_1",
+        "c30_cast_2",
+        "c30_cast_3",
+        "c30_thrust_0",
+        "c30_thrust_1",
+        "c30_thrust_2",
+        "c30_thrust_3",
+        "c30_thrust_4",
+        "c30_thrust_5",
+        "c30_thrust_6",
+        "c30_thrust_7",
+        "c30_cast_5",
+        "c30_cast_7",
+        "c32_palms_4"
+      ]
+    },
+    {
+      "name": "Original Kamehameha gathers, thrusts, fires, recovers and returns through real native clocks",
+      "passed": true,
+      "data": {
+        "phases": [
+          "charge",
+          "kame_up",
+          "kame_strafe",
+          "kame_charge",
+          "kame_thrust",
+          "kame_fire",
+          "kame_recover",
+          "kame_return",
+          "volley_move",
+          "volley_warn",
+          "volley_fire"
+        ],
+        "keys": [
+          "c29_rage_regular_0",
+          "c29_rage_regular_1",
+          "c29_rage_regular_2",
+          "c29_rage_red_2",
+          "c29_rage_regular_3",
+          "c29_rage_red_3",
+          "c29_rage_regular_4",
+          "c29_rage_red_4",
+          "c29_rage_regular_5",
+          "c29_rage_red_5",
+          "c29_rage_regular_6",
+          "c29_rage_red_6",
+          "c29_rage_red_7",
+          "c29_rage_red_8",
+          "c29_rage_red_9",
+          "c30_cast_0",
+          "c30_cast_1",
+          "c30_cast_2",
+          "c30_cast_3",
+          "c30_thrust_0",
+          "c30_thrust_1",
+          "c30_thrust_2",
+          "c30_thrust_3",
+          "c30_thrust_4",
+          "c30_thrust_5",
+          "c30_thrust_6",
+          "c30_thrust_7",
+          "c30_cast_5",
+          "c30_cast_7",
+          "c32_palms_4",
+          "c32_palms_2"
+        ],
+        "strikes": 26,
+        "final": 1,
+        "opener": 1,
+        "done": true,
+        "rf": 0,
+        "cues": [
+          "rage_charge",
+          "rage_release",
+          "wave_charge",
+          "wave_full"
+        ]
+      }
+    },
+    {
+      "name": "Original charge, transformation release and wave audio owners remain active",
+      "passed": true,
+      "data": [
+        "rage_charge",
+        "rage_release",
+        "wave_charge",
+        "wave_full"
+      ]
+    },
+    {
+      "name": "Stage8 regular/left: actual extended strike source pose at native contact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-sides_regular",
+        "key": "nca_ba119_corrupt-sides_regular",
+        "frame": 8,
+        "sourceFrame": 5,
+        "cell": [
+          576,
+          576
+        ],
+        "tip": {
+          "x": 180,
+          "y": 156.8
+        },
+        "keys": [
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_stage_8",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "nca_ba119_corrupt-sides_regular",
+          "eh7_stage_08",
+          "bmbar_fill_grey",
+          "pm27_command_10",
+          "pm27_command_10"
+        ],
+        "root": {
+          "x": 340,
+          "y": 204.8
+        },
+        "hp": 4126
+      }
+    },
+    {
+      "name": "Stage8 regular/right: actual extended strike source pose at native contact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-right_regular",
+        "key": "nca_ba119_corrupt-right_regular",
+        "frame": 8,
+        "sourceFrame": 12,
+        "cell": [
+          576,
+          576
+        ],
+        "tip": {
+          "x": 483,
+          "y": 192.8
+        },
+        "keys": [
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_stage_8",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "nca_ba119_corrupt-right_regular",
+          "eh7_stage_08",
+          "bmbar_fill_grey",
+          "pm27_command_10",
+          "pm27_command_10"
+        ],
+        "root": {
+          "x": 340,
+          "y": 204.8
+        },
+        "hp": 4126
+      }
+    },
+    {
+      "name": "Stage8 regular: authored directional cycle and broad physical head travel",
+      "passed": true,
+      "data": {
+        "frames": 16,
+        "source": 8,
+        "travel": 335
+      }
+    },
+    {
+      "name": "Stage8 chrome/left: actual extended strike source pose at native contact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-sides_chrome",
+        "key": "nca_ba119_corrupt-sides_chrome",
+        "frame": 8,
+        "sourceFrame": 5,
+        "cell": [
+          576,
+          576
+        ],
+        "tip": {
+          "x": 180,
+          "y": 156.8
+        },
+        "keys": [
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_stage_8",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "nca_ba119_corrupt-sides_chrome",
+          "eh7_stage_08",
+          "bmbar_fill_grey",
+          "pm27_command_10",
+          "pm27_command_10"
+        ],
+        "root": {
+          "x": 340,
+          "y": 204.8
+        },
+        "hp": 4126
+      }
+    },
+    {
+      "name": "Stage8 chrome/right: actual extended strike source pose at native contact",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-right_chrome",
+        "key": "nca_ba119_corrupt-right_chrome",
+        "frame": 8,
+        "sourceFrame": 12,
+        "cell": [
+          576,
+          576
+        ],
+        "tip": {
+          "x": 483,
+          "y": 192.8
+        },
+        "keys": [
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_bed_biofluid",
+          "ls112_stage_8",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "pxv17_arena_0",
+          "nca_ba119_corrupt-right_chrome",
+          "eh7_stage_08",
+          "bmbar_fill_grey",
+          "pm27_command_10",
+          "pm27_command_10"
+        ],
+        "root": {
+          "x": 340,
+          "y": 204.8
+        },
+        "hp": 4126
+      }
+    },
+    {
+      "name": "Stage8 chrome: authored directional cycle and broad physical head travel",
+      "passed": true,
+      "data": {
+        "frames": 16,
+        "source": 8,
+        "travel": 335
+      }
+    },
+    {
+      "name": "Stage8 regular/center: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "center",
+        "seen": [
+          "center"
+        ],
+        "drift": 0,
+        "minClear": 14,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 regular/center: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead_regular",
+        "direction": "center",
+        "headOffset": -3,
+        "tipOffset": -4,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead_regular"
+      }
+    },
+    {
+      "name": "Stage8 regular/right: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "right",
+        "seen": [
+          "right"
+        ],
+        "drift": 0,
+        "minClear": 4,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 regular/right: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-right_regular",
+        "direction": "right",
+        "headOffset": 149,
+        "tipOffset": 148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-right_regular"
+      }
+    },
+    {
+      "name": "Stage8 regular/left: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "left",
+        "seen": [
+          "left"
+        ],
+        "drift": 0,
+        "minClear": 4,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 regular/left: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-left_regular",
+        "direction": "left",
+        "headOffset": -149,
+        "tipOffset": -148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-left_regular"
+      }
+    },
+    {
+      "name": "Stage8 chrome/center: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "center",
+        "seen": [
+          "center"
+        ],
+        "drift": 0,
+        "minClear": 14,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 chrome/center: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead_chrome",
+        "direction": "center",
+        "headOffset": -3,
+        "tipOffset": -4,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead_chrome"
+      }
+    },
+    {
+      "name": "Stage8 chrome/right: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "right",
+        "seen": [
+          "right"
+        ],
+        "drift": 0,
+        "minClear": 4,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 chrome/right: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-right_chrome",
+        "direction": "right",
+        "headOffset": 149,
+        "tipOffset": 148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-right_chrome"
+      }
+    },
+    {
+      "name": "Stage8 chrome/left: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "left",
+        "seen": [
+          "left"
+        ],
+        "drift": 0,
+        "minClear": 4,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 chrome/left: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-left_chrome",
+        "direction": "left",
+        "headOffset": -149,
+        "tipOffset": -148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-left_chrome"
+      }
+    },
+    {
+      "name": "Stage8: native attacks select center then mirrored right then left",
+      "passed": true,
+      "data": [
+        "center",
+        "right",
+        "left"
+      ]
+    },
+    {
+      "name": "Stage8: keep previous grip through lift before changing strike direction",
+      "passed": true,
+      "data": {
+        "before": "ba119_corrupt-overhead-left_chrome",
+        "after": "ba119_corrupt-overhead-right_chrome"
+      }
+    },
+    {
+      "name": "Draconus modular gun remains selected with its native remaining HP",
+      "passed": true,
+      "data": {
+        "modular": true,
+        "hp": 321
+      }
+    },
+    {
+      "name": "No native page, update or draw errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "runtimeHash": "5ab3301e3d9471787faf3140205c6e36cdd7217af36d856c5e3ceed45cc72325"
+}

@@ -1,0 +1,86 @@
+{
+  "hashes": {
+    "thunderhead_reactor_1105.js": "5e2ea83ddf777a7b732864258cc27286c743a8d3c6a89feddeebe2eb248552f5",
+    "sumpjaw_tandem_1105.js": "83cb1cc50a0c8afe90b1e671cbfb39334e0b1fa48c988236c47c7ae740ebbe52"
+  },
+  "records": {
+    "cannon0-body": {
+      "path": "assets/game/shared/combat/stage67_flow_1110/cannon0-body.png",
+      "cell": [
+        256,
+        832
+      ]
+    },
+    "cannon0-hit": {
+      "path": "assets/game/shared/combat/stage67_flow_1110/cannon0-hit.png",
+      "cell": [
+        256,
+        832
+      ]
+    },
+    "cannon1-body": {
+      "path": "assets/game/shared/combat/stage67_flow_1110/cannon1-body.png",
+      "cell": [
+        256,
+        832
+      ]
+    },
+    "cannon1-hit": {
+      "path": "assets/game/shared/combat/stage67_flow_1110/cannon1-hit.png",
+      "cell": [
+        256,
+        832
+      ]
+    }
+  },
+  "frames": 28,
+  "pivot": [
+    128,
+    146
+  ],
+  "outlet": [
+    128,
+    239.28
+  ],
+  "source_root": [
+    140,
+    65
+  ],
+  "source_scale": 0.65,
+  "palette": [
+    "#caf9f0",
+    "#9af1e9",
+    "#78ece5",
+    "#67e2dd",
+    "#4dddd9",
+    "#40d4d2",
+    "#32cecd",
+    "#2bc5c5",
+    "#19c9ca",
+    "#15bfc1",
+    "#14b9bb",
+    "#09b7ba",
+    "#0cb0b3",
+    "#0ba9ac",
+    "#04aeb2",
+    "#04a7ab",
+    "#099ea2",
+    "#049da2",
+    "#029fa4",
+    "#02979d",
+    "#058e93",
+    "#028c93",
+    "#018b92",
+    "#038187",
+    "#018087",
+    "#008087",
+    "#017880",
+    "#007880",
+    "#01727b",
+    "#006d76",
+    "#006771",
+    "#005d67"
+  ],
+  "beam_source_sha256": "3e6c17b4eb8ab798ba0632676edacf5d1f657556d50d41e78123637fbdac4cd0",
+  "render": "complete cannon/discharge plates; no independent outlet/beam alignment"
+}

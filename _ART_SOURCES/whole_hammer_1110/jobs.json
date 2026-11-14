@@ -1,0 +1,3842 @@
+[
+  {
+    "name": "blue-overhead",
+    "unit": "blue",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          631
+        ],
+        "root": [
+          306.5,
+          579.0
+        ],
+        "tip": [
+          485.0799404170804,
+          503.0
+        ],
+        "headCenter": [
+          485.0799404170804,
+          434.77358490566036
+        ],
+        "grip": [
+          300.0799404170804,
+          434.77358490566036
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          631
+        ],
+        "root": [
+          293.5,
+          578.0
+        ],
+        "tip": [
+          468.76734623950665,
+          489.0
+        ],
+        "headCenter": [
+          468.76734623950665,
+          382.8845297241734
+        ],
+        "grip": [
+          283.76734623950665,
+          382.8845297241734
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          631,
+          630,
+          616
+        ],
+        "root": [
+          307.5,
+          561.0
+        ],
+        "tip": [
+          488.15468776300287,
+          334.0
+        ],
+        "headCenter": [
+          488.15468776300287,
+          258.1026763171184
+        ],
+        "grip": [
+          303.15468776300287,
+          258.1026763171184
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          631,
+          631,
+          616
+        ],
+        "root": [
+          294.5,
+          560.0
+        ],
+        "tip": [
+          456.42274865006107,
+          213.60000000000036
+        ],
+        "headCenter": [
+          456.42274865006107,
+          135.51820240376242
+        ],
+        "grip": [
+          271.42274865006107,
+          135.51820240376242
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-wind.png",
+        "source": "blue-wind",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          611
+        ],
+        "root": [
+          311.5,
+          565.0
+        ],
+        "tip": [
+          481.3592359453006,
+          210.0
+        ],
+        "headCenter": [
+          481.3592359453006,
+          143.1330583894074
+        ],
+        "grip": [
+          296.3592359453006,
+          143.1330583894074
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-wind.png",
+        "source": "blue-wind",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          611
+        ],
+        "root": [
+          275.0,
+          565.0
+        ],
+        "tip": [
+          445.3546895640686,
+          265.0
+        ],
+        "headCenter": [
+          445.3546895640686,
+          162.97952443857332
+        ],
+        "grip": [
+          260.3546895640686,
+          162.97952443857332
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-wind.png",
+        "source": "blue-wind",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          611,
+          630,
+          636
+        ],
+        "root": [
+          311.5,
+          565.0
+        ],
+        "tip": [
+          483.5813849922066,
+          241.0
+        ],
+        "headCenter": [
+          483.5813849922066,
+          158.8853262079715
+        ],
+        "grip": [
+          298.5813849922066,
+          158.8853262079715
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-wind.png",
+        "source": "blue-wind",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          611,
+          631,
+          636
+        ],
+        "root": [
+          262.5,
+          565.0
+        ],
+        "tip": [
+          442.69867700729924,
+          212.0
+        ],
+        "headCenter": [
+          442.69867700729924,
+          115.23608576642334
+        ],
+        "grip": [
+          257.69867700729924,
+          115.23608576642334
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-wind.png",
+        "source": "blue-wind",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          611,
+          631,
+          636
+        ],
+        "root": [
+          262.5,
+          565.0
+        ],
+        "tip": [
+          442.69867700729924,
+          212.0
+        ],
+        "headCenter": [
+          442.69867700729924,
+          115.23608576642334
+        ],
+        "grip": [
+          257.69867700729924,
+          115.23608576642334
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          631,
+          631,
+          616
+        ],
+        "root": [
+          294.5,
+          560.0
+        ],
+        "tip": [
+          456.42274865006107,
+          213.60000000000036
+        ],
+        "headCenter": [
+          456.42274865006107,
+          135.51820240376242
+        ],
+        "grip": [
+          271.42274865006107,
+          135.51820240376242
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\impact_blue.png",
+        "source": "impact_blue",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          636
+        ],
+        "root": [
+          303.0,
+          555.0
+        ],
+        "tip": [
+          519.5865059532559,
+          475.0
+        ],
+        "headCenter": [
+          519.5865059532559,
+          397.41687490812876
+        ],
+        "grip": [
+          334.58650595325594,
+          397.41687490812876
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\impact_blue.png",
+        "source": "impact_blue",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          636
+        ],
+        "root": [
+          309.0,
+          555.0
+        ],
+        "tip": [
+          508.66600423953355,
+          488.0
+        ],
+        "headCenter": [
+          508.66600423953355,
+          407.3121356650768
+        ],
+        "grip": [
+          323.66600423953355,
+          407.3121356650768
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\impact_blue.png",
+        "source": "impact_blue",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          636,
+          630,
+          611
+        ],
+        "root": [
+          319.5,
+          542.0
+        ],
+        "tip": [
+          515.1759456579648,
+          479.0
+        ],
+        "headCenter": [
+          515.1759456579648,
+          398.0849760255728
+        ],
+        "grip": [
+          330.1759456579648,
+          398.0849760255728
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\impact_blue.png",
+        "source": "impact_blue",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          636,
+          631,
+          611
+        ],
+        "root": [
+          283.0,
+          542.0
+        ],
+        "tip": [
+          506.99167673513216,
+          425.0
+        ],
+        "headCenter": [
+          506.99167673513216,
+          344.6084038125923
+        ],
+        "grip": [
+          321.99167673513216,
+          344.6084038125923
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-drive-reset.png",
+        "source": "blue-drive-reset",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          646,
+          630,
+          601
+        ],
+        "root": [
+          294.5,
+          553.0
+        ],
+        "tip": [
+          489.5539605672778,
+          473.0
+        ],
+        "headCenter": [
+          489.5539605672778,
+          386.6409546869595
+        ],
+        "grip": [
+          304.5539605672778,
+          386.6409546869595
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          631
+        ],
+        "root": [
+          306.5,
+          579.0
+        ],
+        "tip": [
+          485.0799404170804,
+          503.0
+        ],
+        "headCenter": [
+          485.0799404170804,
+          434.77358490566036
+        ],
+        "grip": [
+          300.0799404170804,
+          434.77358490566036
+        ],
+        "scale": 0.63,
+        "mirror": false
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "blue-sides",
+    "unit": "blue",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          631
+        ],
+        "root": [
+          306.5,
+          579.0
+        ],
+        "tip": [
+          485.0799404170804,
+          503.0
+        ],
+        "headCenter": [
+          485.0799404170804,
+          434.77358490566036
+        ],
+        "grip": [
+          300.0799404170804,
+          434.77358490566036
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidewind.png",
+        "source": "blue-sidewind",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          616
+        ],
+        "root": [
+          292.0,
+          555.0
+        ],
+        "tip": [
+          442.62429332902593,
+          481.0
+        ],
+        "headCenter": [
+          442.62429332902593,
+          380.68712647391374
+        ],
+        "grip": [
+          257.62429332902593,
+          380.68712647391374
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidewind.png",
+        "source": "blue-sidewind",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          616,
+          630,
+          631
+        ],
+        "root": [
+          316.5,
+          575.0
+        ],
+        "tip": [
+          515.7720452209661,
+          264.0
+        ],
+        "headCenter": [
+          515.7720452209661,
+          196.67810894141826
+        ],
+        "grip": [
+          330.7720452209661,
+          196.67810894141826
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidewind.png",
+        "source": "blue-sidewind",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          616,
+          631,
+          631
+        ],
+        "root": [
+          308.5,
+          577.0
+        ],
+        "tip": [
+          503.9867624810893,
+          238.0
+        ],
+        "headCenter": [
+          503.9867624810893,
+          135.85835854765503
+        ],
+        "grip": [
+          318.9867624810893,
+          135.85835854765503
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidecontact2.png",
+        "source": "blue-sidecontact2",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          614
+        ],
+        "root": [
+          323.0,
+          552.0
+        ],
+        "tip": [
+          393.0,
+          123.98340531939077
+        ],
+        "headCenter": [
+          487.1159354398727,
+          123.98340531939077
+        ],
+        "grip": [
+          487.1159354398727,
+          233.98340531939078
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidecontact2.png",
+        "source": "blue-sidecontact2",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          614
+        ],
+        "root": [
+          327.5,
+          552.0
+        ],
+        "tip": [
+          104.0,
+          128.84042961258152
+        ],
+        "headCenter": [
+          182.62121212121212,
+          128.84042961258152
+        ],
+        "grip": [
+          182.62121212121212,
+          238.84042961258152
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidecontact2.png",
+        "source": "blue-sidecontact2",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          614,
+          630,
+          633
+        ],
+        "root": [
+          344.5,
+          574.0
+        ],
+        "tip": [
+          101.0,
+          102.20517972761775
+        ],
+        "headCenter": [
+          173.47890154052243,
+          102.20517972761775
+        ],
+        "grip": [
+          173.47890154052243,
+          212.20517972761775
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidecontact2.png",
+        "source": "blue-sidecontact2",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          614,
+          631,
+          633
+        ],
+        "root": [
+          345.5,
+          574.0
+        ],
+        "tip": [
+          52.299999999999955,
+          107.65107040388432
+        ],
+        "headCenter": [
+          125.99779298168176,
+          107.65107040388432
+        ],
+        "grip": [
+          125.99779298168176,
+          217.65107040388432
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidecontact2.png",
+        "source": "blue-sidecontact2",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          614,
+          631,
+          633
+        ],
+        "root": [
+          345.5,
+          574.0
+        ],
+        "tip": [
+          52.299999999999955,
+          107.65107040388432
+        ],
+        "headCenter": [
+          125.99779298168176,
+          107.65107040388432
+        ],
+        "grip": [
+          125.99779298168176,
+          217.65107040388432
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          596
+        ],
+        "root": [
+          360.5,
+          536.0
+        ],
+        "tip": [
+          106.78725850965961,
+          389.0
+        ],
+        "headCenter": [
+          106.78725850965961,
+          325.0271389144434
+        ],
+        "grip": [
+          291.78725850965964,
+          325.0271389144434
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          596
+        ],
+        "root": [
+          322.5,
+          536.0
+        ],
+        "tip": [
+          139.5822859387274,
+          454.09000000000015
+        ],
+        "headCenter": [
+          139.5822859387274,
+          348.39787902592303
+        ],
+        "grip": [
+          324.5822859387274,
+          348.39787902592303
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          596
+        ],
+        "root": [
+          322.5,
+          536.0
+        ],
+        "tip": [
+          139.5822859387274,
+          454.09000000000015
+        ],
+        "headCenter": [
+          139.5822859387274,
+          348.39787902592303
+        ],
+        "grip": [
+          324.5822859387274,
+          348.39787902592303
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          596
+        ],
+        "root": [
+          322.5,
+          536.0
+        ],
+        "tip": [
+          139.5822859387274,
+          454.09000000000015
+        ],
+        "headCenter": [
+          139.5822859387274,
+          348.39787902592303
+        ],
+        "grip": [
+          324.5822859387274,
+          348.39787902592303
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          596
+        ],
+        "root": [
+          322.5,
+          536.0
+        ],
+        "tip": [
+          139.5822859387274,
+          454.09000000000015
+        ],
+        "headCenter": [
+          139.5822859387274,
+          348.39787902592303
+        ],
+        "grip": [
+          324.5822859387274,
+          348.39787902592303
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          596
+        ],
+        "root": [
+          322.5,
+          536.0
+        ],
+        "tip": [
+          139.5822859387274,
+          454.09000000000015
+        ],
+        "headCenter": [
+          139.5822859387274,
+          348.39787902592303
+        ],
+        "grip": [
+          324.5822859387274,
+          348.39787902592303
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          596
+        ],
+        "root": [
+          322.5,
+          536.0
+        ],
+        "tip": [
+          139.5822859387274,
+          454.09000000000015
+        ],
+        "headCenter": [
+          139.5822859387274,
+          348.39787902592303
+        ],
+        "grip": [
+          324.5822859387274,
+          348.39787902592303
+        ],
+        "scale": 0.63,
+        "mirror": false
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "blue-right",
+    "unit": "blue",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          631
+        ],
+        "root": [
+          306.5,
+          579.0
+        ],
+        "tip": [
+          485.0799404170804,
+          503.0
+        ],
+        "headCenter": [
+          485.0799404170804,
+          434.77358490566036
+        ],
+        "grip": [
+          300.0799404170804,
+          434.77358490566036
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidewind.png",
+        "source": "blue-sidewind",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          616
+        ],
+        "root": [
+          292.0,
+          555.0
+        ],
+        "tip": [
+          442.62429332902593,
+          481.0
+        ],
+        "headCenter": [
+          442.62429332902593,
+          380.68712647391374
+        ],
+        "grip": [
+          257.62429332902593,
+          380.68712647391374
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidewind.png",
+        "source": "blue-sidewind",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          616,
+          630,
+          631
+        ],
+        "root": [
+          316.5,
+          575.0
+        ],
+        "tip": [
+          515.7720452209661,
+          264.0
+        ],
+        "headCenter": [
+          515.7720452209661,
+          196.67810894141826
+        ],
+        "grip": [
+          330.7720452209661,
+          196.67810894141826
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidewind.png",
+        "source": "blue-sidewind",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          616,
+          631,
+          631
+        ],
+        "root": [
+          308.5,
+          577.0
+        ],
+        "tip": [
+          503.9867624810893,
+          238.0
+        ],
+        "headCenter": [
+          503.9867624810893,
+          135.85835854765503
+        ],
+        "grip": [
+          318.9867624810893,
+          135.85835854765503
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidecontact2.png",
+        "source": "blue-sidecontact2",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          614
+        ],
+        "root": [
+          323.0,
+          552.0
+        ],
+        "tip": [
+          393.0,
+          123.98340531939077
+        ],
+        "headCenter": [
+          487.1159354398727,
+          123.98340531939077
+        ],
+        "grip": [
+          487.1159354398727,
+          233.98340531939078
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidecontact2.png",
+        "source": "blue-sidecontact2",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          614
+        ],
+        "root": [
+          327.5,
+          552.0
+        ],
+        "tip": [
+          104.0,
+          128.84042961258152
+        ],
+        "headCenter": [
+          182.62121212121212,
+          128.84042961258152
+        ],
+        "grip": [
+          182.62121212121212,
+          238.84042961258152
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidecontact2.png",
+        "source": "blue-sidecontact2",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          614,
+          630,
+          633
+        ],
+        "root": [
+          344.5,
+          574.0
+        ],
+        "tip": [
+          101.0,
+          102.20517972761775
+        ],
+        "headCenter": [
+          173.47890154052243,
+          102.20517972761775
+        ],
+        "grip": [
+          173.47890154052243,
+          212.20517972761775
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidecontact2.png",
+        "source": "blue-sidecontact2",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          614,
+          631,
+          633
+        ],
+        "root": [
+          345.5,
+          574.0
+        ],
+        "tip": [
+          52.299999999999955,
+          107.65107040388432
+        ],
+        "headCenter": [
+          125.99779298168176,
+          107.65107040388432
+        ],
+        "grip": [
+          125.99779298168176,
+          217.65107040388432
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-sidecontact2.png",
+        "source": "blue-sidecontact2",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          614,
+          631,
+          633
+        ],
+        "root": [
+          345.5,
+          574.0
+        ],
+        "tip": [
+          52.299999999999955,
+          107.65107040388432
+        ],
+        "headCenter": [
+          125.99779298168176,
+          107.65107040388432
+        ],
+        "grip": [
+          125.99779298168176,
+          217.65107040388432
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          596
+        ],
+        "root": [
+          360.5,
+          536.0
+        ],
+        "tip": [
+          106.78725850965961,
+          389.0
+        ],
+        "headCenter": [
+          106.78725850965961,
+          325.0271389144434
+        ],
+        "grip": [
+          291.78725850965964,
+          325.0271389144434
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          596
+        ],
+        "root": [
+          322.5,
+          536.0
+        ],
+        "tip": [
+          139.5822859387274,
+          454.09000000000015
+        ],
+        "headCenter": [
+          139.5822859387274,
+          348.39787902592303
+        ],
+        "grip": [
+          324.5822859387274,
+          348.39787902592303
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          596,
+          630,
+          651
+        ],
+        "root": [
+          334.5,
+          542.0
+        ],
+        "tip": [
+          532.3294343240652,
+          413.0
+        ],
+        "headCenter": [
+          532.3294343240652,
+          301.29568552253113
+        ],
+        "grip": [
+          347.32943432406523,
+          301.29568552253113
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-siderecover.png",
+        "source": "blue-siderecover",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          596,
+          631,
+          651
+        ],
+        "root": [
+          305.0,
+          541.0
+        ],
+        "tip": [
+          481.74797999230464,
+          461.0
+        ],
+        "headCenter": [
+          481.74797999230464,
+          360.4874951904578
+        ],
+        "grip": [
+          296.74797999230464,
+          360.4874951904578
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          631
+        ],
+        "root": [
+          306.5,
+          579.0
+        ],
+        "tip": [
+          485.0799404170804,
+          503.0
+        ],
+        "headCenter": [
+          485.0799404170804,
+          434.77358490566036
+        ],
+        "grip": [
+          300.0799404170804,
+          434.77358490566036
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          631
+        ],
+        "root": [
+          306.5,
+          579.0
+        ],
+        "tip": [
+          485.0799404170804,
+          503.0
+        ],
+        "headCenter": [
+          485.0799404170804,
+          434.77358490566036
+        ],
+        "grip": [
+          300.0799404170804,
+          434.77358490566036
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-ready.png",
+        "source": "blue-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          631
+        ],
+        "root": [
+          306.5,
+          579.0
+        ],
+        "tip": [
+          485.0799404170804,
+          503.0
+        ],
+        "headCenter": [
+          485.0799404170804,
+          434.77358490566036
+        ],
+        "grip": [
+          300.0799404170804,
+          434.77358490566036
+        ],
+        "scale": 0.63,
+        "mirror": false
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "corrupt-overhead",
+    "unit": "drac",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          599
+        ],
+        "root": [
+          308.5,
+          582.0
+        ],
+        "tip": [
+          511.9550224887556,
+          564.0
+        ],
+        "headCenter": [
+          511.9550224887556,
+          422.29122938530736
+        ],
+        "grip": [
+          286.9550224887556,
+          422.29122938530736
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          599
+        ],
+        "root": [
+          277.0,
+          581.0
+        ],
+        "tip": [
+          504.70729813664593,
+          565.0
+        ],
+        "headCenter": [
+          504.70729813664593,
+          390.1354813664596
+        ],
+        "grip": [
+          279.70729813664593,
+          390.1354813664596
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          599,
+          630,
+          648
+        ],
+        "root": [
+          297.0,
+          600.0
+        ],
+        "tip": [
+          509.37276378240233,
+          362.0
+        ],
+        "headCenter": [
+          509.37276378240233,
+          273.5377875136911
+        ],
+        "grip": [
+          284.37276378240233,
+          273.5377875136911
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          599,
+          631,
+          648
+        ],
+        "root": [
+          280.5,
+          600.0
+        ],
+        "tip": [
+          513.1140805743917,
+          254.94000000000005
+        ],
+        "headCenter": [
+          513.1140805743917,
+          125.18508177104104
+        ],
+        "grip": [
+          288.11408057439166,
+          125.18508177104104
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-wind.png",
+        "source": "drac-wind",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          578
+        ],
+        "root": [
+          298.0,
+          569.0
+        ],
+        "tip": [
+          483.1440235140431,
+          242.0
+        ],
+        "headCenter": [
+          483.1440235140431,
+          137.56368386675376
+        ],
+        "grip": [
+          258.1440235140431,
+          137.56368386675376
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-wind.png",
+        "source": "drac-wind",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          578
+        ],
+        "root": [
+          262.5,
+          569.0
+        ],
+        "tip": [
+          458.09218859957787,
+          210.59000000000015
+        ],
+        "headCenter": [
+          458.09218859957787,
+          118.06016889514426
+        ],
+        "grip": [
+          233.09218859957787,
+          118.06016889514426
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-wind.png",
+        "source": "drac-wind",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          578,
+          630,
+          669
+        ],
+        "root": [
+          298.0,
+          620.0
+        ],
+        "tip": [
+          481.1260628465804,
+          287.96000000000004
+        ],
+        "headCenter": [
+          481.1260628465804,
+          133.05841035120147
+        ],
+        "grip": [
+          256.1260628465804,
+          133.05841035120147
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-wind.png",
+        "source": "drac-wind",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          578,
+          631,
+          669
+        ],
+        "root": [
+          262.5,
+          619.0
+        ],
+        "tip": [
+          454.664631956912,
+          263.15999999999985
+        ],
+        "headCenter": [
+          454.664631956912,
+          114.31202872531424
+        ],
+        "grip": [
+          229.664631956912,
+          114.31202872531424
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-wind.png",
+        "source": "drac-wind",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          578,
+          631,
+          669
+        ],
+        "root": [
+          262.5,
+          619.0
+        ],
+        "tip": [
+          454.664631956912,
+          263.15999999999985
+        ],
+        "headCenter": [
+          454.664631956912,
+          114.31202872531424
+        ],
+        "grip": [
+          229.664631956912,
+          114.31202872531424
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          599,
+          631,
+          648
+        ],
+        "root": [
+          280.5,
+          600.0
+        ],
+        "tip": [
+          513.1140805743917,
+          254.94000000000005
+        ],
+        "headCenter": [
+          513.1140805743917,
+          125.18508177104104
+        ],
+        "grip": [
+          288.11408057439166,
+          125.18508177104104
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\impact_drac.png",
+        "source": "impact_drac",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          623
+        ],
+        "root": [
+          316.0,
+          559.0
+        ],
+        "tip": [
+          518.7525380710659,
+          491.0
+        ],
+        "headCenter": [
+          518.7525380710659,
+          399.43115482233503
+        ],
+        "grip": [
+          293.75253807106594,
+          399.43115482233503
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\impact_drac.png",
+        "source": "impact_drac",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          623
+        ],
+        "root": [
+          313.5,
+          559.0
+        ],
+        "tip": [
+          513.0327478416195,
+          493.0
+        ],
+        "headCenter": [
+          513.0327478416195,
+          404.0348317951771
+        ],
+        "grip": [
+          288.03274784161954,
+          404.0348317951771
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\impact_drac.png",
+        "source": "impact_drac",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          623,
+          630,
+          624
+        ],
+        "root": [
+          324.5,
+          570.0
+        ],
+        "tip": [
+          519.4235156478502,
+          508.0
+        ],
+        "headCenter": [
+          519.4235156478502,
+          416.77244808423507
+        ],
+        "grip": [
+          294.4235156478502,
+          416.77244808423507
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\impact_drac.png",
+        "source": "impact_drac",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          623,
+          631,
+          624
+        ],
+        "root": [
+          270.5,
+          570.0
+        ],
+        "tip": [
+          516.6020814202632,
+          450.0
+        ],
+        "headCenter": [
+          516.6020814202632,
+          364.58157330884603
+        ],
+        "grip": [
+          291.6020814202632,
+          364.58157330884603
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-drive-reset.png",
+        "source": "drac-drive-reset",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          663,
+          630,
+          584
+        ],
+        "root": [
+          310.5,
+          556.0
+        ],
+        "tip": [
+          510.4463368477967,
+          544.0
+        ],
+        "headCenter": [
+          510.4463368477967,
+          363.70938091376047
+        ],
+        "grip": [
+          285.4463368477967,
+          363.70938091376047
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          599
+        ],
+        "root": [
+          308.5,
+          582.0
+        ],
+        "tip": [
+          511.9550224887556,
+          564.0
+        ],
+        "headCenter": [
+          511.9550224887556,
+          422.29122938530736
+        ],
+        "grip": [
+          286.9550224887556,
+          422.29122938530736
+        ],
+        "scale": 0.63,
+        "mirror": false
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "corrupt-sides",
+    "unit": "drac",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          599
+        ],
+        "root": [
+          308.5,
+          582.0
+        ],
+        "tip": [
+          511.9550224887556,
+          564.0
+        ],
+        "headCenter": [
+          511.9550224887556,
+          422.29122938530736
+        ],
+        "grip": [
+          286.9550224887556,
+          422.29122938530736
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidewind.png",
+        "source": "drac-sidewind",
+        "sourceCell": 1,
+        "crop": [
+          642,
+          0,
+          642,
+          599
+        ],
+        "root": [
+          280.5,
+          564.0
+        ],
+        "tip": [
+          459.1565982404693,
+          471.0
+        ],
+        "headCenter": [
+          459.1565982404693,
+          380.33108504398825
+        ],
+        "grip": [
+          234.1565982404693,
+          380.33108504398825
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidewind.png",
+        "source": "drac-sidewind",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          599,
+          642,
+          626
+        ],
+        "root": [
+          310.5,
+          587.0
+        ],
+        "tip": [
+          513.503209700428,
+          304.0
+        ],
+        "headCenter": [
+          513.503209700428,
+          220.28495007132665
+        ],
+        "grip": [
+          288.503209700428,
+          220.28495007132665
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidewind.png",
+        "source": "drac-sidewind",
+        "sourceCell": 3,
+        "crop": [
+          642,
+          599,
+          642,
+          626
+        ],
+        "root": [
+          287.5,
+          587.0
+        ],
+        "tip": [
+          521.4483000350508,
+          226.0
+        ],
+        "headCenter": [
+          521.4483000350508,
+          140.3655800911322
+        ],
+        "grip": [
+          296.4483000350508,
+          140.3655800911322
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidecontact.png",
+        "source": "drac-sidecontact",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          640
+        ],
+        "root": [
+          308.5,
+          587.0
+        ],
+        "tip": [
+          320.0,
+          97.48053071820017
+        ],
+        "headCenter": [
+          462.0224978367465,
+          97.48053071820017
+        ],
+        "grip": [
+          462.0224978367465,
+          242.48053071820016
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidecontact.png",
+        "source": "drac-sidecontact",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          640
+        ],
+        "root": [
+          342.5,
+          587.0
+        ],
+        "tip": [
+          112.0,
+          142.6006278339728
+        ],
+        "headCenter": [
+          196.28705964422738,
+          142.6006278339728
+        ],
+        "grip": [
+          196.28705964422738,
+          287.6006278339728
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidecontact.png",
+        "source": "drac-sidecontact",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          640,
+          630,
+          607
+        ],
+        "root": [
+          354.5,
+          579.0
+        ],
+        "tip": [
+          83.0,
+          115.50211933485491
+        ],
+        "headCenter": [
+          166.93283338767526,
+          115.50211933485491
+        ],
+        "grip": [
+          166.93283338767526,
+          260.5021193348549
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidecontact.png",
+        "source": "drac-sidecontact",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          640,
+          631,
+          607
+        ],
+        "root": [
+          350.5,
+          579.0
+        ],
+        "tip": [
+          63.0,
+          114.33131763208144
+        ],
+        "headCenter": [
+          147.49395289624442,
+          114.33131763208144
+        ],
+        "grip": [
+          147.49395289624442,
+          259.33131763208144
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidecontact.png",
+        "source": "drac-sidecontact",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          640,
+          631,
+          607
+        ],
+        "root": [
+          350.5,
+          579.0
+        ],
+        "tip": [
+          63.0,
+          114.33131763208144
+        ],
+        "headCenter": [
+          147.49395289624442,
+          114.33131763208144
+        ],
+        "grip": [
+          147.49395289624442,
+          259.33131763208144
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          615
+        ],
+        "root": [
+          348.5,
+          567.0
+        ],
+        "tip": [
+          173.79465722561957,
+          551.0
+        ],
+        "headCenter": [
+          173.79465722561957,
+          373.2468619246862
+        ],
+        "grip": [
+          398.7946572256196,
+          373.2468619246862
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          615
+        ],
+        "root": [
+          319.0,
+          567.0
+        ],
+        "tip": [
+          120.67439549519713,
+          549.0
+        ],
+        "headCenter": [
+          120.67439549519713,
+          368.83073865518384
+        ],
+        "grip": [
+          345.67439549519713,
+          368.83073865518384
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          615
+        ],
+        "root": [
+          319.0,
+          567.0
+        ],
+        "tip": [
+          120.67439549519713,
+          549.0
+        ],
+        "headCenter": [
+          120.67439549519713,
+          368.83073865518384
+        ],
+        "grip": [
+          345.67439549519713,
+          368.83073865518384
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          615
+        ],
+        "root": [
+          319.0,
+          567.0
+        ],
+        "tip": [
+          120.67439549519713,
+          549.0
+        ],
+        "headCenter": [
+          120.67439549519713,
+          368.83073865518384
+        ],
+        "grip": [
+          345.67439549519713,
+          368.83073865518384
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          615
+        ],
+        "root": [
+          319.0,
+          567.0
+        ],
+        "tip": [
+          120.67439549519713,
+          549.0
+        ],
+        "headCenter": [
+          120.67439549519713,
+          368.83073865518384
+        ],
+        "grip": [
+          345.67439549519713,
+          368.83073865518384
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          615
+        ],
+        "root": [
+          319.0,
+          567.0
+        ],
+        "tip": [
+          120.67439549519713,
+          549.0
+        ],
+        "headCenter": [
+          120.67439549519713,
+          368.83073865518384
+        ],
+        "grip": [
+          345.67439549519713,
+          368.83073865518384
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          615
+        ],
+        "root": [
+          319.0,
+          567.0
+        ],
+        "tip": [
+          120.67439549519713,
+          549.0
+        ],
+        "headCenter": [
+          120.67439549519713,
+          368.83073865518384
+        ],
+        "grip": [
+          345.67439549519713,
+          368.83073865518384
+        ],
+        "scale": 0.63,
+        "mirror": false
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "corrupt-right",
+    "unit": "drac",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          599
+        ],
+        "root": [
+          308.5,
+          582.0
+        ],
+        "tip": [
+          511.9550224887556,
+          564.0
+        ],
+        "headCenter": [
+          511.9550224887556,
+          422.29122938530736
+        ],
+        "grip": [
+          286.9550224887556,
+          422.29122938530736
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidewind.png",
+        "source": "drac-sidewind",
+        "sourceCell": 1,
+        "crop": [
+          642,
+          0,
+          642,
+          599
+        ],
+        "root": [
+          280.5,
+          564.0
+        ],
+        "tip": [
+          459.1565982404693,
+          471.0
+        ],
+        "headCenter": [
+          459.1565982404693,
+          380.33108504398825
+        ],
+        "grip": [
+          234.1565982404693,
+          380.33108504398825
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidewind.png",
+        "source": "drac-sidewind",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          599,
+          642,
+          626
+        ],
+        "root": [
+          310.5,
+          587.0
+        ],
+        "tip": [
+          513.503209700428,
+          304.0
+        ],
+        "headCenter": [
+          513.503209700428,
+          220.28495007132665
+        ],
+        "grip": [
+          288.503209700428,
+          220.28495007132665
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidewind.png",
+        "source": "drac-sidewind",
+        "sourceCell": 3,
+        "crop": [
+          642,
+          599,
+          642,
+          626
+        ],
+        "root": [
+          287.5,
+          587.0
+        ],
+        "tip": [
+          521.4483000350508,
+          226.0
+        ],
+        "headCenter": [
+          521.4483000350508,
+          140.3655800911322
+        ],
+        "grip": [
+          296.4483000350508,
+          140.3655800911322
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidecontact.png",
+        "source": "drac-sidecontact",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          640
+        ],
+        "root": [
+          308.5,
+          587.0
+        ],
+        "tip": [
+          320.0,
+          97.48053071820017
+        ],
+        "headCenter": [
+          462.0224978367465,
+          97.48053071820017
+        ],
+        "grip": [
+          462.0224978367465,
+          242.48053071820016
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidecontact.png",
+        "source": "drac-sidecontact",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          640
+        ],
+        "root": [
+          342.5,
+          587.0
+        ],
+        "tip": [
+          112.0,
+          142.6006278339728
+        ],
+        "headCenter": [
+          196.28705964422738,
+          142.6006278339728
+        ],
+        "grip": [
+          196.28705964422738,
+          287.6006278339728
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidecontact.png",
+        "source": "drac-sidecontact",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          640,
+          630,
+          607
+        ],
+        "root": [
+          354.5,
+          579.0
+        ],
+        "tip": [
+          83.0,
+          115.50211933485491
+        ],
+        "headCenter": [
+          166.93283338767526,
+          115.50211933485491
+        ],
+        "grip": [
+          166.93283338767526,
+          260.5021193348549
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidecontact.png",
+        "source": "drac-sidecontact",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          640,
+          631,
+          607
+        ],
+        "root": [
+          350.5,
+          579.0
+        ],
+        "tip": [
+          63.0,
+          114.33131763208144
+        ],
+        "headCenter": [
+          147.49395289624442,
+          114.33131763208144
+        ],
+        "grip": [
+          147.49395289624442,
+          259.33131763208144
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-sidecontact.png",
+        "source": "drac-sidecontact",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          640,
+          631,
+          607
+        ],
+        "root": [
+          350.5,
+          579.0
+        ],
+        "tip": [
+          63.0,
+          114.33131763208144
+        ],
+        "headCenter": [
+          147.49395289624442,
+          114.33131763208144
+        ],
+        "grip": [
+          147.49395289624442,
+          259.33131763208144
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          615
+        ],
+        "root": [
+          348.5,
+          567.0
+        ],
+        "tip": [
+          173.79465722561957,
+          551.0
+        ],
+        "headCenter": [
+          173.79465722561957,
+          373.2468619246862
+        ],
+        "grip": [
+          398.7946572256196,
+          373.2468619246862
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          615
+        ],
+        "root": [
+          319.0,
+          567.0
+        ],
+        "tip": [
+          120.67439549519713,
+          549.0
+        ],
+        "headCenter": [
+          120.67439549519713,
+          368.83073865518384
+        ],
+        "grip": [
+          345.67439549519713,
+          368.83073865518384
+        ],
+        "scale": 0.63,
+        "mirror": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          615,
+          630,
+          632
+        ],
+        "root": [
+          308.0,
+          572.0
+        ],
+        "tip": [
+          505.3931414574403,
+          557.0
+        ],
+        "headCenter": [
+          505.3931414574403,
+          348.7082057562768
+        ],
+        "grip": [
+          280.3931414574403,
+          348.7082057562768
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-siderecover.png",
+        "source": "drac-siderecover",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          615,
+          631,
+          632
+        ],
+        "root": [
+          273.5,
+          572.0
+        ],
+        "tip": [
+          474.88370665848424,
+          556.4200000000001
+        ],
+        "headCenter": [
+          474.88370665848424,
+          368.523473458116
+        ],
+        "grip": [
+          249.88370665848424,
+          368.523473458116
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          599
+        ],
+        "root": [
+          308.5,
+          582.0
+        ],
+        "tip": [
+          511.9550224887556,
+          564.0
+        ],
+        "headCenter": [
+          511.9550224887556,
+          422.29122938530736
+        ],
+        "grip": [
+          286.9550224887556,
+          422.29122938530736
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          599
+        ],
+        "root": [
+          308.5,
+          582.0
+        ],
+        "tip": [
+          511.9550224887556,
+          564.0
+        ],
+        "headCenter": [
+          511.9550224887556,
+          422.29122938530736
+        ],
+        "grip": [
+          286.9550224887556,
+          422.29122938530736
+        ],
+        "scale": 0.63,
+        "mirror": false
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-ready.png",
+        "source": "drac-ready",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          599
+        ],
+        "root": [
+          308.5,
+          582.0
+        ],
+        "tip": [
+          511.9550224887556,
+          564.0
+        ],
+        "headCenter": [
+          511.9550224887556,
+          422.29122938530736
+        ],
+        "grip": [
+          286.9550224887556,
+          422.29122938530736
+        ],
+        "scale": 0.63,
+        "mirror": false
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "blue-empty",
+    "unit": "blue",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          627
+        ],
+        "root": [
+          324.0,
+          578.0
+        ],
+        "tip": [
+          324.0,
+          298.0
+        ],
+        "headCenter": [
+          324.0,
+          298.0
+        ],
+        "grip": [
+          324.0,
+          298.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          627
+        ],
+        "root": [
+          324.0,
+          578.0
+        ],
+        "tip": [
+          324.0,
+          298.0
+        ],
+        "headCenter": [
+          324.0,
+          298.0
+        ],
+        "grip": [
+          324.0,
+          298.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          627
+        ],
+        "root": [
+          324.0,
+          578.0
+        ],
+        "tip": [
+          324.0,
+          298.0
+        ],
+        "headCenter": [
+          324.0,
+          298.0
+        ],
+        "grip": [
+          324.0,
+          298.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          627
+        ],
+        "root": [
+          324.0,
+          578.0
+        ],
+        "tip": [
+          324.0,
+          298.0
+        ],
+        "headCenter": [
+          324.0,
+          298.0
+        ],
+        "grip": [
+          324.0,
+          298.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          627
+        ],
+        "root": [
+          292.5,
+          578.0
+        ],
+        "tip": [
+          292.5,
+          298.0
+        ],
+        "headCenter": [
+          292.5,
+          298.0
+        ],
+        "grip": [
+          292.5,
+          298.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          627
+        ],
+        "root": [
+          292.5,
+          578.0
+        ],
+        "tip": [
+          292.5,
+          298.0
+        ],
+        "headCenter": [
+          292.5,
+          298.0
+        ],
+        "grip": [
+          292.5,
+          298.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          627
+        ],
+        "root": [
+          292.5,
+          578.0
+        ],
+        "tip": [
+          292.5,
+          298.0
+        ],
+        "headCenter": [
+          292.5,
+          298.0
+        ],
+        "grip": [
+          292.5,
+          298.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          627
+        ],
+        "root": [
+          292.5,
+          578.0
+        ],
+        "tip": [
+          292.5,
+          298.0
+        ],
+        "headCenter": [
+          292.5,
+          298.0
+        ],
+        "grip": [
+          292.5,
+          298.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          630,
+          620
+        ],
+        "root": [
+          320.5,
+          561.0
+        ],
+        "tip": [
+          320.5,
+          281.0
+        ],
+        "headCenter": [
+          320.5,
+          281.0
+        ],
+        "grip": [
+          320.5,
+          281.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          630,
+          620
+        ],
+        "root": [
+          320.5,
+          561.0
+        ],
+        "tip": [
+          320.5,
+          281.0
+        ],
+        "headCenter": [
+          320.5,
+          281.0
+        ],
+        "grip": [
+          320.5,
+          281.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          630,
+          620
+        ],
+        "root": [
+          320.5,
+          561.0
+        ],
+        "tip": [
+          320.5,
+          281.0
+        ],
+        "headCenter": [
+          320.5,
+          281.0
+        ],
+        "grip": [
+          320.5,
+          281.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          630,
+          620
+        ],
+        "root": [
+          320.5,
+          561.0
+        ],
+        "tip": [
+          320.5,
+          281.0
+        ],
+        "headCenter": [
+          320.5,
+          281.0
+        ],
+        "grip": [
+          320.5,
+          281.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          627,
+          631,
+          620
+        ],
+        "root": [
+          301.0,
+          560.0
+        ],
+        "tip": [
+          301.0,
+          280.0
+        ],
+        "headCenter": [
+          301.0,
+          280.0
+        ],
+        "grip": [
+          301.0,
+          280.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          627,
+          631,
+          620
+        ],
+        "root": [
+          301.0,
+          560.0
+        ],
+        "tip": [
+          301.0,
+          280.0
+        ],
+        "headCenter": [
+          301.0,
+          280.0
+        ],
+        "grip": [
+          301.0,
+          280.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          627,
+          631,
+          620
+        ],
+        "root": [
+          301.0,
+          560.0
+        ],
+        "tip": [
+          301.0,
+          280.0
+        ],
+        "headCenter": [
+          301.0,
+          280.0
+        ],
+        "grip": [
+          301.0,
+          280.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\blue-empty.png",
+        "source": "blue-empty",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          627,
+          631,
+          620
+        ],
+        "root": [
+          301.0,
+          560.0
+        ],
+        "tip": [
+          301.0,
+          280.0
+        ],
+        "headCenter": [
+          301.0,
+          280.0
+        ],
+        "grip": [
+          301.0,
+          280.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "empty": true
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "corrupt-empty",
+    "unit": "drac",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          638
+        ],
+        "root": [
+          320.5,
+          573.0
+        ],
+        "tip": [
+          320.5,
+          293.0
+        ],
+        "headCenter": [
+          320.5,
+          293.0
+        ],
+        "grip": [
+          320.5,
+          293.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          638
+        ],
+        "root": [
+          320.5,
+          573.0
+        ],
+        "tip": [
+          320.5,
+          293.0
+        ],
+        "headCenter": [
+          320.5,
+          293.0
+        ],
+        "grip": [
+          320.5,
+          293.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          638
+        ],
+        "root": [
+          320.5,
+          573.0
+        ],
+        "tip": [
+          320.5,
+          293.0
+        ],
+        "headCenter": [
+          320.5,
+          293.0
+        ],
+        "grip": [
+          320.5,
+          293.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          630,
+          638
+        ],
+        "root": [
+          320.5,
+          573.0
+        ],
+        "tip": [
+          320.5,
+          293.0
+        ],
+        "headCenter": [
+          320.5,
+          293.0
+        ],
+        "grip": [
+          320.5,
+          293.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          638
+        ],
+        "root": [
+          276.5,
+          573.0
+        ],
+        "tip": [
+          276.5,
+          293.0
+        ],
+        "headCenter": [
+          276.5,
+          293.0
+        ],
+        "grip": [
+          276.5,
+          293.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          638
+        ],
+        "root": [
+          276.5,
+          573.0
+        ],
+        "tip": [
+          276.5,
+          293.0
+        ],
+        "headCenter": [
+          276.5,
+          293.0
+        ],
+        "grip": [
+          276.5,
+          293.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          638
+        ],
+        "root": [
+          276.5,
+          573.0
+        ],
+        "tip": [
+          276.5,
+          293.0
+        ],
+        "headCenter": [
+          276.5,
+          293.0
+        ],
+        "grip": [
+          276.5,
+          293.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 1,
+        "crop": [
+          630,
+          0,
+          631,
+          638
+        ],
+        "root": [
+          276.5,
+          573.0
+        ],
+        "tip": [
+          276.5,
+          293.0
+        ],
+        "headCenter": [
+          276.5,
+          293.0
+        ],
+        "grip": [
+          276.5,
+          293.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          638,
+          630,
+          609
+        ],
+        "root": [
+          329.0,
+          514.0
+        ],
+        "tip": [
+          329.0,
+          234.0
+        ],
+        "headCenter": [
+          329.0,
+          234.0
+        ],
+        "grip": [
+          329.0,
+          234.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          638,
+          630,
+          609
+        ],
+        "root": [
+          329.0,
+          514.0
+        ],
+        "tip": [
+          329.0,
+          234.0
+        ],
+        "headCenter": [
+          329.0,
+          234.0
+        ],
+        "grip": [
+          329.0,
+          234.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          638,
+          630,
+          609
+        ],
+        "root": [
+          329.0,
+          514.0
+        ],
+        "tip": [
+          329.0,
+          234.0
+        ],
+        "headCenter": [
+          329.0,
+          234.0
+        ],
+        "grip": [
+          329.0,
+          234.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          638,
+          630,
+          609
+        ],
+        "root": [
+          329.0,
+          514.0
+        ],
+        "tip": [
+          329.0,
+          234.0
+        ],
+        "headCenter": [
+          329.0,
+          234.0
+        ],
+        "grip": [
+          329.0,
+          234.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          638,
+          631,
+          609
+        ],
+        "root": [
+          282.5,
+          514.0
+        ],
+        "tip": [
+          282.5,
+          234.0
+        ],
+        "headCenter": [
+          282.5,
+          234.0
+        ],
+        "grip": [
+          282.5,
+          234.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          638,
+          631,
+          609
+        ],
+        "root": [
+          282.5,
+          514.0
+        ],
+        "tip": [
+          282.5,
+          234.0
+        ],
+        "headCenter": [
+          282.5,
+          234.0
+        ],
+        "grip": [
+          282.5,
+          234.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          638,
+          631,
+          609
+        ],
+        "root": [
+          282.5,
+          514.0
+        ],
+        "tip": [
+          282.5,
+          234.0
+        ],
+        "headCenter": [
+          282.5,
+          234.0
+        ],
+        "grip": [
+          282.5,
+          234.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Whole-Hammer-1110\\generated\\drac-empty.png",
+        "source": "drac-empty",
+        "sourceCell": 3,
+        "crop": [
+          630,
+          638,
+          631,
+          609
+        ],
+        "root": [
+          282.5,
+          514.0
+        ],
+        "tip": [
+          282.5,
+          234.0
+        ],
+        "headCenter": [
+          282.5,
+          234.0
+        ],
+        "grip": [
+          282.5,
+          234.0
+        ],
+        "scale": 0.75,
+        "mirror": false,
+        "empty": true
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  }
+]

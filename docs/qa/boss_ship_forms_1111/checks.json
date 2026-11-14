@@ -1,0 +1,1463 @@
+{
+  "checks": [
+    {
+      "name": "Stage5 all new lossless sheets load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Chronos flyby and unfolding use new original ship in both materials",
+      "passed": true,
+      "data": [
+        {
+          "mat": "regular",
+          "state": "flyby",
+          "t": 0,
+          "bank": "chronus-transform",
+          "f": 0,
+          "key": "sf1111_chronus-transform_regular"
+        },
+        {
+          "mat": "regular",
+          "state": "unfold",
+          "t": 0,
+          "bank": "chronus-transform",
+          "f": 0,
+          "key": "sf1111_chronus-transform_regular"
+        },
+        {
+          "mat": "regular",
+          "state": "unfold",
+          "t": 1,
+          "bank": "chronus-transform",
+          "f": 11,
+          "key": "sf1111_chronus-transform_regular"
+        },
+        {
+          "mat": "regular",
+          "state": "unfold",
+          "t": 2,
+          "bank": "chronus-transform",
+          "f": 23,
+          "key": "sf1111_chronus-transform_regular"
+        },
+        {
+          "mat": "chrome",
+          "state": "flyby",
+          "t": 0,
+          "bank": "chronus-transform",
+          "f": 0,
+          "key": "sf1111_chronus-transform_chrome"
+        },
+        {
+          "mat": "chrome",
+          "state": "unfold",
+          "t": 0,
+          "bank": "chronus-transform",
+          "f": 0,
+          "key": "sf1111_chronus-transform_chrome"
+        },
+        {
+          "mat": "chrome",
+          "state": "unfold",
+          "t": 1,
+          "bank": "chronus-transform",
+          "f": 11,
+          "key": "sf1111_chronus-transform_chrome"
+        },
+        {
+          "mat": "chrome",
+          "state": "unfold",
+          "t": 2,
+          "bank": "chronus-transform",
+          "f": 23,
+          "key": "sf1111_chronus-transform_chrome"
+        }
+      ]
+    },
+    {
+      "name": "Password intro owns new ship and yields to existing dance",
+      "passed": true,
+      "data": {
+        "start": "chronus-transform",
+        "first": 0,
+        "end": 23,
+        "dance": null
+      }
+    },
+    {
+      "name": "Approved three hammer directions still registered",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage5 regular/center: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "center",
+        "seen": [
+          "center"
+        ],
+        "drift": 0,
+        "minClear": 72,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 regular/center: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead",
+        "direction": "center",
+        "headOffset": -9,
+        "tipOffset": -15,
+        "warningError": 0,
+        "key": "ba119_blue-overhead_regular_22"
+      }
+    },
+    {
+      "name": "Stage5 regular/right: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "right",
+        "seen": [
+          "right"
+        ],
+        "drift": 0,
+        "minClear": 21,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 regular/right: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead-right",
+        "direction": "right",
+        "headOffset": 133,
+        "tipOffset": 143,
+        "warningError": 0,
+        "key": "ba119_blue-overhead-right_regular_22"
+      }
+    },
+    {
+      "name": "Stage5 regular/left: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "left",
+        "seen": [
+          "left"
+        ],
+        "drift": 0,
+        "minClear": 22,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 regular/left: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead-left",
+        "direction": "left",
+        "headOffset": -133,
+        "tipOffset": -143,
+        "warningError": 0,
+        "key": "ba119_blue-overhead-left_regular_22"
+      }
+    },
+    {
+      "name": "Stage5 chrome/center: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "center",
+        "seen": [
+          "center"
+        ],
+        "drift": 0,
+        "minClear": 72,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 chrome/center: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead",
+        "direction": "center",
+        "headOffset": -9,
+        "tipOffset": -15,
+        "warningError": 0,
+        "key": "ba119_blue-overhead_chrome_22"
+      }
+    },
+    {
+      "name": "Stage5 chrome/right: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "right",
+        "seen": [
+          "right"
+        ],
+        "drift": 0,
+        "minClear": 21,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 chrome/right: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead-right",
+        "direction": "right",
+        "headOffset": 133,
+        "tipOffset": 143,
+        "warningError": 0,
+        "key": "ba119_blue-overhead-right_chrome_22"
+      }
+    },
+    {
+      "name": "Stage5 chrome/left: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "left",
+        "seen": [
+          "left"
+        ],
+        "drift": 0,
+        "minClear": 22,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage5 chrome/left: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "blue-overhead-left",
+        "direction": "left",
+        "headOffset": -133,
+        "tipOffset": -143,
+        "warningError": 0,
+        "key": "ba119_blue-overhead-left_chrome_22"
+      }
+    },
+    {
+      "name": "Stage5: native attacks select center then mirrored right then left",
+      "passed": true,
+      "data": [
+        "center",
+        "right",
+        "left"
+      ]
+    },
+    {
+      "name": "Stage5: keep previous grip through lift before changing strike direction",
+      "passed": true,
+      "data": {
+        "before": "blue-overhead-left",
+        "after": "blue-overhead-right"
+      }
+    },
+    {
+      "name": "Stage5 browser has no renderer exceptions",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Stage8 all new lossless sheets load",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage8 regular/center: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "center",
+        "seen": [
+          "center"
+        ],
+        "drift": 0,
+        "minClear": 68,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 regular/center: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead_regular",
+        "direction": "center",
+        "headOffset": -3,
+        "tipOffset": -4,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead_regular"
+      }
+    },
+    {
+      "name": "Stage8 regular/right: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "right",
+        "seen": [
+          "right"
+        ],
+        "drift": 0,
+        "minClear": 29,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 regular/right: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-right_regular",
+        "direction": "right",
+        "headOffset": 149,
+        "tipOffset": 148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-right_regular"
+      }
+    },
+    {
+      "name": "Stage8 regular/left: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "left",
+        "seen": [
+          "left"
+        ],
+        "drift": 0,
+        "minClear": 30,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 regular/left: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-left_regular",
+        "direction": "left",
+        "headOffset": -149,
+        "tipOffset": -148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-left_regular"
+      }
+    },
+    {
+      "name": "Stage8 chrome/center: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "center",
+        "seen": [
+          "center"
+        ],
+        "drift": 0,
+        "minClear": 68,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 chrome/center: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead_chrome",
+        "direction": "center",
+        "headOffset": -3,
+        "tipOffset": -4,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead_chrome"
+      }
+    },
+    {
+      "name": "Stage8 chrome/right: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "right",
+        "seen": [
+          "right"
+        ],
+        "drift": 0,
+        "minClear": 29,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 chrome/right: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-right_chrome",
+        "direction": "right",
+        "headOffset": 149,
+        "tipOffset": 148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-right_chrome"
+      }
+    },
+    {
+      "name": "Stage8 chrome/left: committed bank, four native hits and planted clearance",
+      "passed": true,
+      "data": {
+        "selected": "left",
+        "seen": [
+          "left"
+        ],
+        "drift": 0,
+        "minClear": 30,
+        "contacts": 4
+      }
+    },
+    {
+      "name": "Stage8 chrome/left: actual cap and native warning align",
+      "passed": true,
+      "data": {
+        "bank": "ba119_corrupt-overhead-left_chrome",
+        "direction": "left",
+        "headOffset": -149,
+        "tipOffset": -148,
+        "warningError": 0,
+        "key": "nca_ba119_corrupt-overhead-left_chrome"
+      }
+    },
+    {
+      "name": "Stage8: native attacks select center then mirrored right then left",
+      "passed": true,
+      "data": [
+        "center",
+        "right",
+        "left"
+      ]
+    },
+    {
+      "name": "Stage8: keep previous grip through lift before changing strike direction",
+      "passed": true,
+      "data": {
+        "before": "ba119_corrupt-overhead-left_chrome",
+        "after": "ba119_corrupt-overhead-right_chrome"
+      }
+    },
+    {
+      "name": "Draconus actual morph in/out paints its distinct ship bank",
+      "passed": true,
+      "data": {
+        "keys": [
+          "sf1111_draconus-transform_chrome",
+          "sf1111_draconus-transform_chrome",
+          "sf1111_draconus-transform_chrome",
+          "sf1111_draconus-transform_chrome",
+          "sf1111_draconus-transform_chrome",
+          "sf1111_draconus-transform_chrome",
+          "sf1111_draconus-transform_chrome",
+          "sf1111_draconus-transform_chrome"
+        ],
+        "draws": 8
+      }
+    },
+    {
+      "name": "Normal icon-box strike\u2192eject\u2192catch order",
+      "passed": true,
+      "data": [
+        {
+          "event": "icon-box-approach",
+          "clock": 0,
+          "hp": 4126,
+          "gunHP": 900
+        },
+        {
+          "event": "icon-box-hit",
+          "clock": 0,
+          "x": 336,
+          "y": 409
+        },
+        {
+          "event": "hammer-release",
+          "clock": 0,
+          "x": 322,
+          "y": 3
+        },
+        {
+          "event": "gun-eject",
+          "clock": 0,
+          "x": 336,
+          "y": 409
+        },
+        {
+          "event": "gun-catch",
+          "clock": 0,
+          "hp": 4126,
+          "gunHP": 900
+        },
+        {
+          "event": "gun-rev",
+          "clock": 0,
+          "equipping": false,
+          "gunHP": 900
+        }
+      ]
+    },
+    {
+      "name": "Normal pickup has no shots or HP reset",
+      "passed": true,
+      "data": {
+        "hpSame": true,
+        "gunSame": true,
+        "type": "gun",
+        "seen": [
+          "ba119_corrupt-overhead_regular",
+          "draconus-catch-pre",
+          "draconus-catch-take",
+          "draconus-gun-spin"
+        ],
+        "early": 0,
+        "events": [
+          {
+            "event": "icon-box-approach",
+            "clock": 0,
+            "hp": 4126,
+            "gunHP": 900
+          },
+          {
+            "event": "icon-box-hit",
+            "clock": 0,
+            "x": 336,
+            "y": 409
+          },
+          {
+            "event": "hammer-release",
+            "clock": 0,
+            "x": 322,
+            "y": 3
+          },
+          {
+            "event": "gun-eject",
+            "clock": 0,
+            "x": 336,
+            "y": 409
+          },
+          {
+            "event": "gun-catch",
+            "clock": 0,
+            "hp": 4126,
+            "gunHP": 900
+          },
+          {
+            "event": "gun-rev",
+            "clock": 0,
+            "equipping": false,
+            "gunHP": 900
+          }
+        ],
+        "notes": [
+          {
+            "t": 0.016666666666666666,
+            "bank": "ba119_corrupt-overhead_regular",
+            "f": 0,
+            "gunTarget": false
+          },
+          {
+            "t": 0.26666666666666666,
+            "bank": "ba119_corrupt-overhead_regular",
+            "f": 0,
+            "gunTarget": false
+          },
+          {
+            "t": 0.5166666666666666,
+            "bank": "ba119_corrupt-overhead_regular",
+            "f": 0,
+            "gunTarget": false
+          },
+          {
+            "t": 0.7666666666666674,
+            "bank": "ba119_corrupt-overhead_regular",
+            "f": 0,
+            "gunTarget": false
+          },
+          {
+            "t": 1.016666666666668,
+            "bank": "ba119_corrupt-overhead_regular",
+            "f": 4,
+            "gunTarget": false
+          },
+          {
+            "t": 1.266666666666667,
+            "bank": "ba119_corrupt-overhead_regular",
+            "f": 10,
+            "gunTarget": false
+          },
+          {
+            "t": 1.5166666666666662,
+            "bank": "ba119_corrupt-overhead_regular",
+            "f": 16,
+            "gunTarget": false
+          },
+          {
+            "t": 1.7666666666666653,
+            "bank": "ba119_corrupt-overhead_regular",
+            "f": 21,
+            "gunTarget": false
+          },
+          {
+            "t": 2.0166666666666644,
+            "bank": "ba119_corrupt-overhead_regular",
+            "f": 24,
+            "gunTarget": false
+          },
+          {
+            "t": 2.2666666666666635,
+            "bank": "ba119_corrupt-overhead_regular",
+            "f": 30,
+            "gunTarget": false
+          },
+          {
+            "t": 2.5166666666666626,
+            "bank": "draconus-catch-pre",
+            "f": 0,
+            "gunTarget": false
+          },
+          {
+            "t": 2.7666666666666617,
+            "bank": "draconus-catch-pre",
+            "f": 1,
+            "gunTarget": false
+          },
+          {
+            "t": 3.016666666666661,
+            "bank": "draconus-catch-pre",
+            "f": 3,
+            "gunTarget": false
+          },
+          {
+            "t": 3.26666666666666,
+            "bank": "draconus-catch-pre",
+            "f": 5,
+            "gunTarget": false
+          },
+          {
+            "t": 3.516666666666659,
+            "bank": "draconus-catch-pre",
+            "f": 6,
+            "gunTarget": false
+          },
+          {
+            "t": 3.766666666666658,
+            "bank": "draconus-catch-take",
+            "f": 1,
+            "gunTarget": true
+          },
+          {
+            "t": 4.016666666666658,
+            "bank": "draconus-catch-take",
+            "f": 3,
+            "gunTarget": true
+          },
+          {
+            "t": 4.266666666666657,
+            "bank": "draconus-catch-take",
+            "f": 4,
+            "gunTarget": true
+          },
+          {
+            "t": 4.516666666666656,
+            "bank": "draconus-catch-take",
+            "f": 6,
+            "gunTarget": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Pickup uses empty-hand and complete held-gun drawings False",
+      "passed": true,
+      "data": [
+        "ba119_corrupt-overhead_regular",
+        "draconus-catch-pre",
+        "draconus-catch-take",
+        "draconus-gun-spin"
+      ]
+    },
+    {
+      "name": "Gun fires only from actual muzzle during native active window False",
+      "passed": true,
+      "data": {
+        "counts": [
+          {
+            "t": 1.2000000000000006,
+            "shots": 5
+          },
+          {
+            "t": 1.3666666666666667,
+            "shots": 2
+          },
+          {
+            "t": 1.5333333333333328,
+            "shots": 5
+          },
+          {
+            "t": 1.6999999999999988,
+            "shots": 2
+          },
+          {
+            "t": 1.866666666666665,
+            "shots": 5
+          },
+          {
+            "t": 2.033333333333331,
+            "shots": 2
+          },
+          {
+            "t": 2.199999999999997,
+            "shots": 5
+          },
+          {
+            "t": 2.366666666666663,
+            "shots": 2
+          },
+          {
+            "t": 2.533333333333329,
+            "shots": 5
+          },
+          {
+            "t": 2.6999999999999953,
+            "shots": 2
+          },
+          {
+            "t": 2.8666666666666614,
+            "shots": 5
+          },
+          {
+            "t": 3.0333333333333274,
+            "shots": 2
+          },
+          {
+            "t": 3.1999999999999935,
+            "shots": 5
+          },
+          {
+            "t": 3.3666666666666596,
+            "shots": 2
+          },
+          {
+            "t": 3.5333333333333257,
+            "shots": 5
+          },
+          {
+            "t": 3.6999999999999917,
+            "shots": 2
+          },
+          {
+            "t": 3.866666666666658,
+            "shots": 5
+          },
+          {
+            "t": 4.033333333333324,
+            "shots": 2
+          },
+          {
+            "t": 4.19999999999999,
+            "shots": 5
+          },
+          {
+            "t": 4.3666666666666565,
+            "shots": 2
+          },
+          {
+            "t": 4.533333333333323,
+            "shots": 5
+          },
+          {
+            "t": 4.699999999999989,
+            "shots": 2
+          },
+          {
+            "t": 4.866666666666655,
+            "shots": 5
+          }
+        ],
+        "mismatch": 0,
+        "seen": [
+          "draconus-gun-spin",
+          "draconus-gun-fire",
+          "draconus-gun-stow",
+          "draconus-catch-pre"
+        ],
+        "hpSame": true,
+        "after": "recall",
+        "held": false,
+        "gunHP": 900
+      }
+    },
+    {
+      "name": "Gun coasts, stows and returns to hammer without healing False",
+      "passed": true,
+      "data": {
+        "counts": [
+          {
+            "t": 1.2000000000000006,
+            "shots": 5
+          },
+          {
+            "t": 1.3666666666666667,
+            "shots": 2
+          },
+          {
+            "t": 1.5333333333333328,
+            "shots": 5
+          },
+          {
+            "t": 1.6999999999999988,
+            "shots": 2
+          },
+          {
+            "t": 1.866666666666665,
+            "shots": 5
+          },
+          {
+            "t": 2.033333333333331,
+            "shots": 2
+          },
+          {
+            "t": 2.199999999999997,
+            "shots": 5
+          },
+          {
+            "t": 2.366666666666663,
+            "shots": 2
+          },
+          {
+            "t": 2.533333333333329,
+            "shots": 5
+          },
+          {
+            "t": 2.6999999999999953,
+            "shots": 2
+          },
+          {
+            "t": 2.8666666666666614,
+            "shots": 5
+          },
+          {
+            "t": 3.0333333333333274,
+            "shots": 2
+          },
+          {
+            "t": 3.1999999999999935,
+            "shots": 5
+          },
+          {
+            "t": 3.3666666666666596,
+            "shots": 2
+          },
+          {
+            "t": 3.5333333333333257,
+            "shots": 5
+          },
+          {
+            "t": 3.6999999999999917,
+            "shots": 2
+          },
+          {
+            "t": 3.866666666666658,
+            "shots": 5
+          },
+          {
+            "t": 4.033333333333324,
+            "shots": 2
+          },
+          {
+            "t": 4.19999999999999,
+            "shots": 5
+          },
+          {
+            "t": 4.3666666666666565,
+            "shots": 2
+          },
+          {
+            "t": 4.533333333333323,
+            "shots": 5
+          },
+          {
+            "t": 4.699999999999989,
+            "shots": 2
+          },
+          {
+            "t": 4.866666666666655,
+            "shots": 5
+          }
+        ],
+        "mismatch": 0,
+        "seen": [
+          "draconus-gun-spin",
+          "draconus-gun-fire",
+          "draconus-gun-stow",
+          "draconus-catch-pre"
+        ],
+        "hpSame": true,
+        "after": "recall",
+        "held": false,
+        "gunHP": 900
+      }
+    },
+    {
+      "name": "Chrome icon-box strike\u2192eject\u2192catch order",
+      "passed": true,
+      "data": [
+        {
+          "event": "icon-box-approach",
+          "clock": 0,
+          "hp": 4126,
+          "gunHP": 900
+        },
+        {
+          "event": "icon-box-hit",
+          "clock": 0,
+          "x": 336,
+          "y": 409
+        },
+        {
+          "event": "hammer-release",
+          "clock": 0,
+          "x": 322,
+          "y": 3
+        },
+        {
+          "event": "gun-eject",
+          "clock": 0,
+          "x": 336,
+          "y": 409
+        },
+        {
+          "event": "gun-catch",
+          "clock": 0,
+          "hp": 4126,
+          "gunHP": 900
+        },
+        {
+          "event": "gun-rev",
+          "clock": 0,
+          "equipping": false,
+          "gunHP": 900
+        }
+      ]
+    },
+    {
+      "name": "Chrome pickup has no shots or HP reset",
+      "passed": true,
+      "data": {
+        "hpSame": true,
+        "gunSame": true,
+        "type": "gun",
+        "seen": [
+          "ba119_corrupt-overhead_chrome",
+          "draconus-catch-pre",
+          "draconus-catch-take",
+          "draconus-gun-spin"
+        ],
+        "early": 0,
+        "events": [
+          {
+            "event": "icon-box-approach",
+            "clock": 0,
+            "hp": 4126,
+            "gunHP": 900
+          },
+          {
+            "event": "icon-box-hit",
+            "clock": 0,
+            "x": 336,
+            "y": 409
+          },
+          {
+            "event": "hammer-release",
+            "clock": 0,
+            "x": 322,
+            "y": 3
+          },
+          {
+            "event": "gun-eject",
+            "clock": 0,
+            "x": 336,
+            "y": 409
+          },
+          {
+            "event": "gun-catch",
+            "clock": 0,
+            "hp": 4126,
+            "gunHP": 900
+          },
+          {
+            "event": "gun-rev",
+            "clock": 0,
+            "equipping": false,
+            "gunHP": 900
+          }
+        ],
+        "notes": [
+          {
+            "t": 0.016666666666666666,
+            "bank": "ba119_corrupt-overhead_chrome",
+            "f": 0,
+            "gunTarget": false
+          },
+          {
+            "t": 0.26666666666666666,
+            "bank": "ba119_corrupt-overhead_chrome",
+            "f": 0,
+            "gunTarget": false
+          },
+          {
+            "t": 0.5166666666666666,
+            "bank": "ba119_corrupt-overhead_chrome",
+            "f": 0,
+            "gunTarget": false
+          },
+          {
+            "t": 0.7666666666666674,
+            "bank": "ba119_corrupt-overhead_chrome",
+            "f": 0,
+            "gunTarget": false
+          },
+          {
+            "t": 1.016666666666668,
+            "bank": "ba119_corrupt-overhead_chrome",
+            "f": 4,
+            "gunTarget": false
+          },
+          {
+            "t": 1.266666666666667,
+            "bank": "ba119_corrupt-overhead_chrome",
+            "f": 10,
+            "gunTarget": false
+          },
+          {
+            "t": 1.5166666666666662,
+            "bank": "ba119_corrupt-overhead_chrome",
+            "f": 16,
+            "gunTarget": false
+          },
+          {
+            "t": 1.7666666666666653,
+            "bank": "ba119_corrupt-overhead_chrome",
+            "f": 21,
+            "gunTarget": false
+          },
+          {
+            "t": 2.0166666666666644,
+            "bank": "ba119_corrupt-overhead_chrome",
+            "f": 24,
+            "gunTarget": false
+          },
+          {
+            "t": 2.2666666666666635,
+            "bank": "ba119_corrupt-overhead_chrome",
+            "f": 30,
+            "gunTarget": false
+          },
+          {
+            "t": 2.5166666666666626,
+            "bank": "draconus-catch-pre",
+            "f": 0,
+            "gunTarget": false
+          },
+          {
+            "t": 2.7666666666666617,
+            "bank": "draconus-catch-pre",
+            "f": 1,
+            "gunTarget": false
+          },
+          {
+            "t": 3.016666666666661,
+            "bank": "draconus-catch-pre",
+            "f": 3,
+            "gunTarget": false
+          },
+          {
+            "t": 3.26666666666666,
+            "bank": "draconus-catch-pre",
+            "f": 5,
+            "gunTarget": false
+          },
+          {
+            "t": 3.516666666666659,
+            "bank": "draconus-catch-pre",
+            "f": 6,
+            "gunTarget": false
+          },
+          {
+            "t": 3.766666666666658,
+            "bank": "draconus-catch-take",
+            "f": 1,
+            "gunTarget": true
+          },
+          {
+            "t": 4.016666666666658,
+            "bank": "draconus-catch-take",
+            "f": 3,
+            "gunTarget": true
+          },
+          {
+            "t": 4.266666666666657,
+            "bank": "draconus-catch-take",
+            "f": 4,
+            "gunTarget": true
+          },
+          {
+            "t": 4.516666666666656,
+            "bank": "draconus-catch-take",
+            "f": 6,
+            "gunTarget": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Pickup uses empty-hand and complete held-gun drawings True",
+      "passed": true,
+      "data": [
+        "ba119_corrupt-overhead_chrome",
+        "draconus-catch-pre",
+        "draconus-catch-take",
+        "draconus-gun-spin"
+      ]
+    },
+    {
+      "name": "Gun fires only from actual muzzle during native active window True",
+      "passed": true,
+      "data": {
+        "counts": [
+          {
+            "t": 1.2000000000000006,
+            "shots": 5
+          },
+          {
+            "t": 1.3666666666666667,
+            "shots": 2
+          },
+          {
+            "t": 1.5333333333333328,
+            "shots": 5
+          },
+          {
+            "t": 1.6999999999999988,
+            "shots": 2
+          },
+          {
+            "t": 1.866666666666665,
+            "shots": 5
+          },
+          {
+            "t": 2.033333333333331,
+            "shots": 2
+          },
+          {
+            "t": 2.199999999999997,
+            "shots": 5
+          },
+          {
+            "t": 2.366666666666663,
+            "shots": 2
+          },
+          {
+            "t": 2.533333333333329,
+            "shots": 5
+          },
+          {
+            "t": 2.6999999999999953,
+            "shots": 2
+          },
+          {
+            "t": 2.8666666666666614,
+            "shots": 5
+          },
+          {
+            "t": 3.0333333333333274,
+            "shots": 2
+          },
+          {
+            "t": 3.1999999999999935,
+            "shots": 5
+          },
+          {
+            "t": 3.3666666666666596,
+            "shots": 2
+          },
+          {
+            "t": 3.5333333333333257,
+            "shots": 5
+          },
+          {
+            "t": 3.6999999999999917,
+            "shots": 2
+          },
+          {
+            "t": 3.866666666666658,
+            "shots": 5
+          },
+          {
+            "t": 4.033333333333324,
+            "shots": 2
+          },
+          {
+            "t": 4.19999999999999,
+            "shots": 5
+          },
+          {
+            "t": 4.3666666666666565,
+            "shots": 2
+          },
+          {
+            "t": 4.533333333333323,
+            "shots": 5
+          },
+          {
+            "t": 4.699999999999989,
+            "shots": 2
+          },
+          {
+            "t": 4.866666666666655,
+            "shots": 5
+          }
+        ],
+        "mismatch": 0,
+        "seen": [
+          "draconus-gun-spin",
+          "draconus-gun-fire",
+          "draconus-gun-stow",
+          "draconus-catch-pre"
+        ],
+        "hpSame": true,
+        "after": "recall",
+        "held": false,
+        "gunHP": 900
+      }
+    },
+    {
+      "name": "Gun coasts, stows and returns to hammer without healing True",
+      "passed": true,
+      "data": {
+        "counts": [
+          {
+            "t": 1.2000000000000006,
+            "shots": 5
+          },
+          {
+            "t": 1.3666666666666667,
+            "shots": 2
+          },
+          {
+            "t": 1.5333333333333328,
+            "shots": 5
+          },
+          {
+            "t": 1.6999999999999988,
+            "shots": 2
+          },
+          {
+            "t": 1.866666666666665,
+            "shots": 5
+          },
+          {
+            "t": 2.033333333333331,
+            "shots": 2
+          },
+          {
+            "t": 2.199999999999997,
+            "shots": 5
+          },
+          {
+            "t": 2.366666666666663,
+            "shots": 2
+          },
+          {
+            "t": 2.533333333333329,
+            "shots": 5
+          },
+          {
+            "t": 2.6999999999999953,
+            "shots": 2
+          },
+          {
+            "t": 2.8666666666666614,
+            "shots": 5
+          },
+          {
+            "t": 3.0333333333333274,
+            "shots": 2
+          },
+          {
+            "t": 3.1999999999999935,
+            "shots": 5
+          },
+          {
+            "t": 3.3666666666666596,
+            "shots": 2
+          },
+          {
+            "t": 3.5333333333333257,
+            "shots": 5
+          },
+          {
+            "t": 3.6999999999999917,
+            "shots": 2
+          },
+          {
+            "t": 3.866666666666658,
+            "shots": 5
+          },
+          {
+            "t": 4.033333333333324,
+            "shots": 2
+          },
+          {
+            "t": 4.19999999999999,
+            "shots": 5
+          },
+          {
+            "t": 4.3666666666666565,
+            "shots": 2
+          },
+          {
+            "t": 4.533333333333323,
+            "shots": 5
+          },
+          {
+            "t": 4.699999999999989,
+            "shots": 2
+          },
+          {
+            "t": 4.866666666666655,
+            "shots": 5
+          }
+        ],
+        "mismatch": 0,
+        "seen": [
+          "draconus-gun-spin",
+          "draconus-gun-fire",
+          "draconus-gun-stow",
+          "draconus-catch-pre"
+        ],
+        "hpSame": true,
+        "after": "recall",
+        "held": false,
+        "gunHP": 900
+      }
+    },
+    {
+      "name": "Visible box pixels touch the actual forward cap",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Gun has independent native pixel target and HP",
+      "passed": true,
+      "data": {
+        "contains": true,
+        "hpSame": true,
+        "gunLost": 17,
+        "flash": 0.12,
+        "point": {
+          "x": 342.5,
+          "y": 300
+        },
+        "rig": [
+          {
+            "id": "core",
+            "role": "core",
+            "spans": true
+          },
+          {
+            "id": "chaingun",
+            "role": "weapon",
+            "spans": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Gun flash expires and core damage keeps its own pool",
+      "passed": true,
+      "data": {
+        "expired": true,
+        "coreLost": 5,
+        "gunSame": true
+      }
+    },
+    {
+      "name": "Destroyed gun drops once, stops firing, recalls hammer and never respawns",
+      "passed": true,
+      "data": {
+        "hpSame": true,
+        "broken": true,
+        "gHP": 0,
+        "type": "sf1111_break",
+        "after": "recall",
+        "retry": "side",
+        "extra": 0,
+        "events": [
+          {
+            "event": "gun-rev",
+            "clock": 2,
+            "equipping": false,
+            "gunHP": 900
+          },
+          {
+            "event": "gun-broken",
+            "clock": 2,
+            "hp": 4121,
+            "previous": "gun"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Chromium activation retains held gun and damage budget",
+      "passed": true,
+      "data": {
+        "gunHP": 321,
+        "held": true,
+        "chrome": true,
+        "type": "gun",
+        "box": false,
+        "keys": [
+          "sf1111_draconus-gun-armor_regular",
+          "sf1111_draconus-gun-spin_chrome"
+        ]
+      }
+    },
+    {
+      "name": "Copied hammer directions and rage remain registered",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Real native loop completes pickup/fire/stow/recall False",
+      "passed": true,
+      "data": [
+        "gun",
+        "ready",
+        "recall",
+        "sf1111_arsenal"
+      ]
+    },
+    {
+      "name": "Real native loop completes pickup/fire/stow/recall True",
+      "passed": true,
+      "data": [
+        "gun",
+        "ready",
+        "recall",
+        "sf1111_arsenal"
+      ]
+    },
+    {
+      "name": "Native exit clears temporary gun handoff",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage8 browser has no renderer exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "runtimeHash": "f3c54cdda6ddf94bc85a71808b47505a15ce4b45c9b5e0fcae5551e1783b7cb2"
+}

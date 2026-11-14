@@ -1,0 +1,968 @@
+{
+  "passed": true,
+  "cells": [
+    {
+      "bank": "blue-overhead",
+      "frame": 0,
+      "bounds": [
+        118,
+        183,
+        405,
+        459
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 1,
+      "bounds": [
+        95,
+        182,
+        385,
+        444
+      ],
+      "headToGrip": 100.00000000000001,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 2,
+      "bounds": [
+        80,
+        182,
+        399,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 3,
+      "bounds": [
+        119,
+        168,
+        422,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 4,
+      "bounds": [
+        140,
+        93,
+        403,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 5,
+      "bounds": [
+        163,
+        64,
+        404,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 6,
+      "bounds": [
+        171,
+        54,
+        402,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 7,
+      "bounds": [
+        173,
+        52,
+        404,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 8,
+      "bounds": [
+        174,
+        66,
+        405,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 9,
+      "bounds": [
+        131,
+        192,
+        405,
+        444
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 10,
+      "bounds": [
+        175,
+        209,
+        405,
+        504
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 11,
+      "bounds": [
+        173,
+        220,
+        404,
+        515
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 12,
+      "bounds": [
+        173,
+        209,
+        404,
+        512
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 13,
+      "bounds": [
+        102,
+        192,
+        405,
+        450
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 14,
+      "bounds": [
+        104,
+        184,
+        405,
+        453
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-overhead",
+      "frame": 15,
+      "bounds": [
+        116,
+        184,
+        404,
+        469
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 0,
+      "bounds": [
+        116,
+        152,
+        419,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 1,
+      "bounds": [
+        162,
+        150,
+        471,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 2,
+      "bounds": [
+        163,
+        149,
+        503,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 3,
+      "bounds": [
+        153,
+        145,
+        482,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 4,
+      "bounds": [
+        152,
+        147,
+        426,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 5,
+      "bounds": [
+        154,
+        147,
+        424,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 6,
+      "bounds": [
+        153,
+        148,
+        430,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 7,
+      "bounds": [
+        124,
+        142,
+        426,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 8,
+      "bounds": [
+        52,
+        151,
+        428,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 9,
+      "bounds": [
+        96,
+        150,
+        426,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 10,
+      "bounds": [
+        148,
+        148,
+        427,
+        444
+      ],
+      "headToGrip": 100.00000000000003,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 11,
+      "bounds": [
+        148,
+        147,
+        431,
+        444
+      ],
+      "headToGrip": 100.00000000000003,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 12,
+      "bounds": [
+        128,
+        146,
+        428,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 13,
+      "bounds": [
+        143,
+        146,
+        429,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 14,
+      "bounds": [
+        148,
+        146,
+        429,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 15,
+      "bounds": [
+        148,
+        146,
+        431,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 0,
+      "bounds": [
+        157,
+        152,
+        460,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 1,
+      "bounds": [
+        105,
+        150,
+        414,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 2,
+      "bounds": [
+        73,
+        149,
+        413,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 3,
+      "bounds": [
+        94,
+        145,
+        423,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 4,
+      "bounds": [
+        150,
+        147,
+        424,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 5,
+      "bounds": [
+        152,
+        147,
+        422,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 6,
+      "bounds": [
+        146,
+        148,
+        423,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 7,
+      "bounds": [
+        150,
+        142,
+        452,
+        444
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 8,
+      "bounds": [
+        148,
+        151,
+        524,
+        445
+      ],
+      "headToGrip": 100.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 9,
+      "bounds": [
+        150,
+        150,
+        480,
+        445
+      ],
+      "headToGrip": 99.99999999999997,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 10,
+      "bounds": [
+        149,
+        148,
+        428,
+        444
+      ],
+      "headToGrip": 100.00000000000003,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 11,
+      "bounds": [
+        145,
+        147,
+        428,
+        444
+      ],
+      "headToGrip": 100.00000000000003,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 12,
+      "bounds": [
+        148,
+        146,
+        448,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 13,
+      "bounds": [
+        147,
+        146,
+        433,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 14,
+      "bounds": [
+        147,
+        146,
+        428,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "blue-right",
+      "frame": 15,
+      "bounds": [
+        145,
+        146,
+        428,
+        445
+      ],
+      "headToGrip": 99.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 0,
+      "bounds": [
+        93,
+        156,
+        411,
+        460
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 1,
+      "bounds": [
+        79,
+        157,
+        414,
+        446
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 2,
+      "bounds": [
+        56,
+        158,
+        414,
+        446
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 3,
+      "bounds": [
+        77,
+        139,
+        414,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 4,
+      "bounds": [
+        144,
+        74,
+        415,
+        444
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 5,
+      "bounds": [
+        164,
+        41,
+        414,
+        444
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 6,
+      "bounds": [
+        164,
+        32,
+        414,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 7,
+      "bounds": [
+        164,
+        30,
+        414,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 8,
+      "bounds": [
+        165,
+        39,
+        414,
+        445
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 9,
+      "bounds": [
+        159,
+        166,
+        414,
+        445
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 10,
+      "bounds": [
+        163,
+        181,
+        413,
+        483
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 11,
+      "bounds": [
+        164,
+        194,
+        414,
+        494
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 12,
+      "bounds": [
+        163,
+        187,
+        414,
+        484
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 13,
+      "bounds": [
+        101,
+        173,
+        414,
+        445
+      ],
+      "headToGrip": 105.00000000000003,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 14,
+      "bounds": [
+        100,
+        172,
+        414,
+        445
+      ],
+      "headToGrip": 105.00000000000003,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 15,
+      "bounds": [
+        118,
+        169,
+        414,
+        457
+      ],
+      "headToGrip": 105.00000000000003,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 0,
+      "bounds": [
+        123,
+        135,
+        427,
+        443
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 1,
+      "bounds": [
+        152,
+        136,
+        459,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 2,
+      "bounds": [
+        150,
+        134,
+        485,
+        443
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 3,
+      "bounds": [
+        148,
+        132,
+        463,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 4,
+      "bounds": [
+        147,
+        133,
+        431,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 5,
+      "bounds": [
+        150,
+        130,
+        429,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 6,
+      "bounds": [
+        148,
+        130,
+        429,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 7,
+      "bounds": [
+        106,
+        128,
+        433,
+        445
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 8,
+      "bounds": [
+        46,
+        126,
+        433,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 9,
+      "bounds": [
+        94,
+        129,
+        434,
+        444
+      ],
+      "headToGrip": 105.0,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 10,
+      "bounds": [
+        143,
+        129,
+        432,
+        444
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 11,
+      "bounds": [
+        144,
+        129,
+        436,
+        444
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 12,
+      "bounds": [
+        137,
+        122,
+        432,
+        443
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 13,
+      "bounds": [
+        144,
+        122,
+        434,
+        443
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 14,
+      "bounds": [
+        144,
+        122,
+        436,
+        443
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 15,
+      "bounds": [
+        141,
+        122,
+        435,
+        443
+      ],
+      "headToGrip": 104.99999999999999,
+      "jointAngle": 90
+    }
+  ],
+  "poses": 80,
+  "flightFrames": 32,
+  "method": "Clean GPT body layers; immutable blue and HC23 purple weapon masters. Rotations/materials baked offline in Aseprite."
+}

@@ -1,0 +1,162 @@
+{
+  "checks": [
+    {
+      "name": "Stage5: native debug entry waits for resources",
+      "passed": true
+    },
+    {
+      "name": "Stage5: combat clocks and warning held while loading",
+      "passed": true
+    },
+    {
+      "name": "Stage5: existing loading overlay is active",
+      "passed": true
+    },
+    {
+      "name": "Stage5: native frame loop releases after decoded load",
+      "passed": true
+    },
+    {
+      "name": "Stage5: boss encounter starts after load",
+      "passed": true
+    },
+    {
+      "name": "Leaving preview clears its loading ownership",
+      "passed": true
+    },
+    {
+      "name": "Stage8: native debug entry waits for resources",
+      "passed": true
+    },
+    {
+      "name": "Stage8: combat clocks and warning held while loading",
+      "passed": true
+    },
+    {
+      "name": "Stage8: existing loading overlay is active",
+      "passed": true
+    },
+    {
+      "name": "Stage8: native frame loop releases after decoded load",
+      "passed": true
+    },
+    {
+      "name": "Stage8: boss encounter starts after load",
+      "passed": true
+    },
+    {
+      "name": "Cold launches have no browser or renderer errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "loads": [
+    {
+      "load": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 2037,
+        "failed": 2,
+        "total": 2039
+      },
+      "events": [
+        {
+          "type": "loading",
+          "stage": 5
+        },
+        {
+          "type": "ready",
+          "stage": 5
+        }
+      ],
+      "time": 9999,
+      "seconds": 23.61,
+      "stage": 5
+    },
+    {
+      "load": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 5069,
+        "failed": 55,
+        "total": 5124
+      },
+      "events": [
+        {
+          "type": "loading",
+          "stage": 8
+        },
+        {
+          "type": "ready",
+          "stage": 8
+        }
+      ],
+      "time": 9999,
+      "seconds": 56.97,
+      "stage": 8
+    }
+  ],
+  "regressionSuite": {
+    "exitCode": 1,
+    "completed": false,
+    "existingError": "ReferenceError: difficultyHealthBaseline15 is not defined",
+    "location": "assets/combat_polish_0927b.js:151"
+  },
+  "visibleEntrance": {
+    "checks": [
+      {
+        "name": "Stage8: native debug entry waits for resources",
+        "passed": true
+      },
+      {
+        "name": "Stage8: combat clocks and warning held while loading",
+        "passed": true
+      },
+      {
+        "name": "Stage8: existing loading overlay is active",
+        "passed": true
+      },
+      {
+        "name": "Stage8: native frame loop releases after decoded load",
+        "passed": true
+      },
+      {
+        "name": "Stage8: boss encounter starts after load",
+        "passed": true
+      },
+      {
+        "name": "Stage8: gated entrance reaches a decoded visible drone",
+        "passed": true
+      },
+      {
+        "name": "Cold launches have no browser or renderer errors",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "loads": [
+      {
+        "load": {
+          "ready": true,
+          "progress": 1,
+          "loaded": 5069,
+          "failed": 55,
+          "total": 5124
+        },
+        "events": [
+          {
+            "type": "loading",
+            "stage": 8
+          },
+          {
+            "type": "ready",
+            "stage": 8
+          }
+        ],
+        "time": 9999,
+        "seconds": 83.61,
+        "stage": 8
+      }
+    ]
+  }
+}

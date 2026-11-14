@@ -1,0 +1,11 @@
+{
+  "protected": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/boss_animation_1109.js": "50fea54aefb69bd00161676ee04f5c9ea73558d52f6a2ba3c918dc893b054070",
+    "assets/whole_hammer_1110.js": "b3ff44d55af1c4a5be2e0a065fa0f65ec037f5a1b06cbf2b9270a53c471ded46",
+    "assets/rigid_hammer_1110.js": "f9c265797f006ac4c799cf7696b340a666f1b33ca11f3df78cfc8d626b548392"
+  },
+  "scale": 0.63,
+  "textures": 10,
+  "change": "Direct-master export matching existing whole attack scale"
+}

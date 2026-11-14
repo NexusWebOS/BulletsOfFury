@@ -291,8 +291,14 @@ drawEnemyShieldLayer=function(){const big=cfx114Shield;cfx114Shield=function(){r
    flash: measured 2 of 281 hits on Stage 7's boss and about half on Tidal Sovereign. Any health drop on a boss or miniboss,
    by any route, now flashes it, unless one of its pieces is already showing that hit. window.PR118_FLASH_OFF=1 disables. */
 const PR118_FLASH_T=.07;
-function pr118PartLists(b){const out=[];for(const k of Object.keys(b)){const v=b[k];if(!v||typeof v!=='object')continue;if(Array.isArray(v)){if(v.length&&v[0]&&typeof v[0]==='object'&&'hp' in v[0])out.push(v);continue;}
-  if(k[0]==='_'&&!(v instanceof Set)&&!(v instanceof Map))for(const j of Object.keys(v)){const w=v[j];if(Array.isArray(w)&&w.length&&w[0]&&typeof w[0]==='object'&&'hp' in w[0])out.push(w);}}return out;}
+function pr118PartLists(b){const out=[],seen=new Set([b]);
+  // Some native target lists contain the owning boss itself. Counting that
+  // object as a part overwrote its total-health snapshot and fabricated a
+  // health drop on every tick. Count each genuine child only once.
+  const add=a=>{if(!Array.isArray(a)||!a.length||!a[0]||typeof a[0]!=='object'||!('hp' in a[0]))return;
+    const parts=[];for(const q of a){if(!q||typeof q!=='object'||q._retinaOwner||!('hp' in q)||seen.has(q))continue;seen.add(q);parts.push(q);}if(parts.length)out.push(parts);};
+  for(const k of Object.keys(b)){const v=b[k];if(!v||typeof v!=='object')continue;if(Array.isArray(v)){add(v);continue;}
+    if(k[0]==='_'&&!(v instanceof Set)&&!(v instanceof Map))for(const j of Object.keys(v))add(v[j]);}return out;}
 /* Under sustained fire a flash on every hit is one solid white boss, so it strobes: 0.05 s on, at most every 0.14 s, while damage continues. */
 const PR118_FLASH_ON=.05,PR118_FLASH_EVERY=.14;
 function pr118Strobe(o,hit,now){if(hit)o._pr118LastHit=now;if(!(now-(o._pr118LastHit??-9)<.25))return;
@@ -326,10 +332,7 @@ eShootT=function(x,y,a,spd){if(pr118FuryOn()&&!boss&&!subBossActive&&Number.isFi
    the cannon, starting inside its mouth. Hit lanes are unchanged.
    Background attack: one giant tornado becomes a staggered volley of five. They stop growing at 160 px so a volley can be
    dodged. window.PR118_TH_OFF=1 restores one tornado. */
-tc119Beams=function(b){for(const B of tm115State(b).beams){const f=B.recovery?22+Math.min(5,Math.floor(B.tail*24)):B.age<TM115.beamGrow?Math.min(5,Math.floor(B.age*24)):6+Math.floor((B.age-TM115.beamGrow)*24)%16,at=fb112PartPoint(b,B.part);
-  if(B.part.hp>0)tc119Blit('pod'+B.part.index+'_lip',0,at.x,at.y);
-  tc119Blit(B.recovery?'beam_coupling_tail':'beam_coupling',B.recovery?Math.min(5,Math.floor(B.tail*24)):Math.floor(B.age*24)%16,B.x,B.y);
-  tm115Bank('wind_beam',f,B.x,B.y-(B.y-at.y)*.55);}};
+tc119Beams=function(b){return sr110CannonBeams(b);};
 const PR118_TH={lanes:[0,-130,130,-65,65],gap:.4,sizes:7};
 if(TC119_ART.cycloneSizes.length>PR118_TH.sizes)TC119_ART.cycloneSizes.length=PR118_TH.sizes;
 PR118.base.tcLaunch=tc119Launch;

@@ -1,0 +1,9 @@
+# Generation direction
+
+Pilot masters: one front-on waist-up adult portrait, mouth closed, square shoulders, arms lowered, no headset, microphone, helmet or ear wires. Preserve the supplied pilot’s face, hair, skin, jacket color and glasses. Use Cole’s new portrait as the shared style/framing reference. Combine 1990s Dragon Ball Z cel shadows, expressive angular facial planes and bold comic contours with clear 16-bit pixel clusters. Transparent background; full torso reaches the bottom border. No aura, text, frame or invented costume.
+
+Pilot-specific invariants: Cole olive jacket/brown beard; Axel Black skin/blue shearling jacket/black aviators; Freezer dark ponytail/purple shearling jacket/goatee; Yuri red quiff/red jacket; Maverick brown hair/beard, teal jacket and teal aviators; Falva auburn waves/magenta jacket/rectangular glasses; Lizzie auburn waves/yellow jacket/hoops/no glasses; Decker blond hair/rectangular glasses/black and gold jacket/no beard; Juggernaut broad muscular build/orange vest/black sunglasses/tattoos.
+
+Rooms: one empty landscape background, quiet center for the portrait, important details on either side, coherent dark military-base steel and amber practical lights. Conference architecture retains cyan radar/map screens and the airfield window. Workshop retains the amber worklamp, tools, server drawers and rotary-gun blueprint. Hangar has closed doors, gantries, crates and service carts with no aircraft. Lounge has a sofa, night window, guitar and amplifier. The cockpit is an empty metal frame/seat/radar layer with a true transparent canopy window; actual native environment imagery supplies the sky, starfield and tunnel. No characters, text, comic gutters, dialogue plate or exterior ship in room masters.
+
+Mouth generation: PixMiniMax neutral expression, seven visemes, transparent background, 192-pixel face crop from the native 320-pixel master. Only its mouth region is transferred back.

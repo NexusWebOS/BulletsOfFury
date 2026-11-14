@@ -1,0 +1,39 @@
+{
+  "seeks": [
+    {
+      "seconds": 2.353639,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "seconds": 13.564779,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "seconds": 24.190123,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "seconds": 36.518598,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "seconds": 46.025453,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "seconds": 53.874435,
+      "width": 1280,
+      "height": 844
+    }
+  ],
+  "chapterButton": {
+    "at": 16.842201,
+    "paused": false
+  },
+  "errors": []
+}

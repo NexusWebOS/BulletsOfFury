@@ -1,0 +1,22 @@
+{
+  "checks": [
+    {
+      "unit": "dracodia",
+      "whole": true,
+      "heldParts": [
+        "core"
+      ],
+      "heldToolDraws": 0,
+      "headUsesActorMask": true,
+      "releaseError": 0,
+      "detachedParts": [
+        "core",
+        "hammer"
+      ],
+      "detachedToolDraws": 1,
+      "releasedBodyBank": "ba119_corrupt-empty_regular",
+      "catchError": 0.0003425534265321678
+    }
+  ],
+  "errors": []
+}

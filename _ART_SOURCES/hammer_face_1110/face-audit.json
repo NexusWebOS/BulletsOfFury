@@ -1,0 +1,47 @@
+{
+  "checks": [
+    {
+      "bank": "blue-overhead",
+      "frame": 11,
+      "faceDirectionAgreement": 0.9993908270190958,
+      "motionAlignment": 0.9727412433440359,
+      "passed": true
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frame": 11,
+      "faceDirectionAgreement": 0.9993908270190958,
+      "motionAlignment": 0.9706949450968995,
+      "passed": true
+    },
+    {
+      "bank": "blue-sides",
+      "frame": 5,
+      "faceDirectionAgreement": 1.0,
+      "motionAlignment": 0.9922514167069589,
+      "passed": true
+    },
+    {
+      "bank": "blue-right",
+      "frame": 5,
+      "faceDirectionAgreement": 1.0,
+      "motionAlignment": 0.9922514167069589,
+      "passed": true
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 5,
+      "faceDirectionAgreement": 1.0,
+      "motionAlignment": 0.9910675638601991,
+      "passed": true
+    },
+    {
+      "bank": "corrupt-sides",
+      "frame": 12,
+      "faceDirectionAgreement": 1.0,
+      "motionAlignment": 0.9887005610317153,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

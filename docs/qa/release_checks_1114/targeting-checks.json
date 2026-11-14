@@ -1,0 +1,236 @@
+{
+  "checks": [
+    {
+      "name": "Tracking continuously cycles baked headings and bright/dim authored frames",
+      "passed": true,
+      "data": [
+        {
+          "t": 0.016666666666666666,
+          "f": 0,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.06666666666666667,
+          "f": 4,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.11666666666666665,
+          "f": 39,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.16666666666666666,
+          "f": 43,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.21666666666666665,
+          "f": 76,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.26666666666666666,
+          "f": 80,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.31666666666666665,
+          "f": 117,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.36666666666666664,
+          "f": 119,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.41666666666666663,
+          "f": 154,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.4666666666666666,
+          "f": 156,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.5166666666666666,
+          "f": 161,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.5666666666666668,
+          "f": 165,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.6166666666666669,
+          "f": 198,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.6666666666666671,
+          "f": 202,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.7166666666666672,
+          "f": 205,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        },
+        {
+          "t": 0.7666666666666674,
+          "f": 241,
+          "target": {
+            "x": 340,
+            "y": 447
+          }
+        }
+      ]
+    },
+    {
+      "name": "Repeated owner-timed beeps accelerate while tracking, without changing player Retina ownership",
+      "passed": true,
+      "data": {
+        "beeps": [
+          {
+            "phase": "lock",
+            "t": 0.016666666666666666,
+            "locked": false
+          },
+          {
+            "phase": "lock",
+            "t": 0.19999999999999998,
+            "locked": false
+          },
+          {
+            "phase": "lock",
+            "t": 0.36666666666666664,
+            "locked": false
+          },
+          {
+            "phase": "lock",
+            "t": 0.5166666666666666,
+            "locked": false
+          },
+          {
+            "phase": "lock",
+            "t": 0.6500000000000004,
+            "locked": false
+          },
+          {
+            "phase": "lock",
+            "t": 0.7666666666666674,
+            "locked": false
+          }
+        ],
+        "gaps": [
+          0.18333333333333332,
+          0.16666666666666666,
+          0.14999999999999997,
+          0.13333333333333375,
+          0.11666666666666703
+        ]
+      }
+    },
+    {
+      "name": "Just before firing, the red lock commits and the tracking beeps stop",
+      "passed": true,
+      "data": {
+        "locked": true,
+        "silent": true,
+        "stable": true,
+        "phase": "lock"
+      }
+    },
+    {
+      "name": "Destroyed cannons cancel their targeting beeps and optic",
+      "passed": true,
+      "data": {
+        "quiet": true,
+        "guns": 0,
+        "target": null
+      }
+    },
+    {
+      "name": "Pause freezes both the animated lock and beep scheduler",
+      "passed": true,
+      "data": {
+        "before": {
+          "n": 8,
+          "t": 0
+        },
+        "after": {
+          "n": 8,
+          "t": 0
+        }
+      }
+    },
+    {
+      "name": "Real-clock native fight repeatedly beeps, commits, fires, cools and reacquires",
+      "passed": true,
+      "data": {
+        "beeps": 22,
+        "peak": 0.6898375749588013,
+        "saved": [
+          "burst",
+          "cooling",
+          "locked",
+          "tracking"
+        ]
+      }
+    },
+    {
+      "name": "Native page/update/draw has no errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

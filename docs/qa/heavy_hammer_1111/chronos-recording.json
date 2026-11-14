@@ -1,0 +1,41 @@
+{
+  "records": [
+    {
+      "unit": "chronos",
+      "video": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\outputs\\Heavy-hammer-motion\\chronos-hammer.mp4",
+      "seconds": 37.66,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 8.578
+        },
+        {
+          "name": "whirlwind",
+          "at": 17.094
+        },
+        {
+          "name": "released throw",
+          "at": 23.61
+        }
+      ],
+      "audio": {
+        "peak": 0.7175556421279907,
+        "frames": 1604,
+        "starts": 21,
+        "sfxStarts": 51,
+        "errors": [],
+        "events": [],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [],
+        "phase": null
+      }
+    }
+  ],
+  "errors": []
+}

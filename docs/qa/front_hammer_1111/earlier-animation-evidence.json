@@ -1,0 +1,63 @@
+{
+  "blue_slam": {
+    "frames": 17,
+    "sheet": {
+      "key": "nca_ha21_blue_slam",
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_slam.webp",
+      "w": 1536,
+      "h": 768
+    },
+    "sha": "7376209949aac21b59803b6b7011a0232758ae49c610164533ea16dc5e3fc775"
+  },
+  "blue_side": {
+    "frames": 17,
+    "sheet": {
+      "key": "nca_ha21_blue_side",
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_side.webp",
+      "w": 1536,
+      "h": 768
+    },
+    "sha": "8f291db820e0da40e6dc34bccc25b64f2294d688b971699dd70de3652e2898c4"
+  },
+  "blue_slam_armor": {
+    "frames": 17,
+    "sheet": {
+      "key": "nca_ha21_blue_slam_armor",
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_slam_armor.webp",
+      "w": 1536,
+      "h": 768
+    },
+    "sha": "4e6ac14b8aa1a84f86edec1ab836749e297ebde40b7ea9c144facc94860f8dc0"
+  },
+  "blue_side_armor": {
+    "frames": 17,
+    "sheet": {
+      "key": "nca_ha21_blue_side_armor",
+      "path": "assets/game/shared/combat/hammer_acting_1021/blue_side_armor.webp",
+      "w": 1536,
+      "h": 768
+    },
+    "sha": "9714c40103b9af8e42801b78e8db8359fe407027c3ecf15cf70f2b8a7b18faa8"
+  },
+  "corrupt_slam": {
+    "frames": 17,
+    "sheet": {
+      "key": "nca_ha21_corrupt_slam",
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_slam.webp",
+      "w": 1536,
+      "h": 768
+    },
+    "sha": "4db7e821fcbc00e3f5f3a136d043def30558725f1af9d3ed0fa8fef8c1a03430"
+  },
+  "corrupt_side": {
+    "frames": 17,
+    "sheet": {
+      "key": "nca_ha21_corrupt_side",
+      "path": "assets/game/shared/combat/hammer_acting_1021/corrupt_side.webp",
+      "w": 1536,
+      "h": 768
+    },
+    "sha": "7e9282950e0f5041fa647195f441cb6e589e6c19c9b50499dfed4052f404ca00"
+  },
+  "passwordOwner": "assets/hammer_time_0927.js HT27_BASE.hammerTick/draw; HAMA is excluded by c25Own, so its cue/dance owners remain intact."
+}

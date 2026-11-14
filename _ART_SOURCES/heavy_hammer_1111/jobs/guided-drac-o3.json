@@ -1,0 +1,24 @@
+{
+  "name": "guided-drac-o3",
+  "prompt": "Eight NEW complete Dracodia frames24\u00e2\u20ac\u201c31, the recovery after the heavy ground strike. Transfer the EXACT motion poses from reference1 in the same4-column2-row order. Reference2 is Dracodia's immediately preceding downswing/contact sheet: preserve original purple/silver armor, curved horns, closed gray face/red eyes, red core, head/torso/limb/weapon unit and pixel style. Reference3 locks his purple six-spiked T-hammer and straight shaft/side-center socket. Do not copy the guide's mannequin, clothing, floor or scenery.\n\nFollow the guide's full-body recoil/recovery:\n24 deepest follow-through, bent at hips, knees braced, hammer low ahead of front foot, both hands on lower hilt.\n25 hammer rebounds just off contact while hips/shoulders begin rising; keep weight and connected grips.\n26 torso starts stacking back over hips, elbows flex to absorb/recover the head's mass.\n27 draw the handle toward torso as in guide, natural regrip/hand slide while maintaining the straight rigid shaft.\n28 hands guide hammer past chest, torso turns slightly with the hilt recovery, boots stable.\n29 controlled follow-through/regrip across torso, shoulders relax a little, same heavy head.\n30 lower toward ready guard, hands slide/regrip along the actual shaft in guide positions, no disappearing grip.\n31 ready/recovered waist-level carry matching guide's last pose, close to the next cycle's first pose so it loops smoothly.\n\nEight distinct progressive drawings. Show body/hips/shoulders actually recovering weight, not just arm movement. Original head recognizable/readable toward player. ONE straight shaft passes through each closed gripping fist, weapon rigid perpendicular T at SIDE socket, never handle in endcap, never hands on helmet. Whole complete figure+held hammer coherently drawn.\n\nWide2:1 landscape sheet, eight even512x512 intended cells4x2, target2048x1024. Real RGBA transparency. Same common body unit as reference2 with generous clear margins around all horns/spikes/shaft butt/boots. Crisp16bit metallic pixel clusters, no labels/text, floor/shadows, borders, trails, glow clouds or impact effects.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-72d5dd2c-0bbf-4cb5-afa4-b73baf56620b.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "guideFrames": [
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    26,
+    28
+  ],
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

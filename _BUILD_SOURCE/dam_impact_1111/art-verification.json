@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "aseprite_exact_flash_1": true,
+    "aseprite_exact_flash_9": true,
+    "aseprite_exact_flash_17": true,
+    "aseprite_exact_flash_25": true,
+    "aseprite_exact_flash_33": true,
+    "all_frame_cells_even_and_native_size": true,
+    "monotonic_alpha_with_empty_and_white_endpoints": true
+  }
+}

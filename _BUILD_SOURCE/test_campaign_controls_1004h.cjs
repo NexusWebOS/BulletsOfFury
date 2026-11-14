@@ -11,7 +11,8 @@ module.exports=function(vm,c,ok){
  out['the earned Stage IX latch still limits navigation']=sselMoveHorizontal(-1,9,9,9)===9&&sselMoveHorizontal(1,9,9,9)===9;
  out['3 to 4 faces downward']=map4eShipHeading(3,4,1)===Math.PI;
  cmap2.focus='map';Input.clearTaps();Input.injectTap('enter');campaignMenuInputTick();
- out['Start gives the bar ownership before Stage X can deploy']=cmap2.focus==='bar'&&!Rival24.mapInput()&&state===GS.STAGESEL;
+ out['Start preserves the focused map deployment confirmation']=cmap2.focus==='map'&&Input.menuConfirm()&&state===GS.STAGESEL;
+ Input.clearTaps();Input.injectTap('escape');campaignMenuInputTick();out['Back gives the toolbar ownership and blocks Stage X deployment']=cmap2.focus==='bar'&&!Rival24.mapInput()&&state===GS.STAGESEL;
  Input.clearTaps();cmap2.focus='map';sselCursor=6;map4hVertical(-1);
  out['Up from VI selects the pending X fight']=CF4.focus&&!MAP4E.xPreview&&Rival24.mapFocused;
  Input.injectTap(keybind.down[0]);Rival24.mapInput();

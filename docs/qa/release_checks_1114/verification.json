@@ -1,0 +1,62 @@
+{
+  "fullPasses": 8969,
+  "fullFailures": 0,
+  "fullExit": 0,
+  "nativeChecks": 60,
+  "targetingChecks": 7,
+  "editableFrames": 256,
+  "recoveredCells": 16,
+  "changedSyntaxSources": 11,
+  "movieSeconds": 11.994563,
+  "realMixerBeeps": 22,
+  "movieSha256": "d89afdafee7ff4d8c6c3ad3e608852b373ac0a8523d3084adca25dbf249602c2",
+  "sourceHashes": {
+    "assets/difficulty_helpers_1114.js": "8c323c5c83851e19a92798534466d343b0dc493a8890adf3cca09ed79a852efc",
+    "assets/difficulty_rules_1101.js": "24cf939c7031e1bf56677b3cfdbde5bf32a49bf8e0caefe0aa73547e94b0ef5c",
+    "assets/stage5_bomber_assault_1114.js": "f462856735703eb10bb7d8583bf570cce5427d28dfefee2cfb4aac7c12f7cb4d",
+    "assets/stage5_bomber_assault_art_1114.js": "843e6924ecd0a324a64ffd6990af241dc74e913fbe212d5be01999c46aca3eee",
+    "assets/stage8_leech_recovery_1114.js": "538adbe4356b4286d940025584a415b408b08549ec9f54453f537fd66b8d924d",
+    "assets/game/levels/stage_05/miniboss/assault_1114/retina_tracking_1114.webp": "01cb32e3d26a5226f30df0fefb4f6e1a289410fa83dae1b17fd364394eb92563",
+    "assets/game/levels/stage_08/enemies/atlas/stage8_leech_recovery_1114.png": "427023ad0142bea78aeb16f6d66ba5248bac4063bb07995f7b3f630dd89899cc",
+    "index.html": "88ef82981a04bcf582c5c3197f7c3dd18567fbeae7a6d0f53ab224e829faab73",
+    "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+    "_BUILD_SOURCE/test_difficulty_helpers_1114.cjs": "67517deff286459f25e751f9d75edc5a1600d2877fd61de6e922ec91d383454a",
+    "_BUILD_SOURCE/test_mutator_1003.cjs": "e06628d2da3146532172abc22673d3e6b1549143ecb556f7f7179a0a28643552",
+    "_BUILD_SOURCE/test_stage8_1003.cjs": "51cfd216b012f3f5ca51943ae0240fd543e36234f8162f2a80c31ddf07893958",
+    "_BUILD_SOURCE/test_campaign_focus_1004b.cjs": "1a91f6600e75e43ca55ddc16fa365020eb67549a9e6ce80935253c889fe4d5d0",
+    "_BUILD_SOURCE/test_campaign_controls_1004h.cjs": "0862b48cba22a923f6d99e81ff1e30962aa5ba0d64eb6e606daca20bce471f65"
+  },
+  "protected": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/combat_polish_0927b.js": "ad32ebaeb0ee278d3eb1e78b5f3cca6fa5923918c6b19f0b085802353caa99ac",
+    "assets/hardcorps_bosses_1007.js": "a6d4305e91f9ff629fbf899c7bff86ec11f81e7ed8429d63a3e2d56755293699",
+    "assets/pursuit_bomber_1027.js": "31aa639715274c8693a069190200a518dca920d951cfd7314fd35a281fb8da60",
+    "assets/stage5_bomber_gate_1027.js": "8cf64e2210fd8ae50b2b48b2bdd89cbde64d46b299d5cc4e6fa8002f4b4a3e91",
+    "assets/stage6_roster_1017.js": "50e5266a8f1bcf38ebb191d4d69429a180b6ed7006efbbc43a9cf2886759a704",
+    "assets/draconus_cinematic_rage_1113.js": "7f233420e861f01107e8cbf7d97d3c7de51f7af5c1ed1f28db33e53917995740",
+    "assets/draconus_cinematic_rage_art_1113.js": "cfaa82d20191d6a0dbbd21a491a5070e6d6feaf6cc77485b2499d4ead246aaf9",
+    "assets/chronos_rageform_1026.js": "d0ce6c2908dcf0cb748b6ab35695050d7995d795f90cf06330b7bc3a6207b7e8",
+    "assets/boss_restore_1112.js": "5ab3301e3d9471787faf3140205c6e36cdd7217af36d856c5e3ceed45cc72325"
+  },
+  "playbackSeeks": [
+    {
+      "width": 1280,
+      "height": 844,
+      "error": null,
+      "at": 1.274171
+    },
+    {
+      "width": 1280,
+      "height": 844,
+      "error": null,
+      "at": 5.449191
+    },
+    {
+      "width": 1280,
+      "height": 844,
+      "error": null,
+      "at": 10.265473
+    }
+  ],
+  "errors": []
+}

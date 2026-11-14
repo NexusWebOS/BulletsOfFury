@@ -1,0 +1,845 @@
+{
+  "expected_source_hash": "a17900eb7b81eb70aca5ce443ea95980f7e83e5ff16f3b3c04059f26366bc386",
+  "effects": [
+    {
+      "family": "boss-cascade",
+      "source": "boss-cascade",
+      "source_master_sha256": "82eed1eb7f4383b8782c812479f5e9030f8aee8643ac83800f36fb92b33245f7",
+      "frames": 14,
+      "cells": [
+        176,
+        320,
+        480
+      ],
+      "source_palette": [
+        "#fdfbed",
+        "#fdf597",
+        "#fde63a",
+        "#f7dda4",
+        "#fccf1e",
+        "#fcb725",
+        "#e0b995",
+        "#fb941e",
+        "#f87a23",
+        "#f75d16",
+        "#a68b82",
+        "#f23909",
+        "#a37c77",
+        "#cf4f48",
+        "#d83325",
+        "#8d6563",
+        "#be1810",
+        "#7d5658",
+        "#a01713",
+        "#6c434a",
+        "#8c0d10",
+        "#790a11",
+        "#53333c",
+        "#660e15",
+        "#4b1831",
+        "#550d16",
+        "#3b2429",
+        "#390f13",
+        "#320923",
+        "#260509",
+        "#120708",
+        "#030103",
+        "#000000"
+      ],
+      "palette": [
+        "#fdfbed",
+        "#fdf597",
+        "#fde63a",
+        "#f7dda4",
+        "#fccf1e",
+        "#fcb725",
+        "#e0b995",
+        "#fb941e",
+        "#f87a23",
+        "#f75d16",
+        "#a68b82",
+        "#f23909",
+        "#a37c77",
+        "#cf4f48",
+        "#d83325",
+        "#8d6563",
+        "#be1810",
+        "#7d5658",
+        "#a01713",
+        "#6c434a",
+        "#8c0d10",
+        "#790a11",
+        "#53333c",
+        "#660e15",
+        "#4b1831",
+        "#550d16",
+        "#3b2429",
+        "#390f13",
+        "#320923",
+        "#260509",
+        "#120708",
+        "#030103",
+        "#000000"
+      ],
+      "alpha_preserved": true
+    },
+    {
+      "family": "dracodia-final-purple",
+      "source": "dracodia-final",
+      "source_master_sha256": "4e6152bc61dd85da9780e1509bcd35a7717724f56bc03b77d07049a76fdb7137",
+      "frames": 14,
+      "cells": [
+        176,
+        320,
+        480
+      ],
+      "source_palette": [
+        "#fcfefc",
+        "#eefbfc",
+        "#dbfafc",
+        "#c7f5fb",
+        "#b4eefa",
+        "#ace1f6",
+        "#8cd5f1",
+        "#b8bef0",
+        "#94c6ee",
+        "#aab2e1",
+        "#83bce8",
+        "#58b4e1",
+        "#83a5e3",
+        "#4aa3da",
+        "#878cd5",
+        "#3d99d0",
+        "#5a80dc",
+        "#328cc8",
+        "#297fbf",
+        "#335ef7",
+        "#386ebc",
+        "#5e5fbd",
+        "#2266ae",
+        "#3751c8",
+        "#1a5b9e",
+        "#2140d4",
+        "#185094",
+        "#131ed6",
+        "#224391",
+        "#173982",
+        "#1b2e73",
+        "#111895",
+        "#111678",
+        "#131f60",
+        "#0d1055"
+      ],
+      "palette": [
+        "#fcfefc",
+        "#f5eefc",
+        "#ebdbfc",
+        "#e0c7fb",
+        "#d6b4fa",
+        "#d0acf6",
+        "#be8cf1",
+        "#d7b8f0",
+        "#c294ee",
+        "#c8aae1",
+        "#b683e8",
+        "#9c58e1",
+        "#b683e3",
+        "#924ada",
+        "#b287d5",
+        "#873dd0",
+        "#a05adc",
+        "#7e32c8",
+        "#7529bf",
+        "#9d33f7",
+        "#7d38bc",
+        "#935ebd",
+        "#6a22ae",
+        "#8637c8",
+        "#5e1a9e",
+        "#8321d4",
+        "#581894",
+        "#8013d6",
+        "#5d2291",
+        "#501782",
+        "#4b1b73",
+        "#5b1195",
+        "#4b1178",
+        "#3d1360",
+        "#350d55"
+      ],
+      "alpha_preserved": true
+    },
+    {
+      "family": "stage5-rupture",
+      "source": "stage5-rupture",
+      "source_master_sha256": "2a54e7a992a2976709f2cb6741d701c9ca6a8a522e158bf3a5fd4d33ffe33b2c",
+      "frames": 14,
+      "cells": [
+        176,
+        320,
+        480
+      ],
+      "source_palette": [
+        "#fcfcf7",
+        "#fcf693",
+        "#fdf521",
+        "#e3e6e2",
+        "#fde120",
+        "#fccd20",
+        "#c9d0d6",
+        "#fab217",
+        "#a7b3c7",
+        "#fb9409",
+        "#61b6f2",
+        "#fa740c",
+        "#f95707",
+        "#8b94a7",
+        "#f93107",
+        "#e71707",
+        "#7e64db",
+        "#747489",
+        "#2a6be5",
+        "#615ad1",
+        "#c30805",
+        "#57576b",
+        "#950607",
+        "#48389f",
+        "#1631be",
+        "#423f4e",
+        "#730204",
+        "#332372",
+        "#510204",
+        "#25203d",
+        "#2d0304",
+        "#100f29",
+        "#0a0409",
+        "#000000"
+      ],
+      "palette": [
+        "#fcfcf7",
+        "#fcf693",
+        "#fdf521",
+        "#e3e6e2",
+        "#fde120",
+        "#fccd20",
+        "#c9d0d6",
+        "#fab217",
+        "#a7b3c7",
+        "#fb9409",
+        "#61b6f2",
+        "#fa740c",
+        "#f95707",
+        "#8b94a7",
+        "#f93107",
+        "#e71707",
+        "#7e64db",
+        "#747489",
+        "#2a6be5",
+        "#615ad1",
+        "#c30805",
+        "#57576b",
+        "#950607",
+        "#48389f",
+        "#1631be",
+        "#423f4e",
+        "#730204",
+        "#332372",
+        "#510204",
+        "#25203d",
+        "#2d0304",
+        "#100f29",
+        "#0a0409",
+        "#000000"
+      ],
+      "alpha_preserved": true
+    }
+  ],
+  "scope": "Only explosion artwork and selection; teleport, swelling, red core transition, timings, fragments, portal and victory retained",
+  "records": {
+    "body-00-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-00-0.png",
+      "cell": 640
+    },
+    "body-00-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-00-1.png",
+      "cell": 640
+    },
+    "body-01-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-01-0.png",
+      "cell": 640
+    },
+    "body-01-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-01-1.png",
+      "cell": 640
+    },
+    "body-02-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-02-0.png",
+      "cell": 640
+    },
+    "body-02-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-02-1.png",
+      "cell": 640
+    },
+    "body-03-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-03-0.png",
+      "cell": 640
+    },
+    "body-03-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-03-1.png",
+      "cell": 640
+    },
+    "body-04-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-04-0.png",
+      "cell": 640
+    },
+    "body-04-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-04-1.png",
+      "cell": 640
+    },
+    "body-05-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-05-0.png",
+      "cell": 640
+    },
+    "body-05-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-05-1.png",
+      "cell": 640
+    },
+    "body-06-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-06-0.png",
+      "cell": 640
+    },
+    "body-06-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-06-1.png",
+      "cell": 640
+    },
+    "body-07-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-07-0.png",
+      "cell": 640
+    },
+    "body-07-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-07-1.png",
+      "cell": 640
+    },
+    "body-08-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-08-0.png",
+      "cell": 640
+    },
+    "body-08-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-08-1.png",
+      "cell": 640
+    },
+    "body-09-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-09-0.png",
+      "cell": 640
+    },
+    "body-09-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-09-1.png",
+      "cell": 640
+    },
+    "body-10-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-10-0.png",
+      "cell": 640
+    },
+    "body-10-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-10-1.png",
+      "cell": 640
+    },
+    "body-11-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-11-0.png",
+      "cell": 640
+    },
+    "body-11-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-11-1.png",
+      "cell": 640
+    },
+    "body-12-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-12-0.png",
+      "cell": 640
+    },
+    "body-12-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-12-1.png",
+      "cell": 640
+    },
+    "body-13-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-13-0.png",
+      "cell": 640
+    },
+    "body-13-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-13-1.png",
+      "cell": 640
+    },
+    "body-14-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-14-0.png",
+      "cell": 640
+    },
+    "body-14-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-14-1.png",
+      "cell": 640
+    },
+    "body-15-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-15-0.png",
+      "cell": 640
+    },
+    "body-15-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-15-1.png",
+      "cell": 640
+    },
+    "body-16-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-16-0.png",
+      "cell": 640
+    },
+    "body-16-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-16-1.png",
+      "cell": 640
+    },
+    "body-17-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-17-0.png",
+      "cell": 640
+    },
+    "body-17-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-17-1.png",
+      "cell": 640
+    },
+    "body-18-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-18-0.png",
+      "cell": 640
+    },
+    "body-18-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-18-1.png",
+      "cell": 640
+    },
+    "body-19-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-19-0.png",
+      "cell": 640
+    },
+    "body-19-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-19-1.png",
+      "cell": 640
+    },
+    "body-20-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-20-0.png",
+      "cell": 640
+    },
+    "body-20-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-20-1.png",
+      "cell": 640
+    },
+    "body-21-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-21-0.png",
+      "cell": 640
+    },
+    "body-21-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-21-1.png",
+      "cell": 640
+    },
+    "body-22-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-22-0.png",
+      "cell": 640
+    },
+    "body-22-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-22-1.png",
+      "cell": 640
+    },
+    "body-23-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-23-0.png",
+      "cell": 640
+    },
+    "body-23-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-23-1.png",
+      "cell": 640
+    },
+    "body-24-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-24-0.png",
+      "cell": 640
+    },
+    "body-24-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-24-1.png",
+      "cell": 640
+    },
+    "body-25-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-25-0.png",
+      "cell": 640
+    },
+    "body-25-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-25-1.png",
+      "cell": 640
+    },
+    "body-26-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-26-0.png",
+      "cell": 640
+    },
+    "body-26-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-26-1.png",
+      "cell": 640
+    },
+    "body-27-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-27-0.png",
+      "cell": 640
+    },
+    "body-27-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-27-1.png",
+      "cell": 640
+    },
+    "body-28-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-28-0.png",
+      "cell": 640
+    },
+    "body-28-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-28-1.png",
+      "cell": 640
+    },
+    "body-29-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-29-0.png",
+      "cell": 640
+    },
+    "body-29-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-29-1.png",
+      "cell": 640
+    },
+    "body-30-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-30-0.png",
+      "cell": 640
+    },
+    "body-30-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-30-1.png",
+      "cell": 640
+    },
+    "body-31-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-31-0.png",
+      "cell": 640
+    },
+    "body-31-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-31-1.png",
+      "cell": 640
+    },
+    "body-32-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-32-0.png",
+      "cell": 640
+    },
+    "body-32-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-32-1.png",
+      "cell": 640
+    },
+    "body-33-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-33-0.png",
+      "cell": 640
+    },
+    "body-33-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-33-1.png",
+      "cell": 640
+    },
+    "body-34-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-34-0.png",
+      "cell": 640
+    },
+    "body-34-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-34-1.png",
+      "cell": 640
+    },
+    "body-35-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-35-0.png",
+      "cell": 640
+    },
+    "body-35-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-35-1.png",
+      "cell": 640
+    },
+    "body-36-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-36-0.png",
+      "cell": 640
+    },
+    "body-36-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-36-1.png",
+      "cell": 640
+    },
+    "body-37-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-37-0.png",
+      "cell": 640
+    },
+    "body-37-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-37-1.png",
+      "cell": 640
+    },
+    "body-38-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-38-0.png",
+      "cell": 640
+    },
+    "body-38-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-38-1.png",
+      "cell": 640
+    },
+    "body-39-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-39-0.png",
+      "cell": 640
+    },
+    "body-39-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-39-1.png",
+      "cell": 640
+    },
+    "piece-00": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-00.png",
+      "cell": 114
+    },
+    "piece-01": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-01.png",
+      "cell": 98
+    },
+    "piece-02": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-02.png",
+      "cell": 100
+    },
+    "piece-03": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-03.png",
+      "cell": 80
+    },
+    "piece-04": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-04.png",
+      "cell": 74
+    },
+    "piece-05": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-05.png",
+      "cell": 116
+    },
+    "piece-06": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-06.png",
+      "cell": 124
+    },
+    "piece-07": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-07.png",
+      "cell": 92
+    },
+    "piece-08": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-08.png",
+      "cell": 86
+    },
+    "piece-09": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-09.png",
+      "cell": 68
+    },
+    "piece-10": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-10.png",
+      "cell": 92
+    },
+    "piece-11": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-11.png",
+      "cell": 62
+    },
+    "piece-12": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-12.png",
+      "cell": 74
+    },
+    "piece-13": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-13.png",
+      "cell": 86
+    },
+    "piece-14": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-14.png",
+      "cell": 66
+    },
+    "piece-15": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-15.png",
+      "cell": 78
+    },
+    "piece-16": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-16.png",
+      "cell": 66
+    },
+    "piece-17": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-17.png",
+      "cell": 56
+    },
+    "piece-18": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-18.png",
+      "cell": 90
+    },
+    "piece-19": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-19.png",
+      "cell": 82
+    },
+    "piece-20": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-20.png",
+      "cell": 92
+    },
+    "piece-21": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-21.png",
+      "cell": 94
+    },
+    "piece-22": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-22.png",
+      "cell": 62
+    },
+    "piece-23": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-23.png",
+      "cell": 72
+    },
+    "piece-24": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-24.png",
+      "cell": 114
+    },
+    "piece-25": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-25.png",
+      "cell": 96
+    },
+    "piece-26": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-26.png",
+      "cell": 44
+    },
+    "piece-27": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-27.png",
+      "cell": 84
+    },
+    "piece-28": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-28.png",
+      "cell": 128
+    },
+    "piece-29": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-29.png",
+      "cell": 86
+    },
+    "piece-30": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-30.png",
+      "cell": 42
+    },
+    "piece-31": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-31.png",
+      "cell": 52
+    },
+    "piece-32": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-32.png",
+      "cell": 110
+    },
+    "piece-33": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-33.png",
+      "cell": 94
+    },
+    "piece-34": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-34.png",
+      "cell": 124
+    },
+    "piece-35": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-35.png",
+      "cell": 82
+    },
+    "piece-36": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-36.png",
+      "cell": 78
+    },
+    "piece-37": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-37.png",
+      "cell": 108
+    },
+    "piece-38": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-38.png",
+      "cell": 46
+    },
+    "piece-39": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-39.png",
+      "cell": 104
+    },
+    "piece-40": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-40.png",
+      "cell": 104
+    },
+    "piece-41": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-41.png",
+      "cell": 68
+    },
+    "piece-42": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-42.png",
+      "cell": 78
+    },
+    "piece-43": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-43.png",
+      "cell": 172
+    },
+    "piece-44": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-44.png",
+      "cell": 92
+    },
+    "piece-45": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-45.png",
+      "cell": 94
+    },
+    "piece-46": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-46.png",
+      "cell": 86
+    },
+    "piece-47": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-47.png",
+      "cell": 66
+    },
+    "piece-48": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-48.png",
+      "cell": 68
+    },
+    "piece-49": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-49.png",
+      "cell": 82
+    },
+    "piece-50": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-50.png",
+      "cell": 58
+    },
+    "piece-51": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-51.png",
+      "cell": 38
+    },
+    "piece-52": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-52.png",
+      "cell": 92
+    },
+    "piece-53": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-53.png",
+      "cell": 82
+    },
+    "piece-54": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-54.png",
+      "cell": 52
+    },
+    "piece-55": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-55.png",
+      "cell": 68
+    },
+    "boss-cascade": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_explosions_1110/boss-cascade.png",
+      "cell": 176
+    },
+    "boss-cascade-large": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_explosions_1110/boss-cascade-large.png",
+      "cell": 320
+    },
+    "boss-cascade-mega": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_explosions_1110/boss-cascade-mega.png",
+      "cell": 480
+    },
+    "dracodia-final-purple": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_explosions_1110/dracodia-final-purple.png",
+      "cell": 176
+    },
+    "dracodia-final-purple-large": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_explosions_1110/dracodia-final-purple-large.png",
+      "cell": 320
+    },
+    "dracodia-final-purple-mega": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_explosions_1110/dracodia-final-purple-mega.png",
+      "cell": 480
+    },
+    "stage5-rupture": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_explosions_1110/stage5-rupture.png",
+      "cell": 176
+    },
+    "stage5-rupture-large": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_explosions_1110/stage5-rupture-large.png",
+      "cell": 320
+    },
+    "stage5-rupture-mega": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_explosions_1110/stage5-rupture-mega.png",
+      "cell": 480
+    }
+  },
+  "purple_family": "dracodia-final-purple",
+  "early_terminal_bursts_also_replaced": true,
+  "frames_per_family": 14,
+  "frame_seconds": 0.055,
+  "concurrency_cap": 24
+}

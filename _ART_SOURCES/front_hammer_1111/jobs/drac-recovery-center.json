@@ -1,0 +1,17 @@
+{
+  "name": "drac-recovery-center",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-8845eafc-8395-492d-9015-3efe185adf13.png",
+  "prompt": "Edit reference1's TOP ROW FOUR COMPLETE recovery poses only; preserve bottomrow4unchanged. Currently recovery incorrectlystarts with hammerfarLEFT. Instead first4must continue frontalgroundcontactinreference2: head CENTEREDbetween/infrontbothboots and bothCLOSEfistsstackedonSAMEsinglehiltbehind/abovehead. Keep headnearCENTER in all top4:0 exactlowcompressionreference2lastpose;1 reboundheadslightlyUP20px atsameX;2 risehips/knees/head40pxup sameX;3 drawheadslightlyUPandLEFT towardabdomen preparingregripintoexistingbottomrowfirstpose. Body/face/pelvisstayfront, bothbootsplanted. CorrectperpendicularTgeometry: shaftfromSIDEmidpointbackindepththroughbothclosehands, neverhorizontalbarthroughhead, noheadbetweenfists. Drawentireforearms/bodyposescoherently, don'tassemblyparts/headstamp. EXACTsamebody/head/armor/hammerunits asref1; closedgrayhornedface/redeyes/redcore,purplesilverarmor6spikedT-head. Bottomrow4alreadyvalidfrontreadyregripheadleftfistsbothonright, preserveit. Wide4x22048x10248fullfigures, ample30pxallmarginswithnohorn/spike/bootclipping, crisp16bitmetallicart, REALRGBAtransparency,nofloor/FX/text/background.",
+  "accepted": true,
+  "status": "candidate",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

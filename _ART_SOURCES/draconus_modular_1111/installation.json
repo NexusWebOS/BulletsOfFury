@@ -1,0 +1,13 @@
+{
+  "protected": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/boss_ship_forms_1111.js": "f3c54cdda6ddf94bc85a71808b47505a15ce4b45c9b5e0fcae5551e1783b7cb2",
+    "assets/whole_hammer_1110.js": "ca996c31f6fc9ad524160ac01d3cc1757d4a474331f698a32380396a169865e6",
+    "assets/chronos_rotor_1025.js": "99f97d11a8a8e32d1277c530806bc302a29cafc3f7c35b3d5866b7704952c96f",
+    "assets/overhead_slam_art_1111.js": "0145f54d951cd5b3c059fc114033e691c32d1428d0b39be79404dbcf2c233d73",
+    "assets/rage_palm_1110.js": "51b0f2ba6d672b8a6c78e274a5854daac8e8b3a31166b135aa38bc33c609d60c"
+  },
+  "runtime": "4ea117a08bc57ea1f1e4e5e3d063c2cf207acf601c577377124974114764ed29",
+  "art": "d4c8a4190227645a1afed87cec52de68a381ecd75d7e0f12f63ff845423bbcf6",
+  "index": "ddcd43d074aeb2ce4605e95017037e5956cf771dce7a6025c7c71543020f1612"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "guided-blue-o1",
+  "prompt": "Retarget ALL EIGHT complete poses in reference1 into BLUE CHRONOS, preserving exact pose/motion and4x2 order (overhead frames8-15: low carry, gathering strength, handle raised through chest height, then above crown with deep behind-head load). Reference1 is pose ONLY. Reference2 is accepted Chronos body/head/armor/rendering; references3-4 lock canonical helmet and hammer. Keep the SAME Chronos anatomy/armor proportions across all eight cells: charcoal/chrome muscular armor, dark swept finned helmet with narrow cyan visor, no face/horns/purple/red, round cyan chest core and blue inserts. Blue lightning cylindrical T hammer, flat BLACK/SILVER end caps, no spikes, black straight segmented shaft, rounded cyan butt. Both hands clearly grip lower shaft on SAME side of hammerhead; one straight rigid handle from side-center socket through BOTH fists toward butt, perpendicular to cylinder. In final pose both fists visibly around hilt ABOVE helmet, head remains clear below hands. No bent shafts/handle through cap. Fullbody+hammer redrawn as one coherent figure per cell; no head stamping or parts. Maintain same proportional model unit, generous padding containing every fin, hammer cap, butt and boot. Wide2:1 sprite sheet4columns2rows2048x1024, real RGBA transparency, crisp16bit metallic sprites, no text/labels/effects/floor/shadows/checkerboard.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-75a54ece-0fbd-4475-a1c1-91629c76fee5.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

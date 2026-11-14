@@ -1,0 +1,2830 @@
+{
+  "bytes": 444881794,
+  "folders": {
+    "heavy_hammer_1111": 85576902,
+    "three_way_hammer_1111": 95037595,
+    "front_hammer_1111": 65550852,
+    "solid_hammer_1111": 41238813,
+    "cap_strikes_1111": 47313294,
+    "overhead_slam_1111": 17922655,
+    "ship_forms_1111": 92241683
+  },
+  "files": [
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-overhead.aseprite",
+      "bytes": 3400099,
+      "sha256": "7fbaa9f7b3d02ce4f492e4e6cf7d0aa3e1c465fb93890ab8edc15de7af2e8b98"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-overhead_chrome.webp",
+      "bytes": 1601356,
+      "sha256": "546605c9e8451132a21e9ccd57862e4d3a9e54ab584c4be02d5e0ae6b4ddb021"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-overhead_hit.webp",
+      "bytes": 24418,
+      "sha256": "e68ba2ec01d9e6883b51b1e319879400f6abc68caae73fce235eaf12adb89780"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-overhead_red.webp",
+      "bytes": 1906256,
+      "sha256": "6bdff8aa87de8ca326322e0350f6624f6603854d1294f5c28879735891007c2f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-overhead_red_hit.webp",
+      "bytes": 24418,
+      "sha256": "4d31998a0f85c65d5713aed87e47ef82982e48ab8c9223cb9e0b21cde67ba8e5"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-overhead_regular.png",
+      "bytes": 2800253,
+      "sha256": "d91add2d3504a9cd30cd4e5fcd65cad116a649d7bf598845d527d7239ec41160"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-overhead_regular.webp",
+      "bytes": 1922624,
+      "sha256": "449f3ab209870bab801c9f0413c1f06d08b17c4132c3b6c05519a3fc4a267e57"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-right.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-right.aseprite",
+      "bytes": 1668003,
+      "sha256": "e2988127698860207b05346aa44b6470e1ff9d899ed5b5b224007f8f3fe25383"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-right_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-right_chrome.webp",
+      "bytes": 724462,
+      "sha256": "6288444e2bf6fb80a617adb0433d4fa7904f4ff02a4836f3d4a94018aec17359"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-right_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-right_hit.webp",
+      "bytes": 12460,
+      "sha256": "9d2f5e78049abf3cc860af20923d408abbd47e2cd466882a5b59fb09d31cbca3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-right_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-right_red.webp",
+      "bytes": 887986,
+      "sha256": "71fa74e988f45f2fc24ee4872931769689d44d4865acf8ec968a26ba2e946e50"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-right_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-right_red_hit.webp",
+      "bytes": 12460,
+      "sha256": "8a6fc9adad213d9fdba8c0bc5b6787fdb894eaba7e91015501acc122439245fc"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-right_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-right_regular.png",
+      "bytes": 1384383,
+      "sha256": "f840ee971374d9fc5ea33fd4fd0232c392364cec666fd5c8f0fd5e14aa83d948"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-right_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-right_regular.webp",
+      "bytes": 893444,
+      "sha256": "4306aa3a6157acd703e27819b298f71df0d7d6ccafc8bb85116ac69c215005af"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-sides.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-sides.aseprite",
+      "bytes": 1667224,
+      "sha256": "8bc443659b04a21435645b3715470af6a8a83bb03fe4c8cc2365afd6fc3b1028"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-sides_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-sides_chrome.webp",
+      "bytes": 716616,
+      "sha256": "732849df491dac1da8107a1f96b86150c17c8e81a59b561afe3ef366016f79ef"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-sides_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-sides_hit.webp",
+      "bytes": 12472,
+      "sha256": "80ac11e39eda7a5047cb73b0ce804bc98069aaeb4a77ab117135e8917b3b4ee6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-sides_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-sides_red.webp",
+      "bytes": 885294,
+      "sha256": "a3057eb37bcad38bcb69ab898df5eb677ef1faef0373b92390cf66580ea7c8fe"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-sides_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-sides_red_hit.webp",
+      "bytes": 12472,
+      "sha256": "13895d708dc2d9cfd411ecd4cee051aa13fee8177b3c4398e2548a7f3bb2b046"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-sides_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-sides_regular.png",
+      "bytes": 1378218,
+      "sha256": "70836441edcda4c07f642cbf74e1cf3095509e1048c69bc72d99fdb4c5f2f1c2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-sides_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-sides_regular.webp",
+      "bytes": 893364,
+      "sha256": "e7e3350717feb2093ef7fb4e3188bbcb39ebb7982bf6ea6eb00ef00dd997fded"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-whirl.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-whirl.aseprite",
+      "bytes": 1494080,
+      "sha256": "5314ee6988be8a6a8179dfdaf8464907c730dee9d3c73b6db7b0fa2230c3c7a1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-whirl_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-whirl_chrome.webp",
+      "bytes": 715994,
+      "sha256": "31ea9963bc5d9dacd154401817cb98d3aae367a46c97cb775c594eab0885872a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-whirl_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-whirl_hit.webp",
+      "bytes": 10356,
+      "sha256": "27a7797f0934c5447010c9f4aacd7ddfeab4b9aff265ef228b320f2dd333c9bb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-whirl_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-whirl_red.webp",
+      "bytes": 847668,
+      "sha256": "b95008678551aa346f0089f81d2878ac05fec5338086ce2bc5477ce8a14da6c0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-whirl_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-whirl_red_hit.webp",
+      "bytes": 10356,
+      "sha256": "8e79f9e5f3a93dd5ac6a614d22e98ae31df3264d65f3b8fc519666a0b65b403f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-whirl_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-whirl_regular.png",
+      "bytes": 1250656,
+      "sha256": "02f7cb8a5d244e7122ef5075e429968c11b8c964ffa8fc46c20311b55e4a2099"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\blue-whirl_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\blue-whirl_regular.webp",
+      "bytes": 852846,
+      "sha256": "f9725f3d2c54ca803b94a45c39a3aa68886a707a2879311d5c6cc7c5fdedda18"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-overhead.aseprite",
+      "bytes": 3649289,
+      "sha256": "bf7a0b05999460d64caee8659e5083690f0807442dc35dc6d282beea3f77a1e0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-overhead_chrome.webp",
+      "bytes": 1299712,
+      "sha256": "6c7926eb5651526051ad2ff6556733ded004f67542d2b4f3ceac379203e7454a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-overhead_hit.webp",
+      "bytes": 28580,
+      "sha256": "7c27c66127c43e85cb25ed4fae9606c02efb33539a876e5ef9508b41b9a67447"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-overhead_red.webp",
+      "bytes": 1997920,
+      "sha256": "30b2098a4060a60ee548c2441aad93c7d9658a2b937d6fe1062a1fa3422b9afe"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "bytes": 28580,
+      "sha256": "b544671516ff8525fb5e36d8e2239a86175c65bb85860b8f67e581df414137cf"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-overhead_regular.png",
+      "bytes": 2973355,
+      "sha256": "08b2f6b8e3e54f5e6f598fa61dded6dd7936b6d57e5b62d46883d9a9512b7ce9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-overhead_regular.webp",
+      "bytes": 1980274,
+      "sha256": "214b67b25e2f42ac36e50593f9abe282359c2274f4606e5d3c6e7d10849edffb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-right.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-right.aseprite",
+      "bytes": 1673033,
+      "sha256": "8ec8c95b6ba54c13a90174dfd352e27623a17814139a0f54a541388d0d34ce35"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-right_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-right_chrome.webp",
+      "bytes": 538526,
+      "sha256": "76dc93766943d9d5b9573ea1f002a1b848af3b2f0ffe4218b4d1b00a112dd39f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-right_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-right_hit.webp",
+      "bytes": 13762,
+      "sha256": "903c0888326107b507b92fd85ef832215b0139c6300fc3da231185f5be016dce"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-right_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-right_red.webp",
+      "bytes": 862470,
+      "sha256": "cef2c8002f28386a528817f45885833fe7d6f8d2cd9493b29cb17a1f3b2b5fbf"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-right_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-right_red_hit.webp",
+      "bytes": 13762,
+      "sha256": "fd2cd65b3f31b068e82343063260d03012b55b894cdd7e8dda0c4a20a29189fd"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-right_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-right_regular.png",
+      "bytes": 1386855,
+      "sha256": "68ae3fe9f32ab09b6f4a43990a81158ce8179d3e8635ac91839b8fef61a5a1db"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-right_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-right_regular.webp",
+      "bytes": 842028,
+      "sha256": "6c5491f16f8856b6c3a9be1edb1c1893e254889615fb982ba9ab8bc901dbaaf8"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-sides.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-sides.aseprite",
+      "bytes": 1672339,
+      "sha256": "cf89279648cb29125807dab08f498bdd1008cd17b4c4b1c917b16fafc98f6025"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-sides_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-sides_chrome.webp",
+      "bytes": 537922,
+      "sha256": "155f583a9fc7e151811766a2eaa3b3403aa3fdd0496c2cab62f12462e85001a0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-sides_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-sides_hit.webp",
+      "bytes": 13784,
+      "sha256": "066c025ea22c551785a567293f86c46cc78c14486cb9d01c765095a86e8f39f2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-sides_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-sides_red.webp",
+      "bytes": 851782,
+      "sha256": "7d08903c6f5766350c830060dd177247e4aefd442f26d148ea7f4e4e04c37a3d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-sides_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-sides_red_hit.webp",
+      "bytes": 13784,
+      "sha256": "4cf56f64af05eb136f88d3e9081e27c7612f853e454e577fa330f1df437e679b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-sides_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-sides_regular.png",
+      "bytes": 1380834,
+      "sha256": "bebc72975df7dd4a9fec843264e1273b166c85d050b569d5bbeff0a584078f39"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-sides_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-sides_regular.webp",
+      "bytes": 842374,
+      "sha256": "ba49b5f4098429eea33aa3f7b534f49618b18a1767bae577e49fc73559ec3b91"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-whirl.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-whirl.aseprite",
+      "bytes": 1485086,
+      "sha256": "d85d1d915145774e97dac26b54c2f16149fa719006e7c5f636ceaa4e5f4b2b6d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-whirl_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-whirl_chrome.webp",
+      "bytes": 515600,
+      "sha256": "04431b34b788aaf5b7ec0c10a778b283f143232bccd3be50fba2e4c3e3001cd0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-whirl_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-whirl_hit.webp",
+      "bytes": 11386,
+      "sha256": "377ded3b4b99d645b2ad324158d0bcd121c1e9627472180f19a453e0971cc671"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-whirl_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-whirl_red.webp",
+      "bytes": 831086,
+      "sha256": "7370ddf22fbdcd4f1301f40d711141e280a42911ebebf11bd2d141df79fe3c75"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-whirl_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-whirl_red_hit.webp",
+      "bytes": 11386,
+      "sha256": "4aa4e1e963acab76a1704581ea2085d517b245810de688f031e0b286e5ed132d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-whirl_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-whirl_regular.png",
+      "bytes": 1254068,
+      "sha256": "e4cd9b27d69ee2371a3b62ef2578511dfeea6394c0ae7d9d991b88c8d41bcc7b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\exports\\corrupt-whirl_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\exports\\corrupt-whirl_regular.webp",
+      "bytes": 812988,
+      "sha256": "38e39cfbee67abeaa60aedb277933c45e4aa0056d3de06a3fdf585c709cef92f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\blue-side-T.png",
+      "bytes": 1864115,
+      "sha256": "36e26d992cc23b65dfe6a385794d7a6b7d9fb17ef07cf58eaed52f987c6c0830"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\blue-whirl.png",
+      "bytes": 1509371,
+      "sha256": "e2e17ea00145cf00321e012977184cd79452d57f452e352c67ca3b1b573124a9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\drac-side-T.png",
+      "bytes": 2195348,
+      "sha256": "7e9cbef4d4cf87977c4c5ce5b157eed540ce959ddb7f881d3a52e86a588b006f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\drac-whirl.png",
+      "bytes": 1599090,
+      "sha256": "ee37d2616a18c6a69445e42019708f591ddb9dc7581b34a6c936151925a5298a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o0.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\guided-blue-o0.png",
+      "bytes": 1500344,
+      "sha256": "9177e9cc75a768b574f41d2179ca86cf7bb442b26d03f78421960ec3afebe207"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o1.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\guided-blue-o1.png",
+      "bytes": 1131005,
+      "sha256": "cab7e811eb8bc035b13659bf8d46cb7f0f06ad3680888376e866970ba70fc40d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o2.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\guided-blue-o2.png",
+      "bytes": 1086227,
+      "sha256": "73fc6d34c57eabd7ff547bcd7f99f2d2cbf690d479706871f9f4c7d434a44141"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o3-rejected.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\guided-blue-o3-rejected.png",
+      "bytes": 1319795,
+      "sha256": "786ef9f8b671c7699a3994805fe705a32e34a56372911870ac326c6dd6962fdf"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-blue-o3-right.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\guided-blue-o3-right.png",
+      "bytes": 2985784,
+      "sha256": "175a4cfe2f716f861b89c8971a39fb249850091a617adc83be21eed8af15b16b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o0.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\guided-drac-o0.png",
+      "bytes": 1540650,
+      "sha256": "52601dca14026ecc289ad2e7ccdab056438a12c483457ee2ff2a0b2b12355240"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o1-alpha.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\guided-drac-o1-alpha.png",
+      "bytes": 1147299,
+      "sha256": "d3f56663013d0b8076a6b6c232c414def35ca3c5cbf139257afe4e5133bcd38f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o2.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\guided-drac-o2.png",
+      "bytes": 2770850,
+      "sha256": "3edb83c85feeb22442ac36bdf5b25c6c31b913eee22c3dbfa0167d40bb362051"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o3-grip.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\guided-drac-o3-grip.png",
+      "bytes": 1526511,
+      "sha256": "c09aae576deae19159f7eca1e6f32fed43fc1f69cfd3f601075534a86902ac9f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\generated\\guided-drac-o3.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\generated\\guided-drac-o3.png",
+      "bytes": 1626390,
+      "sha256": "bf6f1a4c856d8d1b35e0a736bb27900a7ad606b48549571b4a6c5747404ecbf1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\blue-hammer.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\blue-hammer.png",
+      "bytes": 30509,
+      "sha256": "7c4882298189d3ad426205260431a78e9e41e8d1a68e2e39f6b066ee0326dd40"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\chronos-exact-head.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\chronos-exact-head.png",
+      "bytes": 9549,
+      "sha256": "a5c1ac25a738da7da866427166429f19a0ef09d74be0d8546c29c87659854196"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\chronos.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\chronos.png",
+      "bytes": 35256,
+      "sha256": "947b2045d6cf0c7a236ace654e81b3e7d2537bc044542a28aab3b7e8b82e0370"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\drac-grip-master.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\drac-grip-master.png",
+      "bytes": 1163940,
+      "sha256": "d84026fa466ba1c55a23758a0bb0de9d5452c7636e99a0cf5471e9a6d2a680d5"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\dracodia.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\dracodia.png",
+      "bytes": 106803,
+      "sha256": "885aaa2b2fcec144aeeed69d25250c339791cfe3813aa371b029eba7b878f247"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\hammer-motion-study.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\hammer-motion-study.png",
+      "bytes": 598986,
+      "sha256": "1fe9f4a06dbcec98337c71a442dccd9d92faad862723b9cc6f400bed430adae1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\overhead-motion-0.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\overhead-motion-0.png",
+      "bytes": 425473,
+      "sha256": "29ef9a686fa75eb95f8f426f8df1eb57a0eeb6724fc34ab6a5569c67c74e88d9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\overhead-motion-1.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\overhead-motion-1.png",
+      "bytes": 428613,
+      "sha256": "da399c817286e05305625d8030b62d355980a0b09ce49ee7c437389c731a6f09"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\overhead-motion-2.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\overhead-motion-2.png",
+      "bytes": 443860,
+      "sha256": "5415414d6d819f985d01e9d199deeff538e00a7892cda7ecf329a54e650a622a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\overhead-motion-3.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\overhead-motion-3.png",
+      "bytes": 492647,
+      "sha256": "75a219ba3cd1ccf7bcae852c7db6e4a48eb29da166fd7470f4b118902aed2af3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\purple-hammer.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\purple-hammer.png",
+      "bytes": 775082,
+      "sha256": "bcfc314c4196e87787196cf3ede1273fd3015cf38045e57142c7ab3d4691186c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\heavy_hammer_1111\\references\\PyCciI-motion-study.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\heavy_hammer_1111\\references\\PyCciI-motion-study.png",
+      "bytes": 1730602,
+      "sha256": "00d543cac7167fb80c877c41b563c610761d31d68a465826ded1027a673274fa"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-left.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-left.aseprite",
+      "bytes": 3498818,
+      "sha256": "bd2a34bd321100464fdef8f87d8f62ee7bfa876427d123d4a5927a32690a1ec3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-left_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-left_chrome.webp",
+      "bytes": 1702924,
+      "sha256": "345d2aae3936884bcd2a2dc7273353bdc5728421218f1fbb819fba7901052256"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-left_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-left_hit.webp",
+      "bytes": 23442,
+      "sha256": "743900051f1b18825013d999e480ff41b7448df51ebd3f1a783ed6bff987ac30"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-left_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-left_red.webp",
+      "bytes": 1999620,
+      "sha256": "ca49ac3dd63445b17959bd956e22bcdc9b51cc4dc5917d9ba2b8f476f9bb33f2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-left_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-left_red_hit.webp",
+      "bytes": 23442,
+      "sha256": "7609625fcb8552fc30ba46b5e4aaf5935b8340959ca7bf44778b07572f9f6c9f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-left_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-left_regular.png",
+      "bytes": 2935791,
+      "sha256": "a06730c91ddbb2596590df253eededb759be53eae0a6a6642e2a1d000ccb76ac"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-left_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-left_regular.webp",
+      "bytes": 2050314,
+      "sha256": "ebce8411fd3c6834e34dbf6be6ada13ee366463a9e8fc50dc89b9a6384c20772"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-right.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-right.aseprite",
+      "bytes": 3498216,
+      "sha256": "1db4dda84a2b60141b38146cddf7c580d5c57171dfef10caedd60193c3a59229"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-right_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-right_chrome.webp",
+      "bytes": 1701538,
+      "sha256": "d0c5287b4f03bd7eeb6ae62c20cc8063101e9204fa691149a520ce70ee26badc"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-right_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-right_hit.webp",
+      "bytes": 23440,
+      "sha256": "7084e6b7c08b27e27ce67bce2356debabfa029a5db3b54fbc808a02604f9503b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-right_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-right_red.webp",
+      "bytes": 1999296,
+      "sha256": "fe425bee01218ba6cad91a54904aaa1706a6b9e8da6f761ace279820fd0fa5c3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-right_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-right_red_hit.webp",
+      "bytes": 23440,
+      "sha256": "b0a150d0629cdac5736c0a8a78319fa9ae3e555d60b679c0cab244a11c30d275"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-right_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-right_regular.png",
+      "bytes": 2935220,
+      "sha256": "495dd5e9eca1fa5cee33215cb9da783559efe084a233fb86a402f672085ed6c5"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead-right_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead-right_regular.webp",
+      "bytes": 2047222,
+      "sha256": "f25309300692151c8932859484f520e7735d4ae7b7e645cfab2b11d2ea881a6b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead.aseprite",
+      "bytes": 3610890,
+      "sha256": "387f0ec8d8db3ed8129681e8a6de7529d557ec6243dd5093be4527dc0b13f3e9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead_chrome.webp",
+      "bytes": 1736214,
+      "sha256": "b4cc148b36de5d531ecc563e7d15c166afe77bd2bee1a9cb122996b06f79a0b9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead_hit.webp",
+      "bytes": 22952,
+      "sha256": "af3bdbbae1cb8a87c8475b0edbd8ec0ef6bd281567433783b609ec2711954534"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead_red.webp",
+      "bytes": 2038142,
+      "sha256": "6b24b38270c79a292acd4a3980d827e420d0d08d00336b76e8d4e42503d78d4b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead_red_hit.webp",
+      "bytes": 22952,
+      "sha256": "f34b905768ae362deb7c1ccb61a78d3587f3fcd7c32644f9240cffc12180d3ce"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead_regular.png",
+      "bytes": 2995158,
+      "sha256": "457c2bd4f6835287422ede11bd5b94a7cd55c6c0213ca55254be5aa833436719"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\blue-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\blue-overhead_regular.webp",
+      "bytes": 2087978,
+      "sha256": "c3448c0e060ac93641baff69ca4f60b9677ab3a2ed0471f7bb0d3bf5aa4560bc"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-left.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-left.aseprite",
+      "bytes": 4115203,
+      "sha256": "aab44d709f32fb9b860b8dd2d4bf0ce250b019c2a1cef5d3e6375d9b7a248632"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-left_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-left_chrome.webp",
+      "bytes": 1596852,
+      "sha256": "e3fdd4d6d05bbb2adc7825e7dc558b9f4a4369687474c27e9b3050ddea4dc744"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-left_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-left_hit.webp",
+      "bytes": 28010,
+      "sha256": "c0f4689aad426011d9e7821c74237e4b448377879a2e9448a055321db80adcd0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-left_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-left_red.webp",
+      "bytes": 2324000,
+      "sha256": "0f097cb2d5e541108ec5ec6db337041b5aa8f8bff0876316012f27424f345e18"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-left_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-left_red_hit.webp",
+      "bytes": 28010,
+      "sha256": "eeea376e96e74d9e9ffade2d7bf61d632e51a79fed2138a1b1615a8bd8c2fd53"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-left_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-left_regular.png",
+      "bytes": 3462572,
+      "sha256": "b2123d9c9eaffd5c9d31f0c4b952b78b273562f7771c7232a7379404ab83aef6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-left_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-left_regular.webp",
+      "bytes": 2341788,
+      "sha256": "98b0037011898d60ced72d4ea7028ebe4c7bb93e1592c3cc6762c6e6f42e7300"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-right.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-right.aseprite",
+      "bytes": 4115454,
+      "sha256": "c6b9cdd3bbd93a23518e41f94fd70e527e17cb52fd6db045dfdbeb4003ca1f42"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-right_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-right_chrome.webp",
+      "bytes": 1598110,
+      "sha256": "5e34b45484eec6c33d4975d2d7a69a89a4289a8e12f5b6e6860cbc9fd1ae9eee"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-right_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-right_hit.webp",
+      "bytes": 28012,
+      "sha256": "dc3654039def463cd519c279b2df9c445af6a9c6ef2eadd77219e275c06d5653"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-right_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-right_red.webp",
+      "bytes": 2323248,
+      "sha256": "1d6ed2b1614c58aa43300a5a33f2fc93bf12223ef0ee840995da59c0132020f1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-right_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-right_red_hit.webp",
+      "bytes": 28012,
+      "sha256": "13df2d0af4a5c9364bd36b8efb4794cc1d7fd6ba972ebc79f320c7091ea455f9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-right_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-right_regular.png",
+      "bytes": 3462044,
+      "sha256": "bb289ab4c2ba4fd18efb101ebdfffd130e70ddadb3240467614d512548096b87"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead-right_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead-right_regular.webp",
+      "bytes": 2344122,
+      "sha256": "3fcb2e4a101345918cb54ae45f5b86ed55991157205c3d2cf6de62ba3be09161"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead.aseprite",
+      "bytes": 3957552,
+      "sha256": "eef983c7761f052611b521e770c36dffc92015bf3e972c2a7f59ad6408a8719d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead_chrome.webp",
+      "bytes": 1478946,
+      "sha256": "ce065ab862da978ec24afb2ebcf28f40d7d382d2e90c7a8ed844edf03d6c98c2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead_hit.webp",
+      "bytes": 26098,
+      "sha256": "d2ec1daad260b967229b826e0472983ea349026b171a86753043cac62b346998"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead_red.webp",
+      "bytes": 2218574,
+      "sha256": "ad64a5d681f427fd4a71cc8e277da3f9aaf13f4cc2cc605996a9fcc6aeb8c656"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "bytes": 26098,
+      "sha256": "ff9e4b2bbfd3ef27301aadc60b15ed7507e26bc7fe50c040bcd7d851f9f34b1b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead_regular.png",
+      "bytes": 3294826,
+      "sha256": "26b41cf9e56ec6b212607840e88f43bed1ed13505697fa9b5f9804d077940dd3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\exports\\corrupt-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\exports\\corrupt-overhead_regular.webp",
+      "bytes": 2224820,
+      "sha256": "1331a7f0b3adeb03fc67066ff30730bd5c8ec64951e4679277cb275752aea6d7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\generated\\blue-down.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\generated\\blue-down.png",
+      "bytes": 1137302,
+      "sha256": "aa43a6c903f697c4f80f1696303cca756353bfca66efb8c9e8336b38275f826a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\generated\\blue-recovery.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\generated\\blue-recovery.png",
+      "bytes": 1287542,
+      "sha256": "ca1bee49cd7dc3aeef83dbc61919f1f8cd82f1fe23a4cd169549e7541e9c99bb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\generated\\drac-down-before-depth-fix.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\generated\\drac-down-before-depth-fix.png",
+      "bytes": 1234572,
+      "sha256": "b47dcbc4303b1df092e03c9d4a21c46c4a8dc63c58e151d55d50c10d5f605989"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\generated\\drac-down-rejected.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\generated\\drac-down-rejected.png",
+      "bytes": 1516496,
+      "sha256": "bcac11119a7fae4bcbb47a84ff81965e1ab7739dea3978161a7419b0099e50b3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\generated\\drac-down.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\generated\\drac-down.png",
+      "bytes": 1316412,
+      "sha256": "eb2e1279996df829ae51bbc4d7fb84b203cacfdce0c310087c51db3455fa0c16"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\generated\\drac-recovery-rejected.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\generated\\drac-recovery-rejected.png",
+      "bytes": 1601355,
+      "sha256": "af55eda4dc8902c898ca1e64c1af0f166847d0c462b744f53fba86881d4563bb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\generated\\drac-recovery.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\generated\\drac-recovery.png",
+      "bytes": 1420743,
+      "sha256": "bafd94bb2051e58bb879549ebbf526103f2ce1efe7968991c2666b44989bfc8f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\reviews\\blue-center-all-poses.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\reviews\\blue-center-all-poses.png",
+      "bytes": 3006223,
+      "sha256": "3cce65dfe2179b16ebd3b4ac5c3628613f09ae00c5a0f50b8f681294ee22ed9b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\reviews\\center-onion-review.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\reviews\\center-onion-review.png",
+      "bytes": 1219233,
+      "sha256": "a4129b52bb48fd41bdc9d4b7d786de9cdc1e6964ac57374d6b429ef6b7169aca"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\three_way_hammer_1111\\reviews\\corrupt-center-all-poses.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\three_way_hammer_1111\\reviews\\corrupt-center-all-poses.png",
+      "bytes": 3298357,
+      "sha256": "a7661c4f1464f1b861bf72beefcfb56f85d087cc68fe19b8dc2cd6c97c3132bb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-overhead.aseprite",
+      "bytes": 3392571,
+      "sha256": "da157e727fefce3caccad7af9d28de7f82318d9f4e2bbade5c2872276fea3512"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-overhead_chrome.webp",
+      "bytes": 1660956,
+      "sha256": "864da47baa33381066f4317b728e1ccfa7c1ea4b1ad1bd9ff7b03805a8bf18f5"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-overhead_hit.webp",
+      "bytes": 23142,
+      "sha256": "5796a8df3cb7b2fedb08487749386dbb842d10e949d1664e674310c6fcc81322"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-overhead_red.webp",
+      "bytes": 1871526,
+      "sha256": "bfacd03fec85a30de309bf961a66b06c8705ba3b80e572d353a81bf3e5af6a82"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-overhead_red_hit.webp",
+      "bytes": 23142,
+      "sha256": "4722e4c230adaebf359201126fba014b257057c889e3b175d65b7f31138fa5d6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-overhead_regular.png",
+      "bytes": 2773048,
+      "sha256": "e0a9818e2160bfdd685e7f23c6c78f11edb58ad52a3275848e9e97f3e3d7b978"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-overhead_regular.webp",
+      "bytes": 1922096,
+      "sha256": "ab6db2d055e7aee91aebdf738ff96f4ee6effc80464a734ffabcfd088111cfa5"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-right.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-right.aseprite",
+      "bytes": 1622780,
+      "sha256": "7e498d54ec14d53c56f9fc2753bc71461364c6af5de1ce9753dfb6c27487f62f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-right_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-right_chrome.webp",
+      "bytes": 806016,
+      "sha256": "b38e129a7e7a3bb41c49ddb150b3920356d5558ec703a7728dc90fa55099a1b1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-right_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-right_hit.webp",
+      "bytes": 11330,
+      "sha256": "88a1f1bc7275a102862bb51eef4b7e200ccbb87e43bf177fad23be83f65d51cb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-right_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-right_red.webp",
+      "bytes": 934464,
+      "sha256": "21e007e9a7845bfdcf64886495e581bdb0745406e4a3d89fcfd3cd0680e050fb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-right_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-right_red_hit.webp",
+      "bytes": 11330,
+      "sha256": "393fb8ef2fc62a9bc661166f5d38521b527e4632792579d0bb614690e5dafe05"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-right_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-right_regular.png",
+      "bytes": 1357337,
+      "sha256": "97ef9f709c6511e4a1f908adaa6a157ff7b92d9314cfa76a2d23bee0d847966b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-right_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-right_regular.webp",
+      "bytes": 934700,
+      "sha256": "8958483673cc4817af7b69837a4b5d19da65c27efaf799ebe4e9d583ceba6226"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-sides.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-sides.aseprite",
+      "bytes": 1622216,
+      "sha256": "baf60186629e5a021633bf7ad821538e4ce4134065be737463daf9e65cd83b0d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-sides_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-sides_chrome.webp",
+      "bytes": 801182,
+      "sha256": "bdfbdccb634e17412cf894964167b95d49fd74bfa8240a3522613b65d3d664b3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-sides_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-sides_hit.webp",
+      "bytes": 11334,
+      "sha256": "b685efe4d407c1d3e1abf36e863f0e33c9fbadd0305770cf065dc4fa9dbaadd1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-sides_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-sides_red.webp",
+      "bytes": 930066,
+      "sha256": "087d8bf9097bb2e17f250c89f89acb16d8ef4ac1078019c9a433d2a5c9430d17"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-sides_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-sides_red_hit.webp",
+      "bytes": 11334,
+      "sha256": "858e9f006a7b7232087f4cf343762ef2597d385225f6ce2a518a2613f4183a21"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-sides_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-sides_regular.png",
+      "bytes": 1354562,
+      "sha256": "a3a090fd9d50cfe54e5ce32f4ea4bcacce06fa8958a22b225de32e1777f2548a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\blue-sides_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\blue-sides_regular.webp",
+      "bytes": 934700,
+      "sha256": "e4e5cfe71f0b4403461154f661862b37aee33915d0b21372f04a67b9c0f783d1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-overhead.aseprite",
+      "bytes": 3457810,
+      "sha256": "909949ed5b83f95f56ae56166f8fa8346287c342cf920f5ce3df96b7b405f114"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-overhead_chrome.webp",
+      "bytes": 1232336,
+      "sha256": "9f501bca29903e59f7414f1ec93121b3aa3f2bb38570168408949c31cd835f15"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-overhead_hit.webp",
+      "bytes": 25468,
+      "sha256": "b909a705d55b581c35f8b6144f6e152b4fc100ffa3f8832bfba5cf6bc83774a0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-overhead_red.webp",
+      "bytes": 1881442,
+      "sha256": "58a57b862b445a283c6d86acc612f59a591982dc27e2366f6338029f89d0ceff"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "bytes": 25468,
+      "sha256": "2261e7fb2bc4227d7b7c6f7d7ee58714b1ddab3cf2740b771f39038f218c2552"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-overhead_regular.png",
+      "bytes": 2823880,
+      "sha256": "b3847bfef9bec2b763b512dccd6f6fa8c639f898868d3412cab994a5b2eff77d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-overhead_regular.webp",
+      "bytes": 1891604,
+      "sha256": "6ecc1677fb7947983b28e889ac35af3bfca6de22bfe68908d8dda36ad01a7cb0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-right.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-right.aseprite",
+      "bytes": 1709820,
+      "sha256": "dc01d238a8dc0258659add7a77043dc37aabc03528ef87b784a417199ca18035"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-right_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-right_chrome.webp",
+      "bytes": 578834,
+      "sha256": "3caf9cc18b2c96dbe8b2383011b3854c77013bdfda4556fc252f32bd635abb10"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-right_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-right_hit.webp",
+      "bytes": 12552,
+      "sha256": "4be28baa8901d80be8d4e9b3b8b12a63134e03a41d2ec4ca05d67c33099ae633"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-right_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-right_red.webp",
+      "bytes": 950128,
+      "sha256": "41f328fba9fe3caa586aecdaa2d7c2603675dadd2e7f6741c6fb7360bd21b4c2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-right_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-right_red_hit.webp",
+      "bytes": 12552,
+      "sha256": "0fa48396991498a9fbfdc093fed93aa411705e935dc9d884e6064f5178cfc954"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-right_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-right_regular.png",
+      "bytes": 1451801,
+      "sha256": "f3557a9bd13506542532131f33e8b163e52549654ad03ad8daf07af2975c55ce"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-right_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-right_regular.webp",
+      "bytes": 960662,
+      "sha256": "df8b37f26d5f449da2e709388b5cafb8bd1ff91c177569367b93c02bc3784dc7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-sides.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-sides.aseprite",
+      "bytes": 1709411,
+      "sha256": "52ac89fea7df0e57266ab46f3927a34571cfefb6fafad5b88ff240a7286ce802"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-sides_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-sides_chrome.webp",
+      "bytes": 577914,
+      "sha256": "4b68aad67b65742450abaf3d49d2a3d92b204e0b998753d18dffe725415d2750"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-sides_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-sides_hit.webp",
+      "bytes": 12534,
+      "sha256": "b42f3eb9147f63be595ce23feec5b452ad89ef7fde3fdac668046f3e87aaa579"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-sides_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-sides_red.webp",
+      "bytes": 948464,
+      "sha256": "51235cc81b23eff64ea9d39629ec9ab3fb99e86b1d9acccb60a9d146ccb26ac6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-sides_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-sides_red_hit.webp",
+      "bytes": 12534,
+      "sha256": "a9fbb75a0a7a6d351c5d8b496bd94e982f7012888d0e125b08748f9a207f732c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-sides_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-sides_regular.png",
+      "bytes": 1446545,
+      "sha256": "8205f27fe5183fbabe35ceec19339746ff39c5e7d284fad368920eb077284ea7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\exports\\corrupt-sides_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\exports\\corrupt-sides_regular.webp",
+      "bytes": 960150,
+      "sha256": "405a4b909bc792ffbae8a1c4b42ff038260edbef60d5f63293b6a725b665b21d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\blue-down.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\blue-down.png",
+      "bytes": 1042334,
+      "sha256": "d92d9a7a24b24478f3576957e299db0d90293f7ee3def74ae04199adac382d89"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\blue-lift-front.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\blue-lift-front.png",
+      "bytes": 2417140,
+      "sha256": "47a6cca38d17288ec6561f05ec7f7bcb60b6ec7ac1f68a2b5e9ed13de16d67eb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\blue-recovery.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\blue-recovery.png",
+      "bytes": 1413684,
+      "sha256": "56e21dd972f68d20c025f309c53912e8b6fea9760cdd807b05725e70ebc429d9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\blue-sides-front.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\blue-sides-front.png",
+      "bytes": 2182485,
+      "sha256": "3aff2e2fe8cf64c69951fc8212fb9dc12672b8fd49ac3abf79504d1dbdf67eee"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\drac-down-grip-candidate.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\drac-down-grip-candidate.png",
+      "bytes": 1318177,
+      "sha256": "4c8ba8d5fdb8e5a7e40fab4628cfc73e030e42532aeaf3d45fc6a0e3841285ef"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\drac-down-rejected.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\drac-down-rejected.png",
+      "bytes": 1257338,
+      "sha256": "ca5fd89ec42885703358e224615d04b24368304844e6013ac94f846415b1f57d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\drac-down.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\drac-down.png",
+      "bytes": 1326746,
+      "sha256": "b75ca9eeab0c5cf668710fe7c74b6844e5f15902fb3175558907519222c93e7b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\drac-lift-front.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\drac-lift-front.png",
+      "bytes": 2157536,
+      "sha256": "7d7195a5a9c83283da7de8180b83d347e8bb2f25ef85e33a3210e7c595f68587"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\drac-recovery-center.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\drac-recovery-center.png",
+      "bytes": 1657265,
+      "sha256": "00b143a70f43a7f6787e6b24a52245d88eeda1fb1a83305b312015bb6a7ea184"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\drac-recovery.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\drac-recovery.png",
+      "bytes": 1775220,
+      "sha256": "90a0e949c3277cd06b1c770c7c36f45334bc82a4134ec8fa8aaadaad2c0d0099"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\generated\\drac-sides-front.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\generated\\drac-sides-front.png",
+      "bytes": 1820151,
+      "sha256": "0d6be09adda287270b3b8dd88181d1f35bf203c1f06602433fa980bb36a364f6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\blue-overhead\\00.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\blue-overhead\\00.png",
+      "bytes": 95977,
+      "sha256": "855fe97da45562b1db9b3d46827edfbc4ee3da360234e6fdaf182c0721fede2b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\blue-overhead\\01.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\blue-overhead\\01.png",
+      "bytes": 95368,
+      "sha256": "61200f538890c3c1e0aa3907e1928a2336bd7f7b601bcfc2aef2f4dc0941a01e"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\blue-overhead\\02.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\blue-overhead\\02.png",
+      "bytes": 94931,
+      "sha256": "9ae0da925c52f6eddfd8a4360a7f625b2eccfc0af64f8f17ad9be1049051ae24"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\blue-overhead\\03.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\blue-overhead\\03.png",
+      "bytes": 93015,
+      "sha256": "6f94ef35bd6aa1dc969c9e86b7bda1c194dd39c4a32349fc0e921ed6531ba87b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\blue-overhead\\04.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\blue-overhead\\04.png",
+      "bytes": 93156,
+      "sha256": "8560a478f36c34c163d23ca3f8e56e699cd65327512168270f9659861eb26153"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\blue-overhead\\05.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\blue-overhead\\05.png",
+      "bytes": 90479,
+      "sha256": "69ddb2bbf95a196927d2c6158340790759a60c11d46710cc527c739b3f362d83"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\blue-overhead\\06.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\blue-overhead\\06.png",
+      "bytes": 87592,
+      "sha256": "c77b3c6ccf572a386d91f3641d8e3920cfa136bd79a10034a6dcb8e640c04a70"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\blue-overhead\\07.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\blue-overhead\\07.png",
+      "bytes": 87013,
+      "sha256": "f246cc9b52e3f5546709f7f75f2aa577edcfff27d42d83683b2a4f52b93aef7b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\corrupt-overhead\\00.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\corrupt-overhead\\00.png",
+      "bytes": 100159,
+      "sha256": "e9c150d9ebe93c447fe07bb8ab1be73e95bb648bee3bdb3f9fdeb6b633814aa0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\corrupt-overhead\\01.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\corrupt-overhead\\01.png",
+      "bytes": 99568,
+      "sha256": "1bcda7405d8f49a0285cf134b27466e5893fdaa0601ffb80ff89c8788244ce86"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\corrupt-overhead\\02.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\corrupt-overhead\\02.png",
+      "bytes": 98283,
+      "sha256": "0934af7ded0e50eadd5b2398587b8144cea091eb2a752e1e083add35190f1f10"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\corrupt-overhead\\03.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\corrupt-overhead\\03.png",
+      "bytes": 96850,
+      "sha256": "ffc46b3d76cbf830507e58a30f88325fec65df370b195f4b5e7cd9ad81489122"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\corrupt-overhead\\04.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\corrupt-overhead\\04.png",
+      "bytes": 94763,
+      "sha256": "553f9c026305bd279104e6449cec4def6c90542f7c59dcd3f18072799e39590d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\corrupt-overhead\\05.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\corrupt-overhead\\05.png",
+      "bytes": 91072,
+      "sha256": "01d06d58dc36c64087d45f909985b739b5d491da401d2b38b32a867fd820dbb7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\corrupt-overhead\\06.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\corrupt-overhead\\06.png",
+      "bytes": 87830,
+      "sha256": "86c94d65027355af5600ac208eac24f94937c8870bfc118722e728ed33c4ee3a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\front_hammer_1111\\references\\ready\\corrupt-overhead\\07.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\front_hammer_1111\\references\\ready\\corrupt-overhead\\07.png",
+      "bytes": 84979,
+      "sha256": "d4249e2756817a02e857cbac83198c6b5c329c8c7a9e9c93ba5ac9863ed90a36"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\blue-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\blue-overhead.aseprite",
+      "bytes": 3498818,
+      "sha256": "bd2a34bd321100464fdef8f87d8f62ee7bfa876427d123d4a5927a32690a1ec3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\blue-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\blue-overhead_chrome.webp",
+      "bytes": 1702924,
+      "sha256": "345d2aae3936884bcd2a2dc7273353bdc5728421218f1fbb819fba7901052256"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\blue-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\blue-overhead_hit.webp",
+      "bytes": 23442,
+      "sha256": "743900051f1b18825013d999e480ff41b7448df51ebd3f1a783ed6bff987ac30"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\blue-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\blue-overhead_red.webp",
+      "bytes": 1999620,
+      "sha256": "ca49ac3dd63445b17959bd956e22bcdc9b51cc4dc5917d9ba2b8f476f9bb33f2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\blue-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\blue-overhead_red_hit.webp",
+      "bytes": 23442,
+      "sha256": "7609625fcb8552fc30ba46b5e4aaf5935b8340959ca7bf44778b07572f9f6c9f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\blue-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\blue-overhead_regular.png",
+      "bytes": 2935791,
+      "sha256": "a06730c91ddbb2596590df253eededb759be53eae0a6a6642e2a1d000ccb76ac"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\blue-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\blue-overhead_regular.webp",
+      "bytes": 2050314,
+      "sha256": "ebce8411fd3c6834e34dbf6be6ada13ee366463a9e8fc50dc89b9a6384c20772"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\corrupt-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\corrupt-overhead.aseprite",
+      "bytes": 4115203,
+      "sha256": "aab44d709f32fb9b860b8dd2d4bf0ce250b019c2a1cef5d3e6375d9b7a248632"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\corrupt-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\corrupt-overhead_chrome.webp",
+      "bytes": 1596852,
+      "sha256": "e3fdd4d6d05bbb2adc7825e7dc558b9f4a4369687474c27e9b3050ddea4dc744"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\corrupt-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\corrupt-overhead_hit.webp",
+      "bytes": 28010,
+      "sha256": "c0f4689aad426011d9e7821c74237e4b448377879a2e9448a055321db80adcd0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\corrupt-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\corrupt-overhead_red.webp",
+      "bytes": 2324000,
+      "sha256": "0f097cb2d5e541108ec5ec6db337041b5aa8f8bff0876316012f27424f345e18"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "bytes": 28010,
+      "sha256": "eeea376e96e74d9e9ffade2d7bf61d632e51a79fed2138a1b1615a8bd8c2fd53"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\corrupt-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\corrupt-overhead_regular.png",
+      "bytes": 3462572,
+      "sha256": "b2123d9c9eaffd5c9d31f0c4b952b78b273562f7771c7232a7379404ab83aef6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\exports\\corrupt-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\exports\\corrupt-overhead_regular.webp",
+      "bytes": 2341788,
+      "sha256": "98b0037011898d60ced72d4ea7028ebe4c7bb93e1592c3cc6762c6e6f42e7300"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\generated\\blue-down.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\generated\\blue-down.png",
+      "bytes": 1254109,
+      "sha256": "ff35b89be9a371a377c72b3b46cc0cbe88bf254b903456a852d192a5dcd12f0b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\generated\\blue-keys.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\generated\\blue-keys.png",
+      "bytes": 910746,
+      "sha256": "9b5d58e3ae249e34e5d13ec823d58322ef5fb0f951ec9eb943a0e3370be1dc09"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\generated\\blue-lift.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\generated\\blue-lift.png",
+      "bytes": 1110260,
+      "sha256": "878cabb26a590516ca74aab750ba467902fdaa1b5450754be5e587de0bfaa91b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\generated\\blue-recovery.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\generated\\blue-recovery.png",
+      "bytes": 1304002,
+      "sha256": "0434f2c05536a46782663f75ae497875a65f660f382a49d2c33a9d52610107b8"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\generated\\drac-down-pre-spikes.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\generated\\drac-down-pre-spikes.png",
+      "bytes": 1483613,
+      "sha256": "26861ac89fad8c2335685c642530b22c532c0e1f56e464860b26a50c291a79de"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\generated\\drac-down.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\generated\\drac-down.png",
+      "bytes": 1569986,
+      "sha256": "96e6b97baa9dd3012546fa7a69a84e24e27a76a122a6be3cf3263df228d38018"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\generated\\drac-lift.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\generated\\drac-lift.png",
+      "bytes": 1322769,
+      "sha256": "d781b2950e0bd811fb809f09d5a73c10a330e2ad08da8b1a7e86e2cebb1bd246"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\generated\\drac-recovery.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\generated\\drac-recovery.png",
+      "bytes": 1604917,
+      "sha256": "8a0f23d8afa91bc05a2c184fe669dbe5ff98d51706f63a0ef9b3d9aed04e2be9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\reviews\\chronos-native-strip.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\reviews\\chronos-native-strip.png",
+      "bytes": 2303558,
+      "sha256": "04fc5a069aab4a4806fa560ba961ac4c134b4351f48c2b7e2dd0f7eea08fe18c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\reviews\\dracodia-native-strip.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\reviews\\dracodia-native-strip.png",
+      "bytes": 1402445,
+      "sha256": "25c5fb7a2bd1379c050a00eb2e530fee8f778991b8af461cc3f30626c25117ec"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\solid_hammer_1111\\reviews\\onion-review.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\solid_hammer_1111\\reviews\\onion-review.png",
+      "bytes": 841622,
+      "sha256": "8a885336a15a6e0419fe6de58ce8bbbe2e8543fb4b60ac0a277526f418d08234"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead.aseprite",
+      "bytes": 1422177,
+      "sha256": "9b1e01d0246b3d7afc3801a991ae6d88ab634904a5099c18a3db39884152fcb5"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead_chrome.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead_chrome.png",
+      "bytes": 870327,
+      "sha256": "2075dcee38abc0969c03ae8819003a3d26d31be09ec3accf8408792c30943af4"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead_chrome.webp",
+      "bytes": 545474,
+      "sha256": "1429c848c62b2b259d312b5399d454c7199e4b59e989f27f9e81aa63ecb235cd"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead_hit.png",
+      "bytes": 47677,
+      "sha256": "86653bfc5b24260cb151dc7dc48c40e5d7e75c03d814d89977e0f960bc6b431d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead_hit.webp",
+      "bytes": 10380,
+      "sha256": "669f919deac4395d711ea648446944a12b11675643203128c745c369b15d39d4"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead_red.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead_red.png",
+      "bytes": 886943,
+      "sha256": "4a3b7b87f5c6686759492a0a0fc2a5024467f366283e7fec97bd1290598b1c95"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead_red.webp",
+      "bytes": 575942,
+      "sha256": "9312a7c266427330063a1e069e9d6713909396e1d7c5c88003eea72486dea29b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead_red_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead_red_hit.png",
+      "bytes": 47777,
+      "sha256": "49436809e7fea9c675df3482a12f13782ed0f83a7355d2e389ef14fe441ce0af"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead_red_hit.webp",
+      "bytes": 10380,
+      "sha256": "a0cc7910b6bea11f75395416d67c9f2a01f4d674114245c7c5434be899e9f619"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead_regular.png",
+      "bytes": 887252,
+      "sha256": "049b1b4d9dcb4778cbba29f4ccbc4206261ba51775f88b71a75d2052cb3099ec"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-overhead_regular.webp",
+      "bytes": 604766,
+      "sha256": "1d4fbc9a80a2e67c1911fd9a3548c4acacf34d7e24b3e1ebfa0ca1a19d22a34c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right.aseprite",
+      "bytes": 1460301,
+      "sha256": "12d4982a33a1c5a809e420dca81ef3461e1d4b3b21f3ef4a93e39cc0123611a1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right_chrome.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right_chrome.png",
+      "bytes": 713788,
+      "sha256": "7f3cc79844091242cc0a4f90b69c50367d0bd1315b64a43de6cdd2dae53f2ab1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right_chrome.webp",
+      "bytes": 425116,
+      "sha256": "c00d6a15bcd758a48a4ba48d8caa5d7860aa43cf59a253fb4a413fbd2c60bc09"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right_hit.png",
+      "bytes": 49659,
+      "sha256": "4e02457734b8e693f9aba7870193a5db98bee063c0913046781c422a719493b2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right_hit.webp",
+      "bytes": 9766,
+      "sha256": "91cdfee77484480dc3f177b6fecc5a273df430a4eab9857dc02eb6065376eac4"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right_red.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right_red.png",
+      "bytes": 731346,
+      "sha256": "1e99c14259c46cf4b7a60d57130f5033a910d7f762fdab92eca22ca65585fb68"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right_red.webp",
+      "bytes": 460500,
+      "sha256": "0ceb3397e7b57c8ac56187bb094ad792ede8c4b18eb39f6e7c4a0c2a61629269"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right_red_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right_red_hit.png",
+      "bytes": 49779,
+      "sha256": "0abd8c7c057defa5bc2914e200c642d37ab50ce4fde0e88f15d67afd789e0915"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right_red_hit.webp",
+      "bytes": 9766,
+      "sha256": "21b23a42b0b2a386f61d2ed72799ac24a15df8da1b879e472946a422979e0fb0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right_regular.png",
+      "bytes": 734193,
+      "sha256": "bc0213306d262f1f27f81ba49ced27f20716da659b579d97aaa73f56dd950780"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-right_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-right_regular.webp",
+      "bytes": 475500,
+      "sha256": "8ad171c4041ce770c6a5d60d9e9d4c166f3adb36a0cfcdf6684dfed9373b8915"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides.aseprite",
+      "bytes": 1460075,
+      "sha256": "82496df29fce96b3f677d2cb735468fa488eb1b07dc46cb1128b009c38ec3d89"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides_chrome.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides_chrome.png",
+      "bytes": 711408,
+      "sha256": "8506ea46a70f6fd4308a53a4fb5ba162a772af57077d798d22b5d591a92890a3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides_chrome.webp",
+      "bytes": 423582,
+      "sha256": "3571eb3b4237294124527706ba26cdbb66c6dccab3f38d6ad6452ae8acb00534"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides_hit.png",
+      "bytes": 49333,
+      "sha256": "690131b6050d64aa47b22983ca79709cd3da88fd5d3f4b17321c2be190eb0e80"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides_hit.webp",
+      "bytes": 9808,
+      "sha256": "0d6852955cb0181e9ee8de9203b652abf1a768ec72987541861e35a5c79e4880"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides_red.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides_red.png",
+      "bytes": 728724,
+      "sha256": "2775ee98e7341f90fc09bd714903b12c9ca4c452a94425fa16ba8da8831bf2b9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides_red.webp",
+      "bytes": 459540,
+      "sha256": "30722f59fe379bd6d29382d05d2af0bede416d5b7eba27549100825b4630d970"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides_red_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides_red_hit.png",
+      "bytes": 49441,
+      "sha256": "407115dca4d717e2fac2f6010bc944b493f11fef6ed9454dc4817f4500e24c7d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides_red_hit.webp",
+      "bytes": 9808,
+      "sha256": "966e29af8dcb2a697a7c7f821a72fffa0a38ad304a84587268d4b9346c90f777"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides_regular.png",
+      "bytes": 733874,
+      "sha256": "9ad0270010df712c608c0b0a7a9caa0d553158d6e12803b8e490fac9ed2108dd"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\blue-sides_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\blue-sides_regular.webp",
+      "bytes": 477178,
+      "sha256": "4022dd816a98c47c5de5a6ed9cbcdb5b2fa3b05f356501940fddebe82ae6382c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead.aseprite",
+      "bytes": 2240973,
+      "sha256": "3560e936acd9a8533466259d634ad3e376ef50a40812213816ccd1f4beb3b84e"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead_chrome.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead_chrome.png",
+      "bytes": 1112263,
+      "sha256": "52075c2c2a2638d73c61e176322b7de88acc9604f8843a48dfea1d7a903a8928"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead_chrome.webp",
+      "bytes": 668072,
+      "sha256": "6a79dfd345a46db30646e023a3f5bc76f75d23083113a862d38b6eb20f5a461d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead_hit.png",
+      "bytes": 50289,
+      "sha256": "c494bae671f08404e7867c4269dd358d1317b5b7033d8598a204c3334eb1b844"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead_hit.webp",
+      "bytes": 11514,
+      "sha256": "f645b90cbd2c009815a5afdc03829b8a43113f75a2ab95aabf200b0e9e5c130b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead_red.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead_red.png",
+      "bytes": 1340524,
+      "sha256": "b2d1d0d7e138b1bfb43a8ad54c833476b01e247ee63c8869c1c26bec634dcdbb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead_red.webp",
+      "bytes": 928208,
+      "sha256": "8fc7883e42cecf58dafd6f1f85142696b9b55234e2a97373ad3c702e70e2ad02"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead_red_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead_red_hit.png",
+      "bytes": 50414,
+      "sha256": "5127b5e7271daf6d64c32f08bc31fbf9ce7f06c4cc3580fdfad29814f5d344ff"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "bytes": 11514,
+      "sha256": "8e9961f361cd842932fa3043d2cab4026dede431f39405a7d42176effab667f0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead_regular.png",
+      "bytes": 1377913,
+      "sha256": "48cac9aa872eb9ef72b1c857f387ee24d4ff195182149d58ba2635099a41b7e9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-overhead_regular.webp",
+      "bytes": 932106,
+      "sha256": "de8e80184287cbf54bf83afd2dcc1df797854a0741bd843bb1494c634addae4f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right.aseprite",
+      "bytes": 2190154,
+      "sha256": "86b5e1ea70fcb2c9b1864cc1ce27d2a0a19e446d679e09562f99821a2be94b62"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right_chrome.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right_chrome.png",
+      "bytes": 867313,
+      "sha256": "6ea6889a5e81399686dab4d27f6875adc684b90bf78a8cc34086001d5800d176"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right_chrome.webp",
+      "bytes": 472660,
+      "sha256": "b45ca8a563527cbd51fc019f007c9eda63314ab692be3673cbaea273c9e1f1c9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right_hit.png",
+      "bytes": 53208,
+      "sha256": "342c7884a64f8d6546c09a725f3ff5f1a141daef97587be6ad29e8181a3ecd95"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right_hit.webp",
+      "bytes": 11290,
+      "sha256": "ce396dc5bbc9bf9f1d8508482c1a58c36894b07e9df6c41fba58a07f68247746"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right_red.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right_red.png",
+      "bytes": 1025544,
+      "sha256": "f4ffb2720e7d7ed570c926de6a4db183bf9236255dca33a1f46d84af816c18bc"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right_red.webp",
+      "bytes": 703470,
+      "sha256": "20b9346ca2fc887cd7de2e0268e17239d52899d37e5707a950f6d4fc7e1ab1ff"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right_red_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right_red_hit.png",
+      "bytes": 53329,
+      "sha256": "152eafd51773344cc375594d8a6401c357944240fb9b5d47903efe1a7c0c0a3b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right_red_hit.webp",
+      "bytes": 11290,
+      "sha256": "da6b19232a0d914b8b761bacb21770fd9361d4140097ce011533fece99783398"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right_regular.png",
+      "bytes": 1056519,
+      "sha256": "143e55e454721c53b759c5906e8658d86c89537ab7d25a6e6ece5a9b66f1465d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-right_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-right_regular.webp",
+      "bytes": 711322,
+      "sha256": "b8c982a4ec6274594529c933c3ada8364074fd37902f79b7ca1c2434b512b206"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides.aseprite",
+      "bytes": 2190104,
+      "sha256": "f3f2004f3ef82137afed336f4acd25b5a4427d250bedc9cda9140d45e7ac347e"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides_chrome.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides_chrome.png",
+      "bytes": 866352,
+      "sha256": "effd139e77e1b81448f5f70911e7dced5c535eb41f0a0636c7c63933260ba9d6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides_chrome.webp",
+      "bytes": 465298,
+      "sha256": "e1ff558f0f1b82623bd50257592a221922d3d05c52d3d69e8561f26b943a7254"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides_hit.png",
+      "bytes": 53195,
+      "sha256": "639f7778decd36165583e51bf629ddaf4c579f631943974ef5fc0631fa8a73ad"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides_hit.webp",
+      "bytes": 11120,
+      "sha256": "3acf0020240a8a1a54489cd69284a5f935f3e929ec65b45e22076a0b996e400c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides_red.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides_red.png",
+      "bytes": 1022931,
+      "sha256": "e253d849df1b66f1c852742e139d06726335a7212af4732f141be030854029c6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides_red.webp",
+      "bytes": 702276,
+      "sha256": "13eb1fc97b320d33930054f3b587fa9787bc893ae0caf97f6f0adea75361ba97"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides_red_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides_red_hit.png",
+      "bytes": 53313,
+      "sha256": "62fbba5b739068c7bac51d837779673c08dcea7074d2df1c621f262e71ce461d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides_red_hit.webp",
+      "bytes": 11120,
+      "sha256": "616de8635c7f0c9263dfe6d293267f11ee3c19b9871f51984c3fa8d94600bdc7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides_regular.png",
+      "bytes": 1054935,
+      "sha256": "ab308eeb5e8abe520c9561a762955e9caaafd8da7a1a4ccbbfc674741f8270ab"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\exports\\corrupt-sides_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\exports\\corrupt-sides_regular.webp",
+      "bytes": 705772,
+      "sha256": "19d2085ef5039dc55d9360b064f5f7c011a538efadad9a96c443697aead2c255"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\generated\\blue-aux.png",
+      "bytes": 748033,
+      "sha256": "443fcb26ad84b3f1068e6a16e673b89b18241666e928cc9104868ef35c7abbfe"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-cap.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\generated\\blue-cap.png",
+      "bytes": 874378,
+      "sha256": "6f11efdf2c141f14aa0ca995c613001b8da6f9810048957bcda7665301dc19e3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side-axial-rejected.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\generated\\blue-side-axial-rejected.png",
+      "bytes": 1001630,
+      "sha256": "3002516320fb33f085a679f7a88d1932b66fc11a233ee8341cf0bbfbff9aa124"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\generated\\blue-side.png",
+      "bytes": 953719,
+      "sha256": "1fe269c3a7afcb08027689dbd0fac4e0969ea98e7451581733c61b71fdb564f5"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\generated\\drac-aux.png",
+      "bytes": 1184961,
+      "sha256": "18de135184663803116333ce19595ddd47cb265813526c07c6a1a70c67f3ee18"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-cap.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\generated\\drac-cap.png",
+      "bytes": 1183695,
+      "sha256": "5edd3a5ee1f2caaebf126f82a8f08b5cb7595b9f439282f495837ab25d1b5afc"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\generated\\drac-side.png",
+      "bytes": 1251794,
+      "sha256": "a6766011d6f881ecfcfbd5ce0e798a0eddfaf6ac04f62655326ce665d995e6f7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\references\\blue-hammer.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\references\\blue-hammer.png",
+      "bytes": 30509,
+      "sha256": "7c4882298189d3ad426205260431a78e9e41e8d1a68e2e39f6b066ee0326dd40"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\references\\chronos-exact-head.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\references\\chronos-exact-head.png",
+      "bytes": 9549,
+      "sha256": "a5c1ac25a738da7da866427166429f19a0ef09d74be0d8546c29c87659854196"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\references\\chronos.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\references\\chronos.png",
+      "bytes": 35256,
+      "sha256": "947b2045d6cf0c7a236ace654e81b3e7d2537bc044542a28aab3b7e8b82e0370"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\references\\dracodia.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\references\\dracodia.png",
+      "bytes": 106803,
+      "sha256": "885aaa2b2fcec144aeeed69d25250c339791cfe3813aa371b029eba7b878f247"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\references\\purple-hammer.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\cap_strikes_1111\\references\\purple-hammer.png",
+      "bytes": 775082,
+      "sha256": "bcfc314c4196e87787196cf3ede1273fd3015cf38045e57142c7ab3d4691186c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead.aseprite",
+      "bytes": 1553425,
+      "sha256": "2c8ba0ef05c2d93c6b8445f2f4993c166726cd562c8ffe33734dbb9932f8ccab"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead_chrome.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead_chrome.png",
+      "bytes": 1222623,
+      "sha256": "66412bfbe0cb44654e322422fd4ef2f6baaef033ef0fa39bc0ac04b6db86cf4e"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead_chrome.webp",
+      "bytes": 669566,
+      "sha256": "65ab7812af6a629bdab44c1f0e6a5e9fcb3027d8c32ca611b78a4373b173d171"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead_hit.png",
+      "bytes": 54381,
+      "sha256": "f95502c80dd8403ed0f7e628924558c4c780b75a9902dc01f9a4b4fc5ea6902d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead_hit.webp",
+      "bytes": 13252,
+      "sha256": "0362c6f692c695f722e77b5807107cd22f346162136f3644c8be43326d062704"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead_red.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead_red.png",
+      "bytes": 1206152,
+      "sha256": "cbf9a0663d9019e6aafcd5241a74186ba63b726426ff9d99e697d9639500343c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead_red.webp",
+      "bytes": 852668,
+      "sha256": "79c7726125805ddd3138d1c880acab7b5f5ebb2a60204f2ac81d5e466a7f11c2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead_red_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead_red_hit.png",
+      "bytes": 54771,
+      "sha256": "455921ea253c646066f9f7a3c3688833f2edbaf98cda2ec76c2c5e9e70ebf9ea"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead_red_hit.webp",
+      "bytes": 13252,
+      "sha256": "1f531edf041edb9845178ff50cb094e4686f054c25fd95d0a57e6a6af6173c93"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead_regular.png",
+      "bytes": 1262563,
+      "sha256": "d06fdddceda5262487d08b93e86920467f09d9c4f2f3361a8bad6daf94704b5a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\blue-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\blue-overhead_regular.webp",
+      "bytes": 866232,
+      "sha256": "46cc97060893b8b863ffaa74cfd400d096b6cadfaa2a3e22d45df020371a3fbd"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead.aseprite",
+      "bytes": 2152840,
+      "sha256": "e7e6610bb8ba5025042b15389003f0c08e72398a94099111f894f8c9725086d8"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead_chrome.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead_chrome.png",
+      "bytes": 1507990,
+      "sha256": "01ec090e1c09f03670d8701cc67f32967eb2339195a69d28244ac2d3dd304f0d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead_chrome.webp",
+      "bytes": 766504,
+      "sha256": "3ea206ee2a87bbed2e612fecc67f430994bd3d7308f7d40ba4afe400de93ea9a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead_hit.png",
+      "bytes": 57629,
+      "sha256": "8f200cd93e842dba39f6b77060c9843890f6236eedd509e9639e9f6c23a6517a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead_hit.webp",
+      "bytes": 14760,
+      "sha256": "fcd2b51b4f4120697e51843ca09ae0b6ae6eb650800a80e38cddd9be49409abc"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead_red.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead_red.png",
+      "bytes": 1579797,
+      "sha256": "685176270e180cf982609d8caf2b9ec9571ec1439807afab5834dd45cc549ea2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead_red.webp",
+      "bytes": 1153334,
+      "sha256": "86f03f1c8f5a538e7b2a6a798e43e6cf02e9b077cb6b49921080db528f22d659"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead_red_hit.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead_red_hit.png",
+      "bytes": 58166,
+      "sha256": "1489487097cf801a44ea9e1d8fc6700c92951b376722c62e7108e369596949a1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead_red_hit.webp",
+      "bytes": 14760,
+      "sha256": "e5d9bd9bac0d348300964d121a6d60450b9e2272bc4b061411a6ec3b9d512ab6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead_regular.png",
+      "bytes": 1692456,
+      "sha256": "ed1c831553bf76786deeeab5741008710d3323aa2c895e561d3331d4985b1f72"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\overhead_slam_1111\\exports\\corrupt-overhead_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\overhead_slam_1111\\exports\\corrupt-overhead_regular.webp",
+      "bytes": 1155534,
+      "sha256": "150afeaaebb82cdfec4c3c46600dda1d7cb77ce84be2bec08d30f25ce7f60ec5"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\chronus-transform.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\chronus-transform.aseprite",
+      "bytes": 2414595,
+      "sha256": "6d550794493f5a357cc408b1fcbcab025e672c6da85f11a1e40f41869729f206"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\chronus-transform_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\chronus-transform_chrome.webp",
+      "bytes": 978372,
+      "sha256": "accf2ae443c5fe54cfbbc6f4c6de46000258b47928b436f2daa5be398d4ccfc7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\chronus-transform_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\chronus-transform_hit.webp",
+      "bytes": 17052,
+      "sha256": "6449fd292f0c1dcd84f02b27c6fc1407d7db42e26d44af54425ed5a44f3bf259"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\chronus-transform_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\chronus-transform_red.webp",
+      "bytes": 1429024,
+      "sha256": "8fb16c86bbe0052e47869d413f254400ca86efb7cac8288514d5e1877a3c6157"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\chronus-transform_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\chronus-transform_regular.png",
+      "bytes": 2142602,
+      "sha256": "ac21b7d6721e651fd5d2b1116ffbbc07dd9af2722095715ed3aaa852907c4830"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\chronus-transform_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\chronus-transform_regular.webp",
+      "bytes": 1451708,
+      "sha256": "8edcde8617aaf0b91d227366e4ac1bf1d04a3f30a91fc346e925af93cf74e607"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-pre.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-pre.aseprite",
+      "bytes": 761288,
+      "sha256": "7fa7c09519174e24cae209de73142570ecb0d0c2410dcaf1de64a5cf95f508a1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-pre_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-pre_chrome.webp",
+      "bytes": 252954,
+      "sha256": "1476fff2d2e1074b4e555e786640b15fabe43eb068426447e612b2ee8fd11d62"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-pre_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-pre_hit.webp",
+      "bytes": 5790,
+      "sha256": "ead66fffb4163b9f61dbccba21374ab547df05ad3e10809c1dc6dc2eb954ddb7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-pre_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-pre_red.webp",
+      "bytes": 379546,
+      "sha256": "5d0ed6cc25a81f86f9382e3d1d535e951fbc2bd081dd12698fc8801151a2a4f2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-pre_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-pre_regular.png",
+      "bytes": 571235,
+      "sha256": "3b1685c22d2e4567ecb36cfa574022de211453d88b5d8fe35b3b27acd0a682be"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-pre_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-pre_regular.webp",
+      "bytes": 384330,
+      "sha256": "f1abcddb03cc02be8535092c040e832e8973b3cfe7aa7868af1fdd56d638d704"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-take.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-take.aseprite",
+      "bytes": 923356,
+      "sha256": "9b9e1bddc0aff29023834ff665625183089f90b6bb39b7b5f157872efe8049a4"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-take_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-take_chrome.webp",
+      "bytes": 358902,
+      "sha256": "273b3b6be6ec943ab75fcb4f7e4437d795363dd66c8d969f2dd440af31af6c4c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-take_chrome_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-take_chrome_gunhit.webp",
+      "bytes": 265006,
+      "sha256": "8c7636d9549029a0daf9a4b3bdd4d8cf7c108a697c6107cbb6e41187b72cad02"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-take_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-take_hit.webp",
+      "bytes": 6544,
+      "sha256": "37ad0ef260d358b8d9a1505a412f791f9de3414c7419102726b025413bec88a6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-take_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-take_red.webp",
+      "bytes": 520572,
+      "sha256": "f31c975409ab89ff8a730328e75bf50e394b3515641db41ae9cd7ad5b02f752b"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-take_red_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-take_red_gunhit.webp",
+      "bytes": 390882,
+      "sha256": "d4e12f64e3fe3cf84ff85e544b2f8aa73efa4b9f121bd295e567785531894d69"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-take_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-take_regular.png",
+      "bytes": 776913,
+      "sha256": "25489b2dd8a65243de8747cf77a2da53b53c01e1c229df182c23178dbe109f71"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-take_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-take_regular.webp",
+      "bytes": 525488,
+      "sha256": "f80b672dc8ba36ade7941085a5e2a3b80ecac2e1d9ba6fd452cb69af2f6ee3d4"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-catch-take_regular_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-catch-take_regular_gunhit.webp",
+      "bytes": 394292,
+      "sha256": "7c08ff230f04ed1ac9c623af5a5d4a3177472ba0f8f09d3c72776c8e9e8399a9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-armor.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-armor.aseprite",
+      "bytes": 805668,
+      "sha256": "51e6ce9f30501ece3b0bce20f3731b7be41790c8948b9e80d18860122cde37ae"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-armor_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-armor_chrome.webp",
+      "bytes": 228728,
+      "sha256": "27f1195df39d63afe998eb4697bf344d30b7b9fc6c0f235d743200fdd8901821"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-armor_chrome_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-armor_chrome_gunhit.webp",
+      "bytes": 167500,
+      "sha256": "2ae22e229f7d850c1c7fc7cd04a565a64669a72ee78b9688b9e5d3004422aaa5"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-armor_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-armor_hit.webp",
+      "bytes": 1710,
+      "sha256": "60966306c7f742f162e65e11c5e198f9f04563ba536f8b5d95751e73f468ffbe"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-armor_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-armor_red.webp",
+      "bytes": 424854,
+      "sha256": "ab8e6a61b500060cd47fa37dd741d4ccdf396995c86e535207149ca14a123593"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-armor_red_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-armor_red_gunhit.webp",
+      "bytes": 322804,
+      "sha256": "800ff7a6b3fd901a27f0b71068c64bfab09ccb81dedf8939a312e3a63d1f40b7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-armor_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-armor_regular.png",
+      "bytes": 620176,
+      "sha256": "c94ef645a8cd7db1bfdfd80515725d2334ab6187eb5fba711643c222df9ddb72"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-armor_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-armor_regular.webp",
+      "bytes": 424910,
+      "sha256": "42c13a77cbb797cd8c0773f4cc746ba6f49637127bc61439c61ca5ce62086aaa"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-armor_regular_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-armor_regular_gunhit.webp",
+      "bytes": 321802,
+      "sha256": "55b747baecdd5e585b47c59207d0b22844fa9036da3d1f33ef6b91b4895ea9ce"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-break.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-break.aseprite",
+      "bytes": 796384,
+      "sha256": "60565d9d440a6c6fe059b436d9fcd534bb1c3298f0e4bcbc77c6f7404b929810"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-break_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-break_chrome.webp",
+      "bytes": 305938,
+      "sha256": "140662603edc5d85908c822865900f4781810c3d3754b19254bb995ecce0c0fc"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-break_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-break_hit.webp",
+      "bytes": 6658,
+      "sha256": "cdbefbde4a5effe077bb6b997925f93f4229e79814d58010daa7d0fca3f60661"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-break_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-break_red.webp",
+      "bytes": 465810,
+      "sha256": "064a6106489c7b2d067f42da8c40436591285dfcc885680bef78db8eda06b7cd"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-break_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-break_regular.png",
+      "bytes": 695846,
+      "sha256": "64eb0ab628ab016b25ae6be80abc8dc0750326726ae0e6e44f521c088958e425"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-break_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-break_regular.webp",
+      "bytes": 467170,
+      "sha256": "37d9f1b42008750dd5eb8b149a5d24c8c6da1ee7a602c4d27d48b6b292d143f0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-fire.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-fire.aseprite",
+      "bytes": 793624,
+      "sha256": "c025b9ebec5bf9e5bb9ae35e4448189cbcaa33d6c8e0a66a78cc5da16c0a6fa3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-fire_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-fire_chrome.webp",
+      "bytes": 316262,
+      "sha256": "c4d7db0c6dd8e07b364ffafeb5e996fbfe1229486b2e84c050cd49568a0de851"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-fire_chrome_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-fire_chrome_gunhit.webp",
+      "bytes": 241598,
+      "sha256": "1d1c5fe97f52bdf06ec6faf7c5044b6a73f9b7fa05510f1c7444588790f055f5"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-fire_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-fire_hit.webp",
+      "bytes": 5530,
+      "sha256": "b20b1a34cc730bde1403c2a6e14eb05e94217310b674b619fbf8ea10d075358d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-fire_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-fire_red.webp",
+      "bytes": 449164,
+      "sha256": "8fbff731a65bef9f53c1c78e150d427adaed488e58bf0da8ae33267b491459ba"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-fire_red_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-fire_red_gunhit.webp",
+      "bytes": 346130,
+      "sha256": "a7ac3e71e1012954a9c9ae17cca65e84d5b1a1d9443aeb3dfa7aa67cc6214440"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-fire_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-fire_regular.png",
+      "bytes": 672870,
+      "sha256": "f8a5c6b9e31165b41f3c42546be0fd0fa2b88d505d6e2164a21925ea84513f17"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-fire_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-fire_regular.webp",
+      "bytes": 453402,
+      "sha256": "9b59f55745de69543c412e417780b94d57310e5e17317ddd89cf8be066c53e7c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-fire_regular_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-fire_regular_gunhit.webp",
+      "bytes": 351476,
+      "sha256": "814d2eb3c5a563db64ded1f90a8f8930954de267e9b5d4188727ca44946f8d0e"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-spin.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-spin.aseprite",
+      "bytes": 927302,
+      "sha256": "d5e8b07443939035449e6f9e4d675bb3d52b225e677f5a54cbd41a70fe6e0cb0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-spin_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-spin_chrome.webp",
+      "bytes": 368356,
+      "sha256": "095e2c32d4efb7dcfd702ef6afe3bf13e19baf3bd6b997de856e4ed9d61b6032"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-spin_chrome_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-spin_chrome_gunhit.webp",
+      "bytes": 277370,
+      "sha256": "d1e5727378e9332f15edbc6092978dc2605cbbba7c1365165542c4defa8d74f1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-spin_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-spin_hit.webp",
+      "bytes": 5886,
+      "sha256": "c42a27a20f67e31730d70f767d5a2ee333db13f55fd877bcc46fa94b81bdca5f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-spin_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-spin_red.webp",
+      "bytes": 522748,
+      "sha256": "db77ce51b668bc5dd3b8abc4958a2eb7a91657499f09d3b03dc57822625470c8"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-spin_red_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-spin_red_gunhit.webp",
+      "bytes": 396536,
+      "sha256": "d2df4574723d7c85b3aeb637c0b42ce9740eb6e964d73db259c84ce1e71b3637"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-spin_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-spin_regular.png",
+      "bytes": 774876,
+      "sha256": "4361d1ced694ea65ac0c6bc0c5d27b183b638c87ae6ae14ea3efe051eb535011"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-spin_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-spin_regular.webp",
+      "bytes": 527304,
+      "sha256": "882162a47a9cf33bb77052f44ea537c296f706457552031708c04dcee3d75d28"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-spin_regular_gunhit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-spin_regular_gunhit.webp",
+      "bytes": 402658,
+      "sha256": "1177f1b2fb55718254300e8d69d19ab90b6ea1f0060c3847d37dc72a477d3c11"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-stow.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-stow.aseprite",
+      "bytes": 865706,
+      "sha256": "0ba1189b680e860c111b5e3f9f85c7c034eceea0bdac1c380a38a3b89252bfb6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-stow_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-stow_chrome.webp",
+      "bytes": 341008,
+      "sha256": "f6f050dc47dca25175e4d1fe0c163f4f3ee0dbaa7db84e1df7ff09e2bc65a5a3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-stow_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-stow_hit.webp",
+      "bytes": 6368,
+      "sha256": "4211cb60086ad5bc1ff868ead8df6b0f5a4f2f368231596bcf57806f3cf3a2d9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-stow_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-stow_red.webp",
+      "bytes": 501936,
+      "sha256": "c5176955e2ff3b892f5fb6dddb9613370e40d75b85b69b4e1743b32a63f2f6cb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-stow_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-stow_regular.png",
+      "bytes": 740117,
+      "sha256": "4a575e9cec63453020a4a4843ffb9038ec2ca0b947ea6990830ae2dc25f7fd56"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-gun-stow_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-gun-stow_regular.webp",
+      "bytes": 499036,
+      "sha256": "dfb4c9949793dec040752aaa41cf1c0c8af5e65842e9f20ca7160ed49434514a"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-transform.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-transform.aseprite",
+      "bytes": 2779399,
+      "sha256": "68560e2de99c85881896fb25db872f964397a2c2ce9589a974ced42bf7145ade"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-transform_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-transform_chrome.webp",
+      "bytes": 1109386,
+      "sha256": "a19efc675ef47500e27135b6dbd445bc227f3ea04d2cdf4172a436657574ab19"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-transform_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-transform_hit.webp",
+      "bytes": 20834,
+      "sha256": "bed84d8536cf91966411af4d805ab75da0b7bcb5c002012ad3f6feaf1be4d146"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-transform_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-transform_red.webp",
+      "bytes": 1645136,
+      "sha256": "ccaa358f6f52b0bccebb574b13bd239f663d22341fa1f8782adb894f2bd0d6a6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-transform_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-transform_regular.png",
+      "bytes": 2430110,
+      "sha256": "79385ae341ea32fd60c7f2d0ef71716ba3e1cf6f8f9884aa452398d84a7d80c4"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\draconus-transform_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\draconus-transform_regular.webp",
+      "bytes": 1657260,
+      "sha256": "01bdd3f22169baaa7e3af72adef7f999353bafd04bd0ceaa39b8b8a008d8e0e1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\gun-prop.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\gun-prop.aseprite",
+      "bytes": 22424,
+      "sha256": "b323dc7c3dc905e43d14fd875980e9820c09570574628948d989553a4f026563"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\gun-prop_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\gun-prop_chrome.webp",
+      "bytes": 8830,
+      "sha256": "63c487ec783efd5e627f9c9db573f2ed212404820e8a22b0b2543ef1e1858ecb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\gun-prop_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\gun-prop_hit.webp",
+      "bytes": 242,
+      "sha256": "b74cec334fae8fd21643187c39bbbd4a72ac6a14f17412339bd20a6e9fefe484"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\gun-prop_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\gun-prop_red.webp",
+      "bytes": 12080,
+      "sha256": "749952e9b12e4b430f96eef3cc505591c63e58c61356e14bace043109714d0f7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\gun-prop_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\gun-prop_regular.png",
+      "bytes": 23062,
+      "sha256": "0ac51415a88f0448229a8dd082b8480c61290e74e9a86514c8f0ad022ede1549"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\gun-prop_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\gun-prop_regular.webp",
+      "bytes": 13606,
+      "sha256": "1adfc074aa0e6198164f304b400db8290710f54836a234f83deed5a247c29977"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\icon-box.aseprite",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\icon-box.aseprite",
+      "bytes": 42932,
+      "sha256": "946c48b34a40a7adac557825eaca0ecdf651d32c0d664847a3a8816c65725624"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\icon-box_chrome.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\icon-box_chrome.webp",
+      "bytes": 20714,
+      "sha256": "ded962d450220814e082304e121f96cce13df39261074a33f6855d582d921068"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\icon-box_hit.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\icon-box_hit.webp",
+      "bytes": 20714,
+      "sha256": "ded962d450220814e082304e121f96cce13df39261074a33f6855d582d921068"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\icon-box_red.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\icon-box_red.webp",
+      "bytes": 20714,
+      "sha256": "ded962d450220814e082304e121f96cce13df39261074a33f6855d582d921068"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\icon-box_regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\icon-box_regular.png",
+      "bytes": 47975,
+      "sha256": "9099f30417767a281e564e3f71823742e7b97f8e4482a5b71d09ea9a1a13e8ed"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\exports\\icon-box_regular.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\exports\\icon-box_regular.webp",
+      "bytes": 20714,
+      "sha256": "ded962d450220814e082304e121f96cce13df39261074a33f6855d582d921068"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\chronus-ship.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\chronus-ship.png",
+      "bytes": 913328,
+      "sha256": "f2014a4ce919a94e8de4f03c5c3e5ac51f3bd1dba0cda3206ae242343e6a4509"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\chronus-transform-a.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\chronus-transform-a.png",
+      "bytes": 2867981,
+      "sha256": "b7b5c9dec8ac7d93e8af8368697b91233b70baf567d3bc0a487318bbcb2b78f6"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\chronus-transform-b.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\chronus-transform-b.png",
+      "bytes": 2405403,
+      "sha256": "1f1d02e1d098be2e594e5cd329b59486db0c7d30c9ff70de0dcf6d5215968f51"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\chronus-transform-c.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\chronus-transform-c.png",
+      "bytes": 2397585,
+      "sha256": "3a55a44da394461c1e163cb524c025e146f69dfbdf9b1b8790bdd739a08d3b2e"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\chronus-transform-d.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\chronus-transform-d.png",
+      "bytes": 2998926,
+      "sha256": "c9106613bdfb727a5e1e5001e17e368b776ff11ac5f81518e553436f44483b6f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\chronus-transform-keys.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\chronus-transform-keys.png",
+      "bytes": 1595261,
+      "sha256": "40cf4c6974b2f2e460de5b16bb01dc124eb553f9c58eb75709d1e3dbba92a6a8"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-catch-pre.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-catch-pre.png",
+      "bytes": 1543132,
+      "sha256": "7aa2fbe2c326246ffd402775d964ac3ecfa4ed9f34b88bc02d4022674abdbe90"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-catch-take.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-catch-take.png",
+      "bytes": 1776241,
+      "sha256": "3a036a10feb8a05a1d813ec96581abbb0333d9ef16dd6ff9c7f1380b0e12d85c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-gun-break.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-gun-break.png",
+      "bytes": 1878085,
+      "sha256": "1dfd0ecede8f36c90fe458ea9dce78cdd3ffc5fd25abc493beb5c76ed0261f57"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-gun-fire.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-gun-fire.png",
+      "bytes": 1845641,
+      "sha256": "96f7900b4648120b8fc211fd6dff19604b05eec971b149de88c27014bafb8c5e"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-gun-master.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-gun-master.png",
+      "bytes": 1114331,
+      "sha256": "d705fbe5b14f5bef92ceff6995092b50d6daa2ffeea09727ee898ead917ea326"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-gun-prop-fixed.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-gun-prop-fixed.png",
+      "bytes": 1260363,
+      "sha256": "62b9b8585f10171cf8e6982cf328b74a9dd4d116f6cca7cfd7ecf552c9429860"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-gun-prop.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-gun-prop.png",
+      "bytes": 1260363,
+      "sha256": "62b9b8585f10171cf8e6982cf328b74a9dd4d116f6cca7cfd7ecf552c9429860"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-gun-rotor-fixed.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-gun-rotor-fixed.png",
+      "bytes": 1700874,
+      "sha256": "e284e9bb4367261a5290075b3e40289875e92f350c72e9b2f5f5179b449d7374"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-gun-spin-final.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-gun-spin-final.png",
+      "bytes": 1394369,
+      "sha256": "a960f20697ab522613643b5130658555d31c40afe2962f01e2eff75d2ce38dd1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-gun-spin.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-gun-spin.png",
+      "bytes": 1760882,
+      "sha256": "ce85f324a78a867c07be34a5a3afc52fd76db8dcd2b66b94c49830eea8b0dd0f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-gun-stow.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-gun-stow.png",
+      "bytes": 1774344,
+      "sha256": "74bdb97925ca915958203b34e748860d07fdfec83f25e65b18eff4e58fd5e3ef"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-ship.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-ship.png",
+      "bytes": 1206279,
+      "sha256": "2d7b860121594cb3c55f8f23f237f6932dc78b2a80e2cfab79d110babdfc47d1"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-transform-a.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-transform-a.png",
+      "bytes": 2414371,
+      "sha256": "5456c59fd6a8113d1f782d0b82968b1e257c3dfc18259cd74a7635432f25807d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-transform-b.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-transform-b.png",
+      "bytes": 1972161,
+      "sha256": "bd02e28f767c6bfc2bf21ace91a182c92d87c8462435fe66b5ede3778aa551a8"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-transform-c.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-transform-c.png",
+      "bytes": 1942936,
+      "sha256": "3adf2d66b5e410339ef0e920a6b99b14b19966ff26d1bef8ff3e343c1010757f"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-transform-d.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-transform-d.png",
+      "bytes": 3099558,
+      "sha256": "eef61a6de65c0ec436746347d71710003c8fcee0e55195827fdabb48b24791be"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\draconus-transform-keys.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\draconus-transform-keys.png",
+      "bytes": 1773107,
+      "sha256": "2e72250d011bf2a4e0b9320505ffbc34e1bdafb4192d9642c77595ebed62d22e"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\generated\\rejected-prop-six-bores.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\generated\\rejected-prop-six-bores.png",
+      "bytes": 1283504,
+      "sha256": "e47745e77f53c11e1d8092c3c741a38787b9b02fa5428f6f7eeda76d6795c5eb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\approved-gun-icon.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\approved-gun-icon.png",
+      "bytes": 25647,
+      "sha256": "d1bb6f7b30ccd33f4e4a985dc465f063fd6fa27be8517c296b7355a43f5a6ce7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\approved-icon-box-opening.webp",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\approved-icon-box-opening.webp",
+      "bytes": 20772,
+      "sha256": "f15ab8f0b4158905f1b13b416e9290386ab83d7cd866cce5677f0355e9c9b17d"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\approved-icon-box.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\approved-icon-box.png",
+      "bytes": 34891,
+      "sha256": "1f0d019a710257b7a7caad5767c05d07782d5ffa7879e71b73d7de082c69a806"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\canonical-rotor-0.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\canonical-rotor-0.png",
+      "bytes": 21925,
+      "sha256": "d2475a60491c534061ef4c0bb414767e6d7603cc7b9e6bd7c4ba18e7ba8ee3af"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\canonical-rotor-1.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\canonical-rotor-1.png",
+      "bytes": 21881,
+      "sha256": "5e6e84af346e7ccdea39aa3d19b35a6e4d501ed9c0b9b8fb41d4c361073d17d0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\canonical-rotor-2.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\canonical-rotor-2.png",
+      "bytes": 21894,
+      "sha256": "a940914a77ec5f03ab00349369ad71b250eeabf5eb509882936b65a696705527"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\canonical-rotor-3.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\canonical-rotor-3.png",
+      "bytes": 22081,
+      "sha256": "a4915b2960c62e46b30239d3a690fa984ee71c0d4eafd6453a63b93d904ac3ee"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\canonical-rotor-4.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\canonical-rotor-4.png",
+      "bytes": 21863,
+      "sha256": "9cf9a0c92f3df25d50004a6d0458f82c4abc94c5ec39d5cdf418d4d2d20794c0"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\canonical-rotor-5.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\canonical-rotor-5.png",
+      "bytes": 21925,
+      "sha256": "1c6a19fb95e103c44acaf28dc3e5633a496132e7c551bfcdda007ba37a5bfaaf"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\canonical-rotor-6.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\canonical-rotor-6.png",
+      "bytes": 22136,
+      "sha256": "c946673a39256c9d7a70ecd8d6bfef0868229f08531d11c9ca2f2490add812e2"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\canonical-rotor-7.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\canonical-rotor-7.png",
+      "bytes": 22076,
+      "sha256": "a94e3fc1b4ccc3ed36e2c34a0ea130dba1d91f6a752f21f6c84748698a36f055"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\canonical-rotor-phases.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\canonical-rotor-phases.png",
+      "bytes": 80939,
+      "sha256": "7afe510b180f7e5c0a9e1cbdeeff338483b629c315a762912148f125679e4d34"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\chronos-gun-barrel.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\chronos-gun-barrel.png",
+      "bytes": 21925,
+      "sha256": "d2475a60491c534061ef4c0bb414767e6d7603cc7b9e6bd7c4ba18e7ba8ee3af"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\chronos-gun-body.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\chronos-gun-body.png",
+      "bytes": 20763,
+      "sha256": "dc26b239b86ef24c82d3855239b90a5c157db197f1c095673e6e3dfa3b3ed2ec"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\chronos-gun-hands.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\chronos-gun-hands.png",
+      "bytes": 9895,
+      "sha256": "f74f450176148b0db10502a6f65d051e13fc457fce47dcc324a22c5c5a756525"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\chronos-ready-chrome.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\chronos-ready-chrome.png",
+      "bytes": 109358,
+      "sha256": "432a1fc1f7fe96ebe6fc80302bac770160b484355a176b44a1e7e93f157391dd"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\chronos-ready-regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\chronos-ready-regular.png",
+      "bytes": 115897,
+      "sha256": "8233cd4d536cd531fc31285516b133601d788276f5a7377729e1ac211c7fb198"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\draconus-ready-chrome.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\draconus-ready-chrome.png",
+      "bytes": 97200,
+      "sha256": "f35d1514ef6cbd4a9a00cc3eb83ddc57321fd700f7d0a46a1ae4b28b92b7f8eb"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\draconus-ready-regular.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\draconus-ready-regular.png",
+      "bytes": 117057,
+      "sha256": "9e52ed7570f22eeb9e1ae50aad2829dbb14defa9cf3d70b0969e5a4f701aa7f3"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\legacy-chronos-transformation-native.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\legacy-chronos-transformation-native.png",
+      "bytes": 1126361,
+      "sha256": "58a10e2423ebe3957e0622aa5f08d86b9f0c775d96c6dd65fa66a7442655470c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\legacy-draconus-gun-native.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\legacy-draconus-gun-native.png",
+      "bytes": 784763,
+      "sha256": "4149c321148360baf435fe50ae7bdc9cbdf6e0fa067050a10bdcbc0e0eabeec8"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\legacy-draconus-gun_chrome-0.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\legacy-draconus-gun_chrome-0.png",
+      "bytes": 35407,
+      "sha256": "c516c4cf82e2fab32314a53a7c246d4ba39165c567c6f56022f697a4fb2d36da"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\legacy-draconus-gun_chrome-16.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\legacy-draconus-gun_chrome-16.png",
+      "bytes": 35151,
+      "sha256": "659488fb2ce77315bcbd49b5a8e7b28f1e8262d962fd948925ae643ea6cfbc01"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\legacy-draconus-gun_chrome-8.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\legacy-draconus-gun_chrome-8.png",
+      "bytes": 35151,
+      "sha256": "659488fb2ce77315bcbd49b5a8e7b28f1e8262d962fd948925ae643ea6cfbc01"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\legacy-draconus-pickup_chrome-0.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\legacy-draconus-pickup_chrome-0.png",
+      "bytes": 23120,
+      "sha256": "b9e8ae76003d24aa8524fa26571d0ccaac186b6f50983f44d93858eceb2845b7"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\legacy-draconus-pickup_chrome-16.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\legacy-draconus-pickup_chrome-16.png",
+      "bytes": 36225,
+      "sha256": "34fc1691b40028eee2ff8eff78b42939d25eb228c94975da7a7d64d83f00403e"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\legacy-draconus-pickup_chrome-8.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\legacy-draconus-pickup_chrome-8.png",
+      "bytes": 36944,
+      "sha256": "40f1b8ec30a962cb34f8fac333ea095ff87dc46d0ca5c68592c72cee5e8f85dc"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\references\\legacy-ship-sheet.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\references\\legacy-ship-sheet.png",
+      "bytes": 315343,
+      "sha256": "96137df64f7b32217387e4fe1c41ac345da93dc26c6fb185d2a9e4e0cfda9f23"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\chronus-transform.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\chronus-transform.png",
+      "bytes": 613241,
+      "sha256": "6631ac3c603b4c99cc827ec75ea08860791db81e7aab54bb2858dfb1f5e85492"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\draconus-catch-pre.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\draconus-catch-pre.png",
+      "bytes": 167231,
+      "sha256": "523e88d41e38862ecba09fdd96643418d8202691e06145e054f0a6226b709025"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\draconus-catch-take.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\draconus-catch-take.png",
+      "bytes": 226367,
+      "sha256": "ad8c39e50fc0137d70f48c706c79dcea37167e26c67effeb61ccbb28d5db9b19"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\draconus-gun-armor.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\draconus-gun-armor.png",
+      "bytes": 191586,
+      "sha256": "7fcac1410790cb9238cd25714544624b213c4c6b05774a37fcdfd04547c8eda9"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\draconus-gun-break.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\draconus-gun-break.png",
+      "bytes": 200989,
+      "sha256": "56dbf54320268b06f8747ced5c8539fccc8510a194bf8e8aabce5d3b13ba3420"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\draconus-gun-fire-muzzles.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\draconus-gun-fire-muzzles.png",
+      "bytes": 184914,
+      "sha256": "e2c574cf4fe6342e2b769bd239a3e7632f13b17498360be2500d79914cfb4a77"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\draconus-gun-fire.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\draconus-gun-fire.png",
+      "bytes": 195701,
+      "sha256": "c81d3716211a57d21807cd42ef33cc9baf47fcfbc8a0242da8058802cb507480"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\draconus-gun-spin-muzzles.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\draconus-gun-spin-muzzles.png",
+      "bytes": 199792,
+      "sha256": "220a8410e599f47ef0d7ffdf2edeb9c15cb303946d00c977c4f430909a4c3381"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\draconus-gun-spin.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\draconus-gun-spin.png",
+      "bytes": 227166,
+      "sha256": "8b35925c3d7abaec1f5120196d19be1f81a00a9526d3956bc44a9b5a2b413b4e"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\draconus-gun-stow.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\draconus-gun-stow.png",
+      "bytes": 215116,
+      "sha256": "fe4ba3b9d908907e60a5c88b8ac56c1e47ac2b123c68e7346ca5447af5cc3b9c"
+    },
+    {
+      "temporary": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\ship_forms_1111\\reviews\\draconus-transform.png",
+      "canonical": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_ART_SOURCES\\boss_ship_forms_1111\\reviews\\draconus-transform.png",
+      "bytes": 692161,
+      "sha256": "9c341b6dfa1a03a1aaea79a6e59a851cb4b963e467fdbc7c06252132f6f0567d"
+    }
+  ],
+  "free": 541675520,
+  "scope": "Only our temporary work-folder graphics with byte-identical canonical source-archive copies. No delivered outputs, canonical masters, prompts, code, uploads or project assets."
+}

@@ -1,0 +1,14 @@
+{
+  "banks": {
+    "retina_tracking_1114": {
+      "cw": 80,
+      "ch": 80,
+      "count": 256,
+      "cols": 16,
+      "pivot": [
+        40,
+        40
+      ]
+    }
+  }
+}

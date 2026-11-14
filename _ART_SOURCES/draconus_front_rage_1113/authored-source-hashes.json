@@ -1,0 +1,325 @@
+[
+  {
+    "bank": "corrupt-overhead",
+    "material": "regular",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead_regular.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "1331a7f0b3adeb03fc67066ff30730bd5c8ec64951e4679277cb275752aea6d7"
+  },
+  {
+    "bank": "corrupt-overhead",
+    "material": "chrome",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead_chrome.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "ce065ab862da978ec24afb2ebcf28f40d7d382d2e90c7a8ed844edf03d6c98c2"
+  },
+  {
+    "bank": "corrupt-overhead",
+    "material": "red",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead_red.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "ad64a5d681f427fd4a71cc8e277da3f9aaf13f4cc2cc605996a9fcc6aeb8c656"
+  },
+  {
+    "bank": "corrupt-overhead",
+    "material": "hit",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead_hit.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "d2ec1daad260b967229b826e0472983ea349026b171a86753043cac62b346998"
+  },
+  {
+    "bank": "corrupt-overhead",
+    "material": "red_hit",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead_red_hit.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "ff9e4b2bbfd3ef27301aadc60b15ed7507e26bc7fe50c040bcd7d851f9f34b1b"
+  },
+  {
+    "bank": "corrupt-overhead-left",
+    "material": "regular",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-left_regular.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "98b0037011898d60ced72d4ea7028ebe4c7bb93e1592c3cc6762c6e6f42e7300"
+  },
+  {
+    "bank": "corrupt-overhead-left",
+    "material": "chrome",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-left_chrome.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "e3fdd4d6d05bbb2adc7825e7dc558b9f4a4369687474c27e9b3050ddea4dc744"
+  },
+  {
+    "bank": "corrupt-overhead-left",
+    "material": "red",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-left_red.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "0f097cb2d5e541108ec5ec6db337041b5aa8f8bff0876316012f27424f345e18"
+  },
+  {
+    "bank": "corrupt-overhead-left",
+    "material": "hit",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-left_hit.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "c0f4689aad426011d9e7821c74237e4b448377879a2e9448a055321db80adcd0"
+  },
+  {
+    "bank": "corrupt-overhead-left",
+    "material": "red_hit",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-left_red_hit.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      256,
+      256
+    ],
+    "sha256": "eeea376e96e74d9e9ffade2d7bf61d632e51a79fed2138a1b1615a8bd8c2fd53"
+  },
+  {
+    "bank": "corrupt-overhead-right",
+    "material": "regular",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-right_regular.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      255,
+      256
+    ],
+    "sha256": "3fcb2e4a101345918cb54ae45f5b86ed55991157205c3d2cf6de62ba3be09161"
+  },
+  {
+    "bank": "corrupt-overhead-right",
+    "material": "chrome",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-right_chrome.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      255,
+      256
+    ],
+    "sha256": "5e34b45484eec6c33d4975d2d7a69a89a4289a8e12f5b6e6860cbc9fd1ae9eee"
+  },
+  {
+    "bank": "corrupt-overhead-right",
+    "material": "red",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-right_red.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      255,
+      256
+    ],
+    "sha256": "1d6ed2b1614c58aa43300a5a33f2fc93bf12223ef0ee840995da59c0132020f1"
+  },
+  {
+    "bank": "corrupt-overhead-right",
+    "material": "hit",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-right_hit.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      255,
+      256
+    ],
+    "sha256": "dc3654039def463cd519c279b2df9c445af6a9c6ef2eadd77219e275c06d5653"
+  },
+  {
+    "bank": "corrupt-overhead-right",
+    "material": "red_hit",
+    "path": "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-right_red_hit.webp",
+    "cell": [
+      512,
+      512
+    ],
+    "count": 32,
+    "pivot": [
+      255,
+      256
+    ],
+    "sha256": "13df2d0af4a5c9364bd36b8efb4794cc1d7fd6ba972ebc79f320c7091ea455f9"
+  },
+  {
+    "bank": "drac_charge_fore",
+    "path": "assets/game/shared/combat/rage_palm_1110/drac_charge_fore_hit.webp",
+    "cell": [
+      384,
+      448
+    ],
+    "count": 16,
+    "pivot": [
+      192,
+      224
+    ],
+    "sha256": "790a96322849f07b5e8a64b7d597ff17edc80cb28ca680bbfed73434dfd6ecbc"
+  },
+  {
+    "bank": "drac_charge_fore",
+    "path": "assets/game/shared/combat/rage_palm_1110/drac_charge_fore_plain.webp",
+    "cell": [
+      384,
+      448
+    ],
+    "count": 16,
+    "pivot": [
+      192,
+      224
+    ],
+    "sha256": "6ee0915ed1be87afd54539a757010846ef25d925cb8dc1a8606bf2bbbd7b2e59"
+  },
+  {
+    "bank": "drac_charge_fore",
+    "path": "assets/game/shared/combat/rage_palm_1110/drac_charge_fore_power.webp",
+    "cell": [
+      384,
+      448
+    ],
+    "count": 16,
+    "pivot": [
+      192,
+      224
+    ],
+    "sha256": "44f85bfc099e4950141ee1f1a1ba170507acd242ced82f8f31328e83682372d5"
+  },
+  {
+    "bank": "drac_palms_fore",
+    "path": "assets/game/shared/combat/rage_palm_1110/drac_palms_fore_hit.webp",
+    "cell": [
+      384,
+      448
+    ],
+    "count": 24,
+    "pivot": [
+      192,
+      224
+    ],
+    "sha256": "09988a8d340439756bd1725dce6e18d69f2037432da77b788b15d82d5fc9d059"
+  },
+  {
+    "bank": "drac_palms_fore",
+    "path": "assets/game/shared/combat/rage_palm_1110/drac_palms_fore_power.webp",
+    "cell": [
+      384,
+      448
+    ],
+    "count": 24,
+    "pivot": [
+      192,
+      224
+    ],
+    "sha256": "c9964a196f91c38e7ec1ade7690c1ea46c69691f1e70eaacb8a0fbe11fa64c8d"
+  },
+  {
+    "bank": "drac_palms_back",
+    "path": "assets/game/shared/combat/rage_palm_1110/drac_palms_back_hit.webp",
+    "cell": [
+      176,
+      208
+    ],
+    "count": 24,
+    "pivot": [
+      88,
+      104
+    ],
+    "sha256": "b0bee69458dd90d70924e921b9aa275dd04dd0822437e3115f49cbd79dbd1c83"
+  },
+  {
+    "bank": "drac_palms_back",
+    "path": "assets/game/shared/combat/rage_palm_1110/drac_palms_back_power.webp",
+    "cell": [
+      176,
+      208
+    ],
+    "count": 24,
+    "pivot": [
+      88,
+      104
+    ],
+    "sha256": "514c55346cceaff46323872c2b53dabcbdfddb54ac5542372cf26d91f20aecd1"
+  }
+]

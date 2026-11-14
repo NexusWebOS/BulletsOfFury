@@ -1,0 +1,41 @@
+{
+  "records": [
+    {
+      "unit": "chronos",
+      "video": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\outputs\\Front-facing-hammer\\chronos-hammer.mp4",
+      "seconds": 37.66,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 8.515
+        },
+        {
+          "name": "whirlwind",
+          "at": 17.031
+        },
+        {
+          "name": "released throw",
+          "at": 23.562
+        }
+      ],
+      "audio": {
+        "peak": 0.698948860168457,
+        "frames": 1394,
+        "starts": 27,
+        "sfxStarts": 52,
+        "errors": [],
+        "events": [],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [],
+        "phase": null
+      }
+    }
+  ],
+  "errors": []
+}

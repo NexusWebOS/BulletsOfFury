@@ -1,0 +1,136 @@
+{
+  "checks": {
+    "cores-1": true,
+    "cores-736": true,
+    "cores-1472": true,
+    "eyes-1": true,
+    "eyes-672": true,
+    "eyes-1344": true,
+    "lightning-1": true,
+    "lightning-4": true,
+    "lightning-8": true,
+    "markers-1": true,
+    "markers-12": true,
+    "markers-24": true,
+    "shield-1": true,
+    "shield-24": true,
+    "shield-48": true,
+    "vortex-1": true,
+    "vortex-44": true,
+    "vortex-88": true,
+    "even_cells_rects_pivots": true,
+    "new_generated_effect_binary_alpha": true
+  },
+  "samples": [
+    {
+      "group": "cores",
+      "frame": 1,
+      "bank": "core-recover-0-0",
+      "equal": true
+    },
+    {
+      "group": "cores",
+      "frame": 736,
+      "bank": "core-strike-6-1-hit",
+      "equal": true
+    },
+    {
+      "group": "cores",
+      "frame": 1472,
+      "bank": "core-wind-8-3-hit",
+      "equal": true
+    },
+    {
+      "group": "eyes",
+      "frame": 1,
+      "bank": "eye-brain-0-0",
+      "equal": true
+    },
+    {
+      "group": "eyes",
+      "frame": 672,
+      "bank": "eye-charge-1-1-hit",
+      "equal": true
+    },
+    {
+      "group": "eyes",
+      "frame": 1344,
+      "bank": "eye-focus-3-3-hit",
+      "equal": true
+    },
+    {
+      "group": "lightning",
+      "frame": 1,
+      "bank": "bolt",
+      "equal": true
+    },
+    {
+      "group": "lightning",
+      "frame": 4,
+      "bank": "bolt",
+      "equal": true
+    },
+    {
+      "group": "lightning",
+      "frame": 8,
+      "bank": "bolt",
+      "equal": true
+    },
+    {
+      "group": "markers",
+      "frame": 1,
+      "bank": "mark",
+      "equal": true
+    },
+    {
+      "group": "markers",
+      "frame": 12,
+      "bank": "mark",
+      "equal": true
+    },
+    {
+      "group": "markers",
+      "frame": 24,
+      "bank": "mark",
+      "equal": true
+    },
+    {
+      "group": "shield",
+      "frame": 1,
+      "bank": "shield-break-front",
+      "equal": true
+    },
+    {
+      "group": "shield",
+      "frame": 24,
+      "bank": "shield-deploy-front",
+      "equal": true
+    },
+    {
+      "group": "shield",
+      "frame": 48,
+      "bank": "shield-loop-rear",
+      "equal": true
+    },
+    {
+      "group": "vortex",
+      "frame": 1,
+      "bank": "wind-0-front",
+      "equal": true
+    },
+    {
+      "group": "vortex",
+      "frame": 44,
+      "bank": "wind-2-rear",
+      "equal": true
+    },
+    {
+      "group": "vortex",
+      "frame": 88,
+      "bank": "wind-out",
+      "equal": true
+    }
+  ],
+  "frames": 2984,
+  "pages": 15
+}

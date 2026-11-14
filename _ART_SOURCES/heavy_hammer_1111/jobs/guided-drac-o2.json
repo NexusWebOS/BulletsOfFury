@@ -1,0 +1,26 @@
+{
+  "name": "guided-drac-o2",
+  "prompt": "Eight NEW whole-character Dracodia frames16\u00e2\u20ac\u201c23, transferring the EXACT heavy overhead downswing/impact poses from reference1, same4-column2-row order. Reference1 is the user's actual animation MOTION ONLY: preserve the raised/behind-head start, torso arch, hip drive, shoulder lead, forward bend, two-hand hilt grip and weight-bearing impact progression. Reference2 is Dracodia's preceding sheet: keep exactly that original horned head/closed face/red eyes, armor/palette, body/head/core/limb unit, boots, camera and rendering. Reference3 locks the canonical purple six-spiked T-hammer, straight shaft and side-center socket.\n\nEIGHT closely spaced DISTINCT drawings:\n16 full overhead/behind-head load as guide0, both hands visibly around lower hilt above head, never on helmet.\n17 begin hips/shoulders driving forward, heavy hammer still lagging back.\n18 chest starts following through, elbows/close grips drive over crown, hammer comes forward.\n19 stronger forward drive, knees start yielding, same rigid hammer arcs over.\n20 downstroke, shoulders/torso fold with force, hands drive shaft forward/down, heavy head descending ahead of body.\n21 last fast downstroke just before contact, both hands lock lower hilt, knees deeply brace.\n22 actual ground IMPACT as guide6: ONE spiked END CAP leads straight down, cylinder long axis vertical/cap down, shaft enters SIDE midpoint and remains perpendicular. Show the long handle extending back from side socket to both gripping hands; never handle in a cap. Head contacts ground just ahead of the braced front foot / foreground.\n23 impact compression as guide7: hips/knees absorb weight, shoulders low, same lower end-cap contact spot, hands stay on hilt, no head sliding sideways.\n\nCopy the USER'S motion and hand spacing, not mannequin/clothing/background. Dracodia keeps his recognizable original face oriented toward the viewer while torso bends. ONE STRAIGHT rigid shaft through both fists all the way; hands do not migrate to the cylinder or helmet. Heavy grounded strength, no floating mallet or disconnected arms.\n\nWide2:1 sheet,8 sprites4x2, even512x512 cells, target2048x1024. Isolated on REAL RGBA TRANSPARENCY. Same common proportional figure unit as reference2, ample clear margins containing all hammer spikes/shaft butt/horns/boots. Complete drawn actor+weapon together, sharp16bit metallic pixel clusters. No labels/text, floor, cast shadows, borders, checkerboard, trails or impact FX.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-621a67d0-4721-4cb8-884a-bc38eb0baf6d.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "guideFrames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

@@ -1,0 +1,1445 @@
+{
+  "expected_source_hash": "412c2207a8705f58fb416a3d8593bd4e474be7269ac4497fbe996078b5024fdf",
+  "source": {
+    "key": "v19_colossus_roar_12",
+    "path": "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_roar_12.png",
+    "w": 320,
+    "h": 320,
+    "pivot": [
+      160,
+      160
+    ],
+    "bounds": [
+      49,
+      38,
+      271,
+      283
+    ],
+    "sha256": "8cfbadc735906f2099dcedbd27435217f6e8fc6ef8a92ea517b6355a40b2ed34",
+    "layers": {
+      "core": {
+        "key": "v19_colossus_roar_core_12",
+        "path": "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_roar_core_12.png",
+        "w": 320,
+        "h": 320,
+        "pivot": [
+          160,
+          160
+        ],
+        "bounds": [
+          69,
+          38,
+          251,
+          283
+        ],
+        "sha256": "bd267dde2ceb688947243af8e12f336b575b2ef4a9dc01dcb3166697012671c3"
+      },
+      "left": {
+        "key": "v19_colossus_roar_left_12",
+        "path": "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_roar_left_12.png",
+        "w": 320,
+        "h": 320,
+        "pivot": [
+          160,
+          160
+        ],
+        "bounds": [
+          49,
+          51,
+          131,
+          228
+        ],
+        "sha256": "1b6a4f8f3d8fdcd67a58da1ac13920e4df8221ed87af0e3e6f8fa566adca7fc1"
+      },
+      "right": {
+        "key": "v19_colossus_roar_right_12",
+        "path": "assets/game/levels/stage_08/boss/identity_1018/v19_colossus_roar_right_12.png",
+        "w": 320,
+        "h": 320,
+        "pivot": [
+          160,
+          160
+        ],
+        "bounds": [
+          192,
+          51,
+          271,
+          224
+        ],
+        "sha256": "7693f51d996a12fc303670c1fe7359d387649b9d1fbad979e015cb516d7c6bed"
+      }
+    }
+  },
+  "teleport_preserved_until": 13.2,
+  "overload": [
+    13.2,
+    18.4
+  ],
+  "shatter": [
+    18.4,
+    23.5
+  ],
+  "portal": 25.5,
+  "body_cell": [
+    640,
+    640
+  ],
+  "body_sizes": [
+    410,
+    420,
+    428,
+    434,
+    440,
+    446,
+    452,
+    458,
+    464,
+    468,
+    474,
+    480,
+    484,
+    490,
+    494,
+    500,
+    504,
+    510,
+    514,
+    518,
+    524,
+    528,
+    532,
+    538,
+    542,
+    546,
+    550,
+    554,
+    560,
+    564,
+    568,
+    572,
+    576,
+    580,
+    586,
+    590,
+    594,
+    598,
+    602,
+    606
+  ],
+  "red_transition": 1.25,
+  "first_cookoff": 1.7,
+  "pieces": [
+    {
+      "key": "piece-00",
+      "cell": 114,
+      "dx": 11.3625,
+      "dy": -115.96875,
+      "angle": -1.5003249822161009,
+      "sourceCut": [
+        148,
+        54,
+        184,
+        96
+      ]
+    },
+    {
+      "key": "piece-01",
+      "cell": 98,
+      "dx": -74.80312500000001,
+      "dy": -51.58125,
+      "angle": -2.2298000695131974,
+      "sourceCut": [
+        102,
+        95,
+        139,
+        123
+      ]
+    },
+    {
+      "key": "piece-02",
+      "cell": 100,
+      "dx": -42.609375,
+      "dy": -109.34062500000002,
+      "angle": -1.8401603990944793,
+      "sourceCut": [
+        127,
+        57,
+        148,
+        100
+      ]
+    },
+    {
+      "key": "piece-03",
+      "cell": 80,
+      "dx": 35.98125,
+      "dy": 42.159375,
+      "angle": -0.07878396098914381,
+      "sourceCut": [
+        168,
+        143,
+        190,
+        174
+      ]
+    },
+    {
+      "key": "piece-04",
+      "cell": 74,
+      "dx": 136.35,
+      "dy": 29.85,
+      "angle": -0.11065722117389565,
+      "sourceCut": [
+        217,
+        143,
+        247,
+        161
+      ]
+    },
+    {
+      "key": "piece-05",
+      "cell": 116,
+      "dx": 173.27812500000002,
+      "dy": -114.07500000000002,
+      "angle": -0.7426891076324441,
+      "sourceCut": [
+        232,
+        56,
+        271,
+        96
+      ]
+    },
+    {
+      "key": "piece-06",
+      "cell": 124,
+      "dx": -101.315625,
+      "dy": 60.15,
+      "angle": 2.9931597443396982,
+      "sourceCut": [
+        86,
+        146,
+        127,
+        190
+      ]
+    },
+    {
+      "key": "piece-07",
+      "cell": 92,
+      "dx": -59.653125,
+      "dy": -121.65,
+      "angle": -1.9145399504306788,
+      "sourceCut": [
+        114,
+        55,
+        143,
+        89
+      ]
+    },
+    {
+      "key": "piece-08",
+      "cell": 86,
+      "dx": -114.571875,
+      "dy": -174.675,
+      "angle": -2.0515362881934194,
+      "sourceCut": [
+        80,
+        38,
+        119,
+        50
+      ]
+    },
+    {
+      "key": "piece-09",
+      "cell": 68,
+      "dx": 9.46875,
+      "dy": 143.47500000000002,
+      "angle": 1.4749371796848834,
+      "sourceCut": [
+        154,
+        201,
+        176,
+        223
+      ]
+    },
+    {
+      "key": "piece-10",
+      "cell": 92,
+      "dx": -144.87187500000002,
+      "dy": 18.4875,
+      "angle": -2.9605890680479177,
+      "sourceCut": [
+        66,
+        133,
+        101,
+        159
+      ]
+    },
+    {
+      "key": "piece-11",
+      "cell": 62,
+      "dx": 179.90625,
+      "dy": -44.00625000000001,
+      "angle": -0.45942822475780265,
+      "sourceCut": [
+        245,
+        103,
+        265,
+        123
+      ]
+    },
+    {
+      "key": "piece-12",
+      "cell": 74,
+      "dx": -116.465625,
+      "dy": -4.237500000000004,
+      "angle": -2.7416172485389882,
+      "sourceCut": [
+        88,
+        121,
+        109,
+        147
+      ]
+    },
+    {
+      "key": "piece-13",
+      "cell": 86,
+      "dx": -157.18125,
+      "dy": -41.165625000000006,
+      "angle": -2.640138009230728,
+      "sourceCut": [
+        62,
+        100,
+        92,
+        129
+      ]
+    },
+    {
+      "key": "piece-14",
+      "cell": 66,
+      "dx": -120.253125,
+      "dy": -36.431250000000006,
+      "angle": -2.5463569031310667,
+      "sourceCut": [
+        88,
+        105,
+        105,
+        129
+      ]
+    },
+    {
+      "key": "piece-15",
+      "cell": 78,
+      "dx": 89.953125,
+      "dy": 43.10625,
+      "angle": -0.02104952213704643,
+      "sourceCut": [
+        195,
+        146,
+        220,
+        172
+      ]
+    },
+    {
+      "key": "piece-16",
+      "cell": 66,
+      "dx": -128.775,
+      "dy": -79.9875,
+      "angle": -2.37111875518243,
+      "sourceCut": [
+        82,
+        83,
+        102,
+        105
+      ]
+    },
+    {
+      "key": "piece-17",
+      "cell": 56,
+      "dx": 110.784375,
+      "dy": -21.28125,
+      "angle": -0.5391616392987663,
+      "sourceCut": [
+        211,
+        115,
+        226,
+        135
+      ]
+    },
+    {
+      "key": "piece-18",
+      "cell": 90,
+      "dx": 51.13125,
+      "dy": 17.540625,
+      "angle": -0.49283639699360077,
+      "sourceCut": [
+        172,
+        130,
+        202,
+        161
+      ]
+    },
+    {
+      "key": "piece-19",
+      "cell": 82,
+      "dx": 15.15,
+      "dy": 50.68125,
+      "angle": 0.35877067027057225,
+      "sourceCut": [
+        157,
+        147,
+        179,
+        179
+      ]
+    },
+    {
+      "key": "piece-20",
+      "cell": 92,
+      "dx": -173.27812500000002,
+      "dy": -143.428125,
+      "angle": -2.3143341410623557,
+      "sourceCut": [
+        53,
+        45,
+        84,
+        76
+      ]
+    },
+    {
+      "key": "piece-21",
+      "cell": 94,
+      "dx": -93.74062500000001,
+      "dy": -84.72187500000001,
+      "angle": -2.1965478205316833,
+      "sourceCut": [
+        94,
+        76,
+        127,
+        107
+      ]
+    },
+    {
+      "key": "piece-22",
+      "cell": 62,
+      "dx": 156.234375,
+      "dy": -53.47500000000001,
+      "angle": -0.5624036448162877,
+      "sourceCut": [
+        231,
+        100,
+        254,
+        116
+      ]
+    },
+    {
+      "key": "piece-23",
+      "cell": 72,
+      "dx": 133.509375,
+      "dy": -9.918750000000003,
+      "angle": -0.39025028309919446,
+      "sourceCut": [
+        219,
+        119,
+        242,
+        143
+      ]
+    },
+    {
+      "key": "piece-24",
+      "cell": 114,
+      "dx": -26.5125,
+      "dy": 82.875,
+      "angle": 2.1815222911841055,
+      "sourceCut": [
+        122,
+        166,
+        170,
+        194
+      ]
+    },
+    {
+      "key": "piece-25",
+      "cell": 96,
+      "dx": 37.875,
+      "dy": 139.6875,
+      "angle": 1.1902899496825317,
+      "sourceCut": [
+        167,
+        191,
+        193,
+        229
+      ]
+    },
+    {
+      "key": "piece-26",
+      "cell": 44,
+      "dx": 88.059375,
+      "dy": -57.2625,
+      "angle": -0.85988695361133,
+      "sourceCut": [
+        199,
+        100,
+        214,
+        112
+      ]
+    },
+    {
+      "key": "piece-27",
+      "cell": 84,
+      "dx": 42.609375,
+      "dy": -50.634375000000006,
+      "angle": -1.1516537238282252,
+      "sourceCut": [
+        173,
+        92,
+        192,
+        127
+      ]
+    },
+    {
+      "key": "piece-28",
+      "cell": 128,
+      "dx": -48.290625,
+      "dy": 133.059375,
+      "angle": 2.0724003809840172,
+      "sourceCut": [
+        114,
+        183,
+        155,
+        230
+      ]
+    },
+    {
+      "key": "piece-29",
+      "cell": 86,
+      "dx": 17.04375,
+      "dy": -11.8125,
+      "angle": -1.2793395323170296,
+      "sourceCut": [
+        155,
+        116,
+        183,
+        144
+      ]
+    },
+    {
+      "key": "piece-30",
+      "cell": 42,
+      "dx": 82.378125,
+      "dy": -53.47500000000001,
+      "angle": -0.8741694787169876,
+      "sourceCut": [
+        197,
+        102,
+        210,
+        114
+      ]
+    },
+    {
+      "key": "piece-31",
+      "cell": 52,
+      "dx": 71.9625,
+      "dy": -47.79375,
+      "angle": -0.9111675841579759,
+      "sourceCut": [
+        191,
+        102,
+        205,
+        120
+      ]
+    },
+    {
+      "key": "piece-32",
+      "cell": 110,
+      "dx": -28.40625,
+      "dy": -25.06875000000001,
+      "angle": -1.9559538331583708,
+      "sourceCut": [
+        132,
+        100,
+        158,
+        146
+      ]
+    },
+    {
+      "key": "piece-33",
+      "cell": 94,
+      "dx": -190.321875,
+      "dy": -9.918750000000003,
+      "angle": -2.8606666053510845,
+      "sourceCut": [
+        52,
+        110,
+        67,
+        152
+      ]
+    },
+    {
+      "key": "piece-34",
+      "cell": 124,
+      "dx": 128.775,
+      "dy": -158.578125,
+      "angle": -1.0067803977592364,
+      "sourceCut": [
+        201,
+        38,
+        255,
+        67
+      ]
+    },
+    {
+      "key": "piece-35",
+      "cell": 82,
+      "dx": -155.2875,
+      "dy": -2.34375,
+      "angle": -2.8456666151255847,
+      "sourceCut": [
+        67,
+        119,
+        89,
+        151
+      ]
+    },
+    {
+      "key": "piece-36",
+      "cell": 78,
+      "dx": 187.48125000000002,
+      "dy": -4.237500000000004,
+      "angle": -0.25682644996980775,
+      "sourceCut": [
+        250,
+        118,
+        268,
+        150
+      ]
+    },
+    {
+      "key": "piece-37",
+      "cell": 108,
+      "dx": 64.3875,
+      "dy": 92.34375,
+      "angle": 0.634022719663422,
+      "sourceCut": [
+        175,
+        167,
+        213,
+        203
+      ]
+    },
+    {
+      "key": "piece-38",
+      "cell": 46,
+      "dx": 107.94375000000001,
+      "dy": -49.6875,
+      "angle": -0.7200706937740967,
+      "sourceCut": [
+        210,
+        103,
+        224,
+        117
+      ]
+    },
+    {
+      "key": "piece-39",
+      "cell": 104,
+      "dx": -24.618750000000002,
+      "dy": 30.796875,
+      "angle": -2.618314331457818,
+      "sourceCut": [
+        126,
+        139,
+        168,
+        166
+      ]
+    },
+    {
+      "key": "piece-40",
+      "cell": 104,
+      "dx": -178.959375,
+      "dy": -83.775,
+      "angle": -2.517848423971209,
+      "sourceCut": [
+        49,
+        73,
+        82,
+        111
+      ]
+    },
+    {
+      "key": "piece-41",
+      "cell": 68,
+      "dx": 108.890625,
+      "dy": -77.14687500000001,
+      "angle": -0.8427123725034882,
+      "sourceCut": [
+        204,
+        88,
+        231,
+        103
+      ]
+    },
+    {
+      "key": "piece-42",
+      "cell": 78,
+      "dx": 87.1125,
+      "dy": 0.49687499999999574,
+      "angle": -0.4723054013305533,
+      "sourceCut": [
+        192,
+        125,
+        220,
+        148
+      ]
+    },
+    {
+      "key": "piece-43",
+      "cell": 172,
+      "dx": -1.89375,
+      "dy": 208.80937500000002,
+      "angle": 1.5823565054503064,
+      "sourceCut": [
+        136,
+        210,
+        182,
+        283
+      ]
+    },
+    {
+      "key": "piece-44",
+      "cell": 92,
+      "dx": -71.015625,
+      "dy": -5.184375000000003,
+      "angle": -2.5264064154778194,
+      "sourceCut": [
+        113,
+        114,
+        132,
+        153
+      ]
+    },
+    {
+      "key": "piece-45",
+      "cell": 94,
+      "dx": -0.946875,
+      "dy": -58.20937500000001,
+      "angle": -1.5799703813400066,
+      "sourceCut": [
+        143,
+        90,
+        176,
+        121
+      ]
+    },
+    {
+      "key": "piece-46",
+      "cell": 86,
+      "dx": 152.446875,
+      "dy": 12.806249999999999,
+      "angle": -0.20812220444420662,
+      "sourceCut": [
+        224,
+        131,
+        257,
+        155
+      ]
+    },
+    {
+      "key": "piece-47",
+      "cell": 66,
+      "dx": 63.440625000000004,
+      "dy": -26.015625,
+      "angle": -0.8416766996862103,
+      "sourceCut": [
+        183,
+        112,
+        204,
+        133
+      ]
+    },
+    {
+      "key": "piece-48",
+      "cell": 68,
+      "dx": -86.165625,
+      "dy": 0.49687499999999574,
+      "angle": -2.66484535726921,
+      "sourceCut": [
+        107,
+        123,
+        122,
+        150
+      ]
+    },
+    {
+      "key": "piece-49",
+      "cell": 82,
+      "dx": 7.575,
+      "dy": 102.759375,
+      "angle": 1.4403930189057632,
+      "sourceCut": [
+        149,
+        178,
+        179,
+        203
+      ]
+    },
+    {
+      "key": "piece-50",
+      "cell": 58,
+      "dx": 161.915625,
+      "dy": -21.28125,
+      "angle": -0.388546404871628,
+      "sourceCut": [
+        236,
+        116,
+        255,
+        134
+      ]
+    },
+    {
+      "key": "piece-51",
+      "cell": 38,
+      "dx": 91.846875,
+      "dy": -30.75,
+      "angle": -0.6896466705016817,
+      "sourceCut": [
+        203,
+        114,
+        214,
+        126
+      ]
+    },
+    {
+      "key": "piece-52",
+      "cell": 92,
+      "dx": 169.490625,
+      "dy": -75.253125,
+      "angle": -0.6170715305796513,
+      "sourceCut": [
+        230,
+        87,
+        269,
+        106
+      ]
+    },
+    {
+      "key": "piece-53",
+      "cell": 82,
+      "dx": 78.590625,
+      "dy": -108.39375000000001,
+      "angle": -1.0973210243761702,
+      "sourceCut": [
+        187,
+        66,
+        216,
+        92
+      ]
+    },
+    {
+      "key": "piece-54",
+      "cell": 52,
+      "dx": -139.190625,
+      "dy": -157.63125,
+      "angle": -2.1726869262734314,
+      "sourceCut": [
+        78,
+        45,
+        95,
+        61
+      ]
+    },
+    {
+      "key": "piece-55",
+      "cell": 68,
+      "dx": 127.828125,
+      "dy": -44.953125,
+      "angle": -0.6132073488745093,
+      "sourceCut": [
+        218,
+        100,
+        237,
+        125
+      ]
+    }
+  ],
+  "reassembles_exact_source_rgba": true,
+  "records": {
+    "body-00-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-00-0.png",
+      "cell": 640
+    },
+    "body-00-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-00-1.png",
+      "cell": 640
+    },
+    "body-01-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-01-0.png",
+      "cell": 640
+    },
+    "body-01-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-01-1.png",
+      "cell": 640
+    },
+    "body-02-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-02-0.png",
+      "cell": 640
+    },
+    "body-02-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-02-1.png",
+      "cell": 640
+    },
+    "body-03-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-03-0.png",
+      "cell": 640
+    },
+    "body-03-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-03-1.png",
+      "cell": 640
+    },
+    "body-04-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-04-0.png",
+      "cell": 640
+    },
+    "body-04-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-04-1.png",
+      "cell": 640
+    },
+    "body-05-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-05-0.png",
+      "cell": 640
+    },
+    "body-05-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-05-1.png",
+      "cell": 640
+    },
+    "body-06-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-06-0.png",
+      "cell": 640
+    },
+    "body-06-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-06-1.png",
+      "cell": 640
+    },
+    "body-07-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-07-0.png",
+      "cell": 640
+    },
+    "body-07-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-07-1.png",
+      "cell": 640
+    },
+    "body-08-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-08-0.png",
+      "cell": 640
+    },
+    "body-08-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-08-1.png",
+      "cell": 640
+    },
+    "body-09-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-09-0.png",
+      "cell": 640
+    },
+    "body-09-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-09-1.png",
+      "cell": 640
+    },
+    "body-10-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-10-0.png",
+      "cell": 640
+    },
+    "body-10-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-10-1.png",
+      "cell": 640
+    },
+    "body-11-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-11-0.png",
+      "cell": 640
+    },
+    "body-11-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-11-1.png",
+      "cell": 640
+    },
+    "body-12-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-12-0.png",
+      "cell": 640
+    },
+    "body-12-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-12-1.png",
+      "cell": 640
+    },
+    "body-13-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-13-0.png",
+      "cell": 640
+    },
+    "body-13-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-13-1.png",
+      "cell": 640
+    },
+    "body-14-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-14-0.png",
+      "cell": 640
+    },
+    "body-14-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-14-1.png",
+      "cell": 640
+    },
+    "body-15-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-15-0.png",
+      "cell": 640
+    },
+    "body-15-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-15-1.png",
+      "cell": 640
+    },
+    "body-16-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-16-0.png",
+      "cell": 640
+    },
+    "body-16-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-16-1.png",
+      "cell": 640
+    },
+    "body-17-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-17-0.png",
+      "cell": 640
+    },
+    "body-17-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-17-1.png",
+      "cell": 640
+    },
+    "body-18-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-18-0.png",
+      "cell": 640
+    },
+    "body-18-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-18-1.png",
+      "cell": 640
+    },
+    "body-19-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-19-0.png",
+      "cell": 640
+    },
+    "body-19-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-19-1.png",
+      "cell": 640
+    },
+    "body-20-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-20-0.png",
+      "cell": 640
+    },
+    "body-20-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-20-1.png",
+      "cell": 640
+    },
+    "body-21-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-21-0.png",
+      "cell": 640
+    },
+    "body-21-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-21-1.png",
+      "cell": 640
+    },
+    "body-22-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-22-0.png",
+      "cell": 640
+    },
+    "body-22-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-22-1.png",
+      "cell": 640
+    },
+    "body-23-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-23-0.png",
+      "cell": 640
+    },
+    "body-23-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-23-1.png",
+      "cell": 640
+    },
+    "body-24-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-24-0.png",
+      "cell": 640
+    },
+    "body-24-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-24-1.png",
+      "cell": 640
+    },
+    "body-25-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-25-0.png",
+      "cell": 640
+    },
+    "body-25-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-25-1.png",
+      "cell": 640
+    },
+    "body-26-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-26-0.png",
+      "cell": 640
+    },
+    "body-26-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-26-1.png",
+      "cell": 640
+    },
+    "body-27-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-27-0.png",
+      "cell": 640
+    },
+    "body-27-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-27-1.png",
+      "cell": 640
+    },
+    "body-28-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-28-0.png",
+      "cell": 640
+    },
+    "body-28-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-28-1.png",
+      "cell": 640
+    },
+    "body-29-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-29-0.png",
+      "cell": 640
+    },
+    "body-29-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-29-1.png",
+      "cell": 640
+    },
+    "body-30-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-30-0.png",
+      "cell": 640
+    },
+    "body-30-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-30-1.png",
+      "cell": 640
+    },
+    "body-31-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-31-0.png",
+      "cell": 640
+    },
+    "body-31-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-31-1.png",
+      "cell": 640
+    },
+    "body-32-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-32-0.png",
+      "cell": 640
+    },
+    "body-32-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-32-1.png",
+      "cell": 640
+    },
+    "body-33-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-33-0.png",
+      "cell": 640
+    },
+    "body-33-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-33-1.png",
+      "cell": 640
+    },
+    "body-34-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-34-0.png",
+      "cell": 640
+    },
+    "body-34-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-34-1.png",
+      "cell": 640
+    },
+    "body-35-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-35-0.png",
+      "cell": 640
+    },
+    "body-35-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-35-1.png",
+      "cell": 640
+    },
+    "body-36-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-36-0.png",
+      "cell": 640
+    },
+    "body-36-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-36-1.png",
+      "cell": 640
+    },
+    "body-37-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-37-0.png",
+      "cell": 640
+    },
+    "body-37-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-37-1.png",
+      "cell": 640
+    },
+    "body-38-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-38-0.png",
+      "cell": 640
+    },
+    "body-38-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-38-1.png",
+      "cell": 640
+    },
+    "body-39-0": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-39-0.png",
+      "cell": 640
+    },
+    "body-39-1": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/body-39-1.png",
+      "cell": 640
+    },
+    "piece-00": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-00.png",
+      "cell": 114
+    },
+    "piece-01": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-01.png",
+      "cell": 98
+    },
+    "piece-02": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-02.png",
+      "cell": 100
+    },
+    "piece-03": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-03.png",
+      "cell": 80
+    },
+    "piece-04": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-04.png",
+      "cell": 74
+    },
+    "piece-05": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-05.png",
+      "cell": 116
+    },
+    "piece-06": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-06.png",
+      "cell": 124
+    },
+    "piece-07": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-07.png",
+      "cell": 92
+    },
+    "piece-08": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-08.png",
+      "cell": 86
+    },
+    "piece-09": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-09.png",
+      "cell": 68
+    },
+    "piece-10": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-10.png",
+      "cell": 92
+    },
+    "piece-11": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-11.png",
+      "cell": 62
+    },
+    "piece-12": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-12.png",
+      "cell": 74
+    },
+    "piece-13": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-13.png",
+      "cell": 86
+    },
+    "piece-14": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-14.png",
+      "cell": 66
+    },
+    "piece-15": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-15.png",
+      "cell": 78
+    },
+    "piece-16": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-16.png",
+      "cell": 66
+    },
+    "piece-17": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-17.png",
+      "cell": 56
+    },
+    "piece-18": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-18.png",
+      "cell": 90
+    },
+    "piece-19": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-19.png",
+      "cell": 82
+    },
+    "piece-20": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-20.png",
+      "cell": 92
+    },
+    "piece-21": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-21.png",
+      "cell": 94
+    },
+    "piece-22": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-22.png",
+      "cell": 62
+    },
+    "piece-23": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-23.png",
+      "cell": 72
+    },
+    "piece-24": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-24.png",
+      "cell": 114
+    },
+    "piece-25": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-25.png",
+      "cell": 96
+    },
+    "piece-26": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-26.png",
+      "cell": 44
+    },
+    "piece-27": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-27.png",
+      "cell": 84
+    },
+    "piece-28": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-28.png",
+      "cell": 128
+    },
+    "piece-29": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-29.png",
+      "cell": 86
+    },
+    "piece-30": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-30.png",
+      "cell": 42
+    },
+    "piece-31": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-31.png",
+      "cell": 52
+    },
+    "piece-32": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-32.png",
+      "cell": 110
+    },
+    "piece-33": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-33.png",
+      "cell": 94
+    },
+    "piece-34": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-34.png",
+      "cell": 124
+    },
+    "piece-35": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-35.png",
+      "cell": 82
+    },
+    "piece-36": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-36.png",
+      "cell": 78
+    },
+    "piece-37": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-37.png",
+      "cell": 108
+    },
+    "piece-38": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-38.png",
+      "cell": 46
+    },
+    "piece-39": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-39.png",
+      "cell": 104
+    },
+    "piece-40": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-40.png",
+      "cell": 104
+    },
+    "piece-41": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-41.png",
+      "cell": 68
+    },
+    "piece-42": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-42.png",
+      "cell": 78
+    },
+    "piece-43": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-43.png",
+      "cell": 172
+    },
+    "piece-44": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-44.png",
+      "cell": 92
+    },
+    "piece-45": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-45.png",
+      "cell": 94
+    },
+    "piece-46": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-46.png",
+      "cell": 86
+    },
+    "piece-47": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-47.png",
+      "cell": 66
+    },
+    "piece-48": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-48.png",
+      "cell": 68
+    },
+    "piece-49": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-49.png",
+      "cell": 82
+    },
+    "piece-50": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-50.png",
+      "cell": 58
+    },
+    "piece-51": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-51.png",
+      "cell": 38
+    },
+    "piece-52": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-52.png",
+      "cell": 92
+    },
+    "piece-53": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-53.png",
+      "cell": 82
+    },
+    "piece-54": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-54.png",
+      "cell": 52
+    },
+    "piece-55": {
+      "path": "assets/game/levels/stage_08/ending/dracodia_overload_1110/piece-55.png",
+      "cell": 68
+    },
+    "boss-heavy": {
+      "path": "assets/game/levels/stage_05/boss/chronus_electric_1110/boss-heavy.png",
+      "cell": 176
+    },
+    "boss-heavy-large": {
+      "path": "assets/game/levels/stage_05/boss/chronus_electric_1110/boss-heavy-large.png",
+      "cell": 320
+    },
+    "boss-heavy-mega": {
+      "path": "assets/game/levels/stage_05/boss/chronus_overload_1110/boss-heavy-mega.png",
+      "cell": 480
+    },
+    "dracodia-surge": {
+      "path": "assets/game/levels/stage_05/boss/chronus_electric_1110/dracodia-surge.png",
+      "cell": 176
+    },
+    "dracodia-surge-large": {
+      "path": "assets/game/levels/stage_05/boss/chronus_electric_1110/dracodia-surge-large.png",
+      "cell": 320
+    },
+    "dracodia-surge-mega": {
+      "path": "assets/game/levels/stage_05/boss/chronus_overload_1110/dracodia-surge-mega.png",
+      "cell": 480
+    },
+    "stage5-core": {
+      "path": "assets/game/levels/stage_05/boss/chronus_electric_1110/stage5-core.png",
+      "cell": 176
+    },
+    "stage5-core-large": {
+      "path": "assets/game/levels/stage_05/boss/chronus_electric_1110/stage5-core-large.png",
+      "cell": 320
+    },
+    "stage5-core-mega": {
+      "path": "assets/game/levels/stage_05/boss/chronus_overload_1110/stage5-core-mega.png",
+      "cell": 480
+    }
+  },
+  "draw": "fixed authored frames, no runtime scale/tint/rotation/alpha changes"
+}

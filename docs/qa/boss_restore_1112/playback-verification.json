@@ -1,0 +1,53 @@
+{
+  "seeks": [
+    {
+      "stage": 5,
+      "at": 0.05,
+      "seconds": 2.871993,
+      "duration": 54.7815,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "stage": 5,
+      "at": 0.5,
+      "seconds": 27.524022,
+      "duration": 54.7815,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "stage": 5,
+      "at": 0.94,
+      "seconds": 51.637168,
+      "duration": 54.7815,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "stage": 8,
+      "at": 0.05,
+      "seconds": 0.797006,
+      "duration": 12.956188,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "stage": 8,
+      "at": 0.5,
+      "seconds": 6.609907,
+      "duration": 12.956188,
+      "width": 1280,
+      "height": 844
+    },
+    {
+      "stage": 8,
+      "at": 0.94,
+      "seconds": 12.330311,
+      "duration": 12.956188,
+      "width": 1280,
+      "height": 844
+    }
+  ],
+  "errors": []
+}

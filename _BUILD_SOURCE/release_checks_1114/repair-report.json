@@ -1,0 +1,60 @@
+{
+  "changes": [
+    {
+      "file": "_BUILD_SOURCE/test_fl.js",
+      "why": "Current authored Stage2 roster; actual markHit feedback; effective help font floor; load recovered native leech atlas.",
+      "before": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "after": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f"
+    },
+    {
+      "file": "_BUILD_SOURCE/test_mutator_1003.cjs",
+      "why": "The approved October24 dialogue \u2192 armor \u2192 combat order superseded the pre-armor opening jump.",
+      "before": "e06628d2da3146532172abc22673d3e6b1549143ecb556f7f7179a0a28643552",
+      "after": "e06628d2da3146532172abc22673d3e6b1549143ecb556f7f7179a0a28643552"
+    },
+    {
+      "file": "_BUILD_SOURCE/test_stage8_1003.cjs",
+      "why": "Actual selected importer metadata has96 actor/effect frames plus4 chunks; verify every source sheet exists.",
+      "before": "51cfd216b012f3f5ca51943ae0240fd543e36234f8162f2a80c31ddf07893958",
+      "after": "51cfd216b012f3f5ca51943ae0240fd543e36234f8162f2a80c31ddf07893958"
+    },
+    {
+      "file": "_BUILD_SOURCE/test_campaign_focus_1004b.cjs",
+      "why": "Each alternate campaign-route fixture must start a fresh pending-route record instead of inheriting the completed previous branch.",
+      "before": "1a91f6600e75e43ca55ddc16fa365020eb67549a9e6ce80935253c889fe4d5d0",
+      "after": "1a91f6600e75e43ca55ddc16fa365020eb67549a9e6ce80935253c889fe4d5d0"
+    },
+    {
+      "file": "_BUILD_SOURCE/test_campaign_controls_1004h.cjs",
+      "why": "Current Start confirms map focus; Back opens toolbar. Verify both real input ownership paths.",
+      "before": "9523d02ee20089ba85d192ba8c147091f0ce0ff632fe9a8fb375f2fa2749a81f",
+      "after": "0862b48cba22a923f6d99e81ff1e30962aa5ba0d64eb6e606daca20bce471f65"
+    },
+    {
+      "file": "index.html",
+      "why": "Register all16 recovered leech cells before encounter code can request them.",
+      "before": "88ef82981a04bcf582c5c3197f7c3dd18567fbeae7a6d0f53ab224e829faab73",
+      "after": "88ef82981a04bcf582c5c3197f7c3dd18567fbeae7a6d0f53ab224e829faab73"
+    }
+  ],
+  "recoveredFrames": 16,
+  "pixelExact": true,
+  "sourceHashes": {
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\attack_01.png": "6c181685d7940fff22383d58e870433a83419f05c5c7102ff343c678c2a2960e",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\attack_02.png": "08740d02ff5351ee7bba4af026ab649bc812bffff13f46b9aac0c070ce734528",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\attack_03.png": "33ec1ccfaefca93d9b34ace00faad9d9f9ed971b44705a782ea4537355f97163",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\attack_04.png": "bad704e2cd8c3f756732a9dcb198dff5af66159a6281df0b85fde5192eece612",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\attack_05.png": "664f381d3c623a54832c76d9305b6c260a2bcf871bee6a968be5cab86f609147",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\attack_06.png": "29bbfa49694d3d5b93682f36c7b050b8986952538d5ebcf7fbbbfe40e54054b7",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\attack_07.png": "6c181685d7940fff22383d58e870433a83419f05c5c7102ff343c678c2a2960e",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\attack_08.png": "08740d02ff5351ee7bba4af026ab649bc812bffff13f46b9aac0c070ce734528",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\roll_01.png": "6c181685d7940fff22383d58e870433a83419f05c5c7102ff343c678c2a2960e",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\roll_02.png": "eafe5bddaa1596eef93d4f6417f82e0458524954d0e168e7e7b98772e9937e0a",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\roll_03.png": "b577f69ca123988b2d3bf3038104731b57099565b9d49575e4749db92cf80656",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\roll_04.png": "12a8a87f4b97b5760207a9c4b616c3b3c33ecffc5f60592af07939dad62a39cd",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\roll_05.png": "df6f8e3f6587d64531e7f5c2bf2ec162622530c6c66bcb793b66a9690d491407",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\roll_06.png": "8d74ae01705943d330cb7967af55a26f3f73d8ca5e8597ec54e8df2f70762528",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\roll_07.png": "2ad690761563905ce9ba3a97f717470ec101ef2ff0b46f72446adef874a78be2",
+    "UNUSED_ASSETS\\cleanup_2026-10-06\\assets\\game\\stage8_mega_enemies\\armored_leech\\roll_08.png": "6c181685d7940fff22383d58e870433a83419f05c5c7102ff343c678c2a2960e"
+  }
+}

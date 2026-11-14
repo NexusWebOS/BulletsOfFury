@@ -1,3 +1,372 @@
+## November14,2026 — Full suite green; continuous bomber lock warnings
+
+Mike requested the missing health-helper error fixed and all full checks passing.
+The early shared difficulty_helpers_1114.js now owns pure math/DR15 state; late
+rules attach live tuning. Original health and15% rules remain. The full runner
+reaches its final summary: 8,969 passed,0 failures,exit0.12 exposed failures were
+fixed: exact archived leech cells restored with live roots, current roster/intro/
+font/frame-count assertions, isolated alternate-route fixtures and real input API.
+No tests are skipped. Native game.js and critical Chronus/Draconus owners remain.
+Bomber target optic continuously rotates/flashes in256 authored variant cells and
+repeats accelerating shared-mixer beeps while tracking; red lock commits and goes
+quiet. Pause/cannon break/target loss cancel scheduling.60 native bomber/weapon
+checks,7 cue checks,16 native recovered-cell decodes and syntax all pass. New
+audible Furious preview is a labeled invulnerable attack checkpoint; home playtest
+is still the full experience check. Source only; no release publication.
+Docs: docs/RELEASE_CHECKS_RETINA_1114.md; _BUILD_SOURCE/release_checks_1114.
+This supersedes earlier missing-helper/full-suite warnings and the old static optic.
+
+## November14,2026 — Stage5 bomber hunting optics and overhead bombing pursuit
+
+Mike requested a more active Stage5 miniboss. S5B14 now owns the actual Stage5
+Eclipse Siege Bomber: committed enemy optic/cannon bursts, visible cooling and
+repeat bursts, thrust away/turnaround, accelerating bombing charge, shadow-led
+overhead pass, return and finite forward-responsive catch-up. The original four
+modules/core gate/HP/white flashes/native defeat remain. Engine breaks slow flight;
+cannon breaks cancel their fire. Upper-plane hulls cannot ram or absorb rounds.
+No player Retina/input takeover or new runtime raster transforms. Original hull,
+module/FX pixels plus a new exclusive clear-center16-frame enemy optic.16 headings,
+32 prepared depths;1,136 exact editable exports in46 banks (includes variants).
+60 native behavior/weapon checks pass across all four difficulties; final audible
+Furious preview completes native entry and two cycles with full original HP.
+Invulnerable review pilot; not a survival or release claim. Syntax passes; full
+suite retains the existing missing difficultyHealthBaseline15 abort. Protected
+Chronus/Draconus and Stage6 owners unchanged. Source only; no push/installer.
+Docs: docs/STAGE5_BOMBER_ASSAULT_1114.md; _ART_SOURCES/stage5_bomber_assault_1114.
+
+## November13,2026 — New Draconus rage/Kamehameha and actual center cap slam
+
+Mike rejected reused open-palm casting and the copied Chromium center hit.
+DCR13 supplies63 usable NEW whole-character drawings: STOP/recoup, strength
+compression/red release, hip-level two-hand ball gather, forward double-palm
+thrust/hold/recovery and a rigid T-shaped hammer's center overhead/ground arc.
+The duplicate-head source13 is rejected.32-cell center/formation timelines,
+16-pose casts at both depths; a newly generated ROUND red/white energy ball.
+The ball is measured inside the actual cupped-hand gap; release is between
+forward palms. Original Stage5 aura/swirl/bolt pixels are baked transparently;
+26 original accelerating scatter strikes, hot rings/dimming and exact red wave.
+Retained palm-volley matte is cleaned without changing non-matte RGB/rounds.
+Stage5's original C45/C46/C47/CF48/CF49/CF50 and all protected owner files remain.
+27 native checks pass;740 Aseprite frame/material/effect exports are exact.
+Actual continuous audible Furious preview completes both center materials and
+the native full rage book,26 strikes/one release, no healing/restored weapons.
+Six seeks and rage chapter pass. Prepared checkpoints/invulnerable observer;
+earlier full-stage films predate this art. Broad suite keeps its existing health
+helper abort. No game.js edit, commit, push, installer or publication.
+Docs: docs/DRACONUS_CINEMATIC_RAGE_1113.md; _ART_SOURCES/draconus_cinematic_rage_1113.
+
+## November13,2026 — Draconus frontal strikes and complete native rage
+
+Mike requires Draconus's face/chest to remain toward the player during hammer
+strikes. DFR13 selects existing whole frontal center/left/right banks in both
+normal/Chromium, including Furious contacts3/4 and the alternating diagonal pair.
+This supersedes November12's Draconus profile-side selector only. Chronos's
+recovered side sweeps, original Stage5 transformation/Kamehameha, ships, gun
+exceptions, whirlwind and whole-held-hammer rules remain protected.
+Low-health Chromium rage now commits at the native action boundary before the
+copied-form return can win. The Draconus-only RF1110 exit requires cycle3, so the
+opening wave, foreground palms, background palms and repeat wave all finish.
+No healing, copied-form clock reset or defeated-weapon restoration. Native HP,
+warnings, round owners, sounds and white hit feedback remain.
+23 native checks pass; actual continuous audible preview visibly shows both
+frontal armor forms and red rage/full attack book.8 player seeks and chapter
+button pass. Prepared native checkpoints/invulnerable observer, not full clears.
+Full suite retains existing difficultyHealthBaseline15 abort; no release claim.
+Docs: docs/DRACONUS_FRONT_RAGE_1113.md; _ART_SOURCES/draconus_front_rage_1113.
+No game.js edit, commit, push, installer or publication.
+
+## November12,2026 — Recovered sideways sweeps and original Chronos rage/wave
+
+Mike rejected the later side poses and explicitly requested recovery, including
+the original Stage5 rage formation and Kamehameha. BR1112 restores the full
+boss_strike_1109b sideways sweeps in both characters/materials. Dracodia's original
+sheet contains both directions: source5/12 are the fully extended left/right
+contacts, each within its own eight-pose sweep. Timeline frame8 follows native hit
+clocks; overhead directions/current ships/modular guns retain their owners.
+Stage5 restores C45/C46/C47/CF48/CF49/CF50 through saved pre-RF1110 functions:
+throw/STOP/charge/26 strikes/release, original gather/thrust/wave/return and sound.
+Do not replace these Stage5 animations with RF1110 again. Draconus RF1110 stays.
+56 focused native checks pass, no renderer errors; two short audible native
+checkpoint films and6 playback seeks pass. Full suite retains its existing
+difficultyHealthBaseline15 abort. No game.js/old owner edits, commit or installer.
+Docs: docs/BOSS_ANIMATION_RECOVERY_1112.md; sources _ART_SOURCES/boss_restore_1112.
+
+## November11,2026 - Independent Draconus rotor and full Furious stage films
+
+Mike explicitly approved a modular Draconus gun. DGM1111 owns the fixed whole
+background body, same-source foreground grips and36 static axial gun cells in
+normal/Chromium, with baked material steps. Native SF1111 box/catch/stow/break,
+HP, cadence and hammer recall remain owners. No runtime gun rotation. Preserve
+approved ships and three-way whole-hammer banks.42 focused checks and216 exact
+editable layer frames pass. Full assisted Furious Stage5–8 videos have sound,
+native waves/HP/defeat and labeled invulnerable keyboard review pilot. They are
+visual stress reviews, not unassisted balance clears. Each film leaves its native
+source JS unchanged. The Stage8 run exposed an obsolete-host Retina getter in
+PR118 flash polling; exclude target descriptors from real-pool lists.7 native
+regressions pass, and Stage8 was replayed after this one-line production fix.
+Broad suite retains missing difficultyHealthBaseline15 abort.
+Source: _ART_SOURCES/draconus_modular_1111; docs/DRACONUS_MODULAR_FULL_STAGES_1111.md.
+No game.js edit, commit, push, installer or publication.
+
+## November11,2026 - Original boss ships and Draconus gun
+
+Mike requested distinct closed ship forms and complete copied-boss gun pickup.
+SF1111 owns new24-frame Chronos/Dracodia ship transformations, both materials,
+and the actual native morph-draw override. Closed ships have no gun. Dracodia
+has the exclusive icon-box strike/eject/catch, full-actor gun acting, measured
+muzzle/FOV, independent native gun HP/flash/break, stow and hammer recall.
+Approved three-way hammer banks/native pools/progression remain protected.
+55 focused native checks and112 exact Aseprite frames pass.
+Broad test_fl.js exits1; exact log: docs/qa/boss_ship_forms_1111.
+Source/rebuild: _ART_SOURCES/boss_ship_forms_1111; docs/BOSS_SHIPS_GUN_1111.md.
+No game.js edit, commit, push or installer.
+
+## November11,2026 - Center and mirrored-right hammer ground smashes
+
+Mike approved the rigid left hit and requested a directly-ahead center smash
+and mirrored right smash for all four forms. Six32-frame overhead banks now
+cover center/right/left for Chronos and Dracodia, normal and Chromium. The
+approved left plates are unchanged; right poses/physical anchors mirror exactly.
+TD1111 keeps a committed attack direction and prior grip during the initial lift.
+Center/right/left attacks preserve native counts, planted roots, warnings and HP.
+113 focused native checks and192 exact Aseprite frames pass. Full suite
+retains the missing difficultyHealthBaseline15 abort. Source/evidence:
+_ART_SOURCES/three_way_hammer_1111; docs/THREE_WAY_HAMMER_1111.md.
+No game.js/shared-sampler edit, commit, push or installer.
+
+## November11,2026 - Solid metal hammer correction / all four forms
+
+Mike rejected the curled hammer socket and rubbery downswing. New complete
+overhead lift/down/recovery drawings replace those poses for Chronos and
+Dracodia, normal and Chromium. Straight shafts, rigid head perspective and
+spiked near caps;32 frames per overhead bank,48 new complete drawings total.
+Preserves side/right/whirl banks and existing native controllers. All64 source
+frames roundtrip exactly;85 focused native checks pass with no browser errors.
+Full suite retains missing difficultyHealthBaseline15 abort. Current overhead
+sources: _ART_SOURCES/solid_hammer_1111; docs/SOLID_METAL_HAMMERS_1111.md.
+No game.js/whole_hammer/boss_animation edit, commit, push or installer.
+
+## November11,2026 - Headset-free comic and anime pilot family
+
+Nine fresh front-facing portraits preserve the actual pilots and palettes.
+Seven generated mouth poses each, stable shared-palette GIFs, seven authored
+zoom sizes and four native small sizes. All cinematic faces use the new family;
+conference/workshop/hangar/lounge and native sky/orbit/tunnel cockpit backdrops
+follow each speaker. Guided CM3 reveals, pans, strips, captions and callbacks
+remain native. CX4 metal plates retain their owner. Existing gameplay HUD
+portraits, combat and other ongoing animation work are untouched.
+Owner: assets/front_pilots_1111.js; editable sources _BUILD_SOURCE/front_pilots_1111/.
+Docs: docs/FRONT_PILOTS_AND_LOCATIONS_1111.md. No commit, push or installer.
+
+## November11,2026 - Frontal hammer strikes / both Chromium forms
+
+Both Chronos and Dracodia/Chronos now strike facing forward and twist/lift into
+side blows. Six new held banks keep32 overhead timeline frames and16 real side
+poses per form; whole-pose right mirrors, matching normal/Chromium/red palettes.
+Actual armor activation returns to the new whole hammer pose in both bosses.
+FH1111 extends depth windups/storm recovery and preloads red held art.
+85 native checks, both weapon contracts and128 exact Aseprite frames pass.
+Full suite keeps existing difficultyHealthBaseline15 failure. Earlier17-frame
+slam/side/armor sets and separate HAMMER/HAMA route recorded as source evidence;
+do not repeat generation without comparing those working references first.
+Sources _ART_SOURCES/front_hammer_1111/; docs/FRONT_HAMMER_CHROMIUM_1111.md.
+Retains prior whirlwind, released weapon and native attack/HP owners. No game.js
+edit, commit, push or installer.
+
+## November11,2026 - Reference-led heavy hammer motion for both forms
+
+Mike's two hammer GIFs now guide Chronos and Dracodia/Chronos.32-frame overhead
+cycles (31 whole drawings + planted contact hold),15 unique side poses + hold,
+full-pose right mirrors and16 actual body-turn whirlwind views per form.
+124 original drawings /160 timeline cells. Hilt grips and rigid T heads;
+whole-combo landing clearance; one-transition-only whirlwind recovery.
+Sources: _ART_SOURCES/heavy_hammer_1111/. Current eight banks override earlier
+sparse held attacks through the overhead_slam addon; native flight/catch stays.
+76 native checks, both weapon contracts and160 pixel-exact source frames pass;
+full suite keeps old missing difficultyHealthBaseline15 error. No game.js edit,
+commit/push/installer. docs/HEAVY_HAMMER_MOTION_1111.md; docs/qa/heavy_hammer_1111/.
+
+## November11,2026 — Square end-cap hammer strikes
+
+Mike rejected the angled impact poses. Six fresh complete-character attack banks
+now hit DOWN on the lower cap and LEFT/RIGHT with the outer cap; visible rigid T
+joints, forward faces, full behind-head windups, native planted1/2/4 sequence.
+Current source: _ART_SOURCES/cap_strikes_1111/. The historical overhead_slam addon
+now registers these six banks. Do not regenerate the superseded tilted contacts.
+57 native checks, both held/released contracts and96 source-frame roundtrips pass;
+old broad-suite missing helper remains. docs/SQUARE_END_CAP_STRIKES_1111.md.
+No game.js edit, installer, commit or push.
+
+## November11,2026 - Everybody Home comic story
+
+Maverick oral colors repaired in the editable source, GIF and every zoom bank.
+CX4 revision2 uses square-corner bolted METAL plates for non-strip dialogue,
+with inset name/text apertures, nine crew colors and compact radio variants.
+Native typewriter, paging and scene callbacks remain in charge.
+
+Maverick oral colors repaired in the editable source, GIF and every zoom bank.
+CX4 adds four authored non-strip dialogue skins, nine crew colors and compact
+radio variants. Native typewriter, paging and scene callbacks remain in charge.
+
+CM3 now guides each page from black through panel reveals, speaker pans,
+authored zooms and strip scrolling; dialogue starts with the revealed panel.
+
+Visible torso baselines now meet the comic borders; all nine pilots have their
+own authored16-color comic backdrops. Cache revision2; framed GIFs included.
+
+Human crew dialogue, illustrated16-bit comic pages and nine fresh talking GIFs
+replace the November10 story presentation. Intro, all mission bridges, Stage4/7/9
+arrivals, optional warp and true ending use the new late C16 owner. Actual native
+flat aircraft replace the slow generated hangar banks. Maverick remains teal.
+Native callbacks, rewards, Forge, saves and combat retain their owners.
+Sources: _BUILD_SOURCE/comic_story_1111/; docs/REVISION_NOTES.md;
+docs/BULLETS_OF_FURY_STORY_AND_SCRIPT.md. No commit, push or installer.
+
+## November11,2026 — Helicopter crashes into the dam under a white fade
+
+Mike corrected Stage1's death exit: the spinning helicopter now hits the actual
+central dam gate. H127 brings the dam into view smoothly, holds its framing and
+swaps to the destroyed plate at full authored white, then fades back to normal.
+Both palettes/difficulties use the route. Native8.6s raid/rewards remain. H126's
+default copied-helicopter path is unchanged; only its optional route/swap hooks
+were added. 37 scoped checks pass; five Aseprite white states match exactly.
+Full suite retains the existing missing difficultyHealthBaseline15 failure.
+Docs/sources: docs/DAM_IMPACT_TRANSITION_1111.md;_BUILD_SOURCE/dam_impact_1111/.
+This supersedes only H126's Stage1 edge-exit description. No push or installer.
+
+## November11,2026 — Recovered behind-head hammer swings
+
+Both bosses' downward strikes now have full over/behind-head windups and forward
+gaze. Final direct-master .63 exports match the other whole attack banks and fix
+high-pose cropping. Supersedes the interrupted .75 scratch export. 57 native
+checks, both held/released/catch contracts and32 pixel-exact source frames pass.
+No game.js/native attack-owner changes; broad suite keeps the old missing health
+helper failure. Sources: _ART_SOURCES/overhead_slam_1111/; report/evidence:
+docs/OVERHEAD_HAMMER_RECOVERY_1111.md. No installer, commit or push.
+
+## November11,2026 — Helicopter runaway death spirals
+
+H126 gives every Stage1 helicopter difficulty and Dracodia form1 accelerating
+authored yaw, moving cook-off trails, an edge blast and real-airframe shatter.
+Six actual hull variants /1776 frames /35 stage-scoped pages; eleven editable
+Aseprite documents. Native rewards/Forge drops/HP pools/remaining copies persist.
+Stage1 dam6.7s and raid8.6s remain; copy death delegates home/final reform at5.4s.
+78 scoped checks pass, including last-copy terminal defeat;33 source exports
+match. Full suite retains the existing missing difficultyHealthBaseline15 abort.
+Prior owners and game.js unchanged. Docs: docs/HELICOPTER_DEATH_SPIRALS_1111.md;
+sources/evidence: _BUILD_SOURCE/helicopter_death_1111/. No push or installer.
+
+## November11,2026 — Animated helicopter gunfire, missiles and blasts
+
+H125 upgrades Dracodia's copied helicopter with four new generated effect masters:
+gold muzzle/tracer pulses, red/chromium missiles with animated engine/smoke, and
+fuel/metal explosions for native missile interceptions and staggered pod breaks.
+2096 frames across seven tagged Aseprite banks /five PNG pages;64 authored headings.
+HC79 body, rotor, pod HP, recoil sockets, aiming, warning/counter lanes, native
+locks/shootable missiles, sonic/charge/return/death owners remain. D124 unchanged.
+55 scoped checks pass;21 source exports are pixel-exact. Successful native
+capture has no browser errors. Full suite retains missing difficultyHealthBaseline15.
+Sources/evidence: docs/DRACODIA_HELICOPTER_EFFECTS_1111.md and
+_BUILD_SOURCE/helicopter_effects_1111/. No commit, push or installer.
+
+## November11,2026 — Dracodia circular optics and purple storm volleys
+
+Mike requested full circular Phoenix/eye laser apertures, stronger Phoenix wind,
+an aggressive laser brain, large purple lightning volleys and an animated shield.
+D124 now owns those effects/attacks through two appended late scripts. Source-fit
+housing collars cover beam corners; generated fire vortex and purple shield use
+fixed authored banks. Brain uses2/3-pulse lasers and2/3 committed lightning waves
+with adjacent moving safe lanes. Native HP, parts, shield budgets, flashes, pause,
+clear, form return and copy defeat remain. 58 scoped checks pass, no browser
+errors;18 editable-source roundtrips match. Full suite retains the old missing
+difficultyHealthBaseline15 abort. Game.js and prior form owners are unchanged.
+Sources/evidence: docs/DRACODIA_ENERGY_1110.md and _BUILD_SOURCE/dracodia_energy_1110/.
+No commit, push or installer. Preserve the latest whole-hammer banks below.
+
+## November10,2026 — Complete generated held-hammer attacks
+
+Mike rejected the assembled body/held-weapon result. Six new complete GPT attack
+banks and two matching empty-hand throw banks now own the hammer correction:
+56 unique source poses,128 timeline cells,40 lossless material sheets. Both hands,
+body and held hammer are one drawing; only released flight separates the weapon.
+Canonical blue/purple spin art is retained. New whole alpha/release/catch match;
+native1/2/4 contacts, planted follow-ups, HP/audio/hit flashes/depth/rewards remain.
+38 native checks and both held/released/catch contracts pass; eight single-layer
+Aseprite roundtrips are pixel-exact. Full suite still exits1 on the existing
+missing difficultyHealthBaseline15 helper; game.js hash is unchanged.
+Sources/runtime/QA: docs/WHOLE_HAMMER_ATTACKS_1110.md; _shots/whole_hammer_1110/.
+This supersedes the held-attack body/prop builders in rigid_hammer_1110 and
+hammer_face_1110. Do not rerun them over the new banks. Preserve separate cannon,
+ball, rage and native cinematic/progression owners. Source only; no push/installer.
+
+## November 10, 2026 — Hammer end-face contact correction
+
+Mike reaffirmed the exact blue and purple spiked masters. All80 attack poses now
+lead with an end cap on down/side strikes; head/handle remain rigid. Actual cap
+contacts own retinas/landing; separate headCenter preserves rage throw release.
+Scoped Dracodia landing clamp correction restores center-target contact. All
+32 blue /64 purple detached spin pages are unchanged.38 native +6 geometry checks
+pass; full suite retains the old missing difficultyHealthBaseline15 failure.
+Sources/review: docs/HAMMER_STRIKING_FACES_1110.md;_shots/hammer_face_1110/.
+Source only; no installer, commit or push. Supersedes prior1110 swing angles.
+
+## November 10, 2026 - Authored comic cinematics
+
+New 96s intro, mission bridges and 72s true ending use 132 authored frames,
+actual pilot/aircraft references, all nine gear/canopy banks and native flight
+views. Satellite correction: new relay overtaken by symbiote code; no creature.
+Comic continuation: six authored divider styles, 54 new space-shot frames in
+nine pilot palettes, native Chronos impact/breakup and coherent Stage5-to-6.
+Owners: cinema_comic_art_1110.js/cinema_comic_1110.js. 144 scene + 8 live
+Chronos + 50 campaign checks pass. Details: docs/COMIC_TRANSITIONS_1110.md.
+Dedicated Stage3-to-4 and Stage6-to-7 continuation: 36 new acting, instrument,
+airbase and river frames; actual arrivals at Stage4 and Stage7, all nine native
+aircraft and co-op, isolated launch evidence and subsurface scan. Preserve
+Stage4 _bridgeArrival4 and native Stage7 _sewerBriefed17 launch ownership;
+Stage6 still returns to its map and earned StageX offer. New late owner:
+cinema_bridges_1110.js. See docs/BRIDGES_3_4_6_7_1110.md and durable
+pack verification/bridges/ for rendering and actual entry-owner checks.
+Stage5-to-9 warp drive: nine dedicated six-frame ship reels, drive console
+and emergence banks (66 new generated frames), nine exact native arrival
+kits and Stage9 approach. Original eight-gate trigger, protected white/map
+unlock, bonus-only selection, Stage5 bookmark and rift defeat return retain
+their native owners. Late owner cinema_warp_1110.js; details and evidence:
+docs/WARP_DRIVE_5_9_1110.md and durable verification/warp/.
+HQ acting continuation: full nine-person conference after Stage3, private
+Cole/Decker LevelVI/VII bench test and shoulder hug, recovered Chronos
+rotor inspection and diagnostic reader after Stage5, plus Juggernaut
+heavy-metal acting. Seven new banks contain40 authored frames; all seven
+editable timelines reopen unchanged. Prototypes grant no field inventory;
+all nine earned-upgrade explanations remain exact. Native decoded laser
+cues, input and once-only Stage3/5 continuation verified. New late owner
+cinema_hq_1110.js; see docs/HQ_TEAM_AND_LAB_1110.md and verification/hq/.
+97 HQ + 50 campaign + 20 review checks pass.
+Maverick correction: Mike clarified TEAL, matching his ship/name tint.
+Offline Aseprite material swaps cover his native clothing/portraits,
+personal boxes, headset acting, preflight and conference. Explicit regions
+preserve every other actor, alpha and atlas geometry. No runtime effects.
+Full chaptered story movie is in the durable pack, with native dialogue
+and sound; alternate route outcomes are labelled after the main ending.
+Details: docs/MAVERICK_TEAL_AND_STORY_MOVIE_1110.md.
+Late owner: cinema_direction_1110.js. Preserve native rewards, saves,
+co-op roles, both Stage6 routes and StageX offers. 86 rendering + 50 campaign
+checks pass; editable Aseprite sources verified pixel-exact. Current connected
+landing times remain PR118 10.4/11.7s. Full suite retains the pre-existing
+missing difficultyHealthBaseline15 failure. Core game.js unchanged.
+Source build only; no installer, commit or push.
+Details and durable art/rebuild/review location: docs/CINEMA_DIRECTION_1110.md.
+
+## November 10, 2026 — Rigid hammer identity and authored rage/palm poses
+
+Fixed Mike's hammer-head placement correction using one immutable head/handle
+assembly per boss. 80 whole poses; 32 rigid blue detached headings. New authored
+charge/palm banks keep approved heads, actual hand sockets, purple copied-form
+lasers, native HP/foreground damage and planted follow-ups. 38 hammer + 9 rage
+checks pass. Typical frame cost and recurring canvas work improved; cold stalls
+remain documented. Full suite still stops on missing difficultyHealthBaseline15.
+Core game.js unchanged. Source only; no installer, commit or push.
+Details/evidence: docs/RAGE_PALM_RIGID_HAMMER_1110.md; docs/qa/*1110*.json.
+
 ## November9,2026 — Quick water mechanics tutorial
 
 Mike removed the tutorial boss and BOB. TS109 replaces the active itinerary with
@@ -5959,3 +6328,11 @@ Mike requested genuinely new icon artwork in the original hexagonal frame style.
 ## November4 — actual Stage X power-box turn
 
 Mike corrected the light-only box loop. stagex_pickups_1104.js now selects power_turn_64.png:16 distinct authored yaw views,16 corresponding white-hit cells,80ms/frame, fixed64cell/pivot32. Speed capsules unchanged. No runtime rotation/scaling and no core/HP/reward edits. Two rear-left view headings corrected offline for a continuous turn.48 native checks+36 asset checks pass; native6.5s recording observes every yaw frame without page/draw errors. Current source/build metadata: _BUILD_SOURCE/stagex_pickups_1104. See docs/STAGEX_BOX_ROTATION_1104.md; GIF/native clip/new ZIP in _shots/stagex_box_rotation_1104. No commit/push.
+
+## November 12 — Stage 8: No Safe Sky
+
+The true Stage 8 campaign victory now plays the new 93-shot finale through the late, scoped `stage8_finale_1112.js` owner. The native boss death, win/unlocks, score, saves and all combat remain authoritative. The enemy references are Mike's supplied BOF II cover and seven-enemy sheet; all nine returning aircraft were exported from the native renderer. Includes Holt, the mystery rescue, mecha-boat escape, HQ loss, planetary invasion and skeletal code Dracodia. Details and source/verification locations: `docs/STAGE8_FINALE_1112.md`.
+
+## November 13 — Stage 8 cinematic repair
+
+Replaced the finale presentation with the canonical RD71 infector/data bomb and RD94 mechanical gates. New GPT action sheets, brown Lizzie front portraits, all speaker avatars, measured metal dialogue windows, player-paced dialogue and cold-load continuity. The same 93-shot script and native victory/death/score/unlock owners remain. Art now lives under finale_1113; the late stage8_finale_1112 entry points are revision 3. See docs/STAGE8_FINALE_REPAIR_1113.md.

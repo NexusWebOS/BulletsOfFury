@@ -1,0 +1,2215 @@
+{
+  "records": [
+    {
+      "unit": "chronos",
+      "video": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_shots\\rage_palm_1110\\chronos-rage.mp4",
+      "seconds": 42716.7,
+      "chapters": [
+        {
+          "name": "rage charge",
+          "at": 0.0
+        },
+        {
+          "name": "background wave charge",
+          "at": 13.797
+        },
+        {
+          "name": "wave release",
+          "at": 17.203
+        },
+        {
+          "name": "foreground palm volleys",
+          "at": 22.469
+        },
+        {
+          "name": "background palm volleys",
+          "at": 29.875
+        }
+      ],
+      "audio": {
+        "peak": 0.7180837392807007,
+        "frames": 1682,
+        "starts": 2,
+        "sfxStarts": 109,
+        "errors": [],
+        "events": [
+          {
+            "type": "charge-strike",
+            "time": 2.749999999999995,
+            "color": "red",
+            "index": 1
+          },
+          {
+            "type": "charge-strike",
+            "time": 2.933333333333328,
+            "color": "red",
+            "index": 2
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.099999999999994,
+            "color": "red",
+            "index": 3
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.2833333333333266,
+            "color": "red",
+            "index": 4
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.4499999999999926,
+            "color": "red",
+            "index": 5
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.6166666666666587,
+            "color": "red",
+            "index": 6
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.7833333333333248,
+            "color": "red",
+            "index": 7
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.9333333333333242,
+            "color": "red",
+            "index": 8
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.083333333333324,
+            "color": "red",
+            "index": 9
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.233333333333324,
+            "color": "red",
+            "index": 10
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.383333333333323,
+            "color": "red",
+            "index": 11
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.516666666666656,
+            "color": "red",
+            "index": 12
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.649999999999989,
+            "color": "red",
+            "index": 13
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.766666666666655,
+            "color": "red",
+            "index": 14
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.883333333333321,
+            "color": "red",
+            "index": 15
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.999999999999988,
+            "color": "red",
+            "index": 16
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.116666666666654,
+            "color": "red",
+            "index": 17
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.2166666666666535,
+            "color": "red",
+            "index": 18
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.316666666666653,
+            "color": "red",
+            "index": 19
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.399999999999986,
+            "color": "red",
+            "index": 20
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.483333333333319,
+            "color": "red",
+            "index": 21
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.549999999999986,
+            "color": "red",
+            "index": 22
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.616666666666652,
+            "color": "red",
+            "index": 23
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.666666666666652,
+            "color": "red",
+            "index": 24
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.716666666666652,
+            "color": "red",
+            "index": 25
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.749999999999985,
+            "color": "red",
+            "index": 26
+          },
+          {
+            "type": "charge-release",
+            "time": 5.7666666666666515,
+            "color": "red"
+          }
+        ],
+        "c32": [
+          {
+            "type": "move",
+            "time": 7.216666666666646,
+            "depth": "foreground",
+            "from": {
+              "x": 340,
+              "y": 260,
+              "scale": 1
+            },
+            "to": {
+              "x": 340,
+              "y": 190,
+              "scale": 1.08
+            }
+          },
+          {
+            "type": "move",
+            "time": 18.800000000000214,
+            "depth": "foreground",
+            "from": {
+              "x": 340,
+              "y": 190,
+              "scale": 1
+            },
+            "to": {
+              "x": 340,
+              "y": 190,
+              "scale": 1.08
+            }
+          },
+          {
+            "type": "warning",
+            "time": 19.60000000000017,
+            "depth": "foreground",
+            "group": 0,
+            "target": {
+              "x": 340,
+              "y": 402
+            }
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.45000000000012,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 0,
+            "hand": 0,
+            "pose": 0,
+            "x": 415,
+            "y": 148,
+            "angle": 1.982793630634339
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.583333333333446,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 1,
+            "hand": 1,
+            "pose": 8,
+            "x": 243,
+            "y": 148,
+            "angle": 1.205999039862357
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.71666666666677,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 2,
+            "hand": 0,
+            "pose": 9,
+            "x": 420,
+            "y": 171,
+            "angle": 1.7590178320996674
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.71666666666677,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 2,
+            "hand": 1,
+            "pose": 9,
+            "x": 245,
+            "y": 171,
+            "angle": 1.0549197011320663
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.850000000000097,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 3,
+            "hand": 1,
+            "pose": 8,
+            "x": 243,
+            "y": 148,
+            "angle": 1.088430155502416
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.983333333333423,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 4,
+            "hand": 0,
+            "pose": 0,
+            "x": 415,
+            "y": 148,
+            "angle": 1.8579131846869745
+          },
+          {
+            "type": "palm-shot",
+            "time": 21.100000000000083,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 5,
+            "hand": 0,
+            "pose": 9,
+            "x": 420,
+            "y": 171,
+            "angle": 2.036174037875718
+          },
+          {
+            "type": "palm-shot",
+            "time": 21.100000000000083,
+            "depth": "foreground",
+            "group": 0,
+            "beat": 5,
+            "hand": 1,
+            "pose": 9,
+            "x": 245,
+            "y": 171,
+            "angle": 1.3207312375435416
+          },
+          {
+            "type": "warning",
+            "time": 21.416666666666732,
+            "depth": "foreground",
+            "group": 1,
+            "target": {
+              "x": 340,
+              "y": 402
+            }
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.000000000000032,
+            "depth": "foreground",
+            "group": 1,
+            "beat": 0,
+            "hand": 0,
+            "pose": 0,
+            "x": 415,
+            "y": 148,
+            "angle": 1.982793630634339
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.133333333333358,
+            "depth": "foreground",
+            "group": 1,
+            "beat": 1,
+            "hand": 1,
+            "pose": 8,
+            "x": 243,
+            "y": 148,
+            "angle": 1.205999039862357
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.266666666666683,
+            "depth": "foreground",
+            "group": 1,
+            "beat": 2,
+            "hand": 0,
+            "pose": 9,
+            "x": 420,
+            "y": 171,
+            "angle": 1.7590178320996674
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.266666666666683,
+            "depth": "foreground",
+            "group": 1,
+            "beat": 2,
+            "hand": 1,
+            "pose": 9,
+            "x": 245,
+            "y": 171,
+            "angle": 1.0549197011320663
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.40000000000001,
+            "depth": "foreground",
+            "group": 1,
+            "beat": 3,
+            "hand": 1,
+            "pose": 8,
+            "x": 243,
+            "y": 148,
+            "angle": 1.088430155502416
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.533333333333335,
+            "depth": "foreground",
+            "group": 1,
+            "beat": 4,
+            "hand": 0,
+            "pose": 0,
+            "x": 415,
+            "y": 148,
+            "angle": 1.8579131846869745
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.649999999999995,
+            "depth": "foreground",
+            "group": 1,
+            "beat": 5,
+            "hand": 0,
+            "pose": 9,
+            "x": 420,
+            "y": 171,
+            "angle": 2.036174037875718
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.649999999999995,
+            "depth": "foreground",
+            "group": 1,
+            "beat": 5,
+            "hand": 1,
+            "pose": 9,
+            "x": 245,
+            "y": 171,
+            "angle": 1.3207312375435416
+          },
+          {
+            "type": "warning",
+            "time": 22.966666666666644,
+            "depth": "foreground",
+            "group": 2,
+            "target": {
+              "x": 340,
+              "y": 402
+            }
+          },
+          {
+            "type": "palm-shot",
+            "time": 23.549999999999944,
+            "depth": "foreground",
+            "group": 2,
+            "beat": 0,
+            "hand": 0,
+            "pose": 0,
+            "x": 415,
+            "y": 148,
+            "angle": 1.982793630634339
+          },
+          {
+            "type": "palm-shot",
+            "time": 23.68333333333327,
+            "depth": "foreground",
+            "group": 2,
+            "beat": 1,
+            "hand": 1,
+            "pose": 8,
+            "x": 243,
+            "y": 148,
+            "angle": 1.205999039862357
+          },
+          {
+            "type": "palm-shot",
+            "time": 23.816666666666595,
+            "depth": "foreground",
+            "group": 2,
+            "beat": 2,
+            "hand": 0,
+            "pose": 9,
+            "x": 420,
+            "y": 171,
+            "angle": 1.7590178320996674
+          },
+          {
+            "type": "palm-shot",
+            "time": 23.816666666666595,
+            "depth": "foreground",
+            "group": 2,
+            "beat": 2,
+            "hand": 1,
+            "pose": 9,
+            "x": 245,
+            "y": 171,
+            "angle": 1.0549197011320663
+          },
+          {
+            "type": "palm-shot",
+            "time": 23.94999999999992,
+            "depth": "foreground",
+            "group": 2,
+            "beat": 3,
+            "hand": 1,
+            "pose": 8,
+            "x": 243,
+            "y": 148,
+            "angle": 1.088430155502416
+          },
+          {
+            "type": "palm-shot",
+            "time": 24.083333333333247,
+            "depth": "foreground",
+            "group": 2,
+            "beat": 4,
+            "hand": 0,
+            "pose": 0,
+            "x": 415,
+            "y": 148,
+            "angle": 1.8579131846869745
+          },
+          {
+            "type": "palm-shot",
+            "time": 24.199999999999907,
+            "depth": "foreground",
+            "group": 2,
+            "beat": 5,
+            "hand": 0,
+            "pose": 9,
+            "x": 420,
+            "y": 171,
+            "angle": 2.036174037875718
+          },
+          {
+            "type": "palm-shot",
+            "time": 24.199999999999907,
+            "depth": "foreground",
+            "group": 2,
+            "beat": 5,
+            "hand": 1,
+            "pose": 9,
+            "x": 245,
+            "y": 171,
+            "angle": 1.3207312375435416
+          },
+          {
+            "type": "move",
+            "time": 25.066666666666524,
+            "depth": "background",
+            "from": {
+              "x": 340,
+              "y": 190,
+              "scale": 1.08
+            },
+            "to": {
+              "x": 450.4,
+              "y": 135,
+              "scale": 0.42
+            }
+          },
+          {
+            "type": "warning",
+            "time": 26.633333333333102,
+            "depth": "background",
+            "group": 0,
+            "target": {
+              "x": 340,
+              "y": 402
+            }
+          },
+          {
+            "type": "palm-shot",
+            "time": 27.483333333333054,
+            "depth": "background",
+            "group": 0,
+            "beat": 0,
+            "hand": 0,
+            "pose": 0,
+            "x": 482.4,
+            "y": 117,
+            "angle": 2.130089210753604
+          },
+          {
+            "type": "palm-shot",
+            "time": 27.61666666666638,
+            "depth": "background",
+            "group": 0,
+            "beat": 1,
+            "hand": 1,
+            "pose": 8,
+            "x": 409.4,
+            "y": 117,
+            "angle": 1.8096563297161248
+          },
+          {
+            "type": "palm-shot",
+            "time": 27.749999999999705,
+            "depth": "background",
+            "group": 0,
+            "beat": 2,
+            "hand": 0,
+            "pose": 9,
+            "x": 484.4,
+            "y": 127,
+            "angle": 1.946276989215886
+          },
+          {
+            "type": "palm-shot",
+            "time": 27.749999999999705,
+            "depth": "background",
+            "group": 0,
+            "beat": 2,
+            "hand": 1,
+            "pose": 9,
+            "x": 410.4,
+            "y": 127,
+            "angle": 1.6952408308294247
+          },
+          {
+            "type": "palm-shot",
+            "time": 27.88333333333303,
+            "depth": "background",
+            "group": 0,
+            "beat": 3,
+            "hand": 1,
+            "pose": 8,
+            "x": 409.4,
+            "y": 117,
+            "angle": 1.6874571704185461
+          },
+          {
+            "type": "palm-shot",
+            "time": 28.016666666666357,
+            "depth": "background",
+            "group": 0,
+            "beat": 4,
+            "hand": 0,
+            "pose": 0,
+            "x": 482.4,
+            "y": 117,
+            "angle": 2.0341631946464247
+          },
+          {
+            "type": "palm-shot",
+            "time": 28.133333333333017,
+            "depth": "background",
+            "group": 0,
+            "beat": 5,
+            "hand": 0,
+            "pose": 9,
+            "x": 484.4,
+            "y": 127,
+            "angle": 2.151377916295839
+          },
+          {
+            "type": "palm-shot",
+            "time": 28.133333333333017,
+            "depth": "background",
+            "group": 0,
+            "beat": 5,
+            "hand": 1,
+            "pose": 9,
+            "x": 410.4,
+            "y": 127,
+            "angle": 1.9399667491458479
+          },
+          {
+            "type": "warning",
+            "time": 28.449999999999665,
+            "depth": "background",
+            "group": 1,
+            "target": {
+              "x": 340,
+              "y": 402
+            }
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.033333333332966,
+            "depth": "background",
+            "group": 1,
+            "beat": 0,
+            "hand": 0,
+            "pose": 0,
+            "x": 482.4,
+            "y": 117,
+            "angle": 2.130089210753604
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.16666666666629,
+            "depth": "background",
+            "group": 1,
+            "beat": 1,
+            "hand": 1,
+            "pose": 8,
+            "x": 409.4,
+            "y": 117,
+            "angle": 1.8096563297161248
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.299999999999617,
+            "depth": "background",
+            "group": 1,
+            "beat": 2,
+            "hand": 0,
+            "pose": 9,
+            "x": 484.4,
+            "y": 127,
+            "angle": 1.946276989215886
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.299999999999617,
+            "depth": "background",
+            "group": 1,
+            "beat": 2,
+            "hand": 1,
+            "pose": 9,
+            "x": 410.4,
+            "y": 127,
+            "angle": 1.6952408308294247
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.433333333332943,
+            "depth": "background",
+            "group": 1,
+            "beat": 3,
+            "hand": 1,
+            "pose": 8,
+            "x": 409.4,
+            "y": 117,
+            "angle": 1.6874571704185461
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.56666666666627,
+            "depth": "background",
+            "group": 1,
+            "beat": 4,
+            "hand": 0,
+            "pose": 0,
+            "x": 482.4,
+            "y": 117,
+            "angle": 2.0341631946464247
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.68333333333293,
+            "depth": "background",
+            "group": 1,
+            "beat": 5,
+            "hand": 0,
+            "pose": 9,
+            "x": 484.4,
+            "y": 127,
+            "angle": 2.151377916295839
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.68333333333293,
+            "depth": "background",
+            "group": 1,
+            "beat": 5,
+            "hand": 1,
+            "pose": 9,
+            "x": 410.4,
+            "y": 127,
+            "angle": 1.9399667491458479
+          },
+          {
+            "type": "warning",
+            "time": 29.999999999999577,
+            "depth": "background",
+            "group": 2,
+            "target": {
+              "x": 340,
+              "y": 402
+            }
+          },
+          {
+            "type": "palm-shot",
+            "time": 30.583333333332877,
+            "depth": "background",
+            "group": 2,
+            "beat": 0,
+            "hand": 0,
+            "pose": 0,
+            "x": 482.4,
+            "y": 117,
+            "angle": 2.130089210753604
+          },
+          {
+            "type": "palm-shot",
+            "time": 30.716666666666203,
+            "depth": "background",
+            "group": 2,
+            "beat": 1,
+            "hand": 1,
+            "pose": 8,
+            "x": 409.4,
+            "y": 117,
+            "angle": 1.8096563297161248
+          },
+          {
+            "type": "palm-shot",
+            "time": 30.84999999999953,
+            "depth": "background",
+            "group": 2,
+            "beat": 2,
+            "hand": 0,
+            "pose": 9,
+            "x": 484.4,
+            "y": 127,
+            "angle": 1.946276989215886
+          },
+          {
+            "type": "palm-shot",
+            "time": 30.84999999999953,
+            "depth": "background",
+            "group": 2,
+            "beat": 2,
+            "hand": 1,
+            "pose": 9,
+            "x": 410.4,
+            "y": 127,
+            "angle": 1.6952408308294247
+          },
+          {
+            "type": "palm-shot",
+            "time": 30.983333333332855,
+            "depth": "background",
+            "group": 2,
+            "beat": 3,
+            "hand": 1,
+            "pose": 8,
+            "x": 409.4,
+            "y": 117,
+            "angle": 1.6874571704185461
+          },
+          {
+            "type": "palm-shot",
+            "time": 31.11666666666618,
+            "depth": "background",
+            "group": 2,
+            "beat": 4,
+            "hand": 0,
+            "pose": 0,
+            "x": 482.4,
+            "y": 117,
+            "angle": 2.0341631946464247
+          },
+          {
+            "type": "palm-shot",
+            "time": 31.23333333333284,
+            "depth": "background",
+            "group": 2,
+            "beat": 5,
+            "hand": 0,
+            "pose": 9,
+            "x": 484.4,
+            "y": 127,
+            "angle": 2.151377916295839
+          },
+          {
+            "type": "palm-shot",
+            "time": 31.23333333333284,
+            "depth": "background",
+            "group": 2,
+            "beat": 5,
+            "hand": 1,
+            "pose": 9,
+            "x": 410.4,
+            "y": 127,
+            "angle": 1.9399667491458479
+          }
+        ],
+        "energy": [
+          {
+            "role": "rage_charge",
+            "cycle": 0,
+            "time": 2.749999999999995,
+            "phase": "hf22_rage_charge",
+            "gain": 1,
+            "accepted": true
+          },
+          {
+            "role": "rage_release",
+            "cycle": 0,
+            "time": 5.7666666666666515,
+            "phase": "hf22_rage_charge",
+            "gain": 0.88,
+            "accepted": true
+          },
+          {
+            "role": "wave_charge",
+            "cycle": 0,
+            "time": 12.10000000000018,
+            "phase": "kame_charge",
+            "gain": 1,
+            "accepted": true
+          },
+          {
+            "role": "wave_full",
+            "cycle": 0,
+            "time": 15.066666666666995,
+            "phase": "kame_fire",
+            "gain": 1,
+            "accepted": true
+          }
+        ],
+        "lightning": [
+          {
+            "family": "rage",
+            "index": 1,
+            "time": 2.749999999999995,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 2,
+            "time": 2.933333333333328,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 3,
+            "time": 3.099999999999994,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 4,
+            "time": 3.2833333333333266,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 5,
+            "time": 3.4499999999999926,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 6,
+            "time": 3.6166666666666587,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 7,
+            "time": 3.7833333333333248,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 8,
+            "time": 3.9333333333333242,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 9,
+            "time": 4.083333333333324,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 10,
+            "time": 4.233333333333324,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 11,
+            "time": 4.383333333333323,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 12,
+            "time": 4.516666666666656,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 13,
+            "time": 4.649999999999989,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 14,
+            "time": 4.766666666666655,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 15,
+            "time": 4.883333333333321,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 16,
+            "time": 4.999999999999988,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 17,
+            "time": 5.116666666666654,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 18,
+            "time": 5.2166666666666535,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 19,
+            "time": 5.316666666666653,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 20,
+            "time": 5.399999999999986,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 21,
+            "time": 5.483333333333319,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 22,
+            "time": 5.549999999999986,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 23,
+            "time": 5.616666666666652,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 24,
+            "time": 5.666666666666652,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 25,
+            "time": 5.716666666666652,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage",
+            "index": 26,
+            "time": 5.749999999999985,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rage-final",
+            "index": 0,
+            "time": 5.7666666666666515,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 0,
+            "time": 12.083333333333513,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 1,
+            "time": 12.466666666666866,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 2,
+            "time": 12.850000000000218,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 3,
+            "time": 13.250000000000238,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 4,
+            "time": 13.616666666666923,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 5,
+            "time": 14.016666666666943,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 6,
+            "time": 14.400000000000295,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 7,
+            "time": 14.76666666666698,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 8,
+            "time": 15.183333333333668,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 9,
+            "time": 15.533333333333685,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 10,
+            "time": 15.916666666667037,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          },
+          {
+            "family": "rf1110-wave-0",
+            "index": 11,
+            "time": 16.300000000000356,
+            "gain": 0.94,
+            "active": 0,
+            "accepted": true
+          }
+        ],
+        "dracAudio": [],
+        "phase": {
+          "unit": "chronos",
+          "phase": "volley_recover",
+          "frame": 0,
+          "palms": [
+            {
+              "x": 481.91451158813766,
+              "y": 114.92042695968996
+            },
+            {
+              "x": 410.91451158813766,
+              "y": 133.92042695968996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "unit": "dracodia",
+      "video": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_shots\\rage_palm_1110\\dracodia-rage.mp4",
+      "seconds": 42840.12,
+      "chapters": [
+        {
+          "name": "rage charge",
+          "at": 0.0
+        },
+        {
+          "name": "background wave charge",
+          "at": 13.5
+        },
+        {
+          "name": "wave release",
+          "at": 16.563
+        },
+        {
+          "name": "foreground palm volleys",
+          "at": 21.203
+        },
+        {
+          "name": "background palm volleys",
+          "at": 28.266
+        }
+      ],
+      "audio": {
+        "peak": 0.7186481356620789,
+        "frames": 1735,
+        "starts": 1,
+        "sfxStarts": 108,
+        "errors": [],
+        "events": [
+          {
+            "type": "charge-strike",
+            "time": 2.749999999999995,
+            "color": "purple",
+            "index": 1
+          },
+          {
+            "type": "charge-strike",
+            "time": 2.933333333333328,
+            "color": "purple",
+            "index": 2
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.099999999999994,
+            "color": "purple",
+            "index": 3
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.2833333333333266,
+            "color": "purple",
+            "index": 4
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.4499999999999926,
+            "color": "purple",
+            "index": 5
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.6166666666666587,
+            "color": "purple",
+            "index": 6
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.7833333333333248,
+            "color": "purple",
+            "index": 7
+          },
+          {
+            "type": "charge-strike",
+            "time": 3.9333333333333242,
+            "color": "purple",
+            "index": 8
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.083333333333324,
+            "color": "purple",
+            "index": 9
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.233333333333324,
+            "color": "purple",
+            "index": 10
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.383333333333323,
+            "color": "purple",
+            "index": 11
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.516666666666656,
+            "color": "purple",
+            "index": 12
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.649999999999989,
+            "color": "purple",
+            "index": 13
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.766666666666655,
+            "color": "purple",
+            "index": 14
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.883333333333321,
+            "color": "purple",
+            "index": 15
+          },
+          {
+            "type": "charge-strike",
+            "time": 4.999999999999988,
+            "color": "purple",
+            "index": 16
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.116666666666654,
+            "color": "purple",
+            "index": 17
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.2166666666666535,
+            "color": "purple",
+            "index": 18
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.316666666666653,
+            "color": "purple",
+            "index": 19
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.399999999999986,
+            "color": "purple",
+            "index": 20
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.483333333333319,
+            "color": "purple",
+            "index": 21
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.549999999999986,
+            "color": "purple",
+            "index": 22
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.616666666666652,
+            "color": "purple",
+            "index": 23
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.666666666666652,
+            "color": "purple",
+            "index": 24
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.716666666666652,
+            "color": "purple",
+            "index": 25
+          },
+          {
+            "type": "charge-strike",
+            "time": 5.749999999999985,
+            "color": "purple",
+            "index": 26
+          },
+          {
+            "type": "charge-release",
+            "time": 5.7666666666666515,
+            "color": "purple"
+          },
+          {
+            "type": "phase",
+            "time": 7.216666666666646,
+            "unit": "drac",
+            "phase": "kame_up",
+            "scale": 1
+          },
+          {
+            "type": "phase",
+            "time": 8.78333333333335,
+            "unit": "drac",
+            "phase": "kame_strafe",
+            "scale": 0.42
+          },
+          {
+            "type": "phase",
+            "time": 12.083333333333513,
+            "unit": "drac",
+            "phase": "kame_charge",
+            "scale": 0.42
+          },
+          {
+            "type": "phase",
+            "time": 14.70000000000031,
+            "unit": "drac",
+            "phase": "kame_thrust",
+            "scale": 0.42
+          },
+          {
+            "type": "phase",
+            "time": 15.066666666666995,
+            "unit": "drac",
+            "phase": "kame_fire",
+            "scale": 0.42
+          },
+          {
+            "type": "phase",
+            "time": 16.683333333333668,
+            "unit": "drac",
+            "phase": "kame_recover",
+            "scale": 0.42
+          },
+          {
+            "type": "phase",
+            "time": 17.233333333333636,
+            "unit": "drac",
+            "phase": "kame_return",
+            "scale": 0.42
+          },
+          {
+            "type": "phase",
+            "time": 18.800000000000214,
+            "unit": "drac",
+            "phase": "volley_move",
+            "scale": 1
+          },
+          {
+            "type": "phase",
+            "time": 19.60000000000017,
+            "unit": "drac",
+            "phase": "volley_warn",
+            "scale": 1
+          },
+          {
+            "type": "phase",
+            "time": 20.45000000000012,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "scale": 1
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.45000000000012,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 0,
+            "hand": 0,
+            "x": 397,
+            "y": 140,
+            "pose": 3,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.583333333333446,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 1,
+            "hand": 1,
+            "x": 288,
+            "y": 143,
+            "pose": 11,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.71666666666677,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 0,
+            "x": 400,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.71666666666677,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 1,
+            "x": 269,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.850000000000097,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 3,
+            "hand": 1,
+            "x": 288,
+            "y": 143,
+            "pose": 11,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 20.983333333333423,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 4,
+            "hand": 0,
+            "x": 397,
+            "y": 140,
+            "pose": 3,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 21.100000000000083,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 0,
+            "x": 400,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 21.100000000000083,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 1,
+            "x": 269,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "phase",
+            "time": 21.416666666666732,
+            "unit": "drac",
+            "phase": "volley_warn",
+            "scale": 1
+          },
+          {
+            "type": "phase",
+            "time": 22.000000000000032,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "scale": 1
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.000000000000032,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 0,
+            "hand": 0,
+            "x": 397,
+            "y": 140,
+            "pose": 3,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.133333333333358,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 1,
+            "hand": 1,
+            "x": 288,
+            "y": 143,
+            "pose": 11,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.266666666666683,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 0,
+            "x": 400,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.266666666666683,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 1,
+            "x": 269,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.40000000000001,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 3,
+            "hand": 1,
+            "x": 288,
+            "y": 143,
+            "pose": 11,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.533333333333335,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 4,
+            "hand": 0,
+            "x": 397,
+            "y": 140,
+            "pose": 3,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.649999999999995,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 0,
+            "x": 400,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 22.649999999999995,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 1,
+            "x": 269,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "phase",
+            "time": 22.966666666666644,
+            "unit": "drac",
+            "phase": "volley_warn",
+            "scale": 1
+          },
+          {
+            "type": "phase",
+            "time": 23.549999999999944,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "scale": 1
+          },
+          {
+            "type": "palm-shot",
+            "time": 23.549999999999944,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 0,
+            "hand": 0,
+            "x": 397,
+            "y": 140,
+            "pose": 3,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 23.68333333333327,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 1,
+            "hand": 1,
+            "x": 288,
+            "y": 143,
+            "pose": 11,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 23.816666666666595,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 0,
+            "x": 400,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 23.816666666666595,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 1,
+            "x": 269,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 23.94999999999992,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 3,
+            "hand": 1,
+            "x": 288,
+            "y": 143,
+            "pose": 11,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 24.083333333333247,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 4,
+            "hand": 0,
+            "x": 397,
+            "y": 140,
+            "pose": 3,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 24.199999999999907,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 0,
+            "x": 400,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "palm-shot",
+            "time": 24.199999999999907,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 1,
+            "x": 269,
+            "y": 185,
+            "pose": 19,
+            "depth": "foreground"
+          },
+          {
+            "type": "phase",
+            "time": 24.516666666666556,
+            "unit": "drac",
+            "phase": "volley_recover",
+            "scale": 1
+          },
+          {
+            "type": "phase",
+            "time": 25.066666666666524,
+            "unit": "drac",
+            "phase": "volley_move",
+            "scale": 1
+          },
+          {
+            "type": "phase",
+            "time": 26.633333333333102,
+            "unit": "drac",
+            "phase": "volley_warn",
+            "scale": 0.42
+          },
+          {
+            "type": "phase",
+            "time": 27.483333333333054,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "scale": 0.42
+          },
+          {
+            "type": "palm-shot",
+            "time": 27.483333333333054,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 0,
+            "hand": 0,
+            "x": 474.4,
+            "y": 114,
+            "pose": 3,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 27.61666666666638,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 1,
+            "hand": 1,
+            "x": 428.4,
+            "y": 115,
+            "pose": 11,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 27.749999999999705,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 0,
+            "x": 475.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 27.749999999999705,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 1,
+            "x": 420.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 27.88333333333303,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 3,
+            "hand": 1,
+            "x": 428.4,
+            "y": 115,
+            "pose": 11,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 28.016666666666357,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 4,
+            "hand": 0,
+            "x": 474.4,
+            "y": 114,
+            "pose": 3,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 28.133333333333017,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 0,
+            "x": 475.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 28.133333333333017,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 1,
+            "x": 420.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "phase",
+            "time": 28.449999999999665,
+            "unit": "drac",
+            "phase": "volley_warn",
+            "scale": 0.42
+          },
+          {
+            "type": "phase",
+            "time": 29.033333333332966,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "scale": 0.42
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.033333333332966,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 0,
+            "hand": 0,
+            "x": 474.4,
+            "y": 114,
+            "pose": 3,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.16666666666629,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 1,
+            "hand": 1,
+            "x": 428.4,
+            "y": 115,
+            "pose": 11,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.299999999999617,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 0,
+            "x": 475.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.299999999999617,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 1,
+            "x": 420.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.433333333332943,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 3,
+            "hand": 1,
+            "x": 428.4,
+            "y": 115,
+            "pose": 11,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.56666666666627,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 4,
+            "hand": 0,
+            "x": 474.4,
+            "y": 114,
+            "pose": 3,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.68333333333293,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 0,
+            "x": 475.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 29.68333333333293,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 1,
+            "x": 420.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "phase",
+            "time": 29.999999999999577,
+            "unit": "drac",
+            "phase": "volley_warn",
+            "scale": 0.42
+          },
+          {
+            "type": "phase",
+            "time": 30.583333333332877,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "scale": 0.42
+          },
+          {
+            "type": "palm-shot",
+            "time": 30.583333333332877,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 0,
+            "hand": 0,
+            "x": 474.4,
+            "y": 114,
+            "pose": 3,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 30.716666666666203,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 1,
+            "hand": 1,
+            "x": 428.4,
+            "y": 115,
+            "pose": 11,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 30.84999999999953,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 0,
+            "x": 475.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 30.84999999999953,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 2,
+            "hand": 1,
+            "x": 420.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 30.983333333332855,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 3,
+            "hand": 1,
+            "x": 428.4,
+            "y": 115,
+            "pose": 11,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 31.11666666666618,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 4,
+            "hand": 0,
+            "x": 474.4,
+            "y": 114,
+            "pose": 3,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 31.23333333333284,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 0,
+            "x": 475.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "palm-shot",
+            "time": 31.23333333333284,
+            "unit": "drac",
+            "phase": "volley_fire",
+            "beat": 5,
+            "hand": 1,
+            "x": 420.4,
+            "y": 133,
+            "pose": 19,
+            "depth": "background"
+          },
+          {
+            "type": "phase",
+            "time": 31.54999999999949,
+            "unit": "drac",
+            "phase": "volley_recover",
+            "scale": 0.42
+          },
+          {
+            "type": "phase",
+            "time": 32.09999999999946,
+            "unit": "drac",
+            "phase": "retreat",
+            "scale": 0.42
+          }
+        ],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [
+          {
+            "event": "sound",
+            "clock": 0.9500000000000013,
+            "key": "hammerThrow"
+          },
+          {
+            "event": "sound",
+            "clock": 2.7666666666666617,
+            "key": "rd74RageCharge"
+          },
+          {
+            "event": "sound",
+            "clock": 5.816666666666651,
+            "key": "rd74RageRelease"
+          }
+        ],
+        "phase": {
+          "unit": "drac",
+          "phase": "retreat",
+          "frame": 0
+        }
+      }
+    }
+  ],
+  "errors": []
+}

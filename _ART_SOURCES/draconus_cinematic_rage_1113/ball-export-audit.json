@@ -1,0 +1,399 @@
+{
+  "sourceImageSize": [
+    1774,
+    887
+  ],
+  "rejectedClippedSourceFrames": [
+    12,
+    13,
+    14,
+    15
+  ],
+  "frames": [
+    {
+      "bank": "ball",
+      "frame": 0,
+      "source": 0,
+      "masterCrop": [
+        102,
+        -9,
+        342,
+        231
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 1,
+      "source": 1,
+      "masterCrop": [
+        545,
+        -9,
+        785,
+        231
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 2,
+      "source": 2,
+      "masterCrop": [
+        989,
+        -9,
+        1229,
+        231
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 3,
+      "source": 3,
+      "masterCrop": [
+        1432,
+        -9,
+        1672,
+        231
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 4,
+      "source": 4,
+      "masterCrop": [
+        102,
+        213,
+        342,
+        453
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 5,
+      "source": 5,
+      "masterCrop": [
+        545,
+        213,
+        785,
+        453
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 6,
+      "source": 6,
+      "masterCrop": [
+        989,
+        213,
+        1229,
+        453
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 7,
+      "source": 7,
+      "masterCrop": [
+        1432,
+        213,
+        1672,
+        453
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 8,
+      "source": 8,
+      "masterCrop": [
+        102,
+        434,
+        342,
+        674
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 9,
+      "source": 9,
+      "masterCrop": [
+        545,
+        434,
+        785,
+        674
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 10,
+      "source": 10,
+      "masterCrop": [
+        989,
+        434,
+        1229,
+        674
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 11,
+      "source": 11,
+      "masterCrop": [
+        1432,
+        434,
+        1672,
+        674
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 12,
+      "source": 10,
+      "masterCrop": [
+        989,
+        434,
+        1229,
+        674
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 13,
+      "source": 11,
+      "masterCrop": [
+        1432,
+        434,
+        1672,
+        674
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 14,
+      "source": 10,
+      "masterCrop": [
+        989,
+        434,
+        1229,
+        674
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball",
+      "frame": 15,
+      "source": 9,
+      "masterCrop": [
+        545,
+        434,
+        785,
+        674
+      ],
+      "targetFromMaster": 84
+    },
+    {
+      "bank": "ball_back",
+      "frame": 0,
+      "source": 0,
+      "masterCrop": [
+        102,
+        -9,
+        342,
+        231
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 1,
+      "source": 1,
+      "masterCrop": [
+        545,
+        -9,
+        785,
+        231
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 2,
+      "source": 2,
+      "masterCrop": [
+        989,
+        -9,
+        1229,
+        231
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 3,
+      "source": 3,
+      "masterCrop": [
+        1432,
+        -9,
+        1672,
+        231
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 4,
+      "source": 4,
+      "masterCrop": [
+        102,
+        213,
+        342,
+        453
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 5,
+      "source": 5,
+      "masterCrop": [
+        545,
+        213,
+        785,
+        453
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 6,
+      "source": 6,
+      "masterCrop": [
+        989,
+        213,
+        1229,
+        453
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 7,
+      "source": 7,
+      "masterCrop": [
+        1432,
+        213,
+        1672,
+        453
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 8,
+      "source": 8,
+      "masterCrop": [
+        102,
+        434,
+        342,
+        674
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 9,
+      "source": 9,
+      "masterCrop": [
+        545,
+        434,
+        785,
+        674
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 10,
+      "source": 10,
+      "masterCrop": [
+        989,
+        434,
+        1229,
+        674
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 11,
+      "source": 11,
+      "masterCrop": [
+        1432,
+        434,
+        1672,
+        674
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 12,
+      "source": 10,
+      "masterCrop": [
+        989,
+        434,
+        1229,
+        674
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 13,
+      "source": 11,
+      "masterCrop": [
+        1432,
+        434,
+        1672,
+        674
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 14,
+      "source": 10,
+      "masterCrop": [
+        989,
+        434,
+        1229,
+        674
+      ],
+      "targetFromMaster": 60
+    },
+    {
+      "bank": "ball_back",
+      "frame": 15,
+      "source": 9,
+      "masterCrop": [
+        545,
+        434,
+        785,
+        674
+      ],
+      "targetFromMaster": 60
+    }
+  ],
+  "transparentEffectBackgrounds": true
+}

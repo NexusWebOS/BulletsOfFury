@@ -1,0 +1,77 @@
+{
+  "records": [
+    {
+      "unit": "dracodia",
+      "video": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\outputs\\Front-facing-hammer\\dracodia-hammer.mp4",
+      "seconds": 37.8,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 8.563
+        },
+        {
+          "name": "whirlwind",
+          "at": 17.078
+        },
+        {
+          "name": "released throw",
+          "at": 23.656
+        }
+      ],
+      "audio": {
+        "peak": 0.7131481170654297,
+        "frames": 1479,
+        "starts": 18,
+        "sfxStarts": 99,
+        "errors": [],
+        "events": [],
+        "c32": [],
+        "energy": [],
+        "lightning": [],
+        "dracAudio": [
+          {
+            "event": "sound",
+            "clock": 0,
+            "key": "bossWeaponCharge"
+          },
+          {
+            "event": "sound",
+            "clock": 0,
+            "key": "hammerThrow"
+          },
+          {
+            "event": "sound",
+            "clock": 6.566666666666649,
+            "key": "bossWeaponCharge"
+          },
+          {
+            "event": "sound",
+            "clock": 20.13333333333347,
+            "key": "bossWeaponCharge"
+          },
+          {
+            "event": "sound",
+            "clock": 22.28333333333335,
+            "key": "hammerThrow"
+          },
+          {
+            "event": "sound",
+            "clock": 28.499999999999662,
+            "key": "bossWeaponCharge"
+          },
+          {
+            "event": "sound",
+            "clock": 34.43333333333266,
+            "key": "hammerThrow"
+          }
+        ],
+        "phase": null
+      }
+    }
+  ],
+  "errors": []
+}

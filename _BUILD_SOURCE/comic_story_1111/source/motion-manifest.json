@@ -1,0 +1,1021 @@
+{
+  "version": 1,
+  "canvas": [
+    912,
+    512
+  ],
+  "visualHeight": 350,
+  "captionY": 350,
+  "zooms": [
+    1,
+    1.03,
+    1.065,
+    1.1,
+    1.135,
+    1.17,
+    1.2
+  ],
+  "banks": {
+    "talk-zoom-cole": {
+      "key": "cm3_talk-zoom-cole",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/talk-zoom-cole.webp",
+      "w": 308,
+      "h": 308,
+      "cols": 7,
+      "frames": 49,
+      "sha256": "1222f087345ad6e97f428769a4ae0753ba64adafd959ead943e682c8af9141fe",
+      "sizes": [
+        256,
+        264,
+        274,
+        282,
+        292,
+        300,
+        308
+      ],
+      "baselines": [
+        250,
+        258,
+        267,
+        275,
+        284,
+        293,
+        300
+      ],
+      "bleeds": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "native": [
+        128,
+        128
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "backdrop-zoom-cole": {
+      "key": "cm3_backdrop-zoom-cole",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/backdrop-zoom-cole.webp",
+      "w": 616,
+      "h": 410,
+      "cols": 3,
+      "frames": 7,
+      "sha256": "49b819d61fec306a43246635ec3d06f5670fe318b7d4bf4e2914000b4ece527b",
+      "sizes": [
+        [
+          512,
+          340
+        ],
+        [
+          527,
+          350
+        ],
+        [
+          545,
+          362
+        ],
+        [
+          563,
+          374
+        ],
+        [
+          581,
+          386
+        ],
+        [
+          599,
+          398
+        ],
+        [
+          614,
+          408
+        ]
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "talk-zoom-axel": {
+      "key": "cm3_talk-zoom-axel",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/talk-zoom-axel.webp",
+      "w": 308,
+      "h": 308,
+      "cols": 7,
+      "frames": 49,
+      "sha256": "e24659b7ed3b23d4b63fff619fbedf803833996265c7d9b85acff56b45da1f3d",
+      "sizes": [
+        256,
+        264,
+        274,
+        282,
+        292,
+        300,
+        308
+      ],
+      "baselines": [
+        250,
+        258,
+        267,
+        275,
+        284,
+        293,
+        300
+      ],
+      "bleeds": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "native": [
+        128,
+        128
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "backdrop-zoom-axel": {
+      "key": "cm3_backdrop-zoom-axel",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/backdrop-zoom-axel.webp",
+      "w": 616,
+      "h": 410,
+      "cols": 3,
+      "frames": 7,
+      "sha256": "314f84fce271481033256f16a1e9c745c569f562d17c2e40b4c9135c35f89a1e",
+      "sizes": [
+        [
+          512,
+          340
+        ],
+        [
+          527,
+          350
+        ],
+        [
+          545,
+          362
+        ],
+        [
+          563,
+          374
+        ],
+        [
+          581,
+          386
+        ],
+        [
+          599,
+          398
+        ],
+        [
+          614,
+          408
+        ]
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "talk-zoom-freezer": {
+      "key": "cm3_talk-zoom-freezer",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/talk-zoom-freezer.webp",
+      "w": 308,
+      "h": 308,
+      "cols": 7,
+      "frames": 49,
+      "sha256": "55c279f77194974b8ed2a12a1aa7848f5cc4c3c7bcc60d9c1e07805cfdb75c38",
+      "sizes": [
+        256,
+        264,
+        274,
+        282,
+        292,
+        300,
+        308
+      ],
+      "baselines": [
+        250,
+        258,
+        267,
+        275,
+        284,
+        293,
+        300
+      ],
+      "bleeds": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "native": [
+        128,
+        128
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "backdrop-zoom-freezer": {
+      "key": "cm3_backdrop-zoom-freezer",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/backdrop-zoom-freezer.webp",
+      "w": 616,
+      "h": 410,
+      "cols": 3,
+      "frames": 7,
+      "sha256": "6cae3e4bcfac687b1711c4a4dd9ed9ff216e5a404c22de1a6014b7af2973a211",
+      "sizes": [
+        [
+          512,
+          340
+        ],
+        [
+          527,
+          350
+        ],
+        [
+          545,
+          362
+        ],
+        [
+          563,
+          374
+        ],
+        [
+          581,
+          386
+        ],
+        [
+          599,
+          398
+        ],
+        [
+          614,
+          408
+        ]
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "talk-zoom-yuri": {
+      "key": "cm3_talk-zoom-yuri",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/talk-zoom-yuri.webp",
+      "w": 308,
+      "h": 308,
+      "cols": 7,
+      "frames": 49,
+      "sha256": "0b6ee21f4df545e861d88045e28a78126ad54f867767af0e60f23517f939142b",
+      "sizes": [
+        256,
+        264,
+        274,
+        282,
+        292,
+        300,
+        308
+      ],
+      "baselines": [
+        250,
+        258,
+        267,
+        275,
+        284,
+        293,
+        300
+      ],
+      "bleeds": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "native": [
+        128,
+        128
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "backdrop-zoom-yuri": {
+      "key": "cm3_backdrop-zoom-yuri",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/backdrop-zoom-yuri.webp",
+      "w": 616,
+      "h": 410,
+      "cols": 3,
+      "frames": 7,
+      "sha256": "cdf9866dbe6fee3e9ef47f3fb205802d18e1d3f6523c9e47c6471c5225f99c17",
+      "sizes": [
+        [
+          512,
+          340
+        ],
+        [
+          527,
+          350
+        ],
+        [
+          545,
+          362
+        ],
+        [
+          563,
+          374
+        ],
+        [
+          581,
+          386
+        ],
+        [
+          599,
+          398
+        ],
+        [
+          614,
+          408
+        ]
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "talk-zoom-maverick": {
+      "key": "cm3_talk-zoom-maverick",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/talk-zoom-maverick.webp",
+      "w": 308,
+      "h": 308,
+      "cols": 7,
+      "frames": 49,
+      "sha256": "b3a735240c1fc0a809af5779c086943486b162369387d412eae80b94ad58187f",
+      "sizes": [
+        256,
+        264,
+        274,
+        282,
+        292,
+        300,
+        308
+      ],
+      "baselines": [
+        250,
+        258,
+        267,
+        275,
+        284,
+        293,
+        300
+      ],
+      "bleeds": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "native": [
+        128,
+        128
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "backdrop-zoom-maverick": {
+      "key": "cm3_backdrop-zoom-maverick",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/backdrop-zoom-maverick.webp",
+      "w": 616,
+      "h": 410,
+      "cols": 3,
+      "frames": 7,
+      "sha256": "e4f49bc5d8f66e0dbee9866e390c49f5e14862598334b4f0ba1c94f9d1296949",
+      "sizes": [
+        [
+          512,
+          340
+        ],
+        [
+          527,
+          350
+        ],
+        [
+          545,
+          362
+        ],
+        [
+          563,
+          374
+        ],
+        [
+          581,
+          386
+        ],
+        [
+          599,
+          398
+        ],
+        [
+          614,
+          408
+        ]
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "talk-zoom-falva": {
+      "key": "cm3_talk-zoom-falva",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/talk-zoom-falva.webp",
+      "w": 308,
+      "h": 308,
+      "cols": 7,
+      "frames": 49,
+      "sha256": "bfef9dbfb53b73d0581688b118b2a653a9324810b210fddd8af637b776729a60",
+      "sizes": [
+        256,
+        264,
+        274,
+        282,
+        292,
+        300,
+        308
+      ],
+      "baselines": [
+        250,
+        258,
+        267,
+        275,
+        284,
+        293,
+        300
+      ],
+      "bleeds": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "native": [
+        128,
+        128
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "backdrop-zoom-falva": {
+      "key": "cm3_backdrop-zoom-falva",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/backdrop-zoom-falva.webp",
+      "w": 616,
+      "h": 410,
+      "cols": 3,
+      "frames": 7,
+      "sha256": "6cf0732bf48d6973c4a10b7ead969e2a41157de2c427ba3fe258fc1f1d80a6ff",
+      "sizes": [
+        [
+          512,
+          340
+        ],
+        [
+          527,
+          350
+        ],
+        [
+          545,
+          362
+        ],
+        [
+          563,
+          374
+        ],
+        [
+          581,
+          386
+        ],
+        [
+          599,
+          398
+        ],
+        [
+          614,
+          408
+        ]
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "talk-zoom-lizzie": {
+      "key": "cm3_talk-zoom-lizzie",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/talk-zoom-lizzie.webp",
+      "w": 308,
+      "h": 308,
+      "cols": 7,
+      "frames": 49,
+      "sha256": "70a0f2520175bdd04606af572af0e9dde98f69bc631e579b784422bbfc6e6e2d",
+      "sizes": [
+        256,
+        264,
+        274,
+        282,
+        292,
+        300,
+        308
+      ],
+      "baselines": [
+        250,
+        258,
+        267,
+        275,
+        284,
+        293,
+        300
+      ],
+      "bleeds": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "native": [
+        128,
+        128
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "backdrop-zoom-lizzie": {
+      "key": "cm3_backdrop-zoom-lizzie",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/backdrop-zoom-lizzie.webp",
+      "w": 616,
+      "h": 410,
+      "cols": 3,
+      "frames": 7,
+      "sha256": "9bd5850681875e5ad81521b706a09580076820ed004ad257321003a65242e320",
+      "sizes": [
+        [
+          512,
+          340
+        ],
+        [
+          527,
+          350
+        ],
+        [
+          545,
+          362
+        ],
+        [
+          563,
+          374
+        ],
+        [
+          581,
+          386
+        ],
+        [
+          599,
+          398
+        ],
+        [
+          614,
+          408
+        ]
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "talk-zoom-decker": {
+      "key": "cm3_talk-zoom-decker",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/talk-zoom-decker.webp",
+      "w": 308,
+      "h": 308,
+      "cols": 7,
+      "frames": 49,
+      "sha256": "7c751cfff3cde3f58c54001d9814cd91bd3c3d0d5a194fb73e88728e92111f52",
+      "sizes": [
+        256,
+        264,
+        274,
+        282,
+        292,
+        300,
+        308
+      ],
+      "baselines": [
+        250,
+        258,
+        267,
+        275,
+        284,
+        293,
+        300
+      ],
+      "bleeds": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "native": [
+        128,
+        128
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "backdrop-zoom-decker": {
+      "key": "cm3_backdrop-zoom-decker",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/backdrop-zoom-decker.webp",
+      "w": 616,
+      "h": 410,
+      "cols": 3,
+      "frames": 7,
+      "sha256": "ad2c0354fc9b4a7f3e34e50247e7f41916e67231de02ecab0b9d7eb787ef1d5b",
+      "sizes": [
+        [
+          512,
+          340
+        ],
+        [
+          527,
+          350
+        ],
+        [
+          545,
+          362
+        ],
+        [
+          563,
+          374
+        ],
+        [
+          581,
+          386
+        ],
+        [
+          599,
+          398
+        ],
+        [
+          614,
+          408
+        ]
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "talk-zoom-juggernaut": {
+      "key": "cm3_talk-zoom-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/talk-zoom-juggernaut.webp",
+      "w": 308,
+      "h": 308,
+      "cols": 7,
+      "frames": 49,
+      "sha256": "6858f338c32d71c4d30f48189979e78547a5a20438461f57fa82d3fdd7451eef",
+      "sizes": [
+        256,
+        264,
+        274,
+        282,
+        292,
+        300,
+        308
+      ],
+      "baselines": [
+        250,
+        258,
+        267,
+        275,
+        284,
+        293,
+        300
+      ],
+      "bleeds": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "native": [
+        128,
+        128
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "backdrop-zoom-juggernaut": {
+      "key": "cm3_backdrop-zoom-juggernaut",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/backdrop-zoom-juggernaut.webp",
+      "w": 616,
+      "h": 410,
+      "cols": 3,
+      "frames": 7,
+      "sha256": "30ce46d22e3b2907a93389a0c6cfe20ab28c2c0b3d71c9bc6674957de12b7e62",
+      "sizes": [
+        [
+          512,
+          340
+        ],
+        [
+          527,
+          350
+        ],
+        [
+          545,
+          362
+        ],
+        [
+          563,
+          374
+        ],
+        [
+          581,
+          386
+        ],
+        [
+          599,
+          398
+        ],
+        [
+          614,
+          408
+        ]
+      ],
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "strip-0": {
+      "key": "cm3_strip-0",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/strip-0.webp",
+      "w": 1008,
+      "h": 388,
+      "cols": 2,
+      "frames": 7,
+      "sha256": "7fcbbe2c1eecf2de24659e771c88dd385e70be62045957e777d9faa2a14830ad",
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "caption-0": {
+      "key": "cm3_caption-0",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/caption-0.webp",
+      "w": 838,
+      "h": 148,
+      "cols": 1,
+      "frames": 1,
+      "sha256": "c34fbb772e9a027a293bab9095e421873a653bc52c2ddc85509dd791cee17d67"
+    },
+    "strip-1": {
+      "key": "cm3_strip-1",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/strip-1.webp",
+      "w": 1008,
+      "h": 388,
+      "cols": 2,
+      "frames": 7,
+      "sha256": "3498c23fe0e8a107d46ad7eea9c5f6fdd6918f2ac4c1707f3b46f7e958751a9f",
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "caption-1": {
+      "key": "cm3_caption-1",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/caption-1.webp",
+      "w": 838,
+      "h": 148,
+      "cols": 1,
+      "frames": 1,
+      "sha256": "c9fc14b5e2a04ee0a49e441735c1defc5befc04e3257c3da49a7c93300c1c912"
+    },
+    "strip-2": {
+      "key": "cm3_strip-2",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/strip-2.webp",
+      "w": 1008,
+      "h": 388,
+      "cols": 2,
+      "frames": 7,
+      "sha256": "9392919c8b284d9bde25eda1cdcb5ed596588d31d255ac61f32012711e1e8f07",
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "caption-2": {
+      "key": "cm3_caption-2",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/caption-2.webp",
+      "w": 838,
+      "h": 148,
+      "cols": 1,
+      "frames": 1,
+      "sha256": "a8efdd3bbf72652e7222a4e0d5af503758b2e49696229dbd10c9d863ca3b5fce"
+    },
+    "strip-3": {
+      "key": "cm3_strip-3",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/strip-3.webp",
+      "w": 1008,
+      "h": 388,
+      "cols": 2,
+      "frames": 7,
+      "sha256": "848c81de217af5440e8922e310f2f01f5ebecfb74ba737f055c8161980d189ae",
+      "scales": [
+        1,
+        1.03,
+        1.065,
+        1.1,
+        1.135,
+        1.17,
+        1.2
+      ]
+    },
+    "caption-3": {
+      "key": "cm3_caption-3",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/caption-3.webp",
+      "w": 838,
+      "h": 148,
+      "cols": 1,
+      "frames": 1,
+      "sha256": "c93162b9f56c29485990383c67704fb53c509945f551d3f5ae93b441b25401d0"
+    },
+    "ink-fade": {
+      "key": "cm3_ink-fade",
+      "path": "assets/game/shared/cinematics/comic_motion_1111/ink-fade.webp",
+      "w": 512,
+      "h": 350,
+      "cols": 3,
+      "frames": 9,
+      "sha256": "e3cfa9a8e477a3824fbacef4def33b99383c14abbd2122c76e0e79529a61de23",
+      "alphaSteps": [
+        255,
+        224,
+        192,
+        160,
+        128,
+        96,
+        64,
+        32,
+        0
+      ]
+    }
+  }
+}

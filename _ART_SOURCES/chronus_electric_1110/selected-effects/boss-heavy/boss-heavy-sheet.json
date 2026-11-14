@@ -1,0 +1,390 @@
+{
+  "frames": [
+    {
+      "filename": "boss-heavy_00",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 40
+    },
+    {
+      "filename": "boss-heavy_01",
+      "frame": {
+        "x": 176,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 50
+    },
+    {
+      "filename": "boss-heavy_02",
+      "frame": {
+        "x": 352,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 50
+    },
+    {
+      "filename": "boss-heavy_03",
+      "frame": {
+        "x": 528,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 60
+    },
+    {
+      "filename": "boss-heavy_04",
+      "frame": {
+        "x": 704,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 80
+    },
+    {
+      "filename": "boss-heavy_05",
+      "frame": {
+        "x": 880,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 90
+    },
+    {
+      "filename": "boss-heavy_06",
+      "frame": {
+        "x": 1056,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 100
+    },
+    {
+      "filename": "boss-heavy_07",
+      "frame": {
+        "x": 1232,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 100
+    },
+    {
+      "filename": "boss-heavy_08",
+      "frame": {
+        "x": 1408,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 110
+    },
+    {
+      "filename": "boss-heavy_09",
+      "frame": {
+        "x": 1584,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 110
+    },
+    {
+      "filename": "boss-heavy_10",
+      "frame": {
+        "x": 1760,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 120
+    },
+    {
+      "filename": "boss-heavy_11",
+      "frame": {
+        "x": 1936,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 120
+    },
+    {
+      "filename": "boss-heavy_12",
+      "frame": {
+        "x": 2112,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 150
+    },
+    {
+      "filename": "boss-heavy_13",
+      "frame": {
+        "x": 2288,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 180
+    }
+  ],
+  "meta": {
+    "app": "clean_gif.py (ChatGPT GIF to sprite sheet)",
+    "image": "boss-heavy-sheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2464,
+      "h": 176
+    },
+    "scale": "1",
+    "art_pixel": 1,
+    "frameTags": [
+      {
+        "name": "ignition",
+        "from": 0,
+        "to": 1,
+        "direction": "forward"
+      },
+      {
+        "name": "blast",
+        "from": 2,
+        "to": 7,
+        "direction": "forward"
+      },
+      {
+        "name": "breakup",
+        "from": 8,
+        "to": 10,
+        "direction": "forward"
+      },
+      {
+        "name": "aftermath",
+        "from": 11,
+        "to": 13,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 88,
+      "y": 88,
+      "kind": "center",
+      "note": "fixed effect source; retains generated coordinates without centroid correction"
+    },
+    "palette": [
+      "#fefef7",
+      "#fdfbc5",
+      "#fcf692",
+      "#fdf229",
+      "#fcde1a",
+      "#fccb0a",
+      "#fcb70b",
+      "#fb9609",
+      "#fa6e08",
+      "#f94e0b",
+      "#c86370",
+      "#ea311b",
+      "#a4556d",
+      "#cc1c10",
+      "#8e526a",
+      "#705d61",
+      "#ac1817",
+      "#92161a",
+      "#5d484b",
+      "#693757",
+      "#840e10",
+      "#4a3b3b",
+      "#740d10",
+      "#4f2c3c",
+      "#66070d",
+      "#520f19",
+      "#2f2323",
+      "#3d1216",
+      "#2a1114",
+      "#280405",
+      "#160608",
+      "#0b0101"
+    ],
+    "loop": false
+  }
+}

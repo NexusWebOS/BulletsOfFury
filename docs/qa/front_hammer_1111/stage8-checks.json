@@ -1,0 +1,812 @@
+{
+  "checks": [
+    {
+      "name": "Stage8 normal/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/regular: full planted combo remains inside playfield",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/regular: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 55,
+        "second": 0
+      }
+    },
+    {
+      "name": "Stage8 normal/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/chrome: full planted combo remains inside playfield",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/chrome: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 55,
+        "second": 0
+      }
+    },
+    {
+      "name": "Stage8 normal/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/red: full planted combo remains inside playfield",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/red: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 55,
+        "second": 0
+      }
+    },
+    {
+      "name": "Stage8 hard/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/regular: full planted combo remains inside playfield",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/regular: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 55,
+        "second": 19
+      }
+    },
+    {
+      "name": "Stage8 hard/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/chrome: full planted combo remains inside playfield",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/chrome: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 55,
+        "second": 19
+      }
+    },
+    {
+      "name": "Stage8 hard/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/red: full planted combo remains inside playfield",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/red: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 55,
+        "second": 19
+      }
+    },
+    {
+      "name": "Stage8 furious/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 235,
+            "y": 181
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 486,
+            "y": 181
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/regular: full planted combo remains inside playfield",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/regular: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 55,
+        "second": 19
+      }
+    },
+    {
+      "name": "Stage8 furious/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 235,
+            "y": 181
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 486,
+            "y": 181
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/chrome: full planted combo remains inside playfield",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/chrome: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 55,
+        "second": 19
+      }
+    },
+    {
+      "name": "Stage8 furious/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 235,
+            "y": 181
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 361,
+            "y": 247
+          },
+          "at": {
+            "x": 486,
+            "y": 181
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/red: full planted combo remains inside playfield",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/red: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 55,
+        "second": 19
+      }
+    },
+    {
+      "name": "Stage8 white hit flash changes native damaged pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage8 native white flash expires",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Copied native Chromium activation returns to frontal held-hammer form",
+      "passed": true,
+      "data": {
+        "chrome": true,
+        "bank": "ba119_corrupt-overhead_chrome",
+        "whole": true,
+        "hpSame": true
+      }
+    },
+    {
+      "name": "Copied normal/Chromium/red down and side attacks select frontal whole poses",
+      "passed": true,
+      "data": [
+        {
+          "mat": "regular",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_regular",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "regular",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_regular",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "regular",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_regular",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "regular",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_regular",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "regular",
+          "type": "side",
+          "bank": "ba119_corrupt-sides_regular",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "regular",
+          "type": "side",
+          "bank": "ba119_corrupt-right_regular",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "regular",
+          "type": "side",
+          "bank": "ba119_corrupt-right_regular",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "regular",
+          "type": "side",
+          "bank": "ba119_corrupt-right_regular",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "chrome",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_chrome",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "chrome",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_chrome",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "chrome",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_chrome",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "chrome",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_chrome",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "chrome",
+          "type": "side",
+          "bank": "ba119_corrupt-sides_chrome",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "chrome",
+          "type": "side",
+          "bank": "ba119_corrupt-right_chrome",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "chrome",
+          "type": "side",
+          "bank": "ba119_corrupt-right_chrome",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "chrome",
+          "type": "side",
+          "bank": "ba119_corrupt-right_chrome",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "red",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_red",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "red",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_red",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "red",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_red",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "red",
+          "type": "skystrike",
+          "bank": "ba119_corrupt-overhead_red",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "red",
+          "type": "side",
+          "bank": "ba119_corrupt-sides_red",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "red",
+          "type": "side",
+          "bank": "ba119_corrupt-right_red",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "red",
+          "type": "side",
+          "bank": "ba119_corrupt-right_red",
+          "front": true,
+          "whole": true
+        },
+        {
+          "mat": "red",
+          "type": "side",
+          "bank": "ba119_corrupt-right_red",
+          "front": true,
+          "whole": true
+        }
+      ]
+    },
+    {
+      "name": "Copied fold/roll/unfold preserve separately registered frames in all materials",
+      "passed": true,
+      "data": [
+        {
+          "mat": "regular",
+          "bank": "ba119_corrupt-fold_regular",
+          "frame": 6,
+          "valid": true
+        },
+        {
+          "mat": "regular",
+          "bank": "ba119_corrupt-roll_regular",
+          "frame": 0,
+          "valid": true
+        },
+        {
+          "mat": "regular",
+          "bank": "ba119_corrupt-fold_regular",
+          "frame": 10,
+          "valid": true
+        },
+        {
+          "mat": "chrome",
+          "bank": "ba119_corrupt-fold_chrome",
+          "frame": 6,
+          "valid": true
+        },
+        {
+          "mat": "chrome",
+          "bank": "ba119_corrupt-roll_chrome",
+          "frame": 0,
+          "valid": true
+        },
+        {
+          "mat": "chrome",
+          "bank": "ba119_corrupt-fold_chrome",
+          "frame": 10,
+          "valid": true
+        },
+        {
+          "mat": "red",
+          "bank": "ba119_corrupt-fold_red",
+          "frame": 6,
+          "valid": true
+        },
+        {
+          "mat": "red",
+          "bank": "ba119_corrupt-roll_red",
+          "frame": 0,
+          "valid": true
+        },
+        {
+          "mat": "red",
+          "bank": "ba119_corrupt-fold_red",
+          "frame": 10,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "Real 32-frame overhead banks registered",
+      "passed": true,
+      "data": {
+        "blue-overhead": 32,
+        "blue-sides": 16,
+        "blue-right": 16,
+        "corrupt-overhead": 32,
+        "corrupt-sides": 16,
+        "corrupt-right": 16,
+        "corrupt-whirl": 16,
+        "blue-whirl": 16
+      }
+    },
+    {
+      "name": "Copied native whirlwind uses all 16 complete body turn drawings",
+      "passed": true,
+      "data": {
+        "frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      }
+    },
+    {
+      "name": "No browser or renderer exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

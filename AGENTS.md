@@ -577,3 +577,111 @@ keys and the game context's own `drawImage`; cached canvases have no reliable
   clock hold preserves later regular waves while actor/input/projectile clocks
   continue; resume miniboss first and retain finite retreat/failsafe. Source art,
   prompts, builder and native recording evidence: `docs/CURRENT_BREAKER_1102.md`.
+
+## November10 whole held-hammer correction
+
+- Mike explicitly rejected modular held hammers and offline body/weapon assembly.
+  Chronos and copied Chronos attacks use complete generated character-and-held-
+  hammer drawings; no head stamping. Only actual released flight separates the
+  hammer. The independently approved chaingun and charging counter aperture keep
+  their native owners. Current source owner: whole_hammer_1110; report/rebuild:
+  docs/WHOLE_HAMMER_ATTACKS_1110.md. Do not restore held-attack sheets by running
+  the superseded rigid_hammer_1110 / hammer_face_1110 assembly builders.
+
+
+## November11 — user-approved Draconus modular gun exception
+
+Mike explicitly requested an independently rotating modular barrel for Draconus.
+For the copied Dracodia/Chronos gun only, DGM1111 supersedes SF1111's whole-held-
+gun spin/firing plates: fixed complete body, same-source foreground grips and36
+static axial gun cells, normal/Chromium/baked activation materials. Preserve its
+actual source-alpha gun target, native independent HP/white feedback and actual
+bore warning/round origin. Catch/stow/break, cadence, module lifetimes, progression
+and hammer recall retain their existing owners. Do not add runtime raster gun
+rotation or apply this exception to whole-hammer poses or other bosses.
+See docs/DRACONUS_MODULAR_FULL_STAGES_1111.md. Full Furious Stage5–8 films are
+explicitly assisted visual stress reviews, not unassisted release validation.
+
+
+## November12 — recovered side attacks and critical original Stage5 rage
+
+Mike explicitly rejected the FH1111/HA1111 sideways drawings. BR1112 now restores
+the earlier boss_strike_1109b full side sweeps for both bosses, normal/Chromium.
+The original corrupted sheet contains two sweeps; source5/12 are the fully
+extended left/right contacts, registered at timeline frame8. Preserve those and
+native counts/recovery. This supersedes prior side-bank preservation notes only.
+Mike also explicitly requires Stage5 Chronos's original rage formation and
+Kamehameha: C45/C46/C47/CF48/CF49/CF50 keep the throw, STOP/recoup, stance,26 strikes,
+red release, original gather/thrust/wave/depth return and sound. RF1110 must not
+intercept those Stage5 animations again. Keep Draconus RF1110, new ship forms,
+all current ground-smash directions and both modular guns. Read
+docs/BOSS_ANIMATION_RECOVERY_1112.md before changing these restored routes.
+
+
+## November13 — Draconus must remain frontal; complete native rage
+
+Mike explicitly requires Draconus to keep his face and chest toward the player
+during center, left and right hammer smashes, normal and Chromium. DFR13 selects
+the existing complete frontal overhead banks throughout the four-contact Furious
+attack and alternating diagonal pair. This supersedes November12's Draconus
+profile-side selector only; Chronos's recovered side sweeps remain. Intentional
+whirlwind turns retain their owner. Do not assemble held hammers or rotate plates.
+Preserve the native low-health rage commitment at the action boundary, before
+the copied-form return, and at least its full opening wave/foreground palms/
+background palms/repeat-wave book before finite cycle3 exit. Do not heal, reset
+the copied-form clock or restore defeated gun/hammer HP to make rage appear.
+Keep Draconus's red authored form, native audio/white hit flash, ships/modular guns
+and critical original Stage5 C45/C46/C47/CF48/CF49/CF50 formation/wave untouched.
+Evidence/recovery: docs/DRACONUS_FRONT_RAGE_1113.md.
+
+
+## November13 — generated Draconus rage and center hammer replacement
+
+Mike requires Draconus's OWN new rage frames with Stage5 Chronus's transformation
+effects and actual two-handed hip-gather/Kamehameha thrust/hold/recovery. DCR13
+supersedes reused RF1110 open-palm casting and the old center overhead geometry.
+Preserve the new STOP/recoup, red strength poses, measured hollow hand sockets,
+double-palm release, transparent baked original Stage5 aura/swirl/26-strike/ring
+presentation and original red wave. Do not restore pink generation matte or
+opaque effect backgrounds. Center cap impacts must fall directly in front below
+both hands in normal/Chromium; keep one rigid T head/shaft. Source13 duplicate
+weapon and clipped orb sources12–15 are rejected. Existing diagonal and whirlwind
+owners, native damage/flash/HP/rounds, ships/guns and full finite rage book remain.
+Stage5 original C45/C46/C47/CF48/CF49/CF50 still must remain untouched. New poses
+are whole authored actors, never body/held-weapon assembly or runtime rotation.
+Evidence/rebuild: docs/DRACONUS_CINEMATIC_RAGE_1113.md.
+
+
+## November14 — Stage5 miniboss active bomber pursuit and enemy optics
+
+Mike requests Stage5 Eclipse's thrust-away/head-on bombing/overhead shadow/finite
+catch-up cycle and its own Stage4-like target/committed cannon burst/cool/repeat
+behavior. Preserve S5B14's real native four-module/core gate, original pools,
+visible white damage feedback and native breakup/reward. Never restore broken
+engines/cannons or heal at flight transitions. Engine loss slows flight; cannon
+loss cancels queued/released fire. Upper-plane hulls must not ram, absorb weapons
+or remain offensive Retina targets. Only this controlled bomber skips additive
+space bob after entry; other space actors keep their owner. Native bomb impact
+warnings remain readable over the big foreground hull and preserve a dodge gap.
+Its enemy-owned clear-center optic must not take over player Retina controls.
+Keep authored sprite banks, fixed pivots and offline headings/depths, with no
+runtime raster transforms. Keep Stage6 pursuit and critical original Chronus
+formation/wave/current Draconus work untouched. Evidence and recovery source:
+docs/STAGE5_BOMBER_ASSAULT_1114.md. Furious film is an invulnerable attack review.
+
+
+## November14 — early difficulty owner and active enemy targeting cues
+
+Mike requires full checks green before readiness and continuous beeping/rotation/
+flashing for Stage5's enemy laser retina until pre-fire commitment. Keep shared
+difficulty_helpers_1114.js before game.js in browser and headless bootstrap; late
+difficulty_rules_1101 attaches its existing live tuning to the same DR15 state.
+Preserve original HP/compound15% math. Never reintroduce duplicate late helpers.
+Keep native owner-timed repeated beeps, quiet committed red aim and authored256-cell
+rotation/brightness library with an empty center; no runtime raster transforms.
+Keep cannon-break, pause and exit cancellation. Preserve16 exact restored leech
+cells/live root registration and current-spec regression coverage. Don't restore
+old opening-jump/retired-roster tests or let fixture state leak between routes.
+Full suite now passes8,969 assertions with0 errors. Evidence/rebuild and the
+targeted audible preview are in docs/RELEASE_CHECKS_RETINA_1114.md. Do not rerun the
+old Stage5 base builder/installer alone over this follow-up. No release published.

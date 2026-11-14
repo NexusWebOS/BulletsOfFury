@@ -1,0 +1,14 @@
+{
+  "name": "guided-blue-o3-right",
+  "prompt": "Transfer ALL EIGHT complete poses in reference1 into BLUE CHRONOS, preserving EXACTLY the body/leg/arm/hand/hammer positions and orientations of EACH cell. Do not reverse head side. Critical: hammer cylinder is to SCREEN RIGHT of BOTH hands in ALL8 drawings, both fists on its LEFT along a single shaft that extends further LEFT to butt. Keep this orientation EXACTLY like reference1. Eight heavy impact-recovery drawings24-31 with compressed knees and torso gradually rising, always holding hilt. Reference1 supplies POSE ONLY, replace purplehornedarmor with Chronos canonical design in reference2. Dark finned helmet, narrow cyan visor, charcoal/chrome muscular armor, cyan core/inserts, blue lightning cylindrical hammer flatblack/silverendcaps, no horns/spikes/purple/red/face. Reference3 exact helmet,reference4 exact hammer, rigid straight handle from cylinder SIDE midpoint through BOTH fists LEFTWARDS to roundedcyanbutt. Correct T socket perpendicular, no bent/doublehandle. Large8-frame wholebody sheet4columns2rows2048x1024, same model unit and common boot baseline, ample margins, every hammer/fin/boot complete, true RGBA transparency, crisp metallic16bit sprite style, no text/labels/effects/shadows/floor. Do not change the motion or head side in reference1.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-c2c99f14-f647-4957-8f49-5cfa80fcca48.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

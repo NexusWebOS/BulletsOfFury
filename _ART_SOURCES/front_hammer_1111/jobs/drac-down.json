@@ -1,0 +1,16 @@
+{
+  "name": "drac-down",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-3cab14c1-f816-4bc4-98cc-a7d316284469.png",
+  "prompt": "Repair ONLY framing/margins of this eight-pose whole-character animation sheet. Preserve every exact frontal pose, BOTH close touching fists on the SAME single hilt, real perpendicular side-socket T-hammer, existing identity, metallic rendering and motion. Current top frame0 clips top spikes and bottom row frames5-7 clips bottom spikes. Recreate all EIGHT complete drawings, SAME proportional model unit in ALL8cells, with the figure+hammer uniformly about10percent smaller inside its cell to provide CLEAR30pixel margins around every horn/spike/butt/boot. ALLSIX spikes must be fully drawn in EACH pose, NONE touching anycellborder, including lowest impact and upper windup. All8 share common footbaseline and bodyproportions. Neverfit eachpose separately. Fix all complete drawings coherently, no bodyparts/headstamping. Eight ordered frontal peak-to-ground downswing/contact poses unchanged in4columns2rows, large2048x1024, TRUE RGBA transparency. Keep ORIGINALhammer singlehaft fromSIDEcentertobothclosegrippingfists andbutt; no shaftthroughcap/crossbar. Closedface/redeyes/chest/pelvis faceviewer inALL8, shouldersdrive torsoforward andkneescompress. No labels/text/effects/floor/shadows/background.",
+  "accepted": true,
+  "status": "candidate",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

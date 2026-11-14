@@ -1,0 +1,16 @@
+{
+  "before": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/boss_animation_1109.js": "50fea54aefb69bd00161676ee04f5c9ea73558d52f6a2ba3c918dc893b054070",
+    "assets/whole_hammer_1110.js": "b3ff44d55af1c4a5be2e0a065fa0f65ec037f5a1b06cbf2b9270a53c471ded46",
+    "assets/overhead_slam_art_1111.js": "7cd465b311d335d14d8579940d9c7bb3f186f01fe961fd1aefcae34b6da33a7b"
+  },
+  "changes": [
+    "8 whole-character motion banks",
+    "32 overhead drawings per form",
+    "15 unique side drawings plus contact hold and whole-pose right mirrors",
+    "16 wholebody turn drawings per form",
+    "native frame-index sampling and whirlwind selection"
+  ],
+  "coreUnchanged": "assets/game.js"
+}

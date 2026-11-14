@@ -1,0 +1,446 @@
+{
+  "checks": {
+    "attack_cues_decode_with_audio": true,
+    "normal_laser_pulse_count": true,
+    "normal_lightning_wave_count": true,
+    "hard_laser_pulse_count": true,
+    "hard_lightning_wave_count": true,
+    "furious_laser_pulse_count": true,
+    "furious_lightning_wave_count": true,
+    "reduced_motion_still_fires_all_pulses": true,
+    "full_attack_book_returns_to_main_form": true,
+    "return_preserves_brain_and_main_lives": true,
+    "brain_defeat_uses_native_copy_death": true,
+    "no_compatibility_browser_errors": true,
+    "earlier_form_owners_unchanged": true
+  },
+  "details": {
+    "audio": [
+      {
+        "key": "combatBeam0927",
+        "peak": 0.6223281621932983,
+        "duration": 0.64
+      },
+      {
+        "key": "chronosLightning1026",
+        "peak": 0.7940345406532288,
+        "duration": 0.34
+      },
+      {
+        "key": "bossWeaponCharge",
+        "peak": 0.6940503120422363,
+        "duration": 1.48
+      },
+      {
+        "key": "shieldHitHeavy",
+        "peak": 0.9237575531005859,
+        "duration": 0.27770833333333333
+      },
+      {
+        "key": "shieldBreakCombat",
+        "peak": 1.0827763080596924,
+        "duration": 0.42
+      }
+    ],
+    "return": {
+      "mode": "v18formOut",
+      "form": 6,
+      "completed": 6,
+      "hp": 3782,
+      "pools": [
+        4470,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3782,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "event": "eye-volley",
+          "t": 0.016666666666666666,
+          "form": 6,
+          "pulses": 3,
+          "tell": 0.75
+        },
+        {
+          "event": "eye-pulse",
+          "t": 0.7666666666666674,
+          "form": 6,
+          "pulse": 0,
+          "eyes": [
+            {
+              "x": 312,
+              "y": 245
+            },
+            {
+              "x": 356,
+              "y": 244
+            }
+          ]
+        },
+        {
+          "event": "eye-pulse",
+          "t": 1.4999999999999996,
+          "form": 6,
+          "pulse": 1,
+          "eyes": [
+            {
+              "x": 310,
+              "y": 246
+            },
+            {
+              "x": 355,
+              "y": 244
+            }
+          ]
+        },
+        {
+          "event": "eye-pulse",
+          "t": 2.2166666666666637,
+          "form": 6,
+          "pulse": 2,
+          "eyes": [
+            {
+              "x": 310,
+              "y": 246
+            },
+            {
+              "x": 361,
+              "y": 242
+            }
+          ]
+        },
+        {
+          "event": "attack-complete",
+          "t": 3.049999999999994,
+          "form": 6,
+          "type": "eyeExpansion"
+        },
+        {
+          "event": "eye-volley",
+          "t": 3.4666666666666592,
+          "form": 6,
+          "pulses": 3,
+          "tell": 0.75
+        },
+        {
+          "event": "eye-pulse",
+          "t": 4.216666666666657,
+          "form": 6,
+          "pulse": 0,
+          "eyes": [
+            {
+              "x": 385,
+              "y": 259
+            },
+            {
+              "x": 429,
+              "y": 258
+            }
+          ]
+        },
+        {
+          "event": "eye-pulse",
+          "t": 4.949999999999988,
+          "form": 6,
+          "pulse": 1,
+          "eyes": [
+            {
+              "x": 383,
+              "y": 260
+            },
+            {
+              "x": 428,
+              "y": 258
+            }
+          ]
+        },
+        {
+          "event": "eye-pulse",
+          "t": 5.666666666666652,
+          "form": 6,
+          "pulse": 2,
+          "eyes": [
+            {
+              "x": 383,
+              "y": 260
+            },
+            {
+              "x": 434,
+              "y": 256
+            }
+          ]
+        },
+        {
+          "event": "attack-complete",
+          "t": 6.499999999999982,
+          "form": 6,
+          "type": "eyeExpansion"
+        },
+        {
+          "event": "storm-committed",
+          "t": 6.916666666666647,
+          "form": 6,
+          "volleys": [
+            {
+              "index": 0,
+              "safe": 2,
+              "safeX": 400,
+              "warn": 0,
+              "strike": 1.3,
+              "fired": false
+            },
+            {
+              "index": 1,
+              "safe": 1,
+              "safeX": 280,
+              "warn": 1.45,
+              "strike": 2.75,
+              "fired": false
+            },
+            {
+              "index": 2,
+              "safe": 0,
+              "safeX": 160,
+              "warn": 2.9,
+              "strike": 4.2,
+              "fired": false
+            }
+          ],
+          "targets": [
+            {
+              "x": 160,
+              "y": 504,
+              "volley": 0,
+              "at": 0,
+              "released": false
+            },
+            {
+              "x": 280,
+              "y": 504,
+              "volley": 0,
+              "at": 0,
+              "released": false
+            },
+            {
+              "x": 520,
+              "y": 504,
+              "volley": 0,
+              "at": 0,
+              "released": false
+            },
+            {
+              "x": 160,
+              "y": 504,
+              "volley": 1,
+              "at": 1.45,
+              "released": false
+            },
+            {
+              "x": 400,
+              "y": 504,
+              "volley": 1,
+              "at": 1.45,
+              "released": false
+            },
+            {
+              "x": 520,
+              "y": 504,
+              "volley": 1,
+              "at": 1.45,
+              "released": false
+            },
+            {
+              "x": 280,
+              "y": 504,
+              "volley": 2,
+              "at": 2.9000000000000004,
+              "released": false
+            },
+            {
+              "x": 400,
+              "y": 504,
+              "volley": 2,
+              "at": 2.9000000000000004,
+              "released": false
+            },
+            {
+              "x": 520,
+              "y": 504,
+              "volley": 2,
+              "at": 2.9000000000000004,
+              "released": false
+            }
+          ]
+        },
+        {
+          "event": "lightning-volley",
+          "t": 8.216666666666654,
+          "form": 6,
+          "volley": 0,
+          "safeX": 400
+        },
+        {
+          "event": "lightning-volley",
+          "t": 9.683333333333394,
+          "form": 6,
+          "volley": 1,
+          "safeX": 280
+        },
+        {
+          "event": "lightning-volley",
+          "t": 11.133333333333466,
+          "form": 6,
+          "volley": 2,
+          "safeX": 160
+        },
+        {
+          "event": "attack-complete",
+          "t": 12.316666666666858,
+          "form": 6,
+          "type": "codeGeysers"
+        },
+        {
+          "event": "eye-volley",
+          "t": 12.733333333333546,
+          "form": 6,
+          "pulses": 3,
+          "tell": 0.75
+        },
+        {
+          "event": "eye-pulse",
+          "t": 13.483333333333583,
+          "form": 6,
+          "pulse": 0,
+          "eyes": [
+            {
+              "x": 307,
+              "y": 248
+            },
+            {
+              "x": 351,
+              "y": 247
+            }
+          ]
+        },
+        {
+          "event": "eye-pulse",
+          "t": 14.216666666666953,
+          "form": 6,
+          "pulse": 1,
+          "eyes": [
+            {
+              "x": 305,
+              "y": 249
+            },
+            {
+              "x": 350,
+              "y": 247
+            }
+          ]
+        },
+        {
+          "event": "eye-pulse",
+          "t": 14.933333333333655,
+          "form": 6,
+          "pulse": 2,
+          "eyes": [
+            {
+              "x": 305,
+              "y": 249
+            },
+            {
+              "x": 356,
+              "y": 245
+            }
+          ]
+        },
+        {
+          "event": "attack-complete",
+          "t": 15.76666666666703,
+          "form": 6,
+          "type": "eyeExpansion"
+        },
+        {
+          "event": "eye-volley",
+          "t": 16.183333333333696,
+          "form": 6,
+          "pulses": 3,
+          "tell": 0.75
+        },
+        {
+          "event": "eye-pulse",
+          "t": 16.933333333333653,
+          "form": 6,
+          "pulse": 0,
+          "eyes": [
+            {
+              "x": 234,
+              "y": 241
+            },
+            {
+              "x": 278,
+              "y": 240
+            }
+          ]
+        },
+        {
+          "event": "eye-pulse",
+          "t": 17.666666666666945,
+          "form": 6,
+          "pulse": 1,
+          "eyes": [
+            {
+              "x": 232,
+              "y": 242
+            },
+            {
+              "x": 277,
+              "y": 240
+            }
+          ]
+        },
+        {
+          "event": "eye-pulse",
+          "t": 18.38333333333357,
+          "form": 6,
+          "pulse": 2,
+          "eyes": [
+            {
+              "x": 232,
+              "y": 242
+            },
+            {
+              "x": 283,
+              "y": 238
+            }
+          ]
+        },
+        {
+          "event": "attack-complete",
+          "t": 19.216666666666857,
+          "form": 6,
+          "type": "eyeExpansion"
+        },
+        {
+          "event": "shield-charge",
+          "t": 19.6333333333335,
+          "form": 6,
+          "shield": 454
+        }
+      ]
+    },
+    "copy_defeat": {
+      "mode": "v19copyDeath",
+      "hp": 0,
+      "pool": 0,
+      "home": 4470,
+      "targetCount": 0
+    }
+  },
+  "errors": []
+}

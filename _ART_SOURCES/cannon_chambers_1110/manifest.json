@@ -1,0 +1,538 @@
+{
+  "expected_source_hash": "bbcdcd0c1399e9df5250005fda30f6c1568ff72b01e621201ea1159891e725f1",
+  "source_master_sha256": "3e6c17b4eb8ab798ba0632676edacf5d1f657556d50d41e78123637fbdac4cd0",
+  "cell": [
+    256,
+    832
+  ],
+  "pivot": [
+    128,
+    146
+  ],
+  "opening": {
+    "center": [
+      128,
+      239.28
+    ],
+    "radii": [
+      52.5,
+      22.5
+    ]
+  },
+  "frames": 28,
+  "firing_coverage": [
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 6,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 7,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 8,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 9,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 10,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 11,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 12,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 13,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 14,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 15,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 16,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 17,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 18,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 19,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 20,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "body",
+      "frame": 21,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 6,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 7,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 8,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 9,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 10,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 11,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 12,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 13,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 14,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 15,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 16,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 17,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 18,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 19,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 20,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 0,
+      "mode": "hit",
+      "frame": 21,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 6,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 7,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 8,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 9,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 10,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 11,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 12,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 13,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 14,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 15,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 16,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 17,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 18,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 19,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 20,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "body",
+      "frame": 21,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 6,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 7,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 8,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 9,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 10,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 11,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 12,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 13,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 14,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 15,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 16,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 17,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 18,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 19,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 20,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    },
+    {
+      "pod": 1,
+      "mode": "hit",
+      "frame": 21,
+      "filled_pixels": 3715,
+      "opening_pixels": 3715,
+      "no_fan_visible": true
+    }
+  ],
+  "scope": "Only baked chamber-face coverage and four texture paths; native weapon and movement logic unchanged"
+}

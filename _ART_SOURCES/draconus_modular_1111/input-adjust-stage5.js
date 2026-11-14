@@ -1,0 +1,1 @@
+()=>{captureStats.fixtureDiagnostic={weapon:run.weapon,wlevel:run.wlevel,spaceWeapon:run.spaceWeapon,spaceLevels:run.spaceLevels,primary:run._primary1003b,armor:boss?._hammer?.frArmor,hammerHP:boss?._hammer?.hammerHP};FILM1111.errors.push("Incomplete recording: pilot assistance failed through campaign route; restart required.");}

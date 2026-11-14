@@ -1,0 +1,99 @@
+{
+  "results": [
+    {
+      "phase": "charge",
+      "frames": 401,
+      "fps": 39.9,
+      "p95": 17,
+      "max": 1483.2,
+      "over50": 12,
+      "canvas": 75,
+      "functions": [
+        [
+          "drawWorld",
+          {
+            "calls": 401,
+            "total": 2355.099999986589,
+            "max": 362
+          }
+        ],
+        [
+          "updatePlay",
+          {
+            "calls": 420,
+            "total": 756.3000000864267,
+            "max": 63.69999999552965
+          }
+        ],
+        [
+          "hammerBossDraw",
+          {
+            "calls": 401,
+            "total": 443.2000001370907,
+            "max": 160.5
+          }
+        ],
+        [
+          "c45Body",
+          {
+            "calls": 121,
+            "total": 29.800000078976154,
+            "max": 1.5
+          }
+        ]
+      ]
+    },
+    {
+      "phase": "volley",
+      "frames": 401,
+      "fps": 57.02,
+      "p95": 16.8,
+      "max": 133.3,
+      "over50": 3,
+      "canvas": 355,
+      "functions": [
+        [
+          "drawWorld",
+          {
+            "calls": 401,
+            "total": 1219.70000012964,
+            "max": 81.89999999850988
+          }
+        ],
+        [
+          "updatePlay",
+          {
+            "calls": 412,
+            "total": 554.2999999970198,
+            "max": 21
+          }
+        ],
+        [
+          "hammerBossDraw",
+          {
+            "calls": 401,
+            "total": 214.4000001102686,
+            "max": 5.5
+          }
+        ],
+        [
+          "c32Hands",
+          {
+            "calls": 1048,
+            "total": 13.900000005960464,
+            "max": 0.5
+          }
+        ],
+        [
+          "c32Pose",
+          {
+            "calls": 1850,
+            "total": 12.100000016391277,
+            "max": 0.3999999985098839
+          }
+        ]
+      ]
+    }
+  ],
+  "errors": []
+}

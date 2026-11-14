@@ -1,0 +1,3434 @@
+[
+  {
+    "name": "blue-overhead",
+    "unit": "blue",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          312.4174685418209,
+          562.0
+        ],
+        "tip": [
+          312.49469429004546,
+          168.0
+        ],
+        "headCenter": [
+          312.49469429004546,
+          90.85320869125822
+        ],
+        "grip": [
+          312.4174685418209,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-cap.png",
+        "source": "blue-cap",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          631,
+          623
+        ],
+        "root": [
+          317.22160664819944,
+          562.0
+        ],
+        "tip": [
+          317.71798188874516,
+          157.0
+        ],
+        "headCenter": [
+          317.71798188874516,
+          71.127425614489
+        ],
+        "grip": [
+          317.22160664819944,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "behind-head",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-cap.png",
+        "source": "blue-cap",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          631,
+          623
+        ],
+        "root": [
+          317.22160664819944,
+          562.0
+        ],
+        "tip": [
+          317.71798188874516,
+          157.0
+        ],
+        "headCenter": [
+          317.71798188874516,
+          71.127425614489
+        ],
+        "grip": [
+          317.22160664819944,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "behind-head",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-cap.png",
+        "source": "blue-cap",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          631,
+          623
+        ],
+        "root": [
+          317.22160664819944,
+          562.0
+        ],
+        "tip": [
+          317.71798188874516,
+          157.0
+        ],
+        "headCenter": [
+          317.71798188874516,
+          71.127425614489
+        ],
+        "grip": [
+          317.22160664819944,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "behind-head",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-cap.png",
+        "source": "blue-cap",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          631,
+          623
+        ],
+        "root": [
+          317.22160664819944,
+          562.0
+        ],
+        "tip": [
+          317.71798188874516,
+          157.0
+        ],
+        "headCenter": [
+          317.71798188874516,
+          71.127425614489
+        ],
+        "grip": [
+          317.22160664819944,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "behind-head",
+        "duration": 0.14
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-cap.png",
+        "source": "blue-cap",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          631,
+          623
+        ],
+        "root": [
+          317.22160664819944,
+          562.0
+        ],
+        "tip": [
+          317.71798188874516,
+          157.0
+        ],
+        "headCenter": [
+          317.71798188874516,
+          71.127425614489
+        ],
+        "grip": [
+          317.22160664819944,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "behind-head",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          314.2230215827338,
+          562.0
+        ],
+        "tip": [
+          315.69850692570606,
+          341.0
+        ],
+        "headCenter": [
+          315.69850692570606,
+          273.0881453498831
+        ],
+        "grip": [
+          314.2230215827338,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "downstroke",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          314.2230215827338,
+          562.0
+        ],
+        "tip": [
+          315.69850692570606,
+          341.0
+        ],
+        "headCenter": [
+          315.69850692570606,
+          273.0881453498831
+        ],
+        "grip": [
+          314.2230215827338,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "downstroke",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-cap.png",
+        "source": "blue-cap",
+        "sourceCell": 1,
+        "crop": [
+          631,
+          0,
+          632,
+          623
+        ],
+        "root": [
+          302.13995485327314,
+          562.0
+        ],
+        "tip": [
+          298.6610195360196,
+          394.0
+        ],
+        "headCenter": [
+          298.6610195360196,
+          314.3536324786325
+        ],
+        "grip": [
+          302.13995485327314,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "downstroke",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          313.3173913043478,
+          562.0
+        ],
+        "tip": [
+          314.0571112748711,
+          532.0
+        ],
+        "headCenter": [
+          314.0571112748711,
+          463.65917464996323
+        ],
+        "grip": [
+          313.3173913043478,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "downstroke",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-cap.png",
+        "source": "blue-cap",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          623,
+          631,
+          623
+        ],
+        "root": [
+          318.75201612903226,
+          537.0
+        ],
+        "tip": [
+          318.85115827437926,
+          543.0
+        ],
+        "headCenter": [
+          318.85115827437926,
+          464.32126508530996
+        ],
+        "grip": [
+          318.75201612903226,
+          332.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-cap.png",
+        "source": "blue-cap",
+        "sourceCell": 3,
+        "crop": [
+          631,
+          623,
+          632,
+          623
+        ],
+        "root": [
+          303.0451055662188,
+          539.0
+        ],
+        "tip": [
+          297.43781364437814,
+          545.0
+        ],
+        "headCenter": [
+          297.43781364437814,
+          463.9509019395091
+        ],
+        "grip": [
+          303.0451055662188,
+          334.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          313.3173913043478,
+          562.0
+        ],
+        "tip": [
+          314.0571112748711,
+          532.0
+        ],
+        "headCenter": [
+          314.0571112748711,
+          463.65917464996323
+        ],
+        "grip": [
+          313.3173913043478,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "blue-sides",
+    "unit": "blue",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          337.3830845771144,
+          543.0
+        ],
+        "tip": [
+          356.0,
+          76.06786786786786
+        ],
+        "headCenter": [
+          434.34654654654656,
+          76.06786786786786
+        ],
+        "grip": [
+          337.3830845771144,
+          338.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          337.3830845771144,
+          543.0
+        ],
+        "tip": [
+          356.0,
+          76.06786786786786
+        ],
+        "headCenter": [
+          434.34654654654656,
+          76.06786786786786
+        ],
+        "grip": [
+          337.3830845771144,
+          338.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.3182897862233,
+          543.0
+        ],
+        "tip": [
+          113.0,
+          128.27011375387798
+        ],
+        "headCenter": [
+          191.05046535677354,
+          128.27011375387798
+        ],
+        "grip": [
+          313.3182897862233,
+          338.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.3182897862233,
+          543.0
+        ],
+        "tip": [
+          113.0,
+          128.27011375387798
+        ],
+        "headCenter": [
+          191.05046535677354,
+          128.27011375387798
+        ],
+        "grip": [
+          313.3182897862233,
+          338.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          321.95991091314033,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          157.22381432896066
+        ],
+        "headCenter": [
+          161.69424823410696,
+          157.22381432896066
+        ],
+        "grip": [
+          321.95991091314033,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          321.95991091314033,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          157.22381432896066
+        ],
+        "headCenter": [
+          161.69424823410696,
+          157.22381432896066
+        ],
+        "grip": [
+          321.95991091314033,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          321.95991091314033,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          157.22381432896066
+        ],
+        "headCenter": [
+          161.69424823410696,
+          157.22381432896066
+        ],
+        "grip": [
+          321.95991091314033,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          321.95991091314033,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          157.22381432896066
+        ],
+        "headCenter": [
+          161.69424823410696,
+          157.22381432896066
+        ],
+        "grip": [
+          321.95991091314033,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          322.95710059171597,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          164.43432503541794
+        ],
+        "headCenter": [
+          162.97328476017003,
+          164.43432503541794
+        ],
+        "grip": [
+          322.95710059171597,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          322.95710059171597,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          164.43432503541794
+        ],
+        "headCenter": [
+          162.97328476017003,
+          164.43432503541794
+        ],
+        "grip": [
+          322.95710059171597,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          322.95710059171597,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          164.43432503541794
+        ],
+        "headCenter": [
+          162.97328476017003,
+          164.43432503541794
+        ],
+        "grip": [
+          322.95710059171597,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          322.95710059171597,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          164.43432503541794
+        ],
+        "headCenter": [
+          162.97328476017003,
+          164.43432503541794
+        ],
+        "grip": [
+          322.95710059171597,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "blue-right",
+    "unit": "blue",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          337.3830845771144,
+          543.0
+        ],
+        "tip": [
+          356.0,
+          76.06786786786786
+        ],
+        "headCenter": [
+          434.34654654654656,
+          76.06786786786786
+        ],
+        "grip": [
+          337.3830845771144,
+          338.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          337.3830845771144,
+          543.0
+        ],
+        "tip": [
+          356.0,
+          76.06786786786786
+        ],
+        "headCenter": [
+          434.34654654654656,
+          76.06786786786786
+        ],
+        "grip": [
+          337.3830845771144,
+          338.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.3182897862233,
+          543.0
+        ],
+        "tip": [
+          113.0,
+          128.27011375387798
+        ],
+        "headCenter": [
+          191.05046535677354,
+          128.27011375387798
+        ],
+        "grip": [
+          313.3182897862233,
+          338.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.3182897862233,
+          543.0
+        ],
+        "tip": [
+          113.0,
+          128.27011375387798
+        ],
+        "headCenter": [
+          191.05046535677354,
+          128.27011375387798
+        ],
+        "grip": [
+          313.3182897862233,
+          338.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          321.95991091314033,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          157.22381432896066
+        ],
+        "headCenter": [
+          161.69424823410696,
+          157.22381432896066
+        ],
+        "grip": [
+          321.95991091314033,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          321.95991091314033,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          157.22381432896066
+        ],
+        "headCenter": [
+          161.69424823410696,
+          157.22381432896066
+        ],
+        "grip": [
+          321.95991091314033,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          321.95991091314033,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          157.22381432896066
+        ],
+        "headCenter": [
+          161.69424823410696,
+          157.22381432896066
+        ],
+        "grip": [
+          321.95991091314033,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          321.95991091314033,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          157.22381432896066
+        ],
+        "headCenter": [
+          161.69424823410696,
+          157.22381432896066
+        ],
+        "grip": [
+          321.95991091314033,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          322.95710059171597,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          164.43432503541794
+        ],
+        "headCenter": [
+          162.97328476017003,
+          164.43432503541794
+        ],
+        "grip": [
+          322.95710059171597,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          322.95710059171597,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          164.43432503541794
+        ],
+        "headCenter": [
+          162.97328476017003,
+          164.43432503541794
+        ],
+        "grip": [
+          322.95710059171597,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          322.95710059171597,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          164.43432503541794
+        ],
+        "headCenter": [
+          162.97328476017003,
+          164.43432503541794
+        ],
+        "grip": [
+          322.95710059171597,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-side.png",
+        "source": "blue-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          322.95710059171597,
+          558.0
+        ],
+        "tip": [
+          83.0,
+          164.43432503541794
+        ],
+        "headCenter": [
+          162.97328476017003,
+          164.43432503541794
+        ],
+        "grip": [
+          322.95710059171597,
+          353.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\blue-aux.png",
+        "source": "blue-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          313.47634854771786,
+          562.0
+        ],
+        "tip": [
+          315.6475060263304,
+          515.0
+        ],
+        "headCenter": [
+          315.6475060263304,
+          446.6217318746523
+        ],
+        "grip": [
+          313.47634854771786,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "corrupt-overhead",
+    "unit": "drac",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          304.3588235294118,
+          598.0
+        ],
+        "tip": [
+          307.4874489200233,
+          153.0
+        ],
+        "headCenter": [
+          307.4874489200233,
+          93.47752481027437
+        ],
+        "grip": [
+          304.3588235294118,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-cap.png",
+        "source": "drac-cap",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          319.656,
+          597.0
+        ],
+        "tip": [
+          318.79264705882355,
+          153.0
+        ],
+        "headCenter": [
+          318.79264705882355,
+          92.38823529411765
+        ],
+        "grip": [
+          319.656,
+          392.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "behind-head",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-cap.png",
+        "source": "drac-cap",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          319.656,
+          597.0
+        ],
+        "tip": [
+          318.79264705882355,
+          153.0
+        ],
+        "headCenter": [
+          318.79264705882355,
+          92.38823529411765
+        ],
+        "grip": [
+          319.656,
+          392.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "behind-head",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-cap.png",
+        "source": "drac-cap",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          319.656,
+          597.0
+        ],
+        "tip": [
+          318.79264705882355,
+          153.0
+        ],
+        "headCenter": [
+          318.79264705882355,
+          92.38823529411765
+        ],
+        "grip": [
+          319.656,
+          392.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "behind-head",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-cap.png",
+        "source": "drac-cap",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          319.656,
+          597.0
+        ],
+        "tip": [
+          318.79264705882355,
+          153.0
+        ],
+        "headCenter": [
+          318.79264705882355,
+          92.38823529411765
+        ],
+        "grip": [
+          319.656,
+          392.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "behind-head",
+        "duration": 0.14
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-cap.png",
+        "source": "drac-cap",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          319.656,
+          597.0
+        ],
+        "tip": [
+          318.79264705882355,
+          153.0
+        ],
+        "headCenter": [
+          318.79264705882355,
+          92.38823529411765
+        ],
+        "grip": [
+          319.656,
+          392.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "behind-head",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          317.28767123287673,
+          567.0
+        ],
+        "tip": [
+          319.4456618962433,
+          431.0
+        ],
+        "headCenter": [
+          319.4456618962433,
+          308.7788461538462
+        ],
+        "grip": [
+          317.28767123287673,
+          362.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "downstroke",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          317.28767123287673,
+          567.0
+        ],
+        "tip": [
+          319.4456618962433,
+          431.0
+        ],
+        "headCenter": [
+          319.4456618962433,
+          308.7788461538462
+        ],
+        "grip": [
+          317.28767123287673,
+          362.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "downstroke",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-cap.png",
+        "source": "drac-cap",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          288.34335839599,
+          599.0
+        ],
+        "tip": [
+          292.0,
+          517.0
+        ],
+        "headCenter": [
+          293.66666666666663,
+          393.843792633015
+        ],
+        "grip": [
+          288.34335839599,
+          394.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "downstroke",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          305.92821782178214,
+          567.0
+        ],
+        "tip": [
+          310.0,
+          548.0
+        ],
+        "headCenter": [
+          309.7060972824846,
+          417.1073304407398
+        ],
+        "grip": [
+          305.92821782178214,
+          362.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "downstroke",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-cap.png",
+        "source": "drac-cap",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          316.7228260869565,
+          548.0
+        ],
+        "tip": [
+          319.8255479300421,
+          550.0
+        ],
+        "headCenter": [
+          319.8255479300421,
+          420.8990480407349
+        ],
+        "grip": [
+          316.7228260869565,
+          343.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-cap.png",
+        "source": "drac-cap",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          290.83149171270713,
+          548.0
+        ],
+        "tip": [
+          293.4325683060109,
+          555.0
+        ],
+        "headCenter": [
+          293.4325683060109,
+          423.53267759562846
+        ],
+        "grip": [
+          290.83149171270713,
+          343.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          305.92821782178214,
+          567.0
+        ],
+        "tip": [
+          310.0,
+          548.0
+        ],
+        "headCenter": [
+          309.7060972824846,
+          417.1073304407398
+        ],
+        "grip": [
+          305.92821782178214,
+          362.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "corrupt-sides",
+    "unit": "drac",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          324.84854771784234,
+          560.0
+        ],
+        "tip": [
+          302.0,
+          70.0
+        ],
+        "headCenter": [
+          428.3839128907622,
+          69.19704952581665
+        ],
+        "grip": [
+          324.84854771784234,
+          355.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          324.84854771784234,
+          560.0
+        ],
+        "tip": [
+          302.0,
+          70.0
+        ],
+        "headCenter": [
+          428.3839128907622,
+          69.19704952581665
+        ],
+        "grip": [
+          324.84854771784234,
+          355.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          331.2402597402597,
+          560.0
+        ],
+        "tip": [
+          53.0,
+          149.0
+        ],
+        "headCenter": [
+          182.26729559748424,
+          148.15688329839273
+        ],
+        "grip": [
+          331.2402597402597,
+          355.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          331.2402597402597,
+          560.0
+        ],
+        "tip": [
+          53.0,
+          149.0
+        ],
+        "headCenter": [
+          182.26729559748424,
+          148.15688329839273
+        ],
+        "grip": [
+          331.2402597402597,
+          355.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          330.74869109947645,
+          561.0
+        ],
+        "tip": [
+          40.0,
+          155.0
+        ],
+        "headCenter": [
+          175.6350180505415,
+          153.41877256317684
+        ],
+        "grip": [
+          330.74869109947645,
+          356.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          330.74869109947645,
+          561.0
+        ],
+        "tip": [
+          40.0,
+          155.0
+        ],
+        "headCenter": [
+          175.6350180505415,
+          153.41877256317684
+        ],
+        "grip": [
+          330.74869109947645,
+          356.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          330.74869109947645,
+          561.0
+        ],
+        "tip": [
+          40.0,
+          155.0
+        ],
+        "headCenter": [
+          175.6350180505415,
+          153.41877256317684
+        ],
+        "grip": [
+          330.74869109947645,
+          356.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          330.74869109947645,
+          561.0
+        ],
+        "tip": [
+          40.0,
+          155.0
+        ],
+        "headCenter": [
+          175.6350180505415,
+          153.41877256317684
+        ],
+        "grip": [
+          330.74869109947645,
+          356.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          328.8004338394794,
+          562.0
+        ],
+        "tip": [
+          35.0,
+          156.0
+        ],
+        "headCenter": [
+          164.27598287271314,
+          155.02413390424294
+        ],
+        "grip": [
+          328.8004338394794,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          328.8004338394794,
+          562.0
+        ],
+        "tip": [
+          35.0,
+          156.0
+        ],
+        "headCenter": [
+          164.27598287271314,
+          155.02413390424294
+        ],
+        "grip": [
+          328.8004338394794,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          328.8004338394794,
+          562.0
+        ],
+        "tip": [
+          35.0,
+          156.0
+        ],
+        "headCenter": [
+          164.27598287271314,
+          155.02413390424294
+        ],
+        "grip": [
+          328.8004338394794,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          328.8004338394794,
+          562.0
+        ],
+        "tip": [
+          35.0,
+          156.0
+        ],
+        "headCenter": [
+          164.27598287271314,
+          155.02413390424294
+        ],
+        "grip": [
+          328.8004338394794,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "corrupt-right",
+    "unit": "drac",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          324.84854771784234,
+          560.0
+        ],
+        "tip": [
+          302.0,
+          70.0
+        ],
+        "headCenter": [
+          428.3839128907622,
+          69.19704952581665
+        ],
+        "grip": [
+          324.84854771784234,
+          355.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          324.84854771784234,
+          560.0
+        ],
+        "tip": [
+          302.0,
+          70.0
+        ],
+        "headCenter": [
+          428.3839128907622,
+          69.19704952581665
+        ],
+        "grip": [
+          324.84854771784234,
+          355.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          331.2402597402597,
+          560.0
+        ],
+        "tip": [
+          53.0,
+          149.0
+        ],
+        "headCenter": [
+          182.26729559748424,
+          148.15688329839273
+        ],
+        "grip": [
+          331.2402597402597,
+          355.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          331.2402597402597,
+          560.0
+        ],
+        "tip": [
+          53.0,
+          149.0
+        ],
+        "headCenter": [
+          182.26729559748424,
+          148.15688329839273
+        ],
+        "grip": [
+          331.2402597402597,
+          355.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          330.74869109947645,
+          561.0
+        ],
+        "tip": [
+          40.0,
+          155.0
+        ],
+        "headCenter": [
+          175.6350180505415,
+          153.41877256317684
+        ],
+        "grip": [
+          330.74869109947645,
+          356.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          330.74869109947645,
+          561.0
+        ],
+        "tip": [
+          40.0,
+          155.0
+        ],
+        "headCenter": [
+          175.6350180505415,
+          153.41877256317684
+        ],
+        "grip": [
+          330.74869109947645,
+          356.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          330.74869109947645,
+          561.0
+        ],
+        "tip": [
+          40.0,
+          155.0
+        ],
+        "headCenter": [
+          175.6350180505415,
+          153.41877256317684
+        ],
+        "grip": [
+          330.74869109947645,
+          356.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          330.74869109947645,
+          561.0
+        ],
+        "tip": [
+          40.0,
+          155.0
+        ],
+        "headCenter": [
+          175.6350180505415,
+          153.41877256317684
+        ],
+        "grip": [
+          330.74869109947645,
+          356.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "contact",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          328.8004338394794,
+          562.0
+        ],
+        "tip": [
+          35.0,
+          156.0
+        ],
+        "headCenter": [
+          164.27598287271314,
+          155.02413390424294
+        ],
+        "grip": [
+          328.8004338394794,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          328.8004338394794,
+          562.0
+        ],
+        "tip": [
+          35.0,
+          156.0
+        ],
+        "headCenter": [
+          164.27598287271314,
+          155.02413390424294
+        ],
+        "grip": [
+          328.8004338394794,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          328.8004338394794,
+          562.0
+        ],
+        "tip": [
+          35.0,
+          156.0
+        ],
+        "headCenter": [
+          164.27598287271314,
+          155.02413390424294
+        ],
+        "grip": [
+          328.8004338394794,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "load",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-side.png",
+        "source": "drac-side",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          627,
+          627,
+          627
+        ],
+        "root": [
+          328.8004338394794,
+          562.0
+        ],
+        "tip": [
+          35.0,
+          156.0
+        ],
+        "headCenter": [
+          164.27598287271314,
+          155.02413390424294
+        ],
+        "grip": [
+          328.8004338394794,
+          357.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "capAxis": [
+          -1,
+          0
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\work\\cap_strikes_1111\\generated\\drac-aux.png",
+        "source": "drac-aux",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "root": [
+          315.86120218579237,
+          598.0
+        ],
+        "tip": [
+          320.0,
+          543.0
+        ],
+        "headCenter": [
+          322.168815943728,
+          414.47620164126613
+        ],
+        "grip": [
+          315.86120218579237,
+          393.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "capAxis": [
+          0,
+          1
+        ],
+        "phase": "recovery",
+        "duration": 0.055
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  }
+]

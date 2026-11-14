@@ -1,0 +1,84 @@
+{
+  "chronus": {
+    "rotor": 17,
+    "rotor_hit": 17,
+    "cast": 8,
+    "cast_hit": 8,
+    "thrust": 9,
+    "thrust_hit": 9,
+    "power_regular": 13,
+    "power_regular_hit": 13,
+    "power_chrome": 13,
+    "power_chrome_hit": 13,
+    "power_red": 13,
+    "power_red_hit": 13,
+    "wave": 8
+  },
+  "rage": {
+    "hold_regular": 9,
+    "hold_regular_hit": 9,
+    "stun_regular": 3,
+    "stun_regular_hit": 3,
+    "recall_regular": 9,
+    "recall_regular_hit": 9,
+    "rage_regular": 13,
+    "rage_regular_hit": 13,
+    "hold_chrome": 9,
+    "hold_chrome_hit": 9,
+    "stun_chrome": 3,
+    "stun_chrome_hit": 3,
+    "recall_chrome": 9,
+    "recall_chrome_hit": 9,
+    "rage_chrome": 13,
+    "rage_chrome_hit": 13,
+    "hold_red": 9,
+    "hold_red_hit": 9,
+    "stun_red": 3,
+    "stun_red_hit": 3,
+    "recall_red": 9,
+    "recall_red_hit": 9,
+    "rage_red": 13,
+    "rage_red_hit": 13
+  },
+  "overhead": {
+    "corrupt-overhead": {
+      "cell": [
+        512,
+        512
+      ],
+      "pivot": [
+        256,
+        256
+      ],
+      "cols": 4,
+      "count": 32,
+      "folder": "three_way_hammer_1111"
+    },
+    "corrupt-overhead-left": {
+      "cell": [
+        512,
+        512
+      ],
+      "pivot": [
+        256,
+        256
+      ],
+      "cols": 4,
+      "count": 32,
+      "folder": "three_way_hammer_1111"
+    },
+    "corrupt-overhead-right": {
+      "cell": [
+        512,
+        512
+      ],
+      "pivot": [
+        255,
+        256
+      ],
+      "cols": 4,
+      "count": 32,
+      "folder": "three_way_hammer_1111"
+    }
+  }
+}

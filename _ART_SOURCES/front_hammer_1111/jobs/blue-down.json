@@ -1,0 +1,16 @@
+{
+  "name": "blue-down",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-f741d1d2-4da7-4004-89e6-f19ee91e51be.png",
+  "prompt": "Retarget ALL EIGHT complete front-facing downswing poses inreference1 into BLUE CHRONOS. EXACTsamebodymotion/handpositions/headcenterpath and4x2order; no sideviewturn. Reference1 is POSE ONLY. Reference2 canonicalChronosarmor; reference3 exactoriginaldarkhelmet sweptfins/narrowcyanvisor;reference4 exactBLUElightning cylindricalThammer,flatblack/silvercaps,blackstraightshaft/cyanroundedbutt, NOspikes/horns/purple/red/face. Preservecharcoalchromeheavyarmor,circularcyanbreastcore/blueinserts. ALL8closedhelmetsandpelvisfaceviewer, hips/shouldersdrivefrontalheavydownswing, kneesbend, centeredgroundimpactinfrontofboots at6/7. BOTHhandsCLOSETOGETHER TOUCHING oneaboveother grippingSAMEonehilt onSAMEsideofcylinder; NOcrossbar/noheadbetweenfists/nohaftoutbothsides. Atcontactoneforeshortenedstraightshaft recedesBACKINDEPTH fromcylinderSIDE-MIDPOINT tobothclosefistsatupperabdomen,headlowernearshins; cylinderUPRIGHTwithflatBOTTOMENDCAPfacingDOWN. SameperpendicularrigidTgeometryasreference1. Upperposesclosefistsaboveforeheadonhilt, neveronhelmet; heavyheadabovewithmargin. All8completeactor+heldweapon drawncoherently, noassemblies/headstamps. SAMEproportionalmodelunitacrosscells,fixedbootbaseline,clear30pixelmarginaroundALLfins/hammer/boots, noCLIPPING. Wide4columns2rows2048x1024, crispmetallic16bitsprites, TRUERGBAtransparency, nofloor/shadow/FX/trails/text/background.",
+  "accepted": true,
+  "status": "candidate",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

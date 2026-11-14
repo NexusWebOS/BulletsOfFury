@@ -1,0 +1,26 @@
+{
+  "generator": "built-in image generation",
+  "source": "masters/pilot-background-sheet.png",
+  "sourceDimensions": [
+    1536,
+    1024
+  ],
+  "cells": [
+    512,
+    340
+  ],
+  "rowOrigins": [
+    0,
+    342,
+    684
+  ],
+  "runtimePortrait": [
+    256,
+    256
+  ],
+  "visibleBottom": 250,
+  "borderOverlap": 2,
+  "portraitScale": "Existing authored128px portraits baked2\u00d7; no source pixels changed",
+  "prompt": "A3\u00d73 sheet of nine distinct opaque16-bit pixel-art comic backgrounds, ordered Cole green/Axel blue/Freezer cyan/Yuri red/Maverick teal/Falva magenta/Lizzie gold/Decker gold circuits/Juggernaut bronze. Coarse halftones, ink hatching and action shapes; dark centers; no people, aircraft, text, logos or borders. Built-in image generation, followed by native cropping and per-pilot16-color Aseprite export.",
+  "production": "Aseprite author_pilot_backgrounds.lua"
+}

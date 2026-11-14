@@ -1,0 +1,426 @@
+{
+  "version": "H127",
+  "frames": [
+    {
+      "key": "h127_0",
+      "rect": [
+        0,
+        0,
+        480,
+        512
+      ],
+      "alpha": 0
+    },
+    {
+      "key": "h127_0",
+      "rect": [
+        480,
+        0,
+        480,
+        512
+      ],
+      "alpha": 8
+    },
+    {
+      "key": "h127_0",
+      "rect": [
+        0,
+        512,
+        480,
+        512
+      ],
+      "alpha": 16
+    },
+    {
+      "key": "h127_0",
+      "rect": [
+        480,
+        512,
+        480,
+        512
+      ],
+      "alpha": 24
+    },
+    {
+      "key": "h127_1",
+      "rect": [
+        0,
+        0,
+        480,
+        512
+      ],
+      "alpha": 32
+    },
+    {
+      "key": "h127_1",
+      "rect": [
+        480,
+        0,
+        480,
+        512
+      ],
+      "alpha": 40
+    },
+    {
+      "key": "h127_1",
+      "rect": [
+        0,
+        512,
+        480,
+        512
+      ],
+      "alpha": 48
+    },
+    {
+      "key": "h127_1",
+      "rect": [
+        480,
+        512,
+        480,
+        512
+      ],
+      "alpha": 56
+    },
+    {
+      "key": "h127_2",
+      "rect": [
+        0,
+        0,
+        480,
+        512
+      ],
+      "alpha": 64
+    },
+    {
+      "key": "h127_2",
+      "rect": [
+        480,
+        0,
+        480,
+        512
+      ],
+      "alpha": 72
+    },
+    {
+      "key": "h127_2",
+      "rect": [
+        0,
+        512,
+        480,
+        512
+      ],
+      "alpha": 80
+    },
+    {
+      "key": "h127_2",
+      "rect": [
+        480,
+        512,
+        480,
+        512
+      ],
+      "alpha": 88
+    },
+    {
+      "key": "h127_3",
+      "rect": [
+        0,
+        0,
+        480,
+        512
+      ],
+      "alpha": 96
+    },
+    {
+      "key": "h127_3",
+      "rect": [
+        480,
+        0,
+        480,
+        512
+      ],
+      "alpha": 104
+    },
+    {
+      "key": "h127_3",
+      "rect": [
+        0,
+        512,
+        480,
+        512
+      ],
+      "alpha": 112
+    },
+    {
+      "key": "h127_3",
+      "rect": [
+        480,
+        512,
+        480,
+        512
+      ],
+      "alpha": 120
+    },
+    {
+      "key": "h127_4",
+      "rect": [
+        0,
+        0,
+        480,
+        512
+      ],
+      "alpha": 128
+    },
+    {
+      "key": "h127_4",
+      "rect": [
+        480,
+        0,
+        480,
+        512
+      ],
+      "alpha": 135
+    },
+    {
+      "key": "h127_4",
+      "rect": [
+        0,
+        512,
+        480,
+        512
+      ],
+      "alpha": 143
+    },
+    {
+      "key": "h127_4",
+      "rect": [
+        480,
+        512,
+        480,
+        512
+      ],
+      "alpha": 151
+    },
+    {
+      "key": "h127_5",
+      "rect": [
+        0,
+        0,
+        480,
+        512
+      ],
+      "alpha": 159
+    },
+    {
+      "key": "h127_5",
+      "rect": [
+        480,
+        0,
+        480,
+        512
+      ],
+      "alpha": 167
+    },
+    {
+      "key": "h127_5",
+      "rect": [
+        0,
+        512,
+        480,
+        512
+      ],
+      "alpha": 175
+    },
+    {
+      "key": "h127_5",
+      "rect": [
+        480,
+        512,
+        480,
+        512
+      ],
+      "alpha": 183
+    },
+    {
+      "key": "h127_6",
+      "rect": [
+        0,
+        0,
+        480,
+        512
+      ],
+      "alpha": 191
+    },
+    {
+      "key": "h127_6",
+      "rect": [
+        480,
+        0,
+        480,
+        512
+      ],
+      "alpha": 199
+    },
+    {
+      "key": "h127_6",
+      "rect": [
+        0,
+        512,
+        480,
+        512
+      ],
+      "alpha": 207
+    },
+    {
+      "key": "h127_6",
+      "rect": [
+        480,
+        512,
+        480,
+        512
+      ],
+      "alpha": 215
+    },
+    {
+      "key": "h127_7",
+      "rect": [
+        0,
+        0,
+        480,
+        512
+      ],
+      "alpha": 223
+    },
+    {
+      "key": "h127_7",
+      "rect": [
+        480,
+        0,
+        480,
+        512
+      ],
+      "alpha": 231
+    },
+    {
+      "key": "h127_7",
+      "rect": [
+        0,
+        512,
+        480,
+        512
+      ],
+      "alpha": 239
+    },
+    {
+      "key": "h127_7",
+      "rect": [
+        480,
+        512,
+        480,
+        512
+      ],
+      "alpha": 247
+    },
+    {
+      "key": "h127_8",
+      "rect": [
+        0,
+        0,
+        480,
+        512
+      ],
+      "alpha": 255
+    }
+  ],
+  "pages": {
+    "h127_0": {
+      "path": "assets/game/shared/combat/dam_impact_1111/h127_0.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "h127_1": {
+      "path": "assets/game/shared/combat/dam_impact_1111/h127_1.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "h127_2": {
+      "path": "assets/game/shared/combat/dam_impact_1111/h127_2.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "h127_3": {
+      "path": "assets/game/shared/combat/dam_impact_1111/h127_3.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "h127_4": {
+      "path": "assets/game/shared/combat/dam_impact_1111/h127_4.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "h127_5": {
+      "path": "assets/game/shared/combat/dam_impact_1111/h127_5.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "h127_6": {
+      "path": "assets/game/shared/combat/dam_impact_1111/h127_6.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "h127_7": {
+      "path": "assets/game/shared/combat/dam_impact_1111/h127_7.png",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "h127_8": {
+      "path": "assets/game/shared/combat/dam_impact_1111/h127_8.png",
+      "size": [
+        1024,
+        512
+      ]
+    }
+  },
+  "logical": [
+    480,
+    512
+  ],
+  "levels": 32,
+  "dam": {
+    "source": [
+      340,
+      286
+    ],
+    "target_src_y": 128,
+    "changed_bounds": [
+      88,
+      242,
+      596,
+      578
+    ]
+  },
+  "timing": {
+    "run_in": 3.6,
+    "approach": 3.8,
+    "flash_rise": 0.16,
+    "flash_hold": 0.18,
+    "flash_fall": 1.18
+  },
+  "contract": "Pre-authored white/alpha full-screen frames; ordinary fixed blits, no runtime opacity animation."
+}

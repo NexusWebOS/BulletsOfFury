@@ -1,0 +1,41 @@
+// SA123: warned accelerating side runs, physical burrow and paired overhead arches.
+function sj123Blit(name,f,x,y){const a=SA123.art[name],im=a&&XART.get('sa123_'+name);if(!im)return false;f=clamp(f|0,0,a.frames-1);const[w,h]=a.cell;ctx.drawImage(im,f%a.cols*w,Math.floor(f/a.cols)*h,w,h,Math.round(x-a.pivot[0]),Math.round(y-a.pivot[1]),w,h);SA123.draws[name]=(SA123.draws[name]||0)+1;return true;}
+function sj123Cancel(b){const C=b?._sj120;if(!C)return;C.holes=[];for(const a of b._sj98.actors){a.underground=false;a.buryDepth=0;a.feed=null;a.riseMode=null;a.emergeTravel=null;}}
+function sj123Hole(b,a,kind,x,y){const h={actor:a.i,kind,x,y,age:0,closing:null};(b._sj120.holes||(b._sj120.holes=[])).push(h);return h;}
+function sj123CloseHoles(b){for(const h of b._sj120.holes||[])if(h.closing==null)h.closing=0;}
+function sj123Tick(b,dt){const C=b._sj120;for(const h of C.holes||[]){h.age+=dt;if(h.closing!=null)h.closing+=dt;}C.holes=(C.holes||[]).filter(h=>h.closing==null||h.closing<.55);}
+function sj123Side(b,pass){const C=b._sj120;C.sidePass=pass;C.sideSpeed=SA123.speeds[pass];C.sideSerial=(C.sideSerial||0)+1;sj120Set(b,'side-warn',1.05);const W=worldWidth();for(const a of b._sj98.actors)if(!a.dead){const right=(a.i+pass+C.cycle)%2===0;a.from={x:right?-360:W+360,y:170+a.i*165+(pass%2?18:-12),h:0};a.to={x:right?W+360:-360,y:a.from.y};a.lane=a.from.y;a.x=a.from.x;a.gy=a.from.y;a.height=0;a.y=a.gy;const p=sj123SidePoint(a,0);a.heading=Math.atan2(-p.dx,p.dy);a.underground=false;a.buryDepth=0;a.feed=null;a.riseMode=null;a.emergeTravel=null;sj120ResetTrail(a);sj122Segments(a);}sj120Log(b,'side-warning',{pass,speed:C.sideSpeed,warning:C.dur});}
+function sj123SidePoint(a,u){return{x:lerp(a.from.x,a.to.x,u),y:a.lane+Math.sin(u*TAU*2+a.i*Math.PI)*24,dx:a.to.x-a.from.x,dy:Math.cos(u*TAU*2+a.i*Math.PI)*24*TAU*2};}
+function sj123Approach(b){const C=b._sj120;sj120Set(b,'dig-approach',1.65);for(const a of b._sj98.actors)if(!a.dead){a.to={x:worldWidth()/2+(a.i?112:-112),y:clamp(player.y-120,190,290)};a.control={x:a.to.x,y:a.to.y-155};a.buryDepth=0;}}
+function sj123Under(b){const C=b._sj120;sj123CloseHoles(b);C.archTarget={x:player.x,y:player.y};sj120Set(b,'underground',1.05);const T=C.archTarget,L=camLeftX(),R=camRightX();for(const a of b._sj98.actors)if(!a.dead){const left=a.i===0,sx=clamp(T.x+(left?-145:145),L+65,R-65),ex=clamp(T.x+(left?145:-145),L+65,R-65),y=clamp(T.y-70,220,VH-110);a.archStart={x:sx,y};a.archEnd={x:ex,y};a.archControl={x:2*T.x-(sx+ex)/2,y:2*T.y-y};a.archHeight=Math.max(100,Math.min(a.i?220:188,T.y-viewTopY()-80));a.archDir=ex>=sx?1:-1;a.x=sx;a.gy=y;a.y=y;a.height=0;a.heading=(left?18:14)*TAU/32;a.underground=true;a.buryDepth=1;a.riseMode=left?'riseR':'riseL';a.feed=null;a.emergeTravel=0;a.archLast={x:sx,y};sj120ResetTrail(a);sj122Segments(a);sj123Hole(b,a,'rise',sx,y+64);}combatAudio0927(b,'bossWeaponCharge',.2);sj120Log(b,'arch-committed',{target:C.archTarget,ends:b._sj98.actors.filter(a=>!a.dead).map(a=>({actor:a.i,start:a.archStart,end:a.archEnd,height:a.archHeight}))});}
+function sj123Bezier(s,c,e,u){const v=1-u;return{x:v*v*s.x+2*v*u*c.x+u*u*e.x,y:v*v*s.y+2*v*u*c.y+u*u*e.y,dx:2*(v*(c.x-s.x)+u*(e.x-c.x)),dy:2*(v*(c.y-s.y)+u*(e.y-c.y))};}
+function sj123Fire(b,a,interval,speed){if(a.t>=a.nextShot){sj120Shoot(b,a,a.heading+Math.PI/2,speed);a.nextShot=a.t+interval;}}
+function sj123Motion(b,a,dt){const C=b._sj120,mode=C.mode,u=clamp(C.t/C.dur,0,1);if(!SA123.modes.has(mode)){a.underground=false;a.buryDepth=0;a.feed=null;a.riseMode=null;a.emergeTravel=null;return false;}
+ a.mouthLevel=0;a.jaw=0;
+ if(mode==='side-warn'){a.underground=false;a.height=0;const first=b._sj98.actors.find(q=>!q.dead);combatWarningTick(a,'sa123-side-'+C.sideSerial,C.t,C.dur,a!==first);}
+ else if(mode==='side-run'){const p=sj123SidePoint(a,u);a.x=p.x;a.gy=p.y;a.height=0;a.heading=Math.atan2(-p.dx,p.dy);a.jaw=1;a.mouthLevel=3;sj123Fire(b,a,.14-C.sidePass*.014,C.sideSpeed/60+4);}
+ else if(mode==='dig-approach'){const p=sj123Bezier(a.from,a.control,a.to,u);a.x=p.x;a.gy=p.y;a.height=0;a.heading=Math.atan2(-p.dx,p.dy);}
+ else if(mode==='burrow'){a.heading=0;a.height=0;a.buryDepth=clamp(C.t/.85,0,1);a.underground=a.buryDepth>.10;a.feed=C.t*310;a.riseMode=null;}
+ else if(mode==='underground'){a.underground=true;a.buryDepth=1;const first=b._sj98.actors.find(q=>!q.dead);combatWarningTick(a,'sa123-arch-'+C.cycle,C.t,C.dur,a!==first);}
+ else if(mode==='emerge'){const v=clamp((C.t-a.i*.18)/.36,0,1);a.buryDepth=1-v;a.underground=a.buryDepth>.06;a.height=0;a.feed=null;}
+ else if(mode==='arch'){const delay=a.i*.18,v=clamp((C.t-delay)/1.35,0,1);a.feed=null;
+  if(C.t<delay){a.buryDepth=.5*(1-C.t/delay);a.underground=a.buryDepth>.06;a.height=0;}
+  else{a.buryDepth=0;a.underground=false;const p=sj123Bezier(a.archStart,a.archControl,a.archEnd,v);a.x=p.x;a.gy=p.y;a.height=4*a.archHeight*v*(1-v);const dx=p.dx,dy=p.dy-4*a.archHeight*(1-2*v);a.heading=Math.atan2(-dx,dy);a.emergeTravel+=Math.hypot(a.x-a.archLast.x,a.gy-a.archLast.y);a.archLast={x:a.x,y:a.gy};a.jaw=1;a.mouthLevel=3;if(v>.22&&v<.78)sj123Fire(b,a,.16,7.6);if(v>=1){const t=Math.max(0,C.t-delay-1.35);a.x+=a.archDir*t*75;a.gy+=Math.sin(t*8)*5;a.heading=Math.atan2(-a.archDir*75,Math.cos(t*8)*40);}}
+ }
+ else if(mode==='arch-land'){a.x=a.from.x+a.archDir*75*C.t;a.gy=a.from.y+Math.sin(C.t*7)*7;a.height=0;a.heading=Math.atan2(-a.archDir*75,Math.cos(C.t*7)*49);a.buryDepth=0;a.underground=false;a.emergeTravel=null;}
+ else if(mode==='arch-exit'){const k=u*u*(3-2*u);a.x=a.from.x+Math.sin(u*Math.PI)*22;a.gy=lerp(a.from.y,-320,k);a.height=0;a.heading=Math.atan2(-Math.cos(u*Math.PI)*22*Math.PI,(-320-a.from.y)*6*u*(1-u));a.buryDepth=0;a.underground=false;}
+ return true;}
+function sj123Next(b){const C=b._sj120;if(C.mode==='side-warn'){const from=b._sj98.actors.map(a=>({...a.from}));sj120Set(b,'side-run',(worldWidth()+720)/C.sideSpeed);for(const a of b._sj98.actors)if(!a.dead)a.from=from[a.i];combatAudio0927(b,'jetDash',.2);sj120Log(b,'side-release',{pass:C.sidePass,speed:C.sideSpeed});}
+ else if(C.mode==='side-run'){if(C.sidePass<3)sj123Side(b,C.sidePass+1);else sj123Approach(b);}
+ else if(C.mode==='dig-approach'){sj120Set(b,'burrow',1.45);for(const a of b._sj98.actors)if(!a.dead){a.heading=0;sj123Hole(b,a,'dive',a.x,a.gy+64);}combatAudio0927(b,'hammerImpact',.2);combatAudio0927(b,'combatToxic0927',.2);}
+ else if(C.mode==='burrow')sj123Under(b);
+ else if(C.mode==='underground'){sj120Set(b,'emerge',.36);combatAudio0927(b,'combatToxic0927',.2);combatAudio0927(b,'jetDash',.2);}
+ else if(C.mode==='emerge'){sj120Set(b,'arch',1.53);sj120Log(b,'paired-arch-release',{actors:b._sj98.actors.filter(a=>!a.dead).map(a=>a.i)});}
+ else if(C.mode==='arch'){sj123CloseHoles(b);sj120Set(b,'arch-land',.55);combatAudio0927(b,'hammerImpact',.2);sj120Log(b,'paired-arch-land');}
+ else if(C.mode==='arch-land')sj120Set(b,'arch-exit',1.45);
+ else if(C.mode==='arch-exit')sj120Return(b);else return false;return true;}
+function sj123Warnings(b){const C=b._sj120;if(C.mode==='side-warn'){const col=C.t/C.dur<1/3?0:C.t/C.dur<2/3?1:2,pulse=Math.floor(C.t*8)%2;for(const a of b._sj98.actors)if(!a.dead){const x=a.to.x>a.from.x?camLeftX()+34:camRightX()-34,u=clamp((x-a.from.x)/(a.to.x-a.from.x),0,1),p=sj123SidePoint(a,u),angle=Math.atan2(p.dy,p.dx),n=((Math.round(angle/TAU*32)%32)+32)%32;sj123Blit('arrows',(col*2+pulse)*32+n,p.x,p.y);SA123.warningDraws++;}}
+ if(C.mode==='underground')for(const a of b._sj98.actors)if(!a.dead)sj98Retina(a.archStart.x,a.archStart.y+32,C.t,C.dur);
+ if(['underground','emerge','arch'].includes(C.mode))for(const a of b._sj98.actors)if(!a.dead)sj98Retina(a.archEnd.x,a.archEnd.y+32,C.mode==='underground'?C.t:C.dur,C.dur);}
+function sj123Holes(b,front){for(const h of b._sj120.holes||[]){const f=h.closing!=null?Math.max(0,2-Math.floor(h.closing/.16)):h.age<.35?Math.min(2,Math.floor(h.age*9)):h.age<.8?3+Math.min(2,Math.floor((h.age-.35)*8)):6+Math.floor(h.age*8)%2;sj123Blit(front?'hole-front':'hole',f,h.x,h.y);}}
+function sj123Head(b,a,white){const mode=b._sj120.mode;if(a.underground&&mode==='underground')return true;if(!['burrow','emerge','arch'].includes(mode)||a.buryDepth<=0)return false;const bank=(a.riseMode||'dive')+'-'+(white?'hit':'body'+sj98State(a));sj123Blit(bank,Math.round(clamp(a.buryDepth,0,1)*15),a.x,a.gy);return true;}

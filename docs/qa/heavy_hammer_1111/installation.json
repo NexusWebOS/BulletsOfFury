@@ -1,0 +1,18 @@
+{
+  "textures": 40,
+  "sourceFrames": 160,
+  "uniqueOriginalDrawings": 124,
+  "coreUnchanged": true,
+  "before": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/boss_animation_1109.js": "50fea54aefb69bd00161676ee04f5c9ea73558d52f6a2ba3c918dc893b054070",
+    "assets/whole_hammer_1110.js": "b3ff44d55af1c4a5be2e0a065fa0f65ec037f5a1b06cbf2b9270a53c471ded46",
+    "assets/overhead_slam_art_1111.js": "7cd465b311d335d14d8579940d9c7bb3f186f01fe961fd1aefcae34b6da33a7b"
+  },
+  "after": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/boss_animation_1109.js": "39b52dd8c0f516488509cf341f770dae86d006164f316d4594ff739081b26075",
+    "assets/whole_hammer_1110.js": "35263ed4ba00b49a5f142434b49839c1fbf5fbc3fdf71ec2a693abad5cd7ff99",
+    "assets/overhead_slam_art_1111.js": "ba9a59ed6a082b236dd35862eb70f8af288d0ca16fd366c1b2ae2f408df998e0"
+  }
+}

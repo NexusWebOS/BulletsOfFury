@@ -1,0 +1,3018 @@
+{
+  "checks": {
+    "both_gun_pods_fire_new_tracers": true,
+    "furious_keeps_eight_physical_missiles": true,
+    "ordinary_player_fire_triggers_new_missile_explosions": true,
+    "broken_pod_uses_new_staggered_explosions": true,
+    "broken_pod_cancels_queued_launches": true,
+    "destroyed_pod_removed_from_live_rig": true,
+    "normal_missile_count_preserved": true,
+    "hard_missile_count_preserved": true,
+    "new_tracers_keep_reachable_native_safe_gap": true,
+    "ordinary_gunfire_remains_noninterceptible": true,
+    "missiles_remain_shootable_and_lock_owned": true,
+    "pause_freezes_effect_and_weapon_clocks": true,
+    "real_interception_spawns_exactly_one_burst_per_missile": true,
+    "missile_explosion_finishes_without_lingering": true,
+    "clear_removes_watchers_and_explosions": true,
+    "native_pod_hit_flash_retained": true,
+    "native_hit_flash_expires": true,
+    "new_muzzle_pixels_follow_current_recoil_sockets": true,
+    "reduced_flashing_keeps_native_eight_launches": true,
+    "sonic_attack_still_uses_native_owner": true,
+    "native_warned_charge_still_exits_screen": true,
+    "native_charge_returns_to_hover": true,
+    "gun_rocket_and_blast_cues_decode": true,
+    "all_new_pages_preloaded": true,
+    "all_requested_effect_banks_rendered": true,
+    "effect_concurrency_is_bounded": true,
+    "no_native_browser_errors": true,
+    "original_body_ai_and_other_forms_unchanged": true,
+    "reduced_recheck_no_browser_errors": true
+  },
+  "details": {
+    "guns": {
+      "rows": [
+        {
+          "kind": "guns",
+          "t": 0.05,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.11666666666666665,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.18333333333333332,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.24999999999999997,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.31666666666666665,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.3833333333333333,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.44999999999999996,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.5166666666666666,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.5833333333333335,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.6500000000000004,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.7166666666666672,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.7833333333333341,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.850000000000001,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.9166666666666679,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.9833333333333347,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.0500000000000012,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.1166666666666676,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.183333333333334,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.2500000000000004,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.3166666666666669,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.3833333333333333,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.4499999999999997,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.5166666666666662,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.5833333333333326,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.649999999999999,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.7166666666666655,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.7833333333333319,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.8499999999999983,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.9166666666666647,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 1.9833333333333312,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.0499999999999976,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.116666666666664,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.1833333333333305,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.249999999999997,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.3166666666666633,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.3833333333333298,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.449999999999996,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.5166666666666626,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.583333333333329,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.6499999999999955,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.716666666666662,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.7833333333333283,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.8499999999999948,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.916666666666661,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 2.9833333333333276,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 3.049999999999994,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 3.1166666666666605,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 3.183333333333327,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 3.2499999999999933,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 3.3166666666666598,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 3.383333333333326,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 3.4499999999999926,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.06666666666666667,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "gun-fire",
+          "t": 1.1500000000000008,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.1500000000000008,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.2500000000000004,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.2500000000000004,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.35,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.35,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.4666666666666663,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.4666666666666663,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.566666666666666,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.566666666666666,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.6666666666666656,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.6666666666666656,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.7666666666666653,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.7666666666666653,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.866666666666665,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.866666666666665,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.9666666666666646,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 1.9666666666666646,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 2.066666666666664,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 2.066666666666664,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 2.166666666666664,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 2.166666666666664,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 2.2666666666666635,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 2.2666666666666635,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 2.366666666666663,
+          "part": "left",
+          "socket": {
+            "x": 219.1101314019587,
+            "y": 228.24
+          }
+        },
+        {
+          "event": "gun-fire",
+          "t": 2.366666666666663,
+          "part": "right",
+          "socket": {
+            "x": 436.28013140195867,
+            "y": 228.78
+          }
+        }
+      ],
+      "native": [
+        {
+          "event": "attack-tell",
+          "clock": 0,
+          "kind": "guns",
+          "tell": 1.15,
+          "target": {
+            "x": 340,
+            "y": 447
+          },
+          "safeX": 252,
+          "safeY": 447,
+          "safeHalf": 48
+        },
+        {
+          "event": "guns-committed",
+          "clock": 0.8166666666666675,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "attack-release",
+          "clock": 1.1500000000000008,
+          "kind": "guns"
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.1500000000000008,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.1500000000000008,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.2500000000000004,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.2500000000000004,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.35,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.35,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.4666666666666663,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.4666666666666663,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.566666666666666,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.566666666666666,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.6666666666666656,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.6666666666666656,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.7666666666666653,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.7666666666666653,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.866666666666665,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.866666666666665,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.9666666666666646,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 1.9666666666666646,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 2.066666666666664,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 2.066666666666664,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 2.166666666666664,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 2.166666666666664,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 2.2666666666666635,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 2.2666666666666635,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 2.366666666666663,
+          "part": "left",
+          "x": 219.1101314019587,
+          "y": 228.24,
+          "angle": 1.7671458676442586,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "gun-shot",
+          "clock": 2.366666666666663,
+          "part": "right",
+          "x": 436.28013140195867,
+          "y": 228.78,
+          "angle": 2.061670178918302,
+          "safeX": 252,
+          "safeY": 447
+        },
+        {
+          "event": "recovery",
+          "clock": 3.4666666666666592,
+          "kind": "guns"
+        },
+        {
+          "event": "attack-tell",
+          "clock": 3.983333333333324,
+          "kind": "guns",
+          "tell": 1.15,
+          "target": {
+            "x": 340,
+            "y": 447
+          },
+          "safeX": 428,
+          "safeY": 447,
+          "safeHalf": 48
+        }
+      ]
+    },
+    "missiles": {
+      "rows": [
+        {
+          "kind": "missiles",
+          "t": 0.06666666666666667,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.13333333333333333,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.19999999999999998,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.26666666666666666,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.3333333333333333,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.39999999999999997,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.4666666666666666,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.5333333333333333,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.6000000000000002,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.6666666666666671,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.733333333333334,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.8000000000000008,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.8666666666666677,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.9333333333333346,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.0000000000000013,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.0666666666666678,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.1333333333333342,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.2000000000000006,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.266666666666667,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 1.3333333333333335,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 1.4,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 1.4666666666666663,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 1.5333333333333328,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 1.5999999999999992,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 6
+        },
+        {
+          "kind": "missiles",
+          "t": 1.6666666666666656,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 6
+        },
+        {
+          "kind": "missiles",
+          "t": 1.733333333333332,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 6
+        },
+        {
+          "kind": "missiles",
+          "t": 1.7999999999999985,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 8
+        },
+        {
+          "kind": "missiles",
+          "t": 1.866666666666665,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 8
+        },
+        {
+          "kind": "missiles",
+          "t": 1.9333333333333313,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 8
+        },
+        {
+          "kind": "missiles",
+          "t": 1.9999999999999978,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 8
+        },
+        {
+          "kind": "missiles",
+          "t": 2.066666666666664,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 8
+        },
+        {
+          "kind": "missiles",
+          "t": 2.1333333333333306,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 8
+        },
+        {
+          "kind": "missiles",
+          "t": 2.199999999999997,
+          "hp": 3095,
+          "fx": 1,
+          "missiles": 7
+        },
+        {
+          "kind": "missiles",
+          "t": 2.2666666666666635,
+          "hp": 3095,
+          "fx": 2,
+          "missiles": 6
+        },
+        {
+          "kind": "missiles",
+          "t": 2.33333333333333,
+          "hp": 3095,
+          "fx": 2,
+          "missiles": 6
+        },
+        {
+          "kind": "missiles",
+          "t": 2.3999999999999964,
+          "hp": 3095,
+          "fx": 3,
+          "missiles": 5
+        },
+        {
+          "kind": "missiles",
+          "t": 2.466666666666663,
+          "hp": 3095,
+          "fx": 4,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 2.533333333333329,
+          "hp": 3095,
+          "fx": 4,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 2.5999999999999956,
+          "hp": 3095,
+          "fx": 6,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 2.666666666666662,
+          "hp": 3095,
+          "fx": 6,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 2.7333333333333285,
+          "hp": 3095,
+          "fx": 7,
+          "missiles": 1
+        },
+        {
+          "kind": "missiles",
+          "t": 2.799999999999995,
+          "hp": 3095,
+          "fx": 8,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 2.8666666666666614,
+          "hp": 3095,
+          "fx": 8,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 2.933333333333328,
+          "hp": 3095,
+          "fx": 8,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 2.9999999999999942,
+          "hp": 3095,
+          "fx": 8,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.0666666666666607,
+          "hp": 3095,
+          "fx": 6,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.133333333333327,
+          "hp": 3095,
+          "fx": 6,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.1999999999999935,
+          "hp": 3095,
+          "fx": 5,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.26666666666666,
+          "hp": 3095,
+          "fx": 4,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.3333333333333264,
+          "hp": 3095,
+          "fx": 4,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.399999999999993,
+          "hp": 3095,
+          "fx": 2,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.4666666666666592,
+          "hp": 3095,
+          "fx": 2,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.5333333333333257,
+          "hp": 3095,
+          "fx": 1,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.599999999999992,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.6666666666666585,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.733333333333325,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.7999999999999914,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.06666666666666667,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "rocket-fire",
+          "t": 5.2999999999999865,
+          "part": "left",
+          "socket": {
+            "x": 261.6876929745627,
+            "y": 212.11576574639363
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 5.2999999999999865,
+          "part": "right",
+          "socket": {
+            "x": 447.0476929745627,
+            "y": 210.95576574639364
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 5.483333333333319,
+          "part": "left",
+          "socket": {
+            "x": 258.29134970402487,
+            "y": 211.82830707493352
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 5.483333333333319,
+          "part": "right",
+          "socket": {
+            "x": 443.6513497040249,
+            "y": 210.66830707493352
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 5.649999999999985,
+          "part": "left",
+          "socket": {
+            "x": 254.15422104750309,
+            "y": 211.1879146372862
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 5.649999999999985,
+          "part": "right",
+          "socket": {
+            "x": 439.5142210475031,
+            "y": 210.02791463728622
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 5.816666666666651,
+          "part": "left",
+          "socket": {
+            "x": 249.35649063335336,
+            "y": 210.21701885541762
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 5.816666666666651,
+          "part": "right",
+          "socket": {
+            "x": 434.7164906333533,
+            "y": 209.05701885541762
+          }
+        },
+        {
+          "event": "burst",
+          "t": 6.249999999999983,
+          "x": 358.44305931960207,
+          "y": 531.0754629299676,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 6.283333333333316,
+          "x": 313.98407134003253,
+          "y": 532.1997657549582,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 6.433333333333316,
+          "x": 355.04671604906423,
+          "y": 530.7880042585074,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 6.466666666666649,
+          "x": 310.5877280694947,
+          "y": 531.912307083498,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 6.599999999999982,
+          "x": 350.90958739254245,
+          "y": 530.1476118208601,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 6.633333333333315,
+          "x": 306.4505994129729,
+          "y": 531.2719146458508,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 6.766666666666648,
+          "x": 346.1118569783927,
+          "y": 529.1767160389916,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 6.799999999999981,
+          "x": 301.6528689988231,
+          "y": 530.3010188639821,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        }
+      ],
+      "native": [
+        {
+          "event": "attack-tell",
+          "clock": 0,
+          "kind": "missiles",
+          "tell": 1.25,
+          "target": {
+            "x": 340,
+            "y": 447
+          },
+          "safeX": null,
+          "safeY": null,
+          "safeHalf": null
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.2333333333333338,
+          "part": "left",
+          "x": 261.6876929745627,
+          "y": 212.11576574639363,
+          "angle": 7.55945732270044
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.2333333333333338,
+          "part": "right",
+          "x": 447.0476929745627,
+          "y": 210.95576574639364,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "attack-release",
+          "clock": 1.2500000000000004,
+          "kind": "missiles"
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.4166666666666665,
+          "part": "left",
+          "x": 258.29134970402487,
+          "y": 211.82830707493352,
+          "angle": 7.55945732270044
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.4166666666666665,
+          "part": "right",
+          "x": 443.6513497040249,
+          "y": 210.66830707493352,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.5833333333333326,
+          "part": "left",
+          "x": 254.15422104750309,
+          "y": 211.1879146372862,
+          "angle": 7.55945732270044
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.5833333333333326,
+          "part": "right",
+          "x": 439.5142210475031,
+          "y": 210.02791463728622,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.7499999999999987,
+          "part": "left",
+          "x": 249.35649063335336,
+          "y": 210.21701885541762,
+          "angle": 7.55945732270044
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.7499999999999987,
+          "part": "right",
+          "x": 434.7164906333533,
+          "y": 209.05701885541762,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "recovery",
+          "clock": 3.816666666666658,
+          "kind": "missiles"
+        },
+        {
+          "event": "attack-tell",
+          "clock": 4.333333333333323,
+          "kind": "guns",
+          "tell": 1.15,
+          "target": {
+            "x": 340,
+            "y": 447
+          },
+          "safeX": 428,
+          "safeY": 447,
+          "safeHalf": 48
+        }
+      ]
+    },
+    "intercepts": {
+      "rows": [
+        {
+          "kind": "missiles",
+          "t": 0.06666666666666667,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.13333333333333333,
+          "hp": 3095,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.19999999999999998,
+          "hp": 3090.95,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.26666666666666666,
+          "hp": 3090.95,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.3333333333333333,
+          "hp": 3086.8999999999996,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.39999999999999997,
+          "hp": 3082.8499999999995,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.4666666666666666,
+          "hp": 3082.8499999999995,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.5333333333333333,
+          "hp": 3078.7999999999993,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.6000000000000002,
+          "hp": 3074.749999999999,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.6666666666666671,
+          "hp": 3074.749999999999,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.733333333333334,
+          "hp": 3070.699999999999,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.8000000000000008,
+          "hp": 3066.6499999999987,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.8666666666666677,
+          "hp": 3066.6499999999987,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.9333333333333346,
+          "hp": 3062.5999999999985,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.0000000000000013,
+          "hp": 3058.5499999999984,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.0666666666666678,
+          "hp": 3058.5499999999984,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.1333333333333342,
+          "hp": 3054.499999999998,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.2000000000000006,
+          "hp": 3050.449999999998,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.266666666666667,
+          "hp": 3050.449999999998,
+          "fx": 0,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 1.3333333333333335,
+          "hp": 3046.399999999998,
+          "fx": 0,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 1.4,
+          "hp": 3042.3499999999976,
+          "fx": 0,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 1.4666666666666663,
+          "hp": 3042.3499999999976,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 1.5333333333333328,
+          "hp": 3038.2999999999975,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 1.5999999999999992,
+          "hp": 3034.2499999999973,
+          "fx": 0,
+          "missiles": 6
+        },
+        {
+          "kind": "missiles",
+          "t": 1.6666666666666656,
+          "hp": 3034.2499999999973,
+          "fx": 0,
+          "missiles": 6
+        },
+        {
+          "kind": "missiles",
+          "t": 1.733333333333332,
+          "hp": 3030.199999999997,
+          "fx": 0,
+          "missiles": 6
+        },
+        {
+          "kind": "missiles",
+          "t": 1.7999999999999985,
+          "hp": 3026.149999999997,
+          "fx": 0,
+          "missiles": 8
+        },
+        {
+          "kind": "missiles",
+          "t": 1.866666666666665,
+          "hp": 3022.0999999999967,
+          "fx": 0,
+          "missiles": 8
+        },
+        {
+          "kind": "missiles",
+          "t": 1.9333333333333313,
+          "hp": 3022.0999999999967,
+          "fx": 1,
+          "missiles": 7
+        },
+        {
+          "kind": "missiles",
+          "t": 1.9999999999999978,
+          "hp": 3018.0499999999965,
+          "fx": 1,
+          "missiles": 7
+        },
+        {
+          "kind": "missiles",
+          "t": 2.066666666666664,
+          "hp": 3018.0499999999965,
+          "fx": 2,
+          "missiles": 6
+        },
+        {
+          "kind": "missiles",
+          "t": 2.1333333333333306,
+          "hp": 3018.0499999999965,
+          "fx": 3,
+          "missiles": 5
+        },
+        {
+          "kind": "missiles",
+          "t": 2.199999999999997,
+          "hp": 3018.0499999999965,
+          "fx": 3,
+          "missiles": 5
+        },
+        {
+          "kind": "missiles",
+          "t": 2.2666666666666635,
+          "hp": 3018.0499999999965,
+          "fx": 4,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 2.33333333333333,
+          "hp": 3018.0499999999965,
+          "fx": 5,
+          "missiles": 3
+        },
+        {
+          "kind": "missiles",
+          "t": 2.3999999999999964,
+          "hp": 3018.0499999999965,
+          "fx": 5,
+          "missiles": 3
+        },
+        {
+          "kind": "missiles",
+          "t": 2.466666666666663,
+          "hp": 3018.0499999999965,
+          "fx": 6,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 2.533333333333329,
+          "hp": 3018.0499999999965,
+          "fx": 7,
+          "missiles": 1
+        },
+        {
+          "kind": "missiles",
+          "t": 2.5999999999999956,
+          "hp": 3018.0499999999965,
+          "fx": 8,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 2.666666666666662,
+          "hp": 3018.0499999999965,
+          "fx": 8,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 2.7333333333333285,
+          "hp": 3018.0499999999965,
+          "fx": 7,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 2.799999999999995,
+          "hp": 3018.0499999999965,
+          "fx": 7,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 2.8666666666666614,
+          "hp": 3013.9999999999964,
+          "fx": 6,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 2.933333333333328,
+          "hp": 3009.949999999996,
+          "fx": 5,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 2.9999999999999942,
+          "hp": 3009.949999999996,
+          "fx": 5,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.0666666666666607,
+          "hp": 3005.899999999996,
+          "fx": 4,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.133333333333327,
+          "hp": 3001.849999999996,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.1999999999999935,
+          "hp": 3001.849999999996,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.26666666666666,
+          "hp": 2997.7999999999956,
+          "fx": 2,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.3333333333333264,
+          "hp": 2993.7499999999955,
+          "fx": 1,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.399999999999993,
+          "hp": 2989.6999999999953,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.4666666666666592,
+          "hp": 2989.6999999999953,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.5333333333333257,
+          "hp": 2985.649999999995,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.599999999999992,
+          "hp": 2981.599999999995,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.6666666666666585,
+          "hp": 2981.599999999995,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.733333333333325,
+          "hp": 2977.5499999999947,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 3.7999999999999914,
+          "hp": 2973.4999999999945,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 2973.4999999999945,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 2969.4499999999944,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 2965.399999999994,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 2965.399999999994,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 2965.399999999994,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 2957.299999999994,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": null,
+          "t": null,
+          "hp": 2957.299999999994,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0,
+          "hp": 2957.299999999994,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.06666666666666667,
+          "hp": 2953.2499999999936,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.13333333333333333,
+          "hp": 2949.1999999999935,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.19999999999999998,
+          "hp": 2949.1999999999935,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.26666666666666666,
+          "hp": 2945.1499999999933,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.3333333333333333,
+          "hp": 2941.099999999993,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.39999999999999997,
+          "hp": 2941.099999999993,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.4666666666666666,
+          "hp": 2937.049999999993,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.5333333333333333,
+          "hp": 2932.9999999999927,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.6000000000000002,
+          "hp": 2932.9999999999927,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "guns",
+          "t": 0.6666666666666671,
+          "hp": 2928.9499999999925,
+          "fx": 0,
+          "missiles": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "rocket-fire",
+          "t": 9.700000000000061,
+          "part": "left",
+          "socket": {
+            "x": 261.6876929745627,
+            "y": 212.11576574639363
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 9.700000000000061,
+          "part": "right",
+          "socket": {
+            "x": 447.0476929745627,
+            "y": 210.95576574639364
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 9.883333333333404,
+          "part": "left",
+          "socket": {
+            "x": 258.29134970402487,
+            "y": 211.82830707493352
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 9.883333333333404,
+          "part": "right",
+          "socket": {
+            "x": 443.6513497040249,
+            "y": 210.66830707493352
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 10.050000000000079,
+          "part": "left",
+          "socket": {
+            "x": 254.15422104750309,
+            "y": 211.1879146372862
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 10.050000000000079,
+          "part": "right",
+          "socket": {
+            "x": 439.5142210475031,
+            "y": 210.02791463728622
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 10.216666666666754,
+          "part": "left",
+          "socket": {
+            "x": 249.35649063335336,
+            "y": 210.21701885541762
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 10.216666666666754,
+          "part": "right",
+          "socket": {
+            "x": 434.7164906333533,
+            "y": 209.05701885541762
+          }
+        },
+        {
+          "event": "burst",
+          "t": 10.366666666666761,
+          "x": 321.55600481152305,
+          "y": 409.4751405878043,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 10.466666666666766,
+          "x": 352.4820246359606,
+          "y": 439.2574847843227,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 10.566666666666771,
+          "x": 320.0848295205368,
+          "y": 415.53411022292016,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 10.666666666666776,
+          "x": 346.3824055991958,
+          "y": 445.49631113052226,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 10.766666666666781,
+          "x": 319.8607383134052,
+          "y": 427.79327351094304,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 10.883333333333454,
+          "x": 355.7918595423771,
+          "y": 399.5979336405453,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 10.966666666666791,
+          "x": 319.05964733569493,
+          "y": 439.9975322714355,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 11.033333333333461,
+          "x": 306.4505994129729,
+          "y": 531.2719146458508,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        }
+      ],
+      "native": [
+        {
+          "event": "attack-tell",
+          "clock": 0,
+          "kind": "missiles",
+          "tell": 1.25,
+          "target": {
+            "x": 340,
+            "y": 447
+          },
+          "safeX": null,
+          "safeY": null,
+          "safeHalf": null
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.2333333333333338,
+          "part": "left",
+          "x": 261.6876929745627,
+          "y": 212.11576574639363,
+          "angle": 7.55945732270044
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.2333333333333338,
+          "part": "right",
+          "x": 447.0476929745627,
+          "y": 210.95576574639364,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "attack-release",
+          "clock": 1.2500000000000004,
+          "kind": "missiles"
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.4166666666666665,
+          "part": "left",
+          "x": 258.29134970402487,
+          "y": 211.82830707493352,
+          "angle": 7.55945732270044
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.4166666666666665,
+          "part": "right",
+          "x": 443.6513497040249,
+          "y": 210.66830707493352,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.5833333333333326,
+          "part": "left",
+          "x": 254.15422104750309,
+          "y": 211.1879146372862,
+          "angle": 7.55945732270044
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.5833333333333326,
+          "part": "right",
+          "x": 439.5142210475031,
+          "y": 210.02791463728622,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.7499999999999987,
+          "part": "left",
+          "x": 249.35649063335336,
+          "y": 210.21701885541762,
+          "angle": 7.55945732270044
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.7499999999999987,
+          "part": "right",
+          "x": 434.7164906333533,
+          "y": 209.05701885541762,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "recovery",
+          "clock": 3.816666666666658,
+          "kind": "missiles"
+        },
+        {
+          "event": "attack-tell",
+          "clock": 4.333333333333323,
+          "kind": "guns",
+          "tell": 1.15,
+          "target": {
+            "x": 340,
+            "y": 447
+          },
+          "safeX": 428,
+          "safeY": 447,
+          "safeHalf": 48
+        }
+      ]
+    },
+    "pod-break": {
+      "rows": [
+        {
+          "kind": "missiles",
+          "t": 0.06666666666666667,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.13333333333333333,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.19999999999999998,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.26666666666666666,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.3333333333333333,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.39999999999999997,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.4666666666666666,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.5333333333333333,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.6000000000000002,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.6666666666666671,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.733333333333334,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.8000000000000008,
+          "hp": 2352,
+          "fx": 2,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.8666666666666677,
+          "hp": 2352,
+          "fx": 2,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 0.9333333333333346,
+          "hp": 2352,
+          "fx": 1,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.0000000000000013,
+          "hp": 2352,
+          "fx": 1,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.0666666666666678,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.1333333333333342,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.2000000000000006,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 0
+        },
+        {
+          "kind": "missiles",
+          "t": 1.266666666666667,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 1
+        },
+        {
+          "kind": "missiles",
+          "t": 1.3333333333333335,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 1
+        },
+        {
+          "kind": "missiles",
+          "t": 1.4,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 1
+        },
+        {
+          "kind": "missiles",
+          "t": 1.4666666666666663,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 1.5333333333333328,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 1.5999999999999992,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 3
+        },
+        {
+          "kind": "missiles",
+          "t": 1.6666666666666656,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 3
+        },
+        {
+          "kind": "missiles",
+          "t": 1.733333333333332,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 3
+        },
+        {
+          "kind": "missiles",
+          "t": 1.7999999999999985,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 1.866666666666665,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 1.9333333333333313,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 1.9999999999999978,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 2.066666666666664,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 2.1333333333333306,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 2.199999999999997,
+          "hp": 2352,
+          "fx": 0,
+          "missiles": 4
+        },
+        {
+          "kind": "missiles",
+          "t": 2.2666666666666635,
+          "hp": 2352,
+          "fx": 1,
+          "missiles": 3
+        },
+        {
+          "kind": "missiles",
+          "t": 2.33333333333333,
+          "hp": 2352,
+          "fx": 1,
+          "missiles": 3
+        },
+        {
+          "kind": "missiles",
+          "t": 2.3999999999999964,
+          "hp": 2352,
+          "fx": 1,
+          "missiles": 3
+        },
+        {
+          "kind": "missiles",
+          "t": 2.466666666666663,
+          "hp": 2352,
+          "fx": 2,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 2.533333333333329,
+          "hp": 2352,
+          "fx": 2,
+          "missiles": 2
+        },
+        {
+          "kind": "missiles",
+          "t": 2.5999999999999956,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 1
+        },
+        {
+          "kind": "missiles",
+          "t": 2.666666666666662,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 1
+        },
+        {
+          "kind": "missiles",
+          "t": 2.7333333333333285,
+          "hp": 2352,
+          "fx": 3,
+          "missiles": 1
+        },
+        {
+          "kind": "missiles",
+          "t": 2.799999999999995,
+          "hp": 2352,
+          "fx": 4,
+          "missiles": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "burst",
+          "t": 13.450000000000248,
+          "x": 232.37,
+          "y": 192.13,
+          "size": 160,
+          "delay": 0,
+          "reason": "pod-break"
+        },
+        {
+          "event": "burst",
+          "t": 13.450000000000248,
+          "x": 214.37,
+          "y": 201.13,
+          "size": 112,
+          "delay": 0.1,
+          "reason": "pod-secondary"
+        },
+        {
+          "event": "burst",
+          "t": 13.450000000000248,
+          "x": 252.37,
+          "y": 180.13,
+          "size": 112,
+          "delay": 0.22,
+          "reason": "pod-secondary"
+        },
+        {
+          "event": "rocket-fire",
+          "t": 14.70000000000031,
+          "part": "right",
+          "socket": {
+            "x": 447.0476929745627,
+            "y": 210.95576574639364
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 14.883333333333653,
+          "part": "right",
+          "socket": {
+            "x": 443.6513497040249,
+            "y": 210.66830707493352
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 15.050000000000328,
+          "part": "right",
+          "socket": {
+            "x": 439.5142210475031,
+            "y": 210.02791463728622
+          }
+        },
+        {
+          "event": "rocket-fire",
+          "t": 15.216666666667003,
+          "part": "right",
+          "socket": {
+            "x": 434.7164906333533,
+            "y": 209.05701885541762
+          }
+        },
+        {
+          "event": "burst",
+          "t": 15.683333333333692,
+          "x": 313.98407134003253,
+          "y": 532.1997657549582,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 15.866666666667035,
+          "x": 310.5877280694947,
+          "y": 531.912307083498,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 16.033333333333704,
+          "x": 306.4505994129729,
+          "y": 531.2719146458508,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        },
+        {
+          "event": "burst",
+          "t": 16.20000000000036,
+          "x": 301.6528689988231,
+          "y": 530.3010188639821,
+          "size": 72,
+          "delay": 0,
+          "reason": "missile-impact"
+        }
+      ],
+      "native": [
+        {
+          "event": "attack-tell",
+          "clock": 0,
+          "kind": "missiles",
+          "tell": 1.25,
+          "target": {
+            "x": 340,
+            "y": 447
+          },
+          "safeX": null,
+          "safeY": null,
+          "safeHalf": null
+        },
+        {
+          "event": "pod-destroyed",
+          "clock": 0,
+          "part": "left",
+          "x": 232.37,
+          "y": 192.13
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.2333333333333338,
+          "part": "right",
+          "x": 447.0476929745627,
+          "y": 210.95576574639364,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "attack-release",
+          "clock": 1.2500000000000004,
+          "kind": "missiles"
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.4166666666666665,
+          "part": "right",
+          "x": 443.6513497040249,
+          "y": 210.66830707493352,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.5833333333333326,
+          "part": "right",
+          "x": 439.5142210475031,
+          "y": 210.02791463728622,
+          "angle": 1.9634954084936207
+        },
+        {
+          "event": "missile-launch",
+          "clock": 1.7499999999999987,
+          "part": "right",
+          "x": 434.7164906333533,
+          "y": 209.05701885541762,
+          "angle": 1.9634954084936207
+        }
+      ]
+    },
+    "emitters": [
+      {
+        "part": "left",
+        "expected": [
+          205,
+          214
+        ],
+        "matched": true
+      },
+      {
+        "part": "right",
+        "expected": [
+          417,
+          217
+        ],
+        "matched": true
+      }
+    ],
+    "audio": [
+      {
+        "key": "overlordGun",
+        "peak": 0.9944242835044861,
+        "duration": 0.56
+      },
+      {
+        "key": "overlordRocket",
+        "peak": 0.8732434511184692,
+        "duration": 1
+      },
+      {
+        "key": "expSmall",
+        "peak": 0.9180575013160706,
+        "duration": 1.6259791666666668
+      },
+      {
+        "key": "expBig",
+        "peak": 0.9021143317222595,
+        "duration": 2.9989791666666665
+      }
+    ],
+    "draws": {
+      "muzzle": 396,
+      "tracer": 3190,
+      "launch": 643,
+      "missile": 2111,
+      "burst72": 908,
+      "burst160": 47,
+      "burst112": 96
+    },
+    "reduced_recheck": {
+      "observed": {
+        "launches": 8,
+        "hp": 3095,
+        "draws": {
+          "launch": 88,
+          "missile": 314
+        },
+        "fx": 0
+      },
+      "errors": [],
+      "correction": "Original check ended at95 ticks, before the last queued pair. Corrected checkpoint waits130 ticks. Runtime unchanged."
+    }
+  },
+  "errors": []
+}

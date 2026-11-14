@@ -1,0 +1,266 @@
+{
+  "spin-dracodia-0": {
+    "banks": [
+      "spin-dracodia-0"
+    ],
+    "logical": [
+      512,
+      512
+    ]
+  },
+  "spin-dracodia-1": {
+    "banks": [
+      "spin-dracodia-1"
+    ],
+    "logical": [
+      512,
+      512
+    ]
+  },
+  "spin-dracodia-2": {
+    "banks": [
+      "spin-dracodia-2"
+    ],
+    "logical": [
+      512,
+      512
+    ]
+  },
+  "spin-dracodia-3": {
+    "banks": [
+      "spin-dracodia-3"
+    ],
+    "logical": [
+      512,
+      512
+    ]
+  },
+  "spin-normal": {
+    "banks": [
+      "spin-normal"
+    ],
+    "logical": [
+      320,
+      320
+    ]
+  },
+  "spin-furious": {
+    "banks": [
+      "spin-furious"
+    ],
+    "logical": [
+      320,
+      320
+    ]
+  },
+  "real-airframe-debris": {
+    "banks": [
+      "chunk-dracodia-0-0",
+      "chunk-dracodia-0-1",
+      "chunk-dracodia-0-10",
+      "chunk-dracodia-0-11",
+      "chunk-dracodia-0-12",
+      "chunk-dracodia-0-13",
+      "chunk-dracodia-0-14",
+      "chunk-dracodia-0-15",
+      "chunk-dracodia-0-16",
+      "chunk-dracodia-0-17",
+      "chunk-dracodia-0-18",
+      "chunk-dracodia-0-19",
+      "chunk-dracodia-0-2",
+      "chunk-dracodia-0-20",
+      "chunk-dracodia-0-21",
+      "chunk-dracodia-0-22",
+      "chunk-dracodia-0-23",
+      "chunk-dracodia-0-24",
+      "chunk-dracodia-0-25",
+      "chunk-dracodia-0-26",
+      "chunk-dracodia-0-27",
+      "chunk-dracodia-0-3",
+      "chunk-dracodia-0-4",
+      "chunk-dracodia-0-5",
+      "chunk-dracodia-0-6",
+      "chunk-dracodia-0-7",
+      "chunk-dracodia-0-8",
+      "chunk-dracodia-0-9",
+      "chunk-dracodia-1-0",
+      "chunk-dracodia-1-1",
+      "chunk-dracodia-1-10",
+      "chunk-dracodia-1-11",
+      "chunk-dracodia-1-12",
+      "chunk-dracodia-1-13",
+      "chunk-dracodia-1-14",
+      "chunk-dracodia-1-15",
+      "chunk-dracodia-1-16",
+      "chunk-dracodia-1-17",
+      "chunk-dracodia-1-18",
+      "chunk-dracodia-1-19",
+      "chunk-dracodia-1-2",
+      "chunk-dracodia-1-20",
+      "chunk-dracodia-1-21",
+      "chunk-dracodia-1-22",
+      "chunk-dracodia-1-23",
+      "chunk-dracodia-1-24",
+      "chunk-dracodia-1-25",
+      "chunk-dracodia-1-26",
+      "chunk-dracodia-1-27",
+      "chunk-dracodia-1-3",
+      "chunk-dracodia-1-4",
+      "chunk-dracodia-1-5",
+      "chunk-dracodia-1-6",
+      "chunk-dracodia-1-7",
+      "chunk-dracodia-1-8",
+      "chunk-dracodia-1-9",
+      "chunk-dracodia-2-0",
+      "chunk-dracodia-2-1",
+      "chunk-dracodia-2-10",
+      "chunk-dracodia-2-11",
+      "chunk-dracodia-2-12",
+      "chunk-dracodia-2-13",
+      "chunk-dracodia-2-14",
+      "chunk-dracodia-2-15",
+      "chunk-dracodia-2-16",
+      "chunk-dracodia-2-17",
+      "chunk-dracodia-2-18",
+      "chunk-dracodia-2-19",
+      "chunk-dracodia-2-2",
+      "chunk-dracodia-2-20",
+      "chunk-dracodia-2-21",
+      "chunk-dracodia-2-22",
+      "chunk-dracodia-2-23",
+      "chunk-dracodia-2-24",
+      "chunk-dracodia-2-25",
+      "chunk-dracodia-2-26",
+      "chunk-dracodia-2-27",
+      "chunk-dracodia-2-3",
+      "chunk-dracodia-2-4",
+      "chunk-dracodia-2-5",
+      "chunk-dracodia-2-6",
+      "chunk-dracodia-2-7",
+      "chunk-dracodia-2-8",
+      "chunk-dracodia-2-9",
+      "chunk-dracodia-3-0",
+      "chunk-dracodia-3-1",
+      "chunk-dracodia-3-10",
+      "chunk-dracodia-3-11",
+      "chunk-dracodia-3-12",
+      "chunk-dracodia-3-13",
+      "chunk-dracodia-3-14",
+      "chunk-dracodia-3-15",
+      "chunk-dracodia-3-16",
+      "chunk-dracodia-3-17",
+      "chunk-dracodia-3-18",
+      "chunk-dracodia-3-19",
+      "chunk-dracodia-3-2",
+      "chunk-dracodia-3-20",
+      "chunk-dracodia-3-21",
+      "chunk-dracodia-3-22",
+      "chunk-dracodia-3-23",
+      "chunk-dracodia-3-24",
+      "chunk-dracodia-3-25",
+      "chunk-dracodia-3-3",
+      "chunk-dracodia-3-4",
+      "chunk-dracodia-3-5",
+      "chunk-dracodia-3-6",
+      "chunk-dracodia-3-7",
+      "chunk-dracodia-3-8",
+      "chunk-dracodia-3-9",
+      "chunk-furious-0",
+      "chunk-furious-1",
+      "chunk-furious-10",
+      "chunk-furious-11",
+      "chunk-furious-12",
+      "chunk-furious-13",
+      "chunk-furious-14",
+      "chunk-furious-15",
+      "chunk-furious-16",
+      "chunk-furious-17",
+      "chunk-furious-18",
+      "chunk-furious-19",
+      "chunk-furious-2",
+      "chunk-furious-20",
+      "chunk-furious-21",
+      "chunk-furious-22",
+      "chunk-furious-23",
+      "chunk-furious-24",
+      "chunk-furious-25",
+      "chunk-furious-26",
+      "chunk-furious-27",
+      "chunk-furious-3",
+      "chunk-furious-4",
+      "chunk-furious-5",
+      "chunk-furious-6",
+      "chunk-furious-7",
+      "chunk-furious-8",
+      "chunk-furious-9",
+      "chunk-normal-0",
+      "chunk-normal-1",
+      "chunk-normal-10",
+      "chunk-normal-11",
+      "chunk-normal-12",
+      "chunk-normal-13",
+      "chunk-normal-14",
+      "chunk-normal-15",
+      "chunk-normal-16",
+      "chunk-normal-17",
+      "chunk-normal-18",
+      "chunk-normal-19",
+      "chunk-normal-2",
+      "chunk-normal-20",
+      "chunk-normal-21",
+      "chunk-normal-22",
+      "chunk-normal-23",
+      "chunk-normal-24",
+      "chunk-normal-25",
+      "chunk-normal-26",
+      "chunk-normal-27",
+      "chunk-normal-3",
+      "chunk-normal-4",
+      "chunk-normal-5",
+      "chunk-normal-6",
+      "chunk-normal-7",
+      "chunk-normal-8",
+      "chunk-normal-9"
+    ],
+    "logical": [
+      64,
+      64
+    ]
+  },
+  "burst88": {
+    "banks": [
+      "burst88"
+    ],
+    "logical": [
+      88,
+      88
+    ]
+  },
+  "burst144": {
+    "banks": [
+      "burst144"
+    ],
+    "logical": [
+      144,
+      144
+    ]
+  },
+  "burst256": {
+    "banks": [
+      "burst256"
+    ],
+    "logical": [
+      256,
+      256
+    ]
+  },
+  "burst384": {
+    "banks": [
+      "burst384"
+    ],
+    "logical": [
+      384,
+      384
+    ]
+  }
+}

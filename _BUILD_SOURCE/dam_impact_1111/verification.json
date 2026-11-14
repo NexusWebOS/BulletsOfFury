@@ -1,0 +1,4973 @@
+{
+  "checks": {
+    "normal_wreck_hits_actual_central_gate": true,
+    "normal_camera_moves_forward_smoothly": true,
+    "normal_camera_is_settled_for_impact": true,
+    "normal_terrain_swap_hidden_at_full_white": true,
+    "normal_white_fades_back_to_normal": true,
+    "normal_destroyed_dam_visible_after_fade": true,
+    "normal_raid_and_reward_remain_native": true,
+    "normal_single_impact_and_swap": true,
+    "furious_wreck_hits_actual_central_gate": true,
+    "furious_camera_moves_forward_smoothly": true,
+    "furious_camera_is_settled_for_impact": true,
+    "furious_terrain_swap_hidden_at_full_white": true,
+    "furious_white_fades_back_to_normal": true,
+    "furious_destroyed_dam_visible_after_fade": true,
+    "furious_raid_and_reward_remain_native": true,
+    "furious_single_impact_and_swap": true,
+    "easy_pause_freezes_route_and_transition": true,
+    "easy_swap_still_uses_full_white": true,
+    "easy_no_backward_camera_travel": true,
+    "hard_pause_freezes_route_and_transition": true,
+    "hard_swap_still_uses_full_white": true,
+    "hard_no_backward_camera_travel": true,
+    "furious_reduced_pause_freezes_route_and_transition": true,
+    "furious_reduced_swap_still_uses_full_white": true,
+    "furious_reduced_no_backward_camera_travel": true,
+    "dracodia_default_trajectory_is_identical": true,
+    "all_flash_and_both_dam_plates_preloaded": true,
+    "retry_clears_white_and_old_death_owner": true,
+    "no_browser_or_draw_errors": true,
+    "unrelated_owners_unchanged": true
+  },
+  "details": {
+    "dam-normal": {
+      "rows": [
+        {
+          "t": 0.06666666666666667,
+          "x": 337.5547146164113,
+          "y": 174.15068731391045,
+          "scroll": 2825.0879516983764,
+          "sourceY": 874.9120483016236,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.13333333333333333,
+          "x": 339.89221760230515,
+          "y": 179.53263349750952,
+          "scroll": 2827.32910568555,
+          "sourceY": 872.6708943144499,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.19999999999999998,
+          "x": 343.8826845314382,
+          "y": 187.9156649135988,
+          "scroll": 2830.9947219527066,
+          "sourceY": 869.0052780472934,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.26666666666666666,
+          "x": 349.18453555978823,
+          "y": 198.81960792497983,
+          "scroll": 2836.0278220086475,
+          "sourceY": 863.9721779913525,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.3333333333333333,
+          "x": 355.0957632002266,
+          "y": 211.76428889445418,
+          "scroll": 2842.371427362173,
+          "sourceY": 857.6285726378269,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.39999999999999997,
+          "x": 360.75704163878436,
+          "y": 226.26953418482344,
+          "scroll": 2849.968559522084,
+          "sourceY": 850.031440477916,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.4666666666666666,
+          "x": 365.4927894290341,
+          "y": 241.85517015888914,
+          "scroll": 2858.7622399971806,
+          "sourceY": 841.2377600028194,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.5333333333333333,
+          "x": 369.11898045656653,
+          "y": 258.0410231794529,
+          "scroll": 2868.695490296264,
+          "sourceY": 831.3045097037361,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.6000000000000002,
+          "x": 372.0162739053333,
+          "y": 274.34691960931633,
+          "scroll": 2879.7113319281343,
+          "sourceY": 820.2886680718657,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.6666666666666671,
+          "x": 374.8921213322169,
+          "y": 290.29268581128093,
+          "scroll": 2891.752786401593,
+          "sourceY": 808.2472135984071,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.733333333333334,
+          "x": 378.3608520796283,
+          "y": 305.39814814814827,
+          "scroll": 2904.76287522544,
+          "sourceY": 795.23712477456,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.8000000000000008,
+          "x": 382.5938842587498,
+          "y": 319.18313298271994,
+          "scroll": 2918.6846199084766,
+          "sourceY": 781.3153800915234,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.8666666666666677,
+          "x": 387.23284436910313,
+          "y": 331.1674666777974,
+          "scroll": 2933.4610419595033,
+          "sourceY": 766.5389580404967,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.9333333333333346,
+          "x": 391.5738422251438,
+          "y": 340.87097559618235,
+          "scroll": 2949.03516288732,
+          "sourceY": 750.96483711268,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.0000000000000013,
+          "x": 394.8750720351234,
+          "y": 347.8134861006763,
+          "scroll": 2965.3500042007286,
+          "sourceY": 734.6499957992714,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.0666666666666678,
+          "x": 396.6162096902996,
+          "y": 351.51482455408075,
+          "scroll": 2982.3485874085286,
+          "sourceY": 717.6514125914714,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.1333333333333342,
+          "x": 386.4257649819358,
+          "y": 341.17586446711397,
+          "scroll": 2999.9739340195215,
+          "sourceY": 700.0260659804785,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.2000000000000006,
+          "x": 391.8038543657527,
+          "y": 341.04218930280575,
+          "scroll": 3018.1690655425077,
+          "sourceY": 681.8309344574923,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.266666666666667,
+          "x": 397.73561951121246,
+          "y": 341.6831295516748,
+          "scroll": 3036.877003486288,
+          "sourceY": 663.1229965137122,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.3333333333333335,
+          "x": 403.5680554836153,
+          "y": 343.0533766927566,
+          "scroll": 3056.0407693596626,
+          "sourceY": 643.9592306403374,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.4,
+          "x": 408.6590921102715,
+          "y": 345.05606698340443,
+          "scroll": 3075.6033846714327,
+          "sourceY": 624.3966153285673,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.4666666666666663,
+          "x": 412.4482769864718,
+          "y": 347.54962882598585,
+          "scroll": 3095.507870930399,
+          "sourceY": 604.4921290696011,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.5333333333333328,
+          "x": 414.51847349908803,
+          "y": 350.3577905645696,
+          "scroll": 3115.6972496453614,
+          "sourceY": 584.3027503546386,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.5999999999999992,
+          "x": 414.64178177255417,
+          "y": 353.2820412533554,
+          "scroll": 3136.1145423251214,
+          "sourceY": 563.8854576748786,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.6666666666666656,
+          "x": 412.80462727903785,
+          "y": 356.11566353628336,
+          "scroll": 3156.7027704784796,
+          "sourceY": 543.2972295215204,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.733333333333332,
+          "x": 409.2092552053685,
+          "y": 358.65834664360824,
+          "scroll": 3177.4049556142363,
+          "sourceY": 522.5950443857637,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.7999999999999985,
+          "x": 404.25146606768504,
+          "y": 360.73034650234064,
+          "scroll": 3198.164119241192,
+          "sourceY": 501.8358807588079,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.866666666666665,
+          "x": 398.47704357331895,
+          "y": 362.1851919723024,
+          "scroll": 3218.923282868148,
+          "sourceY": 481.0767171318521,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.9333333333333313,
+          "x": 392.5216714169878,
+          "y": 362.92003899495245,
+          "scroll": 3239.6254680039046,
+          "sourceY": 460.37453199609536,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.9999999999999978,
+          "x": 387.0409533373248,
+          "y": 362.8829407128572,
+          "scroll": 3260.213696157263,
+          "sourceY": 439.7863038427372,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.066666666666664,
+          "x": 382.6382402533154,
+          "y": 362.0765196299006,
+          "scroll": 3280.630988837023,
+          "sourceY": 419.36901116297713,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.1333333333333306,
+          "x": 379.7982097102474,
+          "y": 360.55778222462396,
+          "scroll": 3300.8203675519853,
+          "sourceY": 399.1796324480147,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.199999999999997,
+          "x": 378.83350961542067,
+          "y": 358.4340891218095,
+          "scroll": 3320.7248538109516,
+          "sourceY": 379.2751461890484,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.2666666666666635,
+          "x": 379.8503400470545,
+          "y": 355.85556569373796,
+          "scroll": 3340.2874691227216,
+          "sourceY": 359.71253087727837,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.33333333333333,
+          "x": 382.73676210107453,
+          "y": 353.0044895911024,
+          "scroll": 3359.4512349960964,
+          "sourceY": 340.54876500390355,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.3999999999999964,
+          "x": 387.1750208093252,
+          "y": 350.08240540654737,
+          "scroll": 3378.1591729398765,
+          "sourceY": 321.8408270601235,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.466666666666663,
+          "x": 392.67652554711196,
+          "y": 347.29587734441145,
+          "scroll": 3396.3543044628627,
+          "sourceY": 303.64569553713727,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.533333333333329,
+          "x": 398.63563707317127,
+          "y": 344.8418870505569,
+          "scroll": 3413.9796510738556,
+          "sourceY": 286.0203489261444,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.5999999999999956,
+          "x": 404.3963399962125,
+          "y": 342.8939088400579,
+          "scroll": 3430.978234281656,
+          "sourceY": 269.0217657183439,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.666666666666662,
+          "x": 409.32446095572004,
+          "y": 341.58964667478085,
+          "scroll": 3447.2930755950642,
+          "sourceY": 252.70692440493576,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.7333333333333285,
+          "x": 412.8774822986106,
+          "y": 341.02129977261393,
+          "scroll": 3462.8671965228814,
+          "sourceY": 237.1328034771186,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.799999999999995,
+          "x": 414.6642657358409,
+          "y": 341.22904497933547,
+          "scroll": 3477.6436185739076,
+          "sourceY": 222.3563814260924,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.8666666666666614,
+          "x": 414.4881112340923,
+          "y": 342.19819663887904,
+          "scroll": 3491.565363256944,
+          "sourceY": 208.43463674305622,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.933333333333328,
+          "x": 412.3684109567579,
+          "y": 343.86024473278076,
+          "scroll": 3504.5754520807914,
+          "sourceY": 195.42454791920863,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.9999999999999942,
+          "x": 408.5385144561618,
+          "y": 346.097697901995,
+          "scroll": 3516.61690655425,
+          "sourceY": 183.3830934457501,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.0666666666666607,
+          "x": 403.4200401296866,
+          "y": 348.75238899442996,
+          "scroll": 3527.6327481861204,
+          "sourceY": 172.36725181387965,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.133333333333327,
+          "x": 397.5764608916098,
+          "y": 351.63665601315495,
+          "scroll": 3537.5659984852036,
+          "sourceY": 162.43400151479636,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.1999999999999935,
+          "x": 391.65107363336267,
+          "y": 354.5466080761166,
+          "scroll": 3546.3596789603007,
+          "sourceY": 153.6403210396993,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.26666666666666,
+          "x": 386.29618117286844,
+          "y": 357.27653860726025,
+          "scroll": 3553.9568111202116,
+          "sourceY": 146.04318887978843,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.3333333333333264,
+          "x": 382.1012827764907,
+          "y": 359.6334668803474,
+          "scroll": 3560.3004164737367,
+          "sourceY": 139.69958352626327,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.399999999999993,
+          "x": 379.5281784795015,
+          "y": 361.45077996342127,
+          "scroll": 3565.333516529678,
+          "sourceY": 134.66648347032196,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.4666666666666592,
+          "x": 378.86013131781476,
+          "y": 362.6000107051852,
+          "scroll": 3568.999132796835,
+          "sourceY": 131.00086720316494,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.5333333333333257,
+          "x": 380.17068400300053,
+          "y": 362.99991916907993,
+          "scroll": 3571.2402867840087,
+          "sourceY": 128.75971321599127,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.599999999999992,
+          "x": 383.31556289144265,
+          "y": 362.6222355420421,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.6666666666666585,
+          "x": 387.94856050816094,
+          "y": 361.4936585476484,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.733333333333325,
+          "x": 393.5596481800738,
+          "y": 359.6939680944016,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.7999999999999914,
+          "x": 399.53112310726567,
+          "y": 357.3503855773921,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.866666666666658,
+          "x": 408.35086468126684,
+          "y": 355.026569284822,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.9333333333333242,
+          "x": 414.5851268329892,
+          "y": 350.4130180449916,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.9999999999999907,
+          "x": 418.5351869766632,
+          "y": 345.2940900626593,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.0666666666666575,
+          "x": 419.72582806425834,
+          "y": 339.98406019071354,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.133333333333324,
+          "x": 418.01088361581344,
+          "y": 334.76141659038166,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.19999999999999,
+          "x": 413.5850028168545,
+          "y": 329.84791264531106,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.266666666666657,
+          "x": 406.9504798281448,
+          "y": 325.39340313097574,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.333333333333323,
+          "x": 398.8449847886583,
+          "y": 321.4676888090147,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.39999999999999,
+          "x": 390.1411586822465,
+          "y": 318.0598885336152,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.466666666666656,
+          "x": 381.7324715761771,
+          "y": 315.0851274841354,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.533333333333323,
+          "x": 374.42107457835357,
+          "y": 312.3976453429141,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.599999999999989,
+          "x": 368.8224903503952,
+          "y": 309.80885349804976,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.666666666666655,
+          "x": 365.2990896885367,
+          "y": 307.10845736195654,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.733333333333322,
+          "x": 363.92987208335023,
+          "y": 304.08654305908107,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.799999999999988,
+          "x": 364.5187839048163,
+          "y": 300.55452134151426,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.866666666666655,
+          "x": 366.6384421186368,
+          "y": 296.36301901928687,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.933333333333321,
+          "x": 369.70144019850454,
+          "y": 291.4151831545739,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.999999999999988,
+          "x": 373.04802815644564,
+          "y": 285.67437292836405,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.066666666666654,
+          "x": 376.0373026668512,
+          "y": 279.16580370875295,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.13333333333332,
+          "x": 378.12927564856057,
+          "y": 271.9723164967457,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.199999999999987,
+          "x": 378.94719345373403,
+          "y": 264.22501263396117,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.266666666666653,
+          "x": 378.31288706310227,
+          "y": 256.08996346478665,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.33333333333332,
+          "x": 376.25219126766984,
+          "y": 247.75253389928167,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.399999999999986,
+          "x": 372.9719215789649,
+          "y": 239.4010192504036,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.466666666666653,
+          "x": 368.81388368713266,
+          "y": 231.21127589310288,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.533333333333319,
+          "x": 364.194348711643,
+          "y": 223.3338362684936,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.599999999999985,
+          "x": 359.53897007325514,
+          "y": 215.88466284579312,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.666666666666652,
+          "x": 355.22308295014756,
+          "y": 208.94025349007384,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.733333333333318,
+          "x": 351.5257966719226,
+          "y": 202.53731188236702,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.799999999999985,
+          "x": 348.60356901840606,
+          "y": 196.6766955208247,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.866666666666651,
+          "x": 346.4855143554116,
+          "y": 191.33090373170222,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.933333333333318,
+          "x": 345.0891125957689,
+          "y": 186.45401586389391,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.999999999999984,
+          "x": 344.2518235550128,
+          "y": 181.99277095433732,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.06666666666665,
+          "x": 343.7718560244607,
+          "y": 177.89741526413846,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.133333333333317,
+          "x": 343.45031804338635,
+          "y": 174.1310369091264,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.199999999999983,
+          "x": 343.12730252513757,
+          "y": 170.67634388098224,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.26666666666665,
+          "x": 342.70603682729956,
+          "y": 167.53919397319834,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.333333333333316,
+          "x": 342.1617406950059,
+          "y": 164.74861091804982,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.399999999999983,
+          "x": 341.5348392027055,
+          "y": 162.35347085196273,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.466666666666649,
+          "x": 340.9111365508075,
+          "y": 160.41646486520966,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.5333333333333155,
+          "x": 340.3939563564136,
+          "y": 159.0062876866089,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.599999999999982,
+          "x": 340.07467593776386,
+          "y": 158.18922874262853,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.666666666666648,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 4,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 6.733333333333315,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 23,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 6.799999999999981,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 32,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 6.866666666666648,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 32,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 6.933333333333314,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 32,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 6.9999999999999805,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 32,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.066666666666647,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 31,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.133333333333313,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 30,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.19999999999998,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 29,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.266666666666646,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 27,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.333333333333313,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 25,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.399999999999979,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 22,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.4666666666666455,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 20,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.533333333333312,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 17,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.599999999999978,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 14,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.666666666666645,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 12,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.733333333333311,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 9,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.799999999999978,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 7,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.866666666666644,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 5,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.9333333333333105,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 3,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.999999999999977,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 1,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.066666666666647,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.133333333333317,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.199999999999987,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.266666666666657,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.333333333333327,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.399999999999997,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.466666666666667,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.533333333333337,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.600000000000007,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572.6666666666665,
+          "sourceY": 127.33333333333348,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.666666666666677,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3575.3333333333326,
+          "sourceY": 124.66666666666742,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 8.733333333333347,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3577.9999999999986,
+          "sourceY": 122.00000000000136,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 8.800000000000017,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3580.6666666666647,
+          "sourceY": 119.3333333333353,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 8.866666666666687,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3583.3333333333308,
+          "sourceY": 116.66666666666924,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 8.933333333333357,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3585.999999999997,
+          "sourceY": 114.00000000000318,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.000000000000027,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3588.666666666663,
+          "sourceY": 111.33333333333712,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.066666666666697,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3591.333333333329,
+          "sourceY": 108.66666666667106,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.133333333333367,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3593.999999999995,
+          "sourceY": 106.000000000005,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.200000000000037,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3596.666666666661,
+          "sourceY": 103.33333333333894,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.266666666666707,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3599.333333333327,
+          "sourceY": 100.66666666667288,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.333333333333377,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3601.999999999993,
+          "sourceY": 98.00000000000682,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.400000000000047,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3604.6666666666592,
+          "sourceY": 95.33333333334076,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.466666666666717,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3607.3333333333253,
+          "sourceY": 92.6666666666747,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.533333333333387,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3609.9999999999914,
+          "sourceY": 90.00000000000864,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.600000000000056,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3612.6666666666574,
+          "sourceY": 87.33333333334258,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        }
+      ],
+      "events": [
+        {
+          "event": "dam-approach",
+          "t": 0,
+          "scrollFrom": 2824.328238482385,
+          "scrollTarget": 3572,
+          "source": [
+            340,
+            286
+          ],
+          "impact": {
+            "x": 340,
+            "y": 158.00000000000006
+          },
+          "swapAt": 6.830000000000001
+        },
+        {
+          "event": "dam-impact",
+          "t": 6.666666666666648,
+          "x": 340,
+          "y": 158.00000000000006
+        },
+        {
+          "event": "dam-swap",
+          "t": 6.833333333333314,
+          "flash": 32,
+          "scroll": 3572
+        },
+        {
+          "event": "dam-revealed",
+          "t": 8.066666666666647
+        }
+      ],
+      "death_events": [
+        {
+          "event": "death-start",
+          "kind": "stage1",
+          "t": 0,
+          "family": "normal",
+          "mask": 0,
+          "hp": -180405.72950400002,
+          "pools": null
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 0.08333333333333333,
+          "x": 372.0121833849953,
+          "y": 177.74742308261307,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 0.08333333333333333,
+          "interval": 0.4594318661232768,
+          "spin": 0.07504915783575616,
+          "position": {
+            "x": 337.9804290912321,
+            "y": 175.18856262347998
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 0.55,
+          "x": 335.77461444871005,
+          "y": 255.0223187909098,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 0.55,
+          "interval": 0.45036688844732625,
+          "spin": 0.9468760257919638,
+          "position": {
+            "x": 369.88662126975197,
+            "y": 262.125
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 1.016666666666668,
+          "x": 411.5426422002907,
+          "y": 380.78100708230454,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 1.016666666666668,
+          "interval": 0.4357902428957325,
+          "spin": 2.5849722485437674,
+          "position": {
+            "x": 395.46969228142643,
+            "y": 349.0614373765201
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 1.4666666666666663,
+          "x": 444.6665867440865,
+          "y": 330.93590676063803,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 1.4666666666666663,
+          "interval": 0.4180511858855814,
+          "spin": 4.89027293774795,
+          "position": {
+            "x": 412.4482769864718,
+            "y": 347.54962882598585
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 1.8999999999999981,
+          "x": 399.34400160448723,
+          "y": 325.93555527651097,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 1.8999999999999981,
+          "interval": 0.3981481125859819,
+          "spin": 7.783609958534057,
+          "position": {
+            "x": 395.4806131650209,
+            "y": 362.64711639234633
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 2.2999999999999967,
+          "x": 362.3915221503323,
+          "y": 321.9055505743443,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 2.2999999999999967,
+          "interval": 0.37762141853022857,
+          "spin": 11.04081322177594,
+          "position": {
+            "x": 381.07519418894145,
+            "y": 354.45178905510284
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 2.6833333333333287,
+          "x": 384.25195391196655,
+          "y": 313.60578938583024,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 2.6833333333333287,
+          "interval": 0.3561911227983949,
+          "spin": 14.690575940376384,
+          "position": {
+            "x": 410.35989704477834,
+            "y": 341.37607409045796
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 3.049999999999994,
+          "x": 380.99008113203246,
+          "y": 317.5718783614961,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 3.049999999999994,
+          "interval": 0.3342024119695217,
+          "spin": 18.66545859203833,
+          "position": {
+            "x": 404.7915323677115,
+            "y": 348.05947789539465
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 3.399999999999993,
+          "x": 367.5448656309209,
+          "y": 324.1115326936825,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 3.399999999999993,
+          "interval": 0.3119389138984644,
+          "spin": 22.900953807608065,
+          "position": {
+            "x": 379.5281784795015,
+            "y": 361.45077996342127
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 3.7166666666666583,
+          "x": 392.4863346839711,
+          "y": 320.50173724468823,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 3.7166666666666583,
+          "interval": 0.29077949987537827,
+          "spin": 27.104474591281264,
+          "position": {
+            "x": 392.09773164250834,
+            "y": 360.20058719641366
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 4.016666666666658,
+          "x": 436.0038561285062,
+          "y": 307.5412022522437,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 4.016666666666658,
+          "interval": 0.2698828726417024,
+          "spin": 31.41222643788357,
+          "position": {
+            "x": 419.1031290701027,
+            "y": 343.9728299249726
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 4.29999999999999,
+          "x": 435.088520833177,
+          "y": 298.45995477266945,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 4.29999999999999,
+          "interval": 0.2494160640702304,
+          "spin": 35.77143059083466,
+          "position": {
+            "x": 403.0289184283392,
+            "y": 323.3632798158414
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 4.549999999999989,
+          "x": 409.51242255868283,
+          "y": 293.4583796689505,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 4.549999999999989,
+          "interval": 0.2307867863059108,
+          "spin": 39.85235944784778,
+          "position": {
+            "x": 372.8420026504985,
+            "y": 311.7492088240561
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 4.783333333333322,
+          "x": 403.19791563194764,
+          "y": 287.764058021866,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 4.783333333333322,
+          "interval": 0.21293084791217257,
+          "spin": 43.85963541042674,
+          "position": {
+            "x": 364.2079926716684,
+            "y": 301.49433197350095
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 4.999999999999988,
+          "x": 412.47961076407825,
+          "y": 272.2032829233965,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 4.999999999999988,
+          "interval": 0.19595523484416,
+          "spin": 47.75220833456463,
+          "position": {
+            "x": 373.04802815644564,
+            "y": 285.67437292836405
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.199999999999987,
+          "x": 416.3214059628348,
+          "y": 245.11617264866027,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.199999999999987,
+          "interval": 0.17995516272173628,
+          "spin": 51.4919602293979,
+          "position": {
+            "x": 378.94719345373403,
+            "y": 264.22501263396117
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.3833333333333195,
+          "x": 403.206485994045,
+          "y": 211.04713715229315,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.3833333333333195,
+          "interval": 0.16501531887380205,
+          "spin": 55.04370525720634,
+          "position": {
+            "x": 373.8894025621143,
+            "y": 241.48025630715784
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.549999999999986,
+          "x": 372.088800466168,
+          "y": 179.8939191601918,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.549999999999986,
+          "interval": 0.15121085147618768,
+          "spin": 58.3751897334131,
+          "position": {
+            "x": 363.01792951821,
+            "y": 221.42771178486402
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.716666666666652,
+          "x": 342.25917416705926,
+          "y": 162.53335326420697,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.716666666666652,
+          "interval": 0.13719752213738629,
+          "spin": 61.80441264773153,
+          "position": {
+            "x": 352.3813511682159,
+            "y": 204.0866849247662
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.866666666666651,
+          "x": 311.45344500366434,
+          "y": 166.39849919689271,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.866666666666651,
+          "interval": 0.1244094870846521,
+          "spin": 64.97427963520363,
+          "position": {
+            "x": 346.4855143554116,
+            "y": 191.33090373170222
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.999999999999984,
+          "x": 304.13916684276705,
+          "y": 198.0387869756042,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.999999999999984,
+          "interval": 0.11290414223918166,
+          "spin": 67.85840131753919,
+          "position": {
+            "x": 344.2518235550128,
+            "y": 181.99277095433732
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.11666666666665,
+          "x": 348.6325953956586,
+          "y": 218.1234131958033,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.11666666666665,
+          "interval": 0.10273145930006772,
+          "spin": 70.43332046959145,
+          "position": {
+            "x": 343.5255385477694,
+            "y": 175.0431163051243
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.2333333333333165,
+          "x": 385.68909250119196,
+          "y": 177.3973685205522,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.2333333333333165,
+          "interval": 0.09246129314080975,
+          "spin": 73.05613145631843,
+          "position": {
+            "x": 342.9321805087955,
+            "y": 169.06678137438996
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.333333333333316,
+          "x": 349.3970173616979,
+          "y": 121.63724876064839,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.333333333333316,
+          "interval": 0.08358140043413875,
+          "spin": 75.34237315009082,
+          "position": {
+            "x": 342.1617406950059,
+            "y": 164.74861091804982
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.433333333333316,
+          "x": 298.02094885287596,
+          "y": 153.67205650695306,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.433333333333316,
+          "interval": 0.07463112365155716,
+          "spin": 77.66380068158342,
+          "position": {
+            "x": 341.2161867951392,
+            "y": 161.32344969885568
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.516666666666649,
+          "x": 348.19686212639385,
+          "y": 202.62407069810956,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.516666666666649,
+          "interval": 0.06711919065898053,
+          "spin": 79.62520169497465,
+          "position": {
+            "x": 340.50780427936473,
+            "y": 159.30569795287056
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.599999999999982,
+          "x": 378.74936411205334,
+          "y": 136.94929401178166,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.599999999999982,
+          "interval": 0.05955907253896997,
+          "spin": 81.61103731789379,
+          "position": {
+            "x": 340.07467593776386,
+            "y": 158.18922874262853
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.666666666666648,
+          "x": 340,
+          "y": 158.00000000000006,
+          "size": 384,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.666666666666648,
+          "x": 405,
+          "y": 123.00000000000006,
+          "size": 256,
+          "delay": 0.12
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.666666666666648,
+          "x": 450,
+          "y": 83.00000000000006,
+          "size": 256,
+          "delay": 0.26
+        },
+        {
+          "event": "shatter",
+          "kind": "stage1",
+          "t": 6.666666666666648,
+          "chunks": 34,
+          "x": 340,
+          "y": 158.00000000000006
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 7.116666666666647,
+          "x": 393.1036319620712,
+          "y": 424.8201667226584,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 7.399999999999979,
+          "x": 393.4001804014618,
+          "y": 406.7068258216503,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 7.6333333333333115,
+          "x": 354.52653202119797,
+          "y": 249.6582832365297,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 7.833333333333311,
+          "x": 315.3847336101415,
+          "y": -10.533829945683797,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 7.999999999999977,
+          "x": 163.36577247853393,
+          "y": 127.83654227980736,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.483333333333334,
+          "x": 169.08604925633034,
+          "y": 137.13003663623388,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.483333333333334,
+          "x": 517.8698166102024,
+          "y": 134.36951419973826,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.483333333333334,
+          "x": 291.18578179208816,
+          "y": 186.1500200894779,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.483333333333334,
+          "x": 495.30474873831747,
+          "y": 63.291117390992056,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.600000000000007,
+          "x": 513.6580958310261,
+          "y": 42.97614189623017,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "death-complete",
+          "kind": "stage1",
+          "t": 8.600000000000007
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.71666666666668,
+          "x": 326.10419902824657,
+          "y": 139.82013250904365,
+          "size": 88,
+          "delay": 0
+        }
+      ],
+      "full_white_pixels": true,
+      "end": {
+        "src": 87.33333333334258,
+        "map": 3612.6666666666574,
+        "flash": 0,
+        "level": 0,
+        "score": 5500,
+        "raid": true,
+        "impact": {
+          "x": 340,
+          "y": 158.00000000000006
+        }
+      }
+    },
+    "dam-furious": {
+      "rows": [
+        {
+          "t": 0.06666666666666667,
+          "x": 334.3880479497446,
+          "y": 172.41919191919192,
+          "scroll": 2822.0428105471724,
+          "sourceY": 877.9571894528276,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.13333333333333333,
+          "x": 336.72555093563847,
+          "y": 177.85353535353536,
+          "scroll": 2824.293101661332,
+          "sourceY": 875.706898338668,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.19999999999999998,
+          "x": 340.7160178647715,
+          "y": 186.3181818181818,
+          "scroll": 2827.97366255144,
+          "sourceY": 872.0263374485598,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.26666666666666666,
+          "x": 346.01786889312154,
+          "y": 197.32828282828282,
+          "scroll": 2833.0272824264594,
+          "sourceY": 866.9727175735406,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.3333333333333333,
+          "x": 351.9290965335599,
+          "y": 210.3989898989899,
+          "scroll": 2839.396750495351,
+          "sourceY": 860.6032495046488,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.39999999999999997,
+          "x": 357.5903749721177,
+          "y": 225.04545454545453,
+          "scroll": 2847.024855967078,
+          "sourceY": 852.9751440329219,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.4666666666666666,
+          "x": 362.3261227623674,
+          "y": 240.78282828282826,
+          "scroll": 2855.8543880506018,
+          "sourceY": 844.1456119493982,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.5333333333333333,
+          "x": 365.95231378989985,
+          "y": 257.1262626262626,
+          "scroll": 2865.8281359548846,
+          "sourceY": 834.1718640451154,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.6000000000000002,
+          "x": 368.84960723866664,
+          "y": 273.5909090909091,
+          "scroll": 2876.8888888888887,
+          "sourceY": 823.1111111111113,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.6666666666666671,
+          "x": 371.72545466555016,
+          "y": 289.6919191919193,
+          "scroll": 2888.9794360615756,
+          "sourceY": 811.0205639384244,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.733333333333334,
+          "x": 375.19418541296153,
+          "y": 304.94444444444457,
+          "scroll": 2902.0425666819083,
+          "sourceY": 797.9574333180917,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.8000000000000008,
+          "x": 379.42721759208314,
+          "y": 318.8636363636365,
+          "scroll": 2916.021069958848,
+          "sourceY": 783.9789300411521,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.8666666666666677,
+          "x": 384.06617770243645,
+          "y": 330.96464646464665,
+          "scroll": 2930.8577351013564,
+          "sourceY": 769.1422648986436,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 0.9333333333333346,
+          "x": 388.4071755584771,
+          "y": 340.76262626262644,
+          "scroll": 2946.495351318397,
+          "sourceY": 753.5046486816032,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.0000000000000013,
+          "x": 391.7084053684567,
+          "y": 347.77272727272737,
+          "scroll": 2962.8767078189303,
+          "sourceY": 737.1232921810697,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.0666666666666678,
+          "x": 393.44954302363294,
+          "y": 351.51010101010104,
+          "scroll": 2979.944593811919,
+          "sourceY": 720.0554061880812,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.1333333333333342,
+          "x": 383.2590983152691,
+          "y": 341.17586446711397,
+          "scroll": 2997.6417985063254,
+          "sourceY": 702.3582014936746,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.2000000000000006,
+          "x": 388.63718769908604,
+          "y": 341.04218930280575,
+          "scroll": 3015.911111111111,
+          "sourceY": 684.088888888889,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.266666666666667,
+          "x": 394.5689528445458,
+          "y": 341.6831295516748,
+          "scroll": 3034.6953208352384,
+          "sourceY": 665.3046791647616,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.3333333333333335,
+          "x": 400.4013888169486,
+          "y": 343.0533766927566,
+          "scroll": 3053.9372168876694,
+          "sourceY": 646.0627831123306,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.4,
+          "x": 405.4924254436048,
+          "y": 345.05606698340443,
+          "scroll": 3073.579588477366,
+          "sourceY": 626.4204115226339,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.4666666666666663,
+          "x": 409.2816103198051,
+          "y": 347.54962882598585,
+          "scroll": 3093.56522481329,
+          "sourceY": 606.4347751867099,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.5333333333333328,
+          "x": 411.35180683242135,
+          "y": 350.3577905645696,
+          "scroll": 3113.8369151044044,
+          "sourceY": 586.1630848955956,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.5999999999999992,
+          "x": 411.47511510588754,
+          "y": 353.2820412533554,
+          "scroll": 3134.3374485596705,
+          "sourceY": 565.6625514403295,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.6666666666666656,
+          "x": 409.63796061237116,
+          "y": 356.11566353628336,
+          "scroll": 3155.00961438805,
+          "sourceY": 544.9903856119499,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.733333333333332,
+          "x": 406.0425885387018,
+          "y": 358.65834664360824,
+          "scroll": 3175.7962017985055,
+          "sourceY": 524.2037982014945,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.7999999999999985,
+          "x": 401.08479940101836,
+          "y": 360.73034650234064,
+          "scroll": 3196.6399999999994,
+          "sourceY": 503.3600000000006,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.866666666666665,
+          "x": 395.31037690665227,
+          "y": 362.1851919723024,
+          "scroll": 3217.483798201493,
+          "sourceY": 482.51620179850715,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.9333333333333313,
+          "x": 389.3550047503211,
+          "y": 362.92003899495245,
+          "scroll": 3238.2703856119488,
+          "sourceY": 461.72961438805123,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 1.9999999999999978,
+          "x": 383.87428667065814,
+          "y": 362.8829407128572,
+          "scroll": 3258.9425514403283,
+          "sourceY": 441.0574485596717,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.066666666666664,
+          "x": 379.47157358664873,
+          "y": 362.0765196299006,
+          "scroll": 3279.4430848955944,
+          "sourceY": 420.55691510440556,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.1333333333333306,
+          "x": 376.63154304358073,
+          "y": 360.55778222462396,
+          "scroll": 3299.7147751867083,
+          "sourceY": 400.28522481329173,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.199999999999997,
+          "x": 375.666842948754,
+          "y": 358.4340891218095,
+          "scroll": 3319.7004115226327,
+          "sourceY": 380.29958847736725,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.2666666666666635,
+          "x": 376.6836733803878,
+          "y": 355.85556569373796,
+          "scroll": 3339.3427831123295,
+          "sourceY": 360.65721688767053,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.33333333333333,
+          "x": 379.57009543440785,
+          "y": 353.0044895911024,
+          "scroll": 3358.5846791647605,
+          "sourceY": 341.4153208352395,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.3999999999999964,
+          "x": 384.0083541426585,
+          "y": 350.08240540654737,
+          "scroll": 3377.368888888888,
+          "sourceY": 322.6311111111122,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.466666666666663,
+          "x": 389.5098588804453,
+          "y": 347.29587734441145,
+          "scroll": 3395.6382014936735,
+          "sourceY": 304.3617985063265,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.533333333333329,
+          "x": 395.4689704065046,
+          "y": 344.8418870505569,
+          "scroll": 3413.33540618808,
+          "sourceY": 286.66459381192,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.5999999999999956,
+          "x": 401.2296733295458,
+          "y": 342.8939088400579,
+          "scroll": 3430.4032921810685,
+          "sourceY": 269.59670781893146,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.666666666666662,
+          "x": 406.15779428905336,
+          "y": 341.58964667478085,
+          "scroll": 3446.7846486816024,
+          "sourceY": 253.21535131839755,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.7333333333333285,
+          "x": 409.7108156319439,
+          "y": 341.02129977261393,
+          "scroll": 3462.4222648986424,
+          "sourceY": 237.57773510135758,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.799999999999995,
+          "x": 411.4975990691742,
+          "y": 341.22904497933547,
+          "scroll": 3477.258930041151,
+          "sourceY": 222.74106995884904,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.8666666666666614,
+          "x": 411.3214445674256,
+          "y": 342.19819663887904,
+          "scroll": 3491.2374333180906,
+          "sourceY": 208.76256668190945,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.933333333333328,
+          "x": 409.2017442900912,
+          "y": 343.86024473278076,
+          "scroll": 3504.300563938423,
+          "sourceY": 195.69943606157722,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 2.9999999999999942,
+          "x": 405.3718477894951,
+          "y": 346.097697901995,
+          "scroll": 3516.39111111111,
+          "sourceY": 183.60888888888985,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.0666666666666607,
+          "x": 400.2533734630199,
+          "y": 348.75238899442996,
+          "scroll": 3527.4518640451142,
+          "sourceY": 172.54813595488577,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.133333333333327,
+          "x": 394.40979422494314,
+          "y": 351.63665601315495,
+          "scroll": 3537.425611949397,
+          "sourceY": 162.57438805060292,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.1999999999999935,
+          "x": 388.484406966696,
+          "y": 354.5466080761166,
+          "scroll": 3546.2551440329207,
+          "sourceY": 153.74485596707927,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.26666666666666,
+          "x": 383.12951450620176,
+          "y": 357.27653860726025,
+          "scroll": 3553.883249504648,
+          "sourceY": 146.11675049535188,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.3333333333333264,
+          "x": 378.934616109824,
+          "y": 359.6334668803474,
+          "scroll": 3560.25271757354,
+          "sourceY": 139.74728242646006,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.399999999999993,
+          "x": 376.3615118128348,
+          "y": 361.45077996342127,
+          "scroll": 3565.306337448559,
+          "sourceY": 134.69366255144087,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.4666666666666592,
+          "x": 375.6934646511481,
+          "y": 362.6000107051852,
+          "scroll": 3568.9868983386677,
+          "sourceY": 131.01310166133226,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.5333333333333257,
+          "x": 377.00401733633385,
+          "y": 362.99991916907993,
+          "scroll": 3571.237189452827,
+          "sourceY": 128.7628105471731,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.599999999999992,
+          "x": 380.14889622477597,
+          "y": 362.6222355420421,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.6666666666666585,
+          "x": 384.78189384149425,
+          "y": 361.4936585476484,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.733333333333325,
+          "x": 390.3929815134071,
+          "y": 359.6939680944016,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.7999999999999914,
+          "x": 396.364456440599,
+          "y": 357.3503855773921,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.866666666666658,
+          "x": 405.1893151319911,
+          "y": 355.026569284822,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.9333333333333242,
+          "x": 411.43860438290324,
+          "y": 350.4130180449916,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 3.9999999999999907,
+          "x": 415.413115228091,
+          "y": 345.2940900626593,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.0666666666666575,
+          "x": 416.637144240049,
+          "y": 339.98406019071354,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.133333333333324,
+          "x": 414.9640385593415,
+          "y": 334.76141659038166,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.19999999999999,
+          "x": 410.58796099201953,
+          "y": 329.84791264531106,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.266666666666657,
+          "x": 404.01071931937156,
+          "y": 325.39340313097574,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.333333333333323,
+          "x": 395.9694973008969,
+          "y": 321.4676888090147,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.39999999999999,
+          "x": 387.33644954097224,
+          "y": 318.0598885336152,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.466666666666656,
+          "x": 379.0045597273904,
+          "y": 315.0851274841354,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.533333333333323,
+          "x": 371.77549258858016,
+          "y": 312.3976453429141,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.599999999999989,
+          "x": 366.264284406686,
+          "y": 309.80885349804976,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.666666666666655,
+          "x": 362.8328195984678,
+          "y": 307.10845736195654,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.733333333333322,
+          "x": 361.559611275023,
+          "y": 304.08654305908107,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.799999999999988,
+          "x": 362.2481194268573,
+          "y": 300.55452134151426,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.866666666666655,
+          "x": 364.47047464019766,
+          "y": 296.36301901928687,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.933333333333321,
+          "x": 367.6387840092624,
+          "y": 291.4151831545739,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 4.999999999999988,
+          "x": 371.0928111666026,
+          "y": 285.67437292836405,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.066666666666654,
+          "x": 374.19116640713463,
+          "y": 279.16580370875295,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.13333333333332,
+          "x": 376.3933752702232,
+          "y": 271.9723164967457,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.199999999999987,
+          "x": 377.3221977285536,
+          "y": 264.22501263396117,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.266666666666653,
+          "x": 376.79897838338184,
+          "y": 256.08996346478665,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.33333333333332,
+          "x": 374.8490656462377,
+          "y": 247.75253389928167,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.399999999999986,
+          "x": 371.67878864917446,
+          "y": 239.4010192504036,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.466666666666653,
+          "x": 367.6294667028627,
+          "y": 231.21127589310288,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.533333333333319,
+          "x": 363.1168845472974,
+          "y": 223.3338362684936,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.599999999999985,
+          "x": 358.56620922376294,
+          "y": 215.88466284579312,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.666666666666652,
+          "x": 354.35228953096316,
+          "y": 208.94025349007384,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.733333333333318,
+          "x": 350.7537484190255,
+          "y": 202.53731188236702,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.799999999999985,
+          "x": 347.926557288301,
+          "y": 196.6766955208247,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.866666666666651,
+          "x": 345.89934412512866,
+          "y": 191.33090373170222,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.933333333333318,
+          "x": 344.58910246286314,
+          "y": 186.45401586389391,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 5.999999999999984,
+          "x": 343.8328057375646,
+          "y": 181.99277095433732,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.06666666666665,
+          "x": 343.4281763610758,
+          "y": 177.89741526413846,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.133333333333317,
+          "x": 343.17583599319556,
+          "y": 174.1310369091264,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.199999999999983,
+          "x": 342.9153911677968,
+          "y": 170.67634388098224,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.26666666666665,
+          "x": 342.5495828629902,
+          "y": 167.53919397319834,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.333333333333316,
+          "x": 342.0531444444344,
+          "y": 164.74861091804982,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.399999999999983,
+          "x": 341.46601460710343,
+          "y": 162.35347085196273,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.466666666666649,
+          "x": 340.8735111719318,
+          "y": 160.41646486520966,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.5333333333333155,
+          "x": 340.3784713765464,
+          "y": 159.0062876866089,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.599999999999982,
+          "x": 340.0717861597125,
+          "y": 158.18922874262853,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": false,
+          "raid": false
+        },
+        {
+          "t": 6.666666666666648,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 4,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 6.733333333333315,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 23,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 6.799999999999981,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 32,
+          "dam": false,
+          "master": "bg_stage01_intact",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 6.866666666666648,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 32,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 6.933333333333314,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 32,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 6.9999999999999805,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 32,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.066666666666647,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 31,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.133333333333313,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 30,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.19999999999998,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 29,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.266666666666646,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 27,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.333333333333313,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 25,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.399999999999979,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 22,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.4666666666666455,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 20,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.533333333333312,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 17,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.599999999999978,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 14,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.666666666666645,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 12,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.733333333333311,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 9,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.799999999999978,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 7,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.866666666666644,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 5,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.9333333333333105,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 3,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 7.999999999999977,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 1,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.066666666666647,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.133333333333317,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.199999999999987,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.266666666666657,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.333333333333327,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.399999999999997,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.466666666666667,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.533333333333337,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572,
+          "sourceY": 128,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.600000000000007,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3572.6666666666665,
+          "sourceY": 127.33333333333348,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": false
+        },
+        {
+          "t": 8.666666666666677,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3575.3333333333326,
+          "sourceY": 124.66666666666742,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 8.733333333333347,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3577.9999999999986,
+          "sourceY": 122.00000000000136,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 8.800000000000017,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3580.6666666666647,
+          "sourceY": 119.3333333333353,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 8.866666666666687,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3583.3333333333308,
+          "sourceY": 116.66666666666924,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 8.933333333333357,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3585.999999999997,
+          "sourceY": 114.00000000000318,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.000000000000027,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3588.666666666663,
+          "sourceY": 111.33333333333712,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.066666666666697,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3591.333333333329,
+          "sourceY": 108.66666666667106,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.133333333333367,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3593.999999999995,
+          "sourceY": 106.000000000005,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.200000000000037,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3596.666666666661,
+          "sourceY": 103.33333333333894,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.266666666666707,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3599.333333333327,
+          "sourceY": 100.66666666667288,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.333333333333377,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3601.999999999993,
+          "sourceY": 98.00000000000682,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.400000000000047,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3604.6666666666592,
+          "sourceY": 95.33333333334076,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.466666666666717,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3607.3333333333253,
+          "sourceY": 92.6666666666747,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.533333333333387,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3609.9999999999914,
+          "sourceY": 90.00000000000864,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        },
+        {
+          "t": 9.600000000000056,
+          "x": 340,
+          "y": 158.00000000000006,
+          "scroll": 3612.6666666666574,
+          "sourceY": 87.33333333334258,
+          "level": 0,
+          "dam": true,
+          "master": "bg_stage01_destroyed",
+          "shattered": true,
+          "raid": true
+        }
+      ],
+      "events": [
+        {
+          "event": "dam-approach",
+          "t": 0,
+          "scrollFrom": 2821.2799999999997,
+          "scrollTarget": 3572,
+          "source": [
+            340,
+            286
+          ],
+          "impact": {
+            "x": 340,
+            "y": 158.00000000000006
+          },
+          "swapAt": 6.830000000000001
+        },
+        {
+          "event": "dam-impact",
+          "t": 6.666666666666648,
+          "x": 340,
+          "y": 158.00000000000006
+        },
+        {
+          "event": "dam-swap",
+          "t": 6.833333333333314,
+          "flash": 32,
+          "scroll": 3572
+        },
+        {
+          "event": "dam-revealed",
+          "t": 8.066666666666647
+        }
+      ],
+      "death_events": [
+        {
+          "event": "death-start",
+          "kind": "stage1",
+          "t": 0,
+          "family": "furious",
+          "mask": 0,
+          "hp": -238586.57726904002,
+          "pools": null
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 0.08333333333333333,
+          "x": 368.84551671832855,
+          "y": 176.0260321763048,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 0.08333333333333333,
+          "interval": 0.4594318661232768,
+          "spin": 0.07504915783575616,
+          "position": {
+            "x": 334.8137624245654,
+            "y": 173.4671717171717
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 0.55,
+          "x": 332.60794778204337,
+          "y": 254.1473187909098,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 0.55,
+          "interval": 0.45036688844732625,
+          "spin": 0.9468760257919638,
+          "position": {
+            "x": 366.7199546030853,
+            "y": 261.25
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 1.016666666666668,
+          "x": 408.37597553362394,
+          "y": 380.7523979886128,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 1.016666666666668,
+          "interval": 0.4357902428957325,
+          "spin": 2.5849722485437674,
+          "position": {
+            "x": 392.3030256147597,
+            "y": 349.03282828282835
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 1.4666666666666663,
+          "x": 441.4999200774198,
+          "y": 330.93590676063803,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 1.4666666666666663,
+          "interval": 0.4180511858855814,
+          "spin": 4.89027293774795,
+          "position": {
+            "x": 409.2816103198051,
+            "y": 347.54962882598585
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 1.8999999999999981,
+          "x": 396.17733493782055,
+          "y": 325.93555527651097,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 1.8999999999999981,
+          "interval": 0.3981481125859819,
+          "spin": 7.783609958534057,
+          "position": {
+            "x": 392.3139464983542,
+            "y": 362.64711639234633
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 2.2999999999999967,
+          "x": 359.22485548366564,
+          "y": 321.9055505743443,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 2.2999999999999967,
+          "interval": 0.37762141853022857,
+          "spin": 11.04081322177594,
+          "position": {
+            "x": 377.90852752227477,
+            "y": 354.45178905510284
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 2.6833333333333287,
+          "x": 381.08528724529987,
+          "y": 313.60578938583024,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 2.6833333333333287,
+          "interval": 0.3561911227983949,
+          "spin": 14.690575940376384,
+          "position": {
+            "x": 407.19323037811165,
+            "y": 341.37607409045796
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 3.049999999999994,
+          "x": 377.8234144653658,
+          "y": 317.5718783614961,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 3.049999999999994,
+          "interval": 0.3342024119695217,
+          "spin": 18.66545859203833,
+          "position": {
+            "x": 401.6248657010448,
+            "y": 348.05947789539465
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 3.399999999999993,
+          "x": 364.37819896425424,
+          "y": 324.1115326936825,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 3.399999999999993,
+          "interval": 0.3119389138984644,
+          "spin": 22.900953807608065,
+          "position": {
+            "x": 376.3615118128348,
+            "y": 361.45077996342127
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 3.7166666666666583,
+          "x": 389.3196680173044,
+          "y": 320.50173724468823,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 3.7166666666666583,
+          "interval": 0.29077949987537827,
+          "spin": 27.104474591281264,
+          "position": {
+            "x": 388.93106497584165,
+            "y": 360.20058719641366
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 4.016666666666658,
+          "x": 432.8893124955808,
+          "y": 307.5412022522437,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 4.016666666666658,
+          "interval": 0.2698828726417024,
+          "spin": 31.41222643788357,
+          "position": {
+            "x": 415.9885854371773,
+            "y": 343.9728299249726
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 4.29999999999999,
+          "x": 432.1800532705081,
+          "y": 298.45995477266945,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 4.29999999999999,
+          "interval": 0.2494160640702304,
+          "spin": 35.77143059083466,
+          "position": {
+            "x": 400.1204508656703,
+            "y": 323.3632798158414
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 4.549999999999989,
+          "x": 406.88823049958773,
+          "y": 293.4583796689505,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 4.549999999999989,
+          "interval": 0.2307867863059108,
+          "spin": 39.85235944784778,
+          "position": {
+            "x": 370.2178105914034,
+            "y": 311.7492088240561
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 4.783333333333322,
+          "x": 400.9020423844653,
+          "y": 287.764058021866,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 4.783333333333322,
+          "interval": 0.21293084791217257,
+          "spin": 43.85963541042674,
+          "position": {
+            "x": 361.9121194241861,
+            "y": 301.49433197350095
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 4.999999999999988,
+          "x": 410.5243937742352,
+          "y": 272.2032829233965,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 4.999999999999988,
+          "interval": 0.19595523484416,
+          "spin": 47.75220833456463,
+          "position": {
+            "x": 371.0928111666026,
+            "y": 285.67437292836405
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.199999999999987,
+          "x": 414.6964102376543,
+          "y": 245.11617264866027,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.199999999999987,
+          "interval": 0.17995516272173628,
+          "spin": 51.4919602293979,
+          "position": {
+            "x": 377.3221977285536,
+            "y": 264.22501263396117
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.3833333333333195,
+          "x": 401.8859555870948,
+          "y": 211.04713715229315,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.3833333333333195,
+          "interval": 0.16501531887380205,
+          "spin": 55.04370525720634,
+          "position": {
+            "x": 372.5688721551641,
+            "y": 241.48025630715784
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.549999999999986,
+          "x": 371.03774202083434,
+          "y": 179.8939191601918,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.549999999999986,
+          "interval": 0.15121085147618768,
+          "spin": 58.3751897334131,
+          "position": {
+            "x": 361.96687107287636,
+            "y": 221.42771178486402
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.716666666666652,
+          "x": 341.4627683087198,
+          "y": 162.53335326420697,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.716666666666652,
+          "interval": 0.13719752213738629,
+          "spin": 61.80441264773153,
+          "position": {
+            "x": 351.5849453098764,
+            "y": 204.0866849247662
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.866666666666651,
+          "x": 310.8672747733814,
+          "y": 166.39849919689271,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.866666666666651,
+          "interval": 0.1244094870846521,
+          "spin": 64.97427963520363,
+          "position": {
+            "x": 345.89934412512866,
+            "y": 191.33090373170222
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 5.999999999999984,
+          "x": 303.7201490253189,
+          "y": 198.0387869756042,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 5.999999999999984,
+          "interval": 0.11290414223918166,
+          "spin": 67.85840131753919,
+          "position": {
+            "x": 343.8328057375646,
+            "y": 181.99277095433732
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.11666666666665,
+          "x": 348.3414162167533,
+          "y": 218.1234131958033,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.11666666666665,
+          "interval": 0.10273145930006772,
+          "spin": 70.43332046959145,
+          "position": {
+            "x": 343.2343593688641,
+            "y": 175.0431163051243
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.2333333333333165,
+          "x": 385.50582940156147,
+          "y": 177.3973685205522,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.2333333333333165,
+          "interval": 0.09246129314080975,
+          "spin": 73.05613145631843,
+          "position": {
+            "x": 342.748917409165,
+            "y": 169.06678137438996
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.333333333333316,
+          "x": 349.2884211111264,
+          "y": 121.63724876064839,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.333333333333316,
+          "interval": 0.08358140043413875,
+          "spin": 75.34237315009082,
+          "position": {
+            "x": 342.0531444444344,
+            "y": 164.74861091804982
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.433333333333316,
+          "x": 297.9688258191347,
+          "y": 153.67205650695306,
+          "size": 144,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.433333333333316,
+          "interval": 0.07463112365155716,
+          "spin": 77.66380068158342,
+          "position": {
+            "x": 341.1640637613979,
+            "y": 161.32344969885568
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.516666666666649,
+          "x": 348.17671790981314,
+          "y": 202.62407069810956,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.516666666666649,
+          "interval": 0.06711919065898053,
+          "spin": 79.62520169497465,
+          "position": {
+            "x": 340.487660062784,
+            "y": 159.30569795287056
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.599999999999982,
+          "x": 378.74647433400196,
+          "y": 136.94929401178166,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "cookoff",
+          "kind": "stage1",
+          "t": 6.599999999999982,
+          "interval": 0.05955907253896997,
+          "spin": 81.61103731789379,
+          "position": {
+            "x": 340.0717861597125,
+            "y": 158.18922874262853
+          }
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.666666666666648,
+          "x": 340,
+          "y": 158.00000000000006,
+          "size": 384,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.666666666666648,
+          "x": 405,
+          "y": 123.00000000000006,
+          "size": 256,
+          "delay": 0.12
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 6.666666666666648,
+          "x": 450,
+          "y": 83.00000000000006,
+          "size": 256,
+          "delay": 0.26
+        },
+        {
+          "event": "shatter",
+          "kind": "stage1",
+          "t": 6.666666666666648,
+          "chunks": 34,
+          "x": 340,
+          "y": 158.00000000000006
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 7.116666666666647,
+          "x": 392.3072261037317,
+          "y": 424.8201667226584,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 7.399999999999979,
+          "x": 392.98116258401365,
+          "y": 406.7068258216503,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 7.6333333333333115,
+          "x": 354.34326892156747,
+          "y": 249.6582832365297,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 7.833333333333311,
+          "x": 315.3326105764002,
+          "y": -10.533829945683797,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 7.999999999999977,
+          "x": 163.36288270048254,
+          "y": 127.83654227980736,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.483333333333334,
+          "x": 169.08604925633034,
+          "y": 137.13003663623388,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.483333333333334,
+          "x": 517.8698166102024,
+          "y": 134.36951419973826,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.483333333333334,
+          "x": 291.18578179208816,
+          "y": 186.1500200894779,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.483333333333334,
+          "x": 495.30474873831747,
+          "y": 63.291117390992056,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.600000000000007,
+          "x": 513.6580958310261,
+          "y": 42.97614189623017,
+          "size": 88,
+          "delay": 0
+        },
+        {
+          "event": "death-complete",
+          "kind": "stage1",
+          "t": 8.600000000000007
+        },
+        {
+          "event": "explosion",
+          "kind": "stage1",
+          "t": 8.71666666666668,
+          "x": 326.10419902824657,
+          "y": 139.82013250904365,
+          "size": 88,
+          "delay": 0
+        }
+      ],
+      "full_white_pixels": true,
+      "end": {
+        "src": 87.33333333334258,
+        "map": 3612.6666666666574,
+        "flash": 0,
+        "level": 0,
+        "score": 5500,
+        "raid": true,
+        "impact": {
+          "x": 340,
+          "y": 158.00000000000006
+        }
+      }
+    }
+  },
+  "errors": []
+}

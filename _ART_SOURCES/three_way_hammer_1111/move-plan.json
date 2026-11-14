@@ -1,0 +1,10 @@
+{
+  "intent": "Add a centered frontal ground smash and a mirrored right ground smash to the user-approved left smash, for Chronos and Dracodia in normal/Chromium forms.",
+  "camera": "Front-facing actor; centered impact head between boots, lower endcap down; slight perspective on straight side-mounted haft.",
+  "cell": [512,512], "root": [256,256], "bootBaseline": 410,
+  "timelineFramesPerDirection": 32, "newWholeDrawings": 30,
+  "poses": "Retain first17 ready/lift/peak poses; select7 centered downswing and8 recovery poses per character. Preserve approved32 left poses. Mirror entire left cells and metadata for right; right pivot255 compensates exact pixel reflection.",
+  "nativeIntegration": "Each committed overhead attack selects center, then right, then left across successive attacks. Keep the previous ready grip through the initial lift, then use the committed bank from the high pose through strike/repeat/recovery and ready/throw handoff; preserve native difficulty strike counts and hit timing. Include all directions in whole-combo clearance and retarget from the chosen bank's actual cap.",
+  "materials": ["regular","chrome","red","hit","red_hit"],
+  "preserved": ["First native leap", "Planted follow-up roots", "Side sweeps", "Whirlwind", "Existing impact audio", "HP and native armor", "Held/released weapon ownership", "HAMMER/HAMA handoff"]
+}

@@ -1,0 +1,391 @@
+{
+  "frames": [
+    {
+      "filename": "boss-cascade_00",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 40
+    },
+    {
+      "filename": "boss-cascade_01",
+      "frame": {
+        "x": 176,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 60
+    },
+    {
+      "filename": "boss-cascade_02",
+      "frame": {
+        "x": 352,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 60
+    },
+    {
+      "filename": "boss-cascade_03",
+      "frame": {
+        "x": 528,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 80
+    },
+    {
+      "filename": "boss-cascade_04",
+      "frame": {
+        "x": 704,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 90
+    },
+    {
+      "filename": "boss-cascade_05",
+      "frame": {
+        "x": 880,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 100
+    },
+    {
+      "filename": "boss-cascade_06",
+      "frame": {
+        "x": 1056,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 120
+    },
+    {
+      "filename": "boss-cascade_07",
+      "frame": {
+        "x": 1232,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 120
+    },
+    {
+      "filename": "boss-cascade_08",
+      "frame": {
+        "x": 1408,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 140
+    },
+    {
+      "filename": "boss-cascade_09",
+      "frame": {
+        "x": 1584,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 140
+    },
+    {
+      "filename": "boss-cascade_10",
+      "frame": {
+        "x": 1760,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 150
+    },
+    {
+      "filename": "boss-cascade_11",
+      "frame": {
+        "x": 1936,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 150
+    },
+    {
+      "filename": "boss-cascade_12",
+      "frame": {
+        "x": 2112,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 180
+    },
+    {
+      "filename": "boss-cascade_13",
+      "frame": {
+        "x": 2288,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 210
+    }
+  ],
+  "meta": {
+    "app": "clean_gif.py (ChatGPT GIF to sprite sheet)",
+    "image": "boss-cascade-sheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2464,
+      "h": 176
+    },
+    "scale": "1",
+    "art_pixel": 1,
+    "frameTags": [
+      {
+        "name": "ignition",
+        "from": 0,
+        "to": 1,
+        "direction": "forward"
+      },
+      {
+        "name": "blast",
+        "from": 2,
+        "to": 7,
+        "direction": "forward"
+      },
+      {
+        "name": "breakup",
+        "from": 8,
+        "to": 10,
+        "direction": "forward"
+      },
+      {
+        "name": "aftermath",
+        "from": 11,
+        "to": 13,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 88,
+      "y": 88,
+      "kind": "center",
+      "note": "fixed effect source; retains generated coordinates without centroid correction"
+    },
+    "palette": [
+      "#fdfbed",
+      "#fdf597",
+      "#fde63a",
+      "#f7dda4",
+      "#fccf1e",
+      "#fcb725",
+      "#e0b995",
+      "#fb941e",
+      "#f87a23",
+      "#f75d16",
+      "#a68b82",
+      "#f23909",
+      "#a37c77",
+      "#cf4f48",
+      "#d83325",
+      "#8d6563",
+      "#be1810",
+      "#7d5658",
+      "#a01713",
+      "#6c434a",
+      "#8c0d10",
+      "#790a11",
+      "#53333c",
+      "#660e15",
+      "#4b1831",
+      "#550d16",
+      "#3b2429",
+      "#390f13",
+      "#320923",
+      "#260509",
+      "#120708",
+      "#030103",
+      "#000000"
+    ],
+    "loop": false
+  }
+}

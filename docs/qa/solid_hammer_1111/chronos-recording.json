@@ -1,0 +1,109 @@
+{
+  "records": [
+    {
+      "unit": "chronos",
+      "video": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\outputs\\Solid-metal-hammers\\chronos-hammer.mp4",
+      "seconds": 14.0,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 7.0
+        }
+      ],
+      "frames": 280,
+      "audioIncluded": false,
+      "method": "Deterministic native game loop, one screenshot per three60Hz ticks; silent20FPS playback",
+      "sampledPoses": [
+        {
+          "material": "regular",
+          "i": 0,
+          "bank": "blue-overhead",
+          "frame": 0
+        },
+        {
+          "material": "regular",
+          "i": 20,
+          "bank": "blue-overhead",
+          "frame": 28
+        },
+        {
+          "material": "regular",
+          "i": 40,
+          "bank": "blue-overhead",
+          "frame": 22
+        },
+        {
+          "material": "regular",
+          "i": 60,
+          "bank": "blue-sides",
+          "frame": 14
+        },
+        {
+          "material": "regular",
+          "i": 80,
+          "bank": "blue-right",
+          "frame": 12
+        },
+        {
+          "material": "regular",
+          "i": 100,
+          "bank": "blue-overhead",
+          "frame": 0
+        },
+        {
+          "material": "regular",
+          "i": 120,
+          "bank": "blue-overhead",
+          "frame": 1
+        },
+        {
+          "material": "chrome",
+          "i": 0,
+          "bank": "blue-overhead",
+          "frame": 1
+        },
+        {
+          "material": "chrome",
+          "i": 20,
+          "bank": "blue-overhead",
+          "frame": 28
+        },
+        {
+          "material": "chrome",
+          "i": 40,
+          "bank": "blue-sides",
+          "frame": 0
+        },
+        {
+          "material": "chrome",
+          "i": 60,
+          "bank": "blue-sides",
+          "frame": 14
+        },
+        {
+          "material": "chrome",
+          "i": 80,
+          "bank": "blue-right",
+          "frame": 13
+        },
+        {
+          "material": "chrome",
+          "i": 100,
+          "bank": "blue-overhead",
+          "frame": 0
+        },
+        {
+          "material": "chrome",
+          "i": 120,
+          "bank": "blue-overhead",
+          "frame": 1
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

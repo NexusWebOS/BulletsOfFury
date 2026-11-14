@@ -1,0 +1,28 @@
+{
+  "name": "drac-side-T",
+  "prompt": "Expand reference1 into a smooth SIXTEEN DRAWING whole-character hammer side-strike animation, FOUR columns FOUR rows, square2048x2048 transparent sprite sheet. Keep EXACTLY this Dracodia design and EXACT LITERAL T HAMMER GEOMETRY in EVERY frame: CYLINDER HORIZONTAL LEFT--RIGHT, caps/spikes at LEFT and RIGHT, handle VERTICAL DOWN from SIDE CENTER, both fists one ABOVE the other BELOW the head, spearbutt BELOW BOTH fists. This visible T joint is essential. Never draw a horizontal shaft into a cap. Keep the hammer upright T while entirebody drives it horizontally from right to left. Reference2 gives exact head/body identity; no redesign. SAME body/head/torso/limb sizes throughout. Wholebody andheldhammer drawn coherently together, no head stamps or pieces. 16 DISTINCT full poses: row1 0-3 twist hips/shoulders RIGHT into load, bring upright T toward right shoulder with elbowsfolding, load rearleg. Row2 4-7 drive hips/shoulders LEFT progressively, extendarms and upright T across chest to SCREEN LEFT, fullestLEFTcontact at6 with leftcap/spikes extremeleft. Row3 8-11 followthroughleft, frontknee bends, elbowsyield, begin recoil pulling uprightT inward. Row4 12-15 relaxbracing, torso untwistsfront, hammer settles inward toward frontguard. Head naturally turns a little withshoulders but original grayclosedface/red eyes visible. Reference1's four poses are only anchors, author smooth fullbody inbetween poses with real twisting and footpivot. Ample clear margins so NOhammer/spike/horn/boot touches anycell edge, fixedcommonbootbaseline and bodyunit. Crisp metallic16bit pixels. TrueRGBA transparency, no text/numbers/effects/trails/floor/shadows/background.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-f95c8642-c98b-4121-a167-b89dc020a412.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "exclude": [
+    8
+  ],
+  "reason": "Frame8 clipped left; use complete contact pose from original side master instead.",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

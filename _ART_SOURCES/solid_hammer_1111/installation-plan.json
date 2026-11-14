@@ -1,0 +1,33 @@
+{
+  "before": {
+    "assets/overhead_slam_art_1111.js": "efded47ff839990441ccb0835e179f09304c4358948e6ceb188c9222d7fb40b0",
+    "assets/game/shared/combat/front_hammer_1111/blue-overhead_regular.webp": "ab6db2d055e7aee91aebdf738ff96f4ee6effc80464a734ffabcfd088111cfa5",
+    "assets/game/shared/combat/front_hammer_1111/blue-overhead_chrome.webp": "864da47baa33381066f4317b728e1ccfa7c1ea4b1ad1bd9ff7b03805a8bf18f5",
+    "assets/game/shared/combat/front_hammer_1111/blue-overhead_red.webp": "bfacd03fec85a30de309bf961a66b06c8705ba3b80e572d353a81bf3e5af6a82",
+    "assets/game/shared/combat/front_hammer_1111/blue-overhead_hit.webp": "5796a8df3cb7b2fedb08487749386dbb842d10e949d1664e674310c6fcc81322",
+    "assets/game/shared/combat/front_hammer_1111/blue-overhead_red_hit.webp": "4722e4c230adaebf359201126fba014b257057c889e3b175d65b7f31138fa5d6",
+    "assets/game/shared/combat/front_hammer_1111/corrupt-overhead_regular.webp": "6ecc1677fb7947983b28e889ac35af3bfca6de22bfe68908d8dda36ad01a7cb0",
+    "assets/game/shared/combat/front_hammer_1111/corrupt-overhead_chrome.webp": "9f501bca29903e59f7414f1ec93121b3aa3f2bb38570168408949c31cd835f15",
+    "assets/game/shared/combat/front_hammer_1111/corrupt-overhead_red.webp": "58a57b862b445a283c6d86acc612f59a591982dc27e2366f6338029f89d0ceff",
+    "assets/game/shared/combat/front_hammer_1111/corrupt-overhead_hit.webp": "b909a705d55b581c35f8b6144f6e152b4fc100ffa3f8832bfba5cf6bc83774a0",
+    "assets/game/shared/combat/front_hammer_1111/corrupt-overhead_red_hit.webp": "2261e7fb2bc4227d7b7c6f7d7ee58714b1ddab3cf2740b771f39038f218c2552"
+  },
+  "protected": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/whole_hammer_1110.js": "41975f15d16775a9b858d4291385c68e4703bb9086ef76c0a6265b770dd903d0",
+    "assets/boss_animation_1109.js": "6a8181ddeaa74ce861305eb94df87133b4902f928bb005fb1658e43b83a282fc"
+  },
+  "files": [
+    "assets/overhead_slam_art_1111.js",
+    "assets/game/shared/combat/front_hammer_1111/blue-overhead_regular.webp",
+    "assets/game/shared/combat/front_hammer_1111/blue-overhead_chrome.webp",
+    "assets/game/shared/combat/front_hammer_1111/blue-overhead_red.webp",
+    "assets/game/shared/combat/front_hammer_1111/blue-overhead_hit.webp",
+    "assets/game/shared/combat/front_hammer_1111/blue-overhead_red_hit.webp",
+    "assets/game/shared/combat/front_hammer_1111/corrupt-overhead_regular.webp",
+    "assets/game/shared/combat/front_hammer_1111/corrupt-overhead_chrome.webp",
+    "assets/game/shared/combat/front_hammer_1111/corrupt-overhead_red.webp",
+    "assets/game/shared/combat/front_hammer_1111/corrupt-overhead_hit.webp",
+    "assets/game/shared/combat/front_hammer_1111/corrupt-overhead_red_hit.webp"
+  ]
+}

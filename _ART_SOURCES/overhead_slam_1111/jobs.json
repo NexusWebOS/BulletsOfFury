@@ -1,0 +1,986 @@
+[
+  {
+    "name": "blue-overhead",
+    "unit": "blue",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-load.png",
+        "source": "blue-load",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          608
+        ],
+        "root": [
+          325.3046683046683,
+          534.0
+        ],
+        "tip": [
+          152.3082805907173,
+          468.3552215189873
+        ],
+        "headCenter": [
+          152.3082805907173,
+          433.3552215189873
+        ],
+        "grip": [
+          320.0,
+          245.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "load"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-load.png",
+        "source": "blue-load",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          608
+        ],
+        "root": [
+          295.79402985074626,
+          534.0
+        ],
+        "tip": [
+          410.81038887311956,
+          258.1751348282713
+        ],
+        "headCenter": [
+          410.81038887311956,
+          223.17513482827135
+        ],
+        "grip": [
+          293.0,
+          280.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "load"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-load.png",
+        "source": "blue-load",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          608,
+          627,
+          646
+        ],
+        "root": [
+          325.2067714631197,
+          556.0
+        ],
+        "tip": [
+          438.58295494236813,
+          167.27488648271049
+        ],
+        "headCenter": [
+          438.58295494236813,
+          132.27488648271049
+        ],
+        "grip": [
+          325.0,
+          292.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "load"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-cock.png",
+        "source": "blue-cock",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          631,
+          577
+        ],
+        "root": [
+          313.0565610859729,
+          559.0
+        ],
+        "tip": [
+          411.2769080234834,
+          110.76614481409003
+        ],
+        "headCenter": [
+          411.2769080234834,
+          75.76614481409003
+        ],
+        "grip": [
+          317.2607655502392,
+          273.2456140350877
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "load"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-cock.png",
+        "source": "blue-cock",
+        "sourceCell": 1,
+        "crop": [
+          631,
+          0,
+          632,
+          577
+        ],
+        "root": [
+          266.3406593406594,
+          559.0
+        ],
+        "tip": [
+          385.7742173112339,
+          193.47366482504603
+        ],
+        "headCenter": [
+          385.7742173112339,
+          158.47366482504603
+        ],
+        "grip": [
+          270.42344497607655,
+          288.1499202551834
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "behind-head"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-cock.png",
+        "source": "blue-cock",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          577,
+          631,
+          669
+        ],
+        "root": [
+          315.76451953537486,
+          577.0
+        ],
+        "tip": [
+          427.8326055312955,
+          226.75982532751095
+        ],
+        "headCenter": [
+          427.8326055312955,
+          191.75982532751095
+        ],
+        "grip": [
+          322.29665071770336,
+          287.4497607655502
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "behind-head"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-cock.png",
+        "source": "blue-cock",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          577,
+          631,
+          669
+        ],
+        "root": [
+          315.76451953537486,
+          577.0
+        ],
+        "tip": [
+          427.8326055312955,
+          226.75982532751095
+        ],
+        "headCenter": [
+          427.8326055312955,
+          191.75982532751095
+        ],
+        "grip": [
+          322.29665071770336,
+          287.4497607655502
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "behind-head"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-cock.png",
+        "source": "blue-cock",
+        "sourceCell": 3,
+        "crop": [
+          631,
+          577,
+          632,
+          669
+        ],
+        "root": [
+          266.3020594965675,
+          577.0
+        ],
+        "tip": [
+          374.82782283218967,
+          117.46849656893323
+        ],
+        "headCenter": [
+          374.82782283218967,
+          82.46849656893323
+        ],
+        "grip": [
+          275.4593301435407,
+          317.2583732057416
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "downstroke"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-descent.png",
+        "source": "blue-descent",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          657
+        ],
+        "root": [
+          321.0243572395129,
+          563.0
+        ],
+        "tip": [
+          322.5713352921972,
+          94.48906301012079
+        ],
+        "headCenter": [
+          322.5713352921972,
+          59.489063010120795
+        ],
+        "grip": [
+          320.0,
+          270.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "downstroke"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-descent.png",
+        "source": "blue-descent",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          657
+        ],
+        "root": [
+          274.39147802929426,
+          563.0
+        ],
+        "tip": [
+          125.58477842003856,
+          236.0330764290302
+        ],
+        "headCenter": [
+          125.58477842003856,
+          201.0330764290302
+        ],
+        "grip": [
+          273.0,
+          265.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "downstroke"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-descent.png",
+        "source": "blue-descent",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          657,
+          627,
+          597
+        ],
+        "root": [
+          321.7290076335878,
+          503.0
+        ],
+        "tip": [
+          209.47909224627023,
+          409.93633116200886
+        ],
+        "headCenter": [
+          209.47909224627023,
+          374.93633116200886
+        ],
+        "grip": [
+          320.0,
+          213.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "downstroke"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-drive.png",
+        "source": "blue-drive",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          656,
+          627,
+          598
+        ],
+        "root": [
+          317.9517396184063,
+          516.0
+        ],
+        "tip": [
+          275.0,
+          539.0
+        ],
+        "headCenter": [
+          241.7967255334805,
+          482.26766004415003
+        ],
+        "grip": [
+          315.0,
+          229.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "contact"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-drive.png",
+        "source": "blue-drive",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          656,
+          627,
+          598
+        ],
+        "root": [
+          273.7913978494623,
+          516.0
+        ],
+        "tip": [
+          223.0,
+          524.0
+        ],
+        "headCenter": [
+          183.3224846568719,
+          471.89548075134826
+        ],
+        "grip": [
+          273.0,
+          224.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "recovery"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-descent.png",
+        "source": "blue-descent",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          657,
+          627,
+          597
+        ],
+        "root": [
+          276.982389937107,
+          504.0
+        ],
+        "tip": [
+          155.612658792066,
+          406.7303320704257
+        ],
+        "headCenter": [
+          155.612658792066,
+          371.7303320704257
+        ],
+        "grip": [
+          273.0,
+          213.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "recovery"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-load.png",
+        "source": "blue-load",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          608,
+          627,
+          646
+        ],
+        "root": [
+          300.082191780822,
+          556.0
+        ],
+        "tip": [
+          149.95704697986582,
+          497.29449664429535
+        ],
+        "headCenter": [
+          149.95704697986582,
+          462.29449664429535
+        ],
+        "grip": [
+          298.0,
+          292.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "recovery"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\blue-load.png",
+        "source": "blue-load",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          608
+        ],
+        "root": [
+          325.3046683046683,
+          534.0
+        ],
+        "tip": [
+          152.3082805907173,
+          468.3552215189873
+        ],
+        "headCenter": [
+          152.3082805907173,
+          433.3552215189873
+        ],
+        "grip": [
+          320.0,
+          245.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "recovery"
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  },
+  {
+    "name": "corrupt-overhead",
+    "unit": "drac",
+    "frames": [
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-load.png",
+        "source": "drac-load",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          584
+        ],
+        "root": [
+          313.71113561190737,
+          544.0
+        ],
+        "tip": [
+          137.48824343015215,
+          505.8298755186722
+        ],
+        "headCenter": [
+          137.48824343015215,
+          441.8298755186722
+        ],
+        "grip": [
+          315.0,
+          230.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "load"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-load.png",
+        "source": "drac-load",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          584
+        ],
+        "root": [
+          289.0694143167028,
+          544.0
+        ],
+        "tip": [
+          101.04940047961634,
+          414.91606714628296
+        ],
+        "headCenter": [
+          101.04940047961634,
+          350.91606714628296
+        ],
+        "grip": [
+          278.0,
+          235.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "load"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-load.png",
+        "source": "drac-load",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          584,
+          627,
+          670
+        ],
+        "root": [
+          314.1294416243655,
+          600.0
+        ],
+        "tip": [
+          471.0,
+          193.0
+        ],
+        "headCenter": [
+          470.09419930589985,
+          131.2959841348537
+        ],
+        "grip": [
+          320.0,
+          291.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "load"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-cock.png",
+        "source": "drac-cock",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          578
+        ],
+        "root": [
+          305.7977653631285,
+          561.0
+        ],
+        "tip": [
+          450.2441731409545,
+          161.5749167591565
+        ],
+        "headCenter": [
+          450.2441731409545,
+          97.5749167591565
+        ],
+        "grip": [
+          305.0,
+          270.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "load"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-cock.png",
+        "source": "drac-cock",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          578
+        ],
+        "root": [
+          264.1547344110854,
+          561.0
+        ],
+        "tip": [
+          404.0,
+          209.0
+        ],
+        "headCenter": [
+          403.56018054162496,
+          145.55366098294886
+        ],
+        "grip": [
+          263.0,
+          270.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "behind-head"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-cock.png",
+        "source": "drac-cock",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          578,
+          627,
+          676
+        ],
+        "root": [
+          304.1975308641975,
+          598.0
+        ],
+        "tip": [
+          454.93562778840027,
+          249.9572976418101
+        ],
+        "headCenter": [
+          454.93562778840027,
+          185.9572976418101
+        ],
+        "grip": [
+          305.0,
+          297.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "behind-head"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-cock.png",
+        "source": "drac-cock",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          578,
+          627,
+          676
+        ],
+        "root": [
+          304.1975308641975,
+          598.0
+        ],
+        "tip": [
+          454.93562778840027,
+          249.9572976418101
+        ],
+        "headCenter": [
+          454.93562778840027,
+          185.9572976418101
+        ],
+        "grip": [
+          305.0,
+          297.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "behind-head"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-cock.png",
+        "source": "drac-cock",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          578,
+          627,
+          676
+        ],
+        "root": [
+          266.558201058201,
+          598.0
+        ],
+        "tip": [
+          421.7744314689612,
+          167.2630608481868
+        ],
+        "headCenter": [
+          421.7744314689612,
+          103.2630608481868
+        ],
+        "grip": [
+          263.0,
+          322.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "downstroke"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-descent.png",
+        "source": "drac-descent",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          643
+        ],
+        "root": [
+          306.4484536082474,
+          561.0
+        ],
+        "tip": [
+          450.3877139979859,
+          161.18831822759316
+        ],
+        "headCenter": [
+          450.3877139979859,
+          97.18831822759316
+        ],
+        "grip": [
+          305.0,
+          260.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "downstroke"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-descent.png",
+        "source": "drac-descent",
+        "sourceCell": 1,
+        "crop": [
+          627,
+          0,
+          627,
+          643
+        ],
+        "root": [
+          261.9970845481049,
+          561.0
+        ],
+        "tip": [
+          425.33060109289613,
+          351.08469945355193
+        ],
+        "headCenter": [
+          425.33060109289613,
+          287.08469945355193
+        ],
+        "grip": [
+          263.0,
+          260.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "phase": "downstroke"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-descent.png",
+        "source": "drac-descent",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          643,
+          627,
+          611
+        ],
+        "root": [
+          308.0488565488566,
+          533.0
+        ],
+        "tip": [
+          451.93726235741445,
+          415.4790874524715
+        ],
+        "headCenter": [
+          451.93726235741445,
+          351.4790874524715
+        ],
+        "grip": [
+          305.0,
+          222.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "phase": "downstroke"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-drive.png",
+        "source": "drac-drive",
+        "sourceCell": 2,
+        "crop": [
+          0,
+          658,
+          627,
+          596
+        ],
+        "root": [
+          312.24087591240874,
+          518.0
+        ],
+        "tip": [
+          280.0,
+          552.0
+        ],
+        "headCenter": [
+          214.62760712931362,
+          470.41524459613197
+        ],
+        "grip": [
+          305.0,
+          242.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "contact"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-drive.png",
+        "source": "drac-drive",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          658,
+          627,
+          596
+        ],
+        "root": [
+          267.26298701298697,
+          517.0
+        ],
+        "tip": [
+          203.0,
+          537.0
+        ],
+        "headCenter": [
+          146.49681528662416,
+          455.34633757961774
+        ],
+        "grip": [
+          263.0,
+          242.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "recovery"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-descent.png",
+        "source": "drac-descent",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          643,
+          627,
+          611
+        ],
+        "root": [
+          265.57592093441156,
+          533.0
+        ],
+        "tip": [
+          417.9910543130991,
+          433.97667731629394
+        ],
+        "headCenter": [
+          417.9910543130991,
+          369.97667731629394
+        ],
+        "grip": [
+          263.0,
+          227.0
+        ],
+        "scale": 0.63,
+        "mirror": true,
+        "phase": "recovery"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-load.png",
+        "source": "drac-load",
+        "sourceCell": 3,
+        "crop": [
+          627,
+          584,
+          627,
+          670
+        ],
+        "root": [
+          287.79200000000003,
+          599.0
+        ],
+        "tip": [
+          93.41041869522883,
+          522.0598831548198
+        ],
+        "headCenter": [
+          93.41041869522883,
+          458.0598831548198
+        ],
+        "grip": [
+          278.0,
+          296.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "recovery"
+      },
+      {
+        "input": "C:\\Users\\Mike\\Documents\\New project\\BOF-Overhead-Slam-1111\\generated\\drac-load.png",
+        "source": "drac-load",
+        "sourceCell": 0,
+        "crop": [
+          0,
+          0,
+          627,
+          584
+        ],
+        "root": [
+          313.71113561190737,
+          544.0
+        ],
+        "tip": [
+          137.48824343015215,
+          505.8298755186722
+        ],
+        "headCenter": [
+          137.48824343015215,
+          441.8298755186722
+        ],
+        "grip": [
+          315.0,
+          230.0
+        ],
+        "scale": 0.63,
+        "mirror": false,
+        "phase": "recovery"
+      }
+    ],
+    "cell": 640,
+    "pivot": [
+      320,
+      320
+    ],
+    "foot": 474
+  }
+]

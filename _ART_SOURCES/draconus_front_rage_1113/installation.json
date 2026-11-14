@@ -1,0 +1,16 @@
+{
+  "protected": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/boss_restore_1112.js": "5ab3301e3d9471787faf3140205c6e36cdd7217af36d856c5e3ceed45cc72325",
+    "assets/boss_restore_art_1112.js": "91c0c5c4ed3e33ab1043764d0c86296b60216027885cb58ed28e08c8061f9d39",
+    "assets/boss_ship_forms_1111.js": "f3c54cdda6ddf94bc85a71808b47505a15ce4b45c9b5e0fcae5551e1783b7cb2",
+    "assets/draconus_modular_1111.js": "4ea117a08bc57ea1f1e4e5e3d063c2cf207acf601c577377124974114764ed29",
+    "assets/overhead_slam_art_1111.js": "0145f54d951cd5b3c059fc114033e691c32d1428d0b39be79404dbcf2c233d73",
+    "assets/chronos_rageform_1026.js": "d0ce6c2908dcf0cb748b6ab35695050d7995d795f90cf06330b7bc3a6207b7e8",
+    "assets/chronos_kamehameha_1026.js": "2632ae77fa46b4afa50a77c3dbe709f1c848e859775925d68395906d50fd02d3",
+    "assets/chronos_energy_audio_1026.js": "2227335dffc1d2513fa1733433f4fd470ad0fb180bcfd0589a56ec80ec620412"
+  },
+  "runtime": "5e38b03c2bc51cd61bd1a417b6e3bc7fd29807be2fbb3f8f847d243ada43ddf3",
+  "rageOwner": "3516cfa2448922d2c98dc06b96501846109b97d0a4b889f0121c8b6d6b6343b8",
+  "rageChange": "Only the Draconus rage-book exit now requires3 completed cycles; native HP, entry clock and attacks are unchanged."
+}

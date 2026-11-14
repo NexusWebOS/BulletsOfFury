@@ -1,0 +1,100 @@
+{
+  "nativeChecks": 32,
+  "weaponChecks": 28,
+  "totalChecks": 60,
+  "editable": {
+    "banks": 46,
+    "exactFrames": 1136,
+    "errors": []
+  },
+  "seconds": 62.098396,
+  "phases": [
+    "boost",
+    "burst",
+    "catch",
+    "charge",
+    "cool",
+    "entry",
+    "lock",
+    "pass",
+    "return",
+    "spool",
+    "stalk",
+    "turn-in",
+    "turnback"
+  ],
+  "audioPeak": 0.7132440805435181,
+  "sourceHashes": {
+    "index.html": "7e4225eb753e0e592ef7e120dbcba8124e09feeadff90879e3cbb456be1e8f67",
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/stage5_bomber_assault_1114.js": "517cef43b3b47395cde046f975ac7df275ca18abdf4f0980882127c277b9b78a",
+    "assets/stage5_bomber_assault_art_1114.js": "b2486620d28100fe7ff2f403e952217d9e743d51d127e128a71ae8abb41a2520"
+  },
+  "protected": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/combat_polish_0927b.js": "ad32ebaeb0ee278d3eb1e78b5f3cca6fa5923918c6b19f0b085802353caa99ac",
+    "assets/hardcorps_bosses_1007.js": "a6d4305e91f9ff629fbf899c7bff86ec11f81e7ed8429d63a3e2d56755293699",
+    "assets/pursuit_bomber_1027.js": "31aa639715274c8693a069190200a518dca920d951cfd7314fd35a281fb8da60",
+    "assets/stage5_bomber_gate_1027.js": "8cf64e2210fd8ae50b2b48b2bdd89cbde64d46b299d5cc4e6fa8002f4b4a3e91",
+    "assets/stage6_roster_1017.js": "50e5266a8f1bcf38ebb191d4d69429a180b6ed7006efbbc43a9cf2886759a704",
+    "assets/difficulty_rules_1101.js": "b21a03e25b9d3abcb86876b2b2ea19af7bf735dcb27250b45d407b30e202bba4",
+    "assets/draconus_cinematic_rage_1113.js": "7f233420e861f01107e8cbf7d97d3c7de51f7af5c1ed1f28db33e53917995740",
+    "assets/draconus_cinematic_rage_art_1113.js": "cfaa82d20191d6a0dbbd21a491a5070e6d6feaf6cc77485b2499d4ead246aaf9",
+    "assets/chronos_rageform_1026.js": "d0ce6c2908dcf0cb748b6ab35695050d7995d795f90cf06330b7bc3a6207b7e8",
+    "assets/boss_restore_1112.js": "5ab3301e3d9471787faf3140205c6e36cdd7217af36d856c5e3ceed45cc72325"
+  },
+  "movieSha256": "f707c7bdede7f199b85ddbce235580f58ff4816547d9f27dbe5d0848da02a5ec",
+  "errors": [],
+  "requiredChecks": [
+    {
+      "name": "game-syntax",
+      "returncode": 0,
+      "tail": ""
+    },
+    {
+      "name": "assault-syntax",
+      "returncode": 0,
+      "tail": ""
+    },
+    {
+      "name": "art-syntax",
+      "returncode": 0,
+      "tail": ""
+    },
+    {
+      "name": "full-suite",
+      "returncode": 1,
+      "tail": " required the magenta to sit on the transparent edge\n=== 98. stage end blasts ===\n  ok  the stage end routes every surviving enemy through the class death\n  ok  the fixed 38px sweep is gone\n  ok  every surviving enemy still explodes (3 of 3)\n  ok  and NOT all at the same size \u2014 units [29,43,44] give blasts [36,54,55]\n  ok  each blast is 1.25x its own unit (engine rule, drop 0801cw) \u2014 ratios 1.24, 1.26, 1.25\n  ok  bossDie has no fixed-size unit blast left\n  ok  modularHit has no fixed-size unit blast left\n  ok  levDoorHit has no fixed-size unit blast left\n=== 99. L2/L3 bosses ===\n  ok  the phase body replaces the part body\n  ok  the retired Behemoth still spawns a hull with its rig quarantined (0903)\n  ok  and it is decided BEFORE the parts loop\n  ok  returning early so nothing can paint over it\n  ok  magma brightness report present\n  ok  magma colossus lifted to 132/255 (was 51) \u2014 readable against the lava now\n  ok  and the damage progression is preserved (132 > 111 > 92)\n  ok  no pixel gained or lost alpha \u2014 only luminance moved\n=== miniboss wall ===\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nassets/combat_polish_0927b.js:151\n  const hp=difficultyHealthBaseline15(1050,diffKey==='easy'?600:[1050,1250,1450][n]);b._bomber={n,mode:'entry',t:0,dur:2.1,seq:0,cd:0,clock:0,bombs:[],history:['entry'],core:hp,coreMax:hp,parts:[]};\n           ^\n\nReferenceError: difficultyHealthBaseline15 is not defined\n    at siegeBomberInit (assets/combat_polish_0927b.js:151:12)\n    at spawnSubBoss__inner (assets/game.js:25118:45)\n    at spawnSubBoss (assets/game.js:25108:110)\n    at evalmachine.<anonymous>:1:1\n    at Script.runInContext (node:vm:149:12)\n    at Object.runInContext (node:vm:301:6)\n    at C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_BUILD_SOURCE\\test_fl.js:4537:10\n    at Object.<anonymous> (C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_BUILD_SOURCE\\test_fl.js:4564:5)\n    at Module._compile (node:internal/modules/cjs/loader:1830:14)\n    at Object..js (node:internal/modules/cjs/loader:1961:10)\n\nNode.js v24.15.0\n"
+    }
+  ],
+  "playbackSeeks": [
+    {
+      "at": 0,
+      "ready": 4,
+      "width": 1280,
+      "height": 844,
+      "error": null
+    },
+    {
+      "at": 0,
+      "ready": 4,
+      "width": 1280,
+      "height": 844,
+      "error": null
+    },
+    {
+      "at": 0,
+      "ready": 4,
+      "width": 1280,
+      "height": 844,
+      "error": null
+    },
+    {
+      "at": 0,
+      "ready": 4,
+      "width": 1280,
+      "height": 844,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "drac-sides-front",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-5e7efd63-9aa4-48bc-913f-fd201a1a8b03.png",
+  "prompt": "Revise ALL16completecharacterposes inreference1 for FRONT-FACING heavy sidehammerstrikes. Keepexact purple/silverDracodiaidentity, hornedgrayclosedface/REDEYES/redcore, metallicsprite rendering, hammerliteralTgeometry and progressivewindup/strike/recoil/recovery. ChangeHEADandPELVISorientation toFACEVIEWERinEVERYcell; bothEYESSYMMETRICALLYvisible, nofacialprofile or3/4head. BodyisallowedclearHIPandSHOULDERtwistingthrough20degrees, butfacecounterturnsforwardnaturally; both kneesvisible, plantedfeetpivot. No staticheadstamp orbodyassembly: REDRAWCOMPLETEcoherentposes. First4wind: twisttorsoRIGHTandLIFTuprightTtowardrightshoulder; next4drivehipsLEFTandextendarmsacrossfront, leftENDCAPleadingleftcontact; next4absorbforce/elbowsyield/recoil; last4unwindthroughfrontalguard. SAME16ordered4x4cells. HammerisLITERALUPRIGHTTalways: purpleCYLINDERHORIZONTALleft--right,3spikesatEACHleft/rightcap, shaftprojectsVERTICALLYDOWNfromSIDEMIDPOINT; bothclosefistsoneABOVEotherBELOWcylindergrippingONEstraighthilt, spearbuttbelow. Neverhaftintoendcap/crossbarthroughhead/headbetweenfists. Keep30pixelpaddingaroundEVERYhorn/spike/boot. Explicitly FIXthirdrowfirstclippedhammerbyredrawingWHOLEposewitharmsalittlemorebentandheadINSIDEcell,leftspikesfullyvisible. NOdrawingscrosscellguidelines; uniformbodyunit/baseline, nofitperpose. Large2048x2048square4columns4rows, sharp16bitmetallicsprites, TRUERGBAtransparency,noFX/trails/text/floor/shadows/background.",
+  "accepted": true,
+  "status": "candidate",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

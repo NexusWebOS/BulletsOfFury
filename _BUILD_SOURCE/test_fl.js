@@ -182,7 +182,9 @@ run('assets/game/shared/atlases/bof_gravity_mode_space_weapons.js', 'gravity_atl
 run('assets/game/shared/atlases/stage_runtime_atlases.js', 'stage_runtime_atlases');
 run('assets/game/levels/stage_05/enemies/stage5_runtime_atlas.js', 'stage5_runtime_atlas');
 run('assets/audio_feedback_0927.js', 'audio_feedback');
+run('assets/difficulty_helpers_1114.js', 'difficulty_helpers');
 run('assets/game.js', 'game');
+run('assets/stage8_leech_recovery_1114.js', 'stage8_leech_recovery');
 run('assets/playthrough_ui_1011.js', 'playthrough_ui');
 run('assets/combat_polish_0927b.js', 'combat_polish');
 run('assets/rival_fight_0924.js', 'rival_fight');
@@ -2148,8 +2150,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     }
   }catch(err){ _c2=String(err&&err.message||err); }
   ok(_c2===null, 'stage 2 survives a full 110s headless run without throwing'+(_c2?(' -> '+_c2):''));
-  var _sv=_vk.filter(function(k){return _seen2[k];});
-  ok(_sv.length===11, 'all eleven active volcanic roles appeared after retiring the golem ('+_sv.length+'/11: '+_sv.join(',')+')');
+  var _scheduledVolc=['skim','disc','miner','ash','cruc','lance','carrier','lavamaw','pod'];
+  var _sv=_scheduledVolc.filter(function(k){return _seen2[k];});
+  ok(_sv.length===9&&!['eye','crawl','golem'].some(k=>_seen2[k]), 'all nine scheduled volcanic roles appear; retired eye/crawler/golem stay out ('+_sv.join(',')+')');
   ok(_sh2>0, 'volcanic units opened fire ('+_sh2+' enemy bullets peaked)');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y);})", ctxv), 'no non-finite enemies after the stage-2 soak');
   /* also report the SHOOTER's state: a NaN round almost always means a NaN source, and this
@@ -5327,7 +5330,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _sb=_g6.slice(_i2,_e);
   ok(_sb.indexOf('GUARANTEED HIT FLASH')>0, 'the miniboss flash is one pass covering EVERY draw branch');
   ok((_sb.match(/_lastKey=/g)||[]).length>=3, 'each branch records the key it drew with ('+(_sb.match(/_lastKey=/g)||[]).length+' branches)');
-  ok(vm.runInContext("hitSubBoss.toString().indexOf('b.flash=0.18')>0", ctxv), 'and the flash is held long enough for a single hit to register');
+  ok(vm.runInContext("(()=>{const prior=subBoss;try{subBoss={x:240,y:140,w:40,h:40,hp:100,maxhp:100,dead:false,enter:false};hitSubBoss(1,240,140);return subBoss.hp<100&&subBoss.flash>=.18;}finally{subBoss=prior;}})()",ctxv), 'native damage holds the actual hit flash for at least .18 seconds');
   [[1,'quadlaser'],[2,'obsidiandrill'],[3,'glacierrail'],[2,'siegeember'],[3,'thornrime']]
     .filter(function(pr){ return !sbRetired(pr[1]); })
     .forEach(function(pr){
@@ -13167,9 +13170,9 @@ console.log("=== 266. moving muzzle hardpoints and Stage-2 volcanic overhaul ===
       _s2plan266=_src266.slice(_s2a266,_s2b266),
       _plan266={old:_s2plan266.indexOf("spawnEnemy('el_em'")>=0||_s2plan266.indexOf("spawnEnemy('el_lr'")>=0,
         alias:['magmagun','spinner','dodger'].some(function(k){return _s2plan266.indexOf("spawnEnemy('"+k+"'")>=0;}),
-        fleet:['ash','skim','cinderwasp','magmaorb','basaltbomber','eye','lance','disc','cruc','carrier','miner','lavamaw','crawl','pod','firejet1002'].every(function(k){return _s2plan266.indexOf("type:'"+k+"'")>=0;})};
+        fleet:['ash','skim','cinderwasp','basaltbomber','lance','disc','cruc','carrier','miner','lavamaw','lavasnake','pod','firejet1002'].every(function(k){return _s2plan266.indexOf("type:'"+k+"'")>=0;})};
   ok(!_plan266.old&&!_plan266.alias&&_plan266.fleet,
-     'Stage 2 fields its fifteen volcanic and new fire-jet types without rejected aliases');
+     'Stage 2 fields its thirteen current volcanic and fire-jet types without rejected aliases');
 
   var _owned266=JSON.parse(vm.runInContext("(function(){run.stage=2;curStage=STAGES[1];enemies.length=0;eBullets.length=0;_navalFlashes.length=0;"
     +"var kinds=['ash','skim','eye','disc','cruc','lance','carrier','miner','lavamaw','crawl','pod','golem'],out={};"
@@ -14265,8 +14268,8 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   var _sizes=[], _m, _re=/helpLabel\([^;]*?,\s*(\d+),\s*'#/g;
   var _pages=_s281.slice(_s281.indexOf('function helpPageControls('), _s281.indexOf('function drawHelp('));
   while((_m=_re.exec(_pages))) _sizes.push(+_m[1]);
-  ok(_sizes.length>10 && Math.min.apply(null,_sizes)>=11,
-     'every helpLabel call asks for 11px or more (' + _sizes.length + ' calls, smallest ' + Math.min.apply(null,_sizes) + ')');
+  ok(_sizes.length>10 && vm.runInContext('HELP_MIN>=11',ctxv) && /Math\.max\(HELP_MIN, size\)/.test(_hlp) && /Math\.max\(HELP_MIN, stageFitH/.test(_hlp),
+     'every help label renders at least 11px, including fit-to-width labels');
   ok(vm.runInContext("MENU_BACK[GS.HELP]===GS.TITLE", ctxv), 'and it is backable like every other menu');
   /* ⚠ THE LABELS MUST COME FROM THE BIND TABLE. A help screen that hard-codes 'FIRE: J' is wrong the
      moment anyone rebinds, and it is wrong SILENTLY - the player follows it, nothing happens, and
@@ -15890,6 +15893,7 @@ require('./test_soul_bomb_1019.cjs')(vm,ctxv,ok);
 require('./test_boss_redesign_1020.cjs')(vm,ctxv,ok);
 require('./test_debug_tools_1021.cjs')(vm,ctxv,ok);
 require('./test_scene_handoff_1021b.cjs')(vm,ctxv,ok);
+require('./test_difficulty_helpers_1114.cjs')(vm,ctxv,ok);
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

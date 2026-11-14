@@ -1,0 +1,25 @@
+{
+  "name": "blue-whirl",
+  "prompt": "Retarget ALL SIXTEEN wholebody360degree whirlwind turn poses of reference1 into BLUE CHRONOS as refs2-4. Preserve EXACT body orientations/footsteps/handpositions/hammercircle in exact4columns4rows order. Reference1 is MOTION ONLY, not identity. Replace allpurplearmor/horns/redcore/face/spikes with canonical charcoal/chrome muscular Chronos, narrowcyanvisordarkhelmetwithlongsweptfins, cyanroundchestcore/armorinserts. Canonical BLUElightning cylindricalThammer withflatblack/silvercaps, blackstraightshaftandroundedcyanbutt, NOspikes. Reference3 exacthelmet,4exacthammer. Bothhandsgrip SAMEsinglelowerhaft onSAMEsideofhead; straightshaftfromSIDEcenterofverticalcylinder, no doubled/benthaft/handlethroughcap. Rigidweapon, wholebodytwists/pivots throughtheCOMPLETE360turn: row1 front22.5/45/67.5right; row2 rightprofile90/rear112.5/rear135/rear157.5; row3 BACK180/backleft202.5/rearleft225/247.5; row4 LEFTprofile270/frontleft292.5/315/nearlyfront337.5. Realbackviews showbackofhelmet/armor, NOfrontvisor/core showingthroughback. Hammerproperlyoccludedbehindtorso, fullblade/caps visiblewhenat sides. Same modelunit/limbheadratios in ALL16cells, fixedbootbaseline, ample40pixelpadding soNOhammer/fins/bootsclip. Wholeactor+heldweapon REDRAWN together notparts orheadstamps. Square2048x2048 4x4 fullsprite sheet, crispmetallic16bit sprites on TRUE RGBA transparency. No labels/text/grid/floor/shadows/trails/FX/background. Frame15 to0mustloopnaturally.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-c432e88e-c5bf-49bc-81d0-a39ebaaee54a.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

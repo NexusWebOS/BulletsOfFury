@@ -1,0 +1,44 @@
+{
+  "before": {
+    "assets/overhead_slam_art_1111.js": "74cbfbc712c692be6a09c73038069d56d40c134448097653f51c90dfe83243b4",
+    "assets/whole_hammer_1110.js": "41975f15d16775a9b858d4291385c68e4703bb9086ef76c0a6265b770dd903d0"
+  },
+  "files": [
+    "assets/overhead_slam_art_1111.js",
+    "assets/whole_hammer_1110.js",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead-left_chrome.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead-left_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead-left_red.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead-left_red_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead-left_regular.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead-right_chrome.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead-right_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead-right_red.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead-right_red_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead-right_regular.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead_chrome.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead_red.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead_red_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/blue-overhead_regular.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-left_chrome.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-left_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-left_red.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-left_red_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-left_regular.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-right_chrome.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-right_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-right_red.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-right_red_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead-right_regular.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead_chrome.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead_red.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead_red_hit.webp",
+    "assets/game/shared/combat/three_way_hammer_1111/corrupt-overhead_regular.webp"
+  ],
+  "protected": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/boss_animation_1109.js": "6a8181ddeaa74ce861305eb94df87133b4902f928bb005fb1658e43b83a282fc"
+  }
+}

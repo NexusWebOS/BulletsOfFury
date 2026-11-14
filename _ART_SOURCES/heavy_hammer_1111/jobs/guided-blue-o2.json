@@ -1,0 +1,16 @@
+{
+  "name": "guided-blue-o2",
+  "prompt": "Retarget all EIGHT complete poses in reference1 into BLUE CHRONOS. Preserve exact reference1 motion and4x2 cell order: eight weighted OVERHEAD DOWNSTROKE drawings16-23, peak behind-head, hips drive, shoulders drive, hammer lags then arcs forward, torso hinges and knees bend, cap contacts ground at6 and compression7. Reference1 ONLY supplies exact poses and strong whole-body biomechanics. Reference2 supplies Chronos canonical design and body proportions: charcoal/chrome muscular armor, narrow cyan visor dark finned helmet, cyan chest core. Reference3 exact helmet, reference4 exact BLUE lightning cylindrical T-hammer, flat black/silver endcaps, black shaft/cyan roundedbutt, NO spikes. Preserve wholefigure proportion, same model unit in all8 frames, every boot/fins/cap/butt inside ample margins. Both hands around SAME SINGLE straight lower shaft, spaced for leverage, never gripping helmet/head. Rigid shaft enters SIDE-MIDPOINT of hammer cylinder at right angles and remains straight through both hands to butt. CONTACT6/7: lower flat END CAP points DOWN and visibly contacts ground ahead of braced feet; long cylinder axis vertical, long handle extends backward horizontally from SIDE socket to BOTH fists. The face/cyan visor remains recognizable under bending helmet. New complete drawings as wholebody+heldhammer, no body assemblies/head stamping, no runtime rotation. Wide2:1 sheet4columns2rows2048x1024, REAL RGBA transparency, crisp metallic16bit sprites, no floor/trails/shadows/text/labels/background/checkerboard. Exact same phase poses as reference1.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-e764ef6a-ee31-4386-9379-bc4244b57f0a.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

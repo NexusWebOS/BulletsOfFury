@@ -1,0 +1,2414 @@
+[
+  {
+    "name": "backdrop-conference",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\backdrop-conference.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\backdrop-conference.aseprite",
+    "w": 616,
+    "h": 410,
+    "cols": 3,
+    "frames": 7
+  },
+  {
+    "name": "backdrop-workshop",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\backdrop-workshop.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\backdrop-workshop.aseprite",
+    "w": 616,
+    "h": 410,
+    "cols": 3,
+    "frames": 7
+  },
+  {
+    "name": "backdrop-hangar",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\backdrop-hangar.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\backdrop-hangar.aseprite",
+    "w": 616,
+    "h": 410,
+    "cols": 3,
+    "frames": 7
+  },
+  {
+    "name": "backdrop-lounge",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\backdrop-lounge.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\backdrop-lounge.aseprite",
+    "w": 616,
+    "h": 410,
+    "cols": 3,
+    "frames": 7
+  },
+  {
+    "name": "backdrop-cockpit-sky",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\backdrop-cockpit-sky.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\backdrop-cockpit-sky.aseprite",
+    "w": 616,
+    "h": 410,
+    "cols": 3,
+    "frames": 7
+  },
+  {
+    "name": "backdrop-cockpit-space",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\backdrop-cockpit-space.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\backdrop-cockpit-space.aseprite",
+    "w": 616,
+    "h": 410,
+    "cols": 3,
+    "frames": 7
+  },
+  {
+    "name": "backdrop-cockpit-tunnel",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\backdrop-cockpit-tunnel.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\backdrop-cockpit-tunnel.aseprite",
+    "w": 616,
+    "h": 410,
+    "cols": 3,
+    "frames": 7
+  },
+  {
+    "name": "talk-zoom-cole",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\talk-zoom-cole.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\talk-zoom-cole.aseprite",
+    "w": 308,
+    "h": 308,
+    "cols": 7,
+    "frames": 49
+  },
+  {
+    "name": "mini-conference-cole-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-cole-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-cole-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-cole-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-cole-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-cole-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-cole-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-cole-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-cole-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-cole-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-cole-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-cole-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-cole-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-cole-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-cole-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-cole-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-cole-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-cole-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-cole-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-cole-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-cole-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-cole-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-cole-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-cole-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-cole-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-cole-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-cole-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-cole-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-cole-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-cole-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-cole-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-cole-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-cole-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-cole-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-cole-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-cole-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-cole-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-cole-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-cole-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-cole-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-cole-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-cole-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-cole-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-cole-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-cole-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-cole-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-cole-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-cole-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-cole-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-cole-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-cole-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-cole-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-cole-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-cole-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-cole-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-cole-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-cole-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-cole-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-cole-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-cole-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-cole-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-cole-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-cole-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-cole-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-cole-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-cole-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-cole-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-cole-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-cole-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-cole-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-cole-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-cole-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-cole-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-cole-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-cole-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-cole-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-cole-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-cole-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-cole-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-cole-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-cole-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-cole-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-cole-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-cole-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "talk-zoom-axel",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\talk-zoom-axel.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\talk-zoom-axel.aseprite",
+    "w": 308,
+    "h": 308,
+    "cols": 7,
+    "frames": 49
+  },
+  {
+    "name": "mini-conference-axel-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-axel-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-axel-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-axel-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-axel-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-axel-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-axel-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-axel-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-axel-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-axel-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-axel-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-axel-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-axel-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-axel-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-axel-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-axel-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-axel-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-axel-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-axel-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-axel-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-axel-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-axel-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-axel-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-axel-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-axel-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-axel-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-axel-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-axel-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-axel-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-axel-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-axel-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-axel-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-axel-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-axel-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-axel-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-axel-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-axel-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-axel-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-axel-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-axel-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-axel-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-axel-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-axel-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-axel-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-axel-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-axel-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-axel-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-axel-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-axel-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-axel-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-axel-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-axel-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-axel-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-axel-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-axel-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-axel-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-axel-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-axel-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-axel-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-axel-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-axel-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-axel-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-axel-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-axel-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-axel-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-axel-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-axel-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-axel-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-axel-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-axel-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-axel-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-axel-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-axel-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-axel-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-axel-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-axel-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-axel-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-axel-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-axel-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-axel-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-axel-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-axel-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-axel-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-axel-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "talk-zoom-freezer",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\talk-zoom-freezer.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\talk-zoom-freezer.aseprite",
+    "w": 308,
+    "h": 308,
+    "cols": 7,
+    "frames": 49
+  },
+  {
+    "name": "mini-conference-freezer-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-freezer-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-freezer-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-freezer-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-freezer-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-freezer-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-freezer-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-freezer-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-freezer-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-freezer-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-freezer-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-freezer-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-freezer-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-freezer-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-freezer-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-freezer-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-freezer-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-freezer-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-freezer-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-freezer-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-freezer-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-freezer-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-freezer-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-freezer-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-freezer-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-freezer-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-freezer-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-freezer-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-freezer-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-freezer-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-freezer-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-freezer-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-freezer-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-freezer-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-freezer-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-freezer-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-freezer-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-freezer-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-freezer-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-freezer-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-freezer-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-freezer-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-freezer-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-freezer-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-freezer-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-freezer-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-freezer-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-freezer-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-freezer-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-freezer-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-freezer-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-freezer-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-freezer-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-freezer-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-freezer-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-freezer-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-freezer-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-freezer-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-freezer-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-freezer-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-freezer-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-freezer-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-freezer-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-freezer-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-freezer-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-freezer-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-freezer-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-freezer-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-freezer-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-freezer-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-freezer-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-freezer-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-freezer-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-freezer-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-freezer-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-freezer-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-freezer-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-freezer-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-freezer-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-freezer-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-freezer-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-freezer-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-freezer-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-freezer-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "talk-zoom-yuri",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\talk-zoom-yuri.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\talk-zoom-yuri.aseprite",
+    "w": 308,
+    "h": 308,
+    "cols": 7,
+    "frames": 49
+  },
+  {
+    "name": "mini-conference-yuri-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-yuri-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-yuri-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-yuri-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-yuri-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-yuri-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-yuri-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-yuri-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-yuri-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-yuri-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-yuri-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-yuri-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-yuri-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-yuri-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-yuri-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-yuri-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-yuri-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-yuri-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-yuri-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-yuri-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-yuri-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-yuri-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-yuri-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-yuri-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-yuri-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-yuri-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-yuri-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-yuri-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-yuri-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-yuri-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-yuri-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-yuri-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-yuri-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-yuri-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-yuri-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-yuri-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-yuri-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-yuri-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-yuri-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-yuri-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-yuri-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-yuri-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-yuri-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-yuri-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-yuri-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-yuri-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-yuri-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-yuri-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-yuri-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-yuri-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-yuri-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-yuri-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-yuri-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-yuri-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-yuri-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-yuri-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-yuri-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-yuri-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-yuri-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-yuri-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-yuri-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-yuri-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-yuri-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-yuri-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-yuri-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-yuri-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-yuri-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-yuri-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-yuri-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-yuri-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-yuri-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-yuri-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-yuri-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-yuri-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-yuri-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-yuri-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-yuri-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-yuri-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-yuri-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-yuri-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-yuri-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-yuri-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-yuri-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-yuri-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "talk-zoom-maverick",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\talk-zoom-maverick.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\talk-zoom-maverick.aseprite",
+    "w": 308,
+    "h": 308,
+    "cols": 7,
+    "frames": 49
+  },
+  {
+    "name": "mini-conference-maverick-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-maverick-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-maverick-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-maverick-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-maverick-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-maverick-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-maverick-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-maverick-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-maverick-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-maverick-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-maverick-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-maverick-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-maverick-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-maverick-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-maverick-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-maverick-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-maverick-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-maverick-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-maverick-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-maverick-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-maverick-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-maverick-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-maverick-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-maverick-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-maverick-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-maverick-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-maverick-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-maverick-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-maverick-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-maverick-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-maverick-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-maverick-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-maverick-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-maverick-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-maverick-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-maverick-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-maverick-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-maverick-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-maverick-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-maverick-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-maverick-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-maverick-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-maverick-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-maverick-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-maverick-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-maverick-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-maverick-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-maverick-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-maverick-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-maverick-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-maverick-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-maverick-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-maverick-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-maverick-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-maverick-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-maverick-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-maverick-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-maverick-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-maverick-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-maverick-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-maverick-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-maverick-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-maverick-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-maverick-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-maverick-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-maverick-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-maverick-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-maverick-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-maverick-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-maverick-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-maverick-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-maverick-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-maverick-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-maverick-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-maverick-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-maverick-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-maverick-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-maverick-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-maverick-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-maverick-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-maverick-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-maverick-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-maverick-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-maverick-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "talk-zoom-falva",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\talk-zoom-falva.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\talk-zoom-falva.aseprite",
+    "w": 308,
+    "h": 308,
+    "cols": 7,
+    "frames": 49
+  },
+  {
+    "name": "mini-conference-falva-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-falva-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-falva-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-falva-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-falva-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-falva-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-falva-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-falva-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-falva-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-falva-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-falva-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-falva-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-falva-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-falva-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-falva-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-falva-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-falva-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-falva-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-falva-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-falva-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-falva-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-falva-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-falva-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-falva-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-falva-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-falva-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-falva-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-falva-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-falva-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-falva-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-falva-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-falva-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-falva-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-falva-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-falva-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-falva-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-falva-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-falva-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-falva-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-falva-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-falva-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-falva-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-falva-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-falva-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-falva-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-falva-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-falva-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-falva-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-falva-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-falva-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-falva-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-falva-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-falva-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-falva-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-falva-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-falva-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-falva-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-falva-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-falva-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-falva-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-falva-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-falva-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-falva-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-falva-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-falva-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-falva-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-falva-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-falva-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-falva-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-falva-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-falva-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-falva-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-falva-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-falva-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-falva-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-falva-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-falva-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-falva-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-falva-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-falva-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-falva-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-falva-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-falva-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-falva-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "talk-zoom-lizzie",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\talk-zoom-lizzie.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\talk-zoom-lizzie.aseprite",
+    "w": 308,
+    "h": 308,
+    "cols": 7,
+    "frames": 49
+  },
+  {
+    "name": "mini-conference-lizzie-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-lizzie-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-lizzie-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-lizzie-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-lizzie-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-lizzie-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-lizzie-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-lizzie-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-lizzie-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-lizzie-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-lizzie-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-lizzie-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-lizzie-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-lizzie-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-lizzie-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-lizzie-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-lizzie-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-lizzie-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-lizzie-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-lizzie-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-lizzie-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-lizzie-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-lizzie-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-lizzie-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-lizzie-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-lizzie-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-lizzie-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-lizzie-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-lizzie-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-lizzie-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-lizzie-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-lizzie-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-lizzie-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-lizzie-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-lizzie-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-lizzie-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-lizzie-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-lizzie-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-lizzie-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-lizzie-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-lizzie-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-lizzie-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-lizzie-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-lizzie-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-lizzie-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-lizzie-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-lizzie-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-lizzie-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-lizzie-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-lizzie-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-lizzie-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-lizzie-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-lizzie-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-lizzie-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-lizzie-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-lizzie-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-lizzie-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-lizzie-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-lizzie-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-lizzie-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-lizzie-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-lizzie-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-lizzie-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-lizzie-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-lizzie-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-lizzie-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-lizzie-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-lizzie-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-lizzie-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-lizzie-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-lizzie-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-lizzie-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-lizzie-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-lizzie-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-lizzie-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-lizzie-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-lizzie-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-lizzie-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-lizzie-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-lizzie-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-lizzie-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-lizzie-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-lizzie-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-lizzie-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "talk-zoom-decker",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\talk-zoom-decker.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\talk-zoom-decker.aseprite",
+    "w": 308,
+    "h": 308,
+    "cols": 7,
+    "frames": 49
+  },
+  {
+    "name": "mini-conference-decker-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-decker-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-decker-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-decker-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-decker-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-decker-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-decker-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-decker-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-decker-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-decker-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-decker-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-decker-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-decker-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-decker-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-decker-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-decker-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-decker-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-decker-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-decker-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-decker-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-decker-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-decker-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-decker-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-decker-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-decker-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-decker-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-decker-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-decker-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-decker-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-decker-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-decker-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-decker-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-decker-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-decker-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-decker-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-decker-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-decker-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-decker-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-decker-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-decker-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-decker-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-decker-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-decker-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-decker-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-decker-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-decker-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-decker-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-decker-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-decker-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-decker-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-decker-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-decker-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-decker-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-decker-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-decker-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-decker-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-decker-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-decker-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-decker-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-decker-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-decker-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-decker-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-decker-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-decker-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-decker-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-decker-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-decker-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-decker-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-decker-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-decker-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-decker-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-decker-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-decker-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-decker-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-decker-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-decker-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-decker-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-decker-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-decker-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-decker-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-decker-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-decker-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-decker-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-decker-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "talk-zoom-juggernaut",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\talk-zoom-juggernaut.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\talk-zoom-juggernaut.aseprite",
+    "w": 308,
+    "h": 308,
+    "cols": 7,
+    "frames": 49
+  },
+  {
+    "name": "mini-conference-juggernaut-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-juggernaut-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-juggernaut-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-juggernaut-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-juggernaut-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-juggernaut-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-juggernaut-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-juggernaut-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-juggernaut-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-conference-juggernaut-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-conference-juggernaut-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-conference-juggernaut-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-juggernaut-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-juggernaut-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-juggernaut-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-juggernaut-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-juggernaut-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-juggernaut-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-juggernaut-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-juggernaut-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-juggernaut-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-workshop-juggernaut-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-workshop-juggernaut-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-workshop-juggernaut-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-juggernaut-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-juggernaut-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-juggernaut-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-juggernaut-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-juggernaut-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-juggernaut-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-juggernaut-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-juggernaut-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-juggernaut-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-hangar-juggernaut-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-hangar-juggernaut-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-hangar-juggernaut-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-juggernaut-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-juggernaut-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-juggernaut-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-juggernaut-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-juggernaut-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-juggernaut-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-juggernaut-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-juggernaut-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-juggernaut-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-lounge-juggernaut-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-lounge-juggernaut-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-lounge-juggernaut-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-juggernaut-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-juggernaut-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-juggernaut-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-juggernaut-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-juggernaut-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-juggernaut-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-juggernaut-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-juggernaut-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-juggernaut-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-sky-juggernaut-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-sky-juggernaut-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-sky-juggernaut-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-juggernaut-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-juggernaut-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-juggernaut-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-juggernaut-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-juggernaut-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-juggernaut-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-juggernaut-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-juggernaut-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-juggernaut-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-space-juggernaut-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-space-juggernaut-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-space-juggernaut-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-juggernaut-48",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-juggernaut-48.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-juggernaut-48.aseprite",
+    "w": 48,
+    "h": 48,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-juggernaut-64",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-juggernaut-64.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-juggernaut-64.aseprite",
+    "w": 64,
+    "h": 64,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-juggernaut-84",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-juggernaut-84.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-juggernaut-84.aseprite",
+    "w": 84,
+    "h": 84,
+    "cols": 1,
+    "frames": 7
+  },
+  {
+    "name": "mini-cockpit-tunnel-juggernaut-96",
+    "input": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\source\\editor-input\\mini-cockpit-tunnel-juggernaut-96.png",
+    "output": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-10\\you-are-a-cinematic-director-for-3\\outputs\\BOF-Front-Pilots-1111\\masters\\aseprite\\mini-cockpit-tunnel-juggernaut-96.aseprite",
+    "w": 96,
+    "h": 96,
+    "cols": 1,
+    "frames": 7
+  }
+]

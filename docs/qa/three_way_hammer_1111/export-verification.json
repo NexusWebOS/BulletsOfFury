@@ -1,0 +1,50 @@
+{
+  "banks": [
+    {
+      "bank": "blue-overhead-left",
+      "frames": 32,
+      "uniqueDrawings": 32,
+      "roundtripExact": true
+    },
+    {
+      "bank": "blue-overhead",
+      "frames": 32,
+      "uniqueDrawings": 32,
+      "roundtripExact": true
+    },
+    {
+      "bank": "blue-overhead-right",
+      "frames": 32,
+      "uniqueDrawings": 32,
+      "roundtripExact": true
+    },
+    {
+      "bank": "corrupt-overhead-left",
+      "frames": 32,
+      "uniqueDrawings": 32,
+      "roundtripExact": true
+    },
+    {
+      "bank": "corrupt-overhead",
+      "frames": 32,
+      "uniqueDrawings": 32,
+      "roundtripExact": true
+    },
+    {
+      "bank": "corrupt-overhead-right",
+      "frames": 32,
+      "uniqueDrawings": 32,
+      "roundtripExact": true
+    }
+  ],
+  "timelineFrames": 192,
+  "newWholeDrawings": 30,
+  "retainedCenterReadyLiftPeak": 34,
+  "approvedLeftFrames": 64,
+  "wholePoseMirrors": 64,
+  "exactRightPhysicsReflection": true,
+  "centeredHeadOffset": {
+    "blue": -9,
+    "corrupt": -3
+  }
+}

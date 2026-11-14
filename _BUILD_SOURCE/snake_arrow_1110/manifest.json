@@ -1,0 +1,15 @@
+{
+  "targets": [
+    {
+      "name": "runtime",
+      "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\assets\\sumpjaw_tandem_1105.js",
+      "before_sha256": "54dd01f6eeca4f8f51bd68f5b6297a1c3fa5b21a124b31ec29c7b0c35b37ffd3"
+    },
+    {
+      "name": "pattern",
+      "path": "C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_BUILD_SOURCE\\snake_assault_1110\\pattern.js",
+      "before_sha256": "de4039cdd0f25963c02195a7a4a5a904fbf266071519c0be00e39e25e5437102"
+    }
+  ],
+  "change": "One existing authored direction-arrow indicator per living snake at its viewport entry edge; colors and timing retained. No attack, movement, health or projectile changes."
+}

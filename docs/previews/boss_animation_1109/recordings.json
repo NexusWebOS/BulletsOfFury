@@ -1,0 +1,536 @@
+{
+  "route": "Focused, explicitly triggered attack checkpoints; native live game simulation, renderer and mixer; invulnerable observer; not a continuous full fight.",
+  "recordings": [
+    {
+      "stage": 5,
+      "video": "chronos-planted-combo.mp4",
+      "chapters": [
+        {
+          "label": "Stage 5 / Normal / regular / native attack checkpoint",
+          "seconds": 0.0
+        },
+        {
+          "label": "Stage 5 / Hard / regular / native attack checkpoint",
+          "seconds": 3.64
+        },
+        {
+          "label": "Stage 5 / Furious / regular / native attack checkpoint",
+          "seconds": 7.38
+        },
+        {
+          "label": "Stage 5 / Furious / chrome / native attack checkpoint",
+          "seconds": 11.86
+        },
+        {
+          "label": "Ball transformation",
+          "seconds": 16.38
+        }
+      ],
+      "segments": [
+        {
+          "label": "Stage 5 / Normal / regular / native attack checkpoint",
+          "landedRootSamples": 10,
+          "maxDrift": 0.0,
+          "contacts": []
+        },
+        {
+          "label": "Stage 5 / Hard / regular / native attack checkpoint",
+          "landedRootSamples": 22,
+          "maxDrift": 0.0,
+          "contacts": [
+            {
+              "type": "planted-contact",
+              "clock": 5.3833333333333195,
+              "stage": 5,
+              "stroke": 2,
+              "root": {
+                "x": 351,
+                "y": 260
+              },
+              "at": {
+                "x": 333,
+                "y": 399
+              }
+            }
+          ]
+        },
+        {
+          "label": "Stage 5 / Furious / regular / native attack checkpoint",
+          "landedRootSamples": 43,
+          "maxDrift": 0.0,
+          "contacts": [
+            {
+              "type": "planted-contact",
+              "clock": 7.98333333333331,
+              "stage": 5,
+              "stroke": 2,
+              "root": {
+                "x": 351,
+                "y": 260
+              },
+              "at": {
+                "x": 340,
+                "y": 402
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 8.633333333333342,
+              "stage": 5,
+              "stroke": 3,
+              "root": {
+                "x": 351,
+                "y": 260
+              },
+              "at": {
+                "x": 220,
+                "y": 229
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 9.700000000000061,
+              "stage": 5,
+              "stroke": 4,
+              "root": {
+                "x": 351,
+                "y": 260
+              },
+              "at": {
+                "x": 481,
+                "y": 229
+              }
+            }
+          ]
+        },
+        {
+          "label": "Stage 5 / Furious / chrome / native attack checkpoint",
+          "landedRootSamples": 45,
+          "maxDrift": 0.0,
+          "contacts": [
+            {
+              "type": "planted-contact",
+              "clock": 12.466666666666866,
+              "stage": 5,
+              "stroke": 2,
+              "root": {
+                "x": 351,
+                "y": 260
+              },
+              "at": {
+                "x": 340,
+                "y": 402
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 13.116666666666898,
+              "stage": 5,
+              "stroke": 3,
+              "root": {
+                "x": 351,
+                "y": 260
+              },
+              "at": {
+                "x": 220,
+                "y": 229
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 14.183333333333618,
+              "stage": 5,
+              "stroke": 4,
+              "root": {
+                "x": 351,
+                "y": 260
+              },
+              "at": {
+                "x": 481,
+                "y": 229
+              }
+            }
+          ]
+        }
+      ],
+      "audio": {
+        "peak": 0.6996669769287109,
+        "frames": 1218,
+        "starts": 0,
+        "sfxStarts": 42,
+        "events": [],
+        "errors": []
+      }
+    },
+    {
+      "stage": 8,
+      "video": "dracodia-hammer-combo.mp4",
+      "chapters": [
+        {
+          "label": "Stage 8 / Normal / regular / native attack checkpoint",
+          "seconds": 0.44
+        },
+        {
+          "label": "Stage 8 / Hard / regular / native attack checkpoint",
+          "seconds": 3.95
+        },
+        {
+          "label": "Stage 8 / Furious / regular / native attack checkpoint",
+          "seconds": 8.33
+        },
+        {
+          "label": "Stage 8 / Furious / chrome / native attack checkpoint",
+          "seconds": 14.16
+        },
+        {
+          "label": "Stage 8 / Furious / red / native attack checkpoint",
+          "seconds": 20.08
+        }
+      ],
+      "segments": [
+        {
+          "label": "Stage 8 / Normal / regular / native attack checkpoint",
+          "landedRootSamples": 16,
+          "maxDrift": 0.0,
+          "contacts": [
+            {
+              "type": "planted-contact",
+              "clock": 2.1833333333333305,
+              "stage": 8,
+              "stroke": 1,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            }
+          ]
+        },
+        {
+          "label": "Stage 8 / Hard / regular / native attack checkpoint",
+          "landedRootSamples": 31,
+          "maxDrift": 0.0,
+          "contacts": [
+            {
+              "type": "planted-contact",
+              "clock": 5.266666666666653,
+              "stage": 8,
+              "stroke": 1,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 6.566666666666649,
+              "stage": 8,
+              "stroke": 2,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            }
+          ]
+        },
+        {
+          "label": "Stage 8 / Furious / regular / native attack checkpoint",
+          "landedRootSamples": 50,
+          "maxDrift": 0.0,
+          "contacts": [
+            {
+              "type": "planted-contact",
+              "clock": 9.650000000000059,
+              "stage": 8,
+              "stroke": 1,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 10.950000000000124,
+              "stage": 8,
+              "stroke": 2,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 11.866666666666836,
+              "stage": 8,
+              "stroke": 3,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 187,
+                "y": 249
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 12.483333333333533,
+              "stage": 8,
+              "stroke": 4,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 484,
+                "y": 299
+              }
+            }
+          ]
+        },
+        {
+          "label": "Stage 8 / Furious / chrome / native attack checkpoint",
+          "landedRootSamples": 49,
+          "maxDrift": 0.0,
+          "contacts": [
+            {
+              "type": "planted-contact",
+              "clock": 15.450000000000347,
+              "stage": 8,
+              "stroke": 1,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 16.75000000000033,
+              "stage": 8,
+              "stroke": 2,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 17.666666666666945,
+              "stage": 8,
+              "stroke": 3,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 187,
+                "y": 249
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 18.283333333333577,
+              "stage": 8,
+              "stroke": 4,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 484,
+                "y": 299
+              }
+            }
+          ]
+        },
+        {
+          "label": "Stage 8 / Furious / red / native attack checkpoint",
+          "landedRootSamples": 44,
+          "maxDrift": 0.0,
+          "contacts": [
+            {
+              "type": "planted-contact",
+              "clock": 21.23333333333341,
+              "stage": 8,
+              "stroke": 1,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 22.533333333333335,
+              "stage": 8,
+              "stroke": 2,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 369,
+                "y": 422
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 23.44999999999995,
+              "stage": 8,
+              "stroke": 3,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 187,
+                "y": 249
+              }
+            },
+            {
+              "type": "planted-contact",
+              "clock": 24.06666666666658,
+              "stage": 8,
+              "stroke": 4,
+              "root": {
+                "x": 361,
+                "y": 280
+              },
+              "at": {
+                "x": 484,
+                "y": 299
+              }
+            }
+          ]
+        }
+      ],
+      "audio": {
+        "peak": 0.6906042098999023,
+        "frames": 1463,
+        "starts": 0,
+        "sfxStarts": 54,
+        "events": [
+          {
+            "type": "planted-contact",
+            "clock": 21.23333333333341,
+            "stage": 8,
+            "stroke": 1,
+            "root": {
+              "x": 361,
+              "y": 280
+            },
+            "at": {
+              "x": 369,
+              "y": 422
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 22.533333333333335,
+            "stage": 8,
+            "stroke": 2,
+            "root": {
+              "x": 361,
+              "y": 280
+            },
+            "at": {
+              "x": 369,
+              "y": 422
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 23.44999999999995,
+            "stage": 8,
+            "stroke": 3,
+            "root": {
+              "x": 361,
+              "y": 280
+            },
+            "at": {
+              "x": 187,
+              "y": 249
+            }
+          },
+          {
+            "type": "planted-contact",
+            "clock": 24.06666666666658,
+            "stage": 8,
+            "stroke": 4,
+            "root": {
+              "x": 361,
+              "y": 280
+            },
+            "at": {
+              "x": 484,
+              "y": 299
+            }
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "stage": 8,
+      "video": "dracodia-claws.mp4",
+      "chapters": [
+        {
+          "label": "Drac-drone / left whole-arm swipe / native checkpoint",
+          "seconds": 0.45
+        },
+        {
+          "label": "Drac-drone / right whole-arm swipe / native checkpoint",
+          "seconds": 3.36
+        },
+        {
+          "label": "Drac-drone / connected arm catch, lift and release / invulnerable observer",
+          "seconds": 6.27
+        },
+        {
+          "label": "Dracodia / articulated side rakes and depth-jump twin claws",
+          "seconds": 11.48
+        }
+      ],
+      "segments": [],
+      "audio": {
+        "peak": 0.6906729936599731,
+        "frames": 1426,
+        "starts": 0,
+        "sfxStarts": 45,
+        "events": [],
+        "errors": []
+      }
+    }
+  ],
+  "errors": []
+}

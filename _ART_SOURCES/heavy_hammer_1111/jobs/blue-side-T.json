@@ -1,0 +1,28 @@
+{
+  "name": "blue-side-T",
+  "prompt": "Retarget sixteen wholebody SIDE HAMMER STRIKE poses of reference1 into BLUE CHRONOS as reference2. Exact bodymotion and4x4 order. Fix the third-row FIRST cell8 clipping by keeping its ENTIRE hammer and fullfigure INSIDEclear20pixel margins. Every pose contains one complete character+heldhammer, never parts or a headstamp. Reference2 locks canonical charcoal/chrome armor and cyan core/inserts, reference3 exact original sweptfinned helmet narrowcyanvisor, reference4 BLUE lightning cylindrical hammer flatBLACK/SILVER endcaps NOspikes. Purple/horns/redface all replaced correctly. CRITICAL keep EXACT literal T geometry of reference1: CYLINDER horizontal LEFT--RIGHT, blackcaps facingLEFT andRIGHT; ONE straightshaft VERTICALLYDOWN from SIDE MIDPOINT ofcylinder; both fists BELOW head gripping that shaft oneaboveother; roundedcyanbutt BELOWfists. No handle through anendcap. Sixteen DISTINCT progressive wholebody drawings windup/hipscoilright4, driveleft/extend4, followthrough/recoil4, recoverfront4, samebody/head/torso/limb proportions everycell. Proper planted pivotingfeet, bendingknees andtwistshoulders. Same proportional bodyunit acrossframes, wideclear padding withNO fins/boots/hammer touchingborders, fixedbootbaseline. Square4x4sheet2048x2048, crispmetallic16bit spriteart on TRUE RGBA transparency, no text/numbers/floor/trails/FX/shadows/background.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-9aa7fbf8-048f-443a-8736-e41d44106b2b.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "exclude": [
+    8
+  ],
+  "reason": "Frame8 clips left; replace complete figure with original side master contact.",
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

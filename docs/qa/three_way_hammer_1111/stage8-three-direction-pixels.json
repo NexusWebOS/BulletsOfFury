@@ -1,0 +1,134 @@
+[
+  {
+    "stage": 8,
+    "material": "regular",
+    "direction": "center",
+    "simulation": {
+      "selected": "center",
+      "seen": [
+        "center"
+      ],
+      "drift": 0,
+      "minClear": 68,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "ba119_corrupt-overhead_regular",
+      "direction": "center",
+      "headOffset": -3,
+      "tipOffset": -4,
+      "warningError": 0,
+      "key": "nca_ba119_corrupt-overhead_regular"
+    }
+  },
+  {
+    "stage": 8,
+    "material": "regular",
+    "direction": "right",
+    "simulation": {
+      "selected": "right",
+      "seen": [
+        "right"
+      ],
+      "drift": 0,
+      "minClear": 29,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "ba119_corrupt-overhead-right_regular",
+      "direction": "right",
+      "headOffset": 149,
+      "tipOffset": 148,
+      "warningError": 0,
+      "key": "nca_ba119_corrupt-overhead-right_regular"
+    }
+  },
+  {
+    "stage": 8,
+    "material": "regular",
+    "direction": "left",
+    "simulation": {
+      "selected": "left",
+      "seen": [
+        "left"
+      ],
+      "drift": 0,
+      "minClear": 30,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "ba119_corrupt-overhead-left_regular",
+      "direction": "left",
+      "headOffset": -149,
+      "tipOffset": -148,
+      "warningError": 0,
+      "key": "nca_ba119_corrupt-overhead-left_regular"
+    }
+  },
+  {
+    "stage": 8,
+    "material": "chrome",
+    "direction": "center",
+    "simulation": {
+      "selected": "center",
+      "seen": [
+        "center"
+      ],
+      "drift": 0,
+      "minClear": 68,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "ba119_corrupt-overhead_chrome",
+      "direction": "center",
+      "headOffset": -3,
+      "tipOffset": -4,
+      "warningError": 0,
+      "key": "nca_ba119_corrupt-overhead_chrome"
+    }
+  },
+  {
+    "stage": 8,
+    "material": "chrome",
+    "direction": "right",
+    "simulation": {
+      "selected": "right",
+      "seen": [
+        "right"
+      ],
+      "drift": 0,
+      "minClear": 29,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "ba119_corrupt-overhead-right_chrome",
+      "direction": "right",
+      "headOffset": 149,
+      "tipOffset": 148,
+      "warningError": 0,
+      "key": "nca_ba119_corrupt-overhead-right_chrome"
+    }
+  },
+  {
+    "stage": 8,
+    "material": "chrome",
+    "direction": "left",
+    "simulation": {
+      "selected": "left",
+      "seen": [
+        "left"
+      ],
+      "drift": 0,
+      "minClear": 30,
+      "contacts": 4
+    },
+    "contact": {
+      "bank": "ba119_corrupt-overhead-left_chrome",
+      "direction": "left",
+      "headOffset": -149,
+      "tipOffset": -148,
+      "warningError": 0,
+      "key": "nca_ba119_corrupt-overhead-left_chrome"
+    }
+  }
+]

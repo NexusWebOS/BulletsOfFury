@@ -2,10 +2,11 @@ module.exports=function(vm,ctxv,ok){
  const fs=require('fs'),path=require('path');
  for(const f of ['stage8_art_1003.js','stage8_1003.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets',f),'utf8'),ctxv,{filename:f});
  console.log('=== October 3 Stage 8 generated knight and alien combat ===');
+ const filesPresent=Object.values(JSON.parse(vm.runInContext('JSON.stringify(S81003_ART)',ctxv))).every(a=>fs.existsSync(path.join(__dirname,'../',a.path)));
  const rows=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
  const o={};ht27Stop();debugFight=null;coopOn=false;run.mode='campaign';run.pilot='yuri';
  function reset(d){diffKey=d;DIFF=DIFFS[d];beginStage(8);setState(GS.PLAY);player.reset();BOFCinematicDirector.cancel();story=null;stagePlan=[];enemies=[];eBullets=[];pBullets=[];player.x=worldWidth()/2;player.y=VH-115;player.invuln=1e9;boss=null;bossActive=false;subBoss=null;subBossActive=false;}
- o['100 generated frames and four crystal chunks resolve to project files']=Object.values(S81003_ART).reduce((n,a)=>n+a.frames,0)===104;
+ o['96 authored actor/effect frames and four crystal chunks resolve to real sheets']=Object.values(S81003_ART).reduce((n,a)=>n+a.frames,0)===100&&S81003_ART.shards.frames===4&&${filesPresent};
  for(const d of ['easy','normal','hard','furious']){
   reset(d);spawnBoss('vileexistence');const b=boss,S=b._r30;r30Form(b,1);S.mode='fight';b.enter=false;S.seq=1;r30Attack(b);
   o[d+' knight starts with generated transformation']=S.attack.type==='knight'&&S.attack.k1003.phase==='morph';

@@ -1,0 +1,654 @@
+{
+  "checks": [
+    {
+      "name": "Stage5 normal/regular: correct planted follow-up count",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Stage5 normal/regular: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 normal/regular: new poses used",
+      "passed": true,
+      "data": 15
+    },
+    {
+      "name": "Stage5 normal/chrome: correct planted follow-up count",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Stage5 normal/chrome: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 normal/chrome: new poses used",
+      "passed": true,
+      "data": 15
+    },
+    {
+      "name": "Stage5 hard/regular: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "hard",
+          "origin": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          },
+          "at": {
+            "x": 355.24390243902434,
+            "y": 399.56097560975616
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 hard/regular: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 hard/regular: new poses used",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "Stage5 hard/chrome: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "hard",
+          "origin": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          },
+          "at": {
+            "x": 355.24390243902434,
+            "y": 399.56097560975616
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 hard/chrome: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 hard/chrome: new poses used",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "Stage5 furious/regular: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "furious",
+          "origin": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          },
+          "at": {
+            "x": 340,
+            "y": 402
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 3,
+          "root": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          },
+          "at": {
+            "x": 474.7057044950614,
+            "y": 162.22979238056845
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 4,
+          "root": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          },
+          "at": {
+            "x": 279.90405160249946,
+            "y": 162.22979238056845
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 furious/regular: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 furious/regular: new poses used",
+      "passed": true,
+      "data": 48
+    },
+    {
+      "name": "Stage5 furious/chrome: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "furious",
+          "origin": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          },
+          "at": {
+            "x": 340,
+            "y": 402
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 3,
+          "root": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          },
+          "at": {
+            "x": 474.7057044950614,
+            "y": 162.22979238056845
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 4,
+          "root": {
+            "x": 377.80487804878044,
+            "y": 204.09756097560978
+          },
+          "at": {
+            "x": 279.90405160249946,
+            "y": 162.22979238056845
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 furious/chrome: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 furious/chrome: new poses used",
+      "passed": true,
+      "data": 48
+    },
+    {
+      "name": "White hit flash changes native damaged pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage8 normal/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 472.60775862068965,
+            "y": 190.99904214559388
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 258.30177481325745,
+            "y": 344.40464459080613
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 472.60775862068965,
+            "y": 190.99904214559388
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 258.30177481325745,
+            "y": 344.40464459080613
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 472.60775862068965,
+            "y": 190.99904214559388
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 373.125,
+            "y": 241.75
+          },
+          "at": {
+            "x": 258.30177481325745,
+            "y": 344.40464459080613
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "No browser or renderer exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

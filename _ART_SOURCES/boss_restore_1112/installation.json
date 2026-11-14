@@ -1,0 +1,13 @@
+{
+  "protected": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/whole_hammer_1110.js": "ca996c31f6fc9ad524160ac01d3cc1757d4a474331f698a32380396a169865e6",
+    "assets/rage_palm_1110.js": "51b0f2ba6d672b8a6c78e274a5854daac8e8b3a31166b135aa38bc33c609d60c",
+    "assets/boss_ship_forms_1111.js": "f3c54cdda6ddf94bc85a71808b47505a15ce4b45c9b5e0fcae5551e1783b7cb2",
+    "assets/draconus_modular_1111.js": "4ea117a08bc57ea1f1e4e5e3d063c2cf207acf601c577377124974114764ed29",
+    "assets/overhead_slam_art_1111.js": "0145f54d951cd5b3c059fc114033e691c32d1428d0b39be79404dbcf2c233d73",
+    "assets/playtest_repairs_1108.js": "d0c8063d39d89d09435469631ea2ac5bc0ced3f95bfabb5736bb2a29baf1f569"
+  },
+  "runtime": "5ab3301e3d9471787faf3140205c6e36cdd7217af36d856c5e3ceed45cc72325",
+  "art": "91c0c5c4ed3e33ab1043764d0c86296b60216027885cb58ed28e08c8061f9d39"
+}

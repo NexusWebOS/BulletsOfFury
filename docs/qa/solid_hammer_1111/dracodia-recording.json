@@ -1,0 +1,109 @@
+{
+  "records": [
+    {
+      "unit": "dracodia",
+      "video": "C:\\Users\\Mike\\Documents\\Codex\\2026-11-11\\i-k\\outputs\\Solid-metal-hammers\\dracodia-hammer.mp4",
+      "seconds": 14.0,
+      "chapters": [
+        {
+          "name": "regular",
+          "at": 0.0
+        },
+        {
+          "name": "chrome",
+          "at": 7.0
+        }
+      ],
+      "frames": 280,
+      "audioIncluded": false,
+      "method": "Deterministic native game loop, one screenshot per three60Hz ticks; silent20FPS playback",
+      "sampledPoses": [
+        {
+          "material": "regular",
+          "i": 0,
+          "bank": "ba119_corrupt-overhead_regular",
+          "frame": 0
+        },
+        {
+          "material": "regular",
+          "i": 20,
+          "bank": "ba119_corrupt-overhead_regular",
+          "frame": 14
+        },
+        {
+          "material": "regular",
+          "i": 40,
+          "bank": "ba119_corrupt-overhead_regular",
+          "frame": 20
+        },
+        {
+          "material": "regular",
+          "i": 60,
+          "bank": "ba119_corrupt-overhead_regular",
+          "frame": 16
+        },
+        {
+          "material": "regular",
+          "i": 80,
+          "bank": "ba119_corrupt-sides_regular",
+          "frame": 2
+        },
+        {
+          "material": "regular",
+          "i": 100,
+          "bank": "ba119_corrupt-right_regular",
+          "frame": 8
+        },
+        {
+          "material": "regular",
+          "i": 120,
+          "bank": "ba119_corrupt-overhead_regular",
+          "frame": 0
+        },
+        {
+          "material": "chrome",
+          "i": 0,
+          "bank": "ba119_corrupt-overhead_chrome",
+          "frame": 0
+        },
+        {
+          "material": "chrome",
+          "i": 20,
+          "bank": "ba119_corrupt-overhead_chrome",
+          "frame": 14
+        },
+        {
+          "material": "chrome",
+          "i": 40,
+          "bank": "ba119_corrupt-overhead_chrome",
+          "frame": 20
+        },
+        {
+          "material": "chrome",
+          "i": 60,
+          "bank": "ba119_corrupt-overhead_chrome",
+          "frame": 16
+        },
+        {
+          "material": "chrome",
+          "i": 80,
+          "bank": "ba119_corrupt-sides_chrome",
+          "frame": 2
+        },
+        {
+          "material": "chrome",
+          "i": 100,
+          "bank": "ba119_corrupt-right_chrome",
+          "frame": 9
+        },
+        {
+          "material": "chrome",
+          "i": 120,
+          "bank": "ba119_corrupt-overhead_chrome",
+          "frame": 0
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

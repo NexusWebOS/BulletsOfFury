@@ -1,0 +1,168 @@
+{
+  "checks": 56,
+  "errors": [],
+  "broad": [
+    {
+      "name": "game-syntax",
+      "exit": 0,
+      "tail": "\n"
+    },
+    {
+      "name": "restoration-syntax",
+      "exit": 0,
+      "tail": "\n"
+    },
+    {
+      "name": "full-suite",
+      "exit": 1,
+      "tail": "ast left\n  ok  levDoorHit has no fixed-size unit blast left\n=== 99. L2/L3 bosses ===\n  ok  the phase body replaces the part body\n  ok  the retired Behemoth still spawns a hull with its rig quarantined (0903)\n  ok  and it is decided BEFORE the parts loop\n  ok  returning early so nothing can paint over it\n  ok  magma brightness report present\n  ok  magma colossus lifted to 132/255 (was 51) \u2014 readable against the lava now\n  ok  and the damage progression is preserved (132 > 111 > 92)\n  ok  no pixel gained or lost alpha \u2014 only luminance moved\n=== miniboss wall ===\n\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nkeybind: restored defaults for up, down, left, right, fire, bomb, retina, multilock, charge, start\nassets/combat_polish_0927b.js:151\n  const hp=difficultyHealthBaseline15(1050,diffKey==='easy'?600:[1050,1250,1450][n]);b._bomber={n,mode:'entry',t:0,dur:2.1,seq:0,cd:0,clock:0,bombs:[],history:['entry'],core:hp,coreMax:hp,parts:[]};\n           ^\n\nReferenceError: difficultyHealthBaseline15 is not defined\n    at siegeBomberInit (assets/combat_polish_0927b.js:151:12)\n    at spawnSubBoss__inner (assets/game.js:25118:45)\n    at spawnSubBoss (assets/game.js:25108:110)\n    at evalmachine.<anonymous>:1:1\n    at Script.runInContext (node:vm:149:12)\n    at Object.runInContext (node:vm:301:6)\n    at C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_BUILD_SOURCE\\test_fl.js:4537:10\n    at Object.<anonymous> (C:\\Users\\Mike\\Desktop\\Github Coding\\BulletsOfFury\\_BUILD_SOURCE\\test_fl.js:4564:5)\n    at Module._compile (node:internal/modules/cjs/loader:1830:14)\n    at Object..js (node:internal/modules/cjs/loader:1961:10)\n\nNode.js v24.15.0\n"
+    }
+  ],
+  "sourceHashes": [
+    {
+      "bank": "blue-sides",
+      "material": "regular",
+      "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-sides_regular.webp",
+      "sha256": "334fada6a7bbf5a4d40e88bdf21c6562a6c69ec68f65afb75e1b8ab5febe8a6b"
+    },
+    {
+      "bank": "blue-sides",
+      "material": "chrome",
+      "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-sides_chrome.webp",
+      "sha256": "485c441161f566ea68a0fd6fca6cba1279110a7962a984b089d7a4f757478482"
+    },
+    {
+      "bank": "blue-sides",
+      "material": "red",
+      "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-sides_red.webp",
+      "sha256": "b39000e2d1a59b0e4075d14d5832e299f36411558d1ce393fde01025d58ccd71"
+    },
+    {
+      "bank": "blue-sides",
+      "material": "hit",
+      "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-sides_hit.webp",
+      "sha256": "9150da8e36474455648a19d547b4ee64fe4bea9957a534c8ac952cbcfb213149"
+    },
+    {
+      "bank": "blue-sides",
+      "material": "red_hit",
+      "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-sides_red_hit.webp",
+      "sha256": "1e64648a7577335f0a5e49d0f1a808441e94bc74ee5b7e6dec8d17143db3bf51"
+    },
+    {
+      "bank": "blue-right",
+      "material": "regular",
+      "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-right_regular.webp",
+      "sha256": "25ac11f5dd70d95801f60c63edc2266b5972ca41e616d5b413859c3a12c8d653"
+    },
+    {
+      "bank": "blue-right",
+      "material": "chrome",
+      "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-right_chrome.webp",
+      "sha256": "17f0d45621b985c47d1107fd74e0579a8e0e597284f18e673c8869bd2815efef"
+    },
+    {
+      "bank": "blue-right",
+      "material": "red",
+      "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-right_red.webp",
+      "sha256": "00cbc176cfade43d8a8944cd0ed83928add8aeafb0a382dd144a6a335fbdde54"
+    },
+    {
+      "bank": "blue-right",
+      "material": "hit",
+      "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-right_hit.webp",
+      "sha256": "fd1ba66b8c78c116173e7e0bda535ef56c7fd25392632556e7d704d40317bab2"
+    },
+    {
+      "bank": "blue-right",
+      "material": "red_hit",
+      "path": "assets\\game\\shared\\combat\\boss_strike_1109b\\blue-right_red_hit.webp",
+      "sha256": "210ff83607ac5e3099083d82e57c6483fb0dc60f36819e934a80407875565a3b"
+    },
+    {
+      "bank": "corrupt-sides",
+      "material": "regular",
+      "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-sides_regular.webp",
+      "sha256": "64d0892c62207540be7c4aff32a985202a680240179bd9ef2ec9fc5734b2aef4"
+    },
+    {
+      "bank": "corrupt-sides",
+      "material": "chrome",
+      "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-sides_chrome.webp",
+      "sha256": "1928253fbb028566e69ff5e450c2569807ced9ebe94f7adb9a4f1f3d2d56621c"
+    },
+    {
+      "bank": "corrupt-sides",
+      "material": "red",
+      "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-sides_red.webp",
+      "sha256": "1610d5337343e02e360671a9e6ac2f1e97b03b8bfa44e3e3b6cd9c66bd56a4a6"
+    },
+    {
+      "bank": "corrupt-sides",
+      "material": "hit",
+      "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-sides_hit.webp",
+      "sha256": "e74eb53b7aaeb3aa07c181b216986ed330cb00a346946cd6be0be1875cfc2548"
+    },
+    {
+      "bank": "corrupt-sides",
+      "material": "red_hit",
+      "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-sides_red_hit.webp",
+      "sha256": "0a9cd27ec551fcc1f3af6303018c70fbba465861c5cd25e49b4edf153f89efc7"
+    },
+    {
+      "bank": "corrupt-right",
+      "material": "regular",
+      "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-right_regular.webp",
+      "sha256": "34cc9284a990d35b43626f5f09849eefa151fe124f42b2e6c7a391cf7f15d674"
+    },
+    {
+      "bank": "corrupt-right",
+      "material": "chrome",
+      "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-right_chrome.webp",
+      "sha256": "d35314aabf9beb058f2c0740ff187f2b3139b6cb80057f1a6706a0c1066a1c0f"
+    },
+    {
+      "bank": "corrupt-right",
+      "material": "red",
+      "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-right_red.webp",
+      "sha256": "bf4ac777989c6785d9ef5f1c8d1f8a5a044d0e7e8a19f63558872a2432c64537"
+    },
+    {
+      "bank": "corrupt-right",
+      "material": "hit",
+      "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-right_hit.webp",
+      "sha256": "f7b3a546ac33f5e13d1af2459d531ae9630a5d988c18d6b36a4e98c47ca943d8"
+    },
+    {
+      "bank": "corrupt-right",
+      "material": "red_hit",
+      "path": "assets\\game\\shared\\combat\\boss_restore_1112\\corrupt-right_red_hit.webp",
+      "sha256": "5788e90ffbce5837976ec7c7a34721f94c0ae04ab9eb7af49b4779a8d099ffd1"
+    }
+  ],
+  "runtime": "5ab3301e3d9471787faf3140205c6e36cdd7217af36d856c5e3ceed45cc72325",
+  "protected": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "assets/whole_hammer_1110.js": "ca996c31f6fc9ad524160ac01d3cc1757d4a474331f698a32380396a169865e6",
+    "assets/rage_palm_1110.js": "51b0f2ba6d672b8a6c78e274a5854daac8e8b3a31166b135aa38bc33c609d60c",
+    "assets/boss_ship_forms_1111.js": "f3c54cdda6ddf94bc85a71808b47505a15ce4b45c9b5e0fcae5551e1783b7cb2",
+    "assets/draconus_modular_1111.js": "4ea117a08bc57ea1f1e4e5e3d063c2cf207acf601c577377124974114764ed29",
+    "assets/overhead_slam_art_1111.js": "0145f54d951cd5b3c059fc114033e691c32d1428d0b39be79404dbcf2c233d73",
+    "assets/playtest_repairs_1108.js": "d0c8063d39d89d09435469631ea2ac5bc0ced3f95bfabb5736bb2a29baf1f569"
+  },
+  "playbackSeeks": 6,
+  "films": [
+    {
+      "stage": 5,
+      "seconds": "54.781500",
+      "sha256": "3c4cd42da8848c269d3209f96e64f08e5a471002b024a9b46667ca9db582af61",
+      "assistance": "Native attack checkpoints; invulnerable observer; no full-fight claim"
+    },
+    {
+      "stage": 8,
+      "seconds": "12.956188",
+      "sha256": "f30310ea5b543403d5bba8e2dab26e734ca6ae0c0c105afcbf203919c2a36ccf",
+      "assistance": "Native attack checkpoints; invulnerable observer; no full-fight claim"
+    }
+  ]
+}

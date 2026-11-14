@@ -1,0 +1,23 @@
+Process 3932: C:\Users\Mike\AppData\Local\Programs\Python\Python312\python.exe C:\Users\Mike\Documents\Codex\2026-11-11\i-k\work\draconus_rotor_stages_1111\record.py 8
+Python v3.12.10 (C:\Users\Mike\AppData\Local\Programs\Python\Python312\python.exe)
+
+Thread 30812 (idle): "MainThread"
+    IocpProactor._poll (asyncio\windows_events.py:774)
+    IocpProactor.select (asyncio\windows_events.py:445)
+    BaseEventLoop._run_once (asyncio\base_events.py:1961)
+    BaseEventLoop.run_forever (asyncio\base_events.py:645)
+    ProactorEventLoop.run_forever (asyncio\windows_events.py:322)
+    BaseEventLoop.run_until_complete (asyncio\base_events.py:678)
+    PlaywrightContextManager.__enter__.<locals>.greenlet_main (playwright\sync_api\_context_manager.py:56)
+Thread 6884 (idle): "Thread-1 (serve_forever)"
+    SelectSelector._select (selectors.py:314)
+    SelectSelector.select (selectors.py:323)
+    BaseServer.serve_forever (socketserver.py:235)
+    Thread.run (threading.py:1012)
+    Thread._bootstrap_inner (threading.py:1075)
+    Thread._bootstrap (threading.py:1032)
+Thread 31496 (idle): "asyncio_0"
+    _worker (concurrent\futures\thread.py:90)
+    Thread.run (threading.py:1012)
+    Thread._bootstrap_inner (threading.py:1075)
+    Thread._bootstrap (threading.py:1032)

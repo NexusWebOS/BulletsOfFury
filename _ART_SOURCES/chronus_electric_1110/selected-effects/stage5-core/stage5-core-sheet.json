@@ -1,0 +1,390 @@
+{
+  "frames": [
+    {
+      "filename": "stage5-core_00",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 30
+    },
+    {
+      "filename": "stage5-core_01",
+      "frame": {
+        "x": 176,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 40
+    },
+    {
+      "filename": "stage5-core_02",
+      "frame": {
+        "x": 352,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 40
+    },
+    {
+      "filename": "stage5-core_03",
+      "frame": {
+        "x": 528,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 50
+    },
+    {
+      "filename": "stage5-core_04",
+      "frame": {
+        "x": 704,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 60
+    },
+    {
+      "filename": "stage5-core_05",
+      "frame": {
+        "x": 880,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 70
+    },
+    {
+      "filename": "stage5-core_06",
+      "frame": {
+        "x": 1056,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 80
+    },
+    {
+      "filename": "stage5-core_07",
+      "frame": {
+        "x": 1232,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 80
+    },
+    {
+      "filename": "stage5-core_08",
+      "frame": {
+        "x": 1408,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 90
+    },
+    {
+      "filename": "stage5-core_09",
+      "frame": {
+        "x": 1584,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 90
+    },
+    {
+      "filename": "stage5-core_10",
+      "frame": {
+        "x": 1760,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 100
+    },
+    {
+      "filename": "stage5-core_11",
+      "frame": {
+        "x": 1936,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 100
+    },
+    {
+      "filename": "stage5-core_12",
+      "frame": {
+        "x": 2112,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 120
+    },
+    {
+      "filename": "stage5-core_13",
+      "frame": {
+        "x": 2288,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "duration": 140
+    }
+  ],
+  "meta": {
+    "app": "clean_gif.py (ChatGPT GIF to sprite sheet)",
+    "image": "stage5-core-sheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2464,
+      "h": 176
+    },
+    "scale": "1",
+    "art_pixel": 1,
+    "frameTags": [
+      {
+        "name": "ignition",
+        "from": 0,
+        "to": 1,
+        "direction": "forward"
+      },
+      {
+        "name": "blast",
+        "from": 2,
+        "to": 7,
+        "direction": "forward"
+      },
+      {
+        "name": "breakup",
+        "from": 8,
+        "to": 10,
+        "direction": "forward"
+      },
+      {
+        "name": "aftermath",
+        "from": 11,
+        "to": 13,
+        "direction": "forward"
+      }
+    ],
+    "anchor": {
+      "x": 88,
+      "y": 88,
+      "kind": "center",
+      "note": "fixed effect source; retains generated coordinates without centroid correction"
+    },
+    "palette": [
+      "#fefdfa",
+      "#fdf8d9",
+      "#fdf38d",
+      "#cfe3f4",
+      "#fddc34",
+      "#fdba1c",
+      "#7dcefb",
+      "#fca00c",
+      "#9ab9e3",
+      "#fb8b0e",
+      "#fa7408",
+      "#7195ed",
+      "#f7520a",
+      "#f02f07",
+      "#a57777",
+      "#6d78c4",
+      "#4874f0",
+      "#e11e0b",
+      "#d1180f",
+      "#4152d5",
+      "#ba100f",
+      "#a30809",
+      "#474776",
+      "#8d0305",
+      "#1a21c7",
+      "#6f0202",
+      "#0d1192",
+      "#4e0101",
+      "#050a74",
+      "#070d3d",
+      "#27070e",
+      "#190000"
+    ],
+    "loop": false
+  }
+}

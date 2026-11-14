@@ -1,12 +1,7 @@
 "use strict";
 /* Normal -> Hard -> Furious uses compound15% steps. Native warnings, flight,
    projectile speed, lives and counts retain their independent ownership. */
-const DR15={step:1.15,keys:['normal','hard','furious'],base:{EHP,encounterFloor:encounterFloorDifficultyMul},events:[]};
-function difficultyEnhancement15(key=diffKey){const i=DR15.keys.indexOf(key);return i<0?1:Math.pow(DR15.step,i);}
-function difficultyHealth15(normal,key=diffKey){return Math.max(1,Math.round(normal*difficultyEnhancement15(key)));}
-function difficultyHealthBaseline15(normal,legacy){return DR15.keys.includes(diffKey)?difficultyHealth15(normal):legacy;}
-function turretSpeed15(normal=1){return normal*difficultyEnhancement15();}
-function turretInterval15(normal,legacy=normal){return DR15.keys.includes(diffKey)?normal/difficultyEnhancement15():legacy;}
+DR15.base={EHP,encounterFloor:encounterFloorDifficultyMul};
 for(const key of ['hard','furious']){
  const f=difficultyEnhancement15(key);FODDER_DIFF[key]=f;
  DIFFS[key].eHp=DIFFS.normal.eHp*f;DIFFS[key].eFire=DIFFS.normal.eFire*f;

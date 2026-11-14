@@ -1,0 +1,314 @@
+{
+  "checks": [
+    {
+      "name": "Stage5 normal/regular: correct planted follow-up count",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Stage5 normal/regular: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 normal/regular: new poses used",
+      "passed": true,
+      "data": 15
+    },
+    {
+      "name": "Stage5 normal/regular: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 27,
+        "second": 0
+      }
+    },
+    {
+      "name": "Stage5 normal/chrome: correct planted follow-up count",
+      "passed": true,
+      "data": []
+    },
+    {
+      "name": "Stage5 normal/chrome: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 normal/chrome: new poses used",
+      "passed": true,
+      "data": 15
+    },
+    {
+      "name": "Stage5 normal/chrome: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 27,
+        "second": 0
+      }
+    },
+    {
+      "name": "Stage5 hard/regular: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "hard",
+          "origin": {
+            "x": 367.059595959596,
+            "y": 233.51
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 367.059595959596,
+            "y": 233.51
+          },
+          "at": {
+            "x": 335.0610153144347,
+            "y": 392.55
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 hard/regular: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 hard/regular: new poses used",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "Stage5 hard/regular: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 27,
+        "second": 10
+      }
+    },
+    {
+      "name": "Stage5 hard/chrome: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "hard",
+          "origin": {
+            "x": 367.059595959596,
+            "y": 233.51
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 367.059595959596,
+            "y": 233.51
+          },
+          "at": {
+            "x": 335.0610153144347,
+            "y": 392.55
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 hard/chrome: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 hard/chrome: new poses used",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "Stage5 hard/chrome: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 27,
+        "second": 10
+      }
+    },
+    {
+      "name": "Stage5 furious/regular: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "furious",
+          "origin": {
+            "x": 367.059595959596,
+            "y": 233.51
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 367.059595959596,
+            "y": 233.51
+          },
+          "at": {
+            "x": 340,
+            "y": 402
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 3,
+          "root": {
+            "x": 367.059595959596,
+            "y": 233.51
+          },
+          "at": {
+            "x": 226.25459595959597,
+            "y": 120.91947065592632
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 4,
+          "root": {
+            "x": 367.059595959596,
+            "y": 233.51
+          },
+          "at": {
+            "x": 506.864595959596,
+            "y": 120.91947065592632
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 furious/regular: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 furious/regular: new poses used",
+      "passed": true,
+      "data": 48
+    },
+    {
+      "name": "Stage5 furious/regular: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 13,
+        "second": 10
+      }
+    },
+    {
+      "name": "Stage5 furious/chrome: correct planted follow-up count",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-combo-start",
+          "clock": 0,
+          "stage": 5,
+          "difficulty": "furious",
+          "origin": {
+            "x": 367.059595959596,
+            "y": 233.51
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 2,
+          "root": {
+            "x": 367.059595959596,
+            "y": 233.51
+          },
+          "at": {
+            "x": 340,
+            "y": 402
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 3,
+          "root": {
+            "x": 367.059595959596,
+            "y": 233.51
+          },
+          "at": {
+            "x": 226.25459595959597,
+            "y": 120.91947065592632
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 5,
+          "stroke": 4,
+          "root": {
+            "x": 367.059595959596,
+            "y": 233.51
+          },
+          "at": {
+            "x": 506.864595959596,
+            "y": 120.91947065592632
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage5 furious/chrome: fixed root after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage5 furious/chrome: new poses used",
+      "passed": true,
+      "data": 48
+    },
+    {
+      "name": "Stage5 furious/chrome: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 13,
+        "second": 10
+      }
+    },
+    {
+      "name": "White hit flash changes native damaged pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage5 native white flash expires",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No browser or renderer exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

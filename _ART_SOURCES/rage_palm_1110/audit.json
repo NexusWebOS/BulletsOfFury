@@ -1,0 +1,1926 @@
+{
+  "passed": true,
+  "poses": 128,
+  "cells": [
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 0,
+      "bounds": [
+        74,
+        133,
+        311,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 30529
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 1,
+      "bounds": [
+        77,
+        131,
+        310,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 31193
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 2,
+      "bounds": [
+        76,
+        130,
+        310,
+        377
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 32076
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 3,
+      "bounds": [
+        76,
+        123,
+        310,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 34395
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 4,
+      "bounds": [
+        74,
+        114,
+        313,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 38106
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 5,
+      "bounds": [
+        73,
+        108,
+        312,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 39336
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 6,
+      "bounds": [
+        64,
+        100,
+        320,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 40259
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 7,
+      "bounds": [
+        55,
+        92,
+        328,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 41207
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 8,
+      "bounds": [
+        55,
+        90,
+        328,
+        380
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 40460
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 9,
+      "bounds": [
+        54,
+        90,
+        330,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 40058
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 10,
+      "bounds": [
+        50,
+        85,
+        333,
+        380
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 39973
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 11,
+      "bounds": [
+        40,
+        82,
+        339,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 40288
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 12,
+      "bounds": [
+        42,
+        82,
+        338,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 39508
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 13,
+      "bounds": [
+        41,
+        80,
+        341,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 39513
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 14,
+      "bounds": [
+        29,
+        76,
+        346,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 40687
+    },
+    {
+      "bank": "chronos_charge_fore",
+      "frame": 15,
+      "bounds": [
+        24,
+        74,
+        339,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 41104
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 0,
+      "bounds": [
+        69,
+        74,
+        318,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 47240
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 1,
+      "bounds": [
+        68,
+        74,
+        324,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46062
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 2,
+      "bounds": [
+        68,
+        74,
+        335,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 45625
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 3,
+      "bounds": [
+        69,
+        74,
+        325,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 45791
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 4,
+      "bounds": [
+        68,
+        74,
+        317,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46229
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 5,
+      "bounds": [
+        69,
+        74,
+        318,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 45814
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 6,
+      "bounds": [
+        68,
+        76,
+        317,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46623
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 7,
+      "bounds": [
+        68,
+        76,
+        317,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46418
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 8,
+      "bounds": [
+        69,
+        76,
+        318,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 47019
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 9,
+      "bounds": [
+        53,
+        76,
+        317,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46607
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 10,
+      "bounds": [
+        39,
+        76,
+        317,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46853
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 11,
+      "bounds": [
+        52,
+        76,
+        318,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46322
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 12,
+      "bounds": [
+        63,
+        76,
+        318,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46009
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 13,
+      "bounds": [
+        69,
+        76,
+        318,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46067
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 14,
+      "bounds": [
+        69,
+        76,
+        318,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46299
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 15,
+      "bounds": [
+        68,
+        76,
+        317,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46518
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 16,
+      "bounds": [
+        63,
+        76,
+        318,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 47556
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 17,
+      "bounds": [
+        56,
+        76,
+        321,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46928
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 18,
+      "bounds": [
+        33,
+        76,
+        350,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 48232
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 19,
+      "bounds": [
+        46,
+        76,
+        332,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46818
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 20,
+      "bounds": [
+        55,
+        76,
+        321,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46982
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 21,
+      "bounds": [
+        68,
+        76,
+        317,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46290
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 22,
+      "bounds": [
+        69,
+        76,
+        318,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46321
+    },
+    {
+      "bank": "chronos_palms_fore",
+      "frame": 23,
+      "bounds": [
+        69,
+        76,
+        318,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46406
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 0,
+      "bounds": [
+        34,
+        39,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9316
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 1,
+      "bounds": [
+        34,
+        39,
+        146,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9122
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 2,
+      "bounds": [
+        34,
+        39,
+        150,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9078
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 3,
+      "bounds": [
+        34,
+        39,
+        146,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9085
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 4,
+      "bounds": [
+        34,
+        39,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9180
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 5,
+      "bounds": [
+        34,
+        39,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9072
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 6,
+      "bounds": [
+        34,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9206
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 7,
+      "bounds": [
+        34,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9150
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 8,
+      "bounds": [
+        34,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9345
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 9,
+      "bounds": [
+        28,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9259
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 10,
+      "bounds": [
+        22,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9323
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 11,
+      "bounds": [
+        27,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9203
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 12,
+      "bounds": [
+        32,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9126
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 13,
+      "bounds": [
+        34,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9110
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 14,
+      "bounds": [
+        34,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9137
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 15,
+      "bounds": [
+        34,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9166
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 16,
+      "bounds": [
+        32,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9400
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 17,
+      "bounds": [
+        29,
+        40,
+        144,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9326
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 18,
+      "bounds": [
+        20,
+        40,
+        157,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9637
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 19,
+      "bounds": [
+        25,
+        40,
+        149,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9332
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 20,
+      "bounds": [
+        29,
+        40,
+        144,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9316
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 21,
+      "bounds": [
+        34,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9125
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 22,
+      "bounds": [
+        34,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9116
+    },
+    {
+      "bank": "chronos_palms_back",
+      "frame": 23,
+      "bounds": [
+        34,
+        40,
+        143,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 9127
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 0,
+      "bounds": [
+        85,
+        64,
+        299,
+        377
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 42608
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 1,
+      "bounds": [
+        93,
+        66,
+        308,
+        377
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 43387
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 2,
+      "bounds": [
+        80,
+        66,
+        308,
+        377
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 44532
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 3,
+      "bounds": [
+        76,
+        66,
+        314,
+        377
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 44928
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 4,
+      "bounds": [
+        67,
+        64,
+        314,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 48253
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 5,
+      "bounds": [
+        69,
+        63,
+        324,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 48340
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 6,
+      "bounds": [
+        63,
+        61,
+        322,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 48109
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 7,
+      "bounds": [
+        65,
+        62,
+        324,
+        380
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 48399
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 8,
+      "bounds": [
+        62,
+        60,
+        325,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 48441
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 9,
+      "bounds": [
+        62,
+        60,
+        322,
+        380
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 48193
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 10,
+      "bounds": [
+        60,
+        61,
+        323,
+        380
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 47730
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 11,
+      "bounds": [
+        64,
+        60,
+        330,
+        380
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 47676
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 12,
+      "bounds": [
+        57,
+        61,
+        331,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 47181
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 13,
+      "bounds": [
+        58,
+        59,
+        324,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46462
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 14,
+      "bounds": [
+        54,
+        57,
+        329,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 46275
+    },
+    {
+      "bank": "drac_charge_fore",
+      "frame": 15,
+      "bounds": [
+        64,
+        54,
+        348,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 45885
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 0,
+      "bounds": [
+        98,
+        90,
+        291,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37976
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 1,
+      "bounds": [
+        99,
+        89,
+        295,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37483
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 2,
+      "bounds": [
+        97,
+        90,
+        296,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 36433
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 3,
+      "bounds": [
+        98,
+        90,
+        297,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 36018
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 4,
+      "bounds": [
+        104,
+        90,
+        301,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 36837
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 5,
+      "bounds": [
+        90,
+        90,
+        283,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37585
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 6,
+      "bounds": [
+        107,
+        90,
+        297,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37876
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 7,
+      "bounds": [
+        97,
+        90,
+        288,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37618
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 8,
+      "bounds": [
+        87,
+        90,
+        286,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37134
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 9,
+      "bounds": [
+        83,
+        91,
+        285,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37077
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 10,
+      "bounds": [
+        90,
+        91,
+        288,
+        380
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 36535
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 11,
+      "bounds": [
+        92,
+        90,
+        291,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37202
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 12,
+      "bounds": [
+        87,
+        91,
+        290,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 36762
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 13,
+      "bounds": [
+        94,
+        92,
+        289,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37386
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 14,
+      "bounds": [
+        97,
+        91,
+        285,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37190
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 15,
+      "bounds": [
+        101,
+        91,
+        287,
+        379
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37480
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 16,
+      "bounds": [
+        92,
+        91,
+        282,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37751
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 17,
+      "bounds": [
+        93,
+        92,
+        300,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 38001
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 18,
+      "bounds": [
+        90,
+        91,
+        296,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 36043
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 19,
+      "bounds": [
+        86,
+        91,
+        291,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 36546
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 20,
+      "bounds": [
+        95,
+        91,
+        285,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 36875
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 21,
+      "bounds": [
+        84,
+        91,
+        275,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37319
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 22,
+      "bounds": [
+        102,
+        91,
+        290,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37076
+    },
+    {
+      "bank": "drac_palms_fore",
+      "frame": 23,
+      "bounds": [
+        99,
+        91,
+        289,
+        378
+      ],
+      "root": [
+        192,
+        224
+      ],
+      "opaque": 37405
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 0,
+      "bounds": [
+        48,
+        46,
+        132,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7606
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 1,
+      "bounds": [
+        47,
+        45,
+        133,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7504
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 2,
+      "bounds": [
+        46,
+        46,
+        133,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7262
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 3,
+      "bounds": [
+        47,
+        46,
+        135,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7231
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 4,
+      "bounds": [
+        49,
+        46,
+        135,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7396
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 5,
+      "bounds": [
+        43,
+        46,
+        128,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7485
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 6,
+      "bounds": [
+        51,
+        46,
+        134,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7548
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 7,
+      "bounds": [
+        47,
+        46,
+        130,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7456
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 8,
+      "bounds": [
+        43,
+        46,
+        129,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7399
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 9,
+      "bounds": [
+        40,
+        46,
+        129,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7435
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 10,
+      "bounds": [
+        44,
+        46,
+        131,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7314
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 11,
+      "bounds": [
+        44,
+        46,
+        131,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7416
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 12,
+      "bounds": [
+        43,
+        47,
+        132,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7350
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 13,
+      "bounds": [
+        45,
+        47,
+        130,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7438
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 14,
+      "bounds": [
+        46,
+        47,
+        128,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7365
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 15,
+      "bounds": [
+        48,
+        47,
+        131,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7432
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 16,
+      "bounds": [
+        44,
+        46,
+        128,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7541
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 17,
+      "bounds": [
+        45,
+        47,
+        135,
+        171
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7537
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 18,
+      "bounds": [
+        44,
+        47,
+        134,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7287
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 19,
+      "bounds": [
+        42,
+        47,
+        131,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7290
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 20,
+      "bounds": [
+        46,
+        47,
+        129,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7340
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 21,
+      "bounds": [
+        42,
+        47,
+        126,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7460
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 22,
+      "bounds": [
+        49,
+        47,
+        131,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7393
+    },
+    {
+      "bank": "drac_palms_back",
+      "frame": 23,
+      "bounds": [
+        48,
+        47,
+        131,
+        172
+      ],
+      "root": [
+        88,
+        104
+      ],
+      "opaque": 7431
+    }
+  ]
+}

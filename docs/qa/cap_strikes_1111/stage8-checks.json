@@ -1,0 +1,485 @@
+{
+  "checks": [
+    {
+      "name": "Stage8 normal/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/regular: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 43,
+        "second": 0
+      }
+    },
+    {
+      "name": "Stage8 normal/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/chrome: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 43,
+        "second": 0
+      }
+    },
+    {
+      "name": "Stage8 normal/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 normal/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 normal/red: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 43,
+        "second": 0
+      }
+    },
+    {
+      "name": "Stage8 hard/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/regular: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 43,
+        "second": 13
+      }
+    },
+    {
+      "name": "Stage8 hard/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/chrome: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 43,
+        "second": 13
+      }
+    },
+    {
+      "name": "Stage8 hard/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 hard/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 hard/red: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 43,
+        "second": 13
+      }
+    },
+    {
+      "name": "Stage8 furious/regular: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 156.04528523885608,
+            "y": 165.74
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 519.0452852388561,
+            "y": 165.74
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/regular: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/regular: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 43,
+        "second": 13
+      }
+    },
+    {
+      "name": "Stage8 furious/chrome: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 156.04528523885608,
+            "y": 165.74
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 519.0452852388561,
+            "y": 165.74
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/chrome: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/chrome: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 43,
+        "second": 13
+      }
+    },
+    {
+      "name": "Stage8 furious/red: correct one/double/four contacts",
+      "passed": true,
+      "data": [
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 1,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 2,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 340,
+            "y": 422
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 3,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 156.04528523885608,
+            "y": 165.74
+          }
+        },
+        {
+          "type": "planted-contact",
+          "clock": 0,
+          "stage": 8,
+          "stroke": 4,
+          "root": {
+            "x": 338.0452852388561,
+            "y": 266.74
+          },
+          "at": {
+            "x": 519.0452852388561,
+            "y": 165.74
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stage8 furious/red: no hops or torso chase after landing",
+      "passed": true,
+      "data": 0
+    },
+    {
+      "name": "Stage8 furious/red: actual behind-head windup on every down strike",
+      "passed": true,
+      "data": {
+        "first": 43,
+        "second": 13
+      }
+    },
+    {
+      "name": "Stage8 white hit flash changes native damaged pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage8 native white flash expires",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No browser or renderer exceptions",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": []
+}

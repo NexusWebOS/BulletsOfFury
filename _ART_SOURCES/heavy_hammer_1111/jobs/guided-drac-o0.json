@@ -1,0 +1,27 @@
+{
+  "name": "guided-drac-o0",
+  "prompt": "MOTION TRANSFER, not pose invention. Redraw the EIGHT sequential poses in reference1 as Dracodia from reference2, in precisely the same4-column2-row chronological order. Reference1 is the USER'S HAMMER-SWING MOTION GUIDE; copy its actual hip/torso/shoulder/arm/hand/foot positions and small frame-to-frame progression, not its mannequin appearance/background. Reference2 locks Dracodia's original purple/silver armor, curved horn pair, closed gray mechanical face/red eyes, red chest/abdomen. Reference3 supplies higher-detail rendering and visible hilt grip ONLY, not its different pose. Reference4 is the immutable purple T-hammer (straight shaft into SIDE-CENTER socket,3 spikes each cap, spear butt).\n\nFrames0\u00e2\u20ac\u201c7 of a32-frame heavy swing cycle: use the guide's near-waist ready/regrip/weight-shift progression EXACTLY, preparing the next lift. Both hands remain visibly wrapped around the handle in the guide's positions; no fists on helmet, no floating grip. One rigid straight shaft through both fists, canonical perpendicular T-joint. Keep Dracodia's head identity, facing/readable toward player while torso follows the motion.\n\nOutput a WIDE2:1 landscape sheet, eight complete full-body sprites in4 columns and2 rows, target2048x1024/even512x512 cells. TRUE RGBA TRANSPARENCY, absolutely no white paper, gray grid/dividing lines, checkerboard, floor/shadow, labels, arrows or text. Keep ALL figures/hammer parts entirely inside cells with at least40px clear margins. Use a common standing BODY HEIGHT around320px within each512px cell, leaving room for later raised hammer. No fill-cell enlargement, no per-pose fitting. Same body/core/head/limb/weapon unit and foot mounting across all eight.\n\nCrisp detailed16bit metallic sprite pixels, clean dark outlines and readable hands. Draw COMPLETE body+held hammer together, no cutout parts or stamped head. Eight genuinely distinct closely spaced drawings follow the exact guide progression, not repeated copies. Do not add clothing/skin/mannequin parts, swing trails, glow clouds, impact art or backgrounds.",
+  "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a1c959-8a0c-74e2-8d69-34cb52593259\\exec-c299c573-6867-428e-9b98-7f4aa3073831.png",
+  "accepted": true,
+  "status": "accepted-selected-complete-cells",
+  "guideFrames": [
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "selectedCells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}
