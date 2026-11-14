@@ -39,7 +39,7 @@ edit('_BUILD_SOURCE/test_campaign_focus_1004b.cjs',lambda s:replace(s,"for(const
 edit('_BUILD_SOURCE/test_campaign_controls_1004h.cjs',lambda s:replace(s.replace("cmap2.focus==='map'&&Input.tap('enter')&&state===GS.STAGESEL","cmap2.focus==='map'&&Input.menuConfirm()&&state===GS.STAGESEL"),"out['Start gives the bar ownership before Stage X can deploy']=cmap2.focus==='bar'&&!Rival24.mapInput()&&state===GS.STAGESEL;","out['Start preserves the focused map deployment confirmation']=cmap2.focus==='map'&&Input.menuConfirm()&&state===GS.STAGESEL;\n Input.clearTaps();Input.injectTap('escape');campaignMenuInputTick();out['Back gives the toolbar ownership and blocks Stage X deployment']=cmap2.focus==='bar'&&!Rival24.mapInput()&&state===GS.STAGESEL;"),'Current Start confirms map focus; Back opens toolbar. Verify both real input ownership paths.')
 # Recover exact original pixels; keep archived source data intact. A separate
 # generated sheet/cell registration leaves existing atlases and newer art alone.
-source=R/'UNUSED_ASSETS/cleanup_2026-10-06/assets/game/stage8_mega_enemies/armored_leech';E=W/'exports';E.mkdir(exist_ok=True);frames=[];inputs={};cells={}
+source=R/'UNUSED_ASSETS/cleanup_2026-10-06/assets/game/stage8_mega_enemies/armored_leech';source=source if source.exists()else R/'_BUILD_SOURCE/release_checks_1114/references/armored_leech';E=W/'exports';E.mkdir(exist_ok=True);frames=[];inputs={};cells={}
 for action in ['attack','roll']:
  for i in range(8):
   p=source/f'{action}_{i+1:02}.png';im=Image.open(p).convert('RGBA');assert im.size==(256,256);inputs[str(p.relative_to(R))]=sha(p);frames.append(im);n=len(frames)-1;cells[f's8{ "atk"if action=="attack"else"roll"}_armored_leech_{i}']=['stage8_leech_recovery_1114',n%4*264+4,n//4*264+4,256,256]

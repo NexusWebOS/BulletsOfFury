@@ -1,0 +1,1 @@
+Exact development-only retired reference fixtures for the existing integrity harness. These135 files retain the manifest SHA256 values. They are not loaded by index.html or included in the playable Windows payload. The harness uses this tracked fallback when the optional ignored UNUSED_ASSETS archive is absent.

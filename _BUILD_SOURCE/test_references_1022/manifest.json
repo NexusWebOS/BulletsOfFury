@@ -1,0 +1,812 @@
+[
+  {
+    "path": "assets/game/levels/stage_04/enemies/enemy_overhaul_0925/sprites/stage4_war_drone_01.png",
+    "bytes": 47242,
+    "sha256": "f72df4a53929ae21795b22f4f3b7f0645d0a4152d135a711f851db03d3da90fe",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_05/enemies/enemy_overhaul_0925/sprites/stage5_space_drone_01.png",
+    "bytes": 59245,
+    "sha256": "8b7adc9b605a553e868c6723e2c6cebd60eb562661e11f2419feca183abe8fc1",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png",
+    "bytes": 42130,
+    "sha256": "b9dcf17efc0bf62daf251e371db642adfc296b7d9a6902ff82fc8e97c4a9aa70",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_09/enemies/enemy_overhaul_0925/sprites/stage9_water_alien_01.png",
+    "bytes": 41537,
+    "sha256": "ea0cf638e625cfaf058a6bf6beebd1c4944563d7c2aec15bd1e3b5f845ea673b",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_09/enemies/enemy_overhaul_0925/sprites/stage9_water_jet_01.png",
+    "bytes": 38795,
+    "sha256": "0de2172e7d45aa24f8553bfcd12c11cf1c580ea9388fc6c84812bf2582d9c896",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_0.png",
+    "bytes": 33876,
+    "sha256": "35e5037ac3d49786c2efbd3a4496baf4d1826d7bf8b2463b9fe531b44b319a1c",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_1.png",
+    "bytes": 33530,
+    "sha256": "bc74aebaa42f2683e99e2887db8b62e9c4df328bffb0f45b016b5e31fb269ad1",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_2.png",
+    "bytes": 33535,
+    "sha256": "2b181b6292d5388b011a178b8d60bb6f4782b449e2820390a247924ce589c6fc",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_3.png",
+    "bytes": 33604,
+    "sha256": "c77bbf40c6200cb2b1d9a75f2bc826b9cdc5dac87f6addef1db1c8b9d61374df",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_4.png",
+    "bytes": 33939,
+    "sha256": "2abb7435051c2ee84511757ad9e65283d9db053d1039144fc2f9323abb9b3967",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_5.png",
+    "bytes": 33793,
+    "sha256": "d260aa5b020dd58a194c642ee3f0854e9615204301596260c28da1d37da4b353",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_6.png",
+    "bytes": 33913,
+    "sha256": "f1de4681b3d3f4eeda013489ed8c98193bcc478474683f9274d4aadc693da35c",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/pilots/cole/body_frames/frames_0.png",
+    "bytes": 389799,
+    "sha256": "3838d4af301e9d8b682759e9b10a3e6fb925ce21278dc094566a6bace09d856e",
+    "reason": "Atlas contains only unconditionally redirected retired Cole body poses"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infected_detail.png",
+    "bytes": 3392992,
+    "sha256": "8f35c2ffe46edb4b713e3ab8195bdddfd8ccd5529babf588937184987aa29877",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_00.png",
+    "bytes": 9498,
+    "sha256": "f9ba44727c234c4139b586fc478e2f7318fd346e97753281a84e090b0d34a555",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_01.png",
+    "bytes": 11936,
+    "sha256": "b83a0d35ae31295f2f541cbbcc64dfab291ef293785dd7d1ccd3977f38dc4219",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_02.png",
+    "bytes": 16139,
+    "sha256": "8e4980c784ec9e5c8086da1f8c9fb9e39f0dbc1076779caad80e12a1a53b5753",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_03.png",
+    "bytes": 20482,
+    "sha256": "e846934942d2d2d464f83f96cbbbe4f7c775926953918fc3fd8e83a6b867dba9",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_04.png",
+    "bytes": 23177,
+    "sha256": "8675240bc44441954c573e350f55df37acde5f01c1e89e7f62730090f5b3410e",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_05.png",
+    "bytes": 28620,
+    "sha256": "e215a930916c6cd05d1a853ed97d791aeb0e6b5175e2daf9f93ab6b964b7e30e",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_06.png",
+    "bytes": 27741,
+    "sha256": "5e7d0d1165190b00eb5fe4ffef6e7aa37e1f0c5af9da2d92b4907907708aedb3",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_07.png",
+    "bytes": 31380,
+    "sha256": "8cadc6d28ed37fb7cfb0fe029d1a29039cb8e570e75ee7fb61b66613d4d533f0",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_08.png",
+    "bytes": 39887,
+    "sha256": "79126a2fc36437da1d788803d5fb568850fc2538133befeb0885483cfc791bb0",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_09.png",
+    "bytes": 46624,
+    "sha256": "79da1b5c420346e24e537c6549cfd2819b2681b75a357c85fe2ab0064c1119cf",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_10.png",
+    "bytes": 49667,
+    "sha256": "97649051ac6d74b6d156fc863d03430a626ea7cc106aaaf3bd35accd85a62fb9",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_11.png",
+    "bytes": 52072,
+    "sha256": "3272c790c38acae9f9a4e862f23f54ced8c8756637c18da7db38e74a90cb8b7c",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_12.png",
+    "bytes": 58314,
+    "sha256": "71eee59fc388186d2fe4a313c8d790b386da6911d6a347c2334fb67987301419",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_13.png",
+    "bytes": 63695,
+    "sha256": "d8ca0f57a26865375a56cda1baf30896758c2d1b0a0019d025bf0601c49829f7",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_14.png",
+    "bytes": 64792,
+    "sha256": "7bf5c1c45fe4ca6d487381a270662ff1b3d91bc56bc2cec57237a07e05788296",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_15.png",
+    "bytes": 64907,
+    "sha256": "525b18e66f4c3b385935afe80715038052533aca63be2a8150aa22531bf98263",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_16.png",
+    "bytes": 72852,
+    "sha256": "bc17d67e78d3c0deb0377dceb0b5f1ada7d4c5a603314437761317aa011e1fe1",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_17.png",
+    "bytes": 77821,
+    "sha256": "3948f52d0d61c5c08aa34dc50cedd40eb890d685d12f94ec614ea12e81b300cd",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_18.png",
+    "bytes": 79186,
+    "sha256": "f548fa421b84c82234265af4fbd728ee7c1fc2904ddecdbb4cd24c39b10aef06",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_19.png",
+    "bytes": 78890,
+    "sha256": "18f874c3bd96ae6bafb97c824cfcb1469960ab58cf8ca03db550407fc6c92ad6",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_20.png",
+    "bytes": 85433,
+    "sha256": "7b2636361e79780bc02178d8d45add50fadb880be1aeab9fde63a7fe520d7b55",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_21.png",
+    "bytes": 83983,
+    "sha256": "8a40ed96ed1b44aed9cbf1cf826e3d14de3bf122ca87fa4ba709a53b0e022440",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_22.png",
+    "bytes": 86405,
+    "sha256": "9a030eaa7a6380f15669737cd9e28802b71247ecb6b0a314b112044c5cf722b9",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_23.png",
+    "bytes": 88351,
+    "sha256": "afb4a0a79104f949a7dc1711047668933d812287b5901269ac76c1957a296538",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_24.png",
+    "bytes": 90454,
+    "sha256": "5196f0165a93c4e1ff74834195ed6e75cc1ee4e07fa18ff6c8bdd2a5c07d708e",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_25.png",
+    "bytes": 93598,
+    "sha256": "5c462ed5991415f48addecf4b9463bc20a9e05d1d8a538ee1bc0cad429cbf4f5",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_26.png",
+    "bytes": 93262,
+    "sha256": "965a231c80627d0d181c93247568a2745c8a281f68fe1c21082af762f610d75a",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_27.png",
+    "bytes": 93667,
+    "sha256": "15ceac0f2c2dc47951dd0587dcec4f5ad1a712d550ed090cb92530484272257a",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_28.png",
+    "bytes": 97629,
+    "sha256": "a0ad3c16e44739e5710ba424cf8bd3d6d6570e0cd408e737de0d2869a5e7d16e",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_29.png",
+    "bytes": 97002,
+    "sha256": "4f8beaed96588164a580bb5bbfba195a2e77a1dfe17ecdc4da5f3a3b3558d590",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_30.png",
+    "bytes": 98071,
+    "sha256": "0694c3eb299dd83701eae98e5ce7a74f2974ec3236acccadb949cbac968784b3",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/homecoming_1010/infection_31.png",
+    "bytes": 95769,
+    "sha256": "27696d0e02c6e9ed271576b56b1f646d30a754623e44ece3ab1c017cde9ab0b7",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/background.png",
+    "bytes": 2984982,
+    "sha256": "8dd64ebd24b9871c8a4045c14f04dbb6358d2559ac93c0bb82ce0336bef36804",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_00.png",
+    "bytes": 18823,
+    "sha256": "e4aacc2799a1e87e60940d681e7dfa16484aeda44dc90d3c10259ebaf0731e85",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_01.png",
+    "bytes": 27542,
+    "sha256": "2f5957e562ebfe4291baacb64a3f7b0516bfd89ce3f4e8322e5df2de8631a64f",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_02.png",
+    "bytes": 36335,
+    "sha256": "a1b9940c37d61fbad6f16ac7a6d620ef96f4d464d91a50d1526cec6f2c88b3e8",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_03.png",
+    "bytes": 40972,
+    "sha256": "f7eda3f9dc6c301ef628fb38c463298cbed5daa84ceb3fd0fa8ad39510ef97af",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_04.png",
+    "bytes": 44644,
+    "sha256": "e17b1ed9581a4da6250e8009431b28d530cab4b5536ddd0bcb8b19fcb125064a",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_05.png",
+    "bytes": 50639,
+    "sha256": "40ade4bc8c9210881bca42e3e42093d4e344bafc5e7778783bd3650cf82cf779",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_06.png",
+    "bytes": 58504,
+    "sha256": "b8c88304ab14ea3195d0e8d14fe16caa5e0ad04f7a56abcc16acc575811d1696",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_07.png",
+    "bytes": 68377,
+    "sha256": "7ce5192f2c9dd4cfc23e9710c21076616e13bd3813f8fe96a8af2800e2f91a1a",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_08.png",
+    "bytes": 66842,
+    "sha256": "0d10f423f1bee83e05ba470a88b2d007692e305caf4eba2187cd8deafd1f4a91",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_09.png",
+    "bytes": 76524,
+    "sha256": "d367e1eef312103a18261ddfcec737834baffad320a4a0757454754733a706db",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_10.png",
+    "bytes": 77944,
+    "sha256": "3f64ab535071e56083d6d786d653ccbb9e942d950b9ff9d7e84f05e53ba69a9c",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_11.png",
+    "bytes": 70005,
+    "sha256": "7233cb4d9f740db3113384c9ac04d541ce925be2887c258fdac529a0b5baebd5",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_12.png",
+    "bytes": 55989,
+    "sha256": "c028a1a1b21241a77dfbe1970dda853b067ce35662eeabbd7cf58e622bb20afa",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_13.png",
+    "bytes": 46148,
+    "sha256": "12eefbc730bc40ce4986c361a2694b51e29d6b62dd801a8f261fd5b27f5b2004",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_14.png",
+    "bytes": 31842,
+    "sha256": "9bfeb48b36829f75032a47dac8cde7a0848fa09d263abd21cf730e28050a9218",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/contact_15.png",
+    "bytes": 15046,
+    "sha256": "b260e7a23ae9f57878afc696e7806c5ba3e89e6a809f283c4ba076cc9ae83caf",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_00.png",
+    "bytes": 32797,
+    "sha256": "c5a62296bb76433c0cc308dcc509272c631d307e15b35d53097657086e36a938",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_01.png",
+    "bytes": 33019,
+    "sha256": "906a12ae6ac9bc6913b7c977650de01fbd794e39377a95d478fc2dddbf002aa6",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_02.png",
+    "bytes": 34119,
+    "sha256": "a5440fa0aeadf40b178a3a49e54d996dafada02c6a891290089933f472512263",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_03.png",
+    "bytes": 35007,
+    "sha256": "1596b0373f75e44347a64fd61b8863bd06b3cb88a5c008ff2fcb010af34e1352",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_04.png",
+    "bytes": 35939,
+    "sha256": "f3567037e5348c5bfccd7ab8e0bbac84e9ad30d319a4a47e5a058f2aceb1d45a",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_05.png",
+    "bytes": 35165,
+    "sha256": "8f14e887eec0e75c889344e2eb825d4aa1d0132f22eb539d2dac67bd8b2a6ced",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_06.png",
+    "bytes": 34471,
+    "sha256": "1d6c63cb19eb04530812e685bb097d5f204722d74693a845c61631d184d2c9d4",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_07.png",
+    "bytes": 34592,
+    "sha256": "b391dabb44cb271109712f4c4041028ed00a03d06656a9149b9b5532ca54806f",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_08.png",
+    "bytes": 33623,
+    "sha256": "e98de606179e1116459e5bf5b8f5ad082257f659fd46fd7440c9577c50df2254",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_09.png",
+    "bytes": 33760,
+    "sha256": "a737c3ca595e967776e1bbe292e80c3a4ad157315f5f1852a594c265e7491316",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_10.png",
+    "bytes": 34389,
+    "sha256": "1f3012716f5dc114a6866dc34b85f950081733be2a40128dc67d3b9277e6bd7f",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_11.png",
+    "bytes": 34457,
+    "sha256": "c04188ae0f2ffb5a8349a44d3c72534b314d1dd74173657512c8585c447ee0fb",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_12.png",
+    "bytes": 33926,
+    "sha256": "a642ba87a4240bc5db1a4ec068f52f4a1abd1c5a22df83d0982debc4be16d782",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_13.png",
+    "bytes": 33283,
+    "sha256": "edca5925eda6680dfb731575a1b315ff204708375438620e0915070bb9f9075d",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_14.png",
+    "bytes": 33688,
+    "sha256": "e0f5044e0690f22fa8ad78c02dcf1cb5d3b3ede7296de56134c3b5c102b0badf",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_15.png",
+    "bytes": 34008,
+    "sha256": "04fb565640cab10490330ae9f70b7f64e2859d46b456a5702401a5660acb3132",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_16.png",
+    "bytes": 32040,
+    "sha256": "817ea0d6dcebce3b074642c0d56baf968f692d1516b7e248dffdf4af102594f1",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_17.png",
+    "bytes": 33601,
+    "sha256": "cb674da7a38a2424d571568327377d463dd3122ab390eb22081f03b4070d25ab",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_18.png",
+    "bytes": 34307,
+    "sha256": "46469511a577b9cf734b5b7bcc811b2664effad12e6a0c629d826acb0a44cc64",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_19.png",
+    "bytes": 33720,
+    "sha256": "4c2215863f20f0e5a35956d9d353eeb2182bce7dbfdbbae4bc025b7c2840b87a",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_20.png",
+    "bytes": 33667,
+    "sha256": "8388450b327482753749200ce41b399e33224bfc4bca8faf652b32129df93638",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_21.png",
+    "bytes": 33400,
+    "sha256": "df938eea5f4bcb6ea29b70fe2cfb9c4ffd77ad4e0fb46c82ea822b941bf0434b",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_22.png",
+    "bytes": 34353,
+    "sha256": "bd6cd816ab38e8a4fef64fba223ccb919e1f790373c320be5d1218bba11633b4",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_23.png",
+    "bytes": 33968,
+    "sha256": "2da3bf11a16f9e16aa9d601ccb2c05506bf5e6fce43ef0737a0b97ab6c384f0e",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_24.png",
+    "bytes": 33946,
+    "sha256": "0fcb3512a2ff74fe1071bc6da51e18d4436f6faeb57d0090d3e0c1f30b4db750",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_25.png",
+    "bytes": 34204,
+    "sha256": "644759c709b3871f7d1184b608da8bafed53e16f6ed828c6fbfdaff999150d75",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_26.png",
+    "bytes": 33746,
+    "sha256": "e820040c529fd33b056c412d539ecf0be52737f83c7fed848404ba30b2ba0868",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_27.png",
+    "bytes": 34312,
+    "sha256": "9ddae23d2be9e9b4d6a922de3b19208a9728c30a03d5ee6b18a6663f6ee0df1c",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_28.png",
+    "bytes": 34868,
+    "sha256": "91d90dafa936197d6bcd67db0026c1277607880c342081ad3f802538eb76c115",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_29.png",
+    "bytes": 33433,
+    "sha256": "b5b37360f730315cb912388f4a42162903b2ce363c9064f3b2fc285a2723bebf",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_30.png",
+    "bytes": 34184,
+    "sha256": "5f2f241d56f17d87d9f13b16b2226785a6ab65d36832cd8ef5c299ab4291bffc",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/crawl_31.png",
+    "bytes": 34033,
+    "sha256": "85f5e645e7d3271ba1fd286e61084133597051335d455dc64b6f828399b8dcb2",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/cinematics/survivor_1010/detail.png",
+    "bytes": 3334682,
+    "sha256": "073a6e6da8cce2f76f437cf6faf0eb2b0eb2337d04ce5a3e10ebfac6e4b25ae2",
+    "reason": "Retired organic ending; explicitly excluded from current ce20Keys and campaign stage loading (CINEMATIC_ENDING_1020.md)"
+  },
+  {
+    "path": "assets/game/shared/combat/encounters_0930/jet.png",
+    "bytes": 53607,
+    "sha256": "55babf2ba8505713ec37d4951981d93167e8c2f140eda2ede720830e0303354d",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/furious_review_0927/realm_fleet.png",
+    "bytes": 1294852,
+    "sha256": "939510fc0fff75fe4089e6141d85ba87e964262cee2500ad2f243c664494e917",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/part2_1010/stealth_blue_idle.png",
+    "bytes": 28522,
+    "sha256": "6150436df73e7def21b43b42f850b911eac4e1a3ae99756b187582f8eae2da24",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_0.png",
+    "bytes": 62939,
+    "sha256": "bbe75574a4088adb268667c8a1c740a412c5d1f6fcb1378232007e5013cb9c3e",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_1.png",
+    "bytes": 62821,
+    "sha256": "88ea4a1c87767dc5edef5f9ffc3d79835fda6809126d5bff02c4e36847f489e5",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_2.png",
+    "bytes": 62737,
+    "sha256": "260e5e3e7cc057b25dde67215c904fcba8a5ff5c545ebe589a5f907439f6fd9b",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_3.png",
+    "bytes": 62292,
+    "sha256": "ebb64a1320960cc92d4e5693f42b988e08da63e28c0670d368daa7352d47b6a7",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_4.png",
+    "bytes": 62457,
+    "sha256": "35d3a8160cf93e5ddfbf79cf439e132d10020fa819e6f929f665e6a26e3631cd",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_5.png",
+    "bytes": 62465,
+    "sha256": "8689c541cd0b65033df6d5cf7c7eb7a3e234d84e00fa5625e46b3f4e1be2a09c",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_6.png",
+    "bytes": 62333,
+    "sha256": "4607bb9c33ffa4d48cf735080cd8cea27364ef34c687950bedd59fbfcb7e37dc",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_7.png",
+    "bytes": 62617,
+    "sha256": "300d17bcd5177c4acd747bae9a73168f007f3daf6d9730a8bb62ae5f4a43aca6",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_0.png",
+    "bytes": 104464,
+    "sha256": "395422c4124580526fea93ebbfe79ac65bed034868a99fc5d11d9f78d443ec54",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_1.png",
+    "bytes": 103967,
+    "sha256": "052c46c5234905441b6410deee537e7b86ebd9b7cffe1b2d830aa23dc2223517",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_2.png",
+    "bytes": 103878,
+    "sha256": "b6363187702f3a5bd806a947c08c817998df923d769d4add4b8792a1321509a1",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_3.png",
+    "bytes": 103673,
+    "sha256": "cc3c799e6d8b679bf354d965ee6347fa46e27da81aad0e8fae5c0863601596d2",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_4.png",
+    "bytes": 104999,
+    "sha256": "96c8343e7a88df3096cced746ffc2c3642dd4bda0fc76f458f04a1c4266ca2b9",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_5.png",
+    "bytes": 104296,
+    "sha256": "cdadcfc5428da9a1cb067aadc27269dfc83e3e38c334c04ce9dc72023560cab6",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_6.png",
+    "bytes": 103862,
+    "sha256": "ded71398767321fda477e2819778657d5e5798c26c3ca81258bf33c9f4cc4b3e",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_7.png",
+    "bytes": 104846,
+    "sha256": "b2418abebb0646b30d57810d4f0d66e6784699964449a5ad84d204434d09aa62",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_0.png",
+    "bytes": 110738,
+    "sha256": "dabb720582731a1bc2813cf89aa853ee4d6d6f9c0b0660e22733a23d6d472b33",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_1.png",
+    "bytes": 110786,
+    "sha256": "950b306481e0f25a7d454d657362bd6017f698028e5e3bbca88b7723c59ac605",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_2.png",
+    "bytes": 110945,
+    "sha256": "e38f8e809970b95d635a2427f1a9595764563acadacd8af952a83b445eb480b1",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_3.png",
+    "bytes": 110800,
+    "sha256": "8ed3620b3f70fe908f66eae91e649bc33d56b1f28888c0449e075a440b4e2b69",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_4.png",
+    "bytes": 110856,
+    "sha256": "359bddcc66652154705bdd09a7264c282e2285f069926f5ad9182724460d05b6",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_5.png",
+    "bytes": 110302,
+    "sha256": "191210381f15ed0c5d811f84ea46fd0cf1660c0721f8f3854ad538a019fe3fcc",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_6.png",
+    "bytes": 110604,
+    "sha256": "9c1b2aff8fb78d24e910243a45c4ae9d0ae2c2e435710c65348a4c539767c6b3",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_7.png",
+    "bytes": 110408,
+    "sha256": "1bded9814b47c08a527db808fdccd9bc8e9c17f93f1006ee44f0dd9b046f91a2",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_0_bank_0.png",
+    "bytes": 13643,
+    "sha256": "7ead1e4f55a4acc27dbe9817610c16495809ca8484e2a011ec8e3af6acacbe3d",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_0_bank_1.png",
+    "bytes": 17255,
+    "sha256": "8c119477a3855f951191b0d0f312d512a903607a7ddbd7de85fb130562ed239b",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_0_bank_2.png",
+    "bytes": 17839,
+    "sha256": "bda088429aa9ace35aa6583c3d45a84da3d0a1686014924571998de09ef86e37",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_1_bank_0.png",
+    "bytes": 20160,
+    "sha256": "2ca844d4e8cc4211e3cfcdc9663a50dcdb8436d1f4c735e3752fb59f8fab9cf9",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_1_bank_1.png",
+    "bytes": 20630,
+    "sha256": "7188797a70665fe419b1ddd156b71dcbf5cc9502484e5888561edfb77cb07653",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_1_bank_2.png",
+    "bytes": 20371,
+    "sha256": "961ffd525debb4b85280908d8b82ff0db65d7d7058804d0bbbead4ef91b552ec",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_2_bank_0.png",
+    "bytes": 16068,
+    "sha256": "7815093260701d48741b58033c0e59c58a8f0857ee534b9e0fedb57d48eb02e9",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_2_bank_1.png",
+    "bytes": 20343,
+    "sha256": "8286af7cda7eadf7e0a08c47ec2089389620f1f1713177d7bec8def23d732853",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_2_bank_2.png",
+    "bytes": 20506,
+    "sha256": "3cfe60c11b0af23bf71d389fe84c9322eac16e30a8690363397fdba87d9447d3",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_3_bank_0.png",
+    "bytes": 19682,
+    "sha256": "5b97e53f09da7e0774182ccaffe6a2286d8fd241eb5173a6c361cf635b85b015",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_3_bank_1.png",
+    "bytes": 20016,
+    "sha256": "c761208f1598c0015b012b019ba8135c5ec659f948632b5ba45075e7eb222c0d",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  },
+  {
+    "path": "assets/game/shared/ships/fury_fleet_0922/jet_3_bank_2.png",
+    "bytes": 19928,
+    "sha256": "42da2b6db9a33f6ac365308a3986d95cbf74a9be83ca431adb6bc2d64e416c7a",
+    "reason": "Every registered source key is globally redirected to current authored flight/body art"
+  }
+]

@@ -1,7 +1,9 @@
 /* Development-only access to exact retired reference artwork. Not loaded by index.html. */
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const root=process.env.BOF_REAL_GAME_ROOT||path.resolve(__dirname,'..');
-const archive=path.resolve(__dirname,'../UNUSED_ASSETS/retired_art_1022');
+const localArchive=path.resolve(__dirname,'../UNUSED_ASSETS/retired_art_1022');
+const portableArchive=path.resolve(__dirname,'test_references_1022');
+const archive=process.env.BOF_RETIREMENT_ARCHIVE||(fs.existsSync(path.join(localArchive,'manifest.json'))?localArchive:portableArchive);
 const read=fs.readFileSync.bind(fs),exists=fs.existsSync.bind(fs);
 const entries=JSON.parse(read(path.join(archive,'manifest.json'),'utf8'));
 const allowed=new Set(entries.map(x=>x.path));
