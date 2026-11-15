@@ -1,0 +1,4 @@
+interface:
+  display_name: "ColeForge-Beat Em Up Attack & Combo Frames"
+  short_description: "Author readable attacks, combos and hit reactions"
+  default_prompt: "Use $coleforge-beat-em-up-attack-combo-frames to plan, generate and integrate consistent combat sprites with authored timing and reactions."

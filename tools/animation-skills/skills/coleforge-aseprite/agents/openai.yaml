@@ -1,0 +1,4 @@
+interface:
+  display_name: "ColeForge Aseprite"
+  short_description: "Portable ColeForge sprite production workflows"
+  default_prompt: "Use $coleforge-aseprite for the relevant ColeForge game assets."

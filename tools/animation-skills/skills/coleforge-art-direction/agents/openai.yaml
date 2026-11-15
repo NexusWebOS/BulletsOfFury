@@ -1,0 +1,4 @@
+interface:
+  display_name: "ColeForge Art Direction"
+  short_description: "ColeForge Art Direction workflow for Mike's ga"
+  default_prompt: "Use $coleforge-art-direction to complete the relevant work in my ColeForge game."

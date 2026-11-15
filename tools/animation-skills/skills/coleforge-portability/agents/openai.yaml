@@ -1,0 +1,4 @@
+interface:
+  display_name: "ColeForge Graphics & Portability"
+  short_description: "ColeForge Graphics & Portability workflow for"
+  default_prompt: "Use $coleforge-portability to complete the relevant work in my ColeForge game."

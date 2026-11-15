@@ -1,0 +1,4 @@
+interface:
+  display_name: "ColeForge-Walk/Run Frames"
+  short_description: "Consistent whole-character walk and run animations"
+  default_prompt: "Use $coleforge-walk-run-frames to create consistent walk and run cycles from a proven motion guide and approved character art."

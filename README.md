@@ -153,3 +153,8 @@ This edition was checked with the project’s browser and gameplay probes:
 Verified production work is published on `main`. Scratch captures, extracted review packages,
 temporary generation inputs, and local QA workspaces are not part of the published build. Runtime
 assets and their manifests remain in `assets/game/`.
+
+
+## GIF and walk/run animation skills for the main PC
+
+The [portable animation skills pack](tools/animation-skills/README.md) includes 13 skills, full helper scripts, motion guides, prompts and examples. [Download the small standalone ZIP](https://github.com/NexusWebOS/BulletsOfFury/releases/tag/coleforge-animation-skills-2026-11-15) and run `Install-Animation-Skills.cmd`, then restart Codex. Run `Setup-Animation-Tools.cmd` for local GIF cleanup tools (Python 3.12). Existing installed skill versions are backed up.

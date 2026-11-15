@@ -1,0 +1,4 @@
+interface:
+  display_name: "ColeForge Sprite Tool Workflow"
+  short_description: "Portable ColeForge sprite production workflows"
+  default_prompt: "Use $coleforge-sprite-tools for the relevant ColeForge game assets."

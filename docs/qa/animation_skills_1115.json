@@ -1,0 +1,21 @@
+{
+  "skills": 13,
+  "checks": [
+    "All manifest file sizes and SHA-256 hashes",
+    "All 13 skill frontmatters and bundled Python syntax",
+    "All bundled Markdown file references resolve; no secret/signed URL patterns",
+    "Installer preview, first install, backup preservation, unrelated skill preservation and repeat install",
+    "Real 16-frame GIF cleanup reproduces bundled expected sheet pixel for pixel, exact timing and even cells",
+    "Walk/run guides decode all 16 movement frames; locomotion checker starts",
+    "Relighting marker, cleanup and comparison scripts run on bundled example",
+    "Actual Windows setup helper creates isolated Python environment; installed dependency imports and pip check pass"
+  ],
+  "gif": {
+    "frames": 16,
+    "sheet": [
+      1952,
+      116
+    ],
+    "expectedPixelsMatch": true
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "format": 1,
+  "version": "2026-11-15",
+  "skills": [
+    "clean-pixel-effect-gifs",
+    "coleforge-art-direction",
+    "coleforge-aseprite",
+    "coleforge-beat-em-up-attack-combo-frames",
+    "coleforge-even-frame-dimensions",
+    "coleforge-portability",
+    "coleforge-sprite-clarity",
+    "coleforge-sprite-tools",
+    "coleforge-walk-run-frames",
+    "paint-pixel-background-relighting",
+    "portable-sprite-games",
+    "prompt-pixel-effect-animations",
+    "stage-pixel-effect-impact"
+  ],
+  "source": "User-owned local ColeForge skills; original third-party notices retained",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 34,
+      "sha256": "8251dca59a3671e9082e1aea360798a07eb9fde55c0017b571fb36789f22bb79"
+    },
+    {
+      "path": "Install-Animation-Skills.cmd",
+      "bytes": 272,
+      "sha256": "634dfad8d2bcd41f086bd761a722e0b5d2b531578b4d6e38d5d6f41a60caba69"
+    },
+    {
+      "path": "install.ps1",
+      "bytes": 4669,
+      "sha256": "d2f4c58bb1110bc4e9f8d97d8b39fd6f68e6e74a77a0da5fd96f01a2b999ed43"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6220,
+      "sha256": "eb2ab20521828ca43acd7f63accca3195d52657e88996154edb528aa27d7001d"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 185,
+      "sha256": "fadb5fe00fc79808f384fb8b2082fc9b433dd142c5b8bb833bf598ad5af946f7"
+    },
+    {
+      "path": "Setup-Animation-Tools.cmd",
+      "bytes": 208,
+      "sha256": "2e0653e202fc11146714377d5b8ada672d79faca866e8ec28383b187241e9540"
+    },
+    {
+      "path": "setup-tools.ps1",
+      "bytes": 1502,
+      "sha256": "e65795ea9a237d2d3519e990307618cae88b47d35b3ffed438ece1f32c1c8d14"
+    },
+    {
+      "path": "skills/clean-pixel-effect-gifs/assets/explosion.gif",
+      "bytes": 455284,
+      "sha256": "761364fbfd57b13163bc112f90489bdd5dec2511c673197eafb7ed954f5be18a"
+    },
+    {
+      "path": "skills/clean-pixel-effect-gifs/assets/explosion_sheet.json",
+      "bytes": 6069,
+      "sha256": "6118fc4b6e029b3fbe5eb32f1a3cb5f365480226b4590e8393cc05e79a40d2b8"
+    },
+    {
+      "path": "skills/clean-pixel-effect-gifs/assets/explosion_sheet.png",
+      "bytes": 69789,
+      "sha256": "161320ae98138cade678d726d8575fc16571605081c7b9faefee721e3c9632de"
+    },
+    {
+      "path": "skills/clean-pixel-effect-gifs/LICENSE",
+      "bytes": 1073,
+      "sha256": "eeab9703e27e39cd879cc840a4a7d80994b56af145aa1bbc220bd35b329a1271"
+    },
+    {
+      "path": "skills/clean-pixel-effect-gifs/references/cleanup.md",
+      "bytes": 10971,
+      "sha256": "23c6ee7dccd1a976cb8212b0d138a92472430d4f92ea71243b02179019a60f10"
+    },
+    {
+      "path": "skills/clean-pixel-effect-gifs/references/setup.md",
+      "bytes": 481,
+      "sha256": "b3cb48563c7e36d78345e5bb7c26025b1cb2baa449e8da152732d3342e5ffb48"
+    },
+    {
+      "path": "skills/clean-pixel-effect-gifs/requirements.txt",
+      "bytes": 332,
+      "sha256": "55ee3e72bd159329c2d08ea7cd6ec7d585e06bfecae54a0f7d673c76171dc1ef"
+    },
+    {
+      "path": "skills/clean-pixel-effect-gifs/scripts/clean_gif.py",
+      "bytes": 20464,
+      "sha256": "6dc02b035f04686a4864fb569f06ef8fcf436f2a65a0e61455bb4e43f168309d"
+    },
+    {
+      "path": "skills/clean-pixel-effect-gifs/scripts/pixelcore.py",
+      "bytes": 11650,
+      "sha256": "ea84bf386cd24ef7becb58f547938cfe1add719aad9d20e599ebcf4fa8e78e8e"
+    },
+    {
+      "path": "skills/clean-pixel-effect-gifs/SKILL.md",
+      "bytes": 3359,
+      "sha256": "07da691ebd753d253c99e81b45940c78e511bd88624831b2bcbdab56652f59fd"
+    },
+    {
+      "path": "skills/coleforge-art-direction/agents/openai.yaml",
+      "bytes": 224,
+      "sha256": "c608fdf5a6c361b3da3cb993bcb14d7fdd5d8cd7729428d1c811f89225e3eee9"
+    },
+    {
+      "path": "skills/coleforge-art-direction/references/retro-art-direction.md",
+      "bytes": 10251,
+      "sha256": "7ccc738102357f86b06417a167a8b20b4c71bb98e7ddbc285b8fc84e3a72906f"
+    },
+    {
+      "path": "skills/coleforge-art-direction/references/style-foundation.md",
+      "bytes": 3566,
+      "sha256": "7ca32226cf12efea981056e6275294a560065ab911beee1823e0df8b14d0083a"
+    },
+    {
+      "path": "skills/coleforge-art-direction/SKILL.md",
+      "bytes": 4559,
+      "sha256": "48371d226c087aef3586a7f14bce2690e2436c56761eddcd0a0927b6224ac70c"
+    },
+    {
+      "path": "skills/coleforge-aseprite/agents/openai.yaml",
+      "bytes": 202,
+      "sha256": "82f6fdcd8434ded45a683847a5f2079d56a4cf766e0982b2c7611ba75df137fa"
+    },
+    {
+      "path": "skills/coleforge-aseprite/SKILL.md",
+      "bytes": 3076,
+      "sha256": "92bc26f91dcf3e540f96213fa9868f5e6425c6b78674fd298da70a41a8846900"
+    },
+    {
+      "path": "skills/coleforge-beat-em-up-attack-combo-frames/agents/openai.yaml",
+      "bytes": 305,
+      "sha256": "9308e07213c7ef4f0099b19f01c1542343da2adc39b620b9811d5ddac1802427"
+    },
+    {
+      "path": "skills/coleforge-beat-em-up-attack-combo-frames/references/classic-reference-study.md",
+      "bytes": 5763,
+      "sha256": "4f91bad4ed214199e3df8cea811a6a5a5b818475c87b4f40f37090f007907d60"
+    },
+    {
+      "path": "skills/coleforge-beat-em-up-attack-combo-frames/references/example-combo-plan.json",
+      "bytes": 743,
+      "sha256": "59994780efa42d807ef15994f76bf168aa339f5fdc7a72aafaf8341546f3906c"
+    },
+    {
+      "path": "skills/coleforge-beat-em-up-attack-combo-frames/references/move-patterns.md",
+      "bytes": 1895,
+      "sha256": "7b6420383c3aee8cc32c0c0e44d949313d1b534b5b3dd26474ef10bd5c1772cf"
+    },
+    {
+      "path": "skills/coleforge-beat-em-up-attack-combo-frames/references/objects-and-layers.md",
+      "bytes": 2560,
+      "sha256": "004ebe3ac50ef3b1b6df2c44a3887545d0942557a09801325a84a4d3b735e818"
+    },
+    {
+      "path": "skills/coleforge-beat-em-up-attack-combo-frames/references/openbor-integration-lessons.md",
+      "bytes": 3654,
+      "sha256": "75d2732115c507eed3d420ebc2bd7613000c4a0ddad1412ffc43b480a463a767"
+    },
+    {
+      "path": "skills/coleforge-beat-em-up-attack-combo-frames/scripts/check_combat_plan.py",
+      "bytes": 1641,
+      "sha256": "03dfcf81a324d9102b2022ae55541a5d3158a1b00c3e5af0170a2f4192eb14fd"
+    },
+    {
+      "path": "skills/coleforge-beat-em-up-attack-combo-frames/SKILL.md",
+      "bytes": 8703,
+      "sha256": "bb1e588ebb30c041a52bfd8c3e14d056d1536db1288f4aa8060a9fb033a2bb2a"
+    },
+    {
+      "path": "skills/coleforge-even-frame-dimensions/SKILL.md",
+      "bytes": 1882,
+      "sha256": "360930b7d790c7983aff8b7b7a558d24834bcfa99f53bdae8efd5c424d5ec399"
+    },
+    {
+      "path": "skills/coleforge-portability/agents/openai.yaml",
+      "bytes": 230,
+      "sha256": "8113ff8fd55390695111f49894bf47057a72b16216da883fac575eafb541bf3c"
+    },
+    {
+      "path": "skills/coleforge-portability/references/authored-graphics.md",
+      "bytes": 5896,
+      "sha256": "55d3936b5c2377e34d90080aaa2aadf9f6767e269779094d9a877f12a9cb7f57"
+    },
+    {
+      "path": "skills/coleforge-portability/SKILL.md",
+      "bytes": 4584,
+      "sha256": "a727c93ef4732cf7976f7834a93d2da08011b3fb122fcd18337a647b286c6f43"
+    },
+    {
+      "path": "skills/coleforge-sprite-clarity/agents/openai.yaml",
+      "bytes": 278,
+      "sha256": "51efd364381aeb02707e13da04f2d3f617b4edf082751072af99ef1f9c76eab6"
+    },
+    {
+      "path": "skills/coleforge-sprite-clarity/SKILL.md",
+      "bytes": 6449,
+      "sha256": "ad7711bd4e8a88940197e6d244c06c2505aeaeb075a443d21001314ec74ec309"
+    },
+    {
+      "path": "skills/coleforge-sprite-tools/agents/openai.yaml",
+      "bytes": 218,
+      "sha256": "21f22eebcdf01836eab0f22ec26a2284a6690be3ccf3d7b2842a31a3eddf5344"
+    },
+    {
+      "path": "skills/coleforge-sprite-tools/references/tools.md",
+      "bytes": 1004,
+      "sha256": "8a652e295ebd422ed2ec46b49f0fc014899dcfc2603149a3d74b7973f3fcbb94"
+    },
+    {
+      "path": "skills/coleforge-sprite-tools/SKILL.md",
+      "bytes": 5051,
+      "sha256": "343ce7ea45f06150a3cd6cbbd9be763f5626a3045bbd8df986462353ee543cfe"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/agents/openai.yaml",
+      "bytes": 276,
+      "sha256": "b88433d718054317232ab542264a9dedaff37a0df67e1e4cc2fc5fde1eec14d4"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/assets/accepted-example/Tyler-run.png",
+      "bytes": 901869,
+      "sha256": "9ba6abef80713197b39a85ea924fad5376668e63b6e1afd2f243802613a2dbb3"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/assets/accepted-example/Tyler-walk.png",
+      "bytes": 704213,
+      "sha256": "590a95dc810365a7083b0ba5dd66e60c70e29d7258f0b11973a334463c77a403"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/assets/elementalist-tools/build_fullframe_locomotion.py",
+      "bytes": 15668,
+      "sha256": "f3edc4ed5e68f45d0133d38986bedfa9b7b718912d368c57b4bc10b517c939d2"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/assets/elementalist-tools/export_animation.lua",
+      "bytes": 991,
+      "sha256": "2aec3d02c1d56265cac9a6d8e5813cef82d143d915089e3a28d08783ac71c3b0"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/assets/motion/run-motion.png",
+      "bytes": 42494,
+      "sha256": "cccaef76e889b624fc28975c032bcc32111406b8b417478b87288dfce9ad2e14"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/assets/motion/run-motion.webp",
+      "bytes": 12186,
+      "sha256": "50c5f7239b3da1ea93c68caef1454eddc5772dd7f556dcf65da5d1b3f7abfe55"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/assets/motion/walk-motion.png",
+      "bytes": 42169,
+      "sha256": "a71db3ff7bc9cc2eca25bf828bb11753b7db79a1720a941cb6a63131492842c5"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/assets/motion/walk-motion.webp",
+      "bytes": 12058,
+      "sha256": "4506900146ec685168c71f0d315054b3f295434fdc96e3ca7c67bf021c900bf9"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/references/accepted-elementalist-recipe.md",
+      "bytes": 5450,
+      "sha256": "6e240513ac28e0377c9e119d352c3d6ae64e8efd5a4744feef8562737bf0f925"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/references/accepted-tyler-run-prompt.json",
+      "bytes": 2058,
+      "sha256": "014fe8e1ce44f2efb84b0ee5f06add799ccecf6c0562d616b2a342b24ffb1b04"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/references/accepted-tyler-walk-prompt.json",
+      "bytes": 2158,
+      "sha256": "51f0bab65f1b6b4df18770e140c92fa07ed0189854b273af4b39887b02a5d1bc"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/references/export-and-verification.md",
+      "bytes": 3827,
+      "sha256": "27044fe7f58b338523bc2c0f19d6d7d940dec613098844696118b342bc9bab2c"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/references/prompt-patterns.md",
+      "bytes": 2601,
+      "sha256": "82bdbf7d9dc50787818e70b060295f78b518df325bd2f4a12146a939d3db2480"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/scripts/check_locomotion.py",
+      "bytes": 2816,
+      "sha256": "af09fe7ff86b21dc5618722be90ed2b1cc1059714ac76a18c25edc3528b53bdc"
+    },
+    {
+      "path": "skills/coleforge-walk-run-frames/SKILL.md",
+      "bytes": 7514,
+      "sha256": "f85c052d2d04a1ee5f97c4b5e6a7159b1705c809d29def960c87a2d810c54220"
+    },
+    {
+      "path": "skills/paint-pixel-background-relighting/assets/canyon.png",
+      "bytes": 45158,
+      "sha256": "86dfea0d8397227e147c035c2e3f3d35a83669db8415c7157954a616b75be125"
+    },
+    {
+      "path": "skills/paint-pixel-background-relighting/assets/canyon_relit.png",
+      "bytes": 1518235,
+      "sha256": "da35843a1a1f54b751afde30417d68637c8a248ab7653b6b7d565d821bc3da8c"
+    },
+    {
+      "path": "skills/paint-pixel-background-relighting/LICENSE",
+      "bytes": 1073,
+      "sha256": "eeab9703e27e39cd879cc840a4a7d80994b56af145aa1bbc220bd35b329a1271"
+    },
+    {
+      "path": "skills/paint-pixel-background-relighting/references/relight-prompt.md",
+      "bytes": 1862,
+      "sha256": "355734b87adbbf7a178ed8b7bd178d53ac7da31fadbbcac044cddd9ca08c651d"
+    },
+    {
+      "path": "skills/paint-pixel-background-relighting/requirements.txt",
+      "bytes": 332,
+      "sha256": "55ee3e72bd159329c2d08ea7cd6ec7d585e06bfecae54a0f7d673c76171dc1ef"
+    },
+    {
+      "path": "skills/paint-pixel-background-relighting/scripts/compare_lit.py",
+      "bytes": 1311,
+      "sha256": "e9ebbb17e258918aade8c0569443989be17040afccc048e06c7c337ef2f25eff"
+    },
+    {
+      "path": "skills/paint-pixel-background-relighting/scripts/make_lit.py",
+      "bytes": 6794,
+      "sha256": "3063ebdef029eb03b162b373b939415161313d3f3f9476d18cd08c479986b17d"
+    },
+    {
+      "path": "skills/paint-pixel-background-relighting/scripts/make_marked_input.py",
+      "bytes": 814,
+      "sha256": "45f68caaaa486e6d2d61320449e2a8d0dfe06d3317e7d69f4059b1ac3806bf06"
+    },
+    {
+      "path": "skills/paint-pixel-background-relighting/scripts/pixelcore.py",
+      "bytes": 11650,
+      "sha256": "ea84bf386cd24ef7becb58f547938cfe1add719aad9d20e599ebcf4fa8e78e8e"
+    },
+    {
+      "path": "skills/paint-pixel-background-relighting/SKILL.md",
+      "bytes": 3111,
+      "sha256": "0263d4f9ca688ce8416dbde3e159ed1b6606d56c976c00e45b4cfed30d15f9dd"
+    },
+    {
+      "path": "skills/portable-sprite-games/SKILL.md",
+      "bytes": 6653,
+      "sha256": "b673fd81248e89548c8268df19b55d536319358ab7b5e3f8eb50e93263544ad8"
+    },
+    {
+      "path": "skills/prompt-pixel-effect-animations/LICENSE",
+      "bytes": 1073,
+      "sha256": "eeab9703e27e39cd879cc840a4a7d80994b56af145aa1bbc220bd35b329a1271"
+    },
+    {
+      "path": "skills/prompt-pixel-effect-animations/references/prompts.md",
+      "bytes": 8382,
+      "sha256": "d5226c1669bb9e1d4ad5ef641cef0982ddaaa4f94876dcdd25d02960dc3dc251"
+    },
+    {
+      "path": "skills/prompt-pixel-effect-animations/SKILL.md",
+      "bytes": 2705,
+      "sha256": "8a93a28b23489db0b012430a9fc702241855611c33522c44c31928bfe86bb6d1"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/backgrounds/canyon.png",
+      "bytes": 45158,
+      "sha256": "86dfea0d8397227e147c035c2e3f3d35a83669db8415c7157954a616b75be125"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/backgrounds/canyon_lit.png",
+      "bytes": 47270,
+      "sha256": "04405cdcf8a3006da7de4ef580c7a800a76a9fe0b964138220e59178d352e567"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/blast.gd",
+      "bytes": 17260,
+      "sha256": "0eb3f8bc4d3a7f796e0385a427f5355d4020b4a2632c16caaeac5579e53f1af1"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/capture/.gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/main.gd",
+      "bytes": 10469,
+      "sha256": "4b0a99abf2af6ceb4a58c98ac2aa6faad363010d6e59b0d745de31cf0fb2012b"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/main.tscn",
+      "bytes": 151,
+      "sha256": "691f186c8088e1e3cdade677468dac5350ca987431a0b28a02b3c38949636f40"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/project.godot",
+      "bytes": 899,
+      "sha256": "c5b744f7e99b5d286b3b8e9a911edd3b081a1ffd1fad331201d2158e637f6170"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/shaders/dissolve.gdshader",
+      "bytes": 1151,
+      "sha256": "d9fd4e6e7480dfbc47c7efed9adabf0852a68647de271ec6fc32eece61a55eec"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/shaders/light_painted.gdshader",
+      "bytes": 2201,
+      "sha256": "89d1bc108260d5a86bb943dee3973c82be7ffc6b8b68792ac351bcc6b5a84e05"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/shaders/light_simple.gdshader",
+      "bytes": 2767,
+      "sha256": "aa3a6f31387179f75f56512a1353c76f75fb513ea33c0c52284585f824e9c29c"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/sprites/explosion_sheet.json",
+      "bytes": 6069,
+      "sha256": "6118fc4b6e029b3fbe5eb32f1a3cb5f365480226b4590e8393cc05e79a40d2b8"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/assets/godot/sprites/explosion_sheet.png",
+      "bytes": 69789,
+      "sha256": "161320ae98138cade678d726d8575fc16571605081c7b9faefee721e3c9632de"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/LICENSE",
+      "bytes": 1073,
+      "sha256": "eeab9703e27e39cd879cc840a4a7d80994b56af145aa1bbc220bd35b329a1271"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/references/godot-reference.md",
+      "bytes": 4799,
+      "sha256": "c2cf21a6c2efa1d0521cd2598d1a96b3966adb53e903fd9ad7709031b8a48535"
+    },
+    {
+      "path": "skills/stage-pixel-effect-impact/SKILL.md",
+      "bytes": 3281,
+      "sha256": "018b0ee8290b8ab5eeaceb3c6867e33be05dae437b483e4b9fed77948e302dc3"
+    }
+  ]
+}

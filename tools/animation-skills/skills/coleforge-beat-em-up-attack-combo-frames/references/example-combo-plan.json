@@ -1,0 +1,18 @@
+{
+  "body_unit":128,
+  "root":[96,167],
+  "moves":[
+    {"id":"jab","frames":[
+      {"phase":"startup","duration_ms":40,"hitboxes":[]},
+      {"phase":"startup","duration_ms":40,"hitboxes":[]},
+      {"phase":"active","duration_ms":70,"hitboxes":[{"id":"jab-1","rect":[110,77,55,25],"damage":4}]},
+      {"phase":"recovery","duration_ms":60,"hitboxes":[]},
+      {"phase":"recovery","duration_ms":70,"hitboxes":[]}
+    ],"cancel":{"from_ms":150,"to_ms":240,"next":["cross"]}},
+    {"id":"cross","frames":[
+      {"phase":"startup","duration_ms":80,"hitboxes":[]},
+      {"phase":"active","duration_ms":70,"hitboxes":[{"id":"cross-1","rect":[110,75,65,30],"damage":6}]},
+      {"phase":"recovery","duration_ms":140,"hitboxes":[]}
+    ]}
+  ]
+}

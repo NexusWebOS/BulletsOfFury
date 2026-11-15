@@ -1,0 +1,4 @@
+interface:
+  display_name: "ColeForge Sprite Clarity"
+  short_description: "Keep ColeForge sprites and animation frames crisp"
+  default_prompt: "Use $coleforge-sprite-clarity to check and fix the native detail, exports and in-game sharpness of my ColeForge sprite animations."

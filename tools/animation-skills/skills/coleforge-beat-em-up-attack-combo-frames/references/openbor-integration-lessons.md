@@ -1,0 +1,18 @@
+# Elementalist native lessons, 2026-11-05
+
+Observed in OpenBOR 4.0 commit `65a7f0b41aee87fe4084e538634b4ed73236f871`; inspect another revision rather than assuming identical commands or VM behavior.
+
+- Model input hook header is **`keyscript data/scripts/prop_keys.c`** in this build. The engine handler/documentation may call its event entitykeyscript, but that literal model command was ignored.
+- `data/script.txt` must allocate entity-variable slots (`maxentityvars 24` for this implementation). Default was zero. Preserve unrelated settings when raising this allocation.
+- Background sprites loaded by `loadsprite` require **indexed PNG**, not RGBA PNG. Reserve transparent index 0; own prop model banks share their own palette, added player actions use the player's existing model palette.
+- Validate a handle in **separate guard statements** before native property/variable calls. A combined orphan condition containing `getentityvar(NULL(),0)` still evaluated that native call in the tested script VM and caused a shutdown. Test carrier loss and deleted objects, not only healthy steady-state movement.
+- `executeanimation` installs ordinary character action behavior. Used on a prop, it made the completed death bank fall back to idle before native obstacle cleanup could remove it. Use `changeentityproperty(prop,"animation",ANI,1)` for object animation selection; keep the native obstacle death handler in charge. Whole fighters can still use `executeanimation` appropriately.
+- Setting `health` above current `maxhealth` clamps it. A QA victim requested at 100 HP was actually at its 34 HP maximum. Raise maxhealth first or measure the actual pre-hit value; the apparent 88-damage result was one correct 22-damage hit leaving 12 HP.
+- For throws, reserve one owner immediately, latch release on the authored extension pose, enable a native attack only in flight, use `attackone 1`, and turn attacking off in the did-hit hook. Native damage/reaction and owner credit should remain native. On impact play the object's material bank at impact height, then let the object/remnant fall to the real basemap floor. Retain damaged drawings through lift, flight and put-down.
+- Disable ordinary controller thinking only during reserved carry states, record prior AI/grab flags, and restore them on throw, drop, hit, death, missing object and lost player handle. Do not assume every character originally had AI flag zero.
+- Explicit durations use centiseconds in model files, milliseconds in Aseprite, and `game_speed=200` ticks/sec in scripts. Promote elapsed-time differences to floating point before calculating seconds.
+- A repeated 2560-pixel facade strip cannot simply be drawn twice over a 3840-pixel street: the second instance covers the stairs. Use a clipped/short final authored strip ending at the route seam.
+
+Implemented original assets: four independently damageable prop models, carryable trash can and wooden barrel, complete lift/hold/eight-frame carry-walk/throw drawings for Tyler and Damien, three separate street/sky/city layers and an eight-frame vent. Existing stairs/opposite wall/platform/train were converted to a compatible pixel grid and palette while retaining route geometry. They were **not newly generated** in this pass.
+
+Native tests cover both players, all carry-walk phases, actual first pickup through the model input hook, explicit later input edges, exclusive ownership, one hit, co-op safety, impact breakup, cleanup, interruption, preserved damage, death and lost player handles. Source checks and frame coverage supplement visual review; they do not prove physical controllers or online sessions were tested.
