@@ -1,0 +1,3574 @@
+{
+  "generator": "built-in image_gen",
+  "spritecookUsed": false,
+  "pilots": {
+    "cole": {
+      "key": "hq20_cole_performance",
+      "path": "assets/game/shared/cinematics/hq_animation_1115/cole.webp",
+      "w": 384,
+      "h": 384,
+      "cols": 4,
+      "frames": 16,
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cheerFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pivot": [
+        192,
+        360
+      ],
+      "bodyHeight": 300,
+      "sha256": "1ac3a88ddf96d0ff433ffa73db75b53fe58abcc371afd2e0590ea080421eb7d4",
+      "registration": [
+        {
+          "sourceRect": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "sourceGroundPivot": [
+            156,
+            305
+          ],
+          "translation": [
+            36,
+            55
+          ],
+          "visibleBounds": [
+            105,
+            60,
+            294,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            0,
+            627,
+            313
+          ],
+          "sourceGroundPivot": [
+            150,
+            305
+          ],
+          "translation": [
+            42,
+            55
+          ],
+          "visibleBounds": [
+            131,
+            61,
+            280,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            0,
+            940,
+            313
+          ],
+          "sourceGroundPivot": [
+            168,
+            305
+          ],
+          "translation": [
+            24,
+            55
+          ],
+          "visibleBounds": [
+            138,
+            62,
+            231,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            0,
+            1254,
+            313
+          ],
+          "sourceGroundPivot": [
+            172,
+            305
+          ],
+          "translation": [
+            20,
+            55
+          ],
+          "visibleBounds": [
+            130,
+            61,
+            260,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            313,
+            313,
+            627
+          ],
+          "sourceGroundPivot": [
+            154,
+            305
+          ],
+          "translation": [
+            38,
+            55
+          ],
+          "visibleBounds": [
+            103,
+            61,
+            307,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            313,
+            627,
+            627
+          ],
+          "sourceGroundPivot": [
+            172,
+            305
+          ],
+          "translation": [
+            20,
+            55
+          ],
+          "visibleBounds": [
+            127,
+            62,
+            260,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            313,
+            940,
+            627
+          ],
+          "sourceGroundPivot": [
+            154,
+            304
+          ],
+          "translation": [
+            38,
+            56
+          ],
+          "visibleBounds": [
+            151,
+            63,
+            259,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            313,
+            1254,
+            627
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            140,
+            61,
+            264,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            627,
+            313,
+            940
+          ],
+          "sourceGroundPivot": [
+            174,
+            306
+          ],
+          "translation": [
+            18,
+            54
+          ],
+          "visibleBounds": [
+            109,
+            60,
+            244,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            627,
+            627,
+            940
+          ],
+          "sourceGroundPivot": [
+            163,
+            306
+          ],
+          "translation": [
+            29,
+            54
+          ],
+          "visibleBounds": [
+            108,
+            59,
+            270,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "sourceGroundPivot": [
+            162,
+            306
+          ],
+          "translation": [
+            30,
+            54
+          ],
+          "visibleBounds": [
+            84,
+            59,
+            284,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "sourceGroundPivot": [
+            164,
+            306
+          ],
+          "translation": [
+            28,
+            54
+          ],
+          "visibleBounds": [
+            68,
+            56,
+            310,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            940,
+            313,
+            1254
+          ],
+          "sourceGroundPivot": [
+            162,
+            307
+          ],
+          "translation": [
+            30,
+            53
+          ],
+          "visibleBounds": [
+            112,
+            61,
+            272,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            940,
+            627,
+            1254
+          ],
+          "sourceGroundPivot": [
+            163,
+            307
+          ],
+          "translation": [
+            29,
+            53
+          ],
+          "visibleBounds": [
+            97,
+            61,
+            277,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "sourceGroundPivot": [
+            173,
+            307
+          ],
+          "translation": [
+            19,
+            53
+          ],
+          "visibleBounds": [
+            96,
+            61,
+            245,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "sourceGroundPivot": [
+            173,
+            307
+          ],
+          "translation": [
+            19,
+            53
+          ],
+          "visibleBounds": [
+            110,
+            62,
+            244,
+            360
+          ]
+        }
+      ],
+      "source": "_ART_SOURCES/hq_animation_1115/cole-source.png",
+      "reference": "_ART_SOURCES/hq_animation_1115/cole-reference.png"
+    },
+    "axel": {
+      "key": "hq20_axel_performance",
+      "path": "assets/game/shared/cinematics/hq_animation_1115/axel.webp",
+      "w": 384,
+      "h": 384,
+      "cols": 4,
+      "frames": 16,
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cheerFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pivot": [
+        192,
+        360
+      ],
+      "bodyHeight": 300,
+      "sha256": "edea5f0db7cd3287d7b2d393995854425db32277d353b2be66b3db1a69f72028",
+      "registration": [
+        {
+          "sourceRect": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "sourceGroundPivot": [
+            155,
+            303
+          ],
+          "translation": [
+            37,
+            57
+          ],
+          "visibleBounds": [
+            112,
+            67,
+            297,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            0,
+            627,
+            313
+          ],
+          "sourceGroundPivot": [
+            158,
+            303
+          ],
+          "translation": [
+            34,
+            57
+          ],
+          "visibleBounds": [
+            123,
+            69,
+            280,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            0,
+            940,
+            313
+          ],
+          "sourceGroundPivot": [
+            160,
+            303
+          ],
+          "translation": [
+            32,
+            57
+          ],
+          "visibleBounds": [
+            138,
+            67,
+            252,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            0,
+            1254,
+            313
+          ],
+          "sourceGroundPivot": [
+            169,
+            303
+          ],
+          "translation": [
+            23,
+            57
+          ],
+          "visibleBounds": [
+            112,
+            63,
+            263,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            313,
+            313,
+            627
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            104,
+            61,
+            296,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            313,
+            627,
+            627
+          ],
+          "sourceGroundPivot": [
+            158,
+            303
+          ],
+          "translation": [
+            34,
+            57
+          ],
+          "visibleBounds": [
+            99,
+            66,
+            265,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            313,
+            940,
+            627
+          ],
+          "sourceGroundPivot": [
+            163,
+            306
+          ],
+          "translation": [
+            29,
+            54
+          ],
+          "visibleBounds": [
+            143,
+            59,
+            239,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            313,
+            1254,
+            627
+          ],
+          "sourceGroundPivot": [
+            171,
+            306
+          ],
+          "translation": [
+            21,
+            54
+          ],
+          "visibleBounds": [
+            122,
+            58,
+            255,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            627,
+            313,
+            940
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            124,
+            64,
+            266,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            627,
+            627,
+            940
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            98,
+            63,
+            298,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            95,
+            61,
+            310,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            77,
+            60,
+            319,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            940,
+            313,
+            1254
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            104,
+            64,
+            286,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            940,
+            627,
+            1254
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            112,
+            64,
+            290,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            108,
+            64,
+            305,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            124,
+            64,
+            266,
+            360
+          ]
+        }
+      ],
+      "source": "_ART_SOURCES/hq_animation_1115/axel-source.png",
+      "reference": "_ART_SOURCES/hq_animation_1115/axel-reference.png"
+    },
+    "decker": {
+      "key": "hq20_decker_performance",
+      "path": "assets/game/shared/cinematics/hq_animation_1115/decker.webp",
+      "w": 384,
+      "h": 384,
+      "cols": 4,
+      "frames": 16,
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cheerFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pivot": [
+        192,
+        360
+      ],
+      "bodyHeight": 300,
+      "sha256": "33f5926da4e21584d84977976b3fdaa44416dd8776ee5e2120ec5307f6edaebd",
+      "registration": [
+        {
+          "sourceRect": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "sourceGroundPivot": [
+            154,
+            305
+          ],
+          "translation": [
+            38,
+            55
+          ],
+          "visibleBounds": [
+            120,
+            65,
+            285,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            0,
+            627,
+            313
+          ],
+          "sourceGroundPivot": [
+            155,
+            305
+          ],
+          "translation": [
+            37,
+            55
+          ],
+          "visibleBounds": [
+            123,
+            66,
+            264,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            0,
+            940,
+            313
+          ],
+          "sourceGroundPivot": [
+            160,
+            305
+          ],
+          "translation": [
+            32,
+            55
+          ],
+          "visibleBounds": [
+            136,
+            66,
+            241,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            0,
+            1254,
+            313
+          ],
+          "sourceGroundPivot": [
+            173,
+            305
+          ],
+          "translation": [
+            19,
+            55
+          ],
+          "visibleBounds": [
+            122,
+            65,
+            250,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            313,
+            313,
+            627
+          ],
+          "sourceGroundPivot": [
+            165,
+            306
+          ],
+          "translation": [
+            27,
+            54
+          ],
+          "visibleBounds": [
+            108,
+            64,
+            290,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            313,
+            627,
+            627
+          ],
+          "sourceGroundPivot": [
+            164,
+            305
+          ],
+          "translation": [
+            28,
+            55
+          ],
+          "visibleBounds": [
+            116,
+            68,
+            256,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            313,
+            940,
+            627
+          ],
+          "sourceGroundPivot": [
+            154,
+            306
+          ],
+          "translation": [
+            38,
+            54
+          ],
+          "visibleBounds": [
+            152,
+            66,
+            256,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            313,
+            1254,
+            627
+          ],
+          "sourceGroundPivot": [
+            180,
+            307
+          ],
+          "translation": [
+            12,
+            53
+          ],
+          "visibleBounds": [
+            106,
+            63,
+            258,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            627,
+            313,
+            940
+          ],
+          "sourceGroundPivot": [
+            153,
+            304
+          ],
+          "translation": [
+            39,
+            56
+          ],
+          "visibleBounds": [
+            136,
+            66,
+            265,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            627,
+            627,
+            940
+          ],
+          "sourceGroundPivot": [
+            164,
+            304
+          ],
+          "translation": [
+            28,
+            56
+          ],
+          "visibleBounds": [
+            108,
+            66,
+            288,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "sourceGroundPivot": [
+            164,
+            304
+          ],
+          "translation": [
+            28,
+            56
+          ],
+          "visibleBounds": [
+            97,
+            65,
+            295,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "sourceGroundPivot": [
+            166,
+            304
+          ],
+          "translation": [
+            26,
+            56
+          ],
+          "visibleBounds": [
+            84,
+            61,
+            298,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            940,
+            313,
+            1254
+          ],
+          "sourceGroundPivot": [
+            166,
+            304
+          ],
+          "translation": [
+            26,
+            56
+          ],
+          "visibleBounds": [
+            120,
+            65,
+            261,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            940,
+            627,
+            1254
+          ],
+          "sourceGroundPivot": [
+            166,
+            303
+          ],
+          "translation": [
+            26,
+            57
+          ],
+          "visibleBounds": [
+            102,
+            66,
+            279,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "sourceGroundPivot": [
+            164,
+            304
+          ],
+          "translation": [
+            28,
+            56
+          ],
+          "visibleBounds": [
+            113,
+            66,
+            280,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "sourceGroundPivot": [
+            165,
+            303
+          ],
+          "translation": [
+            27,
+            57
+          ],
+          "visibleBounds": [
+            125,
+            67,
+            254,
+            360
+          ]
+        }
+      ],
+      "source": "_ART_SOURCES/hq_animation_1115/decker-source.png",
+      "reference": "_ART_SOURCES/hq_animation_1115/decker-reference.png"
+    },
+    "maverick": {
+      "key": "hq20_maverick_performance",
+      "path": "assets/game/shared/cinematics/hq_animation_1115/maverick.webp",
+      "w": 384,
+      "h": 384,
+      "cols": 4,
+      "frames": 16,
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cheerFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pivot": [
+        192,
+        360
+      ],
+      "bodyHeight": 300,
+      "sha256": "13c54090e012e6b54482bca152106bd97e9fd9d3a155e9a9d54fca723f9d21b8",
+      "registration": [
+        {
+          "sourceRect": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "sourceGroundPivot": [
+            152,
+            299
+          ],
+          "translation": [
+            40,
+            61
+          ],
+          "visibleBounds": [
+            123,
+            68,
+            300,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            0,
+            627,
+            313
+          ],
+          "sourceGroundPivot": [
+            147,
+            299
+          ],
+          "translation": [
+            45,
+            61
+          ],
+          "visibleBounds": [
+            126,
+            70,
+            257,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            0,
+            940,
+            313
+          ],
+          "sourceGroundPivot": [
+            156,
+            299
+          ],
+          "translation": [
+            36,
+            61
+          ],
+          "visibleBounds": [
+            123,
+            71,
+            258,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            0,
+            1254,
+            313
+          ],
+          "sourceGroundPivot": [
+            163,
+            299
+          ],
+          "translation": [
+            29,
+            61
+          ],
+          "visibleBounds": [
+            126,
+            68,
+            258,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            313,
+            313,
+            627
+          ],
+          "sourceGroundPivot": [
+            165,
+            300
+          ],
+          "translation": [
+            27,
+            60
+          ],
+          "visibleBounds": [
+            99,
+            68,
+            292,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            313,
+            627,
+            627
+          ],
+          "sourceGroundPivot": [
+            166,
+            301
+          ],
+          "translation": [
+            26,
+            59
+          ],
+          "visibleBounds": [
+            106,
+            69,
+            243,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            313,
+            940,
+            627
+          ],
+          "sourceGroundPivot": [
+            154,
+            300
+          ],
+          "translation": [
+            38,
+            60
+          ],
+          "visibleBounds": [
+            144,
+            70,
+            261,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            313,
+            1254,
+            627
+          ],
+          "sourceGroundPivot": [
+            176,
+            300
+          ],
+          "translation": [
+            16,
+            60
+          ],
+          "visibleBounds": [
+            108,
+            68,
+            247,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            627,
+            313,
+            940
+          ],
+          "sourceGroundPivot": [
+            162,
+            301
+          ],
+          "translation": [
+            30,
+            59
+          ],
+          "visibleBounds": [
+            126,
+            66,
+            259,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            627,
+            627,
+            940
+          ],
+          "sourceGroundPivot": [
+            164,
+            301
+          ],
+          "translation": [
+            28,
+            59
+          ],
+          "visibleBounds": [
+            110,
+            65,
+            294,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "sourceGroundPivot": [
+            164,
+            301
+          ],
+          "translation": [
+            28,
+            59
+          ],
+          "visibleBounds": [
+            107,
+            64,
+            292,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "sourceGroundPivot": [
+            166,
+            301
+          ],
+          "translation": [
+            26,
+            59
+          ],
+          "visibleBounds": [
+            67,
+            64,
+            298,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            940,
+            313,
+            1254
+          ],
+          "sourceGroundPivot": [
+            166,
+            301
+          ],
+          "translation": [
+            26,
+            59
+          ],
+          "visibleBounds": [
+            111,
+            68,
+            274,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            940,
+            627,
+            1254
+          ],
+          "sourceGroundPivot": [
+            165,
+            301
+          ],
+          "translation": [
+            27,
+            59
+          ],
+          "visibleBounds": [
+            110,
+            68,
+            277,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "sourceGroundPivot": [
+            164,
+            301
+          ],
+          "translation": [
+            28,
+            59
+          ],
+          "visibleBounds": [
+            114,
+            68,
+            284,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "sourceGroundPivot": [
+            164,
+            301
+          ],
+          "translation": [
+            28,
+            59
+          ],
+          "visibleBounds": [
+            125,
+            68,
+            259,
+            360
+          ]
+        }
+      ],
+      "source": "_ART_SOURCES/hq_animation_1115/maverick-source.png",
+      "reference": "_ART_SOURCES/hq_animation_1115/maverick-reference.png"
+    },
+    "freezer": {
+      "key": "hq20_freezer_performance",
+      "path": "assets/game/shared/cinematics/hq_animation_1115/freezer.webp",
+      "w": 384,
+      "h": 384,
+      "cols": 4,
+      "frames": 16,
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cheerFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pivot": [
+        192,
+        360
+      ],
+      "bodyHeight": 300,
+      "sha256": "19945bc384a1e77dc738ce8f912cf56daaef4bfb175bc796045664d3f3f91792",
+      "registration": [
+        {
+          "sourceRect": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "sourceGroundPivot": [
+            162,
+            308
+          ],
+          "translation": [
+            30,
+            52
+          ],
+          "visibleBounds": [
+            111,
+            63,
+            294,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            0,
+            627,
+            313
+          ],
+          "sourceGroundPivot": [
+            159,
+            304
+          ],
+          "translation": [
+            33,
+            56
+          ],
+          "visibleBounds": [
+            131,
+            67,
+            263,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            0,
+            940,
+            313
+          ],
+          "sourceGroundPivot": [
+            161,
+            308
+          ],
+          "translation": [
+            31,
+            52
+          ],
+          "visibleBounds": [
+            139,
+            63,
+            255,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            0,
+            1254,
+            313
+          ],
+          "sourceGroundPivot": [
+            155,
+            305
+          ],
+          "translation": [
+            37,
+            55
+          ],
+          "visibleBounds": [
+            143,
+            66,
+            275,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            313,
+            313,
+            627
+          ],
+          "sourceGroundPivot": [
+            163,
+            309
+          ],
+          "translation": [
+            29,
+            51
+          ],
+          "visibleBounds": [
+            111,
+            62,
+            296,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            313,
+            627,
+            627
+          ],
+          "sourceGroundPivot": [
+            152,
+            309
+          ],
+          "translation": [
+            40,
+            51
+          ],
+          "visibleBounds": [
+            125,
+            62,
+            280,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            313,
+            940,
+            627
+          ],
+          "sourceGroundPivot": [
+            166,
+            309
+          ],
+          "translation": [
+            26,
+            51
+          ],
+          "visibleBounds": [
+            136,
+            62,
+            231,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            313,
+            1254,
+            627
+          ],
+          "sourceGroundPivot": [
+            174,
+            308
+          ],
+          "translation": [
+            18,
+            52
+          ],
+          "visibleBounds": [
+            122,
+            63,
+            258,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            627,
+            313,
+            940
+          ],
+          "sourceGroundPivot": [
+            160,
+            307
+          ],
+          "translation": [
+            32,
+            53
+          ],
+          "visibleBounds": [
+            127,
+            64,
+            262,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            627,
+            627,
+            940
+          ],
+          "sourceGroundPivot": [
+            160,
+            307
+          ],
+          "translation": [
+            32,
+            53
+          ],
+          "visibleBounds": [
+            108,
+            66,
+            276,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "sourceGroundPivot": [
+            162,
+            305
+          ],
+          "translation": [
+            30,
+            55
+          ],
+          "visibleBounds": [
+            102,
+            67,
+            291,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "sourceGroundPivot": [
+            164,
+            305
+          ],
+          "translation": [
+            28,
+            55
+          ],
+          "visibleBounds": [
+            84,
+            66,
+            302,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            940,
+            313,
+            1254
+          ],
+          "sourceGroundPivot": [
+            166,
+            306
+          ],
+          "translation": [
+            26,
+            54
+          ],
+          "visibleBounds": [
+            115,
+            65,
+            272,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            940,
+            627,
+            1254
+          ],
+          "sourceGroundPivot": [
+            164,
+            306
+          ],
+          "translation": [
+            28,
+            54
+          ],
+          "visibleBounds": [
+            99,
+            64,
+            298,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "sourceGroundPivot": [
+            160,
+            307
+          ],
+          "translation": [
+            32,
+            53
+          ],
+          "visibleBounds": [
+            111,
+            64,
+            268,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "sourceGroundPivot": [
+            160,
+            307
+          ],
+          "translation": [
+            32,
+            53
+          ],
+          "visibleBounds": [
+            126,
+            64,
+            262,
+            360
+          ]
+        }
+      ],
+      "source": "_ART_SOURCES/hq_animation_1115/freezer-source.png",
+      "reference": "_ART_SOURCES/hq_animation_1115/freezer-reference.png"
+    },
+    "juggernaut": {
+      "key": "hq20_juggernaut_performance",
+      "path": "assets/game/shared/cinematics/hq_animation_1115/juggernaut.webp",
+      "w": 384,
+      "h": 384,
+      "cols": 4,
+      "frames": 16,
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cheerFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pivot": [
+        192,
+        360
+      ],
+      "bodyHeight": 300,
+      "sha256": "032da36a4460abcf8c9081161a66bd771c3c346cdaa0b72f14045b83f73a3b5d",
+      "registration": [
+        {
+          "sourceRect": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "sourceGroundPivot": [
+            156,
+            301
+          ],
+          "translation": [
+            36,
+            59
+          ],
+          "visibleBounds": [
+            100,
+            67,
+            293,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            0,
+            627,
+            313
+          ],
+          "sourceGroundPivot": [
+            144,
+            300
+          ],
+          "translation": [
+            48,
+            60
+          ],
+          "visibleBounds": [
+            125,
+            67,
+            266,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            0,
+            940,
+            313
+          ],
+          "sourceGroundPivot": [
+            160,
+            300
+          ],
+          "translation": [
+            32,
+            60
+          ],
+          "visibleBounds": [
+            134,
+            67,
+            250,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            0,
+            1254,
+            313
+          ],
+          "sourceGroundPivot": [
+            165,
+            300
+          ],
+          "translation": [
+            27,
+            60
+          ],
+          "visibleBounds": [
+            130,
+            67,
+            257,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            313,
+            313,
+            627
+          ],
+          "sourceGroundPivot": [
+            160,
+            298
+          ],
+          "translation": [
+            32,
+            62
+          ],
+          "visibleBounds": [
+            92,
+            69,
+            300,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            313,
+            627,
+            627
+          ],
+          "sourceGroundPivot": [
+            154,
+            299
+          ],
+          "translation": [
+            38,
+            61
+          ],
+          "visibleBounds": [
+            114,
+            68,
+            267,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            313,
+            940,
+            627
+          ],
+          "sourceGroundPivot": [
+            166,
+            299
+          ],
+          "translation": [
+            26,
+            61
+          ],
+          "visibleBounds": [
+            134,
+            68,
+            243,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            313,
+            1254,
+            627
+          ],
+          "sourceGroundPivot": [
+            165,
+            299
+          ],
+          "translation": [
+            27,
+            61
+          ],
+          "visibleBounds": [
+            124,
+            68,
+            248,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            627,
+            313,
+            940
+          ],
+          "sourceGroundPivot": [
+            169,
+            300
+          ],
+          "translation": [
+            23,
+            60
+          ],
+          "visibleBounds": [
+            91,
+            66,
+            257,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            627,
+            627,
+            940
+          ],
+          "sourceGroundPivot": [
+            162,
+            299
+          ],
+          "translation": [
+            30,
+            61
+          ],
+          "visibleBounds": [
+            82,
+            66,
+            294,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "sourceGroundPivot": [
+            160,
+            300
+          ],
+          "translation": [
+            32,
+            60
+          ],
+          "visibleBounds": [
+            81,
+            65,
+            295,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "sourceGroundPivot": [
+            160,
+            300
+          ],
+          "translation": [
+            32,
+            60
+          ],
+          "visibleBounds": [
+            63,
+            64,
+            321,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            940,
+            313,
+            1254
+          ],
+          "sourceGroundPivot": [
+            160,
+            300
+          ],
+          "translation": [
+            32,
+            60
+          ],
+          "visibleBounds": [
+            93,
+            66,
+            284,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            940,
+            627,
+            1254
+          ],
+          "sourceGroundPivot": [
+            160,
+            300
+          ],
+          "translation": [
+            32,
+            60
+          ],
+          "visibleBounds": [
+            86,
+            67,
+            277,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "sourceGroundPivot": [
+            160,
+            300
+          ],
+          "translation": [
+            32,
+            60
+          ],
+          "visibleBounds": [
+            92,
+            67,
+            278,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "sourceGroundPivot": [
+            171,
+            300
+          ],
+          "translation": [
+            21,
+            60
+          ],
+          "visibleBounds": [
+            96,
+            67,
+            254,
+            360
+          ]
+        }
+      ],
+      "source": "_ART_SOURCES/hq_animation_1115/juggernaut-source.png",
+      "reference": "_ART_SOURCES/hq_animation_1115/juggernaut-reference.png"
+    },
+    "yuri": {
+      "key": "hq20_yuri_performance",
+      "path": "assets/game/shared/cinematics/hq_animation_1115/yuri.webp",
+      "w": 384,
+      "h": 384,
+      "cols": 4,
+      "frames": 16,
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cheerFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pivot": [
+        192,
+        360
+      ],
+      "bodyHeight": 300,
+      "sha256": "e29527dc7f481eeefff4e1f699b83f89c9596236ac2f9e959edf8236bd16f2cf",
+      "registration": [
+        {
+          "sourceRect": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "sourceGroundPivot": [
+            168,
+            307
+          ],
+          "translation": [
+            24,
+            53
+          ],
+          "visibleBounds": [
+            108,
+            65,
+            292,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            0,
+            627,
+            313
+          ],
+          "sourceGroundPivot": [
+            161,
+            307
+          ],
+          "translation": [
+            31,
+            53
+          ],
+          "visibleBounds": [
+            129,
+            65,
+            271,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            0,
+            940,
+            313
+          ],
+          "sourceGroundPivot": [
+            174,
+            307
+          ],
+          "translation": [
+            18,
+            53
+          ],
+          "visibleBounds": [
+            147,
+            65,
+            241,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            0,
+            1254,
+            313
+          ],
+          "sourceGroundPivot": [
+            182,
+            307
+          ],
+          "translation": [
+            10,
+            53
+          ],
+          "visibleBounds": [
+            125,
+            64,
+            253,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            313,
+            313,
+            627
+          ],
+          "sourceGroundPivot": [
+            170,
+            307
+          ],
+          "translation": [
+            22,
+            53
+          ],
+          "visibleBounds": [
+            111,
+            64,
+            295,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            313,
+            627,
+            627
+          ],
+          "sourceGroundPivot": [
+            175,
+            307
+          ],
+          "translation": [
+            17,
+            53
+          ],
+          "visibleBounds": [
+            110,
+            64,
+            255,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            313,
+            940,
+            627
+          ],
+          "sourceGroundPivot": [
+            179,
+            308
+          ],
+          "translation": [
+            13,
+            52
+          ],
+          "visibleBounds": [
+            127,
+            64,
+            262,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            313,
+            1254,
+            627
+          ],
+          "sourceGroundPivot": [
+            192,
+            308
+          ],
+          "translation": [
+            0,
+            52
+          ],
+          "visibleBounds": [
+            118,
+            65,
+            249,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            627,
+            313,
+            940
+          ],
+          "sourceGroundPivot": [
+            174,
+            306
+          ],
+          "translation": [
+            18,
+            54
+          ],
+          "visibleBounds": [
+            126,
+            62,
+            254,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            627,
+            627,
+            940
+          ],
+          "sourceGroundPivot": [
+            174,
+            306
+          ],
+          "translation": [
+            18,
+            54
+          ],
+          "visibleBounds": [
+            115,
+            62,
+            279,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "sourceGroundPivot": [
+            174,
+            306
+          ],
+          "translation": [
+            18,
+            54
+          ],
+          "visibleBounds": [
+            108,
+            61,
+            290,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "sourceGroundPivot": [
+            175,
+            306
+          ],
+          "translation": [
+            17,
+            54
+          ],
+          "visibleBounds": [
+            79,
+            60,
+            294,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            940,
+            313,
+            1254
+          ],
+          "sourceGroundPivot": [
+            174,
+            306
+          ],
+          "translation": [
+            18,
+            54
+          ],
+          "visibleBounds": [
+            109,
+            60,
+            264,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            940,
+            627,
+            1254
+          ],
+          "sourceGroundPivot": [
+            175,
+            306
+          ],
+          "translation": [
+            17,
+            54
+          ],
+          "visibleBounds": [
+            109,
+            62,
+            285,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "sourceGroundPivot": [
+            174,
+            306
+          ],
+          "translation": [
+            18,
+            54
+          ],
+          "visibleBounds": [
+            108,
+            64,
+            273,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "sourceGroundPivot": [
+            174,
+            306
+          ],
+          "translation": [
+            18,
+            54
+          ],
+          "visibleBounds": [
+            127,
+            64,
+            255,
+            360
+          ]
+        }
+      ],
+      "source": "_ART_SOURCES/hq_animation_1115/yuri-source.png",
+      "reference": "_ART_SOURCES/hq_animation_1115/yuri-reference.png"
+    },
+    "lizzie": {
+      "key": "hq20_lizzie_performance",
+      "path": "assets/game/shared/cinematics/hq_animation_1115/lizzie.webp",
+      "w": 384,
+      "h": 384,
+      "cols": 4,
+      "frames": 16,
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cheerFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pivot": [
+        192,
+        360
+      ],
+      "bodyHeight": 300,
+      "sha256": "15ad8642d44ba46ae22cb2a8b18f06cbb7fbbfadb47f2cdc0716e34e25acd780",
+      "registration": [
+        {
+          "sourceRect": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "sourceGroundPivot": [
+            179,
+            301
+          ],
+          "translation": [
+            13,
+            59
+          ],
+          "visibleBounds": [
+            113,
+            69,
+            282,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            0,
+            627,
+            313
+          ],
+          "sourceGroundPivot": [
+            178,
+            299
+          ],
+          "translation": [
+            14,
+            61
+          ],
+          "visibleBounds": [
+            113,
+            71,
+            249,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            0,
+            940,
+            313
+          ],
+          "sourceGroundPivot": [
+            178,
+            299
+          ],
+          "translation": [
+            14,
+            61
+          ],
+          "visibleBounds": [
+            132,
+            71,
+            240,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            0,
+            1254,
+            313
+          ],
+          "sourceGroundPivot": [
+            181,
+            299
+          ],
+          "translation": [
+            11,
+            61
+          ],
+          "visibleBounds": [
+            124,
+            71,
+            240,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            313,
+            313,
+            627
+          ],
+          "sourceGroundPivot": [
+            184,
+            302
+          ],
+          "translation": [
+            8,
+            58
+          ],
+          "visibleBounds": [
+            109,
+            69,
+            289,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            313,
+            627,
+            627
+          ],
+          "sourceGroundPivot": [
+            184,
+            301
+          ],
+          "translation": [
+            8,
+            59
+          ],
+          "visibleBounds": [
+            130,
+            71,
+            227,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            313,
+            940,
+            627
+          ],
+          "sourceGroundPivot": [
+            178,
+            301
+          ],
+          "translation": [
+            14,
+            59
+          ],
+          "visibleBounds": [
+            140,
+            70,
+            228,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            313,
+            1254,
+            627
+          ],
+          "sourceGroundPivot": [
+            181,
+            302
+          ],
+          "translation": [
+            11,
+            58
+          ],
+          "visibleBounds": [
+            129,
+            69,
+            239,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            627,
+            313,
+            940
+          ],
+          "sourceGroundPivot": [
+            160,
+            304
+          ],
+          "translation": [
+            32,
+            56
+          ],
+          "visibleBounds": [
+            138,
+            68,
+            264,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            627,
+            627,
+            940
+          ],
+          "sourceGroundPivot": [
+            170,
+            304
+          ],
+          "translation": [
+            22,
+            56
+          ],
+          "visibleBounds": [
+            125,
+            67,
+            270,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "sourceGroundPivot": [
+            170,
+            304
+          ],
+          "translation": [
+            22,
+            56
+          ],
+          "visibleBounds": [
+            121,
+            66,
+            284,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "sourceGroundPivot": [
+            172,
+            304
+          ],
+          "translation": [
+            20,
+            56
+          ],
+          "visibleBounds": [
+            88,
+            66,
+            288,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            940,
+            313,
+            1254
+          ],
+          "sourceGroundPivot": [
+            172,
+            304
+          ],
+          "translation": [
+            20,
+            56
+          ],
+          "visibleBounds": [
+            113,
+            69,
+            261,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            940,
+            627,
+            1254
+          ],
+          "sourceGroundPivot": [
+            172,
+            304
+          ],
+          "translation": [
+            20,
+            56
+          ],
+          "visibleBounds": [
+            113,
+            69,
+            260,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "sourceGroundPivot": [
+            170,
+            304
+          ],
+          "translation": [
+            22,
+            56
+          ],
+          "visibleBounds": [
+            118,
+            69,
+            261,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "sourceGroundPivot": [
+            166,
+            304
+          ],
+          "translation": [
+            26,
+            56
+          ],
+          "visibleBounds": [
+            133,
+            69,
+            259,
+            360
+          ]
+        }
+      ],
+      "source": "_ART_SOURCES/hq_animation_1115/lizzie-source.png",
+      "reference": "_ART_SOURCES/hq_animation_1115/lizzie-reference.png"
+    },
+    "falva": {
+      "key": "hq20_falva_performance",
+      "path": "assets/game/shared/cinematics/hq_animation_1115/falva.webp",
+      "w": 384,
+      "h": 384,
+      "cols": 4,
+      "frames": 16,
+      "walkFrames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "cheerFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pivot": [
+        192,
+        360
+      ],
+      "bodyHeight": 300,
+      "sha256": "60c466beb4ac87661dd7da961059f847531b25a64fee655c3be78f045276a549",
+      "registration": [
+        {
+          "sourceRect": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "sourceGroundPivot": [
+            176,
+            307
+          ],
+          "translation": [
+            16,
+            53
+          ],
+          "visibleBounds": [
+            105,
+            63,
+            293,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            0,
+            627,
+            313
+          ],
+          "sourceGroundPivot": [
+            180,
+            307
+          ],
+          "translation": [
+            12,
+            53
+          ],
+          "visibleBounds": [
+            110,
+            62,
+            260,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            0,
+            940,
+            313
+          ],
+          "sourceGroundPivot": [
+            173,
+            307
+          ],
+          "translation": [
+            19,
+            53
+          ],
+          "visibleBounds": [
+            123,
+            61,
+            261,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            0,
+            1254,
+            313
+          ],
+          "sourceGroundPivot": [
+            192,
+            307
+          ],
+          "translation": [
+            0,
+            53
+          ],
+          "visibleBounds": [
+            119,
+            61,
+            250,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            313,
+            313,
+            627
+          ],
+          "sourceGroundPivot": [
+            188,
+            308
+          ],
+          "translation": [
+            4,
+            52
+          ],
+          "visibleBounds": [
+            102,
+            63,
+            300,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            313,
+            627,
+            627
+          ],
+          "sourceGroundPivot": [
+            190,
+            308
+          ],
+          "translation": [
+            2,
+            52
+          ],
+          "visibleBounds": [
+            115,
+            63,
+            232,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            313,
+            940,
+            627
+          ],
+          "sourceGroundPivot": [
+            174,
+            308
+          ],
+          "translation": [
+            18,
+            52
+          ],
+          "visibleBounds": [
+            140,
+            64,
+            256,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            313,
+            1254,
+            627
+          ],
+          "sourceGroundPivot": [
+            188,
+            308
+          ],
+          "translation": [
+            4,
+            52
+          ],
+          "visibleBounds": [
+            133,
+            64,
+            250,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            627,
+            313,
+            940
+          ],
+          "sourceGroundPivot": [
+            161,
+            308
+          ],
+          "translation": [
+            31,
+            52
+          ],
+          "visibleBounds": [
+            131,
+            61,
+            250,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            627,
+            627,
+            940
+          ],
+          "sourceGroundPivot": [
+            168,
+            308
+          ],
+          "translation": [
+            24,
+            52
+          ],
+          "visibleBounds": [
+            117,
+            61,
+            277,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "sourceGroundPivot": [
+            170,
+            308
+          ],
+          "translation": [
+            22,
+            52
+          ],
+          "visibleBounds": [
+            96,
+            60,
+            291,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "sourceGroundPivot": [
+            172,
+            308
+          ],
+          "translation": [
+            20,
+            52
+          ],
+          "visibleBounds": [
+            84,
+            58,
+            294,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            0,
+            940,
+            313,
+            1254
+          ],
+          "sourceGroundPivot": [
+            172,
+            308
+          ],
+          "translation": [
+            20,
+            52
+          ],
+          "visibleBounds": [
+            107,
+            60,
+            264,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            313,
+            940,
+            627,
+            1254
+          ],
+          "sourceGroundPivot": [
+            168,
+            308
+          ],
+          "translation": [
+            24,
+            52
+          ],
+          "visibleBounds": [
+            100,
+            61,
+            280,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "sourceGroundPivot": [
+            166,
+            308
+          ],
+          "translation": [
+            26,
+            52
+          ],
+          "visibleBounds": [
+            123,
+            61,
+            271,
+            360
+          ]
+        },
+        {
+          "sourceRect": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "sourceGroundPivot": [
+            162,
+            308
+          ],
+          "translation": [
+            30,
+            52
+          ],
+          "visibleBounds": [
+            132,
+            61,
+            250,
+            360
+          ]
+        }
+      ],
+      "source": "_ART_SOURCES/hq_animation_1115/falva-source.png",
+      "reference": "_ART_SOURCES/hq_animation_1115/falva-reference.png"
+    }
+  },
+  "door": {
+    "key": "hq20_hq_door",
+    "path": "assets/game/shared/cinematics/hq_animation_1115/door-slide.webp",
+    "w": 418,
+    "h": 236,
+    "cols": 4,
+    "frames": 16,
+    "aperture": [
+      176,
+      90,
+      242,
+      118
+    ],
+    "generatedCavityRect": [
+      666,
+      350,
+      938,
+      477
+    ],
+    "panelTravel": 33,
+    "sha256": "9c1092d2d0076df3b0aa3d7319dca88eb7f4ac546774e29b9830df25c8373aa0",
+    "source": "_ART_SOURCES/hq_animation_1115/door-source.png",
+    "mechanism": "actual approved two leaves translate into side pockets; fixed scenery and cavity, no crossfade"
+  },
+  "normalization": {
+    "alphaCutoff": 192,
+    "opaqueBody": true,
+    "perFrameScale": false,
+    "cell": [
+      384,
+      384
+    ],
+    "pivot": [
+      192,
+      360
+    ],
+    "registration": "median central waist segment and grounded boot baseline; translation only; all source RGB retained for accepted alpha pixels"
+  },
+  "skills": [
+    "arcade-graphics (Cadillacs and Dinosaurs material/acting study)",
+    "game-studio:sprite-pipeline",
+    "imagegen",
+    "boss-cinematics native handoff rules"
+  ],
+  "prompts": {
+    "cole": "FRAME FORMAT: 16 frames in one exact 4-column by 4-row grid; square 384x384 cells, 1536x1536 sheet. Identical even cell dimensions, one common proportional scale and fixed foot pivot (192,352) in every frame, standing body about300px high. Transparent background including all margins. No grid lines, labels or text. Use case: identity-preserve production game sprites. Image 1 is the approved actual Cole from Bullets of Fury and is the identity and outfit reference, not a sheet to reuse. Generate a NEW smooth whole-sheet animation of this exact brown swept-haired, blue-eyed, short-bearded pilot in olive green flight suit, shoulder insignia, dark harness, gloves, knee pads and black boots. Crisp richly shaded 16-bit arcade pixel art matching the source, strong dark contours, clean material clusters; full body, normal human proportions. First eight frames (first two rows), strictly chronological seamless WALK RIGHT cycle, right-facing side/three-quarter view: heel contact, weight-down, passing, high point, opposite heel contact, opposite weight-down, opposite passing, high point. Proper alternating footfalls and counter-swinging arms, not marching/running, no sliding feet, no root translation, head and torso level within3px, no costume changes. Last eight frames (last two rows), separate chronological front three-quarter CELEBRATION loop: relaxed smiling stance, arms begin to open, raises forearms, laughs warmly with arms raised, fist pump, lowers forearms, relaxed smile, return to initial relaxed stance. Feet grounded, no airborne jump, no sudden view switches within this loop. Keep the entire character comfortably inside every slot. All sixteen drawings must be distinct true joint/anatomy animation, no displaced static cutouts, no ghosts, no scenery, no shadows, no glow or effects. Preserve Cole's reference likeness and current green costume exactly.",
+    "door": "FRAME FORMAT: One complete 1672x944 pixel landscape frame, proportionally upscaled4x from the supplied418x236 approved background. Use case precise-object-edit. The input is the approved Fury HQ scene, identity and geometry reference AND edit target. Preserve the same overhead angle, blue geodesic dome, coast, jungle, paving, gray metal frame, cyan fixtures and circular pad composition. Make ONLY the main doorway FULLY OPEN: the blue vertically ribbed two door leaves at horizontal42%-58%, vertical38%-50% have retracted completely into the side wall pockets. There must be NO flat gray shutter and NO blue grate over the opening. Show a clearly deep dark hangar beyond, floor receding north into darkness, two parallel illuminated yellow guide strips and sidewall cyan light strips disappearing in perspective, with a black open mouth and clear threshold onto the apron. Keep roof lintel and gray side jambs as a crisp foreground frame. This is an open cavity through which aircraft can physically exit, not a closed black rectangle. No people, ships, enemies, text, explosions, effects, new objects or changed camera. Detailed crisp sixteen-bit arcade pixel art, same palette and style as the input. Final background fully opaque.",
+    "axel": "FRAME FORMAT: 16 frames in one exact 4-column by 4-row grid; square 384x384 cells, 1536x1536 sheet. Identical even cell dimensions, one common proportional scale and fixed foot pivot (192,352) in every frame, standing body about300px high. Transparent background including all margins. No grid lines, labels or text. Use case: identity-preserve production game sprites. Image 1 is the approved actual Axel from Bullets of Fury and is the identity and outfit reference, not a sheet to reuse. Generate a NEW smooth whole-sheet animation of this exact dark-skinned Black male pilot with short black hair, dark sunglasses, trimmed beard, blue flight suit with cream shearling collar, gold piping, dog tags, black gloves and boots. Crisp richly shaded 16-bit arcade pixel art matching the source, strong dark contours, clean material clusters; full body, normal human proportions. First eight frames (first two rows), strictly chronological seamless WALK RIGHT cycle, right-facing side/three-quarter view: heel contact, weight-down, passing, high point, opposite heel contact, opposite weight-down, opposite passing, high point. Proper alternating footfalls and counter-swinging arms, not marching/running, no sliding feet, no root translation, head and torso level within3px, no costume changes. Last eight frames (last two rows), separate chronological front three-quarter CELEBRATION loop: relaxed smiling stance, arms begin to open, raises forearms, laughs warmly with arms raised, fist pump, lowers forearms, relaxed smile, return to initial relaxed stance. Feet grounded, no airborne jump, no sudden view switches within this loop. Keep the entire character comfortably inside every slot. All sixteen drawings must be distinct true joint/anatomy animation, no displaced static cutouts, no ghosts, no scenery, no shadows, no glow or effects. Preserve Axel's reference likeness and reference costume exactly.",
+    "decker": "FRAME FORMAT: 16 frames in one exact 4-column by 4-row grid; square 384x384 cells, 1536x1536 sheet. Identical even cell dimensions, one common proportional scale and fixed foot pivot (192,352) in every frame, standing body about300px high. Transparent background including all margins. No grid lines, labels or text. Use case: identity-preserve production game sprites. Image 1 is the approved actual Decker from Bullets of Fury and is the identity and outfit reference, not a sheet to reuse. Generate a NEW smooth whole-sheet animation of this exact fair-skinned blond swept-back-haired male engineer with rectangular black glasses, clean-shaven face, black armored flight suit traced in gold circuit lines, gold lightning shoulder emblems, gloves and boots. Crisp richly shaded 16-bit arcade pixel art matching the source, strong dark contours, clean material clusters; full body, normal human proportions. First eight frames (first two rows), strictly chronological seamless WALK RIGHT cycle, right-facing side/three-quarter view: heel contact, weight-down, passing, high point, opposite heel contact, opposite weight-down, opposite passing, high point. Proper alternating footfalls and counter-swinging arms, not marching/running, no sliding feet, no root translation, head and torso level within3px, no costume changes. Last eight frames (last two rows), separate chronological front three-quarter CELEBRATION loop: relaxed smiling stance, arms begin to open, raises forearms, laughs warmly with arms raised, fist pump, lowers forearms, relaxed smile, return to initial relaxed stance. Feet grounded, no airborne jump, no sudden view switches within this loop. Keep the entire character comfortably inside every slot. All sixteen drawings must be distinct true joint/anatomy animation, no displaced static cutouts, no ghosts, no scenery, no shadows, no glow or effects. Preserve Decker's reference likeness and reference costume exactly.",
+    "maverick": "FRAME FORMAT: 16 frames in one exact 4-column by 4-row grid; square 384x384 cells, 1536x1536 sheet. Identical even cell dimensions, one common proportional scale and fixed foot pivot (192,352) in every frame, standing body about300px high. Transparent background including all margins. No grid lines, labels or text. Use case: identity-preserve production game sprites. Image 1 is the approved actual Maverick from Bullets of Fury and is the identity and outfit reference, not a sheet to reuse. Generate a NEW smooth whole-sheet animation of this exact light-skinned brown-haired bearded male pilot with aviator sunglasses, teal flight suit, black harness, rolled sleeves, black gloves and boots. Crisp richly shaded 16-bit arcade pixel art matching the source, strong dark contours, clean material clusters; full body, normal human proportions. First eight frames (first two rows), strictly chronological seamless WALK RIGHT cycle, right-facing side/three-quarter view: heel contact, weight-down, passing, high point, opposite heel contact, opposite weight-down, opposite passing, high point. Proper alternating footfalls and counter-swinging arms, not marching/running, no sliding feet, no root translation, head and torso level within3px, no costume changes. Last eight frames (last two rows), separate chronological front three-quarter CELEBRATION loop: relaxed smiling stance, arms begin to open, raises forearms, laughs warmly with arms raised, fist pump, lowers forearms, relaxed smile, return to initial relaxed stance. Feet grounded, no airborne jump, no sudden view switches within this loop. Keep the entire character comfortably inside every slot. All sixteen drawings must be distinct true joint/anatomy animation, no displaced static cutouts, no ghosts, no scenery, no shadows, no glow or effects. Preserve Maverick's reference likeness and reference costume exactly.",
+    "freezer": "FRAME FORMAT: 16 frames in one exact 4-column by 4-row grid; square 384x384 cells, 1536x1536 sheet. Identical even cell dimensions, one common proportional scale and fixed foot pivot (192,352) in every frame, standing body about300px high. Transparent background including all margins. No grid lines, labels or text. Use case: identity-preserve production game sprites. Image 1 is the approved actual Freezer from Bullets of Fury and is the identity and outfit reference, not a sheet to reuse. Generate a NEW smooth whole-sheet animation of this exact tan-skinned male pilot with tied-back long black hair, trimmed black beard, purple flight suit with cream shearling collar, black harness, gloves and boots. Crisp richly shaded 16-bit arcade pixel art matching the source, strong dark contours, clean material clusters; full body, normal human proportions. First eight frames (first two rows), strictly chronological seamless WALK RIGHT cycle, right-facing side/three-quarter view: heel contact, weight-down, passing, high point, opposite heel contact, opposite weight-down, opposite passing, high point. Proper alternating footfalls and counter-swinging arms, not marching/running, no sliding feet, no root translation, head and torso level within3px, no costume changes. Last eight frames (last two rows), separate chronological front three-quarter CELEBRATION loop: relaxed smiling stance, arms begin to open, raises forearms, laughs warmly with arms raised, fist pump, lowers forearms, relaxed smile, return to initial relaxed stance. Feet grounded, no airborne jump, no sudden view switches within this loop. Keep the entire character comfortably inside every slot. All sixteen drawings must be distinct true joint/anatomy animation, no displaced static cutouts, no ghosts, no scenery, no shadows, no glow or effects. Preserve Freezer's reference likeness and reference costume exactly.",
+    "juggernaut": "FRAME FORMAT: 16 frames in one exact 4-column by 4-row grid; square 384x384 cells, 1536x1536 sheet. Identical even cell dimensions, one common proportional scale and fixed foot pivot (192,352) in every frame, standing body about300px high. Transparent background including all margins. No grid lines, labels or text. Use case: identity-preserve production game sprites. Image 1 is the approved actual Juggernaut from Bullets of Fury and is the identity and outfit reference, not a sheet to reuse. Generate a NEW smooth whole-sheet animation of this exact heavily muscular tan male pilot with short brown hair, beard and dark sunglasses, black sleeveless studded vest with orange skull badges, bare tattooed arms and chest, chain belt, black/orange pants, heavy gloves and boots. Crisp richly shaded 16-bit arcade pixel art matching the source, strong dark contours, clean material clusters; full body, normal human proportions. First eight frames (first two rows), strictly chronological seamless WALK RIGHT cycle, right-facing side/three-quarter view: heel contact, weight-down, passing, high point, opposite heel contact, opposite weight-down, opposite passing, high point. Proper alternating footfalls and counter-swinging arms, not marching/running, no sliding feet, no root translation, head and torso level within3px, no costume changes. Last eight frames (last two rows), separate chronological front three-quarter CELEBRATION loop: relaxed smiling stance, arms begin to open, raises forearms, laughs warmly with arms raised, fist pump, lowers forearms, relaxed smile, return to initial relaxed stance. Feet grounded, no airborne jump, no sudden view switches within this loop. Keep the entire character comfortably inside every slot. All sixteen drawings must be distinct true joint/anatomy animation, no displaced static cutouts, no ghosts, no scenery, no shadows, no glow or effects. Preserve Juggernaut's reference likeness and reference costume exactly.",
+    "yuri": "FRAME FORMAT: 16 frames in one exact 4-column by 4-row grid; square 384x384 cells, 1536x1536 sheet. Identical even cell dimensions, one common proportional scale and fixed foot pivot (192,352) in every frame, standing body about300px high. Transparent background including all margins. No grid lines, labels or text. Use case: identity-preserve production game sprites. Image 1 is the approved actual Yuri from Bullets of Fury and is the identity and outfit reference, not a sheet to reuse. Generate a NEW smooth whole-sheet animation of this exact light-skinned male pilot with short brown mohawk and trimmed beard, red flight suit with gray harness straps and dark shoulder insignia, black gloves and boots. Crisp richly shaded 16-bit arcade pixel art matching the source, strong dark contours, clean material clusters; full body, normal human proportions. First eight frames (first two rows), strictly chronological seamless WALK RIGHT cycle, right-facing side/three-quarter view: heel contact, weight-down, passing, high point, opposite heel contact, opposite weight-down, opposite passing, high point. Proper alternating footfalls and counter-swinging arms, not marching/running, no sliding feet, no root translation, head and torso level within3px, no costume changes. Last eight frames (last two rows), separate chronological front three-quarter CELEBRATION loop: relaxed smiling stance, arms begin to open, raises forearms, laughs warmly with arms raised, fist pump, lowers forearms, relaxed smile, return to initial relaxed stance. Feet grounded, no airborne jump, no sudden view switches within this loop. Keep the entire character comfortably inside every slot. All sixteen drawings must be distinct true joint/anatomy animation, no displaced static cutouts, no ghosts, no scenery, no shadows, no glow or effects. Preserve Yuri's reference likeness and reference costume exactly.",
+    "lizzie": "FRAME FORMAT: 16 frames in one exact 4-column by 4-row grid; square 384x384 cells, 1536x1536 sheet. Identical even cell dimensions, one common proportional scale and fixed foot pivot (192,352) in every frame, standing body about300px high. Transparent background including all margins. No grid lines, labels or text. Use case: identity-preserve production game sprites. Image 1 is the approved actual Lizzie from Bullets of Fury and is the identity and outfit reference, not a sheet to reuse. Generate a NEW smooth whole-sheet animation of this exact fair-skinned female pilot with long curly auburn hair, gold hoop earrings and necklace, yellow flight suit with black harness and dark undershirt, black gloves and knee-high boots. Crisp richly shaded 16-bit arcade pixel art matching the source, strong dark contours, clean material clusters; full body, normal human proportions. First eight frames (first two rows), strictly chronological seamless WALK RIGHT cycle, right-facing side/three-quarter view: heel contact, weight-down, passing, high point, opposite heel contact, opposite weight-down, opposite passing, high point. Proper alternating footfalls and counter-swinging arms, not marching/running, no sliding feet, no root translation, head and torso level within3px, no costume changes. Last eight frames (last two rows), separate chronological front three-quarter CELEBRATION loop: relaxed smiling stance, arms begin to open, raises forearms, laughs warmly with arms raised, fist pump, lowers forearms, relaxed smile, return to initial relaxed stance. Feet grounded, no airborne jump, no sudden view switches within this loop. Keep the entire character comfortably inside every slot. All sixteen drawings must be distinct true joint/anatomy animation, no displaced static cutouts, no ghosts, no scenery, no shadows, no glow or effects. Preserve Lizzie's reference likeness and reference costume exactly. Absolutely no backdrop, matte, fog, underpainting, white/gray checker pattern or cast shadow. Background must be alpha zero.",
+    "falva": "FRAME FORMAT: 16 frames in one exact 4-column by 4-row grid; square 384x384 cells, 1536x1536 sheet. Identical even cell dimensions, one common proportional scale and fixed foot pivot (192,352) in every frame, standing body about300px high. Transparent background including all margins. No grid lines, labels or text. Use case: identity-preserve production game sprites. Image 1 is the approved actual Falva from Bullets of Fury and is the identity and outfit reference, not a sheet to reuse. Generate a NEW smooth whole-sheet animation of this exact fair-skinned female pilot with long curly auburn hair and black rectangular glasses, magenta flight suit with black harness and dark undershirt, black gloves and knee-high boots. Crisp richly shaded 16-bit arcade pixel art matching the source, strong dark contours, clean material clusters; full body, normal human proportions. First eight frames (first two rows), strictly chronological seamless WALK RIGHT cycle, right-facing side/three-quarter view: heel contact, weight-down, passing, high point, opposite heel contact, opposite weight-down, opposite passing, high point. Proper alternating footfalls and counter-swinging arms, not marching/running, no sliding feet, no root translation, head and torso level within3px, no costume changes. Last eight frames (last two rows), separate chronological front three-quarter CELEBRATION loop: relaxed smiling stance, arms begin to open, raises forearms, laughs warmly with arms raised, fist pump, lowers forearms, relaxed smile, return to initial relaxed stance. Feet grounded, no airborne jump, no sudden view switches within this loop. Keep the entire character comfortably inside every slot. All sixteen drawings must be distinct true joint/anatomy animation, no displaced static cutouts, no ghosts, no scenery, no shadows, no glow or effects. Preserve Falva's reference likeness and reference costume exactly. Absolutely no backdrop, matte, fog, underpainting, white/gray checker pattern or cast shadow. Background must be alpha zero."
+  },
+  "reproduction": "_BUILD_SOURCE/hq_animation_1115_pack.py",
+  "scope": "Only HQ19 cinematic cast/doors and exit choreography. Global cast libraries, gameplay actors and protected native boss/death owners retained."
+}

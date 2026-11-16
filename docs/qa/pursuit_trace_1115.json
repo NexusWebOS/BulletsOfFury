@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-15",
+  "native": {
+    "passed": 150,
+    "failed": 0,
+    "dialogueSamples": 5166,
+    "errors": []
+  },
+  "reproduction": {
+    "all4AtlasPagesAndRegistryByteIdentical": true,
+    "hashes": {
+      "assets\\pursuit_trace_art_1115.js": "801523a41865034841961d5f61cb34c7a494cb00b09c5fe90827a550c789e1a0",
+      "assets\\game\\shared\\ui\\pursuit_trace_1115\\furious-left.png": "c68e1c09390714fe651d5e7add5ae3d3ac4ce2b42399b1e071d323e582467c46",
+      "assets\\game\\shared\\ui\\pursuit_trace_1115\\furious-right.png": "6d996762c737cd6bcf26152918847a715cca6258bbe7ec4efc9c17e24516cc7c",
+      "assets\\game\\shared\\ui\\pursuit_trace_1115\\hard-left.png": "f8cf0028a744a1f09adfba63f277110eb461f3f4e7d387611b689a109ee7e610",
+      "assets\\game\\shared\\ui\\pursuit_trace_1115\\hard-right.png": "6d996762c737cd6bcf26152918847a715cca6258bbe7ec4efc9c17e24516cc7c"
+    }
+  },
+  "browser": {
+    "passed": 5,
+    "failed": 0,
+    "errors": []
+  },
+  "fullSuite": {
+    "passed": 8969,
+    "failed": 0,
+    "exitCode": 0,
+    "failingNames": [],
+    "baselineFailingNames": [],
+    "newFailingNames": []
+  },
+  "coreUnchanged": {
+    "gameSha256": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce",
+    "testRunnerSha256": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+    "gameLF": true,
+    "testRunnerCRLF": true
+  },
+  "gifs": [
+    {
+      "file": "pursuit-hard-highlight.gif",
+      "sourceFrames": 64,
+      "encodedFrames": 64,
+      "beforeBytes": 5499050,
+      "afterBytes": 487890,
+      "decodedTimelinePixelIdentical": true,
+      "durationMs": 4000,
+      "sha256": "0fd425d177d40c178235c16332f8407d112107e921872a1960e2f5db04d71a4b"
+    },
+    {
+      "file": "pursuit-furious-highlight.gif",
+      "sourceFrames": 60,
+      "encodedFrames": 60,
+      "beforeBytes": 5608467,
+      "afterBytes": 494319,
+      "decodedTimelinePixelIdentical": true,
+      "durationMs": 4000,
+      "sha256": "1a5775f35e094cfb0bd9a14e10a700e31160c406897e4f510f311571578e9e3d"
+    },
+    {
+      "file": "pursuit-highlights.gif",
+      "sourceFrames": 120,
+      "encodedFrames": 120,
+      "beforeBytes": 10134740,
+      "afterBytes": 968069,
+      "decodedTimelinePixelIdentical": true,
+      "durationMs": 8000,
+      "sha256": "e35caf208bb673f5abbfb784c8c44dd0bc74ba6184ee96c131566f741646e1dd"
+    }
+  ],
+  "scope": "Prepared real Chromium menu, actual keyboard left/right and native pointer route/encounter. All changed pixels isolated to the selected trace perimeter. No gameplay balance/campaign win/controller hardware claim; no commit/push.",
+  "sourceBuild": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+  "sourceRoundtrip": {
+    "checks": [
+      {
+        "name": "hard-left",
+        "frames": 16,
+        "visiblePixelsRoundtrip": true,
+        "asepriteSha256": "998e3940ff578b4d510ef1be088d8ff04959e426f05bf2e7b1d6a24d4c9d2966"
+      },
+      {
+        "name": "hard-right",
+        "frames": 16,
+        "visiblePixelsRoundtrip": true,
+        "asepriteSha256": "d7355f60c3b422e90af7a0c79f9255a4e88ed003ce1a7f85cfd524fac8a783c6"
+      },
+      {
+        "name": "furious-left",
+        "frames": 16,
+        "visiblePixelsRoundtrip": true,
+        "asepriteSha256": "f2e47b1493a2fadcb8d56a2938a62502d6498e85508bd4282f8c5a42669d3b0f"
+      },
+      {
+        "name": "furious-right",
+        "frames": 16,
+        "visiblePixelsRoundtrip": true,
+        "asepriteSha256": "e1b684b15b66d048d163e72af29b2f45d06393d3d9ae1fb756706bb735898feb"
+      }
+    ],
+    "scope": "All4 layered .aseprite sources decoded independently;64 visible RGBA frame composites match export. Aseprite executable not installed on this host; no GUI/CLI use claimed.",
+    "officialFormat": "https://github.com/aseprite/aseprite/blob/main/docs/ase-file-specs.md"
+  }
+}

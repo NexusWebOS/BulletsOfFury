@@ -42,19 +42,9 @@ rs1004DemoTick=function(R,I,dt){const before=new Set(I.showcase?.fx||[]),r=AP10_
   if(moving)S.fx.push({kind:'dash',x:q.x,y:q.y,t:0,life:.16,w:120,h:32,a:q.rfHeading});
  }return r;};
 furyPartPose=function(){const p=AP10_EXTRA.part.apply(this,arguments);if(p)p.rotation=0;return p;};
-furyShipDrawPhase=function(G,x,y,size,planeH,pilot){
- // Cole's generated plate contains Cole. Other pilots retain their own authored
- // cockpit and separate mounting pieces, now without artificial whole-part spins.
- if(pilot==='cole'&&(['charge','scatter','snap','pixelglow'].includes(G.phase)||G.phase==='drift'&&G.partStartAge!=null)){
-  const f=G.phase==='drift'?Math.floor(Math.max(0,(G.age||0)-G.partStartAge)*8)%4:
-   G.phase==='charge'?4+Math.min(3,Math.floor(G.t/GRAVITY_CHARGE_DUR*4)):
-   G.phase==='scatter'?8+Math.min(1,Math.floor(G.t/GRAVITY_SCATTER_DUR*2)):
-   G.phase==='snap'?10+Math.min(3,Math.floor(G.t/GRAVITY_SNAP_DUR*4)):14+Math.min(1,Math.floor(G.t/GRAVITY_PIXEL_DUR*2));
-  // The 352px cell includes incoming hardware. Its original aircraft is 192px
-  // high: match that aircraft to the launch hull, then tuck only during snap.
-  const aircraftH=gravityPlaneH(planeH,size,G.phase,G.t);
-  if(ap10ExtraCell('assembly',f,x,y,AP10_EXTRA_ART.assembly[0].w*aircraftH/192))return;
- }return AP10_EXTRA.phase.apply(this,arguments);};
+// November14: every pilot uses the same twelve physical orbiting kit pieces.
+// The retired Cole-only baked strip hid the actual kit and skipped its entrances.
+furyShipDrawPhase=function(){return AP10_EXTRA.phase.apply(this,arguments);};
 victoryRestoration=function(t,W,H,pk){
  const f=Math.min(3,Math.floor(t/(VICTORY_DISH_AT/4))),a=AP10_EXTRA_ART.ending[f];
  if(!XART.rdy(a.key))return AP10_EXTRA.ending.apply(this,arguments);

@@ -1,0 +1,60 @@
+{
+  "tool": "Built-in image_gen.imagegen; no SpriteCook or fallback CLI",
+  "outputs": [
+    {
+      "name": "pursuit-furious",
+      "generated_file": "exec-61728f7e-5fef-4269-83c8-43414a8ef2b4.png",
+      "references": [
+        "native_references/storm-clean-nw.png",
+        "native_references/harrier-north.png",
+        "native_references/five-rebels-reference.png"
+      ],
+      "transparent_background": false,
+      "prompt": "FRAME FORMAT: A single landscape 16:9 1536x864 pixel-art game menu illustration. Crisp authored 16-bit arcade pixel clusters, no blurry painterly surface. Use case: ui-mockup, production raster menu for Bullets of Fury. References: first is the CURRENT actual Storm Cannon ship, second the CURRENT actual Harrier (unused in this Furious version), third contains exactly the five CURRENT Rebel aircraft. Preserve their shapes and colors. Create a dramatically better CHOOSE YOUR PURSUIT screen: thick sophisticated gunmetal/navy military arcade housing with restrained amber and cyan lights, rich integrated typography, a bold decorative heading, two generous visually separated equal choice cards. LEFT CARD: large faithful Storm Cannon in top-down northwest three-quarter view with blue reactor energy, integrated chunky metallic lettering exactly 'STORM CANNON', smaller text 'LEFT ROUTE'. RIGHT CARD: the five faithful Rebel fighter jets in formation with red alert accents, integrated bold lettering exactly 'ROUGH RIDERS', smaller text 'RIGHT ROUTE'. Heading exactly 'CHOOSE YOUR PURSUIT'. Legible text in large deliberate pixel clusters with clean bevel highlights, spacious designed layout. Top heading in its own broad plate, each card label at the bottom of its card; never overlap the ships with text. Reserve the bottom 12 percent of the housing as a quiet empty dark footer for our existing controller icons. No extra text, no A/B letters, no keyboard symbols, no unknown pilots, no photographs, no white backdrop, no screen within screen. Entire complete symmetrical framed panel fills image with an 18px safety margin. Opaque background, polished finished artwork and lettering baked together."
+    },
+    {
+      "name": "rural",
+      "generated_file": "exec-0718605e-050e-458d-8a6d-37c362f64600.png",
+      "references": [],
+      "transparent_background": false,
+      "prompt": "FRAME FORMAT: 1024x1536 portrait tile, even dimensions, one common scale. Use case: stylized-concept; production 16-bit top-down vertical shoot-em-up rural-America ground scenery for Bullets of Fury. True overhead orthographic aerial viewpoint with NO horizon and NO perspective tilt. A coherent broad area of rural American farmland, winding two lane county roads, small isolated neighborhoods with detached homes, red barns, silos, fenced fields, cornfields, pasture, broad forest strips and a winding freshwater creek with little bridges. Sparse small-town Americana, countryside, lots of green and tawny fields, NOT a metropolis or downtown. Late afternoon readable natural palette with dark outlines and deliberate arcade pixel-art clusters akin detailed Neo Geo aerial scenery. This lies beneath flying fighter jets and translucent native clouds; do not draw aircraft, characters, UI, words, symbols or clouds. Fill image entirely. Design top and bottom edges to tile continuously for infinite vertical scrolling, with matching field/forest strips and road endpoints across the seam; horizontal left and right edges should also connect. Even lighting, no vignette, no shadow baked across the entire tile. All buildings fully grounded, sensible road connections and visual scale, no floating islands."
+    },
+    {
+      "name": "thruster",
+      "generated_file": "exec-af00853b-8724-45e4-a0fd-83363a5bcbfd.png",
+      "references": [],
+      "transparent_background": true,
+      "prompt": "FRAME FORMAT: Exactly sixteen individual 128x256 RGBA sprite cells, arranged as a perfectly aligned 4 columns by 4 rows sheet (512x1024), zero gutters and no borders. Identical cell dimensions, one proportional scale, fixed nozzle attachment pivot at x64 y224 in EVERY cell. Use case: stylized-concept, production 16-frame seamless blue-white jet thruster animation for an enormous metallic reactor-powered aircraft. Only the isolated exhaust plume, no engine or hull or scenery. The source/nozzle mouth at bottom center (64,224) remains rigidly fixed; a narrow brilliant white core with cyan, electric blue and deep-blue edges jets UPWARD from it, with traveling Mach-diamond rings and finely serrated tongues. Leave at least12px transparent margins at the top and sides, 24px below the nozzle mouth. Sixteen genuinely different ordered phases of steady running thrust: ripples and diamonds travel away from the attachment point, fine sparks leave the plume, length pulses smoothly from about160 to190px while the base stays fixed. End-to-start phase must loop naturally; no start-up, no shut-down, no blank frames. Fine crisp 16-bit pixel art, coherent blue/white limited palette and hard-edged pixels; no blur, no Gaussian glow, no haze, no labels, no frame numbers, no typography, no checkerboard. Actual transparent background."
+    },
+    {
+      "name": "album",
+      "generated_file": "exec-675a0f99-d327-4863-ae3b-95627be1aa8a.png",
+      "references": [
+        "native_references/juggernaut-cockpit-reference.png"
+      ],
+      "transparent_background": false,
+      "prompt": "FRAME FORMAT: One complete landscape 4:3 1024x768 even-sized comic cinematic image with crisp detailed 16-bit arcade pixel-art clusters. Use case: illustration-story. Reference is our actual current Juggernaut pilot inside his cockpit: keep the exact mohawk, huge muscular build, dark beard, gold-rimmed black sunglasses, black-and-yellow harness, upper-arm tribal tattoo and orange-lit dark cockpit; this is the same man, not a substitute. Change his pose and expression: he smiles in satisfied mischievous delight, showing a few teeth, and holds a square black vinyl-record album sleeve toward the camera in one hand; other hand rests by the flight controls. Make the album readable and large, about one third of image width, angled only slightly. This is an original Bullets of Fury homage to the famous nearly-black heavy-metal album aesthetic: matte black/charcoal sleeve, subtle black-on-black embossed fighter jet and looping ammunition-belt motif, with an original sharp angular gunmetal wordmark at upper left reading exactly 'BULLETS OF FURY'. No Metallica word or logo, no copied snake art; only our game title on this original spoof album. Cockpit windows show soft distant rural ground shapes in pixel art, no city. Frame the single full comic panel with a thin cream-and-black ink border. No dialogue box, no speech balloons, no extra captions, no extra words or people. Preserve reference identity and its deliberate pixel shading; no photorealism or smooth painted texture."
+    },
+    {
+      "name": "pursuit-hard",
+      "generated_file": "exec-9e0eb160-19ed-491d-819d-9dd50ce21d8a.png",
+      "references": [
+        "generated-pursuit-furious.png",
+        "native_references/harrier-north.png"
+      ],
+      "transparent_background": false,
+      "prompt": "Use case: precise-object-edit. Produce the matching HARD-difficulty variant of the FIRST supplied pursuit menu, same exact landscape proportions, frame, heading, typography, cards, colors, right-hand five Rebel jets, empty footer and every other element. Change ONLY the LEFT card: replace the Storm Cannon illustration with the actual Harrier aircraft from the SECOND reference, preserving that Harrier's broad dark-gray hull, two enormous ducted fans, central hangar bay and shape. Orient the Harrier straight north/top-down, large and readable within the same card. Replace the left card's large label with exactly 'HARRIER' in the same magnificent metallic pixel lettering style and size hierarchy. Keep 'LEFT ROUTE', 'RIGHT ROUTE', 'ROUGH RIDERS' and 'CHOOSE YOUR PURSUIT' unchanged. No extra text, no unknown planes, no pilots, no new UI layout. Keep the complete thick military arcade panel and lower empty footer. Crisp 16-bit pixel-art clusters, preserve the first image's design and whole frame. Opaque background."
+    },
+    {
+      "name": "album-bulletalica",
+      "replaces": "album",
+      "prompt": "Use case: text-edit. Edit the supplied existing 16-bit pixel-art comic image. Change ONLY the album-cover title lettering from 'BULLETS OF FURY' to exactly 'BULLETALICA' (one word, spelled B U L L E T A L I C A). Render it as an original sharp angular silver/gunmetal heavy-metal wordmark across the upper part of the same matte-black sleeve, following its current slight perspective. It must be very readable. Remove the old title completely. Keep the embossed fighter jet, looping ammunition-belt art, worn album edges, Juggernaut's exact face/mohawk/beard/sunglasses/smile/tattoo, hands, pose, orange-lit cockpit, rural window views, cream comic border, composition, palette and crisp pixel-art style unchanged. Keep the complete landscape 4:3 image with no crop. No other lettering, no added objects or visual redesign. Opaque background.",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background": false,
+      "generated_file": "exec-709a039d-aec6-480e-bb9f-81a83c72df12.png",
+      "reference": "native_references/album-before-bulletalica.png",
+      "requested_name": "Bulletalica"
+    }
+  ],
+  "current_album": "Bulletalica"
+}

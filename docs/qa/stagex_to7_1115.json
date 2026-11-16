@@ -1,0 +1,468 @@
+{
+  "source": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+  "pilot": "cole",
+  "difficulty": "furious",
+  "scope": "Cole/Furious native city-Harrier completion checkpoint. Scripted native Retina/missile damage exhausts the real Harrier/Nightwing/death/result owners before recording. The full city debrief, Bulletalica reveal, native chibi map flight, native Enter Stage7 selection, Stage7 card, approach, sewer descent and launch play without skipping dialogue. Capture composites visible native playfield/HUD canvases. No unassisted campaign-win claim.",
+  "coreBefore": {
+    "assets/game.js": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce",
+    "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+    "assets/crossed_fate_1115.js": "c298b122e2c1c82a8b8aba2341ce66e6495d013533b7e999948a7d623b90da88",
+    "assets/crossed_fate_art_1115.js": "e1c2f4e9ea43f10015e9f0acc5f42fa85dc123dc2c01288077cbd5011ed5840e",
+    "assets/city_rescue_1115.js": "3d060c1fca1a5709a893165f7ab2e7ce28aad43e71884dd6354d710abe3313eb",
+    "assets/city_rescue_art_1115.js": "26a70716f09e3608f6f538064e12be726a6438638b999b7e571f8f747389fa24",
+    "assets/pursuit_trace_art_1115.js": "79be8bb91aad8b62cb3799b0e871a8cec154e6afde61460227f5748c92d814f3",
+    "index.html": "0e29cde4686fe9bcb7f42c9b2c7cc6da959627a5d3569ed31560a97f6fe550e7"
+  },
+  "clips": [
+    {
+      "seconds": 58.15590000000596,
+      "frames": 3535,
+      "peak": 0.7421691417694092,
+      "stages": [
+        {
+          "tag": "cutscene:post-city16:CITY16-01:::6:",
+          "at": 0.019300000011920927
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-02:::6:",
+          "at": 2.979300000011921
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-03:::6:",
+          "at": 7.4285
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-04:::6:",
+          "at": 10.435400000005961
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-05:::6:",
+          "at": 13.443200000017882
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-06:::6:",
+          "at": 16.91459999999404
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-ALBUM:::6:",
+          "at": 19.9235
+        },
+        {
+          "tag": "stagesel:::chibi-flight::6:",
+          "at": 24.93120000001788
+        },
+        {
+          "tag": "stagesel:::stage7-ready::6:",
+          "at": 28.210599999994038
+        },
+        {
+          "tag": "intro:::::7:",
+          "at": 31.2355
+        },
+        {
+          "tag": "launch:::::7:",
+          "at": 35.619200000017884
+        },
+        {
+          "tag": "cutscene:stage7-approach:A701:::7:",
+          "at": 35.635300000011924
+        },
+        {
+          "tag": "cutscene:stage7-approach:ARRIVAL7-02:::7:",
+          "at": 39.3795
+        },
+        {
+          "tag": "launch:::::7:",
+          "at": 41.97120000001788
+        },
+        {
+          "tag": "launch:::::7:run",
+          "at": 42.0055
+        },
+        {
+          "tag": "launch:::::7:brake",
+          "at": 49.39509999999404
+        },
+        {
+          "tag": "launch:::::7:settle",
+          "at": 52.03540000000596
+        },
+        {
+          "tag": "launch:::::7:cd",
+          "at": 52.4995
+        },
+        {
+          "tag": "play:::::7:cd",
+          "at": 56.35509999999404
+        }
+      ],
+      "part": "city",
+      "errors": [],
+      "shots": [
+        {
+          "tag": "cutscene:post-city16:CITY16-01:::6:",
+          "at": 0.7715,
+          "file": "city-sample-00.png"
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-02:::6:",
+          "at": 3.730800000011921,
+          "file": "city-sample-01.png"
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-03:::6:",
+          "at": 8.17909999999404,
+          "file": "city-sample-02.png"
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-04:::6:",
+          "at": 11.186599999994039,
+          "file": "city-sample-03.png"
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-05:::6:",
+          "at": 14.19459999999404,
+          "file": "city-sample-04.png"
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-06:::6:",
+          "at": 17.66659999999404,
+          "file": "city-sample-05.png"
+        },
+        {
+          "tag": "cutscene:post-city16:CITY16-ALBUM:::6:",
+          "at": 20.6755,
+          "file": "city-sample-06.png"
+        },
+        {
+          "tag": "stagesel:::chibi-flight::6:",
+          "at": 25.69409999999404,
+          "file": "city-sample-07.png"
+        },
+        {
+          "tag": "stagesel:::stage7-ready::6:",
+          "at": 28.96340000000596,
+          "file": "city-sample-08.png"
+        },
+        {
+          "tag": "intro:::::7:",
+          "at": 32.11630000001192,
+          "file": "city-sample-09.png"
+        },
+        {
+          "tag": "cutscene:stage7-approach:A701:::7:",
+          "at": 36.38730000001192,
+          "file": "city-sample-10.png"
+        },
+        {
+          "tag": "cutscene:stage7-approach:ARRIVAL7-02:::7:",
+          "at": 40.13130000001192,
+          "file": "city-sample-11.png"
+        },
+        {
+          "tag": "launch:::::7:run",
+          "at": 42.77090000000596,
+          "file": "city-sample-12.png"
+        },
+        {
+          "tag": "launch:::::7:brake",
+          "at": 50.147300000011924,
+          "file": "city-sample-13.png"
+        },
+        {
+          "tag": "launch:::::7:cd",
+          "at": 53.25120000001788,
+          "file": "city-sample-14.png"
+        },
+        {
+          "tag": "play:::::7:cd",
+          "at": 57.1085,
+          "file": "city-sample-15.png"
+        }
+      ],
+      "end": {
+        "state": "play",
+        "stage": 7,
+        "brief": true,
+        "player": {
+          "x": 340,
+          "y": 399.36,
+          "alive": true
+        },
+        "receipt": null,
+        "choice": null,
+        "events": [],
+        "points": 1010,
+        "city": {
+          "version": 1,
+          "completed": true,
+          "debriefSeen": true,
+          "travelSeen": true,
+          "travelT": 3.2,
+          "target": "harrier",
+          "pilot": "cole",
+          "allies": [
+            "axel",
+            "decker",
+            "falva",
+            "yuri"
+          ],
+          "verified": true,
+          "legacy": false
+        },
+        "cap": 7
+      }
+    }
+  ],
+  "errors": [],
+  "coreAfter": {
+    "assets/game.js": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce",
+    "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+    "assets/crossed_fate_1115.js": "c298b122e2c1c82a8b8aba2341ce66e6495d013533b7e999948a7d623b90da88",
+    "assets/crossed_fate_art_1115.js": "e1c2f4e9ea43f10015e9f0acc5f42fa85dc123dc2c01288077cbd5011ed5840e",
+    "assets/city_rescue_1115.js": "3d060c1fca1a5709a893165f7ab2e7ce28aad43e71884dd6354d710abe3313eb",
+    "assets/city_rescue_art_1115.js": "26a70716f09e3608f6f538064e12be726a6438638b999b7e571f8f747389fa24",
+    "assets/pursuit_trace_art_1115.js": "79be8bb91aad8b62cb3799b0e871a8cec154e6afde61460227f5748c92d814f3",
+    "index.html": "0e29cde4686fe9bcb7f42c9b2c7cc6da959627a5d3569ed31560a97f6fe550e7"
+  },
+  "movie": {
+    "file": "stagex-to-stage7-full.mp4",
+    "duration": 58.03,
+    "chapters": [
+      {
+        "start": 0,
+        "title": "City rescued: another win"
+      },
+      {
+        "start": 2.979300000011921,
+        "title": "Back to the riverbank"
+      },
+      {
+        "start": 7.4285,
+        "title": "Is it going to smell bad?"
+      },
+      {
+        "start": 13.443200000017882,
+        "title": "A favorite album"
+      },
+      {
+        "start": 19.9235,
+        "title": "Bulletalica"
+      },
+      {
+        "start": 24.93120000001788,
+        "title": "Flight to Stage7"
+      },
+      {
+        "start": 28.210599999994038,
+        "title": "Stage7 selection"
+      },
+      {
+        "start": 31.2355,
+        "title": "Stage7 card"
+      },
+      {
+        "start": 35.635300000011924,
+        "title": "Approaching the riverbank"
+      },
+      {
+        "start": 39.3795,
+        "title": "The sewer entrance"
+      },
+      {
+        "start": 42.0055,
+        "title": "Fly into the sewer"
+      },
+      {
+        "start": 52.4995,
+        "title": "Ready for Stage7"
+      }
+    ],
+    "audio": [
+      "[Parsed_volumedetect_0 @ 000002397cbf6dc0] mean_volume: -14.4 dB",
+      "[Parsed_volumedetect_0 @ 000002397cbf6dc0] max_volume: -1.2 dB"
+    ],
+    "sha256": "3f6aa8859fed7b16c3328c853dcd023db77acb4133d41a7a66239a8e44d29b93",
+    "size": [
+      1824,
+      1024
+    ],
+    "fps": 30
+  },
+  "checks": [
+    {
+      "name": "recorded full city dialogue 1",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "recorded full city dialogue 2",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "recorded full city dialogue 3",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "recorded full city dialogue 4",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "recorded full city dialogue 5",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "recorded full city dialogue 6",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "latest Bulletalica image was installed during capture",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "native chibi flight and manual selection reach real7",
+      "ok": true,
+      "data": {
+        "state": "play",
+        "stage": 7,
+        "brief": true,
+        "player": {
+          "x": 340,
+          "y": 399.36,
+          "alive": true
+        },
+        "receipt": null,
+        "choice": null,
+        "events": [],
+        "points": 1010,
+        "city": {
+          "version": 1,
+          "completed": true,
+          "debriefSeen": true,
+          "travelSeen": true,
+          "travelT": 3.2,
+          "target": "harrier",
+          "pilot": "cole",
+          "allies": [
+            "axel",
+            "decker",
+            "falva",
+            "yuri"
+          ],
+          "verified": true,
+          "legacy": false
+        },
+        "cap": 7
+      }
+    },
+    {
+      "name": "full H264/AAC movie decodes without errors",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "recorded native audio is audible",
+      "ok": true,
+      "data": [
+        "[Parsed_volumedetect_0 @ 000002397cbf6dc0] mean_volume: -14.4 dB",
+        "[Parsed_volumedetect_0 @ 000002397cbf6dc0] max_volume: -1.2 dB"
+      ]
+    },
+    {
+      "name": "browser movie geometry/duration",
+      "ok": true,
+      "data": {
+        "w": 1824,
+        "h": 1024,
+        "duration": 58.033333
+      }
+    },
+    {
+      "name": "browser decoded chapter: City rescued: another win",
+      "ok": true,
+      "data": 0.033333
+    },
+    {
+      "name": "browser decoded chapter: Back to the riverbank",
+      "ok": true,
+      "data": 3
+    },
+    {
+      "name": "browser decoded chapter: Is it going to smell bad?",
+      "ok": true,
+      "data": 7.433333
+    },
+    {
+      "name": "browser decoded chapter: A favorite album",
+      "ok": true,
+      "data": 13.5
+    },
+    {
+      "name": "browser decoded chapter: Bulletalica",
+      "ok": true,
+      "data": 19.933333
+    },
+    {
+      "name": "browser decoded chapter: Flight to Stage7",
+      "ok": true,
+      "data": 24.966667
+    },
+    {
+      "name": "browser decoded chapter: Stage7 selection",
+      "ok": true,
+      "data": 28.266667
+    },
+    {
+      "name": "browser decoded chapter: Stage7 card",
+      "ok": true,
+      "data": 31.266667
+    },
+    {
+      "name": "browser decoded chapter: Approaching the riverbank",
+      "ok": true,
+      "data": 35.666667
+    },
+    {
+      "name": "browser decoded chapter: The sewer entrance",
+      "ok": true,
+      "data": 39.433333
+    },
+    {
+      "name": "browser decoded chapter: Fly into the sewer",
+      "ok": true,
+      "data": 42.066667
+    },
+    {
+      "name": "browser decoded chapter: Ready for Stage7",
+      "ok": true,
+      "data": 52.533333
+    },
+    {
+      "name": "browser decoded game audio",
+      "ok": true,
+      "data": 0.7320382595062256
+    },
+    {
+      "name": "byte-range seeking works",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "recording and review have no page/console/HTTP errors",
+      "ok": true,
+      "data": []
+    },
+    {
+      "name": "capture source hashes still match the installed build",
+      "ok": true,
+      "data": null
+    }
+  ],
+  "browserErrors": []
+}

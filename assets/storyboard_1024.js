@@ -94,8 +94,8 @@ inv20Text=function(who,text,W,H,shown,alpha){const q=SB24.endingRow;
 function sb24Scenes(pilot){const groups=[['opening','Campaign opening','Opening'],['opening-finale','Opening narration','Opening'],
  ...Array.from({length:9},(_,i)=>['post-'+(i+1),'After Stage '+(i+1),'Campaign']),
  ['cronos','Chronos — first contact','Encounters'],['hammer-trap1002','Chronos — the trap','Encounters'],
- ['route-left','Stage 6 — Harrier route','Encounters'],['route-right','Stage 6 — Rebel route','Encounters'],
- ['rebel-contact','Rebel squad — contact','Encounters'],...['voss','nyx','rook','kaia','jace'].map(k=>['stage-x-'+k,'Stage X — '+k.toUpperCase(),'Encounters']),
+ ['route-left','Stage 6 — Harrier route','Encounters'],['route-right','Stage 6 — Rough Riders route','Encounters'],
+ ['rebel-contact','Rough Riders — contact','Encounters'],...['voss','nyx','rook','kaia','jace'].map(k=>['stage-x-'+k,'Stage X — '+k.toUpperCase(),'Encounters']),
  ['stage7-approach','Stage 7 — river approach','Campaign'],...Object.keys(SB24.transitions||{}).map(id=>[id,id==='dracodia-rebirth'?'Dracodia - rebirth responses':id==='dracodia-transform'?'Dracodia - transformation responses':'Dracodia - final defeat','Finale']),['dracodia-monologue','Dracodia — monologue','Finale'],['ending','Invasion ending','Finale']];
  for(const id of SB24.observed.keys())if(!groups.some(a=>a[0]===id)&&!id.startsWith('ht23-announcement-'))groups.push([id,id,'Discovered']);
  return groups.map(([id,title,group])=>({id,title,group,kind:id==='opening'?'opening':id==='ending'?'ending':SB24.transitions?.[id]?'action':id==='dracodia-monologue'?'monologue':id==='opening-finale'?'narration':'director',beats:sb24Native(id,pilot)}));

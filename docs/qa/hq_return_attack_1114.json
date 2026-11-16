@@ -1,0 +1,5226 @@
+{
+  "scope": "Full revised native cinematic checkpoints: real Chronos destruction, delayed Earth approach, physical landing/walk/crew welcome/radar/evacuation/base invasion continuously into the native Stage6 opening through first interactive interception. Gameplay and optional equipment/result menus between checkpoints omitted. Not a campaign win.",
+  "native": {
+    "native-qa": {
+      "checks": [
+        {
+          "name": "replacement sequence and no old workshop/comic splits",
+          "ok": true,
+          "data": [
+            {
+              "i": 0,
+              "id": "HQ19-LAND",
+              "mode": "land",
+              "duration": 7,
+              "text": "",
+              "upgrade": null
+            },
+            {
+              "i": 1,
+              "id": "HQ19-EXIT",
+              "mode": "exit",
+              "duration": 3,
+              "text": "",
+              "upgrade": null
+            },
+            {
+              "i": 2,
+              "id": "HQ19-ENTER",
+              "mode": "enter",
+              "duration": 6.6,
+              "text": "",
+              "upgrade": null
+            },
+            {
+              "i": 3,
+              "id": "HQ19-CORRIDOR",
+              "mode": "corridor",
+              "duration": 6.6,
+              "text": "",
+              "upgrade": null
+            },
+            {
+              "i": 4,
+              "id": "HQ19-WELCOME",
+              "mode": "welcome",
+              "duration": 7,
+              "text": "",
+              "upgrade": 5
+            },
+            {
+              "i": 5,
+              "id": "HQ19-RADAR",
+              "mode": "radar",
+              "duration": 9,
+              "text": "",
+              "upgrade": null
+            },
+            {
+              "i": 6,
+              "id": "HQ19-LAUNCH",
+              "mode": "launch",
+              "duration": 9.2,
+              "text": "",
+              "upgrade": null
+            },
+            {
+              "i": 7,
+              "id": "HQ19-QUIET",
+              "mode": "quiet",
+              "duration": 5,
+              "text": "",
+              "upgrade": null
+            },
+            {
+              "i": 8,
+              "id": "HQ19-ATTACK",
+              "mode": "attack",
+              "duration": 3.4,
+              "text": "",
+              "upgrade": null
+            },
+            {
+              "i": 9,
+              "id": "HQ19-DECKER",
+              "mode": "escape-decker",
+              "duration": 4.2,
+              "text": "Dammit! They made it to our base too!",
+              "upgrade": null
+            },
+            {
+              "i": 10,
+              "id": "HQ19-AXEL",
+              "mode": "escape-axel",
+              "duration": 4.6,
+              "text": "We gotta tell the others!",
+              "upgrade": null
+            }
+          ]
+        },
+        {
+          "name": "five-second quiet pause authored once",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "earned upgrade5 retained exactly once",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "land frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "land frame 1 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "exit frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "enter frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "enter frame 1 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "enter frame 2 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "enter frame 3 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "corridor frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "corridor frame 1 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "welcome frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "welcome frame 1 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "radar frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "entire actual crew watches radar 0",
+          "ok": true,
+          "data": {
+            "mode": "radar",
+            "time": 0.2,
+            "frame": 1,
+            "cast": [
+              {
+                "pilot": "cole",
+                "pose": "back",
+                "x": 160,
+                "foot": 476
+              },
+              {
+                "pilot": "axel",
+                "pose": "back",
+                "x": 234,
+                "foot": 472
+              },
+              {
+                "pilot": "decker",
+                "pose": "back",
+                "x": 308,
+                "foot": 468
+              },
+              {
+                "pilot": "maverick",
+                "pose": "back",
+                "x": 382,
+                "foot": 464
+              },
+              {
+                "pilot": "freezer",
+                "pose": "back",
+                "x": 456,
+                "foot": 460
+              },
+              {
+                "pilot": "juggernaut",
+                "pose": "back",
+                "x": 530,
+                "foot": 464
+              },
+              {
+                "pilot": "yuri",
+                "pose": "back",
+                "x": 604,
+                "foot": 468
+              },
+              {
+                "pilot": "lizzie",
+                "pose": "back",
+                "x": 678,
+                "foot": 472
+              },
+              {
+                "pilot": "falva",
+                "pose": "back",
+                "x": 752,
+                "foot": 476
+              }
+            ],
+            "solidPanel": true
+          }
+        },
+        {
+          "name": "radar frame 1 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "entire actual crew watches radar 1",
+          "ok": true,
+          "data": {
+            "mode": "radar",
+            "time": 1.3,
+            "frame": 10,
+            "cast": [
+              {
+                "pilot": "cole",
+                "pose": "back",
+                "x": 160,
+                "foot": 476
+              },
+              {
+                "pilot": "axel",
+                "pose": "back",
+                "x": 234,
+                "foot": 472
+              },
+              {
+                "pilot": "decker",
+                "pose": "back",
+                "x": 308,
+                "foot": 468
+              },
+              {
+                "pilot": "maverick",
+                "pose": "back",
+                "x": 382,
+                "foot": 464
+              },
+              {
+                "pilot": "freezer",
+                "pose": "back",
+                "x": 456,
+                "foot": 460
+              },
+              {
+                "pilot": "juggernaut",
+                "pose": "back",
+                "x": 530,
+                "foot": 464
+              },
+              {
+                "pilot": "yuri",
+                "pose": "back",
+                "x": 604,
+                "foot": 468
+              },
+              {
+                "pilot": "lizzie",
+                "pose": "back",
+                "x": 678,
+                "foot": 472
+              },
+              {
+                "pilot": "falva",
+                "pose": "back",
+                "x": 752,
+                "foot": 476
+              }
+            ],
+            "solidPanel": true
+          }
+        },
+        {
+          "name": "radar frame 2 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "entire actual crew watches radar 2",
+          "ok": true,
+          "data": {
+            "mode": "radar",
+            "time": 3.2,
+            "frame": 9,
+            "cast": [
+              {
+                "pilot": "cole",
+                "pose": "back",
+                "x": 160,
+                "foot": 476
+              },
+              {
+                "pilot": "axel",
+                "pose": "back",
+                "x": 234,
+                "foot": 472
+              },
+              {
+                "pilot": "decker",
+                "pose": "back",
+                "x": 308,
+                "foot": 468
+              },
+              {
+                "pilot": "maverick",
+                "pose": "back",
+                "x": 382,
+                "foot": 464
+              },
+              {
+                "pilot": "freezer",
+                "pose": "back",
+                "x": 456,
+                "foot": 460
+              },
+              {
+                "pilot": "juggernaut",
+                "pose": "back",
+                "x": 530,
+                "foot": 464
+              },
+              {
+                "pilot": "yuri",
+                "pose": "back",
+                "x": 604,
+                "foot": 468
+              },
+              {
+                "pilot": "lizzie",
+                "pose": "back",
+                "x": 678,
+                "foot": 472
+              },
+              {
+                "pilot": "falva",
+                "pose": "back",
+                "x": 752,
+                "foot": 476
+              }
+            ],
+            "solidPanel": true
+          }
+        },
+        {
+          "name": "radar frame 3 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "entire actual crew watches radar 3",
+          "ok": true,
+          "data": {
+            "mode": "radar",
+            "time": 6.3,
+            "frame": 10,
+            "cast": [
+              {
+                "pilot": "cole",
+                "pose": "back",
+                "x": 160,
+                "foot": 476
+              },
+              {
+                "pilot": "axel",
+                "pose": "back",
+                "x": 234,
+                "foot": 472
+              },
+              {
+                "pilot": "decker",
+                "pose": "back",
+                "x": 308,
+                "foot": 468
+              },
+              {
+                "pilot": "maverick",
+                "pose": "back",
+                "x": 382,
+                "foot": 464
+              },
+              {
+                "pilot": "freezer",
+                "pose": "back",
+                "x": 456,
+                "foot": 460
+              },
+              {
+                "pilot": "juggernaut",
+                "pose": "back",
+                "x": 530,
+                "foot": 464
+              },
+              {
+                "pilot": "yuri",
+                "pose": "back",
+                "x": 604,
+                "foot": 468
+              },
+              {
+                "pilot": "lizzie",
+                "pose": "back",
+                "x": 678,
+                "foot": 472
+              },
+              {
+                "pilot": "falva",
+                "pose": "back",
+                "x": 752,
+                "foot": 476
+              }
+            ],
+            "solidPanel": true
+          }
+        },
+        {
+          "name": "launch frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "launch frame 1 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "launch frame 2 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "quiet frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "no enemies during five-second wait 0",
+          "ok": true,
+          "data": {
+            "mode": "quiet",
+            "time": 0.2,
+            "attackAge": null,
+            "door": 12,
+            "ships": [],
+            "enemies": [],
+            "shots": [],
+            "quietDuration": 5,
+            "solidPanel": true
+          }
+        },
+        {
+          "name": "quiet frame 1 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "no enemies during five-second wait 1",
+          "ok": true,
+          "data": {
+            "mode": "quiet",
+            "time": 4.8,
+            "attackAge": null,
+            "door": 0,
+            "ships": [],
+            "enemies": [],
+            "shots": [],
+            "quietDuration": 5,
+            "solidPanel": true
+          }
+        },
+        {
+          "name": "attack frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "attack frame 1 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "escape-decker frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "escape-decker frame 1 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "escape-axel frame 0 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "escape-axel frame 1 native solid scene",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "cole actual land actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "cole actual exit actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "cole actual enter actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "cole actual corridor actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "cole actual welcome actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "axel actual land actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "axel actual exit actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "axel actual enter actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "axel actual corridor actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "axel actual welcome actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "decker actual land actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "decker actual exit actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "decker actual enter actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "decker actual corridor actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "decker actual welcome actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "maverick actual land actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "maverick actual exit actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "maverick actual enter actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "maverick actual corridor actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "maverick actual welcome actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "freezer actual land actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "freezer actual exit actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "freezer actual enter actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "freezer actual corridor actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "freezer actual welcome actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "juggernaut actual land actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "juggernaut actual exit actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "juggernaut actual enter actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "juggernaut actual corridor actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "juggernaut actual welcome actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "yuri actual land actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "yuri actual exit actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "yuri actual enter actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "yuri actual corridor actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "yuri actual welcome actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "lizzie actual land actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "lizzie actual exit actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "lizzie actual enter actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "lizzie actual corridor actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "lizzie actual welcome actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "falva actual land actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "falva actual exit actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "falva actual enter actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "falva actual corridor actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "falva actual welcome actor/ship",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "new escape words use exact requested dialogue",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "Normal keeps its native quiet-completion branch",
+          "ok": true,
+          "data": [
+            "land",
+            "exit",
+            "enter",
+            "corridor",
+            "welcome"
+          ]
+        },
+        {
+          "name": "all16 radar frames render distinct native pixels",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "zero page console HTTP errors",
+          "ok": true,
+          "data": []
+        }
+      ],
+      "samples": [
+        {
+          "mode": "land",
+          "time": 2,
+          "door": 0,
+          "ships": [
+            {
+              "pilot": "cole",
+              "key": "ship_cole",
+              "x": 456,
+              "y": 524.541627179407,
+              "h": 131.7016614889255,
+              "power": 0.5694045807287409,
+              "south": false
+            }
+          ],
+          "actors": [],
+          "pad": {
+            "x": 456,
+            "y": 369.8084593301435
+          },
+          "entry": {
+            "x": 456,
+            "y": 231.4334162679426
+          },
+          "solidPanel": true
+        },
+        {
+          "mode": "land",
+          "time": 6.2,
+          "door": 0,
+          "ships": [
+            {
+              "pilot": "cole",
+              "key": "ship_cole",
+              "x": 456,
+              "y": 369.8084593301435,
+              "h": 82,
+              "power": 0,
+              "south": false
+            }
+          ],
+          "actors": [],
+          "pad": {
+            "x": 456,
+            "y": 369.8084593301435
+          },
+          "entry": {
+            "x": 456,
+            "y": 231.4334162679426
+          },
+          "solidPanel": true
+        },
+        {
+          "mode": "exit",
+          "time": 1.7,
+          "door": 0,
+          "ships": [
+            {
+              "pilot": "cole",
+              "key": "ship_cole",
+              "x": 456,
+              "y": 369.8084593301435,
+              "h": 82,
+              "power": 0,
+              "south": false
+            }
+          ],
+          "actors": [
+            {
+              "pilot": "cole",
+              "key": "hl10_cole_exit_05",
+              "x": 477.3927246862775,
+              "foot": 396.8084593301435,
+              "height": 30
+            }
+          ],
+          "pad": {
+            "x": 456,
+            "y": 369.8084593301435
+          },
+          "entry": {
+            "x": 456,
+            "y": 231.4334162679426
+          },
+          "solidPanel": true
+        },
+        {
+          "mode": "enter",
+          "time": 0.3,
+          "door": 0,
+          "ships": [
+            {
+              "pilot": "cole",
+              "key": "ship_cole",
+              "x": 456,
+              "y": 369.8084593301435,
+              "h": 82,
+              "power": 0,
+              "south": false
+            }
+          ],
+          "actors": [
+            {
+              "pilot": "cole",
+              "key": "hl10_cole_walk_02",
+              "x": 486.5793334409982,
+              "foot": 394.8520897082518,
+              "height": 29.924495745820195
+            }
+          ],
+          "pad": {
+            "x": 456,
+            "y": 369.8084593301435
+          },
+          "entry": {
+            "x": 456,
+            "y": 231.4334162679426
+          },
+          "solidPanel": true
+        },
+        {
+          "mode": "enter",
+          "time": 3,
+          "door": 15,
+          "ships": [
+            {
+              "pilot": "cole",
+              "key": "ship_cole",
+              "x": 456,
+              "y": 369.8084593301435,
+              "h": 82,
+              "power": 0,
+              "south": false
+            }
+          ],
+          "actors": [
+            {
+              "pilot": "cole",
+              "key": "hl10_cole_walk_03",
+              "x": 461.0439782743585,
+              "foot": 276.0962911708703,
+              "height": 25.34122686975665
+            }
+          ],
+          "pad": {
+            "x": 456,
+            "y": 369.8084593301435
+          },
+          "entry": {
+            "x": 456,
+            "y": 231.4334162679426
+          },
+          "solidPanel": true
+        },
+        {
+          "mode": "enter",
+          "time": 4.6,
+          "door": 15,
+          "ships": [
+            {
+              "pilot": "cole",
+              "key": "ship_cole",
+              "x": 456,
+              "y": 369.8084593301435,
+              "h": 82,
+              "power": 0,
+              "south": false
+            }
+          ],
+          "actors": [
+            {
+              "pilot": "cole",
+              "key": "hl10_cole_walk_01",
+              "x": 448.4206665590018,
+              "foot": 217.38978588983426,
+              "height": 23.075504254179805
+            }
+          ],
+          "pad": {
+            "x": 456,
+            "y": 369.8084593301435
+          },
+          "entry": {
+            "x": 456,
+            "y": 231.4334162679426
+          },
+          "solidPanel": true
+        },
+        {
+          "mode": "enter",
+          "time": 6.2,
+          "door": 0,
+          "ships": [
+            {
+              "pilot": "cole",
+              "key": "ship_cole",
+              "x": 456,
+              "y": 369.8084593301435,
+              "h": 82,
+              "power": 0,
+              "south": false
+            }
+          ],
+          "actors": [],
+          "pad": {
+            "x": 456,
+            "y": 369.8084593301435
+          },
+          "entry": {
+            "x": 456,
+            "y": 231.4334162679426
+          },
+          "solidPanel": true
+        },
+        {
+          "mode": "corridor",
+          "time": 1,
+          "cast": [
+            {
+              "pilot": "cole",
+              "pose": "walk",
+              "x": 153.01283365451638
+            }
+          ],
+          "solidPanel": true
+        },
+        {
+          "mode": "corridor",
+          "time": 4.2,
+          "cast": [
+            {
+              "pilot": "cole",
+              "pose": "walk",
+              "x": 693.059576038378
+            }
+          ],
+          "solidPanel": true
+        },
+        {
+          "mode": "welcome",
+          "time": 2.8,
+          "frame": 0,
+          "cast": [
+            {
+              "pilot": "axel",
+              "pose": "ecstatic",
+              "x": 360,
+              "foot": 414
+            },
+            {
+              "pilot": "decker",
+              "pose": "happy",
+              "x": 457,
+              "foot": 414
+            },
+            {
+              "pilot": "maverick",
+              "pose": "jump_cheer",
+              "x": 554,
+              "foot": 414
+            },
+            {
+              "pilot": "freezer",
+              "pose": "happy",
+              "x": 651,
+              "foot": 414
+            },
+            {
+              "pilot": "juggernaut",
+              "pose": "ecstatic",
+              "x": 748,
+              "foot": 414
+            },
+            {
+              "pilot": "yuri",
+              "pose": "happy",
+              "x": 360,
+              "foot": 478
+            },
+            {
+              "pilot": "lizzie",
+              "pose": "jump_cheer",
+              "x": 457,
+              "foot": 478
+            },
+            {
+              "pilot": "falva",
+              "pose": "happy",
+              "x": 554,
+              "foot": 478
+            },
+            {
+              "pilot": "cole",
+              "pose": "happy",
+              "x": 245,
+              "foot": 467
+            }
+          ],
+          "solidPanel": true
+        },
+        {
+          "mode": "welcome",
+          "time": 5.2,
+          "frame": 0,
+          "cast": [
+            {
+              "pilot": "axel",
+              "pose": "happy",
+              "x": 360,
+              "foot": 414
+            },
+            {
+              "pilot": "decker",
+              "pose": "jump_cheer",
+              "x": 457,
+              "foot": 414
+            },
+            {
+              "pilot": "maverick",
+              "pose": "happy",
+              "x": 554,
+              "foot": 414
+            },
+            {
+              "pilot": "freezer",
+              "pose": "ecstatic",
+              "x": 651,
+              "foot": 414
+            },
+            {
+              "pilot": "juggernaut",
+              "pose": "happy",
+              "x": 748,
+              "foot": 414
+            },
+            {
+              "pilot": "yuri",
+              "pose": "jump_cheer",
+              "x": 360,
+              "foot": 478
+            },
+            {
+              "pilot": "lizzie",
+              "pose": "happy",
+              "x": 457,
+              "foot": 478
+            },
+            {
+              "pilot": "falva",
+              "pose": "ecstatic",
+              "x": 554,
+              "foot": 478
+            },
+            {
+              "pilot": "cole",
+              "pose": "happy",
+              "x": 245,
+              "foot": 467
+            }
+          ],
+          "solidPanel": true
+        },
+        {
+          "mode": "radar",
+          "time": 0.2,
+          "frame": 1,
+          "cast": [
+            {
+              "pilot": "cole",
+              "pose": "back",
+              "x": 160,
+              "foot": 476
+            },
+            {
+              "pilot": "axel",
+              "pose": "back",
+              "x": 234,
+              "foot": 472
+            },
+            {
+              "pilot": "decker",
+              "pose": "back",
+              "x": 308,
+              "foot": 468
+            },
+            {
+              "pilot": "maverick",
+              "pose": "back",
+              "x": 382,
+              "foot": 464
+            },
+            {
+              "pilot": "freezer",
+              "pose": "back",
+              "x": 456,
+              "foot": 460
+            },
+            {
+              "pilot": "juggernaut",
+              "pose": "back",
+              "x": 530,
+              "foot": 464
+            },
+            {
+              "pilot": "yuri",
+              "pose": "back",
+              "x": 604,
+              "foot": 468
+            },
+            {
+              "pilot": "lizzie",
+              "pose": "back",
+              "x": 678,
+              "foot": 472
+            },
+            {
+              "pilot": "falva",
+              "pose": "back",
+              "x": 752,
+              "foot": 476
+            }
+          ],
+          "solidPanel": true
+        },
+        {
+          "mode": "radar",
+          "time": 1.3,
+          "frame": 10,
+          "cast": [
+            {
+              "pilot": "cole",
+              "pose": "back",
+              "x": 160,
+              "foot": 476
+            },
+            {
+              "pilot": "axel",
+              "pose": "back",
+              "x": 234,
+              "foot": 472
+            },
+            {
+              "pilot": "decker",
+              "pose": "back",
+              "x": 308,
+              "foot": 468
+            },
+            {
+              "pilot": "maverick",
+              "pose": "back",
+              "x": 382,
+              "foot": 464
+            },
+            {
+              "pilot": "freezer",
+              "pose": "back",
+              "x": 456,
+              "foot": 460
+            },
+            {
+              "pilot": "juggernaut",
+              "pose": "back",
+              "x": 530,
+              "foot": 464
+            },
+            {
+              "pilot": "yuri",
+              "pose": "back",
+              "x": 604,
+              "foot": 468
+            },
+            {
+              "pilot": "lizzie",
+              "pose": "back",
+              "x": 678,
+              "foot": 472
+            },
+            {
+              "pilot": "falva",
+              "pose": "back",
+              "x": 752,
+              "foot": 476
+            }
+          ],
+          "solidPanel": true
+        },
+        {
+          "mode": "radar",
+          "time": 3.2,
+          "frame": 9,
+          "cast": [
+            {
+              "pilot": "cole",
+              "pose": "back",
+              "x": 160,
+              "foot": 476
+            },
+            {
+              "pilot": "axel",
+              "pose": "back",
+              "x": 234,
+              "foot": 472
+            },
+            {
+              "pilot": "decker",
+              "pose": "back",
+              "x": 308,
+              "foot": 468
+            },
+            {
+              "pilot": "maverick",
+              "pose": "back",
+              "x": 382,
+              "foot": 464
+            },
+            {
+              "pilot": "freezer",
+              "pose": "back",
+              "x": 456,
+              "foot": 460
+            },
+            {
+              "pilot": "juggernaut",
+              "pose": "back",
+              "x": 530,
+              "foot": 464
+            },
+            {
+              "pilot": "yuri",
+              "pose": "back",
+              "x": 604,
+              "foot": 468
+            },
+            {
+              "pilot": "lizzie",
+              "pose": "back",
+              "x": 678,
+              "foot": 472
+            },
+            {
+              "pilot": "falva",
+              "pose": "back",
+              "x": 752,
+              "foot": 476
+            }
+          ],
+          "solidPanel": true
+        },
+        {
+          "mode": "radar",
+          "time": 6.3,
+          "frame": 10,
+          "cast": [
+            {
+              "pilot": "cole",
+              "pose": "back",
+              "x": 160,
+              "foot": 476
+            },
+            {
+              "pilot": "axel",
+              "pose": "back",
+              "x": 234,
+              "foot": 472
+            },
+            {
+              "pilot": "decker",
+              "pose": "back",
+              "x": 308,
+              "foot": 468
+            },
+            {
+              "pilot": "maverick",
+              "pose": "back",
+              "x": 382,
+              "foot": 464
+            },
+            {
+              "pilot": "freezer",
+              "pose": "back",
+              "x": 456,
+              "foot": 460
+            },
+            {
+              "pilot": "juggernaut",
+              "pose": "back",
+              "x": 530,
+              "foot": 464
+            },
+            {
+              "pilot": "yuri",
+              "pose": "back",
+              "x": 604,
+              "foot": 468
+            },
+            {
+              "pilot": "lizzie",
+              "pose": "back",
+              "x": 678,
+              "foot": 472
+            },
+            {
+              "pilot": "falva",
+              "pose": "back",
+              "x": 752,
+              "foot": 476
+            }
+          ],
+          "solidPanel": true
+        },
+        {
+          "mode": "launch",
+          "time": 2.3,
+          "attackAge": null,
+          "door": 15,
+          "ships": [
+            {
+              "pilot": "cole",
+              "key": "ship_cole",
+              "x": 452.65967020408164,
+              "y": 255.4789220740162,
+              "h": 58.599999999999994,
+              "power": 0.9,
+              "south": true
+            },
+            {
+              "pilot": "maverick",
+              "key": "ship_maverick",
+              "x": 455.9652048979592,
+              "y": 231.8091272961625,
+              "h": 29.199999999999985,
+              "power": 0.9,
+              "south": true
+            }
+          ],
+          "enemies": [],
+          "shots": [],
+          "quietDuration": 0,
+          "solidPanel": true
+        },
+        {
+          "mode": "launch",
+          "time": 5,
+          "attackAge": null,
+          "door": 15,
+          "ships": [
+            {
+              "pilot": "maverick",
+              "key": "ship_maverick",
+              "x": 428.72064,
+              "y": 525.9908623923444,
+              "h": 142.6,
+              "power": 0.9,
+              "south": true
+            },
+            {
+              "pilot": "freezer",
+              "key": "ship_freezer",
+              "x": 448.32768,
+              "y": 397.1219797129187,
+              "h": 113.2,
+              "power": 0.9,
+              "south": true
+            },
+            {
+              "pilot": "juggernaut",
+              "key": "ship_juggernaut",
+              "x": 456,
+              "y": 305.0727777990431,
+              "h": 83.80000000000001,
+              "power": 0.9,
+              "south": true
+            },
+            {
+              "pilot": "yuri",
+              "key": "ship_yuri",
+              "x": 456.85248,
+              "y": 249.8432566507177,
+              "h": 54.400000000000006,
+              "power": 0.9,
+              "south": true
+            },
+            {
+              "pilot": "lizzie",
+              "key": "ship_lizzie",
+              "x": 456,
+              "y": 231.4334162679426,
+              "h": 25,
+              "power": 0.9,
+              "south": true
+            }
+          ],
+          "enemies": [],
+          "shots": [],
+          "quietDuration": 0,
+          "solidPanel": true
+        },
+        {
+          "mode": "launch",
+          "time": 8.7,
+          "attackAge": null,
+          "door": 15,
+          "ships": [
+            {
+              "pilot": "falva",
+              "key": "ship_falva",
+              "x": 502.97338775510207,
+              "y": 569.5733416658529,
+              "h": 151,
+              "power": 0.9,
+              "south": true
+            }
+          ],
+          "enemies": [],
+          "shots": [],
+          "quietDuration": 0,
+          "solidPanel": true
+        },
+        {
+          "mode": "quiet",
+          "time": 0.2,
+          "attackAge": null,
+          "door": 12,
+          "ships": [],
+          "enemies": [],
+          "shots": [],
+          "quietDuration": 5,
+          "solidPanel": true
+        },
+        {
+          "mode": "quiet",
+          "time": 4.8,
+          "attackAge": null,
+          "door": 0,
+          "ships": [],
+          "enemies": [],
+          "shots": [],
+          "quietDuration": 5,
+          "solidPanel": true
+        },
+        {
+          "mode": "attack",
+          "time": 0.8,
+          "attackAge": 0.8,
+          "door": 0,
+          "ships": [],
+          "enemies": [
+            {
+              "key": "whv_ace",
+              "x": 655.556131230293,
+              "y": 142.71489928404796,
+              "angle": 2.9530298620847026
+            },
+            {
+              "key": "whv_ace",
+              "x": 301.29880313322303,
+              "y": 219.93619733818068,
+              "angle": -0.24780397386584002
+            }
+          ],
+          "shots": [
+            {
+              "x": 339.6852300212442,
+              "y": 210.22427692697318,
+              "from": {
+                "x": 316.42227602549303,
+                "y": 216.10989786260706
+              }
+            }
+          ],
+          "quietDuration": 0,
+          "solidPanel": true
+        },
+        {
+          "mode": "attack",
+          "time": 2.9,
+          "attackAge": 2.9,
+          "door": 0,
+          "ships": [],
+          "enemies": [
+            {
+              "key": "whv_ace",
+              "x": 717.0600422402827,
+              "y": 131.29479862105728,
+              "angle": 2.954200567432228
+            },
+            {
+              "key": "whv_ace",
+              "x": 182.72134620619408,
+              "y": 215.14924631639448,
+              "angle": -0.1250511806300623
+            },
+            {
+              "key": "whv_ace",
+              "x": 367.0258399091108,
+              "y": 61.759052364712446,
+              "angle": 0.9289299450631902
+            },
+            {
+              "key": "whv_ace",
+              "x": 557.5662754999726,
+              "y": 265.54793336142313,
+              "angle": -2.446196985114909
+            }
+          ],
+          "shots": [
+            {
+              "x": 585.5201990673359,
+              "y": 156.23696467589173,
+              "from": {
+                "x": 703.2658345830956,
+                "y": 133.91041233688074
+              }
+            },
+            {
+              "x": 632.500707638124,
+              "y": 147.32867029262633,
+              "from": {
+                "x": 703.2658345830956,
+                "y": 133.91041233688074
+              }
+            },
+            {
+              "x": 679.4812162089122,
+              "y": 138.42037590936096,
+              "from": {
+                "x": 703.2658345830956,
+                "y": 133.91041233688074
+              }
+            },
+            {
+              "x": 425.3094678871629,
+              "y": 184.6541908251159,
+              "from": {
+                "x": 198.19953025216935,
+                "y": 213.20352828982521
+              }
+            },
+            {
+              "x": 376.3273786350751,
+              "y": 190.81158847291,
+              "from": {
+                "x": 198.19953025216935,
+                "y": 213.20352828982521
+              }
+            },
+            {
+              "x": 327.3452893829873,
+              "y": 196.96898612070405,
+              "from": {
+                "x": 198.19953025216935,
+                "y": 213.20352828982521
+              }
+            },
+            {
+              "x": 450.37852747348853,
+              "y": 173.27529317132894,
+              "from": {
+                "x": 377.2993846288397,
+                "y": 75.5038651641554
+              }
+            },
+            {
+              "x": 435.42541055296806,
+              "y": 153.26975482524574,
+              "from": {
+                "x": 377.2993846288397,
+                "y": 75.5038651641554
+              }
+            },
+            {
+              "x": 420.4722936324476,
+              "y": 133.2642164791625,
+              "from": {
+                "x": 377.2993846288397,
+                "y": 75.5038651641554
+              }
+            },
+            {
+              "x": 458.16157999596794,
+              "y": 182.59989804796578,
+              "from": {
+                "x": 546.7863598306506,
+                "y": 256.55265581360356
+              }
+            },
+            {
+              "x": 475.4109883637915,
+              "y": 196.99362992527773,
+              "from": {
+                "x": 546.7863598306506,
+                "y": 256.55265581360356
+              }
+            },
+            {
+              "x": 492.66039673161515,
+              "y": 211.38736180258965,
+              "from": {
+                "x": 546.7863598306506,
+                "y": 256.55265581360356
+              }
+            }
+          ],
+          "quietDuration": 0,
+          "solidPanel": true
+        },
+        {
+          "mode": "escape-decker",
+          "time": 1.8,
+          "attackAge": 5.2,
+          "door": 15,
+          "ships": [
+            {
+              "pilot": "decker",
+              "key": "ship_decker",
+              "x": 455.14752,
+              "y": 249.8432566507177,
+              "h": 54.4,
+              "power": 0.9,
+              "south": true
+            }
+          ],
+          "enemies": [
+            {
+              "key": "whv_ace",
+              "x": 668.127329771245,
+              "y": 97.3978905805053,
+              "angle": 2.767003638297191
+            },
+            {
+              "key": "whv_ace",
+              "x": 172.99947246863167,
+              "y": 169.48496471099884,
+              "angle": 0.03994759355857792
+            },
+            {
+              "key": "whv_ace",
+              "x": 286.19407038336465,
+              "y": 80.29683553980541,
+              "angle": 0.5344039805463513
+            },
+            {
+              "key": "whv_ace",
+              "x": 405.71462009095615,
+              "y": 304.1577455407063,
+              "angle": -1.1837331812171166
+            },
+            {
+              "key": "whv_ace",
+              "x": 214.18404262211737,
+              "y": 246.62329259780276,
+              "angle": -0.26577975919337626
+            },
+            {
+              "key": "whv_ace",
+              "x": 730.208703114233,
+              "y": 213.67574208526818,
+              "angle": -3.022255311780704
+            }
+          ],
+          "shots": [
+            {
+              "x": 412.0853932649046,
+              "y": 288.52877737449813,
+              "from": {
+                "x": 411.0143052957559,
+                "y": 291.156401889759
+              }
+            },
+            {
+              "x": 245.43370262169856,
+              "y": 238.11651268152468,
+              "from": {
+                "x": 229.23629513106002,
+                "y": 242.5257696378878
+              }
+            },
+            {
+              "x": 682.5551839867862,
+              "y": 207.9617468972619,
+              "from": {
+                "x": 713.1707493904061,
+                "y": 211.63277049840488
+              }
+            }
+          ],
+          "quietDuration": 0,
+          "solidPanel": true
+        },
+        {
+          "mode": "escape-decker",
+          "time": 3.7,
+          "attackAge": 7.1,
+          "door": 15,
+          "ships": [
+            {
+              "pilot": "decker",
+              "key": "ship_decker",
+              "x": 444.2392555102041,
+              "y": 485.4140713445953,
+              "h": 134.2,
+              "power": 0.9,
+              "south": true
+            },
+            {
+              "pilot": "axel",
+              "key": "ship_axel",
+              "x": 461.02789224489794,
+              "y": 340.01390342349384,
+              "h": 96.4,
+              "power": 0.9,
+              "south": true
+            }
+          ],
+          "enemies": [
+            {
+              "key": "whv_ace",
+              "x": 610.9642054245504,
+              "y": 75.73466461055145,
+              "angle": 2.5458035550421023
+            },
+            {
+              "key": "whv_ace",
+              "x": 193.65216993164722,
+              "y": 132.63762448953767,
+              "angle": 0.1815463629481571
+            },
+            {
+              "key": "whv_ace",
+              "x": 232.27183148417134,
+              "y": 103.52052030872406,
+              "angle": 0.33257073121225733
+            },
+            {
+              "key": "whv_ace",
+              "x": 324.3025859428453,
+              "y": 291.8617849307976,
+              "angle": -0.7006144865780564
+            },
+            {
+              "key": "whv_ace",
+              "x": 261.91947929024536,
+              "y": 272.34691463469596,
+              "angle": -0.44076486990279423
+            },
+            {
+              "key": "whv_ace",
+              "x": 695.3220412073437,
+              "y": 248.37327401418233,
+              "angle": -2.8663886231015483
+            },
+            {
+              "key": "whv_ace",
+              "x": 645.7954058728347,
+              "y": 274.07842598389936,
+              "angle": -2.68477742385531
+            },
+            {
+              "key": "whv_ace",
+              "x": 664.9479653505418,
+              "y": 66.33823680747375,
+              "angle": 2.640453912476907
+            }
+          ],
+          "shots": [
+            {
+              "x": 250.16316201103757,
+              "y": 143.01120871270342,
+              "from": {
+                "x": 208.9957944132455,
+                "y": 135.4542160054834
+              }
+            },
+            {
+              "x": 292.95766192266433,
+              "y": 124.48139055483213,
+              "from": {
+                "x": 248.49156971975492,
+                "y": 109.12281372920359
+              }
+            },
+            {
+              "x": 253.53106016941777,
+              "y": 110.86345243610808,
+              "from": {
+                "x": 248.49156971975492,
+                "y": 109.12281372920359
+              }
+            },
+            {
+              "x": 366.7166123694972,
+              "y": 256.09236709437766,
+              "from": {
+                "x": 335.0354103070609,
+                "y": 282.8103717170005
+              }
+            },
+            {
+              "x": 343.7333403278388,
+              "y": 275.475064993335,
+              "from": {
+                "x": 335.0354103070609,
+                "y": 282.8103717170005
+              }
+            },
+            {
+              "x": 331.7339772744565,
+              "y": 239.41435089064348,
+              "from": {
+                "x": 276.0285188112825,
+                "y": 265.69146545422643
+              }
+            },
+            {
+              "x": 297.5393958486002,
+              "y": 255.54445659967377,
+              "from": {
+                "x": 276.0285188112825,
+                "y": 265.69146545422643
+              }
+            },
+            {
+              "x": 599.2335702149519,
+              "y": 221.24087805944973,
+              "from": {
+                "x": 678.8077758899246,
+                "y": 243.710159065364
+              }
+            },
+            {
+              "x": 641.5670476340375,
+              "y": 233.19453555459617,
+              "from": {
+                "x": 678.8077758899246,
+                "y": 243.710159065364
+              }
+            },
+            {
+              "x": 561.4732392076432,
+              "y": 232.63505326272002,
+              "from": {
+                "x": 633.1950418688405,
+                "y": 267.8854923521829
+              }
+            },
+            {
+              "x": 595.140297162723,
+              "y": 249.18202408236203,
+              "from": {
+                "x": 633.1950418688405,
+                "y": 267.8854923521829
+              }
+            },
+            {
+              "x": 628.8073551178027,
+              "y": 265.72899490200405,
+              "from": {
+                "x": 633.1950418688405,
+                "y": 267.8854923521829
+              }
+            },
+            {
+              "x": 562.9314920905919,
+              "y": 122.22102509282641,
+              "from": {
+                "x": 651.2662029480365,
+                "y": 73.83286005093244
+              }
+            },
+            {
+              "x": 600.0320706507188,
+              "y": 101.89799577523084,
+              "from": {
+                "x": 651.2662029480365,
+                "y": 73.83286005093244
+              }
+            },
+            {
+              "x": 637.1326492108457,
+              "y": 81.57496645763527,
+              "from": {
+                "x": 651.2662029480365,
+                "y": 73.83286005093244
+              }
+            }
+          ],
+          "quietDuration": 0,
+          "solidPanel": true
+        },
+        {
+          "mode": "escape-axel",
+          "time": 0.2,
+          "attackAge": 7.800000000000001,
+          "door": 15,
+          "ships": [
+            {
+              "pilot": "decker",
+              "key": "ship_decker",
+              "x": 437.0540669387755,
+              "y": 640.5827259994143,
+              "h": 163.60000000000002,
+              "power": 0.9,
+              "south": true
+            },
+            {
+              "pilot": "axel",
+              "key": "ship_axel",
+              "x": 466.0209893877551,
+              "y": 447.84296852260525,
+              "h": 125.80000000000001,
+              "power": 0.9,
+              "south": true
+            }
+          ],
+          "enemies": [
+            {
+              "key": "whv_ace",
+              "x": 586.9156915395945,
+              "y": 69.55089609586318,
+              "angle": 2.4372452210196576
+            },
+            {
+              "key": "whv_ace",
+              "x": 207.49863480529655,
+              "y": 120.00595344743442,
+              "angle": 0.23991565001480306
+            },
+            {
+              "key": "whv_ace",
+              "x": 216.20386213607264,
+              "y": 113.54685319194661,
+              "angle": 0.27342010979244374
+            },
+            {
+              "key": "whv_ace",
+              "x": 296.98517277950884,
+              "y": 284.6733985463562,
+              "angle": -0.5786600227101537
+            },
+            {
+              "key": "whv_ace",
+              "x": 283.15869223119097,
+              "y": 280.2836729531102,
+              "angle": -0.5222852698350569
+            },
+            {
+              "key": "whv_ace",
+              "x": 676.6994386074442,
+              "y": 259.74813778847056,
+              "angle": -2.7980434449663245
+            },
+            {
+              "key": "whv_ace",
+              "x": 665.5768090514564,
+              "y": 265.43974465472604,
+              "angle": -2.7577471990697733
+            },
+            {
+              "key": "whv_ace",
+              "x": 653.6016036693654,
+              "y": 90.72279549296746,
+              "angle": 2.713898414497052
+            },
+            {
+              "key": "whv_ace",
+              "x": 249.6613241255577,
+              "y": 3.69527116650967,
+              "angle": 0.7092941093900103
+            }
+          ],
+          "shots": [],
+          "quietDuration": 0,
+          "solidPanel": true
+        },
+        {
+          "mode": "escape-axel",
+          "time": 3.2,
+          "attackAge": 10.8,
+          "door": 15,
+          "ships": [],
+          "enemies": [
+            {
+              "key": "whv_ace",
+              "x": 472.6979395218349,
+              "y": 55.673047121810896,
+              "angle": 1.703464515768756
+            },
+            {
+              "key": "whv_ace",
+              "x": 299.22232799312815,
+              "y": 76.2594340834057,
+              "angle": 0.5880833659231838
+            },
+            {
+              "key": "whv_ace",
+              "x": 174.87674894265552,
+              "y": 162.52092526864095,
+              "angle": 0.06491660883335376
+            },
+            {
+              "key": "whv_ace",
+              "x": 206.2047378574889,
+              "y": 240.545731312401,
+              "angle": -0.23478285645676633
+            },
+            {
+              "key": "whv_ace",
+              "x": 390.1508704634724,
+              "y": 302.72407914497103,
+              "angle": -1.0756118855060295
+            },
+            {
+              "key": "whv_ace",
+              "x": 569.1038230877297,
+              "y": 295.77943847541144,
+              "angle": -2.347954652464348
+            },
+            {
+              "key": "whv_ace",
+              "x": 725.6102827561499,
+              "y": 220.38912133082815,
+              "angle": -2.9957823395677425
+            },
+            {
+              "key": "whv_ace",
+              "x": 725.5701739616663,
+              "y": 141.15012417391966,
+              "angle": 2.9955681394237654
+            },
+            {
+              "key": "whv_ace",
+              "x": 568.9874085220657,
+              "y": 65.79064034742376,
+              "angle": 2.3473430289596657
+            },
+            {
+              "key": "whv_ace",
+              "x": 390.0274433331366,
+              "y": 58.88124727489895,
+              "angle": 1.0747839402310075
+            },
+            {
+              "key": "whv_ace",
+              "x": 206.14427530565536,
+              "y": 121.0958192791071,
+              "angle": 0.23454181225024517
+            },
+            {
+              "key": "whv_ace",
+              "x": 798.2573800291943,
+              "y": -7.697283656520142,
+              "angle": 2.6381845612877464
+            }
+          ],
+          "shots": [
+            {
+              "x": 470.84073741210744,
+              "y": 69.58967028706284,
+              "from": {
+                "x": 470.84073741210744,
+                "y": 69.58967028706273
+              }
+            },
+            {
+              "x": 370.4057224282981,
+              "y": 123.72333484516372,
+              "from": {
+                "x": 312.2016136795405,
+                "y": 84.9138054106883
+              }
+            },
+            {
+              "x": 343.08402902741074,
+              "y": 105.50568514592177,
+              "from": {
+                "x": 312.2016136795405,
+                "y": 84.9138054106883
+              }
+            },
+            {
+              "x": 315.76233562652345,
+              "y": 87.28803544667981,
+              "from": {
+                "x": 312.2016136795405,
+                "y": 84.9138054106883
+              }
+            },
+            {
+              "x": 311.4289022416993,
+              "y": 171.39790117805813,
+              "from": {
+                "x": 192.00060409353827,
+                "y": 163.63411203265957
+              }
+            },
+            {
+              "x": 261.26901701947156,
+              "y": 168.13710973699074,
+              "from": {
+                "x": 192.00060409353827,
+                "y": 163.63411203265957
+              }
+            },
+            {
+              "x": 211.10913179724383,
+              "y": 164.87631829592334,
+              "from": {
+                "x": 192.00060409353827,
+                "y": 163.63411203265957
+              }
+            },
+            {
+              "x": 337.9297743776082,
+              "y": 209.03787651080293,
+              "from": {
+                "x": 219.8595487552157,
+                "y": 237.27958077280223
+              }
+            },
+            {
+              "x": 293.0630886410992,
+              "y": 219.76972413036265,
+              "from": {
+                "x": 219.8595487552157,
+                "y": 237.27958077280223
+              }
+            },
+            {
+              "x": 248.1964029045902,
+              "y": 230.50157174992233,
+              "from": {
+                "x": 219.8595487552157,
+                "y": 237.27958077280223
+              }
+            },
+            {
+              "x": 429.56461962683784,
+              "y": 229.74458841755083,
+              "from": {
+                "x": 397.5638960172205,
+                "y": 288.997934306034
+              }
+            },
+            {
+              "x": 418.46175987010974,
+              "y": 250.30292320842455,
+              "from": {
+                "x": 397.5638960172205,
+                "y": 288.997934306034
+              }
+            },
+            {
+              "x": 407.3589001133816,
+              "y": 270.8612579992983,
+              "from": {
+                "x": 397.5638960172205,
+                "y": 288.997934306034
+              }
+            },
+            {
+              "x": 496.90939228981586,
+              "y": 222.38535479288123,
+              "from": {
+                "x": 557.0702633042515,
+                "y": 283.54591735770146
+              }
+            },
+            {
+              "x": 516.1127423176237,
+              "y": 241.90780636357178,
+              "from": {
+                "x": 557.0702633042515,
+                "y": 283.54591735770146
+              }
+            },
+            {
+              "x": 535.3160923454315,
+              "y": 261.43025793426233,
+              "from": {
+                "x": 557.0702633042515,
+                "y": 283.54591735770146
+              }
+            },
+            {
+              "x": 547.3283100933212,
+              "y": 194.20796461186686,
+              "from": {
+                "x": 711.7192682612997,
+                "y": 218.34919086538036
+              }
+            },
+            {
+              "x": 595.9149710629681,
+              "y": 201.3430381490164,
+              "from": {
+                "x": 711.7192682612997,
+                "y": 218.34919086538036
+              }
+            },
+            {
+              "x": 644.5016320326151,
+              "y": 208.47811168616596,
+              "from": {
+                "x": 711.7192682612997,
+                "y": 218.34919086538036
+              }
+            },
+            {
+              "x": 534.661204535855,
+              "y": 169.22736309300947,
+              "from": {
+                "x": 710.1361992696859,
+                "y": 143.42001959162198
+              }
+            },
+            {
+              "x": 582.9470823970953,
+              "y": 162.12589408814492,
+              "from": {
+                "x": 710.1361992696859,
+                "y": 143.42001959162198
+              }
+            },
+            {
+              "x": 631.2329602583357,
+              "y": 155.02442508328036,
+              "from": {
+                "x": 710.1361992696859,
+                "y": 143.42001959162198
+              }
+            },
+            {
+              "x": 482.44225395898906,
+              "y": 153.88162025577338,
+              "from": {
+                "x": 556.9613332979585,
+                "y": 78.03151918450546
+              }
+            },
+            {
+              "x": 501.6249072856011,
+              "y": 134.3563361735567,
+              "from": {
+                "x": 556.9613332979585,
+                "y": 78.03151918450546
+              }
+            },
+            {
+              "x": 520.8075606122133,
+              "y": 114.83105209134001,
+              "from": {
+                "x": 556.9613332979585,
+                "y": 78.03151918450546
+              }
+            },
+            {
+              "x": 443.2948697337253,
+              "y": 157.31754596154082,
+              "from": {
+                "x": 396.7093920907178,
+                "y": 71.22924957490923
+              }
+            },
+            {
+              "x": 432.0296542309617,
+              "y": 136.49983065350085,
+              "from": {
+                "x": 396.7093920907178,
+                "y": 71.22924957490923
+              }
+            },
+            {
+              "x": 420.7644387281981,
+              "y": 115.68211534546089,
+              "from": {
+                "x": 396.7093920907178,
+                "y": 71.22924957490923
+              }
+            },
+            {
+              "x": 416.88619362273806,
+              "y": 171.45034657453715,
+              "from": {
+                "x": 221.31716173642909,
+                "y": 124.72121820320395
+              }
+            },
+            {
+              "x": 372.29645435265957,
+              "y": 160.79610530587317,
+              "from": {
+                "x": 221.31716173642909,
+                "y": 124.72121820320395
+              }
+            },
+            {
+              "x": 327.7067150825811,
+              "y": 150.1418640372092,
+              "from": {
+                "x": 221.31716173642909,
+                "y": 124.72121820320395
+              }
+            }
+          ],
+          "quietDuration": 0,
+          "solidPanel": true
+        }
+      ],
+      "errors": []
+    },
+    "lifecycle-qa": {
+      "checks": [
+        {
+          "name": "native Chronos destruction retained before new return",
+          "ok": true,
+          "data": [
+            "drain",
+            "pulse",
+            "missile",
+            "after",
+            "burst",
+            "lock",
+            "engulf"
+          ]
+        },
+        {
+          "name": "native settlement reached once",
+          "ok": true,
+          "data": "stageclear"
+        },
+        {
+          "name": "retired static dying/orbital/Earth plates never drawn",
+          "ok": true,
+          "data": []
+        },
+        {
+          "name": "Earth image is not drawn before the reveal",
+          "ok": true,
+          "data": [
+            {
+              "time": 2.416666666666663,
+              "y": -385.4937478461976
+            },
+            {
+              "time": 2.4333333333333296,
+              "y": -385.26568285991505
+            },
+            {
+              "time": 2.449999999999996,
+              "y": -384.8881837172539
+            },
+            {
+              "time": 2.466666666666663,
+              "y": -384.3633851918768
+            }
+          ]
+        },
+        {
+          "name": "southbound descent scales continuously down",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "all eleven complete HQ beats ran natively",
+          "ok": true,
+          "data": [
+            "land",
+            "exit",
+            "enter",
+            "corridor",
+            "welcome",
+            "radar",
+            "launch",
+            "quiet",
+            "attack",
+            "escape-decker",
+            "escape-axel"
+          ]
+        },
+        {
+          "name": "seven pilots launch first and both guards depart later",
+          "ok": true,
+          "data": {
+            "first": [
+              "maverick",
+              "lizzie",
+              "juggernaut",
+              "freezer",
+              "falva",
+              "yuri",
+              "cole"
+            ],
+            "guards": [
+              "decker",
+              "axel"
+            ]
+          }
+        },
+        {
+          "name": "quiet stretch has no enemies or outbound ships",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "at least five seconds before first enemies",
+          "ok": true,
+          "data": {
+            "quietStart": 48.4000000000165,
+            "enemyStart": 53.40000000001809,
+            "delay": 5.000000000001592
+          }
+        },
+        {
+          "name": "enemy build-up is continuous and reaches twelve or more",
+          "ok": true,
+          "data": [
+            2,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13
+          ]
+        },
+        {
+          "name": "escape dialogue keeps framed pilot avatars and one metal size",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "all sixteen actual radar frames are distinct",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "two actual active co-op pilots are retained",
+          "ok": true,
+          "data": null
+        },
+        {
+          "name": "co-op welcome has all nine pilots exactly once",
+          "ok": true,
+          "data": [
+            {
+              "pilot": "axel",
+              "pose": "happy",
+              "x": 360,
+              "foot": 414
+            },
+            {
+              "pilot": "maverick",
+              "pose": "jump_cheer",
+              "x": 457,
+              "foot": 414
+            },
+            {
+              "pilot": "freezer",
+              "pose": "happy",
+              "x": 554,
+              "foot": 414
+            },
+            {
+              "pilot": "juggernaut",
+              "pose": "ecstatic",
+              "x": 651,
+              "foot": 414
+            },
+            {
+              "pilot": "yuri",
+              "pose": "happy",
+              "x": 748,
+              "foot": 414
+            },
+            {
+              "pilot": "lizzie",
+              "pose": "jump_cheer",
+              "x": 360,
+              "foot": 478
+            },
+            {
+              "pilot": "falva",
+              "pose": "happy",
+              "x": 457,
+              "foot": 478
+            },
+            {
+              "pilot": "cole",
+              "pose": "happy",
+              "x": 245,
+              "foot": 467
+            },
+            {
+              "pilot": "decker",
+              "pose": "happy",
+              "x": 160,
+              "foot": 482
+            }
+          ]
+        },
+        {
+          "name": "gd_doorOpen decoded native audio is audible",
+          "ok": true,
+          "data": {
+            "key": "gd_doorOpen",
+            "peak": 0.32314619421958923
+          }
+        },
+        {
+          "name": "gd_footstepA decoded native audio is audible",
+          "ok": true,
+          "data": {
+            "key": "gd_footstepA",
+            "peak": 0.326026976108551
+          }
+        },
+        {
+          "name": "gd_footstepB decoded native audio is audible",
+          "ok": true,
+          "data": {
+            "key": "gd_footstepB",
+            "peak": 0.34475237131118774
+          }
+        },
+        {
+          "name": "blip decoded native audio is audible",
+          "ok": true,
+          "data": {
+            "key": "blip",
+            "peak": 0.3257277011871338
+          }
+        },
+        {
+          "name": "jetDash decoded native audio is audible",
+          "ok": true,
+          "data": {
+            "key": "jetDash",
+            "peak": 0.37750422954559326
+          }
+        },
+        {
+          "name": "enemyMachineGunLight decoded native audio is audible",
+          "ok": true,
+          "data": {
+            "key": "enemyMachineGunLight",
+            "peak": 0.17256198823451996
+          }
+        },
+        {
+          "name": "expSmall decoded native audio is audible",
+          "ok": true,
+          "data": {
+            "key": "expSmall",
+            "peak": 0.3694601356983185
+          }
+        },
+        {
+          "name": "zero page console HTTP errors",
+          "ok": true,
+          "data": []
+        }
+      ],
+      "earthSamples": [
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 0,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 399.36,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 0.09999999999999999,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 396.8980427856168,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 0.19999999999999998,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 389.77132453345473,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 0.3,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 378.36857532999545,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 0.39999999999999997,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 363.07852526172053,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 0.49999999999999994,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 344.28990441511155,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 0.6000000000000002,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 322.39144287665,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 0.7000000000000005,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 297.7718707328173,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 0.8000000000000008,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 270.81991807009535,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 0.9000000000000011,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 241.92431497496554,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.0000000000000013,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 211.47379153390946,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.100000000000001,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 179.85707783340885,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.2000000000000006,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 147.46290395994512,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.3000000000000003,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 114.67999999999995,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.4,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 81.89709604005463,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.4999999999999996,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 49.502922166590906,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.5999999999999992,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": 17.886208466090352,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.6999999999999988,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": -12.564314974965498,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.7999999999999985,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": -41.45991807009517,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.8999999999999981,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": -68.41187073281702,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 1.9999999999999978,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": -93.03144287664946,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 2.0999999999999974,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": -114.92990441511097,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 2.199999999999997,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": -133.71852526172006,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 2.2999999999999967,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": -149.00857532999498,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "space-departure",
+          "time": 2.3999999999999964,
+          "earthVisible": false,
+          "planetY": -218.88,
+          "ship": {
+            "x": 240,
+            "y": -160.41132453345438,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 2.499999999999996,
+          "earthVisible": true,
+          "planetY": -216.19018518518538,
+          "ship": {
+            "x": 240,
+            "y": -167.53804278561654,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 2.5999999999999956,
+          "earthVisible": true,
+          "planetY": -208.42814814814858,
+          "ship": {
+            "x": 240,
+            "y": -170,
+            "h": 72,
+            "south": false
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 2.6999999999999953,
+          "earthVisible": true,
+          "planetY": -196.05500000000066,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 2.799999999999995,
+          "earthVisible": true,
+          "planetY": -179.53185185185276,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 2.8999999999999946,
+          "earthVisible": true,
+          "planetY": -159.31981481481597,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 2.9999999999999942,
+          "earthVisible": true,
+          "planetY": -135.8800000000014,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 3.099999999999994,
+          "earthVisible": true,
+          "planetY": -109.67351851852014,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 3.1999999999999935,
+          "earthVisible": true,
+          "planetY": -81.16148148148332,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 3.299999999999993,
+          "earthVisible": true,
+          "planetY": -50.80500000000208,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 3.399999999999993,
+          "earthVisible": true,
+          "planetY": -19.065185185187488,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 3.4999999999999925,
+          "earthVisible": true,
+          "planetY": 13.596851851849408,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 3.599999999999992,
+          "earthVisible": true,
+          "planetY": 46.71999999999741,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 3.6999999999999917,
+          "earthVisible": true,
+          "planetY": 79.84314814814553,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 3.7999999999999914,
+          "earthVisible": true,
+          "planetY": 112.50518518518248,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 3.899999999999991,
+          "earthVisible": true,
+          "planetY": 144.24499999999733,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 3.9999999999999907,
+          "earthVisible": true,
+          "planetY": 174.60148148147886,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 4.099999999999991,
+          "earthVisible": true,
+          "planetY": 203.11351851851612,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 4.19999999999999,
+          "earthVisible": true,
+          "planetY": 229.31999999999772,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 4.29999999999999,
+          "earthVisible": true,
+          "planetY": 252.75981481481273,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 4.39999999999999,
+          "earthVisible": true,
+          "planetY": 272.97185185185003,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 4.499999999999989,
+          "earthVisible": true,
+          "planetY": 289.4949999999986,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 4.599999999999989,
+          "earthVisible": true,
+          "planetY": 301.86814814814716,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 4.699999999999989,
+          "earthVisible": true,
+          "planetY": 309.6301851851846,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-reveal",
+          "time": 4.799999999999988,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": null,
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 4.899999999999988,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -89.71725895311795,
+            "h": 71.95150842057352,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 4.999999999999988,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -88.88075564861188,
+            "h": 71.80804369594904,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 5.099999999999987,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -87.50806984069206,
+            "h": 71.57262084660904,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 5.199999999999987,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -85.61678128356878,
+            "h": 71.248254893036,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 5.2999999999999865,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -83.22446973145233,
+            "h": 70.8379608557124,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 5.399999999999986,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -80.348714938553,
+            "h": 70.34475375512069,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 5.499999999999986,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -77.00709665908107,
+            "h": 69.77164861174337,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 5.599999999999985,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -73.21719464724683,
+            "h": 69.12166044606292,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 5.699999999999985,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -68.99658865726056,
+            "h": 68.3978042785618,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 5.799999999999985,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -64.36285844333254,
+            "h": 67.60309512972248,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 5.899999999999984,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -59.33358375967309,
+            "h": 66.74054802002745,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 5.999999999999984,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -53.926344360492465,
+            "h": 65.81317796995918,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 6.099999999999984,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -48.158720000000955,
+            "h": 64.82400000000017,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 6.199999999999983,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -42.04829043240886,
+            "h": 63.77602913063286,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 6.299999999999983,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -35.61263541192647,
+            "h": 62.67228038233974,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 6.399999999999983,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -28.86933469276405,
+            "h": 61.5157687756033,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 6.499999999999982,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -21.83596802913189,
+            "h": 60.309509330905996,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 6.599999999999982,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -14.530115175240297,
+            "h": 59.056517068730315,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 6.6999999999999815,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": -6.969355885299549,
+            "h": 57.75980700955873,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 6.799999999999981,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 0.8287300864800926,
+            "h": 56.42239417387371,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 6.899999999999981,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 8.846562985888312,
+            "h": 55.04729358215775,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 6.9999999999999805,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 17.06656305871482,
+            "h": 53.63752025489332,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 7.09999999999998,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 25.471150550749343,
+            "h": 52.19608921256287,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 7.19999999999998,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 34.042745707781606,
+            "h": 50.72601547564891,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 7.299999999999979,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 42.76376877560131,
+            "h": 49.2303140646339,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 7.399999999999979,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 51.61663999999817,
+            "h": 47.712000000000316,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 7.499999999999979,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 60.58377962676187,
+            "h": 46.17408830223064,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 7.599999999999978,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 69.64760790168216,
+            "h": 44.61959399180735,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 7.699999999999978,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 78.79054507054872,
+            "h": 43.05153208921291,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 7.799999999999978,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 87.99501137915132,
+            "h": 41.4729176149298,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 7.899999999999977,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 97.24342707327963,
+            "h": 39.88676558944051,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 7.999999999999977,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 106.51821239872342,
+            "h": 38.29609103322749,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 8.099999999999982,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 115.80178760127276,
+            "h": 36.70390896677316,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 8.199999999999987,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 125.07657292671706,
+            "h": 35.113234410560054,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 8.299999999999992,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 134.32498862084586,
+            "h": 33.52708238507068,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 8.399999999999997,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 143.529454929449,
+            "h": 31.94846791078748,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 8.500000000000002,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 152.6723920983161,
+            "h": 30.380406008192956,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 8.600000000000007,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 161.73622037323685,
+            "h": 28.825911697769584,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 8.700000000000012,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 170.70336000000106,
+            "h": 27.287999999999812,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 8.800000000000017,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 179.5562312243984,
+            "h": 25.769685935366155,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 8.900000000000022,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 188.27725429221857,
+            "h": 24.273984524351064,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 9.000000000000027,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 196.84884944925125,
+            "h": 22.803910787437026,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 9.100000000000032,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 205.25343694128622,
+            "h": 21.362479745106512,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 9.200000000000037,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 213.4734370141132,
+            "h": 19.952706417841995,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 9.300000000000042,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 221.4912699135217,
+            "h": 18.577605826125975,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 9.400000000000047,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 229.2893558853017,
+            "h": 17.240192990440903,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 9.500000000000052,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 236.85011517524282,
+            "h": 15.943482931269251,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 9.600000000000056,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 244.15596802913467,
+            "h": 14.690490669093528,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 9.700000000000061,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 251.1893346927671,
+            "h": 13.484231224396176,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 9.800000000000066,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 257.93263541192977,
+            "h": 12.327719617659689,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 9.900000000000071,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 264.3682904324123,
+            "h": 11.223970869366546,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 10.000000000000076,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 270.47872000000456,
+            "h": 10.17599999999922,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 10.100000000000081,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 276.2463443604961,
+            "h": 9.18682203004019,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 10.200000000000086,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 281.65358375967674,
+            "h": 8.25945197997192,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 10.300000000000091,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 286.6828584433363,
+            "h": 7.3969048702768845,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 10.400000000000096,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 291.31658865726416,
+            "h": 6.602195721437596,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 10.500000000000101,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 295.5371946472503,
+            "h": 5.878339553936485,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 10.600000000000106,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 299.32709665908436,
+            "h": 5.228351388256058,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 10.700000000000111,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 302.66871493855604,
+            "h": 4.655246244878782,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 10.800000000000116,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 305.5444697314551,
+            "h": 4.162039144287135,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 10.900000000000121,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 307.93678128357107,
+            "h": 3.7517451069635968,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 11.000000000000126,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 309.8280698406939,
+            "h": 3.427379153390632,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 11.100000000000131,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 311.20075564861315,
+            "h": 3.191956304050734,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 11.200000000000136,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.0372589531186,
+            "h": 3.0484915794263685,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 11.300000000000141,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 11.400000000000146,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 11.500000000000151,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 11.600000000000156,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 1.9539925233402755e-13
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 11.700000000000161,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0.12500000000020162
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 11.800000000000166,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0.25000000000020783
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 11.90000000000017,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0.37500000000021405
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 12.000000000000176,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0.5000000000002203
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 12.10000000000018,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0.6250000000002265
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 12.200000000000186,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0.7500000000002327
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 12.30000000000019,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0.8750000000002389
+        },
+        {
+          "mode": "earth-return",
+          "phase": "earth-descent",
+          "time": 12.383333333333528,
+          "earthVisible": true,
+          "planetY": 312.32000000000005,
+          "ship": {
+            "x": 240,
+            "y": 312.32,
+            "h": 3,
+            "south": true
+          },
+          "fade": 0.9791666666669108
+        }
+      ],
+      "sounds": [
+        {
+          "key": "gd_doorOpen",
+          "peak": 0.32314619421958923
+        },
+        {
+          "key": "gd_footstepA",
+          "peak": 0.326026976108551
+        },
+        {
+          "key": "gd_footstepB",
+          "peak": 0.34475237131118774
+        },
+        {
+          "key": "blip",
+          "peak": 0.3257277011871338
+        },
+        {
+          "key": "jetDash",
+          "peak": 0.37750422954559326
+        },
+        {
+          "key": "enemyMachineGunLight",
+          "peak": 0.17256198823451996
+        },
+        {
+          "key": "expSmall",
+          "peak": 0.3694601356983185
+        }
+      ],
+      "errors": []
+    },
+    "final-view-qa": {
+      "checks": [
+        {
+          "name": "radar current full single-panel view",
+          "ok": true
+        },
+        {
+          "name": "welcome current full single-panel view",
+          "ok": true
+        },
+        {
+          "name": "corridor current full single-panel view",
+          "ok": true
+        },
+        {
+          "name": "escape-axel current full single-panel view",
+          "ok": true
+        },
+        {
+          "name": "all nine co-op cast members visibly fit in native wide frame",
+          "ok": true
+        },
+        {
+          "name": "both actual co-op aircraft land",
+          "ok": true
+        },
+        {
+          "name": "no final browser errors",
+          "ok": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    },
+    "browser-qa": {
+      "checks": [
+        {
+          "name": "complete video geometry and duration",
+          "ok": true,
+          "data": {
+            "w": 1824,
+            "h": 1024,
+            "duration": 117.315333
+          }
+        },
+        {
+          "name": "Chronos - native final destruction decoded chapter playback",
+          "ok": true,
+          "data": 0.054362
+        },
+        {
+          "name": "Core lock and final missile decoded chapter playback",
+          "ok": true,
+          "data": 7.621029
+        },
+        {
+          "name": "Armor breakup decoded chapter playback",
+          "ok": true,
+          "data": 14.187695
+        },
+        {
+          "name": "Space departure - no Earth yet decoded chapter playback",
+          "ok": true,
+          "data": 19.121029
+        },
+        {
+          "name": "Earth reveal and descent decoded chapter playback",
+          "ok": true,
+          "data": 21.454362
+        },
+        {
+          "name": "Top-down Fury HQ landing decoded chapter playback",
+          "ok": true,
+          "data": 32.821029
+        },
+        {
+          "name": "Disembarking and entering the base decoded chapter playback",
+          "ok": true,
+          "data": 39.821029
+        },
+        {
+          "name": "Walking through Fury HQ decoded chapter playback",
+          "ok": true,
+          "data": 49.454362
+        },
+        {
+          "name": "Crew homecoming decoded chapter playback",
+          "ok": true,
+          "data": 56.054362
+        },
+        {
+          "name": "Sixteen-frame radar alarm decoded chapter playback",
+          "ok": true,
+          "data": 63.087695
+        },
+        {
+          "name": "Fury Fighters launch south decoded chapter playback",
+          "ok": true,
+          "data": 72.087695
+        },
+        {
+          "name": "Five quiet seconds decoded chapter playback",
+          "ok": true,
+          "data": 81.287695
+        },
+        {
+          "name": "Enemies attack Fury HQ decoded chapter playback",
+          "ok": true,
+          "data": 86.287695
+        },
+        {
+          "name": "Decker and Axel escape decoded chapter playback",
+          "ok": true,
+          "data": 89.687695
+        },
+        {
+          "name": "Stage 6 - card and flight in decoded chapter playback",
+          "ok": true,
+          "data": 98.521029
+        },
+        {
+          "name": "Stage 6 - regroup and ambush decoded chapter playback",
+          "ok": true,
+          "data": 102.421029
+        },
+        {
+          "name": "byte-range seeking",
+          "ok": true
+        },
+        {
+          "name": "no browser/page/HTTP errors",
+          "ok": true,
+          "data": []
+        }
+      ],
+      "errors": []
+    }
+  },
+  "syntax": [
+    {
+      "file": "assets/game.js",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "file": "assets/hq_return_attack_art_1114.js",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "file": "assets/hq_return_attack_1114.js",
+      "exit": 0,
+      "stderr": ""
+    }
+  ],
+  "fullSuite": {
+    "passed": 8969,
+    "failures": [],
+    "exit": 0,
+    "baselineFailureNames": [],
+    "newFailures": [],
+    "fixedFailures": [],
+    "log": "_shots/hq_return_attack_1114/full-suite.log"
+  },
+  "recording": {
+    "pilot": "cole",
+    "difficulty": "hard",
+    "source": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+    "scope": "Full revised native cinematic checkpoints: real Chronos destruction, delayed Earth approach, physical landing/walk/crew welcome/radar/evacuation/base invasion continuously into the native Stage6 opening through first interactive interception. Gameplay and optional equipment/result menus between checkpoints omitted. Not a campaign win.",
+    "clips": [
+      {
+        "seconds": 32.87360000002384,
+        "frames": 2022,
+        "peak": 0.7640221118927002,
+        "stages": [
+          {
+            "at": 0.017200000017881394,
+            "tag": "play:drain:hammerFinale:0:0:::::"
+          },
+          {
+            "at": 2.6082000000178813,
+            "tag": "play:drain:hammerFinale:1:0:::::"
+          },
+          {
+            "at": 5.584300000011921,
+            "tag": "play:pulse:hammerFinale:1:0:::::"
+          },
+          {
+            "at": 7.6165,
+            "tag": "play:lock:hammerFinale:1:0:::::"
+          },
+          {
+            "at": 8.720700000017882,
+            "tag": "play:missile:hammerFinale:1:0:::::"
+          },
+          {
+            "at": 9.168200000017881,
+            "tag": "play:engulf:hammerFinale:1:0:::::"
+          },
+          {
+            "at": 14.176200000017882,
+            "tag": "play:burst:hammerFinale:1:0:::::"
+          },
+          {
+            "at": 19.105,
+            "tag": "play:after:overhead:1:0::::earth-return:space-departure"
+          },
+          {
+            "at": 21.42520000001788,
+            "tag": "play:after:overhead:1:0::::earth-return:earth-reveal"
+          },
+          {
+            "at": 23.72930000001192,
+            "tag": "play:after:overhead:1:0::::earth-return:earth-descent"
+          },
+          {
+            "at": 30.9925,
+            "tag": "stageclear::::::::earth-return:earth-descent"
+          }
+        ],
+        "last": {
+          "ending": null,
+          "hf": {
+            "phase": "burst",
+            "age": 19.66666666666683,
+            "t": 5.099999999999987,
+            "anchor": {
+              "x": 340.0374985937658,
+              "y": 166.52146567753985
+            },
+            "core": {
+              "x": 338.8836524399197,
+              "y": 186.13685029292446
+            },
+            "impacts": 1
+          },
+          "earth": null,
+          "cinema": null,
+          "opening": null,
+          "openingRadioIndex": null
+        },
+        "part": "chronos",
+        "expectedBeats": [],
+        "errors": [],
+        "shots": [
+          {
+            "tag": "play:drain:hammerFinale:0:0:::::",
+            "at": 0.6723000000119209,
+            "file": "chronos-sample-00.png"
+          },
+          {
+            "tag": "play:drain:hammerFinale:1:0:::::",
+            "at": 3.2642000000178815,
+            "file": "chronos-sample-01.png"
+          },
+          {
+            "tag": "play:pulse:hammerFinale:1:0:::::",
+            "at": 6.240300000011921,
+            "file": "chronos-sample-02.png"
+          },
+          {
+            "tag": "play:lock:hammerFinale:1:0:::::",
+            "at": 8.27220000001788,
+            "file": "chronos-sample-03.png"
+          },
+          {
+            "tag": "play:engulf:hammerFinale:1:0:::::",
+            "at": 9.82470000001788,
+            "file": "chronos-sample-04.png"
+          },
+          {
+            "tag": "play:burst:hammerFinale:1:0:::::",
+            "at": 14.832400000005961,
+            "file": "chronos-sample-05.png"
+          },
+          {
+            "tag": "play:after:overhead:1:0::::earth-return:space-departure",
+            "at": 19.760200000017882,
+            "file": "chronos-sample-06.png"
+          },
+          {
+            "tag": "play:after:overhead:1:0::::earth-return:earth-reveal",
+            "at": 22.08130000001192,
+            "file": "chronos-sample-07.png"
+          },
+          {
+            "tag": "play:after:overhead:1:0::::earth-return:earth-descent",
+            "at": 24.38440000000596,
+            "file": "chronos-sample-08.png"
+          },
+          {
+            "tag": "stageclear::::::::earth-return:earth-descent",
+            "at": 31.649,
+            "file": "chronos-sample-09.png"
+          }
+        ],
+        "end": {
+          "state": "stageclear",
+          "stage": 5,
+          "done": false,
+          "returns": 0,
+          "gravityReady": true,
+          "opening": null,
+          "openingRadioIndex": null
+        },
+        "finaleEvents": [
+          {
+            "event": "stunned",
+            "x": 340.0374985937658,
+            "y": 166.52146567753985,
+            "core": {
+              "x": 338.8836524399197,
+              "y": 186.13685029292446
+            }
+          },
+          {
+            "event": "pulse",
+            "age": 5.616666666666652
+          },
+          {
+            "event": "lock",
+            "age": 7.733333333333311
+          },
+          {
+            "event": "missile",
+            "age": 8.883333333333354
+          },
+          {
+            "event": "shot-fired",
+            "from": {
+              "x": 340,
+              "y": 367.2975
+            },
+            "to": {
+              "x": 338.8836524399197,
+              "y": 186.13685029292446
+            }
+          },
+          {
+            "event": "engulf",
+            "age": 9.350000000000044
+          },
+          {
+            "event": "core-impact",
+            "count": 1,
+            "x": 338.8836524399197,
+            "y": 186.13685029292446
+          },
+          {
+            "event": "cookoff",
+            "t": 1.7166666666666655,
+            "interval": 0.7169761904761907
+          },
+          {
+            "event": "cookoff",
+            "t": 2.449999999999996,
+            "interval": 0.5839285714285721
+          },
+          {
+            "event": "cookoff",
+            "t": 3.049999999999994,
+            "interval": 0.47507142857142964
+          },
+          {
+            "event": "cookoff",
+            "t": 3.5333333333333257,
+            "interval": 0.38738095238095377
+          },
+          {
+            "event": "cookoff",
+            "t": 3.9333333333333242,
+            "interval": 0.31480952380952537
+          },
+          {
+            "event": "cookoff",
+            "t": 4.24999999999999,
+            "interval": 0.2573571428571446
+          },
+          {
+            "event": "cookoff",
+            "t": 4.516666666666656,
+            "interval": 0.20897619047619242
+          },
+          {
+            "event": "cookoff",
+            "t": 4.733333333333322,
+            "interval": 0.16966666666666877
+          },
+          {
+            "event": "cookoff",
+            "t": 4.9166666666666545,
+            "interval": 0.1364047619047641
+          },
+          {
+            "event": "cookoff",
+            "t": 5.066666666666654,
+            "interval": 0.1091904761904785
+          },
+          {
+            "event": "cookoff",
+            "t": 5.18333333333332,
+            "interval": 0.08802380952381192
+          },
+          {
+            "event": "burst",
+            "age": 14.56666666666697
+          },
+          {
+            "event": "massive-blowup",
+            "cookoff": 11
+          },
+          {
+            "event": "armor-release"
+          },
+          {
+            "event": "cutaway"
+          }
+        ]
+      },
+      {
+        "seconds": 84.599,
+        "frames": 5233,
+        "peak": 0.7635630369186401,
+        "stages": [
+          {
+            "at": 0.0165,
+            "tag": "cutscene:::::HQ19-LAND:::land:"
+          },
+          {
+            "at": 7.008800000011921,
+            "tag": "cutscene:::::HQ19-EXIT:::exit:"
+          },
+          {
+            "at": 10.016600000023843,
+            "tag": "cutscene:::::HQ19-ENTER:::enter:"
+          },
+          {
+            "at": 16.625100000023842,
+            "tag": "cutscene:::::HQ19-CORRIDOR:::corridor:"
+          },
+          {
+            "at": 23.24870000001788,
+            "tag": "cutscene:::::HQ19-WELCOME:::welcome:"
+          },
+          {
+            "at": 30.25680000001192,
+            "tag": "cutscene:::::HQ19-RADAR:::radar:"
+          },
+          {
+            "at": 39.26470000001788,
+            "tag": "cutscene:::::HQ19-LAUNCH:::launch:"
+          },
+          {
+            "at": 48.464700000017885,
+            "tag": "cutscene:::::HQ19-QUIET:::quiet:"
+          },
+          {
+            "at": 53.47220000001788,
+            "tag": "cutscene:::::HQ19-ATTACK:::attack:"
+          },
+          {
+            "at": 56.880800000011924,
+            "tag": "cutscene:::::HQ19-DECKER:::escape-decker:"
+          },
+          {
+            "at": 61.08870000001788,
+            "tag": "cutscene:::::HQ19-AXEL:::escape-axel:"
+          },
+          {
+            "at": 65.69640000000597,
+            "tag": "intro::::::cloak:0:escape-axel:"
+          },
+          {
+            "at": 69.58420000001789,
+            "tag": "launch::::::cloak:0:escape-axel:"
+          },
+          {
+            "at": 69.60020000001788,
+            "tag": "play::::::cloak:1:escape-axel:"
+          },
+          {
+            "at": 72.80080000001192,
+            "tag": "play::::::cloak:2:escape-axel:"
+          },
+          {
+            "at": 75.98480000001192,
+            "tag": "play::::::cloak:3:escape-axel:"
+          },
+          {
+            "at": 79.37640000000596,
+            "tag": "play::::::cloak:4:escape-axel:"
+          },
+          {
+            "at": 81.05680000001192,
+            "tag": "play::::::cloak:5:escape-axel:"
+          },
+          {
+            "at": 82.17670000001789,
+            "tag": "play::::::reveal:5:escape-axel:"
+          },
+          {
+            "at": 83.77210000002384,
+            "tag": "play::::::intercept:5:escape-axel:"
+          }
+        ],
+        "last": {
+          "ending": null,
+          "hf": null,
+          "earth": null,
+          "cinema": {
+            "mode": "escape-axel",
+            "time": 4.5924000000059575,
+            "attackAge": 12.192400000005959,
+            "door": 15,
+            "ships": [],
+            "enemies": [
+              {
+                "key": "whv_ace",
+                "x": 417.43393919257903,
+                "y": 56.61619024879056,
+                "angle": 1.2696745062892931
+              },
+              {
+                "key": "whv_ace",
+                "x": 355.46041611688406,
+                "y": 63.56392410983125,
+                "angle": 0.8619006479378115
+              },
+              {
+                "key": "whv_ace",
+                "x": 172.17564069955347,
+                "y": 186.8863679536391,
+                "angle": -0.021454329276054847
+              },
+              {
+                "key": "whv_ace",
+                "x": 182.44899395365928,
+                "y": 214.72489102540064,
+                "angle": -0.12340047891227295
+              },
+              {
+                "key": "whv_ace",
+                "x": 444.9426128631276,
+                "y": 306.04095541766094,
+                "angle": -1.482738431675599
+              },
+              {
+                "key": "whv_ace",
+                "x": 508.71231443342,
+                "y": 303.9604693992736,
+                "angle": -1.9751914975549196
+              },
+              {
+                "key": "whv_ace",
+                "x": 737.8911014351283,
+                "y": 196.60359658332206,
+                "angle": -3.085574970416156
+              },
+              {
+                "key": "whv_ace",
+                "x": 738.7671522494265,
+                "y": 168.40132429043388,
+                "angle": 3.0977865806783673
+              },
+              {
+                "key": "whv_ace",
+                "x": 516.3428270212555,
+                "y": 58.315136703761425,
+                "angle": 2.0285633855054708
+              },
+              {
+                "key": "whv_ace",
+                "x": 452.7262929313265,
+                "y": 55.46477748220411,
+                "angle": 1.5446818575843884
+              },
+              {
+                "key": "whv_ace",
+                "x": 184.65915275334675,
+                "y": 143.5743375849076,
+                "angle": 0.1363265445577206
+              },
+              {
+                "key": "whv_ace",
+                "x": 172.66047745541073,
+                "y": 171.2782571190611,
+                "angle": 0.0335792811728162
+              },
+              {
+                "key": "whv_ace",
+                "x": 229.5300268531351,
+                "y": 191.1630474983304,
+                "angle": -0.045744003733518286
+              }
+            ],
+            "shots": [],
+            "quietDuration": 0,
+            "solidPanel": true,
+            "id": "post-5",
+            "shot": "HQ19-AXEL",
+            "pilot": "cole",
+            "text": "We gotta tell the others!",
+            "shown": 25
+          },
+          "opening": "intercept",
+          "openingRadioIndex": 5
+        },
+        "part": "hq5",
+        "expectedBeats": [
+          {
+            "id": "HQ19-LAND",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 7,
+            "kind": "wide",
+            "upgrade": null
+          },
+          {
+            "id": "HQ19-EXIT",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 3,
+            "kind": "wide",
+            "upgrade": null
+          },
+          {
+            "id": "HQ19-ENTER",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 6.6,
+            "kind": "wide",
+            "upgrade": null
+          },
+          {
+            "id": "HQ19-CORRIDOR",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 6.6,
+            "kind": "wide",
+            "upgrade": null
+          },
+          {
+            "id": "HQ19-WELCOME",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 7,
+            "kind": "wide",
+            "upgrade": 5
+          },
+          {
+            "id": "HQ19-RADAR",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 9,
+            "kind": "wide",
+            "upgrade": null
+          },
+          {
+            "id": "HQ19-LAUNCH",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 9.2,
+            "kind": "wide",
+            "upgrade": null
+          },
+          {
+            "id": "HQ19-QUIET",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 5,
+            "kind": "wide",
+            "upgrade": null
+          },
+          {
+            "id": "HQ19-ATTACK",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 3.4,
+            "kind": "wide",
+            "upgrade": null
+          },
+          {
+            "id": "HQ19-DECKER",
+            "who": "DECKER",
+            "text": "Dammit! They made it to our base too!",
+            "duration": 4.2,
+            "kind": "wide",
+            "upgrade": null
+          },
+          {
+            "id": "HQ19-AXEL",
+            "who": "AXEL",
+            "text": "We gotta tell the others!",
+            "duration": 4.6,
+            "kind": "wide",
+            "upgrade": null
+          }
+        ],
+        "errors": [],
+        "shots": [
+          {
+            "tag": "cutscene:::::HQ19-LAND:::land:",
+            "at": 0.6727000000178814,
+            "file": "hq5-sample-00.png"
+          },
+          {
+            "tag": "cutscene:::::HQ19-EXIT:::exit:",
+            "at": 7.664800000011921,
+            "file": "hq5-sample-01.png"
+          },
+          {
+            "tag": "cutscene:::::HQ19-ENTER:::enter:",
+            "at": 10.672700000017882,
+            "file": "hq5-sample-02.png"
+          },
+          {
+            "tag": "cutscene:::::HQ19-CORRIDOR:::corridor:",
+            "at": 17.2805,
+            "file": "hq5-sample-03.png"
+          },
+          {
+            "tag": "cutscene:::::HQ19-WELCOME:::welcome:",
+            "at": 23.904700000017883,
+            "file": "hq5-sample-04.png"
+          },
+          {
+            "tag": "cutscene:::::HQ19-RADAR:::radar:",
+            "at": 30.91270000001788,
+            "file": "hq5-sample-05.png"
+          },
+          {
+            "tag": "cutscene:::::HQ19-LAUNCH:::launch:",
+            "at": 39.92070000001788,
+            "file": "hq5-sample-06.png"
+          },
+          {
+            "tag": "cutscene:::::HQ19-QUIET:::quiet:",
+            "at": 49.12080000001192,
+            "file": "hq5-sample-07.png"
+          },
+          {
+            "tag": "cutscene:::::HQ19-ATTACK:::attack:",
+            "at": 54.129700000017884,
+            "file": "hq5-sample-08.png"
+          },
+          {
+            "tag": "cutscene:::::HQ19-DECKER:::escape-decker:",
+            "at": 57.53780000001192,
+            "file": "hq5-sample-09.png"
+          },
+          {
+            "tag": "cutscene:::::HQ19-AXEL:::escape-axel:",
+            "at": 61.744200000017884,
+            "file": "hq5-sample-10.png"
+          },
+          {
+            "tag": "intro::::::cloak:0:escape-axel:",
+            "at": 66.35240000000596,
+            "file": "hq5-sample-11.png"
+          },
+          {
+            "tag": "play::::::cloak:1:escape-axel:",
+            "at": 70.25710000002384,
+            "file": "hq5-sample-12.png"
+          },
+          {
+            "tag": "play::::::cloak:2:escape-axel:",
+            "at": 73.457,
+            "file": "hq5-sample-13.png"
+          },
+          {
+            "tag": "play::::::cloak:3:escape-axel:",
+            "at": 76.64090000000596,
+            "file": "hq5-sample-14.png"
+          },
+          {
+            "tag": "play::::::cloak:4:escape-axel:",
+            "at": 80.0335,
+            "file": "hq5-sample-15.png"
+          },
+          {
+            "tag": "play::::::cloak:5:escape-axel:",
+            "at": 81.71310000002384,
+            "file": "hq5-sample-16.png"
+          },
+          {
+            "tag": "play::::::reveal:5:escape-axel:",
+            "at": 82.83310000002385,
+            "file": "hq5-sample-17.png"
+          },
+          {
+            "tag": "play::::::intercept:5:escape-axel:",
+            "at": 84.43230000001192,
+            "file": "hq5-sample-18.png"
+          }
+        ],
+        "end": {
+          "state": "play",
+          "stage": 6,
+          "done": false,
+          "returns": 0,
+          "gravityReady": true,
+          "opening": "intercept",
+          "openingRadioIndex": 5
+        },
+        "finaleEvents": []
+      }
+    ],
+    "errors": [],
+    "coreBefore": {
+      "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+      "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "index.html": "839e5619ae47221fcde9676f5dc6621d5b02c0219b709f4a841fc2e57dfa30c2"
+    },
+    "coreAfter": {
+      "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+      "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "index.html": "839e5619ae47221fcde9676f5dc6621d5b02c0219b709f4a841fc2e57dfa30c2"
+    },
+    "combined": {
+      "file": "stage5-to-6-hq-evacuation.mp4",
+      "duration": 117.32,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Chronos - native final destruction"
+        },
+        {
+          "start": 7.6165,
+          "title": "Core lock and final missile"
+        },
+        {
+          "start": 14.176200000017882,
+          "title": "Armor breakup"
+        },
+        {
+          "start": 19.105,
+          "title": "Space departure - no Earth yet"
+        },
+        {
+          "start": 21.42520000001788,
+          "title": "Earth reveal and descent"
+        },
+        {
+          "start": 32.8,
+          "title": "Top-down Fury HQ landing"
+        },
+        {
+          "start": 39.80880000001192,
+          "title": "Disembarking and entering the base"
+        },
+        {
+          "start": 49.42510000002384,
+          "title": "Walking through Fury HQ"
+        },
+        {
+          "start": 56.048700000017874,
+          "title": "Crew homecoming"
+        },
+        {
+          "start": 63.05680000001192,
+          "title": "Sixteen-frame radar alarm"
+        },
+        {
+          "start": 72.06470000001788,
+          "title": "Fury Fighters launch south"
+        },
+        {
+          "start": 81.26470000001788,
+          "title": "Five quiet seconds"
+        },
+        {
+          "start": 86.27220000001788,
+          "title": "Enemies attack Fury HQ"
+        },
+        {
+          "start": 89.68080000001191,
+          "title": "Decker and Axel escape"
+        },
+        {
+          "start": 98.49640000000596,
+          "title": "Stage 6 - card and flight in"
+        },
+        {
+          "start": 102.40020000001788,
+          "title": "Stage 6 - regroup and ambush"
+        }
+      ],
+      "sha256": "1784da9444fe6727004ef7170884159f55a7a03e181ac3c353772079c7428a20",
+      "decodeErrors": [],
+      "audio": [
+        "[Parsed_volumedetect_0 @ 00000144231a6e00] mean_volume: -14.3 dB",
+        "[Parsed_volumedetect_0 @ 00000144231a6e00] max_volume: -1.7 dB"
+      ]
+    }
+  },
+  "coreUnchanged": {
+    "gameSha256": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "testSha256": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+    "gameLF": true,
+    "testsCRLF": true
+  },
+  "noCommitOrPush": true
+}

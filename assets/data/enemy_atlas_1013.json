@@ -75497,7 +75497,7 @@
             "line": 36,
             "symbol": "ra4AttackKind"
           },
-          "description": "Charges and fires the rebel pilotâ€™s native fusion-beam ability."
+          "description": "Charges and fires the Rough Rider pilotâ€™s native fusion-beam ability."
         },
         {
           "name": "Formation missile volley",
@@ -76293,7 +76293,7 @@
     },
     {
       "id": "bof-password-REBEL6",
-      "name": "Rebel Fighters Â· Stage 6",
+      "name": "Rough Riders Â· Stage 6",
       "category": "password-boss",
       "game": "bof",
       "stages": [
@@ -76326,7 +76326,7 @@
             "line": 36,
             "symbol": "ra4AttackKind"
           },
-          "description": "Runs the five Rebel Fighters together, each retaining its own weapons, movement and special ability."
+          "description": "Runs the five Rough Riders together, each retaining its own weapons, movement and special ability."
         }
       ],
       "projectileKinds": [],
@@ -76492,7 +76492,7 @@
     },
     {
       "id": "bof-password-XREBEL",
-      "name": "Rebel Fighters Â· Stage X",
+      "name": "Rough Riders Â· Stage X",
       "category": "password-boss",
       "game": "bof",
       "stages": [
@@ -76525,7 +76525,7 @@
             "line": 36,
             "symbol": "ra4AttackKind"
           },
-          "description": "Runs the five Rebel Fighters together, each retaining its own weapons, movement and special ability."
+          "description": "Runs the five Rough Riders together, each retaining its own weapons, movement and special ability."
         }
       ],
       "projectileKinds": [],

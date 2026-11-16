@@ -1,0 +1,774 @@
+{
+  "current": {
+    "checks": [
+      {
+        "name": "all nine excerpts completed with native audio and no game errors",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "shipping source unchanged during recording",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "native ordered dialogue roundtable",
+        "ok": true,
+        "data": {
+          "expected": [
+            "CW3-09",
+            "CW3-10",
+            "CW3-11",
+            "CW3-12",
+            "CW3-13",
+            "CW3-14",
+            "CW3-15",
+            "CW3-16"
+          ],
+          "captured": [
+            "CW3-09",
+            "CW3-10",
+            "CW3-11",
+            "CW3-12",
+            "CW3-13",
+            "CW3-14",
+            "CW3-15",
+            "CW3-16"
+          ]
+        }
+      },
+      {
+        "name": "recorded text exactly matches current rows roundtable",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "clip geometry and native clock roundtable",
+        "ok": true,
+        "data": {
+          "movie": 41.1,
+          "capture": 41.17609999999404
+        }
+      },
+      {
+        "name": "native ordered dialogue workshop",
+        "ok": true,
+        "data": {
+          "expected": [
+            "CW3-W01",
+            "CW3-DEMO",
+            "CW3-W02",
+            "CW3-W03",
+            "CW3-W04",
+            "CW3-W05",
+            "CW3-W06",
+            "CW3-W07",
+            "CW3-W08"
+          ],
+          "captured": [
+            "CW3-W01",
+            "CW3-DEMO",
+            "CW3-W02",
+            "CW3-W03",
+            "CW3-W04",
+            "CW3-W05",
+            "CW3-W06",
+            "CW3-W07",
+            "CW3-W08"
+          ]
+        }
+      },
+      {
+        "name": "recorded text exactly matches current rows workshop",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "clip geometry and native clock workshop",
+        "ok": true,
+        "data": {
+          "movie": 51.87,
+          "capture": 51.93309999999404
+        }
+      },
+      {
+        "name": "native ordered dialogue brotherhood",
+        "ok": true,
+        "data": {
+          "expected": [
+            "ENDING-07",
+            "ENDING-08"
+          ],
+          "captured": [
+            "ENDING-07",
+            "ENDING-08"
+          ]
+        }
+      },
+      {
+        "name": "recorded text exactly matches current rows brotherhood",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "clip geometry and native clock brotherhood",
+        "ok": true,
+        "data": {
+          "movie": 4.93,
+          "capture": 4.96059999999404
+        }
+      },
+      {
+        "name": "native ordered dialogue sisters",
+        "ok": true,
+        "data": {
+          "expected": [
+            "ENDING-11",
+            "ENDING-12"
+          ],
+          "captured": [
+            "ENDING-11",
+            "ENDING-12"
+          ]
+        }
+      },
+      {
+        "name": "recorded text exactly matches current rows sisters",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "clip geometry and native clock sisters",
+        "ok": true,
+        "data": {
+          "movie": 6.27,
+          "capture": 6.290799999982118
+        }
+      },
+      {
+        "name": "native ordered dialogue yuri",
+        "ok": true,
+        "data": {
+          "expected": [
+            "ENDING-09",
+            "ENDING-10"
+          ],
+          "captured": [
+            "ENDING-09",
+            "ENDING-10"
+          ]
+        }
+      },
+      {
+        "name": "recorded text exactly matches current rows yuri",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "clip geometry and native clock yuri",
+        "ok": true,
+        "data": {
+          "movie": 5.57,
+          "capture": 5.584300000011921
+        }
+      },
+      {
+        "name": "native ordered dialogue maverick",
+        "ok": true,
+        "data": {
+          "expected": [
+            "ENDING-13"
+          ],
+          "captured": [
+            "ENDING-13"
+          ]
+        }
+      },
+      {
+        "name": "recorded text exactly matches current rows maverick",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "clip geometry and native clock maverick",
+        "ok": true,
+        "data": {
+          "movie": 3.4,
+          "capture": 3.423
+        }
+      },
+      {
+        "name": "native ordered dialogue coffee",
+        "ok": true,
+        "data": {
+          "expected": [
+            "ENDING-14",
+            "ENDING-15"
+          ],
+          "captured": [
+            "ENDING-14",
+            "ENDING-15"
+          ]
+        }
+      },
+      {
+        "name": "recorded text exactly matches current rows coffee",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "clip geometry and native clock coffee",
+        "ok": true,
+        "data": {
+          "movie": 6.1,
+          "capture": 6.101199999988079
+        }
+      },
+      {
+        "name": "native ordered dialogue heavy-metal",
+        "ok": true,
+        "data": {
+          "expected": [
+            "ENDING-16",
+            "ENDING-17",
+            "ENDING-18"
+          ],
+          "captured": [
+            "ENDING-16",
+            "ENDING-17",
+            "ENDING-18"
+          ]
+        }
+      },
+      {
+        "name": "recorded text exactly matches current rows heavy-metal",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "clip geometry and native clock heavy-metal",
+        "ok": true,
+        "data": {
+          "movie": 8.5,
+          "capture": 8.49840000000596
+        }
+      },
+      {
+        "name": "native ordered dialogue album",
+        "ok": true,
+        "data": {
+          "expected": [
+            "CITY16-03",
+            "CITY16-04",
+            "CITY16-05",
+            "CITY16-06",
+            "CITY16-ALBUM"
+          ],
+          "captured": [
+            "CITY16-03",
+            "CITY16-04",
+            "CITY16-05",
+            "CITY16-06",
+            "CITY16-ALBUM"
+          ]
+        }
+      },
+      {
+        "name": "recorded text exactly matches current rows album",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "clip geometry and native clock album",
+        "ok": true,
+        "data": {
+          "movie": 17.6,
+          "capture": 17.64169999998808
+        }
+      },
+      {
+        "name": "full chaptered H264/AAC reel decodes",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "combined native audio remains audible",
+        "ok": true,
+        "data": [
+          "[Parsed_volumedetect_0 @ 000001c5f6336e00] mean_volume: -34.3 dB",
+          "[Parsed_volumedetect_0 @ 000001c5f6336e00] max_volume: -3.1 dB"
+        ]
+      },
+      {
+        "name": "six distinct retained duo opening scripts found",
+        "ok": true,
+        "data": [
+          "axel",
+          "freezer",
+          "falva",
+          "juggernaut",
+          "lizzie",
+          "decker"
+        ]
+      },
+      {
+        "name": "browser movie geometry/duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 145.354362
+        }
+      },
+      {
+        "name": "decoded chapter roundtable",
+        "ok": true,
+        "data": 0.054362
+      },
+      {
+        "name": "decoded chapter workshop",
+        "ok": true,
+        "data": 41.154362
+      },
+      {
+        "name": "decoded chapter brotherhood",
+        "ok": true,
+        "data": 93.021029
+      },
+      {
+        "name": "decoded chapter sisters",
+        "ok": true,
+        "data": 97.954362
+      },
+      {
+        "name": "decoded chapter yuri",
+        "ok": true,
+        "data": 104.221029
+      },
+      {
+        "name": "decoded chapter maverick",
+        "ok": true,
+        "data": 109.787695
+      },
+      {
+        "name": "decoded chapter coffee",
+        "ok": true,
+        "data": 113.187695
+      },
+      {
+        "name": "decoded chapter heavy-metal",
+        "ok": true,
+        "data": 119.287695
+      },
+      {
+        "name": "decoded chapter album",
+        "ok": true,
+        "data": 127.754362
+      },
+      {
+        "name": "decoded game audio in browser",
+        "ok": true,
+        "data": 0.009648516774177551
+      },
+      {
+        "name": "transcript timestamp seeks video",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "all review assets load without errors",
+        "ok": true,
+        "data": []
+      },
+      {
+        "name": "review page has no horizontal overflow",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "HTTP range seeking206",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "shipping hashes still match after packaging",
+        "ok": true,
+        "data": null
+      }
+    ],
+    "errors": [],
+    "movie": {
+      "file": "allies-and-siblings-full.mp4",
+      "duration": 145.35,
+      "size": [
+        1824,
+        1024
+      ],
+      "sha256": "19e4ac03f717505af6ca1d9a1b37cf45ffa8bfbd4272bee40c5179f7a097ed21",
+      "chapters": [
+        {
+          "key": "roundtable",
+          "title": "Allied pairs \u2014 Stage 3 briefing",
+          "start": 0,
+          "duration": 41.1,
+          "file": "roundtable.mp4",
+          "scene": "post-3",
+          "pilot": "cole"
+        },
+        {
+          "key": "workshop",
+          "title": "Cole & Decker \u2014 Photon Cannon and workshop",
+          "start": 41.1,
+          "duration": 51.87,
+          "file": "workshop.mp4",
+          "scene": "post-3",
+          "pilot": "cole"
+        },
+        {
+          "key": "brotherhood",
+          "title": "Axel & Freezer \u2014 homecoming",
+          "start": 92.97,
+          "duration": 4.93,
+          "file": "brotherhood.mp4",
+          "scene": "ending",
+          "pilot": "axel"
+        },
+        {
+          "key": "sisters",
+          "title": "Falva & Lizzie \u2014 calling Mom",
+          "start": 97.9,
+          "duration": 6.27,
+          "file": "sisters.mp4",
+          "scene": "ending",
+          "pilot": "falva"
+        },
+        {
+          "key": "yuri",
+          "title": "Yuri & Cole \u2014 calling home",
+          "start": 104.17,
+          "duration": 5.57,
+          "file": "yuri.mp4",
+          "scene": "ending",
+          "pilot": "yuri"
+        },
+        {
+          "key": "maverick",
+          "title": "Maverick & Cole \u2014 stop worrying",
+          "start": 109.74000000000001,
+          "duration": 3.4,
+          "file": "maverick.mp4",
+          "scene": "ending",
+          "pilot": "maverick"
+        },
+        {
+          "key": "coffee",
+          "title": "Decker & Cole \u2014 cold coffee",
+          "start": 113.14000000000001,
+          "duration": 6.1,
+          "file": "coffee.mp4",
+          "scene": "ending",
+          "pilot": "decker"
+        },
+        {
+          "key": "heavy-metal",
+          "title": "Juggernaut & Freezer \u2014 the volume knob",
+          "start": 119.24000000000001,
+          "duration": 8.5,
+          "file": "heavy-metal.mp4",
+          "scene": "ending",
+          "pilot": "juggernaut"
+        },
+        {
+          "key": "album",
+          "title": "Juggernaut & Cole \u2014 Bulletalica",
+          "start": 127.74000000000001,
+          "duration": 17.6,
+          "file": "album.mp4",
+          "scene": "city",
+          "pilot": "cole"
+        }
+      ],
+      "audio": [
+        "[Parsed_volumedetect_0 @ 000001c5f6336e00] mean_volume: -34.3 dB",
+        "[Parsed_volumedetect_0 @ 000001c5f6336e00] max_volume: -3.1 dB"
+      ]
+    },
+    "rows": 34,
+    "scope": "Native directed excerpts selected verbatim from current scene builders, with ordinary dialogue clocks, artwork and native mixer. This review does not represent ally-gated unlocks or a campaign win; historical opening transcripts are inactive. No shipping story/art edits.",
+    "knownFindings": [
+      "Shared story beats, not selected-ally gated unlocks.",
+      "Six retained duo opening scripts are inactive under the current Fury opening.",
+      "Juggernaut guitar insert includes older black-vest illustration beside current orange portrait.",
+      "Ending read holds remain short and are preserved for review."
+    ],
+    "sourceBefore": {
+      "assets/game.js": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce",
+      "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "index.html": "0f96e0a14d7da16a1e73d1f14af7a6cc45ea75e0a1d051674f0bb48a664cb8de",
+      "assets/cinematic_rework_1114.js": "ff780807a0d6e8619e2fa81e69154191847f7cfef425e4b14eaa345e1f2c0432",
+      "assets/comic_story_1111.js": "bd16ea63031de75382373a6ae3b6074e80bdb106cffec5ffd09887a22303095a",
+      "assets/comic_motion_1111.js": "6d13b6d81ca914883199afe9f73d907521eb51eb6eaa1b977f836fd6b15db774",
+      "assets/front_pilots_1111.js": "3f96b9d3af3709d8db96475031357d34f43351f04d217a6856655184ed82bc97",
+      "assets/cockpit_talk_1114.js": "94a6c8dc521709b72b76419d667a0734770c7447333a0aac6f5f3a9885e583e1",
+      "assets/cockpit_talk_art_1114.js": "55577ef4c4fea9cc67c8a0f57b337813ed0756309f85089c6b8ce1ba02ab9afc",
+      "assets/city_rescue_1115.js": "e39487b97b6112e063f7609fe87f2cb1eb9696598701fc04ee90c130826da496",
+      "assets/stage_frame_1115.js": "98825a569f8aa6b78d115c9fdf4aaae7431d6914a1aee52e8aa627cec51cd537"
+    },
+    "sourceAfter": {
+      "assets/game.js": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce",
+      "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "index.html": "0f96e0a14d7da16a1e73d1f14af7a6cc45ea75e0a1d051674f0bb48a664cb8de",
+      "assets/cinematic_rework_1114.js": "ff780807a0d6e8619e2fa81e69154191847f7cfef425e4b14eaa345e1f2c0432",
+      "assets/comic_story_1111.js": "bd16ea63031de75382373a6ae3b6074e80bdb106cffec5ffd09887a22303095a",
+      "assets/comic_motion_1111.js": "6d13b6d81ca914883199afe9f73d907521eb51eb6eaa1b977f836fd6b15db774",
+      "assets/front_pilots_1111.js": "3f96b9d3af3709d8db96475031357d34f43351f04d217a6856655184ed82bc97",
+      "assets/cockpit_talk_1114.js": "94a6c8dc521709b72b76419d667a0734770c7447333a0aac6f5f3a9885e583e1",
+      "assets/cockpit_talk_art_1114.js": "55577ef4c4fea9cc67c8a0f57b337813ed0756309f85089c6b8ce1ba02ab9afc",
+      "assets/city_rescue_1115.js": "e39487b97b6112e063f7609fe87f2cb1eb9696598701fc04ee90c130826da496",
+      "assets/stage_frame_1115.js": "98825a569f8aa6b78d115c9fdf4aaae7431d6914a1aee52e8aa627cec51cd537"
+    }
+  },
+  "archive": {
+    "checks": [
+      {
+        "name": "six rehearsals completed without page errors",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "shipping unchanged",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "exact retained script archive-axel",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "all dialogue rendered in order archive-axel",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "current row-B cockpit artwork archive-axel",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "exact retained script archive-freezer",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "all dialogue rendered in order archive-freezer",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "current row-B cockpit artwork archive-freezer",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "exact retained script archive-falva",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "all dialogue rendered in order archive-falva",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "current row-B cockpit artwork archive-falva",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "exact retained script archive-juggernaut",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "all dialogue rendered in order archive-juggernaut",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "current row-B cockpit artwork archive-juggernaut",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "exact retained script archive-lizzie",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "all dialogue rendered in order archive-lizzie",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "current row-B cockpit artwork archive-lizzie",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "exact retained script archive-decker",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "all dialogue rendered in order archive-decker",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "current row-B cockpit artwork archive-decker",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "complete archive H264/AAC decode",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "archive dimensions and duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "d": 124.776693
+        }
+      },
+      {
+        "name": "archive chapter decodes archive-axel",
+        "ok": true,
+        "data": 0.054362
+      },
+      {
+        "name": "archive chapter decodes archive-freezer",
+        "ok": true,
+        "data": 17.541016
+      },
+      {
+        "name": "archive chapter decodes archive-falva",
+        "ok": true,
+        "data": 37.141016
+      },
+      {
+        "name": "archive chapter decodes archive-juggernaut",
+        "ok": true,
+        "data": 57.708333
+      },
+      {
+        "name": "archive chapter decodes archive-lizzie",
+        "ok": true,
+        "data": 78.241667
+      },
+      {
+        "name": "archive chapter decodes archive-decker",
+        "ok": true,
+        "data": 99.110026
+      },
+      {
+        "name": "native archive audio decodes in browser",
+        "ok": true,
+        "data": 0.549329400062561
+      },
+      {
+        "name": "two reels prevent overlapping audio",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "combined review page has no errors",
+        "ok": true,
+        "data": []
+      },
+      {
+        "name": "archive range seeking206",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "source hashes remain unchanged",
+        "ok": true,
+        "data": null
+      }
+    ],
+    "errors": [],
+    "movie": {
+      "file": "archived-duo-rehearsal.mp4",
+      "duration": 124.78,
+      "chapters": [
+        {
+          "key": "archive-axel",
+          "title": "Axel lead \u2014 Axel & Freezer",
+          "start": 0,
+          "duration": 17.52,
+          "pilot": "axel"
+        },
+        {
+          "key": "archive-freezer",
+          "title": "Freezer lead \u2014 Freezer & Axel",
+          "start": 17.52,
+          "duration": 19.6,
+          "pilot": "freezer"
+        },
+        {
+          "key": "archive-falva",
+          "title": "Falva lead \u2014 Falva & Lizzie",
+          "start": 37.120000000000005,
+          "duration": 20.53,
+          "pilot": "falva"
+        },
+        {
+          "key": "archive-juggernaut",
+          "title": "Juggernaut lead \u2014 Juggernaut & Yuri",
+          "start": 57.650000000000006,
+          "duration": 20.57,
+          "pilot": "juggernaut"
+        },
+        {
+          "key": "archive-lizzie",
+          "title": "Lizzie lead \u2014 Lizzie & Falva",
+          "start": 78.22,
+          "duration": 20.84,
+          "pilot": "lizzie"
+        },
+        {
+          "key": "archive-decker",
+          "title": "Decker lead \u2014 Decker & Maverick",
+          "start": 99.06,
+          "duration": 25.7,
+          "pilot": "decker"
+        }
+      ],
+      "sha256": "bd43850f226fdde21610585b292debcade6f650d755cbbedcf88192d52d1faa0"
+    },
+    "lines": 27,
+    "scope": "Review-only native comic rehearsals of six inactive PILOT_OPENINGS duo scripts. Exact retained words and casts, current castB talking cockpit portraits and native letter audio. The old flight staging is not reproduced. No campaign routing or shipping scripts are changed."
+  },
+  "review": "_shots/ally_dialogue_1115/review.html",
+  "scope": "Review-only current scene excerpts and separately labeled rehearsals of inactive retained duo dialogue. No campaign routing or story edits.",
+  "finalReview": [
+    {
+      "name": "UTF8 heading and labels",
+      "ok": true,
+      "heading": "Allies & siblings \u2014 existing dialogue"
+    },
+    {
+      "name": "both movies retain native geometry",
+      "ok": true
+    },
+    {
+      "name": "final page has no console or page errors",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}

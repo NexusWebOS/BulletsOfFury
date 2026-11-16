@@ -1,0 +1,1073 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "all nine pilots and three difficulties use Rough Riders across current/fallback dialogue",
+        "ok": true,
+        "data": {
+          "sampledLines": 5166,
+          "stale": []
+        }
+      },
+      {
+        "name": "current squad name and plural reports",
+        "ok": true,
+        "data": {
+          "name": "Rough Riders",
+          "rebelReport": "The Rough Riders are down. The Harrier is still heading for the city.",
+          "harrierReport": "Harrier is down. The Rough Riders are still heading for the city.",
+          "award": "Defeated the Rough Riders on Furious Difficulty",
+          "ids": [
+            "jace",
+            "kaia",
+            "nyx",
+            "rook",
+            "voss"
+          ],
+          "storm": {
+            "defeated": "storm",
+            "difficulty": "furious",
+            "target": "rebels",
+            "route": "right",
+            "furious": true,
+            "crash": true,
+            "escape": false,
+            "award": "crossed_fate",
+            "message": "Play Stage 6 via password STRM on hard to face the harrier!"
+          },
+          "rebels": {
+            "defeated": "rebels",
+            "difficulty": "furious",
+            "target": "harrier",
+            "route": "left",
+            "furious": true,
+            "crash": false,
+            "escape": true,
+            "award": "road_not_taken",
+            "message": "You let the storm cannon get away! use password STRM on furious for a second chance at redemption!"
+          }
+        }
+      },
+      {
+        "name": "achievement calls the squad Rough Riders",
+        "ok": true,
+        "data": "Defeated the Rough Riders on Furious Difficulty"
+      },
+      {
+        "name": "all five pilot and saved encounter identifiers stay stable",
+        "ok": true,
+        "data": [
+          "jace",
+          "kaia",
+          "nyx",
+          "rook",
+          "voss"
+        ]
+      },
+      {
+        "name": "hard frame0 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame1 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame2 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame3 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame4 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame5 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame6 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame7 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame8 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame9 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame10 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame11 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame12 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame13 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame14 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame15 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame16 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame17 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame18 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame19 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame20 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame21 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame22 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame23 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame24 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame25 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame26 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame27 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame28 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame29 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame30 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame31 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame32 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame33 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame34 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame35 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame36 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame37 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame38 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame39 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame40 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame41 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame42 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame43 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame44 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame45 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame46 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame47 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame48 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame49 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame50 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame51 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame52 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame53 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame54 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame55 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame56 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame57 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame58 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame59 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame60 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame61 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame62 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard frame63 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard contains all16 native highlight phases",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "name": "hard actual title matches difficulty",
+        "ok": true,
+        "data": {
+          "left": "HARRIER",
+          "right": "ROUGH RIDERS",
+          "selected": "right",
+          "generated": true,
+          "rect": {
+            "x": 12,
+            "y": 128,
+            "w": 456,
+            "h": 256
+          }
+        }
+      },
+      {
+        "name": "hard left actual frame and interior visibly flash",
+        "ok": true,
+        "data": {
+          "changedPixels": 113707,
+          "bank": "city16_trace_hard-left"
+        }
+      },
+      {
+        "name": "hard left unselected card and all pixels outside selected card remain byte-identical",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "hard right actual frame and interior visibly flash",
+        "ok": true,
+        "data": {
+          "changedPixels": 113148,
+          "bank": "city16_trace_hard-right"
+        }
+      },
+      {
+        "name": "hard right unselected card and all pixels outside selected card remain byte-identical",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame0 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame1 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame2 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame3 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame4 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame5 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame6 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame7 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame8 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame9 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame10 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame11 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame12 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame13 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame14 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame15 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame16 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame17 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame18 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame19 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame20 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame21 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame22 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame23 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame24 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame25 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame26 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame27 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame28 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame29 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame30 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame31 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame32 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame33 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame34 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame35 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame36 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame37 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame38 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame39 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame40 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame41 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame42 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame43 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame44 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame45 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame46 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame47 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame48 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame49 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame50 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame51 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame52 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame53 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame54 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame55 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame56 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame57 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame58 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame59 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame60 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame61 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame62 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious frame63 native input and authored phase",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious contains all16 native highlight phases",
+        "ok": true,
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "name": "furious actual title matches difficulty",
+        "ok": true,
+        "data": {
+          "left": "STORM CANNON",
+          "right": "ROUGH RIDERS",
+          "selected": "right",
+          "generated": true,
+          "rect": {
+            "x": 12,
+            "y": 128,
+            "w": 456,
+            "h": 256
+          }
+        }
+      },
+      {
+        "name": "furious left actual frame and interior visibly flash",
+        "ok": true,
+        "data": {
+          "changedPixels": 113508,
+          "bank": "city16_trace_furious-left"
+        }
+      },
+      {
+        "name": "furious left unselected card and all pixels outside selected card remain byte-identical",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "furious right actual frame and interior visibly flash",
+        "ok": true,
+        "data": {
+          "changedPixels": 113187,
+          "bank": "city16_trace_furious-right"
+        }
+      },
+      {
+        "name": "furious right unselected card and all pixels outside selected card remain byte-identical",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "real right-card pointer opens Rough Riders campaign briefing",
+        "ok": true,
+        "data": {
+          "id": "route-right",
+          "lines": [
+            "Right side: the Rough Riders. Voss and his unit took the gear from our forward depot.",
+            "They called us the Fury crew like we were strangers. What happened to them?",
+            "HotWire and Phoenix warned us before their last mission. Neither has checked in since.",
+            "Then we get answers here. Right wing, on me."
+          ]
+        }
+      },
+      {
+        "name": "native route still spawns the actual five Rough Riders",
+        "ok": true,
+        "data": {
+          "name": "THE ROUGH RIDERS",
+          "kind": "rebelsquad",
+          "ships": [
+            "voss",
+            "nyx",
+            "rook",
+            "kaia",
+            "jace"
+          ],
+          "route": "right"
+        }
+      },
+      {
+        "name": "no page/console/HTTP errors",
+        "ok": true,
+        "data": []
+      },
+      {
+        "name": "pursuit-hard-highlight.gif actual GIF geometry and timing",
+        "ok": true,
+        "data": {
+          "frames": 64,
+          "durationMs": 4000,
+          "size": [
+            912,
+            512
+          ]
+        }
+      },
+      {
+        "name": "pursuit-furious-highlight.gif actual GIF geometry and timing",
+        "ok": true,
+        "data": {
+          "frames": 64,
+          "durationMs": 4000,
+          "size": [
+            912,
+            512
+          ]
+        }
+      },
+      {
+        "name": "pursuit-highlights.gif actual GIF geometry and timing",
+        "ok": true,
+        "data": {
+          "frames": 128,
+          "durationMs": 8000,
+          "size": [
+            912,
+            512
+          ]
+        }
+      }
+    ],
+    "errors": [],
+    "scope": "Real native rendered menus captured with actual keyboard left/right input; real right-card pointer commits the campaign briefing and five-ship encounter. Prepared checkpoint, no campaign win.",
+    "dialogueSamples": 5166
+  },
+  "source": {
+    "checks": [
+      {
+        "name": "hard-left",
+        "frames": 16,
+        "approvedFramePixelsIdentical": true,
+        "noPixelsOutsideSelectedCard": true,
+        "opaqueBakedInterior": true,
+        "interiorPixels": 102901,
+        "sourceRoundtrip": true,
+        "sourceSha256": "e17bf7420c1260d6f37999fcac6c8c32c87c9c61bfa39d6ac7366bac5653b46d"
+      },
+      {
+        "name": "hard-right",
+        "frames": 16,
+        "approvedFramePixelsIdentical": true,
+        "noPixelsOutsideSelectedCard": true,
+        "opaqueBakedInterior": true,
+        "interiorPixels": 102678,
+        "sourceRoundtrip": true,
+        "sourceSha256": "baef2db8be0427add247f1e8afb9f36ca0aff30fec26794d8f019d4d0a9605bf"
+      },
+      {
+        "name": "furious-left",
+        "frames": 16,
+        "approvedFramePixelsIdentical": true,
+        "noPixelsOutsideSelectedCard": true,
+        "opaqueBakedInterior": true,
+        "interiorPixels": 102853,
+        "sourceRoundtrip": true,
+        "sourceSha256": "d95842af7fe13021b98bd87ff2b631afbefafbe3cb1cd2b8262d85c66feb1b47"
+      },
+      {
+        "name": "furious-right",
+        "frames": 16,
+        "approvedFramePixelsIdentical": true,
+        "noPixelsOutsideSelectedCard": true,
+        "opaqueBakedInterior": true,
+        "interiorPixels": 103003,
+        "sourceRoundtrip": true,
+        "sourceSha256": "1b9c952c5d920d4a676857c0b26fd21386d758c7aec098984b29a87991838949"
+      }
+    ],
+    "scope": "64 retained layered RGBA cels; approved exact border unchanged, same-color interior wash baked into opaque source pixels. No runtime opacity/filter/blend effect. No editor GUI/CLI claim."
+  },
+  "reproduction": {
+    "allPagesRegistryAndSourcesByteIdentical": true,
+    "sha256": {
+      "assets\\game\\shared\\ui\\pursuit_overlay_1115\\hard-left.png": "94a7182e08d49c75e8f15fe1f3a18b4e274edb1762cd4158d197eba63bde332c",
+      "assets\\game\\shared\\ui\\pursuit_overlay_1115\\hard-right.png": "a28d5640fc1efde9b718a0b99ab67dc0ae5a6e08895f4d19c45790247f9e7793",
+      "assets\\game\\shared\\ui\\pursuit_overlay_1115\\furious-left.png": "cad1bbdfed5437b7e8850eb3b4f9c27cc6b6b8880a7042cdc04e45a6c8788cb8",
+      "assets\\game\\shared\\ui\\pursuit_overlay_1115\\furious-right.png": "38caf8cfa5aa5932b7f923d77f22c0ee9b0df1d93ec0608199f170423a48eb0d",
+      "assets\\pursuit_trace_art_1115.js": "79be8bb91aad8b62cb3799b0e871a8cec154e6afde61460227f5748c92d814f3",
+      "_ART_SOURCES\\pursuit_overlay_1115\\hard-left.aseprite": "e17bf7420c1260d6f37999fcac6c8c32c87c9c61bfa39d6ac7366bac5653b46d",
+      "_ART_SOURCES\\pursuit_overlay_1115\\hard-right.aseprite": "baef2db8be0427add247f1e8afb9f36ca0aff30fec26794d8f019d4d0a9605bf",
+      "_ART_SOURCES\\pursuit_overlay_1115\\furious-left.aseprite": "d95842af7fe13021b98bd87ff2b631afbefafbe3cb1cd2b8262d85c66feb1b47",
+      "_ART_SOURCES\\pursuit_overlay_1115\\furious-right.aseprite": "1b9c952c5d920d4a676857c0b26fd21386d758c7aec098984b29a87991838949"
+    },
+    "scope": "Default build exports retained Aseprite-format cels; it does not rewrite authored sources."
+  },
+  "gifBrowser": {
+    "checks": [
+      {
+        "name": "combined GIF browser geometry",
+        "ok": true,
+        "data": {
+          "id": "combined",
+          "width": 912,
+          "height": 512
+        }
+      },
+      {
+        "name": "hard GIF browser geometry",
+        "ok": true,
+        "data": {
+          "id": "hard",
+          "width": 912,
+          "height": 512
+        }
+      },
+      {
+        "name": "furious GIF browser geometry",
+        "ok": true,
+        "data": {
+          "id": "furious",
+          "width": 912,
+          "height": 512
+        }
+      },
+      {
+        "name": "actual browser composited GIF frames change",
+        "ok": true,
+        "data": [
+          "0c47b28e13a7e520fd2362324e156431eb75d153fa0b42dfdb4570467dc03cd8",
+          "c63ee703fe315b55a7feedad3bbecbae168494f90681c9303ef3932d2b913d8b",
+          "103653314c2bdff929fd315220bed100fa26f663c75f77d29c6f79212aa68ad3",
+          "7687237605bf613d3fadfdeb0d34aec8d7abe6d2d70ae46ab4c4d86b8fd4e108"
+        ]
+      },
+      {
+        "name": "no preview page/console/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": [],
+    "scope": "Animated image element screenshots, not canvas default-image sampling."
+  },
+  "gif": [
+    {
+      "file": "pursuit-hard-highlight.gif",
+      "beforeBytes": 4703423,
+      "afterBytes": 3397596,
+      "frames": 64,
+      "durationMs": 4000,
+      "size": [
+        912,
+        512
+      ],
+      "decodedTimingTimelineIdentical": true
+    },
+    {
+      "file": "pursuit-furious-highlight.gif",
+      "beforeBytes": 5136722,
+      "afterBytes": 4511330,
+      "frames": 64,
+      "durationMs": 4000,
+      "size": [
+        912,
+        512
+      ],
+      "decodedTimingTimelineIdentical": true
+    },
+    {
+      "file": "pursuit-highlights.gif",
+      "beforeBytes": 9950216,
+      "afterBytes": 8450592,
+      "frames": 128,
+      "durationMs": 8000,
+      "size": [
+        912,
+        512
+      ],
+      "decodedTimingTimelineIdentical": true
+    }
+  ],
+  "fullSuite": {
+    "passed": 8969,
+    "failingNames": [],
+    "baselineFailingNames": [],
+    "newFailingNames": [],
+    "exitCode": 0
+  },
+  "unchanged": {
+    "assets/game.js": {
+      "sha256": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce",
+      "lineEndings": "LF"
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "sha256": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "lineEndings": "CRLF"
+    }
+  }
+}

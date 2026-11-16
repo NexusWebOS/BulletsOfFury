@@ -1,11 +1,16 @@
 # Bullets of Fury â€” Codex project guide
 
+November16 overnight cinematic QA: preserve assets/night_cinema_1116.js (reading holds, comms continuity, required-art waits and friendly radio material), night_hq_art_1116.js (approved orange-vest conference), night_city_atlas_1116.js (transparent source padding/empty end frame) and night_weather_1116.js (pixel-identical off-canvas weather culling). Current evidence: docs/CINEMA_OVERNIGHT_1116.md and _shots/cinema_overnight_1116/review.html. Core8969/0,754+5 scripts parse. Also preserve night_missile_stats_1116.js for player boss/component hit accounting; native damage/reward owners stay intact. GOD films are not human balance/campaign wins; release remains HOLD. No commit/push without Mike.
+
+
 Read `HANDOFF_CODEX.md`, then the opening rules and latest relevant drop notes in
 `CLAUDE.md`. Read `docs/CODEX_TAKEOVER_0913.md` for the measured takeover baseline.
 Older README branch names, passovers, and test counts are historical; verify the
 current Git state and runtime before relying on them.
 
 ## Working on this build
+
+- November16 release QA: preserve stable local controller-seat ownership and current online visible-canvas HUD/native-audio capture, saved bindings and focus-loss release. Ending art must bind BOTH D1110 and C16 registries; wide-menu aspect fitting must survive fullscreen CSS and restore combat/pointer geometry. Release remains HOLD; scoped smoke fixtures are not full campaign/hardware/WAN certification. Current evidence and remaining gates: docs/RELEASE_READINESS_1116.md. Preserve all prior work; no commit/push without Mike. 
 
 - Later November1: Mike expanded the carriers into four Stage6 waves. Paired carriers are large, staggered, shaking, have no HP bars and permit safe overflight with actual aircraft shadows. All ten turrets gate both hulls. Preserve the two new distinct strategic carriers, physical shootable warheads, authored nuclear catch-up headings, timed generated shockwaves/tornadoes, readable timers, native hit flash, shared interception and once-only native rewards. CA111's native campaign hold/boss gate and warning interlock preserve these added waves. Current owner/evidence: `docs/CARRIER_ASSAULT_1101.md`.
 
@@ -23,6 +28,35 @@ current Git state and runtime before relying on them.
   Do not expose secrets or SpriteCook signed URLs.
 
 ## Creative constraints
+
+- Latest November15: Current Breaker is the real Stage9 boss piloting the Tidal Sovereign. Preserve ship destruction/ejection, repeatable pilot fight, visible second HP pool and final-only native rewards; do not restore his old regular wave/hold. Long dialogue scrolls within its original box. Current owners/evidence: docs/STAGE9_PILOT_1115.md.
+
+- Latest November15: remove the Theater Progression strip. Use the generated geared mission/priority/reward family, fixed2x density, and actual PixelMap letter-by-letter briefings. Preserve native map flags, locks, inputs and earned-reward/city/forge owners. See docs/STAGE_FRAME_1115.md.
+
+- Latest November15 confirmed character references: Mike explicitly chose row B, the front-facing cast masters in _BUILD_SOURCE/front_pilots_1111/masters. The cockpit_talk_1114 appearances were rejected, including Cole/Decker/Juggernaut. Use the newly generated castB-1115 cockpit family and matching orange-vest Juggernaut Bulletalica image. Stable cp15_* keys alone prove nothing about the artwork: verify actual versioned paths/hashes. Juggernaut owns the album line. Preserve current dialogue/map/reward owners. See docs/COCKPIT_CASTB_1115.md.
+
+
+- Latest November15 pursuit-card overlay: Mike approved the exact frame pixels and added a matching color wash across the selected card interior. Preserve the original raised plates/side steps/bottom tabs byte-for-byte, synchronized16-phase arrow, fixed2x density and authored opaque wash frames. The other card/footer stay unchanged. Current source/registry: docs/PURSUIT_OVERLAY_1115.md. The eight-vertex approximation remains rejected.
+
+- November15 canonical dialogue name: **the Rough Riders**. Use Rough Rider for one member and Rough Riders for the squad in all new dialogue, route reports, UI labels and descriptions. Legacy rebel/rebelsquad asset keys, saves, passwords, encounter IDs and individual pilot names remain stable. See docs/ROUGH_RIDERS_SELECTION_1115.md.
+
+- Latest November15 CITY16 overrides the earlier FATE15 optional-next-destination rule: StageX city rescue is mandatory before Stage7 for unfinished campaigns. Preserve the eight city-first post6 beats, real terminal city proof/native once-only rewards, mid-debrief saves, six conversations/album and manual Stage7 selection after chibi travel. Keep rural Stage6 terrain, generated pursuit plates/font, registered16-frame nozzles and removal of the Stage6 private weapon demo. FATE15 outcomes/messages/awards remain. See docs/CITY_RESCUE_1115.md. Generated pursuit artwork is Mike's explicit exception to the older MW21-only menu guidance.
+
+
+- Latest November15: preserve FATE15 Stage6 outcome ownership. Furious Storm Cannon victory crashes the Harrier at the city and leaves Rebels; Furious Rebel victory sends Storm west and leaves the actual Harrier at the city. STRM targets6/BASE4 targets4. Keep generated map awards, exact messages, verified native terminal defeat, saved optional city/underground choice and once-only rewards. No forced sewer departure or stopped-orders aftermath. See docs/CROSSED_FATE_1115.md.
+
+
+- Latest November15: HQ22 replaces earlier1.3s/six-kill timing:0.75s exits,0.9s spacing,7.5s launch beat,5 quiet seconds and ten guard kills. Preserve native stealth missiles, both actual8-frame somersaults, individual SE/SW boosts and warning dialogue. Existing HQ20/HQ21 identities/doors/crew/Earth remain. See docs/HQ_SWARM_1115.md and Stage6-7 preview limitation in docs/STAGE67_CINEMATICS_1115.md.
+
+
+- Later November15: HQ fly-outs use20 fixed-pivot bank/heading/exhaust cells per aircraft, including the B42 alternate. Keep1.3s individual alternating SW/SE departures,12.6s first-wave beat,5 quiet seconds and six guard takedowns. Current owner/evidence: `docs/HQ_TURNS_1115.md`.
+
+- November15 HQ correction: hold the settled Earth/starfield; preserve16 physical sliding-door cells and all9 new8-frame walk/8-frame celebration banks. Depart individually on alternating SW/SE paths; Decker/Axel shoot down6 attackers before their final individual escapes. Keep5 quiet seconds. Current evidence: `docs/HQ_ANIMATION_1115.md`.
+
+- November14-15 HQ19 replaces static post-Chronos plates/post5 workshop: keep real native destruction, delayed Earth reveal, physical selected-pilot HQ landing/walk, all9 crew and16-frame radar,7 first launches,5 quiet seconds and Decker/Axel last escape. Preserve Normal completion and Hard/Furious Stage6 handoff. Owner/evidence: `docs/HQ_RETURN_ATTACK_1114.md`.
+
+- November14 satellite footage is **purple alien code only**. Mike retired the physical tentacled/eyed parasite; never restore it in cinematics. Keep all9 pilots on the same12 separate native kit parts, cinematic-clock exhaust, and one460x84 proportional metal dialogue frame with framed selection avatars. Rebels rust-red, Dracodia purple chrome, CHRONOS blue metallic. Current owner/evidence: `docs/KIT_DIALOGUE_1114.md`.
+
 
 - Frame widths and heights must be even integers. Choose the resolution first;
   keep a uniform canvas, stable pivot and one proportional scale per bank.

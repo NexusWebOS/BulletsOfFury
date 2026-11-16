@@ -1,0 +1,246 @@
+{
+  "date": "2026-11-15",
+  "source": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+  "owners": [
+    "assets/city_rescue_1115.js",
+    "assets/city_rescue_art_1115.js"
+  ],
+  "verification": {
+    "presentation": {
+      "passed": 48,
+      "failed": 0,
+      "file": "_shots/city_rescue_1115/native-qa.json"
+    },
+    "nativeLifecycle": {
+      "passed": 37,
+      "failed": 0,
+      "file": "_shots/city_rescue_1115/lifecycle-qa.json"
+    },
+    "pointerRoutes": {
+      "passed": 19,
+      "failed": 0,
+      "file": "_shots/city_rescue_1115/routes-qa.json"
+    },
+    "artReproduction": {
+      "passed": 4451,
+      "failed": 0,
+      "file": "_shots/city_rescue_1115/art-qa.json"
+    },
+    "moviesBrowser": {
+      "passed": 50,
+      "failed": 0,
+      "file": "_shots/city_rescue_1115/browser-qa.json"
+    },
+    "fullSuite": {
+      "passed": 8969,
+      "failed": 0,
+      "exitCode": 0,
+      "failingNames": [],
+      "baselineFailingNames": [],
+      "newFailures": [],
+      "file": "_shots/city_rescue_1115/full-suite.log"
+    }
+  },
+  "coreHashes": {
+    "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+    "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+    "assets/crossed_fate_1115.js": "9fd697365fba89d8cbfecf3c2c3bf417683ecbdaf5d085f5529086b255bb5159",
+    "assets/crossed_fate_art_1115.js": "e1c2f4e9ea43f10015e9f0acc5f42fa85dc123dc2c01288077cbd5011ed5840e",
+    "assets/city_rescue_1115.js": "a97eb39292105af58b706b7cd4e26dc30b70b035b5073c66e62ae7955f692e52",
+    "assets/city_rescue_art_1115.js": "b4fa473a98b35004c011cd9b385deef94fdb391781b44393621c9042828ff499",
+    "index.html": "8c99bf18a1043564389618f808967c752d2e73f6396cf235de8a714394e277e8"
+  },
+  "syntax": {
+    "assets/game.js": true,
+    "assets/city_rescue_1115.js": true,
+    "assets/city_rescue_art_1115.js": true
+  },
+  "lineEndings": {
+    "game.js": "LF, unchanged",
+    "test_fl.js": "CRLF, unchanged"
+  },
+  "movies": [
+    {
+      "part": "split",
+      "title": "Rural split - Harrier leads, Storm Cannon follows",
+      "file": "split.mp4",
+      "duration": 82.2,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Two overhead aircraft"
+        },
+        {
+          "start": 4.0,
+          "title": "Squad conversation without the weapon demo"
+        },
+        {
+          "start": 62.16190000000596,
+          "title": "Storm Cannon or Rebel Fighters"
+        },
+        {
+          "start": 63.363,
+          "title": "Storm Cannon pursuit briefing"
+        }
+      ],
+      "decodeErrors": [],
+      "audio": [
+        "[Parsed_volumedetect_0 @ 0000013b0a1a6dc0] mean_volume: -12.3 dB",
+        "[Parsed_volumedetect_0 @ 0000013b0a1a6dc0] max_volume: -1.2 dB"
+      ],
+      "sha256": "3270280dc18bd556d40babeb3e35fdcdd6357720ad9669a8330122521b16f357",
+      "scope": "Prepared Cole / Furious native Stage6 split after the carrier prelude. Both real aircraft, retained Rebel dialogue, pursuit choice and full Storm Cannon briefing. The native left route is selected automatically for this cinematic checkpoint; no fight or campaign win is claimed.",
+      "poster": "split-frame-0.png"
+    },
+    {
+      "part": "storm",
+      "title": "Storm Cannon defeated - city rescue required",
+      "file": "storm.mp4",
+      "duration": 62.47,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "The skies are clearing"
+        },
+        {
+          "start": 16.68840000000596,
+          "title": "Who escaped toward the city"
+        },
+        {
+          "start": 23.40840000000596,
+          "title": "Route us for the city"
+        },
+        {
+          "start": 33.95240000000596,
+          "title": "Underground after saving those people"
+        },
+        {
+          "start": 40.737,
+          "title": "Harrier and Fury Fighters reach the city"
+        },
+        {
+          "start": 49.3765,
+          "title": "Alternate-route password"
+        },
+        {
+          "start": 55.28030000001192,
+          "title": "Crossed Fate unlocked"
+        },
+        {
+          "start": 61.79280000001192,
+          "title": "Stage X required, Stage7 locked"
+        }
+      ],
+      "decodeErrors": [],
+      "audio": [
+        "[Parsed_volumedetect_0 @ 0000015551329480] mean_volume: -14.6 dB",
+        "[Parsed_volumedetect_0 @ 0000015551329480] max_volume: -1.9 dB"
+      ],
+      "sha256": "4dccde27c8984f140fae2df8f45b294bc9679859555448ad0b396b02190f548a",
+      "scope": "Cole / Furious. Scripted damage goes through the actual native module/core or five-Rebel/Retina/death owners. The verified result then plays every post6 dialogue beat and the closer map event without skips. Stage X is mandatory before Stage7. Cinematic checkpoint, not an unassisted campaign win.",
+      "poster": "storm-frame-0.png"
+    },
+    {
+      "part": "rebels",
+      "title": "Rebel Fighters defeated - city Harrier required",
+      "file": "rebels.mp4",
+      "duration": 57.84,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "The skies are clearing"
+        },
+        {
+          "start": 15.185199999988079,
+          "title": "Who escaped toward the city"
+        },
+        {
+          "start": 21.2325,
+          "title": "Route us for the city"
+        },
+        {
+          "start": 31.77669999998808,
+          "title": "Underground after saving those people"
+        },
+        {
+          "start": 38.56190000000596,
+          "title": "Storm Cannon escapes west"
+        },
+        {
+          "start": 43.632300000011924,
+          "title": "Alternate-route password"
+        },
+        {
+          "start": 50.67490000000596,
+          "title": "Road Not Taken unlocked"
+        },
+        {
+          "start": 57.168599999994036,
+          "title": "Stage X required, Stage7 locked"
+        }
+      ],
+      "decodeErrors": [],
+      "audio": [
+        "[Parsed_volumedetect_0 @ 000002120c2ad300] mean_volume: -14.7 dB",
+        "[Parsed_volumedetect_0 @ 000002120c2ad300] max_volume: -2.1 dB"
+      ],
+      "sha256": "2da8522093ee6ba52381abac199d3b38df7e57cd8251c4564c3480e0827c82a5",
+      "scope": "Cole / Furious. Scripted damage goes through the actual native module/core or five-Rebel/Retina/death owners. The verified result then plays every post6 dialogue beat and the closer map event without skips. Stage X is mandatory before Stage7. Cinematic checkpoint, not an unassisted campaign win.",
+      "poster": "rebels-frame-0.png"
+    },
+    {
+      "part": "city",
+      "title": "City rescued - regroup, Black Album, riverbank",
+      "file": "city.mp4",
+      "duration": 32.7,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Another win"
+        },
+        {
+          "start": 3.008399999976158,
+          "title": "Return to the riverbank"
+        },
+        {
+          "start": 7.456199999988079,
+          "title": "Is it going to smell bad?"
+        },
+        {
+          "start": 13.47219999998808,
+          "title": "Favorite albums"
+        },
+        {
+          "start": 16.94419999998808,
+          "title": "Only if it is sad but true"
+        },
+        {
+          "start": 19.95209999999404,
+          "title": "Juggernaut and the Black Album"
+        },
+        {
+          "start": 24.960199999988077,
+          "title": "Fly to Stage7"
+        },
+        {
+          "start": 28.22419999998808,
+          "title": "Stage7 ready for manual selection"
+        }
+      ],
+      "decodeErrors": [],
+      "audio": [
+        "[Parsed_volumedetect_0 @ 000002283fb66dc0] mean_volume: -14.5 dB",
+        "[Parsed_volumedetect_0 @ 000002283fb66dc0] max_volume: -2.5 dB"
+      ],
+      "sha256": "ed93f7f11ccd5fb165625fd14eef9670dd5a7b50e826339e5564cee0f2105426",
+      "scope": "Cole / Furious native city-Harrier checkpoint. Scripted Retina/missile damage exhausts the actual carrier, Nightwing Ace and full death owner before native settlement. All six new dialogue beats, the album and map flight play without skips. Stage7 is then offered for manual selection. Not an unassisted win.",
+      "poster": "city-frame-0.png"
+    }
+  ],
+  "scope": "Prepared native Chromium encounter/cinematic checkpoints. Scripted damage uses real module/Retina/missile/terminal death owners. Neither unassisted campaign wins nor balance validation. All nine pilot scripts checked; both actual city encounters cleared through native owners. Real pointer routes checked Hard/Furious; physical controller hardware not tested.",
+  "limitations": [
+    "Earlier prepared Stage7 player-visibility issue remains outside this pass. New preview ends at manual Stage7 selection.",
+    "Normal/Easy native Stage5 campaign ending is retained.",
+    "No commit, push, installer or release."
+  ]
+}

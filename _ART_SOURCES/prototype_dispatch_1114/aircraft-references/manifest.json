@@ -1,0 +1,77 @@
+{
+  "records": [
+    {
+      "pilot": "cole",
+      "key": "ship_cole",
+      "w": 193,
+      "h": 232,
+      "file": "ship_cole.png",
+      "sha256": "c75f3facd000002021b2397d2909ecb8df9730aa805c801835be4674f74af9a1"
+    },
+    {
+      "pilot": "axel",
+      "key": "ship_axel",
+      "w": 190,
+      "h": 224,
+      "file": "ship_axel.png",
+      "sha256": "9544901a7214068b4b4c915dd29b606e3fe6550305cc7d92e4990dff8314570b"
+    },
+    {
+      "pilot": "freezer",
+      "key": "ship_freezer",
+      "w": 183,
+      "h": 194,
+      "file": "ship_freezer.png",
+      "sha256": "38a3e14c3d08ab8fd040271733ddcc54afed8a89f6c556101660652b1a88be43"
+    },
+    {
+      "pilot": "yuri",
+      "key": "ship_yuri",
+      "w": 209,
+      "h": 229,
+      "file": "ship_yuri.png",
+      "sha256": "28b821b21b2bf852871d7b07c6deeae5dcd1a1afd90b6ea13d6b3ebc4b060058"
+    },
+    {
+      "pilot": "maverick",
+      "key": "ship_maverick",
+      "w": 200,
+      "h": 211,
+      "file": "ship_maverick.png",
+      "sha256": "0bc214d1196bce57a839f17a8f56482a098949d7a96e5992e7d318e893715a8b"
+    },
+    {
+      "pilot": "falva",
+      "key": "ship_falva",
+      "w": 204,
+      "h": 238,
+      "file": "ship_falva.png",
+      "sha256": "609582c1cdeeb14a3d66efc489489d3e7100c5bc097c4b3f645413c714e67185"
+    },
+    {
+      "pilot": "lizzie",
+      "key": "ship_lizzie",
+      "w": 224,
+      "h": 243,
+      "file": "ship_lizzie.png",
+      "sha256": "6cf527ab3773914dc87d248c9fef842440ea908e4508c3e0a5eeb3f0efaebb5f"
+    },
+    {
+      "pilot": "decker",
+      "key": "ship_decker",
+      "w": 200,
+      "h": 230,
+      "file": "ship_decker.png",
+      "sha256": "d257ab2be65695b5785c082fd698abfc52ec2ec541dea191eb7f37c3afe32f02"
+    },
+    {
+      "pilot": "juggernaut",
+      "key": "ship_juggernaut",
+      "w": 200,
+      "h": 205,
+      "file": "ship_juggernaut.png",
+      "sha256": "58458d72c11671a3a2de8b1baa8538c166a78fa7ea86c527e3f4fae69c0354de"
+    }
+  ],
+  "errors": []
+}

@@ -6,6 +6,9 @@ for(const a of Object.values(FP5_ART.banks))XART._src[a.key]=a.path+'?v='+a.sha2
 function fp5Room(id,b,pk,p,index){
  const tech=d1110Tech(p),room=pk===tech?(pk==='decker'?'workshop':'conference'):null;
  const cockpit=/warp|arrival-9|post-9|sting/.test(id)?'cockpit-space':/arrival-7|post-7/.test(id)?'cockpit-tunnel':'cockpit-sky';
+ // After the HQ evacuation, the technician is flying with the team too.
+ // Keep every airborne speaker in the current shared cockpit art family.
+ if(/^(post-[6789]|arrival-[79]|warp-5-9|sting)$/.test(id))return cockpit;
  if(id==='opening'){
   const n=Number(String(b.id).split('-').at(-1));
   if(n>=17)return room||cockpit;

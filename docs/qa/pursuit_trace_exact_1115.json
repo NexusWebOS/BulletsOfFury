@@ -1,0 +1,1080 @@
+{
+  "scope": "Exact source-pixel card-frame pulse, replacing the rejected eight-vertex approximation. Original BOF D: checkout, prepared native menu checks; no campaign-win or physical-controller claim.",
+  "nativeChecks": 150,
+  "nativePassed": 150,
+  "browserChecks": 5,
+  "browserPassed": 5,
+  "sourceFrames": 64,
+  "sourceNotchLandmarks": 24,
+  "source": {
+    "checks": [
+      {
+        "name": "hard-left",
+        "frames": 16,
+        "allFramePixelsFromOriginalMetal": true,
+        "noAircraftOrTitlePixelsSelected": true,
+        "landmarks": [
+          {
+            "name": "raised top",
+            "point": [
+              125,
+              100
+            ],
+            "selected": true
+          },
+          {
+            "name": "top recess",
+            "point": [
+              190,
+              100
+            ],
+            "selected": false
+          },
+          {
+            "name": "lower side offset",
+            "point": [
+              58,
+              320
+            ],
+            "selected": true
+          },
+          {
+            "name": "upper side recess",
+            "point": [
+              58,
+              230
+            ],
+            "selected": false
+          },
+          {
+            "name": "bottom tab",
+            "point": [
+              190,
+              408
+            ],
+            "selected": true
+          },
+          {
+            "name": "bottom notch",
+            "point": [
+              250,
+              408
+            ],
+            "selected": false
+          }
+        ],
+        "sourceRoundtrip": true,
+        "sourceSha256": "443a2393987468cba9dc97ffcf5605aab2e835b610421d0de840eee0199aee33",
+        "anchors": [
+          {
+            "guide": [
+              125,
+              105
+            ],
+            "pixel": [
+              125,
+              105
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              190,
+              112
+            ],
+            "pixel": [
+              190,
+              109
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              260,
+              115
+            ],
+            "pixel": [
+              260,
+              113
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              390,
+              110
+            ],
+            "pixel": [
+              390,
+              110
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              67,
+              150
+            ],
+            "pixel": [
+              67,
+              150
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              67,
+              220
+            ],
+            "pixel": [
+              67,
+              220
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              59,
+              320
+            ],
+            "pixel": [
+              59,
+              320
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              80,
+              392
+            ],
+            "pixel": [
+              80,
+              392
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              105,
+              404
+            ],
+            "pixel": [
+              105,
+              404
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              190,
+              404
+            ],
+            "pixel": [
+              190,
+              404
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              260,
+              403
+            ],
+            "pixel": [
+              260,
+              403
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              320,
+              404
+            ],
+            "pixel": [
+              320,
+              404
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              392,
+              404
+            ],
+            "pixel": [
+              392,
+              404
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              435,
+              380
+            ],
+            "pixel": [
+              435,
+              380
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              440,
+              320
+            ],
+            "pixel": [
+              440,
+              320
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              436,
+              240
+            ],
+            "pixel": [
+              435,
+              240
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              431,
+              153
+            ],
+            "pixel": [
+              431,
+              153
+            ],
+            "component": 2
+          }
+        ]
+      },
+      {
+        "name": "hard-right",
+        "frames": 16,
+        "allFramePixelsFromOriginalMetal": true,
+        "noAircraftOrTitlePixelsSelected": true,
+        "landmarks": [
+          {
+            "name": "raised top",
+            "point": [
+              787,
+              100
+            ],
+            "selected": true
+          },
+          {
+            "name": "top recess",
+            "point": [
+              722,
+              100
+            ],
+            "selected": false
+          },
+          {
+            "name": "lower side offset",
+            "point": [
+              854,
+              320
+            ],
+            "selected": true
+          },
+          {
+            "name": "upper side recess",
+            "point": [
+              854,
+              230
+            ],
+            "selected": false
+          },
+          {
+            "name": "bottom tab",
+            "point": [
+              722,
+              408
+            ],
+            "selected": true
+          },
+          {
+            "name": "bottom notch",
+            "point": [
+              662,
+              408
+            ],
+            "selected": false
+          }
+        ],
+        "sourceRoundtrip": true,
+        "sourceSha256": "3444b37e4ac458fc40d9159ef756d8860100b1c1836aecf128e99d2556bfead5",
+        "anchors": [
+          {
+            "guide": [
+              787,
+              105
+            ],
+            "pixel": [
+              787,
+              105
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              722,
+              112
+            ],
+            "pixel": [
+              722,
+              109
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              652,
+              115
+            ],
+            "pixel": [
+              652,
+              113
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              522,
+              110
+            ],
+            "pixel": [
+              522,
+              110
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              845,
+              150
+            ],
+            "pixel": [
+              845,
+              150
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              845,
+              220
+            ],
+            "pixel": [
+              845,
+              220
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              853,
+              320
+            ],
+            "pixel": [
+              853,
+              320
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              832,
+              392
+            ],
+            "pixel": [
+              832,
+              392
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              807,
+              404
+            ],
+            "pixel": [
+              807,
+              404
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              722,
+              404
+            ],
+            "pixel": [
+              722,
+              404
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              652,
+              403
+            ],
+            "pixel": [
+              652,
+              403
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              592,
+              404
+            ],
+            "pixel": [
+              592,
+              404
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              520,
+              404
+            ],
+            "pixel": [
+              520,
+              404
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              477,
+              380
+            ],
+            "pixel": [
+              477,
+              380
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              472,
+              320
+            ],
+            "pixel": [
+              472,
+              320
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              476,
+              240
+            ],
+            "pixel": [
+              476,
+              240
+            ],
+            "component": 12
+          },
+          {
+            "guide": [
+              481,
+              153
+            ],
+            "pixel": [
+              481,
+              153
+            ],
+            "component": 12
+          }
+        ]
+      },
+      {
+        "name": "furious-left",
+        "frames": 16,
+        "allFramePixelsFromOriginalMetal": true,
+        "noAircraftOrTitlePixelsSelected": true,
+        "landmarks": [
+          {
+            "name": "raised top",
+            "point": [
+              125,
+              100
+            ],
+            "selected": true
+          },
+          {
+            "name": "top recess",
+            "point": [
+              190,
+              100
+            ],
+            "selected": false
+          },
+          {
+            "name": "lower side offset",
+            "point": [
+              58,
+              320
+            ],
+            "selected": true
+          },
+          {
+            "name": "upper side recess",
+            "point": [
+              58,
+              230
+            ],
+            "selected": false
+          },
+          {
+            "name": "bottom tab",
+            "point": [
+              190,
+              408
+            ],
+            "selected": true
+          },
+          {
+            "name": "bottom notch",
+            "point": [
+              250,
+              408
+            ],
+            "selected": false
+          }
+        ],
+        "sourceRoundtrip": true,
+        "sourceSha256": "9df47652d08539d2cfe0bf346f0b67f6e0dd689107d0b568225299626a3b0a85",
+        "anchors": [
+          {
+            "guide": [
+              125,
+              105
+            ],
+            "pixel": [
+              125,
+              105
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              190,
+              112
+            ],
+            "pixel": [
+              190,
+              109
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              260,
+              115
+            ],
+            "pixel": [
+              260,
+              113
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              390,
+              110
+            ],
+            "pixel": [
+              390,
+              110
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              67,
+              150
+            ],
+            "pixel": [
+              67,
+              150
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              67,
+              220
+            ],
+            "pixel": [
+              67,
+              220
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              59,
+              320
+            ],
+            "pixel": [
+              59,
+              320
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              80,
+              392
+            ],
+            "pixel": [
+              80,
+              392
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              105,
+              404
+            ],
+            "pixel": [
+              105,
+              404
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              190,
+              404
+            ],
+            "pixel": [
+              190,
+              404
+            ],
+            "component": 2
+          },
+          {
+            "guide": [
+              260,
+              403
+            ],
+            "pixel": [
+              260,
+              403
+            ],
+            "component": 220
+          },
+          {
+            "guide": [
+              320,
+              404
+            ],
+            "pixel": [
+              320,
+              404
+            ],
+            "component": 220
+          },
+          {
+            "guide": [
+              392,
+              404
+            ],
+            "pixel": [
+              392,
+              404
+            ],
+            "component": 220
+          },
+          {
+            "guide": [
+              435,
+              380
+            ],
+            "pixel": [
+              435,
+              380
+            ],
+            "component": 220
+          },
+          {
+            "guide": [
+              440,
+              320
+            ],
+            "pixel": [
+              440,
+              320
+            ],
+            "component": 220
+          },
+          {
+            "guide": [
+              436,
+              240
+            ],
+            "pixel": [
+              435,
+              240
+            ],
+            "component": 220
+          },
+          {
+            "guide": [
+              431,
+              153
+            ],
+            "pixel": [
+              431,
+              153
+            ],
+            "component": 2
+          }
+        ]
+      },
+      {
+        "name": "furious-right",
+        "frames": 16,
+        "allFramePixelsFromOriginalMetal": true,
+        "noAircraftOrTitlePixelsSelected": true,
+        "landmarks": [
+          {
+            "name": "raised top",
+            "point": [
+              787,
+              100
+            ],
+            "selected": true
+          },
+          {
+            "name": "top recess",
+            "point": [
+              722,
+              100
+            ],
+            "selected": false
+          },
+          {
+            "name": "lower side offset",
+            "point": [
+              854,
+              320
+            ],
+            "selected": true
+          },
+          {
+            "name": "upper side recess",
+            "point": [
+              854,
+              230
+            ],
+            "selected": false
+          },
+          {
+            "name": "bottom tab",
+            "point": [
+              722,
+              408
+            ],
+            "selected": true
+          },
+          {
+            "name": "bottom notch",
+            "point": [
+              662,
+              408
+            ],
+            "selected": false
+          }
+        ],
+        "sourceRoundtrip": true,
+        "sourceSha256": "445659785342987d9f7066910ec2ea44afd7813c92896a81b03a39a2f647d4ee",
+        "anchors": [
+          {
+            "guide": [
+              787,
+              105
+            ],
+            "pixel": [
+              787,
+              105
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              722,
+              112
+            ],
+            "pixel": [
+              722,
+              109
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              652,
+              115
+            ],
+            "pixel": [
+              652,
+              113
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              522,
+              110
+            ],
+            "pixel": [
+              522,
+              110
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              845,
+              150
+            ],
+            "pixel": [
+              845,
+              150
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              845,
+              220
+            ],
+            "pixel": [
+              845,
+              220
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              853,
+              320
+            ],
+            "pixel": [
+              853,
+              320
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              832,
+              392
+            ],
+            "pixel": [
+              832,
+              392
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              807,
+              404
+            ],
+            "pixel": [
+              807,
+              404
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              722,
+              404
+            ],
+            "pixel": [
+              722,
+              404
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              652,
+              403
+            ],
+            "pixel": [
+              652,
+              403
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              592,
+              404
+            ],
+            "pixel": [
+              592,
+              404
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              520,
+              404
+            ],
+            "pixel": [
+              520,
+              404
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              477,
+              380
+            ],
+            "pixel": [
+              477,
+              380
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              472,
+              320
+            ],
+            "pixel": [
+              472,
+              320
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              476,
+              240
+            ],
+            "pixel": [
+              477,
+              240
+            ],
+            "component": 11
+          },
+          {
+            "guide": [
+              481,
+              153
+            ],
+            "pixel": [
+              481,
+              153
+            ],
+            "component": 11
+          }
+        ]
+      }
+    ],
+    "scope": "64 layered RGBA cels decoded independently; visible support taken from the original metal frame pixels. Six raised/notched landmarks verified on each card. No editor GUI/CLI claim."
+  },
+  "reproduction": {
+    "allPagesRegistryAndSourcesByteIdentical": true,
+    "sha256": {
+      "assets\\game\\shared\\ui\\pursuit_trace_exact_1115\\hard-left.png": "be5e4c5ee8c3787b87367428788d7227f507a28182e4de7601256403a8fcb44e",
+      "assets\\game\\shared\\ui\\pursuit_trace_exact_1115\\hard-right.png": "30c0767fb7182ddb7b7f4717c0092340114775ebae23eaa5f7c40b1af8735a0a",
+      "assets\\game\\shared\\ui\\pursuit_trace_exact_1115\\furious-left.png": "6277942695b63dadcdc26b94e686e2a835bab6174278ab29d19fd96aca8addc4",
+      "assets\\game\\shared\\ui\\pursuit_trace_exact_1115\\furious-right.png": "a59725d831593fbc7aaf47f0f47748b9239257fe999299ea55ea3dddbc52f2fc",
+      "assets\\pursuit_trace_art_1115.js": "af97b5c988ca0b9235d6f38659177edcc2196df9a445b4d6ab2a864687c64043",
+      "_ART_SOURCES\\pursuit_trace_exact_1115\\hard-left.aseprite": "443a2393987468cba9dc97ffcf5605aab2e835b610421d0de840eee0199aee33",
+      "_ART_SOURCES\\pursuit_trace_exact_1115\\hard-right.aseprite": "3444b37e4ac458fc40d9159ef756d8860100b1c1836aecf128e99d2556bfead5",
+      "_ART_SOURCES\\pursuit_trace_exact_1115\\furious-left.aseprite": "9df47652d08539d2cfe0bf346f0b67f6e0dd689107d0b568225299626a3b0a85",
+      "_ART_SOURCES\\pursuit_trace_exact_1115\\furious-right.aseprite": "445659785342987d9f7066910ec2ea44afd7813c92896a81b03a39a2f647d4ee"
+    },
+    "scope": "Default build exports retained Aseprite-format cels; it does not rewrite authored sources."
+  },
+  "gif": [
+    {
+      "file": "pursuit-hard-highlight.gif",
+      "beforeBytes": 6004321,
+      "afterBytes": 668418,
+      "frames": 64,
+      "durationMs": 4000,
+      "size": [
+        912,
+        512
+      ],
+      "decodedTimingTimelineIdentical": true
+    },
+    {
+      "file": "pursuit-furious-highlight.gif",
+      "beforeBytes": 6432342,
+      "afterBytes": 685890,
+      "frames": 64,
+      "durationMs": 4000,
+      "size": [
+        912,
+        512
+      ],
+      "decodedTimingTimelineIdentical": true
+    },
+    {
+      "file": "pursuit-highlights.gif",
+      "beforeBytes": 12423120,
+      "afterBytes": 1376844,
+      "frames": 128,
+      "durationMs": 8000,
+      "size": [
+        912,
+        512
+      ],
+      "decodedTimingTimelineIdentical": true
+    }
+  ],
+  "fullSuite": {
+    "passed": 8969,
+    "failures": [],
+    "exitCode": 0,
+    "baselineFailingNames": [],
+    "newFailingNames": [],
+    "resolvedFailingNames": []
+  },
+  "syntax": [
+    "assets/game.js",
+    "assets/city_rescue_1115.js",
+    "assets/pursuit_trace_art_1115.js"
+  ],
+  "unchanged": {
+    "assets/game.js": {
+      "sha256": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce",
+      "lineEndings": "LF"
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "sha256": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "lineEndings": "CRLF"
+    }
+  },
+  "evidence": "_shots/pursuit_trace_exact_1115",
+  "review": "http://127.0.0.1:8766/_shots/pursuit_trace_exact_1115/review.html"
+}

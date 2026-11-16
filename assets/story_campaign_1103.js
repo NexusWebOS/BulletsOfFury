@@ -76,7 +76,7 @@ function s113Script(stage,p=run.pilot,route=s113Route()){
  if(stage===6){const harrierDefeated=route==='left';return [
  A('sky',harrierDefeated?4.8:8,{battle:harrierDefeated?'harrier':'rebels',cue:'expBig'}),
  A('hangar',3.8,{flight:'return',cue:'jetDash'}),
- L('decker',harrierDefeated?'The Rebel Fighters have reached the city. If we do not stop them, casualties could be massive.':'The Harrier is heading into the city. We have to stop it before the casualties become massive.','command-bay',{frame:0,actor:'panic'}),
+ L('decker',harrierDefeated?'The Rough Riders have reached the city. If we do not stop them, casualties could be massive.':'The Harrier is heading into the city. We have to stop it before the casualties become massive.','command-bay',{frame:0,actor:'panic'}),
  L('cole','Keep that remaining threat marked for Stage X. What else are you seeing?','command-bay',{frame:0,group:'neutral'}),
  L('decker','Something underground. A strange alien signal... almost like it wants us to find it. Let me narrow the scan.','command-bay',{frame:0,actor:'typing'}),
  A('command-bay',2.8,{frame:1,actor:'typing'}),

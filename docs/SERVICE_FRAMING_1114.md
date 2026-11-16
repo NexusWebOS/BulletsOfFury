@@ -1,0 +1,9 @@
+# Service scene framing correction — November 14
+
+The 888-pixel-wide cinematic panel was allowed to zoom back to 1.18 over a 680-pixel stage plate. That exposed about 43 pixels beyond each side of the terrain. The previous camera also centered directly on the player's position, exposing more edge when the player was off-center.
+
+assets/service_link_1114.js now derives the minimum zoom from the panel and terrain dimensions, retains a four-pixel source inset, and clamps both camera axes inside the finite stage image. The aircraft is projected relative to that local cinematic camera. Its departure stance leaves room for the hull and preserves the same position at the warning-to-takeoff handoff. Native gameplay player positions, dialogue, charges, audio, takeoff timing, progression and the map callback retain their owners. index.html advances the runtime script cache revision to 2.
+
+Native Chromium captured actual terrain drawImage rectangles across 75 cases: left, center and right player positions, five shot rows, five points per row. Every actual terrain blit covers all four panel edges. All source-view bounds stay inside the terrain inset; the warning-to-takeoff ship position matches exactly. No page, console or asset errors. A fresh 48.94-second native recording includes game audio, all scene rows and one map return. Its MP4 decodes cleanly and extracted actual-video frames were inspected. This is cinematic checkpoint verification, not a campaign playthrough.
+
+Syntax passes. The full runner exits 0 with 8,969 passing assertions, zero failures and its success banner; no new failure names. QA: docs/qa/service_framing_1114.json. Replay: _shots/service_framing_1114/review.html. Reproduce with _BUILD_SOURCE/probe_service_framing_1114.py or record_service_framing_1114.py against port 8765. The previous recording remains intact. No commit or push.

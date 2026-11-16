@@ -7631,6 +7631,9 @@ const Input = (()=>{
   window.addEventListener('gamepadconnected',()=>{ gpConnected=true; });
   window.addEventListener('gamepaddisconnected',()=>{ gpConnected=false; });
   const _padHeld={};
+  // In co-op a missing device leaves its seat empty. Compacting the live-pad
+  // list on every poll transfers the surviving wingman's pad to player one.
+  const _padSeats=[null,null];let _padWasCoop=false;
   function pollGamepad(){
     if(!navigator.getGamepads) return;
     const pads=navigator.getGamepads();
@@ -7644,10 +7647,18 @@ const Input = (()=>{
 
        So it stays "the first pad PRESENT", and the second pad present becomes P2. One pad
        behaves exactly as it always did, in whatever slot it occupies. */
-    const live=[];
-    for(let i=0;i<(pads?pads.length:0);i++){ if(pads[i]) live.push(pads[i]); }
-    const gp=live[0], gp2=live[1];
-    if(!gp){gpConnected=false;for(const k in _padHeld){_padHeld[k]=false;keys[k]=false;pressed[k]=false;}return;}
+    const live=[],indexes=[];
+    for(let i=0;i<(pads?pads.length:0);i++){if(pads[i]&&pads[i].connected!==false){live.push(pads[i]);indexes.push(i);}}
+    const party=typeof coopOn!=='undefined'&&coopOn;let gp,gp2;
+    if(party){
+      if(!_padWasCoop){_padSeats[0]=null;_padSeats[1]=null;}
+      const assigned=_padSeats.map(i=>i!=null&&live.includes(pads[i])?pads[i]:null),used=new Set(assigned.filter(Boolean));
+      const available=live.filter(p=>!used.has(p));
+      for(let seat=0;seat<2;seat++)if(!assigned[seat]&&available.length){const next=available.shift();assigned[seat]=next;_padSeats[seat]=indexes[live.indexOf(next)];}
+      gp=assigned[0];gp2=assigned[1];
+    }else{gp=live[0];gp2=live[1];_padSeats[0]=_padSeats[1]=null;}
+    _padWasCoop=party;
+    if(!gp&&!gp2){gpConnected=false;for(const k in _padHeld){_padHeld[k]=false;keys[k]=false;pressed[k]=false;}return;}
     gpConnected=true;
     const setk=(name,held)=>{
       if(held && !_padHeld[name]){ pressed[name]=true; }
@@ -7657,7 +7668,7 @@ const Input = (()=>{
        rather than copied, because a second copy of the stick deadzone is a second place for the
        0822af double-tap bug to come back. */
     if(gp2) padInto(gp2,'pad2_',setk);else for(const k in _padHeld)if(k.startsWith('pad2_'))setk(k,false);
-    padInto(gp,'pad_',setk);
+    if(gp)padInto(gp,'pad_',setk);else for(const k in _padHeld)if(k.startsWith('pad_'))setk(k,false);
   }
   /* One pad's whole mapping, under whatever prefix it was handed. */
   function padInto(gp, P, setk){
@@ -56072,7 +56083,7 @@ function s6WingTick(dt){
     else if(Input.tapSeat(1,'left'))W.route='left';
     else if(Input.tapSeat(1,'right'))W.route='right';
     if(W.route){s6WingSay('COLE',W.route==='left'?'FIVE-SHIP WING, TAKE THE HARRIER TOGETHER!':
-      'FIVE-SHIP WING, TAKE THE REBELS TOGETHER!');
+      'FIVE-SHIP WING, TAKE THE ROUGH RIDERS TOGETHER!');
       // The current roster is already five ships including the player; do not split it again.
       if(W.route==='left'){
         spawnEnemy('xelite_hivewing',camLeftX()+80,-70,{});
@@ -56154,7 +56165,7 @@ function s6WingChoiceDraw(){
   if(XART.rdy('warn_escape_arrow_0916')){const im=XART.get('warn_escape_arrow_0916'),h=48,w=h*im.width/im.height;ctx.globalAlpha=pulse;ctx.drawImage(im,VW*.77-w/2,y-h/2,w,h);ctx.save();ctx.translate(VW*.23,y);ctx.scale(-1,1);ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();ctx.globalAlpha=1;}
   msgText('CHOOSE YOUR TARGET  '+Math.ceil(Math.max(0,30-W.choiceT)),VW/2,y-48,18,'#ffffff',.65,1,.04);
   msgText('LEFT: HARRIER',VW*.23,y+48,12,'#83dfff',.6,1,.03);
-  msgText('RIGHT: REBELS',VW*.77,y+48,12,'#83dfff',.6,1,.03);
+  msgText('RIGHT: ROUGH RIDERS',VW*.77,y+48,12,'#83dfff',.6,1,.03);
   ctx.restore();
 }
 
@@ -56163,7 +56174,7 @@ const REBEL_SHIPS=['voss_iron_vulture','nyx_ghostknife','rook_breachhammer','kai
 const REBEL_TINT=['#b65cff','#4ce5e5','#a6c3d5','#ff6979','#dbea52'];
 function rebelSquadInit(b,hpBase){
   const mult=DR15.keys.includes(diffKey)?1:diffKey==='easy'?.5:1;
-  b.name='REBEL SQUAD';b.enter=false;b._noHit=false;b.x=camLeftX()+VW/2;b.y=VH*.23;b.w=390;b.h=135;
+  b.name='ROUGH RIDERS';b.enter=false;b._noHit=false;b.x=camLeftX()+VW/2;b.y=VH*.23;b.w=390;b.h=135;
   b.hp=b.maxhp=Math.ceil(hpBase*mult);
   const each=b.maxhp/5,slots=[-.38,-.19,0,.19,.38];
   b._rebels={t:0,nextWarp:9,shift:0,ships:REBEL_KEYS.map((key,i)=>({key,i,x:b.x+slots[i]*VW,y:-90-i*26,

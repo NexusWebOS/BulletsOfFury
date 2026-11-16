@@ -1,0 +1,903 @@
+{
+  "version": 1,
+  "source": "Current TC119 modular Storm Cannon, current HF28 Harrier and built-in imagegen medal pair. No replacement aircraft generation.",
+  "banks": {
+    "storm_nw": {
+      "w": 548,
+      "h": 524,
+      "pivot": [
+        272,
+        208
+      ],
+      "sourceCanvas": [
+        800,
+        800
+      ],
+      "sharedCrop": [
+        128,
+        192,
+        676,
+        716
+      ],
+      "bodyWidth": 576,
+      "frames": 16,
+      "pages": [
+        {
+          "key": "fate15_storm_nw_0",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/storm_nw-0.webp",
+          "sha256": "445fbf59e72931040d40106e01150fa23e4eac985a700cabd8addda185c292c4",
+          "w": 2192,
+          "h": 2096
+        }
+      ],
+      "cells": [
+        [
+          "fate15_storm_nw_0",
+          0,
+          0
+        ],
+        [
+          "fate15_storm_nw_0",
+          548,
+          0
+        ],
+        [
+          "fate15_storm_nw_0",
+          1096,
+          0
+        ],
+        [
+          "fate15_storm_nw_0",
+          1644,
+          0
+        ],
+        [
+          "fate15_storm_nw_0",
+          0,
+          524
+        ],
+        [
+          "fate15_storm_nw_0",
+          548,
+          524
+        ],
+        [
+          "fate15_storm_nw_0",
+          1096,
+          524
+        ],
+        [
+          "fate15_storm_nw_0",
+          1644,
+          524
+        ],
+        [
+          "fate15_storm_nw_0",
+          0,
+          1048
+        ],
+        [
+          "fate15_storm_nw_0",
+          548,
+          1048
+        ],
+        [
+          "fate15_storm_nw_0",
+          1096,
+          1048
+        ],
+        [
+          "fate15_storm_nw_0",
+          1644,
+          1048
+        ],
+        [
+          "fate15_storm_nw_0",
+          0,
+          1572
+        ],
+        [
+          "fate15_storm_nw_0",
+          548,
+          1572
+        ],
+        [
+          "fate15_storm_nw_0",
+          1096,
+          1572
+        ],
+        [
+          "fate15_storm_nw_0",
+          1644,
+          1572
+        ]
+      ]
+    },
+    "storm_nw_shadow": {
+      "w": 548,
+      "h": 524,
+      "pivot": [
+        272,
+        208
+      ],
+      "sourceCanvas": [
+        800,
+        800
+      ],
+      "sharedCrop": [
+        128,
+        192,
+        676,
+        716
+      ],
+      "bodyWidth": 576,
+      "frames": 16,
+      "pages": [
+        {
+          "key": "fate15_storm_nw_shadow_0",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/storm_nw_shadow-0.webp",
+          "sha256": "977bd0d57cd31ee3fa3c5240aa566ee0cc33138695ac68ef9f96e0954a08ae7b",
+          "w": 2192,
+          "h": 2096
+        }
+      ],
+      "cells": [
+        [
+          "fate15_storm_nw_shadow_0",
+          0,
+          0
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          548,
+          0
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          1096,
+          0
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          1644,
+          0
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          0,
+          524
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          548,
+          524
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          1096,
+          524
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          1644,
+          524
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          0,
+          1048
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          548,
+          1048
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          1096,
+          1048
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          1644,
+          1048
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          0,
+          1572
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          548,
+          1572
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          1096,
+          1572
+        ],
+        [
+          "fate15_storm_nw_shadow_0",
+          1644,
+          1572
+        ]
+      ]
+    },
+    "storm_w": {
+      "w": 498,
+      "h": 556,
+      "pivot": [
+        222,
+        278
+      ],
+      "sourceCanvas": [
+        800,
+        800
+      ],
+      "sharedCrop": [
+        178,
+        122,
+        676,
+        678
+      ],
+      "bodyWidth": 576,
+      "frames": 16,
+      "pages": [
+        {
+          "key": "fate15_storm_w_0",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/storm_w-0.webp",
+          "sha256": "2790e1d090bcafb9f2bd200e6c28d88ff951b945db1f5db3fcde9926d88f1c77",
+          "w": 1992,
+          "h": 2224
+        }
+      ],
+      "cells": [
+        [
+          "fate15_storm_w_0",
+          0,
+          0
+        ],
+        [
+          "fate15_storm_w_0",
+          498,
+          0
+        ],
+        [
+          "fate15_storm_w_0",
+          996,
+          0
+        ],
+        [
+          "fate15_storm_w_0",
+          1494,
+          0
+        ],
+        [
+          "fate15_storm_w_0",
+          0,
+          556
+        ],
+        [
+          "fate15_storm_w_0",
+          498,
+          556
+        ],
+        [
+          "fate15_storm_w_0",
+          996,
+          556
+        ],
+        [
+          "fate15_storm_w_0",
+          1494,
+          556
+        ],
+        [
+          "fate15_storm_w_0",
+          0,
+          1112
+        ],
+        [
+          "fate15_storm_w_0",
+          498,
+          1112
+        ],
+        [
+          "fate15_storm_w_0",
+          996,
+          1112
+        ],
+        [
+          "fate15_storm_w_0",
+          1494,
+          1112
+        ],
+        [
+          "fate15_storm_w_0",
+          0,
+          1668
+        ],
+        [
+          "fate15_storm_w_0",
+          498,
+          1668
+        ],
+        [
+          "fate15_storm_w_0",
+          996,
+          1668
+        ],
+        [
+          "fate15_storm_w_0",
+          1494,
+          1668
+        ]
+      ]
+    },
+    "storm_w_shadow": {
+      "w": 498,
+      "h": 556,
+      "pivot": [
+        222,
+        278
+      ],
+      "sourceCanvas": [
+        800,
+        800
+      ],
+      "sharedCrop": [
+        178,
+        122,
+        676,
+        678
+      ],
+      "bodyWidth": 576,
+      "frames": 16,
+      "pages": [
+        {
+          "key": "fate15_storm_w_shadow_0",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/storm_w_shadow-0.webp",
+          "sha256": "956fbc7b01ae6ea54745f00399907b9957a0c544c562dc68e5f2dcea14e4a1f5",
+          "w": 1992,
+          "h": 2224
+        }
+      ],
+      "cells": [
+        [
+          "fate15_storm_w_shadow_0",
+          0,
+          0
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          498,
+          0
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          996,
+          0
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          1494,
+          0
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          0,
+          556
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          498,
+          556
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          996,
+          556
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          1494,
+          556
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          0,
+          1112
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          498,
+          1112
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          996,
+          1112
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          1494,
+          1112
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          0,
+          1668
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          498,
+          1668
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          996,
+          1668
+        ],
+        [
+          "fate15_storm_w_shadow_0",
+          1494,
+          1668
+        ]
+      ]
+    },
+    "harrier_nw": {
+      "w": 452,
+      "h": 300,
+      "pivot": [
+        224,
+        142
+      ],
+      "sourceCanvas": [
+        800,
+        800
+      ],
+      "sharedCrop": [
+        176,
+        258,
+        628,
+        558
+      ],
+      "bodyWidth": 512,
+      "frames": 1,
+      "pages": [
+        {
+          "key": "fate15_harrier_nw_0",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/harrier_nw-0.webp",
+          "sha256": "f549d5d7877caafa7593c053eb751216ed2314ccaa069e5f870d21c9da509e96",
+          "w": 452,
+          "h": 300
+        }
+      ],
+      "cells": [
+        [
+          "fate15_harrier_nw_0",
+          0,
+          0
+        ]
+      ]
+    },
+    "harrier_nw_shadow": {
+      "w": 452,
+      "h": 300,
+      "pivot": [
+        224,
+        142
+      ],
+      "sourceCanvas": [
+        800,
+        800
+      ],
+      "sharedCrop": [
+        176,
+        258,
+        628,
+        558
+      ],
+      "bodyWidth": 512,
+      "frames": 1,
+      "pages": [
+        {
+          "key": "fate15_harrier_nw_shadow_0",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/harrier_nw_shadow-0.webp",
+          "sha256": "c07825f812f2e526fb19e33e036f10fab32446578e864774915b26f4bb39618e",
+          "w": 452,
+          "h": 300
+        }
+      ],
+      "cells": [
+        [
+          "fate15_harrier_nw_shadow_0",
+          0,
+          0
+        ]
+      ]
+    },
+    "harrier_north": {
+      "w": 508,
+      "h": 284,
+      "pivot": [
+        254,
+        142
+      ],
+      "sourceCanvas": [
+        800,
+        800
+      ],
+      "sharedCrop": [
+        146,
+        258,
+        654,
+        542
+      ],
+      "bodyWidth": 512,
+      "frames": 1,
+      "pages": [
+        {
+          "key": "fate15_harrier_north_0",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/harrier_north-0.webp",
+          "sha256": "7e16c6cf2eef6ac8b259dcde2877869c873ef36cd47c85760d669c928f4597f2",
+          "w": 508,
+          "h": 284
+        }
+      ],
+      "cells": [
+        [
+          "fate15_harrier_north_0",
+          0,
+          0
+        ]
+      ]
+    },
+    "harrier_north_shadow": {
+      "w": 508,
+      "h": 284,
+      "pivot": [
+        254,
+        142
+      ],
+      "sourceCanvas": [
+        800,
+        800
+      ],
+      "sharedCrop": [
+        146,
+        258,
+        654,
+        542
+      ],
+      "bodyWidth": 512,
+      "frames": 1,
+      "pages": [
+        {
+          "key": "fate15_harrier_north_shadow_0",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/harrier_north_shadow-0.webp",
+          "sha256": "b86df06f0673dd7ea30963f3bb4c24700157766623b299e33141065a8399e093",
+          "w": 508,
+          "h": 284
+        }
+      ],
+      "cells": [
+        [
+          "fate15_harrier_north_shadow_0",
+          0,
+          0
+        ]
+      ]
+    },
+    "harrier_crash": {
+      "w": 508,
+      "h": 508,
+      "pivot": [
+        254,
+        254
+      ],
+      "sourceCanvas": [
+        800,
+        800
+      ],
+      "sharedCrop": [
+        146,
+        146,
+        654,
+        654
+      ],
+      "bodyWidth": 512,
+      "frames": 48,
+      "pages": [
+        {
+          "key": "fate15_harrier_crash_0",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/harrier_crash-0.webp",
+          "sha256": "9373877446c12dc1285a7efed35aeeed4ca5389411f76a70d98c3ad87311c18a",
+          "w": 2032,
+          "h": 2032
+        },
+        {
+          "key": "fate15_harrier_crash_1",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/harrier_crash-1.webp",
+          "sha256": "2894eb6ee9db526696f01d36ef60063103d1e12c864b4ed200e1640a0037ff12",
+          "w": 2032,
+          "h": 2032
+        },
+        {
+          "key": "fate15_harrier_crash_2",
+          "path": "assets/game/shared/cinematics/crossed_fate_1115/harrier_crash-2.webp",
+          "sha256": "1e91ad13781890b8ead32d86bab8a53d896ee2285fbd05e18080f093c3c92745",
+          "w": 2032,
+          "h": 2032
+        }
+      ],
+      "cells": [
+        [
+          "fate15_harrier_crash_0",
+          0,
+          0
+        ],
+        [
+          "fate15_harrier_crash_0",
+          508,
+          0
+        ],
+        [
+          "fate15_harrier_crash_0",
+          1016,
+          0
+        ],
+        [
+          "fate15_harrier_crash_0",
+          1524,
+          0
+        ],
+        [
+          "fate15_harrier_crash_0",
+          0,
+          508
+        ],
+        [
+          "fate15_harrier_crash_0",
+          508,
+          508
+        ],
+        [
+          "fate15_harrier_crash_0",
+          1016,
+          508
+        ],
+        [
+          "fate15_harrier_crash_0",
+          1524,
+          508
+        ],
+        [
+          "fate15_harrier_crash_0",
+          0,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_0",
+          508,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_0",
+          1016,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_0",
+          1524,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_0",
+          0,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_0",
+          508,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_0",
+          1016,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_0",
+          1524,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_1",
+          0,
+          0
+        ],
+        [
+          "fate15_harrier_crash_1",
+          508,
+          0
+        ],
+        [
+          "fate15_harrier_crash_1",
+          1016,
+          0
+        ],
+        [
+          "fate15_harrier_crash_1",
+          1524,
+          0
+        ],
+        [
+          "fate15_harrier_crash_1",
+          0,
+          508
+        ],
+        [
+          "fate15_harrier_crash_1",
+          508,
+          508
+        ],
+        [
+          "fate15_harrier_crash_1",
+          1016,
+          508
+        ],
+        [
+          "fate15_harrier_crash_1",
+          1524,
+          508
+        ],
+        [
+          "fate15_harrier_crash_1",
+          0,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_1",
+          508,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_1",
+          1016,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_1",
+          1524,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_1",
+          0,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_1",
+          508,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_1",
+          1016,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_1",
+          1524,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_2",
+          0,
+          0
+        ],
+        [
+          "fate15_harrier_crash_2",
+          508,
+          0
+        ],
+        [
+          "fate15_harrier_crash_2",
+          1016,
+          0
+        ],
+        [
+          "fate15_harrier_crash_2",
+          1524,
+          0
+        ],
+        [
+          "fate15_harrier_crash_2",
+          0,
+          508
+        ],
+        [
+          "fate15_harrier_crash_2",
+          508,
+          508
+        ],
+        [
+          "fate15_harrier_crash_2",
+          1016,
+          508
+        ],
+        [
+          "fate15_harrier_crash_2",
+          1524,
+          508
+        ],
+        [
+          "fate15_harrier_crash_2",
+          0,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_2",
+          508,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_2",
+          1016,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_2",
+          1524,
+          1016
+        ],
+        [
+          "fate15_harrier_crash_2",
+          0,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_2",
+          508,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_2",
+          1016,
+          1524
+        ],
+        [
+          "fate15_harrier_crash_2",
+          1524,
+          1524
+        ]
+      ]
+    }
+  },
+  "icons": {
+    "crossed_fate": {
+      "key": "fate15_crossed_fate",
+      "path": "assets/game/shared/cinematics/crossed_fate_1115/crossed_fate.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "sha256": "421369e48d429820c9934ade13a71f94ce3daf9f7692c5b2851b152117c0d4ce"
+    },
+    "road_not_taken": {
+      "key": "fate15_road_not_taken",
+      "path": "assets/game/shared/cinematics/crossed_fate_1115/road_not_taken.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "sha256": "4eb4f491c3fe61c9f746578948ef159ab6400a82be9d2ff0053cf0f2210f1a53"
+    }
+  }
+}

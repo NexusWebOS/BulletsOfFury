@@ -1,0 +1,1033 @@
+{
+  "nativeChecks": [
+    {
+      "name": "chronos audible native recording, no page/console/asset errors",
+      "ok": true
+    },
+    {
+      "name": "hq5 audible native recording, no page/console/asset errors",
+      "ok": true
+    },
+    {
+      "name": "all expected post5 narrative beats recorded without skipping",
+      "ok": true
+    },
+    {
+      "name": "every original Chronos farewell and return phase recorded",
+      "ok": true
+    },
+    {
+      "name": "full Stage6 opening radio and native interactive handoff",
+      "ok": true
+    },
+    {
+      "name": "original game, tests and index unchanged",
+      "ok": true
+    }
+  ],
+  "recording": {
+    "pilot": "cole",
+    "difficulty": "hard",
+    "source": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+    "scope": "Two full native cinematic checkpoints: Chronos death/return; complete post5 HQ continuously into Stage6 card/fly-in/all five opening radio cues, ending at the first SHOOT interception. Result/equipment menus between checkpoints omitted. Not a campaign win.",
+    "clips": [
+      {
+        "seconds": 70.5485,
+        "frames": 4375,
+        "peak": 0.7689663171768188,
+        "stages": [
+          {
+            "at": 0.01820000001788139,
+            "tag": "play:drain:hammerFinale:0:0:::"
+          },
+          {
+            "at": 2.5930999999940396,
+            "tag": "play:drain:hammerFinale:1:0:::"
+          },
+          {
+            "at": 5.568900000005961,
+            "tag": "play:pulse:hammerFinale:1:0:::"
+          },
+          {
+            "at": 7.600800000011921,
+            "tag": "play:lock:hammerFinale:1:0:::"
+          },
+          {
+            "at": 8.672400000005961,
+            "tag": "play:missile:hammerFinale:1:0:::"
+          },
+          {
+            "at": 9.104300000011921,
+            "tag": "play:engulf:hammerFinale:1:0:::"
+          },
+          {
+            "at": 14.112800000011921,
+            "tag": "play:burst:hammerFinale:1:0:::"
+          },
+          {
+            "at": 19.00840000000596,
+            "tag": "play:after:overhead:1:0:::"
+          },
+          {
+            "at": 23.824400000005962,
+            "tag": "play:after:surface:1:0:::"
+          },
+          {
+            "at": 28.12880000001192,
+            "tag": "play:after:aftermath:1:0:::"
+          },
+          {
+            "at": 33.88890000000596,
+            "tag": "play:after:welcome:1:0:::"
+          },
+          {
+            "at": 36.577,
+            "tag": "play:after:welcome:1:1:::"
+          },
+          {
+            "at": 39.45630000001192,
+            "tag": "play:after:welcome:1:2:::"
+          },
+          {
+            "at": 42.16080000001192,
+            "tag": "play:after:welcome:1:3:::"
+          },
+          {
+            "at": 44.96080000001192,
+            "tag": "play:after:welcome:1:4:::"
+          },
+          {
+            "at": 47.77709999999404,
+            "tag": "play:after:welcome:1:5:::"
+          },
+          {
+            "at": 50.593,
+            "tag": "play:after:welcome:1:6:::"
+          },
+          {
+            "at": 53.2975,
+            "tag": "play:after:welcome:1:7:::"
+          },
+          {
+            "at": 56.3365,
+            "tag": "play:after:welcome:1:8:::"
+          },
+          {
+            "at": 59.21680000001192,
+            "tag": "play:after:welcome:1:9:::"
+          },
+          {
+            "at": 59.23259999999404,
+            "tag": "play:after:descent:1:9:::"
+          },
+          {
+            "at": 68.6085,
+            "tag": "stageclear:::::::"
+          }
+        ],
+        "last": {
+          "ending": null,
+          "hf": {
+            "phase": "burst",
+            "age": 19.66666666666683,
+            "t": 5.099999999999987,
+            "anchor": {
+              "x": 340,
+              "y": 174.08
+            },
+            "core": {
+              "x": 338.84615384615387,
+              "y": 193.69538461538463
+            },
+            "impacts": 1
+          },
+          "earth": {
+            "phase": "descent",
+            "center": {
+              "x": 240,
+              "y": 179.2
+            },
+            "size": 393.6,
+            "ship": {
+              "x": 240,
+              "y": 179.2,
+              "size": 3
+            },
+            "u": 1,
+            "fade": 1
+          },
+          "cinema": null,
+          "opening": null,
+          "openingRadioIndex": null
+        },
+        "part": "chronos",
+        "expectedBeats": [],
+        "errors": [],
+        "shots": [
+          {
+            "tag": "play:drain:hammerFinale:0:0:::",
+            "at": 0.6723000000119209,
+            "file": "chronos-sample-00.png"
+          },
+          {
+            "tag": "play:drain:hammerFinale:1:0:::",
+            "at": 3.2485999999940396,
+            "file": "chronos-sample-01.png"
+          },
+          {
+            "tag": "play:pulse:hammerFinale:1:0:::",
+            "at": 6.224800000011921,
+            "file": "chronos-sample-02.png"
+          },
+          {
+            "tag": "play:lock:hammerFinale:1:0:::",
+            "at": 8.25620000001788,
+            "file": "chronos-sample-03.png"
+          },
+          {
+            "tag": "play:engulf:hammerFinale:1:0:::",
+            "at": 9.760599999994039,
+            "file": "chronos-sample-04.png"
+          },
+          {
+            "tag": "play:burst:hammerFinale:1:0:::",
+            "at": 14.768800000011922,
+            "file": "chronos-sample-05.png"
+          },
+          {
+            "tag": "play:after:overhead:1:0:::",
+            "at": 19.66580000001192,
+            "file": "chronos-sample-06.png"
+          },
+          {
+            "tag": "play:after:surface:1:0:::",
+            "at": 24.48080000001192,
+            "file": "chronos-sample-07.png"
+          },
+          {
+            "tag": "play:after:aftermath:1:0:::",
+            "at": 28.78580000001192,
+            "file": "chronos-sample-08.png"
+          },
+          {
+            "tag": "play:after:welcome:1:0:::",
+            "at": 34.54440000000596,
+            "file": "chronos-sample-09.png"
+          },
+          {
+            "tag": "play:after:welcome:1:1:::",
+            "at": 37.23290000000596,
+            "file": "chronos-sample-10.png"
+          },
+          {
+            "tag": "play:after:welcome:1:2:::",
+            "at": 40.11380000001192,
+            "file": "chronos-sample-11.png"
+          },
+          {
+            "tag": "play:after:welcome:1:3:::",
+            "at": 42.81690000000596,
+            "file": "chronos-sample-12.png"
+          },
+          {
+            "tag": "play:after:welcome:1:4:::",
+            "at": 45.61780000001192,
+            "file": "chronos-sample-13.png"
+          },
+          {
+            "tag": "play:after:welcome:1:5:::",
+            "at": 48.43270000001788,
+            "file": "chronos-sample-14.png"
+          },
+          {
+            "tag": "play:after:welcome:1:6:::",
+            "at": 51.24859999999404,
+            "file": "chronos-sample-15.png"
+          },
+          {
+            "tag": "play:after:welcome:1:7:::",
+            "at": 53.95220000001788,
+            "file": "chronos-sample-16.png"
+          },
+          {
+            "tag": "play:after:welcome:1:8:::",
+            "at": 56.99380000001192,
+            "file": "chronos-sample-17.png"
+          },
+          {
+            "tag": "play:after:descent:1:9:::",
+            "at": 59.888300000011924,
+            "file": "chronos-sample-18.png"
+          },
+          {
+            "tag": "stageclear:::::::",
+            "at": 69.26570000001789,
+            "file": "chronos-sample-19.png"
+          }
+        ],
+        "end": {
+          "state": "stageclear",
+          "stage": 5,
+          "done": false,
+          "returns": 0,
+          "gravityReady": true,
+          "opening": null,
+          "openingRadioIndex": null
+        },
+        "finaleEvents": [
+          {
+            "event": "stunned",
+            "x": 340,
+            "y": 174.08,
+            "core": {
+              "x": 338.84615384615387,
+              "y": 193.69538461538463
+            }
+          },
+          {
+            "event": "pulse",
+            "age": 5.616666666666652
+          },
+          {
+            "event": "lock",
+            "age": 7.733333333333311
+          },
+          {
+            "event": "missile",
+            "age": 8.883333333333354
+          },
+          {
+            "event": "shot-fired",
+            "from": {
+              "x": 340,
+              "y": 367.2975
+            },
+            "to": {
+              "x": 338.84615384615387,
+              "y": 193.69538461538463
+            }
+          },
+          {
+            "event": "engulf",
+            "age": 9.350000000000044
+          },
+          {
+            "event": "core-impact",
+            "count": 1,
+            "x": 338.84615384615387,
+            "y": 193.69538461538463
+          },
+          {
+            "event": "cookoff",
+            "t": 1.7166666666666655,
+            "interval": 0.7169761904761907
+          },
+          {
+            "event": "cookoff",
+            "t": 2.449999999999996,
+            "interval": 0.5839285714285721
+          },
+          {
+            "event": "cookoff",
+            "t": 3.049999999999994,
+            "interval": 0.47507142857142964
+          },
+          {
+            "event": "cookoff",
+            "t": 3.5333333333333257,
+            "interval": 0.38738095238095377
+          },
+          {
+            "event": "cookoff",
+            "t": 3.9333333333333242,
+            "interval": 0.31480952380952537
+          },
+          {
+            "event": "cookoff",
+            "t": 4.24999999999999,
+            "interval": 0.2573571428571446
+          },
+          {
+            "event": "cookoff",
+            "t": 4.516666666666656,
+            "interval": 0.20897619047619242
+          },
+          {
+            "event": "cookoff",
+            "t": 4.733333333333322,
+            "interval": 0.16966666666666877
+          },
+          {
+            "event": "cookoff",
+            "t": 4.9166666666666545,
+            "interval": 0.1364047619047641
+          },
+          {
+            "event": "cookoff",
+            "t": 5.066666666666654,
+            "interval": 0.1091904761904785
+          },
+          {
+            "event": "cookoff",
+            "t": 5.18333333333332,
+            "interval": 0.08802380952381192
+          },
+          {
+            "event": "burst",
+            "age": 14.56666666666697
+          },
+          {
+            "event": "massive-blowup",
+            "cookoff": 11
+          },
+          {
+            "event": "armor-release"
+          },
+          {
+            "event": "cutaway"
+          }
+        ]
+      },
+      {
+        "seconds": 360.23540000000594,
+        "frames": 22015,
+        "peak": 0.7944902181625366,
+        "stages": [
+          {
+            "at": 0.01660000002384186,
+            "tag": "cutscene:::::B501::"
+          },
+          {
+            "at": 3.408300000011921,
+            "tag": "cutscene:::::POST5-02::"
+          },
+          {
+            "at": 6.2882000000178815,
+            "tag": "cutscene:::::POST5-03::"
+          },
+          {
+            "at": 9.90540000000596,
+            "tag": "cutscene:::::B503::"
+          },
+          {
+            "at": 13.088300000011921,
+            "tag": "cutscene:::::POST5-05::"
+          },
+          {
+            "at": 16.99220000001788,
+            "tag": "cutscene:::::POST5-06::"
+          },
+          {
+            "at": 19.29620000001788,
+            "tag": "cutscene:::::POST5-07::"
+          },
+          {
+            "at": 21.361,
+            "tag": "cutscene:::::POST5-08::"
+          },
+          {
+            "at": 23.42520000001788,
+            "tag": "cutscene:::::POST5-09::"
+          },
+          {
+            "at": 26.19220000001788,
+            "tag": "cutscene:::::POST5-10::"
+          },
+          {
+            "at": 29.968300000011922,
+            "tag": "cutscene:::::POST5-11::"
+          },
+          {
+            "at": 33.872200000017884,
+            "tag": "cutscene:::::POST5-12::"
+          },
+          {
+            "at": 36.448200000017884,
+            "tag": "cutscene:::::B505::"
+          },
+          {
+            "at": 39.088200000017885,
+            "tag": "cutscene:::::POST5-14::"
+          },
+          {
+            "at": 41.31230000001192,
+            "tag": "cutscene:::::POST5-15::"
+          },
+          {
+            "at": 44.94420000001788,
+            "tag": "cutscene:::::POST5-16::"
+          },
+          {
+            "at": 49.28020000001788,
+            "tag": "cutscene:::::B507::"
+          },
+          {
+            "at": 51.50430000001192,
+            "tag": "intro::::::cloak:0"
+          },
+          {
+            "at": 55.424600000023844,
+            "tag": "launch::::::cloak:0"
+          },
+          {
+            "at": 55.44060000002384,
+            "tag": "play::::::cloak:1"
+          },
+          {
+            "at": 58.80040000000596,
+            "tag": "play::::::cloak:2"
+          },
+          {
+            "at": 61.986,
+            "tag": "play::::::cloak:3"
+          },
+          {
+            "at": 65.36060000002384,
+            "tag": "play::::::cloak:4"
+          },
+          {
+            "at": 67.02430000001192,
+            "tag": "play::::::cloak:5"
+          },
+          {
+            "at": 68.14440000000596,
+            "tag": "play::::::reveal:5"
+          },
+          {
+            "at": 69.74030000001193,
+            "tag": "play::::::intercept:5"
+          },
+          {
+            "at": 70.91510000002384,
+            "tag": "play::::::depart:5"
+          },
+          {
+            "at": 72.674,
+            "tag": "play::::::flyover:5"
+          },
+          {
+            "at": 81.44170000001787,
+            "tag": "play::::::assault:"
+          },
+          {
+            "at": 101.12160000002385,
+            "tag": "continue::::::assault:"
+          },
+          {
+            "at": 117.0355,
+            "tag": "gameover::::::assault:"
+          }
+        ],
+        "last": {
+          "ending": null,
+          "hf": null,
+          "earth": null,
+          "cinema": {
+            "id": "post-5",
+            "shot": "B507",
+            "who": "COLE",
+            "text": "Everyone. Go.",
+            "pilot": "cole",
+            "coOp": [
+              "cole"
+            ],
+            "page": 3,
+            "kind": "travel",
+            "bank": null,
+            "frame": 0,
+            "time": 2.208099999994038,
+            "motion3": true,
+            "readAt": 0.42,
+            "scroll": 0,
+            "known": {},
+            "active": 1,
+            "old": 0,
+            "zoom": 0,
+            "factor": 1,
+            "cameraX": 76,
+            "cameraY": -21,
+            "same": false,
+            "reaction": true,
+            "snapshot": false,
+            "visiblePanels": [
+              0,
+              1
+            ],
+            "faces": [
+              {
+                "pilot": "cole",
+                "frame": 0,
+                "key": "cp15_cole",
+                "box": [
+                  475,
+                  73,
+                  249,
+                  261
+                ],
+                "image": [
+                  404,
+                  73,
+                  392,
+                  261
+                ],
+                "speaking": false,
+                "family": "talking-cockpit",
+                "fixedCamera": true,
+                "room": "cockpit-sky",
+                "channel": "radio",
+                "zoom": 0
+              }
+            ],
+            "boxes": [
+              [
+                -32,
+                63,
+                487,
+                271
+              ],
+              [
+                475,
+                73,
+                249,
+                261
+              ]
+            ]
+          },
+          "opening": "assault",
+          "openingRadioIndex": null
+        },
+        "part": "hq5",
+        "expectedBeats": [
+          {
+            "id": "B501",
+            "who": "COLE",
+            "text": "HQ, open the doors. We're coming home.",
+            "duration": 3.4,
+            "kind": "travel",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-02",
+            "who": "JUGGERNAUT",
+            "text": "Hey. We all made it, right?",
+            "duration": 2.87,
+            "kind": "dialogue",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-03",
+            "who": "COLE",
+            "text": "We did. Give me a hand with this thing.",
+            "duration": 3.6,
+            "kind": "dialogue",
+            "upgrade": null
+          },
+          {
+            "id": "B503",
+            "who": "DECKER",
+            "text": "You actually brought the gun back.",
+            "duration": 3.18,
+            "kind": "insert",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-05",
+            "who": "COLE",
+            "text": "Nearly killed us. Figured it owed us something.",
+            "duration": 3.895,
+            "kind": "dialogue",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-06",
+            "who": "JUGGERNAUT",
+            "text": "Can I have it?",
+            "duration": 2.29,
+            "kind": "dialogue",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-07",
+            "who": "DECKER",
+            "text": "No.",
+            "duration": 2.05,
+            "kind": "dialogue",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-08",
+            "who": "JUGGERNAUT",
+            "text": "Had to ask.",
+            "duration": 2.05,
+            "kind": "dialogue",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-09",
+            "who": "CAPTION",
+            "text": "Later that night.",
+            "duration": 2.7600000000000002,
+            "kind": "insert",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-10",
+            "who": "DECKER",
+            "text": "It works. I can fit the squad with these.",
+            "duration": 3.7600000000000002,
+            "kind": "dialogue",
+            "upgrade": 5
+          },
+          {
+            "id": "POST5-11",
+            "who": "COLE",
+            "text": "Keep my rig as it is. Get everybody else ready.",
+            "duration": 3.89,
+            "kind": "dialogue",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-12",
+            "who": "JUGGERNAUT",
+            "text": "Now that's heavy metal.",
+            "duration": 2.5749999999999997,
+            "kind": "insert",
+            "upgrade": null
+          },
+          {
+            "id": "B505",
+            "who": "DECKER",
+            "text": "Cole. Come look at this.",
+            "duration": 2.6300000000000003,
+            "kind": "insert",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-14",
+            "who": "COLE",
+            "text": "How many?",
+            "duration": 2.21,
+            "kind": "dialogue",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-15",
+            "who": "DECKER",
+            "text": "Too many. They're coming down on the city.",
+            "duration": 3.62,
+            "kind": "insert",
+            "upgrade": null
+          },
+          {
+            "id": "POST5-16",
+            "who": "COLE",
+            "text": "Decker and Axel, hold the base. Everyone else, with me.",
+            "duration": 4.335,
+            "kind": "dialogue",
+            "upgrade": null
+          },
+          {
+            "id": "B507",
+            "who": "COLE",
+            "text": "Everyone. Go.",
+            "duration": 2.21,
+            "kind": "travel",
+            "upgrade": null
+          }
+        ],
+        "errors": [],
+        "shots": [
+          {
+            "tag": "cutscene:::::B501::",
+            "at": 0.6762000000178814,
+            "file": "hq5-sample-00.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-02::",
+            "at": 4.0643000000119205,
+            "file": "hq5-sample-01.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-03::",
+            "at": 6.945,
+            "file": "hq5-sample-02.png"
+          },
+          {
+            "tag": "cutscene:::::B503::",
+            "at": 10.560300000011921,
+            "file": "hq5-sample-03.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-05::",
+            "at": 13.744200000017882,
+            "file": "hq5-sample-04.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-06::",
+            "at": 17.64820000001788,
+            "file": "hq5-sample-05.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-07::",
+            "at": 19.95230000001192,
+            "file": "hq5-sample-06.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-08::",
+            "at": 22.01730000001192,
+            "file": "hq5-sample-07.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-09::",
+            "at": 24.08030000001192,
+            "file": "hq5-sample-08.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-10::",
+            "at": 26.84830000001192,
+            "file": "hq5-sample-09.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-11::",
+            "at": 30.62430000001192,
+            "file": "hq5-sample-10.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-12::",
+            "at": 34.52920000001788,
+            "file": "hq5-sample-11.png"
+          },
+          {
+            "tag": "cutscene:::::B505::",
+            "at": 37.10590000000596,
+            "file": "hq5-sample-12.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-14::",
+            "at": 39.74430000001192,
+            "file": "hq5-sample-13.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-15::",
+            "at": 41.96910000002384,
+            "file": "hq5-sample-14.png"
+          },
+          {
+            "tag": "cutscene:::::POST5-16::",
+            "at": 45.60110000002384,
+            "file": "hq5-sample-15.png"
+          },
+          {
+            "tag": "cutscene:::::B507::",
+            "at": 49.936200000017884,
+            "file": "hq5-sample-16.png"
+          },
+          {
+            "tag": "intro::::::cloak:0",
+            "at": 52.16040000000596,
+            "file": "hq5-sample-17.png"
+          },
+          {
+            "tag": "play::::::cloak:1",
+            "at": 56.09680000001192,
+            "file": "hq5-sample-18.png"
+          },
+          {
+            "tag": "play::::::cloak:2",
+            "at": 59.45860000002384,
+            "file": "hq5-sample-19.png"
+          },
+          {
+            "tag": "play::::::cloak:3",
+            "at": 62.64070000001788,
+            "file": "hq5-sample-20.png"
+          },
+          {
+            "tag": "play::::::cloak:4",
+            "at": 66.01660000002384,
+            "file": "hq5-sample-21.png"
+          },
+          {
+            "tag": "play::::::cloak:5",
+            "at": 67.68020000001788,
+            "file": "hq5-sample-22.png"
+          },
+          {
+            "tag": "play::::::reveal:5",
+            "at": 68.80070000001788,
+            "file": "hq5-sample-23.png"
+          },
+          {
+            "tag": "play::::::intercept:5",
+            "at": 70.40060000002384,
+            "file": "hq5-sample-24.png"
+          },
+          {
+            "tag": "play::::::depart:5",
+            "at": 71.56820000001788,
+            "file": "hq5-sample-25.png"
+          },
+          {
+            "tag": "play::::::flyover:5",
+            "at": 73.33080000001192,
+            "file": "hq5-sample-26.png"
+          },
+          {
+            "tag": "play::::::assault:",
+            "at": 82.09630000001192,
+            "file": "hq5-sample-27.png"
+          },
+          {
+            "tag": "continue::::::assault:",
+            "at": 101.78020000001789,
+            "file": "hq5-sample-28.png"
+          },
+          {
+            "tag": "gameover::::::assault:",
+            "at": 117.69310000002385,
+            "file": "hq5-sample-29.png"
+          }
+        ],
+        "end": {
+          "state": "gameover",
+          "stage": 6,
+          "done": false,
+          "returns": 0,
+          "gravityReady": true,
+          "opening": "assault",
+          "openingRadioIndex": null
+        },
+        "finaleEvents": [],
+        "presentationEnd": 70.49030000001193,
+        "presentationNote": "Full native HQ/Stage6 intro retained. Excess post-intro gameplay/idle tail excluded after first interactive missile interception."
+      }
+    ],
+    "errors": [],
+    "coreBefore": {
+      "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+      "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "index.html": "f5311e5214e2cb11e7b59e2dea65a3f0e0c31a8512e125ecfad2499bc9ad776a"
+    },
+    "coreAfter": {
+      "assets/game.js": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+      "_BUILD_SOURCE/test_fl.js": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+      "index.html": "f5311e5214e2cb11e7b59e2dea65a3f0e0c31a8512e125ecfad2499bc9ad776a"
+    },
+    "combined": {
+      "file": "stage5-to-6-full-cinematics.mp4",
+      "duration": 140.99,
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Chronos \u2014 last words"
+        },
+        {
+          "start": 7.600800000011921,
+          "title": "Core lock and final missile"
+        },
+        {
+          "start": 9.104300000011921,
+          "title": "Chromium ignition and breakup"
+        },
+        {
+          "start": 19.00840000000596,
+          "title": "Orbital aftermath"
+        },
+        {
+          "start": 33.88890000000596,
+          "title": "Team radio and return to Earth"
+        },
+        {
+          "start": 70.47,
+          "title": "Fury HQ \u2014 bringing the chaingun home"
+        },
+        {
+          "start": 106.91820000001789,
+          "title": "Incoming contacts \u2014 emergency scramble"
+        },
+        {
+          "start": 121.97430000001192,
+          "title": "Stage 6 \u2014 card and flight in"
+        },
+        {
+          "start": 125.91060000002383,
+          "title": "Stage 6 \u2014 stealth ambush"
+        }
+      ],
+      "sha256": "177410116e1420e0f82ac98fbf0991c034370bc1fe5ae196dcb8739c7f674abe",
+      "decodeErrors": [],
+      "audio": [
+        "[Parsed_volumedetect_0 @ 000002a57a1b6e00] mean_volume: -14.5 dB",
+        "[Parsed_volumedetect_0 @ 000002a57a1b6e00] max_volume: -1.2 dB"
+      ]
+    }
+  },
+  "browser": {
+    "checks": [
+      {
+        "name": "complete video geometry and duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 140.987696
+        }
+      },
+      {
+        "name": "Chronos \u2014 last words decoded chapter playback",
+        "ok": true,
+        "data": 0.054362
+      },
+      {
+        "name": "Core lock and final missile decoded chapter playback",
+        "ok": true,
+        "data": 7.621029
+      },
+      {
+        "name": "Chromium ignition and breakup decoded chapter playback",
+        "ok": true,
+        "data": 9.121029
+      },
+      {
+        "name": "Orbital aftermath decoded chapter playback",
+        "ok": true,
+        "data": 19.021029
+      },
+      {
+        "name": "Team radio and return to Earth decoded chapter playback",
+        "ok": true,
+        "data": 33.921029
+      },
+      {
+        "name": "Fury HQ \u2014 bringing the chaingun home decoded chapter playback",
+        "ok": true,
+        "data": 70.487695
+      },
+      {
+        "name": "Incoming contacts \u2014 emergency scramble decoded chapter playback",
+        "ok": true,
+        "data": 106.921029
+      },
+      {
+        "name": "Stage 6 \u2014 card and flight in decoded chapter playback",
+        "ok": true,
+        "data": 121.987695
+      },
+      {
+        "name": "Stage 6 \u2014 stealth ambush decoded chapter playback",
+        "ok": true,
+        "data": 125.921029
+      },
+      {
+        "name": "byte-range seeking",
+        "ok": true
+      },
+      {
+        "name": "no browser/page/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  }
+}

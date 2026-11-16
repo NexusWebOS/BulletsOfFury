@@ -255,7 +255,10 @@
       var gf0=document.getElementById('game-frame'),sa0=document.getElementById('screen-area'),scr0=document.getElementById('screen');
       if(gf0){gf0.style.marginBottom='0px';gf0.style.position='fixed';gf0.style.left='0px';gf0.style.top='0px';gf0.style.width=vw+'px';gf0.style.height=vh+'px';}
       if(sa0){sa0.style.width=vw+'px';sa0.style.height=vh+'px';sa0.style.marginLeft='0px';}
-      if(scr0){scr0.style.width=vw+'px';scr0.style.height=vh+'px';}
+      // Wide authored menus/comics keep their real backing-store aspect.
+      // Filling a tall browser independently in X/Y squeezed every icon and face.
+      if(scr0){var ratio0=scr0.width/Math.max(1,scr0.height),w0=Math.min(vw,vh*ratio0),h0=w0/ratio0;
+        scr0.style.setProperty('width',Math.max(1,Math.floor(w0))+'px','important');scr0.style.setProperty('height',Math.max(1,Math.floor(h0))+'px','important');}
       return;
     }
     var reserve = isFS() || vw<=820 ? 0 : Math.min(vw*0.34, 420);      // room for the credit rails
@@ -370,7 +373,7 @@
 <script src="assets/game/levels/stage_05/enemies/stage5_runtime_atlas.js"></script>
 <script src="assets/audio_feedback_0927.js"></script>
 <script src="assets/difficulty_helpers_1114.js?v=1"></script>
-<script src="assets/game.js?v=tester-repairs-1106d"></script>
+<script src="assets/game.js?v=release-1116-input-1"></script>
 <script src="assets/stage8_leech_recovery_1114.js?v=1"></script>
 <script src="assets/campaign_story_0924.js"></script>
 <script src="assets/vile_finale_0924.js"></script>
@@ -493,7 +496,7 @@
 <script src="assets/arcade_combat_1010.js"></script>
 <script src="assets/widescreen_hud_0918.js?v=score-readable-1008c"></script>
 <script src="assets/online-config.js"></script>
-<script src="assets/online.js"></script>
+<script src="assets/online.js?v=release-1116-3"></script>
 <script src="assets/asset_memory_1007.js?v=performance-1012"></script>
 <script src="assets/maneuver_safety_1007.js"></script>
 <script src="assets/frame_pacing_1009.js"></script>
@@ -525,7 +528,7 @@
 <script src="assets/audio_fire_art_1010.js"></script>
 <script src="assets/audio_fire_1010.js"></script>
 <script src="assets/audio_extra_art_1010.js"></script>
-<script src="assets/audio_extra_1010.js?v=rebel-flight-audio-1013"></script>
+<script src="assets/audio_extra_1010.js?v=kit18"></script>
 <script src="assets/hq_live_art_1010.js"></script>
 <script src="assets/hq_live_1010.js"></script>
 <script src="assets/homecoming_art_1010.js"></script>
@@ -999,7 +1002,7 @@
 <script src="assets/cast_performance_1102.js?v=performance-1102-1"></script>
 <script src="assets/audio_quality_1102.js?v=shared-headroom-1"></script>
 <script src="assets/layered_stages_art_1102.js?v=stage-layers-1"></script>
-<script src="assets/layered_stages_1102.js?v=stage-layers-1"></script>
+<script src="assets/layered_stages_1102.js?v=stage2-moving-lava-1114"></script>
 <script src="assets/chronos_dialogue_art_1102.js?v=chronos-portraits-1"></script>
 <script src="assets/chronos_dialogue_1102.js?v=chronos-portraits-1"></script>
 <script src="assets/menu_sceneries_1103.js?v=solid-pilot-1106b"></script>
@@ -1014,7 +1017,7 @@
 <script src="assets/stage6_rounds_art_1104.js?v=amber-slug-1"></script>
 <script src="assets/stage6_rounds_1104.js?v=amber-slug-1"></script>
 <script src="assets/wave_followups_1104.js?v=talk-ram-cap-1"></script>
-<script src="assets/ship_forming_1104.js?v=forming-1"></script>
+<script src="assets/ship_forming_1104.js?v=kit18"></script>
 <script src="assets/coleforge_1104_art.js?v=generated-hex-icons-1104"></script>
 <script src="assets/space_arsenal_1104.js?v=static-arsenal-fx-1104"></script>
 <script src="assets/coleforge_fx_1104.js?v=static-arsenal-fx-1104"></script>
@@ -1098,5 +1101,37 @@
 <script src="assets/draconus_cinematic_rage_1113.js?v=1"></script>
 <script src="assets/stage5_bomber_assault_art_1114.js?v=2"></script>
 <script src="assets/stage5_bomber_assault_1114.js?v=2"></script>
+<script src="assets/opening_fury_1114.js?v=1"></script>
+<script src="assets/cinematic_corrections_1114.js?v=1"></script>
+<script src="assets/service_link_art_1114.js?v=1"></script>
+<script src="assets/service_link_1114.js?v=2"></script>
+<script src="assets/cockpit_talk_art_1114.js?v=1"></script>
+<script src="assets/cockpit_talk_1114.js?v=1"></script>
+<script src="assets/cinematic_rework_art_1114.js?v=1"></script>
+<script src="assets/cinematic_rework_1114.js?v=1"></script>
+<script src="assets/prototype_dispatch_art_1114.js?v=1"></script>
+<script src="assets/prototype_dispatch_1114.js?v=1"></script>
+<script src="assets/kit_dialogue_1114.js?v=2"></script>
+<script src="assets/hq_return_attack_art_1114.js?v=1"></script>
+<script src="assets/hq_animation_art_1115.js?v=1"></script>
+<script src="assets/hq_turn_art_1115.js?v=2"></script>
+<script src="assets/hq_swarm_art_1115.js?v=1"></script>
+<script src="assets/hq_return_attack_1114.js?v=5"></script>
+<script src="assets/crossed_fate_art_1115.js?v=1"></script>
+<script src="assets/crossed_fate_1115.js?v=1"></script>
+<script src="assets/city_rescue_art_1115.js?v=1"></script>
+<script src="assets/pursuit_trace_art_1115.js?v=1"></script>
+<script src="assets/city_rescue_1115.js?v=1"></script>
+<script src="assets/stage_frame_art_1115.js?v=1"></script>
+<script src="assets/stage_frame_1115.js?v=1"></script>
+<script src="assets/dialogue_scroll_1115.js?v=1"></script>
+<script src="assets/stage9_pilot_1115.js?v=1"></script>
+<script src="assets/release_cinema_1116.js?v=3"></script>
+<script src="assets/release_entry_1116.js?v=1"></script>
+<script src="assets/night_cinema_1116.js?v=6"></script>
+<script src="assets/night_hq_art_1116.js?v=1"></script>
+<script src="assets/night_city_atlas_1116.js?v=2"></script>
+<script src="assets/night_weather_1116.js?v=1"></script>
+<script src="assets/night_missile_stats_1116.js?v=1"></script>
 </body>
 </html>

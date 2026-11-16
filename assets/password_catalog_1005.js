@@ -8,7 +8,7 @@ function pc5Pages(){
  const add=(title,rows)=>{rows=rows.filter(r=>!seen.has(r[0]));for(const r of rows)seen.add(r[0]);
   for(let i=0;i<rows.length;i+=9)groups.push({title,rows:rows.slice(i,i+9)});};
  add('STAGES',Object.entries({FURY:1,IRON:2,DAM5:3,STRM:4,ORBT:5,TURB:6,SEWR:7,DETH:8,RIFT9:9}).filter(([c])=>PASSWORDS[c]).map(([c,n])=>[c,'STAGE '+n]));
- add('SKY ENCOUNTERS',[['HARR6','STAGE 6 HARRIER'],['REBEL6','STAGE 6 REBELS'],['XHARR','STAGE X HARRIER'],['XREBEL','STAGE X REBELS']].filter(([c])=>PASSWORDS[c]));
+ add('SKY ENCOUNTERS',[['HARR6','STAGE 6 HARRIER'],['REBEL6','STAGE 6 ROUGH RIDERS'],['XHARR','STAGE X HARRIER'],['XREBEL','STAGE X ROUGH RIDERS']].filter(([c])=>PASSWORDS[c]));
  add('BOSSES',Object.entries(ON5_CODES).filter(([,e])=>e.role==='boss'&&e.phase==null).map(([c,e])=>[c,'STAGE '+e.stage+' BOSS']));
  add('MINIBOSSES',Object.entries(ON5_CODES).filter(([,e])=>e.role==='mini').map(([c,e])=>[c,'STAGE '+e.stage+' MINIBOSS']));
  add('ALTERNATE FIGHTS',Object.entries(ON5_CODES).filter(([,e])=>e.role==='alt').map(([c,e])=>[c,{ALT3:'RIME WALL',ALT6:'BLACKSTEEL',ALT8:'HERALD ALTERNATE'}[c]||'STAGE '+e.stage+' ALTERNATE']).concat([['HAMMER','HAMMER MUSIC FIGHT'],['HAMA','HAMA MUSIC FIGHT']]));

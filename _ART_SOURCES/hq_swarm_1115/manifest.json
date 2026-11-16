@@ -1,0 +1,35 @@
+{
+  "generator": "Existing actual guard somersault poses, native turn seed locked at both ends; no new aircraft generation",
+  "flips": {
+    "decker": {
+      "key": "hq22_decker_somersault",
+      "path": "assets/game/shared/cinematics/hq_swarm_1115/decker-somersault.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 8,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "heading": 0.4911032467441596,
+      "sha256": "080e94886f0c297b72f24bafcd176388752e4f2f80221d16a7f6c709c7333d73"
+    },
+    "axel": {
+      "key": "hq22_axel_somersault",
+      "path": "assets/game/shared/cinematics/hq_swarm_1115/axel-somersault.webp",
+      "w": 256,
+      "h": 256,
+      "cols": 4,
+      "frames": 8,
+      "pivot": [
+        128,
+        128
+      ],
+      "bodyHeight": 104,
+      "heading": -0.35363142708659057,
+      "sha256": "f69386782bdf508bca315f0e69ac4901714d195568446008c21a4b9ec44c3449"
+    }
+  }
+}

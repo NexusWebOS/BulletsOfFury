@@ -1,0 +1,7 @@
+# Stage 3 cinematic recording — November 14
+
+Recorded from the running original BOF build at D:/BOF-Downloads/2026-11-14/RevG-source using real Chromium, Cole and Normal difficulty. Three native cinematic checkpoints: the post-Stage-2 radio lead-in, Stage 3 card/fly-in through PLAY, and the complete post-Stage-3 HQ/prototype conversation. Native BOFCinematicDirector.start and beginStage were used. Dialogue and scene clocks ran in real time without manual advancement. This is a cinematic review, not a campaign playthrough. No runtime game source was edited.
+
+Original WebM captures retain game audio. A combined H.264/AAC MP4 includes chapter markers at 0:00, 0:30.22 and 0:48.95 and lasts about 2:06. Audio timestamps were normalized for the combined file; the raw captures remain available. All authored dialogue beats were observed. Each scene reached its native continuation, with audible mixer output and no page, console or asset errors. Extracted actual-video frames were inspected. The current scenes contain visibly blank comic panels and cropped framing; these were recorded as-is.
+
+Watch _shots/stage3_cinematics_1114/review.html or stage3-cinematics.mp4. Source recordings: lead-in.webm, arrival.webm, hq.webm. QA metadata: docs/qa/stage3_cinematics_recording_1114.json. Reproduce with _BUILD_SOURCE/record_stage3_cinematics_1114.py and package_stage3_cinematics_1114.py while the D: server is on port 8765. No commit or push.

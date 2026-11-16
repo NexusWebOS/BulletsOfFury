@@ -1,0 +1,494 @@
+{
+  "version": 1,
+  "sourceCanvas": [
+    456,
+    256
+  ],
+  "nativeMenu": [
+    456,
+    256
+  ],
+  "sourceImageCanvas": [
+    912,
+    512
+  ],
+  "frameMs": [
+    62,
+    63,
+    62,
+    63,
+    62,
+    63,
+    62,
+    63,
+    62,
+    63,
+    62,
+    63,
+    62,
+    63,
+    62,
+    63
+  ],
+  "fps": 16,
+  "colors": [
+    [
+      48,
+      147,
+      81
+    ],
+    [
+      54,
+      170,
+      93
+    ],
+    [
+      64,
+      198,
+      113
+    ],
+    [
+      82,
+      225,
+      134
+    ],
+    [
+      112,
+      246,
+      163
+    ],
+    [
+      159,
+      255,
+      195
+    ],
+    [
+      210,
+      255,
+      228
+    ],
+    [
+      249,
+      255,
+      251
+    ],
+    [
+      235,
+      255,
+      244
+    ],
+    [
+      195,
+      255,
+      220
+    ],
+    [
+      146,
+      248,
+      187
+    ],
+    [
+      105,
+      224,
+      150
+    ],
+    [
+      77,
+      199,
+      121
+    ],
+    [
+      60,
+      176,
+      101
+    ],
+    [
+      48,
+      155,
+      87
+    ],
+    [
+      39,
+      139,
+      75
+    ]
+  ],
+  "pathsSourcePixels": {
+    "hard-left": [
+      [
+        78,
+        110
+      ],
+      [
+        410,
+        110
+      ],
+      [
+        438,
+        138
+      ],
+      [
+        438,
+        374
+      ],
+      [
+        410,
+        402
+      ],
+      [
+        78,
+        402
+      ],
+      [
+        52,
+        376
+      ],
+      [
+        52,
+        138
+      ]
+    ],
+    "hard-right": [
+      [
+        502,
+        110
+      ],
+      [
+        836,
+        110
+      ],
+      [
+        860,
+        138
+      ],
+      [
+        860,
+        378
+      ],
+      [
+        836,
+        402
+      ],
+      [
+        502,
+        402
+      ],
+      [
+        474,
+        374
+      ],
+      [
+        474,
+        138
+      ]
+    ],
+    "furious-left": [
+      [
+        76,
+        110
+      ],
+      [
+        410,
+        110
+      ],
+      [
+        438,
+        138
+      ],
+      [
+        438,
+        374
+      ],
+      [
+        410,
+        402
+      ],
+      [
+        76,
+        402
+      ],
+      [
+        52,
+        378
+      ],
+      [
+        52,
+        138
+      ]
+    ],
+    "furious-right": [
+      [
+        502,
+        110
+      ],
+      [
+        836,
+        110
+      ],
+      [
+        860,
+        138
+      ],
+      [
+        860,
+        378
+      ],
+      [
+        836,
+        402
+      ],
+      [
+        502,
+        402
+      ],
+      [
+        474,
+        374
+      ],
+      [
+        474,
+        138
+      ]
+    ]
+  },
+  "banks": {
+    "hard-left": {
+      "key": "city16_trace_hard-left",
+      "path": "assets/game/shared/ui/pursuit_trace_1115/hard-left.png",
+      "sha256": "f8cf0028a744a1f09adfba63f277110eb461f3f4e7d387611b689a109ee7e610",
+      "w": 206,
+      "h": 158,
+      "cols": 8,
+      "frames": 16,
+      "origin": [
+        20,
+        50
+      ],
+      "sourceCanvas": [
+        456,
+        256
+      ],
+      "crop": [
+        20,
+        50,
+        226,
+        208
+      ],
+      "source": "_ART_SOURCES/pursuit_trace_1115/hard-left.aseprite",
+      "sourceImageSha256": "b71e7a5c536ed310f29a57be37d0bbac35a06c117f62795985a780cdc9f1bd43",
+      "sourceVertices": [
+        [
+          78,
+          110
+        ],
+        [
+          410,
+          110
+        ],
+        [
+          438,
+          138
+        ],
+        [
+          438,
+          374
+        ],
+        [
+          410,
+          402
+        ],
+        [
+          78,
+          402
+        ],
+        [
+          52,
+          376
+        ],
+        [
+          52,
+          138
+        ]
+      ]
+    },
+    "hard-right": {
+      "key": "city16_trace_hard-right",
+      "path": "assets/game/shared/ui/pursuit_trace_1115/hard-right.png",
+      "sha256": "6d996762c737cd6bcf26152918847a715cca6258bbe7ec4efc9c17e24516cc7c",
+      "w": 204,
+      "h": 158,
+      "cols": 8,
+      "frames": 16,
+      "origin": [
+        232,
+        50
+      ],
+      "sourceCanvas": [
+        456,
+        256
+      ],
+      "crop": [
+        232,
+        50,
+        436,
+        208
+      ],
+      "source": "_ART_SOURCES/pursuit_trace_1115/hard-right.aseprite",
+      "sourceImageSha256": "b71e7a5c536ed310f29a57be37d0bbac35a06c117f62795985a780cdc9f1bd43",
+      "sourceVertices": [
+        [
+          502,
+          110
+        ],
+        [
+          836,
+          110
+        ],
+        [
+          860,
+          138
+        ],
+        [
+          860,
+          378
+        ],
+        [
+          836,
+          402
+        ],
+        [
+          502,
+          402
+        ],
+        [
+          474,
+          374
+        ],
+        [
+          474,
+          138
+        ]
+      ]
+    },
+    "furious-left": {
+      "key": "city16_trace_furious-left",
+      "path": "assets/game/shared/ui/pursuit_trace_1115/furious-left.png",
+      "sha256": "c68e1c09390714fe651d5e7add5ae3d3ac4ce2b42399b1e071d323e582467c46",
+      "w": 206,
+      "h": 158,
+      "cols": 8,
+      "frames": 16,
+      "origin": [
+        20,
+        50
+      ],
+      "sourceCanvas": [
+        456,
+        256
+      ],
+      "crop": [
+        20,
+        50,
+        226,
+        208
+      ],
+      "source": "_ART_SOURCES/pursuit_trace_1115/furious-left.aseprite",
+      "sourceImageSha256": "e19cd3402c6eafc783d9aeaf832f6faadf70c70ed391764bc6d8ce18823459c2",
+      "sourceVertices": [
+        [
+          76,
+          110
+        ],
+        [
+          410,
+          110
+        ],
+        [
+          438,
+          138
+        ],
+        [
+          438,
+          374
+        ],
+        [
+          410,
+          402
+        ],
+        [
+          76,
+          402
+        ],
+        [
+          52,
+          378
+        ],
+        [
+          52,
+          138
+        ]
+      ]
+    },
+    "furious-right": {
+      "key": "city16_trace_furious-right",
+      "path": "assets/game/shared/ui/pursuit_trace_1115/furious-right.png",
+      "sha256": "6d996762c737cd6bcf26152918847a715cca6258bbe7ec4efc9c17e24516cc7c",
+      "w": 204,
+      "h": 158,
+      "cols": 8,
+      "frames": 16,
+      "origin": [
+        232,
+        50
+      ],
+      "sourceCanvas": [
+        456,
+        256
+      ],
+      "crop": [
+        232,
+        50,
+        436,
+        208
+      ],
+      "source": "_ART_SOURCES/pursuit_trace_1115/furious-right.aseprite",
+      "sourceImageSha256": "e19cd3402c6eafc783d9aeaf832f6faadf70c70ed391764bc6d8ce18823459c2",
+      "sourceVertices": [
+        [
+          502,
+          110
+        ],
+        [
+          836,
+          110
+        ],
+        [
+          860,
+          138
+        ],
+        [
+          860,
+          378
+        ],
+        [
+          836,
+          402
+        ],
+        [
+          502,
+          402
+        ],
+        [
+          474,
+          374
+        ],
+        [
+          474,
+          138
+        ]
+      ]
+    }
+  },
+  "sourceFormat": "layered RGBA .aseprite; hidden reference + rim + pulse; official ase-file-specs",
+  "editorAvailable": false
+}

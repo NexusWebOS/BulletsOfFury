@@ -1,0 +1,2162 @@
+{
+  "suite": {
+    "passed": 8969,
+    "failed": 0,
+    "exitCode": 0,
+    "newFailureNames": []
+  },
+  "native": {
+    "pilots": [
+      {
+        "pilot": "cole",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 1.7000000000001212
+        },
+        "lines": [
+          {
+            "id": "SL2-01",
+            "who": "COLE",
+            "text": "Decker, what am I looking at?",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-02",
+            "who": "DECKER",
+            "text": "A service data-link. It's restoring power to our internal relay systems.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-03",
+            "who": "DECKER",
+            "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-04",
+            "who": "COLE",
+            "text": "You're a genius, Decker.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-05",
+            "who": "DECKER",
+            "text": "Hey, I'm just telling you what I know from what we have left.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-06",
+            "who": "DECKER",
+            "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-07",
+            "who": "DECKER",
+            "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-08",
+            "who": "DECKER",
+            "text": "Get out of there. The ground is moving.",
+            "mode": "alert"
+          },
+          {
+            "id": "SL2-09",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "takeoff"
+          },
+          {
+            "id": "SL2-10",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "fade"
+          }
+        ],
+        "portrait": "sl14_cole_talk_zoom"
+      },
+      {
+        "pilot": "axel",
+        "render": {
+          "mode": "radio",
+          "pilot": "axel",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-axel",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 1.6666666666665455
+        },
+        "lines": [
+          {
+            "id": "SL2-01",
+            "who": "AXEL",
+            "text": "Decker, what am I looking at?",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-02",
+            "who": "DECKER",
+            "text": "A service data-link. It's restoring power to our internal relay systems.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-03",
+            "who": "DECKER",
+            "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-04",
+            "who": "AXEL",
+            "text": "You're a genius, Decker.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-05",
+            "who": "DECKER",
+            "text": "Hey, I'm just telling you what I know from what we have left.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-06",
+            "who": "DECKER",
+            "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-07",
+            "who": "DECKER",
+            "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-08",
+            "who": "DECKER",
+            "text": "Get out of there. The ground is moving.",
+            "mode": "alert"
+          },
+          {
+            "id": "SL2-09",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "takeoff"
+          },
+          {
+            "id": "SL2-10",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "fade"
+          }
+        ],
+        "portrait": "sl14_cole_talk_zoom"
+      },
+      {
+        "pilot": "freezer",
+        "render": {
+          "mode": "radio",
+          "pilot": "freezer",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-freezer",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 1.6666666666664218
+        },
+        "lines": [
+          {
+            "id": "SL2-01",
+            "who": "FREEZER",
+            "text": "Decker, what am I looking at?",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-02",
+            "who": "DECKER",
+            "text": "A service data-link. It's restoring power to our internal relay systems.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-03",
+            "who": "DECKER",
+            "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-04",
+            "who": "FREEZER",
+            "text": "You're a genius, Decker.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-05",
+            "who": "DECKER",
+            "text": "Hey, I'm just telling you what I know from what we have left.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-06",
+            "who": "DECKER",
+            "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-07",
+            "who": "DECKER",
+            "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-08",
+            "who": "DECKER",
+            "text": "Get out of there. The ground is moving.",
+            "mode": "alert"
+          },
+          {
+            "id": "SL2-09",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "takeoff"
+          },
+          {
+            "id": "SL2-10",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "fade"
+          }
+        ],
+        "portrait": "sl14_cole_talk_zoom"
+      },
+      {
+        "pilot": "yuri",
+        "render": {
+          "mode": "radio",
+          "pilot": "yuri",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-yuri",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 1.6666666666664218
+        },
+        "lines": [
+          {
+            "id": "SL2-01",
+            "who": "YURI",
+            "text": "Decker, what am I looking at?",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-02",
+            "who": "DECKER",
+            "text": "A service data-link. It's restoring power to our internal relay systems.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-03",
+            "who": "DECKER",
+            "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-04",
+            "who": "YURI",
+            "text": "You're a genius, Decker.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-05",
+            "who": "DECKER",
+            "text": "Hey, I'm just telling you what I know from what we have left.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-06",
+            "who": "DECKER",
+            "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-07",
+            "who": "DECKER",
+            "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-08",
+            "who": "DECKER",
+            "text": "Get out of there. The ground is moving.",
+            "mode": "alert"
+          },
+          {
+            "id": "SL2-09",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "takeoff"
+          },
+          {
+            "id": "SL2-10",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "fade"
+          }
+        ],
+        "portrait": "sl14_cole_talk_zoom"
+      },
+      {
+        "pilot": "maverick",
+        "render": {
+          "mode": "radio",
+          "pilot": "maverick",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-maverick",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 1.6666666666664218
+        },
+        "lines": [
+          {
+            "id": "SL2-01",
+            "who": "MAVERICK",
+            "text": "Decker, what am I looking at?",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-02",
+            "who": "DECKER",
+            "text": "A service data-link. It's restoring power to our internal relay systems.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-03",
+            "who": "DECKER",
+            "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-04",
+            "who": "MAVERICK",
+            "text": "You're a genius, Decker.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-05",
+            "who": "DECKER",
+            "text": "Hey, I'm just telling you what I know from what we have left.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-06",
+            "who": "DECKER",
+            "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-07",
+            "who": "DECKER",
+            "text": "Your homing lasers stay as they are. I've raised the squad's heat limits for those icy units.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-08",
+            "who": "DECKER",
+            "text": "Get out of there. The ground is moving.",
+            "mode": "alert"
+          },
+          {
+            "id": "SL2-09",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "takeoff"
+          },
+          {
+            "id": "SL2-10",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "fade"
+          }
+        ],
+        "portrait": "sl14_cole_talk_zoom"
+      },
+      {
+        "pilot": "falva",
+        "render": {
+          "mode": "radio",
+          "pilot": "falva",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-falva",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 1.6666666666664218
+        },
+        "lines": [
+          {
+            "id": "SL2-01",
+            "who": "FALVA",
+            "text": "Decker, what am I looking at?",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-02",
+            "who": "DECKER",
+            "text": "A service data-link. It's restoring power to our internal relay systems.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-03",
+            "who": "DECKER",
+            "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-04",
+            "who": "FALVA",
+            "text": "You're a genius, Decker.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-05",
+            "who": "DECKER",
+            "text": "Hey, I'm just telling you what I know from what we have left.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-06",
+            "who": "DECKER",
+            "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-07",
+            "who": "DECKER",
+            "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-08",
+            "who": "DECKER",
+            "text": "Get out of there. The ground is moving.",
+            "mode": "alert"
+          },
+          {
+            "id": "SL2-09",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "takeoff"
+          },
+          {
+            "id": "SL2-10",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "fade"
+          }
+        ],
+        "portrait": "sl14_cole_talk_zoom"
+      },
+      {
+        "pilot": "lizzie",
+        "render": {
+          "mode": "radio",
+          "pilot": "lizzie",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-lizzie",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 1.6666666666664218
+        },
+        "lines": [
+          {
+            "id": "SL2-01",
+            "who": "LIZZIE",
+            "text": "Decker, what am I looking at?",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-02",
+            "who": "DECKER",
+            "text": "A service data-link. It's restoring power to our internal relay systems.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-03",
+            "who": "DECKER",
+            "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-04",
+            "who": "LIZZIE",
+            "text": "You're a genius, Decker.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-05",
+            "who": "DECKER",
+            "text": "Hey, I'm just telling you what I know from what we have left.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-06",
+            "who": "DECKER",
+            "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-07",
+            "who": "DECKER",
+            "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-08",
+            "who": "DECKER",
+            "text": "Get out of there. The ground is moving.",
+            "mode": "alert"
+          },
+          {
+            "id": "SL2-09",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "takeoff"
+          },
+          {
+            "id": "SL2-10",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "fade"
+          }
+        ],
+        "portrait": "sl14_cole_talk_zoom"
+      },
+      {
+        "pilot": "decker",
+        "render": {
+          "mode": "radio",
+          "pilot": "decker",
+          "tech": "cole",
+          "identityKey": "s113_cockpit-decker",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Cole, what am I looking at?",
+          "time": 1.6666666666664218
+        },
+        "lines": [
+          {
+            "id": "SL2-01",
+            "who": "DECKER",
+            "text": "Cole, what am I looking at?",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-02",
+            "who": "COLE",
+            "text": "A service data-link. It's restoring power to our internal relay systems.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-03",
+            "who": "COLE",
+            "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-04",
+            "who": "DECKER",
+            "text": "You're a genius, Cole.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-05",
+            "who": "COLE",
+            "text": "Hey, I'm just telling you what I know from what we have left.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-06",
+            "who": "COLE",
+            "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-07",
+            "who": "COLE",
+            "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-08",
+            "who": "COLE",
+            "text": "Get out of there. The ground is moving.",
+            "mode": "alert"
+          },
+          {
+            "id": "SL2-09",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "takeoff"
+          },
+          {
+            "id": "SL2-10",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "fade"
+          }
+        ],
+        "portrait": "sl14_cole_talk_zoom"
+      },
+      {
+        "pilot": "juggernaut",
+        "render": {
+          "mode": "radio",
+          "pilot": "juggernaut",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-juggernaut",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 1.6666666666664218
+        },
+        "lines": [
+          {
+            "id": "SL2-01",
+            "who": "JUGGERNAUT",
+            "text": "Decker, what am I looking at?",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-02",
+            "who": "DECKER",
+            "text": "A service data-link. It's restoring power to our internal relay systems.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-03",
+            "who": "DECKER",
+            "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-04",
+            "who": "JUGGERNAUT",
+            "text": "You're a genius, Decker.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-05",
+            "who": "DECKER",
+            "text": "Hey, I'm just telling you what I know from what we have left.",
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-06",
+            "who": "DECKER",
+            "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-07",
+            "who": "DECKER",
+            "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-08",
+            "who": "DECKER",
+            "text": "Get out of there. The ground is moving.",
+            "mode": "alert"
+          },
+          {
+            "id": "SL2-09",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "takeoff"
+          },
+          {
+            "id": "SL2-10",
+            "who": "SYSTEM",
+            "text": "",
+            "mode": "fade"
+          }
+        ],
+        "portrait": "sl14_cole_talk_zoom"
+      }
+    ],
+    "shots": [
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 0.9999999999998552
+        },
+        "row": "SL2-01",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 1.9999999999997051
+        },
+        "row": "SL2-01",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 2.9999999999995683
+        },
+        "row": "SL2-01",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-01",
+          "text": "Decker, what am I looking at?",
+          "time": 3.9999999999994316
+        },
+        "row": "SL2-01",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-02",
+          "text": "A service data-link. It's restoring power to our internal relay systems.",
+          "time": 0.23333333333329945
+        },
+        "row": "SL2-02",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-02",
+          "text": "A service data-link. It's restoring power to our internal relay systems.",
+          "time": 1.2333333333331535
+        },
+        "row": "SL2-02",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-02",
+          "text": "A service data-link. It's restoring power to our internal relay systems.",
+          "time": 2.2333333333330065
+        },
+        "row": "SL2-02",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-02",
+          "text": "A service data-link. It's restoring power to our internal relay systems.",
+          "time": 3.2333333333328698
+        },
+        "row": "SL2-02",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-02",
+          "text": "A service data-link. It's restoring power to our internal relay systems.",
+          "time": 4.233333333332727
+        },
+        "row": "SL2-02",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-03",
+          "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+          "time": 0.11666666666664971
+        },
+        "row": "SL2-03",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-03",
+          "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+          "time": 1.1166666666665044
+        },
+        "row": "SL2-03",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-03",
+          "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+          "time": 2.116666666666356
+        },
+        "row": "SL2-03",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-03",
+          "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+          "time": 3.116666666666219
+        },
+        "row": "SL2-03",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-03",
+          "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+          "time": 4.116666666666079
+        },
+        "row": "SL2-03",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-03",
+          "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+          "time": 5.116666666665916
+        },
+        "row": "SL2-03",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-04",
+          "text": "You're a genius, Decker.",
+          "time": 0.16666666666664245
+        },
+        "row": "SL2-04",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-04",
+          "text": "You're a genius, Decker.",
+          "time": 1.1666666666664969
+        },
+        "row": "SL2-04",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-04",
+          "text": "You're a genius, Decker.",
+          "time": 2.166666666666349
+        },
+        "row": "SL2-04",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-04",
+          "text": "You're a genius, Decker.",
+          "time": 3.166666666666212
+        },
+        "row": "SL2-04",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-04",
+          "text": "You're a genius, Decker.",
+          "time": 4.166666666666079
+        },
+        "row": "SL2-04",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-05",
+          "text": "Hey, I'm just telling you what I know from what we have left.",
+          "time": 0.5500000000001597
+        },
+        "row": "SL2-05",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-05",
+          "text": "Hey, I'm just telling you what I know from what we have left.",
+          "time": 1.5500000000004492
+        },
+        "row": "SL2-05",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-05",
+          "text": "Hey, I'm just telling you what I know from what we have left.",
+          "time": 2.550000000000739
+        },
+        "row": "SL2-05",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-05",
+          "text": "Hey, I'm just telling you what I know from what we have left.",
+          "time": 3.5500000000010283
+        },
+        "row": "SL2-05",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "radio",
+          "pilot": "cole",
+          "tech": "decker",
+          "identityKey": "s113_cockpit-cole",
+          "wholeCockpit": true,
+          "id": "post-2",
+          "shot": "SL2-05",
+          "text": "Hey, I'm just telling you what I know from what we have left.",
+          "time": 4.550000000001333
+        },
+        "row": "SL2-05",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.3450000000000477,
+          "heat": 0.1527777777778221,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 86,
+            "burn": 0.307500000000008
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-06",
+          "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+          "time": 0.9166666666669325
+        },
+        "row": "SL2-06",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.5250000000000998,
+          "heat": 0.319444444444537,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 98,
+            "burn": 0.3375000000000167
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-06",
+          "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+          "time": 1.916666666667222
+        },
+        "row": "SL2-06",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.705000000000152,
+          "heat": 0.48611111111125194,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 109,
+            "burn": 0.36750000000002536
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-06",
+          "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+          "time": 2.9166666666675116
+        },
+        "row": "SL2-06",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.885000000000204,
+          "heat": 0.6527777777779669,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 121,
+            "burn": 0.39750000000003405
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-06",
+          "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+          "time": 3.916666666667801
+        },
+        "row": "SL2-06",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.9,
+          "heat": 0.8194444444446859,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 122,
+            "burn": 0.4275000000000435
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-06",
+          "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+          "time": 4.916666666668116
+        },
+        "row": "SL2-06",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.9,
+          "heat": 0.9861111111114053,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 122,
+            "burn": 0.457500000000053
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-06",
+          "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+          "time": 5.916666666668432
+        },
+        "row": "SL2-06",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.9,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 122,
+            "burn": 0.46
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-07",
+          "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+          "time": 0.6500000000001886
+        },
+        "row": "SL2-07",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.9,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 122,
+            "burn": 0.46
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-07",
+          "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+          "time": 1.6500000000004782
+        },
+        "row": "SL2-07",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.9,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 122,
+            "burn": 0.46
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-07",
+          "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+          "time": 2.6500000000007677
+        },
+        "row": "SL2-07",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.9,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 122,
+            "burn": 0.46
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-07",
+          "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+          "time": 3.6500000000010573
+        },
+        "row": "SL2-07",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.9,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 122,
+            "burn": 0.46
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-07",
+          "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+          "time": 4.650000000001365
+        },
+        "row": "SL2-07",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "alert",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.8169230769230527,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 209.76117396450422,
+            "size": 116,
+            "burn": 0.7
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-08",
+          "text": "Get out of there. The ground is moving.",
+          "time": 0.15000000000004365
+        },
+        "row": "SL2-08",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "alert",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.2630769230767385,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 321.29840473374753,
+            "size": 81,
+            "burn": 0.7
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-08",
+          "text": "Get out of there. The ground is moving.",
+          "time": 1.1500000000003334
+        },
+        "row": "SL2-08",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "alert",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 328.99839999999995,
+            "size": 76,
+            "burn": 0.7
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-08",
+          "text": "Get out of there. The ground is moving.",
+          "time": 2.150000000000623
+        },
+        "row": "SL2-08",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "alert",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 328.99839999999995,
+            "size": 76,
+            "burn": 0.7
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-08",
+          "text": "Get out of there. The ground is moving.",
+          "time": 3.1500000000009125
+        },
+        "row": "SL2-08",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "alert",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 328.99839999999995,
+            "size": 76,
+            "burn": 0.7
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-08",
+          "text": "Get out of there. The ground is moving.",
+          "time": 4.1500000000012065
+        },
+        "row": "SL2-08",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "takeoff",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 317.3174943869265,
+            "size": 78,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-09",
+          "text": "",
+          "time": 0.5500000000001597
+        },
+        "row": "SL2-09",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "takeoff",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 187.69798483736034,
+            "size": 84,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-09",
+          "text": "",
+          "time": 1.5500000000004492
+        },
+        "row": "SL2-09",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "takeoff",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": -0.7382151918534987,
+            "size": 84,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-09",
+          "text": "",
+          "time": 2.550000000000739
+        },
+        "row": "SL2-09",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "takeoff",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": -141.05166846487367,
+            "size": 79,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-09",
+          "text": "",
+          "time": 3.5500000000010283
+        },
+        "row": "SL2-09",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "takeoff",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": -160,
+            "size": 76,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-09",
+          "text": "",
+          "time": 4.550000000001333
+        },
+        "row": "SL2-09",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "cutscene",
+        "render": {
+          "mode": "fade",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": -170,
+            "size": 76,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-10",
+          "text": "",
+          "time": 0.9500000000002755
+        },
+        "row": "SL2-10",
+        "done": 0,
+        "mapFade": 0
+      },
+      {
+        "state": "stagesel",
+        "render": {
+          "mode": "fade",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": -170,
+            "size": 76,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-10",
+          "text": "",
+          "time": 1.1833333333336764
+        },
+        "row": null,
+        "done": 1,
+        "mapFade": 0.14999999999978267
+      },
+      {
+        "state": "stagesel",
+        "render": {
+          "mode": "fade",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.18,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": -170,
+            "size": 76,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "id": "post-2",
+          "shot": "SL2-10",
+          "text": "",
+          "time": 1.1833333333336764
+        },
+        "row": null,
+        "done": 1,
+        "mapFade": 0
+      }
+    ],
+    "completed": {
+      "state": "stagesel",
+      "returns": 1,
+      "events": [
+        {
+          "event": "departure-complete",
+          "pilot": "cole"
+        }
+      ],
+      "sounds": [
+        {
+          "name": "bossWeaponCharge",
+          "ok": true
+        },
+        {
+          "name": "jetDash",
+          "ok": true
+        }
+      ],
+      "before": {
+        "x": 340,
+        "y": 399.36,
+        "score": 0,
+        "lives": 3
+      },
+      "after": {
+        "x": 340,
+        "y": 399.36,
+        "score": 0,
+        "lives": 3
+      },
+      "portrait": {
+        "key": "sl14_cole_talk_zoom",
+        "path": "assets/game/shared/cinematics/service_link_1114/cole-talk-zoom.webp",
+        "sha256": "a5ddd6a252c05881469e9a3eaecf0f657af62721b70f9e8ae218a4b2c09050b6",
+        "w": 308,
+        "h": 308,
+        "cols": 7,
+        "frames": 49,
+        "sizes": [
+          256,
+          264,
+          273,
+          282,
+          291,
+          300,
+          307
+        ],
+        "baselines": [
+          254,
+          262,
+          271,
+          280,
+          289,
+          298,
+          305
+        ],
+        "bleeds": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "native": [
+          256,
+          256
+        ],
+        "scales": [
+          1,
+          1.03,
+          1.065,
+          1.1,
+          1.135,
+          1.17,
+          1.2
+        ],
+        "family": "cockpit-reference-cole"
+      }
+    },
+    "skip": {
+      "state": "stagesel",
+      "returns": 2
+    },
+    "errors": [],
+    "seen": [
+      "SL2-01",
+      "SL2-02",
+      "SL2-03",
+      "SL2-04",
+      "SL2-05",
+      "SL2-06",
+      "SL2-07",
+      "SL2-08",
+      "SL2-09",
+      "SL2-10"
+    ],
+    "checks": {
+      "noErrors": true,
+      "allPilotsUseOwnCockpit": true,
+      "deckerUsesColeSupport": true,
+      "newColeArt": true,
+      "allTenShots": true,
+      "returnsToMapOnce": true,
+      "gameplayPositionAndRewardsUntouched": true,
+      "skipReturnsOnce": true,
+      "chargeAndTakeoffCue": true
+    }
+  },
+  "recording": {
+    "seconds": 48.91639999997616,
+    "frames": 3027,
+    "peak": 0.6880605220794678,
+    "stages": [
+      {
+        "at": 0.016399999976158142,
+        "tag": "cutscene:SL2-01:radio"
+      },
+      {
+        "at": 4.784,
+        "tag": "cutscene:SL2-02:radio"
+      },
+      {
+        "at": 9.904899999976157,
+        "tag": "cutscene:SL2-03:radio"
+      },
+      {
+        "at": 15.841799999982118,
+        "tag": "cutscene:SL2-04:radio"
+      },
+      {
+        "at": 20.44809999999404,
+        "tag": "cutscene:SL2-05:radio"
+      },
+      {
+        "at": 25.08879999998212,
+        "tag": "cutscene:SL2-06:heat"
+      },
+      {
+        "at": 31.4405,
+        "tag": "cutscene:SL2-07:heat"
+      },
+      {
+        "at": 36.94419999998808,
+        "tag": "cutscene:SL2-08:alert"
+      },
+      {
+        "at": 41.55259999999404,
+        "tag": "cutscene:SL2-09:takeoff"
+      },
+      {
+        "at": 46.16019999998808,
+        "tag": "cutscene:SL2-10:fade"
+      },
+      {
+        "at": 47.36059999999404,
+        "tag": "stagesel::fade"
+      }
+    ],
+    "last": {
+      "mode": "fade",
+      "pilot": "cole",
+      "actors": [
+        "cole"
+      ],
+      "world": {
+        "x": 340,
+        "y": 399.36
+      },
+      "zoom": 1.18,
+      "heat": 1,
+      "ship": {
+        "x": 456,
+        "y": -170,
+        "size": 76,
+        "burn": 1
+      },
+      "topDown": true,
+      "backgroundStage": 2,
+      "id": "post-2",
+      "shot": "SL2-10",
+      "text": "",
+      "time": 1.1844000000059607
+    },
+    "expected": [
+      {
+        "id": "SL2-01",
+        "who": "COLE",
+        "text": "Decker, what am I looking at?",
+        "duration": 4.76
+      },
+      {
+        "id": "SL2-02",
+        "who": "DECKER",
+        "text": "A service data-link. It's restoring power to our internal relay systems.",
+        "duration": 5.11
+      },
+      {
+        "id": "SL2-03",
+        "who": "DECKER",
+        "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+        "duration": 5.9350000000000005
+      },
+      {
+        "id": "SL2-04",
+        "who": "COLE",
+        "text": "You're a genius, Decker.",
+        "duration": 4.6000000000000005
+      },
+      {
+        "id": "SL2-05",
+        "who": "DECKER",
+        "text": "Hey, I'm just telling you what I know from what we have left.",
+        "duration": 4.633333333333334
+      },
+      {
+        "id": "SL2-06",
+        "who": "DECKER",
+        "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+        "duration": 6.265000000000001
+      },
+      {
+        "id": "SL2-07",
+        "who": "DECKER",
+        "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+        "duration": 5.495
+      },
+      {
+        "id": "SL2-08",
+        "who": "DECKER",
+        "text": "Get out of there. The ground is moving.",
+        "duration": 4.6000000000000005
+      },
+      {
+        "id": "SL2-09",
+        "who": "SYSTEM",
+        "text": "",
+        "duration": 4.6
+      },
+      {
+        "id": "SL2-10",
+        "who": "SYSTEM",
+        "text": "",
+        "duration": 1.2
+      }
+    ],
+    "errors": [],
+    "end": {
+      "state": "stagesel",
+      "returns": 1
+    },
+    "scope": "Native post-Stage-2 scene checkpoint and map continuation, not a campaign clear.",
+    "video": {
+      "file": "service-datalink.mp4",
+      "sha256": "e1842b6999f5202a55744c1ecfef543371655936afa006be0f2cbe349ee1ad73",
+      "decodeErrors": [],
+      "inspectedFrames": [
+        {
+          "shot": "SL2-02",
+          "time": 7.784,
+          "image": "data-link.png"
+        },
+        {
+          "shot": "SL2-04",
+          "time": 17.34179999998212,
+          "image": "genius.png"
+        },
+        {
+          "shot": "SL2-06",
+          "time": 29.288799999982118,
+          "image": "heat-charge.png"
+        },
+        {
+          "shot": "SL2-07",
+          "time": 34.9405,
+          "image": "ice-surprise.png"
+        },
+        {
+          "shot": "SL2-09",
+          "time": 43.352599999994034,
+          "image": "takeoff.png"
+        }
+      ]
+    }
+  }
+}

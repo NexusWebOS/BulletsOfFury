@@ -1,0 +1,195 @@
+{
+  "checks": [
+    {
+      "name": "native map verification",
+      "ok": true,
+      "data": {
+        "passed": 23,
+        "total": 23,
+        "errors": []
+      }
+    },
+    {
+      "name": "five-file exact retained-source export",
+      "ok": true,
+      "data": {
+        "assets\\stage_frame_art_1115.js": "1ee16fe3188962cb5706f7f786d7629932b74e997dd1d007e873674bb350d88e",
+        "_ART_SOURCES\\stage_frame_1115\\stage-frames.aseprite": "dfe9ba028ad522a5516b37ec297d07b1cf59f6d0de9da05b536d58533a194e48",
+        "assets\\game\\shared\\campaign\\stage_frame_1115\\clear.png": "139203da316efecbe4fa2822666b9ffda5047a962dbe0f1d4eb0e5da21bdbbd8",
+        "assets\\game\\shared\\campaign\\stage_frame_1115\\mission.png": "b57a71296874e67adb7c99eb1b5c80325feea0f516ee18210ac11a3a500792d9",
+        "assets\\game\\shared\\campaign\\stage_frame_1115\\priority.png": "1123d3f63d5f3b11cc763118810583d0b5bfcd99b0d55dadd3fd713934162c4f"
+      }
+    },
+    {
+      "name": "syntax assets/game.js",
+      "ok": true,
+      "data": ""
+    },
+    {
+      "name": "syntax assets/map_briefing_1003g.js",
+      "ok": true,
+      "data": ""
+    },
+    {
+      "name": "syntax assets/stage_frame_art_1115.js",
+      "ok": true,
+      "data": ""
+    },
+    {
+      "name": "syntax assets/stage_frame_1115.js",
+      "ok": true,
+      "data": ""
+    },
+    {
+      "name": "unchanged assets/game.js",
+      "ok": true,
+      "data": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce"
+    },
+    {
+      "name": "unchanged _BUILD_SOURCE/test_fl.js",
+      "ok": true,
+      "data": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f"
+    },
+    {
+      "name": "game.js LF and test CRLF",
+      "ok": true,
+      "data": null
+    },
+    {
+      "name": "full suite and failing-name comparison",
+      "ok": true,
+      "data": {
+        "before": {
+          "passed": 8969,
+          "failures": [],
+          "summary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ===="
+        },
+        "after": {
+          "passed": 8969,
+          "failures": [],
+          "summary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ===="
+        }
+      }
+    },
+    {
+      "name": "native GIF dimensions and nine-second reveal",
+      "ok": true,
+      "data": {
+        "size": [
+          960,
+          424
+        ],
+        "frames": 144,
+        "durationMs": 9000
+      }
+    }
+  ],
+  "native": {
+    "passed": 23,
+    "errors": []
+  },
+  "scope": "Real native map rendering and keyboard selection, original reward/city briefing wrappers, actual glyph reveal, pause and generated panels. Prepared UI checkpoints, no campaign-win claim.",
+  "source": "_ART_SOURCES/stage_frame_1115/manifest.json",
+  "review": "_shots/stage_frame_1115/review.html",
+  "browser": {
+    "checks": [
+      {
+        "name": "all seven generated/native preview images load",
+        "ok": true,
+        "data": [
+          {
+            "src": "stage-briefing-typewriter.gif",
+            "size": [
+              960,
+              424
+            ]
+          },
+          {
+            "src": "mission-map.png",
+            "size": [
+              1440,
+              1000
+            ]
+          },
+          {
+            "src": "priority-map.png",
+            "size": [
+              1440,
+              1000
+            ]
+          },
+          {
+            "src": "clear-map.png",
+            "size": [
+              1440,
+              1000
+            ]
+          },
+          {
+            "src": "mission-frame.png",
+            "size": [
+              912,
+              300
+            ]
+          },
+          {
+            "src": "priority-frame.png",
+            "size": [
+              912,
+              300
+            ]
+          },
+          {
+            "src": "clear-frame.png",
+            "size": [
+              912,
+              300
+            ]
+          }
+        ]
+      },
+      {
+        "name": "actual GIF element advances in Chromium",
+        "ok": true,
+        "data": [
+          "78f308faa570a0f5fca441919d4072582390bb9d5cff5168b0ae82caee37da49",
+          "509a5260cc7d2581f34a0e6c49de366ede1889b54333916ad5196af643a75bfb",
+          "530afa0b4ad4b6eec5fc5a0843547c6e851a2d0901ee1a31121240d47a2e81d4",
+          "87cc37f92325eb75273abc7c60d24d56e1d0955f6b676a060facb35e1f4fa6e2"
+        ]
+      },
+      {
+        "name": "animated GIF preserves native crop dimensions",
+        "ok": true,
+        "data": {
+          "src": "stage-briefing-typewriter.gif",
+          "size": [
+            960,
+            424
+          ]
+        }
+      },
+      {
+        "name": "review page has no horizontal overflow",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "no review page/console/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "gif": {
+    "size": [
+      960,
+      424
+    ],
+    "frames": 144,
+    "durationMs": 9000,
+    "sha256": "163a3aeacafa1d69d151e0e98194144fa9661b593ea0656ec2ac58a0e09597ce",
+    "crop": "campaignViewOffset()*SS + logical center480x212; whole panel"
+  }
+}

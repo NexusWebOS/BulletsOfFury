@@ -1,0 +1,4686 @@
+{
+  "native": {
+    "checks": [
+      {
+        "name": "heat3 no attached fire ring",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "heat3 ground camera remains in bounds",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "alert0.5 no attached fire ring",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "alert0.5 authored wave actually draws",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "alert0.5 ground camera remains in bounds",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "alert2.1 no attached fire ring",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "alert2.1 authored wave actually draws",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "alert2.1 ground camera remains in bounds",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "takeoff1.3 no attached fire ring",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "takeoff1.3 authored wave actually draws",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "takeoff1.3 ground camera remains in bounds",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "ground rumble moves rendered terrain",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "wave moves across ground",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "cinematic does not move gameplay player",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "workshop panel 0 native drawing",
+        "ok": true,
+        "data": {
+          "mode": "workshop",
+          "panel": 0,
+          "previousPanel": 0,
+          "camera": {
+            "x": 0,
+            "y": 0
+          },
+          "boardOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "wholePanel": true,
+          "shot": "CW3-W01",
+          "text": "There's one more thing I wanted to show you.",
+          "who": "DECKER",
+          "time": 1.4166666666666679
+        }
+      },
+      {
+        "name": "workshop panel 1 native drawing",
+        "ok": true,
+        "data": {
+          "mode": "workshop",
+          "panel": 1,
+          "previousPanel": 0,
+          "camera": {
+            "x": 282,
+            "y": 0
+          },
+          "boardOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "wholePanel": true,
+          "shot": "CW3-W03",
+          "text": "Come here, you genius!",
+          "who": "COLE",
+          "time": 1.4166666666666679
+        }
+      },
+      {
+        "name": "workshop panel 2 native drawing",
+        "ok": true,
+        "data": {
+          "mode": "workshop",
+          "panel": 2,
+          "previousPanel": 1,
+          "camera": {
+            "x": 564,
+            "y": 0
+          },
+          "boardOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "wholePanel": true,
+          "shot": "CW3-W04",
+          "text": "Easy now, I'm not trying to file a restraining order these days!",
+          "who": "DECKER",
+          "time": 1.4166666666666679
+        }
+      },
+      {
+        "name": "workshop panel 3 native drawing",
+        "ok": true,
+        "data": {
+          "mode": "workshop",
+          "panel": 3,
+          "previousPanel": 2,
+          "camera": {
+            "x": 0,
+            "y": 378
+          },
+          "boardOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "wholePanel": true,
+          "shot": "CW3-W05",
+          "text": "When can I test it out?",
+          "who": "COLE",
+          "time": 1.4166666666666679
+        }
+      },
+      {
+        "name": "workshop panel 4 native drawing",
+        "ok": true,
+        "data": {
+          "mode": "workshop",
+          "panel": 4,
+          "previousPanel": 3,
+          "camera": {
+            "x": 282,
+            "y": 378
+          },
+          "boardOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "wholePanel": true,
+          "shot": "CW3-W06",
+          "text": "When we find out what caused all of this mayhem. It's still not quite ready yet.",
+          "who": "DECKER",
+          "time": 1.4166666666666679
+        }
+      },
+      {
+        "name": "workshop panel 5 native drawing",
+        "ok": true,
+        "data": {
+          "mode": "workshop",
+          "panel": 5,
+          "previousPanel": 4,
+          "camera": {
+            "x": 564,
+            "y": 378
+          },
+          "boardOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "wholePanel": true,
+          "shot": "CW3-W08",
+          "text": "We all trust you, you know? It'll come in time, I'm sure. Anyway, let's get a move on it!",
+          "who": "COLE",
+          "time": 1.4166666666666679
+        }
+      },
+      {
+        "name": "Photon charge burst sustain recovery frames",
+        "ok": true,
+        "data": [
+          {
+            "last": {
+              "mode": "photon",
+              "frame": 0,
+              "shot": "CW3-DEMO",
+              "topDown": true,
+              "wholeEmitter": true,
+              "text": "",
+              "who": "SYSTEM",
+              "time": 1.016666666666668
+            },
+            "draws": [
+              {
+                "key": "cw16_photon",
+                "args": [
+                  0,
+                  0,
+                  512,
+                  384,
+                  12,
+                  -77,
+                  888,
+                  666
+                ],
+                "transform": [
+                  2,
+                  2,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "last": {
+              "mode": "photon",
+              "frame": 2,
+              "shot": "CW3-DEMO",
+              "topDown": true,
+              "wholeEmitter": true,
+              "text": "",
+              "who": "SYSTEM",
+              "time": 2.116666666666668
+            },
+            "draws": [
+              {
+                "key": "cw16_photon",
+                "args": [
+                  1024,
+                  0,
+                  512,
+                  384,
+                  12,
+                  -77,
+                  888,
+                  666
+                ],
+                "transform": [
+                  2,
+                  2,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "last": {
+              "mode": "photon",
+              "frame": 4,
+              "shot": "CW3-DEMO",
+              "topDown": true,
+              "wholeEmitter": true,
+              "text": "",
+              "who": "SYSTEM",
+              "time": 3.8166666666666678
+            },
+            "draws": [
+              {
+                "key": "cw16_photon",
+                "args": [
+                  0,
+                  384,
+                  512,
+                  384,
+                  12,
+                  -77,
+                  888,
+                  666
+                ],
+                "transform": [
+                  2,
+                  2,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "last": {
+              "mode": "photon",
+              "frame": 5,
+              "shot": "CW3-DEMO",
+              "topDown": true,
+              "wholeEmitter": true,
+              "text": "",
+              "who": "SYSTEM",
+              "time": 5.116666666666667
+            },
+            "draws": [
+              {
+                "key": "cw16_photon",
+                "args": [
+                  512,
+                  384,
+                  512,
+                  384,
+                  12,
+                  -77,
+                  888,
+                  666
+                ],
+                "transform": [
+                  2,
+                  2,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "last": {
+              "mode": "photon",
+              "frame": 7,
+              "shot": "CW3-DEMO",
+              "topDown": true,
+              "wholeEmitter": true,
+              "text": "",
+              "who": "SYSTEM",
+              "time": 6.816666666666667
+            },
+            "draws": [
+              {
+                "key": "cw16_photon",
+                "args": [
+                  1536,
+                  384,
+                  512,
+                  384,
+                  12,
+                  -77,
+                  888,
+                  666
+                ],
+                "transform": [
+                  2,
+                  2,
+                  0,
+                  0
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Photon actual authored bitmap",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "cole revised story and earned upgrade contracts",
+        "ok": true,
+        "data": {
+          "pk": "cole",
+          "old": [],
+          "three": 1,
+          "four": 1,
+          "crew": [
+            "COLE",
+            "DECKER",
+            "AXEL",
+            "FREEZER",
+            "FALVA",
+            "LIZZIE",
+            "YURI",
+            "MAVERICK",
+            "JUGGERNAUT"
+          ],
+          "panels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "name": "axel revised story and earned upgrade contracts",
+        "ok": true,
+        "data": {
+          "pk": "axel",
+          "old": [],
+          "three": 1,
+          "four": 1,
+          "crew": [
+            "COLE",
+            "DECKER",
+            "AXEL",
+            "FREEZER",
+            "FALVA",
+            "LIZZIE",
+            "YURI",
+            "MAVERICK",
+            "JUGGERNAUT"
+          ],
+          "panels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "name": "freezer revised story and earned upgrade contracts",
+        "ok": true,
+        "data": {
+          "pk": "freezer",
+          "old": [],
+          "three": 1,
+          "four": 1,
+          "crew": [
+            "COLE",
+            "DECKER",
+            "AXEL",
+            "FREEZER",
+            "FALVA",
+            "LIZZIE",
+            "YURI",
+            "MAVERICK",
+            "JUGGERNAUT"
+          ],
+          "panels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "name": "yuri revised story and earned upgrade contracts",
+        "ok": true,
+        "data": {
+          "pk": "yuri",
+          "old": [],
+          "three": 1,
+          "four": 1,
+          "crew": [
+            "COLE",
+            "DECKER",
+            "AXEL",
+            "FREEZER",
+            "FALVA",
+            "LIZZIE",
+            "YURI",
+            "MAVERICK",
+            "JUGGERNAUT"
+          ],
+          "panels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "name": "maverick revised story and earned upgrade contracts",
+        "ok": true,
+        "data": {
+          "pk": "maverick",
+          "old": [],
+          "three": 1,
+          "four": 1,
+          "crew": [
+            "COLE",
+            "DECKER",
+            "AXEL",
+            "FREEZER",
+            "FALVA",
+            "LIZZIE",
+            "YURI",
+            "MAVERICK",
+            "JUGGERNAUT"
+          ],
+          "panels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "name": "falva revised story and earned upgrade contracts",
+        "ok": true,
+        "data": {
+          "pk": "falva",
+          "old": [],
+          "three": 1,
+          "four": 1,
+          "crew": [
+            "COLE",
+            "DECKER",
+            "AXEL",
+            "FREEZER",
+            "FALVA",
+            "LIZZIE",
+            "YURI",
+            "MAVERICK",
+            "JUGGERNAUT"
+          ],
+          "panels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "name": "lizzie revised story and earned upgrade contracts",
+        "ok": true,
+        "data": {
+          "pk": "lizzie",
+          "old": [],
+          "three": 1,
+          "four": 1,
+          "crew": [
+            "COLE",
+            "DECKER",
+            "AXEL",
+            "FREEZER",
+            "FALVA",
+            "LIZZIE",
+            "YURI",
+            "MAVERICK",
+            "JUGGERNAUT"
+          ],
+          "panels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "name": "decker revised story and earned upgrade contracts",
+        "ok": true,
+        "data": {
+          "pk": "decker",
+          "old": [],
+          "three": 1,
+          "four": 1,
+          "crew": [
+            "COLE",
+            "DECKER",
+            "AXEL",
+            "FREEZER",
+            "FALVA",
+            "LIZZIE",
+            "YURI",
+            "MAVERICK",
+            "JUGGERNAUT"
+          ],
+          "panels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "name": "juggernaut revised story and earned upgrade contracts",
+        "ok": true,
+        "data": {
+          "pk": "juggernaut",
+          "old": [],
+          "three": 1,
+          "four": 1,
+          "crew": [
+            "COLE",
+            "DECKER",
+            "AXEL",
+            "FREEZER",
+            "FALVA",
+            "LIZZIE",
+            "YURI",
+            "MAVERICK",
+            "JUGGERNAUT"
+          ],
+          "panels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "name": "Stage3 water moves before PLAY",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "Stage3 water animates before PLAY",
+        "ok": true,
+        "data": null
+      },
+      {
+        "name": "Stage3 complete arrival handoff",
+        "ok": true,
+        "data": {
+          "state": "play",
+          "t": 0.36666666666661324,
+          "water": {
+            "elapsed": 14.34999999999774,
+            "motion": 6558.671938189907,
+            "hadLaunch": true,
+            "settled": true,
+            "last": {
+              "time": 14.69999999999772,
+              "frame": 5,
+              "travel": 6562.871938189907,
+              "phase": "cd"
+            },
+            "offset": 6341.471538189939,
+            "timeOffset": -3.7500333333329667
+          },
+          "last": {
+            "name": "water",
+            "time": 14.69999999999772,
+            "frame": 5,
+            "x": -188,
+            "y": -94,
+            "travel": 6562.871938189907
+          }
+        }
+      },
+      {
+        "name": "no native page console HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "samples": [
+      {
+        "last": {
+          "mode": "heat",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.7289999999999999,
+          "heat": 0.5083333333333333,
+          "ship": {
+            "x": 456,
+            "y": 184,
+            "size": 111,
+            "burn": 0.37150000000000005
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "framing": {
+            "zoom": 1.7289999999999999,
+            "viewX": 340,
+            "viewY": 399.36,
+            "terrainW": 680,
+            "terrainH": 512,
+            "inset": 7,
+            "visible": {
+              "left": 83.20416425679582,
+              "right": 596.7958357432042,
+              "top": 299.88053209947947,
+              "bottom": 504.6231578947369
+            },
+            "box": [
+              12,
+              12,
+              888,
+              354
+            ]
+          },
+          "groundRumble": {
+            "amplitude": 0,
+            "x": -0.0,
+            "y": -0.0
+          },
+          "fireWave": null,
+          "shipFireRing": false,
+          "id": "post-2",
+          "shot": "SL2-06",
+          "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+          "time": 3.05
+        },
+        "draws": [
+          {
+            "key": "ls112_stage_2",
+            "args": [
+              0,
+              0,
+              680,
+              512,
+              0,
+              0,
+              680,
+              512
+            ],
+            "transform": [
+              3.4579999446868896,
+              3.4579999446868896,
+              -263.7200012207031,
+              -1012.9868774414062
+            ]
+          }
+        ],
+        "player": {
+          "x": 340,
+          "y": 399.36
+        }
+      },
+      {
+        "last": {
+          "mode": "alert",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.6138461538461533,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 228.65467455621314,
+            "size": 103,
+            "burn": 0.7
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "framing": {
+            "zoom": 1.6138461538461533,
+            "viewX": 340,
+            "viewY": 371.69027792036366,
+            "terrainW": 680,
+            "terrainH": 512,
+            "inset": 7,
+            "visible": {
+              "left": 64.88083889418482,
+              "right": 615.1191611058152,
+              "top": 265.1125848793722,
+              "bottom": 484.46434846373836
+            },
+            "box": [
+              12,
+              12,
+              888,
+              354
+            ]
+          },
+          "groundRumble": {
+            "amplitude": 2.0666666666666713,
+            "x": 0.22502807921007204,
+            "y": 1.5183952797203588
+          },
+          "fireWave": {
+            "frame": 3,
+            "y": -39.30869565217388,
+            "progress": 0.03369565217391311
+          },
+          "shipFireRing": false,
+          "id": "post-2",
+          "shot": "SL2-08",
+          "text": "Get out of there. The ground is moving.",
+          "time": 0.5166666666666678
+        },
+        "draws": [
+          {
+            "key": "ls112_stage_2",
+            "args": [
+              0,
+              0,
+              680,
+              512,
+              0,
+              0,
+              680,
+              512
+            ],
+            "transform": [
+              3.2276923656463623,
+              3.2276923656463623,
+              -184.96533203125,
+              -828.6650390625
+            ]
+          },
+          {
+            "key": "cw16_firewave",
+            "args": [
+              1620,
+              0,
+              540,
+              360,
+              8,
+              -638,
+              896,
+              597
+            ],
+            "transform": [
+              2,
+              2,
+              0,
+              0
+            ]
+          }
+        ],
+        "player": {
+          "x": 340,
+          "y": 399.36
+        }
+      },
+      {
+        "last": {
+          "mode": "alert",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.3333333333333333,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 305.3333333333333,
+            "size": 85,
+            "burn": 0.7
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "framing": {
+            "zoom": 1.3333333333333333,
+            "viewX": 340,
+            "viewY": 308.36,
+            "terrainW": 680,
+            "terrainH": 512,
+            "inset": 7,
+            "visible": {
+              "left": 7,
+              "right": 673,
+              "top": 179.36,
+              "bottom": 444.86
+            },
+            "box": [
+              12,
+              12,
+              888,
+              354
+            ]
+          },
+          "groundRumble": {
+            "amplitude": 3.2,
+            "x": -0.6543518561722044,
+            "y": -2.08732021996044
+          },
+          "fireWave": {
+            "frame": 6,
+            "y": 6.186956521739155,
+            "progress": 0.13804347826086963
+          },
+          "shipFireRing": false,
+          "id": "post-2",
+          "shot": "SL2-08",
+          "text": "Get out of there. The ground is moving.",
+          "time": 2.116666666666668
+        },
+        "draws": [
+          {
+            "key": "ls112_stage_2",
+            "args": [
+              0,
+              0,
+              680,
+              512,
+              0,
+              0,
+              680,
+              512
+            ],
+            "transform": [
+              2.6666667461395264,
+              2.6666667461395264,
+              4.024629592895508,
+              -458.4679870605469
+            ]
+          },
+          {
+            "key": "cw16_firewave",
+            "args": [
+              1080,
+              360,
+              540,
+              360,
+              8,
+              -592,
+              896,
+              597
+            ],
+            "transform": [
+              2,
+              2,
+              0,
+              0
+            ]
+          }
+        ],
+        "player": {
+          "x": 340,
+          "y": 399.36
+        }
+      },
+      {
+        "last": {
+          "mode": "takeoff",
+          "pilot": "cole",
+          "actors": [
+            "cole"
+          ],
+          "world": {
+            "x": 340,
+            "y": 399.36
+          },
+          "zoom": 1.3333333333333333,
+          "heat": 1,
+          "ship": {
+            "x": 456,
+            "y": 208.40027453341446,
+            "size": 94,
+            "burn": 1
+          },
+          "topDown": true,
+          "backgroundStage": 2,
+          "framing": {
+            "zoom": 1.3333333333333333,
+            "viewX": 340,
+            "viewY": 308.36,
+            "terrainW": 680,
+            "terrainH": 512,
+            "inset": 7,
+            "visible": {
+              "left": 7,
+              "right": 673,
+              "top": 179.36,
+              "bottom": 444.86
+            },
+            "box": [
+              12,
+              12,
+              888,
+              354
+            ]
+          },
+          "groundRumble": {
+            "amplitude": 2.63578947368421,
+            "x": -0.4426957611004581,
+            "y": -2.104785182687618
+          },
+          "fireWave": {
+            "frame": 4,
+            "y": 177.26166666666674,
+            "progress": 0.5304166666666669
+          },
+          "shipFireRing": false,
+          "id": "post-2",
+          "shot": "SL2-09",
+          "text": "",
+          "time": 1.316666666666668
+        },
+        "draws": [
+          {
+            "key": "ls112_stage_2",
+            "args": [
+              0,
+              0,
+              680,
+              512,
+              0,
+              0,
+              680,
+              512
+            ],
+            "transform": [
+              2.6666667461395264,
+              2.6666667461395264,
+              4.447941780090332,
+              -458.5028991699219
+            ]
+          },
+          {
+            "key": "cw16_firewave",
+            "args": [
+              0,
+              360,
+              540,
+              360,
+              8,
+              -421,
+              896,
+              597
+            ],
+            "transform": [
+              2,
+              2,
+              0,
+              0
+            ]
+          }
+        ],
+        "player": {
+          "x": 340,
+          "y": 399.36
+        }
+      }
+    ],
+    "water": [
+      {
+        "state": "intro",
+        "t": 0.16666666666664245,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 0.3333333333332848,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 0.499999999999927,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 0.6666666666665697,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 0.8333333333332125,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 0.9999999999998552,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 1.1666666666664969,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 1.3333333333331385,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 1.4999999999997802,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 1.6666666666664218,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 1.8333333333330635,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 1.9999999999997051,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 2.166666666666349,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 2.333333333332993,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 2.4999999999996367,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 2.6666666666662806,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 2.8333333333329245,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 2.9999999999995683,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 3.166666666666212,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 3.333333333332856,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "intro",
+        "t": 3.4999999999995,
+        "water": {
+          "elapsed": 0,
+          "motion": 0,
+          "hadLaunch": false,
+          "settled": false
+        },
+        "last": null
+      },
+      {
+        "state": "launch",
+        "t": 0.049999999999992724,
+        "water": {
+          "elapsed": 0.049999999999992724,
+          "motion": 3.0374999999994765,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 0.049999999999992724,
+            "frame": 0,
+            "travel": -14388.9625,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 0.049999999999992724,
+          "frame": 0,
+          "x": -188,
+          "y": -53,
+          "travel": -14388.9625
+        }
+      },
+      {
+        "state": "launch",
+        "t": 0.2166666666666352,
+        "water": {
+          "elapsed": 0.2166666666666352,
+          "motion": 25.349999999994182,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 0.2166666666666352,
+            "frame": 1,
+            "travel": -14312.650000000005,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 0.2166666666666352,
+          "frame": 1,
+          "x": -188,
+          "y": -233,
+          "travel": -14312.650000000005
+        }
+      },
+      {
+        "state": "launch",
+        "t": 0.38333333333327746,
+        "water": {
+          "elapsed": 0.38333333333327746,
+          "motion": 66.41249999998344,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 0.38333333333327746,
+            "frame": 3,
+            "travel": -14176.587500000016,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 0.38333333333327746,
+          "frame": 3,
+          "x": -188,
+          "y": -97,
+          "travel": -14176.587500000016
+        }
+      },
+      {
+        "state": "launch",
+        "t": 0.5499999999999198,
+        "water": {
+          "elapsed": 0.5499999999999198,
+          "motion": 126.22499999996722,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 0.5499999999999198,
+            "frame": 4,
+            "travel": -13979.775000000032,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 0.5499999999999198,
+          "frame": 4,
+          "x": -188,
+          "y": -156,
+          "travel": -13979.775000000032
+        }
+      },
+      {
+        "state": "launch",
+        "t": 0.7166666666665625,
+        "water": {
+          "elapsed": 0.7166666666665625,
+          "motion": 204.78749999994554,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 0.7166666666665625,
+            "frame": 5,
+            "travel": -13722.212500000054,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 0.7166666666665625,
+          "frame": 5,
+          "x": -188,
+          "y": -155,
+          "travel": -13722.212500000054
+        }
+      },
+      {
+        "state": "launch",
+        "t": 0.8833333333332053,
+        "water": {
+          "elapsed": 0.8833333333332053,
+          "motion": 302.09999999991845,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 0.8833333333332053,
+            "frame": 7,
+            "travel": -13404.900000000081,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 0.8833333333332053,
+          "frame": 7,
+          "x": -188,
+          "y": -93,
+          "travel": -13404.900000000081
+        }
+      },
+      {
+        "state": "launch",
+        "t": 1.0499999999998477,
+        "water": {
+          "elapsed": 1.0499999999998477,
+          "motion": 418.1624999998858,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 1.0499999999998477,
+            "frame": 8,
+            "travel": -13026.837500000114,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 1.0499999999998477,
+          "frame": 8,
+          "x": -188,
+          "y": -227,
+          "travel": -13026.837500000114
+        }
+      },
+      {
+        "state": "launch",
+        "t": 1.2166666666664894,
+        "water": {
+          "elapsed": 1.2166666666664894,
+          "motion": 548.5124999998616,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 1.2166666666664894,
+            "frame": 9,
+            "travel": -12605.487500000138,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 1.2166666666664894,
+          "frame": 9,
+          "x": -188,
+          "y": -62,
+          "travel": -12605.487500000138
+        }
+      },
+      {
+        "state": "launch",
+        "t": 1.383333333333131,
+        "water": {
+          "elapsed": 1.383333333333131,
+          "motion": 679.7624999998422,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 1.383333333333131,
+            "frame": 11,
+            "travel": -12182.237500000158,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 1.383333333333131,
+          "frame": 11,
+          "x": -188,
+          "y": -151,
+          "travel": -12182.237500000158
+        }
+      },
+      {
+        "state": "launch",
+        "t": 1.5499999999997727,
+        "water": {
+          "elapsed": 1.5499999999997727,
+          "motion": 811.0124999998229,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 1.5499999999997727,
+            "frame": 12,
+            "travel": -11758.987500000178,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 1.5499999999997727,
+          "frame": 12,
+          "x": -188,
+          "y": -239,
+          "travel": -11758.987500000178
+        }
+      },
+      {
+        "state": "launch",
+        "t": 1.7166666666664143,
+        "water": {
+          "elapsed": 1.7166666666664143,
+          "motion": 942.2624999998036,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 1.7166666666664143,
+            "frame": 13,
+            "travel": -11336.737500000196,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 1.7166666666664143,
+          "frame": 13,
+          "x": -188,
+          "y": -73,
+          "travel": -11336.737500000196
+        }
+      },
+      {
+        "state": "launch",
+        "t": 1.883333333333056,
+        "water": {
+          "elapsed": 1.883333333333056,
+          "motion": 1073.5124999997847,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 1.883333333333056,
+            "frame": 15,
+            "travel": -10913.487500000216,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 1.883333333333056,
+          "frame": 15,
+          "x": -188,
+          "y": -162,
+          "travel": -10913.487500000216
+        }
+      },
+      {
+        "state": "launch",
+        "t": 2.0499999999996983,
+        "water": {
+          "elapsed": 2.0499999999996983,
+          "motion": 1204.7624999997665,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 2.0499999999996983,
+            "frame": 0,
+            "travel": -10490.237500000234,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 2.0499999999996983,
+          "frame": 0,
+          "x": -188,
+          "y": -251,
+          "travel": -10490.237500000234
+        }
+      },
+      {
+        "state": "launch",
+        "t": 2.216666666666342,
+        "water": {
+          "elapsed": 2.216666666666342,
+          "motion": 1336.0124999997483,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 2.216666666666342,
+            "frame": 1,
+            "travel": -10067.987500000252,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 2.216666666666342,
+          "frame": 1,
+          "x": -188,
+          "y": -84,
+          "travel": -10067.987500000252
+        }
+      },
+      {
+        "state": "launch",
+        "t": 2.383333333332986,
+        "water": {
+          "elapsed": 2.383333333332986,
+          "motion": 1467.2624999997302,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 2.383333333332986,
+            "frame": 3,
+            "travel": -9644.73750000027,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 2.383333333332986,
+          "frame": 3,
+          "x": -188,
+          "y": -173,
+          "travel": -9644.73750000027
+        }
+      },
+      {
+        "state": "launch",
+        "t": 2.54999999999963,
+        "water": {
+          "elapsed": 2.54999999999963,
+          "motion": 1598.512499999712,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 2.54999999999963,
+            "frame": 4,
+            "travel": -9221.487500000288,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 2.54999999999963,
+          "frame": 4,
+          "x": -188,
+          "y": -6,
+          "travel": -9221.487500000288
+        }
+      },
+      {
+        "state": "launch",
+        "t": 2.7166666666662738,
+        "water": {
+          "elapsed": 2.7166666666662738,
+          "motion": 1729.7624999996938,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 2.7166666666662738,
+            "frame": 5,
+            "travel": -8799.237500000307,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 2.7166666666662738,
+          "frame": 5,
+          "x": -188,
+          "y": -96,
+          "travel": -8799.237500000307
+        }
+      },
+      {
+        "state": "launch",
+        "t": 2.8833333333329176,
+        "water": {
+          "elapsed": 2.8833333333329176,
+          "motion": 1861.0124999996756,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 2.8833333333329176,
+            "frame": 7,
+            "travel": -8375.987500000325,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 2.8833333333329176,
+          "frame": 7,
+          "x": -188,
+          "y": -184,
+          "travel": -8375.987500000325
+        }
+      },
+      {
+        "state": "launch",
+        "t": 3.0499999999995615,
+        "water": {
+          "elapsed": 3.0499999999995615,
+          "motion": 1992.2624999996574,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 3.0499999999995615,
+            "frame": 8,
+            "travel": -7952.737500000343,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 3.0499999999995615,
+          "frame": 8,
+          "x": -188,
+          "y": -17,
+          "travel": -7952.737500000343
+        }
+      },
+      {
+        "state": "launch",
+        "t": 3.2166666666662054,
+        "water": {
+          "elapsed": 3.2166666666662054,
+          "motion": 2123.512499999639,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 3.2166666666662054,
+            "frame": 9,
+            "travel": -7530.487500000361,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 3.2166666666662054,
+          "frame": 9,
+          "x": -188,
+          "y": -107,
+          "travel": -7530.487500000361
+        }
+      },
+      {
+        "state": "launch",
+        "t": 3.3833333333328492,
+        "water": {
+          "elapsed": 3.3833333333328492,
+          "motion": 2254.762499999621,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 3.3833333333328492,
+            "frame": 11,
+            "travel": -7107.237500000379,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 3.3833333333328492,
+          "frame": 11,
+          "x": -188,
+          "y": -196,
+          "travel": -7107.237500000379
+        }
+      },
+      {
+        "state": "launch",
+        "t": 3.549999999999493,
+        "water": {
+          "elapsed": 3.549999999999493,
+          "motion": 2386.012499999603,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 3.549999999999493,
+            "frame": 12,
+            "travel": -6683.987500000398,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 3.549999999999493,
+          "frame": 12,
+          "x": -188,
+          "y": -28,
+          "travel": -6683.987500000398
+        }
+      },
+      {
+        "state": "launch",
+        "t": 3.716666666666137,
+        "water": {
+          "elapsed": 3.716666666666137,
+          "motion": 2517.2624999995846,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 3.716666666666137,
+            "frame": 13,
+            "travel": -6261.737500000416,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 3.716666666666137,
+          "frame": 13,
+          "x": -188,
+          "y": -118,
+          "travel": -6261.737500000416
+        }
+      },
+      {
+        "state": "launch",
+        "t": 3.883333333332781,
+        "water": {
+          "elapsed": 3.883333333332781,
+          "motion": 2648.5124999995664,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 3.883333333332781,
+            "frame": 15,
+            "travel": -5838.487500000434,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 3.883333333332781,
+          "frame": 15,
+          "x": -188,
+          "y": -207,
+          "travel": -5838.487500000434
+        }
+      },
+      {
+        "state": "launch",
+        "t": 4.049999999999423,
+        "water": {
+          "elapsed": 4.049999999999423,
+          "motion": 2779.7624999995483,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 4.049999999999423,
+            "frame": 0,
+            "travel": -5415.237500000452,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 4.049999999999423,
+          "frame": 0,
+          "x": -188,
+          "y": -40,
+          "travel": -5415.237500000452
+        }
+      },
+      {
+        "state": "launch",
+        "t": 4.216666666666063,
+        "water": {
+          "elapsed": 4.216666666666063,
+          "motion": 2911.01249999953,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 4.216666666666063,
+            "frame": 1,
+            "travel": -4992.98750000047,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 4.216666666666063,
+          "frame": 1,
+          "x": -188,
+          "y": -129,
+          "travel": -4992.98750000047
+        }
+      },
+      {
+        "state": "launch",
+        "t": 4.383333333332702,
+        "water": {
+          "elapsed": 4.383333333332702,
+          "motion": 3042.262499999512,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 4.383333333332702,
+            "frame": 3,
+            "travel": -4569.737500000489,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 4.383333333332702,
+          "frame": 3,
+          "x": -188,
+          "y": -218,
+          "travel": -4569.737500000489
+        }
+      },
+      {
+        "state": "launch",
+        "t": 4.549999999999342,
+        "water": {
+          "elapsed": 4.549999999999342,
+          "motion": 3173.5124999994937,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 4.549999999999342,
+            "frame": 4,
+            "travel": -4146.487500000507,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 4.549999999999342,
+          "frame": 4,
+          "x": -188,
+          "y": -51,
+          "travel": -4146.487500000507
+        }
+      },
+      {
+        "state": "launch",
+        "t": 4.716666666665981,
+        "water": {
+          "elapsed": 4.716666666665981,
+          "motion": 3304.7624999994755,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 4.716666666665981,
+            "frame": 5,
+            "travel": -3724.2375000005245,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 4.716666666665981,
+          "frame": 5,
+          "x": -188,
+          "y": -141,
+          "travel": -3724.2375000005245
+        }
+      },
+      {
+        "state": "launch",
+        "t": 4.8833333333326205,
+        "water": {
+          "elapsed": 4.8833333333326205,
+          "motion": 3436.0124999994573,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 4.8833333333326205,
+            "frame": 7,
+            "travel": -3300.9875000005427,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 4.8833333333326205,
+          "frame": 7,
+          "x": -188,
+          "y": -229,
+          "travel": -3300.9875000005427
+        }
+      },
+      {
+        "state": "launch",
+        "t": 5.04999999999926,
+        "water": {
+          "elapsed": 5.04999999999926,
+          "motion": 3567.262499999439,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 5.04999999999926,
+            "frame": 8,
+            "travel": -2877.737500000561,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 5.04999999999926,
+          "frame": 8,
+          "x": -188,
+          "y": -62,
+          "travel": -2877.737500000561
+        }
+      },
+      {
+        "state": "launch",
+        "t": 5.216666666665899,
+        "water": {
+          "elapsed": 5.216666666665899,
+          "motion": 3698.512499999421,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 5.216666666665899,
+            "frame": 9,
+            "travel": -2455.487500000579,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 5.216666666665899,
+          "frame": 9,
+          "x": -188,
+          "y": -152,
+          "travel": -2455.487500000579
+        }
+      },
+      {
+        "state": "launch",
+        "t": 5.383333333332539,
+        "water": {
+          "elapsed": 5.383333333332539,
+          "motion": 3829.7624999994027,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 5.383333333332539,
+            "frame": 11,
+            "travel": -2032.2375000005973,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 5.383333333332539,
+          "frame": 11,
+          "x": -188,
+          "y": -241,
+          "travel": -2032.2375000005973
+        }
+      },
+      {
+        "state": "launch",
+        "t": 5.549999999999178,
+        "water": {
+          "elapsed": 5.549999999999178,
+          "motion": 3961.0124999993845,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 5.549999999999178,
+            "frame": 12,
+            "travel": -1608.9875000006155,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 5.549999999999178,
+          "frame": 12,
+          "x": -188,
+          "y": -73,
+          "travel": -1608.9875000006155
+        }
+      },
+      {
+        "state": "launch",
+        "t": 5.716666666665818,
+        "water": {
+          "elapsed": 5.716666666665818,
+          "motion": 4092.2624999993664,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 5.716666666665818,
+            "frame": 13,
+            "travel": -1186.7375000006336,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 5.716666666665818,
+          "frame": 13,
+          "x": -188,
+          "y": -163,
+          "travel": -1186.7375000006336
+        }
+      },
+      {
+        "state": "launch",
+        "t": 5.883333333332457,
+        "water": {
+          "elapsed": 5.883333333332457,
+          "motion": 4223.512499999348,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 5.883333333332457,
+            "frame": 15,
+            "travel": -763.4875000006523,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 5.883333333332457,
+          "frame": 15,
+          "x": -188,
+          "y": -252,
+          "travel": -763.4875000006523
+        }
+      },
+      {
+        "state": "launch",
+        "t": 6.0499999999990965,
+        "water": {
+          "elapsed": 6.0499999999990965,
+          "motion": 4354.7624999993295,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 6.0499999999990965,
+            "frame": 0,
+            "travel": -340.2375000006705,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 6.0499999999990965,
+          "frame": 0,
+          "x": -188,
+          "y": -85,
+          "travel": -340.2375000006705
+        }
+      },
+      {
+        "state": "launch",
+        "t": 6.216666666665736,
+        "water": {
+          "elapsed": 6.216666666665736,
+          "motion": 4486.012499999311,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 6.216666666665736,
+            "frame": 1,
+            "travel": 82.01249999931133,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 6.216666666665736,
+          "frame": 1,
+          "x": -188,
+          "y": -174,
+          "travel": 82.01249999931133
+        }
+      },
+      {
+        "state": "launch",
+        "t": 6.383333333332375,
+        "water": {
+          "elapsed": 6.383333333332375,
+          "motion": 4617.262499999293,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 6.383333333332375,
+            "frame": 3,
+            "travel": 505.26249999929314,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 6.383333333332375,
+          "frame": 3,
+          "x": -188,
+          "y": -7,
+          "travel": 505.26249999929314
+        }
+      },
+      {
+        "state": "launch",
+        "t": 6.549999999999015,
+        "water": {
+          "elapsed": 6.549999999999015,
+          "motion": 4748.512499999275,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 6.549999999999015,
+            "frame": 4,
+            "travel": 928.512499999275,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 6.549999999999015,
+          "frame": 4,
+          "x": -188,
+          "y": -96,
+          "travel": 928.512499999275
+        }
+      },
+      {
+        "state": "launch",
+        "t": 6.716666666665654,
+        "water": {
+          "elapsed": 6.716666666665654,
+          "motion": 4879.762499999257,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 6.716666666665654,
+            "frame": 5,
+            "travel": 1350.7624999992568,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 6.716666666665654,
+          "frame": 5,
+          "x": -188,
+          "y": -186,
+          "travel": 1350.7624999992568
+        }
+      },
+      {
+        "state": "launch",
+        "t": 6.883333333332294,
+        "water": {
+          "elapsed": 6.883333333332294,
+          "motion": 5011.012499999239,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 6.883333333332294,
+            "frame": 7,
+            "travel": 1774.0124999992386,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 6.883333333332294,
+          "frame": 7,
+          "x": -188,
+          "y": -18,
+          "travel": 1774.0124999992386
+        }
+      },
+      {
+        "state": "launch",
+        "t": 7.049999999998933,
+        "water": {
+          "elapsed": 7.049999999998933,
+          "motion": 5142.26249999922,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 7.049999999998933,
+            "frame": 8,
+            "travel": 2197.2624999992204,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 7.049999999998933,
+          "frame": 8,
+          "x": -188,
+          "y": -107,
+          "travel": 2197.2624999992204
+        }
+      },
+      {
+        "state": "launch",
+        "t": 7.2166666666655725,
+        "water": {
+          "elapsed": 7.2166666666655725,
+          "motion": 5273.512499999202,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 7.2166666666655725,
+            "frame": 9,
+            "travel": 2619.512499999202,
+            "phase": "run"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 7.2166666666655725,
+          "frame": 9,
+          "x": -188,
+          "y": -197,
+          "travel": 2619.512499999202
+        }
+      },
+      {
+        "state": "launch",
+        "t": 7.383333333332212,
+        "water": {
+          "elapsed": 7.383333333332212,
+          "motion": 5404.762499999184,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 7.383333333332212,
+            "frame": 11,
+            "travel": 3042.762499999184,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 7.383333333332212,
+          "frame": 11,
+          "x": -188,
+          "y": -30,
+          "travel": 3042.762499999184
+        }
+      },
+      {
+        "state": "launch",
+        "t": 7.549999999998851,
+        "water": {
+          "elapsed": 7.549999999998851,
+          "motion": 5532.401156552297,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 7.549999999998851,
+            "frame": 12,
+            "travel": 3452.401156552297,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 7.549999999998851,
+          "frame": 12,
+          "x": -188,
+          "y": -132,
+          "travel": 3452.401156552297
+        }
+      },
+      {
+        "state": "launch",
+        "t": 7.716666666665491,
+        "water": {
+          "elapsed": 7.716666666665491,
+          "motion": 5652.013563211236,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 7.716666666665491,
+            "frame": 13,
+            "travel": 3836.013563211236,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 7.716666666665491,
+          "frame": 13,
+          "x": -188,
+          "y": -4,
+          "travel": 3836.013563211236
+        }
+      },
+      {
+        "state": "launch",
+        "t": 7.88333333333213,
+        "water": {
+          "elapsed": 7.88333333333213,
+          "motion": 5763.597906247538,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 7.88333333333213,
+            "frame": 15,
+            "travel": 4193.597906247538,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 7.88333333333213,
+          "frame": 15,
+          "x": -188,
+          "y": -159,
+          "travel": 4193.597906247538
+        }
+      },
+      {
+        "state": "launch",
+        "t": 8.04999999999877,
+        "water": {
+          "elapsed": 8.04999999999877,
+          "motion": 5867.152098980355,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 8.04999999999877,
+            "frame": 0,
+            "travel": 4525.152098980355,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 8.04999999999877,
+          "frame": 0,
+          "x": -188,
+          "y": -83,
+          "travel": 4525.152098980355
+        }
+      },
+      {
+        "state": "launch",
+        "t": 8.21666666666541,
+        "water": {
+          "elapsed": 8.21666666666541,
+          "motion": 5962.673714973705,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 8.21666666666541,
+            "frame": 1,
+            "travel": 4831.673714973705,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 8.21666666666541,
+          "frame": 1,
+          "x": -188,
+          "y": -33,
+          "travel": 4831.673714973705
+        }
+      },
+      {
+        "state": "launch",
+        "t": 8.383333333332049,
+        "water": {
+          "elapsed": 8.383333333332049,
+          "motion": 6050.159897436843,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 8.383333333332049,
+            "frame": 3,
+            "travel": 5111.159897436843,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 8.383333333332049,
+          "frame": 3,
+          "x": -188,
+          "y": -9,
+          "travel": 5111.159897436843
+        }
+      },
+      {
+        "state": "launch",
+        "t": 8.549999999998688,
+        "water": {
+          "elapsed": 8.549999999998688,
+          "motion": 6129.607233163395,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 8.549999999998688,
+            "frame": 4,
+            "travel": 5365.607233163395,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 8.549999999998688,
+          "frame": 4,
+          "x": -188,
+          "y": -11,
+          "travel": 5365.607233163395
+        }
+      },
+      {
+        "state": "launch",
+        "t": 8.716666666665327,
+        "water": {
+          "elapsed": 8.716666666665327,
+          "motion": 6201.011571714878,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 8.716666666665327,
+            "frame": 5,
+            "travel": 5594.011571714878,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 8.716666666665327,
+          "frame": 5,
+          "x": -188,
+          "y": -38,
+          "travel": 5594.011571714878
+        }
+      },
+      {
+        "state": "launch",
+        "t": 8.883333333331967,
+        "water": {
+          "elapsed": 8.883333333331967,
+          "motion": 6264.367756364997,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 8.883333333331967,
+            "frame": 7,
+            "travel": 6264.367756364997,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 8.883333333331967,
+          "frame": 7,
+          "x": -188,
+          "y": -136,
+          "travel": 6264.367756364997
+        }
+      },
+      {
+        "state": "launch",
+        "t": 9.049999999998606,
+        "water": {
+          "elapsed": 9.049999999998606,
+          "motion": 6319.669205193947,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 9.049999999998606,
+            "frame": 8,
+            "travel": 6319.669205193947,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 9.049999999998606,
+          "frame": 8,
+          "x": -188,
+          "y": -81,
+          "travel": 6319.669205193947
+        }
+      },
+      {
+        "state": "launch",
+        "t": 9.216666666665246,
+        "water": {
+          "elapsed": 9.216666666665246,
+          "motion": 6366.907220349244,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 9.216666666665246,
+            "frame": 9,
+            "travel": 6366.907220349244,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 9.216666666665246,
+          "frame": 9,
+          "x": -188,
+          "y": -34,
+          "travel": 6366.907220349244
+        }
+      },
+      {
+        "state": "launch",
+        "t": 9.383333333331885,
+        "water": {
+          "elapsed": 9.383333333331885,
+          "motion": 6406.069759938219,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 9.383333333331885,
+            "frame": 11,
+            "travel": 6406.069759938219,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 9.383333333331885,
+          "frame": 11,
+          "x": -188,
+          "y": -250,
+          "travel": 6406.069759938219
+        }
+      },
+      {
+        "state": "launch",
+        "t": 9.549999999998525,
+        "water": {
+          "elapsed": 9.549999999998525,
+          "motion": 6437.139015215352,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 9.549999999998525,
+            "frame": 12,
+            "travel": 6437.139015215352,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 9.549999999998525,
+          "frame": 12,
+          "x": -188,
+          "y": -219,
+          "travel": 6437.139015215352
+        }
+      },
+      {
+        "state": "launch",
+        "t": 9.716666666665164,
+        "water": {
+          "elapsed": 9.716666666665164,
+          "motion": 6460.08583020101,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 9.716666666665164,
+            "frame": 13,
+            "travel": 6460.08583020101,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 9.716666666665164,
+          "frame": 13,
+          "x": -188,
+          "y": -196,
+          "travel": 6460.08583020101
+        }
+      },
+      {
+        "state": "launch",
+        "t": 9.883333333331803,
+        "water": {
+          "elapsed": 9.883333333331803,
+          "motion": 6474.852954274182,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 9.883333333331803,
+            "frame": 15,
+            "travel": 6474.852954274182,
+            "phase": "brake"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 9.883333333331803,
+          "frame": 15,
+          "x": -188,
+          "y": -182,
+          "travel": 6474.852954274182
+        }
+      },
+      {
+        "state": "launch",
+        "t": 10.049999999998443,
+        "water": {
+          "elapsed": 10.049999999998443,
+          "motion": 6481.2719381898605,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 10.049999999998443,
+            "frame": 0,
+            "travel": 6481.2719381898605,
+            "phase": "settle"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 10.049999999998443,
+          "frame": 0,
+          "x": -188,
+          "y": -175,
+          "travel": 6481.2719381898605
+        }
+      },
+      {
+        "state": "launch",
+        "t": 10.216666666665082,
+        "water": {
+          "elapsed": 10.216666666665082,
+          "motion": 6484.271938189862,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 10.216666666665082,
+            "frame": 1,
+            "travel": 6484.271938189862,
+            "phase": "settle"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 10.216666666665082,
+          "frame": 1,
+          "x": -188,
+          "y": -172,
+          "travel": 6484.271938189862
+        }
+      },
+      {
+        "state": "launch",
+        "t": 10.383333333331722,
+        "water": {
+          "elapsed": 10.383333333331722,
+          "motion": 6487.271938189864,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 10.383333333331722,
+            "frame": 3,
+            "travel": 6487.271938189864,
+            "phase": "settle"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 10.383333333331722,
+          "frame": 3,
+          "x": -188,
+          "y": -169,
+          "travel": 6487.271938189864
+        }
+      },
+      {
+        "state": "launch",
+        "t": 10.549999999998361,
+        "water": {
+          "elapsed": 10.549999999998361,
+          "motion": 6490.271938189866,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 10.549999999998361,
+            "frame": 4,
+            "travel": 6490.271938189866,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 10.549999999998361,
+          "frame": 4,
+          "x": -188,
+          "y": -166,
+          "travel": 6490.271938189866
+        }
+      },
+      {
+        "state": "launch",
+        "t": 10.716666666665,
+        "water": {
+          "elapsed": 10.716666666665,
+          "motion": 6493.271938189868,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 10.716666666665,
+            "frame": 5,
+            "travel": 6493.271938189868,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 10.716666666665,
+          "frame": 5,
+          "x": -188,
+          "y": -163,
+          "travel": 6493.271938189868
+        }
+      },
+      {
+        "state": "launch",
+        "t": 10.88333333333164,
+        "water": {
+          "elapsed": 10.88333333333164,
+          "motion": 6496.27193818987,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 10.88333333333164,
+            "frame": 7,
+            "travel": 6496.27193818987,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 10.88333333333164,
+          "frame": 7,
+          "x": -188,
+          "y": -160,
+          "travel": 6496.27193818987
+        }
+      },
+      {
+        "state": "launch",
+        "t": 11.04999999999828,
+        "water": {
+          "elapsed": 11.04999999999828,
+          "motion": 6499.271938189871,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 11.04999999999828,
+            "frame": 8,
+            "travel": 6499.271938189871,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 11.04999999999828,
+          "frame": 8,
+          "x": -188,
+          "y": -157,
+          "travel": 6499.271938189871
+        }
+      },
+      {
+        "state": "launch",
+        "t": 11.216666666664919,
+        "water": {
+          "elapsed": 11.216666666664919,
+          "motion": 6502.271938189873,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 11.216666666664919,
+            "frame": 9,
+            "travel": 6502.271938189873,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 11.216666666664919,
+          "frame": 9,
+          "x": -188,
+          "y": -154,
+          "travel": 6502.271938189873
+        }
+      },
+      {
+        "state": "launch",
+        "t": 11.383333333331558,
+        "water": {
+          "elapsed": 11.383333333331558,
+          "motion": 6505.271938189875,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 11.383333333331558,
+            "frame": 11,
+            "travel": 6505.271938189875,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 11.383333333331558,
+          "frame": 11,
+          "x": -188,
+          "y": -151,
+          "travel": 6505.271938189875
+        }
+      },
+      {
+        "state": "launch",
+        "t": 11.549999999998198,
+        "water": {
+          "elapsed": 11.549999999998198,
+          "motion": 6508.271938189877,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 11.549999999998198,
+            "frame": 12,
+            "travel": 6508.271938189877,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 11.549999999998198,
+          "frame": 12,
+          "x": -188,
+          "y": -148,
+          "travel": 6508.271938189877
+        }
+      },
+      {
+        "state": "launch",
+        "t": 11.716666666664837,
+        "water": {
+          "elapsed": 11.716666666664837,
+          "motion": 6511.271938189879,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 11.716666666664837,
+            "frame": 13,
+            "travel": 6511.271938189879,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 11.716666666664837,
+          "frame": 13,
+          "x": -188,
+          "y": -145,
+          "travel": 6511.271938189879
+        }
+      },
+      {
+        "state": "launch",
+        "t": 11.883333333331477,
+        "water": {
+          "elapsed": 11.883333333331477,
+          "motion": 6514.2719381898805,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 11.883333333331477,
+            "frame": 15,
+            "travel": 6514.2719381898805,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 11.883333333331477,
+          "frame": 15,
+          "x": -188,
+          "y": -142,
+          "travel": 6514.2719381898805
+        }
+      },
+      {
+        "state": "launch",
+        "t": 12.049999999998116,
+        "water": {
+          "elapsed": 12.049999999998116,
+          "motion": 6517.271938189882,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 12.049999999998116,
+            "frame": 0,
+            "travel": 6517.271938189882,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 12.049999999998116,
+          "frame": 0,
+          "x": -188,
+          "y": -139,
+          "travel": 6517.271938189882
+        }
+      },
+      {
+        "state": "launch",
+        "t": 12.216666666664755,
+        "water": {
+          "elapsed": 12.216666666664755,
+          "motion": 6520.271938189884,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 12.216666666664755,
+            "frame": 1,
+            "travel": 6520.271938189884,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 12.216666666664755,
+          "frame": 1,
+          "x": -188,
+          "y": -136,
+          "travel": 6520.271938189884
+        }
+      },
+      {
+        "state": "launch",
+        "t": 12.383333333331395,
+        "water": {
+          "elapsed": 12.383333333331395,
+          "motion": 6523.271938189886,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 12.383333333331395,
+            "frame": 3,
+            "travel": 6523.271938189886,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 12.383333333331395,
+          "frame": 3,
+          "x": -188,
+          "y": -133,
+          "travel": 6523.271938189886
+        }
+      },
+      {
+        "state": "launch",
+        "t": 12.549999999998034,
+        "water": {
+          "elapsed": 12.549999999998034,
+          "motion": 6526.271938189888,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 12.549999999998034,
+            "frame": 4,
+            "travel": 6526.271938189888,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 12.549999999998034,
+          "frame": 4,
+          "x": -188,
+          "y": -130,
+          "travel": 6526.271938189888
+        }
+      },
+      {
+        "state": "launch",
+        "t": 12.716666666664674,
+        "water": {
+          "elapsed": 12.716666666664674,
+          "motion": 6529.27193818989,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 12.716666666664674,
+            "frame": 5,
+            "travel": 6529.27193818989,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 12.716666666664674,
+          "frame": 5,
+          "x": -188,
+          "y": -127,
+          "travel": 6529.27193818989
+        }
+      },
+      {
+        "state": "launch",
+        "t": 12.883333333331313,
+        "water": {
+          "elapsed": 12.883333333331313,
+          "motion": 6532.271938189891,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 12.883333333331313,
+            "frame": 7,
+            "travel": 6532.271938189891,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 12.883333333331313,
+          "frame": 7,
+          "x": -188,
+          "y": -124,
+          "travel": 6532.271938189891
+        }
+      },
+      {
+        "state": "launch",
+        "t": 13.049999999997953,
+        "water": {
+          "elapsed": 13.049999999997953,
+          "motion": 6535.271938189893,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 13.049999999997953,
+            "frame": 8,
+            "travel": 6535.271938189893,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 13.049999999997953,
+          "frame": 8,
+          "x": -188,
+          "y": -121,
+          "travel": 6535.271938189893
+        }
+      },
+      {
+        "state": "launch",
+        "t": 13.216666666664592,
+        "water": {
+          "elapsed": 13.216666666664592,
+          "motion": 6538.271938189895,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 13.216666666664592,
+            "frame": 9,
+            "travel": 6538.271938189895,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 13.216666666664592,
+          "frame": 9,
+          "x": -188,
+          "y": -118,
+          "travel": 6538.271938189895
+        }
+      },
+      {
+        "state": "launch",
+        "t": 13.383333333331231,
+        "water": {
+          "elapsed": 13.383333333331231,
+          "motion": 6541.271938189897,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 13.383333333331231,
+            "frame": 11,
+            "travel": 6541.271938189897,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 13.383333333331231,
+          "frame": 11,
+          "x": -188,
+          "y": -115,
+          "travel": 6541.271938189897
+        }
+      },
+      {
+        "state": "launch",
+        "t": 13.54999999999787,
+        "water": {
+          "elapsed": 13.54999999999787,
+          "motion": 6544.271938189899,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 13.54999999999787,
+            "frame": 12,
+            "travel": 6544.271938189899,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 13.54999999999787,
+          "frame": 12,
+          "x": -188,
+          "y": -112,
+          "travel": 6544.271938189899
+        }
+      },
+      {
+        "state": "launch",
+        "t": 13.71666666666451,
+        "water": {
+          "elapsed": 13.71666666666451,
+          "motion": 6547.2719381899005,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 13.71666666666451,
+            "frame": 13,
+            "travel": 6547.2719381899005,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 13.71666666666451,
+          "frame": 13,
+          "x": -188,
+          "y": -109,
+          "travel": 6547.2719381899005
+        }
+      },
+      {
+        "state": "launch",
+        "t": 13.88333333333115,
+        "water": {
+          "elapsed": 13.88333333333115,
+          "motion": 6550.271938189902,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 13.88333333333115,
+            "frame": 15,
+            "travel": 6550.271938189902,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 13.88333333333115,
+          "frame": 15,
+          "x": -188,
+          "y": -106,
+          "travel": 6550.271938189902
+        }
+      },
+      {
+        "state": "launch",
+        "t": 14.04999999999779,
+        "water": {
+          "elapsed": 14.04999999999779,
+          "motion": 6553.271938189904,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 14.04999999999779,
+            "frame": 0,
+            "travel": 6553.271938189904,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 14.04999999999779,
+          "frame": 0,
+          "x": -188,
+          "y": -103,
+          "travel": 6553.271938189904
+        }
+      },
+      {
+        "state": "launch",
+        "t": 14.216666666664429,
+        "water": {
+          "elapsed": 14.216666666664429,
+          "motion": 6556.271938189906,
+          "hadLaunch": true,
+          "settled": false,
+          "last": {
+            "time": 14.216666666664429,
+            "frame": 1,
+            "travel": 6556.271938189906,
+            "phase": "cd"
+          }
+        },
+        "last": {
+          "name": "water",
+          "time": 14.216666666664429,
+          "frame": 1,
+          "x": -188,
+          "y": -100,
+          "travel": 6556.271938189906
+        }
+      },
+      {
+        "state": "play",
+        "t": 0.03333333333332848,
+        "water": {
+          "elapsed": 14.34999999999774,
+          "motion": 6558.671938189907,
+          "hadLaunch": true,
+          "settled": true,
+          "last": {
+            "time": 14.366666666664406,
+            "frame": 2,
+            "travel": 6558.871938189907,
+            "phase": "cd"
+          },
+          "offset": 6341.471538189939,
+          "timeOffset": -3.7500333333329667
+        },
+        "last": {
+          "name": "water",
+          "time": 14.366666666664406,
+          "frame": 2,
+          "x": -188,
+          "y": -98,
+          "travel": 6558.871938189907
+        }
+      },
+      {
+        "state": "play",
+        "t": 0.19999999999997095,
+        "water": {
+          "elapsed": 14.34999999999774,
+          "motion": 6558.671938189907,
+          "hadLaunch": true,
+          "settled": true,
+          "last": {
+            "time": 14.533333333331063,
+            "frame": 4,
+            "travel": 6560.871938189907,
+            "phase": "cd"
+          },
+          "offset": 6341.471538189939,
+          "timeOffset": -3.7500333333329667
+        },
+        "last": {
+          "name": "water",
+          "time": 14.533333333331063,
+          "frame": 4,
+          "x": -188,
+          "y": -96,
+          "travel": 6560.871938189907
+        }
+      },
+      {
+        "state": "play",
+        "t": 0.36666666666661324,
+        "water": {
+          "elapsed": 14.34999999999774,
+          "motion": 6558.671938189907,
+          "hadLaunch": true,
+          "settled": true,
+          "last": {
+            "time": 14.69999999999772,
+            "frame": 5,
+            "travel": 6562.871938189907,
+            "phase": "cd"
+          },
+          "offset": 6341.471538189939,
+          "timeOffset": -3.7500333333329667
+        },
+        "last": {
+          "name": "water",
+          "time": 14.69999999999772,
+          "frame": 5,
+          "x": -188,
+          "y": -94,
+          "travel": 6562.871938189907
+        }
+      }
+    ],
+    "errors": []
+  },
+  "suite": {
+    "exitCode": 0,
+    "assertions": 8969,
+    "failedNames": [],
+    "priorFailedNames": [],
+    "finalSummaryReached": true
+  },
+  "gameJsSha256": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+  "gameJsUnchanged": true,
+  "testFlUnchanged": true,
+  "recording": {
+    "pilot": "cole",
+    "difficulty": "normal",
+    "source": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+    "scope": "Complete native cinematic checkpoints, no dialogue skips; gameplay between scenes omitted. Not campaign playthroughs.",
+    "clips": [
+      {
+        "seconds": 48.80980000001192,
+        "frames": 3028,
+        "peak": 0.6918741464614868,
+        "stages": [
+          {
+            "at": 0.017,
+            "tag": "cutscene:SL2-01:radio::"
+          },
+          {
+            "at": 4.785,
+            "tag": "cutscene:SL2-02:radio::"
+          },
+          {
+            "at": 9.905100000023841,
+            "tag": "cutscene:SL2-03:radio::"
+          },
+          {
+            "at": 15.840800000011921,
+            "tag": "cutscene:SL2-04:radio::"
+          },
+          {
+            "at": 20.44860000002384,
+            "tag": "cutscene:SL2-05:radio::"
+          },
+          {
+            "at": 25.089600000023843,
+            "tag": "cutscene:SL2-06:heat::"
+          },
+          {
+            "at": 31.41,
+            "tag": "cutscene:SL2-07:heat::"
+          },
+          {
+            "at": 36.91230000001192,
+            "tag": "cutscene:SL2-08:alert::"
+          },
+          {
+            "at": 41.5205,
+            "tag": "cutscene:SL2-09:takeoff::"
+          },
+          {
+            "at": 46.12840000000596,
+            "tag": "cutscene:SL2-10:fade::"
+          },
+          {
+            "at": 47.32870000001788,
+            "tag": "stagesel::fade::"
+          }
+        ],
+        "last": {
+          "cinema": {
+            "mode": "fade",
+            "pilot": "cole",
+            "actors": [
+              "cole"
+            ],
+            "world": {
+              "x": 340,
+              "y": 399.36
+            },
+            "zoom": 1.3333333333333333,
+            "heat": 1,
+            "ship": {
+              "x": 456,
+              "y": -170,
+              "size": 85,
+              "burn": 1
+            },
+            "topDown": true,
+            "backgroundStage": 2,
+            "framing": {
+              "zoom": 1.3333333333333333,
+              "viewX": 340,
+              "viewY": 308.36,
+              "terrainW": 680,
+              "terrainH": 512,
+              "inset": 7,
+              "visible": {
+                "left": 7,
+                "right": 673,
+                "top": 179.36,
+                "bottom": 444.86
+              },
+              "box": [
+                12,
+                12,
+                888,
+                354
+              ]
+            },
+            "groundRumble": {
+              "amplitude": 1.1,
+              "x": -0.30486428527806403,
+              "y": 0.558086188267607
+            },
+            "fireWave": {
+              "frame": 1,
+              "y": 382,
+              "progress": 1
+            },
+            "shipFireRing": false,
+            "id": "post-2",
+            "shot": "SL2-10",
+            "text": "",
+            "time": 1.1838000000119207
+          },
+          "custom": null,
+          "service": {
+            "mode": "fade",
+            "pilot": "cole",
+            "actors": [
+              "cole"
+            ],
+            "world": {
+              "x": 340,
+              "y": 399.36
+            },
+            "zoom": 1.3333333333333333,
+            "heat": 1,
+            "ship": {
+              "x": 456,
+              "y": -170,
+              "size": 85,
+              "burn": 1
+            },
+            "topDown": true,
+            "backgroundStage": 2,
+            "framing": {
+              "zoom": 1.3333333333333333,
+              "viewX": 340,
+              "viewY": 308.36,
+              "terrainW": 680,
+              "terrainH": 512,
+              "inset": 7,
+              "visible": {
+                "left": 7,
+                "right": 673,
+                "top": 179.36,
+                "bottom": 444.86
+              },
+              "box": [
+                12,
+                12,
+                888,
+                354
+              ]
+            },
+            "groundRumble": {
+              "amplitude": 1.1,
+              "x": -0.30486428527806403,
+              "y": 0.558086188267607
+            },
+            "fireWave": {
+              "frame": 1,
+              "y": 382,
+              "progress": 1
+            },
+            "shipFireRing": false,
+            "id": "post-2",
+            "shot": "SL2-10",
+            "text": "",
+            "time": 1.1838000000119207
+          },
+          "fury": null
+        },
+        "part": "escape",
+        "expectedBeats": [
+          {
+            "id": "SL2-01",
+            "who": "COLE",
+            "text": "Decker, what am I looking at?",
+            "duration": 4.76,
+            "panel": null,
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-02",
+            "who": "DECKER",
+            "text": "A service data-link. It's restoring power to our internal relay systems.",
+            "duration": 5.11,
+            "panel": null,
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-03",
+            "who": "DECKER",
+            "text": "Think of it like a LAN, but wireless for all of us. Our squad channels are coming back.",
+            "duration": 5.9350000000000005,
+            "panel": null,
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-04",
+            "who": "COLE",
+            "text": "You're a genius, Decker.",
+            "duration": 4.6000000000000005,
+            "panel": null,
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-05",
+            "who": "DECKER",
+            "text": "Hey, I'm just telling you what I know from what we have left.",
+            "duration": 4.633333333333334,
+            "panel": null,
+            "mode": "radio"
+          },
+          {
+            "id": "SL2-06",
+            "who": "DECKER",
+            "text": "I'm raising your systems' heat levels. You should be able to toggle up to maximum efficiency.",
+            "duration": 6.265000000000001,
+            "panel": null,
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-07",
+            "who": "DECKER",
+            "text": "You'll find an extra surprise for those icy units if they give you any trouble.",
+            "duration": 5.495,
+            "panel": null,
+            "mode": "heat"
+          },
+          {
+            "id": "SL2-08",
+            "who": "DECKER",
+            "text": "Get out of there. The ground is moving.",
+            "duration": 4.6000000000000005,
+            "panel": null,
+            "mode": "alert"
+          },
+          {
+            "id": "SL2-09",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 4.6,
+            "panel": null,
+            "mode": "takeoff"
+          },
+          {
+            "id": "SL2-10",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 1.2,
+            "panel": null,
+            "mode": "fade"
+          }
+        ],
+        "errors": [],
+        "end": {
+          "state": "stagesel",
+          "stage": 2,
+          "done": true,
+          "returns": 1,
+          "gravityReady": false
+        }
+      },
+      {
+        "seconds": 18.793,
+        "frames": 1165,
+        "peak": 0.7105941772460938,
+        "stages": [
+          {
+            "at": 0.016599999994039535,
+            "tag": "intro::::"
+          },
+          {
+            "at": 3.6010999999940396,
+            "tag": "launch::::"
+          },
+          {
+            "at": 3.6170999999940396,
+            "tag": "launch:::run:"
+          },
+          {
+            "at": 10.976300000011921,
+            "tag": "launch:::brake:"
+          },
+          {
+            "at": 13.64990000000596,
+            "tag": "launch:::settle:"
+          },
+          {
+            "at": 14.11269999998808,
+            "tag": "launch:::cd:"
+          },
+          {
+            "at": 17.96840000000596,
+            "tag": "play:::cd:"
+          }
+        ],
+        "last": {
+          "cinema": null,
+          "custom": null,
+          "service": null,
+          "fury": null
+        },
+        "part": "arrival3",
+        "expectedBeats": [],
+        "errors": [],
+        "end": {
+          "state": "play",
+          "stage": 3,
+          "done": false,
+          "returns": 0,
+          "gravityReady": false
+        }
+      },
+      {
+        "seconds": 146.64609999999405,
+        "frames": 9153,
+        "peak": 0.6922738552093506,
+        "stages": [
+          {
+            "at": 0.016900000005960463,
+            "tag": "cutscene:B301:::"
+          },
+          {
+            "at": 4.720800000011921,
+            "tag": "cutscene:CW3-02:::"
+          },
+          {
+            "at": 10.99280000001192,
+            "tag": "cutscene:CW3-03:::"
+          },
+          {
+            "at": 16.52840000000596,
+            "tag": "cutscene:CW3-04:::"
+          },
+          {
+            "at": 24.017,
+            "tag": "cutscene:CW3-05:::"
+          },
+          {
+            "at": 29.66490000000596,
+            "tag": "cutscene:CW3-06:::"
+          },
+          {
+            "at": 38.14469999998808,
+            "tag": "cutscene:CW3-07:::"
+          },
+          {
+            "at": 46.67290000000596,
+            "tag": "cutscene:CW3-08:::"
+          },
+          {
+            "at": 53.712800000011924,
+            "tag": "cutscene:CW3-09:::"
+          },
+          {
+            "at": 58.91290000000596,
+            "tag": "cutscene:CW3-10:::"
+          },
+          {
+            "at": 63.281,
+            "tag": "cutscene:CW3-11:::"
+          },
+          {
+            "at": 68.385,
+            "tag": "cutscene:CW3-12:::"
+          },
+          {
+            "at": 72.99290000000596,
+            "tag": "cutscene:CW3-13:::"
+          },
+          {
+            "at": 77.857,
+            "tag": "cutscene:CW3-14:::"
+          },
+          {
+            "at": 83.13630000001191,
+            "tag": "cutscene:CW3-15:::"
+          },
+          {
+            "at": 87.37759999999403,
+            "tag": "cutscene:CW3-16:::"
+          },
+          {
+            "at": 94.75230000001191,
+            "tag": "cutscene:CW3-W01:workshop::"
+          },
+          {
+            "at": 99.489,
+            "tag": "cutscene:CW3-DEMO:photon::"
+          },
+          {
+            "at": 107.26469999998808,
+            "tag": "cutscene:CW3-W02:workshop::"
+          },
+          {
+            "at": 112.49740000000597,
+            "tag": "cutscene:CW3-W03:workshop::"
+          },
+          {
+            "at": 116.49690000000597,
+            "tag": "cutscene:CW3-W04:workshop::"
+          },
+          {
+            "at": 121.90490000000597,
+            "tag": "cutscene:CW3-W05:workshop::"
+          },
+          {
+            "at": 125.9375,
+            "tag": "cutscene:CW3-W06:workshop::"
+          },
+          {
+            "at": 131.87309999999405,
+            "tag": "cutscene:CW3-W07:workshop::"
+          },
+          {
+            "at": 140.289,
+            "tag": "cutscene:CW3-W08:workshop::"
+          },
+          {
+            "at": 146.52890000000596,
+            "tag": "title::workshop::"
+          }
+        ],
+        "last": {
+          "cinema": {
+            "mode": "workshop",
+            "panel": 5,
+            "previousPanel": 4,
+            "camera": {
+              "x": 564,
+              "y": 378
+            },
+            "boardOrder": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "wholePanel": true,
+            "shot": "CW3-W08",
+            "text": "We all trust you, you know? It'll come in time, I'm sure. Anyway, let's get a move on it!",
+            "who": "COLE",
+            "time": 6.223900000005959
+          },
+          "custom": {
+            "mode": "workshop",
+            "panel": 5,
+            "previousPanel": 4,
+            "camera": {
+              "x": 564,
+              "y": 378
+            },
+            "boardOrder": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "wholePanel": true,
+            "shot": "CW3-W08",
+            "text": "We all trust you, you know? It'll come in time, I'm sure. Anyway, let's get a move on it!",
+            "who": "COLE",
+            "time": 6.223900000005959
+          },
+          "service": null,
+          "fury": null
+        },
+        "part": "hq3",
+        "expectedBeats": [
+          {
+            "id": "B301",
+            "who": "COLE",
+            "text": "All right. We're home. What did we find?",
+            "duration": 4.693333333333333,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-02",
+            "who": "DECKER",
+            "text": "We were able to access the network at the base, despite cooling levels being below freezing.",
+            "duration": 6.2666666666666675,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-03",
+            "who": "DECKER",
+            "text": "Something sent a distress-signal virus from one of our own satellites.",
+            "duration": 5.533333333333333,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-04",
+            "who": "DECKER",
+            "text": "I can't even understand the code either. It's almost like it's alien. I've never seen any language like this. Ever.",
+            "duration": 7.4750000000000005,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-05",
+            "who": "COLE",
+            "text": "You're saying we may be dealing with something outside of our own world?!",
+            "duration": 5.633333333333333,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-06",
+            "who": "DECKER",
+            "text": "Seems so. If we want answers, we're going to have to head to space, where it last came from, and trace the signal back to its source.",
+            "duration": 8.465000000000002,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-07",
+            "who": "DECKER",
+            "text": "There's an airbase about 500 km to the east. Last I heard, there was supposed to be a space shuttle launch, but it never went through.",
+            "duration": 8.520000000000001,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-08",
+            "who": "DECKER",
+            "text": "I also know the Federation was testing prototype attachment suits for domestic aircraft. We may be in luck.",
+            "duration": 7.035,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-09",
+            "who": "AXEL",
+            "text": "A shuttle launch facility. That gives us a destination.",
+            "duration": 5.193333333333333,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-10",
+            "who": "FREEZER",
+            "text": "And a way up. I'll take those odds.",
+            "duration": 4.366666666666667,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-11",
+            "who": "FALVA",
+            "text": "Prototype space attachments? Now that I want to see.",
+            "duration": 5.093333333333334,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-12",
+            "who": "LIZZIE",
+            "text": "First we get there. Then we test anything.",
+            "duration": 4.6,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-13",
+            "who": "YURI",
+            "text": "If that signal came from orbit, we follow it.",
+            "duration": 4.859999999999999,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-14",
+            "who": "MAVERICK",
+            "text": "Alien trouble. Just when I thought this couldn't get stranger.",
+            "duration": 5.2666666666666675,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-15",
+            "who": "JUGGERNAUT",
+            "text": "As long as we go together.",
+            "duration": 4.226666666666667,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-16",
+            "who": "COLE",
+            "text": "Then we go. Better than sitting around twiddling our thumbs. Let's go!",
+            "duration": 7.359999999999999,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW3-W01",
+            "who": "DECKER",
+            "text": "There's one more thing I wanted to show you.",
+            "duration": 4.726666666666667,
+            "panel": 0,
+            "mode": "workshop"
+          },
+          {
+            "id": "CW3-DEMO",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 7.76,
+            "panel": null,
+            "mode": "photon"
+          },
+          {
+            "id": "CW3-W02",
+            "who": "COLE",
+            "text": "That's your Photon Cannon? Decker, this is incredible!",
+            "duration": 5.22,
+            "panel": 0,
+            "mode": "workshop"
+          },
+          {
+            "id": "CW3-W03",
+            "who": "COLE",
+            "text": "Come here, you genius!",
+            "duration": 3.993333333333333,
+            "panel": 1,
+            "mode": "workshop"
+          },
+          {
+            "id": "CW3-W04",
+            "who": "DECKER",
+            "text": "Easy now, I'm not trying to file a restraining order these days!",
+            "duration": 5.393333333333333,
+            "panel": 2,
+            "mode": "workshop"
+          },
+          {
+            "id": "CW3-W05",
+            "who": "COLE",
+            "text": "When can I test it out?",
+            "duration": 4.026666666666666,
+            "panel": 3,
+            "mode": "workshop"
+          },
+          {
+            "id": "CW3-W06",
+            "who": "DECKER",
+            "text": "When we find out what caused all of this mayhem. It's still not quite ready yet.",
+            "duration": 5.926666666666666,
+            "panel": 4,
+            "mode": "workshop"
+          },
+          {
+            "id": "CW3-W07",
+            "who": "DECKER",
+            "text": "There's something missing, and I just can't for the life of me figure out what. Or, more importantly, why. I'm usually good at this.",
+            "duration": 8.41,
+            "panel": 4,
+            "mode": "workshop"
+          },
+          {
+            "id": "CW3-W08",
+            "who": "COLE",
+            "text": "We all trust you, you know? It'll come in time, I'm sure. Anyway, let's get a move on it!",
+            "duration": 6.226666666666667,
+            "panel": 5,
+            "mode": "workshop"
+          }
+        ],
+        "errors": [],
+        "end": {
+          "state": "title",
+          "stage": 3,
+          "done": true,
+          "returns": 1,
+          "gravityReady": false
+        }
+      },
+      {
+        "seconds": 63.41580000001192,
+        "frames": 3952,
+        "peak": 0.6913158297538757,
+        "stages": [
+          {
+            "at": 0.017,
+            "tag": "cutscene:B401:::"
+          },
+          {
+            "at": 7.1045,
+            "tag": "cutscene:POST4-02:::"
+          },
+          {
+            "at": 14.6405,
+            "tag": "cutscene:CW4-03:::"
+          },
+          {
+            "at": 22.51280000001192,
+            "tag": "cutscene:B403:::"
+          },
+          {
+            "at": 28.27290000000596,
+            "tag": "cutscene:POST4-04:::"
+          },
+          {
+            "at": 33.009,
+            "tag": "cutscene:POST4-05:::"
+          },
+          {
+            "at": 38.75280000001192,
+            "tag": "cutscene:POST4-06:::"
+          },
+          {
+            "at": 43.02470000001788,
+            "tag": "cutscene:POST4-07:::"
+          },
+          {
+            "at": 49.23220000001788,
+            "tag": "cutscene:POST4-08:::"
+          },
+          {
+            "at": 54.3365,
+            "tag": "cutscene:POST4-09:::"
+          },
+          {
+            "at": 58.784599999994036,
+            "tag": "cutscene:POST4-10:::"
+          },
+          {
+            "at": 63.345,
+            "tag": "title::::"
+          }
+        ],
+        "last": {
+          "cinema": {
+            "id": "post-4",
+            "shot": "POST4-10",
+            "who": "COLE",
+            "text": "One last check. Then we're going up.",
+            "pilot": "cole",
+            "coOp": [
+              "cole"
+            ],
+            "page": 3,
+            "kind": "travel",
+            "bank": null,
+            "frame": 0,
+            "time": 4.544499999999999,
+            "motion3": true,
+            "readAt": 0.42,
+            "scroll": 0,
+            "known": {},
+            "active": 1,
+            "old": 0,
+            "zoom": 0,
+            "factor": 1,
+            "cameraX": 76,
+            "cameraY": -21,
+            "same": false,
+            "reaction": true,
+            "snapshot": false,
+            "visiblePanels": [
+              0,
+              1
+            ],
+            "faces": [
+              {
+                "pilot": "cole",
+                "frame": 0,
+                "zoom": 0,
+                "origin": [
+                  472,
+                  82
+                ],
+                "baseline": 254,
+                "bottom": 334,
+                "bleed": 2,
+                "room": "hangar",
+                "channel": "in-person",
+                "family": "front-headset-free"
+              }
+            ],
+            "boxes": [
+              [
+                -32,
+                63,
+                487,
+                271
+              ],
+              [
+                475,
+                73,
+                249,
+                261
+              ]
+            ]
+          },
+          "custom": null,
+          "service": null,
+          "fury": null
+        },
+        "part": "post4",
+        "expectedBeats": [
+          {
+            "id": "B401",
+            "who": "COLE",
+            "text": "We found the Federation's prototype attachment suits at the airbase. The launch systems are still intact.",
+            "duration": 7.085000000000001,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-02",
+            "who": "DECKER",
+            "text": "Good. Those hulls were built to take ordinary aircraft beyond the atmosphere. I've adapted the mounts for our ships.",
+            "duration": 7.53,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "CW4-03",
+            "who": "DECKER",
+            "text": "The airbase's last uplink confirms it. That distress virus was broadcast from our satellite. Look at the last camera feed.",
+            "duration": 7.86,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "B403",
+            "who": "SYSTEM",
+            "text": "",
+            "duration": 5.76,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-04",
+            "who": "COLE",
+            "text": "So that's what's been sending the orders.",
+            "duration": 4.726666666666667,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-05",
+            "who": "DECKER",
+            "text": "And its signal is still up there. We have to trace it before it moves again.",
+            "duration": 5.733333333333333,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-06",
+            "who": "COLE",
+            "text": "Then we follow it to the source.",
+            "duration": 4.266666666666667,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-07",
+            "who": "DECKER",
+            "text": "The Federation kits are ready. I'll stay here and keep our relay open. Bring back answers.",
+            "duration": 6.2,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-08",
+            "who": "FALVA",
+            "text": "We got Granddad's bomber flying. We can handle this.",
+            "duration": 5.093333333333334,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-09",
+            "who": "LIZZIE",
+            "text": "Granddad's bomber had air outside it.",
+            "duration": 4.433333333333334,
+            "panel": null,
+            "mode": null
+          },
+          {
+            "id": "POST4-10",
+            "who": "COLE",
+            "text": "One last check. Then we're going up.",
+            "duration": 4.5600000000000005,
+            "panel": null,
+            "mode": null
+          }
+        ],
+        "errors": [],
+        "end": {
+          "state": "title",
+          "stage": 4,
+          "done": true,
+          "returns": 1,
+          "gravityReady": false
+        }
+      },
+      {
+        "seconds": 29.04419999998808,
+        "frames": 1797,
+        "peak": 0.7254776954650879,
+        "stages": [
+          {
+            "at": 0.01719999998807907,
+            "tag": "intro::::active"
+          },
+          {
+            "at": 3.6004000000059606,
+            "tag": "launch::::active"
+          },
+          {
+            "at": 3.6164000000059606,
+            "tag": "launch:::sky:drift"
+          },
+          {
+            "at": 15.60109999999404,
+            "tag": "launch:::assembly:charge"
+          },
+          {
+            "at": 19.71259999999404,
+            "tag": "launch:::assembly:scatter"
+          },
+          {
+            "at": 20.54429999998212,
+            "tag": "launch:::assembly:snap"
+          },
+          {
+            "at": 21.185,
+            "tag": "launch:::assembly:pixelglow"
+          },
+          {
+            "at": 22.11219999998808,
+            "tag": "launch:::assembly:whiteout"
+          },
+          {
+            "at": 22.62479999998212,
+            "tag": "launch:::assembly:reveal"
+          },
+          {
+            "at": 23.48819999998808,
+            "tag": "launch:::load:active"
+          },
+          {
+            "at": 24.34879999998212,
+            "tag": "launch:::countdown:active"
+          },
+          {
+            "at": 28.2085,
+            "tag": "play:::countdown:active"
+          }
+        ],
+        "last": {
+          "cinema": null,
+          "custom": null,
+          "service": null,
+          "fury": {
+            "t": 24.484699999987722,
+            "scroll": 24484.69999998808,
+            "phase": "countdown",
+            "pt": 3.8597000000178827,
+            "lastT": 24.484699999987722,
+            "build": true,
+            "space": true,
+            "num": 1,
+            "go": true,
+            "ship": {
+              "x": 240,
+              "y": 399.36,
+              "size": 48
+            },
+            "white": 0
+          }
+        },
+        "part": "arrival5",
+        "expectedBeats": [],
+        "errors": [],
+        "end": {
+          "state": "play",
+          "stage": 5,
+          "done": false,
+          "returns": 0,
+          "gravityReady": true
+        }
+      }
+    ],
+    "errors": []
+  },
+  "movies": {
+    "movies": [
+      {
+        "key": "stage3-corrected",
+        "file": "stage3-corrected.mp4",
+        "duration": 214.05,
+        "chapters": [
+          {
+            "start": 0,
+            "title": "Service data-link"
+          },
+          {
+            "start": 36.912,
+            "title": "Ground rumble and approaching fire wave"
+          },
+          {
+            "start": 41.52,
+            "title": "Lift-off"
+          },
+          {
+            "start": 48.73,
+            "title": "Stage 3 fly-in with scrolling water"
+          },
+          {
+            "start": 67.5,
+            "title": "Fury HQ \u2014 satellite signal discovery"
+          },
+          {
+            "start": 121.213,
+            "title": "The team discusses the trip to space"
+          },
+          {
+            "start": 162.252,
+            "title": "Six-panel workshop comic"
+          },
+          {
+            "start": 166.989,
+            "title": "Top-down Photon Cannon test"
+          },
+          {
+            "start": 183.997,
+            "title": "Cole and Decker \u2014 the hug"
+          }
+        ],
+        "sha256": "75a2bbe1a9feea77cff495478a2384b04923014595e6c764b88ed8c2e5d394dd",
+        "decodeErrors": [],
+        "audio": [
+          "[Parsed_volumedetect_0 @ 0000014e0d016fc0] mean_volume: -14.4 dB",
+          "[Parsed_volumedetect_0 @ 0000014e0d016fc0] max_volume: -2.0 dB"
+        ]
+      },
+      {
+        "key": "stage4-to-5",
+        "file": "stage4-to-5.mp4",
+        "duration": 92.36,
+        "chapters": [
+          {
+            "start": 0,
+            "title": "The Federation prototype aircraft attachments"
+          },
+          {
+            "start": 22.513,
+            "title": "The satellite camera feed"
+          },
+          {
+            "start": 43.025,
+            "title": "Space kits ready"
+          },
+          {
+            "start": 63.33,
+            "title": "Stage 5 card and space ascent"
+          },
+          {
+            "start": 78.931,
+            "title": "Aircraft attachment and assembly"
+          },
+          {
+            "start": 87.679,
+            "title": "Launch into Stage 5"
+          }
+        ],
+        "sha256": "92723045448c48659415aeb2e6dccc4e0f6bced3da60f0faa9317d9cb10f75a0",
+        "decodeErrors": [],
+        "audio": [
+          "[Parsed_volumedetect_0 @ 0000024856f56fc0] mean_volume: -14.6 dB",
+          "[Parsed_volumedetect_0 @ 0000024856f56fc0] max_volume: -2.1 dB"
+        ]
+      }
+    ]
+  },
+  "browser-qa": {
+    "checks": [
+      {
+        "name": "stage3-corrected complete geometry/duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 214.052333
+        }
+      },
+      {
+        "name": "stage3-corrected Service data-link decoded browser frame",
+        "ok": true,
+        "data": 0.054362
+      },
+      {
+        "name": "stage3-corrected Ground rumble and approaching fire wave decoded browser frame",
+        "ok": true,
+        "data": 36.921029
+      },
+      {
+        "name": "stage3-corrected Lift-off decoded browser frame",
+        "ok": true,
+        "data": 41.521029
+      },
+      {
+        "name": "stage3-corrected Stage 3 fly-in with scrolling water decoded browser frame",
+        "ok": true,
+        "data": 48.754362
+      },
+      {
+        "name": "stage3-corrected Fury HQ \u2014 satellite signal discovery decoded browser frame",
+        "ok": true,
+        "data": 67.521029
+      },
+      {
+        "name": "stage3-corrected The team discusses the trip to space decoded browser frame",
+        "ok": true,
+        "data": 121.221029
+      },
+      {
+        "name": "stage3-corrected Six-panel workshop comic decoded browser frame",
+        "ok": true,
+        "data": 162.254362
+      },
+      {
+        "name": "stage3-corrected Top-down Photon Cannon test decoded browser frame",
+        "ok": true,
+        "data": 167.021029
+      },
+      {
+        "name": "stage3-corrected Cole and Decker \u2014 the hug decoded browser frame",
+        "ok": true,
+        "data": 184.021029
+      },
+      {
+        "name": "stage4-to-5 complete geometry/duration",
+        "ok": true,
+        "data": {
+          "w": 1824,
+          "h": 1024,
+          "duration": 92.359667
+        }
+      },
+      {
+        "name": "stage4-to-5 The Federation prototype aircraft attachments decoded browser frame",
+        "ok": true,
+        "data": 0.054362
+      },
+      {
+        "name": "stage4-to-5 The satellite camera feed decoded browser frame",
+        "ok": true,
+        "data": 22.521029
+      },
+      {
+        "name": "stage4-to-5 Space kits ready decoded browser frame",
+        "ok": true,
+        "data": 43.054362
+      },
+      {
+        "name": "stage4-to-5 Stage 5 card and space ascent decoded browser frame",
+        "ok": true,
+        "data": 63.354362
+      },
+      {
+        "name": "stage4-to-5 Aircraft attachment and assembly decoded browser frame",
+        "ok": true,
+        "data": 78.954362
+      },
+      {
+        "name": "stage4-to-5 Launch into Stage 5 decoded browser frame",
+        "ok": true,
+        "data": 87.687695
+      },
+      {
+        "name": "movie byte range delivery",
+        "ok": true,
+        "data": {
+          "status": 206,
+          "bytes": 256,
+          "contentRange": "bytes 0-255/35531723"
+        }
+      },
+      {
+        "name": "no browser/page/HTTP errors",
+        "ok": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  }
+}

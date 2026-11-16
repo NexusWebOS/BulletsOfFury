@@ -1,0 +1,39 @@
+{
+  "assets": [
+    {
+      "name": "boom",
+      "source": "exec-6ff784ea-8994-47f1-83b1-95eb662ff8cd.png",
+      "runtimeSize": [
+        456,
+        228
+      ],
+      "method": "Built-in image_gen, nearest-neighbor normalization; original retained",
+      "sha256": "268353e4312859a40a8735f0b3b0ec34f7c297dbed6050e655eeb25b08a265b8"
+    },
+    {
+      "name": "fury-division",
+      "source": "exec-994ef3bd-1807-4225-a33b-d33e53f4eb83.png",
+      "runtimeSize": [
+        638,
+        319
+      ],
+      "method": "Built-in image_gen, nearest-neighbor normalization; original retained",
+      "sha256": "f50c2cd53a411b75bed8370878db1263c9dee395d17f3d771dbd0e84a47f341d"
+    },
+    {
+      "name": "jungle-flight",
+      "source": "exec-7c1bb896-1339-478f-85fb-bd2b4d72f1d7.png",
+      "runtimeSize": [
+        1008,
+        568
+      ],
+      "method": "Built-in image_gen; nearest-neighbor normalization; source PNG retained",
+      "sha256": "5fb6617bf500a09033e35638926201f6ead00b62a9e6818558e7f1f208a6d5ec"
+    }
+  ],
+  "prompts": {
+    "boom": "Create a single game-ready comic sound-effect sticker that reads exactly BOOM! in large explosive comic lettering, for an original detailed 16-bit arcade shooter. Wide 2:1 composition. Bold chunky hand-pixelled amber-yellow letters with ivory bright highlights, orange-red undershadow and very thick near-black ink outlines, jagged red/orange explosion burst behind the word, tiny square pixel sparks. Crisp hard pixel edges like late SNES/Neo Geo era, high quality pixel art, no smooth gradients, no photorealism, no checkerboard pattern, no additional words, no border or scene. The word fills most of the image with generous transparent margin so nothing clips. Genuine transparent RGBA background. This will flash above a jungle explosion on the right of a flying pilot's comic view.",
+    "fury-division": "Original 16-bit arcade game military unit emblem, transparent background, centered, no scene. A handsome detailed pixel-art winged metal insignia for the FURY DIVISION, elite fighter pilot squadron defending Earth against unknown attacks. Exact readable text: FURY DIVISION on two bold stacked lines in the center, no other text. Gunmetal and silver wings sweep left and right, navy shield with a small blue Earth globe, warm amber/gold edge trim and highlights, two small fighter silhouettes integrated into the wings. Crisp hand-pixelled Neo Geo era metal shading, visible deliberate pixels, deep ink outlines. Wide symmetrical composition approximately 2:1, fully visible with transparent margin, no rectangular background, no photorealism, no smooth gradients, no checkerboard. Polished title insignia to fill about half the width of a 912x512 game screen.",
+    "jungle-flight": "Game-ready 16-bit comic-book illustration BACKGROUND ONLY for an original arcade aerial shooter. Wide landscape 16:9. We are flying high above a vast tropical jungle valley toward distant green mountains. Foreground treetops visibly far below us, a winding turquoise river leads into the distance, abandoned military structures and a small jungle airstrip on the right, a thin column of ominous gray smoke rising on the right horizon. Broad blue-gray open sky in the upper half for aircraft to be drawn separately. Real sense of forward flight and altitude, distant atmospheric perspective. Original detailed hand-pixelled Neo Geo / late SNES arcade cutscene art, distinct pixel clusters, inked outlines, rich controlled green/blue/amber palette. No aircraft, no pilots, no floating faces, no cockpit, no lettering, no panels, no borders. This is a proper illustrated aerial establishing shot for a moving comic strip, not a flat top-down tile map and not photorealistic."
+  }
+}

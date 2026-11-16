@@ -1,0 +1,50 @@
+{
+  "generator": "Built-in image_gen, no SpriteCook",
+  "banks": {
+    "exterior": {
+      "key": "hq19_exterior",
+      "path": "assets/game/shared/cinematics/hq_return_attack_1114/exterior.webp",
+      "w": 418,
+      "h": 236,
+      "frames": 16,
+      "cols": 4,
+      "sha256": "5b9212c6cc13b26a28d6a4ba2fc7c3017e93a76190f18c6c3ed0a21963f03120",
+      "source": "_ART_SOURCES/hq_return_attack_1114/exterior-source.png",
+      "promptFile": "_ART_SOURCES/hq_return_attack_1114/exterior-prompt.txt",
+      "prompt": "FRAME FORMAT: Exactly16 landscape frames in a precise4-column4-row sheet, each intended640x360, total2560x1440. Same camera/scale/pivot, no margins, no panel borders, no labels. Production16-bit pixel-art overhead game scenery. Camera angle is CRITICAL: a very steep 75-degree aerial bird's-eye view, almost straight down. You see the ROOFS of the headquarters, not a ground-level facade. The painted circular landing pad must appear almost ROUND, not a flattened ellipse. NO horizon or sky. Use the provided tiny headquarters as IDENTITY ONLY: blue glass geodesic dome, gray armored concrete-steel facility with cyan lights and two flanking hangar wings. Do not copy its camera angle. Place a complete Fury HQ compound in the upper half, large nearly circular landing pad in lower half and a straight NORTH-SOUTH apron running to the bottom. Main south-facing hangar threshold at normalized(0.50,0.46), blue dome at(0.50,0.20), pad center(0.50,0.73). Jungle and coastal water only at far sides. Both hangar doors slide sideways into roofed side pockets. Frame01 fully closed; frames02-15 steadily open; frame16 fully open, dark visible hangar floor aligned with apron. The doorway must be wide enough for a large aircraft to emerge south. Keep every background pixel and fixture fixed across all16 cells, only door leaves move. Reserve empty pad, forecourt and pedestrian route; no ships, people, text, explosions, shadows of aircraft or vehicles. Detailed crisp arcade pixel clusters, same material language as reference. Wide single scene per frame, designed for top-down aircraft sprite overlay.\n",
+      "normalization": "Whole fixed environment with shared even padding; only authored door aperture varies."
+    },
+    "radar": {
+      "key": "hq19_radar",
+      "path": "assets/game/shared/cinematics/hq_return_attack_1114/radar.webp",
+      "w": 418,
+      "h": 236,
+      "frames": 16,
+      "cols": 4,
+      "sha256": "4deeae5b802ecb6f0aa912594033502cdcc0190d05ccdf80240bf0e93e9e25bc",
+      "source": "_ART_SOURCES/hq_return_attack_1114/radar-source.png",
+      "promptFile": "_ART_SOURCES/hq_return_attack_1114/radar-prompt.txt",
+      "prompt": "FRAME FORMAT: exactly16 complete wide landscape scenes in a4x4 equal-cell sprite sheet; each intended640x360,total2560x1440. No gutter, no text labels or numbers, fixed camera and same geometry in all16 frames. Production richly detailed16-bit pixel-art military sci-fi Fury HQ command room. A single solid comic panel per frame, not a split comic. NO PEOPLE at all: the actual nine pilot sprites will be layered in the game. Wide room viewed from above waist height toward north wall, dark gray steel with cyan trim, subtle warm gold service lamps, spacious unobstructed foreground floor occupying lower half for nine standing pilots. A very large green circular radar display centered on the back wall, centered normalized(0.52,0.28), spanning about45% of image width; physically mounted steel screen/bezel, desk controls immediately below. Left side doorway and connecting corridor, right console banks. Frame01 calm radar with no red contacts. Frame02 starts a luminous green sweep; frames03-16 the sweep rotates smoothly a full revolution, red enemy contacts gradually appear then multiply on the radar, amber and red alert lamps illuminate and pulse. Alarm red light reflects gently onto metal but floor stays readable. Exactly same floor, walls, screen bezel and consoles across allframes; animate radar sweep/contacts, tiny console scan lines and alarm lighting ONLY. No alien, no monster, no human faces baked in. Original crisp clustered pixel art matching a polished16-bit shooter, clear dark outlines, authored metallic highlights. No lettered interface, speech balloons or dialogue box. Entire frame filled by the room, no black side panels.\n",
+      "normalization": "Whole fixed room; authored radar aperture plus positive red alarm emissions vary, without rectangular lamp patches."
+    },
+    "corridor": {
+      "key": "hq19_corridor",
+      "path": "assets/game/shared/cinematics/hq_return_attack_1114/corridor.webp",
+      "w": 1672,
+      "h": 942,
+      "frames": 1,
+      "cols": 1,
+      "sha256": "1e5c6889a3e3f5310510ddb33c099e8fd5eb5f3a0c0a5773c5402673372cb93c",
+      "source": "_ART_SOURCES/hq_return_attack_1114/corridor-source.png",
+      "promptFile": "_ART_SOURCES/hq_return_attack_1114/corridor-prompt.txt",
+      "prompt": "Production background for Bullets of Fury, richly detailed16-bit pixel-art single solid wide comic scene, landscape1536x864. Fury HQ INTERIOR corridor, no people, no aircraft, no text, no dialogue box, no panel splits. Camera side-on three-quarter view suitable for full-body pilot sprites walking LEFT TO RIGHT. At far left an open steel entry doorway with cyan jamb lights and a hint of blue daylight; polished dark gray floor spans the entire lower half as one clear level walking route; cables, orange service lamps and blue steel wall panels above. At far RIGHT an open doorway leads into a command room where the same large green circular radar screen can be glimpsed. The clear floor route should run at normalized y0.83 from x0.07 to x0.93, with no obstacles along it. Deep perspective confined to background, foreground walking plane remains level. Original crisp arcade pixel clusters, dark outlines, hard-edged metallic highlights, cyan and warm gold lighting, consistent with the newly generated Fury command room. Fill the full image, no surrounding frame or black empty portrait panels. No civilians or generic personnel.\n",
+      "normalization": "One full wide environment; shared final-row pad makes canvas height even."
+    }
+  },
+  "mode": "built-in image_gen",
+  "spritecookUsed": false,
+  "sourceDate": "2026-11-14",
+  "identityReference": "_ART_SOURCES/hq_return_attack_1114/actual-crew-reference.jpg",
+  "actualActors": "Existing C112/CP112 nine-pilot cast, HL10 exit/walk banks, native ship_<pilot> aircraft and whv_ace enemies. No replacement pilots or ships generated.",
+  "reproduction": "_BUILD_SOURCE/hq_return_attack_1114_pack.py"
+}

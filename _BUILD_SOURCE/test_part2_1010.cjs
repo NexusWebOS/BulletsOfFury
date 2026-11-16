@@ -63,7 +63,7 @@ module.exports=function(vm,c,ok){
    o['Main-pilot targeting retains the specified blue, yellow and gold Retina palette']=retinaColor('axel')==='#2f6fff'&&retinaColor('decker')==='#ffe11a'&&retinaColor('lizzie')==='#ffc21a';
    o['Rebel scanner and dialogue colors retain their separately authored identities']=retinaColor('kaia')==='#25d9bd'&&dialogueNameColor('JACE')==='#ff4838'&&dialogueNameColor('ROOK')==='#ff9b30';
    o['Orange Decker dialogue cannot overwrite his yellow Retina']=dialogueNameColor('DECKER')==='#ff9b30'&&RETINA_TINTS.decker==='#ffe11a';
-   boss={_rebels:{}};story=null;s6Wing={route:'right'};o['Rebel pursuit cannot play the obsolete storm-platform scene']=!storyPlay(6,'boss')&&story===null&&arcStageCard(6,'boss_warning')[0]==='REBEL FURY SQUADRON';
+   boss={_rebels:{}};story=null;s6Wing={route:'right'};o['Rebel pursuit cannot play the obsolete storm-platform scene']=!storyPlay(6,'boss')&&story===null&&arcStageCard(6,'boss_warning')[0]==='ROUGH RIDERS';
    boss={_whv:{}};s6Wing={route:'left'};storyPlay(6,'boss');o['Harrier pursuit owns its weather dialogue and actual cannon objectives']=story.key==='P2.S06.HARRIER'&&story.lines.some(q=>q[0]==='YURI')&&/HARRIER/.test(arcStageCard(6,'boss_warning')[0]);
    return o;
   }finally{s6Wing=sv.wing;boss=sv.boss;story=sv.story;ctx.drawImage=sv.draw;ctx.bezierCurveTo=sv.curve;XART.rdy=sv.rdy;XART.get=sv.get;achievementState.owned=sv.owned;P2M.receipt=sv.receipt;bonusModesUnlocked=sv.clear;P2M.active=P2M.pending=P2M.choice=null;p2HubSync();}

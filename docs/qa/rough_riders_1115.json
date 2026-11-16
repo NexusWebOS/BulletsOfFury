@@ -1,0 +1,339 @@
+{
+  "date": "2026-11-15",
+  "source": "D:\\BOF-Downloads\\2026-11-14\\RevG-source",
+  "canonicalName": "Rough Riders",
+  "singular": "Rough Rider",
+  "nativePassed": 142,
+  "nativeFailed": 0,
+  "dialogueLinesSampled": 5166,
+  "pageConsoleHttpErrors": [],
+  "fullSuite": {
+    "passed": 8969,
+    "failed": 0,
+    "exitCode": 0,
+    "failingNames": [],
+    "baselineFailingNames": [],
+    "newFailingNames": []
+  },
+  "core": {
+    "gameSha256": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce",
+    "gameChanges": "Exactly3 visible text literals; reversed bytes reproduce the previous game hash. LF retained.",
+    "testsSha256": "8d6f8332cec791f9e3b1b2e15b856458cb080abe2a40d44c3378bca221d9a72f",
+    "testRunner": "test_fl.js unchanged CRLF",
+    "titleExpectation": {
+      "file": "_BUILD_SOURCE/test_part2_1010.cjs",
+      "beforeSha256": "c52b48790af8a96bba2f0071016a4080c120b8f66e20eafbca2775fad8981b79",
+      "afterSha256": "06971956176f4e7c0cdb37dbcf27ddcea54967b9f3fd6dcba2f60fe24ac8d7e9",
+      "before": "arcStageCard(6,'boss_warning')[0]==='REBEL FURY SQUADRON'",
+      "after": "arcStageCard(6,'boss_warning')[0]==='ROUGH RIDERS'",
+      "reason": "The native stage card now uses Mike's canonical Rough Riders name. The same assertion still requires storyPlay to refuse the obsolete storm-platform scene.",
+      "lineEndingsPreserved": true
+    }
+  },
+  "selection": {
+    "owner": "assets/city_rescue_1115.js",
+    "beforeSha256": "a97eb39292105af58b706b7cd4e26dc30b70b035b5073c66e62ae7955f692e52",
+    "afterSha256": "491457095415ddbbde6ac4527a526872d35e77ee210d7f66d7a51fecd2c38dad",
+    "asset": "pm27_arrow_g",
+    "cell": [
+      26,
+      26
+    ],
+    "phases": 16,
+    "fps": 16,
+    "nativeClock": "s6Wing.frChoice.t",
+    "scope": "Native-size authored selector frame blits on the generated pursuit screens; existing menu input and routes remain owners."
+  },
+  "files": {
+    "assets/game.js": {
+      "beforeSha256": "b46bb789b6344f31d0ecba126169447d491152670c09decc6da624bc4b5d2215",
+      "edits": [
+        {
+          "before": "FIVE-SHIP WING, TAKE THE REBELS TOGETHER!",
+          "after": "FIVE-SHIP WING, TAKE THE ROUGH RIDERS TOGETHER!",
+          "count": 1
+        },
+        {
+          "before": "RIGHT: REBELS",
+          "after": "RIGHT: ROUGH RIDERS",
+          "count": 1
+        },
+        {
+          "before": "b.name='REBEL SQUAD'",
+          "after": "b.name='ROUGH RIDERS'",
+          "count": 1
+        }
+      ],
+      "afterSha256": "274add70570613468dd6b845df247b3e713c30251736a33c2dc95cc6fbb1b5ce"
+    },
+    "assets/cinematic_director_0930.js": {
+      "beforeSha256": "37862a3c479ea6ea69361aa6f2ed443e5b380da29a16c7e6c03a120afbfe80cb",
+      "edits": [
+        {
+          "before": "The Harrier is finished. What happened to the rebel squad?",
+          "after": "The Harrier is finished. What happened to the Rough Riders?",
+          "count": 1
+        },
+        {
+          "before": "Rebel Fury is down. I wish they had listened.",
+          "after": "The Rough Riders are down. I wish they had listened.",
+          "count": 1
+        },
+        {
+          "before": "All five rebel signals are gone.",
+          "after": "All five Rough Rider signals are gone.",
+          "count": 1
+        },
+        {
+          "before": "I am taking the carrier. Keep the rebels on radar.",
+          "after": "I am taking the carrier. Keep the Rough Riders on radar.",
+          "count": 1
+        },
+        {
+          "before": "Right side: Voss and his old unit. They took the gear from our forward depot.",
+          "after": "Right side: the Rough Riders. Voss and his unit took the gear from our forward depot.",
+          "count": 1
+        }
+      ],
+      "afterSha256": "d43cad81149c90eee532c1cd0dbe5d03767d213391ffb904d5cc3ddad87208ea"
+    },
+    "assets/cinema_bridges_1110.js": {
+      "beforeSha256": "e0f2b9934461e5c8d2142f5198f2d41c12fbc41808a063d858cc8381e89ca0c8",
+      "edits": [
+        {
+          "before": "The Harrier is down. The remaining rebel contacts are marked.",
+          "after": "The Harrier is down. The remaining Rough Rider contacts are marked.",
+          "count": 1
+        },
+        {
+          "before": "The rebel formation is down. The remaining Harrier threat is marked.",
+          "after": "The Rough Riders are down. The remaining Harrier threat is marked.",
+          "count": 1
+        }
+      ],
+      "afterSha256": "c55faf281d9ddad2960eee2bc937559f82fa02d2990121b2d3eb8d1e7583731a"
+    },
+    "assets/cinema_direction_1110.js": {
+      "beforeSha256": "3a027b2cf91f8f7bf6b7f9e98e8d28b06505d254b56da49452eb9fd564dd1011",
+      "edits": [
+        {
+          "before": "The Harrier is down. The remaining rebel contacts are marked.",
+          "after": "The Harrier is down. The remaining Rough Rider contacts are marked.",
+          "count": 1
+        },
+        {
+          "before": "The rebel formation is down. The remaining Harrier threat is marked.",
+          "after": "The Rough Riders are down. The remaining Harrier threat is marked.",
+          "count": 1
+        },
+        {
+          "before": "Harrier to the left. Rebel formation to the right.",
+          "after": "Harrier to the left. Rough Riders to the right.",
+          "count": 1
+        },
+        {
+          "before": "RIGHT: REBEL FORMATION",
+          "after": "RIGHT: ROUGH RIDERS",
+          "count": 1
+        }
+      ],
+      "afterSha256": "e38b3af3afa9dcb044553b2767c59a8696bf5ca0fc76bce8fdf37caf3258b300"
+    },
+    "assets/story_campaign_1103.js": {
+      "beforeSha256": "18e770fb05e3c7ea820c475b30ddd0fa11547961a72a209d0a5e9068649da36a",
+      "edits": [
+        {
+          "before": "The Rebel Fighters have reached the city.",
+          "after": "The Rough Riders have reached the city.",
+          "count": 1
+        }
+      ],
+      "afterSha256": "1f15ba35953b45a156603b53a41107dad487bd867673e6706a9ab2bebd2470a5"
+    },
+    "assets/crossed_fate_1115.js": {
+      "beforeSha256": "9fd697365fba89d8cbfecf3c2c3bf417683ecbdaf5d085f5529086b255bb5159",
+      "edits": [
+        {
+          "before": "Rebel Fighters",
+          "after": "Rough Riders",
+          "count": 4
+        },
+        {
+          "before": "Keep the Harrier and the Rebels on radar.",
+          "after": "Keep the Harrier and the Rough Riders on radar.",
+          "count": 1
+        },
+        {
+          "before": "left=q.crash?'the Harrier and the Rough Riders':FATE15_NAMES[q.target]",
+          "after": "left=q.crash?'the Harrier and the Rough Riders':'the '+FATE15_NAMES[q.target]",
+          "count": 1
+        },
+        {
+          "before": "FATE15_NAMES[q.defeated]+' is down. '+FATE15_NAMES[q.target]+' is still heading for the city.'",
+          "after": "fate15SkyReport(q)",
+          "count": 1
+        },
+        {
+          "before": "const fate15Ease=",
+          "after": "function fate15SkyReport(q){const down=q.defeated==='rebels'?'The Rough Riders are down.':FATE15_NAMES[q.defeated]+' is down.',incoming=q.target==='rebels'?'The Rough Riders are still heading for the city.':'The Harrier is still heading for the city.';return down+' '+incoming;}\nconst fate15Ease=",
+          "count": 1
+        }
+      ],
+      "afterSha256": "c298b122e2c1c82a8b8aba2341ce66e6495d013533b7e999948a7d623b90da88"
+    },
+    "assets/part2_combat_1010.js": {
+      "beforeSha256": "5739dff8dd862d98f254168d00707c270cd3c5bc30001f5a44780311e4911d1e",
+      "edits": [
+        {
+          "before": "REBEL FURY SQUADRON",
+          "after": "ROUGH RIDERS",
+          "count": 1
+        }
+      ],
+      "afterSha256": "6bd62240d5cd4037ab8c83f850303efea1aff3dabadaaded8ed999135ad41732"
+    },
+    "assets/password_catalog_1005.js": {
+      "beforeSha256": "58c00d1bd4720689560b0ed34350c0842f50a2bd5f1fb3306629614e6732f003",
+      "edits": [
+        {
+          "before": "STAGE 6 REBELS",
+          "after": "STAGE 6 ROUGH RIDERS",
+          "count": 1
+        },
+        {
+          "before": "STAGE X REBELS",
+          "after": "STAGE X ROUGH RIDERS",
+          "count": 1
+        }
+      ],
+      "afterSha256": "38c981471265efc39783f907b00a31af98d74fbb447801c64a5f356965373c20"
+    },
+    "assets/storyboard_1024.js": {
+      "beforeSha256": "f660b052d97bef373fa3682afb7554ed929fb24aba6ad0076fe5d863e421053b",
+      "edits": [
+        {
+          "before": "Rebel route",
+          "after": "Rough Riders route",
+          "count": 1
+        },
+        {
+          "before": "Rebel squad",
+          "after": "Rough Riders",
+          "count": 1
+        }
+      ],
+      "afterSha256": "ad601c63f1cb0576b296e221ee945f0e1b480c68f65d19d65d78fa44e0c17390"
+    },
+    "assets/enemy_atlas_1013.js": {
+      "beforeSha256": "817fc6f3c1c14902fe4bdedaf37d97ec56d67c3d3e3f50ebda6fd224207547f1",
+      "edits": [
+        {
+          "before": "Rebel fighters",
+          "after": "Rough Riders",
+          "count": 1
+        }
+      ],
+      "afterSha256": "6b1db4a29b13700e086fab84e06f5f476f516049e9842d6db599ecbe45a2335c"
+    },
+    "assets/data/enemy_atlas_1013.json": {
+      "beforeSha256": "9ba6e0b0ee4a4d148009a2c82d24fa12c80d2f07caa2d5a66d944ab97f05a507",
+      "edits": [
+        {
+          "before": "Rebel Fighters",
+          "after": "Rough Riders",
+          "count": 4
+        },
+        {
+          "before": "rebel pilot",
+          "after": "Rough Rider pilot",
+          "count": 1
+        }
+      ],
+      "afterSha256": "75f903498b89462f5844c146ff139c036580b29ac536e27e541e7e6cc4b31c24"
+    },
+    "_BUILD_SOURCE/city_rescue_1115_package.py": {
+      "beforeSha256": "cfae4a7071f932fd1820678dfae4c91cf2ac24e4dfcd276506922cf75f1a730d",
+      "edits": [
+        {
+          "before": "Rebel Fighters",
+          "after": "Rough Riders",
+          "count": 2
+        },
+        {
+          "before": "Rebel interception",
+          "after": "Rough Riders interception",
+          "count": 1
+        }
+      ],
+      "afterSha256": "5e040aaf07d411a75c7a7d161c36c079e59d9099d0088453a2ae8fe531f2e82d"
+    },
+    "_BUILD_SOURCE/crossed_fate_1115_package.py": {
+      "beforeSha256": "988d958afc80917351e35801c4c6f54e2d2456315b3298871ed179807d7cb505",
+      "edits": [
+        {
+          "before": "Rebel Fighters",
+          "after": "Rough Riders",
+          "count": 2
+        },
+        {
+          "before": "Rebel interception",
+          "after": "Rough Riders interception",
+          "count": 2
+        }
+      ],
+      "afterSha256": "6aa6b1864f6a1747a23a1107d60e0f54e2682e8d609a663736f81fec44cf8370"
+    }
+  },
+  "gifs": [
+    {
+      "file": "pursuit-highlights.gif",
+      "sha256": "86cf1c800a77bf67085d0a0d52d098d574789e5b0b8c1b3190194ce166d6003a"
+    },
+    {
+      "file": "pursuit-hard-highlight.gif",
+      "sha256": "62c4bae9521c499d088dc0540d67d55fc19437a5abc4e330eef9049a34bbe1f9"
+    },
+    {
+      "file": "pursuit-furious-highlight.gif",
+      "sha256": "fe329de1e50a91578d29554438d17138e2f8575808e1faa6b1bd19f8b004fc3a"
+    }
+  ],
+  "scope": "Prepared native pursuit menu, real keyboard left/right input, actual pointer confirm, full native Rough Riders route briefing and real five-pilot encounter spawn; no campaign win or physical gamepad test. Prior videos/receipts and generation prompts remain historical.",
+  "gifBrowserChecks": {
+    "passed": 5,
+    "failed": 0,
+    "file": "_shots/rough_riders_1115/browser-qa.json"
+  },
+  "gifOptimization": [
+    {
+      "file": "pursuit-hard-highlight.gif",
+      "sourceFrames": 48,
+      "encodedFrames": 48,
+      "paletteColors": 228,
+      "beforeBytes": 15030647,
+      "afterBytes": 412262,
+      "decodedTimelinePixelIdentical": true,
+      "durationMs": 4000
+    },
+    {
+      "file": "pursuit-furious-highlight.gif",
+      "sourceFrames": 48,
+      "encodedFrames": 48,
+      "paletteColors": 252,
+      "beforeBytes": 15569829,
+      "afterBytes": 424541,
+      "decodedTimelinePixelIdentical": true,
+      "durationMs": 4000
+    },
+    {
+      "file": "pursuit-highlights.gif",
+      "sourceFrames": 96,
+      "encodedFrames": 96,
+      "paletteColors": 250,
+      "beforeBytes": 30707247,
+      "afterBytes": 837919,
+      "decodedTimelinePixelIdentical": true,
+      "durationMs": 8000
+    }
+  ]
+}

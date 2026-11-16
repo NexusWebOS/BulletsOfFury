@@ -1,0 +1,228 @@
+{
+  "version": 2,
+  "sourceCanvas": [
+    912,
+    512
+  ],
+  "nativeMenu": [
+    456,
+    256
+  ],
+  "pixelDensity": 2,
+  "fps": 16,
+  "frameMs": [
+    62,
+    63,
+    62,
+    63,
+    62,
+    63,
+    62,
+    63,
+    62,
+    63,
+    62,
+    63,
+    62,
+    63,
+    62,
+    63
+  ],
+  "authorColors": [
+    [
+      56,
+      204,
+      112
+    ],
+    [
+      60,
+      220,
+      122
+    ],
+    [
+      70,
+      236,
+      138
+    ],
+    [
+      88,
+      247,
+      155
+    ],
+    [
+      113,
+      255,
+      177
+    ],
+    [
+      159,
+      255,
+      202
+    ],
+    [
+      211,
+      255,
+      232
+    ],
+    [
+      249,
+      255,
+      251
+    ],
+    [
+      235,
+      255,
+      244
+    ],
+    [
+      195,
+      255,
+      222
+    ],
+    [
+      146,
+      255,
+      196
+    ],
+    [
+      106,
+      246,
+      166
+    ],
+    [
+      78,
+      231,
+      141
+    ],
+    [
+      63,
+      220,
+      125
+    ],
+    [
+      53,
+      211,
+      114
+    ],
+    [
+      45,
+      198,
+      104
+    ]
+  ],
+  "traceMethod": "Existing metal-frame pixels, connected components and source landmarks; no polygon stroke",
+  "banks": {
+    "hard-left": {
+      "key": "city16_trace_hard-left",
+      "path": "assets/game/shared/ui/pursuit_trace_exact_1115/hard-left.png",
+      "sha256": "be5e4c5ee8c3787b87367428788d7227f507a28182e4de7601256403a8fcb44e",
+      "w": 406,
+      "h": 326,
+      "cols": 8,
+      "frames": 16,
+      "origin": [
+        48,
+        92
+      ],
+      "density": 2,
+      "sourceCanvas": [
+        912,
+        512
+      ],
+      "crop": [
+        48,
+        92,
+        454,
+        418
+      ],
+      "source": "_ART_SOURCES/pursuit_trace_exact_1115/hard-left.aseprite",
+      "sourceImageSha256": "b71e7a5c536ed310f29a57be37d0bbac35a06c117f62795985a780cdc9f1bd43",
+      "mask": "_ART_SOURCES/pursuit_trace_exact_1115/hard-left-frame-mask.png",
+      "selectedOriginalPixels": 10918
+    },
+    "hard-right": {
+      "key": "city16_trace_hard-right",
+      "path": "assets/game/shared/ui/pursuit_trace_exact_1115/hard-right.png",
+      "sha256": "30c0767fb7182ddb7b7f4717c0092340114775ebae23eaa5f7c40b1af8735a0a",
+      "w": 406,
+      "h": 326,
+      "cols": 8,
+      "frames": 16,
+      "origin": [
+        458,
+        92
+      ],
+      "density": 2,
+      "sourceCanvas": [
+        912,
+        512
+      ],
+      "crop": [
+        458,
+        92,
+        864,
+        418
+      ],
+      "source": "_ART_SOURCES/pursuit_trace_exact_1115/hard-right.aseprite",
+      "sourceImageSha256": "b71e7a5c536ed310f29a57be37d0bbac35a06c117f62795985a780cdc9f1bd43",
+      "mask": "_ART_SOURCES/pursuit_trace_exact_1115/hard-right-frame-mask.png",
+      "selectedOriginalPixels": 10992
+    },
+    "furious-left": {
+      "key": "city16_trace_furious-left",
+      "path": "assets/game/shared/ui/pursuit_trace_exact_1115/furious-left.png",
+      "sha256": "6277942695b63dadcdc26b94e686e2a835bab6174278ab29d19fd96aca8addc4",
+      "w": 406,
+      "h": 326,
+      "cols": 8,
+      "frames": 16,
+      "origin": [
+        48,
+        92
+      ],
+      "density": 2,
+      "sourceCanvas": [
+        912,
+        512
+      ],
+      "crop": [
+        48,
+        92,
+        454,
+        418
+      ],
+      "source": "_ART_SOURCES/pursuit_trace_exact_1115/furious-left.aseprite",
+      "sourceImageSha256": "e19cd3402c6eafc783d9aeaf832f6faadf70c70ed391764bc6d8ce18823459c2",
+      "mask": "_ART_SOURCES/pursuit_trace_exact_1115/furious-left-frame-mask.png",
+      "selectedOriginalPixels": 10770
+    },
+    "furious-right": {
+      "key": "city16_trace_furious-right",
+      "path": "assets/game/shared/ui/pursuit_trace_exact_1115/furious-right.png",
+      "sha256": "a59725d831593fbc7aaf47f0f47748b9239257fe999299ea55ea3dddbc52f2fc",
+      "w": 406,
+      "h": 326,
+      "cols": 8,
+      "frames": 16,
+      "origin": [
+        458,
+        92
+      ],
+      "density": 2,
+      "sourceCanvas": [
+        912,
+        512
+      ],
+      "crop": [
+        458,
+        92,
+        864,
+        418
+      ],
+      "source": "_ART_SOURCES/pursuit_trace_exact_1115/furious-right.aseprite",
+      "sourceImageSha256": "e19cd3402c6eafc783d9aeaf832f6faadf70c70ed391764bc6d8ce18823459c2",
+      "mask": "_ART_SOURCES/pursuit_trace_exact_1115/furious-right-frame-mask.png",
+      "selectedOriginalPixels": 10680
+    }
+  }
+}

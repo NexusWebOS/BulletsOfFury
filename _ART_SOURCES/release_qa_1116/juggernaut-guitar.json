@@ -1,0 +1,21 @@
+{
+  "key": "release16_juggernaut_guitar",
+  "path": "assets/game/shared/cinematics/release_qa_1116/juggernaut-guitar.webp",
+  "w": 512,
+  "h": 512,
+  "cols": 3,
+  "frames": 6,
+  "pivot": [
+    256,
+    256
+  ],
+  "durations": [
+    220,
+    180,
+    250,
+    260,
+    320,
+    700
+  ],
+  "sha256": "d1701e43341f0f97590c7a5b109d21e670e234537e6bcc0842f3d80da6c08f19"
+}
